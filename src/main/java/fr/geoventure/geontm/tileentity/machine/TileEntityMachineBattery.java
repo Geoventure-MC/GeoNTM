@@ -135,11 +135,13 @@ public class TileEntityMachineBattery extends TileEntityMachineBase implements M
     }
 
     protected PortDef[] cachedPorts;
-    /**
-     * 1.7 hands solderer() the battery's plain block meta, so its direction is UNKNOWN and every port lands on the
-     * battery itself: this deprecated battery connects to nothing.
-     */
-    public PortDef[] getPorts() { if (cachedPorts == null) cachedPorts = TilePortShapes.solderer(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), ForgeDirection.UNKNOWN); return cachedPorts; }
+    /** Geoventure : la batterie se branche sur ses six faces, y compris aux câbles FE de GeoMods. */
+    public PortDef[] getPorts() {
+        if (cachedPorts == null) {
+            cachedPorts = TilePortShapes.around(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ());
+        }
+        return cachedPorts;
+    }
 
     // Items (1.7 isItemValidForSlot accepts anything; sides as 1.7)
 
