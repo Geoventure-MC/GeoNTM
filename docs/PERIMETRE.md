@@ -8,11 +8,11 @@ NTM-Continuum 1.0.6 contient **1266 blocs** et **3463 objets**. Le détail ligne
 
 | Décision | Nombre | Sens |
 |---|---:|---|
-| GARDER | 356 | repris dans GeoNTM |
+| GARDER | 349 | repris dans GeoNTM |
 | SIMPLIFIER | 1035 | repris, mais regroupé ou réduit |
 | FUSIONNER | 72 | remplacé par un objet Geoventure |
-| SI_BESOIN | 1349 | gardé seulement si une recette retenue en dépend |
-| RETIRER | 1875 | supprimé |
+| SI_BESOIN | 1314 | gardé seulement si une recette retenue en dépend |
+| RETIRER | 1917 | supprimé |
 | A_DECIDER | 42 | arbitrage du propriétaire |
 
 ## Ce qui reste, par thème
@@ -20,14 +20,14 @@ NTM-Continuum 1.0.6 contient **1266 blocs** et **3463 objets**. Le détail ligne
 | Thème | Décision | Nombre |
 |---|---|---:|
 | drones | A_DECIDER | 12 |
-| dépendances | SI_BESOIN | 799 |
+| dépendances | SI_BESOIN | 764 |
 | machines | A_DECIDER | 7 |
 | machines | FUSIONNER | 23 |
-| machines : combustible | GARDER | 10 |
+| machines : combustible | GARDER | 8 |
 | machines : production | GARDER | 21 |
-| machines : réacteurs | GARDER | 6 |
+| machines : réacteurs | GARDER | 3 |
 | machines : satellites | GARDER | 5 |
-| machines : vapeur et énergie | GARDER | 16 |
+| machines : vapeur et énergie | GARDER | 14 |
 | missiles | A_DECIDER | 23 |
 | missiles | GARDER | 59 |
 | missiles | SIMPLIFIER | 122 |
@@ -62,9 +62,9 @@ Ressources rares, sans minerai sur Terre : il faut une fusée pour les récupér
 ## Machines gardées
 
 - **satellites** : `satlink`, `satlinker`, `radar`, `radar_large`, `missile_assembly`
-- **réacteurs** : `reactor`, `reactor_small`, `zirnox`, `radgen`, `rtg_grey`, `minirtg`
-- **combustible** : `gascent`, `puf6_tank`, `uf6_tank`, `silex`, `fel`, `purex`, `exposure_chamber`, `cyclotron`, `waste_drum`, `storage_drum`
-- **vapeur et énergie** : `boiler_off`, `industrial_boiler`, `steam_engine`, `stirling`, `stirling_steel`, `industrial_turbine`, `large_turbine`, `chungus`, `tower_large`, `tower_small`, `condenser`, `condenser_powered`, `turbofan`, `turbine_gas`, `combustion_engine`, `solar_boiler`
+- **réacteurs** : `zirnox`, `radgen`, `rtg_grey`
+- **combustible** : `gascent`, `silex`, `fel`, `purex`, `exposure_chamber`, `cyclotron`, `waste_drum`, `storage_drum`
+- **vapeur et énergie** : `industrial_boiler`, `steam_engine`, `stirling`, `stirling_steel`, `industrial_turbine`, `chungus`, `tower_large`, `tower_small`, `condenser`, `condenser_powered`, `turbofan`, `turbine_gas`, `combustion_engine`, `solar_boiler`
 - **production** : `assembly_machine`, `assembly_factory`, `chemical_plant`, `chemical_factory`, `arc_furnace`, `arc_welder`, `electrolyser`, `crystallizer`, `vacuum_distill`, `catalytic_cracker`, `catalytic_reformer`, `hydrotreater`, `coker`, `liquefactor`, `solidifier`, `compressor`, `compressor_compact`, `rotary_furnace`, `crucible`, `strand_caster`, `soldering_station`
 
 ## Machines remplacées par les nôtres

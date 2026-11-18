@@ -275,7 +275,6 @@ machine_arc_furnace
 machine_arc_welder
 machine_assembly_factory
 machine_assembly_machine
-machine_boiler_off
 machine_catalytic_cracker
 machine_catalytic_reformer
 machine_chemical_factory
@@ -297,17 +296,12 @@ machine_gascent
 machine_hydrotreater
 machine_industrial_boiler
 machine_industrial_turbine
-machine_large_turbine
 machine_liquefactor
-machine_minirtg
 machine_missile_assembly
-machine_puf6_tank
 machine_purex
 machine_radar
 machine_radar_large
 machine_radgen
-machine_reactor
-machine_reactor_small
 machine_rotary_furnace
 machine_rtg_grey
 machine_satlink
@@ -325,7 +319,6 @@ machine_tower_large
 machine_tower_small
 machine_turbine_gas
 machine_turbofan
-machine_uf6_tank
 machine_vacuum_distill
 machine_waste_drum
 machine_zirnox

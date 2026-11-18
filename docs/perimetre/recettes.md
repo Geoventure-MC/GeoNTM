@@ -1,15 +1,15 @@
 # Recettes conservées
 
-- Recettes gardées : **1992**
-- Recettes retirées : **1123**
-- Recettes adaptées à nos objets : **82**
-- Objets ajoutés car indispensables : **35**
+- Recettes gardées : **1991**
+- Recettes retirées : **1**
+- Recettes adaptées à nos objets : **0**
+- Objets ajoutés car indispensables : **0**
 - Tags de matières reliés à GeoMods : **88**
-- Machines gardées sans recette dans les tables : **13**
+- Machines gardées sans recette dans les tables : **6**
 
 | Table | Recettes gardées |
 |---|---:|
-| `anvil_construction` | 190 |
+| `anvil_construction` | 189 |
 | `anvil_smithing` | 21 |
 | `arc_furnace` | 13 |
 | `arc_welder` | 42 |

@@ -184,6 +184,18 @@ ams_core_thingy
 ams_core_wormhole
 ams_lens
 ams_muzzle
+anvil_arsenic_bronze
+anvil_bismuth_bronze
+anvil_desh
+anvil_dnt
+anvil_ferrouranium
+anvil_iron
+anvil_lead
+anvil_murky
+anvil_osmiridium
+anvil_saturnite
+anvil_schrabidate
+anvil_steel
 apple_euphemium
 apple_lead
 apple_lead_block
@@ -208,8 +220,11 @@ balefire
 balefire_and_ham
 balefire_and_steel
 balefire_scrambled
+ball_dynamite
 ball_fireclay
 ball_resin
+ball_tatb
+ball_tnt
 barbed_wire
 barbed_wire_acid
 barbed_wire_fire
@@ -438,6 +453,7 @@ bj_plate
 bj_plate_jetpack
 boat
 boat_rubber
+bobblehead
 bobblehead_abel
 bobblehead_adam29
 bobblehead_agility
@@ -513,6 +529,7 @@ brick_asbestos_stairs
 brick_compound
 brick_compound_slab
 brick_compound_stairs
+brick_concrete
 brick_concrete_broken
 brick_concrete_broken_slab
 brick_concrete_broken_stairs
@@ -785,11 +802,13 @@ concrete_pink
 concrete_pink_slab
 concrete_purple
 concrete_purple_slab
+concrete_rebar
 concrete_red
 concrete_red_slab
 concrete_silver
 concrete_silver_slab
 concrete_slab
+concrete_smooth
 concrete_smooth_slab
 concrete_smooth_stairs
 concrete_stairs
@@ -866,6 +885,7 @@ custom_schrab
 custom_sol
 custom_tnt
 deco_aluminium
+deco_asbestos
 deco_beryllium
 deco_computer_ibm_300pl
 deco_crt_blinking
@@ -905,6 +925,7 @@ deco_red_copper
 deco_rusty_steel
 deco_steel
 deco_titanium
+deco_toaster_iron
 deco_toaster_steel
 deco_toaster_wood
 deco_tungsten
@@ -919,6 +940,7 @@ desh_pickaxe
 desh_shovel
 desh_sword
 det_charge
+det_cord
 det_miner
 det_nuke
 detonator
@@ -965,6 +987,7 @@ dungeon_spawner
 dwarven_pickaxe
 dynamite
 egg_balefire
+egg_balefire_shard
 egg_glyphid
 elec_axe
 elec_pickaxe
@@ -1048,6 +1071,7 @@ glass_boron
 glass_lead
 glass_polarized
 glass_polonium
+glass_quartz
 glass_trinitite
 glass_uranium
 glyphid_base
@@ -1284,6 +1308,7 @@ machine_bat9000
 machine_battery_potato
 machine_battery_redd
 machine_battery_socket
+machine_boiler_off
 machine_capacitor_copper
 machine_capacitor_gold
 machine_capacitor_niobium
@@ -1302,14 +1327,19 @@ machine_hephaestus
 machine_industrial_generator
 machine_intake
 machine_keyforge
+machine_large_turbine
 machine_lpw2
 machine_microwave
+machine_minirtg
 machine_obj_context_base
 machine_obj_context_legacy
 machine_orbus
 machine_ore_slopper
 machine_precass
+machine_puf6_tank
 machine_pyrooven
+machine_reactor
+machine_reactor_small
 machine_rtg_furnace_off
 machine_sawmill
 machine_schrabidium_battery
@@ -1321,6 +1351,7 @@ machine_teleporter
 machine_thresher
 machine_transformer_dnt
 machine_transformer_dnt_20
+machine_uf6_tank
 machine_weapon_table
 machine_well
 machine_wood_burner
@@ -1419,6 +1450,7 @@ particle_copper
 particle_dark
 particle_digamma
 particle_empty
+particle_higgs
 particle_hydrogen
 particle_lead
 particle_lutece
@@ -1509,6 +1541,7 @@ rail_narrow
 rail_narrow_curve
 rail_narrow_straight
 rail_wood
+rebar
 rebar_placer
 record_glass
 record_lc
@@ -1549,6 +1582,7 @@ reinforced_light
 reinforced_sand
 reinforced_sand_slab
 reinforced_sand_stairs
+reinforced_stone
 reinforced_stone_slab
 reinforced_stone_stairs
 robes_boots
@@ -1572,6 +1606,7 @@ sand_dirty_red
 sand_gold
 sand_lead
 sand_polonium
+sand_quartz
 sand_uranium
 sandbags
 schrabidium_axe
@@ -1593,6 +1628,12 @@ security_legs
 security_plate
 semtex
 shell
+shell_aluminium
+shell_copper
+shell_saturnite
+shell_steel
+shell_titanium
+shell_weaponsteel
 shimmer_axe
 shimmer_axe_head
 shimmer_handle
@@ -1720,6 +1761,7 @@ teisr_obj_context_base
 teisr_obj_context_legacy
 test_fan_blowable
 test_fe_cell
+thermo_element
 thermo_unit_empty
 thermo_unit_endo
 thermo_unit_exo

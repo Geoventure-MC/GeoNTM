@@ -32,10 +32,10 @@ FORMES = {'ingot': '{}_ingot', 'nugget': '{}_nugget', 'plate': '{}_plate', 'powd
 # --- Machines ------------------------------------------------------------------------------------------------
 MACHINES_GARDER = {
     'satellites': 'satlink satlinker radar radar_large missile_assembly',
-    'réacteurs': 'reactor reactor_small zirnox radgen rtg_grey minirtg',
-    'combustible': 'gascent puf6_tank uf6_tank silex fel purex exposure_chamber cyclotron waste_drum storage_drum',
-    'vapeur et énergie': 'boiler_off industrial_boiler steam_engine stirling stirling_steel industrial_turbine '
-                         'large_turbine chungus tower_large tower_small condenser condenser_powered turbofan '
+    'réacteurs': 'zirnox radgen rtg_grey',
+    'combustible': 'gascent silex fel purex exposure_chamber cyclotron waste_drum storage_drum',
+    'vapeur et énergie': 'industrial_boiler steam_engine stirling stirling_steel industrial_turbine '
+                         'chungus tower_large tower_small condenser condenser_powered turbofan '
                          'turbine_gas combustion_engine solar_boiler',
     'production': 'assembly_machine assembly_factory chemical_plant chemical_factory arc_furnace arc_welder '
                   'electrolyser crystallizer vacuum_distill catalytic_cracker catalytic_reformer hydrotreater '
@@ -56,7 +56,8 @@ MACHINES_RETIRER = re.compile(r'^(ammo_press|armor_table|weapon_table|annihilato
                               r'stirling_creative|transformer_dnt|tape_drive|orbus|hephaestus|lpw2|ore_slopper|ashpit|autosaw|'
                               r'battery_socket|capacitor_|controller|detector|difurnace|drain|flare|funnel|'
                               r'furnace_brick|furnace_combination|industrial_generator|intake|precass|pyrooven|'
-                              r'rtg_furnace|sawmill|supercomputer|thresher|well|wood_burner)')
+                              r'rtg_furnace|sawmill|supercomputer|thresher|well|wood_burner|reactor$|reactor_small$|'
+                              r'boiler_off$|large_turbine$|minirtg$|puf6_tank$|uf6_tank$)')
 
 # --- Règles par nom : la première qui correspond décide ----------------------------------------------------------
 RETIRER = [
