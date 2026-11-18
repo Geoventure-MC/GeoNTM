@@ -1,0 +1,73 @@
+# Compile GeoNTM pour Forge 1.20.1 avec GeoCore, placé côte à côte comme en développement.
+name: Compilation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'versions/**'
+      - 'gradle/**'
+      - '*.gradle.kts'
+      - 'gradle.properties'
+      - '.github/workflows/build.yml'
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      geocore_ref:
+        description: Branche, tag ou commit de GeoCore
+        default: main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: compilation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: GeoNTM
+
+      # settings.gradle.kts inclut ../Golem-Core : ce nom de dossier est attendu.
+      - uses: actions/checkout@v4
+        with:
+          repository: Geoventure-MC/GeoCore
+          ref: ${{ inputs.geocore_ref || 'main' }}
+          path: Golem-Core
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            17
+            21
+            25
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # CI=false : ModDevGradle doit utiliser sa chaîne locale, sinon les tests Forge 1.20.1 échouent.
+      - name: Construire GeoCore
+        env:
+          CI: "false"
+        working-directory: Golem-Core
+        run: bash ./gradlew chiseledBuild --no-daemon --stacktrace
+
+      - name: Construire GeoNTM
+        env:
+          CI: "false"
+        working-directory: GeoNTM
+        run: bash ./gradlew :1.20.1-forge:build --no-daemon --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: geontm-forge-1.20.1
+          path: |
+            GeoNTM/versions/1.20.1-forge/build/libs/*.jar
+            Golem-Core/versions/1.20.1-forge/build/libs/*.jar
+          if-no-files-found: error
