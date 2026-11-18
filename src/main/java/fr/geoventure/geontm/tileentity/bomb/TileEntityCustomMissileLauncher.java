@@ -205,6 +205,10 @@ public abstract class TileEntityCustomMissileLauncher extends TileEntityMachineB
                 tX + (int) target.x, tZ + (int) target.z,
                 stack(parts == null ? null : parts.warhead()), stack(parts == null ? null : parts.fuselage()),
                 stack(parts == null ? null : parts.stability()), stack(parts == null ? null : parts.thruster()));
+        if (!fr.geoventure.geontm.pont.PontGuerre.autoriser(missile, level, worldPosition,
+                fr.geoventure.geocore.Ids.of("geontm", "missile_custom"), placer())) {
+            return;
+        }
         level.addFreshEntity(Owners.give(missile, placer()));
         GeoNtmEvents.missileLaunched(level, worldPosition, missile, missile.targetX, missile.targetZ, null);
 

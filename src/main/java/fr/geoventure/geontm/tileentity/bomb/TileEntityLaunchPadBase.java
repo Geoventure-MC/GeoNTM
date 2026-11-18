@@ -351,6 +351,15 @@ public abstract class TileEntityLaunchPadBase extends TileEntityMachineBase
         return 5;
     }
 
+    /** Les règles de guerre de Geoventure décident et font payer le tir ; un antimissile reste défensif. */
+    private boolean tirAutorise(Entity missile) {
+        if (!(missile instanceof EntityMissileBaseNT ballistic)) return true;
+        UUID tireur = Owners.detonator(detonator);
+        return fr.geoventure.geontm.pont.PontGuerre.autoriser(ballistic, level, worldPosition,
+                net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(inventory.getStackInSlot(0).getItem()),
+                tireur != null ? tireur : placer());
+    }
+
     /** Spawns the missile, charges the launch, and consumes the item. */
     public void finalizeLaunch(Entity missile) {
         if (missile instanceof EntityMissileBaseNT ballistic) ballistic.setThrower(detonator);
@@ -419,6 +428,7 @@ public abstract class TileEntityLaunchPadBase extends TileEntityMachineBase
 
         Entity e = instantiateMissile(targetX, targetZ);
         if (e == null) return BombReturnCode.ERROR_MISSING_COMPONENT;
+        if (!tirAutorise(e)) return BombReturnCode.ERROR_INCOMPATIBLE;
 
         finalizeLaunch(e);
         return BombReturnCode.LAUNCHED;
@@ -432,6 +442,7 @@ public abstract class TileEntityLaunchPadBase extends TileEntityMachineBase
         if (e == null) return BombReturnCode.ERROR_MISSING_COMPONENT;
 
         if (e instanceof EntityMissileAntiBallistic abm) abm.tracking = entity;
+        if (!tirAutorise(e)) return BombReturnCode.ERROR_INCOMPATIBLE;
 
         finalizeLaunch(e);
         return BombReturnCode.LAUNCHED;

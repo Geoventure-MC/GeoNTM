@@ -87,6 +87,9 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
 
     public @Nullable LivingEntity thrower;
     private @Nullable UUID owner;
+    /** Frappe autorisée par les règles de guerre de Geoventure. */
+    public @Nullable UUID frappeLancement;
+    public @Nullable String frappeId;
 
     /**
      * The missile's pitch in upstream's convention: 0° straight up, −90° horizontal, −180° straight
@@ -318,7 +321,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
 
         if (hit.getType() != HitResult.Type.MISS) {
             GeoNtmEvents.missileImpact(this, hit.getBlockPos(), targetX, targetZ, thrower);
-            this.onMissileImpact(hit);
+            fr.geoventure.geontm.pont.PontGuerre.impact(this, hit.getBlockPos(), () -> this.onMissileImpact(hit));
             discard();
             return;
         }
@@ -407,6 +410,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
 
     /** Destroyed in flight: a modest blast, a shower of shrapnel, and the missile's parts. */
     protected void killMissile() {
+        fr.geoventure.geontm.pont.PontGuerre.intercepte(this);
         if (isRemoved()) return;
         discard();
         ExplosionLarge.explode(level(), thrower, Protection.Source.of(this), getX(), getY(), getZ(), 5, true, false, true);
@@ -481,6 +485,10 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
         startZ = input.getIntOr("sZ", 0);
         velocity = input.getDoubleOr("veloc", 0);
         owner = Owners.load(input);
+        String lancement = input.getStringOr("frappeLancement", "");
+        frappeLancement = lancement.isEmpty() ? null : UUID.fromString(lancement);
+        String frappe = input.getStringOr("frappeId", "");
+        frappeId = frappe.isEmpty() ? null : frappe;
     }
 
     @Override
@@ -500,5 +508,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
         output.putInt("sZ", startZ);
         output.putDouble("veloc", velocity);
         Owners.save(output, owner);
+        if (frappeLancement != null) output.putString("frappeLancement", frappeLancement.toString());
+        if (frappeId != null) output.putString("frappeId", frappeId);
     }
 }
