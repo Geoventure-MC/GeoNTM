@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Player report: with GemRender installed, blocks on a Sable sub-level lose their per-face shading. Builds a stepped

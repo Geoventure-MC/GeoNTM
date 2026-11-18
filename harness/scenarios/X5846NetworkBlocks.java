@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * The 1.7 X5846 network blocks in a real world: the flow control pump between two barrels (water moves, its screen sets
@@ -34,17 +34,17 @@ public final class X5846NetworkBlocks implements Scenario {
     /** Placed by hand facing south: 1.7 sends to the facing turned about DOWN, east. */
     private void pump(Client c) {
         int x = 0, z = -10;
-        place(c, "hbm:flow_control_pump", x, z);
+        place(c, "geontm:flow_control_pump", x, z);
         String state = c.block(x, L, z).get("state").getAsString();
         Expect.that(state.contains("flow_control_pump") && state.contains("facing=south"), "the pump stands facing south: " + state);
         c.cmd("data merge block " + x + " " + L + " " + z + " {t_type:\"minecraft:water\"}");
-        c.cmd("setblock " + (x - 2) + " " + L + " " + z + " hbm:barrel_steel{tank:16000,tank_type:\"minecraft:water\",mode:2s}");
-        c.cmd("setblock " + (x + 2) + " " + L + " " + z + " hbm:barrel_steel{tank:0,tank_type:\"minecraft:water\",mode:0s}");
+        c.cmd("setblock " + (x - 2) + " " + L + " " + z + " geontm:barrel_steel{tank:16000,tank_type:\"minecraft:water\",mode:2s}");
+        c.cmd("setblock " + (x + 2) + " " + L + " " + z + " geontm:barrel_steel{tank:0,tank_type:\"minecraft:water\",mode:0s}");
         c.waitTicks(40);
         int moved = tank(c, x + 2, L, z);
         Expect.that(moved > 0 && moved % 100 == 0, "the pump moved water west to east in 100 mB steps: " + moved);
 
-        c.cmd("setblock " + x + " " + (L + 1) + " " + z + " hbm:block_steel");
+        c.cmd("setblock " + x + " " + (L + 1) + " " + z + " geontm:block_steel");
         c.teleport(x + 0.5, L + 1, z + 4.5);
         c.lookAt(x + 0.5, L + 0.5, z + 0.5);
         c.waitTicks(25);
@@ -68,11 +68,11 @@ public final class X5846NetworkBlocks implements Scenario {
 
     private void separator(Client c) {
         int x = 0, z = 0;
-        place(c, "hbm:network_separator", x, z);
+        place(c, "geontm:network_separator", x, z);
         String state = c.block(x, L, z).get("state").getAsString();
         Expect.that(state.contains("network_separator"), "the separator stands: " + state);
-        c.cmd("setblock " + (x - 2) + " " + L + " " + z + " hbm:red_cable");
-        c.cmd("setblock " + (x + 2) + " " + L + " " + z + " hbm:red_cable");
+        c.cmd("setblock " + (x - 2) + " " + L + " " + z + " geontm:red_cable");
+        c.cmd("setblock " + (x + 2) + " " + L + " " + z + " geontm:red_cable");
         c.teleport(x + 0.5, L + 1, z + 5.5);
         c.lookAt(x + 0.5, L + 1, z + 0.5);
         c.waitTicks(25);
@@ -96,16 +96,16 @@ public final class X5846NetworkBlocks implements Scenario {
 
     /** Each pair is linked with the wrench and keeps one pipe in both lists; across kinds the wrench refuses. */
     private void anchors(Client c) {
-        String[] kinds = {"hbm:pipe_anchor", "hbm:pipe_anchor_exhaust", "hbm:pipe_anchor_pneumatic"};
+        String[] kinds = {"geontm:pipe_anchor", "geontm:pipe_anchor_exhaust", "geontm:pipe_anchor_pneumatic"};
         int z = 10;
         for (int i = 0; i < kinds.length; i++) {
             int x = -8 + i * 8;
             c.cmd("setblock " + x + " " + L + " " + z + " " + kinds[i] + "[facing=up]");
-            c.cmd("setblock " + (x + 5) + " " + (L + 2) + " " + z + " hbm:block_steel");
+            c.cmd("setblock " + (x + 5) + " " + (L + 2) + " " + z + " geontm:block_steel");
             c.cmd("setblock " + (x + 5) + " " + (L + 3) + " " + z + " " + kinds[i] + "[facing=up]");
         }
         c.cmd("data merge block -8 " + L + " " + z + " {type:\"minecraft:water\"}");
-        Fixtures.giveOnly(c, "hbm:wrench", 1);
+        Fixtures.giveOnly(c, "geontm:wrench", 1);
         for (int i = 0; i < kinds.length; i++) {
             int x = -8 + i * 8;
             c.teleport(x + 2.5, L, z + 2.5);
@@ -131,8 +131,8 @@ public final class X5846NetworkBlocks implements Scenario {
     /** 1.7 X5846: the old pump and the diode are conductors with no screen left. */
     private void deprecated(Client c) {
         int z = 18;
-        c.cmd("setblock -2 " + L + " " + z + " hbm:fluid_pump[facing=north]");
-        c.cmd("setblock 2 " + L + " " + z + " hbm:cable_diode[facing=north]");
+        c.cmd("setblock -2 " + L + " " + z + " geontm:fluid_pump[facing=north]");
+        c.cmd("setblock 2 " + L + " " + z + " geontm:cable_diode[facing=north]");
         c.hotbar(9);
         c.teleport(0.5, L, z + 3.5);
         c.waitTicks(4);
@@ -148,7 +148,7 @@ public final class X5846NetworkBlocks implements Scenario {
 
     /** A middle click bookmarks a fluid; the next empty search shows it first and the item keeps it. */
     private void bookmarks(Client c) {
-        Fixtures.giveOnly(c, "hbm:fluid_identifier_multi", 1);
+        Fixtures.giveOnly(c, "geontm:fluid_identifier_multi", 1);
         c.teleport(0.5, L, 22.5);
         c.waitTicks(4);
         c.look(0, -60);
@@ -180,7 +180,7 @@ public final class X5846NetworkBlocks implements Scenario {
         c.cmd("clear");
         for (String id : new String[]{"flow_control_pump", "network_separator", "pipe_anchor", "pipe_anchor_exhaust",
                 "pipe_anchor_pneumatic", "fluid_pump", "cable_diode", "barrel_corroded"}) {
-            c.cmd("give @s hbm:" + id + " 1");
+            c.cmd("give @s geontm:" + id + " 1");
         }
         c.waitTicks(5);
         c.key("e");

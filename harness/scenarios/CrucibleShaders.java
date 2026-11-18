@@ -1,19 +1,19 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The first-person crucible blade with 1.12's shader effects (Golem Core {@code ScreenEffects}): translucent blade,
+ * The first-person crucible blade with 1.12's shader effects (GeoCore {@code ScreenEffects}): translucent blade,
  * bloom composited after the hand, and the heat-distortion shell. A striped wool wall stands behind the blade so the
  * distortion is visible; shots are taken by day and by night (bloom reads best on a dark background), a few frames
  * apart so the animated noise can be compared, plus the spent crucible (no blade, no layers) as the reference.
  *
- * <p>Positive signal: Core's {@code golem_screen_effects} query counts every bloom and distortion composite, so the
+ * <p>Positive signal: Core's {@code geocore_screen_effects} query counts every bloom and distortion composite, so the
  * check holds whenever the scenario runs. (It used to wait for Core's once-per-session "composited after the hand" log
  * line, which a client that had already drawn the blade earlier, e.g. at world join, wrote before the log mark.)
  * The charged blade must composite both layers, at the main target's size with bloom level 0 at half of it; the spent
@@ -45,13 +45,13 @@ public final class CrucibleShaders implements Scenario {
         c.look(0, 10);
 
         c.cmd("time set 6000");
-        Fixtures.giveOnly(c, "hbm:crucible", 1); // old-hbm: crafted empty
+        Fixtures.giveOnly(c, "geontm:crucible", 1); // old-geontm: crafted empty
         c.waitTicks(30);
         c.screenshot("00-day-spent");
         JsonObject before = effects(c);
 
-        Fixtures.giveOnly(c, c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}"
-                : "hbm:crucible[hbm:charges=16]", 1);
+        Fixtures.giveOnly(c, c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}"
+                : "geontm:crucible[geontm:charges=16]", 1);
         c.waitTicks(40);
         c.screenshot("01-day-blade-a");
         c.waitTicks(7);
@@ -77,7 +77,7 @@ public final class CrucibleShaders implements Scenario {
         c.cmd("time set 18000");
         c.waitTicks(10);
         c.screenshot("04-night-blade");
-        Fixtures.giveOnly(c, "hbm:crucible", 1); // old-hbm: crafted empty
+        Fixtures.giveOnly(c, "geontm:crucible", 1); // old-geontm: crafted empty
         c.waitTicks(30);
         c.screenshot("05-night-spent");
         // the spent crucible draws no blade, so neither layer is composited any more
@@ -97,7 +97,7 @@ public final class CrucibleShaders implements Scenario {
     }
 
     private static JsonObject effects(Client c) {
-        return c.query("golem_screen_effects", new JsonObject());
+        return c.query("geocore_screen_effects", new JsonObject());
     }
 
     private static long composites(JsonObject effects, String effect) {

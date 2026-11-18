@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /** GitHub issue 117: JEI lists what the creative tabs show, so a search finds the Turret AI-Chip through its tab. */
 public final class Gh117TurretChip implements Scenario {
@@ -34,7 +34,7 @@ public final class Gh117TurretChip implements Scenario {
 
         c.cmd("gamemode creative");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:turret_chip 1");
+        c.cmd("give @s geontm:turret_chip 1");
         c.hotbar(1);
         c.waitTicks(5);
         JsonObject p = new JsonObject();

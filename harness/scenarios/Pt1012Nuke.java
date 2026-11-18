@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +45,12 @@ public final class Pt1012Nuke implements Scenario {
         c.waitTicks(2);
         c.teleport(0.5, Y + 1, 54.0);
         c.cmd("summon minecraft:villager 3 " + (Y + 1) + " 3 {NoAI:1b}");
-        c.cmd("summon hbm:entity_mob_nuclear_creeper 0.5 " + (Y + 1) + " 0.5 {NoAI:1b,ignited:1b,Fuse:1}");
+        c.cmd("summon geontm:entity_mob_nuclear_creeper 0.5 " + (Y + 1) + " 0.5 {NoAI:1b,ignited:1b,Fuse:1}");
         c.waitTicks(10);
         c.screenshot("creeper-0-fusing");
         c.waitTicks(100);
         Expect.that(c.inWorld(), "the client is still in the world after the nuclear creeper exploded");
-        Expect.that(count(c, "hbm:entity_mob_nuclear_creeper") == 0, "the nuclear creeper is gone");
+        Expect.that(count(c, "geontm:entity_mob_nuclear_creeper") == 0, "the nuclear creeper is gone");
         c.screenshot("creeper-1-after-far");
         JsonObject player = c.player();
         System.out.println("[Pt1012Nuke] player after far blast: " + player);
@@ -59,7 +59,7 @@ public final class Pt1012Nuke implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("kill @e[type=!player]");
         c.waitTicks(5);
-        c.cmd("summon hbm:entity_mob_nuclear_creeper 0.5 " + (Y + 1) + " 0.5 {NoAI:1b,ignited:1b,Fuse:1}");
+        c.cmd("summon geontm:entity_mob_nuclear_creeper 0.5 " + (Y + 1) + " 0.5 {NoAI:1b,ignited:1b,Fuse:1}");
         c.teleport(0.5, Y + 1, 12.0);
         c.waitTicks(110);
         Expect.that(c.inWorld(), "the client is still connected after the second blast");
@@ -110,11 +110,11 @@ public final class Pt1012Nuke implements Scenario {
         c.waitTicks(5);
         c.screenshot("trees-0-before");
 
-        c.cmd("summon hbm:entity_fallout_rain 0.5 " + (Y + 1) + " 0.5 {scale:100}");
+        c.cmd("summon geontm:entity_fallout_rain 0.5 " + (Y + 1) + " 0.5 {scale:100}");
         // wait for the sweep (entity gone)
         for (int i = 0; i < 120; i++) {
             c.waitTicks(20);
-            if (count(c, "hbm:entity_fallout_rain") == 0 && i > 3) break;
+            if (count(c, "geontm:entity_fallout_rain") == 0 && i > 3) break;
         }
         c.waitTicks(40);
 
@@ -134,7 +134,7 @@ public final class Pt1012Nuke implements Scenario {
                     for (int y = Y + 1; y <= Y + height; y++) {
                         String id = c.block(x + dx, y, z + dz).get("block").getAsString();
                         if (dx == 0 && dz == 0) { if (!id.equals(prev)) { if (prev != null) runs.append(prev).append(" x").append(n).append(", "); prev = id; n = 0; } n++; }
-                        if (id.equals("hbm:waste_log")) wasteLogs++;
+                        if (id.equals("geontm:waste_log")) wasteLogs++;
                         else if (id.endsWith("_log")) logsLeft++;
                     }
                 }

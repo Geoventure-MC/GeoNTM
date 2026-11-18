@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,7 +38,7 @@ public final class Gh117To119 implements Scenario {
         pad(c);
         c.cmd(missile());
         waitDescending(c);
-        c.cmd("summon hbm:entity_missile_ab " + TX + " " + Y + " 0");
+        c.cmd("summon geontm:entity_missile_ab " + TX + " " + Y + " 0");
         waitGone(c);
         int intercepted = padBlocks(c);
         System.out.println("[Gh119] " + c.node() + " with ABM: " + intercepted + " of 441 pad blocks left");
@@ -46,11 +46,11 @@ public final class Gh117To119 implements Scenario {
 
         int tx = TX - 40;
         int tz = 25;
-        c.cmd("setblock " + tx + " " + Y + " " + tz + " hbm:turret_howard");
+        c.cmd("setblock " + tx + " " + Y + " " + tz + " geontm:turret_howard");
         c.waitServerTicks(5);
         c.cmd("data merge block " + tx + " " + Y + " " + tz + " {power:50000L,isOn:1b,targetPlayers:1b}");
-        c.cmd("item replace block " + tx + " " + Y + " " + tz + " container.1 with hbm:ammo_dgk 4");
-        c.cmd("item replace block " + tx + " " + Y + " " + tz + " container.10 with hbm:battery_creative");
+        c.cmd("item replace block " + tx + " " + Y + " " + tz + " container.1 with geontm:ammo_dgk 4");
+        c.cmd("item replace block " + tx + " " + Y + " " + tz + " container.10 with geontm:battery_creative");
         c.waitServerTicks(5);
         c.cmd("gamemode spectator");
         int before = loaded(c, tx, tz);
@@ -85,7 +85,7 @@ public final class Gh117To119 implements Scenario {
     }
 
     private static String missile() {
-        return "summon hbm:entity_missile_generic 0 " + Y + " 0 {poX:0d,poY:" + Y + "d,poZ:0d,moY:2d,decel:" + (2D / TX)
+        return "summon geontm:entity_missile_generic 0 " + Y + " 0 {poX:0d,poY:" + Y + "d,poZ:0d,moY:2d,decel:" + (2D / TX)
                 + "d,accel:" + (1D / TX) + "d,tX:" + TX + ",tZ:0,sX:0,sZ:0,veloc:0d}";
     }
 

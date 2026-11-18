@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * GitHub issue 102: {@code 4.13_broadcasterSpawn} and {@code 4.14_landmineSpawn} must change how many corrupted
  * broadcasters and AP mines generate. Creates a fresh seeded world named after {@code GH102_LABEL}, lets 9 x 9 chunks
  * generate around a fixed spot and counts both blocks there (each fill replaces them with air and reports the count).
- * Run once per {@code hbm.cfg} setting and compare the printed counts.
+ * Run once per {@code geontm.cfg} setting and compare the printed counts.
  */
 public final class Gh102DungeonSpawns implements Scenario {
 
@@ -27,8 +27,8 @@ public final class Gh102DungeonSpawns implements Scenario {
         c.cmd("gamemode spectator");
         c.teleport(CX + 0.5, 180, CZ + 0.5);
         c.waitServerTicks(600);
-        int broadcasters = count(c, "hbm:broadcaster_pc");
-        int mines = count(c, "hbm:mine_ap");
+        int broadcasters = count(c, "geontm:broadcaster_pc");
+        int mines = count(c, "geontm:mine_ap");
         System.out.println("[Gh102] " + label + " broadcasters=" + broadcasters + " mines=" + mines + " in 81 chunks");
         Expect.that(true, "counted");
     }

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,7 +16,7 @@ public final class Gh60SocketReload implements Scenario {
     private static final int Y = 100;
     // far from spawn; the 2x2 footprint straddles the z = 0 chunk border
     private static final int X = 5000;
-    private static final String CAPACITOR = "{Slot:0b,id:\"hbm:capacitor_bismuth\",count:1,components:{\"hbm:battery_charge\":2500000L}}";
+    private static final String CAPACITOR = "{Slot:0b,id:\"geontm:capacitor_bismuth\",count:1,components:{\"geontm:battery_charge\":2500000L}}";
 
     @Override
     public void run(Client c) throws Exception {
@@ -31,14 +31,14 @@ public final class Gh60SocketReload implements Scenario {
         c.cmd("fill " + (X - 6) + " " + (Y + 1) + " -6 " + (X + 6) + " " + (Y + 4) + " 6 minecraft:air");
         c.waitTicks(5);
 
-        Fixtures.placeOnTop(c, "hbm:machine_battery_socket", X, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_battery_socket", X, Y, 0);
         c.waitTicks(8);
         int[] core = findCore(c);
         Expect.that(core != null, "the socket was placed");
         c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {redLow:2s,inventory:{Items:[" + CAPACITOR + "]}}");
         int[] beside = besideFootprint(c, core);
         Expect.that(beside != null, "a free cell beside the socket");
-        Fixtures.setBlock(c, beside[0], beside[1], beside[2], "hbm:machine_electric_furnace_off");
+        Fixtures.setBlock(c, beside[0], beside[1], beside[2], "geontm:machine_electric_furnace_off");
         c.waitTicks(40);
         long before = furnacePower(c, beside);
         System.out.println("[Gh60] core " + core[0] + "," + core[2] + " furnace " + beside[0] + "," + beside[2]

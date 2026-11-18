@@ -1,0 +1,13 @@
+{
+  "textures": {
+    "particle": "geontm:blocks/rbmk/rbmk_boiler_side",
+    "side": "geontm:blocks/rbmk/rbmk_boiler_side",
+    "top": "geontm:blocks/rbmk/rbmk_boiler_top",
+    "cover_side": "geontm:blocks/rbmk/rbmk_boiler_cover_side",
+    "cover_top": "geontm:blocks/rbmk/rbmk_boiler_cover_top",
+    "glass_side": "geontm:blocks/rbmk/rbmk_boiler_glass_side",
+    "glass_top": "geontm:blocks/rbmk/rbmk_boiler_glass_top",
+    "pipe_side": "geontm:blocks/rbmk/rbmk_boiler_pipe_side",
+    "pipe_top": "geontm:blocks/rbmk/rbmk_boiler_pipe_top"
+  }
+}

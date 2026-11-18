@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,14 +29,14 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
         c.markLog();
 
         // source barrel at x=0, ducts at x=1..2, the late barrel at x=3
-        place(c, "hbm:barrel_steel", 0);
+        place(c, "geontm:barrel_steel", 0);
         c.cmd("clear");
-        c.cmd("give @s " + identifier(c, "hbm:water") + " 1");
-        c.cmd("give @s hbm:fluid_barrel_infinite 1");
+        c.cmd("give @s " + identifier(c, "geontm:water") + " 1");
+        c.cmd("give @s geontm:fluid_barrel_infinite 1");
         c.waitTicks(3);
         open(c, 0);
-        clickFromInventory(c, "hbm:fluid_identifier", 0);
-        clickFromInventory(c, "hbm:fluid_barrel_infinite", 2);
+        clickFromInventory(c, "geontm:fluid_identifier", 0);
+        clickFromInventory(c, "geontm:fluid_barrel_infinite", 2);
         JsonObject g = c.screen();
         int l = g.get("left").getAsInt(), t = g.get("top").getAsInt();
         c.click(l + 151 + 9, t + 35 + 9); // input -> buffer
@@ -46,9 +46,9 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
         close(c);
         Expect.that(nbt(c, 0).contains("mode:2s"), "the source barrel outputs: " + nbt(c, 0));
 
-        place(c, "hbm:fluid_duct_neo", 1);
-        place(c, "hbm:fluid_duct_neo", 2);
-        Fixtures.giveOnly(c, identifier(c, "hbm:water"), 1);
+        place(c, "geontm:fluid_duct_neo", 1);
+        place(c, "geontm:fluid_duct_neo", 2);
+        Fixtures.giveOnly(c, identifier(c, "geontm:water"), 1);
         for (int x = 1; x <= 2; x++) {
             aim(c, x, G + 0.5);
             c.use(1);
@@ -56,14 +56,14 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
             Expect.that(nbt(c, x).contains("water\""), "duct " + x + " typed water: " + nbt(c, x));
         }
 
-        place(c, "hbm:barrel_steel", 3);
+        place(c, "geontm:barrel_steel", 3);
         c.waitTicks(40);
         Expect.that(intOf(nbt(c, 3), "tank") == 0, "the untyped barrel takes nothing: " + nbt(c, 3));
         c.cmd("clear");
-        c.cmd("give @s " + identifier(c, "hbm:water") + " 1");
+        c.cmd("give @s " + identifier(c, "geontm:water") + " 1");
         c.waitTicks(3);
         open(c, 3);
-        clickFromInventory(c, "hbm:fluid_identifier", 0);
+        clickFromInventory(c, "geontm:fluid_identifier", 0);
         c.waitTicks(5);
         close(c);
         c.waitTicks(60);
@@ -76,19 +76,19 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
 
         // the multi identifier, primary oil
         c.cmd("clear");
-        c.cmd("give @s " + multi(c, "hbm:oil") + " 1");
+        c.cmd("give @s " + multi(c, "geontm:oil") + " 1");
         c.waitTicks(3);
         sneakUse(c, 1, G + 0.5);
         for (int x = 1; x <= 2; x++) {
-            Expect.that(nbt(c, x).contains("\"hbm:oil\""), "a sneak-click with the multi identifier retyped duct " + x + ": " + nbt(c, x));
+            Expect.that(nbt(c, x).contains("\"geontm:oil\""), "a sneak-click with the multi identifier retyped duct " + x + ": " + nbt(c, x));
         }
         sneakUse(c, 3, G + 0.99);
-        Expect.that(nbt(c, 3).contains("\"hbm:oil\""), "a sneak-click with the multi identifier retyped the barrel: " + nbt(c, 3));
+        Expect.that(nbt(c, 3).contains("\"geontm:oil\""), "a sneak-click with the multi identifier retyped the barrel: " + nbt(c, 3));
         Expect.noScreen(c);
         c.screenshot("02-multi-retyped");
 
         // a fluid tank south of the line
-        Fixtures.giveOnly(c, "hbm:machine_fluidtank", 1);
+        Fixtures.giveOnly(c, "geontm:machine_fluidtank", 1);
         c.teleport(0.5, G, 9.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, 5.5);
@@ -98,7 +98,7 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
         int[] tank = findBe(c, "fluid_tank", 0, 5, 3);
         Expect.that(tank != null, "the fluid tank was placed near 0 " + G + " 5");
         c.cmd("clear");
-        c.cmd("give @s " + multi(c, "hbm:oil") + " 1");
+        c.cmd("give @s " + multi(c, "geontm:oil") + " 1");
         c.waitTicks(3);
         c.cmd("setblock " + tank[0] + " " + (G + 3) + " " + (tank[2] + 4) + " minecraft:stone");
         c.hotbar(1);
@@ -113,7 +113,7 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
         c.keyUp("key.sneak");
         String tankNbt = nbt(c, tank[0], tank[1], tank[2]);
         System.out.println("[Gh2] tank after sneak-click: " + tankNbt);
-        Expect.that(tankNbt.contains("\"hbm:oil\""), "a sneak-click with the multi identifier retyped the fluid tank: " + tankNbt);
+        Expect.that(tankNbt.contains("\"geontm:oil\""), "a sneak-click with the multi identifier retyped the fluid tank: " + tankNbt);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");
     }
 
@@ -156,13 +156,13 @@ public final class Gh2DuctsAndIdentifier implements Scenario {
     }
 
     private static String identifier(Client c, String fluid) {
-        return c.node().startsWith("1.20.") ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + fluid + "\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"" + fluid + "\"]";
+        return c.node().startsWith("1.20.") ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + fluid + "\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"" + fluid + "\"]";
     }
 
     private static String multi(Client c, String fluid) {
-        return c.node().startsWith("1.20.") ? "hbm:fluid_identifier_multi{\"hbm:fluid_multi\":{fluid1:\"" + fluid + "\"}}"
-                : "hbm:fluid_identifier_multi[hbm:fluid_multi={fluid1:\"" + fluid + "\"}]";
+        return c.node().startsWith("1.20.") ? "geontm:fluid_identifier_multi{\"geontm:fluid_multi\":{fluid1:\"" + fluid + "\"}}"
+                : "geontm:fluid_identifier_multi[geontm:fluid_multi={fluid1:\"" + fluid + "\"}]";
     }
 
     private static int[] findBe(Client c, String id, int x, int z, int r) {

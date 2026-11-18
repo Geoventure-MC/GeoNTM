@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * A Refined Storage importer takes castings out of the strand caster. RS 2.0.9 on 1.21.1 (run with
@@ -16,9 +16,9 @@ public final class RsImporterCaster implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 8);
         c.cmd("fill -6 " + (Y + 1) + " -6 6 " + (Y + 6) + " 6 minecraft:air");
         int y = Y + 1;
-        c.cmd("setblock 0 " + y + " 0 hbm:machine_strand_caster[facing=north]");
+        c.cmd("setblock 0 " + y + " 0 geontm:machine_strand_caster[facing=north]");
         c.waitTicks(5);
-        c.cmd("item replace block 0 " + y + " 0 container.0 with hbm:mold_ingot 1");
+        c.cmd("item replace block 0 " + y + " 0 container.0 with geontm:mold_ingot 1");
         c.cmd("item replace block 0 " + y + " 0 container.1 with minecraft:iron_ingot 10");
         c.waitTicks(5);
         String before = c.blockEntity(0, y, 0).toString();

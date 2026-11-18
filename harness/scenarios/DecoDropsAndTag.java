@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The rest of the norwood-deco surface: the loot tables of the three new blocks, the name tag branch
@@ -20,21 +20,21 @@ public final class DecoDropsAndTag implements Scenario {
         Fixtures.platform(c, X, Y, 0, 10);
 
         // Lantern: Drops.self, so mining the core must return the item.
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:lantern");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:lantern");
         loot(c, X, Y + 1, Z);
-        Expect.inventoryHolds(c, "hbm:lantern", 1);
+        Expect.inventoryHolds(c, "geontm:lantern", 1);
 
         // Cyber crab assembler: Drops.nothing, so mining it must return nothing.
         c.cmd("clear");
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:meteor_spawner");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:meteor_spawner");
         loot(c, X, Y + 1, Z);
-        Expect.that(count(c, "hbm:meteor_spawner") == 0, "the assembler drops nothing");
+        Expect.that(count(c, "geontm:meteor_spawner") == 0, "the assembler drops nothing");
 
         // Firework battery: Loot.selfAlways() on its Reg chain (ModBombBlocks.fireworks).
         c.cmd("clear");
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:fireworks");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:fireworks");
         loot(c, X, Y + 1, Z);
-        Expect.inventoryHolds(c, "hbm:fireworks", 1);
+        Expect.inventoryHolds(c, "geontm:fireworks", 1);
 
         // The name tag branch: one tag, consumed, and the message in the readout.
         c.cmd("clear");

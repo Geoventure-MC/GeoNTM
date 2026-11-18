@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 152 follow-up: the scope lenses at the hip, for comparison with 1.7. The STG77 (the reporter's gun) has
@@ -23,7 +23,7 @@ public final class Gh152ScopeLens implements Scenario {
         c.raw("{\"cmd\":\"clear_chat\"}");
         for (String gun : new String[] {"gun_stg77", "gun_amat", "gun_g3_zebra", "gun_heavy_revolver_lilmac"}) {
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + gun);
+            c.cmd("give @s geontm:" + gun);
             c.hotbar(1);
             c.look(0, 10);
             c.waitTicks(50);

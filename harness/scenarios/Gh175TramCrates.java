@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 175, sibling: the tram trailer's cargo is 1.7's {@code RenderTrainCargoTramTrailer} pile of framed wooden
@@ -20,13 +20,13 @@ public final class Gh175TramCrates implements Scenario {
         c.markLog();
         Fixtures.platform(c, X, Y, Z, 10);
         c.cmd("time set 6000");
-        c.cmd("kill @e[type=hbm:entity_cargo_tram_trailer]");
+        c.cmd("kill @e[type=geontm:entity_cargo_tram_trailer]");
         StringBuilder items = new StringBuilder();
         for (int i = 0; i < 18; i++) {
             if (i > 0) items.append(',');
             items.append("{Slot:").append(i).append("b,id:\"minecraft:stone\",count:1,Count:1b}");
         }
-        c.cmd("summon hbm:entity_cargo_tram_trailer " + (X + 0.5) + " " + (Y + 1) + " " + (Z + 0.5)
+        c.cmd("summon geontm:entity_cargo_tram_trailer " + (X + 0.5) + " " + (Y + 1) + " " + (Z + 0.5)
                 + " {Items:[" + items + "]}");
         String hide = c.setOption("hide_gui", "true");
         try {
@@ -46,7 +46,7 @@ public final class Gh175TramCrates implements Scenario {
         find.addProperty("type", "cargo_tram_trailer");
         String seen = c.query("entities", find).toString();
         System.out.println("[Gh175Tram] " + c.node() + " " + seen);
-        c.cmd("kill @e[type=hbm:entity_cargo_tram_trailer]");
+        c.cmd("kill @e[type=geontm:entity_cargo_tram_trailer]");
         Expect.that(seen.contains("cargo_tram_trailer"), "the trailer stayed: " + seen);
         Expect.logCleanSinceMark(c, "/(Exception|ERROR|FATAL)[]]?");
     }

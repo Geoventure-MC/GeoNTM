@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,39 +75,39 @@ public final class FinalCustomMissiles implements Scenario {
 
         // --- the two core components forming their launchers ---
         int sx = X + 18;
-        Fixtures.setBlock(c, sx, Y + 1, Z - 12, "hbm:struct_launcher_core");
+        Fixtures.setBlock(c, sx, Y + 1, Z - 12, "geontm:struct_launcher_core");
         worldShot(c, "20-struct-core-preview", sx + 4.5, Y + 4, Z - 8.5, sx + 0.5, Y + 1, Z - 11.5);
         c.cmd("fill " + (sx - 1) + " " + (Y + 1) + " " + (Z - 13) + " " + (sx + 1) + " " + (Y + 1) + " " + (Z - 11)
-                + " hbm:struct_launcher replace minecraft:air");
+                + " geontm:struct_launcher replace minecraft:air");
         c.waitTicks(10);
-        Expect.block(c, sx, Y + 1, Z - 12, "hbm:compact_launcher");
+        Expect.block(c, sx, Y + 1, Z - 12, "geontm:compact_launcher");
 
-        Fixtures.setBlock(c, sx, Y + 1, Z + 12, "hbm:struct_launcher_core_large");
+        Fixtures.setBlock(c, sx, Y + 1, Z + 12, "geontm:struct_launcher_core_large");
         worldShot(c, "21-struct-core-large-preview", sx + 9.5, Y + 9, Z + 20.5, sx + 0.5, Y + 3, Z + 12.5);
         c.cmd("fill " + (sx - 4) + " " + (Y + 1) + " " + (Z + 8) + " " + (sx + 4) + " " + (Y + 1) + " " + (Z + 16)
-                + " hbm:struct_launcher replace minecraft:air");
+                + " geontm:struct_launcher replace minecraft:air");
         c.cmd("fill " + (sx + 3) + " " + (Y + 2) + " " + (Z + 12) + " " + (sx + 3) + " " + (Y + 12) + " " + (Z + 12)
-                + " hbm:struct_scaffold");
+                + " geontm:struct_scaffold");
         c.waitTicks(10);
-        Expect.block(c, sx, Y + 1, Z + 12, "hbm:launch_table");
+        Expect.block(c, sx, Y + 1, Z + 12, "geontm:launch_table");
         Expect.block(c, sx + 3, Y + 5, Z + 12, "minecraft:air");
         worldShot(c, "22-formed-launchers", sx + 12.5, Y + 8, Z + 0.5, sx + 0.5, Y + 1, Z + 0.5);
 
         // --- every block placed by hand, every GUI opened by a real right-click ---
         c.cmd("gamemode creative");
-        place(c, "hbm:machine_missile_assembly", X, Y, Z - 22);
-        Expect.block(c, X, Y + 1, Z - 22, "hbm:machine_missile_assembly");
-        place(c, "hbm:compact_launcher", X, Y, Z - 12);
-        Expect.block(c, X, Y + 1, Z - 12, "hbm:compact_launcher");
+        place(c, "geontm:machine_missile_assembly", X, Y, Z - 22);
+        Expect.block(c, X, Y + 1, Z - 22, "geontm:machine_missile_assembly");
+        place(c, "geontm:compact_launcher", X, Y, Z - 12);
+        Expect.block(c, X, Y + 1, Z - 12, "geontm:compact_launcher");
         // the table's 9x9 footprint (to x+5) may not hold the player: stand just outside it and aim at the clicked
         // top face's east part, a hair under its surface, which keeps the ray inside vanilla's 5-block creative reach
         // (4.83). Aimed lower, this shallow ray crosses the surface plane past x+1 and clicks the next cell east,
         // which moves the footprint onto the player. No reach attribute: 1.20.1 Fabric has none (its creative pick
         // range is a fixed 5.0), so every click here stays within 5 on all nodes.
-        place(c, "hbm:launch_table", X, Y, Z, 5.35, 0.8, 0.999);
-        Expect.block(c, X, Y + 1, Z, "hbm:launch_table");
-        place(c, "hbm:launch_pad_large", X, Y, Z + 14, 5.4, 0.8, 0.999); // its core collision reaches 4.5 blocks out
-        place(c, "hbm:launch_pad_rusted", X, Y, Z + 24);
+        place(c, "geontm:launch_table", X, Y, Z, 5.35, 0.8, 0.999);
+        Expect.block(c, X, Y + 1, Z, "geontm:launch_table");
+        place(c, "geontm:launch_pad_large", X, Y, Z + 14, 5.4, 0.8, 0.999); // its core collision reaches 4.5 blocks out
+        place(c, "geontm:launch_pad_rusted", X, Y, Z + 24);
         worldShot(c, "30-placed-blocks", X + 16.5, Y + 12, Z + 6.5, X - 2.5, Y + 1, Z + 4.5);
 
         open(c, X, Z - 22, "Missile Assembly");
@@ -131,14 +131,14 @@ public final class FinalCustomMissiles implements Scenario {
         c.cmd("clear");
         assemble(c, "10-first");
         assemble(c, "11-second");
-        Expect.inventoryHolds(c, "hbm:missile_custom", 2);
+        Expect.inventoryHolds(c, "geontm:missile_custom", 2);
 
         // --- two designators aimed 26 blocks east, each by a real right-click on a block ---
-        c.cmd("give @s hbm:designator 2");
+        c.cmd("give @s geontm:designator 2");
         c.waitTicks(2);
         for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
             JsonObject slot = e.getAsJsonObject();
-            if (!slot.get("id").getAsString().equals("hbm:designator") || slot.get("slot").getAsInt() >= 9) continue;
+            if (!slot.get("id").getAsString().equals("geontm:designator") || slot.get("slot").getAsInt() >= 9) continue;
             c.hotbar(slot.get("slot").getAsInt() + 1);
             c.teleport(X + 24.5, Y + 1, Z + 0.5);
             c.waitTicks(3);
@@ -147,8 +147,8 @@ public final class FinalCustomMissiles implements Scenario {
             c.use(2);
             c.waitTicks(3);
         }
-        c.cmd("give @s hbm:rocket_fuel 10");
-        c.cmd("give @s hbm:battery_creative 2");
+        c.cmd("give @s geontm:rocket_fuel 10");
+        c.cmd("give @s geontm:battery_creative 2");
         c.waitTicks(3);
 
         // --- compact launcher: missile, designator, solid fuel, battery ---
@@ -173,11 +173,11 @@ public final class FinalCustomMissiles implements Scenario {
                 later.get("x").getAsDouble(), later.get("y").getAsDouble(), later.get("z").getAsDouble());
         c.cmd("gamemode creative");
         Fixtures.setBlock(c, X + 2, Y + 1, Z - 12, "minecraft:air");
-        c.cmd("kill @e[type=hbm:entity_custom_missile]");
+        c.cmd("kill @e[type=geontm:entity_custom_missile]");
         c.waitTicks(5);
 
         // --- launch table at pad size 10 ---
-        c.cmd("give @s hbm:rocket_fuel 10");
+        c.cmd("give @s geontm:rocket_fuel 10");
         c.waitTicks(2);
         load(c, X, Z, "Large Launch Pad");
         c.waitTicks(20);
@@ -196,7 +196,7 @@ public final class FinalCustomMissiles implements Scenario {
                 tableLater.get("x").getAsDouble(), tableLater.get("y").getAsDouble(), tableLater.get("z").getAsDouble());
         c.cmd("gamemode creative");
         Fixtures.setBlock(c, X + 5, Y + 1, Z + 3, "minecraft:air");
-        c.cmd("kill @e[type=hbm:entity_custom_missile]");
+        c.cmd("kill @e[type=geontm:entity_custom_missile]");
         c.waitTicks(5);
 
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Failed to load texture|Missing model|Unable to load model");
@@ -206,8 +206,8 @@ public final class FinalCustomMissiles implements Scenario {
 
     private static void inventoryPages(Client c) {
         List<String> all = new ArrayList<>();
-        for (String p : PARTS) all.add("hbm:" + p);
-        for (String b : BLOCKS) all.add("hbm:" + b);
+        for (String p : PARTS) all.add("geontm:" + p);
+        for (String b : BLOCKS) all.add("geontm:" + b);
         c.cmd("gamemode survival");
         for (int page = 0; page * 36 < all.size(); page++) {
             c.cmd("clear");
@@ -223,7 +223,7 @@ public final class FinalCustomMissiles implements Scenario {
             c.screenshot(String.format("0%d-inventory-page-%d", page + 1, page + 1));
             if (page == 2) {
                 // a rarity/author/witty tooltip on one fuselage
-                JsonObject slot = findSlot(c, "hbm:mp_fuselage_15_kerosene_polite");
+                JsonObject slot = findSlot(c, "geontm:mp_fuselage_15_kerosene_polite");
                 if (slot != null) {
                     c.mouseMove(slot.get("center_x").getAsDouble(), slot.get("center_y").getAsDouble());
                     c.waitTicks(4);
@@ -282,8 +282,8 @@ public final class FinalCustomMissiles implements Scenario {
     }
 
     private static void assemble(Client c, String shot) {
-        String[] parts = {"hbm:mp_c_5", "hbm:mp_warhead_10_he", "hbm:mp_fuselage_10_solid", "hbm:mp_stability_10_flat",
-                "hbm:mp_thruster_10_solid"};
+        String[] parts = {"geontm:mp_c_5", "geontm:mp_warhead_10_he", "geontm:mp_fuselage_10_solid", "geontm:mp_stability_10_flat",
+                "geontm:mp_thruster_10_solid"};
         for (String part : parts) c.cmd("give @s " + part + " 1");
         c.waitTicks(3);
         open(c, X, Z - 22, "Missile Assembly");
@@ -294,7 +294,7 @@ public final class FinalCustomMissiles implements Scenario {
         int left = screen.get("left").getAsInt(), top = screen.get("top").getAsInt();
         c.click(left + 124, top + 44); // the build button, 1.7 x 115..133, y 36..53
         c.waitTicks(5);
-        Expect.slotHolds(c, 5, "hbm:missile_custom", 1);
+        Expect.slotHolds(c, 5, "geontm:missile_custom", 1);
         for (int i = 0; i < 5; i++) Expect.slotEmpty(c, i);
         c.screenshot(shot + "-assembly-built");
         JsonObject empty = findEmptySlot(c);
@@ -320,10 +320,10 @@ public final class FinalCustomMissiles implements Scenario {
     /** Opens a launcher and moves missile, designator, rocket fuel and battery into it by real clicks. */
     private static void load(Client c, int x, int z, String title) {
         open(c, x, z, title);
-        clickFromInventory(c, "hbm:missile_custom", 0);
-        clickFromInventory(c, "hbm:designator", 1);
-        clickFromInventory(c, "hbm:rocket_fuel", 4);
-        clickFromInventory(c, "hbm:battery_creative", 5);
+        clickFromInventory(c, "geontm:missile_custom", 0);
+        clickFromInventory(c, "geontm:designator", 1);
+        clickFromInventory(c, "geontm:rocket_fuel", 4);
+        clickFromInventory(c, "geontm:battery_creative", 5);
         c.waitTicks(10);
     }
 
@@ -365,7 +365,7 @@ public final class FinalCustomMissiles implements Scenario {
     private static JsonObject missile(Client c) {
         for (JsonElement e : c.entities(200)) {
             JsonObject o = e.getAsJsonObject();
-            if (o.get("type").getAsString().equals("hbm:entity_custom_missile")) return o;
+            if (o.get("type").getAsString().equals("geontm:entity_custom_missile")) return o;
         }
         return null;
     }

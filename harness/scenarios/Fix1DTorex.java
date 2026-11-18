@@ -1,13 +1,13 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Fix wave 1D: the Torex mushroom cloud on 1.7's simulation (fixed scale-1.5 simulation mapped out by
  * {@code clamp(squirt(r / 100) * 1.5, 0.5, 5)}, 1.7 colours, fullbright, 1.7 flare, no 1.12.2 ray burst).
  *
- * <p>Uses the development {@code /hbm torex_benchmark <age>} fixture (a radius-500 cloud 240 blocks north
+ * <p>Uses the development {@code /geontm torex_benchmark <age>} fixture (a radius-500 cloud 240 blocks north
  * of the player, deterministic seed). A live cloud is captured from age 1 over many frames, then aged
  * fixtures show the late life (greying and fade). Every frame is a screenshot for inspection; the scenario
  * fails only on an exception in the log.
@@ -38,7 +38,7 @@ public final class Fix1DTorex implements Scenario {
             c.lookAt(X + 0.5, Y + 60, Z + 240.5);
             c.waitTicks(100);
 
-            c.cmd("hbm torex_benchmark 1");
+            c.cmd("geontm torex_benchmark 1");
             // the fixture sits 240 blocks out; stand 75 blocks from it: the integrated server keeps the harness's 6-chunk view distance
             c.teleport(X + 0.5, Y + 1, Z + 165.5);
             c.lookAt(X + 0.5, Y + 45, Z + 240.5);
@@ -52,17 +52,17 @@ public final class Fix1DTorex implements Scenario {
             }
             for (int age : new int[] {600, 1200, 2400}) {
                 c.teleport(X + 0.5, Y + 1, Z + 0.5);
-                c.cmd("hbm torex_benchmark " + age);
+                c.cmd("geontm torex_benchmark " + age);
                 c.teleport(X + 0.5, Y + 1, Z + 165.5);
                 c.lookAt(X + 0.5, Y + 45, Z + 240.5);
                 // the client replays the cloud's history under a 5 ms/tick budget before it draws it
                 c.waitTicks(500);
                 c.screenshot("aged-" + age);
             }
-            c.cmd("hbm torex_benchmark stop");
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(Torex|torex|hbm)");
+            c.cmd("geontm torex_benchmark stop");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(Torex|torex|geontm)");
         } finally {
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
             if (renderDistance != null) c.setOption("render_distance", renderDistance);
             if (fov != null) c.setOption("fov", fov);

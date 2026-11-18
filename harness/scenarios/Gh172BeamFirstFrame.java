@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +32,8 @@ public final class Gh172BeamFirstFrame implements Scenario {
             c.cmd("gamerule sendCommandFeedback false");
             c.cmd("time set 18000");
             c.cmd("clear @s");
-            c.cmd("give @s hbm:gun_lasrifle");
-            c.cmd("give @s hbm:ammo_standard_capacitor 64");
+            c.cmd("give @s geontm:gun_lasrifle");
+            c.cmd("give @s geontm:ammo_standard_capacitor 64");
             c.hotbar(1);
             c.teleport(0.5, Y + 1, 0.5);
             c.waitTicks(50);
@@ -41,7 +41,7 @@ public final class Gh172BeamFirstFrame implements Scenario {
             c.waitTicks(100);
             JsonObject reset = new JsonObject();
             reset.addProperty("reset", true);
-            c.query("hbm_beam_frames", reset);
+            c.query("geontm_beam_frames", reset);
             for (double[] aim : AIMS) {
                 c.look(aim[0], aim[1]);
                 c.waitTicks(10);
@@ -53,7 +53,7 @@ public final class Gh172BeamFirstFrame implements Scenario {
                 c.waitTicks(20);
             }
             int seen = 0;
-            for (JsonElement e : c.query("hbm_beam_frames", new JsonObject()).getAsJsonArray("beams")) {
+            for (JsonElement e : c.query("geontm_beam_frames", new JsonObject()).getAsJsonArray("beams")) {
                 JsonObject beam = e.getAsJsonObject();
                 seen++;
                 System.out.println("[Gh172] " + c.node() + " beam " + beam);
@@ -64,7 +64,7 @@ public final class Gh172BeamFirstFrame implements Scenario {
             }
             if (seen < AIMS.length) failures.add("only " + seen + " beams seen");
             Expect.that(failures.isEmpty(), "every beam's first frame is its final one: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             c.cmd("clear @s");

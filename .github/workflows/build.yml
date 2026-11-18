@@ -34,12 +34,12 @@ jobs:
         with:
           path: GeoNTM
 
-      # settings.gradle.kts inclut ../Golem-Core : ce nom de dossier est attendu.
+      # settings.gradle.kts inclut ../GeoCore : ce nom de dossier est attendu.
       - uses: actions/checkout@v4
         with:
           repository: Geoventure-MC/GeoCore
           ref: ${{ inputs.geocore_ref || 'main' }}
-          path: Golem-Core
+          path: GeoCore
 
       - uses: actions/setup-java@v4
         with:
@@ -55,7 +55,7 @@ jobs:
       - name: Construire GeoCore
         env:
           CI: "false"
-        working-directory: Golem-Core
+        working-directory: GeoCore
         run: bash ./gradlew chiseledBuild --no-daemon --stacktrace
 
       - name: Construire GeoNTM
@@ -69,5 +69,5 @@ jobs:
           name: geontm-forge-1.20.1
           path: |
             GeoNTM/versions/1.20.1-forge/build/libs/*.jar
-            Golem-Core/versions/1.20.1-forge/build/libs/*.jar
+            GeoCore/versions/1.20.1-forge/build/libs/*.jar
           if-no-files-found: error

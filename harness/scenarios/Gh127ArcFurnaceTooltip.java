@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 127: over the arc furnace's molten-material gauge, which is also JEI's recipe click area, only the
@@ -20,7 +20,7 @@ public final class Gh127ArcFurnaceTooltip implements Scenario {
         c.markLog();
         Fixtures.platform(c, 0, Y, 0, 10);
         c.cmd("gamemode creative");
-        c.cmd("setblock 0 " + (Y + 1) + " 0 hbm:machine_arc_furnace[facing=north]");
+        c.cmd("setblock 0 " + (Y + 1) + " 0 geontm:machine_arc_furnace[facing=north]");
         c.waitTicks(10);
         int[] core = core(c);
         c.teleport(core[0] + 0.5, Y + 1, core[2] - 3.5);
@@ -40,7 +40,7 @@ public final class Gh127ArcFurnaceTooltip implements Scenario {
         c.waitTicks(10);
         c.screenshot("solid-area", new int[] {left, top + 20, 260, 90});
         c.key("escape");
-        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception.*hbm");
+        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception.*geontm");
     }
 
     private static int[] core(Client c) {

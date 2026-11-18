@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 
 /**
@@ -28,8 +28,8 @@ public final class RcGunSpecial implements Scenario {
 
         // Stinger
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_stinger");
-        c.cmd("give @s hbm:ammo_standard_rocket_heat 6");
+        c.cmd("give @s geontm:gun_stinger");
+        c.cmd("give @s geontm:ammo_standard_rocket_heat 6");
         c.hotbar(1);
         c.cmd("summon minecraft:iron_golem 0.5 " + G + " 10.5 {NoAI:1b,PersistenceRequired:1b}");
         c.waitTicks(40);
@@ -48,21 +48,21 @@ public final class RcGunSpecial implements Scenario {
                 + num(s30, "lockonprogress") + " progress@75=" + num(s75, "lockonprogress") + " lockedon@75=" + flag(s75, "lockedon"));
         if (!flag(s0, "aiming")) bad.append("stinger did not aim; ");
         if (!flag(s75, "lockedon")) bad.append("stinger never locked on; ");
-        double before = golem(c);
+        double before = geocore(c);
         c.keyDown("mouse.left");
         c.waitTicks(1);
         c.keyUp("mouse.left");
         c.keyUp("mouse.right");
         c.waitTicks(60);
-        double after = golem(c);
-        System.out.println("[RcGunSpecial] " + c.node() + " stinger golem " + before + " -> " + after);
+        double after = geocore(c);
+        System.out.println("[RcGunSpecial] " + c.node() + " stinger geocore " + before + " -> " + after);
         if (after >= before) bad.append("stinger rocket did no damage; ");
 
         // Folly
         c.cmd("kill @e[type=!player]");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_folly");
-        c.cmd("give @s hbm:ammo_secret_folly_sm 2");
+        c.cmd("give @s geontm:gun_folly");
+        c.cmd("give @s geontm:ammo_secret_folly_sm 2");
         c.hotbar(1);
         c.waitTicks(40);
         c.look(0, 0);
@@ -114,7 +114,7 @@ public final class RcGunSpecial implements Scenario {
         return j == i ? -1 : Integer.parseInt(s.substring(i, j));
     }
 
-    private static double golem(Client c) {
+    private static double geocore(Client c) {
         JsonObject p = new JsonObject();
         p.addProperty("radius", 48);
         p.addProperty("type", "minecraft:iron_golem");

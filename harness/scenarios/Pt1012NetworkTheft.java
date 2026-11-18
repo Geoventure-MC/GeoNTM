@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,24 +35,24 @@ public class Pt1012NetworkTheft implements Scenario {
         c.waitTicks(5);
 
         // 1. power: furnace (consumer) -- cable x3 -- input battery
-        c.cmd("setblock -3 " + G + " 0 hbm:machine_electric_furnace_off{power:50000L}");
-        for (int x = -2; x <= 0; x++) c.cmd("setblock " + x + " " + G + " 0 hbm:red_cable");
-        c.cmd("setblock 1 " + G + " 0 hbm:machine_battery{power:0L,redLow:0s,redHigh:0s}");
+        c.cmd("setblock -3 " + G + " 0 geontm:machine_electric_furnace_off{power:50000L}");
+        for (int x = -2; x <= 0; x++) c.cmd("setblock " + x + " " + G + " 0 geontm:red_cable");
+        c.cmd("setblock 1 " + G + " 0 geontm:machine_battery{power:0L,redLow:0s,redHigh:0s}");
 
         // 2. generator side: output battery -- cable x3 -- diesel generator (provider only)
-        c.cmd("setblock -3 " + G + " 3 hbm:machine_battery{power:500000L,redLow:2s,redHigh:2s}");
-        for (int x = -2; x <= 0; x++) c.cmd("setblock " + x + " " + G + " 3 hbm:red_cable");
-        c.cmd("setblock 1 " + G + " 3 hbm:machine_diesel{powerTime:0L}");
+        c.cmd("setblock -3 " + G + " 3 geontm:machine_battery{power:500000L,redLow:2s,redHigh:2s}");
+        for (int x = -2; x <= 0; x++) c.cmd("setblock " + x + " " + G + " 3 geontm:red_cable");
+        c.cmd("setblock 1 " + G + " 3 geontm:machine_diesel{powerTime:0L}");
 
         // 3. fluid: diesel generator (off, 8000 mB) -- diesel duct -- input barrel; a buffer barrel on the duct's south
-        c.cmd("setblock -3 " + G + " 6 hbm:machine_diesel{fuel:8000,fuel_type:\"hbm:diesel\",isOn:0b}");
-        c.cmd("setblock -2 " + G + " 6 hbm:fluid_duct_neo");
-        c.cmd("setblock -1 " + G + " 6 hbm:barrel_steel{tank:0,tank_type:\"hbm:diesel\",mode:0s}");
-        c.cmd("setblock -2 " + G + " 7 hbm:barrel_steel{tank:0,tank_type:\"hbm:diesel\",mode:1s}");
+        c.cmd("setblock -3 " + G + " 6 geontm:machine_diesel{fuel:8000,fuel_type:\"geontm:diesel\",isOn:0b}");
+        c.cmd("setblock -2 " + G + " 6 geontm:fluid_duct_neo");
+        c.cmd("setblock -1 " + G + " 6 geontm:barrel_steel{tank:0,tank_type:\"geontm:diesel\",mode:0s}");
+        c.cmd("setblock -2 " + G + " 7 geontm:barrel_steel{tank:0,tank_type:\"geontm:diesel\",mode:1s}");
         c.waitTicks(3);
         // a duct joins its net's fluid only when typed in game: one click with a diesel fluid identifier
-        String identifier = c.node().startsWith("1.20.") ? "hbm:fluid_identifier{\"hbm:fluid\":\"hbm:diesel\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"hbm:diesel\"]";
+        String identifier = c.node().startsWith("1.20.") ? "geontm:fluid_identifier{\"geontm:fluid\":\"geontm:diesel\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"geontm:diesel\"]";
         Fixtures.giveOnly(c, identifier, 1);
         c.teleport(-1.5, G, 4.5);
         c.waitTicks(3);
@@ -60,7 +60,7 @@ public class Pt1012NetworkTheft implements Scenario {
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(3);
-        Expect.that(nbt(c, -2, G, 6).contains("type:\"hbm:diesel\""), "the duct was typed diesel: " + nbt(c, -2, G, 6));
+        Expect.that(nbt(c, -2, G, 6).contains("type:\"geontm:diesel\""), "the duct was typed diesel: " + nbt(c, -2, G, 6));
 
         c.teleport(-1.0, G + 3, -5.0);
         c.lookAt(-1.0, G, 3.5);
@@ -85,9 +85,9 @@ public class Pt1012NetworkTheft implements Scenario {
         Expect.that(fuel == 8000L, "the generator lost fuel to the net: " + fuel);
 
         // a foreign pipe on the generator's west face: never drains its input tank, still fills it
-        JsonObject extract = q(c, "extract", "x", -3, "y", G, "z", 6, "side", "west", "fluid", "hbm:diesel", "mb", 1000);
+        JsonObject extract = q(c, "extract", "x", -3, "y", G, "z", 6, "side", "west", "fluid", "geontm:diesel", "mb", 1000);
         Expect.that(extract.get("moved").getAsLong() == 0L, "a foreign extract took fuel from an input tank: " + extract);
-        JsonObject insert = q(c, "insert", "x", -3, "y", G, "z", 6, "side", "west", "fluid", "hbm:diesel", "mb", 500);
+        JsonObject insert = q(c, "insert", "x", -3, "y", G, "z", 6, "side", "west", "fluid", "geontm:diesel", "mb", 500);
         Expect.that(insert.get("moved").getAsLong() == 500L, "a foreign insert into the input tank: " + insert);
 
         // positive controls: the same runs do carry from a real provider
@@ -112,7 +112,7 @@ public class Pt1012NetworkTheft implements Scenario {
     /** 4. A hand-placed gas turbine: its dense steam leaves at the steam outlet only, never at a water inlet. */
     private static void portRoles(Client c) {
         int tx = 0, tz = -6;
-        Fixtures.giveOnly(c, "hbm:machine_turbine_gas", 1);
+        Fixtures.giveOnly(c, "geontm:machine_turbine_gas", 1);
         c.teleport(tx + 0.5, G, tz - 4.0);
         c.waitTicks(2);
         c.lookAt(tx + 0.5, Y + 0.98, tz + 0.5);
@@ -136,12 +136,12 @@ public class Pt1012NetworkTheft implements Scenario {
         int[] steam = {x + dir[1] * 6, y + 1, z - dir[0] * 6, -rot[0], -rot[1]};
         int[] water = {x - dir[0] * 2 - rot[0] * 4, y, z - dir[1] * 2 - rot[1] * 4, -dir[0], -dir[1]};
         for (int[] p : new int[][]{steam, water}) {
-            c.cmd("setblock " + p[0] + " " + p[1] + " " + p[2] + " hbm:fluid_duct_neo");
-            c.cmd("setblock " + p[0] + " " + (p[1] + 1) + " " + p[2] + " hbm:barrel_steel{tank:0,tank_type:\"hbm:hotsteam\",mode:0s}");
+            c.cmd("setblock " + p[0] + " " + p[1] + " " + p[2] + " geontm:fluid_duct_neo");
+            c.cmd("setblock " + p[0] + " " + (p[1] + 1) + " " + p[2] + " geontm:barrel_steel{tank:0,tank_type:\"geontm:hotsteam\",mode:0s}");
         }
         c.waitTicks(3);
-        String identifier = c.node().startsWith("1.20.") ? "hbm:fluid_identifier{\"hbm:fluid\":\"hbm:hotsteam\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"hbm:hotsteam\"]";
+        String identifier = c.node().startsWith("1.20.") ? "geontm:fluid_identifier{\"geontm:fluid\":\"geontm:hotsteam\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"geontm:hotsteam\"]";
         Fixtures.giveOnly(c, identifier, 1);
         for (int[] p : new int[][]{steam, water}) {
             // stand three out along the port's side, so nothing stands between the eye and the duct
@@ -151,7 +151,7 @@ public class Pt1012NetworkTheft implements Scenario {
             c.waitTicks(1);
             c.use(1);
             c.waitTicks(3);
-            Expect.that(nbt(c, p[0], p[1], p[2]).contains("type:\"hbm:hotsteam\""), "the duct was typed dense steam: " + nbt(c, p[0], p[1], p[2]));
+            Expect.that(nbt(c, p[0], p[1], p[2]).contains("type:\"geontm:hotsteam\""), "the duct was typed dense steam: " + nbt(c, p[0], p[1], p[2]));
         }
         c.cmd("data merge block " + x + " " + y + " " + z + " {densesteam:8000}");
         // the snapshot's stone floor ends before z - 9: without a block to stand on the camera falls to the world floor
@@ -196,7 +196,7 @@ public class Pt1012NetworkTheft implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        JsonObject r = c.query("hbm_fluidcaps", p);
+        JsonObject r = c.query("geontm_fluidcaps", p);
         Expect.that(!r.has("error"), "query " + op + " failed: " + r);
         return r;
     }

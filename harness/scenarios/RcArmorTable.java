@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,25 +32,25 @@ public final class RcArmorTable implements Scenario {
         c.cmd("effect clear @s");
         c.cmd("clear");
         for (String s : new String[] {"head", "chest", "legs", "feet"}) c.cmd("item replace entity @s armor." + s + " with minecraft:air");
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", 0, Y, TZ);
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", 0, Y, TZ);
         c.waitTicks(3);
-        for (String id : new String[] {"hbm:steel_plate", "hbm:bottled_cloud", "hbm:servo_set", "hbm:steel_helmet", "hbm:back_tesla"}) {
+        for (String id : new String[] {"geontm:steel_plate", "geontm:bottled_cloud", "geontm:servo_set", "geontm:steel_helmet", "geontm:back_tesla"}) {
             c.cmd("give @s " + id + " 1");
         }
         c.waitTicks(5);
         open(c);
 
         // a chestplate module does not go into the boots/helmet slots, and shift-click puts it in its own slot
-        shift(c, "hbm:steel_plate");
+        shift(c, "geontm:steel_plate");
         Expect.that(!c.slot(ARMOR).get("empty").getAsBoolean(), "shift-click moves the armor into the armor slot");
-        shift(c, "hbm:bottled_cloud");
-        slotHolds(c, PLATE_SLOT, "hbm:bottled_cloud", "shift-click sends the cloud to the chestplate module slot");
-        shift(c, "hbm:servo_set");
-        slotHolds(c, 4, "hbm:servo_set", "shift-click sends the servo set to the servo slot");
+        shift(c, "geontm:bottled_cloud");
+        slotHolds(c, PLATE_SLOT, "geontm:bottled_cloud", "shift-click sends the cloud to the chestplate module slot");
+        shift(c, "geontm:servo_set");
+        slotHolds(c, 4, "geontm:servo_set", "shift-click sends the servo set to the servo slot");
         c.screenshot("table-cloud-loaded");
 
         // a click on the helmet slot with the tesla coil (chestplate-only) must not accept it
-        int tesla = find(c, "hbm:back_tesla");
+        int tesla = find(c, "geontm:back_tesla");
         c.clickSlot(tesla);
         c.waitTicks(2);
         c.clickSlot(0);
@@ -66,14 +66,14 @@ public final class RcArmorTable implements Scenario {
         c.waitTicks(3);
         c.key("escape");
         c.waitTicks(10);
-        JsonObject armor = c.query("hbm_armor", new JsonObject());
+        JsonObject armor = c.query("geontm_armor", new JsonObject());
         List<String> mods = mods(armor, "chest");
-        Expect.that(mods.stream().anyMatch(m -> m.startsWith("1:hbm:bottled_cloud")), "the cloud stays on the chestplate, got " + mods);
-        Expect.that(mods.stream().anyMatch(m -> m.startsWith("4:hbm:servo_set")), "the servos stay on the chestplate, got " + mods);
+        Expect.that(mods.stream().anyMatch(m -> m.startsWith("1:geontm:bottled_cloud")), "the cloud stays on the chestplate, got " + mods);
+        Expect.that(mods.stream().anyMatch(m -> m.startsWith("4:geontm:servo_set")), "the servos stay on the chestplate, got " + mods);
 
         // worn: three dashes from the module, +12.5% speed
         c.waitTicks(20);
-        JsonObject set = c.query("hbm_armor_set", new JsonObject());
+        JsonObject set = c.query("geontm_armor_set", new JsonObject());
         Expect.that(set.get("dash_count").getAsInt() == 3, "bottled cloud grants 3 dashes, got " + set.get("dash_count"));
         c.screenshot("cloud-dash-bar");
         double speed = armor.has("movement_speed") ? armor.get("movement_speed").getAsDouble() : -1;
@@ -96,11 +96,11 @@ public final class RcArmorTable implements Scenario {
 
         // close the table with armor and module inside: both come back to the world (1.7 drops them), none vanishes
         c.cmd("clear");
-        c.cmd("give @s hbm:steel_helmet 1");
-        c.cmd("give @s hbm:bottled_cloud 1");
+        c.cmd("give @s geontm:steel_helmet 1");
+        c.cmd("give @s geontm:bottled_cloud 1");
         c.waitTicks(4);
         open(c);
-        shift(c, "hbm:steel_helmet");
+        shift(c, "geontm:steel_helmet");
         c.key("escape");
         c.waitTicks(20);
         int dropped = 0;
@@ -109,7 +109,7 @@ public final class RcArmorTable implements Scenario {
             String s = o.toString();
             if (s.contains("Steel Helmet")) dropped++;
         }
-        int held = count(c, "hbm:steel_helmet");
+        int held = count(c, "geontm:steel_helmet");
         Expect.that(dropped + held >= 1, "the helmet left in the table is dropped or returned, not lost (dropped " + dropped + ", held " + held + ")");
 
         c.cmd("clear");
@@ -149,7 +149,7 @@ public final class RcArmorTable implements Scenario {
     private JsonObject chestSlotInInventory(Client c) {
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("hbm:steel_plate")) return s;
+            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("geontm:steel_plate")) return s;
         }
         return null;
     }

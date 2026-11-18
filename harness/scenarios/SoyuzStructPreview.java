@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +33,11 @@ public final class SoyuzStructPreview implements Scenario {
             hideGui = c.setOption("hide_gui", "true");
             renderDistance = c.setOption("render_distance", "12");
             fov = c.setOption("fov", "70");
-            Fixtures.setBlock(c, X, Y + 1, Z, "hbm:struct_soyuz_core");
+            Fixtures.setBlock(c, X, Y + 1, Z, "geontm:struct_soyuz_core");
             c.cmd("gamemode spectator");
             c.waitTicks(20);
             JsonObject block = c.block(X, Y + 1, Z);
-            Expect.equal("hbm:struct_soyuz_core", block.get("block").getAsString(), "seed placed");
+            Expect.equal("geontm:struct_soyuz_core", block.get("block").getAsString(), "seed placed");
             Expect.that(!block.get("block_entity").isJsonNull(), "seed has its block entity; " + block);
 
             c.teleport(X + 30.5, Y + 20, Z + 30.5);

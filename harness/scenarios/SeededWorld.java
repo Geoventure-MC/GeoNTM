@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Proves the opt-in seeded world: it is the default (non-flat) preset with seed {@link Client#SEEDED_WORLD_SEED},

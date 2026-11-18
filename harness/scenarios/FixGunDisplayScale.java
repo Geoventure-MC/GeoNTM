@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Guns of five sizes (maresleg, light revolver, carbine, panzerschreck, Fat Man) and an iron sword for scale on a
@@ -18,8 +18,8 @@ public final class FixGunDisplayScale implements Scenario {
     private static final int Y = 100;
     private static final int G = Y + 1;
     private static final String COUNT = "count:1,Count:1b"; // 26.1 and 1.20.1 spellings, each ignores the other
-    static final String[] ITEMS = {"hbm:gun_maresleg", "hbm:gun_light_revolver", "hbm:gun_carbine",
-            "hbm:gun_panzerschreck", "hbm:gun_fatman", "minecraft:iron_sword"};
+    static final String[] ITEMS = {"geontm:gun_maresleg", "geontm:gun_light_revolver", "geontm:gun_carbine",
+            "geontm:gun_panzerschreck", "geontm:gun_fatman", "minecraft:iron_sword"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -38,13 +38,13 @@ public final class FixGunDisplayScale implements Scenario {
         for (int i = 0; i < ITEMS.length; i++) {
             int x = -10 + i * 3;
             // pedestal row (z = 0)
-            Fixtures.setBlock(c, x, G, 0, "hbm:pedestal");
+            Fixtures.setBlock(c, x, G, 0, "geontm:pedestal");
             c.cmd("data merge block " + x + " " + G + " 0 {item:{id:\"" + ITEMS[i] + "\"," + COUNT + "}}");
             // skeleton holder row (z = -6), facing south towards the camera
-            Fixtures.setBlock(c, x, G, -6, "hbm:skeleton_holder[facing=south]");
+            Fixtures.setBlock(c, x, G, -6, "geontm:skeleton_holder[facing=south]");
             c.cmd("data merge block " + x + " " + G + " -6 {item:{id:\"" + ITEMS[i] + "\"," + COUNT + "}}");
             // loot pile row (z = -12)
-            Fixtures.setBlock(c, x, G, -12, "hbm:deco_loot");
+            Fixtures.setBlock(c, x, G, -12, "geontm:deco_loot");
             c.cmd("data merge block " + x + " " + G + " -12 {items:[{item:{id:\"" + ITEMS[i] + "\"," + COUNT
                     + "},x:0d,y:0d,z:0d}]}");
             // dropped on the ground (z = 6): frozen, never picked up or despawned

@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +28,15 @@ public final class RcPowerGrid implements Scenario {
         pylonStep(c);
 
         c.screenshot("99-final");
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|power|energy|cable|pylon)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|power|energy|cable|pylon)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
     private void straightRun(Client c) {
         c.cmd("fill -10 " + B + " -2 10 " + (B + 4) + " 2 minecraft:air");
-        Fixtures.setBlock(c, -9, B, 0, "hbm:creative_generator");
-        c.cmd("fill -8 " + B + " 0 -1 " + B + " 0 hbm:red_cable");
-        Fixtures.setBlock(c, 0, B, 0, "hbm:machine_electric_furnace_off");
+        Fixtures.setBlock(c, -9, B, 0, "geontm:creative_generator");
+        c.cmd("fill -8 " + B + " 0 -1 " + B + " 0 geontm:red_cable");
+        Fixtures.setBlock(c, 0, B, 0, "geontm:machine_electric_furnace_off");
         c.waitTicks(40);
         c.screenshot("01-run");
         check(furnacePower(c, 0) > 0, "furnace gets power over 8 cables: " + furnacePower(c, 0));
@@ -48,14 +48,14 @@ public final class RcPowerGrid implements Scenario {
         check(furnacePower(c, 0) == 0, "no power across a broken run: " + furnacePower(c, 0));
 
         // rejoin: power flows again
-        Fixtures.setBlock(c, -4, B, 0, "hbm:red_cable");
+        Fixtures.setBlock(c, -4, B, 0, "geontm:red_cable");
         c.waitTicks(40);
         check(furnacePower(c, 0) > 0, "power flows again after the run is repaired: " + furnacePower(c, 0));
         c.screenshot("02-rejoined");
     }
 
     private void switchStep(Client c) {
-        Fixtures.setBlock(c, -4, B, 0, "hbm:cable_switch");
+        Fixtures.setBlock(c, -4, B, 0, "geontm:cable_switch");
         c.cmd("data merge block 0 " + B + " 0 {power:0L}");
         c.waitTicks(40);
         check(furnacePower(c, 0) == 0, "an open switch blocks power: " + furnacePower(c, 0));
@@ -76,7 +76,7 @@ public final class RcPowerGrid implements Scenario {
         check(furnacePower(c, 0) == 0, "an opened switch blocks power again: " + furnacePower(c, 0));
 
         // detector cable: closed by redstone power
-        Fixtures.setBlock(c, -4, B, 0, "hbm:cable_detector");
+        Fixtures.setBlock(c, -4, B, 0, "geontm:cable_detector");
         c.cmd("data merge block 0 " + B + " 0 {power:0L}");
         c.waitTicks(30);
         check(furnacePower(c, 0) == 0, "an unpowered detector cable blocks: " + furnacePower(c, 0));
@@ -86,23 +86,23 @@ public final class RcPowerGrid implements Scenario {
         check(furnacePower(c, 0) > 0, "a powered detector cable conducts: " + furnacePower(c, 0));
         c.screenshot("05-detector-on");
         Fixtures.setBlock(c, -4, B, 1, "minecraft:air");
-        Fixtures.setBlock(c, -4, B, 0, "hbm:red_cable");
+        Fixtures.setBlock(c, -4, B, 0, "geontm:red_cable");
     }
 
     private void pylonStep(Client c) {
         c.cmd("fill -20 " + B + " -3 20 " + (B + 6) + " 3 minecraft:air");
         c.waitTicks(3);
-        Fixtures.setBlock(c, -17, B, 0, "hbm:creative_generator");
-        c.cmd("fill -16 " + B + " 0 -14 " + B + " 0 hbm:red_cable");
-        Fixtures.placeOnTop(c, "hbm:red_pylon", -13, Y, 0);
-        Fixtures.placeOnTop(c, "hbm:red_pylon", 9, Y, 0);
-        c.cmd("fill 10 " + B + " 0 13 " + B + " 0 hbm:red_cable");
-        Fixtures.setBlock(c, 14, B, 0, "hbm:machine_electric_furnace_off");
+        Fixtures.setBlock(c, -17, B, 0, "geontm:creative_generator");
+        c.cmd("fill -16 " + B + " 0 -14 " + B + " 0 geontm:red_cable");
+        Fixtures.placeOnTop(c, "geontm:red_pylon", -13, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:red_pylon", 9, Y, 0);
+        c.cmd("fill 10 " + B + " 0 13 " + B + " 0 geontm:red_cable");
+        Fixtures.setBlock(c, 14, B, 0, "geontm:machine_electric_furnace_off");
         c.waitTicks(20);
         c.screenshot("06-pylons-unwired");
         check(furnacePower(c, 14) == 0, "unwired pylons carry nothing: " + furnacePower(c, 14));
 
-        Fixtures.giveOnly(c, "hbm:wiring_red_copper", 1);
+        Fixtures.giveOnly(c, "geontm:wiring_red_copper", 1);
         c.hotbar(1);
         c.waitTicks(1);
         c.teleport(-11.5, B, 2.5);

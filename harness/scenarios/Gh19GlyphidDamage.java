@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 19: glyphids followed their target and never hurt it, because vanilla's melee goal swings before it
@@ -29,7 +29,7 @@ public final class Gh19GlyphidDamage implements Scenario {
         c.cmd("effect clear @s");
         c.waitTicks(5);
         float before = c.player().get("health").getAsFloat();
-        c.cmd("summon hbm:entity_glyphid 0.5 " + G + " -3.5 {PersistenceRequired:1b}");
+        c.cmd("summon geontm:entity_glyphid 0.5 " + G + " -3.5 {PersistenceRequired:1b}");
         float now = before;
         for (int t = 0; t < 40 && now >= before; t++) {
             c.waitTicks(5);

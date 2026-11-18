@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,14 +53,14 @@ public final class Fix7Mobs implements Scenario {
                 boolean spawned = false;
                 // a mob that already walked onto the aimed block takes the click; aim again (at most three times)
                 for (int attempt = 0; attempt < 3 && !spawned; attempt++) {
-                    Fixtures.giveOnly(c, "hbm:" + group[i] + "_spawn_egg", 1);
+                    Fixtures.giveOnly(c, "geontm:" + group[i] + "_spawn_egg", 1);
                     c.teleport(sx + 0.5, Y + 1, sz - 1.5);
                     c.waitTicks(2);
                     c.lookAt(sx + 0.5, Y + 0.98, sz + 0.5);
                     c.waitTicks(2);
                     c.use(2);
                     c.waitTicks(6);
-                    spawned = count(c, "hbm:" + group[i]) >= 1;
+                    spawned = count(c, "geontm:" + group[i]) >= 1;
                 }
                 if (!spawned) {
                     StringBuilder seen = new StringBuilder();
@@ -84,14 +84,14 @@ public final class Fix7Mobs implements Scenario {
 
         // natural spawns (1.7 EntityMappings.addSpawn)
         JsonObject plains = spawns(c, "minecraft:plains");
-        expect(plains, "monster", "hbm:entity_mob_phosgene_creeper", 5, 1, 1);
-        expect(plains, "monster", "hbm:entity_mob_volatile_creeper", 10, 1, 1);
-        expect(plains, "monster", "hbm:entity_mob_gold_creeper", 1, 1, 1);
-        expect(plains, "creature", "hbm:entity_pigeon", 1, 5, 10);
+        expect(plains, "monster", "geontm:entity_mob_phosgene_creeper", 5, 1, 1);
+        expect(plains, "monster", "geontm:entity_mob_volatile_creeper", 10, 1, 1);
+        expect(plains, "monster", "geontm:entity_mob_gold_creeper", 1, 1, 1);
+        expect(plains, "creature", "geontm:entity_pigeon", 1, 5, 10);
         JsonObject ocean = spawns(c, "minecraft:ocean");
-        expect(ocean, "water_creature", "hbm:entity_plastic_bag", 1, 1, 3);
+        expect(ocean, "water_creature", "geontm:entity_plastic_bag", 1, 1, 3);
         JsonObject mushroom = spawns(c, "minecraft:mushroom_fields");
-        Expect.that(find(mushroom, "monster", "hbm:entity_mob_gold_creeper") == null, "no HBM creepers on the mushroom island");
+        Expect.that(find(mushroom, "monster", "geontm:entity_mob_gold_creeper") == null, "no GEONTM creepers on the mushroom island");
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Failed to load texture|Missing model");
     }
 
@@ -114,8 +114,8 @@ public final class Fix7Mobs implements Scenario {
     private static JsonObject spawns(Client c, String biome) {
         JsonObject params = new JsonObject();
         params.addProperty("biome", biome);
-        JsonObject result = c.query("hbm_mob_spawns", params).getAsJsonObject("server");
-        Expect.that(result != null && !result.has("error"), "hbm_mob_spawns " + biome + ": " + result);
+        JsonObject result = c.query("geontm_mob_spawns", params).getAsJsonObject("server");
+        Expect.that(result != null && !result.has("error"), "geontm_mob_spawns " + biome + ": " + result);
         return result;
     }
 

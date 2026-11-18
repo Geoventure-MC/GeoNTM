@@ -1,13 +1,13 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * In-game acceptance for the norwood-deco cyber crab assembler ({@code hbm:meteor_spawner}): the nest
+ * In-game acceptance for the norwood-deco cyber crab assembler ({@code geontm:meteor_spawner}): the nest
  * must restock itself with crabs once a player stands inside 25 blocks and the cell above is clear,
  * and it must stop at the five-crab population cap.
  */
@@ -27,8 +27,8 @@ public final class CyberCrabNest implements Scenario {
         c.cmd("kill @e[type=!player]");
         c.waitTicks(2);
 
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:meteor_spawner");
-        Expect.block(c, X, Y + 1, Z, "hbm:meteor_spawner");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:meteor_spawner");
+        Expect.block(c, X, Y + 1, Z, "geontm:meteor_spawner");
         JsonObject nest = c.blockEntity(X, Y + 1, Z);
         Expect.that(String.valueOf(nest.get("block_entity")).contains("TileEntityCyberCrab"),
                 "nest holds TileEntityCyberCrab: " + nest.get("block_entity"));
@@ -69,7 +69,7 @@ public final class CyberCrabNest implements Scenario {
         for (JsonElement e : entities) {
             JsonObject entity = e.getAsJsonObject();
             String type = entity.get("type").getAsString();
-            if (!type.equals("hbm:entity_cyber_crab") && !type.equals("hbm:entity_tesla_crab")) continue;
+            if (!type.equals("geontm:entity_cyber_crab") && !type.equals("geontm:entity_tesla_crab")) continue;
             if (boxOnly) {
                 double x = entity.get("x").getAsDouble();
                 double y = entity.get("y").getAsDouble();

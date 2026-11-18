@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -25,8 +25,8 @@ public final class Gh187SurveyScanner implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 12);
         c.cmd("time set 6000");
         // column (10, 10) is sampled on odd heights from G + 15; the chunk centre floor is (8, FLOOR, 8)
-        c.cmd("setblock 10 " + (FLOOR + 3) + " 10 hbm:ore_bedrock_oil");
-        c.cmd("setblock 8 " + FLOOR + " 8 hbm:ore_bedrock_block");
+        c.cmd("setblock 10 " + (FLOOR + 3) + " 10 geontm:ore_bedrock_oil");
+        c.cmd("setblock 8 " + FLOOR + " 8 geontm:ore_bedrock_block");
         c.teleport(0.5, G, 0.5);
         String labels = scan(c, 20);
         c.lookAt(9.0, FLOOR + 1.0, 9.0);
@@ -71,17 +71,17 @@ public final class Gh187SurveyScanner implements Scenario {
     /** Uses a survey scanner where the player stands and answers the marker labels it queued ({@code polls} tries). */
     private static String scan(Client c, int polls) {
         c.cmd("clear @s");
-        c.cmd("item replace entity @s weapon.mainhand with hbm:survey_scanner");
+        c.cmd("item replace entity @s weapon.mainhand with geontm:survey_scanner");
         c.look(0, 0);
         c.waitTicks(10);
         c.use();
         String labels = "";
         for (int t = 0; t < polls && !labels.contains("Bedrock Ore"); t++) {
             c.waitTicks(5);
-            labels = c.query("hbm_gapsc", new JsonObject()).getAsJsonArray("marker_labels").toString();
+            labels = c.query("geontm_gapsc", new JsonObject()).getAsJsonArray("marker_labels").toString();
         }
         c.waitTicks(10);
-        return c.query("hbm_gapsc", new JsonObject()).getAsJsonArray("marker_labels").toString();
+        return c.query("geontm_gapsc", new JsonObject()).getAsJsonArray("marker_labels").toString();
     }
 
     /** Pure red pixels within {@code half} of the middle of the screen, where the looked-at deposit's marker is. */

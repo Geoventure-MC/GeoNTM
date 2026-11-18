@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -28,14 +28,14 @@ public final class Gh106HelmetOverlays implements Scenario {
         c.setOption("camera", "first_person");
         c.waitTicks(5);
         for (String helmet : HELMETS) {
-            c.cmd("item replace entity @s armor.head with hbm:" + helmet);
+            c.cmd("item replace entity @s armor.head with geontm:" + helmet);
             c.waitTicks(5);
             c.screenshot("gh106_" + helmet);
         }
         c.cmd("item replace entity @s armor.head with minecraft:air");
         c.cmd("clear @s");
         c.cmd("gamemode creative");
-        List<String> jei = c.log(4000, "hbm:jei_plugin took");
+        List<String> jei = c.log(4000, "geontm:jei_plugin took");
         for (String line : jei) System.out.println("[gh106] " + line);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception");
     }

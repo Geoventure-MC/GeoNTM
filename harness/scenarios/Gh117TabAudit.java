@@ -1,6 +1,6 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 
 /** GitHub issue 117: items that 1.7's creative tabs show are listed by JEI, which reads the tabs, carts through vanilla's. */
 public final class Gh117TabAudit implements Scenario {

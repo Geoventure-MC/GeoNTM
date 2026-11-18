@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 123 to 125. A lever flipped by hand starts and stops a fan, read through the client player it pushes;
@@ -27,9 +27,9 @@ public final class Gh123To125 implements Scenario {
         clear(c);
         watz(c);
         clear(c);
-        selector(c, "hbm:machine_precass", "GUIMachinePrecAss", 16, 134, "recipe0:\"precass.");
+        selector(c, "geontm:machine_precass", "GUIMachinePrecAss", 16, 134, "recipe0:\"precass.");
         clear(c);
-        selector(c, "hbm:machine_assembly_factory", "GUIMachineAssemblyFactory", 15, 62, "recipe0:\"ass.");
+        selector(c, "geontm:machine_assembly_factory", "GUIMachineAssemblyFactory", 15, 62, "recipe0:\"ass.");
         c.cmd("gamerule sendCommandFeedback true");
         Expect.logCleanSinceMark(c, "(?i)(exception|error).*(fan|watz|precass|assembly)");
     }
@@ -38,7 +38,7 @@ public final class Gh123To125 implements Scenario {
     private static void fan(Client c) {
         c.cmd("gamemode survival");
         c.cmd("clear @s");
-        Fixtures.setBlock(c, 0, G, 0, "hbm:fan[facing=east]");
+        Fixtures.setBlock(c, 0, G, 0, "geontm:fan[facing=east]");
         Fixtures.setBlock(c, 0, G, 1, "minecraft:lever[face=floor,facing=north,powered=false]");
         c.teleport(3.5, G, 0.5);
         c.hotbar(9);
@@ -71,7 +71,7 @@ public final class Gh123To125 implements Scenario {
     }
 
     private static void watz(Client c) {
-        Fixtures.giveOnly(c, "hbm:watz", 1);
+        Fixtures.giveOnly(c, "geontm:watz", 1);
         c.teleport(0.5, G, -5.5);
         c.waitTicks(5);
         c.lookAt(0.5, Y + 0.98, -2.5);
@@ -81,14 +81,14 @@ public final class Gh123To125 implements Scenario {
         int[] core = core(c, "TileEntityWatz", 0, -3, 14);
         String at = core[0] + " " + core[1] + " " + core[2];
         c.cmd("data merge block " + at + " {t2:64000}");
-        c.cmd("item replace block " + at + " container.0 with hbm:watz_pellet_schrabidium");
-        Fixtures.setBlock(c, core[0], core[1] + 3, core[2], "hbm:watz_pump");
+        c.cmd("item replace block " + at + " container.0 with geontm:watz_pellet_schrabidium");
+        Fixtures.setBlock(c, core[0], core[1] + 3, core[2], "geontm:watz_pump");
         c.waitTicks(10);
-        Expect.block(c, core[0], core[1], core[2], "hbm:watz");
+        Expect.block(c, core[0], core[1], core[2], "geontm:watz");
         c.screenshot("20-watz-before");
         Fixtures.setBlock(c, core[0], core[1] + 5, core[2], "minecraft:redstone_block");
         c.waitTicks(10);
-        Expect.block(c, core[0], core[1], core[2], "hbm:mud_block");
+        Expect.block(c, core[0], core[1], core[2], "geontm:mud_block");
         Expect.block(c, core[0], core[1] + 3, core[2], "minecraft:air");
         c.teleport(core[0] + 10.5, G + 3, core[2] + 10.5);
         c.lookAt(core[0] + 0.5, core[1] + 1.5, core[2] + 0.5);
@@ -105,7 +105,7 @@ public final class Gh123To125 implements Scenario {
         c.waitTicks(5);
         c.use(2);
         c.waitTicks(10);
-        int[] core = core(c, item.equals("hbm:machine_precass") ? "TileEntityMachinePrecAss" : "TileEntityMachineAssemblyFactory", 0, -8, 8);
+        int[] core = core(c, item.equals("geontm:machine_precass") ? "TileEntityMachinePrecAss" : "TileEntityMachineAssemblyFactory", 0, -8, 8);
         c.hotbar(9);
         c.waitTicks(2);
         c.lookAt(core[0] + 0.5, core[1] + 0.5, core[2] + 0.5);
@@ -151,7 +151,7 @@ public final class Gh123To125 implements Scenario {
         params.addProperty("y", y);
         params.addProperty("z", z);
         for (int attempt = 0; attempt < 20; attempt++) {
-            JsonObject result = c.query("hbm_block_info", params);
+            JsonObject result = c.query("geontm_block_info", params);
             if (!result.has("pending")) return result;
             c.waitTicks(5);
         }
@@ -174,7 +174,7 @@ public final class Gh123To125 implements Scenario {
     private static void clear(Client c) {
         c.cmd("fill -16 " + G + " -16 16 " + (Y + 12) + " 16 minecraft:air");
         c.cmd("kill @e[type=item]");
-        c.cmd("kill @e[type=hbm:shrapnel]");
+        c.cmd("kill @e[type=geontm:shrapnel]");
         c.waitTicks(3);
     }
 }

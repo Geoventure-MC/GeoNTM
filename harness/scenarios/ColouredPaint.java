@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Paintable cables, coated ducts and pneumatic tubes painted by clicking with red, lime and blue concrete, next to the
@@ -24,14 +24,14 @@ public final class ColouredPaint implements Scenario {
         c.cmd("fill -8 " + (Y + 1) + " -8 8 " + (Y + 10) + " 8 minecraft:air");
         for (int i = 0; i < COLOURS.length; i++) {
             int x = -3 + 3 * i;
-            Fixtures.setBlock(c, x, Y + 1, 4, "hbm:concrete_colored[color=" + COLOURS[i] + "]");
-            for (int k = 0; k < PAINTABLE.length; k++) Fixtures.setBlock(c, x, Y + 1, 2 - k, "hbm:" + PAINTABLE[k]);
+            Fixtures.setBlock(c, x, Y + 1, 4, "geontm:concrete_colored[color=" + COLOURS[i] + "]");
+            for (int k = 0; k < PAINTABLE.length; k++) Fixtures.setBlock(c, x, Y + 1, 2 - k, "geontm:" + PAINTABLE[k]);
         }
         c.teleport(0.5, Y + 1, -4.5);
         for (int i = 0; i < COLOURS.length; i++) {
             int x = -3 + 3 * i;
             c.cmd("clear");
-            c.cmd("give @s hbm:concrete_" + COLOURS[i] + " 8");
+            c.cmd("give @s geontm:concrete_" + COLOURS[i] + " 8");
             c.hotbar(1);
             for (int k = 0; k < PAINTABLE.length; k++) {
                 c.teleport(x + 0.5, Y + 1, 2 - k - 2.5);

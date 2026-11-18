@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A complete dark fusion core, placed by hand and run: the chamber in the middle, the emitter firing
@@ -28,16 +28,16 @@ public class DfcFullRun implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 12);
 
         // --- build; each aimed part faces the player who placed it, so stand on the chamber's side ---
-        JsonObject core = Fixtures.placeOnTop(c, "hbm:dfc_core", CX, Y, CZ);
-        Expect.equal("hbm:dfc_core", core.get("block").getAsString(), "chamber placed by hand");
-        placeFacing(c, "hbm:dfc_emitter", EMITTER_X, CZ, 3, 0, "east");
-        placeFacing(c, "hbm:dfc_receiver", RECEIVER_X, CZ, -3, 0, "west");
-        placeFacing(c, "hbm:dfc_injector", CX, INJECTOR_Z, 0, 3, "south");
-        placeFacing(c, "hbm:dfc_stabilizer", CX, STABILIZER_Z, 0, -3, "north");
+        JsonObject core = Fixtures.placeOnTop(c, "geontm:dfc_core", CX, Y, CZ);
+        Expect.equal("geontm:dfc_core", core.get("block").getAsString(), "chamber placed by hand");
+        placeFacing(c, "geontm:dfc_emitter", EMITTER_X, CZ, 3, 0, "east");
+        placeFacing(c, "geontm:dfc_receiver", RECEIVER_X, CZ, -3, 0, "west");
+        placeFacing(c, "geontm:dfc_injector", CX, INJECTOR_Z, 0, 3, "south");
+        placeFacing(c, "geontm:dfc_stabilizer", CX, STABILIZER_Z, 0, -3, "north");
         // A battery on the receiver's free side: the receiver only holds HE for the tick it is made in,
         // so what it pushed into the battery is the evidence that the beam came out as power.
-        JsonObject battery = Fixtures.placeOnTop(c, "hbm:machine_battery", RECEIVER_X, Y, CZ + 1);
-        Expect.equal("hbm:machine_battery", battery.get("block").getAsString(), "battery placed by hand");
+        JsonObject battery = Fixtures.placeOnTop(c, "geontm:machine_battery", RECEIVER_X, Y, CZ + 1);
+        Expect.equal("geontm:machine_battery", battery.get("block").getAsString(), "battery placed by hand");
 
         c.teleport(CX - 6.5, Y + 3, CZ - 6.5);
         c.lookAt(CX, CY, CZ);
@@ -45,24 +45,24 @@ public class DfcFullRun implements Scenario {
         c.screenshot("10-dfc-built");
 
         // --- the exotic core and both catalysts, through the chamber's menu ---
-        insert(c, CX, CZ, "GUICore", "hbm:ams_catalyst_iron", 0);
-        insert(c, CX, CZ, "GUICore", "hbm:ams_core_sing", 1);
-        insert(c, CX, CZ, "GUICore", "hbm:ams_catalyst_iron", 2);
+        insert(c, CX, CZ, "GUICore", "geontm:ams_catalyst_iron", 0);
+        insert(c, CX, CZ, "GUICore", "geontm:ams_core_sing", 1);
+        insert(c, CX, CZ, "GUICore", "geontm:ams_catalyst_iron", 2);
         open(c, CX, CZ, "GUICore");
         c.screenshot("20-core-loaded");
         close(c);
 
         // --- the lens, through the stabiliser's menu ---
-        insert(c, CX, STABILIZER_Z, "GUICoreStabilizer", "hbm:ams_lens", 0);
+        insert(c, CX, STABILIZER_Z, "GUICoreStabilizer", "geontm:ams_lens", 0);
 
         // --- prime: fuel in the injector, HE and cryogel where they are spent ---
-        merge(c, CX, INJECTOR_Z, "{fuel1_type:\"hbm:deuterium\",fuel1:50000,fuel2_type:\"hbm:tritium\",fuel2:50000}");
+        merge(c, CX, INJECTOR_Z, "{fuel1_type:\"geontm:deuterium\",fuel1:50000,fuel2_type:\"geontm:tritium\",fuel2:50000}");
         merge(c, CX, STABILIZER_Z, "{power:2500000000L,watts:50}");
         merge(c, RECEIVER_X, CZ, "{tank:64000}");
         c.waitTicks(10);
 
         String injector = nbt(c, CX, INJECTOR_Z);
-        Expect.that(injector.contains("fuel1_type:\"hbm:deuterium\"") && injector.contains("fuel2_type:\"hbm:tritium\""),
+        Expect.that(injector.contains("fuel1_type:\"geontm:deuterium\"") && injector.contains("fuel2_type:\"geontm:tritium\""),
                 "injector tanks retyped to deuterium and tritium; nbt " + injector);
         String chamber = nbt(c, CX, CZ);
         Expect.that(chamber.contains("fuel1:50000") && chamber.contains("fuel2:50000"),
@@ -86,7 +86,7 @@ public class DfcFullRun implements Scenario {
         String injectorAfter = nbt(c, CX, INJECTOR_Z);
         Expect.that(longOf(injectorAfter, "fuel1") < 50_000, "the reaction burned deuterium; injector nbt " + injectorAfter);
         Expect.that(longOf(injectorAfter, "fuel2") < 50_000, "the reaction burned tritium; injector nbt " + injectorAfter);
-        Expect.block(c, CX, CY, CZ, "hbm:dfc_core");
+        Expect.block(c, CX, CY, CZ, "geontm:dfc_core");
         String chamberAfter = nbt(c, CX, CZ);
         Expect.that(fieldOf(chamberAfter) >= 49, "the field held through the run; nbt " + chamberAfter);
         Expect.that(longOf(receiver, "tank") < 64_000, "the receiver spent cryogel; nbt " + receiver);

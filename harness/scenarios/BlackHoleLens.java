@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Black hole lensing (port-only) and the 1.7 field shapes: a striped wool wall behind each field type, shot from
@@ -10,10 +10,10 @@ import dev.golem.harness.api.Scenario;
 public final class BlackHoleLens implements Scenario {
 
     private static final String[][] FIELDS = {
-            {"black_hole", "hbm:entity_black_hole"},
-            {"vortex", "hbm:entity_vortex"},
-            {"raging_vortex", "hbm:entity_raging_vortex"},
-            {"quasar", "hbm:entity_digamma_quasar"}};
+            {"black_hole", "geontm:entity_black_hole"},
+            {"vortex", "geontm:entity_vortex"},
+            {"raging_vortex", "geontm:entity_raging_vortex"},
+            {"quasar", "geontm:entity_digamma_quasar"}};
 
     @Override
     public void run(Client c) throws Exception {
@@ -51,10 +51,10 @@ public final class BlackHoleLens implements Scenario {
     }
 
     private static void clear(Client c) {
-        c.cmd("kill @e[type=hbm:entity_black_hole]");
-        c.cmd("kill @e[type=hbm:entity_vortex]");
-        c.cmd("kill @e[type=hbm:entity_raging_vortex]");
-        c.cmd("kill @e[type=hbm:entity_digamma_quasar]");
+        c.cmd("kill @e[type=geontm:entity_black_hole]");
+        c.cmd("kill @e[type=geontm:entity_vortex]");
+        c.cmd("kill @e[type=geontm:entity_raging_vortex]");
+        c.cmd("kill @e[type=geontm:entity_digamma_quasar]");
     }
 
     private static void above(Client c, String shot) {

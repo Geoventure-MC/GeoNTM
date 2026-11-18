@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 122: the real creative search finds nothing 1.7 keeps out of its tabs, by each item's display name, and
@@ -47,12 +47,12 @@ public final class Gh122CreativeTabs implements Scenario {
         c.waitTicks(10);
 
         for (String[] item : SHOWN) {
-            Expect.that(search(c, item[1]).contains("hbm:" + item[0] + ","), "the creative search lists hbm:" + item[0]);
+            Expect.that(search(c, item[1]).contains("geontm:" + item[0] + ","), "the creative search lists geontm:" + item[0]);
         }
         c.screenshot("shown-" + SHOWN[2][0]);
         for (String[] item : HIDDEN) {
             String found = search(c, item[1]);
-            Expect.that(!found.contains("hbm:" + item[0] + ","), "1.7 keeps hbm:" + item[0] + " out of its tabs: " + found);
+            Expect.that(!found.contains("geontm:" + item[0] + ","), "1.7 keeps geontm:" + item[0] + " out of its tabs: " + found);
         }
         c.screenshot("hidden-" + HIDDEN[HIDDEN.length - 1][0]);
         System.out.println("[Gh122] " + HIDDEN.length + " hidden, " + SHOWN.length + " shown");

@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 126, part 2 of 2, on the new code: the plant {@code Gh126LegacySetup} saved with fluorite in the
@@ -20,14 +20,14 @@ public final class Gh126LegacyCheck implements Scenario {
         int[] core = findCore(c);
         Expect.that(core != null, "the saved chemical plant is there");
         c.cmd("clear");
-        c.cmd("give @s hbm:fluorite 16");
+        c.cmd("give @s geontm:fluorite 16");
         c.waitTicks(20);
         open(c, core);
         String layout = slot(c, 4) + ", " + slot(c, 5) + ", " + slot(c, 6);
         System.out.println("[Gh126] after loading: " + layout);
-        Expect.that(layout.equals("hbm:fluorite x8, hbm:powder_yellowcake x2, empty"), "the saved layout is kept: " + layout);
-        quickMove(c, "hbm:fluorite");
-        Expect.that(slot(c, 6).equals("empty") && slot(c, 4).equals("hbm:fluorite x8"), "new fluorite finds no slot: "
+        Expect.that(layout.equals("geontm:fluorite x8, geontm:powder_yellowcake x2, empty"), "the saved layout is kept: " + layout);
+        quickMove(c, "geontm:fluorite");
+        Expect.that(slot(c, 6).equals("empty") && slot(c, 4).equals("geontm:fluorite x8"), "new fluorite finds no slot: "
                 + slot(c, 4) + ", " + slot(c, 6));
         c.screenshot("01-old-layout-kept");
 
@@ -36,7 +36,7 @@ public final class Gh126LegacyCheck implements Scenario {
         c.waitTicks(10);
         layout = slot(c, 4) + ", " + slot(c, 5) + " -> " + slot(c, 7);
         System.out.println("[Gh126] after running: " + layout);
-        Expect.that(layout.equals("empty, empty -> hbm:sulfur x4"), "two operations use the old stacks up: " + layout);
+        Expect.that(layout.equals("empty, empty -> geontm:sulfur x4"), "two operations use the old stacks up: " + layout);
         c.screenshot("02-used-up");
         c.key("escape");
         c.waitTicks(5);

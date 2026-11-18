@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public final class Gh21PneumaticTubes implements Scenario {
         c.cmd("time set 6000");
         c.markLog();
 
-        String tube = "hbm:pneumatic_tube";
+        String tube = "geontm:pneumatic_tube";
         List<int[]> tubes = new ArrayList<>();
         for (int x = -3; x <= 1; x++) tubes.add(new int[]{x, G, 0});
         for (int z = 1; z <= 3; z++) tubes.add(new int[]{1, G, z});

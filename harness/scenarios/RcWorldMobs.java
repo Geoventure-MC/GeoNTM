@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -61,9 +61,9 @@ public final class RcWorldMobs implements Scenario {
         for (Object[] m : MOBS) {
             String id = (String) m[0];
             double expected = (Double) m[1];
-            c.cmd("summon hbm:" + id + " 0.5 101 0.5");
+            c.cmd("summon geontm:" + id + " 0.5 101 0.5");
             c.waitTicks(30);
-            JsonArray list = entities(c, "hbm:" + id).getAsJsonArray("entities");
+            JsonArray list = entities(c, "geontm:" + id).getAsJsonArray("entities");
             if (list.size() == 0 && id.equals("entity_ghost")) {
                 report.put(id, "vanished near the player (1.7 EntityGhost.onUpdate sets dead within 50 blocks)");
                 c.cmd("kill @e[type=!player]");
@@ -80,7 +80,7 @@ public final class RcWorldMobs implements Scenario {
             if (expected > 0 && Math.abs(max - expected) > 1e-6) wrong.add(id + " max health " + max + ", 1.7 " + expected);
             c.screenshot("mob-" + id);
             if ((Boolean) m[2]) {
-                c.cmd("kill @e[type=hbm:" + id + "]");
+                c.cmd("kill @e[type=geontm:" + id + "]");
                 c.waitTicks(15);
                 JsonArray items = entities(c, "item").getAsJsonArray("entities");
                 StringBuilder drops = new StringBuilder();

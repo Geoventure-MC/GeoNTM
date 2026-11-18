@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 6: a conveyor ejector under the fusion reactor crashed the server, because the torus block handed the
@@ -22,18 +22,18 @@ public final class Gh6FusionExtractor implements Scenario {
         c.cmd("kill @e[type=item]");
         c.markLog();
 
-        Fixtures.giveOnly(c, "hbm:fusion_torus", 1);
+        Fixtures.giveOnly(c, "geontm:fusion_torus", 1);
         c.teleport(0.5, G, -9.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, -6.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(10);
-        Expect.block(c, 0, G, 0, "hbm:fusion_torus");
+        Expect.block(c, 0, G, 0, "geontm:fusion_torus");
         Expect.that(nbt(c, 0, G, 0).contains("ft3_max"), "the torus formed its core at 0 " + G + " 0: " + nbt(c, 0, G, 0));
 
         // the core has a port on its own down face; an ejector pulls from the side its output arrow names
-        c.cmd("setblock 0 " + Y + " 0 hbm:crane_extractor[input=down,output=up]");
+        c.cmd("setblock 0 " + Y + " 0 geontm:crane_extractor[input=down,output=up]");
         c.cmd("setblock 0 " + (Y - 1) + " 0 minecraft:stone");
         c.cmd("item replace block 0 " + G + " 0 container.2 with minecraft:diamond 5");
         c.cmd("item replace block 0 " + G + " 0 container.1 with minecraft:emerald 3");

@@ -1,14 +1,14 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 149: an auxiliary cooling tower's steam on a Sable ship stays in a frozen cluster at the tower top. The
  * tower runs on an iron deck, first in the world, then assembled into a ship with {@code /sable assemble}. Each time the
- * puffs aged 40 to 120 ticks are read through {@code hbm_effects}: by 1.7's ParticleCoolingTower (lift 1, +0.01 a tick,
+ * puffs aged 40 to 120 ticks are read through {@code geontm_effects}: by 1.7's ParticleCoolingTower (lift 1, +0.01 a tick,
  * x0.925) a puff climbs about 0.12 blocks a tick, so at that age it is 3 to 13 blocks above the spout. Nodes without
  * Sable run the world half only.
  */
@@ -27,7 +27,7 @@ public final class Gh149SableSteamClouds implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("time set day");
         c.cmd("fill -5 " + D + " 3 5 " + D + " 13 minecraft:iron_block");
-        Fixtures.giveOnly(c, "hbm:machine_tower_small", 1);
+        Fixtures.giveOnly(c, "geontm:machine_tower_small", 1);
         c.teleport(0.5, D + 1, 4.5);
         c.waitTicks(3);
         c.lookAt(0.5, D + 0.98, 8.5);
@@ -74,7 +74,7 @@ public final class Gh149SableSteamClouds implements Scenario {
 
     /** Mean height above the spout of the puffs aged 40 to 120 ticks. */
     private static double rise(Client c, double spout) throws Exception {
-        JsonObject fx = c.query("hbm_effects", new JsonObject());
+        JsonObject fx = c.query("geontm_effects", new JsonObject());
         double sum = 0;
         int n = 0;
         for (JsonElement e : fx.getAsJsonArray("towers")) {
@@ -113,7 +113,7 @@ public final class Gh149SableSteamClouds implements Scenario {
         at.addProperty("x", core[0] + 0.5);
         at.addProperty("y", core[1] + 0.5);
         at.addProperty("z", core[2] + 0.5);
-        for (JsonElement e : c.query("hbm_sublevel", at).getAsJsonArray("grids")) {
+        for (JsonElement e : c.query("geontm_sublevel", at).getAsJsonArray("grids")) {
             JsonObject g = e.getAsJsonObject();
             return new int[]{(int) Math.floor(g.get("x").getAsDouble()), (int) Math.floor(g.get("y").getAsDouble()),
                     (int) Math.floor(g.get("z").getAsDouble())};

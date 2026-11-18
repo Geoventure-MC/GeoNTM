@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -48,7 +48,7 @@ public final class Gh138BeamRingFog implements Scenario {
             BufferedImage idle = ImageIO.read(c.screenshot("00-rings-idle").toFile());
             // The emitter walks a ring along its beam every five ticks; the glass stops the beam nine blocks out.
             c.cmd("setblock 0 " + (Y + 3) + " 51 minecraft:glass");
-            c.cmd("setblock 0 " + (Y + 3) + " 60 hbm:deco_emitter[facing=north]{effect:4,girth:1.0f,color:16777215}");
+            c.cmd("setblock 0 " + (Y + 3) + " 60 geontm:deco_emitter[facing=north]{effect:4,girth:1.0f,color:16777215}");
             c.waitTicks(40);
             int seen = 0;
             for (int i = 0; i < 8; i++) {
@@ -68,8 +68,8 @@ public final class Gh138BeamRingFog implements Scenario {
 
             c.cmd("gamemode creative");
             c.cmd("clear @s");
-            c.cmd("give @s hbm:gun_folly");
-            c.cmd("give @s hbm:ammo_secret_folly_sm 8");
+            c.cmd("give @s geontm:gun_folly");
+            c.cmd("give @s geontm:ammo_secret_folly_sm 8");
             c.hotbar(1);
             c.teleport(0.5, Y + 1, 0.5);
             c.look(0, 0);
@@ -96,7 +96,7 @@ public final class Gh138BeamRingFog implements Scenario {
             if (lit < 100) failures.add("the beam is not drawn past the fog, " + lit + " pixels");
 
             Expect.that(failures.isEmpty(), "plasma blasts and beams are drawn without fog: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             c.cmd("gamemode creative");

@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,10 @@ public final class X5846MachinesMisc implements Scenario {
 
     private static final int Y = 100, L = 101, Z = 0;
     private static final String[][] DOORS = {
-            {"hbm:sliding_seal_door", "-24", "2"},
-            {"hbm:sliding_blast_door", "-12", "1"},
-            {"hbm:qe_sliding_door", "0", "1"},
-            {"hbm:large_vehicle_door", "14", "3"}};
+            {"geontm:sliding_seal_door", "-24", "2"},
+            {"geontm:sliding_blast_door", "-12", "1"},
+            {"geontm:qe_sliding_door", "0", "1"},
+            {"geontm:large_vehicle_door", "14", "3"}};
 
     @Override
     public void run(Client c) throws Exception {
@@ -79,7 +79,7 @@ public final class X5846MachinesMisc implements Scenario {
 
     private void dipole(Client c) {
         int x = 0, z = -14;
-        Fixtures.giveOnly(c, "hbm:pa_dipole", 1);
+        Fixtures.giveOnly(c, "geontm:pa_dipole", 1);
         standAt(c, x + 0.5, L, z + 3.5);
         c.lookAt(x + 0.5, Y + 0.98, z + 1.5);
         c.waitTicks(3);
@@ -89,10 +89,10 @@ public final class X5846MachinesMisc implements Scenario {
         Fixtures.interact(c, x, L, z + 1);
         c.waitScreen("GUIPADipole", 5_000L);
         Expect.screenStaysOpen(c, "GUIPADipole", 5);
-        give(c, "hbm:pa_coil_gold");
+        give(c, "geontm:pa_coil_gold");
         c.waitTicks(5);
         boolean coil = false;
-        for (JsonObject s : machineSlots(c)) coil |= s.has("id") && s.get("id").getAsString().equals("hbm:pa_coil_gold");
+        for (JsonObject s : machineSlots(c)) coil |= s.has("id") && s.get("id").getAsString().equals("geontm:pa_coil_gold");
         Expect.that(coil, "the gold coil sits in the dipole");
         c.screenshot("11-dipole-gold-coil");
         c.key("escape");
@@ -101,7 +101,7 @@ public final class X5846MachinesMisc implements Scenario {
 
     private void compressor(Client c) {
         int x = 14, z = -14;
-        Fixtures.giveOnly(c, "hbm:machine_compressor_compact", 1);
+        Fixtures.giveOnly(c, "geontm:machine_compressor_compact", 1);
         standAt(c, x + 0.5, L, z + 3.5);
         c.lookAt(x + 0.5, Y + 0.98, z + 1.5);
         c.waitTicks(3);

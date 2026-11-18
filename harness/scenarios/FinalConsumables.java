@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,8 +92,8 @@ public final class FinalConsumables implements Scenario {
             c.waitTicks(2);
             List<String> batch = new ArrayList<>();
             for (int i = page * 36; i < Math.min(IDS.length, (page + 1) * 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i] + " 1");
-                batch.add("hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i] + " 1");
+                batch.add("geontm:" + IDS[i]);
             }
             c.waitTicks(5);
             for (String id : batch) Expect.that(count(c, id) == 1, id + " was given and is in the inventory");
@@ -124,7 +124,7 @@ public final class FinalConsumables implements Scenario {
 
     /** Hold the item in slot 1 and keep the use key down long enough to finish eating. */
     private static void eat(Client c, String id, int ticks) {
-        Fixtures.giveOnly(c, "hbm:" + id, 1);
+        Fixtures.giveOnly(c, "geontm:" + id, 1);
         c.look(0, 60);
         c.waitTicks(2);
         c.use(ticks);
@@ -147,8 +147,8 @@ public final class FinalConsumables implements Scenario {
         eat(c, "canned_conserve_beef", 45);
         int after = foodLevel(c);
         Expect.that(after == Math.min(20, before + 8), "canned beef feeds 8: " + before + " -> " + after);
-        Expect.that(count(c, "hbm:can_key") == 1, "the can hands back a winding key");
-        Expect.that(count(c, "hbm:canned_conserve_beef") == 0, "the can was eaten");
+        Expect.that(count(c, "geontm:can_key") == 1, "the can hands back a winding key");
+        Expect.that(count(c, "geontm:canned_conserve_beef") == 0, "the can was eaten");
         c.screenshot("10-after-canned-beef");
 
         // always edible (full or not): the schrabidium apple's regeneration, resistance and fire resistance
@@ -169,18 +169,18 @@ public final class FinalConsumables implements Scenario {
         // the glowing stew hands back its bowl
         starve(c);
         eat(c, "glowing_stew", 45);
-        Expect.that(count(c, "minecraft:bowl") == 1 && count(c, "hbm:glowing_stew") == 0, "the stew leaves a bowl");
+        Expect.that(count(c, "minecraft:bowl") == 1 && count(c, "geontm:glowing_stew") == 0, "the stew leaves a bowl");
 
         // the pancake refuses anyone without the lunar set
-        Fixtures.giveOnly(c, "hbm:pancake", 1);
+        Fixtures.giveOnly(c, "geontm:pancake", 1);
         c.use(45);
         c.waitTicks(5);
-        Expect.that(count(c, "hbm:pancake") == 1, "the pancake cannot be eaten without the BJ set");
+        Expect.that(count(c, "geontm:pancake") == 1, "the pancake cannot be eaten without the BJ set");
         Expect.that(!c.logSinceMark("Your teeth are too soft to eat this").isEmpty(), "the teeth message appears in chat");
         c.screenshot("12-pancake-teeth");
 
         eat(c, "tem_flakes", 45);
-        Expect.that(count(c, "hbm:tem_flakes") == 0, "tem flakes are always edible");
+        Expect.that(count(c, "geontm:tem_flakes") == 0, "tem flakes are always edible");
     }
 
     private void drinks(Client c) {
@@ -199,21 +199,21 @@ public final class FinalConsumables implements Scenario {
 
         c.cmd("effect clear @s");
         c.cmd("effect give @s minecraft:resistance 900 4 true");
-        Fixtures.giveOnly(c, "hbm:cigarette", 16);
+        Fixtures.giveOnly(c, "geontm:cigarette", 16);
         c.use(40);
         c.waitTicks(5);
-        Expect.that(count(c, "hbm:cigarette") == 15, "one cigarette was smoked, " + count(c, "hbm:cigarette") + " left");
+        Expect.that(count(c, "geontm:cigarette") == 15, "one cigarette was smoked, " + count(c, "geontm:cigarette") + " left");
 
         eat(c, "bdcl", 45);
-        Expect.that(count(c, "hbm:bdcl") == 0, "the BDCL was drunk");
+        Expect.that(count(c, "geontm:bdcl") == 0, "the BDCL was drunk");
         eat(c, "flask_infusion_shield", 45);
-        Expect.that(count(c, "hbm:flask_infusion_shield") == 0, "the shield infusion was drunk");
+        Expect.that(count(c, "geontm:flask_infusion_shield") == 0, "the shield infusion was drunk");
         eat(c, "mucho_mango", 210);
-        Expect.that(count(c, "hbm:mucho_mango") == 0 && hasEffect(c, "speed"), "Mucho Mango drunk over 200 ticks gives speed");
-        Fixtures.giveOnly(c, "hbm:rag", 1);
+        Expect.that(count(c, "geontm:mucho_mango") == 0 && hasEffect(c, "speed"), "Mucho Mango drunk over 200 ticks gives speed");
+        Fixtures.giveOnly(c, "geontm:rag", 1);
         c.use(2);
         c.waitTicks(3);
-        Expect.that(count(c, "hbm:rag_piss") == 1 && count(c, "hbm:rag") == 0, "right-clicking the cloth soils it");
+        Expect.that(count(c, "geontm:rag_piss") == 1 && count(c, "geontm:rag") == 0, "right-clicking the cloth soils it");
         c.cmd("effect clear @s");
         c.cmd("effect give @s minecraft:resistance 900 4 true");
     }
@@ -223,7 +223,7 @@ public final class FinalConsumables implements Scenario {
     private void record(Client c) {
         int jx = X + 3, jz = Z + 3;
         Fixtures.setBlock(c, jx, Y + 1, jz, "minecraft:jukebox");
-        Fixtures.giveOnly(c, "hbm:record_lc", 1);
+        Fixtures.giveOnly(c, "geontm:record_lc", 1);
         c.teleport(jx + 0.5, Y + 1, jz - 1.5);
         c.waitTicks(2);
         c.lookAt(jx + 0.5, Y + 1.5, jz + 0.5);
@@ -234,8 +234,8 @@ public final class FinalConsumables implements Scenario {
         Expect.that(block.contains("has_record=true") || block.contains("\"has_record\":\"true\""),
                 "the jukebox holds the disc: " + block);
         String be = nbt(c, jx, Y + 1, jz);
-        Expect.that(be.contains("record_lc"), "the jukebox block entity holds hbm:record_lc: " + be);
-        Expect.that(count(c, "hbm:record_lc") == 0, "the disc left the hand");
+        Expect.that(be.contains("record_lc"), "the jukebox block entity holds geontm:record_lc: " + be);
+        Expect.that(count(c, "geontm:record_lc") == 0, "the disc left the hand");
         c.screenshot("20-jukebox-record-lc");
         Fixtures.setBlock(c, jx, Y + 1, jz, "minecraft:air");
     }
@@ -246,17 +246,17 @@ public final class FinalConsumables implements Scenario {
 
     private void battery(Client c) {
         c.cmd("gamemode creative");
-        Fixtures.placeOnTop(c, "hbm:machine_electric_furnace_off", FX, Y, FZ);
+        Fixtures.placeOnTop(c, "geontm:machine_electric_furnace_off", FX, Y, FZ);
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_potato 1");
+        c.cmd("give @s geontm:battery_potato 1");
         c.waitTicks(3);
         c.teleport(FX + 0.5, Y + 1, FZ - 2.5);
         c.waitTicks(2);
         Fixtures.interact(c, FX, Y + 1, FZ);
         JsonObject screen = c.waitScreen("", 5000);
         Expect.that(screen.get("open").getAsBoolean(), "the electric furnace GUI opened by a right-click: " + screen);
-        clickFromInventory(c, "hbm:battery_potato", 0);
+        clickFromInventory(c, "geontm:battery_potato", 0);
         c.waitTicks(20);
         c.screenshot("30-electric-furnace-potato-battery");
         c.key("escape");
@@ -286,7 +286,7 @@ public final class FinalConsumables implements Scenario {
     private void rag(Client c) {
         int wx = X + 6, wz = Z - 6;
         Fixtures.setBlock(c, wx, Y + 1, wz, "minecraft:water");
-        Fixtures.giveOnly(c, "hbm:rag", 3);
+        Fixtures.giveOnly(c, "geontm:rag", 3);
         c.teleport(wx + 0.5, Y + 1, wz + 0.5); // standing in the water: the dropped cloth falls into it
         c.waitTicks(3);
         c.look(0, 90);
@@ -313,7 +313,7 @@ public final class FinalConsumables implements Scenario {
             Fixtures.setBlock(c, gx + dx, Y, gz, "minecraft:farmland");
             Fixtures.setBlock(c, gx + dx, Y + 1, gz, "minecraft:wheat[age=0]");
         }
-        Fixtures.giveOnly(c, "hbm:powder_fertilizer", 4);
+        Fixtures.giveOnly(c, "geontm:powder_fertilizer", 4);
         c.teleport(gx + 0.5, Y + 1, gz - 2.5);
         c.waitTicks(2);
         c.lookAt(gx + 0.5, Y + 1.1, gz + 0.5);
@@ -324,7 +324,7 @@ public final class FinalConsumables implements Scenario {
         // 1.7 forces one bone-meal growth on the clicked crop: +2..5 stages, never a fail roll
         int age = Integer.parseInt(c.block(gx, Y + 1, gz).getAsJsonObject("properties").get("age").getAsString());
         Expect.that(age >= 2, "the clicked wheat was forced to grow: " + crop);
-        Expect.that(count(c, "hbm:powder_fertilizer") == 3, "one fertilizer was spent");
+        Expect.that(count(c, "geontm:powder_fertilizer") == 3, "one fertilizer was spent");
         c.screenshot("50-fertilizer-wheat");
     }
 
@@ -333,7 +333,7 @@ public final class FinalConsumables implements Scenario {
     private void muffler(Client c) {
         String before = nbt(c, FX, Y + 1, FZ);
         Expect.that(before.contains("muffled:0b") || before.contains("muffled:false"), "the furnace starts loud: " + before);
-        Fixtures.giveOnly(c, "hbm:upgrade_muffler", 2);
+        Fixtures.giveOnly(c, "geontm:upgrade_muffler", 2);
         c.teleport(FX + 0.5, Y + 1, FZ - 2.5);
         c.waitTicks(2);
         c.lookAt(FX + 0.5, Y + 1.5, FZ + 0.5);
@@ -345,12 +345,12 @@ public final class FinalConsumables implements Scenario {
         c.waitTicks(5);
         String after = nbt(c, FX, Y + 1, FZ);
         Expect.that(after.contains("muffled:1b") || after.contains("muffled:true"), "the muffler muffled the furnace: " + after);
-        Expect.that(count(c, "hbm:upgrade_muffler") == 1, "one muffler was fitted");
+        Expect.that(count(c, "geontm:upgrade_muffler") == 1, "one muffler was fitted");
         c.use(2);
         c.waitTicks(5);
         c.keyUp("key.sneak");
         c.waitTicks(2);
-        Expect.that(count(c, "hbm:upgrade_muffler") == 1, "a muffled machine takes no second muffler");
+        Expect.that(count(c, "geontm:upgrade_muffler") == 1, "a muffled machine takes no second muffler");
         c.screenshot("55-muffled-furnace");
     }
 
@@ -358,7 +358,7 @@ public final class FinalConsumables implements Scenario {
 
     private void matches(Client c) {
         int mx = X + 6, mz = Z + 6;
-        Fixtures.giveOnly(c, "hbm:matchstick", 2);
+        Fixtures.giveOnly(c, "geontm:matchstick", 2);
         c.teleport(mx + 0.5, Y + 1, mz - 2.5);
         c.waitTicks(2);
         c.lookAt(mx + 0.5, Y + 0.98, mz + 0.5);
@@ -366,19 +366,19 @@ public final class FinalConsumables implements Scenario {
         c.use(2);
         c.waitTicks(3);
         Expect.that(c.block(mx, Y + 1, mz).toString().contains("minecraft:fire"), "the matchstick lit a fire");
-        Expect.that(count(c, "hbm:matchstick") == 1, "one matchstick was spent");
+        Expect.that(count(c, "geontm:matchstick") == 1, "one matchstick was spent");
         c.screenshot("60-matchstick-fire");
         Fixtures.setBlock(c, mx, Y + 1, mz, "minecraft:air");
 
         int bx = X + 9;
-        Fixtures.giveOnly(c, "hbm:balefire_and_steel", 1);
+        Fixtures.giveOnly(c, "geontm:balefire_and_steel", 1);
         c.teleport(bx + 0.5, Y + 1, mz - 2.5);
         c.waitTicks(2);
         c.lookAt(bx + 0.5, Y + 0.98, mz + 0.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(3);
-        Expect.that(c.block(bx, Y + 1, mz).toString().contains("hbm:balefire"), "balefire and steel placed balefire");
+        Expect.that(c.block(bx, Y + 1, mz).toString().contains("geontm:balefire"), "balefire and steel placed balefire");
         Expect.that(player(c).getAsJsonObject("main_hand").get("damage").getAsInt() == 1, "balefire and steel wore by one");
         c.screenshot("61-balefire-and-steel");
         Fixtures.setBlock(c, bx, Y + 1, mz, "minecraft:air");

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,10 +43,10 @@ public final class Pt1012Console implements Scenario {
 
             // a fuel column to link the consoles to
             int colX = X + 8, colZ = Z;
-            placeFrom(c, "hbm:rbmk_fuel_rod", colX, colZ, colX + 0.5, colZ - 2.5);
+            placeFrom(c, "geontm:rbmk_fuel_rod", colX, colZ, colX + 0.5, colZ - 2.5);
 
-            desk(c, "hbm:rbmk_console", X - 6, Z, false, colX, colZ);
-            desk(c, "hbm:rbmk_crane_console", X + 2, Z + 8, true, colX, colZ);
+            desk(c, "geontm:rbmk_console", X - 6, Z, false, colX, colZ);
+            desk(c, "geontm:rbmk_crane_console", X + 2, Z + 8, true, colX, colZ);
 
             List<String> bad = new ArrayList<>();
             for (String line : c.logSinceMark("/(ERROR|FATAL)[]]")) {
@@ -134,7 +134,7 @@ public final class Pt1012Console implements Scenario {
         }
 
         // RBMK linker: column, then a console cell
-        Fixtures.giveOnly(c, "hbm:rbmk_tool", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_tool", 1);
         c.teleport(colX + 0.5, L, colZ - 1.5);
         c.waitTicks(3);
         c.lookAt(colX + 0.5, L + 0.5, colZ + 0.02);

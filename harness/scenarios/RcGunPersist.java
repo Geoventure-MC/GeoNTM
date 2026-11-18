@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,8 +18,8 @@ public final class RcGunPersist implements Scenario {
         Fixtures.platform(c, 0, 100, 0, 12);
         c.cmd("gamemode survival");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_light_revolver");
-        c.cmd("give @s hbm:ammo_standard_m357_sp 12");
+        c.cmd("give @s geontm:gun_light_revolver");
+        c.cmd("give @s geontm:ammo_standard_m357_sp 12");
         c.hotbar(1);
         c.teleport(0.5, 101, 0.5);
         c.look(0, 0);

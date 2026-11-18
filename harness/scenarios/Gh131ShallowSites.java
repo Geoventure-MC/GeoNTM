@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 131. 1.7 builds the meteorite, the hive and the capsule in shallow water, and the safe, lantern and
@@ -36,20 +36,20 @@ public final class Gh131ShallowSites implements Scenario {
         System.out.println("[Gh131] hive buildable " + hive.get("buildable"));
         Expect.that(wet(hive, 2) == 0, "no hive in 2 of water: " + hive.get("buildable"));
         Expect.that(wet(hive, 1) > 0, "hives stand in 1 of water: " + hive.get("buildable"));
-        builds(c, "glyphid_hive", hive, "hbm:glyphid_", 24);
+        builds(c, "glyphid_hive", hive, "geontm:glyphid_", 24);
 
         JsonObject capsule = sites(c, "landed_capsule");
         System.out.println("[Gh131] capsule buildable " + capsule.get("buildable"));
         Expect.that(wet(capsule, 3) == 0, "no capsule in 3 of water: " + capsule.get("buildable"));
         Expect.that(wet(capsule, 1) > 0, "capsules stand in up to 2 of water: " + capsule.get("buildable"));
-        builds(c, "landed_capsule", capsule, "hbm:soyuz_capsule", 16);
+        builds(c, "landed_capsule", capsule, "geontm:soyuz_capsule", 16);
 
         c.cmd("forceload remove all");
     }
 
     private static JsonObject sites(Client c, String feature) {
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         p.addProperty("mode", "scattered");
         p.addProperty("feature", feature);
         p.addProperty("radius", 500);
@@ -76,7 +76,7 @@ public final class Gh131ShallowSites implements Scenario {
             System.out.println("[Gh131] " + id + " at " + x + " " + z + " in " + depth + " of water: " + count + " " + block);
             if (count > 0) {
                 JsonObject p = new JsonObject();
-                p.addProperty("kind", "hbm_worldgen");
+                p.addProperty("kind", "geontm_worldgen");
                 p.addProperty("mode", "top");
                 p.addProperty("x", x);
                 p.addProperty("z", z);
@@ -88,14 +88,14 @@ public final class Gh131ShallowSites implements Scenario {
                 return;
             }
         }
-        throw new HarnessException("no water site of hbm:" + id + " held " + block + ": " + water);
+        throw new HarnessException("no water site of geontm:" + id + " held " + block + ": " + water);
     }
 
     private static int blocks(Client c, int x, int z, String block, int radius) {
         c.cmd("forceload add " + (x - radius - 16) + " " + (z - radius - 16) + " " + (x + radius + 16) + " " + (z + radius + 16));
         c.waitTicks(40);
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         p.addProperty("mode", "count");
         p.addProperty("x0", x - radius);
         p.addProperty("z0", z - radius);

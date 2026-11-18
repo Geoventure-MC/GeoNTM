@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/generic"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 9.0,
+        "min": 8.0
+      }
+    }
+  ],
+  "random_sequence": "geontm_de:chests/component/unscaled/generic_8_9"
+}

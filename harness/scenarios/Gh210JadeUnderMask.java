@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -23,11 +23,11 @@ public final class Gh210JadeUnderMask implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 6);
         c.cmd("fill -5 " + G + " -5 5 " + (Y + 6) + " 5 minecraft:air");
         c.cmd("gamemode creative");
-        List<String> jade = c.log(4000, "(?i)golem\\.core\\.jade|jade.*plugin");
+        List<String> jade = c.log(4000, "(?i)geocore\\.core\\.jade|jade.*plugin");
         Expect.that(!jade.isEmpty(), "Jade is in the run");
         c.markLog();
 
-        c.cmd("setblock 0 " + G + " 0 hbm:machine_battery");
+        c.cmd("setblock 0 " + G + " 0 geontm:machine_battery");
         c.waitTicks(5);
         c.cmd("data merge block 0 " + G + " 0 {power:600000L}");
         c.cmd("clear");
@@ -41,12 +41,12 @@ public final class Gh210JadeUnderMask implements Scenario {
         c.waitTicks(20);
         c.screenshot("00-bare");
         for (int i = 0; i < HELMETS.length; i++) {
-            c.cmd("item replace entity @s armor.head with hbm:" + HELMETS[i]);
+            c.cmd("item replace entity @s armor.head with geontm:" + HELMETS[i]);
             c.waitTicks(10);
             c.screenshot("0" + (i + 1) + "-" + HELMETS[i]);
         }
         c.cmd("item replace entity @s armor.head with minecraft:air");
         c.cmd("gamemode creative");
-        Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|golem)");
+        Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|geocore)");
     }
 }

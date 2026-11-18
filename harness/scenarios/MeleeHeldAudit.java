@@ -1,10 +1,10 @@
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -99,7 +99,7 @@ public final class MeleeHeldAudit implements Scenario {
             c.cmd("setblock " + (X - 2) + " " + L + " " + (Z + 2) + " minecraft:air");
             c.waitTicks(4);
             for (String item : items) {
-                hand(c, "hbm:" + item);
+                hand(c, "geontm:" + item);
                 c.screenshot(v.name + "-" + item);
             }
             hand(c, "minecraft:air");
@@ -148,7 +148,7 @@ public final class MeleeHeldAudit implements Scenario {
         c.look(0, 0);
         c.waitTicks(10);
         for (String item : items) {
-            c.cmd("item replace entity @s hotbar.0 with hbm:" + item);
+            c.cmd("item replace entity @s hotbar.0 with geontm:" + item);
             c.hotbar(1);
             c.setOption("hide_gui", "true");
             c.setOption("camera", "third_person_front");
@@ -176,7 +176,7 @@ public final class MeleeHeldAudit implements Scenario {
         String env = System.getenv("MELEE_ITEMS");
         if (env == null || env.isBlank()) return ALL;
         List<String> out = new ArrayList<>();
-        for (String s : env.split("[,\\s]+")) if (!s.isBlank()) out.add(s.replace("hbm:", ""));
+        for (String s : env.split("[,\\s]+")) if (!s.isBlank()) out.add(s.replace("geontm:", ""));
         return out;
     }
 }

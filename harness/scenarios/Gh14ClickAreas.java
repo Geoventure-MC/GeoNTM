@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 14: the SILEX and Black Book screens open their recipe tab when clicked where 1.7's NEI took the click.
@@ -24,7 +24,7 @@ public final class Gh14ClickAreas implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("fill -4 " + G + " -4 4 " + (G + 4) + " 14 air");
 
-        Fixtures.giveOnly(c, "hbm:machine_silex", 1);
+        Fixtures.giveOnly(c, "geontm:machine_silex", 1);
         c.teleport(0.5, G, -5.5);
         c.waitTicks(5);
         c.lookAt(0.5, Y + 0.98, -2.5);
@@ -34,7 +34,7 @@ public final class Gh14ClickAreas implements Scenario {
         c.lookAt(0.5, G + 0.5, -1.5);
         check(c, "SILEX", () -> { c.use(); c.waitTicks(10); }, 44, 71, 60, 50);
 
-        Fixtures.giveOnly(c, "hbm:book_of_", 1);
+        Fixtures.giveOnly(c, "geontm:book_of_", 1);
         c.hotbar(1);
         c.look(0, 90);
         check(c, "Book", () -> { c.use(); c.waitTicks(10); }, 89, 34, 24, 18);

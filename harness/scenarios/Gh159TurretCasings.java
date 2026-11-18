@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,16 +44,16 @@ public final class Gh159TurretCasings implements Scenario {
             c.cmd("difficulty peaceful");
         }
         Expect.that(wrong.isEmpty(), "1.7 turret casings and muzzle smoke: " + wrong);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     private static void duel(Client c, Case k, int x, List<String> wrong) throws Exception {
         c.cmd("kill @e[type=minecraft:iron_golem]");
         // the sentry is one block and has no facing
-        Fixtures.setBlock(c, x, Y + 1, Z, "hbm:turret_" + k.turret + (k.turret.equals("sentry") ? "" : "[facing=north]"));
+        Fixtures.setBlock(c, x, Y + 1, Z, "geontm:turret_" + k.turret + (k.turret.equals("sentry") ? "" : "[facing=north]"));
         c.cmd("data merge block " + x + " " + (Y + 1) + " " + Z + " {power:" + k.power
                 + "L,isOn:1b,targetMobs:1b,targetAnimals:1b}");
-        c.cmd("item replace block " + x + " " + (Y + 1) + " " + Z + " container.1 with hbm:" + k.ammo);
+        c.cmd("item replace block " + x + " " + (Y + 1) + " " + Z + " container.1 with geontm:" + k.ammo);
         c.cmd("summon minecraft:iron_golem " + (x + 0.5) + " " + (Y + 1) + " " + (Z + 20.5)
                 + " {NoAI:1b,PersistenceRequired:1b,Silent:1b}");
         String attr = c.node().startsWith("26.1") ? "minecraft:max_health" : "minecraft:generic.max_health";
@@ -74,7 +74,7 @@ public final class Gh159TurretCasings implements Scenario {
         String names = "";
         boolean shot = false;
         for (int i = 0; i < 400; i++) {
-            JsonObject fx = c.query("hbm_turret_fx", around);
+            JsonObject fx = c.query("geontm_turret_fx", around);
             int f = count(fx, "HugeExplosionParticle") + count(fx, "ExplosionLargeParticle");
             int p = count(fx, "ExplodeParticle") + count(fx, "ExplosionSmokeParticle");
             if (!shot && f + p > 0) {

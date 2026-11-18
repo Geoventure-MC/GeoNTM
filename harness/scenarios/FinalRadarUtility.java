@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * In-game acceptance for the radar and utility machines: every block and item of the family in the inventory;
@@ -20,10 +20,10 @@ public final class FinalRadarUtility implements Scenario {
     private static final int Y = 100;
     private static final int Z = 0;
 
-    static final String[] IDS = {"hbm:machine_radar", "hbm:machine_radar_large", "hbm:radar_screen",
-            "hbm:machine_forcefield", "hbm:machine_teleporter", "hbm:teleanchor", "hbm:machine_orbus",
-            "hbm:seal_controller", "hbm:seal_hatch", "hbm:soyuz_capsule", "hbm:radar_linker", "hbm:linker",
-            "hbm:anchor_remote", "hbm:upgrade_radius", "hbm:upgrade_health"};
+    static final String[] IDS = {"geontm:machine_radar", "geontm:machine_radar_large", "geontm:radar_screen",
+            "geontm:machine_forcefield", "geontm:machine_teleporter", "geontm:teleanchor", "geontm:machine_orbus",
+            "geontm:seal_controller", "geontm:seal_hatch", "geontm:soyuz_capsule", "geontm:radar_linker", "geontm:linker",
+            "geontm:anchor_remote", "geontm:upgrade_radius", "geontm:upgrade_health"};
 
     // layout on the platform
     private static final int RX = X - 12, RZ = Z - 12;      // small radar
@@ -47,44 +47,44 @@ public final class FinalRadarUtility implements Scenario {
 
         // --- placement by hand ---------------------------------------------------------------------------
         c.cmd("gamemode creative");
-        place(c, "hbm:machine_radar", RX, Y, RZ);
-        Expect.block(c, RX, Y + 1, RZ, "hbm:machine_radar");
-        place(c, "hbm:machine_radar_large", LX, Y, LZ);
-        int[] largeCore = findCore(c, LX, Y + 1, LZ, "hbm:machine_radar_large");
+        place(c, "geontm:machine_radar", RX, Y, RZ);
+        Expect.block(c, RX, Y + 1, RZ, "geontm:machine_radar");
+        place(c, "geontm:machine_radar_large", LX, Y, LZ);
+        int[] largeCore = findCore(c, LX, Y + 1, LZ, "geontm:machine_radar_large");
         Expect.that(largeCore != null, "the large radar formed a core");
-        place(c, "hbm:radar_screen", SX, Y, SZ);
-        int[] screenCore = findCore(c, SX, Y + 1, SZ, "hbm:radar_screen");
+        place(c, "geontm:radar_screen", SX, Y, SZ);
+        int[] screenCore = findCore(c, SX, Y + 1, SZ, "geontm:radar_screen");
         Expect.that(screenCore != null, "the radar screen formed a core");
-        place(c, "hbm:machine_forcefield", FX, Y, FZ);
-        Expect.block(c, FX, Y + 1, FZ, "hbm:machine_forcefield");
-        place(c, "hbm:machine_teleporter", TX, Y, TZ);
-        Expect.block(c, TX, Y + 1, TZ, "hbm:machine_teleporter");
-        place(c, "hbm:teleanchor", AX, Y, AZ);
-        Expect.block(c, AX, Y + 1, AZ, "hbm:teleanchor");
-        place(c, "hbm:machine_orbus", OX, Y, OZ);
-        int[] orbusCore = findCore(c, OX, Y + 1, OZ, "hbm:machine_orbus");
+        place(c, "geontm:machine_forcefield", FX, Y, FZ);
+        Expect.block(c, FX, Y + 1, FZ, "geontm:machine_forcefield");
+        place(c, "geontm:machine_teleporter", TX, Y, TZ);
+        Expect.block(c, TX, Y + 1, TZ, "geontm:machine_teleporter");
+        place(c, "geontm:teleanchor", AX, Y, AZ);
+        Expect.block(c, AX, Y + 1, AZ, "geontm:teleanchor");
+        place(c, "geontm:machine_orbus", OX, Y, OZ);
+        int[] orbusCore = findCore(c, OX, Y + 1, OZ, "geontm:machine_orbus");
         Expect.that(orbusCore != null, "the orbus formed a core");
-        place(c, "hbm:soyuz_capsule", KX, Y, KZ);
-        Expect.block(c, KX, Y + 1, KZ, "hbm:soyuz_capsule");
-        place(c, "hbm:launch_pad", PX, Y, PZ);
-        int[] padCore = findCore(c, PX, Y + 1, PZ, "hbm:launch_pad");
+        place(c, "geontm:soyuz_capsule", KX, Y, KZ);
+        Expect.block(c, KX, Y + 1, KZ, "geontm:soyuz_capsule");
+        place(c, "geontm:launch_pad", PX, Y, PZ);
+        int[] padCore = findCore(c, PX, Y + 1, PZ, "geontm:launch_pad");
         Expect.that(padCore != null, "the launch pad formed a core");
 
         // the seal controller is placed looking south (+Z), so its ring runs south of it
-        Fixtures.giveOnly(c, "hbm:seal_controller", 1);
+        Fixtures.giveOnly(c, "geontm:seal_controller", 1);
         c.teleport(CX + 0.5, Y + 1, CZ - 2.5);
         c.waitTicks(3);
         c.lookAt(CX + 0.5, Y + 0.98, CZ + 0.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(4);
-        JsonObject seal = Expect.block(c, CX, Y + 1, CZ, "hbm:seal_controller");
+        JsonObject seal = Expect.block(c, CX, Y + 1, CZ, "geontm:seal_controller");
         Expect.that(seal.toString().contains("facing=north") || seal.toString().contains("\"facing\":\"north\""),
                 "the controller's face looks back at its placer: " + seal);
         for (int x = -2; x <= 2; x++) {
             for (int z = 0; z <= 4; z++) {
                 boolean edge = x == -2 || x == 2 || z == 0 || z == 4;
-                if (edge && !(x == 0 && z == 0)) Fixtures.setBlock(c, CX + x, Y + 1, CZ + z, "hbm:seal_frame");
+                if (edge && !(x == 0 && z == 0)) Fixtures.setBlock(c, CX + x, Y + 1, CZ + z, "geontm:seal_frame");
             }
         }
         worldShot(c, "10-placed-north", X + 2.5, Y + 12, Z + 6.5, X - 8.5, Y + 1, Z - 10.5);
@@ -92,26 +92,26 @@ public final class FinalRadarUtility implements Scenario {
 
         // --- small radar: map GUI, link-slot GUI, battery by clicks ----------------------------------------
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(3);
         openRadarMap(c);
         c.screenshot("20-gui-radar-map-unpowered");
         clickRadarToggle(c, 158); // switch view -> the link slots
         c.waitScreen("GUIMachineRadarNTSlots", 5000);
         Expect.screenStaysOpen(c, "GUIMachineRadarNTSlots", 10);
-        clickFromInventory(c, "hbm:battery_creative", 9);
+        clickFromInventory(c, "geontm:battery_creative", 9);
         c.waitTicks(10);
         c.screenshot("21-gui-radar-slots-battery");
         close(c);
 
         // --- a redstone lamp beside the radar; a linker to the screen in slot 8, one to the pad in slot 0 ----
         Fixtures.setBlock(c, RX - 1, Y + 1, RZ, "minecraft:redstone_lamp");
-        Fixtures.giveOnly(c, "hbm:radar_linker", 1);
+        Fixtures.giveOnly(c, "geontm:radar_linker", 1);
         linkWith(c, screenCore[0], screenCore[2]);
-        moveIntoRadar(c, "hbm:radar_linker", 8);
-        Fixtures.giveOnly(c, "hbm:radar_linker", 1);
+        moveIntoRadar(c, "geontm:radar_linker", 8);
+        Fixtures.giveOnly(c, "geontm:radar_linker", 1);
         linkWith(c, padCore[0], padCore[2]);
-        moveIntoRadar(c, "hbm:radar_linker", 0);
+        moveIntoRadar(c, "geontm:radar_linker", 0);
         openRadarMap(c);
         clickRadarToggle(c, 158);
         c.waitScreen("GUIMachineRadarNTSlots", 5000);
@@ -122,18 +122,18 @@ public final class FinalRadarUtility implements Scenario {
         Expect.that(radarNbt.contains("radar_linker"), "the radar holds its linkers: " + radarNbt);
 
         // --- the launch pad: an anti-ballistic missile (solid fuel), which is handed the blip to chase and a battery ------------------------------------
-        c.cmd("give @s hbm:missile_anti_ballistic 1");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:missile_anti_ballistic 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(2);
         openAt(c, padCore[0] + 3.5, padCore[2] + 0.5, padCore[0] + 0.5, padCore[2] + 0.5, "Launch Pad");
-        clickFromInventory(c, "hbm:missile_anti_ballistic", 0);
-        clickFromInventory(c, "hbm:battery_creative", 2);
+        clickFromInventory(c, "geontm:missile_anti_ballistic", 0);
+        clickFromInventory(c, "geontm:battery_creative", 2);
         c.waitTicks(5);
         close(c);
 
         // --- a target: a tier-1 missile summoned high above and to the side, falling --------------------------
         int mx = RX + 40, my = Y + 190, mz = RZ + 30; // inside the force-loaded platform chunks, so it ticks
-        c.cmd("summon hbm:entity_missile_generic " + mx + " " + my + " " + mz);
+        c.cmd("summon geontm:entity_missile_generic " + mx + " " + my + " " + mz);
         c.waitTicks(40);
         // a freshly summoned missile hovers (it has no launch heading), and smart mode only counts falling ones:
         // turn smart mode off with its toggle so the hovering blip drives the redstone
@@ -152,7 +152,7 @@ public final class FinalRadarUtility implements Scenario {
         c.waitTicks(60);
         c.screenshot("23-gui-radar-map-blip");
         // hover the missile's blip and type 1: the launch command through the linker in slot 0
-        JsonObject target = entity(c, "hbm:entity_missile_generic", 400);
+        JsonObject target = entity(c, "geontm:entity_missile_generic", 400);
         Expect.that(target != null, "the target missile is still in the air");
         int[] blip = blipScreenPos(c, target.get("x").getAsDouble(), target.get("z").getAsDouble());
         c.mouseMove(blip[0], blip[1]);
@@ -163,9 +163,9 @@ public final class FinalRadarUtility implements Scenario {
         c.waitTicks(2);
         c.type("1");
         c.waitTicks(6);
-        JsonObject launched = entity(c, "hbm:entity_missile_ab", 60);
+        JsonObject launched = entity(c, "geontm:entity_missile_ab", 60);
         Expect.that(launched != null, "the radar's launch command fired the linked launch pad");
-        c.cmd("kill @e[type=hbm:entity_missile_ab]");
+        c.cmd("kill @e[type=geontm:entity_missile_ab]");
         close(c);
 
         worldShot(c, "25-radar-and-screen", RX + 4.5, Y + 3.5, RZ + 9.5, RX - 1.5, Y + 1.5, RZ - 0.5);
@@ -177,8 +177,8 @@ public final class FinalRadarUtility implements Scenario {
 
         // --- large radar: a creative generator on a connection point, its map and slots ---------------------
         // a cable on the east connection point, a creative generator behind it: the proxy cell takes the power
-        Fixtures.setBlock(c, largeCore[0] + 2, Y + 1, largeCore[2], "hbm:red_cable");
-        Fixtures.setBlock(c, largeCore[0] + 3, Y + 1, largeCore[2], "hbm:creative_generator");
+        Fixtures.setBlock(c, largeCore[0] + 2, Y + 1, largeCore[2], "geontm:red_cable");
+        Fixtures.setBlock(c, largeCore[0] + 3, Y + 1, largeCore[2], "geontm:creative_generator");
         c.waitTicks(20);
         openAt(c, largeCore[0] + 1.5, largeCore[2] + 3.5, largeCore[0] + 0.5, largeCore[2] + 1.5, "GUIMachineRadarNT");
         c.waitTicks(20);
@@ -187,13 +187,13 @@ public final class FinalRadarUtility implements Scenario {
         String largeNbt = c.blockEntity(largeCore[0], largeCore[1], largeCore[2]).toString().replaceAll("\s", "");
         Expect.that(largeNbt.contains("power:") && !largeNbt.contains("power:0L"), "the large radar took power through its proxy cell: " + largeNbt);
         worldShot(c, "28-radar-large", largeCore[0] + 7.5, Y + 6, largeCore[2] + 7.5, largeCore[0] + 0.5, Y + 3, largeCore[2] + 0.5);
-        c.cmd("kill @e[type=hbm:entity_missile_generic]");
+        c.cmd("kill @e[type=geontm:entity_missile_generic]");
 
         // --- forcefield: battery by click, button by click, the sphere ------------------------------------------
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(2);
         openAt(c, FX + 3.5, FZ + 0.5, FX + 0.5, FZ + 0.5, "Forcefield");
-        clickFromInventory(c, "hbm:battery_creative", 0);
+        clickFromInventory(c, "geontm:battery_creative", 0);
         JsonObject ffScreen = c.screen();
         c.click(ffScreen.get("left").getAsInt() + 151, ffScreen.get("top").getAsInt() + 43);
         c.waitTicks(20);
@@ -205,8 +205,8 @@ public final class FinalRadarUtility implements Scenario {
         worldShot(c, "32-forcefield-close", FX + 4.5, Y + 3, FZ + 0.5, FX + 0.5, Y + 1.5, FZ + 0.5);
 
         // --- teleporter: exit linked with the telelinker, powered by a generator, ridden -----------------------
-        Fixtures.setBlock(c, TX + 1, Y + 1, TZ, "hbm:creative_generator");
-        Fixtures.giveOnly(c, "hbm:linker", 1);
+        Fixtures.setBlock(c, TX + 1, Y + 1, TZ, "geontm:creative_generator");
+        Fixtures.giveOnly(c, "geontm:linker", 1);
         c.teleport(X + 20.5, Y + 1, Z - 2.5);
         c.waitTicks(3);
         c.lookAt(X + 20.5, Y + 0.98, Z + 0.5);
@@ -232,7 +232,7 @@ public final class FinalRadarUtility implements Scenario {
                 "stepping on the teleporter moved the player to the exit: " + after);
 
         // --- recall device: linked to the anchor, used from afar ------------------------------------------------
-        Fixtures.giveOnly(c, "hbm:anchor_remote", 1);
+        Fixtures.giveOnly(c, "geontm:anchor_remote", 1);
         c.teleport(AX + 2.5, Y + 1, AZ + 0.5);
         c.waitTicks(3);
         c.lookAt(AX + 0.5, Y + 1.5, AZ + 0.5);
@@ -266,8 +266,8 @@ public final class FinalRadarUtility implements Scenario {
         // --- silo hatch: redstone closes it, redstone again opens it, a click closes it -------------------------
         Fixtures.setBlock(c, CX, Y + 1, CZ - 1, "minecraft:redstone_block");
         c.waitTicks(5);
-        Expect.block(c, CX, Y + 1, CZ + 2, "hbm:seal_hatch");
-        Expect.block(c, CX + 1, Y + 1, CZ + 3, "hbm:seal_hatch");
+        Expect.block(c, CX, Y + 1, CZ + 2, "geontm:seal_hatch");
+        Expect.block(c, CX + 1, Y + 1, CZ + 3, "geontm:seal_hatch");
         worldShot(c, "60-seal-closed", CX + 0.5, Y + 6, CZ - 3.5, CX + 0.5, Y + 1, CZ + 2.5);
         Fixtures.setBlock(c, CX, Y + 1, CZ - 1, "minecraft:air");
         c.waitTicks(3);
@@ -280,18 +280,18 @@ public final class FinalRadarUtility implements Scenario {
         c.waitTicks(3);
         Fixtures.interact(c, CX, Y + 1, CZ);
         c.waitTicks(3);
-        Expect.block(c, CX, Y + 1, CZ + 2, "hbm:seal_hatch");
+        Expect.block(c, CX, Y + 1, CZ + 2, "geontm:seal_hatch");
         worldShot(c, "61-seal-closed-by-click", CX + 0.5, Y + 6, CZ - 3.5, CX + 0.5, Y + 1, CZ + 2.5);
 
         // --- soyuz capsule: the placed block's menu, and a lander capsule touching down ------------------------
         openAt(c, KX + 3.5, KZ + 0.5, KX + 0.5, KZ + 0.5, "Cargo Landing Capsule");
         c.screenshot("70-gui-soyuz-capsule");
         close(c);
-        c.cmd("summon hbm:entity_soyuz_capsule " + (X + 26.5) + " " + (Y + 12) + " " + (Z - 9.5));
+        c.cmd("summon geontm:entity_soyuz_capsule " + (X + 26.5) + " " + (Y + 12) + " " + (Z - 9.5));
         c.waitTicks(160);
         // 1.7 floors the landing position
         int lx = (int) Math.floor(X + 26.5), lz = (int) Math.floor(Z - 9.5);
-        Expect.block(c, lx, Y + 1, lz, "hbm:soyuz_capsule");
+        Expect.block(c, lx, Y + 1, lz, "geontm:soyuz_capsule");
         String landed = c.blockEntity(lx, Y + 1, lz).toString();
         Expect.that(landed.contains("missile_soyuz"), "the landed capsule holds the spent rocket: " + landed);
         openAt(c, lx + 3.5, lz + 0.5, lx + 0.5, lz + 0.5, "Cargo Landing Capsule");
@@ -306,7 +306,7 @@ public final class FinalRadarUtility implements Scenario {
     // --- helpers -------------------------------------------------------------------------------------------
 
     private static String waterId() {
-        return "hbm:water"; // Fluids.WATER's registry name; checked visually by the filled orbus GUI
+        return "geontm:water"; // Fluids.WATER's registry name; checked visually by the filled orbus GUI
     }
 
     private static void inventory(Client c) {

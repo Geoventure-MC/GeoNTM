@@ -1,0 +1,121 @@
+package fr.geoventure.geontm.gametest;
+
+import fr.geoventure.geontm.blocks.ModDecoBlocks;
+import fr.geoventure.geontm.inventory.recipes.CrystallizerRecipes;
+import fr.geoventure.geontm.items.ModChemicalDyeItems;
+import fr.geoventure.geontm.items.ModDataComponents;
+import fr.geoventure.geontm.items.ModFluidItems;
+import fr.geoventure.geontm.items.ModItems;
+import fr.geoventure.geontm.items.ModMedicineItems;
+import fr.geoventure.geontm.inventory.fluid.Fluids;
+import fr.geoventure.geontm.items.food.ItemCrayon;
+import fr.geoventure.geontm.items.machine.ItemChemicalDye;
+import fr.geoventure.geontm.inventory.material.MaterialShapes;
+import fr.geoventure.geontm.inventory.material.Mats;
+import fr.geoventure.geontm.items.ModAutogenItems;
+import fr.geoventure.geocore.gametest.GameTests;
+import fr.geoventure.geocore.world.ItemStacks;
+import fr.geoventure.geocore.world.Recipes;
+import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.world.item.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/** Contracts for the flattened dye families and component-sensitive shaped recipes. */
+public final class ChemicalDyeAndComponentRecipeGameTests {
+
+    private ChemicalDyeAndComponentRecipeGameTests() {}
+
+    private static final int[] COLORS = {
+            1973019, 11743532, 3887386, 5320730, 2437522, 8073150, 2651799, 11250603,
+            4408131, 14188952, 4312372, 14602026, 6719955, 12801229, 15435844, 15790320,
+    };
+
+    public static void dyeFamilies(GameTestHelper helper) {
+        helper.assertTrue(ItemChemicalDye.EnumChemDye.VALUES.length == 16,
+                "chemical dye enum no longer has 16 legacy variants");
+        helper.assertTrue(ModChemicalDyeItems.registeredCount() == 32,
+                "chemical dye and crayon registry count changed");
+        for (int i = 0; i < COLORS.length; i++) {
+            ItemChemicalDye.EnumChemDye dye = ItemChemicalDye.EnumChemDye.VALUES[i];
+            helper.assertTrue(dye.color == COLORS[i], "chemical dye tint changed at " + i);
+            ItemChemicalDye chemical = ModChemicalDyeItems.chemicalDye(dye);
+            ItemCrayon crayon = ModChemicalDyeItems.crayon(dye);
+            helper.assertTrue(chemical.getDescriptionId().equals("item.geontm.chemical_dye_" + dye.translationName())
+                            && crayon.getDescriptionId().equals("item.geontm.crayon_" + dye.translationName()),
+                    "flattened dye registry id changed at " + i);
+            ItemStack food = new ItemStack(crayon);
+            helper.assertTrue(ItemStacks.foodProperties(food) != null
+                            && ItemStacks.foodNutrition(ItemStacks.foodProperties(food)) == 3,
+                    "crayon food properties changed at " + i);
+        }
+        helper.succeed();
+    }
+
+    public static void dyeCrystallizerRecipes(GameTestHelper helper) {
+        CrystallizerRecipes.register();
+        int matches = 0;
+        for (CrystallizerRecipes.CrystallizerRecipe recipe : CrystallizerRecipes.recipes) {
+            if (!(recipe.output.getItem() instanceof ItemChemicalDye)) continue;
+            matches++;
+            helper.assertTrue(recipe.output.getCount() == 4 && recipe.duration == 20
+                            && recipe.acidAmount == 100 && recipe.productivity == 0.15F,
+                    "chemical dye crystallizer constants changed");
+        }
+        helper.assertTrue(matches == 18, "expected 18 chemical dye crystallizer recipes, found " + matches);
+        helper.succeed();
+    }
+
+    public static void componentShapedRecipes(GameTestHelper helper) {
+        List<ItemStack> white = gridWithConcrete(0);
+        ItemStack whiteStairs = Recipes.craftingResult(helper.getLevel(), 3, 3, white).orElse(ItemStack.EMPTY);
+        helper.assertTrue(whiteStairs.is(ModDecoBlocks.CONCRETE_COLORED_STAIRS.get(0).get().asItem())
+                        && whiteStairs.getCount() == 8,
+                "component-shaped white concrete stair recipe did not assemble");
+
+        List<ItemStack> orange = gridWithConcrete(1);
+        ItemStack orangeStairs = Recipes.craftingResult(helper.getLevel(), 3, 3, orange).orElse(ItemStack.EMPTY);
+        helper.assertTrue(orangeStairs.is(ModDecoBlocks.CONCRETE_COLORED_STAIRS.get(1).get().asItem())
+                        && orangeStairs.getCount() == 8,
+                "component-shaped recipe did not select the exact orange component");
+
+        List<ItemStack> mixed = gridWithConcrete(0);
+        mixed.set(8, ModDecoBlocks.concreteColoredItem(1));
+        helper.assertTrue(Recipes.craftingResult(helper.getLevel(), 3, 3, mixed).isEmpty(),
+                "component-shaped recipe accepted a mixed component input");
+
+        List<ItemStack> lightstone = List.of(
+                ModDecoBlocks.lightstoneItem(0),
+                ModDecoBlocks.lightstoneItem(0),
+                ModDecoBlocks.lightstoneItem(0),
+                ModDecoBlocks.lightstoneItem(0));
+        ItemStack tile = Recipes.craftingResult(helper.getLevel(), 2, 2, lightstone).orElse(ItemStack.EMPTY);
+        helper.assertTrue(tile.is(ModDecoBlocks.LIGHTSTONE_ITEMS.get(1).get()) && tile.getCount() == 4,
+                "lightstone tile recipe did not give four lightstone_tile");
+
+        List<ItemStack> tankRecipe = new ArrayList<>();
+        for (int i = 0; i < 9; i++) tankRecipe.add(ItemStack.EMPTY);
+        tankRecipe.set(1, new ItemStack(ModItems.plate_steel.get()));
+        tankRecipe.set(3, new ItemStack(ModAutogenItems.get(MaterialShapes.BOLT, Mats.MAT_STEEL)));
+        tankRecipe.set(4, ModFluidItems.fluid_tank.get().make(Fluids.KEROSENE, 1_000));
+        tankRecipe.set(5, new ItemStack(ModAutogenItems.get(MaterialShapes.BOLT, Mats.MAT_STEEL)));
+        tankRecipe.set(7, new ItemStack(ModItems.plate_steel.get()));
+        ItemStack tankResult = Recipes.craftingResult(helper.getLevel(), 3, 3, tankRecipe).orElse(ItemStack.EMPTY);
+        List<ItemStack> remainders = Recipes.craftingRemainders(helper.getLevel(), 3, 3, tankRecipe)
+                .orElse(List.of());
+        helper.assertTrue(tankResult.is(ModMedicineItems.jetpack_tank.get()) && remainders.size() == 9
+                        && remainders.get(4).is(ModFluidItems.fluid_tank.get())
+                        && ModFluidItems.fluid_tank.get().getFill(remainders.get(4)) == 0,
+                "filled fluid tank recipe did not return one empty tank remainder");
+        helper.succeed();
+    }
+
+    private static List<ItemStack> gridWithConcrete(int variant) {
+        List<ItemStack> grid = new ArrayList<>();
+        for (int i = 0; i < 9; i++) grid.add(ItemStack.EMPTY);
+        int[] occupied = {0, 3, 4, 6, 7, 8};
+        for (int slot : occupied) grid.set(slot, ModDecoBlocks.concreteColoredItem(variant));
+        return grid;
+    }
+}

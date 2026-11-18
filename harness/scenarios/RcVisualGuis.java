@@ -2,17 +2,17 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Opens the screen of every hbm block that has a block entity (bare placement, empty-handed right click) and
+ * Opens the screen of every geontm block that has a block entity (bare placement, empty-handed right click) and
  * screenshots it. {@code manifest.json} lists, per block, the screen class, its size, the number of slots and the
  * screenshot. Blocks that open nothing are listed under {@code noScreen}. Environment: {@code RC_GUI_FILTER=<regex>} on
  * the block id, {@code RC_GUI_FROM}/{@code RC_GUI_TO} index range into the (filtered) list.
@@ -25,7 +25,7 @@ public final class RcVisualGuis implements Scenario {
     public void run(Client c) throws Exception {
         c.waitInWorld(120_000L);
         c.markLog();
-        JsonObject ids = c.query("hbm_sweep_ids", new JsonObject());
+        JsonObject ids = c.query("geontm_sweep_ids", new JsonObject());
         String regex = System.getenv("RC_GUI_FILTER");
         List<String> blocks = new ArrayList<>();
         for (JsonElement e : ids.getAsJsonArray("blocks")) {
@@ -67,7 +67,7 @@ public final class RcVisualGuis implements Scenario {
             if (s.has("slots") && s.get("slots").isJsonArray()) o.addProperty("slots", s.getAsJsonArray("slots").size());
             c.mouseMove(2, 2);
             c.waitTicks(2);
-            o.addProperty("png", c.screenshot(String.format("%04d-%s", i, id.replace("hbm:", ""))).getFileName().toString());
+            o.addProperty("png", c.screenshot(String.format("%04d-%s", i, id.replace("geontm:", ""))).getFileName().toString());
             opened.add(o);
             c.key("escape");
             c.waitTicks(3);
@@ -79,7 +79,7 @@ public final class RcVisualGuis implements Scenario {
                 new GsonBuilder().setPrettyPrinting().create().toJson(manifest), StandardCharsets.UTF_8);
         System.out.println("[gui] opened " + opened.size() + " noScreen " + noScreen.size());
         Expect.that(opened.size() > 0, "no screen opened");
-        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|geontm)");
     }
 
     private static int intEnv(String key, int fallback) {

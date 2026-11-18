@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "geontm:blocks/difurnace_top_off",
+    "front": "geontm:blocks/difurnace_front_off_tall",
+    "side": "geontm:blocks/difurnace_side_tall"
+  }
+}

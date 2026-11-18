@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +79,7 @@ public final class RcArmorDamage implements Scenario {
         String prefix = set;
         for (int i = 0; i < 4; i++) {
             String id = prefix + "_" + suffix[i];
-            c.cmd("item replace entity @s armor." + slots[i] + " with hbm:" + id);
+            c.cmd("item replace entity @s armor." + slots[i] + " with geontm:" + id);
         }
         c.waitTicks(10);
     }
@@ -90,7 +90,7 @@ public final class RcArmorDamage implements Scenario {
     }
 
     private double health(Client c) {
-        JsonObject a = c.query("hbm_armor_set", new JsonObject());
+        JsonObject a = c.query("geontm_armor_set", new JsonObject());
         return a.get("health").getAsDouble();
     }
 }

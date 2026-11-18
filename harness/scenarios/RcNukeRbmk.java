@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * RBMK block with every column type in one 5x3 grid: placed by hand, fuelled, run for 200 ticks, every menu
@@ -14,9 +14,9 @@ public final class RcNukeRbmk implements Scenario {
     private static final int Y = 100;
     private static final int Z = 200;
     private static final String[][] GRID = {
-            {"hbm:rbmk_fuel_rod_moderated", "hbm:rbmk_fuel_rod", "hbm:rbmk_control_mod", "hbm:rbmk_fuel_rod", "hbm:rbmk_fuel_rod_moderated"},
-            {"hbm:rbmk_boiler", "hbm:rbmk_reflector", "hbm:rbmk_absorber", "hbm:rbmk_moderator", "hbm:rbmk_cooler"},
-            {"hbm:rbmk_heater", "hbm:rbmk_outgasser", "hbm:rbmk_storage", "hbm:rbmk_blank", "hbm:rbmk_control_auto"}};
+            {"geontm:rbmk_fuel_rod_moderated", "geontm:rbmk_fuel_rod", "geontm:rbmk_control_mod", "geontm:rbmk_fuel_rod", "geontm:rbmk_fuel_rod_moderated"},
+            {"geontm:rbmk_boiler", "geontm:rbmk_reflector", "geontm:rbmk_absorber", "geontm:rbmk_moderator", "geontm:rbmk_cooler"},
+            {"geontm:rbmk_heater", "geontm:rbmk_outgasser", "geontm:rbmk_storage", "geontm:rbmk_blank", "geontm:rbmk_control_auto"}};
 
     @Override
     public void run(Client c) throws Exception {
@@ -37,12 +37,12 @@ public final class RcNukeRbmk implements Scenario {
         view(c, "01-cold-south", X + 2.5, Y + 6, Z + 9, X + 2.5, Y + 3, Z + 1);
 
         // fuel: two driver sources next to uranium
-        String[] fuels = {"hbm:rbmk_fuel_ra226be", "hbm:rbmk_fuel_meu", "", "hbm:rbmk_fuel_heu235", "hbm:rbmk_fuel_ueu"};
+        String[] fuels = {"geontm:rbmk_fuel_ra226be", "geontm:rbmk_fuel_meu", "", "geontm:rbmk_fuel_heu235", "geontm:rbmk_fuel_ueu"};
         for (int col = 0; col < 5; col++) {
             if (fuels[col].isEmpty()) continue;
             c.cmd("item replace block " + (X + col) + " " + (Y + 1) + " " + Z + " container.0 with " + fuels[col]);
         }
-        c.cmd("item replace block " + (X + 1) + " " + (Y + 1) + " " + (Z + 2) + " container.0 with hbm:powder_lithium 16");
+        c.cmd("item replace block " + (X + 1) + " " + (Y + 1) + " " + (Z + 2) + " container.0 with geontm:powder_lithium 16");
         c.cmd("data merge block " + (X + 2) + " " + (Y + 1) + " " + Z + " {targetLevel:0.6d}");
         c.cmd("data merge block " + (X) + " " + (Y + 1) + " " + (Z + 1) + " {}");
         c.waitTicks(200);

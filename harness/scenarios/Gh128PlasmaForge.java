@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,12 +29,12 @@ public class Gh128PlasmaForge implements Scenario {
         c.cmd("gamerule sendCommandFeedback false");
         c.waitTicks(5);
 
-        place(c, "hbm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
-        expectCore(c, 0, G, 0, "hbm:fusion_torus", null);
-        place(c, "hbm:fusion_klystron_creative", 18.5, G, 0.5, 15, Y, 0);
-        expectCore(c, 12, G, 0, "hbm:fusion_klystron_creative", "east");
-        place(c, "hbm:fusion_plasma_forge", FORGE_X + 0.5, G, -7.5, FORGE_X, Y, -5);
-        expectCore(c, FORGE_X, G, 0, "hbm:fusion_plasma_forge", "north");
+        place(c, "geontm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
+        expectCore(c, 0, G, 0, "geontm:fusion_torus", null);
+        place(c, "geontm:fusion_klystron_creative", 18.5, G, 0.5, 15, Y, 0);
+        expectCore(c, 12, G, 0, "geontm:fusion_klystron_creative", "east");
+        place(c, "geontm:fusion_plasma_forge", FORGE_X + 0.5, G, -7.5, FORGE_X, Y, -5);
+        expectCore(c, FORGE_X, G, 0, "geontm:fusion_plasma_forge", "north");
 
         c.cmd("data merge block " + FORGE_X + " " + G + " 0 {recipe0:\"plsm.exsteelplating\"}");
         c.cmd("clear");
@@ -43,10 +43,10 @@ public class Gh128PlasmaForge implements Scenario {
         Fixtures.interact(c, FORGE_X, G, -5);
         c.waitScreen("PlasmaForge", 5_000L);
         Expect.screenStaysOpen(c, "PlasmaForge", 5);
-        insert(c, "hbm:battery_creative", 1, 0);
-        insert(c, "hbm:plate_cast_steel", 8, 3);
-        insert(c, "hbm:plate_titanium", 8, 4);
-        insert(c, "hbm:bolt_steel", 32, 5);
+        insert(c, "geontm:battery_creative", 1, 0);
+        insert(c, "geontm:plate_cast_steel", 8, 3);
+        insert(c, "geontm:plate_titanium", 8, 4);
+        insert(c, "geontm:bolt_steel", 32, 5);
         closeAll(c);
 
         long idle = forgeTu(c);
@@ -87,14 +87,14 @@ public class Gh128PlasmaForge implements Scenario {
         c.screenshot("20-forge-beside-torus");
 
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|fusion|plasma)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|fusion|plasma)");
         System.out.println("[Gh128] PASS");
     }
 
     /** Refills what a D-D burn spends: 20 mB a tick of deuterium, plus coolant to stay at 123 K. */
     private static void burn(Client c) {
         c.cmd("data merge block 0 " + G + " 0 {recipe0:\"fus.dd\",power:10000000L,temperature:123F,t0:4000,t1:0,"
-                + "ft0:4000,ft0_type:\"hbm:deuterium\",ft3:0}");
+                + "ft0:4000,ft0_type:\"geontm:deuterium\",ft3:0}");
     }
 
     private static long forgeTu(Client c) {
@@ -103,7 +103,7 @@ public class Gh128PlasmaForge implements Scenario {
         params.addProperty("y", G);
         params.addProperty("z", 0);
         for (int attempt = 0; attempt < 20; attempt++) {
-            JsonObject result = c.query("hbm_block_info", params);
+            JsonObject result = c.query("geontm_block_info", params);
             if (result.has("gauges")) {
                 for (JsonElement gauge : result.getAsJsonArray("gauges")) {
                     JsonObject g = gauge.getAsJsonObject();

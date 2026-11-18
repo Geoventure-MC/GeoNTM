@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
@@ -27,16 +27,16 @@ public class PaintedBlocks implements Scenario {
         Fixtures.platform(c, 4, Y, 0, 16);
         c.cmd("fill -8 " + (Y + 1) + " 2 18 " + (D + 4) + " 8 minecraft:air");
         c.cmd("setblock -4 " + D + " " + Z + " minecraft:stone");
-        c.cmd("setblock -2 " + D + " " + Z + " hbm:red_cable_paintable[overlay=false]");
-        c.cmd("setblock 0 " + D + " " + Z + " hbm:pneumatic_tube_paintable[overlay=false]");
-        c.cmd("setblock 2 " + D + " " + Z + " hbm:red_cable_paintable");
-        c.cmd("setblock 4 " + D + " " + Z + " hbm:pneumatic_tube_paintable");
-        c.cmd("setblock 6 " + D + " " + Z + " hbm:fluid_duct_paintable{type:\"hbm:oil\"}");
-        c.cmd("setblock 8 " + D + " " + Z + " hbm:fluid_duct_paintable{type:\"hbm:hydrogen\"}");
-        c.cmd("setblock 10 " + D + " " + Z + " hbm:fluid_duct_gauge[facing=north]");
-        c.cmd("setblock 12 " + D + " " + Z + " hbm:fluid_duct_paintable[overlay=false]");
-        c.cmd("setblock 14 " + D + " " + Z + " hbm:fluid_duct_paintable");
-        c.cmd("setblock 16 " + D + " " + Z + " hbm:fluid_duct_paintable_block_exhaust");
+        c.cmd("setblock -2 " + D + " " + Z + " geontm:red_cable_paintable[overlay=false]");
+        c.cmd("setblock 0 " + D + " " + Z + " geontm:pneumatic_tube_paintable[overlay=false]");
+        c.cmd("setblock 2 " + D + " " + Z + " geontm:red_cable_paintable");
+        c.cmd("setblock 4 " + D + " " + Z + " geontm:pneumatic_tube_paintable");
+        c.cmd("setblock 6 " + D + " " + Z + " geontm:fluid_duct_paintable{type:\"geontm:oil\"}");
+        c.cmd("setblock 8 " + D + " " + Z + " geontm:fluid_duct_paintable{type:\"geontm:hydrogen\"}");
+        c.cmd("setblock 10 " + D + " " + Z + " geontm:fluid_duct_gauge[facing=north]");
+        c.cmd("setblock 12 " + D + " " + Z + " geontm:fluid_duct_paintable[overlay=false]");
+        c.cmd("setblock 14 " + D + " " + Z + " geontm:fluid_duct_paintable");
+        c.cmd("setblock 16 " + D + " " + Z + " geontm:fluid_duct_paintable_block_exhaust");
         c.waitTicks(5);
         for (int x : new int[]{-2, 0, 2, 4, 12, 14, 16}) paint(c, x, "minecraft:stone");
         c.cmd("clear");

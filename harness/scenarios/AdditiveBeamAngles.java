@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Additive effects seen from every side (2026-10-06): the FEnSU's arcs and the Maxwell's microwave spirals had been
@@ -39,10 +39,10 @@ public final class AdditiveBeamAngles implements Scenario {
             hideGui = c.setOption("hide_gui", "true");
             fov = c.setOption("fov", "70");
 
-            Fixtures.setBlock(c, REDD_X, L, Z, "hbm:machine_battery_redd");
+            Fixtures.setBlock(c, REDD_X, L, Z, "geontm:machine_battery_redd");
             c.cmd("data merge block " + REDD_X + " " + L + " " + Z + " {power:\"1000000000000000000\"}");
 
-            Fixtures.setBlock(c, MAX_X, L, Z, "hbm:turret_maxwell");
+            Fixtures.setBlock(c, MAX_X, L, Z, "geontm:turret_maxwell");
             c.cmd("data merge block " + MAX_X + " " + L + " " + Z
                     + " {power:10000000L,isOn:1b,targetMobs:1b,targetPlayers:0b}");
             c.cmd("summon minecraft:zombie " + (MAX_X + 0.5) + " " + L + " " + (Z + 9.5)
@@ -52,9 +52,9 @@ public final class AdditiveBeamAngles implements Scenario {
             c.waitTicks(60);
 
             JsonObject redd = c.block(REDD_X, L, Z);
-            Expect.that(redd.get("block").getAsString().equals("hbm:machine_battery_redd"), "REDD placed: " + redd);
+            Expect.that(redd.get("block").getAsString().equals("geontm:machine_battery_redd"), "REDD placed: " + redd);
             JsonObject maxwell = c.block(MAX_X, L, Z);
-            Expect.that(maxwell.get("block").getAsString().equals("hbm:turret_maxwell"), "Maxwell placed: " + maxwell);
+            Expect.that(maxwell.get("block").getAsString().equals("geontm:turret_maxwell"), "Maxwell placed: " + maxwell);
 
             // The REDD picks which arcs to draw at random every frame: two passes so a gap is not mistaken for chance.
             ring(c, "redd", REDD_X + 0.5, L + 5.5, Z + 0.5, 13.0, 3.0, null);

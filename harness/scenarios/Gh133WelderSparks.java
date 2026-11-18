@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -33,16 +33,16 @@ public class Gh133WelderSparks implements Scenario {
         c.cmd("time set 18000");
         c.waitTicks(5);
 
-        film(c, "hbm:machine_arc_welder", "welder", 4, new Object[][]{{"hbm:wire_fine_copper", 0}}, 0);
-        film(c, "hbm:machine_soldering_station", "soldering", 7, new Object[][]{
-                {"hbm:circuit_vacuum_tube", 0}, {"hbm:circuit_capacitor", 1}, {"hbm:circuit_pcb", 3}, {"hbm:wire_fine_lead", 5}}, 25);
+        film(c, "geontm:machine_arc_welder", "welder", 4, new Object[][]{{"geontm:wire_fine_copper", 0}}, 0);
+        film(c, "geontm:machine_soldering_station", "soldering", 7, new Object[][]{
+                {"geontm:circuit_vacuum_tube", 0}, {"geontm:circuit_capacitor", 1}, {"geontm:circuit_pcb", 3}, {"geontm:wire_fine_lead", 5}}, 25);
 
         tauon(c);
         derrick(c);
 
         c.cmd("time set 6000");
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|particle)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|particle)");
         System.out.println("[Gh133] PASS");
     }
 
@@ -71,7 +71,7 @@ public class Gh133WelderSparks implements Scenario {
 
         Fixtures.interact(c, 0, G, 0);
         c.waitTicks(10);
-        insert(c, "hbm:battery_creative", 1, batterySlot);
+        insert(c, "geontm:battery_creative", 1, batterySlot);
         c.key("escape");
         c.waitTicks(5);
         aim(c);
@@ -92,9 +92,9 @@ public class Gh133WelderSparks implements Scenario {
     private static void tauon(Client c) throws Exception {
         c.cmd("fill -10 " + G + " -10 10 " + (Y + 12) + " 10 minecraft:air");
         c.cmd("difficulty normal");
-        Fixtures.setBlock(c, 0, G, 0, "hbm:turret_tauon");
+        Fixtures.setBlock(c, 0, G, 0, "geontm:turret_tauon");
         c.cmd("data merge block 0 " + G + " 0 {power:100000L,isOn:1b,targetMobs:1b,targetAnimals:1b}");
-        c.cmd("item replace block 0 " + G + " 0 container.1 with hbm:ammo_standard_tau_uranium 64");
+        c.cmd("item replace block 0 " + G + " 0 container.1 with geontm:ammo_standard_tau_uranium 64");
         c.cmd("summon minecraft:iron_golem 0.5 " + G + " 9.5 {NoAI:1b,PersistenceRequired:1b,Silent:1b}");
         String attr = c.node().startsWith("26.1") ? "minecraft:max_health" : "minecraft:generic.max_health";
         c.cmd("attribute @e[type=minecraft:iron_golem,limit=1] " + attr + " base set 1000");
@@ -109,14 +109,14 @@ public class Gh133WelderSparks implements Scenario {
             c.screenshot("tauon-" + i);
             c.waitTicks(2);
         }
-        double health = golemHealth(c);
+        double health = geocoreHealth(c);
         System.out.println("[Gh133] tauon target health " + health);
         Expect.that(health < 1000, "the turret hit its target");
         c.cmd("kill @e[type=minecraft:iron_golem]");
         c.cmd("difficulty peaceful");
     }
 
-    private static double golemHealth(Client c) {
+    private static double geocoreHealth(Client c) {
         JsonObject params = new JsonObject();
         params.addProperty("radius", 60);
         params.addProperty("type", "minecraft:iron_golem");
@@ -127,13 +127,13 @@ public class Gh133WelderSparks implements Scenario {
             JsonObject o = e.getAsJsonObject();
             if (o.has("health")) return o.get("health").getAsDouble();
         }
-        Expect.that(false, "no golem health: " + result);
+        Expect.that(false, "no geocore health: " + result);
         return 0;
     }
 
     private static void derrick(Client c) throws Exception {
         c.cmd("fill -10 " + G + " -10 10 " + (Y + 12) + " 10 minecraft:air");
-        Fixtures.setBlock(c, 0, G, 0, "hbm:machine_well");
+        Fixtures.setBlock(c, 0, G, 0, "geontm:machine_well");
         c.teleport(0.5, G + 1, -7.5);
         c.lookAt(0.5, G + 5, 0.5);
         c.send("clear_chat");

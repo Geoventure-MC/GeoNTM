@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * §19ed-followups item 1: the conveyor wand ghost run and the rebar placer box are frame-start
@@ -31,7 +31,7 @@ public final class FollowupPreviews implements Scenario {
         c.waitTicks(4);
 
         // ---- conveyor wand ghost run -------------------------------------------------------------------
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 64);
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 64);
         c.hotbar(1);
         c.teleport(0.5, Y + 1, -3.5);
         c.waitTicks(4);
@@ -52,9 +52,9 @@ public final class FollowupPreviews implements Scenario {
         c.waitTicks(3);
         c.keyUp("key.sneak");
         c.waitTicks(3);
-        Expect.that(c.block(0, Y + 1, 0).get("block").getAsString().startsWith("hbm:conveyor"),
+        Expect.that(c.block(0, Y + 1, 0).get("block").getAsString().startsWith("geontm:conveyor"),
                 "the wand run starts on the gold block: " + c.block(0, Y + 1, 0));
-        Expect.that(c.block(4, Y + 1, 4).get("block").getAsString().startsWith("hbm:conveyor"),
+        Expect.that(c.block(4, Y + 1, 4).get("block").getAsString().startsWith("geontm:conveyor"),
                 "the wand run ends on the diamond block: " + c.block(4, Y + 1, 4));
         Fixtures.giveOnly(c, "minecraft:stick", 1);
         shot(c, "12-conveyor-built-east", 7.5, Y + 1, 4.5, 4.5, Y + 0.98, 4.5);
@@ -62,8 +62,8 @@ public final class FollowupPreviews implements Scenario {
 
         // ---- rebar placer box ------------------------------------------------------------------------------
         c.cmd("clear");
-        c.cmd("give @s hbm:rebar_placer 1");
-        c.cmd("give @s hbm:rebar 64");
+        c.cmd("give @s geontm:rebar_placer 1");
+        c.cmd("give @s geontm:rebar 64");
         c.waitTicks(3);
         c.hotbar(1);
         c.teleport(10.5, Y + 1, -2.5);
@@ -80,7 +80,7 @@ public final class FollowupPreviews implements Scenario {
         c.waitTicks(2);
         c.use(1);
         c.waitTicks(4);
-        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 2; dz++) Expect.block(c, 10 + dx, Y + 1, dz, "hbm:rebar");
+        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 2; dz++) Expect.block(c, 10 + dx, Y + 1, dz, "geontm:rebar");
         shot(c, "22-rebar-placed-east", 15.5, Y + 1, 2.5, 12.5, Y + 0.98, 2.5);
 
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");

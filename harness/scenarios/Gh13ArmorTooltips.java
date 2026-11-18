@@ -1,19 +1,19 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 13: the NCR power armor helmet showed a green charge line and purple resistance lines in another order,
  * and no gas mask or helmet showed 1.7's Shift-gated protection classes. Reads the client's tooltip runs for the helmet,
- * a gas mask and a filter with and without Shift through {@code hbm_release mode=tooltip}, then hovers each for
+ * a gas mask and a filter with and without Shift through {@code geontm_release mode=tooltip}, then hovers each for
  * screenshots.
  */
 public final class Gh13ArmorTooltips implements Scenario {
 
-    private static final String[] ITEMS = {"hbm:ncrpa_helmet", "hbm:gas_mask", "hbm:gas_mask_filter"};
+    private static final String[] ITEMS = {"geontm:ncrpa_helmet", "geontm:gas_mask", "geontm:gas_mask_filter"};
     private static final String HINT = "dark_gray/i:Hold <|yellow/i:LSHIFT|dark_gray/i:> to display protection info";
 
     @Override
@@ -96,7 +96,7 @@ public final class Gh13ArmorTooltips implements Scenario {
         JsonObject p = new JsonObject();
         p.addProperty("mode", "tooltip");
         p.addProperty("slot", slot);
-        JsonArray styled = c.query("hbm_release", p).getAsJsonArray("styled");
+        JsonArray styled = c.query("geontm_release", p).getAsJsonArray("styled");
         String[] out = new String[styled.size()];
         for (int i = 0; i < out.length; i++) out[i] = merge(styled.get(i).getAsString());
         System.out.println("[Gh13] slot " + slot + ": " + String.join(" / ", out));

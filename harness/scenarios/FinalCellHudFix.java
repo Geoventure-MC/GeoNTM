@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 2026-09-25 cell / HUD correction.
@@ -24,12 +24,12 @@ public final class FinalCellHudFix implements Scenario {
 
     /** fluid id (the port's Fluids order), CellVariants index, expected English name. */
     private static final Object[][] CELLS = {
-            {"hbm:uf6", 1, "Uranium Hexafluoride Cell"},
-            {"hbm:puf6", 2, "Plutonium Hexafluoride Cell"},
-            {"hbm:amat", 3, "Antimatter Cell"},
-            {"hbm:deuterium", 4, "Deuterium Cell"},
-            {"hbm:tritium", 5, "Tritium Cell"},
-            {"hbm:aschrab", 7, "Antischrabidium Cell"},
+            {"geontm:uf6", 1, "Uranium Hexafluoride Cell"},
+            {"geontm:puf6", 2, "Plutonium Hexafluoride Cell"},
+            {"geontm:amat", 3, "Antimatter Cell"},
+            {"geontm:deuterium", 4, "Deuterium Cell"},
+            {"geontm:tritium", 5, "Tritium Cell"},
+            {"geontm:aschrab", 7, "Antischrabidium Cell"},
     };
 
     private static boolean legacy(Client c) {
@@ -39,8 +39,8 @@ public final class FinalCellHudFix implements Scenario {
     /** A full cell; {@code variant} is the sprite its fluid selects (no longer stored, History §19es-itemvariant). */
     private static String cell(Client c, String fluid, int variant) {
         return legacy(c)
-                ? "hbm:cell{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : "hbm:cell[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+                ? "geontm:cell{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : "geontm:cell[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     @Override
@@ -70,7 +70,7 @@ public final class FinalCellHudFix implements Scenario {
 
     private void cells(Client c) {
         // SAS3 through the real ItemCell.getFullCell path: the prototype kit's four cells.
-        c.cmd("give @s hbm:prototype_kit 1");
+        c.cmd("give @s geontm:prototype_kit 1");
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, -80);
         c.hotbar(1);
@@ -78,15 +78,15 @@ public final class FinalCellHudFix implements Scenario {
         c.use(2);
         c.waitTicks(5);
         strip(c); // the kit dresses a grey hazmat suit
-        Expect.that(count(c, "hbm:cell", "Schrabidium Trisulfide Cell") == 4,
+        Expect.that(count(c, "geontm:cell", "Schrabidium Trisulfide Cell") == 4,
                 "prototype kit gave four cells named Schrabidium Trisulfide Cell: " + c.inventory());
 
-        c.cmd("give @s hbm:cell 1");
+        c.cmd("give @s geontm:cell 1");
         for (Object[] row : CELLS) c.cmd("give @s " + cell(c, (String) row[0], (Integer) row[1]) + " 1");
         c.waitTicks(5);
-        Expect.that(count(c, "hbm:cell", "Empty Cell") == 1, "a bare cell is named Empty Cell");
+        Expect.that(count(c, "geontm:cell", "Empty Cell") == 1, "a bare cell is named Empty Cell");
         for (Object[] row : CELLS) {
-            Expect.that(count(c, "hbm:cell", (String) row[2]) == 1, "full cell named " + row[2] + ": " + c.inventory());
+            Expect.that(count(c, "geontm:cell", (String) row[2]) == 1, "full cell named " + row[2] + ": " + c.inventory());
         }
 
         c.key("e");
@@ -113,12 +113,12 @@ public final class FinalCellHudFix implements Scenario {
         c.cmd("effect clear @s");
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, 10);
-        c.cmd("item replace entity @s armor.head with hbm:ajr_helmet");
-        c.cmd("item replace entity @s armor.chest with hbm:ajr_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:ajr_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:ajr_boots");
+        c.cmd("item replace entity @s armor.head with geontm:ajr_helmet");
+        c.cmd("item replace entity @s armor.chest with geontm:ajr_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:ajr_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:ajr_boots");
         c.waitTicks(20);
-        JsonObject a = c.query("hbm_armor_set", new JsonObject());
+        JsonObject a = c.query("geontm_armor_set", new JsonObject());
         Expect.that(a.get("fsb").getAsBoolean(), "AJR full set worn: " + a);
         Expect.that(a.getAsJsonObject("chest").get("charge").getAsLong() > 0, "AJR has charge to show: " + a);
         c.screenshot("20-first-person-ajr-charge-bars-with-chat");

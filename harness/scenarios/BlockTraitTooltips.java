@@ -1,14 +1,14 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /** 1.12.2's "[Radiation Shielding]" and "Blast Resistance" block tooltip lines, hovered in the survival inventory. */
 public final class BlockTraitTooltips implements Scenario {
 
-    private static final String[] ITEMS = {"hbm:brick_concrete", "hbm:block_lead", "hbm:crate_tungsten",
-            "hbm:reinforced_glass", "hbm:concrete_smooth", "minecraft:obsidian"};
+    private static final String[] ITEMS = {"geontm:brick_concrete", "geontm:block_lead", "geontm:crate_tungsten",
+            "geontm:reinforced_glass", "geontm:concrete_smooth", "minecraft:obsidian"};
 
     @Override
     public void run(Client c) throws Exception {

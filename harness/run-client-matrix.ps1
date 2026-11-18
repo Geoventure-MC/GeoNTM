@@ -5,8 +5,8 @@ param(
     [switch]$NoBuild
 )
 $ErrorActionPreference = 'Stop'
-# The CLI lives in the Golem Core checkout next to this repository (../Golem-Core/harness).
-$Harness = Join-Path $PSScriptRoot '..\..\Golem-Core\harness\harness.cmd'
+# The CLI lives in the GeoCore checkout next to this repository (../GeoCore/harness).
+$Harness = Join-Path $PSScriptRoot '..\..\GeoCore\harness\harness.cmd'
 $results = @()
 Push-Location $PSScriptRoot
 try {

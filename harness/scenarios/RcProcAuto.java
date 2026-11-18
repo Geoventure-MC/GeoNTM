@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -21,14 +21,14 @@ public final class RcProcAuto implements Scenario {
     private record Case(String name, String block, String input, int outSlot, String outItem) {}
 
     private static final Case[] CASES = {
-            new Case("shredder", "machine_shredder", "minecraft:iron_ingot", 9, "hbm:powder_iron"),
+            new Case("shredder", "machine_shredder", "minecraft:iron_ingot", 9, "geontm:powder_iron"),
             new Case("centrifuge", "machine_centrifuge", "minecraft:iron_ore", 2, "minecraft:gravel"),
-            new Case("epress", "machine_epress", "minecraft:iron_ingot", 3, "hbm:plate_iron"),
+            new Case("epress", "machine_epress", "minecraft:iron_ingot", 3, "geontm:plate_iron"),
             new Case("efurnace", "machine_electric_furnace_off", "minecraft:iron_ore", 2, "minecraft:iron_ingot"),
-            new Case("difurnace", "machine_difurnace_off", "minecraft:iron_ingot", 3, "hbm:ingot_steel"),
-            new Case("press", "machine_press", "minecraft:iron_ingot", 3, "hbm:plate_iron"),
-            new Case("ashpit", "machine_ashpit", "minecraft:iron_ingot", 0, "hbm:powder_ash_wood"),
-            new Case("rtgfurnace", "machine_difurnace_rtg_off", "minecraft:iron_ingot", 2, "hbm:ingot_steel"),
+            new Case("difurnace", "machine_difurnace_off", "minecraft:iron_ingot", 3, "geontm:ingot_steel"),
+            new Case("press", "machine_press", "minecraft:iron_ingot", 3, "geontm:plate_iron"),
+            new Case("ashpit", "machine_ashpit", "minecraft:iron_ingot", 0, "geontm:powder_ash_wood"),
+            new Case("rtgfurnace", "machine_difurnace_rtg_off", "minecraft:iron_ingot", 2, "geontm:ingot_steel"),
             new Case("autocrafter", "machine_autocrafter", "minecraft:iron_ingot", 0, "minecraft:stick"),
     };
 
@@ -51,7 +51,7 @@ public final class RcProcAuto implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -59,7 +59,7 @@ public final class RcProcAuto implements Scenario {
         c.cmd("fill -10 " + (Y + 1) + " -10 10 " + (Y + 14) + " 10 minecraft:air");
         c.cmd("fill -10 " + (Y - 3) + " -10 10 " + Y + " 10 minecraft:stone");
         c.waitTicks(3);
-        Fixtures.placeOnTop(c, "hbm:" + cs.block(), 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:" + cs.block(), 0, Y, 0);
         c.waitTicks(6);
         int[] core = findCore(c);
         if (core == null) {

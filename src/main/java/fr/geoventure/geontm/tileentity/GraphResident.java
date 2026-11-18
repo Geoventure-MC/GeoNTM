@@ -1,0 +1,29 @@
+package fr.geoventure.geontm.tileentity;
+
+import fr.geoventure.geontm.blocks.multiblock.BlockMultiblockCore;
+import fr.geoventure.geontm.uninos.graph.EndpointRegistry;
+import fr.geoventure.geontm.uninos.graph.LevelNodeGraph;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.entity.BlockEntity;
+
+/**
+ * What a block entity tells the graph when it arrives: the faces around it may have changed, and if it
+ * is an endpoint in its own right it says so.
+ *
+ * <p>Called from {@code clearRemoved}, which fires on every chunk load, so both halves are idempotent
+ * by construction.
+ */
+public interface GraphResident {
+
+    default void onGraphLoad(ServerLevel server) {
+    }
+
+    static void onLoad(BlockEntity be) {
+        if (!(be.getLevel() instanceof ServerLevel server)) return;
+        LevelNodeGraph.invalidateEndpointsAround(server, be.getBlockPos());
+        if (!(be.getBlockState().getBlock() instanceof BlockMultiblockCore)) {
+            EndpointRegistry.declareSelfIfEndpoint(server, be);
+        }
+        if (be instanceof GraphResident resident) resident.onGraphLoad(server);
+    }
+}

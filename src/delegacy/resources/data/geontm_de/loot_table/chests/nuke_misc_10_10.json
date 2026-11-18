@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/nuke_misc"
+        }
+      ],
+      "rolls": 10.0
+    }
+  ],
+  "random_sequence": "geontm_de:chests/nuke_misc_10_10"
+}

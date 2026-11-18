@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "geontm:blocks/machine_furnace_brick_side",
+    "down": "geontm:blocks/machine_furnace_brick_bottom",
+    "up": "geontm:blocks/machine_furnace_brick_top",
+    "north": "geontm:blocks/machine_furnace_brick_front_on",
+    "south": "geontm:blocks/machine_furnace_brick_side",
+    "east": "geontm:blocks/machine_furnace_brick_side",
+    "west": "geontm:blocks/machine_furnace_brick_side"
+  }
+}

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 157, point 2: after the player died, a foundry mold's installed mold and a battery socket's battery
@@ -29,9 +29,9 @@ public class Gh157RespawnSync implements Scenario {
         c.cmd("spawnpoint @s 0 " + G + " -4");
         c.waitTicks(5);
 
-        Fixtures.placeOnTop(c, "hbm:foundry_mold", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:foundry_mold", 0, Y, 0);
         c.waitTicks(5);
-        Fixtures.giveOnly(c, "hbm:mold_ingot", 1);
+        Fixtures.giveOnly(c, "geontm:mold_ingot", 1);
         c.teleport(0.5, G, -2.5);
         c.waitTicks(3);
         c.lookAt(0.5, G + 0.4, 0.5);
@@ -39,7 +39,7 @@ public class Gh157RespawnSync implements Scenario {
         c.waitTicks(10);
         Expect.that(nbt(c, 0, G, 0).contains("mold_ingot"), "the mold went in: " + nbt(c, 0, G, 0));
 
-        Fixtures.placeOnTop(c, "hbm:machine_battery_socket", 4, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_battery_socket", 4, Y, 0);
         c.waitTicks(8);
         int[] core = findCore(c);
         Expect.that(core != null, "the socket was placed");
@@ -48,7 +48,7 @@ public class Gh157RespawnSync implements Scenario {
         c.waitTicks(3);
         Fixtures.interact(c, core[0], G, core[2]);
         c.waitTicks(15);
-        insert(c, "hbm:battery_lead", 0);
+        insert(c, "geontm:battery_lead", 0);
         c.key("escape");
         c.waitTicks(10);
 
@@ -78,7 +78,7 @@ public class Gh157RespawnSync implements Scenario {
         c.cmd("gamerule immediate_respawn false");
         c.cmd("gamerule keepInventory false");
         c.cmd("gamerule keep_inventory false");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore)");
         System.out.println("[Gh157] PASS");
     }
 
@@ -90,7 +90,7 @@ public class Gh157RespawnSync implements Scenario {
         c.waitTicks(6);
         JsonObject params = new JsonObject();
         params.addProperty("mode", "look");
-        JsonObject result = c.query("hbm_small", params);
+        JsonObject result = c.query("geontm_small", params);
         return result.has("lines") ? result.get("lines").toString() : result.toString();
     }
 

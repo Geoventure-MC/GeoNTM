@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The placed lantern post stands centred on its block column (1.7 {@code RenderLantern} translates to the block
@@ -25,7 +25,7 @@ public final class LanternPlaced implements Scenario {
         c.cmd("fill " + (X - 2) + " " + (Y + 1) + " " + (Z + 4) + " " + (X - 2) + " " + (Y + 5) + " " + (Z + 4) + " minecraft:stone");
         c.teleport(X + 0.5, Y + 1, Z + 1.5);
         c.waitTicks(5);
-        Fixtures.placeOnTop(c, "hbm:lantern", X, Y, Z + 4);
+        Fixtures.placeOnTop(c, "geontm:lantern", X, Y, Z + 4);
         c.waitTicks(10);
         JsonObject block = c.block(X, Y + 1, Z + 4);
         Expect.that(block.toString().contains("lantern"), "lantern placed: " + block);

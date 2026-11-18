@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * RBMK console and display panel in the world: a seven column row (fuel, manual rod, boiler, auto rod, absorber, fuel, manual
@@ -16,8 +16,8 @@ public final class RcNuke2Console implements Scenario {
     private static final int X = 300;
     private static final int Y = 100;
     private static final int Z = 300;
-    private static final String[] ROW = {"hbm:rbmk_fuel_rod", "hbm:rbmk_control", "hbm:rbmk_boiler", "hbm:rbmk_control_auto",
-            "hbm:rbmk_absorber", "hbm:rbmk_fuel_rod", "hbm:rbmk_control"};
+    private static final String[] ROW = {"geontm:rbmk_fuel_rod", "geontm:rbmk_control", "geontm:rbmk_boiler", "geontm:rbmk_control_auto",
+            "geontm:rbmk_absorber", "geontm:rbmk_fuel_rod", "geontm:rbmk_control"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -34,15 +34,15 @@ public final class RcNuke2Console implements Scenario {
             Expect.equal(ROW[i], placed.get("block").getAsString(), "placed " + ROW[i]);
         }
         int cy = Y + 1;
-        c.cmd("item replace block " + (X - 3) + " " + cy + " " + Z + " container.0 with hbm:rbmk_fuel_ueu");
-        c.cmd("item replace block " + (X + 2) + " " + cy + " " + Z + " container.0 with hbm:rbmk_fuel_heu235");
+        c.cmd("item replace block " + (X - 3) + " " + cy + " " + Z + " container.0 with geontm:rbmk_fuel_ueu");
+        c.cmd("item replace block " + (X + 2) + " " + cy + " " + Z + " container.0 with geontm:rbmk_fuel_heu235");
         c.cmd("data merge block " + (X - 2) + " " + cy + " " + Z + " {level:0.4d,targetLevel:0.4d}");
         c.cmd("data merge block " + (X + 3) + " " + cy + " " + Z + " {level:0.9d,targetLevel:0.9d}");
         c.waitTicks(10);
 
         // a console on each of two facings, in front of and behind the row
-        int[] south = place(c, "hbm:rbmk_console", X, Z - 12, X + 2.5, Z - 12 + 0.5, "south side");
-        int[] north = place(c, "hbm:rbmk_console", X + 16, Z + 12, X + 16 - 2.5, Z + 12 + 0.5, "north side");
+        int[] south = place(c, "geontm:rbmk_console", X, Z - 12, X + 2.5, Z - 12 + 0.5, "south side");
+        int[] north = place(c, "geontm:rbmk_console", X + 16, Z + 12, X + 16 - 2.5, Z + 12 + 0.5, "north side");
         System.out.println("[RcNuke2Console] consoles at " + south[0] + "," + south[1] + "," + south[2] + " and " + north[0] + "," + north[1] + "," + north[2]);
         Expect.that(south != null && north != null, "both consoles placed");
         JsonObject f1 = c.block(south[0], south[1], south[2]);
@@ -50,11 +50,11 @@ public final class RcNuke2Console implements Scenario {
         System.out.println("[RcNuke2Console] facings " + f1 + " / " + f2);
 
         // the display panel two blocks from the row
-        Fixtures.setBlock(c, X, cy + 2, Z - 4, "hbm:rbmk_display[facing=north]");
-        Expect.block(c, X, cy + 2, Z - 4, "hbm:rbmk_display");
+        Fixtures.setBlock(c, X, cy + 2, Z - 4, "geontm:rbmk_display[facing=north]");
+        Expect.block(c, X, cy + 2, Z - 4, "geontm:rbmk_display");
 
         // link the tool to the middle column, then to each console and the display
-        Fixtures.giveOnly(c, "hbm:rbmk_tool", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_tool", 1);
         aimAndUse(c, X + 0.5, cy + 1.5, Z + 0.5, X + 0.5, cy + 1, Z + 3.5, true);
         aimAndUse(c, south[0] + 0.5, south[1] + 0.5, south[2] + 0.5, south[0] + 0.5, south[1], south[2] + 4.5, true);
         aimAndUse(c, north[0] + 0.5, north[1] + 0.5, north[2] + 0.5, north[0] + 0.5, north[1], north[2] - 4.5, true);
@@ -70,7 +70,7 @@ public final class RcNuke2Console implements Scenario {
         c.waitTicks(40);
 
         // server scan equals client copy
-        JsonObject q = c.query("hbm_rbmk_console", coords(south));
+        JsonObject q = c.query("geontm_rbmk_console", coords(south));
         System.out.println("[RcNuke2Console] south query " + q);
         JsonObject server = q.getAsJsonObject("server");
         JsonObject client = q.getAsJsonObject("client");
@@ -79,9 +79,9 @@ public final class RcNuke2Console implements Scenario {
         String cols = server.get("columns").toString();
         Expect.that(cols.contains("FUEL") && cols.contains("CONTROL_AUTO") && cols.contains("BOILER") && cols.contains("ABSORBER"), "column types: " + cols);
         Expect.that(cols.contains("max=2865") && cols.contains("level=0.4") && cols.contains("level=0.9"), "column data: " + cols);
-        JsonObject qn = c.query("hbm_rbmk_console", coords(north));
+        JsonObject qn = c.query("geontm_rbmk_console", coords(north));
         Expect.equal(qn.getAsJsonObject("server").get("columns").toString(), qn.getAsJsonObject("client").get("columns").toString(), "north console client equals server");
-        JsonObject qd = c.query("hbm_rbmk_console", disp());
+        JsonObject qd = c.query("geontm_rbmk_console", disp());
         System.out.println("[RcNuke2Console] display query " + qd);
         Expect.that(qd.getAsJsonObject("client").getAsJsonArray("columns").size() == 7, "display scans the same 7 columns: " + qd);
         Expect.equal(qd.getAsJsonObject("server").get("columns").toString(), qd.getAsJsonObject("client").get("columns").toString(), "display client equals server");
@@ -127,7 +127,7 @@ public final class RcNuke2Console implements Scenario {
         c.click(fuelB[0], fuelB[1]);
         c.click(gui[0] + 24 + 9, gui[1] + 8 + 9);
         c.waitTicks(30);
-        JsonObject q2 = c.query("hbm_rbmk_console", coords(south));
+        JsonObject q2 = c.query("geontm_rbmk_console", coords(south));
         System.out.println("[RcNuke2Console] screens " + q2);
         String screens = q2.getAsJsonObject("client").get("screens").toString();
         Expect.that(screens.contains("FUEL_DEPLETION=rbmk.screen.depletion="), "client shows the depletion monitor: " + screens);
@@ -163,7 +163,7 @@ public final class RcNuke2Console implements Scenario {
         c.waitTicks(60);
         String after = c.blockEntity(south[0], south[1], south[2]).get("nbt").getAsString().replaceAll("\\s", "");
         Expect.that(after.contains("tX:" + X) && after.contains("fuel_depletion"), "console kept target and monitor: " + after);
-        JsonObject q3 = c.query("hbm_rbmk_console", coords(south));
+        JsonObject q3 = c.query("geontm_rbmk_console", coords(south));
         Expect.that(q3.getAsJsonObject("client").getAsJsonArray("columns").size() == 7, "after the rejoin the client sees 7 columns again: " + q3);
         for (String error : c.logSinceMark("(ERROR|FATAL|Exception in thread|ReportedException)")) {
             Expect.that(error.contains("Realms"), "unexpected error: " + error);

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 126: fluorite filled all three chemical plant input slots, leaving no room for yellowcake. With the
@@ -24,7 +24,7 @@ public final class Gh126ChemPlantSlots implements Scenario {
         c.cmd("kill @e[type=item]");
         c.markLog();
 
-        Fixtures.giveOnly(c, "hbm:machine_chemical_plant", 1);
+        Fixtures.giveOnly(c, "geontm:machine_chemical_plant", 1);
         c.teleport(0.5, G, -3.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, 0.5);
@@ -36,19 +36,19 @@ public final class Gh126ChemPlantSlots implements Scenario {
         c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {recipe0:\"chem.uf6\"}");
 
         c.cmd("clear");
-        c.cmd("give @s hbm:fluorite 128");
-        c.cmd("give @s hbm:fluorite 64");
-        c.cmd("give @s hbm:powder_yellowcake 16");
+        c.cmd("give @s geontm:fluorite 128");
+        c.cmd("give @s geontm:fluorite 64");
+        c.cmd("give @s geontm:powder_yellowcake 16");
         c.waitTicks(3);
         open(c, core);
 
-        quickMove(c, "hbm:fluorite");
-        quickMove(c, "hbm:fluorite");
-        Expect.equal("hbm:fluorite", slotId(c, 5), "shift-clicked fluorite goes to slot 5");
+        quickMove(c, "geontm:fluorite");
+        quickMove(c, "geontm:fluorite");
+        Expect.equal("geontm:fluorite", slotId(c, 5), "shift-clicked fluorite goes to slot 5");
         Expect.equal("minecraft:air", slotId(c, 4), "fluorite stays out of the yellowcake slot");
         Expect.equal("minecraft:air", slotId(c, 6), "fluorite stays out of spare slot 6");
 
-        JsonObject stack = findSlot(c, "hbm:fluorite");
+        JsonObject stack = findSlot(c, "geontm:fluorite");
         Expect.that(stack != null, "fluorite left in the inventory");
         c.clickSlot(stack.get("index").getAsInt());
         c.waitTicks(2);
@@ -58,8 +58,8 @@ public final class Gh126ChemPlantSlots implements Scenario {
         c.clickSlot(stack.get("index").getAsInt());
         c.waitTicks(2);
 
-        quickMove(c, "hbm:powder_yellowcake");
-        Expect.equal("hbm:powder_yellowcake", slotId(c, 4), "shift-clicked yellowcake goes to slot 4");
+        quickMove(c, "geontm:powder_yellowcake");
+        Expect.equal("geontm:powder_yellowcake", slotId(c, 4), "shift-clicked yellowcake goes to slot 4");
         c.screenshot("01-uf6-inputs");
         c.key("escape");
         c.waitTicks(5);

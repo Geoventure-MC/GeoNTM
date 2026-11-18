@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,7 +18,7 @@ import java.util.List;
  * its two-click box (which places a configured wand_structure saving block)
  * and blacklist clear; the structure wand building the default Paper Press around a custom machine controller,
  * after which the controller's menu opens; the debug wand's ray trace and crane paste (checked in detail by FinalStructures); and missile_test standing on a launch pad,
- * launched by redstone at a designator's target and climbing as the hbm:missile_test entity.
+ * launched by redstone at a designator's target and climbing as the geontm:missile_test entity.
  */
 public final class FinalWands implements Scenario {
 
@@ -55,7 +55,7 @@ public final class FinalWands implements Scenario {
 
     // --- inventory ----------------------------------------------------------------------------------------------
 
-    private static final String[] ITEMS = {"hbm:wand_k", "hbm:wand_s", "hbm:wand_d", "hbm:missile_test"};
+    private static final String[] ITEMS = {"geontm:wand_k", "geontm:wand_s", "geontm:wand_d", "geontm:missile_test"};
 
     private static void inventory(Client c) {
         c.cmd("gamemode survival");
@@ -88,7 +88,7 @@ public final class FinalWands implements Scenario {
     private static void constructionWand(Client c) throws Exception {
         int sx = X + 6, sz = Z + 6;
         Fixtures.setBlock(c, sx, Y + 1, sz, "minecraft:gold_block");
-        Fixtures.giveOnly(c, "hbm:wand_k", 1);
+        Fixtures.giveOnly(c, "geontm:wand_k", 1);
         c.teleport(sx - 1.5, Y + 1, sz - 2.5); // between the gold block and the far corner: both within 5 blocks
         c.waitTicks(3);
 
@@ -114,27 +114,27 @@ public final class FinalWands implements Scenario {
         worldShot(c, "10-wand_k-filled", sx + 1.5, Y + 4, sz - 4.5, sx - 3, Y, sz + 0.5);
 
         // crouch-click air saves air (1.7 block id 0)
-        Fixtures.giveOnly(c, "hbm:wand_k", 1);
+        Fixtures.giveOnly(c, "geontm:wand_k", 1);
         c.teleport(sx - 1.5, Y + 1, sz - 2.5);
         c.waitTicks(3);
         c.markLog();
         sneakUse(c, sx + 0.5, Y + 30, sz + 0.5);
         expectChat(c, "Set block block.minecraft.air");
-        hoverHeld(c, "hbm:wand_k", "11-wand_k-tooltip-after-use");
+        hoverHeld(c, "geontm:wand_k", "11-wand_k-tooltip-after-use");
     }
 
     // --- wand_s -------------------------------------------------------------------------------------------------
 
     private static void structureWand(Client c) throws Exception {
         int sx = X + 6, sz = Z + 6;
-        Fixtures.giveOnly(c, "hbm:wand_s", 1);
+        Fixtures.giveOnly(c, "geontm:wand_s", 1);
         c.teleport(sx + 1.5, Y + 1, sz - 2.5); // the far corner (sx+3, sz+1) stays within 5 blocks
         c.waitTicks(3);
 
         c.markLog();
         sneakUse(c, sx + 0.5, Y + 1.5, sz + 0.02);
         expectChat(c, "Added to blacklist block.minecraft.gold_block");
-        hoverHeld(c, "hbm:wand_s", "20-wand_s-tooltip-blacklist");
+        hoverHeld(c, "geontm:wand_s", "20-wand_s-tooltip-blacklist");
 
         c.lookAt(sx + 2 + 0.5, Y + 0.98, sz + 0.5);
         c.waitTicks(2);
@@ -147,11 +147,11 @@ public final class FinalWands implements Scenario {
         c.waitTicks(4);
         // the second click places a configured wand_structure saving block one below the box's lower corner
         expectChat(c, "Structure block configured and added at: " + (sx + 2) + ", " + (Y - 1) + ", " + sz);
-        Expect.block(c, sx + 2, Y - 1, sz, "hbm:wand_structure");
+        Expect.block(c, sx + 2, Y - 1, sz, "geontm:wand_structure");
 
         sneakUse(c, sx + 0.5, Y + 30, sz + 0.5);
         expectChat(c, "Cleared blacklist");
-        hoverHeld(c, "hbm:wand_s", "21-wand_s-tooltip-cleared");
+        hoverHeld(c, "geontm:wand_s", "21-wand_s-tooltip-cleared");
     }
 
     // --- wand_s on a custom machine controller -------------------------------------------------------------------
@@ -161,8 +161,8 @@ public final class FinalWands implements Scenario {
     private static void customMachine(Client c) throws Exception {
         // a stand for the controller: the Paper Press has components one below it, so it sits in the air on glass
         Fixtures.setBlock(c, CX, CY - 1, CZ, "minecraft:glass");
-        String controller = legacy(c) ? "hbm:custom_machine{\"hbm:custom_machine\":\"paperPress\"}"
-                : "hbm:custom_machine[hbm:custom_machine=\"paperPress\"]";
+        String controller = legacy(c) ? "geontm:custom_machine{\"geontm:custom_machine\":\"paperPress\"}"
+                : "geontm:custom_machine[geontm:custom_machine=\"paperPress\"]";
         Fixtures.giveOnly(c, controller, 1);
         c.teleport(CX + 0.5, Y + 1, CZ - 2.5);
         c.waitTicks(3);
@@ -170,14 +170,14 @@ public final class FinalWands implements Scenario {
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(5);
-        JsonObject core = Expect.block(c, CX, CY, CZ, "hbm:custom_machine");
+        JsonObject core = Expect.block(c, CX, CY, CZ, "geontm:custom_machine");
         Expect.that(core.toString().contains("north"), "the controller faces north: " + core);
         Expect.that(c.blockEntity(CX, CY, CZ).toString().contains("paperPress"), "the controller took the Paper Press");
         Expect.block(c, CX + 1, CY + 1, CZ + 2, "minecraft:air");
         worldShot(c, "30-cm-before", CX + 5.5, CY + 3, CZ - 4.5, CX + 0.5, CY, CZ + 1);
 
         // a plain right-click with the structure wand on the incomplete machine builds it (1.7 BlockCustomMachine)
-        Fixtures.giveOnly(c, "hbm:wand_s", 1);
+        Fixtures.giveOnly(c, "geontm:wand_s", 1);
         c.teleport(CX + 0.5, Y + 1, CZ - 3.5);
         c.waitTicks(3);
         c.markLog();
@@ -185,9 +185,9 @@ public final class FinalWands implements Scenario {
         c.waitTicks(2);
         c.use(2);
         c.waitTicks(6);
-        Expect.block(c, CX - 1, CY - 1, CZ + 2, "hbm:cm_block_steel");
-        Expect.block(c, CX + 1, CY, CZ + 2, "hbm:cm_sheet_steel");
-        Expect.block(c, CX - 1, CY + 1, CZ + 2, "hbm:cm_block_steel");
+        Expect.block(c, CX - 1, CY - 1, CZ + 2, "geontm:cm_block_steel");
+        Expect.block(c, CX + 1, CY, CZ + 2, "geontm:cm_sheet_steel");
+        Expect.block(c, CX - 1, CY + 1, CZ + 2, "geontm:cm_block_steel");
         // the wand did not also act as an item (the controller consumed the click, as in 1.7)
         Expect.that(c.logSinceMark("First position set").isEmpty(), "the wand's own click was not run on the controller");
         worldShot(c, "31-cm-built-by-wand", CX + 5.5, CY + 3, CZ - 4.5, CX + 0.5, CY, CZ + 1);
@@ -209,7 +209,7 @@ public final class FinalWands implements Scenario {
     // --- wand_d -------------------------------------------------------------------------------------------------
 
     private static void debugWand(Client c) throws Exception {
-        Fixtures.giveOnly(c, "hbm:wand_d", 1);
+        Fixtures.giveOnly(c, "geontm:wand_d", 1);
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.waitTicks(3);
         c.markLog();
@@ -230,18 +230,18 @@ public final class FinalWands implements Scenario {
     private static void missileTest(Client c) throws Exception {
         int px = X - 12, pz = Z + 12;          // pad core
         // place the pad by hand from the south: the core lands one block past the clicked cell
-        Fixtures.giveOnly(c, "hbm:launch_pad", 1);
+        Fixtures.giveOnly(c, "geontm:launch_pad", 1);
         c.teleport(px + 0.5, Y + 1, pz + 3.5);
         c.waitTicks(3);
         c.lookAt(px + 0.5, Y + 0.98, pz + 1.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(6);
-        Expect.block(c, px, Y + 1, pz, "hbm:launch_pad");
+        Expect.block(c, px, Y + 1, pz, "geontm:launch_pad");
 
         // the designator aimed at a block 24 east of the pad
         c.cmd("clear");
-        c.cmd("give @s hbm:designator 1");
+        c.cmd("give @s geontm:designator 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(px + 22.5, Y + 1, pz + 0.5);
@@ -250,8 +250,8 @@ public final class FinalWands implements Scenario {
         c.waitTicks(2);
         c.use(2);
         c.waitTicks(4);
-        c.cmd("give @s hbm:missile_test 1");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:missile_test 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(3);
 
         // missile, designator and battery into the pad by real clicks
@@ -263,11 +263,11 @@ public final class FinalWands implements Scenario {
         c.use(2);
         c.waitScreen("LaunchPad", 5000);
         Expect.screenStaysOpen(c, "LaunchPad", 10);
-        clickFromInventory(c, "hbm:missile_test", 0);
-        clickFromInventory(c, "hbm:designator", 1);
-        clickFromInventory(c, "hbm:battery_creative", 2);
+        clickFromInventory(c, "geontm:missile_test", 0);
+        clickFromInventory(c, "geontm:designator", 1);
+        clickFromInventory(c, "geontm:battery_creative", 2);
         c.waitTicks(20);
-        Expect.slotHolds(c, 0, "hbm:missile_test", 1);
+        Expect.slotHolds(c, 0, "geontm:missile_test", 1);
         c.screenshot("50-pad-loaded");
         close(c);
         worldShot(c, "51-missile_test-on-pad", px + 5.5, Y + 5, pz - 5.5, px + 0.5, Y + 3, pz + 0.5);
@@ -276,7 +276,7 @@ public final class FinalWands implements Scenario {
         Fixtures.setBlock(c, px + 2, Y + 1, pz, "minecraft:redstone_block");
         c.waitTicks(4);
         JsonObject flying = missile(c);
-        Expect.that(flying != null, "a hbm:missile_test entity was launched from the pad: " + c.entities(64));
+        Expect.that(flying != null, "a geontm:missile_test entity was launched from the pad: " + c.entities(64));
         c.waitTicks(15);
         JsonObject later = missile(c);
         Expect.that(later != null && later.get("y").getAsDouble() > flying.get("y").getAsDouble(),
@@ -285,7 +285,7 @@ public final class FinalWands implements Scenario {
         worldShot(c, "52-missile_test-flying", px + 12.5, Y + 6, pz - 8.5,
                 later.get("x").getAsDouble(), later.get("y").getAsDouble(), later.get("z").getAsDouble());
         // its impact chars a 50-block sphere; this scenario only checks the launch
-        c.cmd("kill @e[type=hbm:missile_test]");
+        c.cmd("kill @e[type=geontm:missile_test]");
         Fixtures.setBlock(c, px + 2, Y + 1, pz, "minecraft:air");
         c.waitTicks(5);
     }
@@ -345,7 +345,7 @@ public final class FinalWands implements Scenario {
     private static JsonObject missile(Client c) {
         for (JsonElement e : c.entities(200)) {
             JsonObject o = e.getAsJsonObject();
-            if (o.get("type").getAsString().equals("hbm:missile_test")) return o;
+            if (o.get("type").getAsString().equals("geontm:missile_test")) return o;
         }
         return null;
     }

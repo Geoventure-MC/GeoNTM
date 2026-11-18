@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** GitHub issue 141. Glyphid meat put into a real smoker by hand comes out grilled in the smoker's 100 ticks. */
 public final class Gh141SmokerMeat implements Scenario {
@@ -16,7 +16,7 @@ public final class Gh141SmokerMeat implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("clear @s");
         Fixtures.setBlock(c, 0, G, 0, "minecraft:smoker[facing=west]");
-        Fixtures.give(c, "hbm:glyphid_meat", 1);
+        Fixtures.give(c, "geontm:glyphid_meat", 1);
         Fixtures.give(c, "minecraft:coal", 1);
         c.waitTicks(10);
 
@@ -39,7 +39,7 @@ public final class Gh141SmokerMeat implements Scenario {
         String result = c.slot(2).toString();
         System.out.println("[Gh141] result slot after 110 server ticks: " + result);
         c.screenshot("gh141-grilled");
-        Expect.that(result.contains("hbm:glyphid_meat_grilled"), "the smoker grilled the meat: " + result);
+        Expect.that(result.contains("geontm:glyphid_meat_grilled"), "the smoker grilled the meat: " + result);
         c.key("escape");
         c.cmd("gamemode creative");
     }

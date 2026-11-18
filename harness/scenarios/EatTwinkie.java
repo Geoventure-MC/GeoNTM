@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /** A hungry survival player eats a Twinkie, then vanilla bread as the control (Discord: "I cannot eat twinkie"). */
 public final class EatTwinkie implements Scenario {
@@ -12,7 +12,7 @@ public final class EatTwinkie implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("difficulty normal");
         try {
-            for (String item : new String[] {"hbm:twinkie", "minecraft:bread"}) {
+            for (String item : new String[] {"geontm:twinkie", "minecraft:bread"}) {
                 c.cmd("clear");
                 c.cmd("effect give @s minecraft:hunger 4 255");
                 c.waitTicks(90);

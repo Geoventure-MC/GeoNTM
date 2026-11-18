@@ -1,19 +1,19 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * HBM fluids with other mods' real pipes and tanks: Pipez fluid pipes (NeoForge and Forge dev runs) and, where the run
+ * GEONTM fluids with other mods' real pipes and tanks: Pipez fluid pipes (NeoForge and Forge dev runs) and, where the run
  * has Create ({@code -Psable.run=true} on 1.21.1 NeoForge), Create fluid tanks.
  * <ol>
- *   <li>Pipez between two HBM barrels: diesel leaves the output barrel and arrives in the input barrel, none lost;</li>
- *   <li>with Create: HBM barrel, pipe, Create tank, pipe, HBM barrel; the Create tank holds {@code hbm:diesel} on the
+ *   <li>Pipez between two GEONTM barrels: diesel leaves the output barrel and arrives in the input barrel, none lost;</li>
+ *   <li>with Create: GEONTM barrel, pipe, Create tank, pipe, GEONTM barrel; the Create tank holds {@code geontm:diesel} on the
  *       way and the 5000 mB are conserved over the three containers;</li>
- *   <li>with Create: honey, a Create fluid, poured into a Create tank by hand, piped into an HBM barrel typed
+ *   <li>with Create: honey, a Create fluid, poured into a Create tank by hand, piped into an GEONTM barrel typed
  *       {@code create:honey};</li>
- *   <li>with Create: HBM ducts, placed by hand and typed with the identifier, carry diesel from a barrel into a Create
+ *   <li>with Create: GEONTM ducts, placed by hand and typed with the identifier, carry diesel from a barrel into a Create
  *       tank and draw their arm to it.</li>
  * </ol>
  */
@@ -44,7 +44,7 @@ public final class ForeignModFluids implements Scenario {
             barrel(c, -4, 0, 5000, 2);
             pipe(c, -3, 0, "west");
             barrel(c, 0, 0, 0, 0);
-            // 3: honey poured into a Create tank, piped into an HBM barrel, z = 4
+            // 3: honey poured into a Create tank, piped into an GEONTM barrel, z = 4
             Fixtures.setBlock(c, -2, G, 4, "create:fluid_tank");
             Fixtures.giveOnly(c, "create:honey_bucket", 1);
             c.teleport(-1.5, G, 6.5);
@@ -52,18 +52,18 @@ public final class ForeignModFluids implements Scenario {
             c.lookAt(-1.5, G + 0.5, 4.5);
             c.use(2);
             c.waitTicks(5);
-            c.cmd("setblock 0 " + G + " 4 hbm:barrel_steel{tank:0,tank_type:\"create:honey\",mode:0s}");
+            c.cmd("setblock 0 " + G + " 4 geontm:barrel_steel{tank:0,tank_type:\"create:honey\",mode:0s}");
             pipe(c, -1, 4, "west");
-            // 4: barrel, two HBM ducts, Create tank, z = 8
+            // 4: barrel, two GEONTM ducts, Create tank, z = 8
             barrel(c, -4, 8, 5000, 2);
             Fixtures.setBlock(c, -1, G, 8, "create:fluid_tank");
             for (int x = -3; x <= -2; x++) {
-                Fixtures.giveOnly(c, "hbm:fluid_duct_neo", 1);
+                Fixtures.giveOnly(c, "geontm:fluid_duct_neo", 1);
                 aim(c, x, 8, Y + 0.98);
                 c.use(1);
                 c.waitTicks(4);
             }
-            Fixtures.giveOnly(c, identifier(c, "hbm:diesel"), 1);
+            Fixtures.giveOnly(c, identifier(c, "geontm:diesel"), 1);
             for (int x = -3; x <= -2; x++) {
                 aim(c, x, 8, G + 0.5);
                 c.use(1);
@@ -74,10 +74,10 @@ public final class ForeignModFluids implements Scenario {
             // the Create tank filled before its outlet exists, read through Create's own handler
             c.waitTicks(40);
             JsonObject filling = find(c, -2, 0, "east");
-            int held = amount(c, -2, 0, "hbm:diesel");
+            int held = amount(c, -2, 0, "geontm:diesel");
             System.out.println("[ForeignModFluids] Create tank while filling: " + filling);
-            Expect.that(held > 0 && filling.toString().contains("\"hbm\":\"hbm:diesel\""),
-                    "the Create tank holds HBM diesel: " + filling);
+            Expect.that(held > 0 && filling.toString().contains("\"geontm\":\"geontm:diesel\""),
+                    "the Create tank holds GEONTM diesel: " + filling);
             pipe(c, -1, 0, "west");
         }
         c.teleport(-1.5, G + 3, -8.5);
@@ -85,29 +85,29 @@ public final class ForeignModFluids implements Scenario {
         c.waitTicks(100);
         c.screenshot("01-rows");
 
-        int out1 = amount(c, -2, -4, "hbm:diesel"), in1 = amount(c, 0, -4, "hbm:diesel");
+        int out1 = amount(c, -2, -4, "geontm:diesel"), in1 = amount(c, 0, -4, "geontm:diesel");
         System.out.println("[ForeignModFluids] Pipez: source " + out1 + " mB, sink " + in1 + " mB");
-        Expect.that(in1 > 0 && out1 + in1 == 5000, "Pipez moved diesel between HBM barrels without loss: " + out1 + " + " + in1);
+        Expect.that(in1 > 0 && out1 + in1 == 5000, "Pipez moved diesel between GEONTM barrels without loss: " + out1 + " + " + in1);
 
         if (create) {
-            int src = amount(c, -4, 0, "hbm:diesel"), tank = amount(c, -2, 0, "hbm:diesel"), sink = amount(c, 0, 0, "hbm:diesel");
+            int src = amount(c, -4, 0, "geontm:diesel"), tank = amount(c, -2, 0, "geontm:diesel"), sink = amount(c, 0, 0, "geontm:diesel");
             System.out.println("[ForeignModFluids] Create chain: source " + src + ", Create tank " + tank + ", sink " + sink);
             Expect.that(src < 5000 && sink > 0 && src + tank + sink == 5000,
-                    "diesel went HBM barrel, Create tank, HBM barrel with 5000 mB conserved: " + src + "/" + tank + "/" + sink);
+                    "diesel went GEONTM barrel, Create tank, GEONTM barrel with 5000 mB conserved: " + src + "/" + tank + "/" + sink);
 
             int honey = amount(c, 0, 4, "create:honey"), honeyLeft = amount(c, -2, 4, "create:honey");
-            System.out.println("[ForeignModFluids] honey: Create tank " + honeyLeft + ", HBM barrel " + honey);
-            Expect.that(honey > 0 && honey + honeyLeft == 1000, "Create honey reached the HBM barrel: " + honeyLeft + " + " + honey);
-            int ductSource = amount(c, -4, 8, "hbm:diesel"), ductTank = amount(c, -1, 8, "hbm:diesel");
+            System.out.println("[ForeignModFluids] honey: Create tank " + honeyLeft + ", GEONTM barrel " + honey);
+            Expect.that(honey > 0 && honey + honeyLeft == 1000, "Create honey reached the GEONTM barrel: " + honeyLeft + " + " + honey);
+            int ductSource = amount(c, -4, 8, "geontm:diesel"), ductTank = amount(c, -1, 8, "geontm:diesel");
             System.out.println("[ForeignModFluids] ducts: source " + ductSource + ", Create tank " + ductTank
                     + ", last duct " + c.block(-2, G, 8).get("state"));
             Expect.that(ductTank > 0 && ductSource + ductTank == 5000,
-                    "HBM ducts filled the Create tank with 5000 mB conserved: " + ductSource + " + " + ductTank);
+                    "GEONTM ducts filled the Create tank with 5000 mB conserved: " + ductSource + " + " + ductTank);
             Expect.that(c.block(-2, G, 8).toString().contains("\"east\":\"true\""),
                     "the duct draws its arm to the Create tank: " + c.block(-2, G, 8));
 
             String saved = c.blockEntity(0, G, 4).toString().replaceAll("\\s+", "");
-            Expect.that(saved.contains("create:honey"), "the HBM barrel saves the Create fluid by id: " + saved);
+            Expect.that(saved.contains("create:honey"), "the GEONTM barrel saves the Create fluid by id: " + saved);
         }
     }
 
@@ -119,13 +119,13 @@ public final class ForeignModFluids implements Scenario {
     }
 
     private static String identifier(Client c, String fluid) {
-        return c.node().startsWith("1.20.") ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + fluid + "\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"" + fluid + "\"]";
+        return c.node().startsWith("1.20.") ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + fluid + "\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"" + fluid + "\"]";
     }
 
-    /** An HBM steel barrel typed diesel; mode 0 takes, 2 gives. */
+    /** An GEONTM steel barrel typed diesel; mode 0 takes, 2 gives. */
     private static void barrel(Client c, int x, int z, int mb, int mode) {
-        c.cmd("setblock " + x + " " + G + " " + z + " hbm:barrel_steel{tank:" + mb + ",tank_type:\"hbm:diesel\",mode:" + mode + "s}");
+        c.cmd("setblock " + x + " " + G + " " + z + " geontm:barrel_steel{tank:" + mb + ",tank_type:\"geontm:diesel\",mode:" + mode + "s}");
         c.waitTicks(1);
     }
 
@@ -161,6 +161,6 @@ public final class ForeignModFluids implements Scenario {
         p.addProperty("y", G);
         p.addProperty("z", z);
         p.addProperty("side", side);
-        return c.query("hbm_fluidcaps", p);
+        return c.query("geontm_fluidcaps", p);
     }
 }

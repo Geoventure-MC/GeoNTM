@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
@@ -30,21 +30,21 @@ public final class Gh136ElectrolyserPour implements Scenario {
         c.cmd("gamerule doDaylightCycle false");
         c.cmd("gamerule sendCommandFeedback false");
         c.cmd("gamerule send_command_feedback false");
-        Fixtures.setBlock(c, x, L, z, "hbm:machine_electrolyser[facing=south]");
+        Fixtures.setBlock(c, x, L, z, "geontm:machine_electrolyser[facing=south]");
         pourAlong(c, "south", x, z, 0, 1);
         c.cmd("setblock " + x + " " + L + " " + z + " minecraft:air");
-        Fixtures.setBlock(c, x, L, z, "hbm:machine_electrolyser[facing=east]");
+        Fixtures.setBlock(c, x, L, z, "geontm:machine_electrolyser[facing=east]");
         pourAlong(c, "east", x, z, 1, 0);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|NullPointer|ClassCast|IllegalState");
     }
 
     private static void pourAlong(Client c, String name, int x, int z, int dx, int dz) throws Exception {
         int ax = x + dx * 6, az = z + dz * 6, bx = x - dx * 6, bz = z - dz * 6;
-        Fixtures.setBlock(c, ax, L, az, "hbm:foundry_basin");
-        Fixtures.setBlock(c, bx, L, bz, "hbm:foundry_basin");
+        Fixtures.setBlock(c, ax, L, az, "geontm:foundry_basin");
+        Fixtures.setBlock(c, bx, L, bz, "geontm:foundry_basin");
         c.waitTicks(10);
-        c.cmd("item replace block " + ax + " " + L + " " + az + " container.0 with hbm:mold_block");
-        c.cmd("item replace block " + bx + " " + L + " " + bz + " container.0 with hbm:mold_block");
+        c.cmd("item replace block " + ax + " " + L + " " + az + " container.0 with geontm:mold_block");
+        c.cmd("item replace block " + bx + " " + L + " " + bz + " container.0 with geontm:mold_block");
         c.cmd("gamemode spectator");
 
         // The stream is 0.625 above the pour point and at most 1.875 + 0.125 long: look at its middle from the side.

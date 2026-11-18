@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 37 to 39: placing the Watz item dropped its whole build kit, the hot Watz GUI left its overlays tinted
@@ -31,7 +31,7 @@ public final class Gh37WatzAndCrates implements Scenario {
 
         String at = core.get("target").getAsString().replace(',', ' ');
         c.cmd("data merge block " + at + " {heat:10000000,t0:0,t1:16000,t2:6235}");
-        c.cmd("item replace block " + at + " container.0 with hbm:watz_pellet_schrabidium");
+        c.cmd("item replace block " + at + " container.0 with geontm:watz_pellet_schrabidium");
         c.waitTicks(10);
         c.cmd("clear");
         c.teleport(0.5, G, -5.5);
@@ -60,7 +60,7 @@ public final class Gh37WatzAndCrates implements Scenario {
     }
 
     private static JsonObject placeWatz(Client c) {
-        Fixtures.giveOnly(c, "hbm:watz", 1);
+        Fixtures.giveOnly(c, "geontm:watz", 1);
         c.teleport(0.5, G, -5.5);
         c.waitTicks(5);
         c.lookAt(0.5, Y + 0.98, -2.5);
@@ -79,7 +79,7 @@ public final class Gh37WatzAndCrates implements Scenario {
     /** A filled iron crate broken by a one-hit survival pickaxe, picked up and opened from the hand. */
     private static void crate(Client c) {
         int x = 0, z = 3;
-        Fixtures.setBlock(c, x, G, z, "hbm:crate_iron");
+        Fixtures.setBlock(c, x, G, z, "geontm:crate_iron");
         c.cmd("item replace block " + x + " " + G + " " + z + " container.5 with minecraft:diamond 7");
         c.waitTicks(3);
         c.cmd("clear");
@@ -100,7 +100,7 @@ public final class Gh37WatzAndCrates implements Scenario {
         int crateSlot = -1;
         for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("id").getAsString().equals("hbm:crate_iron")) crateSlot = s.get("slot").getAsInt();
+            if (s.get("id").getAsString().equals("geontm:crate_iron")) crateSlot = s.get("slot").getAsInt();
         }
         Expect.that(crateSlot >= 0 && crateSlot < 9, "the broken crate is in the hotbar (slot " + crateSlot + ")");
         c.hotbar(crateSlot + 1);
@@ -139,11 +139,11 @@ public final class Gh37WatzAndCrates implements Scenario {
         params.addProperty("y", y);
         params.addProperty("z", z);
         for (int attempt = 0; attempt < 20; attempt++) {
-            JsonObject result = c.query("hbm_block_info", params);
+            JsonObject result = c.query("geontm_block_info", params);
             if (!result.has("pending")) return result;
             c.waitTicks(5);
         }
-        Expect.that(false, "hbm_block_info at " + x + "," + y + "," + z + " stayed pending");
+        Expect.that(false, "geontm_block_info at " + x + "," + y + "," + z + " stayed pending");
         return null;
     }
 }

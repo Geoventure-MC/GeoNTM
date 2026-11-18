@@ -1,0 +1,253 @@
+package fr.geoventure.geontm.tileentity.machine;
+
+import fr.geoventure.geontm.api.fluidmk2.IFluidStandardTransceiverMK2;
+import fr.geoventure.geontm.api.tile.IHeatSource;
+import fr.geoventure.geontm.api.redstoneoverradio.IRORValueProvider;
+import fr.geoventure.geontm.interfaces.IControlReceiver;
+import fr.geoventure.geontm.inventory.container.ContainerHeaterHeatex;
+import fr.geoventure.geontm.inventory.fluid.FluidType;
+import fr.geoventure.geontm.inventory.fluid.Fluids;
+import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
+import fr.geoventure.geontm.inventory.fluid.trait.FT_Coolable;
+import fr.geoventure.geontm.lib.DirPos;
+import fr.geoventure.geontm.lib.ForgeDirection;
+import fr.geoventure.geontm.tileentity.MachineCore;
+import fr.geoventure.geocore.data.Tags;
+import fr.geoventure.geontm.tileentity.ModBlockEntities;
+import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
+import fr.geoventure.geontm.util.TickPhase;
+import fr.geoventure.geocore.data.DataIn;
+import fr.geoventure.geocore.data.DataOut;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import fr.geoventure.geontm.tileentity.TilePort.PortDef;
+
+/**
+ * The legacy heat-exchanging heater. Hot fluid is cooled into its trait-declared output while its
+ * released heat is retained as TU for an adjacent consumer.
+ *
+ * <p>The legacy machine has one identifier slot and no sided item access. Fluid input and output are
+ * network-only and are restricted to the four remote horizontal connection points.
+ */
+public class TileEntityHeaterHeatex extends TileEntityMachineBase
+        implements IHeatSource, IControlReceiver, IFluidStandardTransceiverMK2, MenuProvider, IRORValueProvider {
+
+    public static final int TANK_CAPACITY = 24_000;
+
+    public final FluidTankNTM[] tanks = {
+            new FluidTankNTM(Fluids.COOLANT_HOT, TANK_CAPACITY),
+            new FluidTankNTM(Fluids.COOLANT, TANK_CAPACITY)
+    };
+
+    public int amountToCool = TANK_CAPACITY;
+    public int tickDelay = 1;
+    public int heatEnergy;
+
+    public TileEntityHeaterHeatex(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.HEATER_HEATEX.get(), pos, state, 1);
+    }
+
+    @Override
+    public String getDefaultName() {
+        return "container.heaterHeatex";
+    }
+
+    public static void serverTick(Level level, BlockPos pos, BlockState state, TileEntityHeaterHeatex heater) {
+        heater.setupFluidPorts(heater.getPorts());
+        heater.updatePortFIFO();
+
+        if (heater.tanks[0].setType(heater.inventory, 0, 0)) heater.setChanged();
+        heater.setupTanks();
+
+        // The old machine decays its stored TU before adding the current cooling operation's heat.
+        heater.heatEnergy *= 0.999;
+        heater.tryConvert(level);
+        heater.networkPackNT();
+    }
+
+    /** Derives the output type from the input's heat-exchanger efficiency every tick. */
+    protected void setupTanks() {
+        FluidType input = tanks[0].getTankType();
+        FT_Coolable trait = input.getTrait(FT_Coolable.class);
+        if (trait != null && trait.getEfficiency(FT_Coolable.CoolingType.HEATEXCHANGER) > 0D) {
+            tanks[1].setTankType(trait.coolsTo);
+            return;
+        }
+
+        tanks[0].setTankType(Fluids.NONE);
+        tanks[1].setTankType(Fluids.NONE);
+    }
+
+    /** Performs the exact old min(input, output, throttle) operation calculation. */
+    protected void tryConvert(Level level) {
+        FT_Coolable trait = tanks[0].getTankType().getTrait(FT_Coolable.class);
+        if (trait == null || trait.getEfficiency(FT_Coolable.CoolingType.HEATEXCHANGER) <= 0D) return;
+
+        if (tickDelay < 1) tickDelay = 1;
+        if (!TickPhase.every(level, worldPosition, tickDelay)) return;
+
+        int inputOps = tanks[0].getFill() / trait.amountReq;
+        int outputOps = (tanks[1].getMaxFill() - tanks[1].getFill()) / trait.amountProduced;
+        int ops = Math.min(inputOps, Math.min(outputOps, amountToCool));
+
+        tanks[0].setFill(tanks[0].getFill() - trait.amountReq * ops);
+        tanks[1].setFill(tanks[1].getFill() + trait.amountProduced * ops);
+        heatEnergy += (int) (trait.heatEnergy * ops
+                * trait.getEfficiency(FT_Coolable.CoolingType.HEATEXCHANGER));
+        setChanged();
+    }
+
+    protected PortDef[] cachedPorts;
+
+    public PortDef[] getPorts() {
+        if (cachedPorts == null) {
+            int meta = MachineCore.facingOrdinal(getBlockState(), 2);
+            ForgeDirection dir = ForgeDirection.getOrientation(meta);
+            ForgeDirection rot = dir.getRotation(ForgeDirection.UP);
+            int x = worldPosition.getX(), y = worldPosition.getY(), z = worldPosition.getZ();
+            cachedPorts = new PortDef[] {
+                    PortDef.make(x + dir.offsetX + rot.offsetX, y, z + dir.offsetZ + rot.offsetZ, dir),
+                    PortDef.make(x + dir.offsetX - rot.offsetX, y, z + dir.offsetZ - rot.offsetZ, dir),
+                    PortDef.make(x - dir.offsetX + rot.offsetX, y, z - dir.offsetZ + rot.offsetZ, dir.getOpposite()),
+                    PortDef.make(x - dir.offsetX - rot.offsetX, y, z - dir.offsetZ - rot.offsetZ, dir.getOpposite()),
+            };
+        }
+        return cachedPorts;
+    }
+
+    public DirPos[] getConPos() { return PortDef.connections(getPorts()); }
+
+    @Override
+    public int getHeatStored() {
+        return heatEnergy;
+    }
+
+    @Override
+    public void useUpHeat(int heat) {
+        heatEnergy = Math.max(0, heatEnergy - heat);
+    }
+
+    @Override
+    public boolean canConnect(FluidType type, ForgeDirection dir) {
+        ForgeDirection facing = MachineCore.facing(getBlockState());
+        return dir == facing || dir == facing.getOpposite();
+    }
+
+    @Override
+    public FluidTankNTM[] getAllTanks() {
+        return tanks;
+    }
+
+    @Override
+    public FluidTankNTM[] getSendingTanks() {
+        return new FluidTankNTM[]{tanks[1]};
+    }
+
+    @Override
+    public FluidTankNTM[] getReceivingTanks() {
+        return new FluidTankNTM[]{tanks[0]};
+    }
+
+    /** The old machine inherited an empty sided-inventory list, so hoppers cannot reach slot 0. */
+    @Override
+    public int[] getAccessibleSlotsFromSide(int side) {
+        return new int[0];
+    }
+
+    @Override
+    public boolean hasPermission(Player player) {
+        return player.distanceToSqr(worldPosition.getX() + 0.5D, worldPosition.getY() + 0.5D,
+                worldPosition.getZ() + 0.5D) < 16D * 16D;
+    }
+
+    /** The old menu used the base machine's 128-square-use range, not the control packet's 16-block range. */
+    @Override
+    public boolean stillValid(Player player) {
+        return level != null && level.getBlockEntity(worldPosition) == this
+                && player.distanceToSqr(worldPosition.getX() + 0.5D, worldPosition.getY() + 0.5D,
+                worldPosition.getZ() + 0.5D) <= 128D;
+    }
+
+    @Override
+    public void receiveControl(CompoundTag data) {
+        if (data.contains("toCool")) {
+            amountToCool = Mth.clamp(Tags.getIntOr(data, "toCool", 0), 1, tanks[0].getMaxFill());
+        }
+        if (data.contains("delay")) {
+            tickDelay = Math.max(Tags.getIntOr(data, "delay", 0), 1);
+        }
+        setChanged();
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable(getName());
+    }
+
+    @Override
+    public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new ContainerHeaterHeatex(containerId, playerInventory, this);
+    }
+
+    @Override
+    public void serialize(RegistryFriendlyByteBuf buf) {
+        super.serialize(buf);
+        tanks[0].serialize(buf);
+        tanks[1].serialize(buf);
+        buf.writeInt(heatEnergy);
+        buf.writeInt(amountToCool);
+        buf.writeInt(tickDelay);
+    }
+
+    @Override
+    public void deserialize(RegistryFriendlyByteBuf buf) {
+        super.deserialize(buf);
+        tanks[0].deserialize(buf);
+        tanks[1].deserialize(buf);
+        heatEnergy = buf.readInt();
+        amountToCool = buf.readInt();
+        tickDelay = buf.readInt();
+    }
+
+    @Override
+    protected void saveData(DataOut output) {
+        super.saveData(output);
+        tanks[0].writeToNBT(output, "0");
+        tanks[1].writeToNBT(output, "1");
+        output.putInt("heatEnergy", heatEnergy);
+        output.putInt("toCool", amountToCool);
+        output.putInt("delay", tickDelay);
+    }
+
+    @Override
+    protected void loadData(DataIn input) {
+        super.loadData(input);
+        tanks[0].readFromNBT(input, "0");
+        tanks[1].readFromNBT(input, "1");
+        heatEnergy = input.getIntOr("heatEnergy", 0);
+        amountToCool = input.getIntOr("toCool", 0);
+        tickDelay = input.getIntOr("delay", 0);
+    }
+
+    @Override
+    public String[] getFunctionInfo() {
+        return new String[]{PREFIX_VALUE + "hotfluid", PREFIX_VALUE + "coldfluid", PREFIX_VALUE + "heat"};
+    }
+
+    @Override
+    public String provideRORValue(String name) {
+        if ((PREFIX_VALUE + "hotfluid").equals(name)) return "" + tanks[0].getFill();
+        if ((PREFIX_VALUE + "coldfluid").equals(name)) return "" + tanks[1].getFill();
+        if ((PREFIX_VALUE + "heat").equals(name)) return "" + heatEnergy;
+        return null;
+    }
+}

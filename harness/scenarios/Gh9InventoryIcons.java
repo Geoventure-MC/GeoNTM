@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.Image;
@@ -26,7 +26,7 @@ public final class Gh9InventoryIcons implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("clear");
         c.waitTicks(2);
-        for (String id : IDS) c.cmd("give @s hbm:" + id + " 1");
+        for (String id : IDS) c.cmd("give @s geontm:" + id + " 1");
         c.waitTicks(5);
         c.key("e");
         c.waitTicks(10);
@@ -51,7 +51,7 @@ public final class Gh9InventoryIcons implements Scenario {
         }
         c.cmd("gamemode survival");
 
-        String filter = "^hbm:(" + String.join("|", IDS) + ")$";
+        String filter = "^geontm:(" + String.join("|", IDS) + ")$";
         List<String> failures = new ArrayList<>();
         try {
             JsonObject page = page(c, 0, false, filter);
@@ -87,7 +87,7 @@ public final class Gh9InventoryIcons implements Scenario {
         } finally {
             JsonObject close = new JsonObject();
             close.addProperty("close", true);
-            c.query("hbm_icon_audit", close);
+            c.query("geontm_icon_audit", close);
         }
         Expect.that(failures.isEmpty(), "box icons are opaque and the derrick keeps the 1.7 frame: " + failures);
     }
@@ -131,7 +131,7 @@ public final class Gh9InventoryIcons implements Scenario {
         params.addProperty("page", page);
         params.addProperty("alt", alt);
         params.addProperty("filter", filter);
-        JsonObject reply = c.query("hbm_icon_audit", params);
+        JsonObject reply = c.query("geontm_icon_audit", params);
         c.waitScreen("IconAuditScreen", 10_000L);
         c.waitTicks(4);
         return reply;

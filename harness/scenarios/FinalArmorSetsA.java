@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Final armor sets, part A (ModArmorSetItems): alloy, CMB, bismuth, euphemium, zirconium pants, DNT, AJR,
  * AJRO, HEV, Fau and Trenchmaster. Every id is given and shown in the inventory (with tooltips); each full
- * set is worn in survival and its bonus checked by value through the {@code hbm_armor_set} query (effects,
+ * set is worn in survival and its bonus checked by value through the {@code geontm_armor_set} query (effects,
  * damage thresholds via /damage (mob_attack: 26.1 /damage generic bypasses armour and resistance), fall damage, euphemium's god mode and fall clamp, AJR drain and recharge
  * from a held self-charger, Trenchmaster step height and unbreakability, Fau digamma protection, bismuth
  * dash stamina); the first-person HUDs (HEV readout, dash bar, charge bars) and every set in third person
@@ -79,14 +79,14 @@ public final class FinalArmorSetsA implements Scenario {
     // ------------------------------------------------------------------ inventory
 
     private void inventoryPages(Client c) {
-        String[][] hovers = {{"hbm:bismuth_helmet", "hbm:alloy_helmet"}, {"hbm:trenchmaster_plate", "hbm:hev_helmet"}};
+        String[][] hovers = {{"geontm:bismuth_helmet", "geontm:alloy_helmet"}, {"geontm:trenchmaster_plate", "geontm:hev_helmet"}};
         for (int page = 0; page * 36 < IDS.length; page++) {
             c.cmd("clear");
             c.waitTicks(2);
             List<String> batch = new ArrayList<>();
             for (int i = page * 36; i < Math.min(IDS.length, (page + 1) * 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i] + " 1");
-                batch.add("hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i] + " 1");
+                batch.add("geontm:" + IDS[i]);
             }
             c.waitTicks(5);
             for (String id : batch) Expect.that(count(c, id) == 1, id + " was given and is in the inventory");
@@ -130,11 +130,11 @@ public final class FinalArmorSetsA implements Scenario {
         Expect.that(a.get("armor_value").getAsInt() == 4, "dnt {1,1,1,1} armor 4, got " + a.get("armor_value"));
 
         strip(c);
-        c.cmd("item replace entity @s armor.legs with hbm:zirconium_legs");
+        c.cmd("item replace entity @s armor.legs with geontm:zirconium_legs");
         c.waitTicks(10);
         a = state(c);
         Expect.that(a.get("armor_value").getAsInt() == 3, "zirconium pants armor 3, got " + a.get("armor_value"));
-        Expect.that(a.getAsJsonObject("legs").get("id").getAsString().equals("hbm:zirconium_legs"), "zirconium worn");
+        Expect.that(a.getAsJsonObject("legs").get("id").getAsString().equals("geontm:zirconium_legs"), "zirconium worn");
     }
 
     // ------------------------------------------------------------------ bismuth
@@ -212,7 +212,7 @@ public final class FinalArmorSetsA implements Scenario {
         Expect.that(Math.abs(before - state(c).get("health").getAsDouble()) < 0.01, "AJR: fall fully resisted");
 
         // Charge it: a held self-charger's rate / 4 is netted against the drain every tick.
-        c.cmd("item replace entity @s weapon.mainhand with hbm:battery_sc_americium");
+        c.cmd("item replace entity @s weapon.mainhand with geontm:battery_sc_americium");
         c.waitTicks(40);
         a = state(c);
         long charged = a.getAsJsonObject("chest").get("charge").getAsLong();
@@ -302,7 +302,7 @@ public final class FinalArmorSetsA implements Scenario {
             c.screenshot("7" + (n++) + "-f5-front-" + set);
         }
         strip(c);
-        c.cmd("item replace entity @s armor.legs with hbm:zirconium_legs");
+        c.cmd("item replace entity @s armor.legs with geontm:zirconium_legs");
         c.waitTicks(10);
         c.screenshot("7" + (n++) + "-f5-front-zirconium-legs");
         c.key("f5"); // first person
@@ -323,10 +323,10 @@ public final class FinalArmorSetsA implements Scenario {
     // ------------------------------------------------------------------ helpers
 
     private void wear(Client c, String set) {
-        c.cmd("item replace entity @s armor.head with hbm:" + set + "_helmet");
-        c.cmd("item replace entity @s armor.chest with hbm:" + set + "_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:" + set + "_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:" + set + "_boots");
+        c.cmd("item replace entity @s armor.head with geontm:" + set + "_helmet");
+        c.cmd("item replace entity @s armor.chest with geontm:" + set + "_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:" + set + "_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:" + set + "_boots");
         c.waitTicks(10);
     }
 
@@ -346,7 +346,7 @@ public final class FinalArmorSetsA implements Scenario {
     }
 
     private JsonObject state(Client c) {
-        return c.query("hbm_armor_set", new JsonObject());
+        return c.query("geontm_armor_set", new JsonObject());
     }
 
     private void hoverItem(Client c, String id) {

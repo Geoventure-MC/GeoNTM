@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 27: 1.7's NEI pages of the recipe-module machines print the duration and power under each recipe
@@ -20,7 +20,7 @@ public final class Gh27RecipeNumbers implements Scenario {
         int shot = 10;
         for (String tab : TABS) {
             JsonObject p = new JsonObject();
-            p.addProperty("category", "hbm:" + tab);
+            p.addProperty("category", "geontm:" + tab);
             JsonObject opened = c.query("jei", p);
             Expect.that(opened.has("opened") && opened.get("opened").getAsBoolean(), "JEI opened " + tab + ": " + opened);
             Expect.that(opened.get("recipes").getAsLong() > 0, tab + " holds recipes: " + opened.get("recipes"));

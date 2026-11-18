@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public final class FinalDungeonRails implements Scenario {
 
     private static final int Y = 100;
     private static final int G = Y + 1;
-    private static final String CONCRETE_ID = "hbm:concrete"; // registry name, never the numeric id
+    private static final String CONCRETE_ID = "geontm:concrete"; // registry name, never the numeric id
 
     static final String[] TRAPS = {"falling_rocks", "fire", "arrow", "spikes", "mine", "web", "flaming_arrow", "pillar",
             "rad_conversion", "magic_converstion", "slowness", "weakness", "poison_dart", "zombie", "spiders"};
@@ -43,14 +43,14 @@ public final class FinalDungeonRails implements Scenario {
                 "brick_forgotten_hole_empty", "brick_forgotten_nullroom_wood", "brick_forgotten_nullroom_stone",
                 "brick_forgotten_lock", "brick_forgotten_lock_bw", "brick_forgotten_lock_nullstone",
                 "brick_jungle_fragile", "brick_jungle_lava", "brick_jungle_ooze", "brick_jungle_mystic", "brick_jungle_circle"}) {
-            ids.add("hbm:" + s);
+            ids.add("geontm:" + s);
         }
-        for (String t : TRAPS) ids.add("hbm:brick_jungle_trap_" + t);
-        for (int i = 0; i < 16; i++) ids.add("hbm:brick_jungle_glyph_" + i);
+        for (String t : TRAPS) ids.add("geontm:brick_jungle_trap_" + t);
+        for (int i = 0; i < 16; i++) ids.add("geontm:brick_jungle_glyph_" + i);
         for (String s : new String[]{"stone_keyhole", "stone_keyhole_meta", "pedestal", "skeleton_holder", "deco_loot",
                 "lantern_behemoth", "dungeon_spawner", "logic_block", "logic_block_invis", "rail_wood", "rail_narrow",
                 "rail_highspeed", "rail_booster", "rebar", "rebar_placer"}) {
-            ids.add("hbm:" + s);
+            ids.add("geontm:" + s);
         }
         return ids;
     }
@@ -109,14 +109,14 @@ public final class FinalDungeonRails implements Scenario {
             c.waitTicks(10);
             c.screenshot("0" + (batch + 1) + "-inventory");
             if (batch == 0) {
-                hover(c, "hbm:brick_jungle_trap_web");
+                hover(c, "geontm:brick_jungle_trap_web");
                 c.screenshot("03-trap-tooltip");
             } else {
-                hover(c, "hbm:brick_jungle_glyph_6");
+                hover(c, "geontm:brick_jungle_glyph_6");
                 c.screenshot("04-glyph-tooltip");
-                hover(c, "hbm:rail_highspeed");
+                hover(c, "geontm:rail_highspeed");
                 c.screenshot("05-rail-highspeed-tooltip");
-                hover(c, "hbm:rail_wood");
+                hover(c, "geontm:rail_wood");
                 c.screenshot("06-rail-wood-tooltip");
             }
             close(c);
@@ -129,14 +129,14 @@ public final class FinalDungeonRails implements Scenario {
     /** Every block in a grid on the platform's north-west quarter. */
     private void display(Client c) {
         List<String> blocks = new ArrayList<>(ids());
-        blocks.remove("hbm:rebar_placer");
-        blocks.remove("hbm:lantern_behemoth"); // a five-tall multiblock, placed by hand below
+        blocks.remove("geontm:rebar_placer");
+        blocks.remove("geontm:lantern_behemoth"); // a five-tall multiblock, placed by hand below
         int x0 = -30, z0 = -30;
         for (int i = 0; i < blocks.size(); i++) {
             int x = x0 + (i % 12) * 2;
             int z = z0 + (i / 12) * 2;
             // the action blocks' default script (a zombie wave on a player within 5) is parked on EMPTY here
-            String nbt = blocks.get(i).startsWith("hbm:logic_block") ? "{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}" : "";
+            String nbt = blocks.get(i).startsWith("geontm:logic_block") ? "{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}" : "";
             Fixtures.setBlock(c, x, G, z, blocks.get(i) + nbt);
         }
         c.waitTicks(10);
@@ -155,11 +155,11 @@ public final class FinalDungeonRails implements Scenario {
     private void renderers(Client c) {
         int x = 12, z = -30;
         // pedestal by hand, then a stack put on it with a real click
-        JsonObject placed = placeOnTop(c, "hbm:pedestal", x, Y, z);
-        Expect.equal("hbm:pedestal", placed.get("block").getAsString(), "pedestal placed by hand");
+        JsonObject placed = placeOnTop(c, "geontm:pedestal", x, Y, z);
+        Expect.equal("geontm:pedestal", placed.get("block").getAsString(), "pedestal placed by hand");
         reset(c, x, G, z, placed);
         // (a gun's right-click is its trigger, so a plain item goes up by hand), approached from the south
-        Fixtures.giveOnly(c, "hbm:plate_steel", 1);
+        Fixtures.giveOnly(c, "geontm:plate_steel", 1);
         c.teleport(x + 0.5, G, z + 2.5);
         c.waitTicks(3);
         c.lookAt(x + 0.5, G + 0.5, z + 0.5);
@@ -168,7 +168,7 @@ public final class FinalDungeonRails implements Scenario {
         c.waitTicks(4);
         Expect.that(nbt(c, x, G, z).contains("plate_steel"), "the plate sits on the pedestal: " + nbt(c, x, G, z));
         Expect.that(!c.inventory().toString().contains("plate_steel"), "the plate left the hand");
-        Fixtures.setBlock(c, x + 3, G, z, "hbm:pedestal");
+        Fixtures.setBlock(c, x + 3, G, z, "geontm:pedestal");
         c.cmd("give @s minecraft:gold_block 1");
         c.waitTicks(2);
         c.hotbar(1);
@@ -181,8 +181,8 @@ public final class FinalDungeonRails implements Scenario {
         worldShot(c, "20-pedestal-items", x + 1.5, G + 2, z + 4.5, x + 1.5, G + 1.2, z + 0.5);
 
         // skeleton holder by hand, facing its placer's left
-        placed = placeOnTop(c, "hbm:skeleton_holder", x + 6, Y, z);
-        Expect.equal("hbm:skeleton_holder", placed.get("block").getAsString(), "skeleton holder placed by hand");
+        placed = placeOnTop(c, "geontm:skeleton_holder", x + 6, Y, z);
+        Expect.equal("geontm:skeleton_holder", placed.get("block").getAsString(), "skeleton holder placed by hand");
         // the held use goes on past the placement and hands the (creative, unspent) holder item to the holder: take it off
         reset(c, x + 6, G, z, placed);
         Fixtures.giveOnly(c, "minecraft:iron_sword", 1);
@@ -209,16 +209,16 @@ public final class FinalDungeonRails implements Scenario {
 
         // loot pile, filled the way a structure would
         String count = "count:1,Count:1b"; // 26.1 and 1.20.1 spell the stack count differently; each ignores the other
-        Fixtures.setBlock(c, x + 10, G, z, "hbm:deco_loot");
+        Fixtures.setBlock(c, x + 10, G, z, "geontm:deco_loot");
         c.cmd("data merge block " + (x + 10) + " " + G + " " + z + " {items:["
-                + "{item:{id:\"hbm:ncrpa_helmet\"," + count + "},x:0d,y:0d,z:0d},"
-                + "{item:{id:\"hbm:ncrpa_plate\"," + count + "},x:0d,y:0d,z:0d},"
-                + "{item:{id:\"hbm:ncrpa_legs\"," + count + "},x:0d,y:0d,z:0d},"
-                + "{item:{id:\"hbm:ncrpa_boots\"," + count + "},x:0d,y:0d,z:0d}]}");
-        Fixtures.setBlock(c, x + 13, G, z, "hbm:deco_loot");
+                + "{item:{id:\"geontm:ncrpa_helmet\"," + count + "},x:0d,y:0d,z:0d},"
+                + "{item:{id:\"geontm:ncrpa_plate\"," + count + "},x:0d,y:0d,z:0d},"
+                + "{item:{id:\"geontm:ncrpa_legs\"," + count + "},x:0d,y:0d,z:0d},"
+                + "{item:{id:\"geontm:ncrpa_boots\"," + count + "},x:0d,y:0d,z:0d}]}");
+        Fixtures.setBlock(c, x + 13, G, z, "geontm:deco_loot");
         c.cmd("data merge block " + (x + 13) + " " + G + " " + z + " {items:["
-                + "{item:{id:\"hbm:ammo_standard_nuke_standard\"," + count + "},x:0d,y:0d,z:0d},"
-                + "{item:{id:\"hbm:gun_maresleg\"," + count + "},x:0.2d,y:0d,z:0.3d},"
+                + "{item:{id:\"geontm:ammo_standard_nuke_standard\"," + count + "},x:0d,y:0d,z:0d},"
+                + "{item:{id:\"geontm:gun_maresleg\"," + count + "},x:0.2d,y:0d,z:0.3d},"
                 + "{item:{id:\"minecraft:diamond\"," + count + "},x:0.4d,y:0d,z:0.5d}]}");
         c.waitTicks(4);
         System.out.println("[FinalDungeonRails] loot piles: " + nbt(c, x + 10, G, z) + " / " + nbt(c, x + 13, G, z));
@@ -241,18 +241,18 @@ public final class FinalDungeonRails implements Scenario {
         c.cmd("kill @e[type=minecraft:item]");
 
         // the invisible action block and the visible one, side by side (script parked on EMPTY)
-        Fixtures.setBlock(c, x + 16, G, z, "hbm:logic_block{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}");
-        Fixtures.setBlock(c, x + 18, G, z, "hbm:logic_block_invis{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}");
-        Fixtures.setBlock(c, x + 20, G, z, "hbm:logic_block{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\",disguise:\"minecraft:gold_block\"}");
+        Fixtures.setBlock(c, x + 16, G, z, "geontm:logic_block{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}");
+        Fixtures.setBlock(c, x + 18, G, z, "geontm:logic_block_invis{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\"}");
+        Fixtures.setBlock(c, x + 20, G, z, "geontm:logic_block{conditionID:\"EMPTY\",actionID:\"FODDER_WAVE\",disguise:\"minecraft:gold_block\"}");
         c.waitTicks(5);
-        Expect.block(c, x + 18, G, z, "hbm:logic_block_invis");
+        Expect.block(c, x + 18, G, z, "geontm:logic_block_invis");
         worldShot(c, "23-logic-blocks", x + 18.5, G + 2, z + 4.5, x + 18.5, G + 0.5, z + 0.5);
     }
 
     private void stepAndTraps(Client c) {
         int x = -30, z = 0;
         // brittle floor: five bricks in a row, a gap under them so the crumble is visible
-        c.cmd("fill " + (x - 2) + " " + Y + " " + z + " " + (x + 2) + " " + Y + " " + z + " hbm:brick_jungle_fragile");
+        c.cmd("fill " + (x - 2) + " " + Y + " " + z + " " + (x + 2) + " " + Y + " " + z + " geontm:brick_jungle_fragile");
         c.waitTicks(2);
         worldShot(c, "30-fragile-before", x + 0.5, G + 2, z + 4.5, x + 0.5, Y + 0.5, z + 0.5);
         c.teleport(x + 0.5, G + 0.5, z + 0.5);
@@ -263,41 +263,41 @@ public final class FinalDungeonRails implements Scenario {
 
         // on-step trap: web
         z = 4;
-        Fixtures.setBlock(c, x, Y, z, "hbm:brick_jungle_trap_web");
+        Fixtures.setBlock(c, x, Y, z, "geontm:brick_jungle_trap_web");
         c.teleport(x + 0.5, G + 0.5, z + 0.5);
         c.waitTicks(10);
-        Expect.block(c, x, Y, z, "hbm:brick_jungle");
+        Expect.block(c, x, Y, z, "geontm:brick_jungle");
         Expect.block(c, x, G, z, "minecraft:cobweb");
         worldShot(c, "32-trap-web-sprung", x + 0.5, G + 1.5, z + 3.5, x + 0.5, G, z + 0.5);
         Fixtures.setBlock(c, x, G, z, "minecraft:air");
 
         // detector trap: zombie, whose box is the 3x3 layer above
         z = 8;
-        Fixtures.setBlock(c, x, Y, z, "hbm:brick_jungle_trap_zombie");
+        Fixtures.setBlock(c, x, Y, z, "geontm:brick_jungle_trap_zombie");
         c.teleport(x + 0.5, G, z + 0.5);
         c.waitTicks(10);
-        Expect.block(c, x, Y, z, "hbm:brick_jungle");
+        Expect.block(c, x, Y, z, "geontm:brick_jungle");
         c.cmd("kill @e[type=minecraft:zombie]");
 
         // detector trap: pillar, three concrete pillars below the brick when a player walks under it
         z = 12;
-        Fixtures.setBlock(c, x, G + 4, z, "hbm:brick_jungle_trap_pillar");
+        Fixtures.setBlock(c, x, G + 4, z, "geontm:brick_jungle_trap_pillar");
         c.teleport(x + 0.5, G, z + 0.5);
         c.waitTicks(10);
-        Expect.block(c, x, G + 4, z, "hbm:brick_jungle");
-        Expect.block(c, x, G + 3, z, "hbm:concrete_pillar");
+        Expect.block(c, x, G + 4, z, "geontm:brick_jungle");
+        Expect.block(c, x, G + 3, z, "geontm:concrete_pillar");
         worldShot(c, "33-trap-pillar-sprung", x + 0.5, G + 2, z + 4.5, x + 0.5, G + 3, z + 0.5);
         c.cmd("fill " + x + " " + G + " " + z + " " + x + " " + (G + 4) + " " + z + " minecraft:air");
 
         // radioactive and arcane bricks
         z = 16;
-        Fixtures.setBlock(c, x, Y, z, "hbm:brick_jungle_ooze");
+        Fixtures.setBlock(c, x, Y, z, "geontm:brick_jungle_ooze");
         c.cmd("gamemode survival");
         c.teleport(x + 0.5, G + 0.5, z + 0.5);
         c.waitTicks(10);
         String effects = c.player().toString();
         Expect.that(effects.contains("radiation"), "walking on radioactive enargite irradiates: " + effects);
-        Fixtures.setBlock(c, x, Y, z, "hbm:brick_jungle_mystic");
+        Fixtures.setBlock(c, x, Y, z, "geontm:brick_jungle_mystic");
         c.teleport(x + 0.5, G + 0.5, z + 0.5);
         c.waitTicks(10);
         effects = c.player().toString();
@@ -311,7 +311,7 @@ public final class FinalDungeonRails implements Scenario {
         int x = -20, z = 0;
         // the hole: an empty hand pulls an eternal coal out
         c.cmd("fill " + (x - 3) + " " + G + " " + (z - 3) + " " + (x + 3) + " " + (G + 5) + " " + (z + 17) + " minecraft:stone");
-        Fixtures.setBlock(c, x, G + 1, z - 3, "hbm:brick_forgotten_hole");
+        Fixtures.setBlock(c, x, G + 1, z - 3, "geontm:brick_forgotten_hole");
         c.cmd("clear");
         c.teleport(x + 0.5, G, z - 5.5);
         c.waitTicks(3);
@@ -320,13 +320,13 @@ public final class FinalDungeonRails implements Scenario {
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(3);
-        Expect.block(c, x, G + 1, z - 3, "hbm:brick_forgotten_hole_empty");
+        Expect.block(c, x, G + 1, z - 3, "geontm:brick_forgotten_hole_empty");
         Expect.that(c.inventory().toString().contains("coal_eternal"), "the hole gave an eternal coal");
         worldShot(c, "40-forgotten-hole-empty", x + 0.5, G + 1, z - 6.5, x + 0.5, G + 1.5, z - 3);
 
         // the lock: the red key on its north face cuts a 15-deep corridor south into the rock
-        Fixtures.setBlock(c, x + 2, G + 2, z - 3, "hbm:brick_forgotten_lock");
-        Fixtures.giveOnly(c, "hbm:key_red", 1);
+        Fixtures.setBlock(c, x + 2, G + 2, z - 3, "geontm:brick_forgotten_lock");
+        Fixtures.giveOnly(c, "geontm:key_red", 1);
         c.teleport(x + 2.5, G, z - 5.5);
         c.waitTicks(3);
         c.lookAt(x + 2.5, G + 2.5, z - 3.0);
@@ -335,39 +335,39 @@ public final class FinalDungeonRails implements Scenario {
         c.waitTicks(5);
         Expect.block(c, x + 2, G + 2, z + 1, "minecraft:air");
         Expect.block(c, x + 2, G + 2, z + 10, "minecraft:air");
-        Expect.block(c, x + 2, G + 2, z + 11, "hbm:brick_forgotten");
-        Expect.block(c, x + 4, G + 2, z + 5, "hbm:brick_forgotten");
+        Expect.block(c, x + 2, G + 2, z + 11, "geontm:brick_forgotten");
+        Expect.block(c, x + 4, G + 2, z + 5, "geontm:brick_forgotten");
         worldShot(c, "41-forgotten-corridor", x + 2.5, G + 1.5, z - 5.5, x + 2.5, G + 2, z + 8);
         c.cmd("fill " + (x - 3) + " " + G + " " + (z - 3) + " " + (x + 5) + " " + (G + 5) + " " + (z + 17) + " minecraft:air");
 
         // the mechanist's circle: the mech key drops Balls-O-Tron from y 300 and cracks the circle
-        Fixtures.setBlock(c, x + 8, Y, z, "hbm:brick_jungle_circle");
-        Fixtures.giveOnly(c, "hbm:mech_key", 1);
+        Fixtures.setBlock(c, x + 8, Y, z, "geontm:brick_jungle_circle");
+        Fixtures.giveOnly(c, "geontm:mech_key", 1);
         c.teleport(x + 8.5, G, z - 2.5);
         c.waitTicks(3);
         c.lookAt(x + 8.5, Y + 0.98, z + 0.5);
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(5);
-        Expect.block(c, x + 8, Y, z, "hbm:brick_jungle_cracked");
+        Expect.block(c, x + 8, Y, z, "geontm:brick_jungle_cracked");
         Expect.that(!c.inventory().toString().contains("mech_key"), "the mechanist's key was used up");
-        c.cmd("kill @e[type=hbm:entity_balls_o_tron]");
-        c.cmd("kill @e[type=hbm:entity_balls_o_tron_seg]");
+        c.cmd("kill @e[type=geontm:entity_balls_o_tron]");
+        c.cmd("kill @e[type=geontm:entity_balls_o_tron_seg]");
         Fixtures.setBlock(c, x + 8, Y, z, "minecraft:stone");
     }
 
     private void pedestalRitual(Client c) {
         int x = 0, z = 0;
         int[][] cells = {{0, 0}, {0, -3}, {0, 3}, {-3, 0}, {3, 0}, {-2, -2}, {2, -2}, {-2, 2}, {2, 2}};
-        for (int[] cell : cells) Fixtures.setBlock(c, x + cell[0], G, z + cell[1], "hbm:pedestal");
+        for (int[] cell : cells) Fixtures.setBlock(c, x + cell[0], G, z + cell[1], "geontm:pedestal");
         // the centre revolver goes on by data (a gun's right-click fires it); the plates by hand
-        c.cmd("data merge block " + x + " " + G + " " + z + " {item:{id:\"hbm:gun_light_revolver\"," + "count:1,Count:1b" + "}}");
+        c.cmd("data merge block " + x + " " + G + " " + z + " {item:{id:\"geontm:gun_light_revolver\"," + "count:1,Count:1b" + "}}");
         c.waitTicks(2);
         Expect.that(nbt(c, x, G, z).contains("gun_light_revolver"), "the revolver is on the centre pedestal: " + nbt(c, x, G, z));
-        put(c, "hbm:plate_lead", x, z - 3);
-        put(c, "hbm:plate_lead", x, z + 3);
-        put(c, "hbm:plate_gold", x - 3, z);
-        put(c, "hbm:plate_gold", x + 3, z);
+        put(c, "geontm:plate_lead", x, z - 3);
+        put(c, "geontm:plate_lead", x, z + 3);
+        put(c, "geontm:plate_gold", x - 3, z);
+        put(c, "geontm:plate_gold", x + 3, z);
         worldShot(c, "50-ritual-before", x + 0.5, G + 5, z + 7.5, x + 0.5, G, z + 0.5);
         c.cmd("clear");
         Fixtures.setBlock(c, x, G, z + 1, "minecraft:redstone_block");
@@ -396,8 +396,8 @@ public final class FinalDungeonRails implements Scenario {
         int x = 20, z = 0;
         // a rock wall, the Strange Stone set in its north face
         c.cmd("fill " + (x - 6) + " " + (Y - 3) + " " + (z) + " " + (x + 6) + " " + (G + 5) + " " + (z + 10) + " minecraft:stone");
-        Fixtures.setBlock(c, x, G + 1, z, "hbm:stone_keyhole");
-        Fixtures.giveOnly(c, "hbm:key_red", 1);
+        Fixtures.setBlock(c, x, G + 1, z, "geontm:stone_keyhole");
+        Fixtures.giveOnly(c, "geontm:key_red", 1);
         c.teleport(x + 0.5, G, z - 2.5);
         c.waitTicks(3);
         worldShot(c, "60-keyhole-before", x + 0.5, G + 0.5, z - 3.5, x + 0.5, G + 1.5, z);
@@ -407,12 +407,12 @@ public final class FinalDungeonRails implements Scenario {
         c.use(1);
         c.waitTicks(6);
         JsonObject door = c.block(x, G + 1, z);
-        Expect.that(door.get("block").getAsString().equals("hbm:door_red"), "a red door replaces the keyhole: " + door);
-        Expect.block(c, x, G, z, "hbm:door_red");
+        Expect.that(door.get("block").getAsString().equals("geontm:door_red"), "a red door replaces the keyhole: " + door);
+        Expect.block(c, x, G, z, "geontm:door_red");
         // room centre four blocks in, floor two below the keyhole
-        Expect.block(c, x, G - 1, z + 4, "hbm:brick_red");
+        Expect.block(c, x, G - 1, z + 4, "geontm:brick_red");
         String centre = c.block(x, G, z + 4).get("block").getAsString();
-        Expect.that(centre.equals("hbm:pedestal") || centre.equals("hbm:deco_loot"), "the Red Room holds its treasure: " + centre);
+        Expect.that(centre.equals("geontm:pedestal") || centre.equals("geontm:deco_loot"), "the Red Room holds its treasure: " + centre);
         worldShot(c, "61-keyhole-door", x + 0.5, G + 0.5, z - 3.5, x + 0.5, G + 1, z);
         // step inside and look around
         c.cmd("setblock " + x + " " + G + " " + z + " minecraft:air");
@@ -424,17 +424,17 @@ public final class FinalDungeonRails implements Scenario {
         int[] kh = null;
         for (int dx = -4; dx <= 4 && kh == null; dx++)
             for (int dz = 0; dz <= 8 && kh == null; dz++)
-                if (c.block(x + dx, G + 1, z + dz).get("block").getAsString().equals("hbm:stone_keyhole_meta")) kh = new int[]{x + dx, z + dz};
+                if (c.block(x + dx, G + 1, z + dz).get("block").getAsString().equals("geontm:stone_keyhole_meta")) kh = new int[]{x + dx, z + dz};
         if (kh == null) {
             // the keyhole brick landed in the entrance wall, where the red door replaced it (as in 1.7): set one in
             // the east wall, facing into the room, to open the black room from
-            Fixtures.setBlock(c, x + 4, G + 1, z + 4, "hbm:stone_keyhole_meta[facing=west]");
+            Fixtures.setBlock(c, x + 4, G + 1, z + 4, "geontm:stone_keyhole_meta[facing=west]");
             kh = new int[]{x + 4, z + 4};
         }
         worldShot(c, "64-red-room-keyhole-brick", x + 0.5, G, z + 4.5, kh[0] + 0.5, G + 1.5, kh[1] + 0.5);
         // open it from inside the room: stand at the centre and click the face toward us
         Fixtures.setBlock(c, x, G, z + 4, "minecraft:air");
-        Fixtures.giveOnly(c, "hbm:key_red", 1);
+        Fixtures.giveOnly(c, "geontm:key_red", 1);
         c.teleport(x + 0.5, G, z + 4.5);
         c.waitTicks(3);
         double fx = kh[0] + 0.5 + Math.signum(x - kh[0]) * 0.5, fz = kh[1] + 0.5 + Math.signum(z + 4 - kh[1]) * 0.5;
@@ -442,7 +442,7 @@ public final class FinalDungeonRails implements Scenario {
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(6);
-        Expect.block(c, kh[0], G + 1, kh[1], "hbm:door_red");
+        Expect.block(c, kh[0], G + 1, kh[1], "geontm:door_red");
         worldShot(c, "65-black-room-door", x + 0.5, G, z + 4.5, kh[0] + 0.5, G + 1, kh[1] + 0.5);
         c.cmd("fill " + (x - 16) + " " + (Y - 3) + " " + (z - 12) + " " + (x + 16) + " " + (G + 6) + " " + (z + 20) + " minecraft:air");
         c.cmd("fill " + (x - 16) + " " + Y + " " + (z - 12) + " " + (x + 16) + " " + Y + " " + (z + 20) + " minecraft:stone");
@@ -453,12 +453,12 @@ public final class FinalDungeonRails implements Scenario {
         String[] rails = {"rail_wood", "rail_narrow", "rail_highspeed", "rail_booster", "minecraft:rail"};
         int[] zs = {20, 23, 26, 29, 32};
         for (int i = 0; i < rails.length; i++) {
-            String id = rails[i].contains(":") ? rails[i] : "hbm:" + rails[i];
+            String id = rails[i].contains(":") ? rails[i] : "geontm:" + rails[i];
             c.cmd("fill -38 " + G + " " + zs[i] + " 38 " + G + " " + zs[i] + " " + id + "[shape=east_west]");
         }
         // a curve on the narrow and the high-speed line's far end shows the turned texture (or, high-speed, not)
         c.waitTicks(4);
-        Expect.block(c, 0, G, 20, "hbm:rail_wood");
+        Expect.block(c, 0, G, 20, "geontm:rail_wood");
         worldShot(c, "70-rails", -30.5, G + 3, 17.5, -26, G, 26);
 
         double[] speeds = new double[rails.length];
@@ -497,7 +497,7 @@ public final class FinalDungeonRails implements Scenario {
             if (i == 2) worldShot(c, "71-cart-highspeed", x1 + 3, G + 2, zs[i] - 3.5, x1, G, zs[i] + 0.5);
         }
         // 1.7 caps: wood 0.2, narrow 0.4 (vanilla), high speed 1.0; the booster accelerates a slow cart. Measured
-        // server-side, and each HBM rail is also checked as a ratio to the vanilla control rail of the same run
+        // server-side, and each GEONTM rail is also checked as a ratio to the vanilla control rail of the same run
         double v = speeds[4];
         Expect.that(v > 0.36 && v <= 0.42, "vanilla rail control stays at 0.4 b/t: " + v);
         Expect.that(speeds[0] > 0.18 && speeds[0] <= 0.21, "wooden tracks cap carts at 0.2 b/t: " + speeds[0]);
@@ -540,8 +540,8 @@ public final class FinalDungeonRails implements Scenario {
     private void rebar(Client c) {
         int x = 12, z = 10;
         c.cmd("clear");
-        c.cmd("give @s hbm:rebar_placer 1");
-        c.cmd("give @s hbm:rebar 64");
+        c.cmd("give @s geontm:rebar_placer 1");
+        c.cmd("give @s geontm:rebar 64");
         c.waitTicks(3);
         c.hotbar(1);
         // the placer's menu, sneak-opened
@@ -575,17 +575,17 @@ public final class FinalDungeonRails implements Scenario {
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(4);
-        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 1; dz++) Expect.block(c, x + dx, G, z + dz, "hbm:rebar");
+        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 1; dz++) Expect.block(c, x + dx, G, z + dz, "geontm:rebar");
         System.out.println("[FinalDungeonRails] inventory after placing: " + c.inventory());
         worldShot(c, "83-rebar-placed", x + 1.5, G + 2.5, z - 2.5, x + 1.5, G, z + 1);
 
         // concrete: a full barrel on output, a duct typed for concrete, into the cage's west end
-        c.cmd("setblock " + (x - 2) + " " + G + " " + z + " hbm:barrel_steel{mode:2s,tank:16000,tank_type:\"" + CONCRETE_ID + "\"}");
-        c.cmd("setblock " + (x - 1) + " " + G + " " + z + " hbm:fluid_duct_neo");
+        c.cmd("setblock " + (x - 2) + " " + G + " " + z + " geontm:barrel_steel{mode:2s,tank:16000,tank_type:\"" + CONCRETE_ID + "\"}");
+        c.cmd("setblock " + (x - 1) + " " + G + " " + z + " geontm:fluid_duct_neo");
         c.waitTicks(3);
         // a duct joins its net's fluid only when typed in game: one click with a concrete fluid identifier
-        String identifier = c.node().startsWith("1.20.") ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + CONCRETE_ID + "\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"" + CONCRETE_ID + "\"]";
+        String identifier = c.node().startsWith("1.20.") ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + CONCRETE_ID + "\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"" + CONCRETE_ID + "\"]";
         Fixtures.giveOnly(c, identifier, 1);
         c.teleport(x - 0.5, G, z - 2.5);
         c.waitTicks(3);
@@ -599,7 +599,7 @@ public final class FinalDungeonRails implements Scenario {
         for (int t = 0; t < 60; t++) {
             c.waitTicks(1);
             JsonObject b = c.block(x, G, z);
-            if (!b.get("block").getAsString().equals("hbm:rebar")) break;
+            if (!b.get("block").getAsString().equals("geontm:rebar")) break;
             String n = nbt(c, x, G, z);
             int p = (int) longOf(n, "progress");
             progress.add(p);
@@ -611,22 +611,22 @@ public final class FinalDungeonRails implements Scenario {
         System.out.println("[FinalDungeonRails] rebar progress samples: " + progress);
         Expect.that(!progress.isEmpty() && progress.get(progress.size() - 1) > 0, "concrete rose in the rebar: " + progress);
         c.waitTicks(20);
-        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 1; dz++) Expect.block(c, x + dx, G, z + dz, "hbm:concrete_rebar");
+        for (int dx = 0; dx <= 2; dx++) for (int dz = 0; dz <= 1; dz++) Expect.block(c, x + dx, G, z + dz, "geontm:concrete_rebar");
         worldShot(c, "85-rebar-set", x + 1.5, G + 2, z - 2.5, x + 1.5, G, z + 1);
     }
 
     private void lantern(Client c) {
         int x = 30, z = -20;
-        JsonObject placed = placeOnTop(c, "hbm:lantern_behemoth", x, Y, z);
-        Expect.equal("hbm:lantern_behemoth", placed.get("block").getAsString(), "old lantern placed by hand");
+        JsonObject placed = placeOnTop(c, "geontm:lantern_behemoth", x, Y, z);
+        Expect.equal("geontm:lantern_behemoth", placed.get("block").getAsString(), "old lantern placed by hand");
         worldShot(c, "90-lantern-working", x + 0.5, G + 3, z + 7.5, x + 0.5, G + 3, z + 0.5);
         c.cmd("data merge block " + x + " " + G + " " + z + " {isBroken:1b}");
         c.waitTicks(5);
         // the repair overlay shows with a blowtorch in hand
         c.cmd("clear");
-        c.cmd("give @s hbm:blowtorch 1");
-        c.cmd("give @s hbm:plate_steel 2");
-        c.cmd("give @s hbm:circuit_basic 1");
+        c.cmd("give @s geontm:blowtorch 1");
+        c.cmd("give @s geontm:plate_steel 2");
+        c.cmd("give @s geontm:circuit_basic 1");
         c.waitTicks(3);
         c.hotbar(1);
         c.teleport(x + 0.5, G, z + 2.5);
@@ -650,13 +650,13 @@ public final class FinalDungeonRails implements Scenario {
 
     private void logicBlock(Client c) {
         int x = -10, z = 30;
-        Fixtures.setBlock(c, x, G, z, "hbm:logic_block{conditionID:\"PLAYER_CUBE_3\",actionID:\"FODDER_WAVE\"}");
+        Fixtures.setBlock(c, x, G, z, "geontm:logic_block{conditionID:\"PLAYER_CUBE_3\",actionID:\"FODDER_WAVE\"}");
         c.teleport(x + 8.5, G, z + 0.5);
         c.waitTicks(10);
-        Expect.block(c, x, G, z, "hbm:logic_block");
+        Expect.block(c, x, G, z, "geontm:logic_block");
         c.teleport(x + 2.5, G, z + 0.5);
         c.waitTicks(10);
-        Expect.block(c, x, G, z, "hbm:block_steel");
+        Expect.block(c, x, G, z, "geontm:block_steel");
         c.cmd("kill @e[type=minecraft:zombie]");
     }
 

@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import java.util.TreeMap;
  * {@code TileEntityBobble.transformTE}), and the silo's hatch, Methusalem turret and launch pad stand whole when the
  * silo is built chunk by chunk as world generation builds it.
  *
- * <p>Flat world: six NBT structures ({@code hbm_wgc mode=nbt}) and the nine hardcoded pieces ({@code mode=build}) are
+ * <p>Flat world: six NBT structures ({@code geontm_wgc mode=nbt}) and the nine hardcoded pieces ({@code mode=build}) are
  * built in all four rotations; rotation N must hold rotation 0's blocks at the turned positions with facing, axis,
  * 16-step rotation, scaffold orientation and rail shape turned N quarters, including the blocks 1.7 left unturned.
  * The silo is built in four rotations, whole and chunk by chunk.
@@ -52,7 +52,7 @@ public final class Gh161Structures implements Scenario {
             Map<Integer, Map<String, String>> builds = new HashMap<>();
             int[] size = null;
             for (int rot = 0; rot < 4; rot++) {
-                JsonObject s = q(c, "hbm_wgc", "mode", "nbt", "piece", id, "x", px, "y", -61, "z", 0, "rot", rot,
+                JsonObject s = q(c, "geontm_wgc", "mode", "nbt", "piece", id, "x", px, "y", -61, "z", 0, "rot", rot,
                         "seed", 161L + rot).getAsJsonObject("start");
                 int[] b = box(s);
                 if (rot == 0) size = new int[] {b[3] - b[0] + 1, b[5] - b[2] + 1};
@@ -81,7 +81,7 @@ public final class Gh161Structures implements Scenario {
             Map<Integer, Map<String, String>> builds = new HashMap<>();
             for (int rot = 0; rot < 4; rot++) {
                 int floor = piece.equals("SiloComponent") || piece.equals("NTMLab2") ? -62 : -60;
-                JsonObject s = q(c, "hbm_wgc", "mode", "build", "piece", piece, "x", px, "z", 0, "y", floor, "seed", 161L,
+                JsonObject s = q(c, "geontm_wgc", "mode", "build", "piece", piece, "x", px, "z", 0, "y", floor, "seed", 161L,
                         "rot", rot).getAsJsonObject("start");
                 Map<String, String> blocks = new HashMap<>();
                 for (JsonElement e : s.getAsJsonArray("blocks")) {
@@ -103,9 +103,9 @@ public final class Gh161Structures implements Scenario {
         for (int rot = 0; rot < 4; rot++) {
             for (boolean chunked : new boolean[] {false, true}) {
                 JsonObject s = chunked
-                        ? q(c, "hbm_wgc", "mode", "build", "piece", "SiloComponent", "x", px, "z", 0, "y", -62, "seed", 161L, "rot", rot, "chunked", true)
+                        ? q(c, "geontm_wgc", "mode", "build", "piece", "SiloComponent", "x", px, "z", 0, "y", -62, "seed", 161L, "rot", rot, "chunked", true)
                         .getAsJsonObject("start")
-                        : q(c, "hbm_wgc", "mode", "build", "piece", "SiloComponent", "x", px, "z", 0, "y", -62, "seed", 161L, "rot", rot)
+                        : q(c, "geontm_wgc", "mode", "build", "piece", "SiloComponent", "x", px, "z", 0, "y", -62, "seed", 161L, "rot", rot)
                         .getAsJsonObject("start");
                 JsonArray multi = s.getAsJsonArray("multiblocks");
                 report.add("silo rot " + rot + (chunked ? " chunked " : " whole   ") + multi);

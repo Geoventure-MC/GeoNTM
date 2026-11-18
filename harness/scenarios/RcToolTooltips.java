@@ -1,8 +1,8 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -68,7 +68,7 @@ public final class RcToolTooltips implements Scenario {
             c.waitTicks(4);
             List<String> given = new ArrayList<>();
             for (int i = start; i < Math.min(IDS.length, start + 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i]);
                 given.add(IDS[i]);
             }
             c.waitTicks(8);
@@ -77,7 +77,7 @@ public final class RcToolTooltips implements Scenario {
                 JsonObject p = new JsonObject();
                 p.addProperty("mode", "tooltip");
                 p.addProperty("slot", slot);
-                JsonObject r = c.query("hbm_release", p);
+                JsonObject r = c.query("geontm_release", p);
                 String item = r.has("item") ? r.get("item").getAsString() : "?";
                 JsonArray lines = r.has("lines") ? r.getAsJsonArray("lines") : new JsonArray();
                 // /give stacks go to the first free slot in hotbar-then-main order, so match by id

@@ -1,14 +1,14 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * Wave 2 HOOKS (History §19ek-hooks), in the seeded world, through the new Golem Core hooks on every loader:
+ * Wave 2 HOOKS (History §19ek-hooks), in the seeded world, through the new GeoCore hooks on every loader:
  * <ol>
  *   <li>JEI: the spent fuel pool drum's page (1.7 FuelPoolHandler) from the drum's uses, and the arc furnace's
  *       furnace-smelting pass (the log line counts it, the solid page shows it);</li>
@@ -32,7 +32,7 @@ public final class HooksWave2 implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        return c.query("hbm_hooks", p);
+        return c.query("geontm_hooks", p);
     }
 
     @Override
@@ -54,7 +54,7 @@ public final class HooksWave2 implements Scenario {
         duck(c);
         cyanide(c);
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|is not registered).*");
     }
 
     // ---------------------------------------------------------------- 1: JEI
@@ -68,11 +68,11 @@ public final class HooksWave2 implements Scenario {
 
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:machine_waste_drum 1");
-        c.cmd("give @s hbm:machine_arc_furnace 1");
+        c.cmd("give @s geontm:machine_waste_drum 1");
+        c.cmd("give @s geontm:machine_arc_furnace 1");
         c.waitTicks(4);
-        uses(c, "hbm:machine_waste_drum", "10-jei-fuel-pool-drum");
-        uses(c, "hbm:machine_arc_furnace", "11-jei-arc-furnace");
+        uses(c, "geontm:machine_waste_drum", "10-jei-fuel-pool-drum");
+        uses(c, "geontm:machine_arc_furnace", "11-jei-arc-furnace");
         c.cmd("clear");
         c.cmd("gamemode creative");
     }
@@ -125,7 +125,7 @@ public final class HooksWave2 implements Scenario {
             c.waitTicks(5);
             for (int[] d : new int[][]{{1, 0, 0}, {-1, 0, 0}, {0, 1, 0}, {0, -1, 0}, {0, 0, 1}, {0, 0, -1}}) {
                 JsonObject b = c.block(bx + d[0], by + 1 + d[1], bz + d[2]);
-                if (b.toString().contains("hbm:gas_coal")) dust++;
+                if (b.toString().contains("geontm:gas_coal")) dust++;
             }
         }
         c.screenshot("20-coal-dust");
@@ -172,11 +172,11 @@ public final class HooksWave2 implements Scenario {
     private void duck(Client c) {
         // a snowy plains patch on the platform (/fillbiome): 26.1 would give a chicken spawned here the cold variant
         int dx = X + 6, dz = Z + 6;
-        c.cmd("kill @e[type=hbm:entity_fucc_a_ducc]");
+        c.cmd("kill @e[type=geontm:entity_fucc_a_ducc]");
         c.cmd("fillbiome " + (dx - 4) + " " + (L - 4) + " " + (dz - 4) + " " + (dx + 4) + " " + (L + 12) + " " + (dz + 4)
                 + " minecraft:snowy_plains");
         c.waitTicks(5);
-        c.cmd("summon hbm:entity_fucc_a_ducc " + dx + " " + L + " " + dz);
+        c.cmd("summon geontm:entity_fucc_a_ducc " + dx + " " + L + " " + dz);
         c.waitTicks(5);
         JsonObject r = hooks(c).getAsJsonObject("server");
         c.teleport(X + 0.5, L, Z + 0.5);
@@ -191,26 +191,26 @@ public final class HooksWave2 implements Scenario {
             Expect.that(ch.get("plain_egg").getAsBoolean(), "a duck in the snowy plains lays the plain egg: " + ch);
         }
         Expect.that(found, "a duck stands in the snowy plains: " + r);
-        c.cmd("kill @e[type=hbm:entity_fucc_a_ducc]");
+        c.cmd("kill @e[type=geontm:entity_fucc_a_ducc]");
     }
 
     // ---------------------------------------------------------------- 5: cyanide
 
     private void cyanide(Client c) {
         int ax = X - 4;
-        Fixtures.placeOnTop(c, "hbm:anvil_iron", ax, Y, Z);
-        Expect.block(c, ax, L, Z, "hbm:anvil_iron");
+        Fixtures.placeOnTop(c, "geontm:anvil_iron", ax, Y, Z);
+        Expect.block(c, ax, L, Z, "geontm:anvil_iron");
         c.cmd("gamemode survival");
         c.cmd("clear");
         Fixtures.give(c, "minecraft:golden_apple", 1);
-        Fixtures.give(c, "hbm:plan_c", 1);
+        Fixtures.give(c, "geontm:plan_c", 1);
         c.teleport(ax + 2.5, L, Z + 0.5);
         c.waitTicks(5);
         Fixtures.interact(c, ax, L, Z);
         c.waitScreen("GUIAnvil", 5_000L);
         c.waitTicks(5);
         move(c, playerSlot(c, "minecraft:golden_apple"), 0);
-        move(c, playerSlot(c, "hbm:plan_c"), 1);
+        move(c, playerSlot(c, "geontm:plan_c"), 1);
         c.waitTicks(5);
         c.screenshot("50-anvil-cyanide");
         Expect.slotHolds(c, 2, "minecraft:golden_apple", 1);

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public final class ReleaseMissileImpacts implements Scenario {
             c.setOption("sound_capture", "false");
             c.cmd("kill @e[type=!player]");
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|is not registered).*");
         c.resetWorld();
     }
 
@@ -66,7 +66,7 @@ public final class ReleaseMissileImpacts implements Scenario {
         c.lookAt(tx + 0.5, Y + 5.0, tz + 0.5);
         c.waitTicks(10);
         c.markLog();
-        summonDown(c, "hbm:missile_drill", tx, tz);
+        summonDown(c, "geontm:missile_drill", tx, tz);
         List<String> booms = List.of();
         for (int i = 0; i < 20; i++) {
             c.waitTicks(5);
@@ -91,13 +91,13 @@ public final class ReleaseMissileImpacts implements Scenario {
         c.lookAt(tx + 0.5, Y + 3.0, tz + 0.5);
         c.waitTicks(10);
         c.markLog();
-        summonDown(c, "hbm:missile_volcano", tx, tz);
+        summonDown(c, "geontm:missile_volcano", tx, tz);
         int[] core = null;
         for (int i = 0; i < 20 && core == null; i++) {
             c.waitTicks(5);
             core = findCore(c, tx, tz);
         }
-        Expect.that(core != null, "the volcano missile placed hbm:volcano_core");
+        Expect.that(core != null, "the volcano missile placed geontm:volcano_core");
         List<String> impact = c.logSinceMark("harness-sound.*id=minecraft:entity.generic.explode");
         int lava0 = countLava(c, core);
         c.screenshot("20-volcano-impact");
@@ -131,7 +131,7 @@ public final class ReleaseMissileImpacts implements Scenario {
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dz = -1; dz <= 1; dz++) {
                     JsonObject b = c.block(tx + dx, y, tz + dz);
-                    if (b.toString().contains("hbm:volcano_core")) return new int[]{tx + dx, y, tz + dz};
+                    if (b.toString().contains("geontm:volcano_core")) return new int[]{tx + dx, y, tz + dz};
                 }
             }
         }

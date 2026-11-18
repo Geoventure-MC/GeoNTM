@@ -1,17 +1,17 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * GitHub issue 10: HBM buffers in Jade's HUD through Golem Core's block-info adapter. Places a machine battery (HE),
+ * GitHub issue 10: GEONTM buffers in Jade's HUD through GeoCore's block-info adapter. Places a machine battery (HE),
  * a steel barrel with kerosene (fluid), a chemical plant with power and a filled tank (a folded multiblock: its
  * cells must show the core) and a firebox with heat (TU), looks at each and screenshots the HUD; the pictures are
  * the check. With Jade in the run ({@code ORG_GRADLE_PROJECT_jade.run=true} and {@code up --rebuild}) the log must
- * show Golem Core's plugin loading; without it the same steps must run clean.
+ * show GeoCore's plugin loading; without it the same steps must run clean.
  */
 public final class Gh10Jade implements Scenario {
 
@@ -27,19 +27,19 @@ public final class Gh10Jade implements Scenario {
         c.cmd("kill @e[type=item]");
         c.cmd("gamemode creative");
 
-        List<String> jade = c.log(4000, "(?i)golem\\.core\\.jade|jade.*plugin");
+        List<String> jade = c.log(4000, "(?i)geocore\\.core\\.jade|jade.*plugin");
         boolean withJade = !jade.isEmpty();
         System.out.println("[Gh10] Jade " + (withJade ? "present: " + jade.get(jade.size() - 1) : "absent"));
         c.markLog();
 
         // HE: a machine battery at 600k of its capacity
-        c.cmd("setblock -6 " + G + " 0 hbm:machine_battery");
+        c.cmd("setblock -6 " + G + " 0 geontm:machine_battery");
         c.waitTicks(5);
         c.cmd("data merge block -6 " + G + " 0 {power:600000L}");
         // fluid: a steel barrel with 4,000 mB kerosene
-        c.cmd("setblock 6 " + G + " 0 hbm:barrel_steel");
+        c.cmd("setblock 6 " + G + " 0 geontm:barrel_steel");
         c.waitTicks(5);
-        c.cmd("data merge block 6 " + G + " 0 {tank:4000,tank_type:\"hbm:kerosene\"}");
+        c.cmd("data merge block 6 " + G + " 0 {tank:4000,tank_type:\"geontm:kerosene\"}");
 
         c.cmd("clear");
         look(c, -6, 0, "01-battery-he");
@@ -47,12 +47,12 @@ public final class Gh10Jade implements Scenario {
 
         // a folded multiblock and a firebox, placed by hand with HBM's gun keys on their default right and middle
         // buttons: below 26.1 Fabric keeps one mapping per key, and key.use must keep right-click with Jade loaded
-        int[] plant = place(c, "hbm:machine_chemical_plant", -3.5, 0.5, "chemical_plant", -1, 3);
-        int[] firebox = place(c, "hbm:heater_firebox", 4.5, 8.5, "firebox", 6, 10);
+        int[] plant = place(c, "geontm:machine_chemical_plant", -3.5, 0.5, "chemical_plant", -1, 3);
+        int[] firebox = place(c, "geontm:heater_firebox", 4.5, 8.5, "firebox", 6, 10);
         Expect.that(plant != null, "the chemical plant formed a core");
         Expect.that(firebox != null, "the firebox formed a core");
         c.cmd("data merge block " + plant[0] + " " + plant[1] + " " + plant[2]
-                + " {power:50000L,i0_type:\"hbm:kerosene\",i0:6000}");
+                + " {power:50000L,i0_type:\"geontm:kerosene\",i0:6000}");
         c.cmd("data merge block " + firebox[0] + " " + firebox[1] + " " + firebox[2] + " {heatEnergy:40000}");
         c.cmd("clear");
 
@@ -64,7 +64,7 @@ public final class Gh10Jade implements Scenario {
         c.screenshot("03-chemplant-cell");
         look(c, firebox[0], firebox[2], "04-firebox-heat");
 
-        if (withJade) Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|golem)");
+        if (withJade) Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|geocore)");
         else Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");
     }
 

@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,13 +30,13 @@ public final class RcFluidSlots implements Scenario {
         c.cmd("fill " + (X - 8) + " " + L + " " + (Z - 8) + " " + (X + 70) + " " + (L + 12) + " " + (Z + 8) + " minecraft:air");
 
         // barrel: tank slots 2 load / 3 result, 4 fill / 5 result
-        machine(c, 0, "hbm:barrel_steel{tank:3000,tank_max:16000,tank_type:\"hbm:oil\",tank_p:0s,mode:0s}", "tank", 2, 3, 4, 5);
+        machine(c, 0, "geontm:barrel_steel{tank:3000,tank_max:16000,tank_type:\"geontm:oil\",tank_p:0s,mode:0s}", "tank", 2, 3, 4, 5);
         // fluid tank: the same four slots
-        machine(c, 10, "hbm:machine_fluidtank[facing=north]{tank:3000,tank_type:\"hbm:oil\"}", "tank", 2, 3, 4, 5);
+        machine(c, 10, "geontm:machine_fluidtank[facing=north]{tank:3000,tank_type:\"geontm:oil\"}", "tank", 2, 3, 4, 5);
         // derrick: oil tank unloaded through slots 1 and 2 (1.7 unloadTank(1, 2)): an empty canister is filled
-        machine(c, 20, "hbm:machine_well[facing=north]{t0:3000,t0_type:\"hbm:oil\"}", "t0", -1, -1, 1, 2);
+        machine(c, 20, "geontm:machine_well[facing=north]{t0:3000,t0_type:\"geontm:oil\"}", "t0", -1, -1, 1, 2);
         // reformer: naphtha input loaded through 1 and 2 (loadTank(1, 2)): a full canister is emptied
-        machine(c, 30, "hbm:machine_catalytic_reformer[facing=north]{input:0,input_type:\"hbm:naphtha\"}", "input", 1, 2, -1, -1);
+        machine(c, 30, "geontm:machine_catalytic_reformer[facing=north]{input:0,input_type:\"geontm:naphtha\"}", "input", 1, 2, -1, -1);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception");
     }
 
@@ -44,7 +44,7 @@ public final class RcFluidSlots implements Scenario {
         int x = X + dx;
         c.cmd("setblock " + x + " " + L + " " + Z + " " + state);
         c.waitTicks(10);
-        String fluid = state.contains("naphtha") ? "hbm:naphtha" : "hbm:oil";
+        String fluid = state.contains("naphtha") ? "geontm:naphtha" : "geontm:oil";
         String name = state.substring(0, state.indexOf('[') > 0 ? state.indexOf('[') : state.indexOf('{'));
         int start = nbtInt(c, x, key);
         System.out.println("[RcSlots] " + name + " start " + key + "=" + start);
@@ -55,7 +55,7 @@ public final class RcFluidSlots implements Scenario {
             c.cmd("clear");
             c.cmd("give @s " + full(c, fluid) + " 2");
             open(c, x);
-            int inv = findInventory(c, "hbm:canister_full");
+            int inv = findInventory(c, "geontm:canister_full");
             Expect.that(inv >= 0, name + ": the full canister is in the player's inventory");
             c.slotClick(inv, 0, "PICKUP");
             c.slotClick(loadIn, 0, "PICKUP");
@@ -64,7 +64,7 @@ public final class RcFluidSlots implements Scenario {
             System.out.println("[RcSlots] " + name + " after placing full canister: " + machineSlots(screen));
             int moved = nbtInt(c, x, key);
             Expect.that(moved > start, name + ": the full canisters must be emptied into the tank: " + start + " -> " + moved);
-            Expect.that(machineSlotHolds(screen, loadOut, "hbm:canister_empty"),
+            Expect.that(machineSlotHolds(screen, loadOut, "geontm:canister_empty"),
                     name + ": the emptied canister must come out in slot " + loadOut + ": " + machineSlots(screen));
             c.screenshot(name.replace(':', '_') + "-load");
             c.key("escape");
@@ -73,9 +73,9 @@ public final class RcFluidSlots implements Scenario {
         }
         if (fillIn >= 0) {
             c.cmd("clear");
-            c.cmd("give @s hbm:canister_empty 2");
+            c.cmd("give @s geontm:canister_empty 2");
             open(c, x);
-            int inv = findInventory(c, "hbm:canister_empty");
+            int inv = findInventory(c, "geontm:canister_empty");
             Expect.that(inv >= 0, name + ": the empty canister is in the player's inventory");
             c.slotClick(inv, 0, "PICKUP");
             c.slotClick(fillIn, 0, "PICKUP");
@@ -84,21 +84,21 @@ public final class RcFluidSlots implements Scenario {
             System.out.println("[RcSlots] " + name + " after placing empty canister: " + machineSlots(screen));
             int left = nbtInt(c, x, key);
             Expect.that(left < start, name + ": the tank must fill the empty canisters: " + start + " -> " + left);
-            Expect.that(machineSlotHolds(screen, fillOut, "hbm:canister_full"),
+            Expect.that(machineSlotHolds(screen, fillOut, "geontm:canister_full"),
                     name + ": the filled canister must come out in slot " + fillOut + ": " + machineSlots(screen));
             c.screenshot(name.replace(':', '_') + "-fill");
             // shift-click the result back out into the inventory
             c.slotClick(fillOut, 0, "QUICK_MOVE");
             c.waitTicks(5);
-            Expect.that(!machineSlotHolds(c.screen(), fillOut, "hbm:canister_full"), name + ": the result slot must empty by shift-click");
+            Expect.that(!machineSlotHolds(c.screen(), fillOut, "geontm:canister_full"), name + ": the result slot must empty by shift-click");
             c.key("escape");
             c.waitTicks(5);
         }
     }
 
     private static String full(Client c, String fluid) {
-        return c.node().startsWith("1.20.") ? "hbm:canister_full{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : "hbm:canister_full[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+        return c.node().startsWith("1.20.") ? "geontm:canister_full{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : "geontm:canister_full[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     private static void open(Client c, int x) {

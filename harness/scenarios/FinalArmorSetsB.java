@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Final armour wave B (ModArmorSetBItems): the steam, diesel and M1TTY suits, the jackets, rag masks, goggles, ash
  * goggles, Fabulous Hat, mining helmet, Beta Features, the IV bags and the statue_elb_f block. Every id is given and
- * shown in the inventory; each suit is worn in survival and checked by value through {@code hbm_armor_set_b}
+ * shown in the inventory; each suit is worn in survival and checked by value through {@code geontm_armor_set_b}
  * (effects, fuel/charge, idle drain, fuel burnt by damage and refilled on a refueler, attribute modifiers, M1TTY
  * water behaviour, hat/no9 damage thresholds, no9 lamp, beta hunger lock), the IV bags are used, the kits that used
  * to skip entries are opened and counted, the statue is placed, heals, and is popped out with a red key; worn
@@ -35,7 +35,7 @@ public final class FinalArmorSetsB implements Scenario {
         c.markLog();
         // a previous run's kit contents may have irradiated the player to death: respawn first
         // Start from a fresh player: radiation and digamma left by earlier runs (kit contents, other scenarios)
-        // lower max health and tick damage into the health checks. Dying resets the HBM player props.
+        // lower max health and tick damage into the health checks. Dying resets the GEONTM player props.
         String screen = c.screenClass();
         if (screen == null || !screen.contains("Death")) {
             c.cmd("gamemode survival");
@@ -45,7 +45,7 @@ public final class FinalArmorSetsB implements Scenario {
         }
         c.clickWidget("Respawn");
         c.waitTicks(40);
-        Expect.that(c.query("hbm_armor_set", new JsonObject()).get("max_health").getAsDouble() >= 19.99,
+        Expect.that(c.query("geontm_armor_set", new JsonObject()).get("max_health").getAsDouble() >= 19.99,
                 "respawned at full max health");
         Fixtures.platform(c, X, Y, Z, 10);
         camera(c, "FIRST_PERSON");
@@ -88,15 +88,15 @@ public final class FinalArmorSetsB implements Scenario {
     private void inventory(Client c) {
         c.cmd("clear");
         c.waitTicks(2);
-        for (String id : IDS) c.cmd("give @s hbm:" + id + " 1");
+        for (String id : IDS) c.cmd("give @s geontm:" + id + " 1");
         c.waitTicks(5);
-        for (String id : IDS) Expect.that(count(c, "hbm:" + id) == 1, id + " was given and is in the inventory");
+        for (String id : IDS) Expect.that(count(c, "geontm:" + id) == 1, id + " was given and is in the inventory");
         c.key("e");
         c.waitTicks(10);
         c.screenshot("00-inventory");
         int n = 0;
-        for (String hover : new String[] {"hbm:steamsuit_helmet", "hbm:dieselsuit_plate", "hbm:envsuit_helmet",
-                "hbm:no9", "hbm:nossy_hat", "hbm:beta"}) {
+        for (String hover : new String[] {"geontm:steamsuit_helmet", "geontm:dieselsuit_plate", "geontm:envsuit_helmet",
+                "geontm:no9", "geontm:nossy_hat", "geontm:beta"}) {
             hoverItem(c, hover);
             c.screenshot("01-tooltip-" + (n++) + "-" + hover.substring(4));
         }
@@ -136,7 +136,7 @@ public final class FinalArmorSetsB implements Scenario {
         // refuel standing on a refueler holding 100 mB of steam, three top-ups
         String steam = state(c).get("steam_id").getAsString(); // the registry name
         int rx = X + 3, rz = Z;
-        Fixtures.setBlock(c, rx, Y + 1, rz, "hbm:refueler");
+        Fixtures.setBlock(c, rx, Y + 1, rz, "geontm:refueler");
         c.teleport(rx + 0.5, Y + 1.1, rz + 0.5);
         c.waitTicks(5);
         // the refueler tops up worn pieces in inventory order, so the whole suit's fuel is what rises
@@ -202,7 +202,7 @@ public final class FinalArmorSetsB implements Scenario {
     private void helmets(Client c) {
         strip(c);
         // Fabulous Hat: a 2-point hit is cancelled outright
-        c.cmd("item replace entity @s armor.head with hbm:nossy_hat");
+        c.cmd("item replace entity @s armor.head with geontm:nossy_hat");
         double before = heal(c);
         c.cmd("damage @s 2 minecraft:mob_attack");
         c.waitTicks(3);
@@ -213,7 +213,7 @@ public final class FinalArmorSetsB implements Scenario {
         Expect.that(after < before - 0.5, "a 5-point hit gets through the hat, " + before + " -> " + after);
 
         // mining helmet: +0.5 DT, lamp follows the HUD toggle
-        c.cmd("item replace entity @s armor.head with hbm:no9");
+        c.cmd("item replace entity @s armor.head with geontm:no9");
         c.waitTicks(5);
         JsonObject a = state(c);
         Expect.that(a.getAsJsonObject("head").has("lamp_on") && a.getAsJsonObject("head").get("lamp_on").getAsBoolean()
@@ -221,16 +221,16 @@ public final class FinalArmorSetsB implements Scenario {
         Expect.that(!a.getAsJsonObject("head").get("damageable").getAsBoolean(), "no9 never wears out");
 
         // goggles: first-person blur overlay
-        c.cmd("item replace entity @s armor.head with hbm:goggles");
+        c.cmd("item replace entity @s armor.head with geontm:goggles");
         c.waitTicks(5);
         c.screenshot("40-first-person-goggles-blur");
-        c.cmd("item replace entity @s armor.head with hbm:mask_piss");
+        c.cmd("item replace entity @s armor.head with geontm:mask_piss");
         c.waitTicks(3);
         strip(c);
 
         // a dropped hat vanishes
         c.cmd("clear");
-        Fixtures.giveOnly(c, "hbm:nossy_hat", 1);
+        Fixtures.giveOnly(c, "geontm:nossy_hat", 1);
         c.hotbar(1);
         c.look(0, 30);
         c.key("key.drop");
@@ -244,7 +244,7 @@ public final class FinalArmorSetsB implements Scenario {
     private void beta(Client c) {
         c.cmd("clear");
         c.cmd("effect clear @s");
-        Fixtures.giveOnly(c, "hbm:beta", 1);
+        Fixtures.giveOnly(c, "geontm:beta", 1);
         c.waitTicks(10);
         JsonObject a = state(c);
         Expect.that(a.get("food").getAsInt() == 10, "Beta Features pins food at 10, got " + a.get("food"));
@@ -268,7 +268,7 @@ public final class FinalArmorSetsB implements Scenario {
         c.cmd("effect clear @s");
         heal(c);
         c.cmd("effect clear @s");
-        Fixtures.giveOnly(c, "hbm:iv_empty", 1);
+        Fixtures.giveOnly(c, "geontm:iv_empty", 1);
         c.hotbar(1);
         c.look(0, 30);
         double h0 = state(c).get("health").getAsDouble();
@@ -276,16 +276,16 @@ public final class FinalArmorSetsB implements Scenario {
         c.waitTicks(5);
         double h1 = state(c).get("health").getAsDouble();
         // natural regeneration may add up to 1 in the ticks waited; max health may be lowered by leftover digamma
-        double max = c.query("hbm_armor_set", new JsonObject()).get("max_health").getAsDouble();
+        double max = c.query("geontm_armor_set", new JsonObject()).get("max_health").getAsDouble();
         Expect.that(h1 >= h0 - 5 - 0.01 && h1 <= h0 - 5 + 1.01, "IV bag draws 5 health: " + h0 + " -> " + h1);
-        Expect.that(count(c, "hbm:iv_blood") == 1, "IV bag became a blood bag");
+        Expect.that(count(c, "geontm:iv_blood") == 1, "IV bag became a blood bag");
         c.use(2);
         c.waitTicks(5);
         double h2 = state(c).get("health").getAsDouble();
         double expected = Math.min(h1 + 5, max);
         Expect.that(h2 >= expected - 0.01 && h2 <= Math.min(expected + 1.01, max + 0.01),
                 "blood bag heals 5 (max " + max + "): " + h1 + " -> " + h2);
-        Expect.that(count(c, "hbm:iv_empty") == 1, "blood bag gave the IV bag back");
+        Expect.that(count(c, "geontm:iv_empty") == 1, "blood bag gave the IV bag back");
 
         c.cmd("clear");
         c.cmd("xp set @s 0 levels");
@@ -293,19 +293,19 @@ public final class FinalArmorSetsB implements Scenario {
         c.cmd("xp add @s 150 points");
         c.waitTicks(3);
         int x0 = state(c).get("xp_total").getAsInt();
-        Fixtures.giveOnly(c, "hbm:iv_xp_empty", 1);
+        Fixtures.giveOnly(c, "geontm:iv_xp_empty", 1);
         c.hotbar(1);
         c.use(2);
         c.waitTicks(5);
         int x1 = state(c).get("xp_total").getAsInt();
         Expect.that(Math.abs(x0 - 100 - x1) <= 2, "experience bag took 100: " + x0 + " -> " + x1);
-        Expect.that(count(c, "hbm:iv_xp") == 1, "empty experience bag filled");
+        Expect.that(count(c, "geontm:iv_xp") == 1, "empty experience bag filled");
         c.screenshot("50-experience-bag-full");
         c.use(2);
         c.waitTicks(5);
         int x2 = state(c).get("xp_total").getAsInt();
         Expect.that(Math.abs(x1 + 100 - x2) <= 2, "experience bag gave 100: " + x1 + " -> " + x2);
-        Expect.that(count(c, "hbm:iv_xp_empty") == 1, "full experience bag emptied");
+        Expect.that(count(c, "geontm:iv_xp_empty") == 1, "full experience bag emptied");
         c.cmd("xp set @s 0 levels");
         c.cmd("xp set @s 0 points");
         c.cmd("gamerule naturalRegeneration true");
@@ -319,7 +319,7 @@ public final class FinalArmorSetsB implements Scenario {
         // ticks per kit keeps enough radiation to die of it after the run
         c.cmd("gamemode creative");
         openKit(c, "nuke_starter_kit");
-        Expect.that(count(c, "hbm:machine_reactor") == 1 && count(c, "hbm:machine_reactor_small") == 1,
+        Expect.that(count(c, "geontm:machine_reactor") == 1 && count(c, "geontm:machine_reactor_small") == 1,
                 "starter kit: breeding reactor + research reactor");
         c.key("e");
         c.waitTicks(10);
@@ -328,8 +328,8 @@ public final class FinalArmorSetsB implements Scenario {
         c.waitTicks(10);
 
         openKit(c, "nuke_advanced_kit");
-        Expect.that(count(c, "hbm:machine_reactor") == 2 && count(c, "hbm:machine_reactor_small") == 4
-                && count(c, "hbm:machine_rtg_grey") == 1 && count(c, "hbm:cell") == 32,
+        Expect.that(count(c, "geontm:machine_reactor") == 2 && count(c, "geontm:machine_reactor_small") == 4
+                && count(c, "geontm:machine_rtg_grey") == 1 && count(c, "geontm:cell") == 32,
                 "advanced kit: 2 breeders, 4 research reactors, RTG, 32 empty cells");
         c.key("e");
         c.waitTicks(10);
@@ -338,27 +338,27 @@ public final class FinalArmorSetsB implements Scenario {
         c.waitTicks(10);
 
         openKit(c, "nuke_commercially_kit");
-        Expect.that(count(c, "hbm:machine_reactor") == 8 && count(c, "hbm:machine_reactor_small") == 8
-                && count(c, "hbm:iv_blood") == 8, "commercial kit: 8 breeders, 8 research reactors, 8 blood bags");
+        Expect.that(count(c, "geontm:machine_reactor") == 8 && count(c, "geontm:machine_reactor_small") == 8
+                && count(c, "geontm:iv_blood") == 8, "commercial kit: 8 breeders, 8 research reactors, 8 blood bags");
 
         openKit(c, "gadget_kit");
-        Expect.that(count(c, "hbm:gadget_explosive8") == 4, "gadget kit: 4 early explosive lenses");
+        Expect.that(count(c, "geontm:gadget_explosive8") == 4, "gadget kit: 4 early explosive lenses");
         openKit(c, "man_kit");
-        Expect.that(count(c, "hbm:gadget_explosive8") == 4, "fat man kit: 4 early explosive lenses");
+        Expect.that(count(c, "geontm:gadget_explosive8") == 4, "fat man kit: 4 early explosive lenses");
         openKit(c, "mike_kit");
-        Expect.that(count(c, "hbm:man_explosive8") == 4, "ivy mike kit: 4 explosive lenses");
+        Expect.that(count(c, "geontm:man_explosive8") == 4, "ivy mike kit: 4 explosive lenses");
         openKit(c, "tsar_kit");
-        Expect.that(count(c, "hbm:man_explosive8") == 4, "tsar kit: 4 explosive lenses");
+        Expect.that(count(c, "geontm:man_explosive8") == 4, "tsar kit: 4 explosive lenses");
         openKit(c, "prototype_kit");
-        Expect.that(count(c, "hbm:cell") == 4, "prototype kit: 4 SAS3 cells");
+        Expect.that(count(c, "geontm:cell") == 4, "prototype kit: 4 SAS3 cells");
         c.key("e");
         c.waitTicks(10);
-        hoverItem(c, "hbm:cell");
+        hoverItem(c, "geontm:cell");
         c.screenshot("62-kit-prototype-sas3-cell");
         c.key("escape");
         c.waitTicks(10);
         openKit(c, "euphemium_kit");
-        Expect.that(count(c, "hbm:statue_elb_f") == 1 && count(c, "hbm:euphemium_helmet") == 1,
+        Expect.that(count(c, "geontm:statue_elb_f") == 1 && count(c, "geontm:euphemium_helmet") == 1,
                 "euphemium kit: suit and statue");
         strip(c);
         c.cmd("clear");
@@ -368,14 +368,14 @@ public final class FinalArmorSetsB implements Scenario {
         strip(c);
         c.cmd("clear");
         c.waitTicks(2);
-        Fixtures.giveOnly(c, "hbm:" + kit, 1);
+        Fixtures.giveOnly(c, "geontm:" + kit, 1);
         c.hotbar(1);
         c.look(0, 30);
         c.use(2);
         c.waitTicks(10);
         // 1.7 decremented the kit even in creative; 1.20.1's creative use restores the held count afterwards
         // (26.1 does not), so the used-up check is only reported, not required, here
-        if (count(c, "hbm:" + kit) != 0) System.out.println("[FinalArmorSetsB] " + kit + " kept by creative on " + c.node());
+        if (count(c, "geontm:" + kit) != 0) System.out.println("[FinalArmorSetsB] " + kit + " kept by creative on " + c.node());
     }
 
     // ------------------------------------------------------------------ statue
@@ -383,30 +383,30 @@ public final class FinalArmorSetsB implements Scenario {
     private void statue(Client c) {
         c.cmd("gamemode survival");
         int sx = X + 3, sz = Z + 3;
-        c.cmd("setblock " + sx + " " + (Y + 1) + " " + sz + " hbm:statue_elb_f[facing=north]");
+        c.cmd("setblock " + sx + " " + (Y + 1) + " " + sz + " geontm:statue_elb_f[facing=north]");
         c.teleport(sx + 0.5, Y + 1, sz - 3.5);
         c.lookAt(sx + 0.5, Y + 1.8, sz + 0.5);
         c.waitTicks(10);
-        Expect.block(c, sx, Y + 1, sz, "hbm:statue_elb_f");
+        Expect.block(c, sx, Y + 1, sz, "geontm:statue_elb_f");
         c.screenshot("70-statue-front");
         // the aura: within 4 blocks of the corner, instant health 100 heals any hurt
         c.teleport(sx + 0.5, Y + 1, sz - 1.5);
         c.cmd("damage @s 6 minecraft:mob_attack");
         c.waitTicks(10);
         JsonObject a = state(c);
-        double max = c.query("hbm_armor_set", new JsonObject()).get("max_health").getAsDouble();
+        double max = c.query("geontm_armor_set", new JsonObject()).get("max_health").getAsDouble();
         Expect.that(a.get("health").getAsDouble() >= max - 0.01, "statue aura healed the player to " + max
                 + ", health " + a.get("health"));
         // a red key pops it out as an item
         c.cmd("clear");
-        Fixtures.giveOnly(c, "hbm:key_red", 1);
+        Fixtures.giveOnly(c, "geontm:key_red", 1);
         c.hotbar(1);
         c.lookAt(sx + 0.5, Y + 1.25, sz + 0.5);
         c.waitTicks(3);
         c.use(2);
         c.waitTicks(10);
         Expect.block(c, sx, Y + 1, sz, "minecraft:air");
-        Expect.that(itemEntityNear(c, "") || count(c, "hbm:statue_elb_f") == 1, "the statue dropped");
+        Expect.that(itemEntityNear(c, "") || count(c, "geontm:statue_elb_f") == 1, "the statue dropped");
         c.cmd("kill @e[type=item,distance=..16]");
         c.cmd("clear");
     }
@@ -430,7 +430,7 @@ public final class FinalArmorSetsB implements Scenario {
                 {"head", "mask_rag"}, {"head", "mask_piss"}, {"chest", "jackt"}, {"chest", "jackt2"}};
         for (String[] s : singles) {
             strip(c);
-            c.cmd("item replace entity @s armor." + s[0] + " with hbm:" + s[1]);
+            c.cmd("item replace entity @s armor." + s[0] + " with geontm:" + s[1]);
             c.waitTicks(10);
             c.screenshot("8" + (char) ('a' + n++) + "-f5-front-" + s[1]);
         }
@@ -440,7 +440,7 @@ public final class FinalArmorSetsB implements Scenario {
             c.screenshot("9" + set.charAt(0) + "-f5-back-" + set);
         }
         strip(c);
-        c.cmd("item replace entity @s armor.head with hbm:no9");
+        c.cmd("item replace entity @s armor.head with geontm:no9");
         c.waitTicks(10);
         c.screenshot("9n-f5-back-no9");
         c.cmd("gamemode survival");
@@ -468,10 +468,10 @@ public final class FinalArmorSetsB implements Scenario {
     // ------------------------------------------------------------------ helpers
 
     private void wear(Client c, String set) {
-        c.cmd("item replace entity @s armor.head with hbm:" + set + "_helmet");
-        c.cmd("item replace entity @s armor.chest with hbm:" + set + "_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:" + set + "_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:" + set + "_boots");
+        c.cmd("item replace entity @s armor.head with geontm:" + set + "_helmet");
+        c.cmd("item replace entity @s armor.chest with geontm:" + set + "_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:" + set + "_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:" + set + "_boots");
         c.waitTicks(10);
     }
 
@@ -507,7 +507,7 @@ public final class FinalArmorSetsB implements Scenario {
     }
 
     private JsonObject state(Client c) {
-        return c.query("hbm_armor_set_b", new JsonObject());
+        return c.query("geontm_armor_set_b", new JsonObject());
     }
 
     private boolean itemEntityNear(Client c, String name) {

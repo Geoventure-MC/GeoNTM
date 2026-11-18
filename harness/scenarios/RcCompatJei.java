@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Release audit: every HBM JEI category opens, has a translated title, holds recipes and catalysts, and the log stays
+ * Release audit: every GEONTM JEI category opens, has a translated title, holds recipes and catalysts, and the log stays
  * clean. The empty default annihilator and the polaroid-hidden Book of Boxcars are reported as
  * visibility waivers only when JEI's actual visible category order excludes them. The {@code jei} query without a
  * category answers every registered category with its title, recipe and catalyst counts.
@@ -28,7 +28,7 @@ public final class RcCompatJei implements Scenario {
         JsonObject list = c.query("jei", listParams);
         JsonArray cats = list.getAsJsonArray("categories");
         System.out.println("[RcCompatJei] " + c.node() + " categories: " + cats.size());
-        Expect.that(cats.size() >= 48, "HBM registered its categories in JEI: " + cats.size());
+        Expect.that(cats.size() >= 48, "GEONTM registered its categories in JEI: " + cats.size());
 
         Set<String> visible = new HashSet<>();
         for (JsonElement entry : list.getAsJsonArray("order")) visible.add(entry.getAsString());
@@ -46,10 +46,10 @@ public final class RcCompatJei implements Scenario {
             long registeredCatalysts = cat.get("registered_catalysts").getAsLong();
             System.out.println("[RcCompatJei] " + id + " title='" + title + "' recipes=" + recipes
                     + " catalysts=" + catalysts + " registered_catalysts=" + registeredCatalysts);
-            if (title.matches("(?i).*\\b(hbm|gui)\\.[a-z0-9_.]+") || title.isBlank())
+            if (title.matches("(?i).*\\b(geontm|gui)\\.[a-z0-9_.]+") || title.isBlank())
                 problems.add(id + " raw title " + title);
-            boolean emptyAnnihilator = id.equals("hbm:annihilator") && recipes == 0 && !visible.contains(id);
-            boolean secretBook = id.equals("hbm:book_of_boxcars") && recipes > 0 && catalysts == 0
+            boolean emptyAnnihilator = id.equals("geontm:annihilator") && recipes == 0 && !visible.contains(id);
+            boolean secretBook = id.equals("geontm:book_of_boxcars") && recipes > 0 && catalysts == 0
                     && registeredCatalysts > 0 && !visible.contains(id);
             if (recipes == 0 && !emptyAnnihilator) problems.add(id + " has no recipes");
             if (catalysts == 0 && !secretBook) problems.add(id + " has no catalyst");

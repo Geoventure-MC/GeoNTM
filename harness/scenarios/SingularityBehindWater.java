@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -72,7 +72,7 @@ public final class SingularityBehindWater implements Scenario {
                 above(c, 126, mode + "-4-above-pool");
                 clearWater(c);
             }
-            c.cmd("kill @e[type=hbm:entity_black_hole]");
+            c.cmd("kill @e[type=geontm:entity_black_hole]");
             // logged once per mode per client session, so read the whole log
             List<String> captured = c.log(40000, "Scene warp sees through translucency");
             System.out.println("[SingularityBehindWater] " + c.node() + " " + captured);
@@ -87,8 +87,8 @@ public final class SingularityBehindWater implements Scenario {
     }
 
     private static void summon(Client c) {
-        c.cmd("kill @e[type=hbm:entity_black_hole]");
-        c.cmd("summon hbm:entity_black_hole " + (X + 0.5) + " " + HOLE_Y + " " + HOLE_Z + " {size:1.5f,breaksBlocks:0b}");
+        c.cmd("kill @e[type=geontm:entity_black_hole]");
+        c.cmd("summon geontm:entity_black_hole " + (X + 0.5) + " " + HOLE_Y + " " + HOLE_Z + " {size:1.5f,breaksBlocks:0b}");
         c.waitTicks(10);
     }
 

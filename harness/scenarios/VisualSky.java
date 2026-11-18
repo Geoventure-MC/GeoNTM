@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Wave 2 VISUAL (History §19ek-visual): 1.7's sky objects and the impact sky.
@@ -71,18 +71,18 @@ public final class VisualSky implements Scenario {
             c.cmd("time set 6000");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
         }
-        Expect.logCleanSinceMark(c, "(?i)exception.*(sky|render|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(sky|render|geontm)");
     }
 
     private static void set(Client c, float dust, float fire) {
         JsonObject p = new JsonObject();
         p.addProperty("set_dust", dust);
         p.addProperty("set_fire", fire);
-        c.query("hbm_impact", p);
+        c.query("geontm_impact", p);
     }
 
     private static String skybox(Client c) {
-        JsonObject client = c.query("hbm_impact", new JsonObject()).getAsJsonObject("client");
+        JsonObject client = c.query("geontm_impact", new JsonObject()).getAsJsonObject("client");
         return client != null && client.has("skybox") ? client.get("skybox").getAsString() : "?";
     }
 }

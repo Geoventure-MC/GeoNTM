@@ -1,15 +1,15 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
-/** The Builder's Jetpack hovering over HBM building blocks, looking down at its exhaust (Discord: black/violet particles). */
+/** The Builder's Jetpack hovering over GEONTM building blocks, looking down at its exhaust (Discord: black/violet particles). */
 public final class BuilderJetpackParticles implements Scenario {
 
     private static final int X = 360;
     private static final int Y = 100;
     private static final int Z = 360;
-    private static final String[] FLOORS = {"hbm:brick_concrete", "hbm:concrete_smooth", "hbm:reinforced_brick",
-            "hbm:brick_light", "hbm:concrete_colored_ext", "minecraft:stone"};
+    private static final String[] FLOORS = {"geontm:brick_concrete", "geontm:concrete_smooth", "geontm:reinforced_brick",
+            "geontm:brick_light", "geontm:concrete_colored_ext", "minecraft:stone"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -20,8 +20,8 @@ public final class BuilderJetpackParticles implements Scenario {
         c.cmd("gamerule doMobSpawning false");
         c.cmd("weather clear");
         c.cmd("time set 6000");
-        String jetpack = c.node().startsWith("1.20") ? "hbm:jetpack_break{\"hbm:jetpack_fuel\":1200}"
-                : "hbm:jetpack_break[hbm:jetpack_fuel=1200]";
+        String jetpack = c.node().startsWith("1.20") ? "geontm:jetpack_break{\"geontm:jetpack_fuel\":1200}"
+                : "geontm:jetpack_break[geontm:jetpack_fuel=1200]";
         try {
             for (String floor : FLOORS) {
                 c.cmd("fill " + (X - 4) + " " + Y + " " + (Z - 4) + " " + (X + 4) + " " + Y + " " + (Z + 4) + " " + floor);

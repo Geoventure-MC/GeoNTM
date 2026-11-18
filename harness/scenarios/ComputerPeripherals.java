@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.7's OpenComputers components as CC: Tweaked peripherals (History §19el-computers), driven the way a player does:
@@ -34,8 +34,8 @@ public class ComputerPeripherals implements Scenario {
         // the computer first: placeOnTop aims from two blocks east, where the Geiger counter will stand
         JsonObject placed = Fixtures.placeOnTop(c, "computercraft:computer_advanced", X, Y, Z);
         Expect.equal("computercraft:computer_advanced", placed.get("block").getAsString(), "computer A placed by hand");
-        Fixtures.setBlock(c, X + 1, Y + 1, Z, "hbm:geiger");
-        Fixtures.setBlock(c, X - 1, Y + 1, Z, "hbm:machine_microwave");
+        Fixtures.setBlock(c, X + 1, Y + 1, Z, "geontm:geiger");
+        Fixtures.setBlock(c, X - 1, Y + 1, Z, "geontm:machine_microwave");
         c.waitTicks(10);
 
         openRepl(c, X, Y + 1, Z, "A");
@@ -56,13 +56,13 @@ public class ComputerPeripherals implements Scenario {
 
         // --- computer B: against the top of an RBMK boiler column ---
         int bx = X, bz = Z + 4;
-        JsonObject boiler = Fixtures.placeOnTop(c, "hbm:rbmk_boiler", bx, Y, bz);
-        Expect.equal("hbm:rbmk_boiler", boiler.get("block").getAsString(), "RBMK boiler placed by hand");
+        JsonObject boiler = Fixtures.placeOnTop(c, "geontm:rbmk_boiler", bx, Y, bz);
+        Expect.equal("geontm:rbmk_boiler", boiler.get("block").getAsString(), "RBMK boiler placed by hand");
         c.waitTicks(10);
         int top = Y + 1;
         for (int y = Y + 2; y < Y + 16; y++) {
             JsonObject b = c.block(bx, y, bz);
-            if (!"hbm:rbmk_boiler".equals(b.get("block").getAsString())) break;
+            if (!"geontm:rbmk_boiler".equals(b.get("block").getAsString())) break;
             top = y;
         }
         JsonObject topState = c.block(bx, top, bz);

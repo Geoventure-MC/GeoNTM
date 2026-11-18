@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * 1.7's {@code drawStackText} panels in a real client: the turret's ammo list over a filled ammo grid (no slot item may
@@ -24,7 +24,7 @@ public final class TooltipPanels implements Scenario {
 
     private void turret(Client c) {
         int x = 0, z = -8;
-        open(c, "hbm:turret_chekhov", x, z, "GUITurretBase");
+        open(c, "geontm:turret_chekhov", x, z, "GUITurretBase");
         int[] core = blockEntity(c, x, z, "turret");
         Expect.that(core != null, "the turret has a block entity near the clicked cell");
         for (int slot = 2; slot <= 9; slot++) {
@@ -42,7 +42,7 @@ public final class TooltipPanels implements Scenario {
 
     private void hydrotreater(Client c) {
         int x = 0, z = 8;
-        open(c, "hbm:machine_hydrotreater", x, z, "GUIMachineHydrotreater");
+        open(c, "geontm:machine_hydrotreater", x, z, "GUIMachineHydrotreater");
         JsonObject catalyst = c.slot(10);
         c.mouseMove(catalyst.get("center_x").getAsDouble(), catalyst.get("center_y").getAsDouble());
         c.waitTicks(20);

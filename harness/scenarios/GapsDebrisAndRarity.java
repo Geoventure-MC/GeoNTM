@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.7 ExplosionEffectStandard's per-block poof and smoke debris on a gold creeper's blast, next to a vanilla creeper
@@ -14,8 +14,8 @@ public final class GapsDebrisAndRarity implements Scenario {
     private static final int X = 420;
     private static final int Y = 100;
     private static final int Z = 420;
-    private static final String[] ITEMS = {"hbm:ingot_schrabidium", "hbm:powder_iodine", "hbm:billet_flashlead",
-            "hbm:rune_dagaz", "hbm:ingot_steel"};
+    private static final String[] ITEMS = {"geontm:ingot_schrabidium", "geontm:powder_iodine", "geontm:billet_flashlead",
+            "geontm:rune_dagaz", "geontm:ingot_steel"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -28,7 +28,7 @@ public final class GapsDebrisAndRarity implements Scenario {
         c.cmd("time set 6000");
         c.cmd("difficulty normal");
         try {
-            blast(c, "hbm:entity_mob_gold_creeper", "gold-creeper");
+            blast(c, "geontm:entity_mob_gold_creeper", "gold-creeper");
             blast(c, "minecraft:creeper", "vanilla-creeper");
             // creative: the shared harness player carries radiation from earlier scenarios that kills in survival
             c.cmd("gamemode creative");

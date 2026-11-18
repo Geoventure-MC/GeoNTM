@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
@@ -32,11 +32,11 @@ public final class Gh135CastingMelt implements Scenario {
         c.cmd("gamerule doDaylightCycle false");
         c.cmd("gamerule sendCommandFeedback false");
         c.cmd("gamerule send_command_feedback false");
-        Fixtures.setBlock(c, X, L, Z, "hbm:foundry_basin");
-        Fixtures.setBlock(c, X + 3, L, Z, "hbm:foundry_mold");
+        Fixtures.setBlock(c, X, L, Z, "geontm:foundry_basin");
+        Fixtures.setBlock(c, X + 3, L, Z, "geontm:foundry_mold");
         c.waitTicks(20);
-        c.cmd("item replace block " + X + " " + L + " " + Z + " container.0 with hbm:mold_block");
-        c.cmd("item replace block " + (X + 3) + " " + L + " " + Z + " container.0 with hbm:mold_ingot");
+        c.cmd("item replace block " + X + " " + L + " " + Z + " container.0 with geontm:mold_block");
+        c.cmd("item replace block " + (X + 3) + " " + L + " " + Z + " container.0 with geontm:mold_ingot");
         c.waitTicks(10);
         c.cmd("data merge block " + X + " " + L + " " + Z + " {type:\"iron\",amount:640}");
         c.cmd("data merge block " + (X + 3) + " " + L + " " + Z + " {type:\"copper\",amount:60}");

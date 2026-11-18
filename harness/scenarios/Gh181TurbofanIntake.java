@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -32,10 +32,10 @@ public final class Gh181TurbofanIntake implements Scenario {
             c.cmd("gamerule doImmediateRespawn false");
             c.cmd("gamerule immediate_respawn false");
             c.cmd("time set 6000");
-            String core = place(c, "hbm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
+            String core = place(c, "geontm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
             String[] p = core.split(" ");
             double x = Integer.parseInt(p[0]) + 7.5, z = Integer.parseInt(p[2]) + 0.5;
-            c.cmd("data merge block " + core + " {tank:24000,tank_type:\"hbm:kerosene\"}");
+            c.cmd("data merge block " + core + " {tank:24000,tank_type:\"geontm:kerosene\"}");
             c.waitTicks(40);
             c.teleport(x, L, z);
             c.lookAt(Integer.parseInt(p[0]) + 0.5, L + 1.5, z);
@@ -55,7 +55,7 @@ public final class Gh181TurbofanIntake implements Scenario {
             }
             c.waitTicks(20);
             c.screenshot("intake-dead");
-            int giblets = c.query("hbm_giblets", new JsonObject()).getAsJsonArray("giblets").size();
+            int giblets = c.query("geontm_giblets", new JsonObject()).getAsJsonArray("giblets").size();
             List<String> chat = c.logSinceMark("chopped in small, bite-sized pieces|shredded by a sawmill");
             System.out.println("[Gh181] " + c.node() + " start x " + x + ", nearest x " + nearest + ", dead " + dead
                     + ", giblets 20 ticks after death " + giblets + ", death lines " + chat);
@@ -65,7 +65,7 @@ public final class Gh181TurbofanIntake implements Scenario {
                     "1.7's death message: " + chat);
             // a dead player stays in the blades until respawn: one burst of 5 a tick
             Expect.that(giblets > 20, "the dead player is gibbed every tick, not once: " + giblets);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             if (c.screen().toString().contains("Respawn")) c.clickWidget("Respawn");
             c.waitTicks(10);

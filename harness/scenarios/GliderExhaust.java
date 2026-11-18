@@ -1,18 +1,18 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The worn glider jetpack with its exhaust (development {@code /hbm jetpack_smoke} session: glider worn, fuelled,
+ * The worn glider jetpack with its exhaust (development {@code /geontm jetpack_smoke} session: glider worn, fuelled,
  * hovering), seen from behind and in front, by night and by day, then with a charged crucible in first person on top.
  *
- * <p>Positive signals: {@code hbm_static_models} reports live exhaust effects (plasma, heat distortion, brightness)
- * while hovering; Core's {@code golem_static_meshes} reports the glider's 17 Collada meshes (and the crucible's 5)
+ * <p>Positive signals: {@code geontm_static_models} reports live exhaust effects (plasma, heat distortion, brightness)
+ * while hovering; Core's {@code geocore_static_meshes} reports the glider's 17 Collada meshes (and the crucible's 5)
  * resident and drawn from the GPU copy with no new fallback; and no shader or render error since the mark.
  */
 public final class GliderExhaust implements Scenario {
@@ -30,18 +30,18 @@ public final class GliderExhaust implements Scenario {
         c.cmd("gamerule doMobSpawning false");
         c.cmd("weather clear");
         c.cmd("gamemode creative");
-        String charged = c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}" : "hbm:crucible[hbm:charges=16]";
+        String charged = c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}" : "geontm:crucible[geontm:charges=16]";
         try {
             JsonObject start = meshes(c);
             boolean resident = start.get("active").getAsBoolean();
             for (String time : new String[] {"night", "day"}) {
                 c.cmd("time set " + (time.equals("night") ? 18000 : 6000));
-                c.cmd("hbm jetpack_smoke stop");
+                c.cmd("geontm jetpack_smoke stop");
                 c.cmd("clear");
                 c.waitTicks(5);
                 c.teleport(X + 0.5, Y + 1, Z + 0.5);
                 c.setOption("camera", "third_person_back");
-                c.cmd("hbm jetpack_smoke");
+                c.cmd("geontm jetpack_smoke");
                 c.waitTicks(5);
                 c.look(0, 10);
                 c.waitTicks(40);
@@ -53,7 +53,7 @@ public final class GliderExhaust implements Scenario {
                 c.screenshot(time + "-glider-front");
                 c.setOption("camera", "third_person_back");
                 c.waitTicks(5);
-                JsonObject exhaust = c.query("hbm_static_models", new JsonObject());
+                JsonObject exhaust = c.query("geontm_static_models", new JsonObject());
                 int effects = exhaust.get("exhaust_plasma").getAsInt() + exhaust.get("exhaust_heat").getAsInt()
                         + exhaust.get("exhaust_brightness").getAsInt();
                 Expect.that(effects > 0, time + ": exhaust effects live while hovering: " + exhaust);
@@ -82,7 +82,7 @@ public final class GliderExhaust implements Scenario {
             Expect.that(!end.get("failed").getAsBoolean(), "resident meshes did not fail: " + end);
             Expect.equal(0, end.get("rejected").getAsInt(), "no geometry rejected");
         } finally {
-            c.cmd("hbm jetpack_smoke stop");
+            c.cmd("geontm jetpack_smoke stop");
             c.setOption("camera", "first_person");
             c.cmd("clear");
             c.cmd("time set 6000");
@@ -94,6 +94,6 @@ public final class GliderExhaust implements Scenario {
     }
 
     private static JsonObject meshes(Client c) {
-        return c.query("golem_static_meshes", new JsonObject());
+        return c.query("geocore_static_meshes", new JsonObject());
     }
 }

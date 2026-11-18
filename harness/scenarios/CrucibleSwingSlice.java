@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,17 +33,17 @@ public final class CrucibleSwingSlice implements Scenario {
     private static final int Z = 300;
 
     private static String charged(Client c) {
-        return c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}" : "hbm:crucible[hbm:charges=16]";
+        return c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}" : "geontm:crucible[geontm:charges=16]";
     }
 
     private static JsonObject q(Client c) throws Exception {
-        return c.query("hbm_crucible", new JsonObject());
+        return c.query("geontm_crucible", new JsonObject());
     }
 
     private static JsonObject q(Client c, String control) throws Exception {
         JsonObject p = new JsonObject();
         p.addProperty(control, true);
-        return c.query("hbm_crucible", p);
+        return c.query("geontm_crucible", p);
     }
 
     /** The server's view of the living entity of {@code type} nearest (x, z), or null. */
@@ -66,7 +66,7 @@ public final class CrucibleSwingSlice implements Scenario {
         return best;
     }
 
-    /** original-hbm ItemCrucible.getAnimation(SWING) at {@code ms}: SWING_ROT (3) then SWING_TRANS (3). */
+    /** original-geontm ItemCrucible.getAnimation(SWING) at {@code ms}: SWING_ROT (3) then SWING_TRANS (3). */
     static double[] expected17(int offset, double ms) {
         double[][] keys = {
                 {0, 0, 0, 0, 0, 0},
@@ -224,7 +224,7 @@ public final class CrucibleSwingSlice implements Scenario {
         for (String s : samples) System.out.println("[crucible2] " + s);
         Expect.that(checked >= 5, "sampled the 1.7 swing at least four times: " + samples);
 
-        // pinned keyframes, offset 20: the old-hbm scene with the mapped swing next to the 1.7 renderer's own crucible
+        // pinned keyframes, offset 20: the old-geontm scene with the mapped swing next to the 1.7 renderer's own crucible
         c.look(0, 0);
         c.waitTicks(20);
         for (int ms : new int[]{0, 40, 75, 150, 225, 350, 475, 600}) {
@@ -233,15 +233,15 @@ public final class CrucibleSwingSlice implements Scenario {
                 pin.addProperty("swing17_ms", ms);
                 pin.addProperty("swing17_offset", 20);
                 pin.addProperty("reference17", ref);
-                c.query("hbm_crucible", pin);
+                c.query("geontm_crucible", pin);
                 c.waitTicks(2);
-                c.screenshot(String.format("21-pinned-%03dms-%s", ms, ref ? "1.7-reference" : "old-hbm-mapped"));
+                c.screenshot(String.format("21-pinned-%03dms-%s", ms, ref ? "1.7-reference" : "old-geontm-mapped"));
             }
         }
         JsonObject unpin = new JsonObject();
         unpin.addProperty("swing17_release", true);
         unpin.addProperty("reference17", false);
-        c.query("hbm_crucible", unpin);
+        c.query("geontm_crucible", unpin);
 
         // ---- 4. third-person effects at night
         c.cmd("time set 18000");
@@ -269,7 +269,7 @@ public final class CrucibleSwingSlice implements Scenario {
         c.setOption("camera", "third_person_front");
         JsonObject freeze = new JsonObject();
         freeze.addProperty("lightning_freeze", true);
-        c.query("hbm_crucible", freeze);
+        c.query("geontm_crucible", freeze);
         c.waitTicks(3);
         q(c);
         c.waitTicks(2);
@@ -278,12 +278,12 @@ public final class CrucibleSwingSlice implements Scenario {
         Expect.that(frozen.get("third_person_bolts").getAsInt() > 0, "the frozen bolt drew in third person: " + frozen);
         JsonObject thaw = new JsonObject();
         thaw.addProperty("lightning_freeze", false);
-        c.query("hbm_crucible", thaw);
+        c.query("geontm_crucible", thaw);
 
-        // an empty crucible: the old-hbm cutout blade, no effects
+        // an empty crucible: the old-geontm cutout blade, no effects
         c.cmd("clear");
         c.waitTicks(3);
-        c.cmd("give @s hbm:crucible 1");
+        c.cmd("give @s geontm:crucible 1");
         c.waitTicks(20);
         q(c);
         c.waitTicks(3);

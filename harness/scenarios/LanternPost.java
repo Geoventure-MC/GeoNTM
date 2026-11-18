@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * In-game acceptance for the norwood-deco lantern: the folded five-tall post, its core block entity,
@@ -22,10 +22,10 @@ public final class LanternPost implements Scenario {
         c.waitTicks(2);
 
         // The item places the core one above the clicked block; the four dummy cells fold upward.
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:lantern", X, Y, Z);
-        Expect.equal("hbm:lantern", placed.get("block").getAsString(), "lantern core placed by hand");
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:lantern", X, Y, Z);
+        Expect.equal("geontm:lantern", placed.get("block").getAsString(), "lantern core placed by hand");
         for (int dy = 1; dy <= 4; dy++) {
-            Expect.block(c, X, Y + 1 + dy, Z, "hbm:lantern");
+            Expect.block(c, X, Y + 1 + dy, Z, "geontm:lantern");
         }
         c.screenshot("10-lantern-placed");
 
@@ -42,12 +42,12 @@ public final class LanternPost implements Scenario {
         c.screenshot("20-lantern-render");
 
         // The sweep: a glyphid inside 7.5 blocks of the lamp must get blindness within one second.
-        c.cmd("summon hbm:entity_glyphid " + (X + 1) + " " + (Y + 1) + " " + (Z + 1));
+        c.cmd("summon geontm:entity_glyphid " + (X + 1) + " " + (Y + 1) + " " + (Z + 1));
         c.waitTicks(40);
         JsonObject glyphids = c.query("entities", json("radius", 20, "type", "glyphid"));
         Expect.that(glyphids.getAsJsonArray("entities").size() > 0,
                 "a glyphid stands beside the lantern: " + glyphids);
-        c.cmd("data get entity @e[type=hbm:entity_glyphid,limit=1]");
+        c.cmd("data get entity @e[type=geontm:entity_glyphid,limit=1]");
         c.waitTicks(5);
         // Vanilla 1.20.1 persists mob effects by numeric registry id; Forge may also name them.
         Expect.logMatches(c, c.node().startsWith("1.20.")

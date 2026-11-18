@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/nuke_fuel"
+        }
+      ],
+      "rolls": {
+        "type": "geontm_de:config_scaled",
+        "value": 10.0
+      }
+    }
+  ],
+  "random_sequence": "geontm_de:chests/component/nuke_fuel_10_10"
+}

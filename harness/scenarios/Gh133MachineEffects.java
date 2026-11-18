@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * GitHub issue 133 sibling audit: effects 1.7 emits that never reached the client. Smoke is measured as pixels darkened
  * against a white wall, compared with the same machine without the condition (blast furnace running with an empty flue
- * tank, empty crucible). Flames and giblets are counted through {@code hbm_effects}. By hand from 1.7's ClientProxy, an
- * iron golem (1.4 x 2.7) gives gW 5, gH 10, count 75: the Maxwell throws 75, the turbofan's cDiv 5 leaves 15 a tick.
+ * tank, empty crucible). Flames and giblets are counted through {@code geontm_effects}. By hand from 1.7's ClientProxy, an
+ * iron geocore (1.4 x 2.7) gives gW 5, gH 10, count 75: the Maxwell throws 75, the turbofan's cDiv 5 leaves 15 a tick.
  */
 public class Gh133MachineEffects implements Scenario {
 
@@ -48,7 +48,7 @@ public class Gh133MachineEffects implements Scenario {
             c.cmd("gamerule sendCommandFeedback true");
             c.setOption("hide_gui", hideGui);
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|particle)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|particle)");
         Expect.that(failures.get().isEmpty(), "effects missing: " + failures.get());
         System.out.println("[Gh133Fx] PASS");
     }
@@ -56,7 +56,7 @@ public class Gh133MachineEffects implements Scenario {
     private void blastFurnace(Client c) throws Exception {
         clear(c);
         wall(c);
-        int[] p = place(c, "hbm:machine_blast_furnace[facing=north]", "TileEntityMachineBlastFurnace");
+        int[] p = place(c, "geontm:machine_blast_furnace[facing=north]", "TileEntityMachineBlastFurnace");
         camera(c, G + 10, -13, G + 11);
         c.cmd("data merge block " + at(p) + " {fuel:64000,t1:0,inventory:{Items:["
                 + stack(1, "minecraft:iron_ingot", 64) + "," + stack(2, "minecraft:sand", 64) + "]}}");
@@ -69,7 +69,7 @@ public class Gh133MachineEffects implements Scenario {
     private void crucible(Client c) throws Exception {
         clear(c);
         wall(c);
-        int[] p = place(c, "hbm:machine_crucible[facing=north]", "TileEntityCrucible");
+        int[] p = place(c, "geontm:machine_crucible[facing=north]", "TileEntityCrucible");
         camera(c, G + 3, -10, G + 4);
         c.waitTicks(10);
         BufferedImage empty = ImageIO.read(c.screenshot("crucible-00-empty").toFile());
@@ -91,10 +91,10 @@ public class Gh133MachineEffects implements Scenario {
     private void arcFurnace(Client c) throws Exception {
         clear(c);
         c.cmd("time set 18000");
-        int[] p = place(c, "hbm:machine_arc_furnace[facing=north]", "TileEntityMachineArcFurnaceLarge");
+        int[] p = place(c, "geontm:machine_arc_furnace[facing=north]", "TileEntityMachineArcFurnaceLarge");
         camera(c, G + 3, -11, G + 3);
         c.cmd("data merge block " + at(p) + " {power:100000000L,lid:1f,delay:0,inventory:{Items:["
-                + stack(0, "hbm:arc_electrode", 1) + "," + stack(1, "hbm:arc_electrode", 1) + "," + stack(2, "hbm:arc_electrode", 1)
+                + stack(0, "geontm:arc_electrode", 1) + "," + stack(1, "geontm:arc_electrode", 1) + "," + stack(2, "geontm:arc_electrode", 1)
                 + "," + stack(25, "minecraft:flint", 64) + "]}}");
         int max = 0;
         for (int i = 1; i <= 12; i++) {
@@ -110,11 +110,11 @@ public class Gh133MachineEffects implements Scenario {
         clear(c);
         waitForNoGiblets(c);
         c.cmd("time set 6000");
-        int[] p = place(c, "hbm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
-        c.cmd("data merge block " + at(p) + " {tank:24000,tank_type:\"hbm:kerosene\"}");
+        int[] p = place(c, "geontm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
+        c.cmd("data merge block " + at(p) + " {tank:24000,tank_type:\"geontm:kerosene\"}");
         camera(c, G + 3, -10, G + 1);
         c.waitTicks(10);
-        golem(c, p[0] + 4.1, G, p[2] + 0.5);
+        geocore(c, p[0] + 4.1, G, p[2] + 0.5);
         int gibs = waitForGiblets(c, "turbofan");
         System.out.println("[Gh133Fx] turbofan giblets: " + gibs);
         c.screenshot("turbofan-gibs");
@@ -126,10 +126,10 @@ public class Gh133MachineEffects implements Scenario {
         clear(c);
         waitForNoGiblets(c);
         c.cmd("difficulty normal");
-        Fixtures.setBlock(c, 0, G, 0, "hbm:turret_maxwell");
+        Fixtures.setBlock(c, 0, G, 0, "geontm:turret_maxwell");
         c.cmd("data merge block 0 " + G + " 0 {power:10000000L,isOn:1b,targetMobs:1b,targetAnimals:1b}");
         camera(c, G + 3, -8, G + 1);
-        golem(c, 0.5, G, 9.5);
+        geocore(c, 0.5, G, 9.5);
         c.cmd("data merge entity @e[type=minecraft:iron_golem,limit=1] {Health:5f}");
         int gibs = waitForGiblets(c, "maxwell");
         System.out.println("[Gh133Fx] maxwell giblets: " + gibs);
@@ -142,7 +142,7 @@ public class Gh133MachineEffects implements Scenario {
         clear(c);
         c.cmd("time set 18000");
         camera(c, G + 3, -11, G + 2);
-        for (int x = -8; x <= 8; x++) Fixtures.setBlock(c, x, G, 3, "hbm:rbmk_debris_burning");
+        for (int x = -8; x <= 8; x++) Fixtures.setBlock(c, x, G, 3, "geontm:rbmk_debris_burning");
         c.waitTicks(30);
         int flames = effects(c, "flames");
         System.out.println("[Gh133Fx] debris flames: " + flames);
@@ -150,17 +150,17 @@ public class Gh133MachineEffects implements Scenario {
         if (flames < 1) failures.get().add("burning debris flames 0");
     }
 
-    private void golem(Client c, double x, double y, double z) {
+    private void geocore(Client c, double x, double y, double z) {
         c.cmd("summon minecraft:iron_golem " + x + " " + y + " " + z + " {NoAI:1b,PersistenceRequired:1b,Silent:1b}");
     }
 
     private int waitForGiblets(Client c, String label) {
-        // The burst arrives once, so read until the golem is gone and the count has settled.
+        // The burst arrives once, so read until the geocore is gone and the count has settled.
         int gibs = 0;
         for (int i = 0; i < 60; i++) {
             c.waitTicks(5);
             gibs = effects(c, "giblets");
-            if (gibs > 0 || !golemAlive(c)) break;
+            if (gibs > 0 || !geocoreAlive(c)) break;
         }
         c.waitTicks(10);
         return Math.max(gibs, effects(c, "giblets"));
@@ -171,7 +171,7 @@ public class Gh133MachineEffects implements Scenario {
         Expect.equal(0, effects(c, "giblets"), "giblets from the previous kill are gone");
     }
 
-    private static boolean golemAlive(Client c) {
+    private static boolean geocoreAlive(Client c) {
         JsonObject params = new JsonObject();
         params.addProperty("radius", 60);
         params.addProperty("type", "minecraft:iron_golem");
@@ -186,7 +186,7 @@ public class Gh133MachineEffects implements Scenario {
     }
 
     private static int effects(Client c, String key) {
-        return c.query("hbm_effects", new JsonObject()).get(key).getAsInt();
+        return c.query("geontm_effects", new JsonObject()).get(key).getAsInt();
     }
 
     private static int[] place(Client c, String block, String cls) {

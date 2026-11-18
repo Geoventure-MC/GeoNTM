@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 22: a Balefire Bomb set off below y = 0 left no crater and its mushroom cloud had no stem. 1.7 clamps
@@ -24,13 +24,13 @@ public final class Gh22BalefireBelowZero implements Scenario {
         c.cmd("fill -30 -50 -30 30 -46 30 minecraft:stone");
         c.cmd("fill -30 -45 -30 30 " + TOP + " 30 minecraft:stone");
         c.cmd("fill -30 " + (TOP + 1) + " -30 30 " + (TOP + 8) + " 30 minecraft:air");
-        c.cmd("setblock 0 " + (TOP + 1) + " 0 hbm:nuke_fstbmb");
+        c.cmd("setblock 0 " + (TOP + 1) + " 0 geontm:nuke_fstbmb");
         c.waitTicks(5);
         Expect.that(block(c, 6, TOP, 6).contains("minecraft:stone"), "the slab is there: " + block(c, 6, TOP, 6));
         Expect.that(block(c, 0, TOP + 1, 0).contains("nuke_fstbmb"), "the bomb is there: " + block(c, 0, TOP + 1, 0));
         c.teleport(0.5, TOP + 20, -60.5);
-        c.cmd("item replace block 0 " + (TOP + 1) + " 0 container.0 with hbm:egg_balefire");
-        c.cmd("item replace block 0 " + (TOP + 1) + " 0 container.1 with hbm:battery_spark");
+        c.cmd("item replace block 0 " + (TOP + 1) + " 0 container.0 with geontm:egg_balefire");
+        c.cmd("item replace block 0 " + (TOP + 1) + " 0 container.1 with geontm:battery_spark");
         c.cmd("data merge block 0 " + (TOP + 1) + " 0 {started:1b,timer:40}");
         c.markLog();
         c.lookAt(0.5, TOP + 30, 0.5);

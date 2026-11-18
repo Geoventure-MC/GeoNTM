@@ -1,0 +1,3 @@
+package fr.geoventure.geontm.inventory.container;
+import fr.geoventure.geontm.inventory.ModRBMKMenus; import fr.geoventure.geontm.tileentity.machine.rbmk.BlockEntityRBMKBoiler; import net.minecraft.core.BlockPos; import net.minecraft.world.entity.player.*; import net.minecraft.world.item.ItemStack;
+public final class MenuRBMKBoiler extends RBMKMenu<BlockEntityRBMKBoiler>{public MenuRBMKBoiler(int i,Inventory p,BlockPos x){super(ModRBMKMenus.RBMK_BOILER.get(),i,p,x,BlockEntityRBMKBoiler.class,0);addPlayer();}public MenuRBMKBoiler(int i,Inventory p,BlockEntityRBMKBoiler b){super(ModRBMKMenus.RBMK_BOILER.get(),i,p,b,0);addPlayer();}@Override public ItemStack quickMoveStack(Player p,int i){return ItemStack.EMPTY;}}

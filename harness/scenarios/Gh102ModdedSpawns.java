@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.Locale;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 /**
  * GitHub issue 102 with worldgen mods in the client's mods folder: broadcasters and AP/AT mines counted in 15 x 15 chunks
- * of a fresh seeded world. Set the hbm.cfg keys first; {@code GH102_LABEL} names the world and the printed line.
+ * of a fresh seeded world. Set the geontm.cfg keys first; {@code GH102_LABEL} names the world and the printed line.
  */
 public final class Gh102ModdedSpawns implements Scenario {
 
@@ -46,9 +46,9 @@ public final class Gh102ModdedSpawns implements Scenario {
                 if (attempt == 20) throw e;
             }
         }
-        int broadcasters = count(c, "hbm:broadcaster_pc");
-        int apMines = count(c, "hbm:mine_ap");
-        int atMines = count(c, "hbm:mine_he");
+        int broadcasters = count(c, "geontm:broadcaster_pc");
+        int apMines = count(c, "geontm:mine_ap");
+        int atMines = count(c, "geontm:mine_he");
         c.cmd("forceload remove all");
         int chunks = (2 * RADIUS + 1) * (2 * RADIUS + 1);
         System.out.println("[Gh102] " + label + " broadcasters=" + broadcasters + " ap_mines=" + apMines + " at_mines="

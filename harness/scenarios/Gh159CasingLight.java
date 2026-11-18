@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
@@ -47,7 +47,7 @@ public final class Gh159CasingLight implements Scenario {
             casing.add(yaws[i]);
             casing.add(0F);
             spawn.add("spawn_casing", casing);
-            c.query("hbm_turret_fx", spawn);
+            c.query("geontm_turret_fx", spawn);
             c.waitTicks(30);
             c.key("f1");
             c.waitTicks(2);
@@ -58,7 +58,7 @@ public final class Gh159CasingLight implements Scenario {
             c.waitTicks(300);
         }
         Expect.that(ratios[0] >= 0.8 && ratios[1] >= 0.8, "the casing is lit as 1.7 lights it: " + ratios[0] + ", " + ratios[1]);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     /** Red channel's 95th percentile over pixels of the casing's hue (green/red 0.55..0.8, blue/red under 0.3). */

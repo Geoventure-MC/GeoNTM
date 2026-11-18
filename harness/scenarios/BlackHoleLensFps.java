@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Locale;
 
 /**
  * Frame cost of the port-only black hole lens (History §19ey-lensbench): frame ms with no field, with the field
- * drawn the 1.7 way (lens off through {@code hbm_lens_bench}) and with the lens, alternated lens/1.7/lens/1.7 so
+ * drawn the 1.7 way (lens off through {@code geontm_lens_bench}) and with the lens, alternated lens/1.7/lens/1.7 so
  * drift cancels. Views at 8, 20 and 60 blocks (size 1.5) and a screen-filling size 5 at 20 blocks.
  *
  * <p>Not a pass/fail check, beyond requiring that the intended path actually drew in every window. Run on one client
@@ -19,9 +19,9 @@ import java.util.Locale;
 public final class BlackHoleLensFps implements Scenario {
 
     private static final String[][] FIELDS = {
-            {"black_hole", "hbm:entity_black_hole"},
-            {"quasar", "hbm:entity_digamma_quasar"},
-            {"vortex", "hbm:entity_vortex"}};
+            {"black_hole", "geontm:entity_black_hole"},
+            {"quasar", "geontm:entity_digamma_quasar"},
+            {"vortex", "geontm:entity_vortex"}};
     /** name, camera z, field size */
     private static final String[][] VIEWS = {
             {"8m", "-1.5", "1.5"}, {"20m", "-13.5", "1.5"}, {"60m", "-53.5", "1.5"}, {"20m-size5", "-13.5", "5"}};
@@ -135,18 +135,18 @@ public final class BlackHoleLensFps implements Scenario {
     private static JsonObject measure(Client c) {
         JsonObject start = new JsonObject();
         start.addProperty("action", "start");
-        c.query("hbm_lens_bench", start);
+        c.query("geontm_lens_bench", start);
         c.waitTicks(WINDOW_TICKS);
         JsonObject stop = new JsonObject();
         stop.addProperty("action", "stop");
-        return c.query("hbm_lens_bench", stop);
+        return c.query("geontm_lens_bench", stop);
     }
 
     private static void lens(Client c, boolean on) {
         JsonObject p = new JsonObject();
         p.addProperty("action", "lens");
         p.addProperty("on", on);
-        c.query("hbm_lens_bench", p);
+        c.query("geontm_lens_bench", p);
         c.waitTicks(2);
     }
 

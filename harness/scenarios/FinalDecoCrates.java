@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +22,14 @@ public final class FinalDecoCrates implements Scenario {
     private static final int Y = 100;
     private static final int Z = 0;
 
-    static final String[] PLAIN = {"hbm:crate", "hbm:crate_can", "hbm:crate_tungsten", "hbm:safe", "hbm:broadcaster_pc",
-            "hbm:radiobox", "hbm:radiorec", "hbm:deco_emitter", "hbm:part_emitter", "hbm:hadron_coil_alloy",
-            "hbm:hadron_coil_gold", "hbm:hadron_coil_neodymium", "hbm:hadron_coil_magtung", "hbm:hadron_coil_schrabidium",
-            "hbm:hadron_coil_schrabidate", "hbm:hadron_coil_starmetal", "hbm:hadron_coil_chlorophyte", "hbm:hadron_coil_mese",
-            "hbm:block_cap_nuka", "hbm:block_cap_quantum", "hbm:block_cap_sparkle", "hbm:block_cap_rad",
-            "hbm:block_cap_korl", "hbm:block_cap_fritz", "hbm:pink_log", "hbm:wood_structure_roof",
-            "hbm:wood_structure_scaffold", "hbm:wood_structure_ceiling", "hbm:rad_absorber", "hbm:rad_absorber_red",
-            "hbm:rad_absorber_green", "hbm:rad_absorber_pink", "hbm:field_disturber"};
+    static final String[] PLAIN = {"geontm:crate", "geontm:crate_can", "geontm:crate_tungsten", "geontm:safe", "geontm:broadcaster_pc",
+            "geontm:radiobox", "geontm:radiorec", "geontm:deco_emitter", "geontm:part_emitter", "geontm:hadron_coil_alloy",
+            "geontm:hadron_coil_gold", "geontm:hadron_coil_neodymium", "geontm:hadron_coil_magtung", "geontm:hadron_coil_schrabidium",
+            "geontm:hadron_coil_schrabidate", "geontm:hadron_coil_starmetal", "geontm:hadron_coil_chlorophyte", "geontm:hadron_coil_mese",
+            "geontm:block_cap_nuka", "geontm:block_cap_quantum", "geontm:block_cap_sparkle", "geontm:block_cap_rad",
+            "geontm:block_cap_korl", "geontm:block_cap_fritz", "geontm:pink_log", "geontm:wood_structure_roof",
+            "geontm:wood_structure_scaffold", "geontm:wood_structure_ceiling", "geontm:rad_absorber", "geontm:rad_absorber_red",
+            "geontm:rad_absorber_green", "geontm:rad_absorber_pink", "geontm:field_disturber"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -44,11 +44,11 @@ public final class FinalDecoCrates implements Scenario {
         c.cmd("gamemode creative");
         for (int i = 0; i < PLAIN.length; i++) place(c, PLAIN[i], px(i), Y, pz(i));
         // wood structures joined: three roofs and a two-high scaffold stack beside the singles
-        place(c, "hbm:wood_structure_roof", X + 20, Y, Z + 8);
-        place(c, "hbm:wood_structure_roof", X + 21, Y, Z + 8);
-        place(c, "hbm:wood_structure_scaffold", X + 23, Y, Z + 8);
-        place(c, "hbm:wood_structure_scaffold", X + 24, Y, Z + 8);
-        Fixtures.setBlock(c, X + 23, Y + 2, Z + 8, "hbm:wood_structure_scaffold");
+        place(c, "geontm:wood_structure_roof", X + 20, Y, Z + 8);
+        place(c, "geontm:wood_structure_roof", X + 21, Y, Z + 8);
+        place(c, "geontm:wood_structure_scaffold", X + 23, Y, Z + 8);
+        place(c, "geontm:wood_structure_scaffold", X + 24, Y, Z + 8);
+        Fixtures.setBlock(c, X + 23, Y + 2, Z + 8, "geontm:wood_structure_scaffold");
         for (int i = 0; i < PLAIN.length; i++) {
             Expect.block(c, px(i), Y + 1, pz(i), PLAIN[i]);
         }
@@ -66,21 +66,21 @@ public final class FinalDecoCrates implements Scenario {
         // both filing cabinets, the glyphid hive blocks
         int x = X - 26;
         for (int t = 1; t <= 24; t++) {
-            placeVariant(c, "hbm:bobblehead", t, x, Y, Z - 4);
+            placeVariant(c, "geontm:bobblehead", t, x, Y, Z - 4);
             x += 2;
         }
         x = X - 26;
-        for (int t = 1; t <= 5; t++) { placeVariant(c, "hbm:snowglobe", t, x, Y, Z - 8); x += 2; }
-        for (int t = 1; t <= 4; t++) { placeVariant(c, "hbm:plushie", t, x, Y, Z - 8); x += 2; }
-        for (int t = 0; t < 2; t++) { placeVariant(c, "hbm:vending_machine", t, x, Y, Z - 8); x += 2; }
-        for (int t = 0; t < 2; t++) { placeVariant(c, "hbm:filing_cabinet", t, x, Y, Z - 8); x += 2; }
-        for (int t = 0; t < 3; t++) { placeVariant(c, "hbm:glyphid_base", t, x, Y, Z - 8); x += 2; }
-        Expect.block(c, X - 26, Y + 1, Z - 4, "hbm:bobblehead");
-        Expect.block(c, X - 26, Y + 1, Z - 8, "hbm:snowglobe");
-        Expect.block(c, X - 16, Y + 1, Z - 8, "hbm:plushie");
-        Expect.block(c, X - 8, Y + 1, Z - 8, "hbm:vending_machine");
-        Expect.block(c, X - 4, Y + 1, Z - 8, "hbm:filing_cabinet");
-        Expect.block(c, X, Y + 1, Z - 8, "hbm:glyphid_base");
+        for (int t = 1; t <= 5; t++) { placeVariant(c, "geontm:snowglobe", t, x, Y, Z - 8); x += 2; }
+        for (int t = 1; t <= 4; t++) { placeVariant(c, "geontm:plushie", t, x, Y, Z - 8); x += 2; }
+        for (int t = 0; t < 2; t++) { placeVariant(c, "geontm:vending_machine", t, x, Y, Z - 8); x += 2; }
+        for (int t = 0; t < 2; t++) { placeVariant(c, "geontm:filing_cabinet", t, x, Y, Z - 8); x += 2; }
+        for (int t = 0; t < 3; t++) { placeVariant(c, "geontm:glyphid_base", t, x, Y, Z - 8); x += 2; }
+        Expect.block(c, X - 26, Y + 1, Z - 4, "geontm:bobblehead");
+        Expect.block(c, X - 26, Y + 1, Z - 8, "geontm:snowglobe");
+        Expect.block(c, X - 16, Y + 1, Z - 8, "geontm:plushie");
+        Expect.block(c, X - 8, Y + 1, Z - 8, "geontm:vending_machine");
+        Expect.block(c, X - 4, Y + 1, Z - 8, "geontm:filing_cabinet");
+        Expect.block(c, X, Y + 1, Z - 8, "geontm:glyphid_base");
         String bobbleNbt = c.blockEntity(X - 26 + 2 * 7, Y + 1, Z - 4).toString();
         // the figure is saved by name since History §19es-itemvariant (1.7 saved the ordinal byte 8)
         Expect.that(bobbleNbt.replaceAll("\\s", "").replace("\\", "").contains("type:\"bob\""), "bobblehead 8 (BOB) keeps its type: " + bobbleNbt);
@@ -114,14 +114,14 @@ public final class FinalDecoCrates implements Scenario {
         close(c);
 
         // --- contents ride on the broken crate and safe -----------------------------------------------------
-        keepsContents(c, "hbm:crate_tungsten", X - 22, "Tungsten Crate", "36");
-        keepsContents(c, "hbm:safe", X - 20, "Safe", "37");
+        keepsContents(c, "geontm:crate_tungsten", X - 22, "Tungsten Crate", "36");
+        keepsContents(c, "geontm:safe", X - 20, "Safe", "37");
 
         // --- interactions ----------------------------------------------------------------------------------
         // plushie squeeze (Yomi): the squeak plays; the block survives
         c.teleport(X - 16 + 2.5, Y + 1, Z - 8 + 0.5);
         Fixtures.interact(c, X - 16, Y + 1, Z - 8);
-        Expect.block(c, X - 16, Y + 1, Z - 8, "hbm:plushie");
+        Expect.block(c, X - 16, Y + 1, Z - 8, "geontm:plushie");
         // dye the emitter red and photograph the beam
         Fixtures.giveOnly(c, "minecraft:red_dye", 1);
         c.teleport(X - 12 + 2.5, Y + 1, Z + 4 + 0.5);
@@ -135,7 +135,7 @@ public final class FinalDecoCrates implements Scenario {
 
         // vending machine: a token for a drink
         c.cmd("kill @e[type=item]");
-        Fixtures.giveOnly(c, "hbm:coin_token", 4);
+        Fixtures.giveOnly(c, "geontm:coin_token", 4);
         // 4.5 out, not 3.5: the drink leaves the slot with 1.7's zero pickup delay and a random toss of up to ~1.2
         // blocks, and from 3.5 out a toss toward the player lands it in the inventory (seen on 1.20.1 Forge)
         c.teleport(X - 8 + 0.5, Y + 1, Z - 8 + 4.5);
@@ -151,7 +151,7 @@ public final class FinalDecoCrates implements Scenario {
         int tokens = 0;
         for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("id").getAsString().equals("hbm:coin_token")) tokens += s.get("count").getAsInt();
+            if (s.get("id").getAsString().equals("geontm:coin_token")) tokens += s.get("count").getAsInt();
         }
         Expect.that(tokens == 3, "the machine took exactly one of the four tokens, " + tokens + " left");
         c.screenshot("41-vending-drop");
@@ -159,12 +159,12 @@ public final class FinalDecoCrates implements Scenario {
         // --- radiation absorber against a control chunk ---------------------------------------------------
         int ax = X + 40, az = Z + 40;     // an absorber chunk and, 32 blocks off, a control chunk
         Fixtures.platform(c, ax, Y, az, 20);
-        c.cmd("hbm rad set " + ax + " " + (Y + 1) + " " + az + " 5000");
-        c.cmd("hbm rad set " + (ax + 32) + " " + (Y + 1) + " " + az + " 5000");
-        Fixtures.setBlock(c, ax, Y + 1, az, "hbm:rad_absorber_pink");
+        c.cmd("geontm rad set " + ax + " " + (Y + 1) + " " + az + " 5000");
+        c.cmd("geontm rad set " + (ax + 32) + " " + (Y + 1) + " " + az + " 5000");
+        Fixtures.setBlock(c, ax, Y + 1, az, "geontm:rad_absorber_pink");
         c.waitTicks(60);
-        c.cmd("hbm rad get " + ax + " " + (Y + 1) + " " + az);
-        c.cmd("hbm rad get " + (ax + 32) + " " + (Y + 1) + " " + az);
+        c.cmd("geontm rad get " + ax + " " + (Y + 1) + " " + az);
+        c.cmd("geontm rad get " + (ax + 32) + " " + (Y + 1) + " " + az);
         c.waitTicks(4);
         List<String> rad = c.log(40, "Radiation at");
         Expect.that(rad.size() >= 2, "both radiation readings logged: " + rad);
@@ -181,14 +181,14 @@ public final class FinalDecoCrates implements Scenario {
         // platform the first free slot is the air under it and the swarm falls to the superflat floor (seen on
         // 1.21.1: 5 glyphids at y=-60). A hive sits in terrain; give the platform solid ground under it.
         c.cmd("fill " + (gx - 12) + " " + (Y - 3) + " " + (gz - 12) + " " + (gx + 12) + " " + (Y - 1) + " " + (gz + 12) + " minecraft:stone");
-        place(c, "hbm:glyphid_spawner", gx, Y, gz);
+        place(c, "geontm:glyphid_spawner", gx, Y, gz);
         c.waitTicks(40);
         int glyphids = 0;
         for (JsonElement e : c.entities(40)) {
             if (e.getAsJsonObject().get("type").getAsString().contains("glyphid")) glyphids++;
         }
         if (glyphids == 0) {
-            for (JsonElement e : c.query("hbm_living", new JsonObject()).getAsJsonArray("living")) {
+            for (JsonElement e : c.query("geontm_living", new JsonObject()).getAsJsonArray("living")) {
                 if (e.getAsJsonObject().get("type").getAsString().contains("glyphid")) glyphids++;
             }
         }
@@ -198,7 +198,7 @@ public final class FinalDecoCrates implements Scenario {
         c.cmd("kill @e[type=!player]");
         c.cmd("difficulty peaceful");
 
-        Expect.logCleanSinceMark(c, "(Exception|ERROR.*hbm|Missing model|missing texture)");
+        Expect.logCleanSinceMark(c, "(Exception|ERROR.*geontm|Missing model|missing texture)");
     }
 
     /** The first 24 plain blocks along z + 4, the rest along z + 8 (inside the 30-block platform). */
@@ -218,15 +218,15 @@ public final class FinalDecoCrates implements Scenario {
 
     private static void inventories(Client c) {
         List<String> batchA = new ArrayList<>();
-        for (int t = 1; t <= 24; t++) batchA.add(variant(c, "hbm:bobblehead", t));
-        for (int t = 1; t <= 5; t++) batchA.add(variant(c, "hbm:snowglobe", t));
-        for (int t = 1; t <= 4; t++) batchA.add(variant(c, "hbm:plushie", t));
+        for (int t = 1; t <= 24; t++) batchA.add(variant(c, "geontm:bobblehead", t));
+        for (int t = 1; t <= 5; t++) batchA.add(variant(c, "geontm:snowglobe", t));
+        for (int t = 1; t <= 4; t++) batchA.add(variant(c, "geontm:plushie", t));
         List<String> batchB = new ArrayList<>(List.of(PLAIN).subList(0, 24));
-        for (int t = 0; t < 2; t++) batchB.add(variant(c, "hbm:filing_cabinet", t));
-        for (int t = 0; t < 2; t++) batchB.add(variant(c, "hbm:vending_machine", t));
+        for (int t = 0; t < 2; t++) batchB.add(variant(c, "geontm:filing_cabinet", t));
+        for (int t = 0; t < 2; t++) batchB.add(variant(c, "geontm:vending_machine", t));
         List<String> batchC = new ArrayList<>(List.of(PLAIN).subList(24, PLAIN.length));
-        for (int t = 0; t < 3; t++) batchC.add(variant(c, "hbm:glyphid_base", t));
-        for (int t = 0; t < 3; t++) batchC.add(variant(c, "hbm:glyphid_spawner", t));
+        for (int t = 0; t < 3; t++) batchC.add(variant(c, "geontm:glyphid_base", t));
+        for (int t = 0; t < 3; t++) batchC.add(variant(c, "geontm:glyphid_spawner", t));
         inventory(c, batchA, "01-inventory-props");
         inventory(c, batchB, "02-inventory-crates-coils-caps");
         inventory(c, batchC, "03-inventory-simple");
@@ -257,13 +257,13 @@ public final class FinalDecoCrates implements Scenario {
     /** 1.7 (block, metadata): one item per subtype since History §19es-itemvariant (ntm-next ids). */
     private static String variant(Client c, String id, int variant) {
         return switch (id) {
-            case "hbm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
-            case "hbm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
-            case "hbm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
-            case "hbm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
-            case "hbm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
-            case "hbm:glyphid_base", "hbm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
-            case "hbm:holotape_image" -> id + "_holo_digamma";
+            case "geontm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
+            case "geontm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
+            case "geontm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
+            case "geontm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
+            case "geontm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
+            case "geontm:glyphid_base", "geontm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
+            case "geontm:holotape_image" -> id + "_holo_digamma";
             default -> throw new IllegalArgumentException(id);
         };
     }
@@ -284,7 +284,7 @@ public final class FinalDecoCrates implements Scenario {
      * The crates 1.7 registers with {@code ItemBlockStorageCrate}: under {@code /ntmserver CRATE_OPEN_HELD} (on by
      * default) a plain right-click opens the held crate and only a sneak-click places it.
      */
-    static final java.util.Set<String> SNEAK_PLACED = java.util.Set.of("hbm:crate_tungsten", "hbm:safe");
+    static final java.util.Set<String> SNEAK_PLACED = java.util.Set.of("geontm:crate_tungsten", "geontm:safe");
 
     private static void place(Client c, String item, int x, int y, int z) {
         Fixtures.giveOnly(c, item, 1);

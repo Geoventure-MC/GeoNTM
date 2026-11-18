@@ -1,5 +1,5 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 
 /** The disperser canisters and glyphid glands in the creative search, each tinted with its fluid's 1.7 colour. */
 public final class CanisterLook implements Scenario {

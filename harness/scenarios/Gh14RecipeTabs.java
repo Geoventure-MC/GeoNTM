@@ -1,30 +1,30 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * GitHub issues 14 and 18: the recipe tabs 1.7's NEI had, in JEI. Opens each of them through Golem Core's {@code jei}
+ * GitHub issues 14 and 18: the recipe tabs 1.7's NEI had, in JEI. Opens each of them through GeoCore's {@code jei}
  * query (JEI's recipe screen on that category, as its tab would), checks the title is translated text rather than a
- * raw {@code hbm.*.name} key and that the category holds recipes, and screenshots the page; the pictures are compared
+ * raw {@code geontm.*.name} key and that the category holds recipes, and screenshots the page; the pictures are compared
  * by eye with 1.7's NEI pages (SILEX laser box and percentages, two-way fluid container arrow, 3x3 crucible output).
  * Also opens the categories whose titles issue 18 reported as raw keys. JEI is in every default dev run.
  */
 public final class Gh14RecipeTabs implements Scenario {
 
     private static final String[][] TABS = {
-            {"hbm:silex", "SILEX"},
-            {"hbm:electrolysis_fluid", "Electrolysis Machine"},
-            {"hbm:electrolysis_metal", "Electrolysis Machine"},
-            {"hbm:fluid_containers", "Fluid Containers"},
-            {"hbm:construction", "Construction"},
-            {"hbm:tooling", "Tooling"},
-            {"hbm:crucible_smelting", "Crucible Smelting"},
-            {"hbm:book_of_boxcars", "Black Book"},
-            {"hbm:crucible_casting", "Crucible Casting"},
-            {"hbm:centrifuge", "Centrifuge"},
-            {"hbm:mixer", "Industrial Mixer"},
-            {"hbm:vacuum_distiller", "Vacuum Refinery"},
+            {"geontm:silex", "SILEX"},
+            {"geontm:electrolysis_fluid", "Electrolysis Machine"},
+            {"geontm:electrolysis_metal", "Electrolysis Machine"},
+            {"geontm:fluid_containers", "Fluid Containers"},
+            {"geontm:construction", "Construction"},
+            {"geontm:tooling", "Tooling"},
+            {"geontm:crucible_smelting", "Crucible Smelting"},
+            {"geontm:book_of_boxcars", "Black Book"},
+            {"geontm:crucible_casting", "Crucible Casting"},
+            {"geontm:centrifuge", "Centrifuge"},
+            {"geontm:mixer", "Industrial Mixer"},
+            {"geontm:vacuum_distiller", "Vacuum Refinery"},
     };
 
     @Override
@@ -39,7 +39,7 @@ public final class Gh14RecipeTabs implements Scenario {
             JsonObject opened = c.query("jei", p);
             Expect.that(opened.has("opened") && opened.get("opened").getAsBoolean(), "JEI opened " + tab[0] + ": " + opened);
             String title = opened.get("title").getAsString();
-            Expect.that(!title.matches("hbm\\..*\\.name"), tab[0] + " shows a translated title, not a raw key: " + title);
+            Expect.that(!title.matches("geontm\\..*\\.name"), tab[0] + " shows a translated title, not a raw key: " + title);
             Expect.that(title.equals(tab[1]), tab[0] + " is titled as 1.7's NEI tab '" + tab[1] + "': " + title);
             Expect.that(opened.get("recipes").getAsLong() > 0, tab[0] + " holds recipes: " + opened.get("recipes"));
             c.waitTicks(30);

@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 95: the Tom crater cleared and filled only y 1..256 (1.7's world), leaving terrain above 256 standing
@@ -32,7 +32,7 @@ public final class Gh95TomCraterHeight implements Scenario {
             Expect.that(block(c, X, 295, Z).contains("minecraft:stone"), "the pillar is there: " + block(c, X, 295, Z));
             c.markLog();
             // a summoned blast reads its explosion state from NBT, so state it in full
-            c.cmd("summon hbm:entity_tom_bust " + X + " 100 " + Z + " {destructionRange:" + R + ",speed:1,did:1b"
+            c.cmd("summon geontm:entity_tom_bust " + X + " 100 " + Z + " {destructionRange:" + R + ",speed:1,did:1b"
                     + ",exp_posX:" + X + ",exp_posY:100,exp_posZ:" + Z + ",exp_radius:" + R + ",exp_radius2:" + R * R
                     + ",exp_nlimit:" + R * R * 4 + ",exp_n:1}");
             c.waitTicks(400);

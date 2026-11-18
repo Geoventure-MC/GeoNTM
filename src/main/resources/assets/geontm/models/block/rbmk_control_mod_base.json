@@ -1,0 +1,10 @@
+{
+  "textures": {
+    "particle": "geontm:blocks/rbmk/rbmk_control_mod_side",
+    "side": "geontm:blocks/rbmk/rbmk_control_mod_side",
+    "top": "geontm:blocks/rbmk/rbmk_control_mod_top",
+    "bottom": "geontm:blocks/rbmk/rbmk_control_mod_top",
+    "pipe_side": "geontm:blocks/rbmk/rbmk_control_mod_pipe_side",
+    "pipe_top": "geontm:blocks/rbmk/rbmk_control_mod_pipe_top"
+  }
+}

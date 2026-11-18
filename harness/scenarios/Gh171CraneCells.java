@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,7 +20,7 @@ public final class Gh171CraneCells implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("fill -6 " + G + " -6 6 " + (G + 6) + " 6 minecraft:air");
         c.cmd("kill @e[type=item]");
-        Fixtures.placeOnTop(c, "hbm:machine_centrifuge", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_centrifuge", 0, Y, 0);
         c.waitTicks(5);
         Expect.that(c.blockEntity(0, G, 0).toString().contains("TileEntityMachineCentrifuge"),
                 "the centrifuge core is at 0 " + G + " 0: " + c.block(0, G, 0));
@@ -46,8 +46,8 @@ public final class Gh171CraneCells implements Scenario {
     }
 
     private static void place(Client c, int x, int y) {
-        c.cmd("setblock " + x + " " + y + " 0 hbm:crane_extractor[input=east,output=west]");
-        c.cmd("fill " + (x + 1) + " " + y + " 0 " + (x + 4) + " " + y + " 0 hbm:conveyor[facing=east]");
+        c.cmd("setblock " + x + " " + y + " 0 geontm:crane_extractor[input=east,output=west]");
+        c.cmd("fill " + (x + 1) + " " + y + " 0 " + (x + 4) + " " + y + " 0 geontm:conveyor[facing=east]");
         c.cmd("setblock " + (x + 5) + " " + y + " 0 minecraft:chest");
         if (y > G) c.cmd("fill " + (x + 1) + " " + (y - 1) + " 0 " + (x + 5) + " " + (y - 1) + " 0 minecraft:stone");
     }

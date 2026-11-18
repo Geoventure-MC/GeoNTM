@@ -31,12 +31,12 @@ Il part de [NTM-Continuum](https://github.com/Warfactory-Official/NTM-Continuum)
 
 ## Construire
 
-Java 17 ou plus. Les deux dépôts doivent être côte à côte, GeoCore dans un dossier nommé `Golem-Core` :
+Java 17 ou plus. Les deux dépôts doivent être côte à côte :
 
 ```bash
-git clone https://github.com/Geoventure-MC/GeoCore.git Golem-Core
+git clone https://github.com/Geoventure-MC/GeoCore.git
 git clone https://github.com/Geoventure-MC/GeoNTM.git
-cd Golem-Core && ./gradlew chiseledBuild
+cd GeoCore && ./gradlew chiseledBuild
 cd ../GeoNTM && ./gradlew :1.20.1-forge:build
 ```
 

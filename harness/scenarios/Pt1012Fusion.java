@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,50 +42,50 @@ public class Pt1012Fusion implements Scenario {
         boolean legacy120 = c.node().startsWith("1.20.");
 
         // --- the torus, placed from its item: the core lands seven blocks ahead of the clicked block ---
-        place(c, "hbm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
-        expectCore(c, 0, G, 0, "hbm:fusion_torus", null);
+        place(c, "geontm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
+        expectCore(c, 0, G, 0, "geontm:fusion_torus", null);
 
         // --- the klystron twelve blocks east, placed standing east of it so it faces east (away from the torus) ---
-        place(c, "hbm:fusion_klystron", 18.5, G, 0.5, 15, Y, 0);
-        expectCore(c, 12, G, 0, "hbm:fusion_klystron", "east");
+        place(c, "geontm:fusion_klystron", 18.5, G, 0.5, 15, Y, 0);
+        expectCore(c, 12, G, 0, "geontm:fusion_klystron", "east");
 
         // --- three air intakes, 2x2 each, on the klystron's south side ---
         for (int z = 4; z <= 8; z += 2) {
-            place(c, "hbm:machine_intake", 16.5, G, z + 0.5, 14, Y, z);
-            expectCore(c, 14, G, z, "hbm:machine_intake", "east");
+            place(c, "geontm:machine_intake", 16.5, G, z + 0.5, 14, Y, z);
+            expectCore(c, 14, G, z, "geontm:machine_intake", "east");
         }
         // air duct from the klystron's south port (12, G, 3) along the intakes' west faces
-        for (int z = 3; z <= 9; z++) place(c, "hbm:fluid_duct_neo", 10.5, G, z + 0.5, 12, Y, z);
+        for (int z = 3; z <= 9; z++) place(c, "geontm:fluid_duct_neo", 10.5, G, z + 0.5, 12, Y, z);
         // red cable along the intakes' east faces; the power source is placed at its end later
-        for (int z = 4; z <= 9; z++) place(c, "hbm:red_cable", 17.5, G, z + 0.5, 15, Y, z);
+        for (int z = 4; z <= 9; z++) place(c, "geontm:red_cable", 17.5, G, z + 0.5, 15, Y, z);
 
         // --- the two fuel tanks on the torus's top ring ---
-        place(c, "hbm:machine_fluidtank", -6.5, TOP, 0.5, -5, TOP - 1, 0);   // deuterium, core (-4, TOP, 0)
-        expectCore(c, -4, TOP, 0, "hbm:machine_fluidtank", null);
-        place(c, "hbm:machine_fluidtank", 0.5, TOP, -6.5, 0, TOP - 1, -5);   // coolant, core (0, TOP, -4)
-        expectCore(c, 0, TOP, -4, "hbm:machine_fluidtank", null);
-        place(c, "hbm:machine_fluidtank", 0.5, TOP, 7.5, 0, TOP - 1, 5);     // warm coolant out, core (0, TOP, 4)
-        expectCore(c, 0, TOP, 4, "hbm:machine_fluidtank", null);
+        place(c, "geontm:machine_fluidtank", -6.5, TOP, 0.5, -5, TOP - 1, 0);   // deuterium, core (-4, TOP, 0)
+        expectCore(c, -4, TOP, 0, "geontm:machine_fluidtank", null);
+        place(c, "geontm:machine_fluidtank", 0.5, TOP, -6.5, 0, TOP - 1, -5);   // coolant, core (0, TOP, -4)
+        expectCore(c, 0, TOP, -4, "geontm:machine_fluidtank", null);
+        place(c, "geontm:machine_fluidtank", 0.5, TOP, 7.5, 0, TOP - 1, 5);     // warm coolant out, core (0, TOP, 4)
+        expectCore(c, 0, TOP, 4, "geontm:machine_fluidtank", null);
         // deuterium: tank port (-6, TOP, 1) -> torus top port (-6, TOP, 0)
-        place(c, "hbm:fluid_duct_neo", -5.5, TOP, 1.5, -6, TOP - 1, 0);
-        place(c, "hbm:fluid_duct_neo", -6.5, TOP, 3.5, -6, TOP - 1, 1);
+        place(c, "geontm:fluid_duct_neo", -5.5, TOP, 1.5, -6, TOP - 1, 0);
+        place(c, "geontm:fluid_duct_neo", -6.5, TOP, 3.5, -6, TOP - 1, 1);
         // coolant: tank port (1, TOP, -6) -> torus top port (2, TOP, -6)
-        place(c, "hbm:fluid_duct_neo", 3.5, TOP, -6.5, 1, TOP - 1, -6);
-        place(c, "hbm:fluid_duct_neo", 3.5, TOP, -6.5, 2, TOP - 1, -6);
+        place(c, "geontm:fluid_duct_neo", 3.5, TOP, -6.5, 1, TOP - 1, -6);
+        place(c, "geontm:fluid_duct_neo", 3.5, TOP, -6.5, 2, TOP - 1, -6);
 
         // warm coolant: torus top port (0, TOP, 6) -> tank port (1, TOP, 6)
-        place(c, "hbm:fluid_duct_neo", 1.5, TOP, 7.5, 0, TOP - 1, 6);
-        place(c, "hbm:fluid_duct_neo", 1.5, TOP, 7.5, 1, TOP - 1, 6);
+        place(c, "geontm:fluid_duct_neo", 1.5, TOP, 7.5, 0, TOP - 1, 6);
+        place(c, "geontm:fluid_duct_neo", 1.5, TOP, 7.5, 1, TOP - 1, 6);
 
         // --- type the ducts with fluid identifiers (sneak-click spreads along the run) ---
-        typeDuct(c, legacy120, "hbm:air", 10.5, G, 6.5, 12, G, 6);
-        typeDuct(c, legacy120, "hbm:deuterium", -6.5, TOP, 3.5, -6, TOP, 1);
-        typeDuct(c, legacy120, "hbm:perfluoromethyl_cold", 3.5, TOP, -6.5, 2, TOP, -6);
-        typeDuct(c, legacy120, "hbm:perfluoromethyl", 1.5, TOP, 7.5, 1, TOP, 6);
-        for (int z = 3; z <= 9; z++) Expect.that(nbt(c, 12, G, z).contains("\"hbm:air\""), "air duct at z=" + z + " typed: " + nbt(c, 12, G, z));
-        Expect.that(nbt(c, -6, TOP, 0).contains("\"hbm:deuterium\""), "deuterium duct typed: " + nbt(c, -6, TOP, 0));
-        Expect.that(nbt(c, 2, TOP, -6).contains("\"hbm:perfluoromethyl_cold\""), "coolant duct typed: " + nbt(c, 2, TOP, -6));
-        Expect.that(nbt(c, 0, TOP, 6).contains("\"hbm:perfluoromethyl\""), "warm coolant duct typed: " + nbt(c, 0, TOP, 6));
+        typeDuct(c, legacy120, "geontm:air", 10.5, G, 6.5, 12, G, 6);
+        typeDuct(c, legacy120, "geontm:deuterium", -6.5, TOP, 3.5, -6, TOP, 1);
+        typeDuct(c, legacy120, "geontm:perfluoromethyl_cold", 3.5, TOP, -6.5, 2, TOP, -6);
+        typeDuct(c, legacy120, "geontm:perfluoromethyl", 1.5, TOP, 7.5, 1, TOP, 6);
+        for (int z = 3; z <= 9; z++) Expect.that(nbt(c, 12, G, z).contains("\"geontm:air\""), "air duct at z=" + z + " typed: " + nbt(c, 12, G, z));
+        Expect.that(nbt(c, -6, TOP, 0).contains("\"geontm:deuterium\""), "deuterium duct typed: " + nbt(c, -6, TOP, 0));
+        Expect.that(nbt(c, 2, TOP, -6).contains("\"geontm:perfluoromethyl_cold\""), "coolant duct typed: " + nbt(c, 2, TOP, -6));
+        Expect.that(nbt(c, 0, TOP, 6).contains("\"geontm:perfluoromethyl\""), "warm coolant duct typed: " + nbt(c, 0, TOP, 6));
 
         c.teleport(22.5, G + 9, -16.5);
         c.lookAt(4.0, G + 1, 2.0);
@@ -93,20 +93,20 @@ public class Pt1012Fusion implements Scenario {
         c.screenshot("10-built");
 
         // --- fuel tanks: identifier, infinite barrel, send mode, all through the tank menu ---
-        fillTank(c, legacy120, "hbm:deuterium", -6.5, TOP, 0.5, -5, TOP, 0, "10-tank-deuterium");
-        fillTank(c, legacy120, "hbm:perfluoromethyl_cold", 0.5, TOP, -6.5, 0, TOP, -5, "11-tank-coolant");
+        fillTank(c, legacy120, "geontm:deuterium", -6.5, TOP, 0.5, -5, TOP, 0, "10-tank-deuterium");
+        fillTank(c, legacy120, "geontm:perfluoromethyl_cold", 0.5, TOP, -6.5, 0, TOP, -5, "11-tank-coolant");
         // the warm-coolant tank stays in receive mode; an infinite barrel in its drain bay empties it (1.7 FluidLoaderInfinite)
         c.cmd("clear");
         openAt(c, 0.5, TOP, 7.5, 0, TOP, 5, "GUIMachineFluidTank");
-        insertOpen(c, identifier(legacy120, "hbm:perfluoromethyl"), 0, 1);
-        insertOpen(c, "hbm:fluid_barrel_infinite", 4);
+        insertOpen(c, identifier(legacy120, "geontm:perfluoromethyl"), 0, 1);
+        insertOpen(c, "geontm:fluid_barrel_infinite", 4);
         c.waitTicks(10);
         c.screenshot("12-tank-warm-coolant");
         closeAll(c);
 
         // --- torus: creative battery, D-D cycle through the recipe selector ---
         openAt(c, 0.5, G, -9.5, 0, G, -7, "GUIFusionTorus");
-        insertOpen(c, "hbm:battery_creative", 0);
+        insertOpen(c, "geontm:battery_creative", 0);
         JsonObject s = c.screen();
         int left = s.get("left").getAsInt(), top = s.get("top").getAsInt();
         c.click(left + 52, top + 89);                  // 1.7 checkClick(43, 80, 18, 18)
@@ -128,14 +128,14 @@ public class Pt1012Fusion implements Scenario {
         c.waitTicks(120);
         torus = nbt(c, 0, G, 0);
         System.out.println("[Pt1012Fusion] torus before klystron: " + summary(torus));
-        Expect.that(intOf(torus, "ft0") > 0 && torus.contains("ft0_type:\"hbm:deuterium\""), "deuterium reached the torus: " + summary(torus));
+        Expect.that(intOf(torus, "ft0") > 0 && torus.contains("ft0_type:\"geontm:deuterium\""), "deuterium reached the torus: " + summary(torus));
         Expect.that(floatOf(torus, "temperature") <= 123.0f, "the coolant cooled the torus to 123 K: " + summary(torus));
         Expect.that(longOf(torus, "power") > 5_000_000L, "the creative battery powers the torus: " + summary(torus));
         Expect.that(doubleOf(torus, "progress0") == 0.0 && intOf(torus, "ft3") == 0, "no ignition without a klystron: " + summary(torus));
 
         // --- klystron: creative battery, 1 MKyU target typed into its field ---
         openAt(c, 18.5, G, 0.5, 15, G, 0, "GUIFusionKlystron");
-        insertOpen(c, "hbm:battery_creative", 0);
+        insertOpen(c, "geontm:battery_creative", 0);
         JsonObject field = editBox(c);
         c.click(field.get("x").getAsInt() + 90, field.get("center_y").getAsDouble());
         c.waitTicks(2);
@@ -153,8 +153,8 @@ public class Pt1012Fusion implements Scenario {
         Expect.that(doubleOf(torus, "progress0") == 0.0, "no air, no ignition: " + summary(torus));
 
         // --- power the intakes: a creative generator at the cable's end ---
-        place(c, "hbm:creative_generator", 17.5, G, 10.5, 15, Y, 10);
-        Expect.block(c, 15, G, 10, "hbm:creative_generator");
+        place(c, "geontm:creative_generator", 17.5, G, 10.5, 15, Y, 10);
+        Expect.block(c, 15, G, 10, "geontm:creative_generator");
         c.waitTicks(10);
 
         // --- run and sample ---
@@ -196,7 +196,7 @@ public class Pt1012Fusion implements Scenario {
             }
         }
         Expect.that(maxAir >= 75_000, "the intakes filled the klystron's air tank past half (full speed in 1.7): max " + maxAir);
-        Expect.that(helium >= 1000 && torus.contains("ft3_type:\"hbm:helium4\""), "the D-D cycle produced helium-4: " + summary(torus));
+        Expect.that(helium >= 1000 && torus.contains("ft3_type:\"geontm:helium4\""), "the D-D cycle produced helium-4: " + summary(torus));
         Expect.that(floatOf(torus, "temperature") <= 123.0f, "the torus stayed cold: " + summary(torus));
 
         openAt(c, 0.5, G, -9.5, 0, G, -7, "GUIFusionTorus");
@@ -209,7 +209,7 @@ public class Pt1012Fusion implements Scenario {
         c.screenshot("62-running-west");
 
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|fusion|klystron)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|fusion|klystron)");
         System.out.println("[Pt1012Fusion] PASS: max klystron air " + maxAir + ", max progress " + maxProgress + ", helium " + helium);
     }
 
@@ -248,8 +248,8 @@ public class Pt1012Fusion implements Scenario {
     }
 
     private static String identifier(boolean legacy120, String fluid) {
-        return legacy120 ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + fluid + "\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"" + fluid + "\"]";
+        return legacy120 ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + fluid + "\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"" + fluid + "\"]";
     }
 
     /** Sneak-right-clicks one duct of a run with an identifier, which types the whole connected run. */
@@ -305,7 +305,7 @@ public class Pt1012Fusion implements Scenario {
         openAt(c, px, py, pz, x, y, z, "GUIMachineFluidTank");
         insertOpen(c, identifier(legacy120, fluid), 0, 1);
         c.waitTicks(5);
-        insertOpen(c, "hbm:fluid_barrel_infinite", 2);
+        insertOpen(c, "geontm:fluid_barrel_infinite", 2);
         JsonObject s = c.screen();
         int left = s.get("left").getAsInt(), top = s.get("top").getAsInt();
         for (int i = 0; i < 2; i++) { c.click(left + 160, top + 44); c.waitTicks(3); }   // mode: receive -> buffer -> send

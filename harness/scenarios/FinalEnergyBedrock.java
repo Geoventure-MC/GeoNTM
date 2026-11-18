@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +20,13 @@ import java.util.List;
  *       acidizer with water, then the washed ore centrifuged into two primary fractions and gravel.</li>
  * </ol>
  */
-public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario {
+public final class FinalEnergyBedrock implements fr.geoventure.harness.api.Scenario {
 
     private static final int Y = 100;
     private static final int G = Y + 1;
 
-    static final String[] BLOCK_IDS = {"hbm:red_wire_coated", "hbm:red_cable_box_0", "hbm:red_cable_box_1",
-            "hbm:red_cable_box_2", "hbm:red_cable_box_3", "hbm:red_cable_box_4", "hbm:charger"};
+    static final String[] BLOCK_IDS = {"geontm:red_wire_coated", "geontm:red_cable_box_0", "geontm:red_cable_box_1",
+            "geontm:red_cable_box_2", "geontm:red_cable_box_3", "geontm:red_cable_box_4", "geontm:charger"};
     static final String[] GRADES = {"base_roasted", "base_washed", "primary", "primary_roasted", "primary_sulfuric",
             "primary_nosulfuric", "primary_solvent", "primary_nosolvent", "primary_rad", "primary_norad", "primary_first",
             "primary_second", "crumbs", "sulfuric_byproduct", "sulfuric_roasted", "sulfuric_arc", "sulfuric_washed",
@@ -53,7 +53,7 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
     private static void inventory(Client c) {
         List<String> ids = new ArrayList<>(List.of(BLOCK_IDS));
         for (String type : TYPES) {
-            for (String grade : GRADES) ids.add("hbm:bedrock_ore_" + grade + "_" + type);
+            for (String grade : GRADES) ids.add("geontm:bedrock_ore_" + grade + "_" + type);
         }
         int page = 0;
         for (int from = 0; from < ids.size(); from += 36, page++) {
@@ -68,7 +68,7 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
             c.key("key.inventory");
             c.waitScreen("", 5000);
             c.waitTicks(10);
-            if (page == 1) hover(c, "hbm:bedrock_ore_primary_nosulfuric_heavy");
+            if (page == 1) hover(c, "geontm:bedrock_ore_primary_nosulfuric_heavy");
             c.screenshot(String.format("0%d-inventory-%d", page, page));
             close(c);
         }
@@ -81,17 +81,17 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
 
     private static void cableRun(Client c) {
         int z = 4;
-        Fixtures.setBlock(c, 0, G, z, "hbm:creative_generator");
-        placeByHand(c, "hbm:red_cable_box_2", 1, z);
-        placeByHand(c, "hbm:red_cable_box_2", 2, z);
-        placeByHand(c, "hbm:red_wire_coated", 3, z);
-        placeByHand(c, "hbm:red_cable_box_0", 4, z);
-        placeByHand(c, "hbm:red_cable_box_4", 5, z);
-        Fixtures.setBlock(c, 6, G, z, "hbm:machine_battery_potato");
+        Fixtures.setBlock(c, 0, G, z, "geontm:creative_generator");
+        placeByHand(c, "geontm:red_cable_box_2", 1, z);
+        placeByHand(c, "geontm:red_cable_box_2", 2, z);
+        placeByHand(c, "geontm:red_wire_coated", 3, z);
+        placeByHand(c, "geontm:red_cable_box_0", 4, z);
+        placeByHand(c, "geontm:red_cable_box_4", 5, z);
+        Fixtures.setBlock(c, 6, G, z, "geontm:machine_battery_potato");
         // a bend and a junction, so the curve and junction plates are drawn too
-        placeFromWest(c, "hbm:red_cable_box_1", 5, z + 1);
-        placeFromWest(c, "hbm:red_cable_box_1", 5, z + 2);
-        placeByHand(c, "hbm:red_cable_box_3", 2, z - 1);
+        placeFromWest(c, "geontm:red_cable_box_1", 5, z + 1);
+        placeFromWest(c, "geontm:red_cable_box_1", 5, z + 2);
+        placeByHand(c, "geontm:red_cable_box_3", 2, z - 1);
         c.waitTicks(40);
         long power = longOf(nbt(c, 6, G, z), "power");
         Expect.that(power > 0, "the battery behind the boxcable and coated wire charged: " + power + " HE");
@@ -106,15 +106,15 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
 
     private static void charger(Client c) {
         int x = 0, z = 14;
-        Fixtures.setBlock(c, x, G, z + 2, "hbm:creative_generator");
-        Fixtures.setBlock(c, x, G, z + 1, "hbm:red_wire_coated");
-        Fixtures.setBlock(c, x, G, z, "hbm:charger[facing=north]");
+        Fixtures.setBlock(c, x, G, z + 2, "geontm:creative_generator");
+        Fixtures.setBlock(c, x, G, z + 1, "geontm:red_wire_coated");
+        Fixtures.setBlock(c, x, G, z, "geontm:charger[facing=north]");
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_lead 1");
+        c.cmd("give @s geontm:battery_lead 1");
         c.waitTicks(3);
         c.hotbar(1);
-        JsonObject before = c.query("hbm_battery", new JsonObject());
+        JsonObject before = c.query("geontm_battery", new JsonObject());
         System.out.println("[FinalEnergyBedrock] battery before: " + before);
         c.teleport(x + 0.5, G, z + 0.3);
         c.waitTicks(2);
@@ -124,7 +124,7 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
         c.lookAt(x + 0.5, G + 0.45, z + 0.95);
         c.waitTicks(2);
         c.screenshot("30-charger-clamps-out");
-        JsonObject after = c.query("hbm_battery", new JsonObject());
+        JsonObject after = c.query("geontm_battery", new JsonObject());
         System.out.println("[FinalEnergyBedrock] battery after: " + after);
         Expect.that(after.has("charge") && after.get("charge").getAsLong() > (before.has("charge") ? before.get("charge").getAsLong() : 0),
                 "the charger charged the held battery: " + before + " -> " + after);
@@ -139,29 +139,29 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
 
     private static void chain(Client c) {
         int ax = 12, az = 0, cx = 12, cz = 10;
-        placeMachine(c, "hbm:machine_crystallizer", ax, az);
+        placeMachine(c, "geontm:machine_crystallizer", ax, az);
         int[] acid = findCore(c, ax, G, az, "TileEntityMachineCrystallizer");
         Expect.that(acid != null, "the ore acidizer was placed");
         // 1.7 WATER is fluid id 1
-        c.cmd("data merge block " + acid[0] + " " + acid[1] + " " + acid[2] + " {power:1000000L,tankNew:8000,tankNew_type:\"hbm:water\"}");
-        placeMachine(c, "hbm:machine_centrifuge", cx, cz);
+        c.cmd("data merge block " + acid[0] + " " + acid[1] + " " + acid[2] + " {power:1000000L,tankNew:8000,tankNew_type:\"geontm:water\"}");
+        placeMachine(c, "geontm:machine_centrifuge", cx, cz);
         int[] cent = findCore(c, cx, G, cz, "TileEntityMachineCentrifuge");
         Expect.that(cent != null, "the centrifuge was placed");
         c.cmd("data merge block " + cent[0] + " " + cent[1] + " " + cent[2] + " {power:100000L}");
 
         c.cmd("clear");
-        c.cmd("give @s hbm:bedrock_ore_base_light 1");
+        c.cmd("give @s geontm:bedrock_ore_base_light 1");
         c.waitTicks(3);
         c.teleport(ax + 0.5, G, az - 3.5);
         c.waitTicks(2);
         Fixtures.interact(c, acid[0], acid[1], acid[2]);
         c.waitScreen("GUICrystallizer", 5000);
         Expect.screenStaysOpen(c, "GUICrystallizer", 5);
-        clickFromInventory(c, "hbm:bedrock_ore_base_light", 0);
+        clickFromInventory(c, "geontm:bedrock_ore_base_light", 0);
         c.screenshot("40-acidizer-loaded");
         c.waitTicks(140);
         c.screenshot("41-acidizer-done");
-        Expect.slotHolds(c, 2, "hbm:bedrock_ore_base_washed_light", 1);
+        Expect.slotHolds(c, 2, "geontm:bedrock_ore_base_washed_light", 1);
         takeToInventory(c, 2);
         close(c);
 
@@ -170,12 +170,12 @@ public final class FinalEnergyBedrock implements dev.golem.harness.api.Scenario 
         Fixtures.interact(c, cent[0], cent[1], cent[2]);
         c.waitScreen("GUICentrifuge", 5000);
         Expect.screenStaysOpen(c, "GUICentrifuge", 5);
-        clickFromInventory(c, "hbm:bedrock_ore_base_washed_light", 0);
+        clickFromInventory(c, "geontm:bedrock_ore_base_washed_light", 0);
         c.screenshot("42-centrifuge-loaded");
         c.waitTicks(240);
         c.screenshot("43-centrifuge-done");
-        Expect.slotHolds(c, 2, "hbm:bedrock_ore_primary_light", 1);
-        Expect.slotHolds(c, 3, "hbm:bedrock_ore_primary_light", 1);
+        Expect.slotHolds(c, 2, "geontm:bedrock_ore_primary_light", 1);
+        Expect.slotHolds(c, 3, "geontm:bedrock_ore_primary_light", 1);
         Expect.slotHolds(c, 4, "minecraft:gravel", 1);
         close(c);
     }

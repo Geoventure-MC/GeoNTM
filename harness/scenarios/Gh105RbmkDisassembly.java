@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 105: an RBMK rod alone in a crafting table gives eight pellets once it is below 99% fuel and both its
@@ -12,7 +12,7 @@ import dev.golem.harness.api.Scenario;
 public final class Gh105RbmkDisassembly implements Scenario {
 
     private static final int X = 0, Y = 100, Z = 0;
-    private static final String ROD = "hbm:rbmk_fuel_hep";
+    private static final String ROD = "geontm:rbmk_fuel_hep";
 
     @Override
     public void run(Client c) throws Exception {
@@ -21,16 +21,16 @@ public final class Gh105RbmkDisassembly implements Scenario {
         Fixtures.platform(c, X, Y, Z, 8);
 
         craft(c, "", "", "fresh");
-        craft(c, rod(c, 20), "hbm:rbmk_pellet_hep", "half-cool");
+        craft(c, rod(c, 20), "geontm:rbmk_pellet_hep", "half-cool");
         craft(c, rod(c, 60), "", "half-hot");
 
-        Expect.logCleanSinceMark(c, "(?i)exception.*(recipe|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(recipe|geontm)");
     }
 
     /** A HEP-239 rod at half its 1.7 yield of 1e8 with the given hull heat. */
     private static String rod(Client c, int hull) {
         String data = "yield:5.0E7d,xenon:0.0d,core:20.0d,hull:" + hull + ".0d";
-        return c.node().startsWith("1.20.") ? "{\"hbm:rbmk_fuel\":{" + data + "}}" : "[hbm:rbmk_fuel={" + data + "}]";
+        return c.node().startsWith("1.20.") ? "{\"geontm:rbmk_fuel\":{" + data + "}}" : "[geontm:rbmk_fuel={" + data + "}]";
     }
 
     private static void craft(Client c, String components, String expected, String shot) {

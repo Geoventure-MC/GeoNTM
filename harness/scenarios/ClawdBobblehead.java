@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The port-only Clawd bobblehead beside Leafia, the other modelled figure. Checks: each places and keeps its type by
@@ -33,7 +33,7 @@ public final class ClawdBobblehead implements Scenario {
             for (int i = 0; i < NAMES.length; i++) {
                 c.cmd("clear");
                 c.waitTicks(1);
-                c.cmd("give @s hbm:bobblehead_" + NAMES[i] + " 1");
+                c.cmd("give @s geontm:bobblehead_" + NAMES[i] + " 1");
                 c.hotbar(1);
                 c.waitTicks(2);
                 int x = X + i * 2;
@@ -43,13 +43,13 @@ public final class ClawdBobblehead implements Scenario {
                 c.waitTicks(1);
                 c.use(2);
                 c.waitTicks(5);
-                Expect.block(c, x, Y + 1, Z, "hbm:bobblehead");
+                Expect.block(c, x, Y + 1, Z, "geontm:bobblehead");
                 String nbt = c.blockEntity(x, Y + 1, Z).toString().replace(" ", "").replace("\\", "");
                 Expect.that(nbt.contains("type:\"" + NAMES[i] + "\""), NAMES[i] + " keeps its type: " + nbt);
             }
 
             c.cmd("clear");
-            c.cmd("give @s hbm:bobblehead_clawd 1");
+            c.cmd("give @s geontm:bobblehead_clawd 1");
             c.hotbar(1);
             c.teleport(X + 1.5, Y + 1, Z + 4.5);
             c.lookAt(X + 1.5, Y + 1.2, Z + 0.5);

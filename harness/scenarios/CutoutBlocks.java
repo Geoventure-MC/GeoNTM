@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +45,12 @@ public final class CutoutBlocks implements Scenario {
 
             List<String> missing = new ArrayList<>();
             for (int i = 0; i < BLOCKS.size(); i++) {
-                Fixtures.setBlock(c, X + i * 2, L, Z, "hbm:" + BLOCKS.get(i));
+                Fixtures.setBlock(c, X + i * 2, L, Z, "geontm:" + BLOCKS.get(i));
             }
             c.waitTicks(10);
             for (int i = 0; i < BLOCKS.size(); i++) {
                 JsonObject block = c.block(X + i * 2, L, Z);
-                if (!("hbm:" + BLOCKS.get(i)).equals(block.get("block").getAsString())) missing.add(BLOCKS.get(i) + " " + block);
+                if (!("geontm:" + BLOCKS.get(i)).equals(block.get("block").getAsString())) missing.add(BLOCKS.get(i) + " " + block);
             }
             Expect.that(missing.isEmpty(), "every cutout block placed: " + missing);
 

@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,19 +24,19 @@ public final class RcPowerSlots implements Scenario {
         c.waitTicks(5);
 
         // block, item, expected machine slot (-1 = any machine slot)
-        shift(c, "machine_diesel", "hbm:battery_potato", 0);   // 1.7 merges any item into slot 0 first
-        shift(c, "machine_combustion_engine", "hbm:piston_set_steel", 2);
-        shift(c, "machine_combustion_engine", "hbm:battery_potato", 3);
+        shift(c, "machine_diesel", "geontm:battery_potato", 0);   // 1.7 merges any item into slot 0 first
+        shift(c, "machine_combustion_engine", "geontm:piston_set_steel", 2);
+        shift(c, "machine_combustion_engine", "geontm:battery_potato", 3);
         shift(c, "machine_wood_burner", "minecraft:oak_log", 0);
-        shift(c, "machine_wood_burner", "hbm:battery_potato", 5);
-        shift(c, "machine_rtg_grey", "hbm:pellet_rtg_polonium", -1);
-        shift(c, "machine_turbofan", "hbm:battery_potato", 3);
-        shift(c, "machine_large_turbine", "hbm:battery_potato", 4);
-        shift(c, "machine_battery_socket", "hbm:battery_potato", 0);
+        shift(c, "machine_wood_burner", "geontm:battery_potato", 5);
+        shift(c, "machine_rtg_grey", "geontm:pellet_rtg_polonium", -1);
+        shift(c, "machine_turbofan", "geontm:battery_potato", 3);
+        shift(c, "machine_large_turbine", "geontm:battery_potato", 4);
+        shift(c, "machine_battery_socket", "geontm:battery_potato", 0);
 
         persistence(c);
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -45,7 +45,7 @@ public final class RcPowerSlots implements Scenario {
         try {
             c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 14) + " 16 minecraft:air");
             c.waitTicks(3);
-            Fixtures.placeOnTop(c, "hbm:" + block, 0, Y, 0);
+            Fixtures.placeOnTop(c, "geontm:" + block, 0, Y, 0);
             c.waitTicks(10);
             int[] core = findCore(c);
             c.cmd("clear");
@@ -89,9 +89,9 @@ public final class RcPowerSlots implements Scenario {
         try {
             c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 14) + " 16 minecraft:air");
             c.waitTicks(3);
-            Fixtures.placeOnTop(c, "hbm:machine_diesel", -6, Y, 0);
+            Fixtures.placeOnTop(c, "geontm:machine_diesel", -6, Y, 0);
             c.waitTicks(10);
-            c.cmd("data merge block -6 " + (Y + 1) + " 0 {isOn:1b,fuel:16000,fuel_type:\"hbm:diesel\"}");
+            c.cmd("data merge block -6 " + (Y + 1) + " 0 {isOn:1b,fuel:16000,fuel_type:\"geontm:diesel\"}");
             c.waitTicks(30);
             long before = read(c, "powerTime");
             long fuelBefore = read(c, "fuel");

@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public final class GunGhostCopy implements Scenario {
     private static final int X = 380;
     private static final int Y = 100;
     private static final int Z = 380;
-    private static final String GUN = "hbm:gun_light_revolver";
+    private static final String GUN = "geontm:gun_light_revolver";
 
     @Override
     public void run(Client c) throws Exception {

@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +32,7 @@ public final class RcWorldFight implements Scenario {
         JsonObject p = new JsonObject();
         if (mobs) p.addProperty("mobs", true);
         if (setRads != null) p.addProperty("set_rads", setRads);
-        return c.query("hbm_props", p);
+        return c.query("geontm_props", p);
     }
 
     private static void respawn(Client c) {
@@ -96,7 +96,7 @@ public final class RcWorldFight implements Scenario {
             c.cmd("effect give @s minecraft:resistance 1000 2 true");
             c.waitTicks(10);
             double hp0 = c.player().get("health").getAsDouble();
-            c.cmd("summon hbm:" + id + " 0.5 101 0.5 {PersistenceRequired:1b}");
+            c.cmd("summon geontm:" + id + " 0.5 101 0.5 {PersistenceRequired:1b}");
             double minHp = hp0;
            
             boolean died = false;
@@ -117,7 +117,7 @@ public final class RcWorldFight implements Scenario {
             JsonObject list = new JsonObject();
             list.addProperty("radius", 40);
             list.addProperty("server", true);
-            list.addProperty("type", "hbm:" + id);
+            list.addProperty("type", "geontm:" + id);
             boolean mobAlive = !died && c.query("entities", list).getAsJsonArray("entities").size() > 0;
             System.out.println("[RcWorldFight] " + c.node() + " " + id + " hp " + hp0 + "->" + minHp + " rads=" + rads
                     + " effects=" + fx + " mobAlive=" + mobAlive + " died=" + died);
@@ -130,9 +130,9 @@ public final class RcWorldFight implements Scenario {
 
         // save and rejoin
         c.teleport(0.5, 101, -8.5);
-        c.cmd("summon hbm:entity_glyphid_brawler 3.5 101 0.5 {PersistenceRequired:1b,NoAI:1b,Health:11f}");
-        c.cmd("summon hbm:entity_pigeon -3.5 101 0.5 {PersistenceRequired:1b,NoAI:1b}");
-        c.cmd("summon hbm:entity_mob_nuclear_creeper 0.5 101 3.5 {PersistenceRequired:1b,NoAI:1b,Health:30f}");
+        c.cmd("summon geontm:entity_glyphid_brawler 3.5 101 0.5 {PersistenceRequired:1b,NoAI:1b,Health:11f}");
+        c.cmd("summon geontm:entity_pigeon -3.5 101 0.5 {PersistenceRequired:1b,NoAI:1b}");
+        c.cmd("summon geontm:entity_mob_nuclear_creeper 0.5 101 3.5 {PersistenceRequired:1b,NoAI:1b,Health:30f}");
         c.waitTicks(20);
         props(c, true, 12.5);
         String beforeSummary = summary(c.query("entities", obj(40)));
@@ -176,7 +176,7 @@ public final class RcWorldFight implements Scenario {
         for (JsonElement e : r.getAsJsonArray("entities")) {
             JsonObject o = e.getAsJsonObject();
             String type = o.get("type").getAsString();
-            if (!type.startsWith("hbm:")) continue;
+            if (!type.startsWith("geontm:")) continue;
             out.add(type + " hp=" + (o.has("health") ? o.get("health").getAsDouble() : -1));
         }
         Collections.sort(out);

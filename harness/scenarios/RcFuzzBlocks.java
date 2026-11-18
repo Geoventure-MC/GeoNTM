@@ -2,17 +2,17 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Rendering sweep over every {@code hbm:} block: each is placed (default state) in a 5x4 grid, a batch at a time, and
+ * Rendering sweep over every {@code geontm:} block: each is placed (default state) in a 5x4 grid, a batch at a time, and
  * photographed from the north at a downward slant so the front of a north-facing block shows. The block entity of each
  * cell is read back from the server, so a block that lost its block entity is named in the report. Writes
  * {@code batch-NNN.png} and {@code manifest.json} (batch to cell to block id) in the node's screenshot folder;
@@ -34,7 +34,7 @@ public final class RcFuzzBlocks implements Scenario {
     public void run(Client c) throws Exception {
         c.waitInWorld(120_000L);
         c.markLog();
-        JsonObject ids = c.query("hbm_sweep_ids", new JsonObject());
+        JsonObject ids = c.query("geontm_sweep_ids", new JsonObject());
         String regex = System.getenv("RC_FUZZ_FILTER");
         List<JsonObject> blocks = new ArrayList<>();
         for (JsonElement e : ids.getAsJsonArray("blocks")) {
@@ -42,7 +42,7 @@ public final class RcFuzzBlocks implements Scenario {
             if (regex == null || regex.isBlank() || b.get("id").getAsString().matches(regex)) blocks.add(b);
         }
         Expect.that(blocks.size() > 1000 || (regex != null && !regex.isBlank() && !blocks.isEmpty()),
-                "expected the hbm block list, got " + blocks.size());
+                "expected the geontm block list, got " + blocks.size());
         int perBatch = COLS * ROWS;
         int batches = (blocks.size() + perBatch - 1) / perBatch;
         int from = intEnv("RC_FUZZ_FROM", 0);

@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * The 1.7 X5860 screens in a real client: the fluid burner's burn rate slider and overdrive slot, the calculator's
@@ -28,11 +28,11 @@ public final class X5860Screens implements Scenario {
     /** Placed by hand from the south, so the core is one block north of the clicked cell. */
     private void burner(Client c) {
         int x = 0, z = -8;
-        place(c, "hbm:heater_oilburner", x, z);
+        place(c, "geontm:heater_oilburner", x, z);
         int core = z - 1;
         Expect.that(c.block(x, L, core).get("state").getAsString().contains("heater_oilburner"), "the burner stands");
 
-        c.cmd("give @s hbm:upgrade_overdrive_1 1");
+        c.cmd("give @s geontm:upgrade_overdrive_1 1");
         c.waitTicks(2);
         open(c, x, z, "GUIOilburner");
         JsonObject screen = c.screen();
@@ -44,11 +44,11 @@ public final class X5860Screens implements Scenario {
         c.waitTicks(6);
         Expect.that(nbt(c, x, L, core).contains("setting:9"), "the slider set 9 mB/t of 10: " + nbt(c, x, L, core));
 
-        c.clickSlot(slotWith(c, "hbm:upgrade_overdrive_1"));
+        c.clickSlot(slotWith(c, "geontm:upgrade_overdrive_1"));
         c.waitTicks(1);
         c.clickSlot(3);
         c.waitTicks(10);
-        Expect.slotHolds(c, 3, "hbm:upgrade_overdrive_1", 1);
+        Expect.slotHolds(c, 3, "geontm:upgrade_overdrive_1", 1);
         holdClick(c, left + 100, top + 27);
         c.waitTicks(6);
         Expect.that(nbt(c, x, L, core).contains("setting:18"), "overdrive I doubles the slider's range: " + nbt(c, x, L, core));
@@ -110,9 +110,9 @@ public final class X5860Screens implements Scenario {
     /** Terminal, two tubes, a clutter crate: sixteen cobblestone go in through the grid and come back with a shift-click. */
     private void pneumatic(Client c) {
         int x = 0, z = 8;
-        Fixtures.setBlock(c, x, L, z, "hbm:pneumatic_storage_access");
-        for (int i = 1; i <= 2; i++) Fixtures.setBlock(c, x + i, L, z, "hbm:pneumatic_tube[west=true,east=true]");
-        Fixtures.setBlock(c, x + 3, L, z, "hbm:pneumatic_storage_clutter");
+        Fixtures.setBlock(c, x, L, z, "geontm:pneumatic_storage_access");
+        for (int i = 1; i <= 2; i++) Fixtures.setBlock(c, x + i, L, z, "geontm:pneumatic_tube[west=true,east=true]");
+        Fixtures.setBlock(c, x + 3, L, z, "geontm:pneumatic_storage_clutter");
         air(c, x + 3, z);
         c.waitTicks(20);
 

@@ -1,9 +1,9 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Astolfization ({@code hbm:death}): shots of ModelMan from behind, in front, with a sword and armour, the
+ * Astolfization ({@code geontm:death}): shots of ModelMan from behind, in front, with a sword and armour, the
  * first-person hand (the skin's, as 1.7) and the skin back after the effect is cleared.
  */
 public final class Astolfization implements Scenario {
@@ -27,7 +27,7 @@ public final class Astolfization implements Scenario {
             c.cmd("gamemode creative");
             c.cmd("clear @s");
             c.cmd("effect clear @s");
-            c.cmd("effect give @s hbm:death 600 0 true");
+            c.cmd("effect give @s geontm:death 600 0 true");
             hideGui = c.setOption("hide_gui", "true");
 
             c.teleport(X + 0.5, L, Z + 0.5);

@@ -9,7 +9,7 @@ body:
       options:
         - label: I searched the existing issues and this crash has not been reported yet.
           required: true
-        - label: I am using the latest NTM - Continuum and Golem Core versions for my Minecraft version, and the Golem Core jar matches my Minecraft version and loader.
+        - label: I am using the latest NTM - Continuum and GeoCore versions for my Minecraft version, and the GeoCore jar matches my Minecraft version and loader.
           required: true
 
   - type: dropdown
@@ -35,9 +35,9 @@ body:
       required: true
 
   - type: input
-    id: golem
+    id: geocore
     attributes:
-      label: Golem Core version
+      label: GeoCore version
       placeholder: 0.1.0
     validations:
       required: true
@@ -87,5 +87,5 @@ body:
       label: Other mods
       description: |
         Other mods or the modpack you use (name and version). Does it also crash with only NTM - Continuum,
-        Golem Core (and Fabric API on Fabric) installed?
+        GeoCore (and Fabric API on Fabric) installed?
       placeholder: "Modpack X 1.2 / Sodium 0.6.0, JEI 19.21 ... Also crashes without them: yes / no / not tested"

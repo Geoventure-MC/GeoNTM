@@ -1,13 +1,13 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Configurable gun damage and the radar-linked CIWS. A .357 revolver hits a still iron golem for its configured 7.5,
+ * Configurable gun damage and the radar-linked CIWS. A .357 revolver hits a still iron geocore for its configured 7.5,
  * then for 40 after {@code /ntmserver set GUN_LIGHT_REVOLVER_DAMAGE 40}. A Howard in player mode (48 blocks) ignores
  * the player standing 68 blocks away on a pillar; once a powered radar holds a linker to it, the radar designates
  * the player and the Howard fires at him.
@@ -44,8 +44,8 @@ public final class WeaponConfigCiws implements Scenario {
         expectChat(c, "ntmserver get GUN_LIGHT_REVOLVER_DAMAGE", "GUN_LIGHT_REVOLVER_DAMAGE: 7.5");
         c.cmd("summon minecraft:iron_golem 0.5 " + (Y + 1) + " 5.5 {NoAI:1b}");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_light_revolver");
-        c.cmd("give @s hbm:ammo_standard_m357_sp 12");
+        c.cmd("give @s geontm:gun_light_revolver");
+        c.cmd("give @s geontm:ammo_standard_m357_sp 12");
         c.hotbar(1);
         c.teleport(0.5, Y + 1, 0.5);
         c.waitTicks(30);
@@ -85,29 +85,29 @@ public final class WeaponConfigCiws implements Scenario {
         JsonObject clear = new JsonObject();
         clear.addProperty("op", "set");
         clear.addProperty("digamma", 0.0);
-        c.query("hbm_gapsb", clear);
+        c.query("geontm_gapsb", clear);
 
         // radar, powered by a creative battery clicked into slot 9
-        place(c, "hbm:machine_radar", RX, Y, RZ);
-        Expect.block(c, RX, Y + 1, RZ, "hbm:machine_radar");
-        c.cmd("give @s hbm:battery_creative 1");
+        place(c, "geontm:machine_radar", RX, Y, RZ);
+        Expect.block(c, RX, Y + 1, RZ, "geontm:machine_radar");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(2);
         openRadarSlots(c);
-        clickFromInventory(c, "hbm:battery_creative", 9);
+        clickFromInventory(c, "geontm:battery_creative", 9);
         c.waitTicks(5);
         close(c);
 
         // the Howard: belts and a battery clicked in, switched on and set to target players
-        place(c, "hbm:turret_howard", HX, Y, HZ);
+        place(c, "geontm:turret_howard", HX, Y, HZ);
         int[] core = findCore(c, HX, Y + 1, HZ, "turret_howard");
         Expect.that(core != null, "the Howard formed a core");
-        c.cmd("give @s hbm:ammo_dgk 4");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:ammo_dgk 4");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(2);
         openAt(c, core[0] + 4.5, core[2] + 0.5, core[0] + 0.5, core[2] + 0.5, "Howard");
         JsonObject screen = c.screen();
-        clickFromInventory(c, "hbm:ammo_dgk", 1);
-        clickFromInventory(c, "hbm:battery_creative", 10);
+        clickFromInventory(c, "geontm:ammo_dgk", 1);
+        clickFromInventory(c, "geontm:battery_creative", 10);
         int left = screen.get("left").getAsInt(), top = screen.get("top").getAsInt();
         c.click(left + 115 + 9, top + 26 + 9); // power switch
         c.waitTicks(3);
@@ -134,10 +134,10 @@ public final class WeaponConfigCiws implements Scenario {
         c.screenshot("howard-idle-from-pillar");
 
         // link the Howard to the radar
-        Fixtures.giveOnly(c, "hbm:radar_linker", 1);
+        Fixtures.giveOnly(c, "geontm:radar_linker", 1);
         linkWith(c, core[0], core[2]);
         openRadarSlots(c);
-        clickFromInventory(c, "hbm:radar_linker", 0);
+        clickFromInventory(c, "geontm:radar_linker", 0);
         c.waitTicks(3);
         c.screenshot("radar-slots-linked");
         close(c);
@@ -166,7 +166,7 @@ public final class WeaponConfigCiws implements Scenario {
         String nbt = c.blockEntity(core[0], core[1], core[2]).toString().replaceAll("\\s", "");
         int loaded = intAfter(nbt, "loaded:");
         int belts = 0;
-        int i = nbt.indexOf("hbm:ammo_dgk");
+        int i = nbt.indexOf("geontm:ammo_dgk");
         if (i >= 0) {
             String tail = nbt.substring(Math.max(0, i - 80), Math.min(nbt.length(), i + 80));
             belts = intAfter(tail, "count:");

@@ -1,14 +1,14 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Animated block textures on a Sable sub-level under Sodium. Sodium's "animate only visible textures" advances an
  * animated sprite only when a renderer marks it drawn that frame; Sable draws sub-levels from its own meshes and does
  * not, so a ship's conveyor belts froze unless the same sprite was also drawn elsewhere (a held conveyor, a belt in the
  * world). The scenario takes screenshot pairs a few ticks apart, empty-handed and then holding a conveyor; compare the
- * belt region of each pair (identical = frozen). Golem Core's Sable root marks the sprites of visible sub-levels.
+ * belt region of each pair (identical = frozen). GeoCore's Sable root marks the sprites of visible sub-levels.
  *
  * <p>1.21.1 NeoForge with Sable and Sodium: {@code ${env:ORG_GRADLE_PROJECT_sable.run}="true"} and {@code up --rebuild}.
  */
@@ -32,7 +32,7 @@ public class SableShipAnimation implements Scenario {
         // nothing animated in the world grid: the only belts are the ship's
         c.cmd("fill " + (X - 3) + " " + (Y + 1) + " " + (Z + 3) + " " + (X + 3) + " " + (Y + 1) + " " + (Z + 7) + " minecraft:iron_block");
         c.cmd("fill " + (X - 3) + " " + (Y + 2) + " " + (Z + 3) + " " + (X + 3) + " " + (Y + 2) + " " + (Z + 7)
-                + " hbm:conveyor[facing=east]");
+                + " geontm:conveyor[facing=east]");
         c.waitTicks(4);
         c.cmd("sable assemble area " + (X - 3) + " " + (Y + 1) + " " + (Z + 3) + " " + (X + 3) + " " + (Y + 2) + " " + (Z + 7));
         c.waitTicks(20);
@@ -49,7 +49,7 @@ public class SableShipAnimation implements Scenario {
         c.waitTicks(3);
         c.screenshot("11-empty-hand-b");
 
-        Fixtures.giveOnly(c, "hbm:conveyor", 1);
+        Fixtures.giveOnly(c, "geontm:conveyor", 1);
         c.waitTicks(10);
         c.screenshot("20-holding-belt-a");
         c.waitTicks(3);

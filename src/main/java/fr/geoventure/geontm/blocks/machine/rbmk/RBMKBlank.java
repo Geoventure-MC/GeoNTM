@@ -1,0 +1,3 @@
+package fr.geoventure.geontm.blocks.machine.rbmk;
+import fr.geoventure.geontm.tileentity.ModRBMKBlockEntities; import fr.geoventure.geontm.tileentity.machine.rbmk.*; import net.minecraft.core.BlockPos; import net.minecraft.world.level.block.entity.BlockEntityType; import net.minecraft.world.level.block.state.BlockState;
+public class RBMKBlank extends RBMKBase { public RBMKBlank(Properties properties) { super(properties); } @Override protected BlockEntityType<? extends BlockEntityRBMKBase> beType() { return ModRBMKBlockEntities.RBMK_BLANK.get(); } @Override protected BlockEntityRBMKBase createCore(BlockPos pos, BlockState state) { return new BlockEntityRBMKBlank(pos, state); } }

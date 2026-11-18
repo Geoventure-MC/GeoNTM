@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -34,8 +34,8 @@ public final class Gh138FollyVisuals implements Scenario {
             c.cmd("weather clear");
             capture = c.setOption("sound_capture", "true");
             c.cmd("clear @s");
-            c.cmd("give @s hbm:gun_folly");
-            c.cmd("give @s hbm:ammo_secret_folly_sm 8");
+            c.cmd("give @s geontm:gun_folly");
+            c.cmd("give @s geontm:ammo_secret_folly_sm 8");
             c.hotbar(1);
             c.teleport(0.5, Y + 1, 0.5);
             c.look(0, -8);
@@ -106,7 +106,7 @@ public final class Gh138FollyVisuals implements Scenario {
             c.tickRate(rate);
             c.cmd("gamemode creative");
             Expect.that(failures.isEmpty(), "the Folly's visuals are 1.7's: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             if (capture != null) c.setOption("sound_capture", "false");

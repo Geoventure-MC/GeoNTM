@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Leaving the world while a nuke is still running must not hang: the explosion holds chunk claims, and a
@@ -24,10 +24,10 @@ public final class RcHangNukeLeave implements Scenario {
         c.cmd("forceload add " + (x - 48) + " " + (z - 48) + " " + (x + 48) + " " + (z + 48));
         c.teleport(x + 0.5, Y + 6, z - 4.5);
         c.waitTicks(40);
-        c.cmd("setblock " + x + " " + Y + " " + z + " hbm:nuke_man");
+        c.cmd("setblock " + x + " " + Y + " " + z + " geontm:nuke_man");
         c.waitTicks(4);
-        String[][] fill = {{"0", "hbm:man_igniter"}, {"1", "hbm:gadget_explosive8"}, {"2", "hbm:gadget_explosive8"},
-                {"3", "hbm:gadget_explosive8"}, {"4", "hbm:gadget_explosive8"}, {"5", "hbm:man_core"}};
+        String[][] fill = {{"0", "geontm:man_igniter"}, {"1", "geontm:gadget_explosive8"}, {"2", "geontm:gadget_explosive8"},
+                {"3", "geontm:gadget_explosive8"}, {"4", "geontm:gadget_explosive8"}, {"5", "geontm:man_core"}};
         for (String[] f : fill) {
             c.cmd("item replace block " + x + " " + Y + " " + z + " container." + f[0] + " with " + f[1] + " 1");
         }
@@ -49,6 +49,6 @@ public final class RcHangNukeLeave implements Scenario {
             c.waitTicks(200);
         }
         c.cmd("kill @e[type=!player]");
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered geontm:|is not registered).*");
     }
 }

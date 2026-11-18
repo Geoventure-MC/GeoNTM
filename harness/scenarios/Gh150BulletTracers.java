@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -45,7 +45,7 @@ public final class Gh150BulletTracers implements Scenario {
             c.setOption("hide_gui", hideGui);
             liberatorReload(c, failures);
             Expect.that(failures.isEmpty(), "tracers, recoil and the Liberator's shells behave as in 1.7: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             c.releaseAll();
@@ -71,7 +71,7 @@ public final class Gh150BulletTracers implements Scenario {
         for (int shot = 0; shot < 8; shot++) {
             BufferedImage frame = ImageIO.read(c.screenshot("stg77-" + shot).toFile());
             amber = Math.max(amber, amber(idle, frame));
-            for (JsonElement e : c.query("hbm_bullets", new JsonObject()).getAsJsonArray("bullets")) {
+            for (JsonElement e : c.query("geontm_bullets", new JsonObject()).getAsJsonArray("bullets")) {
                 JsonObject b = e.getAsJsonObject();
                 if (!b.has("stray")) continue;
                 seen++;
@@ -102,7 +102,7 @@ public final class Gh150BulletTracers implements Scenario {
         double lag = 0D;
         for (int shot = 0; shot < 12; shot++) {
             BufferedImage frame = ImageIO.read(c.screenshot("recoil-" + shot).toFile());
-            JsonObject q = c.query("hbm_bullets", new JsonObject());
+            JsonObject q = c.query("geontm_bullets", new JsonObject());
             double behind = q.get("camera_pitch").getAsDouble() - q.get("pitch").getAsDouble();
             if (shot < 3) amber = Math.max(amber, amber(idle, frame));
             lag = Math.max(lag, Math.abs(behind));
@@ -138,7 +138,7 @@ public final class Gh150BulletTracers implements Scenario {
             JsonArray buses = new JsonArray();
             for (String bus : new String[] {"BREAK", "SHELL1", "SHELL2", "SHELL3", "SHELL4"}) buses.add(bus);
             params.add("buses", buses);
-            JsonObject q = c.query("hbm_bullets", params);
+            JsonObject q = c.query("geontm_bullets", params);
             int brass = brass(closed, frame);
             System.out.println("[Gh150] " + c.node() + " reload tick " + tick + " brass " + brass + " " + q.get("buses"));
             // a slow client's animation clock runs ahead of its ticks, so only the first frame is surely before shell 2
@@ -152,8 +152,8 @@ public final class Gh150BulletTracers implements Scenario {
 
     private static void equip(Client c, String gun, String ammo) {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:" + gun);
-        c.cmd("give @s hbm:" + ammo);
+        c.cmd("give @s geontm:" + gun);
+        c.cmd("give @s geontm:" + ammo);
         c.hotbar(1);
         c.waitTicks(40);
     }

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public final class RcFluidGallery implements Scenario {
         for (int i = 0; i < MACHINES.length; i++) {
             for (int f = 0; f < 4; f++) {
                 String id = MACHINES[i];
-                String state = "hbm:" + id + "[facing=" + FACINGS[f] + "]";
+                String state = "geontm:" + id + "[facing=" + FACINGS[f] + "]";
                 Fixtures.setBlock(c, X + f * STEP, L, Z + i * STEP, state);
             }
         }
@@ -60,7 +60,7 @@ public final class RcFluidGallery implements Scenario {
         for (int i = 0; i < MACHINES.length; i++) {
             for (int f = 0; f < 4; f++) {
                 if (c.block(X + f * STEP, L, Z + i * STEP).get("block").getAsString().equals("minecraft:air")) {
-                    Fixtures.setBlock(c, X + f * STEP, L, Z + i * STEP, "hbm:" + MACHINES[i]);
+                    Fixtures.setBlock(c, X + f * STEP, L, Z + i * STEP, "geontm:" + MACHINES[i]);
                 }
             }
         }
@@ -70,7 +70,7 @@ public final class RcFluidGallery implements Scenario {
                 JsonObject b = c.block(X + f * STEP, L, Z + i * STEP);
                 String id = MACHINES[i];
                 String got = b.get("block").getAsString();
-                if (!got.equals("hbm:" + id)) { missing.add(id + "/" + FACINGS[f] + " -> " + got); continue; }
+                if (!got.equals("geontm:" + id)) { missing.add(id + "/" + FACINGS[f] + " -> " + got); continue; }
                 if (b.get("block_entity").isJsonNull() && !id.equals("fraction_spacer")) noBe.add(id + "/" + FACINGS[f]);
             }
         }

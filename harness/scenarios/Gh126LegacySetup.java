@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 126, part 1 of 2, run on the old any-slot code: a chemical plant set to uranium hexafluoride gets 8
@@ -20,7 +20,7 @@ public final class Gh126LegacySetup implements Scenario {
         c.waitInWorld(120_000L);
         Fixtures.platform(c, X, Y, 0, 10);
         c.cmd("fill " + (X - 6) + " " + G + " -6 " + (X + 6) + " " + (Y + 10) + " 6 minecraft:air");
-        Fixtures.giveOnly(c, "hbm:machine_chemical_plant", 1);
+        Fixtures.giveOnly(c, "geontm:machine_chemical_plant", 1);
         c.teleport(X + 0.5, G, -3.5);
         c.waitTicks(3);
         c.lookAt(X + 0.5, Y + 0.98, 0.5);
@@ -31,15 +31,15 @@ public final class Gh126LegacySetup implements Scenario {
         Expect.that(core != null, "the chemical plant formed a core");
         c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {recipe0:\"chem.uf6\"}");
         c.cmd("clear");
-        c.cmd("give @s hbm:fluorite 8");
-        c.cmd("give @s hbm:powder_yellowcake 2");
+        c.cmd("give @s geontm:fluorite 8");
+        c.cmd("give @s geontm:powder_yellowcake 2");
         c.waitTicks(3);
         open(c, core);
-        quickMove(c, "hbm:fluorite");
-        quickMove(c, "hbm:powder_yellowcake");
+        quickMove(c, "geontm:fluorite");
+        quickMove(c, "geontm:powder_yellowcake");
         String layout = slot(c, 4) + ", " + slot(c, 5) + ", " + slot(c, 6);
         System.out.println("[Gh126] old layout: " + layout);
-        Expect.that(layout.equals("hbm:fluorite x8, hbm:powder_yellowcake x2, empty"), "the old code puts them the wrong way round: " + layout);
+        Expect.that(layout.equals("geontm:fluorite x8, geontm:powder_yellowcake x2, empty"), "the old code puts them the wrong way round: " + layout);
         c.screenshot("01-old-layout");
         c.key("escape");
         c.waitTicks(5);

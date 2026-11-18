@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -13,8 +13,8 @@ import java.util.stream.Stream;
 /**
  * GitHub issue 208: the structure starts of HBM's {@code ntm_structures} set in a modded biome. Vanilla tries the set's
  * members one after another on a start chunk, and each try ran the region pick over every member's 1.7 predicate,
- * which reads 25 noise columns for a biome the 1.7 table does not know. A tags-only datapack makes {@code hbm:crater}
- * (sandy) and {@code hbm:crater_outer} (forest) such biomes; {@code hbm_structure_set} runs vanilla's tries over a grid
+ * which reads 25 noise columns for a biome the 1.7 table does not know. A tags-only datapack makes {@code geontm:crater}
+ * (sandy) and {@code geontm:crater_outer} (forest) such biomes; {@code geontm_structure_set} runs vanilla's tries over a grid
  * of chunks and reports each chunk's member and the wall time. Set {@code GH208_PRINT=1} to print the picks.
  */
 public final class Gh208StructureSet implements Scenario {
@@ -64,9 +64,9 @@ public final class Gh208StructureSet implements Scenario {
             forest = "c/tags/worldgen/biome/forest.json";
             overworld = "c/tags/worldgen/biome/in_overworld.json";
         }
-        write(pack.resolve("data").resolve(sandy), "[\"hbm:crater\"]");
-        write(pack.resolve("data").resolve(forest), "[\"hbm:crater_outer\"]");
-        write(pack.resolve("data").resolve(overworld), "[\"hbm:crater\",\"hbm:crater_outer\"]");
+        write(pack.resolve("data").resolve(sandy), "[\"geontm:crater\"]");
+        write(pack.resolve("data").resolve(forest), "[\"geontm:crater_outer\"]");
+        write(pack.resolve("data").resolve(overworld), "[\"geontm:crater\",\"geontm:crater_outer\"]");
     }
 
     static void write(Path file, String values) throws Exception {
@@ -97,14 +97,14 @@ public final class Gh208StructureSet implements Scenario {
         c.waitInWorld(120_000L);
         c.useSeededWorld();
         c.freezeWorld();
-        Path pack = Path.of("versions", c.node(), "runs", "harness", "saves", c.currentWorld(), "datapacks", "hbm_gh208_test");
+        Path pack = Path.of("versions", c.node(), "runs", "harness", "saves", c.currentWorld(), "datapacks", "geontm_gh208_test");
         Expect.that(Files.isDirectory(pack.getParent()), "the save's datapacks folder is at " + pack.toAbsolutePath());
         writePack(pack, c.node());
         try {
             c.cmd("reload");
             c.waitTicks(100);
-            check(c, "hbm:crater at 0,0", q(c, "hbm_structure_set", "biome", "hbm:crater", "x0", 0, "z0", 0, "radius", 3), CRATER_0);
-            check(c, "hbm:crater_outer at 1000,1000", q(c, "hbm_structure_set", "biome", "hbm:crater_outer", "x0", 1000, "z0", 1000, "radius", 2), OUTER_1000);
+            check(c, "geontm:crater at 0,0", q(c, "geontm_structure_set", "biome", "geontm:crater", "x0", 0, "z0", 0, "radius", 3), CRATER_0);
+            check(c, "geontm:crater_outer at 1000,1000", q(c, "geontm_structure_set", "biome", "geontm:crater_outer", "x0", 1000, "z0", 1000, "radius", 2), OUTER_1000);
         } finally {
             delete(pack);
             c.cmd("reload");

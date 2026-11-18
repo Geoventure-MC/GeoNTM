@@ -1,16 +1,16 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Pre-release wave, agent A (History section 19es-render): the rendering items, each over many frames.
  *
  * <ul>
- *   <li>Haze: 1.7's white-phosphorus haze (query {@code hbm_haze}, age 200 = peak alpha 0.025) in front of a black
+ *   <li>Haze: 1.7's white-phosphorus haze (query {@code geontm_haze}, age 200 = peak alpha 0.025) in front of a black
  *       wall at night; a frame without it first, then frames 10 ticks apart.</li>
  *   <li>Fat Man balefire glint: a Fat Man loaded with the balefire mini-nuke, first person (frames 5 ticks apart so the
  *       scroll shows), third person, the inventory icon, and the shell in flight (killed long before it lands).</li>
@@ -44,9 +44,9 @@ public final class ReleaseVisualsA implements Scenario {
             if (!"0".equals(System.getenv("RELEASE_A_TOREX"))) torex(c);
         } finally {
             c.setOption("hide_gui", hideGui);
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
         }
-        Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(hbm|golem|shader|Shader)");
+        Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(geontm|geocore|shader|Shader)");
     }
 
     private static void haze(Client c) {
@@ -61,7 +61,7 @@ public final class ReleaseVisualsA implements Scenario {
         p.addProperty("y", Y + 2.5);
         p.addProperty("z", 7.5);
         p.addProperty("age", 200);
-        c.query("hbm_haze", p);
+        c.query("geontm_haze", p);
         for (int i = 1; i <= 6; i++) {
             c.waitTicks(10);
             c.screenshot(String.format("haze-%02d", i));
@@ -76,8 +76,8 @@ public final class ReleaseVisualsA implements Scenario {
         c.cmd("time set 6000");
         c.setOption("hide_gui", "false");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_fatman");
-        c.cmd("give @s hbm:ammo_standard_nuke_balefire 4");
+        c.cmd("give @s geontm:gun_fatman");
+        c.cmd("give @s geontm:ammo_standard_nuke_balefire 4");
         c.hotbar(1);
         c.teleport(0.5, Y + 1, 0.5);
         c.look(0, 0);
@@ -110,29 +110,29 @@ public final class ReleaseVisualsA implements Scenario {
             c.waitTicks(2);
             c.screenshot(String.format("fatman-shell-%02d", i));
         }
-        c.cmd("kill @e[type=hbm:entity_bullet_mk4]");
+        c.cmd("kill @e[type=geontm:entity_bullet_mk4]");
         c.waitTicks(5);
         c.setOption("hide_gui", "true");
     }
 
     private static void grenade(Client c) {
         c.cmd("clear @s");
-        c.cmd("kill @e[type=hbm:grenade_universal]");
+        c.cmd("kill @e[type=geontm:grenade_universal]");
         String data = "{shell:\"frag\",filling:\"he\",fuze:\"s15\"}";
-        c.cmd("give @s " + (c.node().startsWith("1.20.1") ? "hbm:grenade_universal{\"hbm:grenade\":" + data + "} 2"
-                : "hbm:grenade_universal[hbm:grenade=" + data + "] 2"));
+        c.cmd("give @s " + (c.node().startsWith("1.20.1") ? "geontm:grenade_universal{\"geontm:grenade\":" + data + "} 2"
+                : "geontm:grenade_universal[geontm:grenade=" + data + "] 2"));
         c.hotbar(1);
         c.setOption("hide_gui", "false");
         c.teleport(0.5, Y + 1, 0.5);
         c.look(0, -10);
         c.waitTicks(60); // frag draws in 30 ticks
         // the client half must pass its draw-time gate and swing the arm (1.7 swung; the port never did before)
-        JsonObject idle = c.query("hbm_swing", new JsonObject());
+        JsonObject idle = c.query("geontm_swing", new JsonObject());
         Expect.that(!idle.get("swinging").getAsBoolean(), "not swinging before the throw: " + idle);
         c.use();
         boolean swung = false;
         for (int i = 0; i < 4 && !swung; i++) {
-            JsonObject s = c.query("hbm_swing", new JsonObject());
+            JsonObject s = c.query("geontm_swing", new JsonObject());
             System.out.println("[release-a] after throw: " + s);
             swung = s.get("swinging").getAsBoolean();
             if (!swung) c.waitTicks(1);
@@ -150,7 +150,7 @@ public final class ReleaseVisualsA implements Scenario {
             if (o.has("type") && o.get("type").getAsString().endsWith("grenade_universal")) thrown++;
         }
         Expect.that(thrown == 1, "one universal grenade thrown, saw " + thrown);
-        c.cmd("kill @e[type=hbm:grenade_universal]");
+        c.cmd("kill @e[type=geontm:grenade_universal]");
         c.cmd("clear @s");
         c.setOption("hide_gui", "true");
     }
@@ -164,26 +164,26 @@ public final class ReleaseVisualsA implements Scenario {
             c.cmd("forceload add " + (x - 32) + " " + (z - 32) + " " + (x + 32) + " " + (z + 280));
             Fixtures.platform(c, x, Y, z + 165, 4);
             c.teleport(x + 0.5, Y + 1, z + 0.5);
-            c.cmd("hbm torex_benchmark 2150");
+            c.cmd("geontm torex_benchmark 2150");
             c.teleport(x + 0.5, Y + 1, z + 165.5);
             c.lookAt(x + 0.5, Y + 70, z + 240.5);
             int waited = 0;
             while (waited < 6000) {
                 c.waitTicks(20);
                 waited += 20;
-                JsonArray clouds = c.query("hbm_torex", new JsonObject()).getAsJsonArray("clouds");
+                JsonArray clouds = c.query("geontm_torex", new JsonObject()).getAsJsonArray("clouds");
                 JsonObject state = clouds.size() > 0 ? clouds.get(0).getAsJsonObject() : null;
                 if (state != null && state.get("ready").getAsBoolean()) break;
             }
             for (int i = 0; i < 10; i++) {
-                JsonArray clouds = c.query("hbm_torex", new JsonObject()).getAsJsonArray("clouds");
+                JsonArray clouds = c.query("geontm_torex", new JsonObject()).getAsJsonArray("clouds");
                 String age = clouds.size() > 0 ? clouds.get(0).getAsJsonObject().get("tick").getAsString() : "gone";
                 System.out.println("[release-a] torex frame " + i + " tick " + age);
                 c.screenshot(String.format("torex-%02d-tick-%s", i, age));
                 c.waitTicks(70);
             }
         } finally {
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
             c.cmd("forceload remove all");
             c.cmd("time set 18000");
             if (renderDistance != null) c.setOption("render_distance", renderDistance);

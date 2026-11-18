@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A creative battery in a battery socket: chuddie spinning with the energy_ball shader between its hands. Ticks are
@@ -22,13 +22,13 @@ public final class ChuddieEnergyBall implements Scenario {
         c.cmd("time set 18000");
         c.waitTicks(5);
 
-        Fixtures.placeOnTop(c, "hbm:machine_battery_socket", X, Y, Z + 2);
+        Fixtures.placeOnTop(c, "geontm:machine_battery_socket", X, Y, Z + 2);
         c.waitTicks(8);
         int[] core = findCore(c);
         Expect.that(core != null, "the socket was placed");
         String item = c.node().startsWith("1.20.1")
-                ? "{Slot:0b,id:\"hbm:battery_creative\",Count:1b}"
-                : "{Slot:0b,id:\"hbm:battery_creative\",count:1}";
+                ? "{Slot:0b,id:\"geontm:battery_creative\",Count:1b}"
+                : "{Slot:0b,id:\"geontm:battery_creative\",count:1}";
         c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {inventory:{Items:[" + item + "]}}");
         c.waitTicks(20);
         Expect.that(nbt(c, core).contains("battery_creative"), "the creative battery sits in the socket");

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Foundry molds beside a crucible: empty, with an installed mold, with a cast output, and part filled with copper.
@@ -22,15 +22,15 @@ public final class FoundryMoldMelt implements Scenario {
         c.cmd("fill " + (X - 8) + " " + L + " " + (Z - 8) + " " + (X + 8) + " " + (L + 6) + " " + (Z + 8) + " minecraft:air");
         c.cmd("time set 6000");
         c.cmd("gamerule doDaylightCycle false");
-        Fixtures.setBlock(c, X, L, Z - 2, "hbm:machine_crucible[facing=south]");
-        Fixtures.setBlock(c, X - 3, L, Z + 1, "hbm:foundry_mold");
-        Fixtures.setBlock(c, X, L, Z + 1, "hbm:foundry_mold");
-        Fixtures.setBlock(c, X + 3, L, Z + 1, "hbm:foundry_mold");
+        Fixtures.setBlock(c, X, L, Z - 2, "geontm:machine_crucible[facing=south]");
+        Fixtures.setBlock(c, X - 3, L, Z + 1, "geontm:foundry_mold");
+        Fixtures.setBlock(c, X, L, Z + 1, "geontm:foundry_mold");
+        Fixtures.setBlock(c, X + 3, L, Z + 1, "geontm:foundry_mold");
         c.waitTicks(20);
-        c.cmd("item replace block " + X + " " + L + " " + (Z + 1) + " container.0 with hbm:mold_ingot");
-        c.cmd("item replace block " + (X + 3) + " " + L + " " + (Z + 1) + " container.0 with hbm:mold_plate");
+        c.cmd("item replace block " + X + " " + L + " " + (Z + 1) + " container.0 with geontm:mold_ingot");
+        c.cmd("item replace block " + (X + 3) + " " + L + " " + (Z + 1) + " container.0 with geontm:mold_plate");
         c.cmd("item replace block " + (X + 3) + " " + L + " " + (Z + 1) + " container.1 with minecraft:iron_ingot");
-        c.cmd("item replace block " + (X - 3) + " " + L + " " + (Z + 1) + " container.0 with hbm:mold_plate");
+        c.cmd("item replace block " + (X - 3) + " " + L + " " + (Z + 1) + " container.0 with geontm:mold_plate");
         c.waitTicks(10);
         c.cmd("data merge block " + (X - 3) + " " + L + " " + (Z + 1) + " {type:\"copper\",amount:40}");
         c.waitTicks(30);

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public final class CrucibleLightningShader implements Scenario {
         JsonObject p = new JsonObject();
         if (value instanceof Boolean b) p.addProperty(key, b);
         else if (value != null) p.addProperty(key, value.toString());
-        return c.query("hbm_crucible", p);
+        return c.query("geontm_crucible", p);
     }
 
     @Override
@@ -41,7 +41,7 @@ public final class CrucibleLightningShader implements Scenario {
         c.cmd("clear");
         c.cmd("time set 6000");
         c.waitTicks(5);
-        c.cmd("give @s " + (c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}" : "hbm:crucible[hbm:charges=16]") + " 1");
+        c.cmd("give @s " + (c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}" : "geontm:crucible[geontm:charges=16]") + " 1");
         c.waitTicks(40);
         for (String mode : new String[]{"full", "isolated"}) {
         q(c, "isolate", mode.equals("isolated"));
@@ -61,11 +61,11 @@ public final class CrucibleLightningShader implements Scenario {
             q(c, "lightning_mode", "gpu");
             JsonObject none = new JsonObject();
             none.addProperty("lightning_freeze", true);
-            c.query("hbm_crucible", none);
+            c.query("geontm_crucible", none);
             // the same frozen state without the bolt: clear it by freezing with no particles
             JsonObject clear = new JsonObject();
             clear.addProperty("lightning_clear", true);
-            c.query("hbm_crucible", clear);
+            c.query("geontm_crucible", clear);
             c.waitTicks(4);
             c.screenshot(tag + "-none");
         }

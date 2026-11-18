@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 98, 99 and 101: the powered condenser's item icon, the geiger HUD bar filling with the player's
@@ -31,7 +31,7 @@ public final class Gh98To101 implements Scenario {
     }
 
     private static void condenserIcon(Client c) {
-        c.cmd("give @s hbm:machine_condenser_powered 1");
+        c.cmd("give @s geontm:machine_condenser_powered 1");
         c.waitTicks(5);
         c.key("e");
         c.waitTicks(10);
@@ -46,19 +46,19 @@ public final class Gh98To101 implements Scenario {
     }
 
     private static void electrolyser(Client c) {
-        open(c, "hbm:machine_electrolyser", 0);
+        open(c, "geontm:machine_electrolyser", 0);
         JsonObject screen = c.screen();
         int left = screen.get("left").getAsInt(), top = screen.get("top").getAsInt();
         c.click(left + 35, top + 88);
         c.waitTicks(15);
-        c.cmd("give @s hbm:crystal_iron 4");
+        c.cmd("give @s geontm:crystal_iron 4");
         c.waitTicks(5);
         int slots = c.screen().getAsJsonArray("slots").size();
         Expect.that(slots == 10 + 36, "the metal electrolyser screen is open, slots " + slots);
         JsonObject from = null;
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("player_inventory").getAsBoolean() && s.has("id") && "hbm:crystal_iron".equals(s.get("id").getAsString())) from = s;
+            if (s.get("player_inventory").getAsBoolean() && s.has("id") && "geontm:crystal_iron".equals(s.get("id").getAsString())) from = s;
         }
         c.clickSlot(from.get("index").getAsInt());
         c.waitTicks(3);
@@ -69,21 +69,21 @@ public final class Gh98To101 implements Scenario {
                 + " screen=" + c.screen().get("class") + " slot3json=" + slotJson(c, 3));
         c.mouseMove(2, 2);
         c.screenshot("101-electrolyser-crystal");
-        Expect.that("hbm:crystal_iron".equals(slotItem(c, 3)), "the crystal went into the input slot: " + slotItem(c, 3));
+        Expect.that("geontm:crystal_iron".equals(slotItem(c, 3)), "the crystal went into the input slot: " + slotItem(c, 3));
         c.key("escape");
         c.waitTicks(5);
         c.cmd("clear @s");
     }
 
     private static void armorTable(Client c) {
-        open(c, "hbm:machine_armor_table", 0);
+        open(c, "geontm:machine_armor_table", 0);
         c.cmd("give @s minecraft:iron_chestplate 1");
-        c.cmd("give @s hbm:servo_set 1");
+        c.cmd("give @s geontm:servo_set 1");
         c.waitTicks(10);
         int armor = 9, servos = 4;
         clickFromInventory(c, "minecraft:iron_chestplate", armor);
-        clickFromInventory(c, "hbm:servo_set", servos);
-        Expect.that("hbm:servo_set".equals(slotItem(c, servos)), "the servos went into their slot");
+        clickFromInventory(c, "geontm:servo_set", servos);
+        Expect.that("geontm:servo_set".equals(slotItem(c, servos)), "the servos went into their slot");
 
         // take the servos out, then the chestplate, and put the chestplate back: no servos may reappear
         c.clickSlot(servos);
@@ -104,7 +104,7 @@ public final class Gh98To101 implements Scenario {
     }
 
     private static void geiger(Client c) {
-        c.cmd("give @s hbm:geiger_counter 1");
+        c.cmd("give @s geontm:geiger_counter 1");
         c.cmd("gamemode survival");
         c.cmd("effect give @s minecraft:resistance 600 255 true");
         c.cmd("ntmrad set 100000");

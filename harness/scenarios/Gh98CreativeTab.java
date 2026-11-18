@@ -1,17 +1,17 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * GitHub issue 98: the powered condenser drew no icon in the HBM: Machines creative tab. Finds the tab by clicking
+ * GitHub issue 98: the powered condenser drew no icon in the GEONTM: Machines creative tab. Finds the tab by clicking
  * through the creative tabs until its grid lists the condenser, scrolls it into view and screenshots it.
  */
 public final class Gh98CreativeTab implements Scenario {
 
-    private static final String ID = "hbm:machine_condenser_powered";
+    private static final String ID = "geontm:machine_condenser_powered";
 
     @Override
     public void run(Client c) throws Exception {
@@ -23,7 +23,7 @@ public final class Gh98CreativeTab implements Scenario {
         c.cmd("fill -8 99 -8 8 110 8 minecraft:air");
         Fixtures.platform(c, 0, 100, 0, 8);
         c.waitTicks(5);
-        Fixtures.placeOnTop(c, "hbm:machine_condenser_powered", 0, 100, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_condenser_powered", 0, 100, 0);
         c.teleport(0.5, 101, -5.5);
         c.lookAt(0, 102, 0);
         c.waitTicks(20);

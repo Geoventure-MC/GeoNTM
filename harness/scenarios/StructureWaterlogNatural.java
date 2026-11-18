@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +25,12 @@ public final class StructureWaterlogNatural implements Scenario {
         List<String> missing = new ArrayList<>();
         for (String id : IDS) {
             c.markLog();
-            c.cmd("execute positioned 0 100 0 run locate structure hbm:" + id);
+            c.cmd("execute positioned 0 100 0 run locate structure geontm:" + id);
             List<String> found = List.of();
             // a structure search through large terrain takes tens of seconds
             for (int wait = 0; wait < 120 && found.isEmpty(); wait++) {
                 c.waitTicks(20);
-                found = c.logSinceMark("nearest hbm:" + id + " is at .-?[0-9]+, [-0-9~]+, -?[0-9]+|Could not find");
+                found = c.logSinceMark("nearest geontm:" + id + " is at .-?[0-9]+, [-0-9~]+, -?[0-9]+|Could not find");
             }
             if (!found.isEmpty() && found.get(0).contains("Could not find")) found = List.of();
             if (found.isEmpty()) {

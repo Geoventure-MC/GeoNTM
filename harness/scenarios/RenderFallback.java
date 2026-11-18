@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,13 +85,13 @@ public final class RenderFallback implements Scenario {
             c.cmd("weather clear");
 
             for (Machine m : MACHINES) {
-                Fixtures.setBlock(c, m.x, L, m.z, "hbm:" + m.id + "[facing=north]");
+                Fixtures.setBlock(c, m.x, L, m.z, "geontm:" + m.id + "[facing=north]");
             }
             c.cmd("gamemode spectator");
             c.waitTicks(20);
             for (Machine m : MACHINES) {
                 JsonObject block = c.block(m.x, L, m.z);
-                Expect.equal("hbm:" + m.id, block.get("block").getAsString(), m.id + " core placed");
+                Expect.equal("geontm:" + m.id, block.get("block").getAsString(), m.id + " core placed");
                 Expect.that(!block.get("block_entity").isJsonNull(), m.id + " core has its block entity; " + block);
             }
 
@@ -125,7 +125,7 @@ public final class RenderFallback implements Scenario {
             }
 
             List<String> bad = new ArrayList<>();
-            for (String line : c.logSinceMark("/(ERROR|FATAL)[]]|Golem flywheel failed|Gem visual failed")) {
+            for (String line : c.logSinceMark("/(ERROR|FATAL)[]]|GeoCore flywheel failed|Gem visual failed")) {
                 if (!line.contains("Loaded ")) bad.add(line);
             }
             Expect.that(bad.isEmpty(), "log clean since the mark: " + bad);

@@ -1,11 +1,11 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -32,7 +32,7 @@ public final class SmallChecks implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        return poll(c, "hbm_small", p);
+        return poll(c, "geontm_small", p);
     }
 
     static JsonObject poll(Client c, String kind, JsonObject p) {
@@ -89,13 +89,13 @@ public final class SmallChecks implements Scenario {
         Fixtures.platform(c, 0, 100, 0, 12);
         c.cmd("kill @e[type=!player]");
         // a Quackos left by an earlier run cannot be killed: peas are the only way (1.7 ItemPeas)
-        Fixtures.giveOnly(c, "hbm:peas", 1);
+        Fixtures.giveOnly(c, "geontm:peas", 1);
         c.hotbar(1);
         c.waitTicks(2);
         c.use(2);
         c.cmd("clear");
         Expect.that(awaitBar(c, false, 300) >= 0, "no boss bar before any boss: " + bossName(c));
-        c.cmd("summon hbm:entity_elder_one 0.5 101 14.5");
+        c.cmd("summon geontm:entity_elder_one 0.5 101 14.5");
         c.teleport(0.5, 101, -8.5);
         c.lookAt(0.5, 108, 14.5);
         c.waitTicks(20);
@@ -112,7 +112,7 @@ public final class SmallChecks implements Scenario {
         c.lookAt(0.5, 108, 14.5);
         Expect.that(awaitBar(c, true, 60) >= 0, "the bar is back when the Quackos is in view again");
         // peas: the one way to get rid of Quackos (1.7 ItemPeas)
-        Fixtures.giveOnly(c, "hbm:peas", 1);
+        Fixtures.giveOnly(c, "geontm:peas", 1);
         c.hotbar(1);
         c.waitTicks(2);
         c.use(2);
@@ -127,7 +127,7 @@ public final class SmallChecks implements Scenario {
         Expect.that(left.isEmpty(), "peas sent the Quackos off: " + left);
         Expect.that(!afterPeas, "no Quackos bar lingers after it is gone");
         // a UFO, then killed
-        c.cmd("summon hbm:entity_ufo 0.5 112 14.5 {NoAI:1b}");   // it flies off otherwise
+        c.cmd("summon geontm:entity_ufo 0.5 112 14.5 {NoAI:1b}");   // it flies off otherwise
         c.waitTicks(20);
         int ufoSeen = -1;
         for (int i = 0; i < 30 && ufoSeen < 0; i++) {   // the UFO flies: keep looking at where it is
@@ -141,9 +141,9 @@ public final class SmallChecks implements Scenario {
         System.out.println("[small] " + node + " ufo in view: '" + ufo + "'");
         c.screenshot("boss-ufo");
         Expect.that(boss(c) && !ufo.contains("Quackos"), "the UFO shows its own bar: " + ufo);
-        c.cmd("kill @e[type=hbm:entity_ufo]");
+        c.cmd("kill @e[type=geontm:entity_ufo]");
         c.waitTicks(200);
-        c.cmd("kill @e[type=hbm:entity_ufo]");
+        c.cmd("kill @e[type=geontm:entity_ufo]");
         int ufoGone = awaitBar(c, false, 300);
         boolean afterUfo = boss(c);
         System.out.println("[small] " + node + " after the UFO died: bar " + afterUfo + " (gone after " + ufoGone + " s)");
@@ -174,7 +174,7 @@ public final class SmallChecks implements Scenario {
         impact.addProperty("set_impact", true);
         impact.addProperty("set_fire", 0.0);
         impact.addProperty("set_dust", 0.0);
-        c.query("hbm_impact", impact);
+        c.query("geontm_impact", impact);
         c.waitTicks(5);
         // natural spawns need the ground within 128 blocks: stand on the superflat floor, not the platform at y 100
         c.teleport(0.5, -60, 0.5);
@@ -189,7 +189,7 @@ public final class SmallChecks implements Scenario {
         JsonObject withImpact = small(c, "mode", "spawns");
         System.out.println("[small] " + node + " impact on, 600 ticks: " + withImpact + " (denied before " + deniedBefore + ")");
         impact.addProperty("set_impact", false);
-        c.query("hbm_impact", impact);
+        c.query("geontm_impact", impact);
         c.waitTicks(5);
         c.cmd("kill @e[type=!player]");
         c.waitTicks(600);
@@ -235,7 +235,7 @@ public final class SmallChecks implements Scenario {
             p.addProperty("x", at[0]);
             p.addProperty("z", at[1]);
             p.addProperty("spawns", spawns);
-            JsonObject r = poll(c, "hbm_modded_biome", p);
+            JsonObject r = poll(c, "geontm_modded_biome", p);
             int average = r.getAsJsonObject("guess").get("average").getAsInt();
             StringBuilder accepted = new StringBuilder();
             int buried = 0;
@@ -290,7 +290,7 @@ public final class SmallChecks implements Scenario {
             cave.putAll(Fix6Count.count(c, sx - 24, sz - 24, sx + 24, sz + 24, 5, 60, "acid"));
             System.out.println("[small] " + node + " sulfur stratum at " + sx + "," + sz + " (range " + pick[2] + "): " + cave);
             c.cmd("forceload remove all");
-            if (cave.getOrDefault("hbm:stone_resource_sulfur", 0) > 0) break;
+            if (cave.getOrDefault("geontm:stone_resource_sulfur", 0) > 0) break;
         }
         c.cmd("gamemode spectator");
         c.teleport(sx + 0.5, 30, sz + 0.5);
@@ -298,18 +298,18 @@ public final class SmallChecks implements Scenario {
         c.waitTicks(60);
         c.screenshot("sulfur-cave");
         c.cmd("gamemode creative");
-        Expect.that(cave.getOrDefault("hbm:stone_resource_sulfur", 0) > 0, "sulfur stone in the cave: " + cave);
-        Expect.that(cave.getOrDefault("hbm:sulfuric_acid_block", 0) > 0, "acid pools in the sulfur cave: " + cave);
+        Expect.that(cave.getOrDefault("geontm:stone_resource_sulfur", 0) > 0, "sulfur stone in the cave: " + cave);
+        Expect.that(cave.getOrDefault("geontm:sulfuric_acid_block", 0) > 0, "acid pools in the sulfur cave: " + cave);
 
         c.resetWorld();
         c.useFlatWorld();
     }
 
-    /** The {@code hbm_worldgen count} query (as in Fix6Worldgen). */
+    /** The {@code geontm_worldgen count} query (as in Fix6Worldgen). */
     static final class Fix6Count {
         static Map<String, Integer> count(Client c, int x0, int z0, int x1, int z1, int y0, int y1, String contains) {
             JsonObject p = new JsonObject();
-            p.addProperty("kind", "hbm_worldgen");
+            p.addProperty("kind", "geontm_worldgen");
             p.addProperty("mode", "count");
             p.addProperty("x0", x0);
             p.addProperty("z0", z0);
@@ -319,7 +319,7 @@ public final class SmallChecks implements Scenario {
             p.addProperty("y1", y1);
             p.addProperty("contains", contains);
             JsonObject r = c.send("query", p, 240_000L);
-            if (r.has("error")) throw new HarnessException("hbm_worldgen " + p + ": " + r.get("error"));
+            if (r.has("error")) throw new HarnessException("geontm_worldgen " + p + ": " + r.get("error"));
             Map<String, Integer> out = new LinkedHashMap<>();
             r.getAsJsonObject("counts").entrySet().forEach(e -> out.put(e.getKey(), e.getValue().getAsInt()));
             return out;

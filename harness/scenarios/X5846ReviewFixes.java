@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,7 +37,7 @@ public final class X5846ReviewFixes implements Scenario {
     private void tower(Client c) {
         int gx = 10, gz = -10;
         Fixtures.setBlock(c, gx, Y, gz, "minecraft:gold_block");
-        Fixtures.placeOnTop(c, "hbm:machine_tower_small", gx, Y, gz);
+        Fixtures.placeOnTop(c, "geontm:machine_tower_small", gx, Y, gz);
         int cx = gx - 2, cz = gz;
         c.waitTicks(10);
         Expect.that(c.blockEntity(cx, L, cz).toString().contains("input"), "the tower core is two blocks west of the click: " + c.blockEntity(cx, L, cz));
@@ -58,8 +58,8 @@ public final class X5846ReviewFixes implements Scenario {
     private void highlights(Client c) {
         int gx = -10, gz = -10;
         Fixtures.setBlock(c, gx, Y, gz, "minecraft:gold_block");
-        String[][] machines = {{"hbm:machine_assembly_machine", "10-assembler"}, {"hbm:heat_boiler", "11-heat-boiler"},
-                {"hbm:machine_ashpit", "12-ashpit"}, {"hbm:heater_firebox", "13-firebox"}, {"hbm:machine_tower_small", "14-tower-small"}};
+        String[][] machines = {{"geontm:machine_assembly_machine", "10-assembler"}, {"geontm:heat_boiler", "11-heat-boiler"},
+                {"geontm:machine_ashpit", "12-ashpit"}, {"geontm:heater_firebox", "13-firebox"}, {"geontm:machine_tower_small", "14-tower-small"}};
         for (String[] m : machines) {
             Fixtures.giveOnly(c, m[0], 1);
             c.hotbar(1);
@@ -70,10 +70,10 @@ public final class X5846ReviewFixes implements Scenario {
 
     /** Bedrock ore at the chunk centre's floor, bedrock oil on a scanned column, then a scan from inside chunk (0, 0). */
     private void scanner(Client c) {
-        c.cmd("setblock 8 -64 8 hbm:ore_bedrock_block");
-        c.cmd("setblock 9 -64 7 hbm:ore_bedrock_block");
-        c.cmd("setblock 5 98 0 hbm:ore_bedrock_oil");
-        Fixtures.giveOnly(c, "hbm:survey_scanner", 1);
+        c.cmd("setblock 8 -64 8 geontm:ore_bedrock_block");
+        c.cmd("setblock 9 -64 7 geontm:ore_bedrock_block");
+        c.cmd("setblock 5 98 0 geontm:ore_bedrock_oil");
+        Fixtures.giveOnly(c, "geontm:survey_scanner", 1);
         c.hotbar(1);
         c.teleport(0.5, L, 0.5);
         c.look(0, 90);
@@ -92,7 +92,7 @@ public final class X5846ReviewFixes implements Scenario {
         c.cmd("clear @s");
         String[] doors = {"secure_access_door", "fire_door", "sliding_blast_door", "large_vehicle_door", "water_door",
                 "qe_containment", "qe_sliding_door", "round_airlock_door", "sliding_seal_door"};
-        for (String door : doors) c.cmd("give @s hbm:" + door);
+        for (String door : doors) c.cmd("give @s geontm:" + door);
         c.hotbar(9);
         c.teleport(0.5, L, 0.5);
         c.look(0, 0);
@@ -116,7 +116,7 @@ public final class X5846ReviewFixes implements Scenario {
     }
 
     private static void barrel(Client c, int x, int y, int z) {
-        c.cmd("setblock " + x + " " + y + " " + z + " hbm:barrel_steel{mode:2s,tank:16000,tank_max:16000,tank_type:\"hbm:spentsteam\"}");
+        c.cmd("setblock " + x + " " + y + " " + z + " geontm:barrel_steel{mode:2s,tank:16000,tank_max:16000,tank_type:\"geontm:spentsteam\"}");
     }
 
     private static int fill(Client c, int x, int y, int z) {

@@ -1,5 +1,5 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Terrain and entities under the same GemRender spot: the mining helmet lights an armor stand in front of a wall in a
@@ -27,7 +27,7 @@ public final class LampLightsEntities implements Scenario {
             c.cmd("summon minecraft:armor_stand " + (X + 10.5) + " " + (Y + 1) + " " + (Z + 10.5)
                     + " {NoGravity:1b,Rotation:[90f,0f]}");
             c.cmd("clear @s");
-            c.cmd("item replace entity @s armor.head with hbm:no9");
+            c.cmd("item replace entity @s armor.head with geontm:no9");
             c.cmd("item replace entity @s weapon.mainhand with minecraft:stone");
             c.teleport(X + 3.5, Y + 1, Z + 10.5);
             c.setOption("camera", "first_person");

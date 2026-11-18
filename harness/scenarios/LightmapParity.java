@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.awt.image.BufferedImage;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,7 +10,7 @@ import java.nio.file.Path;
 /**
  * Lit ground under the light map, per node. 26.1 (and 1.7) sample the light map at the texel centre; 1.20.1 and 1.21.1
  * sample it at a texel boundary ({@code uv / 256}), so with the light map's linear filter full sky light is the average
- * of levels 14 and 15 and lit ground is darker there. Golem Core repaired that with overrides of vanilla's
+ * of levels 14 and 15 and lit ground is darker there. GeoCore repaired that with overrides of vanilla's
  * {@code light.glsl} and of Sodium's terrain shader (2026-10-09); the user removed them on 2026-10-11 because a vanilla
  * shader include override risks clashing with other mods and shader packs. Legacy nodes now draw vanilla's own darker
  * sampling, and this scenario pins that instead of parity.

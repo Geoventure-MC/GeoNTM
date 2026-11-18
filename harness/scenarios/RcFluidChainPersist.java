@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -18,7 +18,7 @@ public final class RcFluidChainPersist implements Scenario {
     private static final int L = Y + 1;
     private static final int SRC = 356;
     private static final int R = 404;
-    private static final String SRC_BARREL = "hbm:barrel_steel{tank:16000,tank_max:16000,tank_type:\"hbm:hotoil\",tank_p:0s,mode:2s}";
+    private static final String SRC_BARREL = "geontm:barrel_steel{tank:16000,tank_max:16000,tank_type:\"geontm:hotoil\",tank_p:0s,mode:2s}";
 
     @Override
     public void run(Client c) throws Exception {
@@ -28,23 +28,23 @@ public final class RcFluidChainPersist implements Scenario {
         c.waitTicks(40);
         c.cmd("fill 350 " + Y + " -10 430 " + Y + " 20 minecraft:stone");
         c.cmd("fill 350 " + L + " -10 430 " + (L + 12) + " 20 minecraft:air");
-        c.cmd("setblock 420 " + Y + " 10 hbm:ore_oil");
+        c.cmd("setblock 420 " + Y + " 10 geontm:ore_oil");
         c.teleport(405.5, L + 6, 8.5);
         c.waitTicks(10);
 
         set(c, SRC, -1, SRC_BARREL);
-        for (int x = SRC + 1; x <= R - 2; x++) set(c, x, -1, "hbm:fluid_duct_neo{type:\"hbm:hotoil\"}");
-        set(c, R, 0, "hbm:machine_refinery[facing=north]");
-        set(c, R + 2, -1, "hbm:fluid_duct_neo{type:\"hbm:heavyoil\"}");
+        for (int x = SRC + 1; x <= R - 2; x++) set(c, x, -1, "geontm:fluid_duct_neo{type:\"geontm:hotoil\"}");
+        set(c, R, 0, "geontm:machine_refinery[facing=north]");
+        set(c, R + 2, -1, "geontm:fluid_duct_neo{type:\"geontm:heavyoil\"}");
         set(c, R + 3, -1, out("heavyoil"));
-        set(c, R + 2, 1, "hbm:fluid_duct_neo{type:\"hbm:naphtha\"}");
+        set(c, R + 2, 1, "geontm:fluid_duct_neo{type:\"geontm:naphtha\"}");
         set(c, R + 3, 1, out("naphtha"));
-        set(c, R - 2, 1, "hbm:fluid_duct_neo{type:\"hbm:lightoil\"}");
+        set(c, R - 2, 1, "geontm:fluid_duct_neo{type:\"geontm:lightoil\"}");
         set(c, R - 3, 1, out("lightoil"));
-        set(c, R + 1, -2, "hbm:fluid_duct_neo{type:\"hbm:petroleum\"}");
+        set(c, R + 1, -2, "geontm:fluid_duct_neo{type:\"geontm:petroleum\"}");
         set(c, R + 1, -3, out("petroleum"));
-        set(c, 420, 10, "hbm:machine_well[facing=north]");
-        set(c, 421, 10, "hbm:fluid_duct_neo{type:\"hbm:oil\"}");
+        set(c, 420, 10, "geontm:machine_well[facing=north]");
+        set(c, 421, 10, "geontm:fluid_duct_neo{type:\"geontm:oil\"}");
         set(c, 422, 10, out("oil"));
         c.waitTicks(10);
         // ducts typed through setblock only join the graph when their chunk loads, so save and rejoin first
@@ -148,7 +148,7 @@ public final class RcFluidChainPersist implements Scenario {
     }
 
     private static String out(String fluid) {
-        return "hbm:barrel_steel{tank:0,tank_max:16000,tank_type:\"hbm:" + fluid + "\",tank_p:0s,mode:0s}";
+        return "geontm:barrel_steel{tank:0,tank_max:16000,tank_type:\"geontm:" + fluid + "\",tank_p:0s,mode:0s}";
     }
 
     private static void set(Client c, int x, int z, String state) {
@@ -157,8 +157,8 @@ public final class RcFluidChainPersist implements Scenario {
 
     private static void feed(Client c, boolean on) {
         // a deposit drains now and then (1.7: 5% per suck); put it back so the derrick keeps a target
-        c.cmd("fill 420 " + Y + " 10 420 " + Y + " 10 hbm:ore_oil replace hbm:oil_pipe");
-        c.cmd("fill 420 " + Y + " 10 420 " + Y + " 10 hbm:ore_oil replace hbm:ore_oil_empty");
+        c.cmd("fill 420 " + Y + " 10 420 " + Y + " 10 geontm:ore_oil replace geontm:oil_pipe");
+        c.cmd("fill 420 " + Y + " 10 420 " + Y + " 10 geontm:ore_oil replace geontm:ore_oil_empty");
         c.cmd("data merge block " + R + " " + L + " 0 {power:" + (on ? 1000 : 0) + "L}");
         c.cmd("data merge block 420 " + L + " 10 {power:" + (on ? 100000 : 0) + "L,CarriedData:{power:" + (on ? 100000 : 0) + "L}}");
     }

@@ -1,21 +1,21 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Weapon table over the real GUI: a revolver goes in with shift-click, the steel damage mod goes in with shift-click,
  * the revolver is taken out again. The generic damage mod multiplies receiver damage by 1.15, so a 357 SP shot at a
- * golem must deal 7.5 x 1.15 = 8.625; the mod item is consumed (it lives on the gun) and the damage survives
+ * geocore must deal 7.5 x 1.15 = 8.625; the mod item is consumed (it lives on the gun) and the damage survives
  * leaving and rejoining.
  */
 public final class RcGunTable implements Scenario {
 
     private static final int Y = 100;
-    private static final String GUN = "hbm:gun_light_revolver";
-    private static final String MOD = "hbm:weapon_mod_generic_steel_damage";
+    private static final String GUN = "geontm:gun_light_revolver";
+    private static final String MOD = "geontm:weapon_mod_generic_steel_damage";
 
     @Override
     public void run(Client c) throws Exception {
@@ -27,7 +27,7 @@ public final class RcGunTable implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 10);
         c.cmd("kill @e[type=!player]");
         c.cmd("clear @s");
-        Fixtures.placeOnTop(c, "hbm:machine_weapon_table", 6, Y, 6);
+        Fixtures.placeOnTop(c, "geontm:machine_weapon_table", 6, Y, 6);
         c.waitTicks(10);
         c.teleport(0.5, Y + 1, 0.5);
         c.cmd("give @s " + GUN);
@@ -61,7 +61,7 @@ public final class RcGunTable implements Scenario {
         Expect.that(inv >= 0, "gun back in the inventory");
         c.teleport(0.5, Y + 1, -2.5);
         c.hotbar(inv < 9 ? inv + 1 : 1);
-        c.cmd("give @s hbm:ammo_standard_m357_sp 12");
+        c.cmd("give @s geontm:ammo_standard_m357_sp 12");
         c.waitTicks(40);
         double first = shoot(c);
         System.out.println("[RcGunTable] " + c.node() + " damage with mod: " + first);
@@ -86,15 +86,15 @@ public final class RcGunTable implements Scenario {
         c.lookAt(0.5, Y + 2.3, 4.5);
         c.key("r");
         c.waitTicks(130);
-        double before = golem(c);
+        double before = geocore(c);
         c.keyDown("mouse.left");
         c.waitTicks(1);
         c.keyUp("mouse.left");
         c.waitTicks(15);
-        return before - golem(c);
+        return before - geocore(c);
     }
 
-    private static double golem(Client c) {
+    private static double geocore(Client c) {
         JsonObject p = new JsonObject();
         p.addProperty("radius", 32);
         p.addProperty("type", "minecraft:iron_golem");

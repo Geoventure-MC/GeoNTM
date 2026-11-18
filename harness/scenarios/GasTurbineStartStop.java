@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Gas turbine ignition: opens the turbine GUI by a real right-click and presses
@@ -21,7 +21,7 @@ public final class GasTurbineStartStop implements Scenario {
         c.cmd("fill -12 " + (Y - 1) + " -12 12 " + (Y + 14) + " 12 minecraft:air");
         Fixtures.platform(c, 0, Y, 0, 12);
         c.waitServerTicks(5);
-        Fixtures.placeOnTop(c, "hbm:machine_turbine_gas", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_turbine_gas", 0, Y, 0);
         c.waitServerTicks(10);
 
         int[] core = findCore(c);
@@ -58,7 +58,7 @@ public final class GasTurbineStartStop implements Scenario {
         c.key("escape");
         c.waitServerTicks(5);
         c.cmd("fill -12 " + (Y - 1) + " -12 12 " + (Y + 14) + " 12 minecraft:air");
-        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|hbm|turbine)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|geontm|turbine)");
     }
 
     private static void open(Client c) throws Exception {

@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,18 +25,18 @@ public final class RcPowerGen implements Scenario {
         c.waitTicks(5);
 
         // id, merge data, key of the power value, minimum expected power after the wait, ticks to wait
-        gen(c, "machine_diesel", "{isOn:1b,fuel:16000,fuel_type:\"hbm:diesel\"}", "powerTime", 3_000, 20);
+        gen(c, "machine_diesel", "{isOn:1b,fuel:16000,fuel_type:\"geontm:diesel\"}", "powerTime", 3_000, 20);
         gen(c, "machine_wood_burner", "{isOn:1b,burnTime:1000,maxBurnTime:1000}", "power", 1_500, 20);
-        gen(c, "machine_steam_engine", "{s:2000,s_type:\"hbm:steam\"}", "powerBuffer", 1, 3);
-        gen(c, "machine_large_turbine", "{water:100000,water_type:\"hbm:steam\"}", "power", 100, 20);
-        gen(c, "machine_industrial_turbine", "{input:100000,input_type:\"hbm:steam\"}", "power", 1, 40);
-        gen(c, "machine_chungus", "{water:100000,water_type:\"hbm:steam\"}", "power", 1, 3);
-        gen(c, "machine_turbofan", "{tank:24000,tank_type:\"hbm:kerosene\"}", "powerTime", 1_000, 20);
-        gen(c, "machine_combustion_engine", "{isOn:1b,setting:10,tank:24000,tank_type:\"hbm:diesel\"}", "power", -1, 20);
+        gen(c, "machine_steam_engine", "{s:2000,s_type:\"geontm:steam\"}", "powerBuffer", 1, 3);
+        gen(c, "machine_large_turbine", "{water:100000,water_type:\"geontm:steam\"}", "power", 100, 20);
+        gen(c, "machine_industrial_turbine", "{input:100000,input_type:\"geontm:steam\"}", "power", 1, 40);
+        gen(c, "machine_chungus", "{water:100000,water_type:\"geontm:steam\"}", "power", 1, 3);
+        gen(c, "machine_turbofan", "{tank:24000,tank_type:\"geontm:kerosene\"}", "powerTime", 1_000, 20);
+        gen(c, "machine_combustion_engine", "{isOn:1b,setting:10,tank:24000,tank_type:\"geontm:diesel\"}", "power", -1, 20);
         gen(c, "machine_rtg_grey", "{}", "power", -1, 20);
-        gen(c, "machine_solar_boiler", "{tank0:100,tank0_type:\"hbm:water\"}", "none", -1, 10);
+        gen(c, "machine_solar_boiler", "{tank0:100,tank0_type:\"geontm:water\"}", "none", -1, 10);
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -44,7 +44,7 @@ public final class RcPowerGen implements Scenario {
         try {
             c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 14) + " 16 minecraft:air");
             c.waitTicks(3);
-            Fixtures.placeOnTop(c, "hbm:" + id, 0, Y, 0);
+            Fixtures.placeOnTop(c, "geontm:" + id, 0, Y, 0);
             c.waitTicks(10);
             core = findCore(c);
             System.out.println("[" + id + "] core " + Arrays.toString(core));

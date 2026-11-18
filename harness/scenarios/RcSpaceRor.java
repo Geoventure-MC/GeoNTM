@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Redstone-over-radio across distance. A counter torch on a chest of 5 iron ingots broadcasts the count on its
@@ -28,10 +28,10 @@ public final class RcSpaceRor implements Scenario {
         // counter on a chest, TELEX far away
         Fixtures.setBlock(c, 0, L, Z, "minecraft:chest");
         c.cmd("item replace block 0 " + L + " " + Z + " container.0 with minecraft:iron_ingot 5");
-        Fixtures.setBlock(c, 0, L + 1, Z, "hbm:radio_torch_counter[facing=up]");
+        Fixtures.setBlock(c, 0, L + 1, Z, "geontm:radio_torch_counter[facing=up]");
         c.cmd("item replace block 0 " + (L + 1) + " " + Z + " container.0 with minecraft:iron_ingot 1");
         c.cmd("data merge block 0 " + (L + 1) + " " + Z + " {channel0:\"cnt\"}");
-        Fixtures.setBlock(c, 100, L, Z, "hbm:radio_telex[facing=north]");
+        Fixtures.setBlock(c, 100, L, Z, "geontm:radio_telex[facing=north]");
         c.cmd("data merge block 100 " + L + " " + Z + " {rxChan:\"cnt\"}");
         c.waitTicks(60);
         String telex = nbt(c, 100, L, Z);
@@ -49,8 +49,8 @@ public final class RcSpaceRor implements Scenario {
         Expect.that(counter.contains("lastCount0:8"), "a changed stock is re-broadcast: " + counter);
 
         // controller on a turret
-        Fixtures.setBlock(c, 10, L, Z, "hbm:turret_chekhov[facing=north]");
-        Fixtures.setBlock(c, 10, L + 1, Z, "hbm:radio_torch_controller[facing=up]");
+        Fixtures.setBlock(c, 10, L, Z, "geontm:turret_chekhov[facing=north]");
+        Fixtures.setBlock(c, 10, L + 1, Z, "geontm:radio_torch_controller[facing=up]");
         c.cmd("data merge block 10 " + (L + 1) + " " + Z + " {channel:\"ctl\"}");
         c.waitTicks(10);
         send(c, "ctl", "setactive!1");
@@ -84,7 +84,7 @@ public final class RcSpaceRor implements Scenario {
         a.add(message);
         if (character) a.add("c");
         q.add("rtty", a);
-        c.query("hbm_gapsc", q);
+        c.query("geontm_gapsc", q);
         c.waitTicks(6);
     }
 

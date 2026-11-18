@@ -1,11 +1,11 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * In-game acceptance for the norwood-deco firework battery ({@code hbm:fireworks}): the empty-hand
+ * In-game acceptance for the norwood-deco firework battery ({@code geontm:fireworks}): the empty-hand
  * readout, gunpowder and sulfur loading, the dye colour, and the powered launch that spends charges.
  */
 public final class FireworkBattery implements Scenario {
@@ -22,8 +22,8 @@ public final class FireworkBattery implements Scenario {
         c.cmd("time set night");
         c.waitTicks(2);
 
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:fireworks", X, Y, Z);
-        Expect.equal("hbm:fireworks", placed.get("block").getAsString(), "battery placed by hand");
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:fireworks", X, Y, Z);
+        Expect.equal("geontm:fireworks", placed.get("block").getAsString(), "battery placed by hand");
         c.screenshot("10-battery-placed");
 
         // Empty hand prints the four readout lines; chat reaches the log.
@@ -38,7 +38,7 @@ public final class FireworkBattery implements Scenario {
         Expect.that(heldCount(c, "minecraft:gunpowder") == 0, "the whole gunpowder stack was consumed");
 
         // Sulfur loads one charge a piece, on the same whole-stack rule.
-        load(c, "hbm:sulfur", 5);
+        load(c, "geontm:sulfur", 5);
         Expect.that(charges(c) == 17, "five sulfur added five charges, saw " + charges(c));
 
         // A dye sets the burst colour and costs one item.

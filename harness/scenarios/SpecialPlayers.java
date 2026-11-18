@@ -1,16 +1,16 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * The ShadyUtil players (2026-10-06): HBM capes through Core {@code Capes}, Bob's / the_NCR's wings, Pheo's axe pack
+ * The ShadyUtil players (2026-10-06): GEONTM capes through Core {@code Capes}, Bob's / the_NCR's wings, Pheo's axe pack
  * and flames, Peep's tail, and the wing glide. Capes key on the real UUID, so a dev client only shows the test cape
  * ({@code Dev} / {@code Player###}); the models and the glide also key on the name, so start the clients with
  * {@code up --username HbMinecraft} (or {@code the_NCR}, {@code pheo7}, {@code LePeeperSauvage}) to see them.
  *
- * <p>Checks: the cape the vanilla cape layer reads ({@code hbm_special}) is the one the 1.7 table names; and an
+ * <p>Checks: the cape the vanilla cape layer reads ({@code geontm_special}) is the one the 1.7 table names; and an
  * airborne second without a chestplate drops less than a normal fall for the three flyers (1.7 onWingFlop's glide)
  * and a normal fall's distance for anyone else. Shots: behind and in front on the ground, and in front mid-air.
  */
@@ -46,7 +46,7 @@ public final class SpecialPlayers implements Scenario {
             hideGui = c.setOption("hide_gui", "true");
 
             String name = c.player().get("name").getAsString();
-            JsonObject special = c.query("hbm_special", new JsonObject());
+            JsonObject special = c.query("geontm_special", new JsonObject());
             String cape = special.has("cape") ? special.get("cape").getAsString() : "";
             String expected = special.has("expected") ? special.get("expected").getAsString() : "";
             System.out.println("[SpecialPlayers] " + c.node() + " name=" + name + " cape=" + cape + " expected=" + expected);

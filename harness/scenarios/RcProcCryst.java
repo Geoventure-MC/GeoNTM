@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -39,15 +39,15 @@ public final class RcProcCryst implements Scenario {
 
         String[][] cases = {
                 {"cry_base", "-24", "0", ""},
-                {"cry_speed3", "-8", "0", "hbm:upgrade_speed_3"},
-                {"cry_effect3", "8", "0", "hbm:upgrade_effect_3"},
-                {"cry_over3", "24", "0", "hbm:upgrade_overdrive_3"},
+                {"cry_speed3", "-8", "0", "geontm:upgrade_speed_3"},
+                {"cry_effect3", "8", "0", "geontm:upgrade_effect_3"},
+                {"cry_over3", "24", "0", "geontm:upgrade_overdrive_3"},
         };
         for (String[] a : cases) {
             place(c, a[0], "machine_crystallizer", Integer.parseInt(a[1]), Integer.parseInt(a[2]));
             String[] items = a[3].isEmpty() ? new String[]{"minecraft:iron_ore 8"} : new String[]{"minecraft:iron_ore 8", a[3] + " 1"};
             load(c, a[0], items);
-            merge(a[0], "power:1000000L,tankNew:8000,tankNew_type:\"hbm:peroxide\"");
+            merge(a[0], "power:1000000L,tankNew:8000,tankNew_type:\"geontm:peroxide\"");
         }
         for (String cmd : pending) c.cmd(cmd);
         c.waitTicks(1);
@@ -77,7 +77,7 @@ public final class RcProcCryst implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -90,7 +90,7 @@ public final class RcProcCryst implements Scenario {
         try {
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + block, 1);
+            Fixtures.giveOnly(c, "geontm:" + block, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

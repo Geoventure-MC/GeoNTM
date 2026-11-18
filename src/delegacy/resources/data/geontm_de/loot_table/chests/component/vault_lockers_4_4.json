@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/vault_lockers"
+        }
+      ],
+      "rolls": {
+        "type": "geontm_de:config_scaled",
+        "value": 4.0
+      }
+    }
+  ],
+  "random_sequence": "geontm_de:chests/component/vault_lockers_4_4"
+}

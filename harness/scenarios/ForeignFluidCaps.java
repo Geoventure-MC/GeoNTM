@@ -1,17 +1,17 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * HBM fluids on the loaders' standard fluid capability (History section 19ek-fluids), in a real world, through the same
- * lookup another mod's pipe uses ({@code hbm_fluidcaps} query, Core {@code FluidCompat}):
+ * GEONTM fluids on the loaders' standard fluid capability (History section 19ek-fluids), in a real world, through the same
+ * lookup another mod's pipe uses ({@code geontm_fluidcaps} query, Core {@code FluidCompat}):
  * <ol>
- *   <li>the 154 HBM token fluids are in the vanilla fluid registry ({@code hbm:diesel}; water is vanilla water);</li>
+ *   <li>the 154 GEONTM token fluids are in the vanilla fluid registry ({@code geontm:diesel}; water is vanilla water);</li>
  *   <li>a vanilla water bucket's own handler empties into a water barrel (1000 mB, the bucket becomes a bucket);</li>
  *   <li>1500 mB diesel moves between two barrels through the capability alone, exact on both sides;</li>
- *   <li>JEI lists every HBM fluid as a fluid ingredient;</li>
+ *   <li>JEI lists every GEONTM fluid as a fluid ingredient;</li>
  *   <li>the saved NBT still names fluids by registry name.</li>
  * </ol>
  */
@@ -27,15 +27,15 @@ public class ForeignFluidCaps implements Scenario {
 
         JsonObject registry = q(c, "registry");
         Expect.that(registry.get("tokens").getAsInt() == 154 && registry.get("fluidTypes").getAsInt() == 157,
-                "154 HBM token fluids registered for 157 fluid types: " + registry);
-        Expect.that(registry.get("diesel").getAsString().equals("hbm:diesel")
+                "154 GEONTM token fluids registered for 157 fluid types: " + registry);
+        Expect.that(registry.get("diesel").getAsString().equals("geontm:diesel")
                 && registry.get("water").getAsString().equals("minecraft:water"), "fluid ids: " + registry);
 
         // a water barrel filled from a vanilla bucket, through both loader handlers
-        c.cmd("setblock 0 " + (Y + 1) + " 0 hbm:barrel_steel{tank:0,tank_type:\"hbm:water\",mode:0s}");
+        c.cmd("setblock 0 " + (Y + 1) + " 0 geontm:barrel_steel{tank:0,tank_type:\"geontm:water\",mode:0s}");
         // two diesel barrels: an output one and an input one
-        c.cmd("setblock -4 " + (Y + 1) + " 3 hbm:barrel_steel{tank:5000,tank_type:\"hbm:diesel\",mode:2s}");
-        c.cmd("setblock -2 " + (Y + 1) + " 3 hbm:barrel_steel{tank:0,tank_type:\"hbm:diesel\",mode:0s}");
+        c.cmd("setblock -4 " + (Y + 1) + " 3 geontm:barrel_steel{tank:5000,tank_type:\"geontm:diesel\",mode:2s}");
+        c.cmd("setblock -2 " + (Y + 1) + " 3 geontm:barrel_steel{tank:0,tank_type:\"geontm:diesel\",mode:0s}");
         c.teleport(0.5, Y + 1, -4.5);
         c.waitTicks(10);
         c.screenshot("placed");
@@ -45,11 +45,11 @@ public class ForeignFluidCaps implements Scenario {
                 "a water bucket emptied 1000 mB into the water barrel: " + bucket);
         Expect.that(bucket.getAsJsonArray("tanks").get(0).getAsJsonObject().get("amount").getAsInt() == 1000,
                 "the barrel reads 1000 mB: " + bucket);
-        JsonObject lava = q(c, "insert", "x", 0, "y", Y + 1, "z", 0, "side", "north", "fluid", "hbm:lava", "mb", 1000);
+        JsonObject lava = q(c, "insert", "x", 0, "y", Y + 1, "z", 0, "side", "north", "fluid", "geontm:lava", "mb", 1000);
         Expect.that(lava.get("moved").getAsInt() == 0, "the water barrel refused lava: " + lava);
 
         JsonObject move = q(c, "move", "x", -4, "y", Y + 1, "z", 3, "side", "east",
-                "tx", -2, "ty", Y + 1, "tz", 3, "tside", "west", "fluid", "hbm:diesel", "mb", 1500);
+                "tx", -2, "ty", Y + 1, "tz", 3, "tside", "west", "fluid", "geontm:diesel", "mb", 1500);
         Expect.that(move.get("moved").getAsInt() == 1500 && move.get("taken").getAsInt() == 1500, "1500 mB diesel moved: " + move);
 
         // the flow control pump's intake and outlet: GameTest foreign_fluids_pump_typed_sides
@@ -57,12 +57,12 @@ public class ForeignFluidCaps implements Scenario {
         // the saved form is unchanged
         c.waitTicks(10);
         String water = nbt(c, 0, Y + 1, 0), out = nbt(c, -4, Y + 1, 3), in = nbt(c, -2, Y + 1, 3);
-        // placed with the old name hbm:water (still read, §19fa-m1); saved under vanilla's fluid id
+        // placed with the old name geontm:water (still read, §19fa-m1); saved under vanilla's fluid id
         Expect.that(water.contains("tank_type:\"minecraft:water\"") && water.contains("tank:1000"), "water barrel save: " + water);
-        Expect.that(out.contains("tank_type:\"hbm:diesel\"") && out.contains("tank:3500"), "source barrel save: " + out);
-        Expect.that(in.contains("tank_type:\"hbm:diesel\"") && in.contains("tank:1500"), "sink barrel save: " + in);
+        Expect.that(out.contains("tank_type:\"geontm:diesel\"") && out.contains("tank:3500"), "source barrel save: " + out);
+        Expect.that(in.contains("tank_type:\"geontm:diesel\"") && in.contains("tank:1500"), "sink barrel save: " + in);
 
-        // JEI: every HBM fluid as a fluid ingredient
+        // JEI: every GEONTM fluid as a fluid ingredient
         JsonObject jei = new JsonObject();
         for (int i = 0; i < 60; i++) {
             jei = q(c, "jei");
@@ -70,7 +70,7 @@ public class ForeignFluidCaps implements Scenario {
             c.waitTicks(20);
         }
         Expect.that(jei.get("ready").getAsBoolean() && jei.get("count").getAsInt() == 154,
-                "JEI lists the 154 HBM fluids: " + (jei.has("count") ? jei.get("count") : jei));
+                "JEI lists the 154 GEONTM fluids: " + (jei.has("count") ? jei.get("count") : jei));
         Expect.that(jei.toString().contains("Diesel"), "JEI names diesel by its lang name");
         c.key("e");
         c.waitScreen("Inventory", 5000);
@@ -93,7 +93,7 @@ public class ForeignFluidCaps implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        JsonObject r = c.query("hbm_fluidcaps", p);
+        JsonObject r = c.query("geontm_fluidcaps", p);
         Expect.that(!r.has("error"), "query " + op + " failed: " + r);
         return r;
     }

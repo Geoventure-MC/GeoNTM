@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Release audit, server tick cost: 40 powered electric furnaces smelting off one cable network, 10 steel barrels on a
@@ -21,25 +21,25 @@ public final class RcCompatTick implements Scenario {
         c.waitTicks(300);
         double idle = measure(c);
 
-        Fixtures.setBlock(c, -26, B, 0, "hbm:creative_generator");
-        c.cmd("fill -25 " + B + " 0 25 " + B + " 0 hbm:red_cable");
+        Fixtures.setBlock(c, -26, B, 0, "geontm:creative_generator");
+        c.cmd("fill -25 " + B + " 0 25 " + B + " 0 geontm:red_cable");
         for (int x = -24; x <= 14; x += 2) {
             for (int z : new int[] {-1, 1}) {
-                Fixtures.setBlock(c, x, B, z, "hbm:machine_electric_furnace_off");
+                Fixtures.setBlock(c, x, B, z, "geontm:machine_electric_furnace_off");
                 c.cmd("item replace block " + x + " " + B + " " + z + " container.0 with minecraft:iron_ore 64");
             }
         }
-        c.cmd("fill -25 " + B + " 10 -5 " + B + " 10 hbm:fluid_duct_neo");
+        c.cmd("fill -25 " + B + " 10 -5 " + B + " 10 geontm:fluid_duct_neo");
         for (int x = -24; x <= -6; x += 2) {
-            Fixtures.setBlock(c, x, B, 11, "hbm:barrel_steel");
-            c.cmd("data merge block " + x + " " + B + " 11 {tank:16000,tank_type:\"hbm:oil\"}");
+            Fixtures.setBlock(c, x, B, 11, "geontm:barrel_steel");
+            c.cmd("data merge block " + x + " " + B + " 11 {tank:16000,tank_type:\"geontm:oil\"}");
         }
         c.waitTicks(300);
         c.screenshot("01-base");
         double busy = measure(c);
         System.out.println("[RcCompatTick] " + c.node() + " idle " + idle + " ms, 50 machines + 2 networks " + busy + " ms per tick");
         Expect.that(busy < 15.0, "average tick with 50 working machines stays well under 50 ms: " + busy);
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore)");
     }
 
     private static double measure(Client c) {

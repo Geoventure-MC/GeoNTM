@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The RBMK terminal's prompt screen: 1.7 draws its key legend at half scale with 10 px lines and no default
@@ -20,7 +20,7 @@ public final class RorTerminalScreen implements Scenario {
         c.cmd("fill -8 " + G + " -8 8 " + (Y + 6) + " 8 minecraft:air");
         c.cmd("time set 6000");
         c.markLog();
-        c.cmd("setblock 0 " + G + " 2 hbm:rbmk_terminal[facing=north]");
+        c.cmd("setblock 0 " + G + " 2 geontm:rbmk_terminal[facing=north]");
         c.cmd("clear");
         c.teleport(0.5, G, 0.5);
         c.waitTicks(10);

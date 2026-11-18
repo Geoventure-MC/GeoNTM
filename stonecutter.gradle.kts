@@ -12,7 +12,7 @@ tasks.register("chiseledBuild") {
     dependsOn(stonecutter.tasks.named("build"))
 }
 
-// Uploads every node's jar to Modrinth and CurseForge (Golem-Core/gradle/mod/publish.gradle.kts). Add
+// Uploads every node's jar to Modrinth and CurseForge (GeoCore/gradle/mod/publish.gradle.kts). Add
 // -Ppublish.dryRun=true to build and log the uploads without making them.
 tasks.register("publishAllMods") {
     group = "publishing"
@@ -37,21 +37,21 @@ stonecutter parameters {
     constants["emi"] = !(node.project.findProperty("deps.emi") as String?).isNullOrBlank()
     // True only where the node declares CC: Tweaked coordinates (an optional peer, like JEI).
     constants["computercraft"] = !(node.project.findProperty("deps.cc") as String?).isNullOrBlank()
-    // True only where the node declares KubeJS coordinates (an optional peer; dev.golem.core.kubejs in Golem Core).
+    // True only where the node declares KubeJS coordinates (an optional peer; fr.geoventure.geocore.kubejs in GeoCore).
     constants["kubejs"] = !(node.project.findProperty("deps.kubejs") as String?).isNullOrBlank()
 
     // Mechanical renames, declared 26.1 -> older because 26.1 is this port's source of truth.
     replacements {
-        // Id construction changed twice across the supported range. Keep it behind Golem Core so
+        // Id construction changed twice across the supported range. Keep it behind GeoCore so
         // callers survive the Identifier -> ResourceLocation source rename without version branches.
         string(true) {
-            replace("net.minecraft.resources.Identifier.fromNamespaceAndPath(", "dev.golem.core.Ids.of(")
-            replace("Identifier.fromNamespaceAndPath(", "dev.golem.core.Ids.of(")
-            replace("ResourceLocation.fromNamespaceAndPath(", "dev.golem.core.Ids.of(")
-            replace("Identifier.parse(", "dev.golem.core.Ids.parse(")
-            replace("ResourceLocation.parse(", "dev.golem.core.Ids.parse(")
-            replace("Identifier.withDefaultNamespace(", "dev.golem.core.Ids.minecraft(")
-            replace("ResourceLocation.withDefaultNamespace(", "dev.golem.core.Ids.minecraft(")
+            replace("net.minecraft.resources.Identifier.fromNamespaceAndPath(", "fr.geoventure.geocore.Ids.of(")
+            replace("Identifier.fromNamespaceAndPath(", "fr.geoventure.geocore.Ids.of(")
+            replace("ResourceLocation.fromNamespaceAndPath(", "fr.geoventure.geocore.Ids.of(")
+            replace("Identifier.parse(", "fr.geoventure.geocore.Ids.parse(")
+            replace("ResourceLocation.parse(", "fr.geoventure.geocore.Ids.parse(")
+            replace("Identifier.withDefaultNamespace(", "fr.geoventure.geocore.Ids.minecraft(")
+            replace("ResourceLocation.withDefaultNamespace(", "fr.geoventure.geocore.Ids.minecraft(")
         }
         // Match the vanilla type token, preserving names such as FluidIdentifierData in both directions.
         regex(current.parsed < "1.21.11") {

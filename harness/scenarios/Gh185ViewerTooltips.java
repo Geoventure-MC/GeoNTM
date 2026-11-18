@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 185 in the viewers: opens the acidizer, liquefaction, solidification, fractioning, refinery and
@@ -34,7 +34,7 @@ public final class Gh185ViewerTooltips implements Scenario {
             c.key("e");
             c.waitTicks(10);
             for (Object[] tab : TABS) {
-                String category = "hbm:" + tab[0];
+                String category = "geontm:" + tab[0];
                 JsonObject p = new JsonObject();
                 if (!viewer.equals("jei")) p.addProperty("op", "open");
                 p.addProperty("category", category);

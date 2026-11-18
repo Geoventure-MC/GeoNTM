@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -29,7 +29,7 @@ public final class Gh3CargoElevator implements Scenario {
         c.markLog();
 
         // the first elevator, placed by hand from the south
-        Fixtures.giveOnly(c, "hbm:cargo_elevator", 8);
+        Fixtures.giveOnly(c, "geontm:cargo_elevator", 8);
         c.teleport(0.5, G, -2.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, 0.5);

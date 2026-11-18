@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,24 +35,24 @@ public class DeRealWorld implements Scenario {
         Expect.that(done.contains("airships converted 1"), "the airship converted: " + done);
         Expect.that(c.log(20000, "ordinal-indexed pollution").size() == numericPollution, "DE's pollution reads as Continuum's");
 
-        Expect.that(c.block(2, -60, 2).toString().contains("hbm:machine_centrifuge"), "centrifuge");
+        Expect.that(c.block(2, -60, 2).toString().contains("geontm:machine_centrifuge"), "centrifuge");
         Expect.that(!c.block(2, -59, 2).toString().contains("minecraft:air"), "centrifuge cell");
         String centrifuge = c.blockEntity(2, -60, 2).toString();
         // The centrifuge drains its battery slot: DE's 5000 HE plus the battery's 1234.
         Expect.that(centrifuge.contains("canned_conserve_ass") && centrifuge.contains("battery_lead") && centrifuge.contains("6234"),
                 "centrifuge stacks and the battery's charge: " + centrifuge);
         String tank = c.blockEntity(8, -60, 4).toString();
-        Expect.that(tank.contains("16000") && tank.contains("hbm:oil"), "fluid tank oil: " + tank);
-        Expect.that(c.block(18, -60, 6).toString().contains("hbm:machine_zirnox"), "ZIRNOX");
+        Expect.that(tank.contains("16000") && tank.contains("geontm:oil"), "fluid tank oil: " + tank);
+        Expect.that(c.block(18, -60, 6).toString().contains("geontm:machine_zirnox"), "ZIRNOX");
         Expect.that(c.blockEntity(18, -60, 6).toString().contains("8000"), "ZIRNOX carbon dioxide");
-        Expect.that(c.block(52, -60, 12).toString().contains("hbm:machine_catalytic_cracker"), "catalytic cracker");
+        Expect.that(c.block(52, -60, 12).toString().contains("geontm:machine_catalytic_cracker"), "catalytic cracker");
         Expect.that(c.blockEntity(4, -60, 14).toString().contains("steel"), "crucible molten steel");
         Expect.that(c.blockEntity(14, -60, 16).toString().contains("steel"), "arc furnace liquid steel");
         String duct = c.blockEntity(12, -60, 4).toString();
-        Expect.that(duct.contains("hbm:oil"), "duct fluid: " + duct);
+        Expect.that(duct.contains("geontm:oil"), "duct fluid: " + duct);
         Expect.that(c.blockEntity(2, -60, 30).toString().contains("777777"), "battery power");
         Expect.that(c.blockEntity(33, -60, 30).toString().contains("500"), "mass storage stockpile");
-        Expect.that(c.block(18, -60, 30).toString().contains("hbm:machine_capacitor_copper"), "capacitor block");
+        Expect.that(c.block(18, -60, 30).toString().contains("geontm:machine_capacitor_copper"), "capacitor block");
         Expect.that(c.blockEntity(14, -60, 30).toString().contains("minecraft:iron_ingot"), "steam turbine refunded");
         Expect.that(c.blockEntity(8, -60, 30).toString().contains("machine_battery_redd"), "FEnSU refunded as a REDD");
         Expect.that(c.block(30, -60, 30).toString().contains("concrete_colored"), "concrete");
@@ -60,9 +60,9 @@ public class DeRealWorld implements Scenario {
         Expect.that(c.block(31, -60, 30).toString().contains("lamp_tritium_blue_"), "tritium lamp");
         Expect.that(c.block(32, -60, 30).toString().contains("sellafield_3"), "sellafield");
         String chest = c.blockEntity(24, -60, 30).toString();
-        Expect.that(chest.contains("canister_full") && chest.contains("hbm:diesel") && chest.contains("designator_x")
-                && chest.contains("crashed_bomb_nuke") && chest.contains("hbm:machine_capacitor_copper")
-                && chest.contains("hbm:ingot_metal_key") && chest.contains("hbm:gas_radon") && chest.contains("hbm:glitch")
+        Expect.that(chest.contains("canister_full") && chest.contains("geontm:diesel") && chest.contains("designator_x")
+                && chest.contains("crashed_bomb_nuke") && chest.contains("geontm:machine_capacitor_copper")
+                && chest.contains("geontm:ingot_metal_key") && chest.contains("geontm:gas_radon") && chest.contains("geontm:glitch")
                 && !chest.contains("test_item"), "chest of DE stacks: " + chest);
 
         // The pad was powered before DE saved it: a neighbour update must not fire it.
@@ -90,7 +90,7 @@ public class DeRealWorld implements Scenario {
         c.waitTicks(40);
         Expect.that(c.log(20000, "DE import done").size() == before + 1, "a second start does no import work");
         Expect.logCleanSinceMark(c, "DE import");
-        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(hbm|deimport|Skipping|invalid item)");
+        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(geontm|deimport|Skipping|invalid item)");
         // Later scenarios build on the harness world.
         c.leaveWorld(60000);
         c.joinWorld("harness", 180000);

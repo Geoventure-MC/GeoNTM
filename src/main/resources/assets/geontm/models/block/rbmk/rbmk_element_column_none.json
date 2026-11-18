@@ -1,0 +1,36 @@
+{
+  "textures": {
+    "top": "geontm:blocks/rbmk/rbmk_element_top",
+    "side": "geontm:blocks/rbmk/rbmk_element_side",
+    "bottom": "geontm:blocks/rbmk/rbmk_element_top",
+    "particle": "geontm:blocks/rbmk/rbmk_element_side"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#side"
+        },
+        "south": {
+          "texture": "#side"
+        },
+        "west": {
+          "texture": "#side"
+        },
+        "east": {
+          "texture": "#side"
+        }
+      }
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public final class DiscordBatch1022 implements Scenario {
 
         // gas in front of a stone wall: the crosshair must reach the wall
         c.cmd("fill -1 " + G + " 2 1 " + (G + 2) + " 2 minecraft:stone");
-        c.cmd("fill -1 " + G + " 0 1 " + (G + 2) + " 1 hbm:gas_coal");
+        c.cmd("fill -1 " + G + " 0 1 " + (G + 2) + " 1 geontm:gas_coal");
         c.teleport(0.5, G, -1.5);
         c.waitTicks(5);
         c.lookAt(0.5, G + 1.5, 2.5);
@@ -48,8 +48,8 @@ public final class DiscordBatch1022 implements Scenario {
 
     private static JsonObject focus(Client c, int amount) {
         String stack = c.node().startsWith("1.20.")
-                ? "hbm:scraps{\"hbm:material\":\"steel\",\"hbm:mat_amount\":" + amount + "}"
-                : "hbm:scraps[hbm:material=\"steel\",hbm:mat_amount=" + amount + "]";
+                ? "geontm:scraps{\"geontm:material\":\"steel\",\"geontm:mat_amount\":" + amount + "}"
+                : "geontm:scraps[geontm:material=\"steel\",geontm:mat_amount=" + amount + "]";
         Fixtures.giveOnly(c, stack, 1);
         c.hotbar(1);
         c.waitTicks(3);

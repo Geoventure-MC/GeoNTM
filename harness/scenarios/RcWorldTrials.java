@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +48,12 @@ public final class RcWorldTrials implements Scenario {
         double lost = 0;
         double last = c.player().get("health").getAsDouble();
         if (egg) {
-            Fixtures.giveOnly(c, "hbm:" + id + "_spawn_egg", 1);
+            Fixtures.giveOnly(c, "geontm:" + id + "_spawn_egg", 1);
             c.lookAt(0.5, 100.98, 0.5);
             c.waitTicks(3);
             c.use(2);
         } else {
-            c.cmd("summon hbm:" + id + " 0.5 101 0.5");
+            c.cmd("summon geontm:" + id + " 0.5 101 0.5");
         }
         for (int t = 0; t < 60; t++) {
             c.waitTicks(5);

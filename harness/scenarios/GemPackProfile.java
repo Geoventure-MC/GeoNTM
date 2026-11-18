@@ -1,10 +1,10 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Frame cost of 48 gem machines with Flywheel on, then with {@code /flywheel backend off}: one {@code /golem profiler 20}
- * capture each, written to the run's {@code golem} folder in that order. Meant for a shader pack with a Flywheel compat
+ * Frame cost of 48 gem machines with Flywheel on, then with {@code /flywheel backend off}: one {@code /geocore profiler 20}
+ * capture each, written to the run's {@code geocore} folder in that order. Meant for a shader pack with a Flywheel compat
  * mod (Colorwheel) installed, against the CPU path the pack otherwise forces; it asserts nothing.
  */
 public final class GemPackProfile implements Scenario {
@@ -44,7 +44,7 @@ public final class GemPackProfile implements Scenario {
             for (int row = 0; row < ROWS; row++) {
                 for (int column = 0; column < COLUMNS; column++) {
                     String machine = MACHINES[(row * COLUMNS + column) % MACHINES.length];
-                    Fixtures.setBlock(c, X + column * SPACING, L, Z + row * SPACING, "hbm:" + machine);
+                    Fixtures.setBlock(c, X + column * SPACING, L, Z + row * SPACING, "geontm:" + machine);
                 }
             }
             c.cmd("gamemode spectator");
@@ -52,14 +52,14 @@ public final class GemPackProfile implements Scenario {
             c.lookAt(X + width / 2.0, L, Z + depth / 2.0);
             c.waitTicks(200);
 
-            c.cmd("golem profiler 20");
+            c.cmd("geocore profiler 20");
             c.waitTicks(20 * 25);
             c.screenshot("instanced");
 
             c.cmd("flywheel backend off");
             backendOff = true;
             c.waitTicks(100);
-            c.cmd("golem profiler 20");
+            c.cmd("geocore profiler 20");
             c.waitTicks(20 * 25);
             c.screenshot("cpu");
         } finally {

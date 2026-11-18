@@ -1,12 +1,12 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * History §19es-itemvariant: the 1.7 metadata families are one item per type (the saved {@code hbm:item_variant} int is
+ * History §19es-itemvariant: the 1.7 metadata families are one item per type (the saved {@code geontm:item_variant} int is
  * gone).
  * <ul>
  *   <li>two inventory sheets of the new ids (every family), and JEI opened by R on {@code concrete_red};</li>
@@ -21,20 +21,20 @@ public final class ItemVariantSplit implements Scenario {
     private static final int X = 0, Y = 100, Z = 0, L = 101, ANVIL_X = -6;
 
     private static final String[][] SHEETS = {
-            {"hbm:concrete_red", "hbm:concrete_silver", "hbm:concrete_ext_hazard", "hbm:concrete_ext_machine_stripe",
-                    "hbm:lightstone_bricks", "hbm:lightstone_chiseled", "hbm:steel_scaffold_yellow", "hbm:pile_loader",
-                    "hbm:pile_vent", "hbm:pile_control", "hbm:satellite_death_ray", "hbm:satellite_ray_scan",
-                    "hbm:missile_soyuz_2", "hbm:ammo_arty_nuke", "hbm:ammo_arty_cargo", "hbm:ammo_himars_single_tb",
-                    "hbm:weapon_mod_special_bayonet", "hbm:weapon_mod_caliber_bmg50", "hbm:weapon_mod_generic_desh_damage",
-                    "hbm:weapon_mod_test_override_20", "hbm:gear_large_steel", "hbm:ammo_container_alt", "hbm:hs_vault",
-                    "hbm:wand_structure_load", "hbm:pile_rod_mk2_rgp", "hbm:nuclear_waste_long_thorium",
-                    "hbm:nuclear_waste_short_tiny_plutonium240"},
-            {"hbm:holotape_image_holo_restored", "hbm:book_guide_rbmk", "hbm:clay_tablet_1",
-                    "hbm:blueprint_folder_discover", "hbm:blueprint_folder_secret", "hbm:bobblehead_bob",
-                    "hbm:bobblehead_pu238", "hbm:plushie_derg", "hbm:plushie_yomi", "hbm:snowglobe_lucky38",
-                    "hbm:vending_machine_snacks", "hbm:filing_cabinet_steel", "hbm:glyphid_base_rad",
-                    "hbm:glyphid_spawner_infested", "hbm:gear_large", "hbm:ammo_container", "hbm:steel_scaffold",
-                    "hbm:filing_cabinet_green", "hbm:vending_machine", "hbm:glyphid_base"},
+            {"geontm:concrete_red", "geontm:concrete_silver", "geontm:concrete_ext_hazard", "geontm:concrete_ext_machine_stripe",
+                    "geontm:lightstone_bricks", "geontm:lightstone_chiseled", "geontm:steel_scaffold_yellow", "geontm:pile_loader",
+                    "geontm:pile_vent", "geontm:pile_control", "geontm:satellite_death_ray", "geontm:satellite_ray_scan",
+                    "geontm:missile_soyuz_2", "geontm:ammo_arty_nuke", "geontm:ammo_arty_cargo", "geontm:ammo_himars_single_tb",
+                    "geontm:weapon_mod_special_bayonet", "geontm:weapon_mod_caliber_bmg50", "geontm:weapon_mod_generic_desh_damage",
+                    "geontm:weapon_mod_test_override_20", "geontm:gear_large_steel", "geontm:ammo_container_alt", "geontm:hs_vault",
+                    "geontm:wand_structure_load", "geontm:pile_rod_mk2_rgp", "geontm:nuclear_waste_long_thorium",
+                    "geontm:nuclear_waste_short_tiny_plutonium240"},
+            {"geontm:holotape_image_holo_restored", "geontm:book_guide_rbmk", "geontm:clay_tablet_1",
+                    "geontm:blueprint_folder_discover", "geontm:blueprint_folder_secret", "geontm:bobblehead_bob",
+                    "geontm:bobblehead_pu238", "geontm:plushie_derg", "geontm:plushie_yomi", "geontm:snowglobe_lucky38",
+                    "geontm:vending_machine_snacks", "geontm:filing_cabinet_steel", "geontm:glyphid_base_rad",
+                    "geontm:glyphid_spawner_infested", "geontm:gear_large", "geontm:ammo_container", "geontm:steel_scaffold",
+                    "geontm:filing_cabinet_green", "geontm:vending_machine", "geontm:glyphid_base"},
     };
 
     @Override
@@ -75,12 +75,12 @@ public final class ItemVariantSplit implements Scenario {
     /** JEI: R on concrete_red shows its recipes (the 1.7 dye recipe, its result an item of its own). */
     private static void jei(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:concrete_red 1");
+        c.cmd("give @s geontm:concrete_red 1");
         c.waitTicks(4);
         c.key("e");
         c.waitScreen("Inventory", 5_000L);
         c.waitTicks(10);
-        JsonObject slot = c.slot(playerSlot(c, "hbm:concrete_red"));
+        JsonObject slot = c.slot(playerSlot(c, "geontm:concrete_red"));
         c.mouseMove(slot.get("center_x").getAsDouble(), slot.get("center_y").getAsDouble());
         c.waitTicks(5);
         c.key("r");
@@ -97,7 +97,7 @@ public final class ItemVariantSplit implements Scenario {
     /** Four lightstone_unrefined in a 2x2 give four lightstone_tile (1.7 CraftingManager lightstone:1). */
     private static void craft(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:lightstone_unrefined 4");
+        c.cmd("give @s geontm:lightstone_unrefined 4");
         c.waitTicks(3);
         c.teleport(X + 0.5, L, Z + 0.5);
         c.waitTicks(2);
@@ -107,7 +107,7 @@ public final class ItemVariantSplit implements Scenario {
         c.use(2);
         c.waitScreen("Crafting", 5000);
         c.waitTicks(3);
-        JsonObject stack = invSlot(c, "hbm:lightstone_unrefined");
+        JsonObject stack = invSlot(c, "geontm:lightstone_unrefined");
         Expect.that(stack != null, "the inventory holds the unrefined lightstone: " + c.screen());
         c.clickSlot(stack.get("index").getAsInt());
         c.waitTicks(1);
@@ -118,24 +118,24 @@ public final class ItemVariantSplit implements Scenario {
         c.waitTicks(3);
         c.screenshot("30-lightstone-grid");
         JsonObject result = c.slot(0);
-        Expect.that("hbm:lightstone_tile".equals(id(result)) && result.get("count").getAsInt() == 4,
+        Expect.that("geontm:lightstone_tile".equals(id(result)) && result.get("count").getAsInt() == 4,
                 "the table offers four lightstone_tile: " + result);
         c.clickSlot(0);
         c.waitTicks(2);
         c.clickSlot(emptyInvSlot(c));
         c.waitTicks(2);
         c.screenshot("31-lightstone-taken");
-        Expect.that(invSlot(c, "hbm:lightstone_tile") != null, "the tiles arrived");
+        Expect.that(invSlot(c, "geontm:lightstone_tile") != null, "the tiles arrived");
         c.key("escape");
         c.waitTicks(3);
     }
 
     /** The murky anvil (tier 7) dismantles the large steel gear: 8 steel plates and 1 titanium ingot (1.7). */
     private static void anvil(Client c) {
-        Fixtures.placeOnTop(c, "hbm:anvil_murky", ANVIL_X, Y, Z);
-        Expect.block(c, ANVIL_X, L, Z, "hbm:anvil_murky");
+        Fixtures.placeOnTop(c, "geontm:anvil_murky", ANVIL_X, Y, Z);
+        Expect.block(c, ANVIL_X, L, Z, "geontm:anvil_murky");
         c.cmd("clear");
-        c.cmd("give @s hbm:gear_large_steel 1");
+        c.cmd("give @s geontm:gear_large_steel 1");
         c.waitTicks(3);
         c.hotbar(9);
         c.teleport(ANVIL_X + 2.5, L, Z + 0.5);
@@ -158,15 +158,15 @@ public final class ItemVariantSplit implements Scenario {
         c.screenshot("41-anvil-gear-dismantled");
         c.key("escape");
         c.waitTicks(3);
-        Expect.that(count(c, "hbm:plate_steel") == 8 && count(c, "hbm:ingot_titanium") == 1
-                        && count(c, "hbm:gear_large_steel") == 0,
+        Expect.that(count(c, "geontm:plate_steel") == 8 && count(c, "geontm:ingot_titanium") == 1
+                        && count(c, "geontm:gear_large_steel") == 0,
                 "the steel gear came apart into 8 steel plates and a titanium ingot: " + c.inventory());
     }
 
     private static void place(Client c) {
         c.cmd("gamemode creative");
-        Fixtures.placeOnTop(c, "hbm:concrete_red", X + 4, Y, Z);
-        Fixtures.placeOnTop(c, "hbm:lightstone_tile", X + 5, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:concrete_red", X + 4, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:lightstone_tile", X + 5, Y, Z);
         c.waitTicks(3);
         String red = c.block(X + 4, L, Z).toString();
         Expect.that(red.contains("concrete_colored") && red.contains("color=red"), "concrete_red places red concrete: " + red);

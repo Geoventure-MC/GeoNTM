@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,11 +39,11 @@ public final class Gh159ArtilleryTurret implements Scenario {
             shot(c, "ammo_arty_he", true, wrong);
         } finally {
             c.tickRate(20F);
-            c.cmd("kill @e[type=hbm:entity_artillery_shell]");
+            c.cmd("kill @e[type=geontm:entity_artillery_shell]");
             c.cmd("setblock " + X + " " + (Y + 1) + " " + Z + " minecraft:air");
         }
         Expect.that(wrong.isEmpty(), "1.7 artillery turret: " + wrong);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     private static void smoothness(Client c, List<String> wrong) throws Exception {
@@ -51,15 +51,15 @@ public final class Gh159ArtilleryTurret implements Scenario {
         c.look(0, -30);
         c.waitTicks(10);
         JsonObject start = new JsonObject();
-        start.addProperty("type", "hbm:entity_artillery_shell");
-        c.query("hbm_frame_moves", start);
+        start.addProperty("type", "geontm:entity_artillery_shell");
+        c.query("geontm_frame_moves", start);
         float rate = c.tickRate(4F);
-        c.cmd("summon hbm:entity_artillery_shell " + (X + 0.5) + " " + (Y + 3) + " " + (Z + 0.5)
+        c.cmd("summon geontm:entity_artillery_shell " + (X + 0.5) + " " + (Y + 3) + " " + (Z + 0.5)
                 + " {Motion:[0.0d,1.2d,0.8d],targetX:" + (X + 0.5) + "d,targetY:" + (Y + 1) + "d,targetZ:" + (Z + RANGE + 0.5) + "d}");
         c.waitTicks(12);
-        JsonObject result = c.query("hbm_frame_moves", new JsonObject());
+        JsonObject result = c.query("geontm_frame_moves", new JsonObject());
         c.tickRate(rate);
-        c.cmd("kill @e[type=hbm:entity_artillery_shell]");
+        c.cmd("kill @e[type=geontm:entity_artillery_shell]");
         c.waitTicks(10);
         System.out.println("[Gh159] " + c.node() + " shell frames " + result);
         int moves = result.get("moves").getAsInt();
@@ -72,9 +72,9 @@ public final class Gh159ArtilleryTurret implements Scenario {
         String tag = ammo.substring("ammo_".length());
         Fixtures.setBlock(c, X, Y + 1, Z, "minecraft:air");
         c.waitTicks(2);
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:turret_arty[facing=north]");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:turret_arty[facing=north]");
         c.cmd("data merge block " + X + " " + (Y + 1) + " " + Z + " {power:100000L,isOn:1b,mode:2s}");
-        c.cmd("item replace block " + X + " " + (Y + 1) + " " + Z + " container.1 with hbm:" + ammo + " 1");
+        c.cmd("item replace block " + X + " " + (Y + 1) + " " + Z + " container.1 with geontm:" + ammo + " 1");
         c.teleport(X + 0.5, Y + 1, Z - 11.5);
         c.waitTicks(5);
         c.lookAt(X + 0.5, Y + 12, Z + 0.5);
@@ -82,13 +82,13 @@ public final class Gh159ArtilleryTurret implements Scenario {
         JsonArray a = new JsonArray();
         for (int v : new int[]{X, Y + 1, Z, X, Y + 1, Z + RANGE}) a.add(v);
         cmd.add("command", a);
-        System.out.println("[Gh159] " + c.node() + " " + tag + " command " + c.query("hbm_gapsc", cmd).get("command_accepted"));
+        System.out.println("[Gh159] " + c.node() + " " + tag + " command " + c.query("geontm_gapsc", cmd).get("command_accepted"));
 
         // the muzzle: count what the shot leaves in the six blocks around the barrel's tip
         JsonObject muzzle = point(X + 0.5, Y + 13, Z + 0.5, 7);
         JsonObject fx = null;
         for (int i = 0; i < 400 && fx == null; i++) {
-            JsonObject now = c.query("hbm_turret_fx", muzzle);
+            JsonObject now = c.query("geontm_turret_fx", muzzle);
             if (flashes(now) + puffs(now) > 0) fx = now;
             else c.waitTicks(1);
         }
@@ -106,7 +106,7 @@ public final class Gh159ArtilleryTurret implements Scenario {
         int flash = 0;
         int puff = 0;
         for (int i = 0; i < 4; i++) {
-            JsonObject now = c.query("hbm_turret_fx", muzzle);
+            JsonObject now = c.query("geontm_turret_fx", muzzle);
             flash = Math.max(flash, flashes(now));
             puff = Math.max(puff, puffs(now));
             System.out.println("[Gh159] " + c.node() + " " + tag + " muzzle " + now.get("particles"));
@@ -120,7 +120,7 @@ public final class Gh159ArtilleryTurret implements Scenario {
         c.lookAt(X + 0.5, Y + 1, Z + 0.5);
         c.waitTicks(3);
         c.screenshot(tag + "-casing");
-        JsonObject casings = c.query("hbm_turret_fx", muzzle).getAsJsonObject("casings");
+        JsonObject casings = c.query("geontm_turret_fx", muzzle).getAsJsonObject("casings");
         System.out.println("[Gh159] " + c.node() + " " + tag + " casings " + casings);
         if (!casings.has(ammo)) wrong.add(tag + ": no spent casing " + ammo + " (" + casings + ")");
 
@@ -130,12 +130,12 @@ public final class Gh159ArtilleryTurret implements Scenario {
         JsonObject far = point(X + 0.5, Y + 1, Z + RANGE + 0.5, 30);
         List<JsonArray> debris = new ArrayList<>();
         for (int i = 0; i < 600 && debris.isEmpty(); i++) {
-            for (JsonElement e : c.query("hbm_turret_fx", far).getAsJsonArray("debris")) debris.add(e.getAsJsonArray());
+            for (JsonElement e : c.query("geontm_turret_fx", far).getAsJsonArray("debris")) debris.add(e.getAsJsonArray());
             if (debris.isEmpty()) c.waitTicks(1);
         }
         c.waitTicks(3);
         c.screenshot(tag + "-impact-a");
-        JsonObject flight = c.query("hbm_turret_fx", far);
+        JsonObject flight = c.query("geontm_turret_fx", far);
         c.waitTicks(5);
         c.screenshot(tag + "-impact-b");
         System.out.println("[Gh159] " + c.node() + " " + tag + " debris at impact " + debris + ", 3 ticks later "

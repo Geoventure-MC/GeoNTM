@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.Color;
@@ -91,7 +91,7 @@ public final class RcArmorRender implements Scenario {
             String[] slots = {"head", "chest", "legs", "feet"};
             for (int i = 0; i < pieces.length; i++) {
                 if (!pieces[i].isEmpty()) {
-                    String id = pieces[i].startsWith("gas_mask") || pieces[i].equals("mask_of_infamy") ? "hbm:" + pieces[i] : "hbm:" + pieces[i];
+                    String id = pieces[i].startsWith("gas_mask") || pieces[i].equals("mask_of_infamy") ? "geontm:" + pieces[i] : "geontm:" + pieces[i];
                     c.cmd("item replace entity @s armor." + slots[i] + " with " + id);
                 }
             }
@@ -108,7 +108,7 @@ public final class RcArmorRender implements Scenario {
             String[] pieces = set[1].split(",", -1);
             String[] slots = {"head", "chest", "legs", "feet"};
             for (int i = 0; i < pieces.length; i++) {
-                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + slots[i] + " with hbm:" + pieces[i]);
+                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + slots[i] + " with geontm:" + pieces[i]);
             }
             c.waitTicks(12);
             back.add(shot(c, "b-" + set[0]));
@@ -118,7 +118,7 @@ public final class RcArmorRender implements Scenario {
         c.key("f5"); // first person
         c.key("f1");
         strip(c);
-        c.cmd("item replace entity @s armor.chest with hbm:t51_plate");
+        c.cmd("item replace entity @s armor.chest with geontm:t51_plate");
         c.cmd("item replace entity @s weapon.mainhand with minecraft:air");
         c.waitTicks(10);
         c.screenshot("first-person-arms-t51");

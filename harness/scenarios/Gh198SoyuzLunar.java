@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * GitHub issue 198: the Soyuz pad takes the lunar mining ship but will not launch it. As in 1.7 it needs the Soyuz lander
@@ -24,18 +24,18 @@ public final class Gh198SoyuzLunar implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("time set 6000");
 
-        Fixtures.giveOnly(c, "hbm:launchpad_soyuz", 1);
+        Fixtures.giveOnly(c, "geontm:launchpad_soyuz", 1);
         standAt(c, X + 0.5, L, Z + 3.5);
         c.lookAt(X + 0.5, Y + 0.98, Z + 1.5);
         c.waitTicks(3);
         c.use(2);
         c.waitTicks(5);
-        Expect.block(c, X, L, CORE_Z, "hbm:launchpad_soyuz");
+        Expect.block(c, X, L, CORE_Z, "geontm:launchpad_soyuz");
 
         open(c);
-        give(c, "hbm:battery_creative", 8);
-        give(c, "hbm:missile_soyuz_1", 0);
-        give(c, "hbm:satellite_miner_lunar", 2);
+        give(c, "geontm:battery_creative", 8);
+        give(c, "geontm:missile_soyuz_1", 0);
+        give(c, "geontm:satellite_miner_lunar", 2);
         c.cmd("data merge block " + X + " " + L + " " + CORE_Z + " {tank0:100000,tank1:100000}");
         c.waitTicks(10);
         close(c);
@@ -47,7 +47,7 @@ public final class Gh198SoyuzLunar implements Scenario {
         c.screenshot("01-lunar-without-lander");
         Expect.that(status(c).equals("ready"), "without the lander the launch must not start: " + nbt(c));
 
-        give(c, "hbm:missile_soyuz_lander", 3);
+        give(c, "geontm:missile_soyuz_lander", 3);
         launch(c);
         c.screenshot("02-lunar-with-lander");
         Expect.that(status(c).equals("launching"), "with the lander the countdown starts: " + nbt(c));

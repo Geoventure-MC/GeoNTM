@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public final class RcProcGui implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -55,7 +55,7 @@ public final class RcProcGui implements Scenario {
         for (int side = 0; side < 4; side++) {
             c.cmd("fill -14 " + (Y + 1) + " -14 14 " + (Y + 12) + " 14 minecraft:air");
             c.waitTicks(3);
-            Fixtures.giveOnly(c, "hbm:" + id, 1);
+            Fixtures.giveOnly(c, "geontm:" + id, 1);
             int[] d = DIRS[side];
             c.teleport(d[0] * 2.5 + 0.5, Y + 1, d[1] * 2.5 + 0.5);
             c.waitTicks(2);

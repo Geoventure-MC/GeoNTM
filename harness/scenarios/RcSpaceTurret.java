@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Turrets against a mob in game: each turret gets power, rounds and a 1000 health zombie 12 blocks away, and the
@@ -19,10 +19,10 @@ public final class RcSpaceTurret implements Scenario {
     private record Case(String block, String ammo, double min, double max, long power) {}
 
     private static final Case[] CASES = {
-            new Case("hbm:turret_chekhov", "hbm:ammo_standard_bmg50_sp", 9.5, 10.5, 10000),
-            new Case("hbm:turret_friendly", "hbm:ammo_standard_r556_sp", 4.7, 5.3, 10000),
-            new Case("hbm:turret_sentry", "hbm:ammo_standard_p9_sp", 4.7, 5.3, 10000),
-            new Case("hbm:turret_tauon", "hbm:ammo_standard_tau_uranium", 29.0, 41.0, 100000),
+            new Case("geontm:turret_chekhov", "geontm:ammo_standard_bmg50_sp", 9.5, 10.5, 10000),
+            new Case("geontm:turret_friendly", "geontm:ammo_standard_r556_sp", 4.7, 5.3, 10000),
+            new Case("geontm:turret_sentry", "geontm:ammo_standard_p9_sp", 4.7, 5.3, 10000),
+            new Case("geontm:turret_tauon", "geontm:ammo_standard_tau_uranium", 29.0, 41.0, 100000),
     };
 
     @Override
@@ -100,7 +100,7 @@ public final class RcSpaceTurret implements Scenario {
         String nbt = c.blockEntity(x, L, 0).toString().replaceAll("\\s", "");
         int total = 0;
         int i = 0;
-        while ((i = nbt.indexOf("hbm:ammo_standard", i)) >= 0) {
+        while ((i = nbt.indexOf("geontm:ammo_standard", i)) >= 0) {
             int j = Math.max(nbt.indexOf("count:", Math.max(0, i - 60)), nbt.indexOf("Count:", Math.max(0, i - 60)));
             if (j >= 0) {
                 int k = j + 6, e = k;
@@ -120,7 +120,7 @@ public final class RcSpaceTurret implements Scenario {
         JsonObject result = c.query("entities", params);
         JsonObject side = result.has("entities") ? result : result.getAsJsonObject("server");
         JsonArray list = side == null ? null : side.getAsJsonArray("entities");
-        Expect.that(list != null && list.size() > 0, "golem present: " + result);
+        Expect.that(list != null && list.size() > 0, "geocore present: " + result);
         for (JsonElement e : list) {
             JsonObject o = e.getAsJsonObject();
             if (o.get("type").getAsString().equals("minecraft:iron_golem")) return o.get("health").getAsDouble();

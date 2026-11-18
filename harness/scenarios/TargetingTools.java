@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** In-game acceptance for the 300-block rangefinder and the manual designator's coordinate payload. */
 public final class TargetingTools implements Scenario {
@@ -17,7 +17,7 @@ public final class TargetingTools implements Scenario {
 
         // A wall eight blocks down +Z makes the source's eye-to-hit range legible in the action bar.
         c.cmd("fill -2 101 8 2 104 8 minecraft:stone");
-        Fixtures.giveOnly(c, "hbm:rangefinder", 1);
+        Fixtures.giveOnly(c, "geontm:rangefinder", 1);
         c.teleport(0.5, Y + 1, 0.5);
         c.look(0, 0);
         c.waitTicks(2);
@@ -27,7 +27,7 @@ public final class TargetingTools implements Scenario {
 
         // The source coordinate editor starts at (0,0). Drive its real +/- and set buttons, then
         // close/reopen to force a server round trip before capturing the resulting coordinates.
-        Fixtures.giveOnly(c, "hbm:designator_manual", 1);
+        Fixtures.giveOnly(c, "geontm:designator_manual", 1);
         c.use(1);
         c.waitScreen("GUIScreenDesignator", 5_000L);
         JsonObject screen = c.screen();

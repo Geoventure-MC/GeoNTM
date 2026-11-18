@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Holo Inventory Modern on a hand-placed strand caster (run with {@code -Pholoinventory.run=true}, NeoForge). The
@@ -15,20 +15,20 @@ public final class HoloCasterParts implements Scenario {
         c.waitInWorld(120_000L);
         c.markLog();
         Fixtures.platform(c, 0, Y, 0, 9);
-        Fixtures.placeOnTop(c, "hbm:machine_strand_caster", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_strand_caster", 0, Y, 0);
         int y = Y + 1;
         int[] core = null;
         int[] part = null;
         for (int x = -8; x <= 8; x++) {
             for (int z = -8; z <= 8; z++) {
                 JsonObject block = c.block(x, y, z);
-                if (!"hbm:machine_strand_caster".equals(block.get("block").getAsString())) continue;
+                if (!"geontm:machine_strand_caster".equals(block.get("block").getAsString())) continue;
                 if (!block.get("block_entity").isJsonNull()) core = new int[] {x, z};
                 else if (part == null || Math.abs(x) + Math.abs(z) > Math.abs(part[0]) + Math.abs(part[1])) part = new int[] {x, z};
             }
         }
         Expect.that(core != null && part != null, "the caster did not place with parts");
-        c.cmd("item replace block " + core[0] + " " + y + " " + core[1] + " container.0 with hbm:mold_ingot 1");
+        c.cmd("item replace block " + core[0] + " " + y + " " + core[1] + " container.0 with geontm:mold_ingot 1");
         c.cmd("item replace block " + core[0] + " " + y + " " + core[1] + " container.1 with minecraft:iron_ingot 10");
         c.cmd("clear");
         c.waitTicks(5);

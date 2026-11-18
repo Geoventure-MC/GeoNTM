@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public final class RcFluidFlareSound implements Scenario {
         c.cmd("fill " + (X - 8) + " " + L + " -8 " + (X + 8) + " " + (L + 20) + " 8 minecraft:air");
         c.teleport(X + 0.5, L + 3, 5.5);
         c.markLog();
-        c.cmd("setblock " + X + " " + L + " 0 hbm:machine_flare[facing=north]{isOn:1b,doesBurn:1b,gas:50000,gas_max:64000,gas_type:\"hbm:gas\"}");
+        c.cmd("setblock " + X + " " + L + " 0 geontm:machine_flare[facing=north]{isOn:1b,doesBurn:1b,gas:50000,gas_max:64000,gas_type:\"geontm:gas\"}");
         c.waitTicks(60);
         List<String> lines = c.log(400, "flamethrower");
         System.out.println("[RcFlare] flamethrower sound lines: " + lines.size() + (lines.isEmpty() ? "" : " e.g. " + lines.get(0)));

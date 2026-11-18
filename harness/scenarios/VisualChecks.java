@@ -1,16 +1,16 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Wave 2 VISUAL (History §19ek-visual), non-screen checks:
  *
  * <ul>
- *   <li>{@code hbm_lang_missing}: registered hbm items/blocks/entities without a translation (printed; fails when any
+ *   <li>{@code geontm_lang_missing}: registered geontm items/blocks/entities without a translation (printed; fails when any
  *       block or entity is untranslated).</li>
- *   <li>{@code hbm_sound}: {@code hbm:rbmk_shutdown} resolves to {@code hbm:block/shutdown} and plays.</li>
- *   <li>Torex late life: the aged {@code torex_benchmark} fixtures (600/1200/2400) are polled with {@code hbm_torex} until
+ *   <li>{@code geontm_sound}: {@code geontm:rbmk_shutdown} resolves to {@code geontm:block/shutdown} and plays.</li>
+ *   <li>Torex late life: the aged {@code torex_benchmark} fixtures (600/1200/2400) are polled with {@code geontm_torex} until
  *       the client replay is ready, logging how long that took, then screenshotted.</li>
  * </ul>
  */
@@ -23,7 +23,7 @@ public final class VisualChecks implements Scenario {
         c.waitInWorld(120_000L);
         c.markLog();
 
-        JsonObject lang = c.query("hbm_lang_missing", new JsonObject());
+        JsonObject lang = c.query("geontm_lang_missing", new JsonObject());
         System.out.println("[visual] lang counts items=" + lang.get("item_count") + " blocks=" + lang.get("block_count")
                 + " entities=" + lang.get("entity_count"));
         System.out.println("[visual] lang missing items " + lang.getAsJsonArray("items"));
@@ -31,13 +31,13 @@ public final class VisualChecks implements Scenario {
         System.out.println("[visual] lang missing entities " + lang.getAsJsonArray("entities"));
 
         JsonObject p = new JsonObject();
-        p.addProperty("id", "hbm:rbmk_shutdown");
+        p.addProperty("id", "geontm:rbmk_shutdown");
         p.addProperty("play", true);
-        JsonObject sound = c.query("hbm_sound", p);
+        JsonObject sound = c.query("geontm_sound", p);
         System.out.println("[visual] sound " + sound);
         Expect.that(sound.get("resolved").getAsBoolean()
-                        && sound.get("sound").getAsString().equals("hbm:block/shutdown"),
-                "hbm:rbmk_shutdown must resolve to hbm:block/shutdown: " + sound);
+                        && sound.get("sound").getAsString().equals("geontm:block/shutdown"),
+                "geontm:rbmk_shutdown must resolve to geontm:block/shutdown: " + sound);
 
         String hideGui = null, renderDistance = null, fov = null;
         try {
@@ -56,7 +56,7 @@ public final class VisualChecks implements Scenario {
                     : java.util.Arrays.stream(agesEnv.split(",")).mapToInt(Integer::parseInt).toArray();
             for (int age : ages) {
                 c.teleport(X + 0.5, Y + 1, Z + 0.5);
-                c.cmd("hbm torex_benchmark " + age);
+                c.cmd("geontm torex_benchmark " + age);
                 c.teleport(X + 0.5, Y + 1, Z + 165.5);
                 c.lookAt(X + 0.5, Y + 45, Z + 240.5);
                 int waited = 0;
@@ -64,7 +64,7 @@ public final class VisualChecks implements Scenario {
                 while (waited < 6000) {
                     c.waitTicks(20);
                     waited += 20;
-                    JsonArray clouds = c.query("hbm_torex", new JsonObject()).getAsJsonArray("clouds");
+                    JsonArray clouds = c.query("geontm_torex", new JsonObject()).getAsJsonArray("clouds");
                     state = clouds.size() > 0 ? clouds.get(0).getAsJsonObject() : null;
                     if (waited % 200 == 0) System.out.println("[visual] torex " + age + " after " + waited + "t: " + state);
                     if (state != null && state.get("ready").getAsBoolean()) break;
@@ -78,14 +78,14 @@ public final class VisualChecks implements Scenario {
                 c.waitTicks(40);
                 c.screenshot("torex-aged-" + age + "-b");
             }
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
         } finally {
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
             if (renderDistance != null) c.setOption("render_distance", renderDistance);
             if (fov != null) c.setOption("fov", fov);
             c.cmd("forceload remove all");
         }
-        Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(Torex|torex|hbm)");
+        Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(Torex|torex|geontm)");
     }
 }

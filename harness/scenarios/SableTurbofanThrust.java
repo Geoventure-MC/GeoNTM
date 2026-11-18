@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -25,7 +25,7 @@ public final class SableTurbofanThrust implements Scenario {
         c.resetWorld();
         Fixtures.platform(c, 0, Y, 0, 24);
         c.cmd("fill -5 " + D + " 3 5 " + D + " 13 minecraft:iron_block");
-        Fixtures.giveOnly(c, "hbm:machine_turbofan", 1);
+        Fixtures.giveOnly(c, "geontm:machine_turbofan", 1);
         c.teleport(0.5, D + 1, 5.5);
         c.waitTicks(3);
         c.lookAt(0.5, D + 0.98, 8.5);
@@ -35,7 +35,7 @@ public final class SableTurbofanThrust implements Scenario {
 
         int[] core = findCore(c);
         Expect.that(core != null, "the turbofan was placed on the deck");
-        c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {tank:24000,tank_type:\"hbm:kerosene\"}");
+        c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2] + " {tank:24000,tank_type:\"geontm:kerosene\"}");
         c.waitTicks(5);
 
         c.cmd("sable assemble area -5 " + D + " 3 5 " + (D + 4) + " 13");

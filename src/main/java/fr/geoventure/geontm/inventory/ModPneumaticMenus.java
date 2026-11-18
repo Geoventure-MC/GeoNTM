@@ -1,0 +1,39 @@
+package fr.geoventure.geontm.inventory;
+
+import fr.geoventure.geontm.registration.Reg;
+import fr.geoventure.geontm.Constants;
+import fr.geoventure.geocore.gui.Menus;
+import fr.geoventure.geocore.registry.DeferredRegister;
+import fr.geoventure.geocore.registry.RegistryObject;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.MenuType;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoStorageAccess;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoStorageClutter;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoStorageExporter;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoStorageImporter;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoStorageMono;
+import fr.geoventure.geontm.inventory.container.ContainerPneumoTube;
+
+/** Feature-local position-bound menus for the pneumatic tube storage system. */
+public final class ModPneumaticMenus {
+    private ModPneumaticMenus() {}
+
+    public static final DeferredRegister<MenuType<?>> MENUS =
+            DeferredRegister.create(Registries.MENU, Constants.MOD_ID);
+    private static final Reg REG = Reg.of(MENUS);
+
+    public static final RegistryObject<MenuType<ContainerPneumoTube>> PNEUMATIC_TUBE =
+            REG.menu("pneumatic_tube", () -> Menus.typeWithPos(ContainerPneumoTube::new));
+    public static final RegistryObject<MenuType<ContainerPneumoStorageAccess>> PNEUMATIC_STORAGE_ACCESS =
+            REG.menu("pneumatic_storage_access", () -> Menus.typeWithPos(ContainerPneumoStorageAccess::new));
+    public static final RegistryObject<MenuType<ContainerPneumoStorageClutter>> PNEUMATIC_STORAGE_CLUTTER =
+            REG.menu("pneumatic_storage_clutter", () -> Menus.typeWithPos(ContainerPneumoStorageClutter::new));
+    public static final RegistryObject<MenuType<ContainerPneumoStorageMono>> PNEUMATIC_STORAGE_MONO =
+            REG.menu("pneumatic_storage_mono", () -> Menus.typeWithPos(ContainerPneumoStorageMono::new));
+    public static final RegistryObject<MenuType<ContainerPneumoStorageImporter>> PNEUMATIC_STORAGE_IMPORTER =
+            REG.menu("pneumatic_storage_importer", () -> Menus.typeWithPos(ContainerPneumoStorageImporter::new));
+    public static final RegistryObject<MenuType<ContainerPneumoStorageExporter>> PNEUMATIC_STORAGE_EXPORTER =
+            REG.menu("pneumatic_storage_exporter", () -> Menus.typeWithPos(ContainerPneumoStorageExporter::new));
+
+    public static void init() {}
+}

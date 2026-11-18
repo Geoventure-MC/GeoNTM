@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,9 +34,9 @@ public final class RcGunLook implements Scenario {
         for (String[] g : GUNS) {
             String gun = g[0];
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + gun);
-            c.cmd("give @s hbm:" + g[1] + " 64");
-            if (!g[2].equals(g[1])) c.cmd("give @s hbm:" + g[2] + " 64");
+            c.cmd("give @s geontm:" + gun);
+            c.cmd("give @s geontm:" + g[1] + " 64");
+            if (!g[2].equals(g[1])) c.cmd("give @s geontm:" + g[2] + " 64");
             c.hotbar(1);
             c.look(0, 0);
             c.waitTicks(45);
@@ -64,7 +64,7 @@ public final class RcGunLook implements Scenario {
                 int i = l.indexOf("id=");
                 if (i >= 0) {
                     String id = l.substring(i + 3, l.indexOf(' ', i));
-                    if (id.startsWith("hbm:")) sounds.add(id);
+                    if (id.startsWith("geontm:")) sounds.add(id);
                 }
             }
             System.out.println("[RcGunLook] " + c.node() + " " + gun + " sounds " + sounds);

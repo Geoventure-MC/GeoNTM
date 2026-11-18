@@ -1,12 +1,12 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * World-in-a-jar presentations (1.7 com.hbm.wiaj): for each tested cannery, hover the item in the survival
+ * World-in-a-jar presentations (1.7 fr.geoventure.geontm.wiaj): for each tested cannery, hover the item in the survival
  * inventory (tooltip must carry the green "Press Left Shift + F1 for a presentation" line), open it the way a
  * player does — Left Shift held, QMAW key (F1) pressed — then let the script run and step it with the
  * on-screen controls: pause, forward one scene, rewind one scene. Screenshots at every step are the evidence;
@@ -18,17 +18,17 @@ public final class WiajCanneries implements Scenario {
 
     /** Stepped through in full: pause, forward, rewind, title. */
     private static final String[][] CANNERIES = {
-            {"hbm:machine_gascent", "centrifuge"},
-            {"hbm:heater_firebox", "firebox"},
+            {"geontm:machine_gascent", "centrifuge"},
+            {"geontm:heater_firebox", "firebox"},
     };
 
     /** The other five: opened and forwarded through every scene, a screenshot per step. */
     private static final String[][] OTHERS = {
-            {"hbm:machine_stirling", "stirling"},
-            {"hbm:machine_crucible", "crucible"},
-            {"hbm:foundry_channel", "foundry"},
-            {"hbm:machine_silex", "silex"},
-            {"hbm:plant_item_mustardwillow", "willow"},
+            {"geontm:machine_stirling", "stirling"},
+            {"geontm:machine_crucible", "crucible"},
+            {"geontm:foundry_channel", "foundry"},
+            {"geontm:machine_silex", "silex"},
+            {"geontm:plant_item_mustardwillow", "willow"},
     };
 
     @Override

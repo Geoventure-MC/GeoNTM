@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,18 +27,18 @@ public final class FxCableForeignEnergy implements Scenario {
         c.cmd("fill -10 " + B + " -10 10 " + (B + 6) + " 10 minecraft:air");
         c.waitTicks(5);
 
-        run(c, "hbm:red_cable", 0, "cable");
-        run(c, "hbm:red_cable_classic", 6, "classic");
+        run(c, "geontm:red_cable", 0, "cable");
+        run(c, "geontm:red_cable_classic", 6, "classic");
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|power|energy|cable)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|power|energy|cable)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
     private void run(Client c, String cable, int x, String tag) {
         // cable first, then the neighbours: the arms must come from the neighbour updates
         Fixtures.setBlock(c, x, B, 0, cable);
-        Fixtures.setBlock(c, x - 1, B, 0, "hbm:creative_generator");
-        Fixtures.setBlock(c, x + 1, B, 0, "hbm:test_fe_cell");
+        Fixtures.setBlock(c, x - 1, B, 0, "geontm:creative_generator");
+        Fixtures.setBlock(c, x + 1, B, 0, "geontm:test_fe_cell");
         Fixtures.setBlock(c, x, B, -1, "minecraft:stone");
         c.teleport(x + 3.5, B, 3.5);
         c.waitTicks(3);
@@ -58,7 +58,7 @@ public final class FxCableForeignEnergy implements Scenario {
         check(stored > 0, tag + ": power reached the foreign cell: " + stored);
 
         // a second cell on top
-        Fixtures.setBlock(c, x, B + 1, 0, "hbm:test_fe_cell");
+        Fixtures.setBlock(c, x, B + 1, 0, "geontm:test_fe_cell");
         c.waitTicks(10);
         c.screenshot(tag + "-02-east-up");
         check(arm(c, x, "up", true) && arm(c, x, "east", true), tag + ": arms east and up");
@@ -117,7 +117,7 @@ public final class FxCableForeignEnergy implements Scenario {
         p.addProperty("y", y);
         p.addProperty("z", 0);
         if (side != null) p.addProperty("side", side);
-        return c.query("hbm_fecell", p);
+        return c.query("geontm_fecell", p);
     }
 
     private void check(boolean ok, String what) {

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,13 +36,13 @@ public final class DeepslateOres implements Scenario {
             hideGui = c.setOption("hide_gui", "true");
 
             for (int i = 0; i < ORES.size(); i++) {
-                Fixtures.setBlock(c, X + i * 2, L, Z, "hbm:ore_" + ORES.get(i));
-                Fixtures.setBlock(c, X + i * 2, L, Z + 1, "hbm:ore_" + ORES.get(i) + "_deepslate");
+                Fixtures.setBlock(c, X + i * 2, L, Z, "geontm:ore_" + ORES.get(i));
+                Fixtures.setBlock(c, X + i * 2, L, Z + 1, "geontm:ore_" + ORES.get(i) + "_deepslate");
             }
             c.waitTicks(10);
             List<String> missing = new ArrayList<>();
             for (int i = 0; i < ORES.size(); i++) {
-                String id = "hbm:ore_" + ORES.get(i) + "_deepslate";
+                String id = "geontm:ore_" + ORES.get(i) + "_deepslate";
                 JsonObject block = c.block(X + i * 2, L, Z + 1);
                 if (!id.equals(block.get("block").getAsString())) missing.add(id + " " + block);
             }

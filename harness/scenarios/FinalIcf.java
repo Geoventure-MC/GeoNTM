@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * In-game acceptance for the inertial confinement fusion reactor, by the original assembly flow:
@@ -32,12 +32,12 @@ public final class FinalIcf implements Scenario {
     private static final int PX = 0, PZ = -9;     // pellet maker
     private static final int DX = 0, DZ = 16;     // an ICF placed from its item
 
-    static final String[] IDS = {"hbm:struct_icf_core", "hbm:icf", "hbm:machine_icf_press", "hbm:icf_controller",
-            "hbm:icf_component", "hbm:icf_component_vessel", "hbm:icf_component_vessel_welded",
-            "hbm:icf_component_structure", "hbm:icf_component_structure_bolted", "hbm:icf_laser_component_casing",
-            "hbm:icf_laser_component_port", "hbm:icf_laser_component_cell", "hbm:icf_laser_component_emitter",
-            "hbm:icf_laser_component_capacitor", "hbm:icf_laser_component_turbo", "hbm:icf_pellet",
-            "hbm:icf_pellet_empty", "hbm:icf_pellet_depleted"};
+    static final String[] IDS = {"geontm:struct_icf_core", "geontm:icf", "geontm:machine_icf_press", "geontm:icf_controller",
+            "geontm:icf_component", "geontm:icf_component_vessel", "geontm:icf_component_vessel_welded",
+            "geontm:icf_component_structure", "geontm:icf_component_structure_bolted", "geontm:icf_laser_component_casing",
+            "geontm:icf_laser_component_port", "geontm:icf_laser_component_cell", "geontm:icf_laser_component_emitter",
+            "geontm:icf_laser_component_capacitor", "geontm:icf_laser_component_turbo", "geontm:icf_pellet",
+            "geontm:icf_pellet_empty", "geontm:icf_pellet_depleted"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -48,14 +48,14 @@ public final class FinalIcf implements Scenario {
         inventory(c);
 
         // --- the seed, by hand, facing north (the placer stands north and looks south) ------------------------
-        Fixtures.giveOnly(c, "hbm:struct_icf_core", 1);
+        Fixtures.giveOnly(c, "geontm:struct_icf_core", 1);
         c.teleport(SX + 0.5, G, SZ - 2.5);
         c.waitTicks(3);
         c.lookAt(SX + 0.5, Y + 0.98, SZ + 0.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(4);
-        JsonObject seed = Expect.block(c, SX, G, SZ, "hbm:struct_icf_core");
+        JsonObject seed = Expect.block(c, SX, G, SZ, "geontm:struct_icf_core");
         Expect.that(seed.toString().contains("facing=north"), "the seed faces its placer: " + seed);
         worldShot(c, "10-seed-ghost", SX - 9.5, G + 7, SZ - 12.5, SX + 0.5, G + 2, SZ + 0.5);
 
@@ -65,38 +65,38 @@ public final class FinalIcf implements Scenario {
 
         // --- the vessel (1.7 TileEntityICFStruct): a partial build shows the ghost of the rest ------------------
         c.cmd("gamemode creative");
-        fill(c, -8, G, -1, 8, G, 1, "hbm:icf_component replace minecraft:air");
-        fill(c, -8, G + 1, -1, 8, G + 1, 1, "hbm:icf_component_structure_bolted");
-        fill(c, -2, G + 1, -1, 2, G + 1, 1, "hbm:icf_component_vessel_welded");
+        fill(c, -8, G, -1, 8, G, 1, "geontm:icf_component replace minecraft:air");
+        fill(c, -8, G + 1, -1, 8, G + 1, 1, "geontm:icf_component_structure_bolted");
+        fill(c, -2, G + 1, -1, 2, G + 1, 1, "geontm:icf_component_vessel_welded");
         c.waitTicks(5);
         worldShot(c, "11-seed-partial", SX - 9.5, G + 7, SZ - 12.5, SX + 0.5, G + 2, SZ + 0.5);
         for (int dy = 2; dy <= 4; dy++) {
-            fill(c, -8, G + dy, -2, 8, G + dy, 2, "hbm:icf_component_structure_bolted");
-            fill(c, -2, G + dy, -2, 2, G + dy, 2, "hbm:icf_component_vessel_welded");
+            fill(c, -8, G + dy, -2, 8, G + dy, 2, "geontm:icf_component_structure_bolted");
+            fill(c, -2, G + dy, -2, 2, G + dy, 2, "geontm:icf_component_vessel_welded");
         }
-        fill(c, -8, G + 3, 0, 8, G + 3, 0, "hbm:icf_component_vessel_welded");
-        fill(c, -8, G + 5, -1, 8, G + 5, 1, "hbm:icf_component_structure_bolted");
-        fill(c, -2, G + 5, -1, 2, G + 5, 1, "hbm:icf_component_vessel_welded");
+        fill(c, -8, G + 3, 0, 8, G + 3, 0, "geontm:icf_component_vessel_welded");
+        fill(c, -8, G + 5, -1, 8, G + 5, 1, "geontm:icf_component_structure_bolted");
+        fill(c, -2, G + 5, -1, 2, G + 5, 1, "geontm:icf_component_vessel_welded");
         c.waitTicks(45);
-        JsonObject core = Expect.block(c, SX, G, SZ, "hbm:icf");
+        JsonObject core = Expect.block(c, SX, G, SZ, "geontm:icf");
         Expect.that(core.toString().contains("facing=north") && core.toString().contains("cell=false"),
                 "the seed became the ICF core facing north: " + core);
-        Expect.block(c, 8, G + 5, 0, "hbm:icf");
-        Expect.block(c, -8, G + 3, 2, "hbm:icf");
+        Expect.block(c, 8, G + 5, 0, "geontm:icf");
+        Expect.block(c, -8, G + 3, 2, "geontm:icf");
         worldShot(c, "12-icf-formed", SX - 12.5, G + 6, SZ - 10.5, SX + 0.5, G + 2, SZ + 0.5);
 
         // --- the laser array behind the controller --------------------------------------------------------------
         buildArray(c);
         // stand on a pad east of the controller, below the beam line, and place it on the casing below by hand
         fill(c, CX + 1, CY - 1, -1, CX + 3, CY - 1, 1, "minecraft:stone");
-        Fixtures.giveOnly(c, "hbm:icf_controller", 1);
+        Fixtures.giveOnly(c, "geontm:icf_controller", 1);
         c.teleport(CX + 2.5, CY, CZ + 0.5);
         c.waitTicks(3);
         c.lookAt(CX + 0.5, CY - 0.02, CZ + 0.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(4);
-        JsonObject controller = Expect.block(c, CX, CY, CZ, "hbm:icf_controller");
+        JsonObject controller = Expect.block(c, CX, CY, CZ, "geontm:icf_controller");
         Expect.that(controller.toString().contains("facing=east"), "the controller faces the reactor: " + controller);
         worldShot(c, "20-array-built", CX + 4.5, CY + 4, CZ - 6.5, CX - 2, CY, CZ);
 
@@ -109,38 +109,38 @@ public final class FinalIcf implements Scenario {
         Expect.that(longOf(ctrl, "cellCount") == 2 && longOf(ctrl, "emitterCount") == 2
                 && longOf(ctrl, "capacitorCount") == 4 && longOf(ctrl, "turbochargerCount") == 4,
                 "part counts 2/2/4/4; nbt " + ctrl);
-        Expect.block(c, CX - 2, CY + 1, CZ, "hbm:icf_block");
+        Expect.block(c, CX - 2, CY + 1, CZ, "geontm:icf_block");
         Expect.that(c.block(CX - 2, CY + 1, CZ).toString().contains("port=true"), "the port became a port cell");
-        Expect.block(c, CX - 1, CY, CZ, "hbm:icf_block");
+        Expect.block(c, CX - 1, CY, CZ, "geontm:icf_block");
         worldShot(c, "21-array-assembled", CX + 4.5, CY + 4, CZ - 6.5, CX - 2, CY, CZ);
         // move off the beam line before power arrives
         c.teleport(CX + 2.5, CY, CZ - 3.5);
 
         // --- the pellet maker ------------------------------------------------------------------------------------
-        JsonObject press = Fixtures.placeOnTop(c, "hbm:machine_icf_press", PX, Y, PZ);
-        Expect.equal("hbm:machine_icf_press", press.get("block").getAsString(), "pellet maker placed by hand");
+        JsonObject press = Fixtures.placeOnTop(c, "geontm:machine_icf_press", PX, Y, PZ);
+        Expect.equal("geontm:machine_icf_press", press.get("block").getAsString(), "pellet maker placed by hand");
         c.cmd("data merge block " + PX + " " + G + " " + PZ + " {t0:2000,t1:2000}");
         c.waitTicks(2);
         c.cmd("clear");
-        c.cmd("give @s hbm:icf_pellet_empty 2");
-        c.cmd("give @s hbm:particle_muon 1");
+        c.cmd("give @s geontm:icf_pellet_empty 2");
+        c.cmd("give @s geontm:particle_muon 1");
         c.waitTicks(3);
         openPress(c);
         c.screenshot("30-gui-press-fueled");
-        clickFromInventory(c, "hbm:icf_pellet_empty", 0);
+        clickFromInventory(c, "geontm:icf_pellet_empty", 0);
         c.waitTicks(6);
         c.screenshot("31-gui-press-pressed");
-        Expect.slotHolds(c, 1, "hbm:icf_pellet", 1);
+        Expect.slotHolds(c, 1, "geontm:icf_pellet", 1);
         takeToInventory(c, 1);
         // the second pellet muon-catalysed
-        clickFromInventory(c, "hbm:particle_muon", 2);
+        clickFromInventory(c, "geontm:particle_muon", 2);
         c.waitTicks(3);
         c.cmd("data merge block " + PX + " " + G + " " + PZ + " {t0:2000,t1:2000}");
-        clickFromInventory(c, "hbm:icf_pellet_empty", 0);
+        clickFromInventory(c, "geontm:icf_pellet_empty", 0);
         c.waitTicks(6);
         c.screenshot("32-gui-press-muon");
-        Expect.slotHolds(c, 1, "hbm:icf_pellet", 1);
-        Expect.slotHolds(c, 3, "hbm:particle_empty", 1);
+        Expect.slotHolds(c, 1, "geontm:icf_pellet", 1);
+        Expect.slotHolds(c, 3, "geontm:particle_empty", 1);
         takeToInventory(c, 1);
         close(c);
         String pressNbt = nbt(c, PX, G, PZ);
@@ -152,9 +152,9 @@ public final class FinalIcf implements Scenario {
         c.key("key.inventory");
         c.waitScreen("", 5000);
         c.waitTicks(4);
-        hoverFirst(c, "hbm:icf_pellet", 0);
+        hoverFirst(c, "geontm:icf_pellet", 0);
         c.screenshot("33-pellet-dt-tooltip");
-        hoverFirst(c, "hbm:icf_pellet", 1);
+        hoverFirst(c, "geontm:icf_pellet", 1);
         c.screenshot("34-pellet-muon-tooltip");
         close(c);
         c.cmd("gamemode creative");
@@ -171,7 +171,7 @@ public final class FinalIcf implements Scenario {
         c.cmd("data merge block " + SX + " " + G + " " + SZ + " {t0:512000}");
         c.waitTicks(2);
         // power: a creative generator on the laser port
-        Fixtures.setBlock(c, CX - 2, CY + 2, CZ, "hbm:creative_generator");
+        Fixtures.setBlock(c, CX - 2, CY + 2, CZ, "geontm:creative_generator");
         c.waitTicks(8);
 
         String icf = nbt(c, SX, G, SZ);
@@ -203,7 +203,7 @@ public final class FinalIcf implements Scenario {
         worldShot(c, "51-icf-running-wide", SX + 6.5, G + 9, SZ - 14.5, SX - 3, G + 2, SZ);
 
         // --- the dummyable route: the ICF placed from its own item ----------------------------------------------
-        Fixtures.giveOnly(c, "hbm:icf", 1);
+        Fixtures.giveOnly(c, "geontm:icf", 1);
         c.teleport(DX + 0.5, G, DZ - 3.5); // within the 5-block creative reach of the top face
         c.waitTicks(3);
         c.lookAt(DX + 0.5, Y + 0.98, DZ + 0.5);
@@ -240,11 +240,11 @@ public final class FinalIcf implements Scenario {
     /** A vessel wall, welded by the blowtorch with one cast bismuth-bronze plate in the inventory. */
     private static void weld(Client c) {
         int x = 12, z = -9;
-        Fixtures.setBlock(c, x, G, z, "hbm:icf_component_vessel");
+        Fixtures.setBlock(c, x, G, z, "geontm:icf_component_vessel");
         c.cmd("clear");
         c.cmd("gamemode survival");
-        c.cmd("give @s hbm:blowtorch 1");
-        c.cmd("give @s hbm:plate_cast_bismuth_bronze 1");
+        c.cmd("give @s geontm:blowtorch 1");
+        c.cmd("give @s geontm:plate_cast_bismuth_bronze 1");
         c.waitTicks(3);
         c.hotbar(1);
         c.teleport(x + 0.5, G, z - 2.5);
@@ -254,7 +254,7 @@ public final class FinalIcf implements Scenario {
         c.screenshot("15-weld-before");
         c.use(2);
         c.waitTicks(4);
-        Expect.block(c, x, G, z, "hbm:icf_component_vessel_welded");
+        Expect.block(c, x, G, z, "geontm:icf_component_vessel_welded");
         Expect.that(!c.inventory().toString().contains("plate_cast_bismuth_bronze"), "the plate was used up");
         c.screenshot("16-weld-after");
     }
@@ -262,11 +262,11 @@ public final class FinalIcf implements Scenario {
     /** A casing, riveted by the boltgun with a cast steel plate and four dura bolts. */
     private static void rivet(Client c) {
         int x = 15, z = -9;
-        Fixtures.setBlock(c, x, G, z, "hbm:icf_component_structure");
+        Fixtures.setBlock(c, x, G, z, "geontm:icf_component_structure");
         c.cmd("clear");
-        c.cmd("give @s hbm:boltgun 1");
-        c.cmd("give @s hbm:plate_cast_steel 1");
-        c.cmd("give @s hbm:bolt_dura_steel 4");
+        c.cmd("give @s geontm:boltgun 1");
+        c.cmd("give @s geontm:plate_cast_steel 1");
+        c.cmd("give @s geontm:bolt_dura_steel 4");
         c.waitTicks(3);
         c.hotbar(1);
         c.teleport(x + 0.5, G, z - 2.5);
@@ -275,7 +275,7 @@ public final class FinalIcf implements Scenario {
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(4);
-        Expect.block(c, x, G, z, "hbm:icf_component_structure_bolted");
+        Expect.block(c, x, G, z, "geontm:icf_component_structure_bolted");
         Expect.that(!c.inventory().toString().contains("bolt_dura_steel"), "the bolts were used up");
         c.screenshot("17-rivet-after");
         c.cmd("clear");
@@ -287,21 +287,21 @@ public final class FinalIcf implements Scenario {
      * and a port above the second cell.
      */
     private static void buildArray(Client c) {
-        fill(c, CX - 4, CY - 1, CZ - 3, CX, CY + 1, CZ + 3, "hbm:icf_laser_component_casing");
+        fill(c, CX - 4, CY - 1, CZ - 3, CX, CY + 1, CZ + 3, "geontm:icf_laser_component_casing");
         Fixtures.setBlock(c, CX, CY, CZ, "minecraft:air");
-        set(c, -1, 0, "hbm:icf_laser_component_cell");
-        set(c, -2, 0, "hbm:icf_laser_component_cell");
-        set(c, -1, 1, "hbm:icf_laser_component_emitter");
-        set(c, -1, -1, "hbm:icf_laser_component_emitter");
-        set(c, -2, 1, "hbm:icf_laser_component_capacitor");
-        set(c, -2, -1, "hbm:icf_laser_component_capacitor");
-        set(c, -1, 2, "hbm:icf_laser_component_capacitor");
-        set(c, -1, -2, "hbm:icf_laser_component_capacitor");
-        set(c, -2, 2, "hbm:icf_laser_component_turbo");
-        set(c, -2, -2, "hbm:icf_laser_component_turbo");
-        set(c, -3, 1, "hbm:icf_laser_component_turbo");
-        set(c, -3, -1, "hbm:icf_laser_component_turbo");
-        Fixtures.setBlock(c, CX - 2, CY + 1, CZ, "hbm:icf_laser_component_port");
+        set(c, -1, 0, "geontm:icf_laser_component_cell");
+        set(c, -2, 0, "geontm:icf_laser_component_cell");
+        set(c, -1, 1, "geontm:icf_laser_component_emitter");
+        set(c, -1, -1, "geontm:icf_laser_component_emitter");
+        set(c, -2, 1, "geontm:icf_laser_component_capacitor");
+        set(c, -2, -1, "geontm:icf_laser_component_capacitor");
+        set(c, -1, 2, "geontm:icf_laser_component_capacitor");
+        set(c, -1, -2, "geontm:icf_laser_component_capacitor");
+        set(c, -2, 2, "geontm:icf_laser_component_turbo");
+        set(c, -2, -2, "geontm:icf_laser_component_turbo");
+        set(c, -3, 1, "geontm:icf_laser_component_turbo");
+        set(c, -3, -1, "geontm:icf_laser_component_turbo");
+        Fixtures.setBlock(c, CX - 2, CY + 1, CZ, "geontm:icf_laser_component_port");
     }
 
     private static void set(Client c, int dx, int dz, String block) {
@@ -376,7 +376,7 @@ public final class FinalIcf implements Scenario {
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
             if (s.get("player_inventory").getAsBoolean() && !s.get("empty").getAsBoolean()
-                    && s.get("id").getAsString().equals("hbm:icf_pellet")) {
+                    && s.get("id").getAsString().equals("geontm:icf_pellet")) {
                 if (first == null) first = s; else second = s;
             }
         }

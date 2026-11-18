@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /** F1 over items that the manual files name by 1.7 metadata: ammo, a particle accelerator coil, pile bricks. */
 public final class RcToolQmawF1 implements Scenario {
@@ -20,14 +20,14 @@ public final class RcToolQmawF1 implements Scenario {
         };
         for (String[] k : cases) {
             c.cmd("clear");
-            c.cmd("give @s hbm:" + k[0]);
+            c.cmd("give @s geontm:" + k[0]);
             c.waitTicks(5);
             c.key("e");
             c.waitTicks(10);
             boolean hovered = false;
             for (JsonElement e : c.screen().getAsJsonArray("slots")) {
                 JsonObject s = e.getAsJsonObject();
-                if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("hbm:" + k[0])) {
+                if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("geontm:" + k[0])) {
                     c.mouseMove(s.get("center_x").getAsDouble(), s.get("center_y").getAsDouble());
                     hovered = true;
                     break;
@@ -39,7 +39,7 @@ public final class RcToolQmawF1 implements Scenario {
             c.waitScreen("GuiQMAW", 5000);
             c.mouseMove(2, 2);
             c.waitTicks(8);
-            JsonObject q = c.query("hbm_qmaw", new JsonObject());
+            JsonObject q = c.query("geontm_qmaw", new JsonObject());
             System.out.println(c.node() + " " + k[0] + " -> " + q.get("page"));
             Expect.that(q.has("page") && q.get("page").getAsString().equals(k[1]), k[0] + " opens '" + k[1] + "', got " + q.get("page"));
             c.screenshot("f1-" + k[0]);

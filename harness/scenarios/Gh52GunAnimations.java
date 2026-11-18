@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 52, 53 and 58: the grenade machinegun's belt through a reload and an inspect, the Liberator's
@@ -91,8 +91,8 @@ public final class Gh52GunAnimations implements Scenario {
 
     private static void equip(Client c, String gun, String ammo) {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:" + gun);
-        if (ammo != null) c.cmd("give @s hbm:" + ammo);
+        c.cmd("give @s geontm:" + gun);
+        if (ammo != null) c.cmd("give @s geontm:" + ammo);
         c.hotbar(1);
         c.waitTicks(60);
     }

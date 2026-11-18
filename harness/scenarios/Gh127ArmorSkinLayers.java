@@ -1,11 +1,11 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * GitHub issue 127: a modelled HBM suit hides the outer skin layer it covers (helmet: hat, chestplate: jacket and
+ * GitHub issue 127: a modelled GEONTM suit hides the outer skin layer it covers (helmet: hat, chestplate: jacket and
  * sleeves, leggings or boots: trousers), as 1.12.2 and ntm-next do; flat-texture armour leaves the skin alone.
  * Third person front and back and the first-person arm are shot for each set.
  */
@@ -52,7 +52,7 @@ public final class Gh127ArmorSkinLayers implements Scenario {
                 strip(c);
                 String[] pieces = set[1].split(",", -1);
                 for (int i = 0; i < pieces.length; i++) {
-                    if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + SLOTS[i] + " with hbm:" + pieces[i]);
+                    if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + SLOTS[i] + " with geontm:" + pieces[i]);
                 }
                 for (String camera : new String[] {"third_person_front", "third_person_back"}) {
                     c.setOption("camera", camera);
@@ -79,15 +79,15 @@ public final class Gh127ArmorSkinLayers implements Scenario {
             c.setOption("camera", "first_person");
             c.key("f1");
         }
-        Expect.that(failures.isEmpty(), "skin layers under HBM armour: " + failures);
-        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception.*hbm");
+        Expect.that(failures.isEmpty(), "skin layers under GEONTM armour: " + failures);
+        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception.*geontm");
     }
 
     private static Set<String> hidden(Client c) {
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_armor");
+        p.addProperty("kind", "geontm_armor");
         JsonObject r = c.send("query", p, 30_000L);
-        if (r.has("error")) throw new HarnessException("hbm_armor: " + r.get("error"));
+        if (r.has("error")) throw new HarnessException("geontm_armor: " + r.get("error"));
         Set<String> out = new TreeSet<>();
         JsonArray layers = r.getAsJsonArray("hidden_skin_layers");
         if (layers != null) for (JsonElement e : layers) out.add(e.getAsString());

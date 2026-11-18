@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
@@ -41,7 +41,7 @@ public final class RcServerRestartA implements Scenario {
             c.waitTicks(40);
             rcon.command("fill " + (X - 4) + " " + Y + " " + (Z - 4) + " " + (X + 4) + " " + Y + " " + (Z + 4) + " minecraft:stone");
             rcon.command("fill " + (X - 4) + " " + L + " " + (Z - 4) + " " + (X + 4) + " " + (L + 4) + " " + (Z + 4) + " minecraft:air");
-            rcon.command("setblock " + X + " " + L + " " + Z + " hbm:machine_electric_furnace_off");
+            rcon.command("setblock " + X + " " + L + " " + Z + " geontm:machine_electric_furnace_off");
             c.waitTicks(10);
             rcon.command("item replace block " + X + " " + L + " " + Z + " container.1 with minecraft:iron_ore 32");
             rcon.command("data merge block " + X + " " + L + " " + Z + " {power:100000000L}");

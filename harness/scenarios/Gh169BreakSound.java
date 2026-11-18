@@ -1,13 +1,13 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * GitHub issue 169: an HBM tool played a block's break sound twice when it was the right tool. Stone is broken with a
- * vanilla pickaxe and with HBM pickaxes (a plain, an ability and an electric one); each break must start one sound.
+ * GitHub issue 169: an GEONTM tool played a block's break sound twice when it was the right tool. Stone is broken with a
+ * vanilla pickaxe and with GEONTM pickaxes (a plain, an ability and an electric one); each break must start one sound.
  */
 public final class Gh169BreakSound implements Scenario {
 
@@ -22,8 +22,8 @@ public final class Gh169BreakSound implements Scenario {
         c.cmd("gamemode creative");
         String previous = c.setOption("sound_capture", "true");
         try {
-            for (String tool : new String[] {"minecraft:iron_pickaxe", "hbm:steel_pickaxe", "hbm:starmetal_pickaxe",
-                    "hbm:elec_pickaxe"}) {
+            for (String tool : new String[] {"minecraft:iron_pickaxe", "geontm:steel_pickaxe", "geontm:starmetal_pickaxe",
+                    "geontm:elec_pickaxe"}) {
                 c.cmd("setblock 0 " + G + " 2 minecraft:stone");
                 Fixtures.giveOnly(c, tool, 1);
                 c.teleport(0.5, G, 0.5);

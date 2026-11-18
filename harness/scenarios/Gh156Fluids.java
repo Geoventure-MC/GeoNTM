@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 156, by real clicks: the multi identifier's picker shows sulfuric acid once (a click on a second
@@ -26,20 +26,20 @@ public final class Gh156Fluids implements Scenario {
         c.waitTicks(5);
 
         // the identifier's picker: one Sulfuric Acid, nothing behind it
-        Fixtures.giveOnly(c, "hbm:fluid_identifier_multi", 1);
+        Fixtures.giveOnly(c, "geontm:fluid_identifier_multi", 1);
         c.hotbar(1);
         String held = pick(c, "sulfuric", "01-picker-sulfuric");
-        Expect.that(held.contains("hbm:sulfuric_acid") && !held.contains("sulfuric_acid_fluid"),
+        Expect.that(held.contains("geontm:sulfuric_acid") && !held.contains("sulfuric_acid_fluid"),
                 "the second picker result chose a placed fluid: " + held);
 
-        // with Mekanism (-Pmekanism.run=true): its brine, which HBM has no fluid for, is picked once
+        // with Mekanism (-Pmekanism.run=true): its brine, which GEONTM has no fluid for, is picked once
         c.cmd("clear @s");
         c.cmd("give @s mekanism:brine_bucket");
         c.waitTicks(5);
         boolean mekanism = c.inventory().toString().contains("mekanism:brine_bucket");
         System.out.println("[Gh156] Mekanism in this run: " + mekanism);
         if (mekanism) {
-            Fixtures.giveOnly(c, "hbm:fluid_identifier_multi", 1);
+            Fixtures.giveOnly(c, "geontm:fluid_identifier_multi", 1);
             c.hotbar(1);
             held = pick(c, "brine", "01b-picker-brine");
             Expect.that(held.contains("primary: \"mekanism:brine\""), "the picker did not offer Mekanism's brine once: " + held);
@@ -53,16 +53,16 @@ public final class Gh156Fluids implements Scenario {
         c.waitTicks(10);
         String found = search(c, "Ethanol");
         c.screenshot("02-creative-ethanol");
-        Expect.that(!found.contains("hbm:fluid_bucket,"), "the creative search lists a universal bucket: " + found);
+        Expect.that(!found.contains("geontm:fluid_bucket,"), "the creative search lists a universal bucket: " + found);
         c.key("escape");
         c.waitTicks(10);
 
         // 1.7 FluidContainerRegistry: the sulfuric acid bucket into a sulfuric acid barrel
-        c.cmd("setblock 0 " + G + " 2 hbm:barrel_steel{tank:0,tank_type:\"hbm:sulfuric_acid\",mode:0s}");
-        c.cmd("setblock 2 " + G + " 2 hbm:barrel_steel{tank:5000,tank_type:\"hbm:ethanol\",mode:0s}");
+        c.cmd("setblock 0 " + G + " 2 geontm:barrel_steel{tank:0,tank_type:\"geontm:sulfuric_acid\",mode:0s}");
+        c.cmd("setblock 2 " + G + " 2 geontm:barrel_steel{tank:5000,tank_type:\"geontm:ethanol\",mode:0s}");
         c.waitTicks(5);
-        Fixtures.giveOnly(c, "hbm:bucket_sulfuric_acid", 1);
-        placeInSlot(c, 0, 2, "hbm:bucket_sulfuric_acid", 2);
+        Fixtures.giveOnly(c, "geontm:bucket_sulfuric_acid", 1);
+        placeInSlot(c, 0, 2, "geontm:bucket_sulfuric_acid", 2);
         c.waitTicks(20);
         c.screenshot("03-sulfuric-barrel");
         c.key("escape");
@@ -81,9 +81,9 @@ public final class Gh156Fluids implements Scenario {
         c.waitTicks(10);
         String ethanol = c.blockEntity(2, G, 2).toString().replaceAll("\\s+", "");
         System.out.println("[Gh156] ethanol barrel: " + ethanol);
-        Expect.that(!slots.contains("hbm:fluid_bucket") && (ethanol.contains("tank:5000") || ethanol.contains("\"tank\":5000")),
+        Expect.that(!slots.contains("geontm:fluid_bucket") && (ethanol.contains("tank:5000") || ethanol.contains("\"tank\":5000")),
                 "the ethanol barrel filled a bucket: " + ethanol);
-        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(hbm|golem)");
+        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(geontm|geocore)");
     }
 
     /** Opens the picker, searches {@code text}, left-clicks the first and the second result; the identifier's data. */

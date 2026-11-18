@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * In-game acceptance for the RBMK console peripherals: the blank panel, display, keypad, lever,
@@ -33,14 +33,14 @@ public final class FinalRbmkPeripherals implements Scenario {
 
         // --- the reactor column the display, autoloader and connector work against ---
         int colX = X - 8, colZ = Z - 4;
-        JsonObject rod = Fixtures.placeOnTop(c, "hbm:rbmk_fuel_rod", colX, Y, colZ);
-        Expect.equal("hbm:rbmk_fuel_rod", rod.get("block").getAsString(), "fuel column core placed by hand");
+        JsonObject rod = Fixtures.placeOnTop(c, "geontm:rbmk_fuel_rod", colX, Y, colZ);
+        Expect.equal("geontm:rbmk_fuel_rod", rod.get("block").getAsString(), "fuel column core placed by hand");
         int top = Y + 4; // default column: core + three cells
-        Expect.block(c, colX, top, colZ, "hbm:rbmk_fuel_rod");
+        Expect.block(c, colX, top, colZ, "geontm:rbmk_fuel_rod");
 
         // --- panels ---
-        String[] panels = {"hbm:rbmk_display_blank", "hbm:rbmk_display", "hbm:rbmk_key_pad", "hbm:rbmk_lever",
-                "hbm:rbmk_numitron", "hbm:rbmk_graph", "hbm:rbmk_indicator"};
+        String[] panels = {"geontm:rbmk_display_blank", "geontm:rbmk_display", "geontm:rbmk_key_pad", "geontm:rbmk_lever",
+                "geontm:rbmk_numitron", "geontm:rbmk_graph", "geontm:rbmk_indicator"};
         int[] px = new int[panels.length];
         for (int i = 0; i < panels.length; i++) {
             px[i] = X - 6 + i * 2;
@@ -51,8 +51,8 @@ public final class FinalRbmkPeripherals implements Scenario {
             JsonObject be = c.blockEntity(px[i], PY, Z);
             Expect.that(be.has("block_entity") && !be.get("block_entity").isJsonNull(), "block entity exists for " + panels[i]);
         }
-        Fixtures.setBlock(c, X + 8, Y + 1, Z, "hbm:rbmk_loader");
-        Expect.block(c, X + 8, Y + 1, Z, "hbm:rbmk_loader");
+        Fixtures.setBlock(c, X + 8, Y + 1, Z, "geontm:rbmk_loader");
+        Expect.block(c, X + 8, Y + 1, Z, "geontm:rbmk_loader");
 
         // keypad: open, activate key 1, give it channel + command, save
         String channel = "rbmkh";
@@ -104,7 +104,7 @@ public final class FinalRbmkPeripherals implements Scenario {
         closeScreen(c);
 
         // the pre-existing gauge through the same screwdriver path, as a control for the renderers' sync
-        Fixtures.setBlock(c, X + 4, PY + 2, Z, "hbm:rbmk_gauge[facing=south]");
+        Fixtures.setBlock(c, X + 4, PY + 2, Z, "geontm:rbmk_gauge[facing=south]");
         openGauge(c, X + 4);
         c.screenshot("17-gui-gauge");
         gui = gui(c, 256, 204);
@@ -137,7 +137,7 @@ public final class FinalRbmkPeripherals implements Scenario {
         c.waitTicks(5);
 
         // --- display: link to the fuel column with the linking device ---
-        Fixtures.giveOnly(c, "hbm:rbmk_tool", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_tool", 1);
         c.teleport(colX + 2.5, Y + 1, colZ + 0.5);
         c.waitTicks(3);
         c.lookAt(colX + 0.5, Y + 2.5, colZ + 0.5);
@@ -168,7 +168,7 @@ public final class FinalRbmkPeripherals implements Scenario {
 
         // --- autoloader on top of the fuel column ---
         // A plain right-click on the column would open its rod GUI, so the autoloader is placed sneaking.
-        Fixtures.giveOnly(c, "hbm:rbmk_autoloader", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_autoloader", 1);
         Fixtures.setBlock(c, colX + 2, top, colZ, "minecraft:stone"); // a step level with the column top
         c.teleport(colX + 2.5, top + 1, colZ + 0.5);
         c.waitTicks(3);
@@ -181,8 +181,8 @@ public final class FinalRbmkPeripherals implements Scenario {
         c.keyUp("key.sneak");
         c.waitTicks(3);
         JsonObject loader = c.block(colX, top + 1, colZ);
-        Expect.equal("hbm:rbmk_autoloader", loader.get("block").getAsString(), "autoloader core placed on the column top");
-        Expect.block(c, colX, top + 9, colZ, "hbm:rbmk_autoloader");
+        Expect.equal("geontm:rbmk_autoloader", loader.get("block").getAsString(), "autoloader core placed on the column top");
+        Expect.block(c, colX, top + 9, colZ, "geontm:rbmk_autoloader");
         c.teleport(colX + 2.5, top + 1, colZ + 0.5);
         c.waitTicks(3);
         Fixtures.interact(c, colX, top + 1, colZ);
@@ -190,7 +190,7 @@ public final class FinalRbmkPeripherals implements Scenario {
         Expect.screenStaysOpen(c, "Autoloader", 10);
         c.screenshot("30-gui-autoloader");
         closeScreen(c);
-        c.cmd("item replace block " + colX + " " + (top + 1) + " " + colZ + " container.0 with hbm:rbmk_fuel_ueu");
+        c.cmd("item replace block " + colX + " " + (top + 1) + " " + colZ + " container.0 with geontm:rbmk_fuel_ueu");
         c.waitTicks(80);
         worldShot(c, "31-autoloader-lowering", colX + 5.5, top + 3, colZ + 0.5, colX + 0.5, top + 4, colZ + 0.5);
         c.cmd("gamemode creative");
@@ -206,9 +206,9 @@ public final class FinalRbmkPeripherals implements Scenario {
         c.cmd("gamemode survival");
         c.waitTicks(2);
         c.cmd("clear");
-        String[] icons = {"hbm:rbmk_display_blank", "hbm:rbmk_display", "hbm:rbmk_key_pad", "hbm:rbmk_lever",
-                "hbm:rbmk_numitron", "hbm:rbmk_graph", "hbm:rbmk_indicator", "hbm:rbmk_autoloader", "hbm:rbmk_loader",
-                "hbm:rbmk_gauge"};
+        String[] icons = {"geontm:rbmk_display_blank", "geontm:rbmk_display", "geontm:rbmk_key_pad", "geontm:rbmk_lever",
+                "geontm:rbmk_numitron", "geontm:rbmk_graph", "geontm:rbmk_indicator", "geontm:rbmk_autoloader", "geontm:rbmk_loader",
+                "geontm:rbmk_gauge"};
         for (String icon : icons) c.cmd("give @s " + icon);
         c.waitTicks(5);
         for (String icon : icons) Expect.inventoryHolds(c, icon, 1);
@@ -226,7 +226,7 @@ public final class FinalRbmkPeripherals implements Scenario {
 
     /** Sneak + screwdriver right-click on the panel's front face, then wait for its screen. */
     private static void openWithScrewdriver(Client c, int x, String title) {
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.teleport(x + 0.5, Y + 1, Z + 2.5);
         c.waitTicks(3);
         c.lookAt(x + 0.5, PY + 0.5, Z + 0.74);
@@ -241,7 +241,7 @@ public final class FinalRbmkPeripherals implements Scenario {
     }
 
     private static void openGauge(Client c, int x) {
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.teleport(x + 0.5, Y + 1, Z + 3.5);
         c.waitTicks(3);
         c.lookAt(x + 0.5, PY + 2.5, Z + 0.74);

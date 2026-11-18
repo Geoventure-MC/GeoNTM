@@ -1,16 +1,16 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * Per-entity HBM state (hbm:living_props) survives save & quit on the loader's own storage, and a mob saved in the
- * pre-attachment format (a v1 HbmLivingProps child tag) is migrated on the real load path.
+ * Per-entity GEONTM state (geontm:living_props) survives save & quit on the loader's own storage, and a mob saved in the
+ * pre-attachment format (a v1 GeoNtmLivingProps child tag) is migrated on the real load path.
  *
  * <p>The player's rads/reputation are written on the server, the world is left and rejoined, and the values are read
  * back from the integrated server. A pig is summoned with the old child tag in its NBT: it must arrive in the
@@ -29,8 +29,8 @@ public class EntityDataRoundTrip implements Scenario {
         Fixtures.platform(c, 0, 100, 0, 6);
         c.cmd("/kill @e[type=minecraft:pig]");
         c.waitTicks(5);
-        c.cmd("/summon minecraft:pig 0 101 3 {NoAI:1b,PersistenceRequired:1b,Tags:[\"hbm_entity_data\"],"
-                + "HbmLivingProps:{fmt:\"v1\",rads:77.5d,digamma:0.25d,reputation:4,radMark:1b}}");
+        c.cmd("/summon minecraft:pig 0 101 3 {NoAI:1b,PersistenceRequired:1b,Tags:[\"geontm_entity_data\"],"
+                + "GeoNtmLivingProps:{fmt:\"v1\",rads:77.5d,digamma:0.25d,reputation:4,radMark:1b}}");
         c.waitTicks(10);
 
         JsonObject before = props(c, true);
@@ -45,11 +45,11 @@ public class EntityDataRoundTrip implements Scenario {
                 "the legacy values arrived in the attachment: " + pig);
 
         c.markLog();
-        c.cmd("/data get entity @e[type=minecraft:pig,tag=hbm_entity_data,limit=1] HbmLivingProps");
-        c.cmd("/data get entity @e[type=minecraft:pig,tag=hbm_entity_data,limit=1] " + attachmentPath(c.node()) + ".rads");
+        c.cmd("/data get entity @e[type=minecraft:pig,tag=geontm_entity_data,limit=1] GeoNtmLivingProps");
+        c.cmd("/data get entity @e[type=minecraft:pig,tag=geontm_entity_data,limit=1] " + attachmentPath(c.node()) + ".rads");
         c.waitTicks(10);
         List<String> chat = c.logSinceMark("CHAT");
-        Expect.that(chat.stream().anyMatch(line -> line.contains("Found no elements matching HbmLivingProps")),
+        Expect.that(chat.stream().anyMatch(line -> line.contains("Found no elements matching GeoNtmLivingProps")),
                 "the migrated pig no longer saves the old child tag: " + chat);
         Expect.that(chat.stream().anyMatch(line -> line.contains("77.5")),
                 "the pig's saved data carries the attachment value at " + attachmentPath(c.node()) + ": " + chat);
@@ -66,7 +66,7 @@ public class EntityDataRoundTrip implements Scenario {
             if (pig(after) != null) break;
         }
         JsonObject reloadedPlayer = after.getAsJsonObject("player");
-        Expect.that(reloadedPlayer.get("stored").getAsBoolean(), "the player's HBM data was loaded: " + reloadedPlayer);
+        Expect.that(reloadedPlayer.get("stored").getAsBoolean(), "the player's GEONTM data was loaded: " + reloadedPlayer);
         Expect.that(reloadedPlayer.get("rads").getAsDouble() == PLAYER_RADS,
                 "player rads after save & quit: " + reloadedPlayer);
         Expect.that(reloadedPlayer.get("reputation").getAsInt() == PLAYER_REPUTATION,
@@ -79,24 +79,24 @@ public class EntityDataRoundTrip implements Scenario {
         c.screenshot("after-reload");
 
         props(c, 0.0, 0);
-        c.cmd("/kill @e[type=minecraft:pig,tag=hbm_entity_data]");
+        c.cmd("/kill @e[type=minecraft:pig,tag=geontm_entity_data]");
     }
 
     private static String attachmentPath(String node) {
-        if (node.endsWith("neoforge")) return "\"neoforge:attachments\".\"hbm:living_props\"";
-        if (node.endsWith("fabric")) return "\"fabric:attachments\".\"hbm:living_props\"";
-        return "ForgeCaps.\"golemcore:entity_data\".\"hbm:living_props\"";
+        if (node.endsWith("neoforge")) return "\"neoforge:attachments\".\"geontm:living_props\"";
+        if (node.endsWith("fabric")) return "\"fabric:attachments\".\"geontm:living_props\"";
+        return "ForgeCaps.\"geocore:entity_data\".\"geontm:living_props\"";
     }
 
     private static JsonObject props(Client c, boolean set) {
-        return set ? props(c, PLAYER_RADS, PLAYER_REPUTATION) : c.query("hbm_props", new JsonObject());
+        return set ? props(c, PLAYER_RADS, PLAYER_REPUTATION) : c.query("geontm_props", new JsonObject());
     }
 
     private static JsonObject props(Client c, double rads, int reputation) {
         JsonObject params = new JsonObject();
         params.addProperty("set_rads", rads);
         params.addProperty("set_reputation", reputation);
-        return c.query("hbm_props", params);
+        return c.query("geontm_props", params);
     }
 
     private static JsonObject pig(JsonObject props) {

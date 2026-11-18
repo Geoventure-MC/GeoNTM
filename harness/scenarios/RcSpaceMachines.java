@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Supercomputer, tape drive, Lambda-98 pad and Soyuz pad placed by hand: the multiblock forms, the right-click opens
@@ -13,9 +13,9 @@ public final class RcSpaceMachines implements Scenario {
 
     private static final int Y = 100, L = Y + 1;
     private static final String[][] MACHINES = {
-            {"hbm:machine_supercomputer", "machine_supercomputer", "-30", "0"},
-            {"hbm:machine_tape_drive", "machine_tape_drive", "-12", "0"},
-            {"hbm:launchpad_lambda", "launchpad_lambda", "20", "-30"},
+            {"geontm:machine_supercomputer", "machine_supercomputer", "-30", "0"},
+            {"geontm:machine_tape_drive", "machine_tape_drive", "-12", "0"},
+            {"geontm:launchpad_lambda", "launchpad_lambda", "20", "-30"},
     };
 
     @Override

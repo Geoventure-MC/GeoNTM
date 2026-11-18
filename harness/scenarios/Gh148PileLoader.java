@@ -1,10 +1,10 @@
 import com.google.gson.JsonObject;
 import java.util.ArrayList;
 import java.util.List;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 148: the Chicago Pile fuel loader's lever and ram never moved on the client, and pile rods did not stack.
@@ -33,16 +33,16 @@ public final class Gh148PileLoader implements Scenario {
         c.cmd("fill " + (X - 1) + " " + L + " " + Z + " " + (X + 1) + " " + (L + 2) + " " + Z + " minecraft:stone");
 
         // the loader goes on the wall's south face
-        Fixtures.giveOnly(c, "hbm:pile_loader", 1);
+        Fixtures.giveOnly(c, "geontm:pile_loader", 1);
         c.teleport(X + 0.5, L, Z + 2.5);
         c.waitTicks(2);
         c.lookAt(X + 0.5, L + 0.5, Z + 0.99);
         Fixtures.waitForTarget(c, X, L, Z);
         c.use(2);
         c.waitTicks(4);
-        check(c.block(X, L, Z + 1).get("block").getAsString().equals("hbm:pile_device"), "the loader must be placed");
+        check(c.block(X, L, Z + 1).get("block").getAsString().equals("geontm:pile_device"), "the loader must be placed");
 
-        Fixtures.giveOnly(c, "hbm:pile_rod_mk2_nu", 2);
+        Fixtures.giveOnly(c, "geontm:pile_rod_mk2_nu", 2);
         int count = c.player().getAsJsonObject("main_hand").get("count").getAsInt();
         check(count == 2, "two natural uranium pile rods must stack in one slot as in 1.7, held " + count);
         aim(c);
@@ -98,6 +98,6 @@ public final class Gh148PileLoader implements Scenario {
         params.addProperty("x", X);
         params.addProperty("y", L);
         params.addProperty("z", Z + 1);
-        return c.query("hbm_small", params);
+        return c.query("geontm_small", params);
     }
 }

@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +31,14 @@ public final class RcPowerTail2 implements Scenario {
             }
         }
         storagePersist(c);
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
     private void one(Client c, String id) {
         c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 12) + " 16 minecraft:air");
         c.waitTicks(3);
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:" + id, 0, Y, 0);
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:" + id, 0, Y, 0);
         System.out.println("[" + id + "] placed: " + placed);
         c.teleport(0.5, Y + 1, -3.5);
         c.look(0, 15);
@@ -68,7 +68,7 @@ public final class RcPowerTail2 implements Scenario {
         try {
             c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 12) + " 16 minecraft:air");
             c.waitTicks(3);
-            Fixtures.placeOnTop(c, "hbm:machine_battery_redd", 0, Y, 0);
+            Fixtures.placeOnTop(c, "geontm:machine_battery_redd", 0, Y, 0);
             c.waitTicks(10);
             int[] k = findCore(c);
             c.cmd("data merge block " + k[0] + " " + k[1] + " " + k[2] + " {power:\"123456789\"}");

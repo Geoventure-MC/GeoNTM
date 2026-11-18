@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public final class Gh110DesertAtomRadiation implements Scenario {
 
-    private static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    private static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     @Override
     public void run(Client c) throws Exception {
@@ -21,10 +21,10 @@ public final class Gh110DesertAtomRadiation implements Scenario {
         c.resetWorld();
         c.waitInWorld(240_000L);
         c.markLog();
-        c.cmd("locate structure hbm:desert_atom");
+        c.cmd("locate structure geontm:desert_atom");
         c.waitTicks(200);
         Matcher matcher = null;
-        for (String line : c.logSinceMark("nearest hbm:")) {
+        for (String line : c.logSinceMark("nearest geontm:")) {
             Matcher m = FOUND.matcher(line);
             if (m.find()) matcher = m;
         }
@@ -39,7 +39,7 @@ public final class Gh110DesertAtomRadiation implements Scenario {
         double peak = 0;
         for (int i = 0; i < 12; i++) {
             c.waitTicks(200);
-            JsonObject impact = c.query("hbm_impact", new JsonObject()).getAsJsonObject("server");
+            JsonObject impact = c.query("geontm_impact", new JsonObject()).getAsJsonObject("server");
             peak = Math.max(peak, impact.get("chunk_rad").getAsDouble());
             System.out.println("[Gh110] " + c.node() + " tick " + (i + 1) * 200 + " chunk radiation " + impact.get("chunk_rad").getAsDouble());
         }

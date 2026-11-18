@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * 1.7 {@code RenderMassStorage}: the stored item as an 8-pixel GUI icon in the upper middle of the front face,
@@ -25,10 +25,10 @@ public final class MassStorageFront implements Scenario {
         c.cmd("fill -12 " + (Y + 1) + " -12 12 " + (Y + 6) + " 12 minecraft:air");
 
         boolean legacy = c.node().startsWith("1.20.1");
-        storage(c, legacy, "hbm:mass_storage_iron", "north", 0, Y + 2, 0, "minecraft:stone", 5000);
-        storage(c, legacy, "hbm:mass_storage", "south", 6, Y + 2, 0, "minecraft:diamond", 123456);
-        storage(c, legacy, "hbm:mass_storage_desh", "west", -6, Y + 2, 6, "minecraft:oak_log", 25000);
-        storage(c, legacy, "hbm:mass_storage_wood", "east", 6, Y + 2, 6, "minecraft:apple", 1_000_000);
+        storage(c, legacy, "geontm:mass_storage_iron", "north", 0, Y + 2, 0, "minecraft:stone", 5000);
+        storage(c, legacy, "geontm:mass_storage", "south", 6, Y + 2, 0, "minecraft:diamond", 123456);
+        storage(c, legacy, "geontm:mass_storage_desh", "west", -6, Y + 2, 6, "minecraft:oak_log", 25000);
+        storage(c, legacy, "geontm:mass_storage_wood", "east", 6, Y + 2, 6, "minecraft:apple", 1_000_000);
         c.waitTicks(10);
 
         // the server really holds what the panels should show

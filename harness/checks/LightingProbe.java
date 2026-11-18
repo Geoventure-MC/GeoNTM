@@ -1,6 +1,6 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.file.Files;
 
 public final class LightingProbe implements Scenario {

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -26,22 +26,22 @@ public class Gh157BoilerDrop implements Scenario {
         c.cmd("gamerule doTileDrops true");
         c.cmd("gamerule block_drops true");
 
-        Map<String, Integer> burst = mine(c, "hbm:heat_boiler", "exploded:1b", 2, "boiler-burst-part");
-        Expect.that(burst.getOrDefault("hbm:ingot_steel", 0) == 4 && burst.getOrDefault("hbm:plate_copper", 0) == 8
-                && !burst.containsKey("hbm:heat_boiler"), "a burst boiler breaks into 4 steel and 8 copper: " + burst);
+        Map<String, Integer> burst = mine(c, "geontm:heat_boiler", "exploded:1b", 2, "boiler-burst-part");
+        Expect.that(burst.getOrDefault("geontm:ingot_steel", 0) == 4 && burst.getOrDefault("geontm:plate_copper", 0) == 8
+                && !burst.containsKey("geontm:heat_boiler"), "a burst boiler breaks into 4 steel and 8 copper: " + burst);
 
-        Map<String, Integer> whole = mine(c, "hbm:heat_boiler", null, 2, "boiler-whole-part");
-        Expect.that(whole.getOrDefault("hbm:heat_boiler", 0) == 1 && whole.size() == 1,
+        Map<String, Integer> whole = mine(c, "geontm:heat_boiler", null, 2, "boiler-whole-part");
+        Expect.that(whole.getOrDefault("geontm:heat_boiler", 0) == 1 && whole.size() == 1,
                 "a sound boiler drops itself: " + whole);
 
-        Map<String, Integer> cogless = mine(c, "hbm:machine_stirling", "hasCog:0b", 1, "stirling-no-cog-part");
-        Expect.that(cogless.getOrDefault("hbm:machine_stirling", 0) == 1 && cogless.size() == 1,
+        Map<String, Integer> cogless = mine(c, "geontm:machine_stirling", "hasCog:0b", 1, "stirling-no-cog-part");
+        Expect.that(cogless.getOrDefault("geontm:machine_stirling", 0) == 1 && cogless.size() == 1,
                 "a Stirling engine drops once: " + cogless);
         Expect.that(!placedStirlingHasCog(c), "a Stirling engine without its cog drops without it");
 
         c.cmd("gamemode creative");
         c.cmd("effect clear @s");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore)");
         System.out.println("[Gh157] PASS");
     }
 
@@ -100,7 +100,7 @@ public class Gh157BoilerDrop implements Scenario {
         int slot = -1;
         for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("id").getAsString().equals("hbm:machine_stirling")) slot = s.get("slot").getAsInt();
+            if (s.get("id").getAsString().equals("geontm:machine_stirling")) slot = s.get("slot").getAsInt();
         }
         Expect.that(slot >= 0 && slot < 9, "the Stirling engine is in the hotbar: " + slot);
         c.hotbar(slot + 1);
@@ -109,7 +109,7 @@ public class Gh157BoilerDrop implements Scenario {
         c.lookAt(0.5, Y + 0.98, 0.5);
         c.use(2);
         c.waitTicks(8);
-        int[] core = findCore(c, "hbm:machine_stirling");
+        int[] core = findCore(c, "geontm:machine_stirling");
         Expect.that(core != null, "the picked-up Stirling engine was placed again");
         JsonObject be = c.blockEntity(core[0], core[1], core[2]);
         String nbt = be.has("nbt") && !be.get("nbt").isJsonNull() ? be.get("nbt").getAsString() : be.toString();

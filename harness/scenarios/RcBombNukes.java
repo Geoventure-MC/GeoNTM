@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -22,30 +22,30 @@ public final class RcBombNukes implements Scenario {
 
     /** id, expected radius, fill as {slot, item} pairs */
     private static Object[][] bombs(boolean legacy) {
-        String cell = legacy ? "hbm:cell{\"hbm:fluid\":\"hbm:sas3\",\"hbm:fluid_amount\":1000}"
-                : "hbm:cell[hbm:fluid=\"hbm:sas3\",hbm:fluid_amount=1000]";
+        String cell = legacy ? "geontm:cell{\"geontm:fluid\":\"geontm:sas3\",\"geontm:fluid_amount\":1000}"
+                : "geontm:cell[geontm:fluid=\"geontm:sas3\",geontm:fluid_amount=1000]";
         return new Object[][]{
-                {"hbm:nuke_boy", 120, new String[][]{{"0", "hbm:boy_shielding"}, {"1", "hbm:boy_target"}, {"2", "hbm:boy_bullet"},
-                        {"3", "hbm:boy_propellant"}, {"4", "hbm:boy_igniter"}}},
-                {"hbm:nuke_man", 175, new String[][]{{"0", "hbm:man_igniter"}, {"1", "hbm:gadget_explosive8"}, {"2", "hbm:gadget_explosive8"},
-                        {"3", "hbm:gadget_explosive8"}, {"4", "hbm:gadget_explosive8"}, {"5", "hbm:man_core"}}},
-                {"hbm:nuke_fleija", 50, new String[][]{{"0", "hbm:fleija_igniter"}, {"1", "hbm:fleija_igniter"}, {"2", "hbm:fleija_propellant"},
-                        {"3", "hbm:fleija_propellant"}, {"4", "hbm:fleija_propellant"}, {"5", "hbm:fleija_core"}, {"6", "hbm:fleija_core"},
-                        {"7", "hbm:fleija_core"}, {"8", "hbm:fleija_core"}, {"9", "hbm:fleija_core"}, {"10", "hbm:fleija_core"}}},
-                {"hbm:nuke_solinium", 150, new String[][]{{"0", "hbm:solinium_igniter"}, {"1", "hbm:solinium_propellant"},
-                        {"2", "hbm:solinium_propellant"}, {"3", "hbm:solinium_igniter"}, {"4", "hbm:solinium_core"},
-                        {"5", "hbm:solinium_igniter"}, {"6", "hbm:solinium_propellant"}, {"7", "hbm:solinium_propellant"},
-                        {"8", "hbm:solinium_igniter"}}},
-                {"hbm:nuke_prototype", 150, new String[][]{{"0", cell}, {"1", cell}, {"12", cell}, {"13", cell},
-                        {"2", "hbm:rod_quad_uranium"}, {"3", "hbm:rod_quad_uranium"}, {"10", "hbm:rod_quad_uranium"}, {"11", "hbm:rod_quad_uranium"},
-                        {"4", "hbm:rod_quad_lead"}, {"5", "hbm:rod_quad_lead"}, {"8", "hbm:rod_quad_lead"}, {"9", "hbm:rod_quad_lead"},
-                        {"6", "hbm:rod_quad_np237"}, {"7", "hbm:rod_quad_np237"}}},
-                {"hbm:nuke_fstbmb", 250, new String[][]{{"0", "hbm:egg_balefire"}, {"1", "hbm:battery_spark"}}},
-                {"hbm:nuke_mike", 250, new String[][]{{"0", "hbm:man_explosive8"}, {"1", "hbm:man_explosive8"}, {"2", "hbm:man_explosive8"},
-                        {"3", "hbm:man_explosive8"}, {"4", "hbm:man_core"}, {"5", "hbm:mike_core"}, {"6", "hbm:mike_deut"},
-                        {"7", "hbm:mike_cooling_unit"}}},
-                {"hbm:nuke_tsar", 500, new String[][]{{"0", "hbm:man_explosive8"}, {"1", "hbm:man_explosive8"}, {"2", "hbm:man_explosive8"},
-                        {"3", "hbm:man_explosive8"}, {"4", "hbm:man_core"}, {"5", "hbm:tsar_core"}}},
+                {"geontm:nuke_boy", 120, new String[][]{{"0", "geontm:boy_shielding"}, {"1", "geontm:boy_target"}, {"2", "geontm:boy_bullet"},
+                        {"3", "geontm:boy_propellant"}, {"4", "geontm:boy_igniter"}}},
+                {"geontm:nuke_man", 175, new String[][]{{"0", "geontm:man_igniter"}, {"1", "geontm:gadget_explosive8"}, {"2", "geontm:gadget_explosive8"},
+                        {"3", "geontm:gadget_explosive8"}, {"4", "geontm:gadget_explosive8"}, {"5", "geontm:man_core"}}},
+                {"geontm:nuke_fleija", 50, new String[][]{{"0", "geontm:fleija_igniter"}, {"1", "geontm:fleija_igniter"}, {"2", "geontm:fleija_propellant"},
+                        {"3", "geontm:fleija_propellant"}, {"4", "geontm:fleija_propellant"}, {"5", "geontm:fleija_core"}, {"6", "geontm:fleija_core"},
+                        {"7", "geontm:fleija_core"}, {"8", "geontm:fleija_core"}, {"9", "geontm:fleija_core"}, {"10", "geontm:fleija_core"}}},
+                {"geontm:nuke_solinium", 150, new String[][]{{"0", "geontm:solinium_igniter"}, {"1", "geontm:solinium_propellant"},
+                        {"2", "geontm:solinium_propellant"}, {"3", "geontm:solinium_igniter"}, {"4", "geontm:solinium_core"},
+                        {"5", "geontm:solinium_igniter"}, {"6", "geontm:solinium_propellant"}, {"7", "geontm:solinium_propellant"},
+                        {"8", "geontm:solinium_igniter"}}},
+                {"geontm:nuke_prototype", 150, new String[][]{{"0", cell}, {"1", cell}, {"12", cell}, {"13", cell},
+                        {"2", "geontm:rod_quad_uranium"}, {"3", "geontm:rod_quad_uranium"}, {"10", "geontm:rod_quad_uranium"}, {"11", "geontm:rod_quad_uranium"},
+                        {"4", "geontm:rod_quad_lead"}, {"5", "geontm:rod_quad_lead"}, {"8", "geontm:rod_quad_lead"}, {"9", "geontm:rod_quad_lead"},
+                        {"6", "geontm:rod_quad_np237"}, {"7", "geontm:rod_quad_np237"}}},
+                {"geontm:nuke_fstbmb", 250, new String[][]{{"0", "geontm:egg_balefire"}, {"1", "geontm:battery_spark"}}},
+                {"geontm:nuke_mike", 250, new String[][]{{"0", "geontm:man_explosive8"}, {"1", "geontm:man_explosive8"}, {"2", "geontm:man_explosive8"},
+                        {"3", "geontm:man_explosive8"}, {"4", "geontm:man_core"}, {"5", "geontm:mike_core"}, {"6", "geontm:mike_deut"},
+                        {"7", "geontm:mike_cooling_unit"}}},
+                {"geontm:nuke_tsar", 500, new String[][]{{"0", "geontm:man_explosive8"}, {"1", "geontm:man_explosive8"}, {"2", "geontm:man_explosive8"},
+                        {"3", "geontm:man_explosive8"}, {"4", "geontm:man_core"}, {"5", "geontm:tsar_core"}}},
         };
     }
 
@@ -64,7 +64,7 @@ public final class RcBombNukes implements Scenario {
         for (int i = 0; i < list.length; i++) {
             String id = (String) list[i][0];
             int radius = (Integer) list[i][1];
-            if (id.equals("hbm:nuke_tsar") && System.currentTimeMillis() - started > 8 * 60_000L) {
+            if (id.equals("geontm:nuke_tsar") && System.currentTimeMillis() - started > 8 * 60_000L) {
                 notes.add(id + ": skipped, the earlier bombs used more than eight minutes");
                 continue;
             }
@@ -75,7 +75,7 @@ public final class RcBombNukes implements Scenario {
             }
         }
         for (String n : notes) System.out.println("[RcBombNukes] " + n);
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered geontm:|is not registered).*");
     }
 
     private String detonate(Client c, int index, String id, int radius, String[][] fill) {
@@ -101,7 +101,7 @@ public final class RcBombNukes implements Scenario {
         String after = c.block(x, Y, z).get("block").getAsString();
         Set<String> seen = new LinkedHashSet<>();
         boolean shot = false;
-        int limitTicks = id.equals("hbm:nuke_tsar") ? 20 * 900 : 20 * 300;
+        int limitTicks = id.equals("geontm:nuke_tsar") ? 20 * 900 : 20 * 300;
         int ticks = 0;
         while (ticks < limitTicks) {
             c.waitTicks(20);
@@ -145,7 +145,7 @@ public final class RcBombNukes implements Scenario {
         params.addProperty("server", true);
         for (JsonElement e : c.query("entities", params).getAsJsonArray("entities")) {
             String t = e.getAsJsonObject().get("type").getAsString();
-            if (t.startsWith("hbm:")) out.add(t.substring(4));
+            if (t.startsWith("geontm:")) out.add(t.substring(4));
         }
         return out;
     }

@@ -1,0 +1,5 @@
+{
+  "parent": "geontm:item/gun_obj_base",
+  "gui_light": "front",
+  "textures": { "particle": "geontm:items/gun_b92" }
+}

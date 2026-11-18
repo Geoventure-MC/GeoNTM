@@ -2,10 +2,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Rendering sweep over every {@code hbm:} entity type: each is summoned (AI off, silent) in a row-and-column grid, ten
+ * Rendering sweep over every {@code geontm:} entity type: each is summoned (AI off, silent) in a row-and-column grid, ten
  * per batch, and photographed from the north. Types that explode, launch or reshape terrain once alive are listed in the
  * manifest as skipped; the entity renderer audit at startup still covers their renderers. Writes
  * {@code batch-NNN.png} and {@code manifest.json}.
@@ -34,7 +34,7 @@ public final class RcFuzzEntities implements Scenario {
     public void run(Client c) throws Exception {
         c.waitInWorld(120_000L);
         c.markLog();
-        JsonObject ids = c.query("hbm_sweep_ids", new JsonObject());
+        JsonObject ids = c.query("geontm_sweep_ids", new JsonObject());
         List<JsonObject> types = new ArrayList<>();
         JsonArray skipped = new JsonArray();
         for (JsonElement e : ids.getAsJsonArray("entities")) {
@@ -42,7 +42,7 @@ public final class RcFuzzEntities implements Scenario {
             if (NO_SUMMON.matcher(entity.get("cls").getAsString()).find()) skipped.add(entity.get("id").getAsString());
             else types.add(entity);
         }
-        Expect.that(types.size() > 50, "expected the hbm entity list, got " + types.size());
+        Expect.that(types.size() > 50, "expected the geontm entity list, got " + types.size());
         int batches = (types.size() + PER_BATCH - 1) / PER_BATCH;
 
         String hideGui = null;

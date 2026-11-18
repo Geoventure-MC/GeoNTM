@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +31,8 @@ public final class Gh175Conveyors implements Scenario {
             for (String side : new String[]{"north", "west"}) placement(c, side, wrong);
             render(c);
         } finally {
-            c.cmd("kill @e[type=hbm:entity_c_item]");
-            c.cmd("kill @e[type=hbm:entity_c_package]");
+            c.cmd("kill @e[type=geontm:entity_c_item]");
+            c.cmd("kill @e[type=geontm:entity_c_package]");
         }
         Expect.that(wrong.isEmpty(), "1.7 conveyors: " + wrong);
         Expect.logCleanSinceMark(c, "/(Exception|ERROR|FATAL)[]]?");
@@ -41,8 +41,8 @@ public final class Gh175Conveyors implements Scenario {
     /** Clicks the ejector's {@code side} face, then the floor four blocks out from it. */
     private static void placement(Client c, String side, List<String> wrong) throws Exception {
         c.cmd("fill " + (X - 8) + " " + (Y + 1) + " " + (Z - 8) + " " + (X + 8) + " " + (Y + 6) + " " + (Z + 8) + " minecraft:air");
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:crane_extractor[input=south,output=north]");
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 1);
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:crane_extractor[input=south,output=north]");
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 1);
         c.hotbar(1);
         int dx = side.equals("west") ? -1 : 0;
         int dz = side.equals("north") ? -1 : 0;
@@ -78,7 +78,7 @@ public final class Gh175Conveyors implements Scenario {
 
     private static void render(Client c) throws Exception {
         c.cmd("fill " + (X - 8) + " " + (Y + 1) + " " + (Z - 8) + " " + (X + 8) + " " + (Y + 6) + " " + (Z + 8) + " minecraft:air");
-        String belt = "hbm:conveyor[facing=east]";
+        String belt = "geontm:conveyor[facing=east]";
         c.cmd("fill " + (X - 6) + " " + (Y + 1) + " " + Z + " " + (X + 6) + " " + (Y + 1) + " " + Z + " " + belt);
         c.cmd("fill " + (X - 6) + " " + (Y + 1) + " " + (Z + 2) + " " + (X + 6) + " " + (Y + 1) + " " + (Z + 2) + " " + belt);
         c.cmd("setblock " + (X + 7) + " " + (Y + 1) + " " + Z + " minecraft:chest");
@@ -90,12 +90,12 @@ public final class Gh175Conveyors implements Scenario {
         try {
             int[] counts = {1, 2, 6, 21, 41, 64};
             for (int i = 0; i < counts.length; i++) {
-                c.cmd("summon hbm:entity_c_item " + (X - 6 + i * 0.9) + " " + (Y + 1.25) + " " + (Z + 0.5)
+                c.cmd("summon geontm:entity_c_item " + (X - 6 + i * 0.9) + " " + (Y + 1.25) + " " + (Z + 0.5)
                         + " {Item:{id:\"minecraft:gray_terracotta\",count:" + counts[i] + ",Count:" + counts[i] + "b}}");
-                c.cmd("summon hbm:entity_c_item " + (X - 6 + i * 0.9) + " " + (Y + 1.25) + " " + (Z + 2.5)
+                c.cmd("summon geontm:entity_c_item " + (X - 6 + i * 0.9) + " " + (Y + 1.25) + " " + (Z + 2.5)
                         + " {Item:{id:\"minecraft:coal\",count:" + counts[i] + ",Count:" + counts[i] + "b}}");
             }
-            c.cmd("summon hbm:entity_c_package " + (X + 0.8) + " " + (Y + 1.25) + " " + (Z + 0.5));
+            c.cmd("summon geontm:entity_c_package " + (X + 0.8) + " " + (Y + 1.25) + " " + (Z + 0.5));
             c.waitTicks(3);
             c.screenshot("belt-stacks");
             c.teleport(X - 3, Y + 1.2, Z - 2.5);

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,7 +29,7 @@ public final class Gh4SoyuzContainers implements Scenario {
         c.cmd("kill @e[type=item]");
         c.markLog();
 
-        Fixtures.giveOnly(c, "hbm:soyuz_launcher", 1);
+        Fixtures.giveOnly(c, "geontm:soyuz_launcher", 1);
         c.teleport(0.5, G, -3.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, 0.5);
@@ -40,8 +40,8 @@ public final class Gh4SoyuzContainers implements Scenario {
                 "the launch complex formed its core at 0 " + CY + " 0: " + c.blockEntity(0, CY, 0));
         c.cmd("fill -13 " + LEDGE + " -6 -7 " + LEDGE + " 6 minecraft:stone");
         c.cmd("clear");
-        c.cmd("give @s " + container(c, "hbm:canister_full", "hbm:kerosene") + " 2");
-        c.cmd("give @s " + container(c, "hbm:gas_full", "hbm:oxygen") + " 1");
+        c.cmd("give @s " + container(c, "geontm:canister_full", "geontm:kerosene") + " 2");
+        c.cmd("give @s " + container(c, "geontm:gas_full", "geontm:oxygen") + " 1");
         c.waitTicks(3);
 
         c.teleport(-9.5, CY - 1, 3.5);
@@ -52,8 +52,8 @@ public final class Gh4SoyuzContainers implements Scenario {
         c.use(2);
         c.waitScreen("Soyuz", 5000);
         c.waitTicks(5);
-        clickFromInventory(c, "hbm:canister_full", 4);
-        clickFromInventory(c, "hbm:gas_full", 6);
+        clickFromInventory(c, "geontm:canister_full", 4);
+        clickFromInventory(c, "geontm:gas_full", 6);
         c.waitTicks(20);
         c.screenshot("01-gui-containers");
         String pad = nbt(c, 0, CY, 0);
@@ -61,8 +61,8 @@ public final class Gh4SoyuzContainers implements Scenario {
         Expect.that(intOf(pad, "fuel") == 2000, "two kerosene canisters drained into the fuel tank: " + pad);
         Expect.that(intOf(pad, "oxidizer") == 1000, "the oxygen tank drained into the oxidizer tank: " + pad);
         // 1.7 FluidContainerRegistry: an emptied canister / gas tank is canister_empty / gas_empty
-        Expect.that(slot(c, 4).isEmpty() && emptied(pad, 5, "hbm:canister_empty", 2), "empty canisters in slot 5: " + pad);
-        Expect.that(slot(c, 6).isEmpty() && emptied(pad, 7, "hbm:gas_empty", 1), "empty gas tank in slot 7: " + pad);
+        Expect.that(slot(c, 4).isEmpty() && emptied(pad, 5, "geontm:canister_empty", 2), "empty canisters in slot 5: " + pad);
+        Expect.that(slot(c, 6).isEmpty() && emptied(pad, 7, "geontm:gas_empty", 1), "empty gas tank in slot 7: " + pad);
         c.key("escape");
         c.waitTicks(5);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");
@@ -84,13 +84,13 @@ public final class Gh4SoyuzContainers implements Scenario {
     /** {@code count} of {@code id} holding no fluid in machine slot {@code slot}. */
     private static boolean emptied(String nbt, int slot, String id, int count) {
         String s = savedSlot(nbt, slot);
-        return s.contains("\"" + id + "\"") && s.matches(".*[cC]ount:" + count + "b?[,}].*") && !s.contains("hbm:fluid");
+        return s.contains("\"" + id + "\"") && s.matches(".*[cC]ount:" + count + "b?[,}].*") && !s.contains("geontm:fluid");
     }
 
     private static String container(Client c, String item, String fluid) {
         return c.node().startsWith("1.20.")
-                ? item + "{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : item + "[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+                ? item + "{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : item + "[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     /** "id xN" for a filled slot, "" for an empty one. */

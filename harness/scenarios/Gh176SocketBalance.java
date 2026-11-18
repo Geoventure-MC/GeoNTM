@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,9 +31,9 @@ public final class Gh176SocketBalance implements Scenario {
         c.cmd("clear @s");
         c.waitTicks(5);
 
-        Fixtures.placeOnTop(c, "hbm:machine_battery_socket", 0, Y, A);
-        Fixtures.placeOnTop(c, "hbm:machine_battery_socket", 0, Y, B);
-        c.cmd("fill -2 " + G + " " + (A + 1) + " 2 " + G + " " + (B - 1) + " hbm:red_cable replace minecraft:air");
+        Fixtures.placeOnTop(c, "geontm:machine_battery_socket", 0, Y, A);
+        Fixtures.placeOnTop(c, "geontm:machine_battery_socket", 0, Y, B);
+        c.cmd("fill -2 " + G + " " + (A + 1) + " 2 " + G + " " + (B - 1) + " geontm:red_cable replace minecraft:air");
         c.waitTicks(10);
 
         setUp(c, A, true, 0);
@@ -63,7 +63,7 @@ public final class Gh176SocketBalance implements Scenario {
         Expect.that(b3 - b2 <= 1_000L * ticks && b3 - b2 >= 850L * ticks,
                 "the high-priority socket took " + (b3 - b2) + " HE in at most " + ticks + " ticks, 1.7 moves 1,000 a tick");
         gui(c, B, "gh176-high-priority-empty");
-        Expect.logCleanSinceMark(c, "(?i)exception.*(hbm|power|battery|socket)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(geontm|power|battery|socket)");
     }
 
     /** Opens the socket at z, puts a lead-acid battery in by hand, clicks the low-signal mode to input/output. */
@@ -71,8 +71,8 @@ public final class Gh176SocketBalance implements Scenario {
         boolean insert = priorityClicks == 0;
         if (insert) {
             String battery = c.node().startsWith("1.20.1")
-                    ? "hbm:battery_lead{\"hbm:battery_charge\":" + (full ? 18_000_000L : 0L) + "L}"
-                    : "hbm:battery_lead[hbm:battery_charge=" + (full ? 18_000_000L : 0L) + "L]";
+                    ? "geontm:battery_lead{\"geontm:battery_charge\":" + (full ? 18_000_000L : 0L) + "L}"
+                    : "geontm:battery_lead[geontm:battery_charge=" + (full ? 18_000_000L : 0L) + "L]";
             c.cmd("give @s " + battery);
             c.waitTicks(5);
         }
@@ -80,7 +80,7 @@ public final class Gh176SocketBalance implements Scenario {
         Fixtures.interact(c, 0, G, z);
         c.waitScreen("Battery Socket", 5_000L);
         if (insert) {
-            c.clickSlot(slotHolding(c, "hbm:battery_lead"));
+            c.clickSlot(slotHolding(c, "geontm:battery_lead"));
             c.clickSlot(0);
             c.waitTicks(5);
         }

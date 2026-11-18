@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 157, point 9: glyphids hit from too far. 1.7 glyphids run the old {@code EntityMob} AI, whose
@@ -47,9 +47,9 @@ public final class Gh157GlyphidReach implements Scenario {
         c.cmd("effect give @s minecraft:instant_health 1 10");
         c.waitTicks(10);
         String speed = c.node().startsWith("26.1") ? "minecraft:movement_speed" : "minecraft:generic.movement_speed";
-        c.cmd("summon hbm:entity_glyphid 0.5 " + G + " 0.5 {PersistenceRequired:1b,Rotation:[180f,0f]}");
+        c.cmd("summon geontm:entity_glyphid 0.5 " + G + " 0.5 {PersistenceRequired:1b,Rotation:[180f,0f]}");
         c.waitTicks(2);
-        c.cmd("attribute @e[type=hbm:entity_glyphid,limit=1] " + speed + " base set 0");
+        c.cmd("attribute @e[type=geontm:entity_glyphid,limit=1] " + speed + " base set 0");
         c.teleport(0.5, G, 0.5 - distance);
         c.lookAt(0.5, G + 0.5, 0.5);
         c.waitTicks(5);

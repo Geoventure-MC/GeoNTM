@@ -1,14 +1,14 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Fine yaw and pitch sweeps of MachineFps's machines from three spots, the camera jumping a few ticks apart, so
- * a machine that pops at a screen edge shows in a run compared with culling off (GOLEM_GEM_CULL=off).
+ * a machine that pops at a screen edge shows in a run compared with culling off (GEOCORE_GEM_CULL=off).
  */
 public final class RcCullSweep implements Scenario {
 
@@ -48,7 +48,7 @@ public final class RcCullSweep implements Scenario {
             renderDistance = c.setOption("render_distance", "12");
             fov = c.setOption("fov", "70");
             for (String[] m : MACHINES) {
-                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "hbm:" + m[0] + "[facing=north]");
+                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "geontm:" + m[0] + "[facing=north]");
             }
             c.cmd("gamemode spectator");
             c.cmd("flywheel backend off");

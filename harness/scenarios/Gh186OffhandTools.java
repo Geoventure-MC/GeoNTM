@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -18,13 +18,13 @@ public final class Gh186OffhandTools implements Scenario {
 
     private static final int X = 24000, Y = 250, G = 251;
     private static final double LIMIT = 0.15;
-    private static final String[] TOOLS = {"minecraft:iron_pickaxe", "minecraft:iron_sword", "hbm:steel_pickaxe",
-            "hbm:dwarven_pickaxe", "hbm:volcanic_pickaxe", "hbm:bismuth_pickaxe", "hbm:mese_axe", "hbm:steel_sword",
-            "hbm:schrabidium_sword", "hbm:desh_sword", "hbm:meteorite_sword_seared", "hbm:wrench", "hbm:crowbar", "hbm:ullapool_caber", "hbm:screwdriver_desh",
+    private static final String[] TOOLS = {"minecraft:iron_pickaxe", "minecraft:iron_sword", "geontm:steel_pickaxe",
+            "geontm:dwarven_pickaxe", "geontm:volcanic_pickaxe", "geontm:bismuth_pickaxe", "geontm:mese_axe", "geontm:steel_sword",
+            "geontm:schrabidium_sword", "geontm:desh_sword", "geontm:meteorite_sword_seared", "geontm:wrench", "geontm:crowbar", "geontm:ullapool_caber", "geontm:screwdriver_desh",
             // 1.7 IItemRenderer bodies in the full-3D weapon frame
-            "hbm:redstone_sword", "hbm:big_sword", "hbm:shimmer_sledge", "hbm:shimmer_axe", "hbm:wood_gavel",
-            "hbm:lead_gavel", "hbm:diamond_gavel", "hbm:mese_gavel", "hbm:stopsign", "hbm:sopsign", "hbm:chernobylsign",
-            "hbm:chainsaw", "hbm:detonator_laser"};
+            "geontm:redstone_sword", "geontm:big_sword", "geontm:shimmer_sledge", "geontm:shimmer_axe", "geontm:wood_gavel",
+            "geontm:lead_gavel", "geontm:diamond_gavel", "geontm:mese_gavel", "geontm:stopsign", "geontm:sopsign", "geontm:chernobylsign",
+            "geontm:chainsaw", "geontm:detonator_laser"};
 
     @Override
     public void run(Client c) throws Exception {

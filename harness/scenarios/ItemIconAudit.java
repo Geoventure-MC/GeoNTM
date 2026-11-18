@@ -1,15 +1,15 @@
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 /**
- * Item icon audit: every HBM stack a player can see (creative-tab entries, custom tab stacks such as enum variants,
- * then every other registered hbm item) is drawn in real 16x16 slots on {@code IconAuditScreen}, paged, at GUI
+ * Item icon audit: every GEONTM stack a player can see (creative-tab entries, custom tab stacks such as enum variants,
+ * then every other registered geontm item) is drawn in real 16x16 slots on {@code IconAuditScreen}, paged, at GUI
  * scale 3 on the harness' 1280x720 window, no hover. Page {@code -1} is the empty background reference. Writes
  * {@code page-NNN.png}, {@code background.png} and {@code manifest.json} (per page: label, item id, variant, name,
  * GUI slot origin) to the node's screenshot folder; every page is also drawn in unrelated colours ({@code -alt}) so the
@@ -17,13 +17,13 @@ import java.nio.file.Files;
  *
  * <p>Item filter (optional, read from the harness CLI's environment):
  * <ul>
- *   <li>{@code ICON_AUDIT_NAMESPACE=ntmspace}: registry namespace to capture; defaults to {@code hbm};</li>
- *   <li>{@code ICON_AUDIT_ITEMS=nuke_fleija,watz,hbm:fluid_pump} — exact item ids (namespace optional), every variant of each;</li>
- *   <li>{@code ICON_AUDIT_FILTER=<regex>} — matched ({@code find}) against each stack label {@code hbm:id} / {@code hbm:id@k}.</li>
+ *   <li>{@code ICON_AUDIT_NAMESPACE=ntmspace}: registry namespace to capture; defaults to {@code geontm};</li>
+ *   <li>{@code ICON_AUDIT_ITEMS=nuke_fleija,watz,geontm:fluid_pump} — exact item ids (namespace optional), every variant of each;</li>
+ *   <li>{@code ICON_AUDIT_FILTER=<regex>} — matched ({@code find}) against each stack label {@code geontm:id} / {@code geontm:id@k}.</li>
  * </ul>
  * Both may be given; a stack is shown if it matches either. Labels and variant ordinals are counted over the full
  * list, so a filtered run joins the baseline's {@code items.csv} / {@code ref17.csv} rows one to one. Example (Git Bash,
- * from NTM-Continuum): {@code ICON_AUDIT_ITEMS=watz,machine_fel ../Golem-Core/harness/harness run ItemIconAudit.java --label icon-watz}.
+ * from NTM-Continuum): {@code ICON_AUDIT_ITEMS=watz,machine_fel ../GeoCore/harness/harness run ItemIconAudit.java --label icon-watz}.
  */
 public final class ItemIconAudit implements Scenario {
 
@@ -34,7 +34,7 @@ public final class ItemIconAudit implements Scenario {
         c.setOption("gui_scale", "3");
         c.setOption("hide_gui", "false");
         c.waitTicks(5);
-        JsonObject info = c.query("hbm_icon_audit", withFilter(new JsonObject()));
+        JsonObject info = c.query("geontm_icon_audit", withFilter(new JsonObject()));
         int pages = info.get("pages").getAsInt();
         int from = 0, to = pages - 1;
 
@@ -66,13 +66,13 @@ public final class ItemIconAudit implements Scenario {
         manifest.add("pages", pageList);
         JsonObject status = c.status();
         manifest.add("status", status);
-        c.query("hbm_icon_audit", obj("close", true));
+        c.query("geontm_icon_audit", obj("close", true));
         c.setOption("gui_scale", "2");
 
         Files.writeString(c.screenshotDir().resolve("manifest.json"),
                 new GsonBuilder().setPrettyPrinting().create().toJson(manifest), StandardCharsets.UTF_8);
-        if (FILTER.isEmpty() && NAMESPACE.equals("hbm"))
-            Expect.that(info.get("total").getAsInt() > 1000, "expected > 1000 hbm stacks, got " + info.get("total"));
+        if (FILTER.isEmpty() && NAMESPACE.equals("geontm"))
+            Expect.that(info.get("total").getAsInt() > 1000, "expected > 1000 geontm stacks, got " + info.get("total"));
         else Expect.that(info.get("total").getAsInt() > 0,
                 "namespace " + NAMESPACE + " filter " + FILTER + " matched no stack");
     }
@@ -83,7 +83,7 @@ public final class ItemIconAudit implements Scenario {
 
     private static String namespace() {
         String requested = System.getenv("ICON_AUDIT_NAMESPACE");
-        return requested == null || requested.isBlank() ? "hbm" : requested.trim();
+        return requested == null || requested.isBlank() ? "geontm" : requested.trim();
     }
 
     private static String filter() {
@@ -112,7 +112,7 @@ public final class ItemIconAudit implements Scenario {
     private static JsonObject open(Client c, int page, boolean alt) {
         JsonObject params = withFilter(obj("page", page));
         params.addProperty("alt", alt);
-        JsonObject reply = c.query("hbm_icon_audit", params);
+        JsonObject reply = c.query("geontm_icon_audit", params);
         c.waitScreen("IconAuditScreen", 10_000L);
         c.waitTicks(4); // the screen has been drawn, the 26.1 GUI item atlas has been filled
         return reply;

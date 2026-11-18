@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -32,17 +32,17 @@ public final class Gh171TubesRealAir implements Scenario {
         c.cmd("fill -16 " + G + " -16 16 " + (G + 5) + " 16 minecraft:air");
         c.cmd("kill @e[type=item]");
         c.waitTicks(5);
-        line(c, "hbm:crate_iron", 0, "crate", wrong);
+        line(c, "geontm:crate_iron", 0, "crate", wrong);
         Expect.that(wrong.isEmpty(), "tubes with air from a compressor: " + wrong);
-        Expect.logCleanSinceMark(c, "(?i)exception.*(hbm|pneum|tube)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(geontm|pneum|tube)");
     }
 
     private static void line(Client c, String inventory, int z, String tag, List<String> wrong) {
-        for (int x = -1; x <= 1; x++) Fixtures.placeOnTop(c, "hbm:pneumatic_tube", x, Y, z);
+        for (int x = -1; x <= 1; x++) Fixtures.placeOnTop(c, "geontm:pneumatic_tube", x, Y, z);
         Fixtures.setBlock(c, -2, G, z, inventory);
         Fixtures.setBlock(c, 2, G, z, inventory);
         c.cmd("item replace block -2 " + G + " " + z + " container.0 with minecraft:cobblestone 16");
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.hotbar(1);
         c.waitTicks(5);
         screw(c, -1, z, false);
@@ -50,7 +50,7 @@ public final class Gh171TubesRealAir implements Scenario {
 
         // the compressor, by hand, six blocks north of the line
         int mz = z - 7;
-        Fixtures.giveOnly(c, "hbm:machine_compressor", 1);
+        Fixtures.giveOnly(c, "geontm:machine_compressor", 1);
         c.hotbar(1);
         c.teleport(-0.5, G, mz - 3.5);
         c.waitTicks(3);
@@ -102,7 +102,7 @@ public final class Gh171TubesRealAir implements Scenario {
         int far = 0;
         for (int i = 0; i < 12; i++) {
             c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2]
-                    + " {power:1000000L,\"0\":16000,\"0_type\":\"hbm:air\",\"0_p\":0s}");
+                    + " {power:1000000L,\"0\":16000,\"0_type\":\"geontm:air\",\"0_p\":0s}");
             c.waitTicks(20);
         }
         String tube = c.blockEntity(-1, G, z).toString().replaceAll("\\s+", "");
@@ -121,7 +121,7 @@ public final class Gh171TubesRealAir implements Scenario {
     }
 
     private static void duct(Client c, int x, int y, int z) {
-        c.cmd("setblock " + x + " " + y + " " + z + " hbm:fluid_duct_neo{type:\"hbm:air\"}");
+        c.cmd("setblock " + x + " " + y + " " + z + " geontm:fluid_duct_neo{type:\"geontm:air\"}");
     }
 
     private static void screw(Client c, int x, int z, boolean sneak) {

@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,9 +28,9 @@ public final class RcMetalRun implements Scenario {
         c.markLog();
 
         // steel furnace: one iron ore, heat 100000
-        c.cmd("setblock 10 " + L + " 10 hbm:furnace_steel[facing=north]");
-        c.cmd("setblock 25 " + L + " 10 hbm:machine_furnace_combination[facing=north]");
-        c.cmd("setblock 40 " + L + " 10 hbm:machine_blast_furnace[facing=north]");
+        c.cmd("setblock 10 " + L + " 10 geontm:furnace_steel[facing=north]");
+        c.cmd("setblock 25 " + L + " 10 geontm:machine_furnace_combination[facing=north]");
+        c.cmd("setblock 40 " + L + " 10 geontm:machine_blast_furnace[facing=north]");
         c.waitTicks(10);
         int[] steel = findBe(c, 10, L, 10, "TileEntityFurnaceSteel");
         int[] comb = findBe(c, 25, L, 10, "TileEntityFurnaceCombination");

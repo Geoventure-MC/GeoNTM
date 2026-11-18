@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The plastic bag: right-click opens its one-slot screen, the slot takes exactly one item (shift-click and a manual
@@ -16,7 +16,7 @@ public final class RcToolBag implements Scenario {
         Fixtures.platform(c, 0, 100, 0, 8);
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:plastic_bag");
+        c.cmd("give @s geontm:plastic_bag");
         c.cmd("give @s minecraft:cobblestone 20");
         c.waitTicks(6);
         c.hotbar(1);
@@ -57,7 +57,7 @@ public final class RcToolBag implements Scenario {
         c.waitTicks(20);
         c.hotbar(1);
         c.waitTicks(3);
-        System.out.println("tooltip after rejoin: " + c.query("hbm_release", slotQuery(0)));
+        System.out.println("tooltip after rejoin: " + c.query("geontm_release", slotQuery(0)));
         c.use();
         c.waitTicks(8);
         System.out.println("bag slot after rejoin: " + c.slot(0));

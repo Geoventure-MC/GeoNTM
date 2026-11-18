@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -34,21 +34,21 @@ public final class RcProcRun implements Scenario {
 
         // name, block, cell x, items, power key (null = none), power value
         setup(c, want, "shredder", "machine_shredder", -24, 0,
-                new String[]{"hbm:blades_steel 2", "minecraft:iron_ingot 2", "minecraft:gold_ingot 2", "minecraft:copper_ingot 2"}, "power", 10000);
+                new String[]{"geontm:blades_steel 2", "minecraft:iron_ingot 2", "minecraft:gold_ingot 2", "minecraft:copper_ingot 2"}, "power", 10000);
         setup(c, want, "centrifuge", "machine_centrifuge", -16, 0,
                 new String[]{"minecraft:iron_ore 4"}, "power", 100000);
         setup(c, want, "centrifuge_speed", "machine_centrifuge", -16, 12,
-                new String[]{"minecraft:iron_ore 4", "hbm:upgrade_speed_3 1"}, "power", 100000);
+                new String[]{"minecraft:iron_ore 4", "geontm:upgrade_speed_3 1"}, "power", 100000);
         setup(c, want, "epress", "machine_epress", -8, 0,
-                new String[]{"hbm:stamp_iron_plate 1", "minecraft:iron_ingot 8"}, "power", 50000);
+                new String[]{"geontm:stamp_iron_plate 1", "minecraft:iron_ingot 8"}, "power", 50000);
         setup(c, want, "efurnace", "machine_electric_furnace_off", 0, 0,
                 new String[]{"minecraft:iron_ore 8"}, "power", 100000);
         setup(c, want, "efurnace_speed", "machine_electric_furnace_off", 0, 12,
-                new String[]{"minecraft:iron_ore 8", "hbm:upgrade_speed_3 1"}, "power", 100000);
+                new String[]{"minecraft:iron_ore 8", "geontm:upgrade_speed_3 1"}, "power", 100000);
         setup(c, want, "difurnace", "machine_difurnace_off", 8, 0,
                 new String[]{"minecraft:iron_ingot 4", "minecraft:coal 2"}, null, 0);
         setup(c, want, "press", "machine_press", 16, 0,
-                new String[]{"hbm:stamp_iron_plate 1", "minecraft:iron_ingot 4", "minecraft:coal 2"}, null, 0);
+                new String[]{"geontm:stamp_iron_plate 1", "minecraft:iron_ingot 4", "minecraft:coal 2"}, null, 0);
 
         c.cmd("item replace block " + cores.get("difurnace")[0] + " " + cores.get("difurnace")[1] + " " + cores.get("difurnace")[2] + " container.1 with minecraft:coal 4");
         for (String cmd : pending) c.cmd(cmd);
@@ -69,7 +69,7 @@ public final class RcProcRun implements Scenario {
         report(c, "late");
         for (var e : cores.entrySet()) c.screenshot(e.getKey());
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -78,7 +78,7 @@ public final class RcProcRun implements Scenario {
         try {
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + block, 1);
+            Fixtures.giveOnly(c, "geontm:" + block, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

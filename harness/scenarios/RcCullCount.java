@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * How many of MachineFps's ten machines the frustum culls when the camera faces them and when it faces away
@@ -39,7 +39,7 @@ public final class RcCullCount implements Scenario {
             Fixtures.platform(c, X, Y, Z + 8, 60);
             JsonArray positions = new JsonArray();
             for (String[] m : MACHINES) {
-                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "hbm:" + m[0] + "[facing=north]");
+                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "geontm:" + m[0] + "[facing=north]");
                 JsonArray p = new JsonArray();
                 p.add(Integer.parseInt(m[1]));
                 p.add(L);

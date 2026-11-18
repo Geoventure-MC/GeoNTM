@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 40: the gluon gun's tooltip read "Base Damage: 0" because its receiver never fires. Hovers the gun in
@@ -16,15 +16,15 @@ public final class Gh40GluonTooltip implements Scenario {
         c.useFlatWorld();
         c.waitInWorld(120_000L);
         c.cmd("gamemode survival");
-        Fixtures.giveOnly(c, "hbm:gun_egon", 1);
-        Fixtures.give(c, "hbm:ammo_standard_tau_uranium", 34);
+        Fixtures.giveOnly(c, "geontm:gun_egon", 1);
+        Fixtures.give(c, "geontm:ammo_standard_tau_uranium", 34);
         c.key("e");
         c.waitTicks(5);
         JsonObject screen = Expect.screenOpen(c, "Inventory");
         JsonObject gun = null;
         for (JsonElement e : screen.getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("hbm:gun_egon")) gun = s;
+            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("geontm:gun_egon")) gun = s;
         }
         Expect.that(gun != null, "the gluon gun is in the inventory screen");
         c.mouseMove(gun.get("center_x").getAsInt(), gun.get("center_y").getAsInt());

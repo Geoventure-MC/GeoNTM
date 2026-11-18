@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,9 +59,9 @@ public final class MachineFps implements Scenario {
             String which = System.getenv().getOrDefault("MF_MACHINES", "all");
             for (String[] m : MACHINES) {
                 if (!which.equals("all") && !which.contains(m[0])) continue;
-                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "hbm:" + m[0] + "[facing=north]");
+                Fixtures.setBlock(c, Integer.parseInt(m[1]), L, Integer.parseInt(m[2]), "geontm:" + m[0] + "[facing=north]");
             }
-            // MF_FILL=hbm:some_block: a 24x24 carpet of one small gem block (576 block entities), as in a built-up base
+            // MF_FILL=geontm:some_block: a 24x24 carpet of one small gem block (576 block entities), as in a built-up base
             String fill = System.getenv("MF_FILL");
             if (fill != null && !fill.isEmpty()) {
                 c.cmd("fill " + (X - 12) + " " + L + " " + (Z + 4) + " " + (X + 11) + " " + L + " " + (Z + 27) + " " + fill);

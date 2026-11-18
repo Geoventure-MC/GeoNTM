@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public final class RcWorldNuke implements Scenario {
         int[][] boxes = {{X + r0, Z - r1, X + r1, Z + r1}, {X - r1, Z - r1, X - r0, Z + r1}};
         for (int[] b : boxes) {
             JsonObject p = new JsonObject();
-            p.addProperty("kind", "hbm_worldgen");
+            p.addProperty("kind", "geontm_worldgen");
             p.addProperty("mode", "count");
             p.addProperty("x0", b[0]);
             p.addProperty("z0", b[1]);
@@ -56,10 +56,10 @@ public final class RcWorldNuke implements Scenario {
         c.cmd("forceload add " + (X - 64) + " " + (Z - 64) + " " + (X + 64) + " " + (Z + 64));
         c.teleport(X + 0.5, Y + 6, Z - 4.5);
         c.waitTicks(40);
-        c.cmd("setblock " + X + " " + Y + " " + Z + " hbm:nuke_boy");
+        c.cmd("setblock " + X + " " + Y + " " + Z + " geontm:nuke_boy");
         c.waitTicks(4);
-        String[][] fill = {{"0", "hbm:boy_shielding"}, {"1", "hbm:boy_target"}, {"2", "hbm:boy_bullet"},
-                {"3", "hbm:boy_propellant"}, {"4", "hbm:boy_igniter"}};
+        String[][] fill = {{"0", "geontm:boy_shielding"}, {"1", "geontm:boy_target"}, {"2", "geontm:boy_bullet"},
+                {"3", "geontm:boy_propellant"}, {"4", "geontm:boy_igniter"}};
         for (String[] f : fill) c.cmd("item replace block " + X + " " + Y + " " + Z + " container." + f[0] + " with " + f[1] + " 1");
         c.waitTicks(4);
         c.teleport(X + 75.5, Y + 3, Z + 0.5);
@@ -87,6 +87,6 @@ public final class RcWorldNuke implements Scenario {
         c.screenshot("after-fallout");
         c.cmd("forceload remove all");
         Expect.that(sawFallout, "the bomb produced a fallout entity");
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|unregistered hbm:).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|unregistered geontm:).*");
     }
 }

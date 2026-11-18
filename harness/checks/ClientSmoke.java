@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /** Fresh client acceptance after the server matrix: world, menu, title and rejoin. */
 public final class ClientSmoke implements Scenario {
@@ -7,7 +7,7 @@ public final class ClientSmoke implements Scenario {
         var world = c.currentWorld();
         c.markLog();
         Fixtures.platform(c, 0, 100, 0, 8);
-        Fixtures.giveOnly(c, "hbm:crate_steel", 1);
+        Fixtures.giveOnly(c, "geontm:crate_steel", 1);
         c.look(0, -60);
         c.use(2);
         c.waitScreen("Crate", 5000L);
@@ -18,11 +18,11 @@ public final class ClientSmoke implements Scenario {
         c.keyDown("lshift");
         try {
             c.waitTicks(2);
-            Fixtures.placeOnTop(c, "hbm:crate_steel", 0, 100, 2);
+            Fixtures.placeOnTop(c, "geontm:crate_steel", 0, 100, 2);
         } finally {
             c.keyUp("lshift");
         }
-        Expect.block(c, 0, 101, 2, "hbm:crate_steel");
+        Expect.block(c, 0, 101, 2, "geontm:crate_steel");
         Fixtures.interact(c, 0, 101, 2);
         c.waitScreen("Crate", 5000L);
         Expect.screenStaysOpen(c, "Crate", 20);

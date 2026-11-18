@@ -1,18 +1,18 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * GitHub issue 15: more HBM readouts in Jade. Places the fusion torus, plasma forge, fusion boiler and MHD turbine,
+ * GitHub issue 15: more GEONTM readouts in Jade. Places the fusion torus, plasma forge, fusion boiler and MHD turbine,
  * the ICF and the SILEX by hand, and a DFC emitter, receiver and core by command, seeds what can be seeded (the D-D
  * cycle, ICF heat, UF6 drawn into the SILEX pool, an emitter beam into a receiver, a restriction field), and checks the
- * lines {@code hbm_block_info} reports, which are what Jade is sent, in 1.7's units: TU, TU/t, Spk and the pool in mB.
+ * lines {@code geontm_block_info} reports, which are what Jade is sent, in 1.7's units: TU, TU/t, Spk and the pool in mB.
  * Each machine is also looked at and screenshotted; with Jade in the run the pictures show the HUD.
  */
 public final class Gh15JadeMore implements Scenario {
@@ -29,13 +29,13 @@ public final class Gh15JadeMore implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("gamerule sendCommandFeedback false");
 
-        List<String> jade = c.log(4000, "(?i)golem\\.core\\.jade|jade.*plugin");
+        List<String> jade = c.log(4000, "(?i)geocore\\.core\\.jade|jade.*plugin");
         boolean withJade = !jade.isEmpty();
         System.out.println("[Gh15] Jade " + (withJade ? "present" : "absent"));
         c.markLog();
 
         // torus with the D-D cycle: klystron energy against its ignition, plasma against its output
-        JsonObject torus = place(c, "hbm:fusion_torus", "TileEntityFusionTorus");
+        JsonObject torus = place(c, "geontm:fusion_torus", "TileEntityFusionTorus");
         merge(c, torus, "{recipe0:\"fus.dd\"}");
         torus = info(c, torus);
         Expect.that(gauge(torus, "", "KyU").get("max").getAsLong() > 0, "torus KyU has the recipe's ignition: " + torus);
@@ -43,23 +43,23 @@ public final class Gh15JadeMore implements Scenario {
         look(c, torus, "01-torus");
         clear(c);
 
-        JsonObject forge = place(c, "hbm:fusion_plasma_forge", "TileEntityFusionPlasmaForge");
+        JsonObject forge = place(c, "geontm:fusion_plasma_forge", "TileEntityFusionPlasmaForge");
         gauge(forge, "", "TU");
         look(c, forge, "02-plasma-forge");
         clear(c);
 
-        JsonObject boiler = place(c, "hbm:fusion_boiler", "TileEntityFusionBoiler");
+        JsonObject boiler = place(c, "geontm:fusion_boiler", "TileEntityFusionBoiler");
         Expect.equal(0L, gauge(boiler, "", "TU").get("max").getAsLong(), "boiler plasma is a plain TU line");
         look(c, boiler, "03-fusion-boiler");
         clear(c);
 
-        JsonObject mhdt = place(c, "hbm:fusion_mhdt", "TileEntityFusionMHDT");
+        JsonObject mhdt = place(c, "geontm:fusion_mhdt", "TileEntityFusionMHDT");
         Expect.equal(5_000_000L, gauge(mhdt, "", "TU/t").get("max").getAsLong(), "MHDT plasma against 1.7's minimum");
         look(c, mhdt, "04-fusion-mhdt");
         clear(c);
 
         // ICF: heat against 1.7's 1 TTU; no laser line while no laser is linked
-        JsonObject icf = place(c, "hbm:icf", "TileEntityICF");
+        JsonObject icf = place(c, "geontm:icf", "TileEntityICF");
         merge(c, icf, "{heat:500000000000L}");
         icf = info(c, icf);
         JsonObject heat = gauge(icf, "", "TU");
@@ -70,15 +70,15 @@ public final class Gh15JadeMore implements Scenario {
         clear(c);
 
         // SILEX: UF6 in the tank moves into the pool at 50 mB a tick; tank and pool hold the 8,000 mB between them
-        JsonObject silex = place(c, "hbm:machine_silex", "TileEntitySILEX");
-        merge(c, silex, "{tankNew:8000,tankNew_type:\"hbm:uf6\"}");
+        JsonObject silex = place(c, "geontm:machine_silex", "TileEntitySILEX");
+        merge(c, silex, "{tankNew:8000,tankNew_type:\"geontm:uf6\"}");
         c.waitTicks(40);
         silex = info(c, silex);
         long uf6 = 0;
         int pools = 0;
         for (JsonElement e : silex.getAsJsonArray("tanks")) {
             JsonObject tank = e.getAsJsonObject();
-            if (!tank.get("fluid").getAsString().equals("hbm:uf6")) continue;
+            if (!tank.get("fluid").getAsString().equals("geontm:uf6")) continue;
             uf6 += tank.get("mb").getAsLong();
             pools++;
         }
@@ -87,9 +87,9 @@ public final class Gh15JadeMore implements Scenario {
         clear(c);
 
         // DFC: an emitter at 1% fires 100 Spk a tick east into a receiver, which catches 95; a core holds its field
-        c.cmd("setblock -3 " + G + " 0 hbm:dfc_emitter[facing=east]");
-        c.cmd("setblock 3 " + G + " 0 hbm:dfc_receiver[facing=west]");
-        c.cmd("setblock 0 " + G + " 5 hbm:dfc_core");
+        c.cmd("setblock -3 " + G + " 0 geontm:dfc_emitter[facing=east]");
+        c.cmd("setblock 3 " + G + " 0 geontm:dfc_receiver[facing=west]");
+        c.cmd("setblock 0 " + G + " 5 geontm:dfc_core");
         c.waitTicks(5);
         c.cmd("data merge block 3 " + G + " 0 {tank:64000}");
         c.cmd("data merge block 0 " + G + " 5 {field:100}");
@@ -109,7 +109,7 @@ public final class Gh15JadeMore implements Scenario {
         c.waitTicks(2);
         clear(c);
 
-        if (withJade) Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|golem)");
+        if (withJade) Expect.logCleanSinceMark(c, "(?i)(ERROR|FATAL).*(jade|geocore)");
         else Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");
     }
 
@@ -148,14 +148,14 @@ public final class Gh15JadeMore implements Scenario {
         params.addProperty("y", y);
         params.addProperty("z", z);
         for (int attempt = 0; attempt < 20; attempt++) {
-            JsonObject result = c.query("hbm_block_info", params);
+            JsonObject result = c.query("geontm_block_info", params);
             if (!result.has("pending")) {
                 result.add("at", params);
                 return result;
             }
             c.waitTicks(5);
         }
-        Expect.that(false, "hbm_block_info at " + x + "," + y + "," + z + " stayed pending");
+        Expect.that(false, "geontm_block_info at " + x + "," + y + "," + z + " stayed pending");
         return null;
     }
 

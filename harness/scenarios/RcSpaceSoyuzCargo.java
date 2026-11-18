@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A Soyuz in cargo mode (1.7 mode 1): rocket and a manual designator aimed 200 blocks south, cargo in the payload
@@ -28,7 +28,7 @@ public final class RcSpaceSoyuzCargo implements Scenario {
         c.cmd("fill -30 " + (Y + 1) + " -30 30 " + (Y + 8) + " 30 minecraft:air");
         c.cmd("gamemode creative");
         c.cmd("clear");
-        c.cmd("give @s hbm:soyuz_launcher 1");
+        c.cmd("give @s geontm:soyuz_launcher 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(0.5, Y + 1, -3.5);
@@ -41,7 +41,7 @@ public final class RcSpaceSoyuzCargo implements Scenario {
         Expect.that(core != null, "the Soyuz complex formed a core");
 
         String at = core[0] + " " + core[1] + " " + core[2];
-        c.cmd("item replace block " + at + " container.0 with hbm:missile_soyuz_0 1");
+        c.cmd("item replace block " + at + " container.0 with geontm:missile_soyuz_0 1");
         c.cmd("item replace block " + at + " container.9 with minecraft:diamond 7");
         c.cmd("item replace block " + at + " container.10 with minecraft:gold_ingot 12");
         c.cmd("data merge block " + at + " {mode:1b,power:1000000L,fuel:128000,oxidizer:128000}");
@@ -50,14 +50,14 @@ public final class RcSpaceSoyuzCargo implements Scenario {
         xz.add(0);
         xz.add(TZ);
         des.add("designate", xz);
-        Expect.that(c.query("hbm_gapsc", des).get("designated").getAsBoolean(), "designator handed over");
+        Expect.that(c.query("geontm_gapsc", des).get("designated").getAsBoolean(), "designator handed over");
         c.waitTicks(3);
 
         openLauncher(c, core);
         JsonObject held = null;
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("player_inventory").getAsBoolean() && s.has("id") && s.get("id").getAsString().equals("hbm:designator_manual")) held = s;
+            if (s.get("player_inventory").getAsBoolean() && s.has("id") && s.get("id").getAsString().equals("geontm:designator_manual")) held = s;
         }
         Expect.that(held != null, "the designator is in the inventory");
         c.clickSlot(held.get("index").getAsInt());
@@ -86,7 +86,7 @@ public final class RcSpaceSoyuzCargo implements Scenario {
         int[] cap = null;
         for (int i = 0; i < 120 && cap == null; i++) {
             c.waitTicks(40);
-            cap = find(c, "hbm:soyuz_capsule", 0, TZ);
+            cap = find(c, "geontm:soyuz_capsule", 0, TZ);
         }
         Expect.that(cap != null, "the capsule landed at the designated target");
         String capNbt = c.blockEntity(cap[0], cap[1], cap[2]).toString().replaceAll("\\s", "");

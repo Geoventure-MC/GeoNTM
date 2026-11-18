@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.12.2's occult (jade) shotgun (gun_jshotgun) through the real input path: the Collada model at rest and in both
@@ -27,8 +27,8 @@ public final class OccultShotgun implements Scenario {
         c.cmd("time set 6000");
         c.setOption("camera", "first_person");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_jshotgun");
-        c.cmd("give @s hbm:ammo_standard_g10_du 16");
+        c.cmd("give @s geontm:gun_jshotgun");
+        c.cmd("give @s geontm:ammo_standard_g10_du 16");
         c.hotbar(1);
         c.teleport(0.5, Y + 1, 0.5);
         c.look(0, 0);
@@ -46,12 +46,12 @@ public final class OccultShotgun implements Scenario {
         c.screenshot("loaded");
 
         // one shot: 8 to 12 pellets at once
-        c.cmd("kill @e[type=hbm:entity_bullet_mk4]");
+        c.cmd("kill @e[type=geontm:entity_bullet_mk4]");
         c.look(0, 0);
         c.waitTicks(5);
         c.attack();
         c.waitTicks(1);
-        int pellets = count(c, "hbm:entity_bullet_mk4", 200);
+        int pellets = count(c, "geontm:entity_bullet_mk4", 200);
         int smokes = jade(c).get("smokes").getAsInt();
         c.screenshot("after-shot");
         Expect.that(pellets >= 8 && pellets <= 12, "one trigger pull fires 8 to 12 pellets, saw " + pellets);
@@ -66,7 +66,7 @@ public final class OccultShotgun implements Scenario {
         c.screenshot("flash-pinned");
         pinFlash(c, false);
         Expect.that(jade(c).get("loaded").getAsInt() == 1, "one shell left: " + jade(c));
-        Expect.that(count(c, "hbm:entity_bullet_mk4", 200) == 0, "the pellets died within 7 ticks");
+        Expect.that(count(c, "geontm:entity_bullet_mk4", 200) == 0, "the pellets died within 7 ticks");
 
         // one shell in: the one-shell reload (1.5 s)
         c.key("r", 2);
@@ -88,20 +88,20 @@ public final class OccultShotgun implements Scenario {
         c.setOption("camera", "first_person");
         c.releaseAll();
 
-        Expect.logCleanSinceMark(c, "(Exception|ERROR.*hbm|Collada|Shader.*(hbm|flash_lmap))");
+        Expect.logCleanSinceMark(c, "(Exception|ERROR.*geontm|Collada|Shader.*(geontm|flash_lmap))");
     }
 
     private static JsonObject jade(Client c) {
         JsonObject req = new JsonObject();
         req.addProperty("mode", "jade");
-        return c.query("hbm_reloaded_guns", req);
+        return c.query("geontm_reloaded_guns", req);
     }
 
     private static void pinFlash(Client c, boolean on) {
         JsonObject req = new JsonObject();
         req.addProperty("mode", "jade");
         req.addProperty("pin_flash", on);
-        c.query("hbm_reloaded_guns", req);
+        c.query("geontm_reloaded_guns", req);
     }
 
     private static int count(Client c, String type, int radius) {

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * Dedicated server: a Chekhov turret on the server shoots a golem and spends rounds and power as it does in
+ * Dedicated server: a Chekhov turret on the server shoots a geocore and spends rounds and power as it does in
  * singleplayer (10 per .50 SP round), and a powered radar sees the flying player and lights an adjacent lamp, with the
  * client joined over the network. Needs a client joined to a dedicated server (harness up --server).
  */
@@ -33,8 +33,8 @@ public final class RcSpaceServer implements Scenario {
             c.waitTicks(20);
 
             rcon.command("kill @e[type=minecraft:iron_golem]");
-            rcon.command("setblock " + X + " " + L + " " + Z + " hbm:turret_chekhov[facing=north]");
-            rcon.command("item replace block " + X + " " + L + " " + Z + " container.1 with hbm:ammo_standard_bmg50_sp 64");
+            rcon.command("setblock " + X + " " + L + " " + Z + " geontm:turret_chekhov[facing=north]");
+            rcon.command("item replace block " + X + " " + L + " " + Z + " container.1 with geontm:ammo_standard_bmg50_sp 64");
             rcon.command("data merge block " + X + " " + L + " " + Z + " {power:10000L,isOn:1b,targetMobs:1b,targetAnimals:1b}");
             rcon.command("summon minecraft:iron_golem " + (X + 0.5) + " " + L + " " + (Z + 14.5) + " {NoAI:1b,PersistenceRequired:1b,Silent:1b}");
             rcon.command("attribute @e[type=minecraft:iron_golem,limit=1] minecraft:generic.max_health base set 1000");
@@ -44,22 +44,22 @@ public final class RcSpaceServer implements Scenario {
             for (int i = 0; i < 9; i++) {
                 rcon.command("data merge block " + X + " " + L + " " + Z + " {power:10000L}");
                 c.waitTicks(10);
-                System.out.println("[RcSpaceServer] t" + i + " bullets: " + rcon.command("execute if entity @e[type=hbm:entity_bullet_mk4]") + " golem " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Health") + " turret " + rcon.command("data get block " + X + " " + L + " " + Z + " power"));
+                System.out.println("[RcSpaceServer] t" + i + " bullets: " + rcon.command("execute if entity @e[type=geontm:entity_bullet_mk4]") + " geocore " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Health") + " turret " + rcon.command("data get block " + X + " " + L + " " + Z + " power"));
             }
             c.waitTicks(40);   // the last bullet may still be in flight
             double end = health(rcon);
-            System.out.println("[RcSpaceServer] golem raw: " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Health") + " | " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Pos"));
+            System.out.println("[RcSpaceServer] geocore raw: " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Health") + " | " + rcon.command("data get entity @e[type=minecraft:iron_golem,limit=1] Pos"));
             String turret = rcon.command("data get block " + X + " " + L + " " + Z + " inventory");
             int rounds = count(turret);
-            System.out.println("[RcSpaceServer] golem " + start + " -> " + end + ", rounds left " + rounds + " of 64: " + turret);
-            Expect.that(end < start, "the server turret hurt the golem");
+            System.out.println("[RcSpaceServer] geocore " + start + " -> " + end + ", rounds left " + rounds + " of 64: " + turret);
+            Expect.that(end < start, "the server turret hurt the geocore");
             Expect.that(rounds < 64, "the server turret spent rounds");
             Expect.that(Math.abs((start - end) - (64 - rounds) * 10D) < 0.01D, "10 damage per round: " + (start - end) + " for " + (64 - rounds));
             rcon.command("data merge block " + X + " " + L + " " + Z + " {isOn:0b}");
             c.screenshot("turret");
 
             // radar
-            rcon.command("setblock " + (X - 10) + " " + L + " " + Z + " hbm:machine_radar");
+            rcon.command("setblock " + (X - 10) + " " + L + " " + Z + " geontm:machine_radar");
             rcon.command("setblock " + (X - 9) + " " + L + " " + Z + " minecraft:redstone_lamp");
             rcon.command("data merge block " + (X - 10) + " " + L + " " + Z + " {power:100000L,scanPlayers:1b,scanMissiles:1b,scanShells:1b,smartMode:0b}");
             rcon.command("setblock " + (X - 10) + " " + (L + 59) + " " + Z + " minecraft:stone");

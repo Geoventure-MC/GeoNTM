@@ -122,8 +122,8 @@ fun computerCraftLibraries(): FileCollection =
         ?: emptyList<File>())
 
 val mcVersion = stonecutter.current.version
-apply(from = rootProject.file("../Golem-Core/gradle/mod/gemrender-local.gradle.kts"))
-val localGemRender = extra.properties["golem.gemrender.local"]
+apply(from = rootProject.file("../GeoCore/gradle/mod/gemrender-local.gradle.kts"))
+val localGemRender = extra.properties["geocore.gemrender.local"]
 val javaVersion = prop("java_version").toInt()
 val modId = prop("mod.id")
 
@@ -136,7 +136,7 @@ java {
 }
 
 sourceSets["main"].java {
-    exclude("com/hbm/platform/neoforge/**", "com/hbm/platform/forge/**")
+    exclude("fr/geoventure/geontm/platform/neoforge/**", "fr/geoventure/geontm/platform/forge/**")
 }
 
 repositories {
@@ -182,9 +182,9 @@ repositories {
 }
 
 // Sable (moving block sub-levels) is an optional peer on the nodes that declare it. HBM's side of it is the shared
-// root src/sable (com.hbm.compat.sable) plus this loader's entry points in src/sable-fabric, added only here and
-// appended to fabric.mod.json only here; the shared tree reaches sub-levels only through Golem Core's neutral
-// dev.golem.core.world.SubLevels. `-Psable.run=true` puts Sable in the dev runs (Create Aeronautics has no Fabric
+// root src/sable (fr.geoventure.geontm.compat.sable) plus this loader's entry points in src/sable-fabric, added only here and
+// appended to fabric.mod.json only here; the shared tree reaches sub-levels only through GeoCore's neutral
+// fr.geoventure.geocore.world.SubLevels. `-Psable.run=true` puts Sable in the dev runs (Create Aeronautics has no Fabric
 // build); off by default.
 val sableMc = propOrNull("deps.sable_mc")
 val sableVer = propOrNull("deps.sable")
@@ -197,7 +197,7 @@ if (hasSable) {
 }
 
 // Happy ghasts exist from Minecraft 1.21.6, so only the 26.1 nodes carry the happy-ghast Fat Man: the shared root
-// src/happyghast (com.hbm.compat.happyghast) plus this loader's entry points in src/happyghast-fabric, added and
+// src/happyghast (fr.geoventure.geontm.compat.happyghast) plus this loader's entry points in src/happyghast-fabric, added and
 // written into fabric.mod.json only on nodes that set `feature.happy_ghast=true`.
 val hasHappyGhast = propOrNull("feature.happy_ghast") == "true"
 if (hasHappyGhast) {
@@ -255,7 +255,7 @@ val devRuntime = if (obfuscated) "modLocalRuntime" else "localRuntime"
 
 // Resolve and validate the same upstream artifacts as every other Fabric consumer.
 extra["mc_version"] = mcVersion
-apply(from = rootProject.file("../Golem-Core/gradle/mod/composite-freshness.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/composite-freshness.gradle.kts"))
 
 dependencies {
     "minecraft"("com.mojang:minecraft:${prop("deps.minecraft")}")
@@ -263,8 +263,8 @@ dependencies {
 
     modCfg("net.fabricmc:fabric-loader:${prop("deps.fabric_loader")}")
     modCfg("net.fabricmc.fabric-api:fabric-api:${prop("deps.fabric_api")}")
-    // Golem Core supplies the cross-version API facades, resolved from the composite build.
-    modCfg("dev.golem:golemcore-fabric-$mcVersion:${prop("deps.golemcore")}+$mcVersion")
+    // GeoCore supplies the cross-version API facades, resolved from the composite build.
+    modCfg("fr.geoventure:geocore-fabric-$mcVersion:${prop("deps.geocore")}+$mcVersion")
 
     // JEI is per-node optional; see the neoforge buildscript for the rationale.
     val jei = propOrNull("deps.jei_mc")
@@ -281,8 +281,8 @@ dependencies {
     }
 
     // REI (Roughly Enough Items) is an optional peer like JEI: HBM's recipe-viewer declarations
-    // (com.hbm.handler.jei.HbmRecipeViewer) feed it through Golem Core's dev.golem.core.rei, from the thin plugins in
-    // com.hbm.handler.rei (the `rei_client` / `rei_common` entrypoints; guarded by the `rei` constant). Compiled
+    // (fr.geoventure.geontm.handler.jei.GeoNtmRecipeViewer) feed it through GeoCore's fr.geoventure.geocore.rei, from the thin plugins in
+    // fr.geoventure.geontm.handler.rei (the `rei_client` / `rei_common` entrypoints; guarded by the `rei` constant). Compiled
     // against on every node (intermediary jars below 26.1), never shipped or required. `-Prei.run=true` puts REI
     // (with Cloth Config and Architectury) in the client run, beside JEI; off by default so the recipe baselines stay
     // REI-free. Its POM's Fabric Loader / Fabric API are left out, as JEI's are: the node declares its own.
@@ -306,13 +306,13 @@ dependencies {
         }
     }
 
-    // EMI is an optional peer like REI, fed by the thin plugin in com.hbm.handler.emi (`-Pemi.run=true` for dev runs).
+    // EMI is an optional peer like REI, fed by the thin plugin in fr.geoventure.geontm.handler.emi (`-Pemi.run=true` for dev runs).
     propOrNull("deps.emi")?.let { emi ->
         (if (obfuscated) "modCompileOnly" else "compileOnly")("maven.modrinth:emi:$emi") { isTransitive = false }
         if (propOrNull("emi.run") == "true") devRuntime("maven.modrinth:emi:$emi") { isTransitive = false }
     }
 
-    // GemRender instances gem-declared machines through Golem Core; every machine keeps its vanilla BER, which draws
+    // GemRender instances gem-declared machines through GeoCore; every machine keeps its vanilla BER, which draws
     // whenever GemRender is absent or `/flywheel backend off`. `-Pgemrender.run=false` launches without it, as a
     // player without GemRender would. Its 1.x Fabric jars nest Flywheel, but a Loom dev run does not load a dependency's
     // nested jars, so Flywheel (the nested version) is added beside it.
@@ -326,8 +326,8 @@ dependencies {
     }
 
     // Sodium declares `environment: client`, so Fabric loads it only during the client run.
-    // Jade, dev runs only (`-Pjade.run=true`): HBM's overlay declarations (com.hbm.compat.HbmBlockInfo) reach it
-    // through Golem Core's dev.golem.core.jade, so HBM has no Jade dependency.
+    // Jade, dev runs only (`-Pjade.run=true`): HBM's overlay declarations (fr.geoventure.geontm.compat.GeoNtmBlockInfo) reach it
+    // through GeoCore's fr.geoventure.geocore.jade, so GEONTM has no Jade dependency.
     if (propOrNull("jade.run") == "true") propOrNull("deps.jade")?.let { devRuntime("maven.modrinth:jade:$it") }
     // C2ME, dev runs only (`-Pc2me.run=true`): runs worldgen features on its own worker threads. Only for the node a
     // task names: its 1.21.1 Fabric jars need a newer Loom and would fail every other node's configuration.
@@ -340,7 +340,7 @@ dependencies {
     }
     // Just Enough Characters, dev runs only (`-Pjecharacters.run=true`): pinyin matching in HBM's search bars (Core TextSearch).
     if (propOrNull("jecharacters.run") == "true") propOrNull("deps.jecharacters")?.let { devRuntime("maven.modrinth:justenoughcharacters:$it") }
-    // Applied Energistics 2, dev runs only (`-Pae2.run=true`), through Golem Core's dev.golem.core.autocraft. 1.20.1 only.
+    // Applied Energistics 2, dev runs only (`-Pae2.run=true`), through GeoCore's fr.geoventure.geocore.autocraft. 1.20.1 only.
     if (propOrNull("ae2.run") == "true") propOrNull("deps.ae2")?.let { devRuntime("maven.modrinth:ae2:$it") }
     // Refined Storage, dev runs only (`-Prefinedstorage.run=true`); it reads HBM's blocks through Fabric's transfer API.
     if (propOrNull("refinedstorage.run") == "true") {
@@ -390,11 +390,11 @@ dependencies {
     // 1.20.1: Sodium 0.5 skips FabricBakedModel.emitBlockQuads (connected textures) unless Indium is loaded.
     propOrNull("deps.indium")?.let { devRuntime("maven.modrinth:indium:$it") }
     // Team Reborn Energy is an optional peer of Core's energy facades; the dev game loads it so the RF
-    // converters' Fabric exposure can be exercised (HBM never compiles against it). `-Ptr_energy.run=false` leaves it
+    // converters' Fabric exposure can be exercised (GEONTM never compiles against it). `-Ptr_energy.run=false` leaves it
     // out, as most players run: a game without it once crashed at init (Core's RebornEnergy, History §19eq).
     if (propOrNull("tr_energy.run") != "false") propOrNull("deps.tr_energy")?.let { devRuntime("teamreborn:energy:$it") }
 
-    // KubeJS is an optional peer served entirely by Golem Core's dev.golem.core.kubejs adapter (HBM has no KubeJS code).
+    // KubeJS is an optional peer served entirely by GeoCore's fr.geoventure.geocore.kubejs adapter (GEONTM has no KubeJS code).
     // Never compiled against, shipped or required. `-Pkubejs.run=true` puts KubeJS 6, Rhino and Architectury in the dev
     // runs (intermediary jars below 26.1) and copies harness/kubejs into each run's kubejs folder; off by default so
     // the baselines stay KubeJS-free. The node declares its own Fabric Loader / Fabric API, as for JEI.
@@ -409,7 +409,7 @@ dependencies {
     }
 
     // CC: Tweaked is an optional peer: HBM's 1.7 OpenComputers components are served to it as peripherals
-    // (com.hbm.compat.computer, through Golem Core's dev.golem.core.computer). Compiled against on every node,
+    // (fr.geoventure.geontm.compat.computer, through GeoCore's fr.geoventure.geocore.computer). Compiled against on every node,
     // never shipped or required. `-Pcomputercraft.run=true` puts the mod in the dev runs as well; it is off by
     // default so the recipe baselines stay CC-free.
     val ccMc = propOrNull("deps.cc_mc")
@@ -451,7 +451,7 @@ loom {
             ideConfigGenerated(true)
             runDir = "runs/server"
         }
-        // Headless GameTest runner: `gradlew :<node>-fabric:runGametest` executes every hbm:* test through
+        // Headless GameTest runner: `gradlew :<node>-fabric:runGametest` executes every geontm:* test through
         // Fabric API's runner and the fabric-gametest entrypoint (see FabricGameTests).
         register("gametest") {
             server()
@@ -460,8 +460,8 @@ loom {
             runDir = "runs/gametest"
             vmArg("-Dfabric-api.gametest")
             vmArg("-Dfabric-api.gametest.report-file=${project.file("runs/gametest/report.xml").absolutePath}")
-            // -Pgametest.filter=<regex> runs only the matching test ids (see Golem's GameTests.addLegacy).
-            vmArg("-Dgolem.gametest.filter=${providers.gradleProperty("gametest.filter").orElse("").get()}")
+            // -Pgametest.filter=<regex> runs only the matching test ids (see GeoCore's GameTests.addLegacy).
+            vmArg("-Dgeocore.gametest.filter=${providers.gradleProperty("gametest.filter").orElse("").get()}")
         }
     }
 }
@@ -499,8 +499,8 @@ tasks.processResources {
     // so the source fabric.mod.json stays valid JSON (Loom parses it at configuration).
     if (hasSable) {
         val sableLines = mapOf(
-            "\"com.hbm.platform.fabric.FabricInit\"" to "\"com.hbm.compat.sable.HbmSableFabric\"",
-            "\"com.hbm.platform.fabric.FabricGameTests\"" to "\"com.hbm.compat.sable.HbmSableFabricGameTests\"",
+            "\"fr.geoventure.geontm.platform.fabric.FabricInit\"" to "\"fr.geoventure.geontm.compat.sable.GeoNtmSableFabric\"",
+            "\"fr.geoventure.geontm.platform.fabric.FabricGameTests\"" to "\"fr.geoventure.geontm.compat.sable.GeoNtmSableFabricGameTests\"",
         )
         filesMatching("fabric.mod.json") {
             filter { line -> sableLines[line.trim()]?.let { "$line, $it" } ?: line }
@@ -508,11 +508,11 @@ tasks.processResources {
     }
     // The happy-ghast Fat Man's entry points, only on nodes that set feature.happy_ghast. Both go BEFORE HBM's: Fabric
     // registers everything in FabricInit's one flush, so the entity type and GameTest bodies must exist by then, and
-    // FabricClientInit binds and audits every hbm entity renderer at once, so the renderer must be handed over first.
+    // FabricClientInit binds and audits every geontm entity renderer at once, so the renderer must be handed over first.
     if (hasHappyGhast) {
         val happyGhastLines = mapOf(
-            "\"com.hbm.platform.fabric.FabricInit\"" to { it: String -> "\"com.hbm.compat.happyghast.HbmHappyGhastFabric\", \"com.hbm.compat.happyghast.HappyGhastGameTestsFabric\", $it" },
-            "\"com.hbm.platform.fabric.FabricClientInit\"" to { it: String -> "\"com.hbm.compat.happyghast.HbmHappyGhastFabricClient\", $it" },
+            "\"fr.geoventure.geontm.platform.fabric.FabricInit\"" to { it: String -> "\"fr.geoventure.geontm.compat.happyghast.GeoNtmHappyGhastFabric\", \"fr.geoventure.geontm.compat.happyghast.HappyGhastGameTestsFabric\", $it" },
+            "\"fr.geoventure.geontm.platform.fabric.FabricClientInit\"" to { it: String -> "\"fr.geoventure.geontm.compat.happyghast.GeoNtmHappyGhastFabricClient\", $it" },
         )
         filesMatching("fabric.mod.json") {
             filter { line ->
@@ -543,33 +543,33 @@ tasks.processResources { dependsOn(tasks.named("stonecutterGenerate")) }
 
 // Recipe ingredients are written in the 26.1 shape and converted downward for older nodes.
 extra["java_version"] = javaVersion.toString()
-// Golem Core's shared build layer; HBM's parameters for it (golem.build.*) are in gradle.properties.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/run-toolchain.gradle.kts"))
-// Visual test harness launch capture (shared by every Golem Core mod); see harness.json and ../Golem-Core/harness/README.md.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/harness-spec.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-recipes.gradle.kts"))
+// GeoCore's shared build layer; HBM's parameters for it (geocore.build.*) are in gradle.properties.
+apply(from = rootProject.file("../GeoCore/gradle/mod/run-toolchain.gradle.kts"))
+// Visual test harness launch capture (shared by every GeoCore mod); see harness.json and ../GeoCore/harness/README.md.
+apply(from = rootProject.file("../GeoCore/gradle/mod/harness-spec.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-recipes.gradle.kts"))
 extra["loader"] = "fabric"
-// Neutral "golem:conditions" in data JSON, rewritten to this loader's spelling; see the script.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/recipe-conditions.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-biomes.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-assets.gradle.kts"))
+// Neutral "geocore:conditions" in data JSON, rewritten to this loader's spelling; see the script.
+apply(from = rootProject.file("../GeoCore/gradle/mod/recipe-conditions.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-biomes.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-assets.gradle.kts"))
 // HBM's own item-model resource checks; after legacy-assets, whose parentModelOf export they read.
 apply(from = rootProject.file("gradle/asset-checks.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/dejson.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/dejson.gradle.kts"))
 // HBM's machine recipe tables, generated from src/recipes on 26.1 NeoForge (build.neoforge.gradle.kts); see the script.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/generated-data.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/generated-data.gradle.kts"))
 
-apply(from = rootProject.file("../Golem-Core/gradle/mod/mixin-validation.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/mixin-validation.gradle.kts"))
 
 // The uploaded jar: no GameTests or harness queries (see the script).
-apply(from = rootProject.file("../Golem-Core/gradle/mod/release-jar.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/release-jar.gradle.kts"))
 // Credits and links in the loader metadata, from the mod.* properties.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/mod-metadata.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/mod-metadata.gradle.kts"))
 // Modrinth + CurseForge upload of this node's jar; run every node with the root `publishAllMods`.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/publish.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/publish.gradle.kts"))
 
 dependencies {
-    // NeoForge ships jspecify transitively on 26.1 but not on older versions, and HBM uses @Nullable in
+    // NeoForge ships jspecify transitively on 26.1 but not on older versions, and GEONTM uses @Nullable in
     // ~156 files. Declared explicitly so the shared tree compiles on every node; annotations-only jar,
     // no runtime component.
     compileOnly("org.jspecify:jspecify:1.0.0")
@@ -577,7 +577,7 @@ dependencies {
 
 // The id constants recipe declarations are written against. Generated from the live registry by
 // `runGenerateIds` and committed, because the plain-JVM build step the declarations run in cannot
-// load half the registry classes; see com.hbm.lib.IdConstants.
+// load half the registry classes; see fr.geoventure.geontm.lib.IdConstants.
 sourceSets["main"].java.srcDir(rootProject.file("src/generated/java"))
 
 // KubeJS dev scripts (`-Pkubejs.run=true`): harness/kubejs (startup_scripts, server_scripts, client_scripts) is copied

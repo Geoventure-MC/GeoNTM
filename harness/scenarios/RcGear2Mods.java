@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,21 +31,21 @@ public final class RcGear2Mods implements Scenario {
         c.cmd("effect clear @s");
         c.cmd("clear");
         for (String s : new String[] {"head", "chest", "legs", "feet"}) c.cmd("item replace entity @s armor." + s + " with minecraft:air");
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", 0, Y, TZ);
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", 0, Y, TZ);
         c.waitTicks(3);
-        for (String id : new String[] {"hbm:steel_plate", "hbm:insert_steel", "hbm:cladding_lead", "hbm:armor_battery", "hbm:scrumpy"}) {
+        for (String id : new String[] {"geontm:steel_plate", "geontm:insert_steel", "geontm:cladding_lead", "geontm:armor_battery", "geontm:scrumpy"}) {
             c.cmd("give @s " + id + " 1");
         }
         c.waitTicks(5);
         open(c);
-        shift(c, "hbm:steel_plate");
-        shift(c, "hbm:insert_steel");
-        shift(c, "hbm:cladding_lead");
-        shift(c, "hbm:armor_battery");
-        shift(c, "hbm:scrumpy");
-        slotHolds(c, KEVLAR, "hbm:insert_steel");
-        slotHolds(c, CLADDING, "hbm:cladding_lead");
-        slotHolds(c, BATTERY, "hbm:armor_battery");
+        shift(c, "geontm:steel_plate");
+        shift(c, "geontm:insert_steel");
+        shift(c, "geontm:cladding_lead");
+        shift(c, "geontm:armor_battery");
+        shift(c, "geontm:scrumpy");
+        slotHolds(c, KEVLAR, "geontm:insert_steel");
+        slotHolds(c, CLADDING, "geontm:cladding_lead");
+        slotHolds(c, BATTERY, "geontm:armor_battery");
         // 1.7 ItemModRevive fits leggings only, so a chestplate refuses it
         Expect.that(c.slot(EXTRA).get("empty").getAsBoolean(), "a revive module is refused by a chestplate");
         hover(c, KEVLAR, "insert-tooltip");
@@ -56,7 +56,7 @@ public final class RcGear2Mods implements Scenario {
         c.waitTicks(3);
         c.key("escape");
         c.waitTicks(30);
-        JsonObject armor = c.query("hbm_armor", new JsonObject());
+        JsonObject armor = c.query("geontm_armor", new JsonObject());
         List<String> mods = mods(armor, "chest");
         System.out.println("[RcGear2Mods] " + c.node() + " chest mods " + mods + " speed " + armor.get("movement_speed"));
         Expect.that(mods.size() == 3, "insert, cladding and battery stay on the plate, got " + mods);
@@ -65,15 +65,15 @@ public final class RcGear2Mods implements Scenario {
 
         // helmet-only slot: one charm fits, the gas mask attachment is then refused by the occupied slot
         c.cmd("clear");
-        for (String id : new String[] {"hbm:steel_helmet", "hbm:protection_charm", "hbm:attachment_mask"}) c.cmd("give @s " + id + " 1");
+        for (String id : new String[] {"geontm:steel_helmet", "geontm:protection_charm", "geontm:attachment_mask"}) c.cmd("give @s " + id + " 1");
         c.waitTicks(4);
         open(c);
-        shift(c, "hbm:steel_helmet");
-        shift(c, "hbm:protection_charm");
-        slotHolds(c, HELMET_SLOT, "hbm:protection_charm");
-        shift(c, "hbm:attachment_mask");
-        slotHolds(c, HELMET_SLOT, "hbm:protection_charm");
-        Expect.that(find(c, "hbm:attachment_mask") >= 0, "the second helmet module stays in the inventory");
+        shift(c, "geontm:steel_helmet");
+        shift(c, "geontm:protection_charm");
+        slotHolds(c, HELMET_SLOT, "geontm:protection_charm");
+        shift(c, "geontm:attachment_mask");
+        slotHolds(c, HELMET_SLOT, "geontm:protection_charm");
+        Expect.that(find(c, "geontm:attachment_mask") >= 0, "the second helmet module stays in the inventory");
         hover(c, HELMET_SLOT, "charm-tooltip");
         c.key("escape");
         c.waitTicks(20);

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Every 1.7 turret in the world, powered and on, with a mob to aim at, photographed from the front and from behind;
@@ -47,7 +47,7 @@ public final class RcSpaceTurretLook implements Scenario {
     }
 
     private static void place(Client c, String turret, int x, int z, String facing) {
-        Fixtures.setBlock(c, x, L, z, "hbm:turret_" + turret + (turret.startsWith("sentry") ? "" : "[facing=" + facing + "]"));
+        Fixtures.setBlock(c, x, L, z, "geontm:turret_" + turret + (turret.startsWith("sentry") ? "" : "[facing=" + facing + "]"));
         c.cmd("data merge block " + x + " " + L + " " + z + " {power:1000000L,isOn:1b,targetMobs:1b,targetAnimals:1b}");
         // 6 blocks out and 4 to the side so the turret has to swing round
         c.cmd("summon minecraft:iron_golem " + (x + 6.5) + " " + L + " " + (z + 6.5) + " {NoAI:1b,PersistenceRequired:1b,Silent:1b}");

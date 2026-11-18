@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,27 +27,27 @@ public final class VisualContainers implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 16);
 
         // oil derrick
-        open(c, "hbm:machine_well", -8, 0);
+        open(c, "geontm:machine_well", -8, 0);
         List<JsonObject> well = machineSlots(c);
         Expect.that(well.size() == 7, "oil well menu must show 7 machine slots (1.7), has " + well.size());
-        shiftIn(c, "hbm:upgrade_speed_1");
+        shiftIn(c, "geontm:upgrade_speed_1");
         JsonObject s5 = machineSlots(c).get(5);
-        Expect.that(s5.has("id") && s5.get("id").getAsString().equals("hbm:upgrade_speed_1"),
+        Expect.that(s5.has("id") && s5.get("id").getAsString().equals("geontm:upgrade_speed_1"),
                 "speed upgrade must land in oil well slot 5: " + s5);
         c.screenshot("00-oil-well");
         close(c);
 
         // chemical factory
-        open(c, "hbm:machine_chemical_factory", 8, 0);
-        shiftIn(c, "hbm:battery_creative");
+        open(c, "geontm:machine_chemical_factory", 8, 0);
+        shiftIn(c, "geontm:battery_creative");
         JsonObject s0 = machineSlots(c).get(0);
-        Expect.that(s0.has("id") && s0.get("id").getAsString().equals("hbm:battery_creative"),
+        Expect.that(s0.has("id") && s0.get("id").getAsString().equals("geontm:battery_creative"),
                 "creative battery must land in chemical factory slot 0: " + s0);
-        shiftIn(c, "hbm:upgrade_speed_1");
+        shiftIn(c, "geontm:upgrade_speed_1");
         boolean upgrade = false;
         for (int i = 1; i <= 3; i++) {
             JsonObject s = machineSlots(c).get(i);
-            if (s.has("id") && s.get("id").getAsString().equals("hbm:upgrade_speed_1")) upgrade = true;
+            if (s.has("id") && s.get("id").getAsString().equals("geontm:upgrade_speed_1")) upgrade = true;
         }
         Expect.that(upgrade, "speed upgrade must land in chemical factory slots 1..3");
         printSlots(c, "chemical factory");
@@ -55,12 +55,12 @@ public final class VisualContainers implements Scenario {
         close(c);
 
         // mixer
-        open(c, "hbm:machine_mixer", 0, -8);
+        open(c, "geontm:machine_mixer", 0, -8);
         printSlots(c, "mixer");
         c.screenshot("02-mixer");
         close(c);
 
-        Expect.logCleanSinceMark(c, "(?i)exception.*(container|menu|screen|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(container|menu|screen|geontm)");
     }
 
     private static void open(Client c, String block, int x, int z) {

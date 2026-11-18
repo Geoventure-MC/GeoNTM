@@ -1,15 +1,15 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Real-input gun check: each gun is given with a round, reloaded with R, and fired once with the held left mouse
- * button at a no-AI iron golem. The golem's health lost must equal the 1.7 figure (receiver damage times the round's
- * damage multiplier; an iron golem has no armor and no resistance), and one round must leave the inventory per
+ * button at a no-AI iron geocore. The geocore's health lost must equal the 1.7 figure (receiver damage times the round's
+ * damage multiplier; an iron geocore has no armor and no resistance), and one round must leave the inventory per
  * reload round, not per shot.
  */
 public final class RcGunFire implements Scenario {
@@ -18,12 +18,12 @@ public final class RcGunFire implements Scenario {
 
     // gun, ammo, expected damage per hit (1.7: GUN_*_DAMAGE x BulletConfig.setDamage), rounds used by one reload
     private static final Object[][] CASES = {
-            {"hbm:gun_light_revolver", "hbm:ammo_standard_m357_sp", 7.5, 6},
-            {"hbm:gun_greasegun", "hbm:ammo_standard_p9_fmj", 3.0 * 0.8, 30},
-            {"hbm:gun_uzi", "hbm:ammo_standard_p9_sp", 3.0, 30},
-            {"hbm:gun_stg77", "hbm:ammo_standard_r556_fmj", 10.0 * 0.8, 30},
-            {"hbm:gun_stg77", "hbm:ammo_standard_r556_jhp", 10.0 * 1.5, 30},
-            {"hbm:gun_henry", "hbm:ammo_standard_m44_sp", 10.0, -1},
+            {"geontm:gun_light_revolver", "geontm:ammo_standard_m357_sp", 7.5, 6},
+            {"geontm:gun_greasegun", "geontm:ammo_standard_p9_fmj", 3.0 * 0.8, 30},
+            {"geontm:gun_uzi", "geontm:ammo_standard_p9_sp", 3.0, 30},
+            {"geontm:gun_stg77", "geontm:ammo_standard_r556_fmj", 10.0 * 0.8, 30},
+            {"geontm:gun_stg77", "geontm:ammo_standard_r556_jhp", 10.0 * 1.5, 30},
+            {"geontm:gun_henry", "geontm:ammo_standard_m44_sp", 10.0, -1},
     };
 
     @Override
@@ -54,14 +54,14 @@ public final class RcGunFire implements Scenario {
             c.key("r");
             c.waitTicks(gun.endsWith("henry") ? 260 : 120);
             int left = count(c, ammo);
-            double before = golemHealth(c);
+            double before = geocoreHealth(c);
             c.keyDown("mouse.left");
             c.waitTicks(1);
             c.keyUp("mouse.left");
             c.waitTicks(15);
-            double after = golemHealth(c);
+            double after = geocoreHealth(c);
             double dealt = before - after;
-            String line = c.node() + " " + gun + " + " + ammo + ": reload took " + (64 - left) + " rounds, golem " + before
+            String line = c.node() + " " + gun + " + " + ammo + ": reload took " + (64 - left) + " rounds, geocore " + before
                     + " -> " + after + " (" + dealt + " dealt, expected " + expected + ")";
             System.out.println("[RcGunFire] " + line);
             if ((Integer) t[3] > 0 && 64 - left != (Integer) t[3]) bad.append("reload count: ").append(line).append("; ");
@@ -76,7 +76,7 @@ public final class RcGunFire implements Scenario {
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Exception");
     }
 
-    private static double golemHealth(Client c) {
+    private static double geocoreHealth(Client c) {
         JsonObject p = new JsonObject();
         p.addProperty("radius", 32);
         p.addProperty("type", "minecraft:iron_golem");
@@ -84,7 +84,7 @@ public final class RcGunFire implements Scenario {
         JsonObject r = c.query("entities", p);
         JsonObject side = r.has("entities") ? r : r.getAsJsonObject("server");
         JsonArray list = side.getAsJsonArray("entities");
-        Expect.that(list != null && list.size() > 0, "golem exists: " + r);
+        Expect.that(list != null && list.size() > 0, "geocore exists: " + r);
         JsonObject o = list.get(0).getAsJsonObject();
         if (!o.has("health")) throw new IllegalStateException("no health field: " + o);
         return o.get("health").getAsDouble();

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The network blocks 1.7 drew into the world mesh (red cable, fluid ducts, box ducts, box cables, pneumatic tubes),
@@ -13,9 +13,9 @@ import dev.golem.harness.api.Scenario;
 public class ChunkPipes implements Scenario {
 
     private static final int Y = 100, D = Y + 1;
-    private static final String[] KINDS = {"hbm:red_cable", "hbm:fluid_duct_neo", "hbm:fluid_duct_neo_colored",
-            "hbm:fluid_duct_box_silver_2", "hbm:fluid_duct_box_white_2", "hbm:fluid_duct_exhaust_2",
-            "hbm:red_cable_box_2", "hbm:pneumatic_tube"};
+    private static final String[] KINDS = {"geontm:red_cable", "geontm:fluid_duct_neo", "geontm:fluid_duct_neo_colored",
+            "geontm:fluid_duct_box_silver_2", "geontm:fluid_duct_box_white_2", "geontm:fluid_duct_exhaust_2",
+            "geontm:red_cable_box_2", "geontm:pneumatic_tube"};
     /** Cells relative to a row's origin: a run (0..2), a branch off its middle, a bend at its end, a lone block. */
     private static final int[][] CELLS = {{0, 0}, {1, 0}, {2, 0}, {1, 1}, {2, -1}, {5, 0}};
 
@@ -35,7 +35,7 @@ public class ChunkPipes implements Scenario {
             }
             if (KINDS[k].contains("neo") || KINDS[k].contains("white")) {
                 for (int[] cell : CELLS) {
-                    c.cmd("data merge block " + cell[0] + " " + D + " " + (z + cell[1]) + " {type:\"hbm:oil\"}");
+                    c.cmd("data merge block " + cell[0] + " " + D + " " + (z + cell[1]) + " {type:\"geontm:oil\"}");
                 }
             }
         }

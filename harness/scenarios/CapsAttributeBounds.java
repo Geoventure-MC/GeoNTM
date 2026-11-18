@@ -1,14 +1,14 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Fix phase CAPS (History §19ej-caps): vanilla clamps MAX_HEALTH at 1024 and ATTACK_DAMAGE at 2048; HBM raises both
- * bounds through Golem Core {@code Attributes.raiseMax}. A summoned UFO (1.7: 20,000 HP) and Balls-O-Tron (15,000)
+ * Fix phase CAPS (History §19ej-caps): vanilla clamps MAX_HEALTH at 1024 and ATTACK_DAMAGE at 2048; GEONTM raises both
+ * bounds through GeoCore {@code Attributes.raiseMax}. A summoned UFO (1.7: 20,000 HP) and Balls-O-Tron (15,000)
  * must report their full health on the server and on the client (which recomputes synced attributes itself), and a
  * player with 5000 attack damage (the crucible's 1.7 value) must take 5000 off the UFO in one hit.
  */
@@ -25,15 +25,15 @@ public final class CapsAttributeBounds implements Scenario {
         c.waitTicks(5);
 
         // NoAI: the UFO would otherwise fly off and shoot; its box is 15 x 4, centred at z 10 (front face at z 2.5)
-        c.cmd("summon hbm:entity_ufo 0.5 " + (Y + 1) + " 10.5 {NoAI:1b}");
-        c.cmd("summon hbm:entity_balls_o_tron 8.5 " + (Y + 1) + " -6.5 {NoAI:1b}");
+        c.cmd("summon geontm:entity_ufo 0.5 " + (Y + 1) + " 10.5 {NoAI:1b}");
+        c.cmd("summon geontm:entity_balls_o_tron 8.5 " + (Y + 1) + " -6.5 {NoAI:1b}");
         c.teleport(0.5, Y + 1, 0.5);
         c.waitTicks(20);
 
-        JsonObject ufoServer = one(c, "hbm:entity_ufo", true);
-        JsonObject ufoClient = one(c, "hbm:entity_ufo", false);
-        JsonObject botServer = one(c, "hbm:entity_balls_o_tron", true);
-        JsonObject botClient = one(c, "hbm:entity_balls_o_tron", false);
+        JsonObject ufoServer = one(c, "geontm:entity_ufo", true);
+        JsonObject ufoClient = one(c, "geontm:entity_ufo", false);
+        JsonObject botServer = one(c, "geontm:entity_balls_o_tron", true);
+        JsonObject botClient = one(c, "geontm:entity_balls_o_tron", false);
         System.out.println("[caps] ufo server " + health(ufoServer) + " client " + health(ufoClient)
                 + "; balls-o-tron server " + health(botServer) + " client " + health(botClient));
         expectHealth(ufoServer, "UFO (server)", 20000, 20000);
@@ -51,8 +51,8 @@ public final class CapsAttributeBounds implements Scenario {
         c.screenshot("ufo-before-hit");
         c.attack();
         c.waitTicks(10);
-        JsonObject hitServer = one(c, "hbm:entity_ufo", true);
-        JsonObject hitClient = one(c, "hbm:entity_ufo", false);
+        JsonObject hitServer = one(c, "geontm:entity_ufo", true);
+        JsonObject hitClient = one(c, "geontm:entity_ufo", false);
         System.out.println("[caps] after one 5000-damage hit: server " + health(hitServer) + " client " + health(hitClient));
         c.screenshot("ufo-after-hit");
         expectHealth(hitServer, "UFO after one hit (server)", 15000, 20000);

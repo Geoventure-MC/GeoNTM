@@ -1,8 +1,8 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +14,9 @@ import java.util.List;
  *
  * <ul>
  *   <li>Recipe schemas: rows a server script added (typed arguments, a tag, a plain object, a generic table with builder
- *       methods and a fluid) reach the client in Golem Core's recipe-table sync; rows it removed (by id, by output)
+ *       methods and a fluid) reach the client in GeoCore's recipe-table sync; rows it removed (by id, by output)
  *       do not.</li>
- *   <li>The {@code HBM} binding: radiation, a fluid, a material and chunk radiation, read back in chat.</li>
+ *   <li>The {@code GEONTM} binding: radiation, a fluid, a material and chunk radiation, read back in chat.</li>
  *   <li>Startup registration: a material from a startup script exists.</li>
  *   <li>Observe-only events: an explosion and an irradiated entity reach the script.</li>
  * </ul>
@@ -28,10 +28,10 @@ public class KubeJsSupport implements Scenario {
         List<String> problems = new ArrayList<>();
 
         // --- recipe schemas: what the client received ---
-        expectIds(c, "hbm:press", List.of("kubejs:press_typed", "kubejs:press_raw"),
-                List.of("hbm:press/ball_resin", "hbm:press/biomass_compressed"), problems);
-        expectIds(c, "hbm:shredder", List.of("kubejs:shredder_tag"), List.of(), problems);
-        expectIds(c, "hbm:chemical_plant", List.of("kubejs:chem_typed", "kubejs:chem_positional"), List.of(),
+        expectIds(c, "geontm:press", List.of("kubejs:press_typed", "kubejs:press_raw"),
+                List.of("geontm:press/ball_resin", "geontm:press/biomass_compressed"), problems);
+        expectIds(c, "geontm:shredder", List.of("kubejs:shredder_tag"), List.of(), problems);
+        expectIds(c, "geontm:chemical_plant", List.of("kubejs:chem_typed", "kubejs:chem_positional"), List.of(),
                 problems);
 
         // --- binding, startup material, events: through chat ---
@@ -47,7 +47,7 @@ public class KubeJsSupport implements Scenario {
         c.waitTicks(40);
         c.cmd("gamemode creative");
 
-        expectChat(c, "\\[kjs\\] rad 123 fluid hbm:oxygen iron yes chunk 77", problems);
+        expectChat(c, "\\[kjs\\] rad 123 fluid geontm:oxygen iron yes chunk 77", problems);
         expectChat(c, "\\[kjs\\] material kubejs_testium", problems);
         expectChat(c, "\\[kjs\\] explosion vnt size 2", problems);
         expectChat(c, "\\[kjs\\] irradiated RADIATION dose>0 true", problems);

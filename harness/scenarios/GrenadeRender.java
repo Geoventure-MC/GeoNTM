@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * icon-grenade (2026-10-01): the universal grenade's 1.7 ItemRenderGrenade / RenderGrenadeUniversal port. One stack per
@@ -21,7 +21,7 @@ public final class GrenadeRender implements Scenario {
     public void run(Client c) throws Exception {
         c.waitInWorld(120_000L);
         Fixtures.platform(c, 0, 100, 0, 24);
-        c.cmd("kill @e[type=hbm:grenade_universal]");
+        c.cmd("kill @e[type=geontm:grenade_universal]");
         for (String[] g : HELD) c.cmd("give @s " + stack(c, g[0], g[1], g[2]));
         c.hotbar(9);
         c.look(0, 10);
@@ -67,7 +67,7 @@ public final class GrenadeRender implements Scenario {
             c.lookAt(x, y + 0.05, z);
             c.waitTicks(6);
             c.screenshot(String.format("%02d-%s-thrown-landed", i + 5, name));
-            c.cmd("kill @e[type=hbm:grenade_universal]");
+            c.cmd("kill @e[type=geontm:grenade_universal]");
         }
 
         // dropped
@@ -97,7 +97,7 @@ public final class GrenadeRender implements Scenario {
     /** The give argument for a grenade stack: an item component from 1.20.5 on, the stack's tag before. */
     private static String stack(Client c, String shell, String filling, String fuze) {
         String data = "{shell:\"" + shell + "\",filling:\"" + filling + "\",fuze:\"" + fuze + "\"}";
-        if (c.node().startsWith("1.20.1")) return "hbm:grenade_universal{\"hbm:grenade\":" + data + "} 1";
-        return "hbm:grenade_universal[hbm:grenade=" + data + "] 1";
+        if (c.node().startsWith("1.20.1")) return "geontm:grenade_universal{\"geontm:grenade\":" + data + "} 1";
+        return "geontm:grenade_universal[geontm:grenade=" + data + "] 1";
     }
 }

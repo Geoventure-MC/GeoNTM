@@ -1,7 +1,7 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public final class Fix2Machines implements Scenario {
         c.cmd("fill -24 " + (Y + 1) + " -24 24 " + (Y + 10) + " 24 minecraft:air");
 
         // hydrotreater
-        open(c, "hbm:machine_hydrotreater", -8, 6);
+        open(c, "geontm:machine_hydrotreater", -8, 6);
         checkSlots(c, "hydrotreater", 176, 238, new int[][]{
                 {17, 90}, {35, 90}, {35, 108}, {53, 90}, {53, 108}, {125, 90}, {125, 108},
                 {143, 90}, {143, 108}, {17, 108}, {89, 36}});
@@ -38,7 +38,7 @@ public final class Fix2Machines implements Scenario {
         close(c);
 
         // vacuum distiller
-        open(c, "hbm:machine_vacuum_distill", 8, 6);
+        open(c, "geontm:machine_vacuum_distill", 8, 6);
         checkSlots(c, "vacuum distiller", 176, 238, new int[][]{
                 {26, 90}, {44, 90}, {44, 108}, {80, 90}, {80, 108}, {98, 90}, {98, 108},
                 {116, 90}, {116, 108}, {134, 90}, {134, 108}, {26, 108}});
@@ -46,7 +46,7 @@ public final class Fix2Machines implements Scenario {
         close(c);
 
         // energy storage block: 2 slots, creative battery discharges into it
-        open(c, "hbm:machine_battery", 0, -6);
+        open(c, "geontm:machine_battery", 0, -6);
         checkSlots(c, "energy storage block", 176, 166, new int[][]{{26, 17}, {26, 53}});
         insertCreativeBattery(c, 0);
         c.waitTicks(20);
@@ -56,7 +56,7 @@ public final class Fix2Machines implements Scenario {
         Expect.that(batteryPower > 0, "the creative battery in slot 0 must charge the energy storage block: power " + batteryPower);
 
         // assembly machine: battery slot charges the machine
-        open(c, "hbm:machine_assembly_machine", -8, -8);
+        open(c, "geontm:machine_assembly_machine", -8, -8);
         Expect.that(machineSlots(c).size() == 17, "assembly machine must keep 17 machine slots");
         insertCreativeBattery(c, 0);
         c.waitTicks(20);
@@ -66,7 +66,7 @@ public final class Fix2Machines implements Scenario {
         Expect.that(assemblyPower > 0, "the creative battery in slot 0 must charge the assembly machine: power " + assemblyPower);
 
         // diesel generator: 1.7 layout and the on/off switch
-        open(c, "hbm:machine_diesel", 8, -8);
+        open(c, "geontm:machine_diesel", 8, -8);
         checkSlots(c, "diesel generator", 176, 203, new int[][]{{17, 17}, {17, 53}, {141, 71}, {35, 71}});
         JsonObject screen = c.screen();
         int left = screen.get("left").getAsInt(), top = screen.get("top").getAsInt();
@@ -122,12 +122,12 @@ public final class Fix2Machines implements Scenario {
     /** Gives a creative battery and shift-clicks it into the menu; the 1.7 transfer puts it in the first free valid slot. */
     private static void insertCreativeBattery(Client c, int expectedSlot) {
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.waitTicks(5);
         int from = -1;
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (s.get("player_inventory").getAsBoolean() && s.has("id") && s.get("id").getAsString().equals("hbm:battery_creative")) {
+            if (s.get("player_inventory").getAsBoolean() && s.has("id") && s.get("id").getAsString().equals("geontm:battery_creative")) {
                 from = s.get("index").getAsInt();
             }
         }
@@ -135,7 +135,7 @@ public final class Fix2Machines implements Scenario {
         c.slotClick(from, 0, "QUICK_MOVE");
         c.waitTicks(5);
         JsonObject target = machineSlots(c).get(expectedSlot);
-        Expect.that(target.has("id") && target.get("id").getAsString().equals("hbm:battery_creative"),
+        Expect.that(target.has("id") && target.get("id").getAsString().equals("geontm:battery_creative"),
                 "the creative battery must land in machine slot " + expectedSlot + ": " + target);
     }
 

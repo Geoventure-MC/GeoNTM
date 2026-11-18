@@ -1,15 +1,15 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Another mod's power cable between two HBM machines: a charged diesel generator, the foreign cable, an electric furnace.
+ * Another mod's power cable between two GEONTM machines: a charged diesel generator, the foreign cable, an electric furnace.
  * The cable must draw its arms to both and carry the generator's power into the furnace. The cable is Mekanism's
  * universal cable where Mekanism is loaded (1.21.1 NeoForge with -Pmekanism.run), else Pipez's energy pipe (the
  * forge-like nodes). Fabric has no foreign cable mod on disk: there the furnace and generator faces are asked through
@@ -37,9 +37,9 @@ public final class GhForeignEnergyCables implements Scenario {
         System.out.println("[Foreign] cable on " + c.node() + ": " + cable);
         // the cable is laid by hand first; the machines then arrive beside it
         if (cable != null) Fixtures.placeOnTop(c, cable, 0, Y, Z);
-        else Fixtures.setBlock(c, 0, G, Z, "hbm:test_fe_cell");
-        Fixtures.setBlock(c, -1, G, Z, "hbm:machine_diesel");
-        Fixtures.setBlock(c, 1, G, Z, "hbm:machine_electric_furnace_off");
+        else Fixtures.setBlock(c, 0, G, Z, "geontm:test_fe_cell");
+        Fixtures.setBlock(c, -1, G, Z, "geontm:machine_diesel");
+        Fixtures.setBlock(c, 1, G, Z, "geontm:machine_electric_furnace_off");
         c.cmd("data merge block -1 " + G + " " + Z + " {powerTime:50000L}");
         // a Pipez pipe carries nothing until one end is wrenched to extract: the generator end, as a player sets it
         if ("pipez:energy_pipe".equals(cable)) {
@@ -84,7 +84,7 @@ public final class GhForeignEnergyCables implements Scenario {
         } else {
             check(stored(c, 0) > 0L, "the Team Reborn store beside the generator filled: " + stored(c, 0));
         }
-        Expect.logCleanSinceMark(c, "(?i)exception.*(hbm|power|energy|cable|pipe|mekanism)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(geontm|power|energy|cable|pipe|mekanism)");
         Expect.that(failures.isEmpty(), "checks failed: " + failures);
     }
 
@@ -125,7 +125,7 @@ public final class GhForeignEnergyCables implements Scenario {
         p.addProperty("y", G);
         p.addProperty("z", Z);
         if (side != null) p.addProperty("side", side);
-        return c.query("hbm_fecell", p);
+        return c.query("geontm_fecell", p);
     }
 
     private void check(boolean ok, String what) {

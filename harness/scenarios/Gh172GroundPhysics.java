@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public final class Gh172GroundPhysics implements Scenario {
             casings(c, failures);
             giblets(c, failures);
             Expect.that(failures.isEmpty(), "casings and giblets rest as in 1.7: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.releaseAll();
             c.cmd("clear @s");
@@ -49,8 +49,8 @@ public final class Gh172GroundPhysics implements Scenario {
     /** Eight STG77 rounds, then each casing's yaw and pitch twice, 20 ticks apart, while it lies on the ground. */
     private static void casings(Client c, List<String> failures) throws Exception {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_stg77");
-        c.cmd("give @s hbm:ammo_standard_r556_sp 64");
+        c.cmd("give @s geontm:gun_stg77");
+        c.cmd("give @s geontm:ammo_standard_r556_sp 64");
         c.hotbar(1);
         c.waitTicks(40);
         c.key("r");
@@ -63,7 +63,7 @@ public final class Gh172GroundPhysics implements Scenario {
         }
         c.waitTicks(80);
         double cx = 0, cy = 0, cz = 0;
-        JsonArray resting = c.query("hbm_casing_states", new JsonObject()).getAsJsonArray("casings");
+        JsonArray resting = c.query("geontm_casing_states", new JsonObject()).getAsJsonArray("casings");
         for (JsonElement e : resting) {
             cx += e.getAsJsonArray().get(0).getAsDouble() / resting.size();
             cy += e.getAsJsonArray().get(1).getAsDouble() / resting.size();
@@ -91,7 +91,7 @@ public final class Gh172GroundPhysics implements Scenario {
     /** Casings by their age at the first sample, so the same casing is matched across samples. */
     private static Map<Integer, double[]> casingAngles(Client c) {
         Map<Integer, double[]> angles = new HashMap<>();
-        JsonArray rows = c.query("hbm_casing_states", new JsonObject()).getAsJsonArray("casings");
+        JsonArray rows = c.query("geontm_casing_states", new JsonObject()).getAsJsonArray("casings");
         int index = 0;
         for (JsonElement e : rows) {
             JsonArray row = e.getAsJsonArray();
@@ -110,13 +110,13 @@ public final class Gh172GroundPhysics implements Scenario {
             c.waitTicks(10);
             JsonObject spawn = new JsonObject();
             spawn.addProperty("spawn", true);
-            int count = c.query("hbm_giblets", spawn).getAsJsonArray("giblets").size();
+            int count = c.query("geontm_giblets", spawn).getAsJsonArray("giblets").size();
             c.cmd("kill @e[type=minecraft:pig]");
             c.waitTicks(60);
             c.lookAt(0.5, Y + 1, 4.5);
             c.waitTicks(2);
             c.screenshot("giblets-resting-" + attempt);
-            JsonArray rows = c.query("hbm_giblets", new JsonObject()).getAsJsonArray("giblets");
+            JsonArray rows = c.query("geontm_giblets", new JsonObject()).getAsJsonArray("giblets");
             double fastest = 0D;
             int grounded = 0;
             for (JsonElement e : rows) {

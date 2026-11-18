@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.12.2's gluon gun (gun_egon) through the real input path: the held hose, the beam (gluon_beam and gluon_spiral
@@ -31,8 +31,8 @@ public final class GluonGun implements Scenario {
         c.cmd("gamerule advance_time true");
         c.setOption("camera", "first_person");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_egon");
-        c.cmd("give @s hbm:ammo_standard_tau_uranium 64");
+        c.cmd("give @s geontm:gun_egon");
+        c.cmd("give @s geontm:ammo_standard_tau_uranium 64");
         c.hotbar(1);
         c.teleport(0.5, Y + 1, 0.5);
         c.look(0, 0);
@@ -61,7 +61,7 @@ public final class GluonGun implements Scenario {
         Expect.that(firing.get("sparks_spawned").getAsInt() > 0, "muzzle sparks were spawned: " + firing);
         Expect.that(firing.get("trail_nodes").getAsInt() > 1, "the beam burned a trail on the wall: " + firing);
         Expect.that(after.get("active_ticks").getAsInt() == 0, "the ramp fell back after release: " + after);
-        int ammo = count(c, "hbm:ammo_standard_tau_uranium");
+        int ammo = count(c, "geontm:ammo_standard_tau_uranium");
         Expect.that(ammo < 64 && ammo % 2 == 0, "two rounds a time were used: " + ammo + " left");
 
         // a pig in the beam: hit flashes, then it falls apart
@@ -94,13 +94,13 @@ public final class GluonGun implements Scenario {
         c.cmd("gamerule doDaylightCycle false");
         c.cmd("gamerule advance_time false");
 
-        Expect.logCleanSinceMark(c, "(Exception|ERROR.*hbm|Could not find uniform|Shader.*(hbm|gluon))");
+        Expect.logCleanSinceMark(c, "(Exception|ERROR.*geontm|Could not find uniform|Shader.*(geontm|gluon))");
     }
 
     private static JsonObject gluon(Client c) {
         JsonObject req = new JsonObject();
         req.addProperty("mode", "gluon");
-        return c.query("hbm_reloaded_guns", req);
+        return c.query("geontm_reloaded_guns", req);
     }
 
     private static int count(Client c, String item) {

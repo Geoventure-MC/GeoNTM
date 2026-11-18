@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +32,8 @@ public final class Gh155GunSounds implements Scenario {
             fire(c, "gun_henry_lincoln", "1.250", wrong);
 
             c.cmd("clear @s");
-            c.cmd("give @s hbm:gun_star_f");
-            c.cmd("give @s hbm:ammo_standard_p22_sp 32");
+            c.cmd("give @s geontm:gun_star_f");
+            c.cmd("give @s geontm:ammo_standard_p22_sp 32");
             c.hotbar(1);
             c.waitTicks(40);
             c.markLog();
@@ -41,7 +41,7 @@ public final class Gh155GunSounds implements Scenario {
             c.waitTicks(40);
             List<String> reload = c.logSinceMark("harness-sound");
             System.out.println("[Gh155] " + c.node() + " star_f reload " + reload);
-            if (reload.stream().noneMatch(l -> l.contains("id=hbm:weapon.reload.magremove")))
+            if (reload.stream().noneMatch(l -> l.contains("id=geontm:weapon.reload.magremove")))
                 wrong.add("star_f reload without the magazine removal: " + reload);
         } finally {
             if (capture != null) c.setOption("sound_capture", capture);
@@ -53,8 +53,8 @@ public final class Gh155GunSounds implements Scenario {
 
     private static void fire(Client c, String gun, String pitch, List<String> wrong) throws Exception {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:" + gun);
-        c.cmd("give @s hbm:ammo_standard_m44_sp 32");
+        c.cmd("give @s geontm:" + gun);
+        c.cmd("give @s geontm:ammo_standard_m44_sp 32");
         c.hotbar(1);
         c.look(0, 0);
         c.waitTicks(40);
@@ -75,7 +75,7 @@ public final class Gh155GunSounds implements Scenario {
             return;
         }
         String shot = shots.get(0);
-        if (!shot.contains("id=hbm:weapon.fire.rifle") || !shot.contains("file=hbm:weapon/fire/rifle")
+        if (!shot.contains("id=geontm:weapon.fire.rifle") || !shot.contains("file=geontm:weapon/fire/rifle")
                 || !shot.contains("pitch=" + pitch)) wrong.add(gun + " " + shot);
     }
 }

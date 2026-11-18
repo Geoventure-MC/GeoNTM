@@ -1,15 +1,15 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 /**
- * Another mod's pipes move HBM items and fluids: Pipez (dev runs on NeoForge and Forge) pipes, each extracting from its
+ * Another mod's pipes move GEONTM items and fluids: Pipez (dev runs on NeoForge and Forge) pipes, each extracting from its
  * west neighbour into its east neighbour. Items chest to crate, crate to chest, chest to the alloy furnace's fuel slot and its
  * output to a chest; diesel from one steel barrel to another. Every case is reported, then checked.
  */
@@ -41,21 +41,21 @@ public final class PipezInterop implements Scenario {
         // 1 chest -> crate
         c.cmd("setblock 0 " + G + " 0 minecraft:chest");
         c.cmd("item replace block 0 " + G + " 0 container.0 with minecraft:cobblestone 32");
-        c.cmd("setblock 2 " + G + " 0 hbm:crate_iron");
+        c.cmd("setblock 2 " + G + " 0 geontm:crate_iron");
         // 2 crate -> chest
-        c.cmd("setblock 0 " + G + " 3 hbm:crate_iron");
+        c.cmd("setblock 0 " + G + " 3 geontm:crate_iron");
         c.cmd("item replace block 0 " + G + " 3 container.0 with minecraft:cobblestone 32");
         c.cmd("setblock 2 " + G + " 3 minecraft:chest");
         // 3 chest -> alloy furnace, 4 alloy furnace output -> chest
         c.cmd("setblock 0 " + G + " 6 minecraft:chest");
         c.cmd("item replace block 0 " + G + " 6 container.0 with minecraft:coal 16");
         // 1.7 takes each input only from its configured side; fuel set to west (4), as in the furnace's GUI
-        c.cmd("setblock 2 " + G + " 6 hbm:machine_difurnace_off{sideFuel:4b}");
+        c.cmd("setblock 2 " + G + " 6 geontm:machine_difurnace_off{sideFuel:4b}");
         c.cmd("setblock 4 " + G + " 6 minecraft:chest");
-        c.cmd("item replace block 2 " + G + " 6 container.3 with hbm:ingot_steel 8");
+        c.cmd("item replace block 2 " + G + " 6 container.3 with geontm:ingot_steel 8");
         // 5 barrel -> barrel
-        c.cmd("setblock 0 " + G + " 9 hbm:barrel_steel{tank:5000,tank_type:\"hbm:diesel\",mode:2s}");
-        c.cmd("setblock 2 " + G + " 9 hbm:barrel_steel{tank:0,tank_type:\"hbm:diesel\",mode:0s}");
+        c.cmd("setblock 0 " + G + " 9 geontm:barrel_steel{tank:5000,tank_type:\"geontm:diesel\",mode:2s}");
+        c.cmd("setblock 2 " + G + " 9 geontm:barrel_steel{tank:0,tank_type:\"geontm:diesel\",mode:0s}");
 
         // 0 control: chest -> chest
         c.cmd("setblock 0 " + G + " -3 minecraft:chest");
@@ -91,7 +91,7 @@ public final class PipezInterop implements Scenario {
     private static int multiblock(Client c, String id) {
         int oz = -10;
         c.cmd("fill -10 " + G + " -12 10 " + (Y + 8) + " -4 minecraft:air");
-        Fixtures.giveOnly(c, "hbm:" + id, 1);
+        Fixtures.giveOnly(c, "geontm:" + id, 1);
         c.teleport(0.5, G, oz + 4.5);
         c.waitTicks(5);
         c.lookAt(0.5, Y + 0.98, oz + 1.5);
@@ -102,7 +102,7 @@ public final class PipezInterop implements Scenario {
         c.teleport(0.5, G + 6, oz + 8.5);
         Set<Long> footprint = new HashSet<>();
         for (int x = -6; x <= 6; x++) for (int z = oz - 6; z <= oz + 6; z++) for (int y = G; y <= G + 5; y++) {
-            if (c.block(x, y, z).get("block").getAsString().equals("hbm:" + id)) footprint.add(key(x, y, z));
+            if (c.block(x, y, z).get("block").getAsString().equals("geontm:" + id)) footprint.add(key(x, y, z));
         }
         Expect.that(!footprint.isEmpty(), id + " placed by hand");
         Set<Long> pipes = new HashSet<>();

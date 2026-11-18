@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +19,20 @@ public final class RcBombPlace implements Scenario {
 
     /** id, whether a right-click opens a menu */
     private static final String[][] BLOCKS = {
-            {"hbm:nuke_gadget", "gui"}, {"hbm:nuke_boy", "gui"}, {"hbm:nuke_man", "gui"}, {"hbm:nuke_mike", "gui"},
-            {"hbm:nuke_tsar", "gui"}, {"hbm:nuke_n2", "gui"}, {"hbm:nuke_custom", "gui"}, {"hbm:nuke_fleija", "gui"},
-            {"hbm:nuke_prototype", "gui"}, {"hbm:nuke_solinium", "gui"}, {"hbm:nuke_fstbmb", "gui"},
-            {"hbm:bomb_multi", "gui"}, {"hbm:float_bomb", ""}, {"hbm:emp_bomb", ""}, {"hbm:therm_endo", ""},
-            {"hbm:therm_exo", ""}, {"hbm:flame_war", ""}, {"hbm:fireworks", "gui"},
-            {"hbm:tnt_ntm", ""}, {"hbm:dynamite", ""}, {"hbm:semtex", ""}, {"hbm:c4", ""}, {"hbm:fissure_bomb", ""},
-            {"hbm:block_semtex", ""}, {"hbm:block_c4", ""}, {"hbm:det_cord", ""}, {"hbm:det_charge", ""},
-            {"hbm:det_nuke", ""}, {"hbm:det_miner", ""},
-            {"hbm:charge_dynamite", ""}, {"hbm:charge_miner", ""}, {"hbm:charge_c4", ""}, {"hbm:charge_semtex", ""},
-            {"hbm:mine_ap", ""}, {"hbm:mine_he", ""}, {"hbm:mine_shrap", ""}, {"hbm:mine_fat", ""}, {"hbm:mine_naval", ""},
-            {"hbm:crashed_bomb_balefire", ""}, {"hbm:crashed_bomb_conventional", ""}, {"hbm:crashed_bomb_nuke", ""},
-            {"hbm:crashed_bomb_salted", ""},
-            {"hbm:launch_pad", "gui"}, {"hbm:launch_pad_large", "gui"}, {"hbm:launch_pad_rusted", "gui"},
-            {"hbm:machine_missile_assembly", "gui"}, {"hbm:compact_launcher", "gui"}, {"hbm:launch_table", "gui"},
+            {"geontm:nuke_gadget", "gui"}, {"geontm:nuke_boy", "gui"}, {"geontm:nuke_man", "gui"}, {"geontm:nuke_mike", "gui"},
+            {"geontm:nuke_tsar", "gui"}, {"geontm:nuke_n2", "gui"}, {"geontm:nuke_custom", "gui"}, {"geontm:nuke_fleija", "gui"},
+            {"geontm:nuke_prototype", "gui"}, {"geontm:nuke_solinium", "gui"}, {"geontm:nuke_fstbmb", "gui"},
+            {"geontm:bomb_multi", "gui"}, {"geontm:float_bomb", ""}, {"geontm:emp_bomb", ""}, {"geontm:therm_endo", ""},
+            {"geontm:therm_exo", ""}, {"geontm:flame_war", ""}, {"geontm:fireworks", "gui"},
+            {"geontm:tnt_ntm", ""}, {"geontm:dynamite", ""}, {"geontm:semtex", ""}, {"geontm:c4", ""}, {"geontm:fissure_bomb", ""},
+            {"geontm:block_semtex", ""}, {"geontm:block_c4", ""}, {"geontm:det_cord", ""}, {"geontm:det_charge", ""},
+            {"geontm:det_nuke", ""}, {"geontm:det_miner", ""},
+            {"geontm:charge_dynamite", ""}, {"geontm:charge_miner", ""}, {"geontm:charge_c4", ""}, {"geontm:charge_semtex", ""},
+            {"geontm:mine_ap", ""}, {"geontm:mine_he", ""}, {"geontm:mine_shrap", ""}, {"geontm:mine_fat", ""}, {"geontm:mine_naval", ""},
+            {"geontm:crashed_bomb_balefire", ""}, {"geontm:crashed_bomb_conventional", ""}, {"geontm:crashed_bomb_nuke", ""},
+            {"geontm:crashed_bomb_salted", ""},
+            {"geontm:launch_pad", "gui"}, {"geontm:launch_pad_large", "gui"}, {"geontm:launch_pad_rusted", "gui"},
+            {"geontm:machine_missile_assembly", "gui"}, {"geontm:compact_launcher", "gui"}, {"geontm:launch_table", "gui"},
     };
 
     @Override
@@ -78,6 +78,6 @@ public final class RcBombPlace implements Scenario {
             }
         }
         for (String n : notes) System.out.println("[RcBombPlace] " + n);
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|missing model|failed to load|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|missing model|failed to load|unregistered geontm:|is not registered).*");
     }
 }

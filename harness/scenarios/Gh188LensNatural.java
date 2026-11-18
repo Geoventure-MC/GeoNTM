@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -38,7 +38,7 @@ public final class Gh188LensNatural implements Scenario {
             c.cmd("spreadplayers " + spot[0] + " " + spot[1] + " 0 1 false @s");
             c.waitServerTicks(200);
             c.cmd("clear @s");
-            c.cmd("item replace entity @s weapon.mainhand with hbm:survey_scanner");
+            c.cmd("item replace entity @s weapon.mainhand with geontm:survey_scanner");
             c.waitTicks(10);
             c.markLog();
             c.use();
@@ -48,12 +48,12 @@ public final class Gh188LensNatural implements Scenario {
             for (String[] kind : KINDS) if (chat.contains(kind[0])) here.add(kind[1]);
             JsonObject lens = new JsonObject();
             lens.add("lens", new JsonPrimitive(4817));
-            c.query("hbm_gapsc", lens);
+            c.query("geontm_gapsc", lens);
             c.tickRate(100F);
             Set<String> marked = new LinkedHashSet<>();
             for (int t = 0; t < 80 && !(marked.containsAll(here) && marked.contains("Bedrock Oil")); t++) {
                 c.waitTicks(20);
-                for (var label : c.query("hbm_gapsc", new JsonObject()).getAsJsonArray("marker_labels")) {
+                for (var label : c.query("geontm_gapsc", new JsonObject()).getAsJsonArray("marker_labels")) {
                     for (String[] kind : KINDS) if (label.getAsString().startsWith(kind[1])) marked.add(kind[1]);
                 }
             }

@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The mining helmet's lamp and the occult shotgun's flashlight in a closed stone room at night. With GemRender they are
@@ -40,7 +40,7 @@ public final class LampLights implements Scenario {
             boolean gem = dark.get("shading").getAsBoolean();
             System.out.println("GemRender shading: " + gem + " " + dark);
 
-            c.cmd("item replace entity @s armor.head with hbm:no9");
+            c.cmd("item replace entity @s armor.head with geontm:no9");
             c.waitTicks(40);
             JsonObject helmet = lamp(c);
             c.screenshot("helmet");
@@ -63,7 +63,7 @@ public final class LampLights implements Scenario {
                 Expect.that(off.get("face_block_light").getAsInt() == 0, "the wall is dark again: " + off);
             }
 
-            c.cmd("give @s hbm:gun_jshotgun");
+            c.cmd("give @s geontm:gun_jshotgun");
             c.hotbar(1);
             c.waitTicks(10);
             c.use(2);
@@ -88,7 +88,7 @@ public final class LampLights implements Scenario {
             System.out.println("flashlight off: " + flashOff);
             Expect.that(!flashOff.get("flashlight_on").getAsBoolean(), "right click turned it off: " + flashOff);
             if (!gem) Expect.that(flashOff.get("fallback_lit").getAsInt() == 0, "every lit block handed back: " + flashOff);
-            Expect.logCleanSinceMark(c, "(Exception|ERROR.*(hbm|golem|gemrender))");
+            Expect.logCleanSinceMark(c, "(Exception|ERROR.*(geontm|geocore|gemrender))");
         } finally {
             c.releaseAll();
             c.cmd("clear @s");
@@ -99,6 +99,6 @@ public final class LampLights implements Scenario {
     }
 
     private static JsonObject lamp(Client c) {
-        return c.query("hbm_lamp_lights", new JsonObject());
+        return c.query("geontm_lamp_lights", new JsonObject());
     }
 }

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Real client acceptance for the legacy crowbar path: both original loot crates accept the steel
@@ -18,8 +18,8 @@ public final class CrowbarCrates implements Scenario {
         c.markLog();
         Fixtures.platform(c, X, Y, Z, 8);
 
-        breakCrate(c, "hbm:crate_supply", X - 3, "supply");
-        breakCrate(c, "hbm:crate_ammo", X + 3, "ammo");
+        breakCrate(c, "geontm:crate_supply", X - 3, "supply");
+        breakCrate(c, "geontm:crate_ammo", X + 3, "ammo");
 
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Failed to load texture");
     }
@@ -32,7 +32,7 @@ public final class CrowbarCrates implements Scenario {
 
         // The held item is deliberately supplied after placement so the interaction is the real
         // BlockSupplyCrate/BlockAmmoCrate crowbar path, rather than a command-side block removal.
-        Fixtures.giveOnly(c, "hbm:crowbar", 1);
+        Fixtures.giveOnly(c, "geontm:crowbar", 1);
         c.lookAt(x + 0.5, Y + 1.5, Z + 2.5);
         c.waitTicks(1);
         c.use(2);

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/solid_fuel"
+        }
+      ],
+      "rolls": {
+        "type": "geontm_de:config_scaled",
+        "value": 6.0
+      }
+    }
+  ],
+  "random_sequence": "geontm_de:chests/component/solid_fuel_6_6"
+}

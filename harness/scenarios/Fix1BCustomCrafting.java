@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Fix phase 1B (History §19ej-1b): the 1.7 IRecipe handlers, crafted by real mouse clicks in a real crafting table.
@@ -45,7 +45,7 @@ public final class Fix1BCustomCrafting implements Scenario {
         scope(c);
 
         c.cmd("gamemode creative");
-        Expect.logCleanSinceMark(c, "(?i)(exception|Failed to parse|Couldn't parse).*(recipe|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|Failed to parse|Couldn't parse).*(recipe|geontm)");
     }
 
     private void openTable(Client c) {
@@ -117,33 +117,33 @@ public final class Fix1BCustomCrafting implements Scenario {
 
     private void grenade(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:grenade_shell_frag 1");
-        c.cmd("give @s hbm:grenade_filling_he 1");
-        c.cmd("give @s hbm:grenade_fuze_s3 1");
+        c.cmd("give @s geontm:grenade_shell_frag 1");
+        c.cmd("give @s geontm:grenade_filling_he 1");
+        c.cmd("give @s geontm:grenade_fuze_s3 1");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:grenade_shell_frag", 2);
-        place(c, "hbm:grenade_filling_he", 5);
-        place(c, "hbm:grenade_fuze_s3", 8);
+        place(c, "geontm:grenade_shell_frag", 2);
+        place(c, "geontm:grenade_filling_he", 5);
+        place(c, "geontm:grenade_fuze_s3", 8);
         c.waitTicks(3);
         c.screenshot("10-grenade-grid");
-        JsonObject result = take(c, "hbm:grenade_universal", 1);
+        JsonObject result = take(c, "geontm:grenade_universal", 1);
         c.screenshot("11-grenade-taken");
-        Expect.that(invSlot(c, "hbm:grenade_universal") != null, "the universal grenade arrived: " + result);
-        Expect.that(invSlot(c, "hbm:grenade_shell_frag") == null && id(c.slot(2)).isEmpty(), "the parts were used up");
+        Expect.that(invSlot(c, "geontm:grenade_universal") != null, "the universal grenade arrived: " + result);
+        Expect.that(invSlot(c, "geontm:grenade_shell_frag") == null && id(c.slot(2)).isEmpty(), "the parts were used up");
         close(c);
     }
 
     private void cargo(Client c) {
-        c.cmd("give @s hbm:ammo_arty_cargo 1");
+        c.cmd("give @s geontm:ammo_arty_cargo 1");
         c.cmd("give @s minecraft:diamond 3");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:ammo_arty_cargo", 1);
+        place(c, "geontm:ammo_arty_cargo", 1);
         place(c, "minecraft:diamond", 9);
         c.waitTicks(3);
         c.screenshot("20-cargo-grid");
-        take(c, "hbm:ammo_arty_cargo", 1);
+        take(c, "geontm:ammo_arty_cargo", 1);
         Expect.that(id(c.slot(1)).isEmpty() && id(c.slot(9)).isEmpty(), "the shell and the one diamond were used up");
         JsonObject diamonds = invSlot(c, "minecraft:diamond");
         Expect.that(diamonds != null && diamonds.get("count").getAsInt() == 2, "two diamonds stayed in the inventory");
@@ -152,31 +152,31 @@ public final class Fix1BCustomCrafting implements Scenario {
     }
 
     private void scraps(Client c) {
-        c.cmd("give @s " + withComponents(c, "hbm:scraps", "[hbm:material=\"steel\",hbm:mat_amount=216]",
-                "{\"hbm:material\":\"steel\",\"hbm:mat_amount\":216}") + " 1");
+        c.cmd("give @s " + withComponents(c, "geontm:scraps", "[geontm:material=\"steel\",geontm:mat_amount=216]",
+                "{\"geontm:material\":\"steel\",\"geontm:mat_amount\":216}") + " 1");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:scraps", 5);
+        place(c, "geontm:scraps", 5);
         c.waitTicks(3);
         c.screenshot("30-scraps-grid");
-        JsonObject result = take(c, "hbm:scraps", 2);
+        JsonObject result = take(c, "geontm:scraps", 2);
         c.screenshot("31-scraps-split");
         Expect.that(result.toString().toLowerCase().contains("steel"), "steel scraps came out: " + result);
         close(c);
     }
 
     private void scope(Client c) {
-        c.cmd("give @s hbm:plate_steel 4");
-        c.cmd("give @s hbm:ingot_polymer 2");
+        c.cmd("give @s geontm:plate_steel 4");
+        c.cmd("give @s geontm:ingot_polymer 2");
         c.cmd("give @s minecraft:glass_pane 2");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:plate_steel", 1, 3, 7, 9);
-        place(c, "hbm:ingot_polymer", 2, 8);
+        place(c, "geontm:plate_steel", 1, 3, 7, 9);
+        place(c, "geontm:ingot_polymer", 2, 8);
         place(c, "minecraft:glass_pane", 4, 6);
         c.waitTicks(3);
         c.screenshot("40-scope-grid");
-        take(c, "hbm:weapon_mod_special_scope", 1);
+        take(c, "geontm:weapon_mod_special_scope", 1);
         c.screenshot("41-scope-taken");
         close(c);
     }

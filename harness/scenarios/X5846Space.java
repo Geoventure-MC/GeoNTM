@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,9 +39,9 @@ public final class X5846Space implements Scenario {
     }
 
     private void soyuz(Client c) {
-        place(c, "hbm:launchpad_soyuz", SOYUZ_X);
+        place(c, "geontm:launchpad_soyuz", SOYUZ_X);
         int coreZ = Z + 1 - 2;
-        Expect.block(c, SOYUZ_X, L, coreZ, "hbm:launchpad_soyuz");
+        Expect.block(c, SOYUZ_X, L, coreZ, "geontm:launchpad_soyuz");
 
         open(c, SOYUZ_X, "GUILaunchpadSoyuz");
         int[][] slots = new int[27][];
@@ -49,9 +49,9 @@ public final class X5846Space implements Scenario {
         System.arraycopy(fixed, 0, slots, 0, fixed.length);
         for (int i = 0; i < 3; i++) for (int j = 0; j < 6; j++) slots[9 + j + i * 6] = new int[] {44 - i * 18, 26 + j * 18};
         checkSlots(c, "Soyuz pad", 194, 244, slots);
-        give(c, "hbm:battery_creative", 1, 8);
-        give(c, "hbm:missile_soyuz_1", 1, 0);
-        give(c, "hbm:satellite_ray_scan", 1, 2);
+        give(c, "geontm:battery_creative", 1, 8);
+        give(c, "geontm:missile_soyuz_1", 1, 0);
+        give(c, "geontm:satellite_ray_scan", 1, 2);
         c.cmd("data merge block " + SOYUZ_X + " " + L + " " + coreZ + " {tank0:100000,tank1:100000}");
         c.waitTicks(10);
         c.screenshot("00-soyuz-gui-loading");
@@ -80,16 +80,16 @@ public final class X5846Space implements Scenario {
     }
 
     private void lambda(Client c) {
-        place(c, "hbm:launchpad_lambda", LAMBDA_X);
+        place(c, "geontm:launchpad_lambda", LAMBDA_X);
         int coreZ = Z + 1 - 7;
-        Expect.block(c, LAMBDA_X, L, coreZ, "hbm:launchpad_lambda");
+        Expect.block(c, LAMBDA_X, L, coreZ, "geontm:launchpad_lambda");
 
         open(c, LAMBDA_X, "GUILaunchpadLambda");
         checkSlots(c, "Lambda pad", 176, 226, new int[][] {
                 {35, 17}, {53, 17}, {107, 80}, {107, 98}, {125, 80}, {125, 98}, {89, 80}});
-        give(c, "hbm:battery_creative", 1, 6);
-        give(c, "hbm:missile_lambda", 1, 0);
-        give(c, "hbm:satellite_radar", 1, 1);
+        give(c, "geontm:battery_creative", 1, 6);
+        give(c, "geontm:missile_lambda", 1, 0);
+        give(c, "geontm:satellite_radar", 1, 1);
         c.cmd("data merge block " + LAMBDA_X + " " + L + " " + coreZ + " {tank0:64000,tank1:64000}");
         c.waitTicks(10);
         c.screenshot("10-lambda-gui");
@@ -104,9 +104,9 @@ public final class X5846Space implements Scenario {
     }
 
     private void dock(Client c) {
-        place(c, "hbm:sat_dock", DOCK_X);
+        place(c, "geontm:sat_dock", DOCK_X);
         int coreZ = Z + 1 - 1;
-        Expect.block(c, DOCK_X, L, coreZ, "hbm:sat_dock");
+        Expect.block(c, DOCK_X, L, coreZ, "geontm:sat_dock");
 
         open(c, DOCK_X, "GUISatDock");
         JsonObject screen = c.screen();
@@ -117,7 +117,7 @@ public final class X5846Space implements Scenario {
         // 1.20.1 item stacks spell the count "Count" and as a byte
         String count = c.node().startsWith("1.20.1") ? "Count" : "count";
         String suffix = c.node().startsWith("1.20.1") ? "b" : "";
-        c.cmd("summon hbm:entity_miner_lander " + (DOCK_X + 0.5) + " " + (L + 40) + " " + (coreZ + 0.5)
+        c.cmd("summon geontm:entity_miner_lander " + (DOCK_X + 0.5) + " " + (L + 40) + " " + (coreZ + 0.5)
                 + " {callerYPos:" + L + ",items:[{id:\"minecraft:iron_ingot\"," + count + ":12" + suffix + "},{id:\"minecraft:gold_ingot\","
                 + count + ":3" + suffix + "}]}");
         view(c, DOCK_X, coreZ, 6, 4);

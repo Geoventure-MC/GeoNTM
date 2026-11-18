@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Save and rejoin while a powered suit is worn and effects and radiation are active: the worn pieces, their charge,
@@ -23,20 +23,20 @@ public final class RcArmorPersist implements Scenario {
         c.waitTicks(5);
         for (String s : new String[] {"head", "chest", "legs", "feet"}) {
             String piece = switch (s) { case "head" -> "ajr_helmet"; case "chest" -> "ajr_plate"; case "legs" -> "ajr_legs"; default -> "ajr_boots"; };
-            c.cmd("item replace entity @s armor." + s + " with hbm:" + piece);
+            c.cmd("item replace entity @s armor." + s + " with geontm:" + piece);
         }
-        c.cmd("effect give @s hbm:radx 600 3 true");
-        c.cmd("effect give @s hbm:taint 600 0 true");
-        c.cmd("effect give @s hbm:lead 600 0 true");
+        c.cmd("effect give @s geontm:radx 600 3 true");
+        c.cmd("effect give @s geontm:taint 600 0 true");
+        c.cmd("effect give @s geontm:lead 600 0 true");
         c.cmd("effect give @s minecraft:saturation 600 1 true");
         c.waitTicks(20);
         JsonObject props = new JsonObject();
         props.addProperty("set_rads", 250.0);
-        c.query("hbm_props", props);
+        c.query("geontm_props", props);
         c.waitTicks(40);
-        JsonObject before = c.query("hbm_armor_set", new JsonObject());
+        JsonObject before = c.query("geontm_armor_set", new JsonObject());
         long chargeBefore = before.getAsJsonObject("chest").get("charge").getAsLong();
-        double radsBefore = c.query("hbm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
+        double radsBefore = c.query("geontm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
         System.out.println("BEFORE charge " + chargeBefore + " rads " + radsBefore + " effects " + before.get("effect_ticks"));
         Expect.that(before.get("fsb").getAsBoolean(), "AJR set working before the reload");
         c.screenshot("before-reload");
@@ -48,20 +48,20 @@ public final class RcArmorPersist implements Scenario {
 
         JsonObject after = null;
         for (int i = 0; i < 20; i++) {
-            after = c.query("hbm_armor_set", new JsonObject());
+            after = c.query("geontm_armor_set", new JsonObject());
             if (after.has("chest")) break;
             c.waitTicks(10);
         }
         Expect.that(after != null && after.has("chest"), "the player is back");
         for (String slot : new String[] {"head", "chest", "legs", "feet"}) {
-            Expect.that(after.getAsJsonObject(slot).get("id").getAsString().startsWith("hbm:ajr_"), slot + " still worn, got " + after.getAsJsonObject(slot));
+            Expect.that(after.getAsJsonObject(slot).get("id").getAsString().startsWith("geontm:ajr_"), slot + " still worn, got " + after.getAsJsonObject(slot));
         }
         long chargeAfter = after.getAsJsonObject("chest").get("charge").getAsLong();
         Expect.that(chargeAfter > 0 && chargeAfter <= chargeBefore && chargeBefore - chargeAfter < 25L * 400,
                 "charge survives and only drains at 25/t: " + chargeBefore + " -> " + chargeAfter);
         Expect.that(after.get("fsb").getAsBoolean(), "the set bonus is back");
-        Expect.that(has(after, "radx", 3) && has(after, "taint", 0) && has(after, "lead", 0), "HBM effects persist, got " + after.get("effect_ticks"));
-        double radsAfter = c.query("hbm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
+        Expect.that(has(after, "radx", 3) && has(after, "taint", 0) && has(after, "lead", 0), "GEONTM effects persist, got " + after.get("effect_ticks"));
+        double radsAfter = c.query("geontm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
         Expect.that(radsAfter > radsBefore - 30 && radsAfter < radsBefore + 30, "radiation persists: " + radsBefore + " -> " + radsAfter);
         c.screenshot("after-reload");
         c.cmd("effect clear @s");

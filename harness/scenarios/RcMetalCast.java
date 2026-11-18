@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,9 +31,9 @@ public final class RcMetalCast implements Scenario {
         c.waitTicks(10);
         c.markLog();
 
-        c.cmd("setblock " + X + " " + L + " " + Z + " hbm:heater_firebox[facing=north]");
-        c.cmd("setblock " + X + " " + (L + 1) + " " + Z + " hbm:machine_crucible[facing=north]");
-        c.cmd("setblock " + X + " " + L + " " + (Z + 2) + " hbm:foundry_basin");
+        c.cmd("setblock " + X + " " + L + " " + Z + " geontm:heater_firebox[facing=north]");
+        c.cmd("setblock " + X + " " + (L + 1) + " " + Z + " geontm:machine_crucible[facing=north]");
+        c.cmd("setblock " + X + " " + L + " " + (Z + 2) + " geontm:foundry_basin");
         c.waitTicks(10);
         // the firebox keeps full heat for the whole run
         c.cmd("data merge block " + X + " " + L + " " + Z + " {heatEnergy:100000,burnTime:200000,maxBurnTime:200000,burnHeat:100}");
@@ -42,8 +42,8 @@ public final class RcMetalCast implements Scenario {
         System.out.println("[RcMetal] crucible heat after 20 ticks " + heat);
         Expect.that(heat > 50_000, "the crucible pulls heat from the firebox below: " + heat);
 
-        install(c, "hbm:mold_block");
-        Expect.that(nbtText(c, X, L, Z + 2).contains("hbm:mold_block"), "the block mold is installed in the basin");
+        install(c, "geontm:mold_block");
+        Expect.that(nbtText(c, X, L, Z + 2).contains("geontm:mold_block"), "the block mold is installed in the basin");
 
         // cycle 1 without the firebox: the crucible's own heat decays by max(heat / 1000, 1) a tick, the melt
         // gate is 50000 and each tick adds (heat - 50000) * 0.05 to the 20000 needed (1.7 TileEntityCrucible)

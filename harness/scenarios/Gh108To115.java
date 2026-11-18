@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 108, 109, 111 and 115 on a real client.
@@ -34,8 +34,8 @@ public final class Gh108To115 implements Scenario {
 
         craterNames(c);
         duckFall(c);
-        fatMan(c, "hbm:ammo_standard_nuke_tots", 8, 0.1);
-        fatMan(c, "hbm:ammo_standard_nuke_hive", 12, 0.15);
+        fatMan(c, "geontm:ammo_standard_nuke_tots", 8, 0.1);
+        fatMan(c, "geontm:ammo_standard_nuke_hive", 12, 0.15);
         pwrReload(c);
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]](?! \\[EMI\\])|NullPointerException|Tank already has an owner");
     }
@@ -44,23 +44,23 @@ public final class Gh108To115 implements Scenario {
         JsonObject p = new JsonObject();
         p.addProperty("mode", "translate");
         JsonArray keys = new JsonArray();
-        keys.add("biome.hbm.crater");
-        keys.add("biome.hbm.crater_inner");
-        keys.add("biome.hbm.crater_outer");
+        keys.add("biome.geontm.crater");
+        keys.add("biome.geontm.crater_inner");
+        keys.add("biome.geontm.crater_outer");
         p.add("keys", keys);
-        JsonObject names = c.query("hbm_release", p).getAsJsonObject("translated");
-        Expect.that(names.get("biome.hbm.crater").getAsString().equals("Crater"), "crater: " + names);
-        Expect.that(names.get("biome.hbm.crater_inner").getAsString().equals("Inner Crater"), "inner: " + names);
-        Expect.that(names.get("biome.hbm.crater_outer").getAsString().equals("Outer Crater"), "outer: " + names);
+        JsonObject names = c.query("geontm_release", p).getAsJsonObject("translated");
+        Expect.that(names.get("biome.geontm.crater").getAsString().equals("Crater"), "crater: " + names);
+        Expect.that(names.get("biome.geontm.crater_inner").getAsString().equals("Inner Crater"), "inner: " + names);
+        Expect.that(names.get("biome.geontm.crater_outer").getAsString().equals("Outer Crater"), "outer: " + names);
     }
 
     private static void duckFall(Client c) {
         c.cmd("gamemode creative");
         c.teleport(0.5, G, -8.5);
-        c.cmd("summon hbm:entity_fucc_a_ducc 0.5 " + (G + 12) + " 2.5 {PersistenceRequired:1b}");
+        c.cmd("summon geontm:entity_fucc_a_ducc 0.5 " + (G + 12) + " 2.5 {PersistenceRequired:1b}");
         c.cmd("summon minecraft:pig 4.5 " + (G + 12) + " 2.5 {PersistenceRequired:1b}");
         c.waitTicks(200);
-        JsonObject duck = first(c, "hbm:entity_fucc_a_ducc");
+        JsonObject duck = first(c, "geontm:entity_fucc_a_ducc");
         JsonObject pig = first(c, "minecraft:pig");
         Expect.that(duck != null, "the duck is alive");
         Expect.that(duck.get("y").getAsDouble() < G + 2, "the duck landed: " + duck);
@@ -73,7 +73,7 @@ public final class Gh108To115 implements Scenario {
     private static void fatMan(Client c, String ammo, int rounds, double spread) {
         c.cmd("clear @s");
         c.cmd("gamemode survival");
-        c.cmd("give @s hbm:gun_fatman");
+        c.cmd("give @s geontm:gun_fatman");
         c.cmd("give @s " + ammo + " 4");
         c.hotbar(1);
         c.teleport(0.5, G, 0.5);
@@ -122,7 +122,7 @@ public final class Gh108To115 implements Scenario {
     private static JsonArray bullets(Client c) {
         JsonObject p = new JsonObject();
         p.addProperty("radius", 64);
-        p.addProperty("type", "hbm:entity_bullet_mk4");
+        p.addProperty("type", "geontm:entity_bullet_mk4");
         p.addProperty("server", true);
         JsonObject result = c.query("entities", p);
         JsonObject side = result.has("entities") ? result : result.getAsJsonObject("server");
@@ -148,8 +148,8 @@ public final class Gh108To115 implements Scenario {
         c.cmd("clear @s");
         c.cmd("gamemode creative");
         c.teleport(0.5, G, -6.5);
-        c.cmd("setblock 2 " + G + " 2 hbm:pwr_controller{assembled:1b}");
-        c.cmd("setblock 3 " + G + " 2 hbm:pwr_block[port=true]{block:\"hbm:pwr_port\",cX:2,cY:" + G + ",cZ:2}");
+        c.cmd("setblock 2 " + G + " 2 geontm:pwr_controller{assembled:1b}");
+        c.cmd("setblock 3 " + G + " 2 geontm:pwr_block[port=true]{block:\"geontm:pwr_port\",cX:2,cY:" + G + ",cZ:2}");
         c.waitTicks(10);
         c.leaveWorld(60_000L);
         c.joinWorld("harness", 180_000L);
@@ -162,7 +162,7 @@ public final class Gh108To115 implements Scenario {
         p.addProperty("z", 2);
         p.addProperty("server", true);
         JsonObject block = c.query("block", p);
-        Expect.that(block.toString().contains("hbm:pwr_block"), "the cell stands after the reload: " + block);
+        Expect.that(block.toString().contains("geontm:pwr_block"), "the cell stands after the reload: " + block);
         c.cmd("setblock 3 " + G + " 2 minecraft:air");
         c.cmd("setblock 2 " + G + " 2 minecraft:air");
     }

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import com.google.gson.JsonObject;
 
 import java.awt.image.BufferedImage;
@@ -34,7 +34,7 @@ public final class Gh152ScopeTransition implements Scenario {
         List<String> wrong = new ArrayList<>();
         for (String gun : new String[] {"gun_amat", "gun_g3_zebra"}) {
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + gun);
+            c.cmd("give @s geontm:" + gun);
             c.hotbar(1);
             c.look(0, 0);
             c.waitTicks(45);
@@ -44,7 +44,7 @@ public final class Gh152ScopeTransition implements Scenario {
                 c.key("mouse.middle");
                 for (int i = 0; i < 16; i++) {
                     Thread.sleep(120);
-                    JsonObject aim = c.query("hbm_gun_aim", new JsonObject());
+                    JsonObject aim = c.query("geontm_gun_aim", new JsonObject());
                     c.screenshot(gun + "-in-" + i + "-aim" + aim.get("prev_aim").getAsFloat() + "-" + aim.get("aim").getAsFloat()
                             + "-fov" + Math.round(aim.get("fov").getAsFloat()));
                 }
@@ -52,7 +52,7 @@ public final class Gh152ScopeTransition implements Scenario {
                 c.tickRate(rate);
             }
             c.waitTicks(30);
-            JsonObject aimed = c.query("hbm_gun_aim", new JsonObject());
+            JsonObject aimed = c.query("geontm_gun_aim", new JsonObject());
             Path shot = c.screenshot(gun + "-aimed");
             float zoom = gun.equals("gun_amat") ? 0.8F : 0.66F;
             float expected = aimed.get("option_fov").getAsFloat() * (1F - zoom);
@@ -68,7 +68,7 @@ public final class Gh152ScopeTransition implements Scenario {
                 c.key("mouse.middle");
                 for (int i = 0; i < 16; i++) {
                     Thread.sleep(120);
-                    JsonObject aim = c.query("hbm_gun_aim", new JsonObject());
+                    JsonObject aim = c.query("geontm_gun_aim", new JsonObject());
                     c.screenshot(gun + "-out-" + i + "-aim" + aim.get("prev_aim").getAsFloat() + "-" + aim.get("aim").getAsFloat()
                             + "-fov" + Math.round(aim.get("fov").getAsFloat()));
                 }
@@ -79,14 +79,14 @@ public final class Gh152ScopeTransition implements Scenario {
             for (float pin : new float[] {0.25F, 0.5F, 0.75F, 0.9F}) {
                 JsonObject params = new JsonObject();
                 params.addProperty("pin", pin);
-                c.query("hbm_gun_aim", params);
+                c.query("geontm_gun_aim", params);
                 c.waitTicks(15);
-                c.screenshot(gun + "-pinned-" + pin + "-fov" + Math.round(c.query("hbm_gun_aim", new JsonObject())
+                c.screenshot(gun + "-pinned-" + pin + "-fov" + Math.round(c.query("geontm_gun_aim", new JsonObject())
                         .get("fov").getAsFloat()));
             }
             JsonObject release = new JsonObject();
             release.addProperty("pin", -1F);
-            c.query("hbm_gun_aim", release);
+            c.query("geontm_gun_aim", release);
         }
         c.releaseAll();
         c.cmd("gamemode creative");

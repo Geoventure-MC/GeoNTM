@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The final recipe/data gap wave, by hand in a real crafting table and a real furnace:
@@ -23,8 +23,8 @@ public final class FinalRecipeGaps implements Scenario {
     private static final int X = 0;
     private static final int Y = 100;
     private static final int Z = 0;
-    private static final String NITROGLYCERIN = "hbm:nitroglycerin";
-    private static final String WOODOIL = "hbm:woodoil";
+    private static final String NITROGLYCERIN = "geontm:nitroglycerin";
+    private static final String WOODOIL = "geontm:woodoil";
 
     /** Per client: one scenario instance runs on both nodes in parallel, so no per-node field. */
     private static boolean legacy(Client c) {
@@ -46,24 +46,24 @@ public final class FinalRecipeGaps implements Scenario {
         furnace(c);
 
         c.cmd("gamemode creative");
-        Expect.logCleanSinceMark(c, "(?i)(exception|Failed to parse|Couldn't parse).*(recipe|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|Failed to parse|Couldn't parse).*(recipe|geontm)");
     }
 
     private static String tank(Client c, String fluid) {
-        return legacy(c) ? "hbm:fluid_tank{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : "hbm:fluid_tank[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+        return legacy(c) ? "geontm:fluid_tank{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : "geontm:fluid_tank[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     /** 1.7 (block, metadata): one item per subtype since History §19es-itemvariant (ntm-next ids). */
     private static String variant(Client c, String id, int variant) {
         return switch (id) {
-            case "hbm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
-            case "hbm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
-            case "hbm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
-            case "hbm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
-            case "hbm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
-            case "hbm:glyphid_base", "hbm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
-            case "hbm:holotape_image" -> id + "_holo_digamma";
+            case "geontm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
+            case "geontm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
+            case "geontm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
+            case "geontm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
+            case "geontm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
+            case "geontm:glyphid_base", "geontm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
+            case "geontm:holotape_image" -> id + "_holo_digamma";
             default -> throw new IllegalArgumentException(id);
         };
     }
@@ -168,54 +168,54 @@ public final class FinalRecipeGaps implements Scenario {
         place(c, "minecraft:glass_pane", 1);
         place(c, "minecraft:cocoa_beans", 2);
         place(c, "minecraft:milk_bucket", 4);
-        place(c, "hbm:fluid_tank", 5);
+        place(c, "geontm:fluid_tank", 5);
         c.waitTicks(3);
         c.screenshot("10-chocolate-milk-grid");
-        take(c, "hbm:chocolate_milk");
+        take(c, "geontm:chocolate_milk");
         JsonObject bucket = c.slot(4);
         JsonObject tank = c.slot(5);
         Expect.that("minecraft:bucket".equals(id(bucket)), "the milk bucket left a bucket: " + bucket);
-        Expect.that("hbm:fluid_tank".equals(id(tank)) && !tank.get("name").getAsString().toLowerCase().contains("nitro"),
+        Expect.that("geontm:fluid_tank".equals(id(tank)) && !tank.get("name").getAsString().toLowerCase().contains("nitro"),
                 "the tank stayed in the grid, empty: " + tank);
         c.screenshot("11-chocolate-milk-remainders");
         clearGridAndClose(c);
     }
 
     private void gunKit(Client c) {
-        c.cmd("give @s hbm:ingot_rubber 1");
+        c.cmd("give @s geontm:ingot_rubber 1");
         c.cmd("give @s minecraft:iron_ingot 1");
         c.cmd("give @s " + tank(c, WOODOIL) + " 1");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:ingot_rubber", 1);
-        place(c, "hbm:fluid_tank", 5);
+        place(c, "geontm:ingot_rubber", 1);
+        place(c, "geontm:fluid_tank", 5);
         place(c, "minecraft:iron_ingot", 9);
         c.waitTicks(3);
         c.screenshot("20-gun-kit-grid");
-        take(c, "hbm:gun_kit_1");
+        take(c, "geontm:gun_kit_1");
         JsonObject tank = c.slot(5);
-        Expect.that("hbm:fluid_tank".equals(id(tank)) && !tank.get("name").getAsString().toLowerCase().contains("wood"),
+        Expect.that("geontm:fluid_tank".equals(id(tank)) && !tank.get("name").getAsString().toLowerCase().contains("wood"),
                 "the woodoil tank came back empty: " + tank);
         c.screenshot("21-gun-kit-remainder");
         clearGridAndClose(c);
     }
 
     private void holotape(Client c) {
-        c.cmd("give @s " + variant(c, "hbm:holotape_image", 0) + " 1");
-        c.cmd("give @s hbm:screwdriver 1");
-        c.cmd("give @s hbm:ducttape 1");
-        c.cmd("give @s hbm:armor_polish 1");
+        c.cmd("give @s " + variant(c, "geontm:holotape_image", 0) + " 1");
+        c.cmd("give @s geontm:screwdriver 1");
+        c.cmd("give @s geontm:ducttape 1");
+        c.cmd("give @s geontm:armor_polish 1");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:holotape_image_holo_digamma", 1);
-        place(c, "hbm:screwdriver", 2);
-        place(c, "hbm:ducttape", 3);
-        place(c, "hbm:armor_polish", 4);
+        place(c, "geontm:holotape_image_holo_digamma", 1);
+        place(c, "geontm:screwdriver", 2);
+        place(c, "geontm:ducttape", 3);
+        place(c, "geontm:armor_polish", 4);
         c.waitTicks(3);
         c.screenshot("30-holotape-grid");
-        take(c, "hbm:holotape_image_holo_restored");
+        take(c, "geontm:holotape_image_holo_restored");
         JsonObject tool = c.slot(2);
-        Expect.that("hbm:screwdriver".equals(id(tool)) && tool.get("damage").getAsInt() == 1,
+        Expect.that("geontm:screwdriver".equals(id(tool)) && tool.get("damage").getAsInt() == 1,
                 "the screwdriver stayed, one use more worn: " + tool);
         c.screenshot("31-holotape-screwdriver-stays");
         clearGridAndClose(c);
@@ -225,7 +225,7 @@ public final class FinalRecipeGaps implements Scenario {
         int cx = X + 4, cz = Z + 3;
         // a steel crate filled through its own GUI, broken and picked up with its contents
         c.cmd("gamemode creative");
-        c.cmd("setblock " + cx + " " + (Y + 1) + " " + cz + " hbm:crate_steel");
+        c.cmd("setblock " + cx + " " + (Y + 1) + " " + cz + " geontm:crate_steel");
         c.cmd("give @s minecraft:diamond 7");
         c.waitTicks(3);
         c.teleport(cx + 0.5, Y + 1, cz - 2.5);
@@ -250,18 +250,18 @@ public final class FinalRecipeGaps implements Scenario {
         c.waitTicks(5);
         c.teleport(cx + 0.5, Y + 1, cz + 0.5);
         c.waitTicks(20);
-        Expect.that(c.inventory().toString().contains("hbm:crate_steel"), "the broken steel crate was picked up");
+        Expect.that(c.inventory().toString().contains("geontm:crate_steel"), "the broken steel crate was picked up");
 
-        c.cmd("give @s hbm:block_tungsten 4");
-        c.cmd("give @s hbm:plate_cast_copper 4");
+        c.cmd("give @s geontm:block_tungsten 4");
+        c.cmd("give @s geontm:plate_cast_copper 4");
         c.waitTicks(3);
         openTable(c);
-        place(c, "hbm:block_tungsten", 1, 3, 7, 9);
-        place(c, "hbm:plate_cast_copper", 2, 4, 6, 8);
-        place(c, "hbm:crate_steel", 5);
+        place(c, "geontm:block_tungsten", 1, 3, 7, 9);
+        place(c, "geontm:plate_cast_copper", 2, 4, 6, 8);
+        place(c, "geontm:crate_steel", 5);
         c.waitTicks(3);
         c.screenshot("41-tungsten-crate-grid");
-        take(c, "hbm:crate_tungsten");
+        take(c, "geontm:crate_tungsten");
         c.key("escape");
         c.waitTicks(3);
 
@@ -271,7 +271,7 @@ public final class FinalRecipeGaps implements Scenario {
         int hotbar = -1;
         for (JsonElement e : inv.getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if ("hbm:crate_tungsten".equals(s.get("id").getAsString()) && s.get("slot").getAsInt() < 9) hotbar = s.get("slot").getAsInt();
+            if ("geontm:crate_tungsten".equals(s.get("id").getAsString()) && s.get("slot").getAsInt() < 9) hotbar = s.get("slot").getAsInt();
         }
         Expect.that(hotbar >= 0, "the tungsten crate is in the hotbar: " + inv);
         c.teleport(tx + 2.5, Y + 1, tz + 0.5);
@@ -288,7 +288,7 @@ public final class FinalRecipeGaps implements Scenario {
         c.waitTicks(4);
         c.keyUp("key.sneak");
         c.waitTicks(3);
-        Expect.block(c, tx, Y + 1, tz, "hbm:crate_tungsten");
+        Expect.block(c, tx, Y + 1, tz, "geontm:crate_tungsten");
         String nbt = c.blockEntity(tx, Y + 1, tz).toString();
         Expect.that(nbt.contains("diamond"), "the crafted tungsten crate kept the steel crate's diamonds: " + nbt);
         Fixtures.interact(c, tx, Y + 1, tz);
@@ -305,7 +305,7 @@ public final class FinalRecipeGaps implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("setblock " + fx + " " + (Y + 1) + " " + fz + " minecraft:furnace[facing=south]");
         c.cmd("give @s minecraft:raw_iron 1");
-        c.cmd("give @s hbm:briquette_coal 1");
+        c.cmd("give @s geontm:briquette_coal 1");
         c.waitTicks(3);
         c.teleport(fx + 0.5, Y + 1, fz + 2.5);
         c.waitTicks(2);
@@ -313,7 +313,7 @@ public final class FinalRecipeGaps implements Scenario {
         c.waitScreen("Furnace", 5000);
         c.waitTicks(3);
         place(c, "minecraft:raw_iron", 0);
-        place(c, "hbm:briquette_coal", 1);
+        place(c, "geontm:briquette_coal", 1);
         c.waitTicks(40);
         JsonObject fuel = c.slot(1);
         Expect.that(id(fuel).isEmpty(), "the furnace burned the briquette as fuel: " + fuel);

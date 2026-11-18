@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
  *       buffer) loaded through its GUI with iron + coal, a smoke duct to a brick chimney: the chimney reports
  *       {@code onTicks} (it received smoke), the furnace's smoke tank never fills, the region gains soot (0.25 of the
  *       smoke). Without the duct the tank fills to 50 and overflows into the region with the 1.7 fizz.</li>
- *   <li>FT_Toxin at runtime: a pig in a phosgene mist ({@code hbm:entity_mist}) loses 4 x intensity on the 20-tick clock.</li>
+ *   <li>FT_Toxin at runtime: a pig in a phosgene mist ({@code geontm:entity_mist}) loses 4 x intensity on the 20-tick clock.</li>
  * </ol>
  */
 public final class ReleasePollutionToxin implements Scenario {
@@ -34,7 +34,7 @@ public final class ReleasePollutionToxin implements Scenario {
     }
 
     private static String icon(Client c, String fluid) {
-        return legacy(c) ? "hbm:fluid_icon{\"hbm:fluid\":\"" + fluid + "\"}" : "hbm:fluid_icon[hbm:fluid=\"" + fluid + "\"]";
+        return legacy(c) ? "geontm:fluid_icon{\"geontm:fluid\":\"" + fluid + "\"}" : "geontm:fluid_icon[geontm:fluid=\"" + fluid + "\"]";
     }
 
     static JsonObject release(Client c, Object... kv) {
@@ -44,10 +44,10 @@ public final class ReleasePollutionToxin implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        return c.query("hbm_release", p);
+        return c.query("geontm_release", p);
     }
 
-    /** Polls a server-side hbm_release query until it is no longer pending (a nonce defeats the answer cache). */
+    /** Polls a server-side geontm_release query until it is no longer pending (a nonce defeats the answer cache). */
     static JsonObject server(Client c, Object... kv) {
         JsonObject r = null;
         for (int i = 0; i < 20; i++) {
@@ -73,15 +73,15 @@ public final class ReleasePollutionToxin implements Scenario {
         smokeChain(c);
         toxinMist(c);
 
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|is not registered).*");
     }
 
     // ---------------------------------------------------------------- 1: tooltips
 
     private void tooltips(Client c) {
         c.cmd("clear");
-        c.cmd("give @s " + icon(c, "hbm:oil") + " 1");
-        c.cmd("give @s " + icon(c, "hbm:phosgene") + " 1");
+        c.cmd("give @s " + icon(c, "geontm:oil") + " 1");
+        c.cmd("give @s " + icon(c, "geontm:phosgene") + " 1");
         c.waitTicks(5);
         c.cmd("gamemode survival");
         c.waitTicks(5);
@@ -168,7 +168,7 @@ public final class ReleasePollutionToxin implements Scenario {
         c.cmd("clear");
         c.cmd("fill " + (X - 12) + " " + (Y + 1) + " " + (Z - 4) + " " + (X + 6) + " " + (Y + 20) + " " + (Z + 12) + " minecraft:air");
         c.waitTicks(5);
-        Fixtures.placeOnTop(c, "hbm:chimney_brick", X - 4, Y, Z + 4);
+        Fixtures.placeOnTop(c, "geontm:chimney_brick", X - 4, Y, Z + 4);
         c.waitTicks(10);
         JsonObject found = server(c, "mode", "machine", "x", X - 4, "y", L, "z", Z + 4, "radius", 4);
         JsonArray chimneys = found.getAsJsonArray("chimneys");
@@ -178,12 +178,12 @@ public final class ReleasePollutionToxin implements Scenario {
 
         // furnace three blocks east of the core, a smoke duct between (the chimney's east port is core + 2)
         int fx = cx + 3, fz = cz;
-        Fixtures.setBlock(c, fx, cy, fz, "hbm:machine_difurnace_off");
+        Fixtures.setBlock(c, fx, cy, fz, "geontm:machine_difurnace_off");
         // the duct is typed by hand, as a player does: right-click with a fluid identifier set to smoke. (A duct typed by
         // /setblock NBT keeps an untyped graph cell: the NBT is applied after the block entity joined the graph.)
-        Fixtures.setBlock(c, cx + 2, cy, cz, "hbm:fluid_duct_neo");
+        Fixtures.setBlock(c, cx + 2, cy, cz, "geontm:fluid_duct_neo");
         c.cmd("clear");
-        c.cmd("give @s " + (legacy(c) ? "hbm:fluid_identifier{\"hbm:fluid\":\"hbm:smoke\"}" : "hbm:fluid_identifier[hbm:fluid=\"hbm:smoke\"]") + " 1");
+        c.cmd("give @s " + (legacy(c) ? "geontm:fluid_identifier{\"geontm:fluid\":\"geontm:smoke\"}" : "geontm:fluid_identifier[geontm:fluid=\"geontm:smoke\"]") + " 1");
         c.hotbar(1);
         c.teleport(cx + 2.5, cy, cz - 2.5);
         c.waitTicks(5);
@@ -192,10 +192,10 @@ public final class ReleasePollutionToxin implements Scenario {
         c.use(2);
         c.waitTicks(10);
         JsonObject duct = c.blockEntity(cx + 2, cy, cz);
-        Expect.that(duct.toString().contains("hbm:smoke"), "the identifier typed the duct smoke: " + duct);
+        Expect.that(duct.toString().contains("geontm:smoke"), "the identifier typed the duct smoke: " + duct);
         JsonObject zero = new JsonObject();
         zero.addProperty("set_soot", 0);
-        c.query("hbm_hooks", zero); // earlier runs left soot in this region; start the measurement at zero
+        c.query("geontm_hooks", zero); // earlier runs left soot in this region; start the measurement at zero
         c.waitTicks(2);
         float sootBefore = server(c, "mode", "machine", "x", fx, "y", cy, "z", fz, "radius", 0).get("soot").getAsFloat();
 
@@ -292,14 +292,14 @@ public final class ReleasePollutionToxin implements Scenario {
     private void toxinMist(Client c) {
         c.teleport(X + 0.5, L, Z + 0.5);
         c.cmd("kill @e[type=minecraft:pig]");
-        c.cmd("summon minecraft:pig " + (X + 6) + " " + L + " " + Z + " {NoAI:1b,Health:10f,Tags:[\"hbm_toxin\"]}");
+        c.cmd("summon minecraft:pig " + (X + 6) + " " + L + " " + Z + " {NoAI:1b,Health:10f,Tags:[\"geontm_toxin\"]}");
         c.waitTicks(5);
-        c.cmd("summon hbm:entity_mist " + (X + 6) + " " + L + " " + Z + " {type:\"hbm:phosgene\",width:4f,height:2f}");
+        c.cmd("summon geontm:entity_mist " + (X + 6) + " " + L + " " + Z + " {type:\"geontm:phosgene\",width:4f,height:2f}");
         c.lookAt(X + 6.5, L + 0.5, Z + 0.5);
         float health = 10F;
         for (int i = 0; i < 6; i++) {
             c.waitTicks(10);
-            JsonObject living = c.query("hbm_living", new JsonObject());
+            JsonObject living = c.query("geontm_living", new JsonObject());
             for (JsonElement e : living.getAsJsonArray("living")) {
                 JsonObject o = e.getAsJsonObject();
                 if (o.get("type").getAsString().equals("minecraft:pig")) {
@@ -310,7 +310,7 @@ public final class ReleasePollutionToxin implements Scenario {
         }
         System.out.println(c.node() + " pig in phosgene: health " + health);
         Expect.that(health < 10F, "the phosgene mist (FT_Toxin, 4 per 20 ticks x intensity) hurt the pig: " + health);
-        c.cmd("kill @e[type=hbm:entity_mist]");
+        c.cmd("kill @e[type=geontm:entity_mist]");
         c.cmd("kill @e[type=minecraft:pig]");
     }
 }

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The turret screen over real clicks: the power switch and a target toggle, the biometry chip in slot 0 with a name
@@ -25,9 +25,9 @@ public final class RcSpaceTurretGui implements Scenario {
         c.cmd("clear");
         placeTurret(c);
         c.cmd("data merge block " + TX + " " + L + " " + TZ + " {power:5000L}");
-        c.cmd("give @s hbm:turret_chip 1");
-        c.cmd("give @s hbm:ammo_standard_bmg50_sp 64");
-        c.cmd("give @s hbm:ammo_standard_r556_sp 10");
+        c.cmd("give @s geontm:turret_chip 1");
+        c.cmd("give @s geontm:ammo_standard_bmg50_sp 64");
+        c.cmd("give @s geontm:ammo_standard_r556_sp 10");
         c.waitTicks(4);
 
         c.teleport(TX + 4.5, L, TZ + 0.5);
@@ -52,7 +52,7 @@ public final class RcSpaceTurretGui implements Scenario {
         Expect.that(nbt.contains("targetAnimals:1b") || nbt.contains("targetAnimals:true"), "animals toggle on: " + nbt);
 
         // chip into slot 0 by a pickup/place pair, then a name
-        int chipSlot = invSlot(c, "hbm:turret_chip");
+        int chipSlot = invSlot(c, "geontm:turret_chip");
         Expect.that(chipSlot >= 0, "chip in the inventory");
         c.clickSlot(chipSlot);
         c.waitTicks(1);
@@ -78,7 +78,7 @@ public final class RcSpaceTurretGui implements Scenario {
         c.waitTicks(5);
 
         // shift-click rounds: .50 SP is accepted, 5.56 is not but 1.7 takes anything in the ammo block
-        int ammoSlot = invSlot(c, "hbm:ammo_standard_bmg50_sp");
+        int ammoSlot = invSlot(c, "geontm:ammo_standard_bmg50_sp");
         Expect.that(ammoSlot >= 0, "rounds in the inventory");
         c.slotClick(ammoSlot, 0, "QUICK_MOVE");
         c.waitTicks(4);
@@ -103,7 +103,7 @@ public final class RcSpaceTurretGui implements Scenario {
     }
 
     private static void placeTurret(Client c) {
-        Fixtures.giveOnly(c, "hbm:turret_chekhov", 1);
+        Fixtures.giveOnly(c, "geontm:turret_chekhov", 1);
         c.waitTicks(3);
         c.teleport(4.5, Y + 1, 0.5);
         c.waitTicks(3);

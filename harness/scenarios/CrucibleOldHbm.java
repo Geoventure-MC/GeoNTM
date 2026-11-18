@@ -1,15 +1,15 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The old-hbm (1.12) crucible, end to end on one client:
+ * The old-geontm (1.12) crucible, end to end on one client:
  *
  * <ol>
  *   <li>deploy: the Collada scene with the arms appears only once the server's equip cue arrives, its sparks run while
@@ -29,11 +29,11 @@ public final class CrucibleOldHbm implements Scenario {
     private static final int Z = 300;
 
     private static String charged(Client c) {
-        return c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}" : "hbm:crucible[hbm:charges=16]";
+        return c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}" : "geontm:crucible[geontm:charges=16]";
     }
 
     private static JsonObject q(Client c) throws Exception {
-        return c.query("hbm_crucible", new JsonObject());
+        return c.query("geontm_crucible", new JsonObject());
     }
 
     @Override
@@ -176,7 +176,7 @@ public final class CrucibleOldHbm implements Scenario {
         // ---- 5. an empty crucible
         c.cmd("clear");
         c.waitTicks(5);
-        c.cmd("give @s hbm:crucible 1");
+        c.cmd("give @s geontm:crucible 1");
         c.waitTicks(30);
         JsonObject empty = q(c);
         c.screenshot("15-empty");

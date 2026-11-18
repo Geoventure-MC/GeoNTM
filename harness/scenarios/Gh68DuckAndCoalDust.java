@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 68 and the duck: 1.7's info-HUD notices. Rejoining a fresh world shows "Press O to Duck!", O throws
@@ -25,18 +25,18 @@ public final class Gh68DuckAndCoalDust implements Scenario {
         c.keyUp("o");
         c.waitTicks(20);
         c.screenshot("duck-thrown");
-        c.cmd("kill @e[type=hbm:entity_fucc_a_ducc]");
+        c.cmd("kill @e[type=geontm:entity_fucc_a_ducc]");
 
         c.cmd("gamemode survival");
-        c.cmd("setblock 0 101 0 hbm:gas_coal");
-        c.cmd("setblock 0 102 0 hbm:gas_coal");
+        c.cmd("setblock 0 101 0 geontm:gas_coal");
+        c.cmd("setblock 0 102 0 geontm:gas_coal");
         c.waitTicks(20);
         c.screenshot("coal-dust-warning");
-        c.cmd("item replace entity @s armor.head with hbm:mask_rag");
+        c.cmd("item replace entity @s armor.head with geontm:mask_rag");
         c.cmd("fill 0 101 0 0 102 0 air");
         c.waitTicks(80);
-        c.cmd("setblock 0 101 0 hbm:gas_coal");
-        c.cmd("setblock 0 102 0 hbm:gas_coal");
+        c.cmd("setblock 0 101 0 geontm:gas_coal");
+        c.cmd("setblock 0 102 0 geontm:gas_coal");
         c.waitTicks(20);
         c.screenshot("coal-dust-masked");
         c.cmd("fill 0 101 0 0 102 0 air");

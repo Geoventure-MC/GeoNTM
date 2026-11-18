@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The RBMK dials as world rules: /gamerule accepts a double, an int and a boolean, tab completion lists them, the
@@ -27,11 +27,11 @@ public final class RcNukeRbmkDials implements Scenario {
 
             JsonObject suggest = new JsonObject();
             suggest.addProperty("input", "gamerule dialCo");
-            String names = c.query("hbm_suggest", suggest).get("suggestions").toString();
+            String names = c.query("geontm_suggest", suggest).get("suggestions").toString();
             Expect.that(names.contains("dialControlSpeed") && names.contains("dialControlSurgeMod") && names.contains("dialColumnHeight")
                     && names.contains("dialColumnHeatFlow"), "tab completion lists the dials: " + names);
             suggest.addProperty("input", "gamerule dialDisableMeltdowns ");
-            String values = c.query("hbm_suggest", suggest).get("suggestions").toString();
+            String values = c.query("geontm_suggest", suggest).get("suggestions").toString();
             Expect.that(values.contains("true") && values.contains("false"), "a boolean dial suggests true and false: " + values);
 
             c.screenshot("01-dials-set");
@@ -51,7 +51,7 @@ public final class RcNukeRbmkDials implements Scenario {
     }
 
     private static void check(Client c, String when) {
-        JsonObject dials = c.query("hbm_rbmk_dials", new JsonObject());
+        JsonObject dials = c.query("geontm_rbmk_dials", new JsonObject());
         Expect.that(dials.get("controlSpeed").getAsDouble() == 2.5D, "client sees dialControlSpeed 2.5 " + when + ": " + dials);
         Expect.that(dials.get("columnHeight").getAsInt() == 6, "client sees dialColumnHeight 6 " + when + ": " + dials);
         Expect.that(dials.get("disableMeltdowns").getAsBoolean(), "client sees dialDisableMeltdowns true " + when + ": " + dials);

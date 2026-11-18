@@ -1,10 +1,10 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -54,14 +54,14 @@ public final class RcArmorServer implements Scenario {
             c.waitTicks(5);
             String effects = rcon.command("data get entity RcServer active_effects") + rcon.command("data get entity RcServer ActiveEffects");
             // 1.20.1 lists effects by numeric id in NBT, so only their number can be checked there
-            boolean named = effects.contains("hbm:radx") && effects.contains("strength");
+            boolean named = effects.contains("geontm:radx") && effects.contains("strength");
             boolean numbered = c.node().startsWith("1.20.") && effects.split("Id:", -1).length - 1 >= 4;
             Expect.that(named || numbered, "server: awesome syringe effects incl. Rad-X, got " + effects);
 
             // 2. worn powered suit
             rcon.command("effect clear RcServer");
             rcon.command("clear RcServer");
-            for (String slot : new String[] {"armor.head with hbm:rpa_helmet", "armor.chest with hbm:rpa_plate", "armor.legs with hbm:rpa_legs", "armor.feet with hbm:rpa_boots"}) {
+            for (String slot : new String[] {"armor.head with geontm:rpa_helmet", "armor.chest with geontm:rpa_plate", "armor.legs with geontm:rpa_legs", "armor.feet with geontm:rpa_boots"}) {
                 rcon.command("item replace entity RcServer " + slot);
             }
             c.waitTicks(20);
@@ -74,7 +74,7 @@ public final class RcArmorServer implements Scenario {
             rcon.command("effect clear RcServer");
 
             // 3. armor table over the network
-            rcon.command("setblock 0 " + (Y + 1) + " " + TZ + " hbm:machine_armor_table");
+            rcon.command("setblock 0 " + (Y + 1) + " " + TZ + " geontm:machine_armor_table");
             rcon.command("clear RcServer");
             give(c, rcon, "steel_plate");
             give(c, rcon, "bottled_cloud");
@@ -85,9 +85,9 @@ public final class RcArmorServer implements Scenario {
             Fixtures.interact(c, 0, Y + 1, TZ);
             c.waitScreen("Armor Modification Table", 5000);
             Expect.screenStaysOpen(c, "Armor Modification Table", 15);
-            shift(c, "hbm:steel_plate");
-            shift(c, "hbm:bottled_cloud");
-            shift(c, "hbm:servo_set");
+            shift(c, "geontm:steel_plate");
+            shift(c, "geontm:bottled_cloud");
+            shift(c, "geontm:servo_set");
             c.waitTicks(3);
             Expect.that(!c.slot(9).get("empty").getAsBoolean() && !c.slot(1).get("empty").getAsBoolean()
                     && !c.slot(4).get("empty").getAsBoolean(), "client shows the armor and both modules in the table");
@@ -118,7 +118,7 @@ public final class RcArmorServer implements Scenario {
     }
 
     private void give(Client c, Rcon rcon, String item) {
-        rcon.command("give RcServer hbm:" + item);
+        rcon.command("give RcServer geontm:" + item);
         c.waitTicks(3);
     }
 

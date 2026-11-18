@@ -1,0 +1,11 @@
+package fr.geoventure.geontm.client.render;
+
+import fr.geoventure.geocore.render.CompatRenderState;
+
+/** Render state for the powered condenser's body and twin fan angle. */
+public final class CondenserRenderState extends CompatRenderState {
+    public float yaw;
+    public float spin;
+    /** An addon's wrecked view is drawn instead ({@link DamagedView}). */
+    public boolean damaged;
+}

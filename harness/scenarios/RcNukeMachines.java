@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Every reactor and high-energy machine placed by hand from each of the four sides, a screenshot of the four
@@ -15,8 +15,8 @@ public final class RcNukeMachines implements Scenario {
     private static final int Z0 = 400;
     private static final int STEP = 26;
 
-    static final String[] MACHINES = {"hbm:machine_waste_drum", "hbm:pwr_controller", "hbm:fusion_boiler", "hbm:fusion_collector",
-            "hbm:dfc_core", "hbm:dfc_emitter", "hbm:dfc_receiver", "hbm:dfc_injector", "hbm:dfc_stabilizer"};
+    static final String[] MACHINES = {"geontm:machine_waste_drum", "geontm:pwr_controller", "geontm:fusion_boiler", "geontm:fusion_collector",
+            "geontm:dfc_core", "geontm:dfc_emitter", "geontm:dfc_receiver", "geontm:dfc_injector", "geontm:dfc_stabilizer"};
 
     @Override
     public void run(Client c) throws Exception {

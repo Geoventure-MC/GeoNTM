@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issues 75 to 77. A supply crate broken in survival drops itself with its contents and places back full. The
@@ -31,7 +31,7 @@ public final class Gh75to77 implements Scenario {
 
     private static void supplyCrate(Client c) {
         int x = 0, z = 3;
-        Fixtures.setBlock(c, x, G, z, "hbm:crate_supply");
+        Fixtures.setBlock(c, x, G, z, "geontm:crate_supply");
         c.cmd("item replace block " + x + " " + G + " " + z + " container.0 with minecraft:diamond 7");
         c.waitTicks(3);
         c.cmd("clear");
@@ -48,7 +48,7 @@ public final class Gh75to77 implements Scenario {
         c.teleport(x + 0.5, G, z + 0.5);
         c.waitTicks(40);
         Expect.that(c.block(x, G, z).get("block").getAsString().equals("minecraft:air"), "the supply crate broke");
-        int slot = hotbarSlot(c, "hbm:crate_supply");
+        int slot = hotbarSlot(c, "geontm:crate_supply");
         System.out.println("[Gh75] inventory after breaking: " + c.inventory());
         Expect.that(slot >= 0, "the broken supply crate dropped itself");
         c.cmd("effect clear @s");
@@ -70,7 +70,7 @@ public final class Gh75to77 implements Scenario {
     private static void b92(Client c) {
         c.teleport(0.5, G, -4.5);
         c.look(0, 10);
-        Fixtures.giveOnly(c, "hbm:gun_b92", 1);
+        Fixtures.giveOnly(c, "geontm:gun_b92", 1);
         c.waitTicks(20);
         c.screenshot("b92-first-person");
         c.key("f5");
@@ -81,7 +81,7 @@ public final class Gh75to77 implements Scenario {
         c.screenshot("b92-third-person-front");
         c.key("f5");
         c.waitTicks(5);
-        c.cmd("summon item 0.5 " + G + " -2.5 {Item:{id:\"hbm:gun_b92\",count:1,Count:1b},PickupDelay:32767,NoGravity:1b}");
+        c.cmd("summon item 0.5 " + G + " -2.5 {Item:{id:\"geontm:gun_b92\",count:1,Count:1b},PickupDelay:32767,NoGravity:1b}");
         c.lookAt(0.5, G + 0.2, -2.5);
         c.waitTicks(10);
         c.screenshot("b92-dropped");
@@ -91,7 +91,7 @@ public final class Gh75to77 implements Scenario {
     private static void radgen(Client c) {
         int oz = -10;
         c.cmd("clear");
-        Fixtures.giveOnly(c, "hbm:machine_radgen", 1);
+        Fixtures.giveOnly(c, "geontm:machine_radgen", 1);
         c.teleport(0.5, G, oz + 4.5);
         c.waitTicks(5);
         c.lookAt(0.5, Y + 0.98, oz + 1.5);
@@ -101,7 +101,7 @@ public final class Gh75to77 implements Scenario {
         int[] core = null;
         for (int x = -6; x <= 6 && core == null; x++) for (int z = oz - 6; z <= oz + 6 && core == null; z++) {
             for (int y = G; y <= G + 4; y++) {
-                if (c.block(x, y, z).get("block").getAsString().equals("hbm:machine_radgen")
+                if (c.block(x, y, z).get("block").getAsString().equals("geontm:machine_radgen")
                         && c.blockEntity(x, y, z).toString().contains("maxProgress")) {
                     core = new int[] {x, y, z};
                     break;
@@ -112,9 +112,9 @@ public final class Gh75to77 implements Scenario {
         System.out.println("[Gh77] core at " + core[0] + "," + core[1] + "," + core[2]);
 
         c.cmd("clear");
-        c.cmd("give @s hbm:nuclear_waste_short_uranium235 4");
-        c.cmd("give @s hbm:scrap_nuclear 4");
-        c.cmd("give @s hbm:yellow_barrel 4");
+        c.cmd("give @s geontm:nuclear_waste_short_uranium235 4");
+        c.cmd("give @s geontm:scrap_nuclear 4");
+        c.cmd("give @s geontm:yellow_barrel 4");
         c.teleport(core[0] + 0.5, G, oz + 4.5);
         c.waitTicks(3);
         c.lookAt(core[0] + 0.5, G + 0.5, core[2] + 0.5);
@@ -122,8 +122,8 @@ public final class Gh75to77 implements Scenario {
         c.use(1);
         c.waitTicks(10);
         Expect.screenOpen(c, "Radiation");
-        c.slotClick(playerSlotWith(c, "hbm:nuclear_waste_short_uranium235"), 0, "QUICK_MOVE");
-        c.slotClick(playerSlotWith(c, "hbm:yellow_barrel"), 0, "QUICK_MOVE");
+        c.slotClick(playerSlotWith(c, "geontm:nuclear_waste_short_uranium235"), 0, "QUICK_MOVE");
+        c.slotClick(playerSlotWith(c, "geontm:yellow_barrel"), 0, "QUICK_MOVE");
         c.waitTicks(5);
         c.screenshot("radgen-menu");
         c.key("escape");
@@ -138,7 +138,7 @@ public final class Gh75to77 implements Scenario {
         while (!c.block(core[0], hy, core[2]).get("block").getAsString().equals("minecraft:air")) hy++;
         c.cmd("setblock " + core[0] + " " + hy + " " + core[2] + " minecraft:hopper[facing=down]");
         c.waitTicks(2);
-        c.cmd("item replace block " + core[0] + " " + hy + " " + core[2] + " container.0 with hbm:scrap_nuclear 4");
+        c.cmd("item replace block " + core[0] + " " + hy + " " + core[2] + " container.0 with geontm:scrap_nuclear 4");
         String top = c.block(core[0], hy - 1, core[2]).get("block").getAsString();
         System.out.println("[Gh77] block under the hopper: " + top);
         c.waitTicks(80);

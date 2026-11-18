@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -29,10 +29,10 @@ public class HappyGhastFatMan implements Scenario {
         String hideGui = c.setOption("hide_gui", "true");
         try {
             // a ready Fat Man, every part put in by command (the GUI is not what is under test)
-            c.cmd("setblock " + BX + " " + BY + " " + BZ + " hbm:nuke_man[facing=3]");
+            c.cmd("setblock " + BX + " " + BY + " " + BZ + " geontm:nuke_man[facing=3]");
             c.waitTicks(2);
-            String[] parts = {"hbm:man_igniter", "hbm:gadget_explosive8", "hbm:gadget_explosive8",
-                    "hbm:gadget_explosive8", "hbm:gadget_explosive8", "hbm:man_core"};
+            String[] parts = {"geontm:man_igniter", "geontm:gadget_explosive8", "geontm:gadget_explosive8",
+                    "geontm:gadget_explosive8", "geontm:gadget_explosive8", "geontm:man_core"};
             for (int i = 0; i < parts.length; i++) {
                 c.cmd("item replace block " + BX + " " + BY + " " + BZ + " container." + i + " with " + parts[i]);
             }
@@ -49,7 +49,7 @@ public class HappyGhastFatMan implements Scenario {
             c.waitTicks(1);
             c.use(2);
             c.waitTicks(4);
-            Expect.block(c, BX, BY, BZ, "hbm:nuke_man");
+            Expect.block(c, BX, BY, BZ, "geontm:nuke_man");
             c.cmd("give @s minecraft:lead 1");
             c.waitTicks(2);
             c.hotbar(1);
@@ -140,19 +140,19 @@ public class HappyGhastFatMan implements Scenario {
                 blast = first(entities(c, "entity_nuke_mk5", 64));
             }
             Expect.that(blast != null, "no Fat Man blast after the drop: " + entities(c, "", 64));
-            c.cmd("kill @e[type=hbm:entity_nuke_mk5]");
+            c.cmd("kill @e[type=geontm:entity_nuke_mk5]");
             Expect.that(bomb(c) == null, "the bomb is still there after it went off");
             Expect.that(Math.abs(blast.get("y").getAsDouble() - BY) < 1.5,
                     "the blast is not at the landing point: y " + blast.get("y"));
             c.waitTicks(8);
             c.screenshot("5-detonation-cloud");
-            c.cmd("kill @e[type=hbm:entity_effect_torex]");
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(hbm|happyghast|rigged)");
+            c.cmd("kill @e[type=geontm:entity_effect_torex]");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*(geontm|happyghast|rigged)");
         } finally {
-            c.cmd("kill @e[type=hbm:entity_nuke_mk5]");
-            c.cmd("kill @e[type=hbm:entity_effect_torex]");
+            c.cmd("kill @e[type=geontm:entity_nuke_mk5]");
+            c.cmd("kill @e[type=geontm:entity_effect_torex]");
             c.cmd("kill @e[type=minecraft:happy_ghast]");
-            c.cmd("kill @e[type=hbm:rigged_fat_man]");
+            c.cmd("kill @e[type=geontm:rigged_fat_man]");
             c.cmd("kill @e[type=minecraft:item]");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
         }
@@ -185,7 +185,7 @@ public class HappyGhastFatMan implements Scenario {
     /** The bomb's saved leash as the server prints it. */
     private static String leashLine(Client c) {
         c.markLog();
-        c.cmd("data get entity @e[type=hbm:rigged_fat_man,limit=1] leash");
+        c.cmd("data get entity @e[type=geontm:rigged_fat_man,limit=1] leash");
         c.waitTicks(3);
         List<String> chat = c.logSinceMark("CHAT");
         return String.join(" | ", chat);

@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public final class QuickfixIcons implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("clear");
         c.waitTicks(2);
-        for (String id : IDS) c.cmd("give @s hbm:" + id + " 1");
+        for (String id : IDS) c.cmd("give @s geontm:" + id + " 1");
         c.waitTicks(5);
         c.key("e");
         c.waitTicks(10);
@@ -39,12 +39,12 @@ public final class QuickfixIcons implements Scenario {
     }
 
     /**
-     * The assertion half: draws {@code ids} in real 16x16 slots on the {@code hbm_icon_audit} screen, then
+     * The assertion half: draws {@code ids} in real 16x16 slots on the {@code geontm_icon_audit} screen, then
      * compares each slot's pixels with the empty background page. An icon that renders nothing (the blank-icon
      * bug) leaves its cell identical to the background and fails here instead of passing as a screenshot.
      */
     static void assertIconsDrawn(Client c, String[] ids) throws Exception {
-        String filter = "^hbm:(" + String.join("|", ids) + ")$";
+        String filter = "^geontm:(" + String.join("|", ids) + ")$";
         String guiScale = c.setOption("gui_scale", "2");
         try {
             JsonObject page = auditPage(c, 0, filter);
@@ -74,11 +74,11 @@ public final class QuickfixIcons implements Scenario {
                 if (changed < cell * cell / 20) blank.add(id + " (" + changed + " of " + cell * cell + " px)");
             }
             List<String> missing = new ArrayList<>();
-            for (String id : ids) if (!seen.contains("hbm:" + id)) missing.add(id);
+            for (String id : ids) if (!seen.contains("geontm:" + id)) missing.add(id);
             Expect.that(missing.isEmpty(), "audit page lists every id: missing " + missing);
             Expect.that(blank.isEmpty(), "icons draw nothing over the slot background: " + blank);
         } finally {
-            c.query("hbm_icon_audit", closeParams());
+            c.query("geontm_icon_audit", closeParams());
             if (guiScale != null) c.setOption("gui_scale", guiScale);
         }
     }
@@ -87,7 +87,7 @@ public final class QuickfixIcons implements Scenario {
         JsonObject params = new JsonObject();
         params.addProperty("page", page);
         params.addProperty("filter", filter);
-        JsonObject reply = c.query("hbm_icon_audit", params);
+        JsonObject reply = c.query("geontm_icon_audit", params);
         c.waitScreen("IconAuditScreen", 10_000L);
         c.waitTicks(4); // the screen has been drawn, the 26.1 GUI item atlas has been filled
         return reply;

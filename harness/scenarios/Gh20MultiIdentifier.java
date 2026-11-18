@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 20: the electrolyser (and the ore slopper, excavator and annihilator) took only the single fluid
@@ -21,14 +21,14 @@ public final class Gh20MultiIdentifier implements Scenario {
         c.cmd("gamemode creative");
         c.markLog();
 
-        open(c, "hbm:machine_electrolyser");
+        open(c, "geontm:machine_electrolyser");
         give(c);
-        clickFromInventory(c, "hbm:fluid_identifier_multi", 3);
+        clickFromInventory(c, "geontm:fluid_identifier_multi", 3);
         c.waitTicks(10);
         c.mouseMove(2, 2);
         c.screenshot("01-electrolyser");
         String moved = slotItem(c, 4);
-        Expect.that("hbm:fluid_identifier_multi".equals(moved),
+        Expect.that("geontm:fluid_identifier_multi".equals(moved),
                 "the multi identifier retyped the tank and passed to slot 4, which holds " + moved + ", slot 3 " + slotItem(c, 3));
         String nbt = nbtNear(c);
         System.out.println("[Gh20] electrolyser: " + nbt);
@@ -53,8 +53,8 @@ public final class Gh20MultiIdentifier implements Scenario {
 
     private static void give(Client c) {
         String multi = c.node().startsWith("1.20.")
-                ? "hbm:fluid_identifier_multi{\"hbm:fluid_multi\":{fluid1:\"hbm:heavywater\"}}"
-                : "hbm:fluid_identifier_multi[hbm:fluid_multi={fluid1:\"hbm:heavywater\"}]";
+                ? "geontm:fluid_identifier_multi{\"geontm:fluid_multi\":{fluid1:\"geontm:heavywater\"}}"
+                : "geontm:fluid_identifier_multi[geontm:fluid_multi={fluid1:\"geontm:heavywater\"}]";
         c.cmd("give @s " + multi + " 1");
         c.waitTicks(5);
     }

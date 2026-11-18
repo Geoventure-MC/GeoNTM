@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -26,8 +26,8 @@ public final class Gh195ServerSliders implements Scenario {
             c.waitTicks(40);
             rcon.command("fill " + (X - 6) + " " + Y + " " + (Z - 6) + " " + (X + 6) + " " + Y + " " + (Z + 18) + " minecraft:stone");
             rcon.command("fill " + (X - 6) + " " + L + " " + (Z - 6) + " " + (X + 6) + " " + (L + 6) + " " + (Z + 18) + " minecraft:air");
-            rcon.command("setblock " + X + " " + L + " " + Z + " hbm:machine_combustion_engine");
-            rcon.command("setblock " + X + " " + L + " " + (Z + 12) + " hbm:heater_oilburner");
+            rcon.command("setblock " + X + " " + L + " " + Z + " geontm:machine_combustion_engine");
+            rcon.command("setblock " + X + " " + L + " " + (Z + 12) + " geontm:heater_oilburner");
             c.waitTicks(20);
             c.cmd("gamemode creative");
 

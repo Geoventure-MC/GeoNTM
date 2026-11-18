@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/snow_height6",
+  "textures": {
+    "particle": "geontm:blocks/block_foam",
+    "texture": "geontm:blocks/block_foam"
+  }
+}

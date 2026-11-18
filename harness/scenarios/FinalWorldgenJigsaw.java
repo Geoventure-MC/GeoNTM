@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -13,14 +13,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * WG-C acceptance: the multi-piece 1.7 structures - {@code hbm:features} (the hardcoded houses, labs, offices and the
- * missile silo), {@code hbm:bunker} (1.7 procedural rooms) and {@code hbm:meteor_dungeon} (1.7 jigsaw with block
+ * WG-C acceptance: the multi-piece 1.7 structures - {@code geontm:features} (the hardcoded houses, labs, offices and the
+ * missile silo), {@code geontm:bunker} (1.7 procedural rooms) and {@code geontm:meteor_dungeon} (1.7 jigsaw with block
  * tables) - generate in a real world.
  *
- * <p>Seeded world (seed 4815162342): {@code /locate structure hbm:<id>}, read the start through {@code hbm_wgc}
- * (pieces, loot containers, block entities), count its blocks through {@code hbm_worldgen} (chunks generate on demand),
- * teleport into or beside it (spectator) and screenshot. Superflat world: {@code /place structure hbm:<id>} for all three,
- * and every hardcoded building built once through {@code hbm_wgc mode=build}, each checked and screenshotted.
+ * <p>Seeded world (seed 4815162342): {@code /locate structure geontm:<id>}, read the start through {@code geontm_wgc}
+ * (pieces, loot containers, block entities), count its blocks through {@code geontm_worldgen} (chunks generate on demand),
+ * teleport into or beside it (spectator) and screenshot. Superflat world: {@code /place structure geontm:<id>} for all three,
+ * and every hardcoded building built once through {@code geontm_wgc mode=build}, each checked and screenshotted.
  */
 public final class FinalWorldgenJigsaw implements Scenario {
 
@@ -28,27 +28,27 @@ public final class FinalWorldgenJigsaw implements Scenario {
     static final String[] BUILDINGS = {"NTMHouse1", "NTMHouse2", "NTMLab1", "NTMLab2", "RuralHouse1", "LargeOffice",
             "LargeOfficeCorner", "SiloComponent"};
     /** A block each building must contain (its 1.7 builder places it unconditionally). */
-    static final Map<String, String> SIGNATURE = Map.of("NTMHouse1", "hbm:crate_weapon", "NTMHouse2", "hbm:machine_boiler_off",
-            "NTMLab1", "hbm:machine_microwave", "NTMLab2", "hbm:vitrified_barrel", "RuralHouse1", "hbm:deco_loot",
-            "LargeOffice", "hbm:filing_cabinet", "LargeOfficeCorner", "hbm:filing_cabinet", "SiloComponent", "hbm:launch_pad_rusted");
+    static final Map<String, String> SIGNATURE = Map.of("NTMHouse1", "geontm:crate_weapon", "NTMHouse2", "geontm:machine_boiler_off",
+            "NTMLab1", "geontm:machine_microwave", "NTMLab2", "geontm:vitrified_barrel", "RuralHouse1", "geontm:deco_loot",
+            "LargeOffice", "geontm:filing_cabinet", "LargeOfficeCorner", "geontm:filing_cabinet", "SiloComponent", "geontm:launch_pad_rusted");
 
-    static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     final List<String> report = new ArrayList<>();
 
     static int[] locate(Client c, String id) {
         c.markLog();
-        c.cmd("locate structure hbm:" + id);
+        c.cmd("locate structure geontm:" + id);
         long deadline = System.currentTimeMillis() + 600_000L;
         while (System.currentTimeMillis() < deadline) {
             c.waitTicks(10);
-            for (String line : c.logSinceMark("hbm:" + id + "|Could not find|no structure")) {
+            for (String line : c.logSinceMark("geontm:" + id + "|Could not find|no structure")) {
                 Matcher m = FOUND.matcher(line);
-                if (m.find() && m.group(1).equals("hbm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
+                if (m.find() && m.group(1).equals("geontm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
                 if (line.contains("Could not find") || line.contains("no structure")) return null;
             }
         }
-        throw new HarnessException("no /locate answer for hbm:" + id);
+        throw new HarnessException("no /locate answer for geontm:" + id);
     }
 
     static JsonObject q(Client c, String kind, Object... kv) {
@@ -69,8 +69,8 @@ public final class FinalWorldgenJigsaw implements Scenario {
         long deadline = System.currentTimeMillis() + 300_000L;
         JsonObject last = null;
         while (System.currentTimeMillis() < deadline) {
-            last = rebuild ? q(c, "hbm_wgc", "mode", "start", "x", x, "z", z, "spawn", id, "rebuild", true)
-                    : q(c, "hbm_wgc", "mode", "start", "x", x, "z", z, "spawn", id);
+            last = rebuild ? q(c, "geontm_wgc", "mode", "start", "x", x, "z", z, "spawn", id, "rebuild", true)
+                    : q(c, "geontm_wgc", "mode", "start", "x", x, "z", z, "spawn", id);
             JsonArray starts = last.getAsJsonArray("starts");
             if (starts != null && !starts.isEmpty()) return starts.get(0).getAsJsonObject();
             c.waitTicks(20);
@@ -91,7 +91,7 @@ public final class FinalWorldgenJigsaw implements Scenario {
                 JsonObject r = null;
                 for (int attempt = 0; attempt < 6 && r == null; attempt++) {
                     try {
-                        r = q(c, "hbm_worldgen", "mode", "count", "x0", x0, "y0", box[1], "z0", z0, "x1", x1, "y1", box[4],
+                        r = q(c, "geontm_worldgen", "mode", "count", "x0", x0, "y0", box[1], "z0", z0, "x1", x1, "y1", box[4],
                                 "z1", z1, "contains", contains);
                     } catch (HarnessException e) {
                         if (!e.getMessage().contains("Timeout")) throw e;
@@ -159,7 +159,7 @@ public final class FinalWorldgenJigsaw implements Scenario {
         String forceload = counted[0] + " " + counted[2] + " " + counted[3] + " " + counted[5];
         c.cmd("forceload add " + forceload);
         c.waitTicks(40);
-        Map<String, Integer> blocks = count(c, counted, "hbm:");
+        Map<String, Integer> blocks = count(c, counted, "geontm:");
         // loot, block entities: re-read now that the chunks exist
         long settle = System.currentTimeMillis() + 60_000L;
         do {
@@ -174,11 +174,11 @@ public final class FinalWorldgenJigsaw implements Scenario {
             case "meteor_dungeon" -> {
                 Expect.that(kinds.has("meteor_core"), id + ": the core is placed " + kinds);
                 Expect.that(pieces >= 3, id + ": the dungeon grew " + kinds);
-                int bricks = sum(blocks, "hbm:meteor_brick", "hbm:meteor_brick_mossy", "hbm:meteor_brick_cracked");
+                int bricks = sum(blocks, "geontm:meteor_brick", "geontm:meteor_brick_mossy", "geontm:meteor_brick_cracked");
                 // superflat: 1.7 put the core at the terrain height, unclamped, so most rooms fall below the world bottom
                 Expect.that(bricks > (rebuild ? 20 : 200), id + " (" + where + "): meteor bricks " + blocks);
-                Expect.that(blocks.getOrDefault("hbm:meteor_brick_mossy", 0) > bricks / 8
-                        && blocks.getOrDefault("hbm:meteor_brick_cracked", 0) > bricks / 8, id + ": the brick block table mixes " + blocks);
+                Expect.that(blocks.getOrDefault("geontm:meteor_brick_mossy", 0) > bricks / 8
+                        && blocks.getOrDefault("geontm:meteor_brick_cracked", 0) > bricks / 8, id + ": the brick block table mixes " + blocks);
                 int[] core = pieceBox(s, "meteor_core");
                 if (!rebuild) Expect.that(core[1] == 32, id + ": the core sits at y 32 " + java.util.Arrays.toString(core));
                 // inside the core room, looking along it
@@ -189,8 +189,8 @@ public final class FinalWorldgenJigsaw implements Scenario {
             }
             case "bunker" -> {
                 Expect.that(kinds.has("StartingHub"), id + ": the hub starts it " + kinds);
-                Expect.that(sum(blocks, "hbm:vinyl_tile_small", "hbm:vinyl_tile_large") > 20, id + ": vinyl floors/ceilings " + blocks);
-                Expect.that(sum(blocks, "hbm:brick_concrete", "hbm:brick_concrete_mossy", "hbm:brick_concrete_cracked", "hbm:brick_concrete_broken") > 50,
+                Expect.that(sum(blocks, "geontm:vinyl_tile_small", "geontm:vinyl_tile_large") > 20, id + ": vinyl floors/ceilings " + blocks);
+                Expect.that(sum(blocks, "geontm:brick_concrete", "geontm:brick_concrete_mossy", "geontm:brick_concrete_cracked", "geontm:brick_concrete_broken") > 50,
                         id + ": concrete brick walls " + blocks);
                 Expect.that(s.get("filled_containers").getAsInt() >= 1, id + ": loot " + s);
                 Expect.that(b[4] < 43 || b[4] - b[1] + 1 >= 42, id + ": sunk below y 43 " + java.util.Arrays.toString(b));
@@ -205,8 +205,8 @@ public final class FinalWorldgenJigsaw implements Scenario {
                 String signature = SIGNATURE.get(building);
                 // superflat: 1.7's height rule sinks the silo's floors and the dug-in lab 2 under the world bottom
                 boolean sunk = rebuild && (building.equals("SiloComponent") || building.equals("NTMLab2"));
-                int hbm = blocks.values().stream().mapToInt(Integer::intValue).sum();
-                Expect.that(sunk ? hbm > 50 : signature != null && blocks.getOrDefault(signature, 0) > 0,
+                int geontm = blocks.values().stream().mapToInt(Integer::intValue).sum();
+                Expect.that(sunk ? geontm > 50 : signature != null && blocks.getOrDefault(signature, 0) > 0,
                         id + ": " + building + " has its " + signature + " " + blocks);
                 camera = outside(c, b);
             }
@@ -216,7 +216,7 @@ public final class FinalWorldgenJigsaw implements Scenario {
         alive(c, where + "-" + id);
         c.screenshot(where + "-" + id);
         c.cmd("forceload remove " + forceload);
-        report.add(String.format("%-15s %-6s at %d %d box %s pieces %d %s containers %s filled %s BEs %s camera %s; hbm blocks %s",
+        report.add(String.format("%-15s %-6s at %d %d box %s pieces %d %s containers %s filled %s BEs %s camera %s; geontm blocks %s",
                 id, where, x, z, java.util.Arrays.toString(b), pieces, kinds, s.get("containers"), s.get("filled_containers"),
                 s.get("block_entities"), camera, blocks));
     }
@@ -301,10 +301,10 @@ public final class FinalWorldgenJigsaw implements Scenario {
             }
             c.waitTicks(100);
             c.markLog();
-            c.cmd("place structure hbm:" + id + " " + px + " -60 0");
+            c.cmd("place structure geontm:" + id + " " + px + " -60 0");
             c.waitTicks(60);
             List<String> failed = c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument|not loaded");
-            Expect.that(failed.isEmpty(), "/place structure hbm:" + id + ": " + failed);
+            Expect.that(failed.isEmpty(), "/place structure geontm:" + id + ": " + failed);
             inspect(c, id, px, 0, "flat");
             for (String area : loads) c.cmd("forceload remove " + area);
             px += 512;
@@ -312,10 +312,10 @@ public final class FinalWorldgenJigsaw implements Scenario {
         for (String building : BUILDINGS) {
             // floors above the superflat bottom: the silo reaches 25 below its ground floor, lab 2 is dug in 7
             int floor = building.equals("SiloComponent") || building.equals("NTMLab2") ? -62 : -60;
-            JsonObject r = q(c, "hbm_wgc", "mode", "build", "piece", building, "x", px, "z", 0, "y", floor, "seed", 4815162342L);
+            JsonObject r = q(c, "geontm_wgc", "mode", "build", "piece", building, "x", px, "z", 0, "y", floor, "seed", 4815162342L);
             JsonObject s = r.getAsJsonObject("start");
             int[] b = box(s);
-            Map<String, Integer> blocks = count(c, new int[] {b[0], b[1] - 16, b[2], b[3], b[4], b[5]}, "hbm:");
+            Map<String, Integer> blocks = count(c, new int[] {b[0], b[1] - 16, b[2], b[3], b[4], b[5]}, "geontm:");
             String signature = SIGNATURE.get(building);
             Expect.that(blocks.getOrDefault(signature, 0) > 0, building + ": has its " + signature + " " + blocks);
             int filled = s.get("filled_containers").getAsInt();
@@ -325,7 +325,7 @@ public final class FinalWorldgenJigsaw implements Scenario {
             c.waitTicks(60);
             alive(c, "build-" + building);
             c.screenshot("build-" + building);
-            report.add(String.format("%-18s built box %s rot %s containers %s filled %s BEs %s camera %s; hbm blocks %s", building,
+            report.add(String.format("%-18s built box %s rot %s containers %s filled %s BEs %s camera %s; geontm blocks %s", building,
                     java.util.Arrays.toString(b), s.getAsJsonArray("pieces").get(0).getAsJsonObject().get("rot"), s.get("containers"),
                     filled, s.get("block_entities"), camera, blocks));
             px += 128;
@@ -334,10 +334,10 @@ public final class FinalWorldgenJigsaw implements Scenario {
         System.out.println("[FinalWorldgenJigsaw] " + c.node() + "\n  " + String.join("\n  ", report));
         List<String> bad = c.log(6000, "\\[Jigsaw\\]|Requested chunk|Detected setBlock in a far chunk|no port block for 1.7|Exception.*(component|Component|NBTStructure)");
         // meteor-3-statue names a block 1.7 never registered ("#undef"); 1.7 placed air there too
-        bad.removeIf(line -> line.contains("hbm:tile.#undef"));
-        // oil_rig.nbt names hbm:tile.barrel_iron, a block 1.7.10 had removed (MainRegistry.ignoreMappings): air in 1.7
+        bad.removeIf(line -> line.contains("geontm:tile.#undef"));
+        // oil_rig.nbt names geontm:tile.barrel_iron, a block 1.7.10 had removed (MainRegistry.ignoreMappings): air in 1.7
         // too (GameTest structure_legacy_palette); the line comes from an earlier scenario's oil rig still in the window
-        bad.removeIf(line -> line.contains("hbm:tile.barrel_iron"));
+        bad.removeIf(line -> line.contains("geontm:tile.barrel_iron"));
         Expect.that(bad.isEmpty(), "no structure errors in the log: " + bad);
     }
 }

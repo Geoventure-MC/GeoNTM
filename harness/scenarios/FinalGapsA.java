@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,14 +19,14 @@ import java.util.List;
  *   <li>the singularity crafted from anti-schrabidium cells on a crafting table, refused with antimatter cells;</li>
  *   <li>the ten radiovoltaic batteries, a Po-210 one crafted in the 2x2 grid, drawn in a battery socket;</li>
  *   <li>an orbus cell broken in survival drops the tank's contents, which come back when it is placed again;</li>
- *   <li>the crucible (old-hbm since 2026-10-02): an empty one hits for 5 (+1), a charged one for 500 (+1);</li>
+ *   <li>the crucible (old-geontm since 2026-10-02): an empty one hits for 5 (+1), a charged one for 500 (+1);</li>
  *   <li>the mese gavel from the Book of Boxcars;</li>
  *   <li>the survey scanner's bedrock ore line;</li>
  *   <li>the trenchmaster's one-in-three dodge and immunity to the wearer's own explosions;</li>
  *   <li>custom machines on a real research reactor's flux and a real firebox's heat (test machines and recipes
- *       staged by the scenario itself through {@code hbm_gapsa custom_machines}, restored at the end), a bred
+ *       staged by the scenario itself through {@code geontm_gapsa custom_machines}, restored at the end), a bred
  *       meteorite sword irradiated in that reactor, the JEI chance line;</li>
- *   <li>mp_s_20's name, the icfLaser entry of hbmMachines.json;</li>
+ *   <li>mp_s_20's name, the icfLaser entry of geontmMachines.json;</li>
  *   <li>the deco emitter's beam after dyeing;</li>
  *   <li>the settings tool: Alt cycles the copied fluid, Ctrl pastes along a whole pipe run;</li>
  *   <li>the death ray on a world aged past its charge time, and the ground station read by a ROR reader;</li>
@@ -53,7 +53,7 @@ public final class FinalGapsA implements Scenario {
         } finally {
             JsonObject restore = new JsonObject();
             restore.addProperty("custom_machines", "restore");
-            c.query("hbm_gapsa", restore);
+            c.query("geontm_gapsa", restore);
             c.resetWorld();
         }
     }
@@ -68,14 +68,14 @@ public final class FinalGapsA implements Scenario {
         JsonObject params = new JsonObject();
         params.addProperty("custom_machines", "stage");
         JsonArray machines = new JsonArray();
-        machines.add(testMachine("gapsaFlux", "G-A Flux Test", true, 0, "hbm:tile.cm_flux"));
-        machines.add(testMachine("gapsaHeat", "G-A Heat Test", false, 10000, "hbm:tile.cm_heat"));
+        machines.add(testMachine("gapsaFlux", "G-A Flux Test", true, 0, "geontm:tile.cm_flux"));
+        machines.add(testMachine("gapsaHeat", "G-A Heat Test", false, 10000, "geontm:tile.cm_heat"));
         params.add("machines", machines);
         params.add("recipes", com.google.gson.JsonParser.parseString(
                 "{\"recipes\": [" +
                 "{\"recipeKey\": \"paperPress\", \"recipes\": [" +
-                "{\"inputFluids\": [[\"WATER\", 250]], \"inputItems\": [[\"item\", \"hbm:powder_sawdust\", 1]], \"outputFluids\": []," +
-                "\"outputItems\": [[\"minecraft:paper\", 3, 1.0], [\"hbm:powder_sawdust\", 1, 0.5]], \"duration\": 60," +
+                "{\"inputFluids\": [[\"WATER\", 250]], \"inputItems\": [[\"item\", \"geontm:powder_sawdust\", 1]], \"outputFluids\": []," +
+                "\"outputItems\": [[\"minecraft:paper\", 3, 1.0], [\"geontm:powder_sawdust\", 1, 0.5]], \"duration\": 60," +
                 "\"consumptionPerTick\": 10, \"pollutionType\": \"SOOT\", \"pollutionAmount\": 0.03, \"radiationAmount\": 0.0," +
                 "\"flux\": 0, \"heat\": 0}]}," +
                 "{\"recipeKey\": \"gapsaFlux\", \"recipes\": [" +
@@ -86,7 +86,7 @@ public final class FinalGapsA implements Scenario {
                 "{\"inputFluids\": [], \"inputItems\": [[\"item\", \"minecraft:stone\", 1]], \"outputFluids\": []," +
                 "\"outputItems\": [[\"minecraft:cobblestone\", 1, 1.0]], \"duration\": 20, \"consumptionPerTick\": 1," +
                 "\"pollutionType\": \"SOOT\", \"pollutionAmount\": 0.0, \"radiationAmount\": 0.0, \"flux\": 0, \"heat\": 100}]}]}"));
-        JsonObject staged = c.query("hbm_gapsa", params);
+        JsonObject staged = c.query("geontm_gapsa", params);
         System.out.println("[FinalGapsA " + c.node() + "] staged custom machines: " + staged);
         Expect.that(staged.has("custom_machines") && staged.get("custom_machines").getAsInt() >= 3,
                 "the staged machine file loaded the two test machines after the real ones: " + staged);
@@ -165,7 +165,7 @@ public final class FinalGapsA implements Scenario {
         try {
             JsonObject clear = new JsonObject();
             clear.addProperty("clearrads", true);
-            c.query("hbm_gapsa", clear);
+            c.query("geontm_gapsa", clear);
             c.cmd("ntmrad clear");
             c.cmd("effect clear @s");
             body.run();
@@ -194,7 +194,7 @@ public final class FinalGapsA implements Scenario {
     private static void amatDrop(Client c) {
         int ax = X + 20, az = Z;
         c.cmd("gamemode creative");
-        Fixtures.giveOnly(c, cell(c, "hbm:amat", 3), 1);
+        Fixtures.giveOnly(c, cell(c, "geontm:amat", 3), 1);
         c.teleport(ax + 0.5, Y + 1, az + 0.5);
         c.look(0, 20);
         c.waitTicks(5);
@@ -224,7 +224,7 @@ public final class FinalGapsA implements Scenario {
         Fixtures.platform(c, fx, Y, fz, 6);
         c.waitTicks(40);
         Fixtures.platform(c, fx, Y, fz, 6);
-        Fixtures.giveOnly(c, cell(c, "hbm:aschrab", 7), 1);
+        Fixtures.giveOnly(c, cell(c, "geontm:aschrab", 7), 1);
         c.teleport(fx + 0.5, Y + 1, fz + 0.5);
         c.look(0, 20);
         c.waitTicks(5);
@@ -232,8 +232,8 @@ public final class FinalGapsA implements Scenario {
         JsonObject field = null, cloud = null;
         for (int i = 0; i < 60 && (field == null || cloud == null); i++) {
             c.waitTicks(1);
-            if (field == null) field = serverEntity(c, "hbm:nuke_mk3", 40);
-            if (cloud == null) cloud = serverEntity(c, "hbm:cloud_fleija", 40);
+            if (field == null) field = serverEntity(c, "geontm:nuke_mk3", 40);
+            if (cloud == null) cloud = serverEntity(c, "geontm:cloud_fleija", 40);
         }
         // the cloud lives aSchrabRadius (20) ticks and a small field can finish within a poll, so either one seen
         // proves the spawn; the hollowed ground below is the value check
@@ -258,18 +258,18 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(2);
         JsonObject give = new JsonObject();
         give.addProperty("give", "oldcell:AMAT");
-        c.query("hbm_gapsa", give);
+        c.query("geontm_gapsa", give);
         give.addProperty("give", "oldcell:SAS3");
-        c.query("hbm_gapsa", give);
+        c.query("geontm_gapsa", give);
         c.waitTicks(5); // one inventory tick migrates both; a new antimatter cell must then stack onto the old one
-        c.cmd("give @s " + cell(c, "hbm:amat", 3) + " 1");
+        c.cmd("give @s " + cell(c, "geontm:amat", 3) + " 1");
         c.waitTicks(10);
         JsonObject q = gapsa(c);
         int amat = 0;
         for (JsonElement e : q.getAsJsonArray("cells")) {
             JsonObject cell = e.getAsJsonObject();
             Expect.that(cell.get("variant").getAsInt() < 8, "every cell draws a CellVariants sprite: " + q);
-            if (cell.get("fluid").getAsString().equals("hbm:amat")) amat += cell.get("count").getAsInt();
+            if (cell.get("fluid").getAsString().equals("geontm:amat")) amat += cell.get("count").getAsInt();
         }
         Expect.that(amat == 2 && q.getAsJsonArray("cells").size() == 2,
                 "the migrated antimatter cell stacked with a new one (one stack of 2, one SAS3): " + q);
@@ -290,19 +290,19 @@ public final class FinalGapsA implements Scenario {
         // creative: four anti-schrabidium cells and a schrabidium block kill a survival player within seconds (1.7 hazards)
         c.cmd("gamemode creative");
         c.cmd("clear");
-        c.cmd("give @s " + cell(c, "hbm:aschrab", 7) + " 4");
-        c.cmd("give @s hbm:nugget_euphemium 4");
-        c.cmd("give @s hbm:block_schrabidium 1");
+        c.cmd("give @s " + cell(c, "geontm:aschrab", 7) + " 4");
+        c.cmd("give @s geontm:nugget_euphemium 4");
+        c.cmd("give @s geontm:block_schrabidium 1");
         c.waitTicks(4);
         c.teleport(tx + 0.5, Y + 1, tz - 1.5);
         Fixtures.interact(c, tx, Y + 1, tz);
         c.waitScreen("Crafting", 5000);
         c.waitTicks(3);
-        fillSingularity(c, "hbm:aschrab");
+        fillSingularity(c, "geontm:aschrab");
         c.waitTicks(5);
         JsonObject result = c.slot(0);
         c.screenshot("20-singularity-aschrab");
-        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("hbm:singularity"),
+        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("geontm:singularity"),
                 "four anti-schrabidium cells make the singularity (1.7 CraftingManager:325): " + result);
         c.clickSlot(0);
         c.waitTicks(2);
@@ -318,14 +318,14 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(5);
 
         c.cmd("clear");
-        c.cmd("give @s " + cell(c, "hbm:amat", 3) + " 4");
-        c.cmd("give @s hbm:nugget_euphemium 4");
-        c.cmd("give @s hbm:block_schrabidium 1");
+        c.cmd("give @s " + cell(c, "geontm:amat", 3) + " 4");
+        c.cmd("give @s geontm:nugget_euphemium 4");
+        c.cmd("give @s geontm:block_schrabidium 1");
         c.waitTicks(4);
         Fixtures.interact(c, tx, Y + 1, tz);
         c.waitScreen("Crafting", 5000);
         c.waitTicks(3);
-        fillSingularity(c, "hbm:amat");
+        fillSingularity(c, "geontm:amat");
         c.waitTicks(5);
         c.screenshot("21-singularity-amat-refused");
         Expect.that(c.slot(0).get("empty").getAsBoolean(), "antimatter cells no longer make the singularity");
@@ -336,15 +336,15 @@ public final class FinalGapsA implements Scenario {
     }
 
     private static void fillSingularity(Client c, String fluid) {
-        int cells = playerSlot(c, "hbm:cell");
+        int cells = playerSlot(c, "geontm:cell");
         c.clickSlot(cells);
         c.waitTicks(1);
         for (int s : new int[]{2, 4, 6, 8}) { c.clickSlot(s, 1); c.waitTicks(1); }
-        int nuggets = playerSlot(c, "hbm:nugget_euphemium");
+        int nuggets = playerSlot(c, "geontm:nugget_euphemium");
         c.clickSlot(nuggets);
         c.waitTicks(1);
         for (int s : new int[]{1, 3, 7, 9}) { c.clickSlot(s, 1); c.waitTicks(1); }
-        c.clickSlot(playerSlot(c, "hbm:block_schrabidium"));
+        c.clickSlot(playerSlot(c, "geontm:block_schrabidium"));
         c.waitTicks(1);
         c.clickSlot(5);
         c.waitTicks(2);
@@ -362,7 +362,7 @@ public final class FinalGapsA implements Scenario {
     private static void batteries(Client c) {
         c.cmd("gamemode survival");
         c.cmd("clear");
-        for (String[] sc : SC) c.cmd("give @s hbm:battery_sc_" + sc[0] + " 1");
+        for (String[] sc : SC) c.cmd("give @s geontm:battery_sc_" + sc[0] + " 1");
         c.waitTicks(5);
         String inv = c.inventory().toString();
         for (String[] sc : SC) Expect.that(inv.contains(sc[1]), "inventory shows " + sc[1]);
@@ -370,23 +370,23 @@ public final class FinalGapsA implements Scenario {
         c.waitScreen("Inventory", 5000);
         c.waitTicks(8);
         c.screenshot("30-sc-batteries");
-        hover(c, playerSlot(c, "hbm:battery_sc_po210"));
+        hover(c, playerSlot(c, "geontm:battery_sc_po210"));
         c.screenshot("31-sc-po210-tooltip");
         c.key("escape");
         c.waitTicks(3);
 
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_sc_empty 1");
-        c.cmd("give @s hbm:billet_polonium 2");
+        c.cmd("give @s geontm:battery_sc_empty 1");
+        c.cmd("give @s geontm:billet_polonium 2");
         c.waitTicks(4);
         c.key("e");
         c.waitScreen("Inventory", 5000);
         c.waitTicks(4);
-        c.clickSlot(playerSlot(c, "hbm:battery_sc_empty"));
+        c.clickSlot(playerSlot(c, "geontm:battery_sc_empty"));
         c.waitTicks(1);
         c.clickSlot(1);
         c.waitTicks(1);
-        c.clickSlot(playerSlot(c, "hbm:billet_polonium"));
+        c.clickSlot(playerSlot(c, "geontm:billet_polonium"));
         c.waitTicks(1);
         c.clickSlot(2, 1);
         c.waitTicks(1);
@@ -394,7 +394,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(4);
         JsonObject result = c.slot(0);
         c.screenshot("32-sc-po210-crafting");
-        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("hbm:battery_sc_po210"),
+        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("geontm:battery_sc_po210"),
                 "empty radiovoltaic battery + two polonium billets = Po-210 (1.7 CraftingManager:268): " + result);
         c.clickSlot(0);
         c.waitTicks(2);
@@ -402,22 +402,22 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(2);
         c.key("escape");
         c.waitTicks(3);
-        Expect.inventoryHolds(c, "hbm:battery_sc_po210", 1);
+        Expect.inventoryHolds(c, "geontm:battery_sc_po210", 1);
 
         c.cmd("gamemode creative");
         int sx = X - 20, sz = Z - 10;
-        place(c, "hbm:machine_battery_socket", sx, Y, sz);
+        place(c, "geontm:machine_battery_socket", sx, Y, sz);
         int[] core = findCore(c, sx, Y + 1, sz, "battery_socket", 2);
         Expect.that(core != null, "the battery socket formed a core");
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_sc_po210 1");
+        c.cmd("give @s geontm:battery_sc_po210 1");
         c.waitTicks(3);
         c.teleport(core[0] + 3.5, Y + 1, core[2] + 0.5);
         c.waitTicks(3);
         Fixtures.interact(c, core[0], Y + 1, core[2]);
         c.waitScreen("GUIBatterySocket", 5000);
         c.waitTicks(3);
-        c.clickSlot(playerSlot(c, "hbm:battery_sc_po210"));
+        c.clickSlot(playerSlot(c, "geontm:battery_sc_po210"));
         c.waitTicks(1);
         c.clickSlot(0);
         c.waitTicks(5);
@@ -434,7 +434,7 @@ public final class FinalGapsA implements Scenario {
     private static void orbus(Client c) {
         int ox = X - 16, oz = Z + 16;
         c.cmd("gamemode creative");
-        place(c, "hbm:machine_orbus", ox, Y, oz);
+        place(c, "geontm:machine_orbus", ox, Y, oz);
         int[] core = findCore(c, ox, Y + 1, oz, "machine_orbus", 3);
         Expect.that(core != null, "the orbus formed a core");
         c.cmd("data merge block " + core[0] + " " + core[1] + " " + core[2]
@@ -466,14 +466,14 @@ public final class FinalGapsA implements Scenario {
         int count = 0;
         for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("hbm:machine_orbus")) count += s.get("count").getAsInt();
+            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("geontm:machine_orbus")) count += s.get("count").getAsInt();
         }
         Expect.that(count == 1, "exactly one orbus item came back from the broken cell: " + c.inventory());
         // place the carried orbus again by hand, still in survival, and read the new core's tank
         int nx = ox + 12;
         c.cmd("clear @s minecraft:netherite_pickaxe");
         c.waitTicks(2);
-        c.hotbar(slotOf(c, "hbm:machine_orbus") + 1);
+        c.hotbar(slotOf(c, "geontm:machine_orbus") + 1);
         c.teleport(nx + 4.5, Y + 1, oz + 0.5);
         c.waitTicks(3);
         c.lookAt(nx + 0.9, Y + 0.98, oz + 0.5);
@@ -496,8 +496,8 @@ public final class FinalGapsA implements Scenario {
         c.cmd("kill @e[type=!player]");
         c.cmd("gamemode survival");
         c.cmd("clear");
-        // old-hbm ItemCrucible: a crafted crucible holds no charge; its modifiers are 5 damage, +80% speed
-        c.cmd("give @s hbm:crucible 1");
+        // old-geontm ItemCrucible: a crafted crucible holds no charge; its modifiers are 5 damage, +80% speed
+        c.cmd("give @s geontm:crucible 1");
         c.waitTicks(3);
         c.hotbar(1);
         c.cmd("summon minecraft:pig " + (px + 0.5) + " " + (Y + 1) + " " + (pz + 0.5) + " {NoAI:1b}");
@@ -526,7 +526,7 @@ public final class FinalGapsA implements Scenario {
     }
 
     private static float pigHealth(Client c) {
-        JsonObject living = c.query("hbm_living", new JsonObject());
+        JsonObject living = c.query("geontm_living", new JsonObject());
         for (JsonElement e : living.getAsJsonArray("living")) {
             JsonObject o = e.getAsJsonObject();
             if (o.get("type").getAsString().equals("minecraft:pig")) return o.get("health").getAsFloat();
@@ -539,18 +539,18 @@ public final class FinalGapsA implements Scenario {
     private static void meseGavel(Client c) {
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:book_of_ 1");
-        for (String id : new String[]{"hbm:shimmer_handle", "hbm:powder_dineutronium", "hbm:blades_desh", "hbm:diamond_gavel"}) {
+        c.cmd("give @s geontm:book_of_ 1");
+        for (String id : new String[]{"geontm:shimmer_handle", "geontm:powder_dineutronium", "geontm:blades_desh", "geontm:diamond_gavel"}) {
             c.cmd("give @s " + id + " 1");
         }
         c.waitTicks(4);
-        c.hotbar(slotOf(c, "hbm:book_of_") + 1);
+        c.hotbar(slotOf(c, "geontm:book_of_") + 1);
         c.look(0, -30);
         c.waitTicks(2);
         c.use(2);
         c.waitScreen("GUIBook", 5000);
         c.waitTicks(5);
-        String[] order = {"hbm:shimmer_handle", "hbm:powder_dineutronium", "hbm:blades_desh", "hbm:diamond_gavel"};
+        String[] order = {"geontm:shimmer_handle", "geontm:powder_dineutronium", "geontm:blades_desh", "geontm:diamond_gavel"};
         for (int i = 0; i < 4; i++) {
             c.clickSlot(playerSlot(c, order[i]));
             c.waitTicks(1);
@@ -560,7 +560,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(4);
         JsonObject result = c.slot(0);
         c.screenshot("50-book-mese-gavel");
-        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("hbm:mese_gavel"),
+        Expect.that(!result.get("empty").getAsBoolean() && result.get("id").getAsString().equals("geontm:mese_gavel"),
                 "1.7 MagicRecipes: handle, dineutronium, desh blades, diamond gavel -> mese gavel: " + result);
         c.clickSlot(0);
         c.waitTicks(2);
@@ -569,7 +569,7 @@ public final class FinalGapsA implements Scenario {
         for (int i = 1; i <= 4; i++) Expect.that(c.slot(i).get("empty").getAsBoolean(), "grid slot " + i + " was used up");
         c.key("escape");
         c.waitTicks(3);
-        Expect.inventoryHolds(c, "hbm:mese_gavel", 1);
+        Expect.inventoryHolds(c, "geontm:mese_gavel", 1);
         c.cmd("clear");
         c.cmd("gamemode creative");
     }
@@ -579,11 +579,11 @@ public final class FinalGapsA implements Scenario {
     private static void survey(Client c) {
         // 1.7 scans the 5x5 around the chunk centre (8, 8) of the floor
         int ox = X + 8, oz = Z + 8;
-        c.cmd("setblock " + ox + " -64 " + oz + " hbm:ore_bedrock_block{tier:1}");
+        c.cmd("setblock " + ox + " -64 " + oz + " geontm:ore_bedrock_block{tier:1}");
         c.waitTicks(3);
         String b = c.block(ox, -64, oz).get("block").getAsString();
-        Expect.that(b.equals("hbm:ore_bedrock_block"), "a bedrock deposit under the player: " + b);
-        Fixtures.giveOnly(c, "hbm:survey_scanner", 1);
+        Expect.that(b.equals("geontm:ore_bedrock_block"), "a bedrock deposit under the player: " + b);
+        Fixtures.giveOnly(c, "geontm:survey_scanner", 1);
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, -30);
         c.waitTicks(3);
@@ -602,10 +602,10 @@ public final class FinalGapsA implements Scenario {
         c.cmd("clear");
         c.cmd("effect clear @s");
         c.cmd("gamemode survival");
-        c.cmd("item replace entity @s armor.head with hbm:trenchmaster_helmet");
-        c.cmd("item replace entity @s armor.chest with hbm:trenchmaster_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:trenchmaster_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:trenchmaster_boots");
+        c.cmd("item replace entity @s armor.head with geontm:trenchmaster_helmet");
+        c.cmd("item replace entity @s armor.chest with geontm:trenchmaster_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:trenchmaster_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:trenchmaster_boots");
         c.cmd("effect give @s minecraft:instant_health 1 5 true");
         c.waitTicks(20);
         int hits = 0, dodged = 0;
@@ -651,10 +651,10 @@ public final class FinalGapsA implements Scenario {
         c.cmd("give @s " + controller(c, 101) + " 1");
         c.waitTicks(4);
         Expect.that(c.inventory().toString().contains("G-A Flux Test"),
-                "the staged hbmCustomMachines.json declares the flux test machine (stageCustomMachines)");
+                "the staged geontmCustomMachines.json declares the flux test machine (stageCustomMachines)");
         int rx = X + 12, rz = Z + 20;
         c.cmd("gamemode creative");
-        place(c, "hbm:machine_reactor_small", rx, Y, rz);
+        place(c, "geontm:machine_reactor_small", rx, Y, rz);
         int[] reactor = findCore(c, rx, Y + 1, rz, "reactorResearch", 2);
         if (reactor == null) reactor = findCore(c, rx, Y + 1, rz, "reactor", 2);
         Expect.that(reactor != null, "the research reactor was placed");
@@ -663,8 +663,8 @@ public final class FinalGapsA implements Scenario {
         // heat*0.07/12 per tick, an equilibrium near 41,000, so it survives this and the later sections.
         Fixtures.setBlock(c, reactor[0], reactor[1] - 1, reactor[2], "minecraft:water");
         c.cmd("clear");
-        c.cmd("give @s hbm:plate_fuel_ra226be 4");
-        c.cmd("give @s hbm:meteorite_sword_bred 1");
+        c.cmd("give @s geontm:plate_fuel_ra226be 4");
+        c.cmd("give @s geontm:meteorite_sword_bred 1");
         c.waitTicks(3);
         c.teleport(reactor[0] + 2.5, Y + 1, reactor[2] + 0.5);
         c.waitTicks(3);
@@ -674,12 +674,12 @@ public final class FinalGapsA implements Scenario {
         // plate fuel does not stack (1.7 ItemFuelRod setMaxStackSize(1)): carry each plate over on its own; four
         // passive Ra226Be plates are the 4 x 30 = 120 flux the custom machine below needs (its recipe asks 50)
         for (int s = 0; s < 4; s++) {
-            c.clickSlot(playerSlot(c, "hbm:plate_fuel_ra226be"));
+            c.clickSlot(playerSlot(c, "geontm:plate_fuel_ra226be"));
             c.waitTicks(1);
             c.clickSlot(s);
             c.waitTicks(1);
         }
-        c.clickSlot(playerSlot(c, "hbm:meteorite_sword_bred"));
+        c.clickSlot(playerSlot(c, "geontm:meteorite_sword_bred"));
         c.waitTicks(1);
         c.clickSlot(5);
         c.waitTicks(2);
@@ -711,7 +711,7 @@ public final class FinalGapsA implements Scenario {
         int cx = fx, cz = fz - 1;
         Fixtures.setBlock(c, cx, Y + 1, cz, "minecraft:stone");
         Fixtures.setBlock(c, fx, Y + 1, fz, "minecraft:stone");
-        Fixtures.setBlock(c, fx, fy, fz, "hbm:cm_flux");
+        Fixtures.setBlock(c, fx, fy, fz, "geontm:cm_flux");
         placeController(c, 101, cx, fy, cz);
         loadController(c, cx, fy, cz);
         c.waitTicks(100);
@@ -729,7 +729,7 @@ public final class FinalGapsA implements Scenario {
     private static void heatMachine(Client c) {
         c.cmd("gamemode creative");
         int hx = X + 24, hz = Z + 20;
-        place(c, "hbm:heater_firebox", hx, Y, hz);
+        place(c, "geontm:heater_firebox", hx, Y, hz);
         int[] fire = findCore(c, hx, Y + 1, hz, "heater_firebox", 2);
         if (fire == null) fire = findCore(c, hx, Y + 1, hz, "Firebox", 2);
         Expect.that(fire != null, "the firebox was placed");
@@ -754,7 +754,7 @@ public final class FinalGapsA implements Scenario {
         int cx = x, cz = z - 1;
         Fixtures.setBlock(c, cx, Y + 1, cz, "minecraft:stone");
         Fixtures.setBlock(c, x, Y + 1, z, "minecraft:stone");
-        Fixtures.setBlock(c, x, y, z, "hbm:cm_heat");
+        Fixtures.setBlock(c, x, y, z, "geontm:cm_heat");
         placeController(c, 102, cx, y, cz);
         loadController(c, cx, y, cz);
         c.waitTicks(160);
@@ -781,7 +781,7 @@ public final class FinalGapsA implements Scenario {
             String b = c.block(x + dx, y + dy, z + dz).get("block").getAsString();
             if (b.contains("custom_machine")) near.append(" ").append(dx).append(",").append(dy).append(",").append(dz);
         }
-        Expect.that(c.block(x, y, z).get("block").getAsString().equals("hbm:custom_machine"),
+        Expect.that(c.block(x, y, z).get("block").getAsString().equals("geontm:custom_machine"),
                 "the controller was placed at " + x + "," + y + "," + z + "; controllers nearby at offsets:" + near
                         + " gamemode " + c.player().get("game_mode"));
     }
@@ -789,13 +789,13 @@ public final class FinalGapsA implements Scenario {
     /** A creative battery in slot 0 and a stack of stone in the one input, by clicks. */
     private static void loadController(Client c, int x, int y, int z) {
         c.cmd("clear");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:battery_creative 1");
         c.cmd("give @s minecraft:stone 64");
         c.waitTicks(3);
         openController(c, x, y, z);
         JsonObject gui = c.screen();
         int battery = slotAt(c, gui, 150, 72), input = slotAt(c, gui, 8, 72);
-        c.clickSlot(playerSlot(c, "hbm:battery_creative"));
+        c.clickSlot(playerSlot(c, "geontm:battery_creative"));
         c.waitTicks(1);
         c.clickSlot(battery);
         c.waitTicks(1);
@@ -829,7 +829,7 @@ public final class FinalGapsA implements Scenario {
         c.key("e");
         c.waitScreen("Inventory", 5000);
         c.waitTicks(10);
-        hover(c, playerSlot(c, "hbm:custom_machine"));
+        hover(c, playerSlot(c, "geontm:custom_machine"));
         c.key("u");
         c.waitTicks(20);
         String screen = c.screenClass();
@@ -866,11 +866,11 @@ public final class FinalGapsA implements Scenario {
     // ============================================================== 12/13: names, config
 
     private static void namesAndConfig(Client c) throws Exception {
-        Fixtures.giveOnly(c, "hbm:mp_s_20", 1);
+        Fixtures.giveOnly(c, "geontm:mp_s_20", 1);
         c.waitTicks(3);
         Expect.that(c.inventory().toString().contains("Size 20 Flat Fins"), "mp_s_20 is named Size 20 Flat Fins");
-        Path file = gameDir(c).resolve("config/hbmConfig/hbmMachines.json");
-        Expect.that(Files.isRegularFile(file), "1.7 hbmMachines.json written at " + file);
+        Path file = gameDir(c).resolve("config/geontmConfig/geontmMachines.json");
+        Expect.that(Files.isRegularFile(file), "1.7 geontmMachines.json written at " + file);
         String json = Files.readString(file).replaceAll("\\s", "");
         Expect.that(json.contains("\"icfLaser\":{\"I:capacitorPower\":2500000,\"I:turboPower\":5000000}"),
                 "icfLaser entry with the 1.7 defaults: " + json);
@@ -882,8 +882,8 @@ public final class FinalGapsA implements Scenario {
     private static void emitter(Client c) {
         int ex = X - 12, ez = Z - 20;
         c.cmd("gamemode creative");
-        Fixtures.placeOnTop(c, "hbm:deco_emitter", ex, Y, ez);
-        Expect.block(c, ex, Y + 1, ez, "hbm:deco_emitter");
+        Fixtures.placeOnTop(c, "geontm:deco_emitter", ex, Y, ez);
+        Expect.block(c, ex, Y + 1, ez, "geontm:deco_emitter");
         Fixtures.giveOnly(c, "minecraft:red_dye", 1);
         c.teleport(ex + 2.5, Y + 1, ez + 0.5);
         c.waitTicks(2);
@@ -901,12 +901,12 @@ public final class FinalGapsA implements Scenario {
     private static void settingsTool(Client c) {
         int dx = X + 10, dz = Z - 12;
         c.cmd("gamemode creative");
-        for (int i = 0; i < 6; i++) Fixtures.setBlock(c, dx + i, Y + 1, dz, "hbm:fluid_duct_neo");
-        place(c, "hbm:heat_boiler", dx, Y, dz - 6);
+        for (int i = 0; i < 6; i++) Fixtures.setBlock(c, dx + i, Y + 1, dz, "geontm:fluid_duct_neo");
+        place(c, "geontm:heat_boiler", dx, Y, dz - 6);
         int[] boiler = findCore(c, dx, Y + 1, dz - 6, "heat_boiler", 2);
         if (boiler == null) boiler = findCore(c, dx, Y + 1, dz - 6, "Boiler", 2);
         Expect.that(boiler != null, "the heat boiler was placed");
-        Fixtures.giveOnly(c, "hbm:settings_tool", 1);
+        Fixtures.giveOnly(c, "geontm:settings_tool", 1);
         c.teleport(boiler[0] + 0.5, Y + 1, boiler[2] + 3.5);
         c.waitTicks(3);
         c.lookAt(boiler[0] + 0.5, Y + 1.5, boiler[2] + 0.5);
@@ -919,7 +919,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(10);
         String settings = held(c).toString();
         // fluids are saved by vanilla id, water included
-        Expect.that(settings.contains("fluids:[") && settings.contains(WATER) && settings.contains("hbm:steam")
+        Expect.that(settings.contains("fluids:[") && settings.contains(WATER) && settings.contains("geontm:steam")
                 && settings.contains("copyIndex:0"), "copied the boiler's two tanks: " + settings);
         JsonObject keys = holdAltUntil(c, 1);
         settings = held(c).toString();
@@ -935,7 +935,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(5);
-        Expect.that(ductType(c, dx, dz).equals("hbm:steam") && ductType(c, dx + 1, dz).equals("minecraft:empty"), "a plain paste retypes one duct to steam");
+        Expect.that(ductType(c, dx, dz).equals("geontm:steam") && ductType(c, dx + 1, dz).equals("minecraft:empty"), "a plain paste retypes one duct to steam");
 
         // Alt back to water (the index wraps), then Ctrl-paste into the untyped run
         holdAltUntil(c, 0);
@@ -943,16 +943,16 @@ public final class FinalGapsA implements Scenario {
         c.teleport(dx + 3.5, Y + 1, dz + 2.5);
         c.waitTicks(3);
         c.lookAt(dx + 3.5, Y + 1.5, dz + 0.5);
-        c.keyDown("key.hbm.copyToolCtrl");
+        c.keyDown("key.geontm.copyToolCtrl");
         c.waitTicks(4);
         c.use(2);
         c.waitTicks(4);
-        c.keyUp("key.hbm.copyToolCtrl");
+        c.keyUp("key.geontm.copyToolCtrl");
         c.waitTicks(5);
         StringBuilder types = new StringBuilder();
         for (int i = 0; i < 6; i++) types.append(ductType(c, dx + i, dz)).append(' ');
         worldShot(c, "B1-ducts-ctrl-pasted", dx + 3, Y + 4, dz + 5.5, dx + 3, Y + 1, dz + 0.5);
-        Expect.that(ductType(c, dx, dz).equals("hbm:steam"), "the steam duct kept its type (a different type ends the run): " + types);
+        Expect.that(ductType(c, dx, dz).equals("geontm:steam"), "the steam duct kept its type (a different type ends the run): " + types);
         for (int i = 1; i < 6; i++) Expect.that(ductType(c, dx + i, dz).equals(WATER), "Ctrl pasted water along the run: " + types);
         c.cmd("clear");
     }
@@ -964,7 +964,7 @@ public final class FinalGapsA implements Scenario {
      * and releases at once. Returns that reading (the server-side proof the key was held when it moved).
      */
     private static JsonObject holdAltUntil(Client c, int target) {
-        c.keyDown("key.hbm.copyToolAlt");
+        c.keyDown("key.geontm.copyToolAlt");
         JsonObject keys = new JsonObject();
         try {
             for (int i = 0; i < 40; i++) {
@@ -973,7 +973,7 @@ public final class FinalGapsA implements Scenario {
                 if (keys.has("settings_copy_index") && keys.get("settings_copy_index").getAsInt() == target) break;
             }
         } finally {
-            c.keyUp("key.hbm.copyToolAlt");
+            c.keyUp("key.geontm.copyToolAlt");
         }
         c.waitTicks(10);
         return keys;
@@ -986,7 +986,7 @@ public final class FinalGapsA implements Scenario {
     }
 
     private static JsonObject held(Client c) {
-        return c.query("hbm_utility", new JsonObject());
+        return c.query("geontm_utility", new JsonObject());
     }
 
     // ============================================================== 16: death ray, satlink ROR
@@ -1013,7 +1013,7 @@ public final class FinalGapsA implements Scenario {
         c.cmd("ntmsatellites orbit");
         c.waitTicks(3);
         c.cmd("clear");
-        c.cmd("give @s " + chip(c, "hbm:sat_coord", freq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_coord", freq) + " 1");
         c.waitTicks(8);
         c.hotbar(1);
         c.waitTicks(4);
@@ -1032,7 +1032,7 @@ public final class FinalGapsA implements Scenario {
         JsonObject blast = null;
         for (int i = 0; i < 20 && blast == null; i++) {
             c.waitTicks(4);
-            blast = entity(c, "hbm:entity_laser_blast", 300);
+            blast = entity(c, "geontm:entity_laser_blast", 300);
         }
         Expect.that(blast != null, "the death ray dropped its blast at 200 / 200");
         // the superflat ground at 200 / 200 is at y -61, far below the platform: aim at the blast and that ground
@@ -1055,11 +1055,11 @@ public final class FinalGapsA implements Scenario {
         // the ground station tuned to the death ray, read by a ROR reader on its east face
         int gx = X - 24, gz = Z - 24;
         c.cmd("clear");
-        place(c, "hbm:machine_satlink", gx, Y, gz);
+        place(c, "geontm:machine_satlink", gx, Y, gz);
         int[] link = findCore(c, gx, Y + 1, gz, "machine_satlink", 2);
         Expect.that(link != null, "the ground station formed a core");
         c.cmd("clear");
-        c.cmd("give @s " + chip(c, "hbm:sat_chip", freq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_chip", freq) + " 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(link[0] + 3.5, Y + 1, link[2] + 0.5);
@@ -1070,7 +1070,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(40);
         Expect.that(c.blockEntity(link[0], link[1], link[2]).toString().replaceAll("\\s", "").contains("freq:" + freq),
                 "the chip tuned the ground station");
-        Fixtures.giveOnly(c, "hbm:radio_torch_reader", 1);
+        Fixtures.giveOnly(c, "geontm:radio_torch_reader", 1);
         c.teleport(link[0] + 4.5, Y + 1, link[2] + 0.5);
         c.waitTicks(3);
         c.lookAt(link[0] + 1.98, Y + 1.5, link[2] + 0.5);
@@ -1079,7 +1079,7 @@ public final class FinalGapsA implements Scenario {
         c.waitTicks(5);
         int rx = Integer.MIN_VALUE, rz = 0;
         for (int dx = -2; dx <= 3 && rx == Integer.MIN_VALUE; dx++) for (int dz = -2; dz <= 3; dz++) {
-            if (c.block(link[0] + dx, Y + 1, link[2] + dz).get("block").getAsString().equals("hbm:radio_torch_reader")) {
+            if (c.block(link[0] + dx, Y + 1, link[2] + dz).get("block").getAsString().equals("geontm:radio_torch_reader")) {
                 rx = link[0] + dx; rz = link[2] + dz; break;
             }
         }
@@ -1108,11 +1108,11 @@ public final class FinalGapsA implements Scenario {
     private static void knife(Client c) {
         int tx = X + 4, tz = Z - 4;
         c.cmd("gamemode creative");
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", tx, Y, tz);
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", tx, Y, tz);
         c.cmd("clear");
         c.cmd("gamemode survival");
-        c.cmd("give @s hbm:steel_plate 1");
-        c.cmd("give @s hbm:injector_knife 1");
+        c.cmd("give @s geontm:steel_plate 1");
+        c.cmd("give @s geontm:injector_knife 1");
         c.waitTicks(4);
         // the baseline before the knife is fitted: its first stab can land while the table closes (every 50 ticks
         // of the wearer's age, whatever the phase), and a later read would already include it
@@ -1122,11 +1122,11 @@ public final class FinalGapsA implements Scenario {
         Fixtures.interact(c, tx, Y + 1, tz);
         c.waitScreen("Armor Modification Table", 5000);
         c.waitTicks(3);
-        c.clickSlot(playerSlot(c, "hbm:steel_plate"));
+        c.clickSlot(playerSlot(c, "geontm:steel_plate"));
         c.waitTicks(1);
         c.clickSlot(9);
         c.waitTicks(2);
-        c.clickSlot(playerSlot(c, "hbm:injector_knife"));
+        c.clickSlot(playerSlot(c, "geontm:injector_knife"));
         c.waitTicks(1);
         c.clickSlot(7);
         c.waitTicks(3);
@@ -1157,7 +1157,7 @@ public final class FinalGapsA implements Scenario {
     // ============================================================== helpers
 
     private static JsonObject gapsa(Client c) {
-        return c.query("hbm_gapsa", new JsonObject());
+        return c.query("geontm_gapsa", new JsonObject());
     }
 
     private static boolean legacy(Client c) {
@@ -1167,18 +1167,18 @@ public final class FinalGapsA implements Scenario {
     /** A full cell; {@code variant} is the sprite its fluid selects (no longer stored, History §19es-itemvariant). */
     private static String cell(Client c, String fluid, int variant) {
         return legacy(c)
-                ? "hbm:cell{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : "hbm:cell[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+                ? "geontm:cell{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : "geontm:cell[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     private static String crucible(Client c, int charges) {
-        return legacy(c) ? "hbm:crucible{\"hbm:charges\":" + charges + "}" : "hbm:crucible[hbm:charges=" + charges + "]";
+        return legacy(c) ? "geontm:crucible{\"geontm:charges\":" + charges + "}" : "geontm:crucible[geontm:charges=" + charges + "]";
     }
 
     private static String controller(Client c, int variant) {
         String name = controllerName(variant);
-        return legacy(c) ? "hbm:custom_machine{\"hbm:custom_machine\":\"" + name + "\"}"
-                : "hbm:custom_machine[hbm:custom_machine=\"" + name + "\"]";
+        return legacy(c) ? "geontm:custom_machine{\"geontm:custom_machine\":\"" + name + "\"}"
+                : "geontm:custom_machine[geontm:custom_machine=\"" + name + "\"]";
     }
 
     /** 1.7 controller damage 100/101/102: the paper press and the two staged test machines, by configuration name. */
@@ -1192,14 +1192,14 @@ public final class FinalGapsA implements Scenario {
 
 
     private static String satellite(Client c, int variant, int freq) {
-        String id = "hbm:satellite_" + new String[] {"spy", "scanner", "radar", "miner_astro", "miner_lunar", "precision_laser", "death_ray", "xenium_resonator", "relay", "detector", "ray_scan"}[variant];
-        if (legacy(c)) return id + "{\"hbm:persistent_data\":{freq:" + freq + "}}";
-        return id + "[hbm:persistent_data={freq:" + freq + "}]";
+        String id = "geontm:satellite_" + new String[] {"spy", "scanner", "radar", "miner_astro", "miner_lunar", "precision_laser", "death_ray", "xenium_resonator", "relay", "detector", "ray_scan"}[variant];
+        if (legacy(c)) return id + "{\"geontm:persistent_data\":{freq:" + freq + "}}";
+        return id + "[geontm:persistent_data={freq:" + freq + "}]";
     }
 
     private static String chip(Client c, String id, int freq) {
-        if (legacy(c)) return id + "{\"hbm:persistent_data\":{freq:" + freq + "}}";
-        return id + "[hbm:persistent_data={freq:" + freq + "}]";
+        if (legacy(c)) return id + "{\"geontm:persistent_data\":{freq:" + freq + "}}";
+        return id + "[geontm:persistent_data={freq:" + freq + "}]";
     }
 
     private static void place(Client c, String item, int x, int y, int z) {
@@ -1298,7 +1298,7 @@ public final class FinalGapsA implements Scenario {
         Expect.that(dir != null, "project root above " + Path.of("").toAbsolutePath());
         Path runs = dir.resolve("NTM-Continuum/versions/" + c.node() + "/runs");
         for (String name : new String[]{"harness", "client"}) {
-            if (Files.isDirectory(runs.resolve(name).resolve("config/hbmConfig"))) return runs.resolve(name);
+            if (Files.isDirectory(runs.resolve(name).resolve("config/geontmConfig"))) return runs.resolve(name);
         }
         return runs.resolve("client");
     }

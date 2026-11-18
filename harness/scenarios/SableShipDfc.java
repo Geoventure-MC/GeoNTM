@@ -1,5 +1,5 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Player report: the DFC does not work on a Create Aeronautics ship. A DFC emitter firing into a receiver on an iron
@@ -20,9 +20,9 @@ public final class SableShipDfc implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("fill -12 " + D + " -12 12 " + (D + 12) + " 16 minecraft:air");
         c.cmd("fill -3 " + D + " 6 3 " + D + " 8 minecraft:iron_block");
-        c.cmd("setblock -2 " + (D + 1) + " 7 hbm:dfc_emitter[facing=east]{isOn:1b,watts:100,power:1000000000000L,"
-                + "tank:64000,tank_type:\"hbm:cryogel\"}");
-        c.cmd("setblock 2 " + (D + 1) + " 7 hbm:dfc_receiver[facing=west]{tank:64000,tank_type:\"hbm:cryogel\"}");
+        c.cmd("setblock -2 " + (D + 1) + " 7 geontm:dfc_emitter[facing=east]{isOn:1b,watts:100,power:1000000000000L,"
+                + "tank:64000,tank_type:\"geontm:cryogel\"}");
+        c.cmd("setblock 2 " + (D + 1) + " 7 geontm:dfc_receiver[facing=west]{tank:64000,tank_type:\"geontm:cryogel\"}");
         c.teleport(0.5, D + 4, -1.5);
         c.lookAt(0.5, D + 1.5, 7.5);
         c.waitTicks(40);

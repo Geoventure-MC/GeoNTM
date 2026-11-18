@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 134. A screwdriver clicked on a crane sets the input side without sneaking and the output side sneaking,
@@ -44,8 +44,8 @@ public final class Gh134CraneScrewdriver implements Scenario {
     }
 
     private static void crane(Client c, String id) {
-        Fixtures.setBlock(c, 0, G, 0, "hbm:" + id + "[input=north,output=south]");
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.setBlock(c, 0, G, 0, "geontm:" + id + "[input=north,output=south]");
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.hotbar(1);
         c.waitTicks(5);
 
@@ -56,7 +56,7 @@ public final class Gh134CraneScrewdriver implements Scenario {
         Expect.that(state.contains("input=up"), id + ": the clicked face became the input: " + state);
         c.screenshot("gh134-" + id + "-input");
 
-        Fixtures.setBlock(c, 0, G, 0, "hbm:" + id + "[input=north,output=south]");
+        Fixtures.setBlock(c, 0, G, 0, "geontm:" + id + "[input=north,output=south]");
         c.keyDown("key.sneak");
         c.waitTicks(5);
         clickTop(c);
@@ -76,8 +76,8 @@ public final class Gh134CraneScrewdriver implements Scenario {
     }
 
     private static void wandOn(Client c, String block) {
-        Fixtures.setBlock(c, 0, G, 0, "hbm:" + block);
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 1);
+        Fixtures.setBlock(c, 0, G, 0, "geontm:" + block);
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 1);
         c.hotbar(1);
         c.waitTicks(5);
         clickTop(c);
@@ -88,8 +88,8 @@ public final class Gh134CraneScrewdriver implements Scenario {
     /** The first click makes a chest-side tube a compressor, the second turns a compressor's insertion side. */
     private static void tube(Client c, String id) {
         Fixtures.setBlock(c, 1, G, 0, "minecraft:chest");
-        Fixtures.setBlock(c, 0, G, 0, "hbm:" + id);
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.setBlock(c, 0, G, 0, "geontm:" + id);
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.hotbar(1);
         c.waitTicks(5);
         clickTop(c);

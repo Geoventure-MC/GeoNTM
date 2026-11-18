@@ -1,18 +1,18 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * An HBM machine on a Sable sub-level (Create Aeronautics' engine), used the way a player does: a centrifuge placed
+ * An GEONTM machine on a Sable sub-level (Create Aeronautics' engine), used the way a player does: a centrifuge placed
  * by hand on an iron deck, the deck and machine assembled into a sub-level with Sable's own {@code /sable assemble},
  * then the machine right-clicked where it is seen. Its menu must open and stay open (the reach check is measured in
  * the world, not at the plot where Sable keeps the blocks), and the machine's blocks must have left the world grid.
  *
  * <p>1.21.1 NeoForge only, and needs Sable in the run: start the client with
  * {@code ORG_GRADLE_PROJECT_sable.run=true} in the environment and {@code up --rebuild --nodes 1.21.1-neoforge}.
- * The GameTests ({@code hbm:sable_*}) cover inventories, cell indexes, cables, pylons, missiles and the radar
+ * The GameTests ({@code geontm:sable_*}) cover inventories, cell indexes, cables, pylons, missiles and the radar
  * through Sable's assembly and disassembly; this covers a placed machine, a real client and its menu.
  */
 public class SableShip implements Scenario {
@@ -37,8 +37,8 @@ public class SableShip implements Scenario {
         c.cmd("fill " + (X - 2) + " " + (Y + 1) + " " + (Z + 3) + " " + (X + 2) + " " + (Y + 1) + " " + (Z + 7)
                 + " minecraft:iron_block");
         c.waitTicks(2);
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:machine_centrifuge", X, Y + 1, Z + 5);
-        Expect.equal("hbm:machine_centrifuge", placed.get("block").getAsString(), "centrifuge placed by hand on the deck");
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:machine_centrifuge", X, Y + 1, Z + 5);
+        Expect.equal("geontm:machine_centrifuge", placed.get("block").getAsString(), "centrifuge placed by hand on the deck");
         c.waitTicks(10);
         c.teleport(X + 0.5, Y + 1, Z - 2.5);
         c.look(0, 15);
@@ -67,14 +67,14 @@ public class SableShip implements Scenario {
         // Placement previews aimed at the deck. Its blocks now live in Sable's plot, far from where they are drawn; the
         // previews must be drawn on the deck (look at the screenshots: the lines/ghosts sit on the iron blocks).
         double top = Y + 1.98;
-        Fixtures.giveOnly(c, "hbm:machine_centrifuge", 1);
+        Fixtures.giveOnly(c, "geontm:machine_centrifuge", 1);
         c.teleport(X + 0.5, Y + 1, Z + 1.5);
         c.waitTicks(3);
         c.lookAt(X - 1.5, top, Z + 3.5);
         c.waitTicks(5);
         c.screenshot("40-placement-highlight-on-deck");
 
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 64);
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 64);
         c.lookAt(X - 1.5, top, Z + 3.5);
         c.waitTicks(3);
         c.use(2);
@@ -84,8 +84,8 @@ public class SableShip implements Scenario {
         c.screenshot("41-conveyor-ghost-on-deck");
 
         c.cmd("clear");
-        c.cmd("give @s hbm:rebar_placer 1");
-        c.cmd("give @s hbm:rebar 64");
+        c.cmd("give @s geontm:rebar_placer 1");
+        c.cmd("give @s geontm:rebar 64");
         c.waitTicks(3);
         c.hotbar(1);
         c.lookAt(X - 1.5, top, Z + 3.5);
@@ -103,11 +103,11 @@ public class SableShip implements Scenario {
         c.waitTicks(20);
         c.teleport(X + 0.5, Y + 5, Z + 0.5);
         c.waitTicks(3);
-        Fixtures.giveOnly(c, "hbm:machine_centrifuge", 1);
+        Fixtures.giveOnly(c, "geontm:machine_centrifuge", 1);
         c.lookAt(X - 0.5, Y + 3.2, Z + 4.0);
         c.waitTicks(5);
         c.screenshot("43-placement-highlight-tilted");
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 64);
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 64);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(4);

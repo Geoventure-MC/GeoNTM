@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -31,8 +31,8 @@ public final class VoxyWorldFluids implements Scenario {
             c.cmd("gamemode spectator");
             for (int i = 0; i < FLUIDS.length; i++) {
                 int x = X - 10 + i * 3;
-                c.cmd("setblock " + x + " " + (Y + 1) + " " + Z + " hbm:" + FLUIDS[i]);
-                c.cmd("setblock " + x + " " + (Y + 1) + " " + (Z + 2) + " hbm:" + FLUIDS[i] + "[level=2]");
+                c.cmd("setblock " + x + " " + (Y + 1) + " " + Z + " geontm:" + FLUIDS[i]);
+                c.cmd("setblock " + x + " " + (Y + 1) + " " + (Z + 2) + " geontm:" + FLUIDS[i] + "[level=2]");
             }
             c.teleport(X, Y + 12, Z - 16);
             c.lookAt(X, Y + 1, Z);

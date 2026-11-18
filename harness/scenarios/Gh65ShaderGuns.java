@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 65: held guns and the "Greg" artillery turret under an Iris shader pack. Needs {@code -Pshaders.run=true}
@@ -21,7 +21,7 @@ public final class Gh65ShaderGuns implements Scenario {
         c.look(0, 10);
         for (String gun : GUNS) {
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + gun);
+            c.cmd("give @s geontm:" + gun);
             c.hotbar(1);
             c.waitTicks(40);
             c.screenshot("shader-" + gun);
@@ -31,7 +31,7 @@ public final class Gh65ShaderGuns implements Scenario {
         c.screenshot("shader-third-person");
         c.key("f5");
         c.key("f5");
-        Fixtures.setBlock(c, 0, 101, 6, "hbm:turret_arty");
+        Fixtures.setBlock(c, 0, 101, 6, "geontm:turret_arty");
         c.waitTicks(40);
         c.lookAt(0.5, 102, 6.5);
         c.waitTicks(10);

@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -13,16 +13,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * WG-D acceptance (§19ec-dungeons): 1.7 {@code HbmWorldGen}'s legacy hardcoded dungeons and scattered world blocks.
+ * WG-D acceptance (§19ec-dungeons): 1.7 {@code GeoNtmWorldGen}'s legacy hardcoded dungeons and scattered world blocks.
  *
  * <ol>
- *   <li>Seeded world (4815162342): {@code /locate structure hbm:<id>} for all nine dungeons; each found one is
- *       force-loaded and read through the {@code hbm_wgd} query (how many of the blocks the 1.7 builder wrote stand in the
+ *   <li>Seeded world (4815162342): {@code /locate structure geontm:<id>} for all nine dungeons; each found one is
+ *       force-loaded and read through the {@code geontm_wgd} query (how many of the blocks the 1.7 builder wrote stand in the
  *       world, containers filled, spawner mobs, block entities), then screenshotted. A dungeon out of locate range is put
  *       down with {@code /place structure} in the seeded world (real terrain; the builder's own site test decides) and
  *       checked the same way.</li>
  *   <li>Scattered blocks: a region of the seeded world is scanned for the frequent ones (AP mines 1/64 chunks, and
- *       whatever safes, lanterns, broadcasters it holds); every one is placed with {@code /place feature hbm:<id>} in
+ *       whatever safes, lanterns, broadcasters it holds); every one is placed with {@code /place feature geontm:<id>} in
  *       the seeded and the flat world and checked (block, and for safes/mines/capsules their state), and screenshotted.</li>
  * </ol>
  */
@@ -37,23 +37,23 @@ public final class FinalWorldgenDungeons implements Scenario {
             "dud", "crashed_bomb", "spaceship", "fusion_heater", "barrel", "sellafield",
             "arctic_vault", "tape_recorder", "ancient_tomb", "ancient_scrap", "jungle_dungeon", "brick_jungle_circle");
 
-    static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     final List<String> report = new ArrayList<>();
 
     static int[] locate(Client c, String id) {
         c.markLog();
-        c.cmd("locate structure hbm:" + id);
+        c.cmd("locate structure geontm:" + id);
         long deadline = System.currentTimeMillis() + 600_000L;
         while (System.currentTimeMillis() < deadline) {
             c.waitTicks(10);
-            for (String line : c.logSinceMark("hbm:" + id + "|Could not find|no structure")) {
+            for (String line : c.logSinceMark("geontm:" + id + "|Could not find|no structure")) {
                 Matcher m = FOUND.matcher(line);
-                if (m.find() && m.group(1).equals("hbm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
+                if (m.find() && m.group(1).equals("geontm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
                 if (line.contains("Could not find") || line.contains("no structure")) return null;
             }
         }
-        throw new HarnessException("no /locate answer for hbm:" + id);
+        throw new HarnessException("no /locate answer for geontm:" + id);
     }
 
     static JsonObject query(Client c, String kind, JsonObject p, long timeout) {
@@ -70,7 +70,7 @@ public final class FinalWorldgenDungeons implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        return query(c, "hbm_worldgen", p, 300_000L);
+        return query(c, "geontm_worldgen", p, 300_000L);
     }
 
     /** The dungeon start at x, z (or rebuilt for /place structure). */
@@ -82,7 +82,7 @@ public final class FinalWorldgenDungeons implements Scenario {
             p.addProperty("x", x);
             p.addProperty("z", z);
             if (rebuild) p.addProperty("rebuild", id);
-            last = query(c, "hbm_wgd", p, 120_000L);
+            last = query(c, "geontm_wgd", p, 120_000L);
             for (var e : last.getAsJsonArray("starts")) {
                 JsonObject s = e.getAsJsonObject();
                 if (s.get("dungeon").getAsString().equals(id)) return s;
@@ -175,7 +175,7 @@ public final class FinalWorldgenDungeons implements Scenario {
             c.cmd("forceload add " + (px - 80) + " " + (pz - 80) + " " + (px + 80) + " " + (pz + 80));
             c.waitTicks(40);
             c.markLog();
-            c.cmd("place structure hbm:" + id + " " + px + " 64 " + pz);
+            c.cmd("place structure geontm:" + id + " " + px + " 64 " + pz);
             c.waitTicks(60);
             List<String> failed = c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument|not loaded");
             c.cmd("forceload remove " + (px - 80) + " " + (pz - 80) + " " + (px + 80) + " " + (pz + 80));
@@ -184,7 +184,7 @@ public final class FinalWorldgenDungeons implements Scenario {
                 return;
             }
         }
-        throw new HarnessException("/place structure hbm:" + id + " failed at every spot near " + x + " " + z);
+        throw new HarnessException("/place structure geontm:" + id + " failed at every spot near " + x + " " + z);
     }
 
     // ------------------------------------------------------------------------------------------------ features
@@ -208,7 +208,7 @@ public final class FinalWorldgenDungeons implements Scenario {
             c.cmd("forceload add " + px + " " + z);
             int y = surface(c, px, z);
             c.markLog();
-            c.cmd("place feature hbm:" + id + " " + px + " " + y + " " + z);
+            c.cmd("place feature geontm:" + id + " " + px + " " + y + " " + z);
             c.waitTicks(20);
             List<String> failed = c.logSinceMark("Failed to place|Unknown|Incorrect");
             if (!failed.isEmpty()) continue;
@@ -229,7 +229,7 @@ public final class FinalWorldgenDungeons implements Scenario {
         for (Object[] f : list) {
             String id = (String) f[0];
             int[] at = placeFeature(c, id, x, bz, (String) f[1], (Integer) f[2], 8);
-            Expect.that(at != null, where + ": /place feature hbm:" + id + " placed something");
+            Expect.that(at != null, where + ": /place feature geontm:" + id + " placed something");
             JsonObject be = new JsonObject();
             be.addProperty("x", at[0]);
             be.addProperty("y", at[1]);
@@ -246,7 +246,7 @@ public final class FinalWorldgenDungeons implements Scenario {
         for (int attempt = 0; attempt < 16 && chest == null; attempt++) {
             c.cmd("forceload add 5008 5008");
             c.markLog();
-            c.cmd("place feature hbm:blueprint_chest 5008 0 5008");
+            c.cmd("place feature geontm:blueprint_chest 5008 0 5008");
             c.waitTicks(20);
             if (c.logSinceMark("Failed to place").isEmpty()) {
                 int y = surface(c, 5016, 5016);
@@ -306,10 +306,10 @@ public final class FinalWorldgenDungeons implements Scenario {
 
         // natural scattered blocks in a 20 x 20 chunk sample (AP mines: about 6 expected)
         JsonObject counts = wg(c, "mode", "count", "x0", 2048, "z0", -2048, "x1", 2048 + 319, "z1", -2048 + 319, "y0", 40, "y1", 200,
-                "ids", "hbm:mine_ap,hbm:safe,hbm:lantern_behemoth,hbm:broadcaster_pc,hbm:soyuz_capsule").getAsJsonObject("counts");
+                "ids", "geontm:mine_ap,geontm:safe,geontm:lantern_behemoth,geontm:broadcaster_pc,geontm:soyuz_capsule").getAsJsonObject("counts");
         report.add("natural scattered blocks in 400 chunks at 2048,-2048: " + counts);
-        Expect.that(counts.has("hbm:mine_ap") && counts.get("hbm:mine_ap").getAsInt() >= 1, "AP mines generate naturally: " + counts);
-        JsonArray mines = wg(c, "mode", "find", "id", "hbm:mine_ap", "x0", 2048, "z0", -2048, "x1", 2048 + 319, "z1", -2048 + 319,
+        Expect.that(counts.has("geontm:mine_ap") && counts.get("geontm:mine_ap").getAsInt() >= 1, "AP mines generate naturally: " + counts);
+        JsonArray mines = wg(c, "mode", "find", "id", "geontm:mine_ap", "x0", 2048, "z0", -2048, "x1", 2048 + 319, "z1", -2048 + 319,
                 "y0", 40, "y1", 200, "limit", 4).getAsJsonArray("found");
         if (!mines.isEmpty()) {
             JsonArray m = mines.get(0).getAsJsonArray();

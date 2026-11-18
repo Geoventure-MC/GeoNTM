@@ -1,0 +1,3 @@
+package fr.geoventure.geontm.inventory.container;
+import fr.geoventure.geontm.inventory.ModRBMKMenus; import fr.geoventure.geontm.tileentity.machine.rbmk.BlockEntityRBMKControlAuto; import net.minecraft.core.BlockPos; import net.minecraft.world.entity.player.*; import net.minecraft.world.item.ItemStack;
+public final class MenuRBMKControlAuto extends RBMKMenu<BlockEntityRBMKControlAuto>{public MenuRBMKControlAuto(int i,Inventory p,BlockPos x){super(ModRBMKMenus.RBMK_CONTROL_AUTO.get(),i,p,x,BlockEntityRBMKControlAuto.class,0);addPlayer();}public MenuRBMKControlAuto(int i,Inventory p,BlockEntityRBMKControlAuto b){super(ModRBMKMenus.RBMK_CONTROL_AUTO.get(),i,p,b,0);addPlayer();}@Override public ItemStack quickMoveStack(Player p,int i){return ItemStack.EMPTY;}}

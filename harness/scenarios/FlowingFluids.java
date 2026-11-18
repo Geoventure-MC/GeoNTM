@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,8 +61,8 @@ public final class FlowingFluids implements Scenario {
             c.waitTicks(5);
             for (int i = 0; i < FLUIDS.length; i++) {
                 int bx = X + i * LANE;
-                Fixtures.setBlock(c, bx, L, Z, "hbm:" + FLUIDS[i][0]);
-                Fixtures.setBlock(c, bx, L + 3, Z + 12, "hbm:" + FLUIDS[i][0]);
+                Fixtures.setBlock(c, bx, L, Z, "geontm:" + FLUIDS[i][0]);
+                Fixtures.setBlock(c, bx, L + 3, Z + 12, "geontm:" + FLUIDS[i][0]);
             }
             // the lavas set into basalt within seconds (1.7), so they are photographed while still running
             c.waitTicks(30);
@@ -74,7 +74,7 @@ public final class FlowingFluids implements Scenario {
 
             for (int i = 0; i < FLUIDS.length; i++) {
                 int bx = X + i * LANE;
-                String id = "hbm:" + FLUIDS[i][0];
+                String id = "geontm:" + FLUIDS[i][0];
                 int quanta = Integer.parseInt(FLUIDS[i][1]);
                 if (quanta > 0 && !FLUIDS[i][0].contains("lava")) {
                     // classic, settled: the source and one level step per block, eastwards in the basin
@@ -128,7 +128,7 @@ public final class FlowingFluids implements Scenario {
             c.cmd("fill " + (ax - 3) + " " + L + " " + (Z - 3) + " " + (ax + 3) + " " + L + " " + (Z + 3) + " minecraft:obsidian");
             c.cmd("fill " + (ax - 2) + " " + L + " " + (Z - 2) + " " + (ax + 2) + " " + L + " " + (Z + 2) + " minecraft:air");
             c.waitTicks(2);
-            Fixtures.setBlock(c, ax, L, Z, "hbm:acid_block");
+            Fixtures.setBlock(c, ax, L, Z, "geontm:acid_block");
             c.teleport(ax + 5.5, L + 4.5, Z - 5.5);
             c.lookAt(ax + 0.5, L - 1, Z + 0.5);
             c.waitTicks(12);
@@ -137,14 +137,14 @@ public final class FlowingFluids implements Scenario {
             if ("minecraft:obsidian".equals(floorUnder.get("block").getAsString())) {
                 failures.add("acid did not dissolve the obsidian under it (1.7 AcidBlock eats every neighbour)");
             }
-            c.cmd("fill " + (ax - 8) + " " + (Y - 14) + " " + (Z - 8) + " " + (ax + 8) + " " + (L + 2) + " " + (Z + 8) + " minecraft:air replace hbm:acid_block");
+            c.cmd("fill " + (ax - 8) + " " + (Y - 14) + " " + (Z - 8) + " " + (ax + 8) + " " + (L + 2) + " " + (Z + 8) + " minecraft:air replace geontm:acid_block");
         } finally {
             c.cmd("gamemode creative");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
             // take every fluid down before the next scenario
             int width2 = FLUIDS.length * LANE + 16;
             for (String[] fluid : FLUIDS) {
-                c.cmd("fill " + (X - 10) + " " + L + " " + (Z - 8) + " " + (X + width2) + " " + (L + 4) + " " + (Z + 24) + " minecraft:air replace hbm:" + fluid[0]);
+                c.cmd("fill " + (X - 10) + " " + L + " " + (Z - 8) + " " + (X + width2) + " " + (L + 4) + " " + (Z + 24) + " minecraft:air replace geontm:" + fluid[0]);
             }
             c.cmd("forceload remove " + (X - 16) + " " + (Z - 16) + " " + (X + FLUIDS.length * LANE + 16) + " " + (Z + 32));
         }

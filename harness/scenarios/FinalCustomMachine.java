@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,12 +11,12 @@ import java.util.List;
 
 /**
  * In-game acceptance for the custom machine system: every block and item of the family in the inventory and in a
- * row in the world; the default Paper Press (hbmConfig/hbmCustomMachines.json, written on first start) built by
+ * row in the world; the default Paper Press (geontmConfig/geontmCustomMachines.json, written on first start) built by
  * hand around its controller, with the ghost of the missing components shown while it is incomplete; power from a
  * creative generator over a cable into the lower cm_port, water from a creative source into the upper cm_port,
  * sawdust from a hopper into the upper port; the controller's menu opened by a real right-click, a water
  * identifier moved in by clicks, and paper produced; and the structure output wand recording a box around the
- * positioning anchor into hbmConfig/CMstructureOutput.txt.
+ * positioning anchor into geontmConfig/CMstructureOutput.txt.
  */
 public final class FinalCustomMachine implements Scenario {
 
@@ -25,14 +25,14 @@ public final class FinalCustomMachine implements Scenario {
     private static final int Z = 0;
 
     static final String[] BLOCKS = {
-            "hbm:cm_block_steel", "hbm:cm_block_alloy", "hbm:cm_block_desh", "hbm:cm_block_tcalloy",
-            "hbm:cm_sheet_steel", "hbm:cm_sheet_alloy", "hbm:cm_sheet_desh", "hbm:cm_sheet_tcalloy",
-            "hbm:cm_engine_standard", "hbm:cm_engine_desh", "hbm:cm_engine_bismuth",
-            "hbm:cm_tank_steel", "hbm:cm_tank_alloy", "hbm:cm_tank_desh", "hbm:cm_tank_tcalloy",
-            "hbm:cm_circuit_aluminium", "hbm:cm_circuit_copper", "hbm:cm_circuit_red_copper", "hbm:cm_circuit_gold",
-            "hbm:cm_circuit_schrabidium",
-            "hbm:cm_port_steel", "hbm:cm_port_alloy", "hbm:cm_port_desh", "hbm:cm_port_tcalloy",
-            "hbm:cm_flux", "hbm:cm_heat", "hbm:custom_machine_anchor"};
+            "geontm:cm_block_steel", "geontm:cm_block_alloy", "geontm:cm_block_desh", "geontm:cm_block_tcalloy",
+            "geontm:cm_sheet_steel", "geontm:cm_sheet_alloy", "geontm:cm_sheet_desh", "geontm:cm_sheet_tcalloy",
+            "geontm:cm_engine_standard", "geontm:cm_engine_desh", "geontm:cm_engine_bismuth",
+            "geontm:cm_tank_steel", "geontm:cm_tank_alloy", "geontm:cm_tank_desh", "geontm:cm_tank_tcalloy",
+            "geontm:cm_circuit_aluminium", "geontm:cm_circuit_copper", "geontm:cm_circuit_red_copper", "geontm:cm_circuit_gold",
+            "geontm:cm_circuit_schrabidium",
+            "geontm:cm_port_steel", "geontm:cm_port_alloy", "geontm:cm_port_desh", "geontm:cm_port_tcalloy",
+            "geontm:cm_flux", "geontm:cm_heat", "geontm:custom_machine_anchor"};
 
     // the Paper Press: controller at (CX, CY, CZ) facing north, components at core + (x, y, z), z 0..2 behind it
     private static final int CX = X, CY = Y + 2, CZ = Z;
@@ -58,10 +58,10 @@ public final class FinalCustomMachine implements Scenario {
         for (int x = -1; x <= 1; x++) {
             for (int z = 0; z <= 2; z++) {
                 if (x == 0 && z == 0) continue;
-                placeFromAbove(c, "hbm:cm_block_steel", CX + x, CY - 1, CZ + z);
+                placeFromAbove(c, "geontm:cm_block_steel", CX + x, CY - 1, CZ + z);
             }
         }
-        placeFromAbove(c, "hbm:cm_port_steel", CX, CY - 1, CZ);
+        placeFromAbove(c, "geontm:cm_port_steel", CX, CY - 1, CZ);
         // the controller, placed from the north so it faces north (1.7: the face turned to the placer)
         Fixtures.giveOnly(c, controller(c), 1);
         c.teleport(CX + 0.5, Y + 4, CZ - 1.5);
@@ -70,7 +70,7 @@ public final class FinalCustomMachine implements Scenario {
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(5);
-        JsonObject core = Expect.block(c, CX, CY, CZ, "hbm:custom_machine");
+        JsonObject core = Expect.block(c, CX, CY, CZ, "geontm:custom_machine");
         Expect.that(core.toString().contains("north"), "the controller faces north: " + core);
         String coreNbt = c.blockEntity(CX, CY, CZ).toString();
         Expect.that(coreNbt.contains("paperPress"), "the placed controller took the Paper Press config: " + coreNbt);
@@ -80,18 +80,18 @@ public final class FinalCustomMachine implements Scenario {
         for (int x = -1; x <= 1; x++) {
             for (int z = 0; z <= 2; z++) {
                 if (x == 0 && (z == 0 || z == 1)) continue;
-                placeFromAbove(c, "hbm:cm_sheet_steel", CX + x, CY, CZ + z);
+                placeFromAbove(c, "geontm:cm_sheet_steel", CX + x, CY, CZ + z);
             }
         }
         placeFromAbove(c, "minecraft:glass", CX, CY, CZ + 1);
         for (int x = -1; x <= 1; x++) {
             for (int z = 0; z <= 2; z++) {
                 if (x == 0 && z == 0) continue;
-                placeFromAbove(c, "hbm:cm_block_steel", CX + x, CY + 1, CZ + z);
+                placeFromAbove(c, "geontm:cm_block_steel", CX + x, CY + 1, CZ + z);
             }
         }
         // the upper port sits on the controller: sneak, or the right-click goes to the controller as in 1.7
-        Fixtures.giveOnly(c, "hbm:cm_port_steel", 1);
+        Fixtures.giveOnly(c, "geontm:cm_port_steel", 1);
         c.teleport(CX + 0.5, Y + 5, CZ - 0.5);
         c.waitTicks(2);
         c.lookAt(CX + 0.5, CY + 0.98, CZ + 0.5);
@@ -101,15 +101,15 @@ public final class FinalCustomMachine implements Scenario {
         c.waitTicks(3);
         c.keyUp("key.sneak");
         c.waitTicks(2);
-        Expect.block(c, CX, CY + 1, CZ, "hbm:cm_port_steel");
-        Expect.block(c, CX, CY - 1, CZ, "hbm:cm_port_steel");
-        Expect.block(c, CX + 1, CY, CZ + 2, "hbm:cm_sheet_steel");
-        Expect.block(c, CX - 1, CY + 1, CZ + 2, "hbm:cm_block_steel");
+        Expect.block(c, CX, CY + 1, CZ, "geontm:cm_port_steel");
+        Expect.block(c, CX, CY - 1, CZ, "geontm:cm_port_steel");
+        Expect.block(c, CX + 1, CY, CZ + 2, "geontm:cm_sheet_steel");
+        Expect.block(c, CX - 1, CY + 1, CZ + 2, "geontm:cm_block_steel");
 
         // --- supply: cable + generator on the lower port, a fluid source on top of the upper port ----------
-        placeFromAbove(c, "hbm:red_cable", CX, CY - 1, CZ - 1);
-        placeFromAbove(c, "hbm:creative_generator", CX, CY - 1, CZ - 2);
-        placeFromAbove(c, "hbm:creative_fluid_source", CX, CY + 2, CZ);
+        placeFromAbove(c, "geontm:red_cable", CX, CY - 1, CZ - 1);
+        placeFromAbove(c, "geontm:creative_generator", CX, CY - 1, CZ - 2);
+        placeFromAbove(c, "geontm:creative_fluid_source", CX, CY + 2, CZ);
         // a hopper against the upper port's north face, pointing into it
         Fixtures.giveOnly(c, "minecraft:hopper", 1);
         c.teleport(CX + 0.5, Y + 1, CZ - 3.5);
@@ -125,14 +125,14 @@ public final class FinalCustomMachine implements Scenario {
         // --- the controller's menu by a real right-click, the water identifier moved in by clicks --------------
         c.cmd("clear");
         c.cmd("give @s " + identifier(c) + " 1");
-        c.cmd("give @s hbm:powder_sawdust 64");
+        c.cmd("give @s geontm:powder_sawdust 64");
         c.waitTicks(3);
         openController(c);
         c.screenshot("20-gui-empty");
         JsonObject screen = c.screen();
-        Expect.that(screen.toString().contains("hbm:fluid_identifier") || findSlot(c, "hbm:fluid_identifier") != null,
+        Expect.that(screen.toString().contains("geontm:fluid_identifier") || findSlot(c, "geontm:fluid_identifier") != null,
                 "the menu shows the player's identifier");
-        clickFromInventory(c, "hbm:fluid_identifier", 1);
+        clickFromInventory(c, "geontm:fluid_identifier", 1);
         c.waitTicks(40);
         c.screenshot("21-gui-identifier-water");
         close(c);
@@ -147,7 +147,7 @@ public final class FinalCustomMachine implements Scenario {
         c.use(2);
         c.waitScreen("Hopper", 5000);
         c.waitTicks(3);
-        clickFromInventory(c, "hbm:powder_sawdust", 0);
+        clickFromInventory(c, "geontm:powder_sawdust", 0);
         c.waitTicks(3);
         close(c);
 
@@ -173,22 +173,22 @@ public final class FinalCustomMachine implements Scenario {
     }
 
     private static String controller(Client c) {
-        return legacy(c) ? "hbm:custom_machine{\"hbm:custom_machine\":\"paperPress\"}"
-                : "hbm:custom_machine[hbm:custom_machine=\"paperPress\"]";
+        return legacy(c) ? "geontm:custom_machine{\"geontm:custom_machine\":\"paperPress\"}"
+                : "geontm:custom_machine[geontm:custom_machine=\"paperPress\"]";
     }
 
     private static String identifier(Client c) {
-        return legacy(c) ? "hbm:fluid_identifier{\"hbm:fluid\":\"hbm:water\"}" : "hbm:fluid_identifier[hbm:fluid=\"hbm:water\"]";
+        return legacy(c) ? "geontm:fluid_identifier{\"geontm:fluid\":\"geontm:water\"}" : "geontm:fluid_identifier[geontm:fluid=\"geontm:water\"]";
     }
 
-    /** 1.7 wrote hbmConfig/hbmCustomMachines.json with the Paper Press on first start; the port does too. */
+    /** 1.7 wrote geontmConfig/geontmCustomMachines.json with the Paper Press on first start; the port does too. */
     private static void configFileWritten(Client c) throws Exception {
         List<String> loaded = c.log(4000, "Loaded \\d+ custom machine");
         Expect.that(loaded.isEmpty() || loaded.get(loaded.size() - 1).contains("Loaded 1 custom machine"), "one default machine (the line predates the log buffer on some nodes): " + loaded);
-        Path file = gameDir(c).resolve("config/hbmConfig/hbmCustomMachines.json");
+        Path file = gameDir(c).resolve("config/geontmConfig/geontmCustomMachines.json");
         Expect.that(Files.isRegularFile(file), "default config written at " + file);
         String json = Files.readString(file);
-        Expect.that(json.contains("\"paperPress\"") && json.contains("hbm:tile.cm_sheet") && json.contains("Papierpresse"),
+        Expect.that(json.contains("\"paperPress\"") && json.contains("geontm:tile.cm_sheet") && json.contains("Papierpresse"),
                 "default config content: " + json.substring(0, Math.min(400, json.length())));
     }
 
@@ -198,7 +198,7 @@ public final class FinalCustomMachine implements Scenario {
         Expect.that(dir != null, "project root above " + Path.of("").toAbsolutePath());
         Path runs = dir.resolve("NTM-Continuum/versions/" + c.node() + "/runs");
         for (String name : new String[]{"harness", "client"}) {
-            if (Files.isDirectory(runs.resolve(name).resolve("config/hbmConfig"))) return runs.resolve(name);
+            if (Files.isDirectory(runs.resolve(name).resolve("config/geontmConfig"))) return runs.resolve(name);
         }
         return runs.resolve("client");
     }
@@ -208,29 +208,29 @@ public final class FinalCustomMachine implements Scenario {
         c.cmd("clear");
         c.waitTicks(2);
         for (String id : BLOCKS) c.cmd("give @s " + id + " 1");
-        c.cmd("give @s hbm:structure_custommachine 1");
+        c.cmd("give @s geontm:structure_custommachine 1");
         c.cmd("give @s " + controller(c) + " 1");
         c.waitTicks(4);
         JsonObject inv = c.inventory();
-        for (int i = 0; i < 20 && !inv.toString().contains("hbm:custom_machine\""); i++) {
+        for (int i = 0; i < 20 && !inv.toString().contains("geontm:custom_machine\""); i++) {
             c.waitTicks(5);
             inv = c.inventory();
         }
         for (String id : BLOCKS) Expect.that(inv.toString().contains("\"" + id + "\""), "inventory holds " + id);
-        Expect.that(inv.toString().contains("hbm:structure_custommachine"), "inventory holds the wand");
-        Expect.that(inv.toString().contains("hbm:custom_machine\"") && inv.toString().contains("Paper Press"),
+        Expect.that(inv.toString().contains("geontm:structure_custommachine"), "inventory holds the wand");
+        Expect.that(inv.toString().contains("geontm:custom_machine\"") && inv.toString().contains("Paper Press"),
                 "inventory holds the controller, named from the config: " + inv);
         c.key("key.inventory");
         c.waitScreen("", 5000);
         c.waitTicks(10);
         c.screenshot("01-inventory");
         // the controller's name comes from the config
-        JsonObject slot = findSlot(c, "hbm:custom_machine");
+        JsonObject slot = findSlot(c, "geontm:custom_machine");
         Expect.that(slot != null, "controller slot");
         c.mouseMove(slot.get("x").getAsDouble() + 8, slot.get("y").getAsDouble() + 8);
         c.waitTicks(4);
         c.screenshot("02-inventory-controller-tooltip");
-        JsonObject wand = findSlot(c, "hbm:structure_custommachine");
+        JsonObject wand = findSlot(c, "geontm:structure_custommachine");
         c.mouseMove(wand.get("x").getAsDouble() + 8, wand.get("y").getAsDouble() + 8);
         c.waitTicks(4);
         c.screenshot("03-inventory-wand-tooltip");
@@ -279,19 +279,19 @@ public final class FinalCustomMachine implements Scenario {
 
     private static void structureWand(Client c) throws Exception {
         int ax = X + 8, az = Z - 8;
-        Fixtures.giveOnly(c, "hbm:custom_machine_anchor", 1);
+        Fixtures.giveOnly(c, "geontm:custom_machine_anchor", 1);
         c.teleport(ax + 0.5, Y + 1, az - 2.5);
         c.waitTicks(3);
         c.lookAt(ax + 0.5, Y + 0.98, az + 0.5);
         c.waitTicks(1);
         c.use(2);
         c.waitTicks(3);
-        Expect.block(c, ax, Y + 1, az, "hbm:custom_machine_anchor");
-        Fixtures.setBlock(c, ax, Y + 1, az + 1, "hbm:cm_block_steel");
-        Fixtures.setBlock(c, ax + 1, Y + 1, az + 1, "hbm:cm_engine_standard");
-        Fixtures.setBlock(c, ax, Y + 2, az + 1, "hbm:cm_tank_desh");
+        Expect.block(c, ax, Y + 1, az, "geontm:custom_machine_anchor");
+        Fixtures.setBlock(c, ax, Y + 1, az + 1, "geontm:cm_block_steel");
+        Fixtures.setBlock(c, ax + 1, Y + 1, az + 1, "geontm:cm_engine_standard");
+        Fixtures.setBlock(c, ax, Y + 2, az + 1, "geontm:cm_tank_desh");
 
-        Fixtures.giveOnly(c, "hbm:structure_custommachine", 1);
+        Fixtures.giveOnly(c, "geontm:structure_custommachine", 1);
         c.teleport(ax + 0.5, Y + 1, az - 2.5);
         c.waitTicks(3);
         c.lookAt(ax + 0.5, Y + 0.98, az + 0.5);
@@ -314,14 +314,14 @@ public final class FinalCustomMachine implements Scenario {
         c.markLog();
         c.use(2);             // third click writes the file
         c.waitTicks(10);
-        Path out = gameDir(c).resolve("config/hbmConfig/CMstructureOutput.txt");
+        Path out = gameDir(c).resolve("config/geontmConfig/CMstructureOutput.txt");
         Expect.that(Files.isRegularFile(out) && Files.getLastModifiedTime(out).toMillis() >= before,
                 "the third click wrote CMstructureOutput.txt at " + out);
         // the server-thread log line is not in every node's harness log buffer; when it is, it names the anchor
         List<String> wrote = c.logSinceMark("Wrote custom machine structure");
         Expect.that(wrote.isEmpty() || wrote.get(0).contains("around anchor " + ax + " " + (Y + 1) + " " + az), "the wand kept the anchor: " + wrote);
         String json = Files.readString(out);
-        Expect.that(json.contains("hbm:cm_engine_standard") && json.contains("hbm:cm_tank_desh")
+        Expect.that(json.contains("geontm:cm_engine_standard") && json.contains("geontm:cm_tank_desh")
                 && !json.contains("custom_machine_anchor"), "structure output content: " + json);
     }
 

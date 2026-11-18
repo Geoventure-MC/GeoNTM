@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * RBMK crane console: linked to a fuel column with the RBMK tool, driven with the real crane key bindings while the
@@ -26,16 +26,16 @@ public final class RcNuke2Crane implements Scenario {
         c.waitTicks(5);
 
         for (int i = -1; i <= 1; i++) {
-            JsonObject placed = Fixtures.placeOnTop(c, "hbm:rbmk_fuel_rod", X + i, Y, Z);
-            Expect.equal("hbm:rbmk_fuel_rod", placed.get("block").getAsString(), "column placed");
+            JsonObject placed = Fixtures.placeOnTop(c, "geontm:rbmk_fuel_rod", X + i, Y, Z);
+            Expect.equal("geontm:rbmk_fuel_rod", placed.get("block").getAsString(), "column placed");
         }
         int cy = Y + 1;
-        c.cmd("item replace block " + X + " " + cy + " " + Z + " container.0 with hbm:rbmk_fuel_ueu");
-        c.cmd("item replace block " + (X + 1) + " " + cy + " " + Z + " container.0 with hbm:rbmk_fuel_meu");
+        c.cmd("item replace block " + X + " " + cy + " " + Z + " container.0 with geontm:rbmk_fuel_ueu");
+        c.cmd("item replace block " + (X + 1) + " " + cy + " " + Z + " container.0 with geontm:rbmk_fuel_meu");
         c.waitTicks(5);
 
         int[] desk = null;
-        Fixtures.giveOnly(c, "hbm:rbmk_crane_console", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_crane_console", 1);
         c.teleport(X + 2.5, Y + 1, Z - 9.5);
         c.waitTicks(3);
         c.lookAt(X + 0.5, Y + 0.98, Z - 9.5);
@@ -44,7 +44,7 @@ public final class RcNuke2Crane implements Scenario {
         c.waitTicks(4);
         for (int dx = -3; dx <= 3 && desk == null; dx++) for (int dy = 0; dy <= 3 && desk == null; dy++) for (int dz = -3; dz <= 3 && desk == null; dz++) {
             JsonObject b = c.block(X + dx, Y + dy, Z - 10 + dz);
-            if ("hbm:rbmk_crane_console".equals(b.get("block").getAsString()) && b.toString().contains("\"cell\":\"false\"")) {
+            if ("geontm:rbmk_crane_console".equals(b.get("block").getAsString()) && b.toString().contains("\"cell\":\"false\"")) {
                 desk = new int[] {X + dx, Y + dy, Z - 10 + dz};
             }
         }
@@ -55,7 +55,7 @@ public final class RcNuke2Crane implements Scenario {
         int dirZ = state.contains("\"facing\":\"south\"") ? 1 : state.contains("\"facing\":\"north\"") ? -1 : 0;
 
         // link: column first, then the desk
-        Fixtures.giveOnly(c, "hbm:rbmk_tool", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_tool", 1);
         link(c, X + 0.5, cy + 1.5, Z + 0.5, X + 0.5, cy + 1, Z + 4, true);
         link(c, desk[0] + 0.5, desk[1] + 0.5, desk[2] + 0.5, desk[0] + 0.5 - dirX * 2.5, desk[1], desk[2] + 0.5 - dirZ * 2.5, true);
         c.waitTicks(10);
@@ -74,7 +74,7 @@ public final class RcNuke2Crane implements Scenario {
         c.screenshot("00-at-desk");
         String before = ctrl(c, X, cy, Z);
         Expect.that(before.contains("rbmk_fuel_ueu"), "the column holds the UEU rod: " + before);
-        c.key("key.hbm.craneLoad", 4);
+        c.key("key.geontm.craneLoad", 4);
         c.waitTicks(15);
         c.screenshot("01-lowering");
         q = query(c, desk);
@@ -91,7 +91,7 @@ public final class RcNuke2Crane implements Scenario {
         c.screenshot("02-loaded");
 
         // drive one column east and back, 20 ticks of key each, then put the rod into the MEU column (occupied: no change)
-        c.key("key.hbm.craneRight", 20);
+        c.key("key.geontm.craneRight", 20);
         c.waitTicks(10);
         JsonObject moved = query(c, desk);
         System.out.println("[RcNuke2Crane] right " + moved);
@@ -100,7 +100,7 @@ public final class RcNuke2Crane implements Scenario {
         Expect.that(Math.abs(left) > 0.7 && Math.abs(left) < 1.3 && Math.abs(front) < 0.01, "20 ticks of right move the carriage about one block: " + moved);
         Expect.that(Math.abs(moved.getAsJsonObject("client").get("left").getAsDouble() - left) < 0.2, "the client carriage follows the server: " + moved);
         c.screenshot("03-moved");
-        c.key("key.hbm.craneLoad", 4);
+        c.key("key.geontm.craneLoad", 4);
         c.waitTicks(80);
         String meu = ctrl(c, X + 1, cy, Z);
         q = query(c, desk);
@@ -108,11 +108,11 @@ public final class RcNuke2Crane implements Scenario {
         Expect.that(meu.contains("rbmk_fuel_meu"), "the occupied column keeps its rod: " + meu);
         Expect.that(q.getAsJsonObject("server").get("loaded").getAsBoolean(), "the crane still carries the UEU rod: " + q);
 
-        c.key("key.hbm.craneLeft", 20);
+        c.key("key.geontm.craneLeft", 20);
         c.waitTicks(10);
         moved = query(c, desk);
         Expect.that(Math.abs(moved.getAsJsonObject("server").get("left").getAsDouble()) < 0.3, "20 ticks of left bring it back: " + moved);
-        c.key("key.hbm.craneLoad", 4);
+        c.key("key.geontm.craneLoad", 4);
         c.waitTicks(80);
         after = ctrl(c, X, cy, Z);
         q = query(c, desk);
@@ -131,7 +131,7 @@ public final class RcNuke2Crane implements Scenario {
         p.addProperty("x", at[0]);
         p.addProperty("y", at[1]);
         p.addProperty("z", at[2]);
-        return c.query("hbm_rbmk_console", p);
+        return c.query("geontm_rbmk_console", p);
     }
 
     private static String ctrl(Client c, int x, int y, int z) {

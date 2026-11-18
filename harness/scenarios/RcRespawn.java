@@ -1,7 +1,7 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Scenario;
 
 /** Helper between scenarios: respawns a dead player, clears the open screen and returns to creative at the platform. */
 public final class RcRespawn implements Scenario {

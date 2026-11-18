@@ -1,12 +1,12 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
- * The worn, fuelled, hovering glider jetpack (development {@code /hbm jetpack_smoke} session) must not replay the
+ * The worn, fuelled, hovering glider jetpack (development {@code /geontm jetpack_smoke} session) must not replay the
  * armour equip sound while it burns fuel, with the inventory closed or open, in creative or survival.
  *
  * <p>Positive signal: Core's {@code [harness-sound]} log ({@code sound_capture}) counts {@code item.armor.equip}
@@ -29,12 +29,12 @@ public final class GliderEquipSound implements Scenario {
         StringBuilder summary = new StringBuilder();
         try {
             for (String mode : new String[] {"creative-tab-gun", "creative", "survival"}) {
-                c.cmd("hbm jetpack_smoke stop");
+                c.cmd("geontm jetpack_smoke stop");
                 c.cmd("clear");
                 c.cmd("gamemode " + mode.split("-")[0]);
                 c.waitTicks(5);
                 c.teleport(X + 0.5, Y + 1, Z + 0.5);
-                c.cmd("hbm jetpack_smoke");
+                c.cmd("geontm jetpack_smoke");
                 c.waitTicks(40);
 
                 c.markLog();
@@ -44,11 +44,11 @@ public final class GliderEquipSound implements Scenario {
                 if (mode.endsWith("gun")) {
                     // a held gun rewrites its components every tick, so the client's slots refresh every tick
                     c.hotbar(1);
-                    c.cmd("give @s hbm:gun_light_revolver");
+                    c.cmd("give @s geontm:gun_light_revolver");
                     c.waitTicks(20);
                 }
                 // the fixture lasts 200 ticks: restart it for the open-inventory window
-                c.cmd("hbm jetpack_smoke");
+                c.cmd("geontm jetpack_smoke");
                 c.waitTicks(10);
                 c.key("e");
                 c.waitTicks(10);
@@ -79,7 +79,7 @@ public final class GliderEquipSound implements Scenario {
             }
         } finally {
             c.setOption("sound_capture", "false");
-            c.cmd("hbm jetpack_smoke stop");
+            c.cmd("geontm jetpack_smoke stop");
             c.cmd("clear");
             c.cmd("gamemode creative");
         }

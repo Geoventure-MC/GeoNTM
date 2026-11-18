@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /** Release audit: multiblock generators placed from four sides, plus the turbofan with a flame pony upgrade burning kerosene. */
 public final class RcPowerFacings implements Scenario {
@@ -20,7 +20,7 @@ public final class RcPowerFacings implements Scenario {
             for (int f = 0; f < 4; f++) {
                 c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 14) + " 16 minecraft:air");
                 c.waitTicks(3);
-                Fixtures.giveOnly(c, "hbm:" + id, 1);
+                Fixtures.giveOnly(c, "geontm:" + id, 1);
                 c.teleport(SIDE[f][0], Y + 1, SIDE[f][1]);
                 c.waitTicks(2);
                 c.lookAt(0.5, Y + 0.98, 0.5);
@@ -34,18 +34,18 @@ public final class RcPowerFacings implements Scenario {
             }
         }
         flames(c);
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render)");
     }
 
     private void flames(Client c) {
         c.cmd("fill -16 " + (Y + 1) + " -16 16 " + (Y + 14) + " 16 minecraft:air");
         c.waitTicks(3);
-        Fixtures.placeOnTop(c, "hbm:machine_turbofan", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_turbofan", 0, Y, 0);
         c.waitTicks(10);
         int[] k = core(c);
-        c.cmd("data merge block " + k[0] + " " + k[1] + " " + k[2] + " {tank:24000,tank_type:\"hbm:kerosene\"}");
+        c.cmd("data merge block " + k[0] + " " + k[1] + " " + k[2] + " {tank:24000,tank_type:\"geontm:kerosene\"}");
         c.cmd("clear");
-        c.cmd("give @s hbm:flame_pony 1");
+        c.cmd("give @s geontm:flame_pony 1");
         c.waitTicks(3);
         c.teleport(0.5, Y + 1, -3.5);
         Fixtures.interact(c, k[0], k[1], k[2]);

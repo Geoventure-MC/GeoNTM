@@ -1,15 +1,15 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
  * GitHub issue 69: the Torex shockwave follows the terrain, as 1.7's per-cloud {@code getHeightValue}. A benchmark
  * cloud goes off on the superflat floor beside a 10-block stone plateau; its shock clouds must sit both on the floor
- * and on the plateau top ({@code hbm_torex} shock_y). Then a real Fat Man beside the same plateau, shot at 3 and 6
+ * and on the plateau top ({@code geontm_torex} shock_y). Then a real Fat Man beside the same plateau, shot at 3 and 6
  * seconds and its shock heights printed.
  */
 public final class Gh69ShockwaveTerrain implements Scenario {
@@ -38,7 +38,7 @@ public final class Gh69ShockwaveTerrain implements Scenario {
             System.out.println("[Gh69] Fat Man shock clouds by y " + fatMan);
             Expect.logCleanSinceMark(c, "(?i)(exception|crash report).*");
         } finally {
-            c.cmd("hbm torex_benchmark stop");
+            c.cmd("geontm torex_benchmark stop");
             c.cmd("kill @e[type=!player]");
             c.cmd("forceload remove all");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
@@ -52,11 +52,11 @@ public final class Gh69ShockwaveTerrain implements Scenario {
         plateau(c, x, gz);
         c.teleport(x + 0.5, G, z + 0.5);
         c.waitTicks(40);
-        c.cmd("hbm torex_benchmark 1");
+        c.cmd("geontm torex_benchmark 1");
         c.teleport(x + 0.5, G, gz - 75 + 0.5);
         c.lookAt(x + 0.5, G + 10, gz + 0.5);
         Map<Integer, Integer> seen = watch(c, "fixture");
-        c.cmd("hbm torex_benchmark stop");
+        c.cmd("geontm torex_benchmark stop");
         return seen;
     }
 
@@ -65,10 +65,10 @@ public final class Gh69ShockwaveTerrain implements Scenario {
         plateau(c, x, z);
         c.teleport(x + 0.5, G + 6, z - 4.5);
         c.waitTicks(40);
-        c.cmd("setblock " + x + " " + G + " " + z + " hbm:nuke_man");
+        c.cmd("setblock " + x + " " + G + " " + z + " geontm:nuke_man");
         c.waitTicks(4);
-        String[] fill = {"hbm:man_igniter", "hbm:gadget_explosive8", "hbm:gadget_explosive8", "hbm:gadget_explosive8",
-                "hbm:gadget_explosive8", "hbm:man_core"};
+        String[] fill = {"geontm:man_igniter", "geontm:gadget_explosive8", "geontm:gadget_explosive8", "geontm:gadget_explosive8",
+                "geontm:gadget_explosive8", "geontm:man_core"};
         for (int i = 0; i < fill.length; i++) {
             c.cmd("item replace block " + x + " " + G + " " + z + " container." + i + " with " + fill[i] + " 1");
         }
@@ -91,7 +91,7 @@ public final class Gh69ShockwaveTerrain implements Scenario {
         Map<Integer, Integer> most = new TreeMap<>();
         for (int t = 10; t <= 120; t += 10) {
             c.waitTicks(10);
-            JsonArray clouds = c.query("hbm_torex", new JsonObject()).getAsJsonArray("clouds");
+            JsonArray clouds = c.query("geontm_torex", new JsonObject()).getAsJsonArray("clouds");
             for (int i = 0; i < clouds.size(); i++) {
                 JsonObject shock = clouds.get(i).getAsJsonObject().getAsJsonObject("shock_y");
                 for (String y : shock.keySet()) most.merge(Integer.parseInt(y), shock.get(y).getAsInt(), Math::max);

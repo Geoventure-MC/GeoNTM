@@ -1,15 +1,15 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The visual gaps of the final-content wave, each drawn where it is seen: the ported 1.7 item renderers
- * ({@code hbm:custom_item}) in the inventory, in first person and in third person, on the ground; the
+ * ({@code geontm:custom_item}) in the inventory, in first person and in third person, on the ground; the
  * meteorite swords' tier glints and the hot ingots' glow; the bobblehead and plushie items with their props;
  * the RBMK gauge and panel icons; and the deco emitter's beam before and after a dye.
  */
@@ -54,7 +54,7 @@ public final class FinalVisualGaps implements Scenario {
         c.setOption("camera", "first_person");
         c.cmd("gamemode creative");
         c.cmd("clear");
-        List<String> bad = c.logSinceMark("/(ERROR|FATAL)[]]|Failed to load texture|Missing model|custom item|Unknown hbm:custom_item");
+        List<String> bad = c.logSinceMark("/(ERROR|FATAL)[]]|Failed to load texture|Missing model|custom item|Unknown geontm:custom_item");
         List<String> relevant = new ArrayList<>();
         for (String line : bad) if (!line.contains("Loaded ")) relevant.add(line);
         Expect.that(relevant.isEmpty(), "log clean since the mark: " + relevant);
@@ -66,18 +66,18 @@ public final class FinalVisualGaps implements Scenario {
         c.cmd("gamemode survival");
         c.cmd("effect give @s minecraft:resistance 900 4 true");
         List<String> page0 = new ArrayList<>();
-        for (String id : HELD) page0.add("hbm:" + id);
+        for (String id : HELD) page0.add("geontm:" + id);
         page0.add(missile(c));
-        page0.add("hbm:missile_custom"); // no parts: 1.7 drew nothing at all for it
-        for (String t : TIERS) page0.add("hbm:meteorite_sword_" + t);
-        page0.add("hbm:meteorite_sword");
-        for (String id : HOT) page0.add(heat(c, "hbm:" + id));
+        page0.add("geontm:missile_custom"); // no parts: 1.7 drew nothing at all for it
+        for (String t : TIERS) page0.add("geontm:meteorite_sword_" + t);
+        page0.add("geontm:meteorite_sword");
+        for (String id : HOT) page0.add(heat(c, "geontm:" + id));
         page(c, page0, "00-inventory-held-glint-hot");
 
         List<String> page1 = new ArrayList<>();
-        for (int b : BOBBLES) page1.add(variant(c, "hbm:bobblehead", b));
-        for (int p = 1; p <= 4; p++) page1.add(variant(c, "hbm:plushie", p));
-        for (String id : RBMK) page1.add("hbm:" + id);
+        for (int b : BOBBLES) page1.add(variant(c, "geontm:bobblehead", b));
+        for (int p = 1; p <= 4; p++) page1.add(variant(c, "geontm:plushie", p));
+        for (String id : RBMK) page1.add("geontm:" + id);
         page(c, page1, "01-inventory-bobbles-plushies-rbmk");
         c.cmd("clear");
     }
@@ -107,15 +107,15 @@ public final class FinalVisualGaps implements Scenario {
     private void held(Client c) {
         c.cmd("gamemode creative");
         List<String> shots = new ArrayList<>();
-        for (String id : HELD) shots.add("hbm:" + id);
+        for (String id : HELD) shots.add("geontm:" + id);
         shots.add(missile(c));
-        shots.add("hbm:meteorite_sword_seared");
-        shots.add("hbm:meteorite_sword_baleful");
-        shots.add(variant(c, "hbm:bobblehead", 17));
-        shots.add(variant(c, "hbm:plushie", 2));
+        shots.add("geontm:meteorite_sword_seared");
+        shots.add("geontm:meteorite_sword_baleful");
+        shots.add(variant(c, "geontm:bobblehead", 17));
+        shots.add(variant(c, "geontm:plushie", 2));
         int n = 10;
         for (String item : shots) {
-            String name = item.replaceAll("[^a-z0-9_]", "_").replace("hbm_", "");
+            String name = item.replaceAll("[^a-z0-9_]", "_").replace("geontm_", "");
             if (name.length() > 40) name = name.substring(0, 40);
             c.setOption("camera", "first_person");
             c.teleport(X + 0.5, Y + 1, Z + 0.5);
@@ -129,8 +129,8 @@ public final class FinalVisualGaps implements Scenario {
             n++;
         }
         c.setOption("camera", "first_person");
-        // crucible without charge (old-hbm: crafted empty): lowered, the blade clipped away
-        Fixtures.giveOnly(c, "hbm:crucible", 1);
+        // crucible without charge (old-geontm: crafted empty): lowered, the blade clipped away
+        Fixtures.giveOnly(c, "geontm:crucible", 1);
         c.waitTicks(20);
         c.screenshot(n + "-fp-crucible-spent", new int[]{320, 120, 320, 240});
     }
@@ -140,8 +140,8 @@ public final class FinalVisualGaps implements Scenario {
     private void ground(Client c) {
         c.cmd("clear");
         c.cmd("kill @e[type=item]");
-        String[] drops = {"hbm:chainsaw", "hbm:wood_gavel", "hbm:stopsign", "hbm:crucible", "hbm:big_sword",
-                "hbm:shimmer_sledge"};
+        String[] drops = {"geontm:chainsaw", "geontm:wood_gavel", "geontm:stopsign", "geontm:crucible", "geontm:big_sword",
+                "geontm:shimmer_sledge"};
         for (int i = 0; i < drops.length; i++) {
             String nbt = c.node().startsWith("1.20")
                     ? "{Item:{id:\"" + drops[i] + "\",Count:1b},PickupDelay:32767,Age:-32768}"
@@ -160,8 +160,8 @@ public final class FinalVisualGaps implements Scenario {
 
     private void emitter(Client c) {
         int ex = X + 6, ez = Z - 6;
-        Fixtures.setBlock(c, ex, Y + 1, ez, "hbm:deco_emitter[facing=up]");
-        Fixtures.setBlock(c, ex + 3, Y + 1, ez, "hbm:deco_emitter[facing=up]");
+        Fixtures.setBlock(c, ex, Y + 1, ez, "geontm:deco_emitter[facing=up]");
+        Fixtures.setBlock(c, ex + 3, Y + 1, ez, "geontm:deco_emitter[facing=up]");
         c.waitTicks(45);
         Fixtures.giveOnly(c, "minecraft:red_dye", 1);
         c.teleport(ex + 0.5, Y + 1, ez + 2.5);
@@ -182,26 +182,26 @@ public final class FinalVisualGaps implements Scenario {
 
     /** A fully assembled 1.7-style custom missile: chip, HE warhead, kerosene fuselage, flat fins, kerosene engine. */
     private static String missile(Client c) {
-        String parts = "chip:\"hbm:mp_c_1\",warhead:\"hbm:mp_warhead_10_he\",fuselage:\"hbm:mp_fuselage_10_kerosene\","
-                + "stability:\"hbm:mp_stability_10_flat\",thruster:\"hbm:mp_thruster_10_kerosene\"";
-        return c.node().startsWith("1.20") ? "hbm:missile_custom{\"hbm:missile_custom_parts\":{" + parts + "}}"
-                : "hbm:missile_custom[hbm:missile_custom_parts={" + parts + "}]";
+        String parts = "chip:\"geontm:mp_c_1\",warhead:\"geontm:mp_warhead_10_he\",fuselage:\"geontm:mp_fuselage_10_kerosene\","
+                + "stability:\"geontm:mp_stability_10_flat\",thruster:\"geontm:mp_thruster_10_kerosene\"";
+        return c.node().startsWith("1.20") ? "geontm:missile_custom{\"geontm:missile_custom_parts\":{" + parts + "}}"
+                : "geontm:missile_custom[geontm:missile_custom_parts={" + parts + "}]";
     }
 
     private static String heat(Client c, String id) {
-        return c.node().startsWith("1.20") ? id + "{\"hbm:heat\":100000}" : id + "[hbm:heat=100000]";
+        return c.node().startsWith("1.20") ? id + "{\"geontm:heat\":100000}" : id + "[geontm:heat=100000]";
     }
 
     /** 1.7 (block, metadata): one item per subtype since History §19es-itemvariant (ntm-next ids). */
     private static String variant(Client c, String id, int variant) {
         return switch (id) {
-            case "hbm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
-            case "hbm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
-            case "hbm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
-            case "hbm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
-            case "hbm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
-            case "hbm:glyphid_base", "hbm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
-            case "hbm:holotape_image" -> id + "_holo_digamma";
+            case "geontm:bobblehead" -> variant == 0 ? id : id + "_" + BOBBLE_NAMES[variant];
+            case "geontm:snowglobe" -> variant == 0 ? id : id + "_" + new String[] {"none", "rivetcity", "tenpennytower", "lucky38", "sierramadre", "prydwen"}[variant];
+            case "geontm:plushie" -> variant == 0 ? id : id + "_" + new String[] {"none", "yomi", "numbernine", "hundun", "derg"}[variant];
+            case "geontm:filing_cabinet" -> id + (variant == 1 ? "_steel" : "_green");
+            case "geontm:vending_machine" -> variant == 1 ? id + "_snacks" : id;
+            case "geontm:glyphid_base", "geontm:glyphid_spawner" -> id + new String[] {"", "_infested", "_rad"}[variant];
+            case "geontm:holotape_image" -> id + "_holo_digamma";
             default -> throw new IllegalArgumentException(id);
         };
     }

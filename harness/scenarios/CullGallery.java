@@ -1,14 +1,14 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A machine gallery for face-culling checks (2026-10-02, icon-final): Golem Core's {@code Surface.cutout} and
+ * A machine gallery for face-culling checks (2026-10-02, icon-final): GeoCore's {@code Surface.cutout} and
  * {@code CompatRenderTypes.entityCutout} now cull on every node, as 1.7's GL default did, where 26.1 alone had
  * drawn back faces. Machines that draw through either (difurnace extension, the annihilator / conveyor press belts,
  * the excavator shaft, radar, RTGs, turbofan, mining laser, charger, pylon, funnel, small reactor, plus the assembler
@@ -70,16 +70,16 @@ public final class CullGallery implements Scenario {
 
             List<String> missing = new ArrayList<>();
             for (Machine m : MACHINES) {
-                Fixtures.setBlock(c, m.x, L, m.z, "hbm:" + m.id + "[facing=north]");
-                if (!("hbm:" + m.id).equals(c.block(m.x, L, m.z).get("block").getAsString())) {
-                    Fixtures.setBlock(c, m.x, L, m.z, "hbm:" + m.id);
+                Fixtures.setBlock(c, m.x, L, m.z, "geontm:" + m.id + "[facing=north]");
+                if (!("geontm:" + m.id).equals(c.block(m.x, L, m.z).get("block").getAsString())) {
+                    Fixtures.setBlock(c, m.x, L, m.z, "geontm:" + m.id);
                 }
             }
             c.cmd("gamemode spectator");
             c.waitTicks(20);
             for (Machine m : MACHINES) {
                 JsonObject block = c.block(m.x, L, m.z);
-                if (!("hbm:" + m.id).equals(block.get("block").getAsString())) missing.add(m.id + " " + block);
+                if (!("geontm:" + m.id).equals(block.get("block").getAsString())) missing.add(m.id + " " + block);
             }
             Expect.that(missing.isEmpty(), "every gallery machine placed: " + missing);
 

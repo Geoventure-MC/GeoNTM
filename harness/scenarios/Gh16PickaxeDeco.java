@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 16: metal deco blocks were not mineable/pickaxe. In 1.7 they are Material.iron: a pickaxe is effective,
@@ -16,10 +16,10 @@ public final class Gh16PickaxeDeco implements Scenario {
 
     private static final int Y = 100, BX = 0, BY = 101, BZ = 2;
     private static final String[][] CASES = {
-            {"hbm:deco_aluminium", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
-            {"hbm:deco_steel", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
-            {"hbm:gravel_obsidian", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
-            {"hbm:crate_supply", "#minecraft:mineable/axe", null},
+            {"geontm:deco_aluminium", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
+            {"geontm:deco_steel", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
+            {"geontm:gravel_obsidian", "#minecraft:mineable/pickaxe", "minecraft:iron_pickaxe"},
+            {"geontm:crate_supply", "#minecraft:mineable/axe", null},
     };
 
     @Override

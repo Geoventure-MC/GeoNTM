@@ -1,11 +1,11 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 158: under a shader pack the mining helmet lit nothing on 1.20.1 Forge. GemRender's lights are off under
- * a pack, but its 1.20.1 Forge build cannot see Oculus, so HBM skipped the 1.7 block-light fallback as well. Under a
+ * a pack, but its 1.20.1 Forge build cannot see Oculus, so GEONTM skipped the 1.7 block-light fallback as well. Under a
  * pack the lamp must be the fallback. Needs {@code ORG_GRADLE_PROJECT_shaders.run=true harness up --rebuild} and the
  * pack selected in the run's {@code config/oculus.properties} (Forge) or {@code config/iris.properties}.
  */
@@ -36,7 +36,7 @@ public final class Gh158LampShaders implements Scenario {
             boolean pack = c.query("gem", new JsonObject()).get("shaderPack").getAsBoolean();
             c.screenshot("dark");
 
-            c.cmd("item replace entity @s armor.head with hbm:no9");
+            c.cmd("item replace entity @s armor.head with geontm:no9");
             c.waitTicks(60);
             JsonObject helmet = lamp(c);
             c.screenshot("helmet");
@@ -47,7 +47,7 @@ public final class Gh158LampShaders implements Scenario {
             JsonObject off = lamp(c);
             System.out.println("[Gh158] " + c.node() + " helmet off: " + off);
 
-            c.cmd("give @s hbm:gun_jshotgun");
+            c.cmd("give @s geontm:gun_jshotgun");
             c.hotbar(1);
             c.waitTicks(10);
             c.use(2);
@@ -75,6 +75,6 @@ public final class Gh158LampShaders implements Scenario {
     }
 
     private static JsonObject lamp(Client c) {
-        return c.query("hbm_lamp_lights", new JsonObject());
+        return c.query("geontm_lamp_lights", new JsonObject());
     }
 }

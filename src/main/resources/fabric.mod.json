@@ -3,11 +3,11 @@
     "id": "${mod_id}",
     "version": "${mod_version}",
     "name": "${mod_name}",
-    "description": "${mod_description}@golem.credits@",
+    "description": "${mod_description}@geocore.credits@",
     "contact": {
-        "homepage": "@golem.homepage@",
-        "sources": "@golem.sources@",
-        "issues": "@golem.issues@"
+        "homepage": "@geocore.homepage@",
+        "sources": "@geocore.sources@",
+        "issues": "@geocore.issues@"
     },
     "authors": [
         "${mod_author}"
@@ -16,28 +16,28 @@
     "icon": "assets/${mod_id}/icon.png",
     "environment": "*",
     "entrypoints": {
-        "golemcore:entry": [
-            "com.hbm.gametest.GameTestEntry",
-            "com.hbm.platform.fabric.FabricInit"
+        "geocore:entry": [
+            "fr.geoventure.geontm.gametest.GameTestEntry",
+            "fr.geoventure.geontm.platform.fabric.FabricInit"
         ],
         "client": [
-            "com.hbm.client.HarnessQueriesFabricEntry",
-            "com.hbm.platform.fabric.FabricClientInit"
+            "fr.geoventure.geontm.client.HarnessQueriesFabricEntry",
+            "fr.geoventure.geontm.platform.fabric.FabricClientInit"
         ],
         "jei_mod_plugin": [
-            "com.hbm.handler.jei.HbmJeiPluginFabric"
+            "fr.geoventure.geontm.handler.jei.GeoNtmJeiPluginFabric"
         ],
         "rei_client": [
-            "com.hbm.handler.rei.HbmReiClientPlugin"
+            "fr.geoventure.geontm.handler.rei.GeoNtmReiClientPlugin"
         ],
         "rei_common": [
-            "com.hbm.handler.rei.HbmReiCommonPlugin"
+            "fr.geoventure.geontm.handler.rei.GeoNtmReiCommonPlugin"
         ],
         "emi": [
-            "com.hbm.handler.emi.HbmEmiPlugin"
+            "fr.geoventure.geontm.handler.emi.GeoNtmEmiPlugin"
         ],
         "fabric-gametest": [
-            "com.hbm.platform.fabric.FabricGameTests"
+            "fr.geoventure.geontm.platform.fabric.FabricGameTests"
         ]
     },
     "mixins": [
@@ -47,7 +47,7 @@
     "depends": {
         "fabricloader": ">=${fabric_loader}",
         "fabric-api": "*",
-        "golemcore": ">=1.0.6",
+        "geocore": ">=1.0.6",
         "minecraft": "${minecraft_range}",
         "java": ">=${java_version}"
     },

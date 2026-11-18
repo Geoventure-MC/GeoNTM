@@ -1,15 +1,15 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * GitHub issue 172: 1.7's compressor plays {@code hbm:item.boltgun} at volume 0.5, pitch 0.75, each time its piston
+ * GitHub issue 172: 1.7's compressor plays {@code geontm:item.boltgun} at volume 0.5, pitch 0.75, each time its piston
  * reaches the bottom. The piston climbs 0.05 a tick and falls 0.085 to 0.115, so a stroke lasts 20 + 9 to 12 ticks:
  * 200 ticks of running give 6 or 7 strokes.
  */
@@ -29,10 +29,10 @@ public final class Gh172CompressorSound implements Scenario {
             c.cmd("gamerule sendCommandFeedback false");
             c.teleport(0.5, L + 2, 9.5);
             c.lookAt(0.5, L + 3, 0.5);
-            String core = place(c, "hbm:machine_compressor[facing=north]", "TileEntityMachineCompressor");
+            String core = place(c, "geontm:machine_compressor[facing=north]", "TileEntityMachineCompressor");
             c.markLog();
             for (int i = 0; i < 10; i++) {
-                c.cmd("data merge block " + core + " {power:100000L,\"0\":16000,\"0_type\":\"hbm:air\"}");
+                c.cmd("data merge block " + core + " {power:100000L,\"0\":16000,\"0_type\":\"geontm:air\"}");
                 c.waitTicks(20);
                 if (i == 4) c.screenshot("compressor-running");
             }

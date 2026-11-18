@@ -1,11 +1,11 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 130. On a crafting table the RBMK console and crane console craft with {@code X528_forceReasimBoilers} at
- * its default of true, and without {@code enable528Mode}. Set {@code GH130_528=1} for a client whose {@code hbm.cfg} has
+ * its default of true, and without {@code enable528Mode}. Set {@code GH130_528=1} for a client whose {@code geontm.cfg} has
  * {@code enable528Mode=true}: as in 1.7's {@code if(!GeneralConfig.enable528)}, then they do not.
  */
 public final class Gh130RbmkConsole implements Scenario {
@@ -32,10 +32,10 @@ public final class Gh130RbmkConsole implements Scenario {
 
     private static void craft(Client c, String result, String[] grid, boolean mode528) {
         c.cmd("clear @s");
-        Fixtures.give(c, "hbm:ingot_boron", 8);
-        Fixtures.give(c, "hbm:deco_rbmk", 8);
+        Fixtures.give(c, "geontm:ingot_boron", 8);
+        Fixtures.give(c, "geontm:deco_rbmk", 8);
         Fixtures.give(c, "minecraft:glass_pane", 8);
-        Fixtures.give(c, "hbm:circuit_analog", 8);
+        Fixtures.give(c, "geontm:circuit_analog", 8);
         c.waitTicks(10);
         c.use(2);
         c.waitScreen("Crafting", 10_000L);
@@ -60,7 +60,7 @@ public final class Gh130RbmkConsole implements Scenario {
         String out = c.slot(0).toString();
         System.out.println("[Gh130] " + result + " with enable528Mode " + mode528 + ": " + out);
         c.screenshot("gh130-" + result + (mode528 ? "-528" : ""));
-        boolean crafted = out.contains("hbm:" + result);
+        boolean crafted = out.contains("geontm:" + result);
         Expect.that(crafted != mode528, result + (mode528 ? " has no recipe in 528 mode: " : " crafts: ") + out);
         c.key("escape");
         c.waitTicks(5);

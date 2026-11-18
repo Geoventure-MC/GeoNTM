@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +32,9 @@ public final class Gh147RbmkDodd implements Scenario {
         Fixtures.platform(c, X, Y, Z, 12);
         c.cmd("time set 6000");
         c.markLog();
-        Fixtures.placeOnTop(c, "hbm:rbmk_fuel_rod", X, Y, Z);
-        Fixtures.placeOnTop(c, "hbm:rbmk_boiler", X + 3, Y, Z);
-        Fixtures.placeOnTop(c, "hbm:rbmk_control", X - 3, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:rbmk_fuel_rod", X, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:rbmk_boiler", X + 3, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:rbmk_control", X - 3, Y, Z);
 
         aim(c, X, Z);
         List<String> empty = look(c);
@@ -42,7 +42,7 @@ public final class Gh147RbmkDodd implements Scenario {
         check(empty.contains("Has Rod: 0") && empty.contains("Column Heat: 20.0") && empty.contains("ReaSim Water: 0"),
                 "empty fuel channel DODD: " + empty);
 
-        Fixtures.giveOnly(c, "hbm:rbmk_fuel_ueu", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_fuel_ueu", 1);
         c.cmd("gamemode survival");
         String capture = c.setOption("sound_capture", "true");
         c.markLog();
@@ -69,7 +69,7 @@ public final class Gh147RbmkDodd implements Scenario {
                         && fuelled.contains("Fuel Xenon: \"0.0%\"") && fuelled.contains("Fuel Yield: \"1.0E8 / 1.0E8 (100.0%)\""),
                 "fuelled channel DODD: " + fuelled);
 
-        Fixtures.giveOnly(c, "hbm:rbmk_fuel_meu", 1);
+        Fixtures.giveOnly(c, "geontm:rbmk_fuel_meu", 1);
         aim(c, X, Z);
         c.use(2);
         c.waitTicks(10);
@@ -107,7 +107,7 @@ public final class Gh147RbmkDodd implements Scenario {
 
     /** The DODD lines of the aimed column; fails unless the overlay is the DODD. */
     private List<String> look(Client c) {
-        JsonObject look = c.query("hbm_small", obj("mode", "look"));
+        JsonObject look = c.query("geontm_small", obj("mode", "look"));
         System.out.println("[Gh147] look " + look);
         List<String> lines = new ArrayList<>();
         if (!look.get("showing").getAsBoolean() || !look.get("diagnostic").getAsBoolean()) {

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,16 +16,16 @@ public final class Gh131LocateAll implements Scenario {
 
     private static final String[][] TARGETS = {
             {"blueprint_chest", "minecraft:chest", "0"},
-            {"silo", "hbm:door_bunker", "24"},
-            {"meteor_dungeon", "hbm:meteor_", "24"},
-            {"locked_safe", "hbm:safe", "16"},
-            {"broken_lantern", "hbm:lantern_behemoth", "16"},
-            {"corrupted_broadcaster", "hbm:broadcaster_pc", "16"},
-            {"landed_capsule", "hbm:soyuz_capsule", "16"},
-            {"glyphid_hive", "hbm:glyphid_", "24"},
+            {"silo", "geontm:door_bunker", "24"},
+            {"meteor_dungeon", "geontm:meteor_", "24"},
+            {"locked_safe", "geontm:safe", "16"},
+            {"broken_lantern", "geontm:lantern_behemoth", "16"},
+            {"corrupted_broadcaster", "geontm:broadcaster_pc", "16"},
+            {"landed_capsule", "geontm:soyuz_capsule", "16"},
+            {"glyphid_hive", "geontm:glyphid_", "24"},
             {"fallen_meteorite", "meteor", "24"}};
 
-    private static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    private static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     @Override
     public void run(Client c) throws Exception {
@@ -34,7 +34,7 @@ public final class Gh131LocateAll implements Scenario {
         c.cmd("gamemode spectator");
         for (String[] target : TARGETS) check(c, target[0], target[1], Integer.parseInt(target[2]));
         c.cmd("forceload remove all");
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(scattered|config_spread|hbm:silo)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(scattered|config_spread|geontm:silo)");
     }
 
     private static void check(Client c, String id, String block, int radius) {
@@ -43,7 +43,7 @@ public final class Gh131LocateAll implements Scenario {
             c.teleport(fromX + 0.5, 200, 0.5);
             c.waitTicks(10);
             int[] at = locate(c, id);
-            Expect.that(at != null, "/locate structure hbm:" + id + " answers");
+            Expect.that(at != null, "/locate structure geontm:" + id + " answers");
             int count = blocks(c, at, block, radius);
             System.out.println("[Gh131] " + id + " at " + at[0] + " " + at[1] + " from x " + fromX + ": " + count + " " + block);
             if (count > 0) {
@@ -53,14 +53,14 @@ public final class Gh131LocateAll implements Scenario {
             }
             fromX = at[0] + 1500;
         }
-        throw new HarnessException("hbm:" + id + " never held " + block);
+        throw new HarnessException("geontm:" + id + " never held " + block);
     }
 
     private static int blocks(Client c, int[] at, String block, int radius) {
         c.cmd("forceload add " + (at[0] - radius - 16) + " " + (at[1] - radius - 16) + " " + (at[0] + radius + 16) + " " + (at[1] + radius + 16));
         c.waitTicks(40);
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         p.addProperty("mode", "count");
         p.addProperty("x0", at[0] - radius - 8);
         p.addProperty("z0", at[1] - radius - 8);
@@ -76,7 +76,7 @@ public final class Gh131LocateAll implements Scenario {
 
     private static void shoot(Client c, String id, int[] at) {
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         p.addProperty("mode", "top");
         p.addProperty("x", at[0]);
         p.addProperty("z", at[1]);
@@ -89,16 +89,16 @@ public final class Gh131LocateAll implements Scenario {
 
     private static int[] locate(Client c, String id) {
         c.markLog();
-        c.cmd("locate structure hbm:" + id);
+        c.cmd("locate structure geontm:" + id);
         long deadline = System.currentTimeMillis() + 600_000L;
         while (System.currentTimeMillis() < deadline) {
             c.waitTicks(10);
-            for (String line : c.logSinceMark("hbm:" + id + "|Could not find|no structure")) {
+            for (String line : c.logSinceMark("geontm:" + id + "|Could not find|no structure")) {
                 Matcher m = FOUND.matcher(line);
-                if (m.find() && m.group(1).equals("hbm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
+                if (m.find() && m.group(1).equals("geontm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
                 if (line.contains("Could not find") || line.contains("no structure")) return null;
             }
         }
-        throw new HarnessException("no /locate answer for hbm:" + id);
+        throw new HarnessException("no /locate answer for geontm:" + id);
     }
 }

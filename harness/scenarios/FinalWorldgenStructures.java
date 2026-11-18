@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -15,8 +15,8 @@ import java.util.regex.Pattern;
 /**
  * WG-A acceptance: the 33 single-piece 1.7 NBT structures generate in a real world.
  *
- * <p>In the seeded world (seed 4815162342): for every structure, {@code /locate structure hbm:<id>}, force-load the area,
- * read the start through the {@code hbm_structure} query (spawn name, piece, rotation, how many palette blocks stand where
+ * <p>In the seeded world (seed 4815162342): for every structure, {@code /locate structure geontm:<id>}, force-load the area,
+ * read the start through the {@code geontm_structure} query (spawn name, piece, rotation, how many palette blocks stand where
  * the .nbt says, loot placeholders left, filled containers, block entities), teleport beside it and screenshot it. The
  * null weights must be locatable too (they claim regions). Structures the locate radius does not reach, and a fixed
  * sample, are then placed with {@code /place structure} in the superflat world and checked the same way.
@@ -31,7 +31,7 @@ public final class FinalWorldgenStructures implements Scenario {
     /** Always also placed in the flat world, to prove /place structure (biome bypass, flat-world height rule). */
     static final String[] FLAT_SAMPLE = {"spire", "desert_shack_1", "ruina", "labolatory"};
 
-    static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     static String spawnName(String id) {
         if (id.startsWith("ruin") && id.length() == 5) return "ruin" + Character.toUpperCase(id.charAt(4));
@@ -41,19 +41,19 @@ public final class FinalWorldgenStructures implements Scenario {
     /** {@code /locate structure}; the start chunk's corner, or null when nothing is within the command's radius. */
     static int[] locate(Client c, String id) {
         c.markLog();
-        c.cmd("locate structure hbm:" + id);
+        c.cmd("locate structure geontm:" + id);
         long deadline = System.currentTimeMillis() + 600_000L; // a fresh world generates structure-start chunks for the search
         while (System.currentTimeMillis() < deadline) {
             c.waitTicks(10);
-            for (String line : c.logSinceMark("hbm:" + id + "|Could not find|no structure")) {
+            for (String line : c.logSinceMark("geontm:" + id + "|Could not find|no structure")) {
                 Matcher m = FOUND.matcher(line);
-                if (m.find() && m.group(1).equals("hbm:" + id)) {
+                if (m.find() && m.group(1).equals("geontm:" + id)) {
                     return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
                 }
                 if (line.contains("Could not find") || line.contains("no structure")) return null;
             }
         }
-        throw new HarnessException("no /locate answer for hbm:" + id + " within 600 s");
+        throw new HarnessException("no /locate answer for geontm:" + id + " within 600 s");
     }
 
     /** The start at x, z; {@code rebuild} for /place structure, which records no start in the chunk (see the query). */
@@ -65,7 +65,7 @@ public final class FinalWorldgenStructures implements Scenario {
         long deadline = System.currentTimeMillis() + 300_000L; // the server thread may be busy generating the force-loaded chunks
         JsonObject last = null;
         while (System.currentTimeMillis() < deadline) {
-            last = c.query("hbm_structure", params);
+            last = c.query("geontm_structure", params);
             if (last.has("starts")) {
                 for (var e : last.getAsJsonArray("starts")) {
                     JsonObject s = e.getAsJsonObject();
@@ -198,10 +198,10 @@ public final class FinalWorldgenStructures implements Scenario {
             c.cmd("forceload add " + px + " 0 " + (px + 111) + " 111");
             c.waitTicks(20);
             c.markLog();
-            c.cmd("place structure hbm:" + id + " " + px + " -60 0");
+            c.cmd("place structure geontm:" + id + " " + px + " -60 0");
             c.waitTicks(40);
             List<String> failed = c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument|not loaded");
-            Expect.that(failed.isEmpty(), "/place structure hbm:" + id + ": " + failed);
+            Expect.that(failed.isEmpty(), "/place structure geontm:" + id + ": " + failed);
             report.add(inspect(c, id, px, 0, "flat"));
             c.cmd("forceload remove " + px + " 0 " + (px + 111) + " 111");
             px += 256;

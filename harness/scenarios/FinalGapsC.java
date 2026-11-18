@@ -1,18 +1,18 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Gap batch C (§19ed-gaps-c), rendering and input, every item where it is seen and by value where it can be read
- * (query {@code hbm_gapsc}):
+ * (query {@code geontm_gapsc}):
  * <ol>
- *   <li>swing/equip animations started by the server: chainsaw swing, crucible deploy + swing (old-hbm's since 2026-10-02; pinned equip,
+ *   <li>swing/equip animations started by the server: chainsaw swing, crucible deploy + swing (old-geontm's since 2026-10-02; pinned equip,
  *       suppressed vanilla swing), boltgun recoil on a bolted hit, the gavel's plain vanilla swing;</li>
  *   <li>crucible blade (flat, fullbright) in first person;</li>
  *   <li>RPA / NCRPA worn OBJ suits;</li>
@@ -77,13 +77,13 @@ public final class FinalGapsC implements Scenario {
     }
 
     private JsonObject q(Client c) {
-        return c.query("hbm_gapsc", new JsonObject());
+        return c.query("geontm_gapsc", new JsonObject());
     }
 
     private JsonObject q(Client c, String key, com.google.gson.JsonElement value) {
         JsonObject p = new JsonObject();
         p.add(key, value);
-        return c.query("hbm_gapsc", p);
+        return c.query("geontm_gapsc", p);
     }
 
     private static double x(JsonObject json, String bus) {
@@ -106,7 +106,7 @@ public final class FinalGapsC implements Scenario {
                 "machine_radar"};
         c.cmd("gamemode survival");
         c.cmd("effect give @s minecraft:resistance 600 4 true");
-        for (String id : items) c.cmd("give @s hbm:" + id);
+        for (String id : items) c.cmd("give @s geontm:" + id);
         c.waitTicks(10);
         c.setOption("gui_scale", "3");
         c.waitTicks(3);
@@ -135,7 +135,7 @@ public final class FinalGapsC implements Scenario {
         c.setOption("camera", "first_person");
 
         // chainsaw: every swing the server sees starts SWING_ROT/SWING_TRANS; the vanilla swing is cleared
-        Fixtures.giveOnly(c, "hbm:chainsaw", 1);
+        Fixtures.giveOnly(c, "geontm:chainsaw", 1);
         c.waitTicks(20);
         JsonObject rest = q(c);
         Expect.that(abs(rest, "swing_rot") == 0, "chainsaw at rest: " + rest.get("swing_rot"));
@@ -152,25 +152,25 @@ public final class FinalGapsC implements Scenario {
         c.screenshot("12-tp-chainsaw", new int[]{200, 60, 240, 240});
         c.setOption("camera", "first_person");
 
-        // crucible (old-hbm since 2026-10-02, see CrucibleOldHbm): the Collada deploy on equip, then the random swing
-        Fixtures.giveOnly(c, "hbm:wood_gavel", 1);
+        // crucible (old-geontm since 2026-10-02, see CrucibleOldHbm): the Collada deploy on equip, then the random swing
+        Fixtures.giveOnly(c, "geontm:wood_gavel", 1);
         c.waitTicks(10);
         c.cmd("clear");
-        c.cmd("give @s " + (c.node().startsWith("1.20") ? "hbm:crucible{\"hbm:charges\":16}" : "hbm:crucible[hbm:charges=16]"));
+        c.cmd("give @s " + (c.node().startsWith("1.20") ? "geontm:crucible{\"geontm:charges\":16}" : "geontm:crucible[geontm:charges=16]"));
         c.waitTicks(4);
-        JsonObject deploy = c.query("hbm_crucible", new JsonObject());
+        JsonObject deploy = c.query("geontm_crucible", new JsonObject());
         c.screenshot("13-fp-crucible-deploy", new int[]{320, 120, 320, 240});
         Expect.that(deploy.get("blender").getAsBoolean() && deploy.get("deploy_ms").getAsLong() < 700,
                 "crucible deploying: " + deploy);
         c.waitTicks(30);
-        JsonObject settled = c.query("hbm_crucible", new JsonObject());
+        JsonObject settled = c.query("geontm_crucible", new JsonObject());
         c.screenshot("14-fp-crucible-blade", new int[]{320, 120, 320, 240});
         Expect.that(settled.get("deploy_ms").getAsLong() >= 1050, "crucible deployed: " + settled);
         Expect.that(settled.get("equip").getAsDouble() == 1.0 && settled.get("equip_prev").getAsDouble() == 1.0,
                 "crucible equip pinned at 1: " + settled.get("equip") + "/" + settled.get("equip_prev"));
         c.attack();
         c.waitTicks(2);
-        JsonObject cswing = c.query("hbm_crucible", new JsonObject());
+        JsonObject cswing = c.query("geontm_crucible", new JsonObject());
         c.screenshot("15-fp-crucible-swing", new int[]{320, 120, 320, 240});
         Expect.that(cswing.get("swing_rot_x").getAsDouble() != 0, "crucible swing bus running: " + cswing);
         Expect.that(!cswing.get("swinging").getAsBoolean(), "vanilla swing cleared under the crucible");
@@ -182,8 +182,8 @@ public final class FinalGapsC implements Scenario {
 
         // boltgun: a bolted hit on a pig plays the barrel recoil
         c.cmd("clear");
-        c.cmd("give @s hbm:boltgun");
-        c.cmd("give @s hbm:bolt_spike 8");
+        c.cmd("give @s geontm:boltgun");
+        c.cmd("give @s geontm:bolt_spike 8");
         c.waitTicks(3);
         c.cmd("summon minecraft:pig " + (X + 0.5) + " " + (Y + 1) + " " + (Z + 2.5) + " {NoAI:1b,Health:100f,Attributes:[]}");
         c.waitTicks(5);
@@ -193,11 +193,11 @@ public final class FinalGapsC implements Scenario {
         c.screenshot("17-fp-boltgun-recoil", new int[]{320, 120, 320, 240});
         c.waitTicks(5);
         // the 150 ms RECOIL bus is over before a query round-trip returns; the server cue is proven by the bolt spent
-        Expect.equal(7, held(c, "hbm:bolt_spike"), "bolts left after one bolted hit");
+        Expect.equal(7, held(c, "geontm:bolt_spike"), "bolts left after one bolted hit");
         c.cmd("kill @e[type=minecraft:pig]");
 
         // gavel: 1.7 had no bus for it; the vanilla swing plays
-        Fixtures.giveOnly(c, "hbm:wood_gavel", 1);
+        Fixtures.giveOnly(c, "geontm:wood_gavel", 1);
         c.look(0, 10);
         c.waitTicks(10);
         c.attack();
@@ -217,10 +217,10 @@ public final class FinalGapsC implements Scenario {
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, 10);
         for (String set : new String[]{"rpa", "ncrpa"}) {
-            c.cmd("item replace entity @s armor.head with hbm:" + set + "_helmet");
-            c.cmd("item replace entity @s armor.chest with hbm:" + set + "_plate");
-            c.cmd("item replace entity @s armor.legs with hbm:" + set + "_legs");
-            c.cmd("item replace entity @s armor.feet with hbm:" + set + "_boots");
+            c.cmd("item replace entity @s armor.head with geontm:" + set + "_helmet");
+            c.cmd("item replace entity @s armor.chest with geontm:" + set + "_plate");
+            c.cmd("item replace entity @s armor.legs with geontm:" + set + "_legs");
+            c.cmd("item replace entity @s armor.feet with geontm:" + set + "_boots");
             c.cmd("effect clear @s");
             c.setOption("camera", "third_person_front");
             c.waitTicks(10);
@@ -239,8 +239,8 @@ public final class FinalGapsC implements Scenario {
     // ------------------------------------------------------------------ 4: framed items
 
     private void framed(Client c) {
-        String[] items = {"hbm:machine_radar_large", "hbm:icf", "hbm:missile_buster", "hbm:chainsaw", "hbm:crucible",
-                "hbm:boltgun", "hbm:wood_gavel"};
+        String[] items = {"geontm:machine_radar_large", "geontm:icf", "geontm:missile_buster", "geontm:chainsaw", "geontm:crucible",
+                "geontm:boltgun", "geontm:wood_gavel"};
         JsonArray ids = new JsonArray();
         for (String id : items) ids.add(id);
         JsonObject routed = q(c, "framed", ids);
@@ -251,9 +251,9 @@ public final class FinalGapsC implements Scenario {
         int gz = Z - 12;
         for (int i = 0; i < items.length; i++) {
             int x = X - 9 + i * 3;
-            Fixtures.setBlock(c, x, Y + 1, gz, "hbm:pedestal");
+            Fixtures.setBlock(c, x, Y + 1, gz, "geontm:pedestal");
             c.cmd("data merge block " + x + " " + (Y + 1) + " " + gz + " {item:{id:\"" + items[i] + "\"," + count(c) + "}}");
-            Fixtures.setBlock(c, x, Y + 1, gz - 4, "hbm:skeleton_holder[facing=south]");
+            Fixtures.setBlock(c, x, Y + 1, gz - 4, "geontm:skeleton_holder[facing=south]");
             c.cmd("data merge block " + x + " " + (Y + 1) + " " + (gz - 4) + " {item:{id:\"" + items[i] + "\"," + count(c) + "}}");
         }
         c.waitTicks(20);
@@ -281,16 +281,16 @@ public final class FinalGapsC implements Scenario {
         JsonObject ct = q(c);
         Expect.that(ct.get("ct_registered").getAsInt() == 45, "45 connected-texture blocks (1.7 IBlockCT set): " + ct.get("ct_registered"));
         int wz = Z + 14;
-        String[] walls = {"hbm:hadron_coil_alloy", "hbm:hadron_coil_mese", "hbm:red_wire_coated", "hbm:icf_block",
-                "hbm:pwr_block"};
+        String[] walls = {"geontm:hadron_coil_alloy", "geontm:hadron_coil_mese", "geontm:red_wire_coated", "geontm:icf_block",
+                "geontm:pwr_block"};
         for (int w = 0; w < walls.length; w++) {
             int x0 = X - 12 + w * 5;
             c.cmd("fill " + x0 + " " + (Y + 1) + " " + wz + " " + (x0 + 2) + " " + (Y + 3) + " " + (wz + 1) + " " + walls[w]);
         }
         // a lone coil, a port cell in the ICF and PWR walls, and two coil kinds joined
-        Fixtures.setBlock(c, X + 14, Y + 1, wz, "hbm:hadron_coil_gold");
-        Fixtures.setBlock(c, X - 12 + 3 * 5 + 1, Y + 2, wz, "hbm:icf_block[port=true]");
-        Fixtures.setBlock(c, X - 12 + 4 * 5 + 1, Y + 2, wz, "hbm:pwr_block[port=true]");
+        Fixtures.setBlock(c, X + 14, Y + 1, wz, "geontm:hadron_coil_gold");
+        Fixtures.setBlock(c, X - 12 + 3 * 5 + 1, Y + 2, wz, "geontm:icf_block[port=true]");
+        Fixtures.setBlock(c, X - 12 + 4 * 5 + 1, Y + 2, wz, "geontm:pwr_block[port=true]");
         c.waitTicks(20);
         worldShot(c, "40-ct-walls", X + 0.5, Y + 4, wz - 12.5, X + 0.5, Y + 2, wz);
         worldShot(c, "41-ct-coils-close", X - 10.5, Y + 2.5, wz - 4.5, X - 7.5, Y + 2, wz);
@@ -304,9 +304,9 @@ public final class FinalGapsC implements Scenario {
 
     private void rbmk(Client c) {
         int pz = Z - 20;
-        Fixtures.setBlock(c, X, Y + 1, pz, "hbm:rbmk_lever[facing=south]");
-        Fixtures.setBlock(c, X + 2, Y + 1, pz, "hbm:rbmk_numitron[facing=south]");
-        Fixtures.setBlock(c, X + 4, Y + 1, pz, "hbm:rbmk_graph[facing=south]");
+        Fixtures.setBlock(c, X, Y + 1, pz, "geontm:rbmk_lever[facing=south]");
+        Fixtures.setBlock(c, X + 2, Y + 1, pz, "geontm:rbmk_numitron[facing=south]");
+        Fixtures.setBlock(c, X + 4, Y + 1, pz, "geontm:rbmk_graph[facing=south]");
         c.cmd("data merge block " + (X + 2) + " " + (Y + 1) + " " + pz
                 + " {active0:1b,value0:1234567L,active_digits0:127L,active1:1b,value1:42L,active_digits1:127L}");
         StringBuilder graph = new StringBuilder("{active0:1b,active1:1b");
@@ -340,9 +340,9 @@ public final class FinalGapsC implements Scenario {
 
     private void powerNet(Client c) {
         int cz = Z + 6;
-        c.cmd("fill " + (X - 3) + " " + (Y + 1) + " " + cz + " " + (X + 3) + " " + (Y + 1) + " " + cz + " hbm:red_cable");
+        c.cmd("fill " + (X - 3) + " " + (Y + 1) + " " + cz + " " + (X + 3) + " " + (Y + 1) + " " + cz + " geontm:red_cable");
         c.waitTicks(10);
-        Fixtures.giveOnly(c, "hbm:power_net_tool", 1);
+        Fixtures.giveOnly(c, "geontm:power_net_tool", 1);
         c.teleport(X + 0.5, Y + 1, cz - 2.5);
         c.lookAt(X + 0.5, Y + 1.5, cz + 0.5);
         c.waitTicks(5);
@@ -357,7 +357,7 @@ public final class FinalGapsC implements Scenario {
 
     private void markers(Client c) {
         int mz = Z + 20;
-        Fixtures.setBlock(c, X - 6, Y + 1, mz, "hbm:icf_controller[facing=south]");
+        Fixtures.setBlock(c, X - 6, Y + 1, mz, "geontm:icf_controller[facing=south]");
         c.cmd("clear");
         c.cmd("gamemode survival");
         c.teleport(X - 5.5, Y + 1, mz + 3.5);
@@ -374,7 +374,7 @@ public final class FinalGapsC implements Scenario {
         c.waitTicks(5);
         c.screenshot("70-marker-icf");
 
-        Fixtures.setBlock(c, X + 6, Y + 1, mz, "hbm:pwr_controller[facing=south]");
+        Fixtures.setBlock(c, X + 6, Y + 1, mz, "geontm:pwr_controller[facing=south]");
         c.cmd("gamemode survival");
         c.teleport(X + 6.5, Y + 1, mz + 3.5);
         c.lookAt(X + 6.5, Y + 1.5, mz + 0.5);
@@ -396,7 +396,7 @@ public final class FinalGapsC implements Scenario {
 
     private void lens(Client c) {
         int lz = Z - 4;
-        c.cmd("fill " + (X + 8) + " " + (Y + 2) + " " + lz + " " + (X + 9) + " " + (Y + 2) + " " + (lz + 1) + " hbm:ore_alexandrite");
+        c.cmd("fill " + (X + 8) + " " + (Y + 2) + " " + lz + " " + (X + 9) + " " + (Y + 2) + " " + (lz + 1) + " geontm:ore_alexandrite");
         JsonObject applied = q(c, "lens", new com.google.gson.JsonPrimitive(4815));
         Expect.that(applied.get("lens_applied").getAsBoolean(), "lens applied to the helmet: " + applied);
         c.teleport(X + 0.5, Y + 1, lz + 0.5);
@@ -420,20 +420,20 @@ public final class FinalGapsC implements Scenario {
     private void launchSmoke(Client c) {
         int sx = X + 16;
         int sz = Z - 16;
-        Fixtures.setBlock(c, sx, Y + 1, sz, "hbm:struct_launcher_core");
+        Fixtures.setBlock(c, sx, Y + 1, sz, "geontm:struct_launcher_core");
         c.cmd("fill " + (sx - 1) + " " + (Y + 1) + " " + (sz - 1) + " " + (sx + 1) + " " + (Y + 1) + " " + (sz + 1)
-                + " hbm:struct_launcher replace minecraft:air");
+                + " geontm:struct_launcher replace minecraft:air");
         c.waitTicks(10);
-        Expect.block(c, sx, Y + 1, sz, "hbm:compact_launcher");
+        Expect.block(c, sx, Y + 1, sz, "geontm:compact_launcher");
         int before = q(c).get("launch_smoke").getAsInt();
         c.cmd("gamemode spectator");
         c.teleport(sx + 6.5, Y + 4, sz + 6.5);
         c.lookAt(sx + 0.5, Y + 2, sz + 0.5);
-        c.cmd("summon hbm:entity_custom_missile " + (sx + 0.5) + " " + (Y + 8) + " " + (sz + 0.5) + " {NoGravity:1b}");
+        c.cmd("summon geontm:entity_custom_missile " + (sx + 0.5) + " " + (Y + 8) + " " + (sz + 0.5) + " {NoGravity:1b}");
         c.waitTicks(6);
         c.screenshot("61-launch-smoke");
         int after = q(c).get("launch_smoke").getAsInt();
-        c.cmd("kill @e[type=hbm:entity_custom_missile]");
+        c.cmd("kill @e[type=geontm:entity_custom_missile]");
         c.cmd("gamemode creative");
         Expect.that(after - before >= 15, "15 smoke plumes a tick under a custom missile: " + (after - before));
         // the plumes move and grow (1.7: gaussian sideways push, friction 0.925): a pile at the pad is not the effect
@@ -473,7 +473,7 @@ public final class FinalGapsC implements Scenario {
         // 11: the HEV suit replaces hearts and armour on every node
         for (String piece : new String[]{"head:hev_helmet", "chest:hev_plate", "legs:hev_legs", "feet:hev_boots"}) {
             String[] p = piece.split(":");
-            c.cmd("item replace entity @s armor." + p[0] + " with hbm:" + p[1]);
+            c.cmd("item replace entity @s armor." + p[0] + " with geontm:" + p[1]);
         }
         c.waitTicks(20);
         JsonObject hev = q(c);
@@ -498,11 +498,11 @@ public final class FinalGapsC implements Scenario {
 
     private void magnet(Client c) {
         boolean start = q(c).get("server_magnet").getAsBoolean();
-        c.key("key.hbm.toggleMagnet");
+        c.key("key.geontm.toggleMagnet");
         c.waitTicks(5);
         c.screenshot("90-magnet-toggled");
         JsonObject one = q(c);
-        c.key("key.hbm.toggleMagnet");
+        c.key("key.geontm.toggleMagnet");
         c.waitTicks(5);
         JsonObject two = q(c);
         Expect.that(one.get("server_magnet").getAsBoolean() != start, "magnet key toggles the server flag: " + one);

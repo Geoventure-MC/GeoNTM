@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A Sable ship split in two with an instanced machine on one half. Two pads joined by a one-block bridge, a Fat Man
@@ -36,8 +36,8 @@ public class SableShipSplit implements Scenario {
         c.cmd("fill " + (X - 1) + " " + (Y + 1) + " " + (Z + 5) + " " + (X + 1) + " " + (Y + 1) + " " + (Z + 5) + " minecraft:iron_block");
         c.cmd("fill " + (X + 2) + " " + (Y + 1) + " " + (Z + 3) + " " + (X + 6) + " " + (Y + 1) + " " + (Z + 7) + " minecraft:iron_block");
         c.waitTicks(2);
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:nuke_man", X + 4, Y + 1, Z + 5);
-        Expect.that(placed.get("block").getAsString().startsWith("hbm:nuke_man"), "Fat Man placed by hand: " + placed);
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:nuke_man", X + 4, Y + 1, Z + 5);
+        Expect.that(placed.get("block").getAsString().startsWith("geontm:nuke_man"), "Fat Man placed by hand: " + placed);
         c.cmd("clear");
         c.waitTicks(10);
 

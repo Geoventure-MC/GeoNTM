@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,23 +28,23 @@ public final class Gh174DeliveryShell implements Scenario {
         Fixtures.fill(c, X - RANGE, Y - 2, Z + RANGE / 2 - RANGE, X + RANGE, Y - 1, Z + RANGE / 2 + RANGE, "minecraft:stone");
         c.cmd("time set 6000");
         c.cmd("gamemode creative");
-        c.cmd("kill @e[type=hbm:entity_artillery_shell]");
+        c.cmd("kill @e[type=geontm:entity_artillery_shell]");
         List<String> wrong = new ArrayList<>();
         try {
             fill(c, wrong);
             fire(c, wrong);
         } finally {
-            c.cmd("kill @e[type=hbm:entity_artillery_shell]");
+            c.cmd("kill @e[type=geontm:entity_artillery_shell]");
             c.cmd("setblock " + X + " " + (Y + 1) + " " + Z + " minecraft:air");
         }
         Expect.that(wrong.isEmpty(), "1.7 delivery shell: " + wrong);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     /** The 2x2 grid of the player's own inventory: the empty shell and a diamond make a closed shell. */
     private static void fill(Client c, List<String> wrong) throws Exception {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:ammo_arty_cargo 1");
+        c.cmd("give @s geontm:ammo_arty_cargo 1");
         c.cmd("give @s minecraft:diamond 1");
         c.cmd("gamemode survival");
         c.waitTicks(5);
@@ -64,10 +64,10 @@ public final class Gh174DeliveryShell implements Scenario {
         c.hotbar(3);
         c.waitTicks(5);
         c.screenshot("02-hotbar");
-        JsonObject held = c.query("hbm_held_state", new JsonObject());
+        JsonObject held = c.query("geontm_held_state", new JsonObject());
         System.out.println("[Gh174] " + c.node() + " hotbar states " + held + " held " + c.player().get("main_hand"));
         JsonArray states = held.getAsJsonArray("hotbar");
-        if (!"hbm:ammo_arty_cargo".equals(c.player().getAsJsonObject("main_hand").get("id").getAsString())) {
+        if (!"geontm:ammo_arty_cargo".equals(c.player().getAsJsonObject("main_hand").get("id").getAsString())) {
             wrong.add("crafting gave " + c.player().get("main_hand"));
         } else if (states.get(2).getAsInt() != 1) {
             wrong.add("the filled shell draws model state " + states.get(2) + ", 1.7 draws ammo_arty_cargo_full");
@@ -75,7 +75,7 @@ public final class Gh174DeliveryShell implements Scenario {
     }
 
     private static void fire(Client c, List<String> wrong) throws Exception {
-        Fixtures.setBlock(c, X, Y + 1, Z, "hbm:turret_arty[facing=north]");
+        Fixtures.setBlock(c, X, Y + 1, Z, "geontm:turret_arty[facing=north]");
         c.cmd("data merge block " + X + " " + (Y + 1) + " " + Z + " {power:100000L,isOn:1b,mode:2s}");
         c.cmd("item replace block " + X + " " + (Y + 1) + " " + Z + " container.1 from entity @s hotbar.2");
         c.teleport(X + 0.5, Y + 1, Z + RANGE - 12.5);
@@ -84,7 +84,7 @@ public final class Gh174DeliveryShell implements Scenario {
         JsonArray a = new JsonArray();
         for (int v : new int[]{X, Y + 1, Z, X, Y + 1, Z + RANGE}) a.add(v);
         cmd.add("command", a);
-        System.out.println("[Gh174] " + c.node() + " command " + c.query("hbm_gapsc", cmd).get("command_accepted"));
+        System.out.println("[Gh174] " + c.node() + " command " + c.query("geontm_gapsc", cmd).get("command_accepted"));
 
         JsonObject find = new JsonObject();
         find.addProperty("server", true);

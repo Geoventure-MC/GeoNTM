@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,7 @@ public final class WaterloggedDeco implements Scenario {
             for (int i = 0; i < BLOCKS.size(); i++) {
                 String id = BLOCKS.get(i).id();
                 int x = X + i * STEP;
-                JsonObject placed = Fixtures.placeOnTop(c, "hbm:" + id, x, Y, Z);
+                JsonObject placed = Fixtures.placeOnTop(c, "geontm:" + id, x, Y, Z);
                 if (!expect(placed, id, true)) failures.add("pool " + id + " " + placed);
             }
             c.cmd("clear");
@@ -105,7 +105,7 @@ public final class WaterloggedDeco implements Scenario {
                 int x = X + i * STEP;
                 Fixtures.setBlock(c, x, Y, DRY_Z, ground(id));
                 if (id.equals("dungeon_chain")) Fixtures.setBlock(c, x, L + 1, DRY_Z, "minecraft:stone");
-                Fixtures.setBlock(c, x, L, DRY_Z, "hbm:" + id);
+                Fixtures.setBlock(c, x, L, DRY_Z, "geontm:" + id);
             }
             c.waitTicks(5);
             for (int i = 0; i < BLOCKS.size(); i++) {
@@ -130,7 +130,7 @@ public final class WaterloggedDeco implements Scenario {
                 int x = X + i * STEP;
                 Fixtures.setBlock(c, x, Y, FLOW_Z, ground(id));
                 if (id.equals("dungeon_chain")) Fixtures.setBlock(c, x, L + 1, FLOW_Z, "minecraft:stone");
-                Fixtures.setBlock(c, x, L, FLOW_Z, "hbm:" + id);
+                Fixtures.setBlock(c, x, L, FLOW_Z, "geontm:" + id);
             }
             c.waitTicks(5);
             for (int i = 0; i < BLOCKS.size(); i++) {
@@ -177,7 +177,7 @@ public final class WaterloggedDeco implements Scenario {
     }
 
     private static boolean expect(JsonObject view, String id, boolean waterlogged) {
-        return ("hbm:" + id).equals(view.get("block").getAsString())
+        return ("geontm:" + id).equals(view.get("block").getAsString())
                 && String.valueOf(waterlogged).equals(prop(view, "waterlogged"));
     }
 

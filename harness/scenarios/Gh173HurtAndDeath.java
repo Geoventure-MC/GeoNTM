@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -22,10 +22,10 @@ public final class Gh173HurtAndDeath implements Scenario {
     private record Mob(String id, double distance, double eye, boolean rolls) {}
 
     private static final Mob[] MOBS = {
-            new Mob("hbm:entity_glyphid", 4D, 0.5D, true),
-            new Mob("hbm:entity_mob_mask_man", 11D, 2.5D, true),
-            new Mob("hbm:entity_tesla_crab", 3.5D, 0.6D, false),
-            new Mob("hbm:entity_taint_crab", 4D, 0.6D, false),
+            new Mob("geontm:entity_glyphid", 4D, 0.5D, true),
+            new Mob("geontm:entity_mob_mask_man", 11D, 2.5D, true),
+            new Mob("geontm:entity_tesla_crab", 3.5D, 0.6D, false),
+            new Mob("geontm:entity_taint_crab", 4D, 0.6D, false),
     };
 
     @Override
@@ -48,7 +48,7 @@ public final class Gh173HurtAndDeath implements Scenario {
             hideGui = c.setOption("hide_gui", "true");
             for (Mob mob : MOBS) check(c, mob, failures);
             Expect.that(failures.isEmpty(), "every mob flashes red when hurt and rolls over dying: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             if (hideGui != null) c.setOption("hide_gui", hideGui);

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,7 +28,7 @@ public final class RcMetalGui implements Scenario {
 
         // soldering station
         int sx = 10, sz = 10;
-        c.cmd("setblock " + sx + " " + L + " " + sz + " hbm:machine_soldering_station[facing=north]");
+        c.cmd("setblock " + sx + " " + L + " " + sz + " geontm:machine_soldering_station[facing=north]");
         c.waitTicks(10);
         int[] core = findBe(c, sx, L, sz, "TileEntityMachineSolderingStation");
         System.out.println("[RcMetalGui] soldering core " + core[0] + "," + core[1] + "," + core[2]);
@@ -70,42 +70,42 @@ public final class RcMetalGui implements Scenario {
 
         // electric heater and the screwdriver
         int hx = 20, hz = 10;
-        c.cmd("setblock " + hx + " " + L + " " + hz + " hbm:heater_electric[facing=north]");
+        c.cmd("setblock " + hx + " " + L + " " + hz + " geontm:heater_electric[facing=north]");
         c.waitTicks(10);
         int[] heater = findBe(c, hx, L, hz, "TileEntityHeaterElectric");
         Expect.that(nbtInt(c, heater, "setting") == 0, "a fresh electric heater is at setting 0: " + nbt(c, heater));
         c.teleport(heater[0] + 0.5, L, heater[2] + 4.5);
         c.waitTicks(3);
-        use(c, "hbm:screwdriver", heater[0] + 0.5, heater[1] + 0.5, heater[2] + 0.5);
+        use(c, "geontm:screwdriver", heater[0] + 0.5, heater[1] + 0.5, heater[2] + 0.5);
         Expect.that(nbtInt(c, heater, "setting") == 1, "the screwdriver cycles the heater to 1: " + nbt(c, heater));
-        use(c, "hbm:screwdriver", heater[0] + 0.5, heater[1] + 0.5, heater[2] + 0.5);
+        use(c, "geontm:screwdriver", heater[0] + 0.5, heater[1] + 0.5, heater[2] + 0.5);
         Expect.that(nbtInt(c, heater, "setting") == 2, "and to 2: " + nbt(c, heater));
 
         // mold install and screwdriver removal
         int mx = 25, mz = 10;
-        c.cmd("setblock " + mx + " " + L + " " + mz + " hbm:foundry_mold");
+        c.cmd("setblock " + mx + " " + L + " " + mz + " geontm:foundry_mold");
         c.waitTicks(5);
         c.teleport(mx + 0.5, L, mz + 3.5);
         c.waitTicks(3);
-        use(c, "hbm:mold_ingot", mx + 0.5, L + 0.2, mz + 0.5);
+        use(c, "geontm:mold_ingot", mx + 0.5, L + 0.2, mz + 0.5);
         Expect.that(nbt(c, new int[]{mx, L, mz}).contains("mold_ingot"), "the mold was installed: " + nbt(c, new int[]{mx, L, mz}));
-        use(c, "hbm:screwdriver", mx + 0.5, L + 0.2, mz + 0.5);
+        use(c, "geontm:screwdriver", mx + 0.5, L + 0.2, mz + 0.5);
         Expect.that(!nbt(c, new int[]{mx, L, mz}).contains("mold_ingot"), "the screwdriver took the mold out: " + nbt(c, new int[]{mx, L, mz}));
 
         // outlet and the hand drill
         int ox = 30, oz = 10;
-        c.cmd("setblock " + ox + " " + L + " " + oz + " hbm:foundry_outlet[facing=north]");
+        c.cmd("setblock " + ox + " " + L + " " + oz + " geontm:foundry_outlet[facing=north]");
         c.waitTicks(5);
         c.teleport(ox + 0.5, L, oz + 3.5);
         c.waitTicks(3);
-        use(c, "hbm:hand_drill", ox + 0.5, L + 0.2, oz + 0.5);
+        use(c, "geontm:hand_drill", ox + 0.5, L + 0.2, oz + 0.5);
         Expect.that(nbt(c, new int[]{ox, L, oz}).matches(".*invertFilter:(1b|true).*"), "the hand drill flips the outlet filter: " + nbt(c, new int[]{ox, L, oz}));
-        use(c, "hbm:screwdriver", ox + 0.5, L + 0.2, oz + 0.5);
+        use(c, "geontm:screwdriver", ox + 0.5, L + 0.2, oz + 0.5);
         Expect.that(!nbt(c, new int[]{ox, L, oz}).matches(".*invertFilter:(1b|true).*"), "the screwdriver resets it: " + nbt(c, new int[]{ox, L, oz}));
 
         // anvil menu
         int ax = 35, az = 10;
-        c.cmd("setblock " + ax + " " + L + " " + az + " hbm:anvil_steel");
+        c.cmd("setblock " + ax + " " + L + " " + az + " geontm:anvil_steel");
         c.waitTicks(5);
         c.teleport(ax + 0.5, L, az + 3.5);
         c.waitTicks(3);

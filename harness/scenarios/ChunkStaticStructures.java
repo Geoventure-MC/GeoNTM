@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Chunk-model blocks against each other, where boundary faces cull: 1.7's crane (pasted by the debug wand, the same
@@ -24,7 +24,7 @@ public class ChunkStaticStructures implements Scenario {
         c.cmd("gamemode creative");
         c.teleport(CRANE_X + 0.5, D + 6, 20.5);
         c.lookAt(CRANE_X + 0.5, Y, 0.5);
-        Fixtures.giveOnly(c, "hbm:wand_d", 1);
+        Fixtures.giveOnly(c, "geontm:wand_d", 1);
         c.waitTicks(10);
         c.use();
         c.waitTicks(60);
@@ -49,31 +49,31 @@ public class ChunkStaticStructures implements Scenario {
             for (int y = 0; y < 3; y++) {
                 for (int z = 0; z < 3; z++) {
                     String orient = y == 1 ? "vertical_north_south" : "horizontal_north_south";
-                    c.cmd("setblock " + (x0 + x) + " " + (D + y) + " " + (z0 + z) + " hbm:steel_scaffold[orient=" + orient + "]");
+                    c.cmd("setblock " + (x0 + x) + " " + (D + y) + " " + (z0 + z) + " geontm:steel_scaffold[orient=" + orient + "]");
                 }
             }
         }
         int rx = RIG_X + 2, rz = -3;
         for (int y = 0; y < 3; y++) {
             for (int i = 1; i < 4; i++) {
-                c.cmd("setblock " + (rx + i) + " " + (D + y) + " " + rz + " hbm:steel_wall[facing=south]");
-                c.cmd("setblock " + (rx + i) + " " + (D + y) + " " + (rz + 4) + " hbm:steel_wall[facing=north]");
-                c.cmd("setblock " + rx + " " + (D + y) + " " + (rz + i) + " hbm:steel_wall[facing=east]");
-                c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + (rz + i) + " hbm:steel_wall[facing=west]");
+                c.cmd("setblock " + (rx + i) + " " + (D + y) + " " + rz + " geontm:steel_wall[facing=south]");
+                c.cmd("setblock " + (rx + i) + " " + (D + y) + " " + (rz + 4) + " geontm:steel_wall[facing=north]");
+                c.cmd("setblock " + rx + " " + (D + y) + " " + (rz + i) + " geontm:steel_wall[facing=east]");
+                c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + (rz + i) + " geontm:steel_wall[facing=west]");
             }
-            c.cmd("setblock " + rx + " " + (D + y) + " " + rz + " hbm:steel_corner[facing=south]");
-            c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + rz + " hbm:steel_corner[facing=west]");
-            c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + (rz + 4) + " hbm:steel_corner[facing=north]");
-            c.cmd("setblock " + rx + " " + (D + y) + " " + (rz + 4) + " hbm:steel_corner[facing=east]");
+            c.cmd("setblock " + rx + " " + (D + y) + " " + rz + " geontm:steel_corner[facing=south]");
+            c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + rz + " geontm:steel_corner[facing=west]");
+            c.cmd("setblock " + (rx + 4) + " " + (D + y) + " " + (rz + 4) + " geontm:steel_corner[facing=north]");
+            c.cmd("setblock " + rx + " " + (D + y) + " " + (rz + 4) + " geontm:steel_corner[facing=east]");
         }
-        c.cmd("fill " + rx + " " + (D + 3) + " " + rz + " " + (rx + 4) + " " + (D + 3) + " " + (rz + 4) + " hbm:steel_roof[facing=north]");
+        c.cmd("fill " + rx + " " + (D + 3) + " " + rz + " " + (rx + 4) + " " + (D + 3) + " " + (rz + 4) + " geontm:steel_roof[facing=north]");
         c.cmd("fill " + (rx + 6) + " " + D + " -1 " + (rx + 6) + " " + (D + 4) + " -1 minecraft:iron_block");
-        c.cmd("setblock " + (rx + 6) + " " + (D + 2) + " 0 hbm:spotlight_halogen[facing=south]");
-        c.cmd("setblock " + (rx + 7) + " " + (D + 2) + " -1 hbm:spotlight_incandescent[facing=east]");
-        c.cmd("fill " + (rx + 1) + " " + (D + 2) + " " + (rz + 1) + " " + (rx + 3) + " " + (D + 2) + " " + (rz + 1) + " hbm:spotlight_fluoro[facing=down]");
-        c.cmd("fill " + (RIG_X - 3) + " " + D + " 5 " + (RIG_X - 3) + " " + (D + 5) + " 5 hbm:steel_poles[facing=north]");
-        c.cmd("setblock " + (RIG_X - 3) + " " + (D + 6) + " 5 hbm:pole_top");
-        c.cmd("fill " + (RIG_X - 6) + " " + D + " 6 " + RIG_X + " " + D + " 6 hbm:barbed_wire[facing=east]");
+        c.cmd("setblock " + (rx + 6) + " " + (D + 2) + " 0 geontm:spotlight_halogen[facing=south]");
+        c.cmd("setblock " + (rx + 7) + " " + (D + 2) + " -1 geontm:spotlight_incandescent[facing=east]");
+        c.cmd("fill " + (rx + 1) + " " + (D + 2) + " " + (rz + 1) + " " + (rx + 3) + " " + (D + 2) + " " + (rz + 1) + " geontm:spotlight_fluoro[facing=down]");
+        c.cmd("fill " + (RIG_X - 3) + " " + D + " 5 " + (RIG_X - 3) + " " + (D + 5) + " 5 geontm:steel_poles[facing=north]");
+        c.cmd("setblock " + (RIG_X - 3) + " " + (D + 6) + " 5 geontm:pole_top");
+        c.cmd("fill " + (RIG_X - 6) + " " + D + " 6 " + RIG_X + " " + D + " 6 geontm:barbed_wire[facing=east]");
     }
 
     private static void orbit(Client c, double x, double y, double z, double r, String label) throws Exception {

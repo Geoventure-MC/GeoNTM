@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The assembly machine's floating product item on a Sable sub-level. The renderer shows the selected recipe's output
@@ -32,8 +32,8 @@ public class SableShipAssemblyItem implements Scenario {
 
         c.cmd("fill " + (X - 3) + " " + (Y + 1) + " " + (Z + 2) + " " + (X + 3) + " " + (Y + 1) + " " + (Z + 8) + " minecraft:iron_block");
         c.waitTicks(2);
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:machine_assembly_machine", X, Y + 1, Z + 5);
-        Expect.that(placed.get("block").getAsString().startsWith("hbm:machine_assembly_machine"),
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:machine_assembly_machine", X, Y + 1, Z + 5);
+        Expect.that(placed.get("block").getAsString().startsWith("geontm:machine_assembly_machine"),
                 "assembly machine placed by hand on the deck: " + placed);
         c.waitTicks(5);
 

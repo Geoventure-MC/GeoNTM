@@ -1,19 +1,19 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * GitHub issue 162 in JEI and REI: an HBM fluid's JEI or REI entry found none of HBM's recipes, because HBM's slots
+ * GitHub issue 162 in JEI and REI: an GEONTM fluid's JEI or REI entry found none of HBM's recipes, because HBM's slots
  * hold fluid icon items. Each such slot now files its fluid beside the icon. JEI runs on every node; REI only with
  * {@code ORG_GRADLE_PROJECT_rei.run=true harness up --rebuild}, which keeps JEI in the run.
  */
 public final class Gh162JeiReiFluids implements Scenario {
 
     private static final String[][] LOOKUPS = {
-            {"hbm:sulfuric_acid", "output", "hbm:chemical_plant"},
-            {"hbm:hotoil", "input", "hbm:refinery"},
-            {"minecraft:water", "input", "hbm:boiling"}};
+            {"geontm:sulfuric_acid", "output", "geontm:chemical_plant"},
+            {"geontm:hotoil", "input", "geontm:refinery"},
+            {"minecraft:water", "input", "geontm:boiling"}};
 
     @Override
     public void run(Client c) throws Exception {
@@ -30,7 +30,7 @@ public final class Gh162JeiReiFluids implements Scenario {
                 failures.append("JEI ").append(lookup[0]).append(' ').append(lookup[1]).append(" lacks ").append(lookup[2]).append("; ");
             }
         }
-        if (c.log(60_000, "HbmReiClientPlugin").isEmpty()) {
+        if (c.log(60_000, "GeoNtmReiClientPlugin").isEmpty()) {
             System.out.println("[Gh162] " + c.node() + " REI is not in this run");
         } else {
             for (String[] lookup : LOOKUPS) {
@@ -45,6 +45,6 @@ public final class Gh162JeiReiFluids implements Scenario {
                 }
             }
         }
-        Expect.that(failures.length() == 0, "every fluid lookup finds its HBM machine: " + failures);
+        Expect.that(failures.length() == 0, "every fluid lookup finds its GEONTM machine: " + failures);
     }
 }

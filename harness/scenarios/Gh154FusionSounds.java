@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +33,16 @@ public class Gh154FusionSounds implements Scenario {
         c.cmd("time set 6000");
         c.waitTicks(5);
 
-        place(c, "hbm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
-        expectCore(c, 0, G, 0, "hbm:fusion_torus");
-        place(c, "hbm:fusion_klystron_creative", 18.5, G, 0.5, 15, Y, 0);
-        expectCore(c, 12, G, 0, "hbm:fusion_klystron_creative");
-        place(c, "hbm:fusion_plasma_forge", FORGE_X + 0.5, G, -7.5, FORGE_X, Y, -5);
-        expectCore(c, FORGE_X, G, 0, "hbm:fusion_plasma_forge");
-        place(c, "hbm:fusion_mhdt", 0.5, G, MHDT_Z + 9.5, 0, Y, MHDT_Z + 7);
-        expectCore(c, 0, G, MHDT_Z, "hbm:fusion_mhdt");
-        place(c, "hbm:fusion_breeder", BREEDER_X + 2.5, G, 0.5, BREEDER_X, Y, 0);
-        expectCore(c, BREEDER_X - 2, G, 0, "hbm:fusion_breeder");
+        place(c, "geontm:fusion_torus", 0.5, G, -9.5, 0, Y, -7);
+        expectCore(c, 0, G, 0, "geontm:fusion_torus");
+        place(c, "geontm:fusion_klystron_creative", 18.5, G, 0.5, 15, Y, 0);
+        expectCore(c, 12, G, 0, "geontm:fusion_klystron_creative");
+        place(c, "geontm:fusion_plasma_forge", FORGE_X + 0.5, G, -7.5, FORGE_X, Y, -5);
+        expectCore(c, FORGE_X, G, 0, "geontm:fusion_plasma_forge");
+        place(c, "geontm:fusion_mhdt", 0.5, G, MHDT_Z + 9.5, 0, Y, MHDT_Z + 7);
+        expectCore(c, 0, G, MHDT_Z, "geontm:fusion_mhdt");
+        place(c, "geontm:fusion_breeder", BREEDER_X + 2.5, G, 0.5, BREEDER_X, Y, 0);
+        expectCore(c, BREEDER_X - 2, G, 0, "geontm:fusion_breeder");
 
         c.cmd("data merge block " + FORGE_X + " " + G + " 0 {recipe0:\"plsm.weldsteel\",power:100000000L}");
         c.cmd("clear");
@@ -50,7 +50,7 @@ public class Gh154FusionSounds implements Scenario {
         c.waitTicks(3);
         Fixtures.interact(c, FORGE_X, G, -5);
         c.waitScreen("PlasmaForge", 5_000L);
-        insert(c, "hbm:plate_cast_steel", 64, 3);
+        insert(c, "geontm:plate_cast_steel", 64, 3);
         JsonObject forgeScreen = c.screen();
         c.mouseMove(forgeScreen.get("left").getAsInt() + 16, forgeScreen.get("top").getAsInt() + 89);
         c.waitTicks(4);
@@ -90,7 +90,7 @@ public class Gh154FusionSounds implements Scenario {
                 c.waitTicks(4);
                 c.screenshot("1" + i + "-forge-striker");
             }
-            String[] sounds = {"hbm:block.fusion_reactor_running", "hbm:block.fel", "hbm:block.industrial_turbine", "hbm:item.boltgun"};
+            String[] sounds = {"geontm:block.fusion_reactor_running", "geontm:block.fel", "geontm:block.industrial_turbine", "geontm:item.boltgun"};
             for (String sound : sounds) {
                 List<String> lines = c.logSinceMark("harness-sound\\] id=" + sound.replace(".", "\\.") + " ");
                 System.out.println("[Gh154] " + sound + ": " + lines.size() + (lines.isEmpty() ? "" : " e.g. " + lines.get(0)));
@@ -109,7 +109,7 @@ public class Gh154FusionSounds implements Scenario {
 
         c.cmd("gamerule sendCommandFeedback true");
         Expect.that(missing.isEmpty(), "1.7's fusion sounds were not played: " + missing);
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|fusion|plasma)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|fusion|plasma)");
         System.out.println("[Gh154] PASS");
     }
 
@@ -139,7 +139,7 @@ public class Gh154FusionSounds implements Scenario {
     /** Refills a D-D burn (20 mB a tick of deuterium plus coolant) and the turbine's coolant. */
     private static void burn(Client c) {
         c.cmd("data merge block 0 " + G + " 0 {recipe0:\"fus.dd\",power:10000000L,temperature:123F,t0:4000,t1:0,"
-                + "ft0:4000,ft0_type:\"hbm:deuterium\",ft3:0}");
+                + "ft0:4000,ft0_type:\"geontm:deuterium\",ft3:0}");
         c.cmd("data merge block 0 " + G + " " + MHDT_Z + " {t0:4000,t1:0}");
         c.cmd("data merge block " + FORGE_X + " " + G + " 0 {power:100000000L}");
     }

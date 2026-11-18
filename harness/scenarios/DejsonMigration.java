@@ -1,14 +1,14 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Visual acceptance for the 2026-09-28 JSON-to-Dejson migration (§19ed-dejson): every asset shown here used
  * to be an authored JSON file and is now emitted by a declaration.
  *
- * <p>Three inventory sheets cover the migrated item-definition shapes — {@code hbm:machine_obj} OBJ icons
- * (direct and inside {@code minecraft:special}), RBMK column icons, Sedna guns ({@code hbm:gun}),
+ * <p>Three inventory sheets cover the migrated item-definition shapes — {@code geontm:machine_obj} OBJ icons
+ * (direct and inside {@code minecraft:special}), RBMK column icons, Sedna guns ({@code geontm:gun}),
  * {@code select} families, the tinted flag item and plain sprites whose item models moved with them. A row of
  * hand-placed blocks covers the migrated blockstates and hand-built element models (multipart ducts, cables,
  * fence, pipe anchor, glass pane, conveyor chute, foundry channel/tank, snow-style layers, lit furnaces,
@@ -22,44 +22,44 @@ public final class DejsonMigration implements Scenario {
 
     private static final String[][] SHEETS = {
             { // OBJ machine and RBMK icons
-                    "hbm:machine_assembly_machine", "hbm:machine_chemical_plant", "hbm:machine_press",
-                    "hbm:machine_cyclotron", "hbm:machine_fluidtank", "hbm:machine_stirling", "hbm:machine_sawmill",
-                    "hbm:machine_turbofan", "hbm:machine_mining_laser", "hbm:machine_large_turbine",
-                    "hbm:machine_industrial_generator", "hbm:machine_satlink", "hbm:fusion_plasma_forge",
-                    "hbm:turret_chekhov", "hbm:turret_howard", "hbm:turret_himars", "hbm:turret_arty",
-                    "hbm:missile_nuclear", "hbm:missile_anti_ballistic", "hbm:nuke_boy", "hbm:nuke_man",
-                    "hbm:blast_door", "hbm:vault_door", "hbm:silo_hatch", "hbm:cargo_elevator", "hbm:crane_splitter",
-                    "hbm:crane_partitioner", "hbm:anvil_steel", "hbm:battery_lead", "hbm:barrel_antimatter",
-                    "hbm:rbmk_absorber", "hbm:rbmk_control", "hbm:rbmk_fuel_rod", "hbm:rbmk_boiler",
-                    "hbm:rbmk_heater", "hbm:rbmk_gauge"},
+                    "geontm:machine_assembly_machine", "geontm:machine_chemical_plant", "geontm:machine_press",
+                    "geontm:machine_cyclotron", "geontm:machine_fluidtank", "geontm:machine_stirling", "geontm:machine_sawmill",
+                    "geontm:machine_turbofan", "geontm:machine_mining_laser", "geontm:machine_large_turbine",
+                    "geontm:machine_industrial_generator", "geontm:machine_satlink", "geontm:fusion_plasma_forge",
+                    "geontm:turret_chekhov", "geontm:turret_howard", "geontm:turret_himars", "geontm:turret_arty",
+                    "geontm:missile_nuclear", "geontm:missile_anti_ballistic", "geontm:nuke_boy", "geontm:nuke_man",
+                    "geontm:blast_door", "geontm:vault_door", "geontm:silo_hatch", "geontm:cargo_elevator", "geontm:crane_splitter",
+                    "geontm:crane_partitioner", "geontm:anvil_steel", "geontm:battery_lead", "geontm:barrel_antimatter",
+                    "geontm:rbmk_absorber", "geontm:rbmk_control", "geontm:rbmk_fuel_rod", "geontm:rbmk_boiler",
+                    "geontm:rbmk_heater", "geontm:rbmk_gauge"},
             { // guns, armour OBJ icons, glider, gear, scaffold, HIMARS ammo
-                    "hbm:gun_aberrator", "hbm:gun_am180", "hbm:gun_b92", "hbm:gun_bolter", "hbm:gun_carbine",
-                    "hbm:gun_congolake", "hbm:gun_fatman", "hbm:gun_flamer", "hbm:gun_g3", "hbm:gun_greasegun",
-                    "hbm:gun_heavy_revolver", "hbm:gun_henry", "hbm:gun_lag", "hbm:gun_light_revolver",
-                    "hbm:gun_maresleg", "hbm:gun_minigun", "hbm:gun_panzerschreck", "hbm:gun_spas12",
-                    "hbm:gun_stg77", "hbm:gun_tau", "hbm:gun_uzi", "hbm:gun_coilgun", "hbm:gun_pepperbox",
-                    "hbm:gun_amat", "hbm:bj_helmet", "hbm:bj_plate", "hbm:bj_plate_jetpack", "hbm:bj_legs",
-                    "hbm:bj_boots", "hbm:dns_helmet", "hbm:t51_plate", "hbm:t51_boots", "hbm:jetpack_glider",
-                    "hbm:gear_large", "hbm:steel_scaffold", "hbm:ammo_himars_standard"},
+                    "geontm:gun_aberrator", "geontm:gun_am180", "geontm:gun_b92", "geontm:gun_bolter", "geontm:gun_carbine",
+                    "geontm:gun_congolake", "geontm:gun_fatman", "geontm:gun_flamer", "geontm:gun_g3", "geontm:gun_greasegun",
+                    "geontm:gun_heavy_revolver", "geontm:gun_henry", "geontm:gun_lag", "geontm:gun_light_revolver",
+                    "geontm:gun_maresleg", "geontm:gun_minigun", "geontm:gun_panzerschreck", "geontm:gun_spas12",
+                    "geontm:gun_stg77", "geontm:gun_tau", "geontm:gun_uzi", "geontm:gun_coilgun", "geontm:gun_pepperbox",
+                    "geontm:gun_amat", "geontm:bj_helmet", "geontm:bj_plate", "geontm:bj_plate_jetpack", "geontm:bj_legs",
+                    "geontm:bj_boots", "geontm:dns_helmet", "geontm:t51_plate", "geontm:t51_boots", "geontm:jetpack_glider",
+                    "geontm:gear_large", "geontm:steel_scaffold", "geontm:ammo_himars_standard"},
             { // select families, flag tint, sprites and block items of the migrated blockstates
-                    "hbm:blueprints", "hbm:blueprint_folder", "hbm:ammo_container", "hbm:concrete_red",
-                    "hbm:concrete_ext_hazard", "hbm:weapon_mod_generic_iron_damage", "hbm:weapon_mod_special_silencer",
-                    "hbm:weapon_mod_caliber_p9", "hbm:scraps", "hbm:lightstone_unrefined", "hbm:ammo_bag", "hbm:casing_bag",
-                    "hbm:ammo_standard_g12", "hbm:ammo_standard_p45_fmj", "hbm:ammo_standard_nuke_standard",
-                    "hbm:key", "hbm:key_fake", "hbm:gun_pa_ranged", "hbm:fluid_duct_neo", "hbm:fluid_duct_gauge",
-                    "hbm:fluid_valve", "hbm:foam_layer", "hbm:foundry_channel", "hbm:foundry_tank",
-                    "hbm:foundry_mold", "hbm:pipe_anchor", "hbm:pneumatic_tube", "hbm:red_cable_classic",
-                    "hbm:red_cable_paintable", "hbm:sand_boron_layer", "hbm:machine_weapon_table",
-                    "hbm:machine_difurnace_off", "hbm:machine_electric_furnace_off", "hbm:machine_furnace_brick_off",
-                    "hbm:fence_metal", "hbm:reinforced_glass_pane"},
+                    "geontm:blueprints", "geontm:blueprint_folder", "geontm:ammo_container", "geontm:concrete_red",
+                    "geontm:concrete_ext_hazard", "geontm:weapon_mod_generic_iron_damage", "geontm:weapon_mod_special_silencer",
+                    "geontm:weapon_mod_caliber_p9", "geontm:scraps", "geontm:lightstone_unrefined", "geontm:ammo_bag", "geontm:casing_bag",
+                    "geontm:ammo_standard_g12", "geontm:ammo_standard_p45_fmj", "geontm:ammo_standard_nuke_standard",
+                    "geontm:key", "geontm:key_fake", "geontm:gun_pa_ranged", "geontm:fluid_duct_neo", "geontm:fluid_duct_gauge",
+                    "geontm:fluid_valve", "geontm:foam_layer", "geontm:foundry_channel", "geontm:foundry_tank",
+                    "geontm:foundry_mold", "geontm:pipe_anchor", "geontm:pneumatic_tube", "geontm:red_cable_classic",
+                    "geontm:red_cable_paintable", "geontm:sand_boron_layer", "geontm:machine_weapon_table",
+                    "geontm:machine_difurnace_off", "geontm:machine_electric_furnace_off", "geontm:machine_furnace_brick_off",
+                    "geontm:fence_metal", "geontm:reinforced_glass_pane"},
     };
 
     /** Hand-placed in pairs so connection-driven multipart states actually vary. */
     private static final String[] PLACED = {
-            "hbm:fluid_duct_neo", "hbm:red_cable", "hbm:fence_metal", "hbm:reinforced_glass_pane",
-            "hbm:pneumatic_tube", "hbm:conveyor_chute", "hbm:foundry_channel", "hbm:foundry_tank",
-            "hbm:pipe_anchor", "hbm:foam_layer", "hbm:sand_boron_layer", "hbm:machine_difurnace_off",
-            "hbm:machine_electric_furnace_off", "hbm:machine_weapon_table", "hbm:rbmk_gauge", "hbm:wood_barrier",
+            "geontm:fluid_duct_neo", "geontm:red_cable", "geontm:fence_metal", "geontm:reinforced_glass_pane",
+            "geontm:pneumatic_tube", "geontm:conveyor_chute", "geontm:foundry_channel", "geontm:foundry_tank",
+            "geontm:pipe_anchor", "geontm:foam_layer", "geontm:sand_boron_layer", "geontm:machine_difurnace_off",
+            "geontm:machine_electric_furnace_off", "geontm:machine_weapon_table", "geontm:rbmk_gauge", "geontm:wood_barrier",
     };
 
     @Override

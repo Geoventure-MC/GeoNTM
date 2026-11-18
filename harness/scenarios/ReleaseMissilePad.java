@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * peroxide as eight 1000 mB fluid tanks, the others' liquid fuels from the infinite barrel; the three micro missiles
  * are pre-fuelled), the GUI is closed, and a redstone block next to the pad fires it (1.7: a rising redstone edge).
  * Expected (1.7 TileEntityLaunchPadBase): the missile entity spawns above the pad and climbs, the takeoff sound plays
- * ({@code hbm:weapon.missile_takeoff}, 1.7 "hbm:weapon.missileTakeOff"), the missile item is consumed and both tanks
+ * ({@code geontm:weapon.missile_takeoff}, 1.7 "geontm:weapon.missileTakeOff"), the missile item is consumed and both tanks
  * lose exactly the missile's fuelCap. The missile is removed after it has climbed (its impact is ReleaseMissileImpacts).
  */
 public final class ReleaseMissilePad implements Scenario {
@@ -26,15 +26,15 @@ public final class ReleaseMissilePad implements Scenario {
 
     /** item id, entity id, fuel fluid, oxidiser fluid, fuel cap (0 = solid) */
     private static final String[][] MISSILES = {
-            {"hbm:missile_schrabidium", "hbm:missile_schrabidium", "", "", "0"},
-            {"hbm:missile_bhole", "hbm:missile_bhole", "", "", "0"},
-            {"hbm:missile_emp", "hbm:missile_emp", "", "", "0"},
-            {"hbm:missile_cluster", "hbm:missile_cluster", "hbm:ethanol", "hbm:peroxide", "4000"},
-            {"hbm:missile_cluster_strong", "hbm:missile_cluster_strong", "hbm:kerosene", "hbm:peroxide", "8000"},
-            {"hbm:missile_rain", "hbm:missile_rain", "hbm:kerosene", "hbm:oxygen", "12000"},
-            {"hbm:missile_drill", "hbm:missile_drill", "hbm:kerosene", "hbm:oxygen", "12000"},
-            {"hbm:missile_volcano", "hbm:missile_volcano", "hbm:kerosene_reform", "hbm:oxygen", "16000"},
-            {"hbm:missile_shuttle", "hbm:entity_missile_shuttle", "hbm:kerosene", "hbm:peroxide", "8000"},
+            {"geontm:missile_schrabidium", "geontm:missile_schrabidium", "", "", "0"},
+            {"geontm:missile_bhole", "geontm:missile_bhole", "", "", "0"},
+            {"geontm:missile_emp", "geontm:missile_emp", "", "", "0"},
+            {"geontm:missile_cluster", "geontm:missile_cluster", "geontm:ethanol", "geontm:peroxide", "4000"},
+            {"geontm:missile_cluster_strong", "geontm:missile_cluster_strong", "geontm:kerosene", "geontm:peroxide", "8000"},
+            {"geontm:missile_rain", "geontm:missile_rain", "geontm:kerosene", "geontm:oxygen", "12000"},
+            {"geontm:missile_drill", "geontm:missile_drill", "geontm:kerosene", "geontm:oxygen", "12000"},
+            {"geontm:missile_volcano", "geontm:missile_volcano", "geontm:kerosene_reform", "geontm:oxygen", "16000"},
+            {"geontm:missile_shuttle", "geontm:entity_missile_shuttle", "geontm:kerosene", "geontm:peroxide", "8000"},
     };
 
     private static boolean legacy(Client c) {
@@ -42,13 +42,13 @@ public final class ReleaseMissilePad implements Scenario {
     }
 
     private static String designator(Client c, int x, int z) {
-        return legacy(c) ? "hbm:designator{\"hbm:designator_x\":" + x + ",\"hbm:designator_z\":" + z + "}"
-                : "hbm:designator[hbm:designator_x=" + x + ",hbm:designator_z=" + z + "]";
+        return legacy(c) ? "geontm:designator{\"geontm:designator_x\":" + x + ",\"geontm:designator_z\":" + z + "}"
+                : "geontm:designator[geontm:designator_x=" + x + ",geontm:designator_z=" + z + "]";
     }
 
     private static String tank(Client c, String fluid) {
-        return legacy(c) ? "hbm:fluid_tank{\"hbm:fluid\":\"" + fluid + "\",\"hbm:fluid_amount\":1000}"
-                : "hbm:fluid_tank[hbm:fluid=\"" + fluid + "\",hbm:fluid_amount=1000]";
+        return legacy(c) ? "geontm:fluid_tank{\"geontm:fluid\":\"" + fluid + "\",\"geontm:fluid_amount\":1000}"
+                : "geontm:fluid_tank[geontm:fluid=\"" + fluid + "\",geontm:fluid_amount=1000]";
     }
 
     @Override
@@ -60,7 +60,7 @@ public final class ReleaseMissilePad implements Scenario {
         c.cmd("gamemode survival");
         c.markLog();
 
-        Fixtures.placeOnTop(c, "hbm:launch_pad", X, Y, Z + 5);
+        Fixtures.placeOnTop(c, "geontm:launch_pad", X, Y, Z + 5);
         c.waitTicks(10);
         JsonObject pad = server(c, "mode", "pad", "x", X, "y", L, "z", Z + 5);
         Expect.that(pad.has("found") && pad.get("found").getAsBoolean(), "the launch pad was placed by hand: " + pad);
@@ -76,7 +76,7 @@ public final class ReleaseMissilePad implements Scenario {
             c.cmd("gamemode creative");
         }
         System.out.println(c.node() + " missile pad:\n" + summary);
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|is not registered).*");
     }
 
     private String launch(Client c, int px, int py, int pz, String[] m) {
@@ -88,15 +88,15 @@ public final class ReleaseMissilePad implements Scenario {
         c.cmd("clear");
         c.cmd("give @s " + item + " 1");
         c.cmd("give @s " + designator(c, px + 400, pz) + " 1");
-        c.cmd("give @s hbm:battery_creative 1");
+        c.cmd("give @s geontm:battery_creative 1");
         boolean tanks = name.equals("missile_cluster");
         if (cap > 0) {
             if (tanks) {
                 c.cmd("give @s " + tank(c, fuel) + " " + (cap / 1000));
                 c.cmd("give @s " + tank(c, oxid) + " " + (cap / 1000));
             } else {
-                c.cmd("give @s hbm:fluid_barrel_infinite 1");
-                c.cmd("give @s hbm:fluid_barrel_infinite 1");
+                c.cmd("give @s geontm:fluid_barrel_infinite 1");
+                c.cmd("give @s geontm:fluid_barrel_infinite 1");
             }
         }
         c.waitTicks(5);
@@ -107,10 +107,10 @@ public final class ReleaseMissilePad implements Scenario {
         c.waitTicks(10);
         Expect.that(c.screenClass() != null, name + ": the pad GUI opened by right-click");
         moveTo(c, item, 0);
-        moveTo(c, "hbm:designator", 1);
-        moveTo(c, "hbm:battery_creative", 2);
+        moveTo(c, "geontm:designator", 1);
+        moveTo(c, "geontm:battery_creative", 2);
         if (cap > 0) {
-            String in = tanks ? "hbm:fluid_tank" : "hbm:fluid_barrel_infinite";
+            String in = tanks ? "geontm:fluid_tank" : "geontm:fluid_barrel_infinite";
             moveTo(c, in, 3, false); // the pad drains a container in the tick it lands, so the slot may be empty already
             moveTo(c, in, 5, false);
         }
@@ -170,7 +170,7 @@ public final class ReleaseMissilePad implements Scenario {
         }
         Expect.that(!Double.isNaN(firstY), name + ": a " + entity + " entity spawned");
         Expect.that(lastY > firstY + 2, name + ": the missile climbs: " + firstY + " -> " + lastY);
-        List<String> takeoff = c.logSinceMark("harness-sound.*id=hbm:weapon.missile_takeoff");
+        List<String> takeoff = c.logSinceMark("harness-sound.*id=geontm:weapon.missile_takeoff");
         Expect.that(!takeoff.isEmpty(), name + ": the takeoff sound played");
 
         JsonObject after = server(c, "mode", "pad", "x", px, "y", py, "z", pz);
@@ -228,10 +228,10 @@ public final class ReleaseMissilePad implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        return c.query("hbm_release", p);
+        return c.query("geontm_release", p);
     }
 
-    /** Polls a server-side hbm_release query until it is no longer pending (a nonce defeats the answer cache). */
+    /** Polls a server-side geontm_release query until it is no longer pending (a nonce defeats the answer cache). */
     static JsonObject server(Client c, Object... kv) {
         JsonObject r = null;
         for (int i = 0; i < 20; i++) {

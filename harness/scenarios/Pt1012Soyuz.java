@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,7 +52,7 @@ public final class Pt1012Soyuz implements Scenario {
         c.markLog();
 
         // --- the complex ------------------------------------------------------------------------------------------
-        Fixtures.giveOnly(c, "hbm:soyuz_launcher", 1);
+        Fixtures.giveOnly(c, "geontm:soyuz_launcher", 1);
         c.teleport(0.5, G, -3.5);
         c.waitTicks(3);
         c.lookAt(0.5, Y + 0.98, 0.5);
@@ -71,27 +71,27 @@ public final class Pt1012Soyuz implements Scenario {
         c.waitTicks(3);
 
         // --- propellant lines (east): duct, duct, barrel -------------------------------------------------------------
-        line(c, -2, "hbm:kerosene");
-        line(c, 2, "hbm:oxygen");
-        fillBarrel(c, -2, "hbm:kerosene");
-        fillBarrel(c, 2, "hbm:oxygen");
+        line(c, -2, "geontm:kerosene");
+        line(c, 2, "geontm:oxygen");
+        fillBarrel(c, -2, "geontm:kerosene");
+        fillBarrel(c, 2, "geontm:oxygen");
 
         // --- power (west): cable, cable, battery socket with a creative battery ----------------------------------------
         int pz = -3;
-        place(c, "hbm:red_cable", -7, pz);
-        place(c, "hbm:red_cable", -8, pz);
-        place(c, "hbm:machine_battery_socket", -11, pz);
+        place(c, "geontm:red_cable", -7, pz);
+        place(c, "geontm:red_cable", -8, pz);
+        place(c, "geontm:machine_battery_socket", -11, pz);
         int[] socket = findBe(c, -11, CY - 1, pz, "battery_socket", 2);
         Expect.that(socket != null, "the battery socket was placed near -11 " + pz);
         // close any gap between the cable and the socket's footprint
         for (int x = -9; x >= -12; x--) {
             String b = c.block(x, CY - 1, pz).toString();
             if (b.contains("battery_socket")) break;
-            if (b.contains("minecraft:air")) place(c, "hbm:red_cable", x, pz);
+            if (b.contains("minecraft:air")) place(c, "geontm:red_cable", x, pz);
         }
-        Fixtures.giveOnly(c, "hbm:battery_creative", 1);
+        Fixtures.giveOnly(c, "geontm:battery_creative", 1);
         openAt(c, -9.5, pz + 2.5, socket, "");
-        clickFromInventory(c, "hbm:battery_creative", 0);
+        clickFromInventory(c, "geontm:battery_creative", 0);
         JsonObject sg = c.screen();
         int sl = sg.get("left").getAsInt(), st = sg.get("top").getAsInt();
         c.click(sl + 106 + 9, st + 16 + 9); // redLow: input -> buffer
@@ -119,12 +119,12 @@ public final class Pt1012Soyuz implements Scenario {
         // cut the lines (barrels to "none", one cable broken) so the drain at liftoff can be read exactly
         isolate(c, true);
         c.cmd("clear");
-        c.cmd("give @s hbm:missile_soyuz_0 1");
+        c.cmd("give @s geontm:missile_soyuz_0 1");
         c.cmd("give @s " + satellite(c) + " 1");
         c.waitTicks(3);
         openLauncher(c);
-        clickFromInventory(c, "hbm:missile_soyuz_0", 0);
-        clickFromInventory(c, "hbm:satellite_precision_laser", 2);
+        clickFromInventory(c, "geontm:missile_soyuz_0", 0);
+        clickFromInventory(c, "geontm:satellite_precision_laser", 2);
         c.waitTicks(10);
         c.screenshot("20-gui-satellite-loaded");
         JsonObject gui = c.screen();
@@ -148,7 +148,7 @@ public final class Pt1012Soyuz implements Scenario {
         Expect.that(tank(after, "fuel") == 0 && tank(after, "oxidizer") == 0 && longOf(after, "power") == 250_000L,
                 "liftoff drew 128,000 kerosene, 128,000 oxygen and 750,000 HE: " + after);
         observeRise(c, "23-satellite-liftoff");
-        waitGone(c, "hbm:entity_soyuz");
+        waitGone(c, "geontm:entity_soyuz");
         c.markLog();
         c.cmd("ntmsatellites list");
         c.waitTicks(10);
@@ -163,14 +163,14 @@ public final class Pt1012Soyuz implements Scenario {
                 && longOf(refilled, "power") == 1_000_000L, "the lines refilled the pad: " + refilled);
         isolate(c, true);
         // the designator, aimed at the target block on the platform
-        Fixtures.giveOnly(c, "hbm:designator", 1);
+        Fixtures.giveOnly(c, "geontm:designator", 1);
         c.teleport(TX + 0.5, G, TZ - 2.5);
         c.waitTicks(3);
         c.lookAt(TX + 0.5, Y + 0.98, TZ + 0.5);
         c.waitTicks(1);
         c.use(1);
         c.waitTicks(3);
-        c.cmd("give @s hbm:missile_soyuz_2 1");
+        c.cmd("give @s geontm:missile_soyuz_2 1");
         c.cmd("give @s minecraft:iron_ingot 64");
         c.cmd("give @s minecraft:diamond 7");
         c.waitTicks(3);
@@ -181,8 +181,8 @@ public final class Pt1012Soyuz implements Scenario {
         c.click(gl + 79 + 9, gt + 52 + 9); // CARGO
         c.waitTicks(5);
         Expect.that(nbt(c, 0, CY, 0).contains("mode:1b"), "the mode switch set CARGO: " + nbt(c, 0, CY, 0));
-        clickFromInventory(c, "hbm:missile_soyuz_2", 0);
-        clickFromInventory(c, "hbm:designator", 1);
+        clickFromInventory(c, "geontm:missile_soyuz_2", 0);
+        clickFromInventory(c, "geontm:designator", 1);
         clickFromInventory(c, "minecraft:iron_ingot", 9);
         clickFromInventory(c, "minecraft:diamond", 14);
         c.waitTicks(10);
@@ -208,9 +208,9 @@ public final class Pt1012Soyuz implements Scenario {
                 && longOf(cargoAfter, "power") == 250_000L, "cargo liftoff drew 5000 + dist of each and 750,000 HE: " + cargoAfter);
         Expect.that(!cargoAfter.contains("iron_ingot") && !cargoAfter.contains("minecraft:diamond")
                 && !cargoAfter.contains("missile_soyuz"), "liftoff took the rocket and the cargo: " + cargoAfter);
-        Expect.that(cargoAfter.contains("hbm:designator"), "the designator stays in its slot (1.7)");
+        Expect.that(cargoAfter.contains("geontm:designator"), "the designator stays in its slot (1.7)");
         observeRise(c, "33-cargo-liftoff");
-        waitGone(c, "hbm:entity_soyuz");
+        waitGone(c, "geontm:entity_soyuz");
 
         // the capsule: spawned at y=600 over the target, falling at 0.2 blocks per tick
         c.cmd("gamemode spectator");
@@ -222,7 +222,7 @@ public final class Pt1012Soyuz implements Scenario {
         boolean shotMid = false;
         for (int i = 0; i < 400; i++) {
             c.waitTicks(10);
-            JsonObject e = entity(c, "hbm:entity_soyuz_capsule", 700);
+            JsonObject e = entity(c, "geontm:entity_soyuz_capsule", 700);
             if (e != null) {
                 capsule = e;
                 double y = e.get("y").getAsDouble();
@@ -245,7 +245,7 @@ public final class Pt1012Soyuz implements Scenario {
         Expect.that(Math.abs(capsule.get("x").getAsDouble() - (TX + 0.5)) < 0.01
                 && Math.abs(capsule.get("z").getAsDouble() - (TZ + 0.5)) < 0.01, "the capsule falls on the target column: " + capsule);
         for (int i = 0; i < 40 && !c.block(TX, G, TZ).toString().contains("soyuz_capsule"); i++) c.waitTicks(10);
-        Expect.block(c, TX, G, TZ, "hbm:soyuz_capsule");
+        Expect.block(c, TX, G, TZ, "geontm:soyuz_capsule");
         String landed = nbt(c, TX, G, TZ);
         System.out.println("[Pt1012Soyuz] landed capsule: " + landed);
         Expect.that(landed.contains("minecraft:iron_ingot") && landed.contains("minecraft:diamond")
@@ -282,11 +282,11 @@ public final class Pt1012Soyuz implements Scenario {
         c.attack(2);
         c.waitTicks(10);
         Expect.block(c, socket[0], CY - 1, socket[2], "minecraft:air");
-        place(c, "hbm:machine_battery_socket", -11, pz);
+        place(c, "geontm:machine_battery_socket", -11, pz);
         Expect.that(isBe(c, socket[0], CY - 1, socket[2], "battery_socket"), "the socket stands where it stood");
-        Fixtures.giveOnly(c, "hbm:battery_creative", 1);
+        Fixtures.giveOnly(c, "geontm:battery_creative", 1);
         openAt(c, -9.5, pz + 2.5, socket, "");
-        clickFromInventory(c, "hbm:battery_creative", 0);
+        clickFromInventory(c, "geontm:battery_creative", 0);
         sg = c.screen();
         c.click(sg.get("left").getAsInt() + 106 + 9, sg.get("top").getAsInt() + 16 + 9);
         c.waitTicks(3);
@@ -334,7 +334,7 @@ public final class Pt1012Soyuz implements Scenario {
             c.waitTicks(5);
             Expect.block(c, -8, CY - 1, -3, "minecraft:air");
         } else {
-            place(c, "hbm:red_cable", -8, -3);
+            place(c, "geontm:red_cable", -8, -3);
         }
     }
 
@@ -350,8 +350,8 @@ public final class Pt1012Soyuz implements Scenario {
 
     /** Two ducts from the rim port at x=7 outward, each typed with an identifier. */
     private static void line(Client c, int z, String fluid) {
-        place(c, "hbm:fluid_duct_neo", 7, z);
-        place(c, "hbm:fluid_duct_neo", 8, z);
+        place(c, "geontm:fluid_duct_neo", 7, z);
+        place(c, "geontm:fluid_duct_neo", 8, z);
         Fixtures.giveOnly(c, identifier(c, fluid), 1);
         for (int x = 7; x <= 8; x++) {
             c.teleport(x + 0.5, CY - 1, z + 2.5);
@@ -368,14 +368,14 @@ public final class Pt1012Soyuz implements Scenario {
     /** A steel barrel behind the ducts: identifier and infinite barrel clicked in, mode clicked to output. */
     private static void fillBarrel(Client c, int z, String fluid) {
         int x = 9;
-        place(c, "hbm:barrel_steel", x, z);
+        place(c, "geontm:barrel_steel", x, z);
         c.cmd("clear");
         c.cmd("give @s " + identifier(c, fluid) + " 1");
-        c.cmd("give @s hbm:fluid_barrel_infinite 1");
+        c.cmd("give @s geontm:fluid_barrel_infinite 1");
         c.waitTicks(3);
         openAt(c, x + 0.5, z + 2.5, new int[]{x, CY - 1, z}, "");
-        clickFromInventory(c, "hbm:fluid_identifier", 0);
-        clickFromInventory(c, "hbm:fluid_barrel_infinite", 2);
+        clickFromInventory(c, "geontm:fluid_identifier", 0);
+        clickFromInventory(c, "geontm:fluid_barrel_infinite", 2);
         JsonObject g = c.screen();
         int l = g.get("left").getAsInt(), t = g.get("top").getAsInt();
         c.click(l + 151 + 9, t + 35 + 9); // input -> buffer
@@ -434,7 +434,7 @@ public final class Pt1012Soyuz implements Scenario {
         c.teleport(20.5, CY + 6, -20.5);
         c.waitTicks(400);
         for (int i = 0; i < 300; i++) {
-            JsonObject r = entity(c, "hbm:entity_soyuz", 900);
+            JsonObject r = entity(c, "geontm:entity_soyuz", 900);
             if (r != null) return r;
             if (!nbt(c, 0, CY, 0).contains("missile_soyuz")) return null;
             c.waitTicks(5);
@@ -447,7 +447,7 @@ public final class Pt1012Soyuz implements Scenario {
         double prev = -1;
         boolean shotTaken = false;
         for (int i = 0; i < 12; i++) {
-            JsonObject r = entity(c, "hbm:entity_soyuz", 900);
+            JsonObject r = entity(c, "geontm:entity_soyuz", 900);
             if (r == null) break;
             double y = r.get("y").getAsDouble();
             System.out.printf("[Pt1012Soyuz] rocket y=%.2f%n", y);
@@ -474,13 +474,13 @@ public final class Pt1012Soyuz implements Scenario {
     }
 
     private static String identifier(Client c, String fluid) {
-        return legacy(c) ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + fluid + "\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"" + fluid + "\"]";
+        return legacy(c) ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + fluid + "\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"" + fluid + "\"]";
     }
 
     private static String satellite(Client c) {
-        String id = "hbm:satellite_precision_laser";
-        return legacy(c) ? id + "{\"hbm:persistent_data\":{freq:" + FREQ + "}}" : id + "[hbm:persistent_data={freq:" + FREQ + "}]";
+        String id = "geontm:satellite_precision_laser";
+        return legacy(c) ? id + "{\"geontm:persistent_data\":{freq:" + FREQ + "}}" : id + "[geontm:persistent_data={freq:" + FREQ + "}]";
     }
 
     private static boolean isBe(Client c, int x, int y, int z, String id) {

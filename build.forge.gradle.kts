@@ -7,8 +7,8 @@ fun prop(name: String): String = property(name) as String
 fun propOrNull(name: String): String? = (findProperty(name) as String?)?.takeIf { it.isNotBlank() }
 
 val mcVersion = stonecutter.current.version
-apply(from = rootProject.file("../Golem-Core/gradle/mod/gemrender-local.gradle.kts"))
-val localGemRender = extra.properties["golem.gemrender.local"]
+apply(from = rootProject.file("../GeoCore/gradle/mod/gemrender-local.gradle.kts"))
+val localGemRender = extra.properties["geocore.gemrender.local"]
 val javaVersion = prop("java_version").toInt()
 val modId = prop("mod.id")
 
@@ -19,7 +19,7 @@ base.archivesName = "$modId-forge"
 java { toolchain.languageVersion = JavaLanguageVersion.of(javaVersion) }
 
 sourceSets["main"].java {
-    exclude("com/hbm/platform/fabric/**", "com/hbm/platform/neoforge/**")
+    exclude("fr/geoventure/geontm/platform/fabric/**", "fr/geoventure/geontm/platform/neoforge/**")
 }
 
 legacyForge {
@@ -52,13 +52,13 @@ legacyForge {
             server()
             gameDirectory = file("runs/server")
         }
-        // Headless GameTest runner: `gradlew :1.20.1-forge:runGameTestServer` executes every hbm:* test
-        // through Golem's @GameTestGenerator (the pre-1.21.4 framework discovers tests by reflection).
+        // Headless GameTest runner: `gradlew :1.20.1-forge:runGameTestServer` executes every geontm:* test
+        // through GeoCore's @GameTestGenerator (the pre-1.21.4 framework discovers tests by reflection).
         register("gameTestServer") {
             type = "gameTestServer"
             gameDirectory = file("runs/gametest")
-            // -Pgametest.filter=<regex> runs only the matching test ids (see Golem's GameTests.addLegacy).
-            jvmArgument("-Dgolem.gametest.filter=${providers.gradleProperty("gametest.filter").orElse("").get()}")
+            // -Pgametest.filter=<regex> runs only the matching test ids (see GeoCore's GameTests.addLegacy).
+            jvmArgument("-Dgeocore.gametest.filter=${providers.gradleProperty("gametest.filter").orElse("").get()}")
         }
     }
     mods {
@@ -90,7 +90,7 @@ tasks.matching { it.name == "runGameTestServer" }.configureEach {
 
 // A one-off smoke launch must not leave Quick Play in ModDev's cached argument file.
 tasks.matching { it.name == "prepareClientRun" }.configureEach {
-    inputs.property("hbmQuickPlayWorld", providers.gradleProperty("quickPlayWorld").orElse(""))
+    inputs.property("geontmQuickPlayWorld", providers.gradleProperty("quickPlayWorld").orElse(""))
 }
 
 repositories {
@@ -129,11 +129,11 @@ repositories {
 }
 
 dependencies {
-    modImplementation("dev.golem:golemcore-forge-$mcVersion:${prop("deps.golemcore")}+$mcVersion")
+    modImplementation("fr.geoventure:geocore-forge-$mcVersion:${prop("deps.geocore")}+$mcVersion")
     compileOnly("org.spongepowered:mixin:0.8.5")
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
-    // Forge 1.20.1 does not bundle MixinExtras; Golem Core nests mixinextras-forge (Jar-in-Jar) and its dev runtime
-    // carries it here, so HBM can compile against it without shipping a copy.
+    // Forge 1.20.1 does not bundle MixinExtras; GeoCore nests mixinextras-forge (Jar-in-Jar) and its dev runtime
+    // carries it here, so GEONTM can compile against it without shipping a copy.
     compileOnly("io.github.llamalad7:mixinextras-common:0.3.5")
     annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.5")
 
@@ -145,15 +145,15 @@ dependencies {
         if (propOrNull("jei.run") != "false") modRuntimeOnly("mezz.jei:jei-$jei-forge:$jeiVer")
     }
 
-    // EMI is an optional peer like REI, fed by the thin plugin in com.hbm.handler.emi (`-Pemi.run=true` for dev runs).
+    // EMI is an optional peer like REI, fed by the thin plugin in fr.geoventure.geontm.handler.emi (`-Pemi.run=true` for dev runs).
     propOrNull("deps.emi")?.let { emi ->
         modCompileOnly("maven.modrinth:emi:$emi")
         if (propOrNull("emi.run") == "true") modRuntimeOnly("maven.modrinth:emi:$emi")
     }
 
     // REI (Roughly Enough Items) is an optional peer like JEI: HBM's recipe-viewer declarations
-    // (com.hbm.handler.jei.HbmRecipeViewer) feed it through Golem Core's dev.golem.core.rei, from the thin plugins in
-    // com.hbm.handler.rei (guarded by the `rei` constant). Compiled against on every node, never shipped or required.
+    // (fr.geoventure.geontm.handler.jei.GeoNtmRecipeViewer) feed it through GeoCore's fr.geoventure.geocore.rei, from the thin plugins in
+    // fr.geoventure.geontm.handler.rei (guarded by the `rei` constant). Compiled against on every node, never shipped or required.
     // `-Prei.run=true` puts REI (with Cloth Config and Architectury) in the client run, beside JEI; off by default so
     // the recipe baselines stay REI-free. The REI Plugin Compatibilities annotation lets HBM's JEI plugin opt out of
     // that mod's JEI-on-REI layer (Forge 1.20.1 only; it exists for no later target).
@@ -172,7 +172,7 @@ dependencies {
         }
     }
 
-    // GemRender (with Flywheel nested) instances gem-declared machines through Golem Core; every machine keeps its
+    // GemRender (with Flywheel nested) instances gem-declared machines through GeoCore; every machine keeps its
     // vanilla BER. `-Pgemrender.run=false` launches without it, as a player without GemRender would.
     if (propOrNull("gemrender.run") != "false") {
         if (localGemRender != null) modRuntimeOnly(localGemRender)
@@ -181,23 +181,23 @@ dependencies {
 
     // Embeddium is the Forge port of Sodium — Sodium itself ships no Forge build, so this is the
     // equivalent dev renderer for this node. Client-side only, dev runtime only, never published.
-    // Jade, dev runs only (`-Pjade.run=true`): HBM's overlay declarations (com.hbm.compat.HbmBlockInfo) reach it
-    // through Golem Core's dev.golem.core.jade, so HBM has no Jade dependency.
+    // Jade, dev runs only (`-Pjade.run=true`): HBM's overlay declarations (fr.geoventure.geontm.compat.GeoNtmBlockInfo) reach it
+    // through GeoCore's fr.geoventure.geocore.jade, so GEONTM has no Jade dependency.
     if (propOrNull("jade.run") == "true") propOrNull("deps.jade")?.let { modRuntimeOnly("maven.modrinth:jade:$it") }
     // Just Enough Characters, dev runs only (`-Pjecharacters.run=true`): pinyin matching in HBM's search bars (Core TextSearch).
     if (propOrNull("jecharacters.run") == "true") propOrNull("deps.jecharacters")?.let { modRuntimeOnly("maven.modrinth:justenoughcharacters:$it") }
-    // Applied Energistics 2 and its required GuideME, dev runs only (`-Pae2.run=true`), through Golem Core's
-    // dev.golem.core.autocraft; HBM has no AE2 dependency.
+    // Applied Energistics 2 and its required GuideME, dev runs only (`-Pae2.run=true`), through GeoCore's
+    // fr.geoventure.geocore.autocraft; GEONTM has no AE2 dependency.
     if (propOrNull("ae2.run") == "true") {
         propOrNull("deps.ae2")?.let { modRuntimeOnly("maven.modrinth:ae2:$it") { isTransitive = false } }
         propOrNull("deps.ae2_guideme")?.let { modRuntimeOnly("maven.modrinth:guideme:$it") { isTransitive = false } }
     }
-    // Refined Storage 1.12, dev runs only (`-Prefinedstorage.run=true`), through Golem Core's item capability.
+    // Refined Storage 1.12, dev runs only (`-Prefinedstorage.run=true`), through GeoCore's item capability.
     if (propOrNull("refinedstorage.run") == "true") {
         propOrNull("deps.refinedstorage")?.let { modRuntimeOnly("maven.modrinth:refined-storage:$it") { isTransitive = false } }
     }
     // Mo' Bends, client dev runs only (`-Pmobends.run=true`), with the Architectury API it requires. HBM's armour follows
-    // its bent skeleton through Golem Core (dev.golem.core.render.BodyAnimations); nothing here compiles against it.
+    // its bent skeleton through GeoCore (fr.geoventure.geocore.render.BodyAnimations); nothing here compiles against it.
     if (propOrNull("mobends.run") == "true") {
         propOrNull("deps.mobends_run")?.let { modRuntimeOnly("maven.modrinth:mo-bends-unofficial-modern-port:$it") { isTransitive = false } }
         propOrNull("deps.mobends_architectury")?.let { modRuntimeOnly("dev.architectury:architectury-forge:$it") { isTransitive = false } }
@@ -225,7 +225,7 @@ dependencies {
     // so the production jar is remapped for this node's dev mappings; nothing compiles against it.
     propOrNull("deps.pipez")?.let { modRuntimeOnly("maven.modrinth:pipez:$it") }
 
-    // KubeJS is an optional peer served entirely by Golem Core's dev.golem.core.kubejs adapter (HBM has no KubeJS code).
+    // KubeJS is an optional peer served entirely by GeoCore's fr.geoventure.geocore.kubejs adapter (GEONTM has no KubeJS code).
     // Never compiled against, shipped or required. `-Pkubejs.run=true` puts KubeJS 6, Rhino and Architectury in the dev
     // runs (SRG jars, remapped by `modRuntimeOnly`) and copies harness/kubejs into each run's kubejs folder; off by
     // default so the baselines stay KubeJS-free. With -Prei.run too, Gradle keeps the newer of the two Architectury pins.
@@ -240,7 +240,7 @@ dependencies {
     }
 
     // CC: Tweaked is an optional peer: HBM's 1.7 OpenComputers components are served to it as peripherals
-    // (com.hbm.compat.computer, through Golem Core's dev.golem.core.computer). Compiled against on every node,
+    // (fr.geoventure.geontm.compat.computer, through GeoCore's fr.geoventure.geocore.computer). Compiled against on every node,
     // never shipped or required. `-Pcomputercraft.run=true` puts the mod in the dev runs as well; it is off by
     // default so the recipe baselines stay CC-free.
     val ccMc = propOrNull("deps.cc_mc")
@@ -302,40 +302,40 @@ extra["mc_version"] = mcVersion
 extra["java_version"] = javaVersion.toString()
 // Forge 1.20.1's community tag namespace is `forge:`, not the `c:` this mod's data is authored in —
 // `c:` only became universal with NeoForge 1.21. The legacy resource pass republishes the convention
-// tags under this namespace and repoints recipes at them; see ../Golem-Core/gradle/mod/legacy-recipes.gradle.kts.
+// tags under this namespace and repoints recipes at them; see ../GeoCore/gradle/mod/legacy-recipes.gradle.kts.
 // Forge nodes at 1.21+ (should any be added) would drop this line rather than change it.
 extra["convention_namespace"] = "forge"
-// Golem Core's shared build layer; HBM's parameters for it (golem.build.*) are in gradle.properties.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/run-toolchain.gradle.kts"))
-// Visual test harness launch capture (shared by every Golem Core mod); see harness.json and ../Golem-Core/harness/README.md.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/harness-spec.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-recipes.gradle.kts"))
+// GeoCore's shared build layer; HBM's parameters for it (geocore.build.*) are in gradle.properties.
+apply(from = rootProject.file("../GeoCore/gradle/mod/run-toolchain.gradle.kts"))
+// Visual test harness launch capture (shared by every GeoCore mod); see harness.json and ../GeoCore/harness/README.md.
+apply(from = rootProject.file("../GeoCore/gradle/mod/harness-spec.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-recipes.gradle.kts"))
 extra["loader"] = "forge"
 // Orders the mod before KubeJS (optional dependency) so its script groups and bindings reach the startup scripts.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/kubejs-order.gradle.kts"))
-// Neutral "golem:conditions" in data JSON, rewritten to this loader's spelling; see the script.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/recipe-conditions.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-biomes.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/legacy-assets.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/kubejs-order.gradle.kts"))
+// Neutral "geocore:conditions" in data JSON, rewritten to this loader's spelling; see the script.
+apply(from = rootProject.file("../GeoCore/gradle/mod/recipe-conditions.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-biomes.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/legacy-assets.gradle.kts"))
 // HBM's own item-model resource checks; after legacy-assets, whose parentModelOf export they read.
 apply(from = rootProject.file("gradle/asset-checks.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/dejson.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/dejson.gradle.kts"))
 // HBM's machine recipe tables, generated from src/recipes on 26.1 NeoForge (build.neoforge.gradle.kts); see the script.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/generated-data.gradle.kts"))
-apply(from = rootProject.file("../Golem-Core/gradle/mod/mixin-validation.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/generated-data.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/mixin-validation.gradle.kts"))
 
 // The uploaded jar: no GameTests or harness queries (see the script).
-apply(from = rootProject.file("../Golem-Core/gradle/mod/release-jar.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/release-jar.gradle.kts"))
 // Credits and links in the loader metadata, from the mod.* properties.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/mod-metadata.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/mod-metadata.gradle.kts"))
 // Modrinth + CurseForge upload of this node's jar; run every node with the root `publishAllMods`.
-apply(from = rootProject.file("../Golem-Core/gradle/mod/publish.gradle.kts"))
+apply(from = rootProject.file("../GeoCore/gradle/mod/publish.gradle.kts"))
 
 dependencies { compileOnly("org.jspecify:jspecify:1.0.0") }
 
 // The id constants recipe declarations are written against. Generated from the live registry by
 // `runGenerateIds` and committed, because the plain-JVM build step the declarations run in cannot
-// load half the registry classes; see com.hbm.lib.IdConstants.
+// load half the registry classes; see fr.geoventure.geontm.lib.IdConstants.
 sourceSets["main"].java.srcDir(rootProject.file("src/generated/java"))
 
 // KubeJS dev scripts (`-Pkubejs.run=true`): harness/kubejs (startup_scripts, server_scripts, client_scripts) is copied

@@ -1,8 +1,8 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Release audit, explosives: the HE, shrapnel, fat and naval mines each fire under a pig (trigger boxes and blast
  * written down from 1.7), then the four crashed bombs are bound to a real detonator (shift-click a block, right-click
- * in the air) and set off. Crater floor along +x and the hbm entities seen are printed.
+ * in the air) and set off. Crater floor along +x and the geontm entities seen are printed.
  */
 public final class RcBombMines implements Scenario {
 
@@ -28,16 +28,16 @@ public final class RcBombMines implements Scenario {
         c.cmd("difficulty normal");
         c.cmd("gamerule mobGriefing true");
         List<String> notes = new ArrayList<>();
-        String[] mines = {"hbm:mine_he", "hbm:mine_shrap", "hbm:mine_fat", "hbm:mine_naval"};
+        String[] mines = {"geontm:mine_he", "geontm:mine_shrap", "geontm:mine_fat", "geontm:mine_naval"};
         for (int i = 0; i < mines.length; i++) {
             try { notes.add(mine(c, mines[i], 400 + i * 150)); } catch (RuntimeException e) { notes.add(mines[i] + ": FAILED " + e.getMessage()); }
         }
-        String[] duds = {"hbm:crashed_bomb_conventional", "hbm:crashed_bomb_nuke", "hbm:crashed_bomb_salted", "hbm:crashed_bomb_balefire"};
+        String[] duds = {"geontm:crashed_bomb_conventional", "geontm:crashed_bomb_nuke", "geontm:crashed_bomb_salted", "geontm:crashed_bomb_balefire"};
         for (int i = 0; i < duds.length; i++) {
             try { notes.add(dud(c, duds[i], 1200 + i * 400)); } catch (RuntimeException e) { notes.add(duds[i] + ": FAILED " + e.getMessage()); }
         }
         for (String n : notes) System.out.println("[RcBombMines] " + n);
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered geontm:|is not registered).*");
     }
 
     private String mine(Client c, String id, int x) {
@@ -56,7 +56,7 @@ public final class RcBombMines implements Scenario {
             c.waitTicks(5);
             for (JsonElement e : c.entities(60)) {
                 String t = e.getAsJsonObject().get("type").getAsString();
-                if (t.startsWith("hbm:")) seen.add(t.substring(4));
+                if (t.startsWith("geontm:")) seen.add(t.substring(4));
             }
             if (i == 1) c.screenshot(id.substring(4) + "-blast");
         }
@@ -80,7 +80,7 @@ public final class RcBombMines implements Scenario {
         c.cmd("setblock " + x + " " + Y + " " + z + " " + id);
         c.waitTicks(4);
         c.cmd("clear");
-        c.cmd("give @s hbm:detonator 1");
+        c.cmd("give @s geontm:detonator 1");
         c.waitTicks(4);
         c.hotbar(1);
         c.teleport(x + 0.5, Y, z - 3.5);
@@ -108,7 +108,7 @@ public final class RcBombMines implements Scenario {
             params.addProperty("server", true);
             for (JsonElement e : c.query("entities", params).getAsJsonArray("entities")) {
                 String t = e.getAsJsonObject().get("type").getAsString();
-                if (t.startsWith("hbm:")) seen.add(t.substring(4));
+                if (t.startsWith("geontm:")) seen.add(t.substring(4));
             }
             if (i == 2) c.screenshot(id.substring(4) + "-blast");
             if (i > 3 && seen.stream().noneMatch(s -> s.contains("mk5") || s.contains("balefire"))) break;

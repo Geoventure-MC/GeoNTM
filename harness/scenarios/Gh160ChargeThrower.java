@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ public final class Gh160ChargeThrower implements Scenario {
             tap(c);
             c.waitTicks(30);
             c.screenshot("hook-fired");
-            JsonObject before = c.query("hbm_bullets", new JsonObject());
+            JsonObject before = c.query("geontm_bullets", new JsonObject());
             JsonObject hook = hook(before);
             System.out.println("[Gh160] " + c.node() + " after firing " + before);
             if (hook == null) {
@@ -51,12 +51,12 @@ public final class Gh160ChargeThrower implements Scenario {
             c.waitTicks(40);
             c.screenshot("reeling");
             c.keyUp("mouse.left");
-            JsonObject after = c.query("hbm_bullets", new JsonObject());
+            JsonObject after = c.query("geontm_bullets", new JsonObject());
             double pulled = after.get("player_z").getAsDouble() - startZ;
             System.out.println("[Gh160] " + c.node() + " reeled " + pulled + " blocks: " + after);
             if (pulled < 3D) wrong.add("holding fire reeled the player only " + pulled + " blocks");
 
-            c.cmd("kill @e[type=hbm:entity_bullet_mk4]");
+            c.cmd("kill @e[type=geontm:entity_bullet_mk4]");
             c.teleport(X + 0.5, Y + 1, Z + 0.5);
             c.look(0, -30);
             load(c, "ct_mortar");
@@ -70,13 +70,13 @@ public final class Gh160ChargeThrower implements Scenario {
             c.cmd("clear @s");
         }
         Expect.that(wrong.isEmpty(), "1.7 charge thrower: " + wrong);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     private static void load(Client c, String ammo) throws Exception {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_charge_thrower");
-        c.cmd("give @s hbm:ammo_standard_" + ammo + " 1");
+        c.cmd("give @s geontm:gun_charge_thrower");
+        c.cmd("give @s geontm:ammo_standard_" + ammo + " 1");
         c.hotbar(1);
         c.waitTicks(40);
         c.key("r");

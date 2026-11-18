@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Player report: multiblock machines (turbofan, ZIRNOX, derrick) are invisible on a Create Aeronautics ship while
@@ -11,7 +11,7 @@ import dev.golem.harness.api.Scenario;
 public final class SableShipMachines implements Scenario {
 
     private static final int Y = 100, D = Y + 1;
-    private static final String[] MACHINES = {"hbm:machine_turbofan", "hbm:machine_zirnox", "hbm:machine_well"};
+    private static final String[] MACHINES = {"geontm:machine_turbofan", "geontm:machine_zirnox", "geontm:machine_well"};
 
     @Override
     public void run(Client c) throws Exception {

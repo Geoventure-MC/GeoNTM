@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.Locale;
 /**
  * GitHub issue 146: ducts and pipe anchors lost 1.7's placement sound ({@code ModSoundTypes.pipe}). Places each kind by
  * hand and breaks it with {@code setblock ... destroy}, and reads the client's sound log: placing must play
- * {@code hbm:block.pipe_placed} at volume 0.925 and pitch (0.85..1.05) x 0.8, breaking it at (0.70..0.90) x 0.8.
+ * {@code geontm:block.pipe_placed} at volume 0.925 and pitch (0.85..1.05) x 0.8, breaking it at (0.70..0.90) x 0.8.
  */
 public final class Gh146DuctSound implements Scenario {
 
@@ -19,8 +19,8 @@ public final class Gh146DuctSound implements Scenario {
     private static final int Z = 1460;
 
     private static final String[] ITEMS = {
-            "hbm:fluid_duct_neo", "hbm:fluid_duct_neo_silver", "hbm:fluid_duct_box_copper_2", "hbm:fluid_duct_exhaust_1",
-            "hbm:pipe_anchor", "hbm:pneumatic_tube", "hbm:pneumatic_storage_mono"
+            "geontm:fluid_duct_neo", "geontm:fluid_duct_neo_silver", "geontm:fluid_duct_box_copper_2", "geontm:fluid_duct_exhaust_1",
+            "geontm:pipe_anchor", "geontm:pneumatic_tube", "geontm:pneumatic_storage_mono"
     };
 
     @Override

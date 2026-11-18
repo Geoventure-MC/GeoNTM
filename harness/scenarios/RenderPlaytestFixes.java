@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public final class RenderPlaytestFixes implements Scenario {
         String[] axes = {"y", "x", "z"};
         for (int s = 0; s < styles.length; s++) {
             for (int a = 0; a < axes.length; a++) {
-                Fixtures.setBlock(c, X - 6 + s * 2, Y + 1 + a * 2, Z + 6, "hbm:" + styles[s] + "[axis=" + axes[a] + "]");
+                Fixtures.setBlock(c, X - 6 + s * 2, Y + 1 + a * 2, Z + 6, "geontm:" + styles[s] + "[axis=" + axes[a] + "]");
             }
         }
         c.cmd("gamemode spectator");
@@ -61,9 +61,9 @@ public final class RenderPlaytestFixes implements Scenario {
 
     private void wall(Client c) {
         int wx = X + 6, wz = Z + 6;
-        Fixtures.setBlock(c, wx, Y + 1, wz, "hbm:steel_wall[facing=north]");
-        Fixtures.setBlock(c, wx + 1, Y + 1, wz, "hbm:steel_wall[facing=north]");
-        Fixtures.setBlock(c, wx + 3, Y + 1, wz, "hbm:steel_corner[facing=north]");
+        Fixtures.setBlock(c, wx, Y + 1, wz, "geontm:steel_wall[facing=north]");
+        Fixtures.setBlock(c, wx + 1, Y + 1, wz, "geontm:steel_wall[facing=north]");
+        Fixtures.setBlock(c, wx + 3, Y + 1, wz, "geontm:steel_corner[facing=north]");
         c.teleport(wx + 1.5, Y + 2.5, wz - 3.5);
         c.lookAt(wx + 1.5, Y + 1.5, wz + 0.5);
         c.waitTicks(20);
@@ -78,7 +78,7 @@ public final class RenderPlaytestFixes implements Scenario {
         String[] orient = {"horizontal_north_south", "horizontal_east_west", "vertical_north_south", "vertical_east_west"};
         int sz = Z - 6;
         for (int i = 0; i < orient.length; i++) {
-            Fixtures.setBlock(c, X - 6 + i * 3, Y + 1, sz, "hbm:steel_scaffold[orient=" + orient[i] + ",variant=steel]");
+            Fixtures.setBlock(c, X - 6 + i * 3, Y + 1, sz, "geontm:steel_scaffold[orient=" + orient[i] + ",variant=steel]");
             Fixtures.setBlock(c, X - 6 + i * 3, Y + 1, sz - 2, "minecraft:gold_block");
         }
         c.teleport(X - 1.5, Y + 4, sz + 5.5);
@@ -100,8 +100,8 @@ public final class RenderPlaytestFixes implements Scenario {
         c.cmd("fill " + (px - 1) + " " + (Y - 6) + " " + (pz - 1) + " " + (px + 3) + " " + Y + " " + (pz + 3) + " minecraft:glass");
         c.cmd("fill " + px + " " + (Y - 5) + " " + pz + " " + (px + 2) + " " + Y + " " + (pz + 2) + " minecraft:water");
         c.cmd("fill " + (px - 1) + " " + (Y - 6) + " " + (pz - 1) + " " + (px + 3) + " " + (Y - 6) + " " + (pz + 3) + " minecraft:sand");
-        Fixtures.setBlock(c, px + 1, Y + 1, pz + 1, "hbm:plant_reeds");
-        Fixtures.setBlock(c, px, Y + 1, pz + 2, "hbm:plant_reeds");
+        Fixtures.setBlock(c, px + 1, Y + 1, pz + 1, "geontm:plant_reeds");
+        Fixtures.setBlock(c, px, Y + 1, pz + 2, "geontm:plant_reeds");
         c.waitTicks(5);
         Expect.that(c.blockEntity(px + 1, Y + 1, pz + 1) != null, "reeds carry their renderer's block entity");
         c.teleport(px + 1.5, Y - 2.5, pz - 4.5);
@@ -113,7 +113,7 @@ public final class RenderPlaytestFixes implements Scenario {
     private void craterWater(Client c) {
         int ax = X - 10, az = Z - 14;
         c.cmd("fill " + ax + " " + Y + " " + az + " " + (ax + 9) + " " + Y + " " + (az + 4) + " minecraft:water");
-        c.cmd("fillbiome " + ax + " " + (Y - 4) + " " + az + " " + (ax + 4) + " " + (Y + 4) + " " + (az + 4) + " hbm:crater");
+        c.cmd("fillbiome " + ax + " " + (Y - 4) + " " + az + " " + (ax + 4) + " " + (Y + 4) + " " + (az + 4) + " geontm:crater");
         c.waitTicks(40);
         c.teleport(ax + 5.0, Y + 6, az - 3.5);
         c.lookAt(ax + 5.0, Y, az + 2.5);
@@ -125,8 +125,8 @@ public final class RenderPlaytestFixes implements Scenario {
         c.cmd("gamemode creative");
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.cmd("clear");
-        for (String id : new String[]{"hbm:steel_scaffold", "hbm:steel_wall", "hbm:deco_pipe", "hbm:deco_pipe_quad",
-                "hbm:deco_pipe_framed", "hbm:plant_reeds"}) c.cmd("give @s " + id + " 1");
+        for (String id : new String[]{"geontm:steel_scaffold", "geontm:steel_wall", "geontm:deco_pipe", "geontm:deco_pipe_quad",
+                "geontm:deco_pipe_framed", "geontm:plant_reeds"}) c.cmd("give @s " + id + " 1");
         c.waitTicks(10);
         c.setOption("gui_scale", "3");
         c.key("e");

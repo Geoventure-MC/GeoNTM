@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +22,8 @@ public final class RcToolAbility implements Scenario {
         Fixtures.platform(c, 0, 100, 0, 8);
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:schrabidium_pickaxe");
-        c.cmd("give @s hbm:cmb_axe");
+        c.cmd("give @s geontm:schrabidium_pickaxe");
+        c.cmd("give @s geontm:cmb_axe");
         c.waitTicks(6);
         c.hotbar(1);
         c.waitTicks(3);
@@ -62,7 +62,7 @@ public final class RcToolAbility implements Scenario {
         System.out.println(c.node() + " before leaving: " + atTwo);
         c.screenshot("ability-held");
 
-        c.key("key.hbm.abilityAlt");
+        c.key("key.geontm.abilityAlt");
         c.waitTicks(10);
         System.out.println(c.node() + " alt screen: " + c.screenClass());
         c.screenshot("ability-screen");
@@ -87,7 +87,7 @@ public final class RcToolAbility implements Scenario {
     }
 
     private String info(Client c) {
-        JsonObject r = c.query("hbm_info", new JsonObject());
+        JsonObject r = c.query("geontm_info", new JsonObject());
         JsonArray msgs = r.has("messages") ? r.getAsJsonArray("messages") : new JsonArray();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < msgs.size(); i++) sb.append(msgs.get(i).getAsString()).append(" / ");

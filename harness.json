@@ -1,7 +1,7 @@
 {
-  "name": "hbm",
+  "name": "geontm",
   "mod": ".",
-  "golemCore": "../Golem-Core",
+  "geocoreCore": "../GeoCore",
   "scenarios": "harness/scenarios",
   "fixtures": "harness/fixtures",
   "out": "harness/out",

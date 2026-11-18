@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** The conveyor wand: first click stores the start, the ghost shows the route while aiming at the target, the second click lays the belts. */
 public final class RcLogiWand implements Scenario {
@@ -15,7 +15,7 @@ public final class RcLogiWand implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 14);
         c.cmd("fill -14 " + (Y + 1) + " -14 14 " + (Y + 6) + " 14 minecraft:air");
         c.cmd("gamemode creative");
-        Fixtures.giveOnly(c, "hbm:conveyor_wand_regular", 1);
+        Fixtures.giveOnly(c, "geontm:conveyor_wand_regular", 1);
         c.hotbar(1);
         c.waitTicks(2);
         c.teleport(0.5, Y + 1, -3.5);

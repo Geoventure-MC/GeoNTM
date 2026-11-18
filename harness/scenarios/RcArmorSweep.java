@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,10 +72,10 @@ public final class RcArmorSweep implements Scenario {
             String[] pieces = set[1].split(",", -1);
             String[] slots = {"head", "chest", "legs", "feet"};
             for (int i = 0; i < 4; i++) {
-                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + slots[i] + " with hbm:" + pieces[i]);
+                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + slots[i] + " with geontm:" + pieces[i]);
             }
             c.waitTicks(12);
-            JsonObject a = c.query("hbm_armor_set", new JsonObject());
+            JsonObject a = c.query("geontm_armor_set", new JsonObject());
             int armor = a.get("armor_value").getAsInt();
             double tough = a.get("armor_toughness").getAsDouble();
             int chestMax = a.getAsJsonObject("chest").get("max_damage").getAsInt();

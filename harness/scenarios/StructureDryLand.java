@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ public final class StructureDryLand implements Scenario {
             c.cmd("forceload add " + (x - R) + " " + (z - R) + " " + (x + R) + " " + (z + R));
             c.waitTicks(100);
             c.markLog();
-            c.cmd("place structure hbm:" + id + " " + x + " 64 " + z);
+            c.cmd("place structure geontm:" + id + " " + x + " 64 " + z);
             c.waitTicks(200);
             Expect.that(c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument").isEmpty(), "placed " + id);
             int count = 0;

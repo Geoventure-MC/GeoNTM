@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,8 +84,8 @@ public final class FinalArmorMods implements Scenario {
             c.waitTicks(2);
             List<String> batch = new ArrayList<>();
             for (int i = page * 36; i < Math.min(IDS.length, (page + 1) * 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i] + " 1");
-                batch.add("hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i] + " 1");
+                batch.add("geontm:" + IDS[i]);
             }
             c.waitTicks(5);
             for (String id : batch) Expect.that(count(c, id) == 1, id + " was given and is in the inventory");
@@ -113,25 +113,25 @@ public final class FinalArmorMods implements Scenario {
     // ------------------------------------------------------------------ armor table
 
     private void tables(Client c) {
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", TX, Y, TZ);
-        Expect.block(c, TX, Y + 1, TZ, "hbm:machine_armor_table");
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", TX, Y, TZ);
+        Expect.block(c, TX, Y + 1, TZ, "geontm:machine_armor_table");
         c.cmd("clear");
-        for (String id : new String[]{"hbm:steel_plate", "hbm:servo_set", "hbm:heart_container", "hbm:australium_iii",
-                "hbm:cladding_iron", "hbm:back_tesla", "hbm:steel_helmet", "hbm:attachment_mask",
-                "hbm:medal_liquidator", "hbm:spider_milk", "hbm:cladding_obsidian", "hbm:steel_legs", "hbm:scrumpy",
-                "hbm:hazmat_boots", "hbm:pads_slime"}) {
+        for (String id : new String[]{"geontm:steel_plate", "geontm:servo_set", "geontm:heart_container", "geontm:australium_iii",
+                "geontm:cladding_iron", "geontm:back_tesla", "geontm:steel_helmet", "geontm:attachment_mask",
+                "geontm:medal_liquidator", "geontm:spider_milk", "geontm:cladding_obsidian", "geontm:steel_legs", "geontm:scrumpy",
+                "geontm:hazmat_boots", "geontm:pads_slime"}) {
             c.cmd("give @s " + id + " 1");
         }
         c.waitTicks(5);
         openTable(c);
 
         // Chestplate: servos, special (heart), insert (life extender), cladding (iron), chest-only (tesla).
-        moveInto(c, "hbm:steel_plate", ARMOR);
-        moveInto(c, "hbm:servo_set", 4);
-        moveInto(c, "hbm:heart_container", 7);
-        moveInto(c, "hbm:australium_iii", 6);
-        moveInto(c, "hbm:cladding_iron", 5);
-        moveInto(c, "hbm:back_tesla", 1);
+        moveInto(c, "geontm:steel_plate", ARMOR);
+        moveInto(c, "geontm:servo_set", 4);
+        moveInto(c, "geontm:heart_container", 7);
+        moveInto(c, "geontm:australium_iii", 6);
+        moveInto(c, "geontm:cladding_iron", 5);
+        moveInto(c, "geontm:back_tesla", 1);
         c.waitTicks(5);
         c.screenshot("10-table-chestplate");
         hover(c, ARMOR);
@@ -139,23 +139,23 @@ public final class FinalArmorMods implements Scenario {
         moveSlot(c, ARMOR, CHEST);
 
         // Helmet: M65 attachment (helmet-only), medal (chest-only is allowed on helmets), milk, obsidian skin.
-        moveInto(c, "hbm:steel_helmet", ARMOR);
-        moveInto(c, "hbm:attachment_mask", 0);
-        moveInto(c, "hbm:medal_liquidator", 1);
-        moveInto(c, "hbm:spider_milk", 7);
-        moveInto(c, "hbm:cladding_obsidian", 5);
+        moveInto(c, "geontm:steel_helmet", ARMOR);
+        moveInto(c, "geontm:attachment_mask", 0);
+        moveInto(c, "geontm:medal_liquidator", 1);
+        moveInto(c, "geontm:spider_milk", 7);
+        moveInto(c, "geontm:cladding_obsidian", 5);
         c.waitTicks(5);
         c.screenshot("12-table-helmet");
         hover(c, ARMOR);
         c.screenshot("13-table-helmet-tooltip");
         moveSlot(c, ARMOR, HEAD);
 
-        moveInto(c, "hbm:steel_legs", ARMOR);
-        moveInto(c, "hbm:scrumpy", 7);
+        moveInto(c, "geontm:steel_legs", ARMOR);
+        moveInto(c, "geontm:scrumpy", 7);
         c.waitTicks(3);
         moveSlot(c, ARMOR, LEGS);
-        moveInto(c, "hbm:hazmat_boots", ARMOR);
-        moveInto(c, "hbm:pads_slime", 3);
+        moveInto(c, "geontm:hazmat_boots", ARMOR);
+        moveInto(c, "geontm:pads_slime", 3);
         c.waitTicks(3);
         c.screenshot("14-table-boots");
         moveSlot(c, ARMOR, FEET);
@@ -163,12 +163,12 @@ public final class FinalArmorMods implements Scenario {
         c.waitTicks(10);
 
         JsonObject armor = armor(c);
-        expectMods(armor, "chest", "4:hbm:servo_set", "7:hbm:heart_container", "6:hbm:australium_iii",
-                "5:hbm:cladding_iron", "1:hbm:back_tesla");
-        expectMods(armor, "head", "0:hbm:attachment_mask", "1:hbm:medal_liquidator", "7:hbm:spider_milk",
-                "5:hbm:cladding_obsidian");
-        expectMods(armor, "legs", "7:hbm:scrumpy");
-        expectMods(armor, "feet", "3:hbm:pads_slime");
+        expectMods(armor, "chest", "4:geontm:servo_set", "7:geontm:heart_container", "6:geontm:australium_iii",
+                "5:geontm:cladding_iron", "1:geontm:back_tesla");
+        expectMods(armor, "head", "0:geontm:attachment_mask", "1:geontm:medal_liquidator", "7:geontm:spider_milk",
+                "5:geontm:cladding_obsidian");
+        expectMods(armor, "legs", "7:geontm:scrumpy");
+        expectMods(armor, "feet", "3:geontm:pads_slime");
 
         // Shift-hover the worn chestplate in the survival inventory: the "Mods:" listing.
         c.key("e");
@@ -229,7 +229,7 @@ public final class FinalArmorMods implements Scenario {
         Expect.that(Math.abs(a.get("health").getAsDouble() - a.get("max_health").getAsDouble()) < 0.01,
                 "scrumpy revive restores full health, got " + a.get("health"));
         Expect.that(hasEffect(a, "resistance", 99), "scrumpy revive grants Resistance 100, got " + a.get("effects"));
-        Expect.that(!mods(a, "legs").contains("7:hbm:scrumpy:1") && mods(a, "legs").isEmpty(),
+        Expect.that(!mods(a, "legs").contains("7:geontm:scrumpy:1") && mods(a, "legs").isEmpty(),
                 "the single scrumpy revive is spent, legs mods " + mods(a, "legs"));
         Expect.that(c.screenClass() == null || !c.screenClass().contains("Death"), "no death screen");
         c.screenshot("21-after-scrumpy-revive");
@@ -257,7 +257,7 @@ public final class FinalArmorMods implements Scenario {
         // check is relative: the pads must at least halve the cost of the same hit.
         double padded = hit(c, "minecraft:fall");
         c.screenshot("20-after-padded-fall");
-        c.cmd("item replace entity @s armor.feet with hbm:hazmat_boots");
+        c.cmd("item replace entity @s armor.feet with geontm:hazmat_boots");
         double bare = hit(c, "minecraft:fall");
         Expect.that(bare > 4 && padded <= bare * 0.5,
                 "slime pads: 16 fall damage cost " + padded + " padded vs " + bare + " unpadded");
@@ -288,15 +288,15 @@ public final class FinalArmorMods implements Scenario {
 
     private void nightVision(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:t51_helmet 1");
-        c.cmd("give @s hbm:night_vision 1");
-        c.cmd("item replace entity @s armor.chest with hbm:t51_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:t51_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:t51_boots");
+        c.cmd("give @s geontm:t51_helmet 1");
+        c.cmd("give @s geontm:night_vision 1");
+        c.cmd("item replace entity @s armor.chest with geontm:t51_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:t51_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:t51_boots");
         c.waitTicks(5);
         openTable(c);
-        moveInto(c, "hbm:t51_helmet", ARMOR);
-        moveInto(c, "hbm:night_vision", 0);
+        moveInto(c, "geontm:t51_helmet", ARMOR);
+        moveInto(c, "geontm:night_vision", 0);
         c.waitTicks(3);
         c.screenshot("30-table-t51-night-vision");
         // Straight from the table onto the head: the full T-51b set is now worn.
@@ -304,7 +304,7 @@ public final class FinalArmorMods implements Scenario {
         c.key("escape");
         c.waitTicks(20);
         JsonObject a = armor(c);
-        expectMods(a, "head", "0:hbm:night_vision");
+        expectMods(a, "head", "0:geontm:night_vision");
         Expect.that(hasEffect(a, "night_vision", 0), "night vision goggles on a full T-51b set grant Night Vision, got "
                 + a.get("effects"));
         c.screenshot("31-t51-night-vision");
@@ -326,18 +326,18 @@ public final class FinalArmorMods implements Scenario {
         c.cmd("item replace entity @s armor.chest with minecraft:air");
         c.cmd("item replace entity @s armor.legs with minecraft:air");
         c.cmd("item replace entity @s armor.feet with minecraft:air");
-        c.cmd("give @s hbm:steel_helmet 1");
-        c.cmd("give @s hbm:attachment_mask 1");
-        c.cmd("give @s hbm:steel_plate 1");
-        c.cmd("give @s hbm:back_tesla 1");
+        c.cmd("give @s geontm:steel_helmet 1");
+        c.cmd("give @s geontm:attachment_mask 1");
+        c.cmd("give @s geontm:steel_plate 1");
+        c.cmd("give @s geontm:back_tesla 1");
         c.cmd("gamemode survival");
         c.waitTicks(5);
         openTable(c);
-        moveInto(c, "hbm:steel_helmet", ARMOR);
-        moveInto(c, "hbm:attachment_mask", 0);
+        moveInto(c, "geontm:steel_helmet", ARMOR);
+        moveInto(c, "geontm:attachment_mask", 0);
         moveSlot(c, ARMOR, HEAD);
-        moveInto(c, "hbm:steel_plate", ARMOR);
-        moveInto(c, "hbm:back_tesla", 1);
+        moveInto(c, "geontm:steel_plate", ARMOR);
+        moveInto(c, "geontm:back_tesla", 1);
         moveSlot(c, ARMOR, CHEST);
         c.key("escape");
         c.waitTicks(5);
@@ -353,22 +353,22 @@ public final class FinalArmorMods implements Scenario {
         c.waitTicks(10);
         c.screenshot("41-f5-front-m65-attachment");
 
-        wear(c, "hbm:hazmat_paa_helmet", "hbm:hazmat_paa_plate", "hbm:hazmat_paa_legs", "hbm:hazmat_paa_boots");
+        wear(c, "geontm:hazmat_paa_helmet", "geontm:hazmat_paa_plate", "geontm:hazmat_paa_legs", "geontm:hazmat_paa_boots");
         c.screenshot("42-f5-front-hazmat-paa");
-        wear(c, "hbm:liquidator_helmet", "hbm:liquidator_plate", "hbm:liquidator_legs", "hbm:liquidator_boots");
+        wear(c, "geontm:liquidator_helmet", "geontm:liquidator_plate", "geontm:liquidator_legs", "geontm:liquidator_boots");
         c.screenshot("43-f5-front-liquidator");
         JsonObject a = armor(c);
         Expect.that(a.get("knockback_resistance").getAsDouble() >= 1.0,
                 "liquidator suit: knockback resistance capped at 1, got " + a.get("knockback_resistance"));
         // The pre-existing yellow hazmat suit: below 1.21.2 its worn texture comes from the build layer's
         // equipment-asset -> models/armor/<material>_layer_N copy (it drew solid magenta without it).
-        wear(c, "hbm:hazmat_helmet", "hbm:hazmat_plate", "hbm:hazmat_legs", "hbm:hazmat_boots");
+        wear(c, "geontm:hazmat_helmet", "geontm:hazmat_plate", "geontm:hazmat_legs", "geontm:hazmat_boots");
         c.screenshot("43b-f5-front-hazmat-yellow");
-        wear(c, "hbm:mask_of_infamy", "minecraft:air", "minecraft:air", "minecraft:air");
+        wear(c, "geontm:mask_of_infamy", "minecraft:air", "minecraft:air", "minecraft:air");
         c.screenshot("44-f5-front-mask-of-infamy");
         c.key("f5"); // back to first person
         c.waitTicks(5);
-        wear(c, "hbm:liquidator_helmet", "minecraft:air", "minecraft:air", "minecraft:air");
+        wear(c, "geontm:liquidator_helmet", "minecraft:air", "minecraft:air", "minecraft:air");
         c.screenshot("45-first-person-liquidator-overlay");
     }
 
@@ -426,7 +426,7 @@ public final class FinalArmorMods implements Scenario {
     }
 
     private JsonObject armor(Client c) {
-        return c.query("hbm_armor", new JsonObject());
+        return c.query("geontm_armor", new JsonObject());
     }
 
     private static List<String> mods(JsonObject armor, String slot) {

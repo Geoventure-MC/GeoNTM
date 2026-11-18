@@ -1,0 +1,35 @@
+package fr.geoventure.geontm.items;
+
+import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.creativetabs.GeoNtmTab;
+import fr.geoventure.geontm.items.machine.ItemSelfcharger;
+import fr.geoventure.geocore.registry.DeferredRegister;
+import fr.geoventure.geocore.registry.RegistryObject;
+import fr.geoventure.geontm.registration.Presets;
+import fr.geoventure.geontm.registration.Reg;
+import net.minecraft.world.item.Item;
+
+/** The seven deprecated fixed-output batteries used by powered armour's auxiliary drain. */
+@SuppressWarnings("deprecation")
+public final class ModSelfchargerItems {
+    private ModSelfchargerItems() {}
+
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Constants.MOD_ID);
+    private static final Reg REG = Reg.of(ITEMS);
+
+    public static final RegistryObject<ItemSelfcharger> battery_sc_uranium = register("battery_sc_uranium", 5);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_technetium = register("battery_sc_technetium", 25);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_plutonium = register("battery_sc_plutonium", 100);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_polonium = register("battery_sc_polonium", 500);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_gold = register("battery_sc_gold", 2_500);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_lead = register("battery_sc_lead", 5_000);
+    public static final RegistryObject<ItemSelfcharger> battery_sc_americium = register("battery_sc_americium", 10_000);
+
+    private static RegistryObject<ItemSelfcharger> register(String name, long charge) {
+        return REG.<ItemSelfcharger>item(name, (Item.Properties p) -> new ItemSelfcharger(p.stacksTo(1), charge))
+                .transform(Presets.sprite())
+                .tab(GeoNtmTab.CONTROL);
+    }
+
+    public static void init() {}
+}

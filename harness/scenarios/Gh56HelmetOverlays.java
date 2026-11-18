@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
@@ -51,7 +51,7 @@ public final class Gh56HelmetOverlays implements Scenario {
         double[] mask = worn(c, "gas_mask", "05-gas-mask", bare);
         Expect.that(mask[0] > 0.55, "gas mask centre is not black: " + mask[0]);
 
-        c.cmd("item replace entity @s armor.head with hbm:liquidator_helmet");
+        c.cmd("item replace entity @s armor.head with geontm:liquidator_helmet");
         c.key("f5");
         c.waitTicks(10);
         c.screenshot("06-liquidator-third-person");
@@ -64,7 +64,7 @@ public final class Gh56HelmetOverlays implements Scenario {
     }
 
     private static double[] worn(Client c, String id, String shot, double[] bare) throws Exception {
-        c.cmd("item replace entity @s armor.head with hbm:" + id);
+        c.cmd("item replace entity @s armor.head with geontm:" + id);
         c.waitTicks(10);
         double[] seen = light(c.screenshot(shot));
         double[] ratio = {seen[0] / bare[0], seen[1] / bare[1]};

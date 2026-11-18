@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * One machine in a thunderstorm at 20, 40 and 60 blocks, shot with GemRender drawing and after
@@ -25,7 +25,7 @@ public final class GemRenderFog implements Scenario {
             c.cmd("forceload add " + forceload);
             c.waitTicks(20);
             Fixtures.platform(c, X, Y, Z + 32, 40);
-            Fixtures.setBlock(c, X, Y + 1, Z, "hbm:machine_chemical_plant[facing=north]");
+            Fixtures.setBlock(c, X, Y + 1, Z, "geontm:machine_chemical_plant[facing=north]");
             c.cmd("time set 6000");
             c.cmd("gamerule advance_time false");
             c.cmd("weather thunder");

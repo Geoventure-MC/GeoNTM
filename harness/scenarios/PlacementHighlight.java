@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * 1.7 {@code BlockDummyable#drawPlacementHighlight}: holding a multiblock's item and aiming at a block outlines the
@@ -22,7 +22,7 @@ public final class PlacementHighlight implements Scenario {
         Fixtures.setBlock(c, 0, Y, 0, "minecraft:gold_block");
         c.waitTicks(4);
 
-        Fixtures.giveOnly(c, "hbm:machine_chemical_plant", 1);
+        Fixtures.giveOnly(c, "geontm:machine_chemical_plant", 1);
         c.hotbar(1);
         shot(c, "00-chemplant-green", 0.5, Y + 2, -3.5, 0.5, Y + 0.98, 0.5);
 
@@ -32,7 +32,7 @@ public final class PlacementHighlight implements Scenario {
         shot(c, "01-chemplant-red", 0.5, Y + 2, -3.5, 0.5, Y + 0.98, 0.5);
         c.cmd("fill 1 " + (Y + 2) + " -2 1 " + (Y + 2) + " 2 minecraft:air");
 
-        Fixtures.giveOnly(c, "hbm:fusion_breeder", 1);
+        Fixtures.giveOnly(c, "geontm:fusion_breeder", 1);
         c.hotbar(1);
         shot(c, "02-breeder-green-blue", 3.5, Y + 2, -2.5, 0.5, Y + 0.98, 0.5);
     }

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,7 +26,7 @@ public final class FinalRecipeContent implements Scenario {
 
     private static final int X = 0, Y = 100, Z = 0, L = 101;
     private static final int ASM_X = 0, CHEM_X = 8, SOLDER_X = 16, ANVIL_X = -6, DRUM_X = -11;
-    private static final String WATER = "hbm:water", PERFLUOROMETHYL = "hbm:perfluoromethyl";
+    private static final String WATER = "geontm:water", PERFLUOROMETHYL = "geontm:perfluoromethyl";
 
     @Override
     public void run(Client c) throws Exception {
@@ -43,34 +43,34 @@ public final class FinalRecipeContent implements Scenario {
         products(c);
 
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|duplicate ID).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|duplicate ID).*");
     }
 
     // ------------------------------------------------------------------ assembly machine
 
     private void assembly(Client c) {
-        placeSouth(c, "hbm:machine_assembly_machine", ASM_X, Z);
-        Expect.block(c, ASM_X, L, Z, "hbm:machine_assembly_machine");
+        placeSouth(c, "geontm:machine_assembly_machine", ASM_X, Z);
+        Expect.block(c, ASM_X, L, Z, "geontm:machine_assembly_machine");
         selectRecipe(c, ASM_X, Z + 1, 0, 2.5, "GUIMachineAssemblyMachine", "stability", "ass.watzcasing", ASM_X, Z);
         c.cmd("data merge block " + ASM_X + " " + L + " " + Z + " {power:100000L}");
-        put(c, ASM_X, L, Z, 4, "hbm:plate_welded_tcalloy", 1);
-        put(c, ASM_X, L, Z, 5, "hbm:ingot_boron", 3);
-        put(c, ASM_X, L, Z, 6, "hbm:plate_welded_steel", 2);
+        put(c, ASM_X, L, Z, 4, "geontm:plate_welded_tcalloy", 1);
+        put(c, ASM_X, L, Z, 5, "geontm:ingot_boron", 3);
+        put(c, ASM_X, L, Z, 6, "geontm:plate_welded_steel", 2);
         open(c, ASM_X, L + 1, Z + 1, 0, 2.5, "GUIMachineAssemblyMachine");
         c.waitTicks(20);
         c.screenshot("10-assembly-watzcasing-running");
-        int made = waitFor(c, ASM_X, L, Z, "hbm:watz_casing", 3, 300);
+        int made = waitFor(c, ASM_X, L, Z, "geontm:watz_casing", 3, 300);
         c.screenshot("11-assembly-watzcasing-done");
         close(c);
         Expect.that(made >= 3, "ass.watzcasing made 3 watz casings from a welded TC-alloy plate; nbt " + nbt(c, ASM_X, L, Z));
-        Expect.that(count(nbt(c, ASM_X, L, Z), "hbm:plate_welded_tcalloy") == 0, "the TC-alloy plate was consumed");
+        Expect.that(count(nbt(c, ASM_X, L, Z), "geontm:plate_welded_tcalloy") == 0, "the TC-alloy plate was consumed");
         c.cmd("item replace block " + ASM_X + " " + L + " " + Z + " container.16 with minecraft:air");
 
         selectRecipe(c, ASM_X, Z + 1, 0, 2.5, "GUIMachineAssemblyMachine", "nuka", "ass.capnuka", ASM_X, Z);
         c.cmd("data merge block " + ASM_X + " " + L + " " + Z + " {power:100000L}");
-        put(c, ASM_X, L, Z, 4, "hbm:cap_nuka", 64);
-        put(c, ASM_X, L, Z, 5, "hbm:cap_nuka", 64);
-        int caps = waitFor(c, ASM_X, L, Z, "hbm:block_cap_nuka", 1, 200);
+        put(c, ASM_X, L, Z, 4, "geontm:cap_nuka", 64);
+        put(c, ASM_X, L, Z, 5, "geontm:cap_nuka", 64);
+        int caps = waitFor(c, ASM_X, L, Z, "geontm:block_cap_nuka", 1, 200);
         open(c, ASM_X, L + 1, Z + 1, 0, 2.5, "GUIMachineAssemblyMachine");
         c.waitTicks(5);
         c.screenshot("12-assembly-capnuka-done");
@@ -81,36 +81,36 @@ public final class FinalRecipeContent implements Scenario {
     // ------------------------------------------------------------------ chemical plant
 
     private void chemicalPlant(Client c) {
-        placeSouth(c, "hbm:machine_chemical_plant", CHEM_X, Z);
-        Expect.block(c, CHEM_X, L, Z, "hbm:machine_chemical_plant");
+        placeSouth(c, "geontm:machine_chemical_plant", CHEM_X, Z);
+        Expect.block(c, CHEM_X, L, Z, "geontm:machine_chemical_plant");
         selectRecipe(c, CHEM_X, Z + 1, 0, 2.5, "GUIMachineChemicalPlant", "glyphid", "chem.meatprocessing", CHEM_X, Z);
         c.cmd("data merge block " + CHEM_X + " " + L + " " + Z + " {power:100000L,i0:4000,i0_type:\"" + WATER + "\"}");
-        put(c, CHEM_X, L, Z, 4, "hbm:glyphid_meat", 3);
+        put(c, CHEM_X, L, Z, 4, "geontm:glyphid_meat", 3);
         open(c, CHEM_X, L + 1, Z + 1, 0, 2.5, "GUIMachineChemicalPlant");
         c.waitTicks(20);
         c.screenshot("20-chemplant-meat-running");
-        int sulfur = waitFor(c, CHEM_X, L, Z, "hbm:sulfur", 4, 400);
+        int sulfur = waitFor(c, CHEM_X, L, Z, "geontm:sulfur", 4, 400);
         c.screenshot("21-chemplant-meat-done");
         close(c);
         String n = nbt(c, CHEM_X, L, Z);
-        Expect.that(sulfur >= 4 && count(n, "hbm:niter") >= 3,
+        Expect.that(sulfur >= 4 && count(n, "geontm:niter") >= 3,
                 "chem.meatprocessing turned 3 glyphid meat + water into 4 sulfur and 3 niter; nbt " + n);
     }
 
     // ------------------------------------------------------------------ soldering station
 
     private void soldering(Client c) {
-        Fixtures.placeOnTop(c, "hbm:machine_soldering_station", SOLDER_X, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:machine_soldering_station", SOLDER_X, Y, Z);
         int[] core = findCore(c, SOLDER_X, L, Z, "maxPower");
         int sx = core[0], sy = core[1], sz = core[2];
         c.cmd("data merge block " + sx + " " + sy + " " + sz + " {tank:4000,tank_type:\"" + PERFLUOROMETHYL + "\"}");
-        put(c, sx, sy, sz, 0, "hbm:circuit_chip", 32);
-        put(c, sx, sy, sz, 1, "hbm:circuit_capacitor", 32);
-        put(c, sx, sy, sz, 2, "hbm:circuit_capacitor_tantalium", 16);
-        put(c, sx, sy, sz, 3, "hbm:circuit_controller_chassis", 1);
-        put(c, sx, sy, sz, 4, "hbm:ingot_rubber", 4);
-        put(c, sx, sy, sz, 5, "hbm:wire_fine_lead", 16);
-        put(c, sx, sy, sz, 7, "hbm:battery_creative", 1);
+        put(c, sx, sy, sz, 0, "geontm:circuit_chip", 32);
+        put(c, sx, sy, sz, 1, "geontm:circuit_capacitor", 32);
+        put(c, sx, sy, sz, 2, "geontm:circuit_capacitor_tantalium", 16);
+        put(c, sx, sy, sz, 3, "geontm:circuit_controller_chassis", 1);
+        put(c, sx, sy, sz, 4, "geontm:ingot_rubber", 4);
+        put(c, sx, sy, sz, 5, "geontm:wire_fine_lead", 16);
+        put(c, sx, sy, sz, 7, "geontm:battery_creative", 1);
         c.hotbar(9);
         c.teleport(SOLDER_X + 2.5, L, Z + 0.5);
         c.waitTicks(3);
@@ -119,7 +119,7 @@ public final class FinalRecipeContent implements Scenario {
         Expect.screenStaysOpen(c, "GUIMachineSolderingStation", 5);
         c.waitTicks(20);
         c.screenshot("30-soldering-controller-running");
-        int made = waitFor(c, sx, sy, sz, "hbm:circuit_controller", 1, 600);
+        int made = waitFor(c, sx, sy, sz, "geontm:circuit_controller", 1, 600);
         c.screenshot("31-soldering-controller-done");
         close(c);
         Expect.that(made >= 1, "the soldering station made a control unit (1.7 CONTROLLER); nbt " + nbt(c, sx, sy, sz));
@@ -128,18 +128,18 @@ public final class FinalRecipeContent implements Scenario {
     // ------------------------------------------------------------------ anvil recycling
 
     private void anvil(Client c) {
-        Fixtures.placeOnTop(c, "hbm:anvil_murky", ANVIL_X, Y, Z);
-        Expect.block(c, ANVIL_X, L, Z, "hbm:anvil_murky");
+        Fixtures.placeOnTop(c, "geontm:anvil_murky", ANVIL_X, Y, Z);
+        Expect.block(c, ANVIL_X, L, Z, "geontm:anvil_murky");
         c.cmd("clear");
-        Fixtures.give(c, "hbm:rbmk_moderator", 1);
-        Fixtures.give(c, "hbm:deco_crt_clean", 1);
+        Fixtures.give(c, "geontm:rbmk_moderator", 1);
+        Fixtures.give(c, "geontm:deco_crt_clean", 1);
         dismantle(c, "moderator", "40-anvil-moderator");
-        Expect.that(inventoryCount(c, "hbm:rbmk_blank") == 1 && inventoryCount(c, "hbm:block_graphite") == 4
-                        && inventoryCount(c, "hbm:rbmk_moderator") == 0,
+        Expect.that(inventoryCount(c, "geontm:rbmk_blank") == 1 && inventoryCount(c, "geontm:block_graphite") == 4
+                        && inventoryCount(c, "geontm:rbmk_moderator") == 0,
                 "the moderator column came apart into a blank column and 4 graphite blocks: " + c.inventory());
         dismantle(c, "old crt", "41-anvil-crt");
-        Expect.that(inventoryCount(c, "hbm:crt_display") == 1 && inventoryCount(c, "hbm:scrap") == 2
-                        && inventoryCount(c, "hbm:deco_crt_clean") == 0,
+        Expect.that(inventoryCount(c, "geontm:crt_display") == 1 && inventoryCount(c, "geontm:scrap") == 2
+                        && inventoryCount(c, "geontm:deco_crt_clean") == 0,
                 "the old CRT came apart into a CRT display and 2 scrap: " + c.inventory());
     }
 
@@ -169,13 +169,13 @@ public final class FinalRecipeContent implements Scenario {
     // ------------------------------------------------------------------ storage drum
 
     private void drum(Client c) {
-        Fixtures.placeOnTop(c, "hbm:machine_storage_drum", DRUM_X, Y, Z);
-        Expect.block(c, DRUM_X, L, Z, "hbm:machine_storage_drum");
-        for (int slot = 0; slot < 24; slot++) put(c, DRUM_X, L, Z, slot, "hbm:ingot_au198", 1);
+        Fixtures.placeOnTop(c, "geontm:machine_storage_drum", DRUM_X, Y, Z);
+        Expect.block(c, DRUM_X, L, Z, "geontm:machine_storage_drum");
+        for (int slot = 0; slot < 24; slot++) put(c, DRUM_X, L, Z, slot, "geontm:ingot_au198", 1);
         int mercury = 0;
         for (int t = 0; t < 900; t += 20) {
             c.waitTicks(20);
-            mercury = count(nbt(c, DRUM_X, L, Z), "hbm:nugget_mercury");
+            mercury = count(nbt(c, DRUM_X, L, Z), "geontm:nugget_mercury");
         }
         c.hotbar(9);
         c.teleport(DRUM_X + 2.5, L, Z + 0.5);
@@ -195,9 +195,9 @@ public final class FinalRecipeContent implements Scenario {
 
     private void products(Client c) {
         c.cmd("clear");
-        for (String id : new String[]{"hbm:watz_casing", "hbm:block_cap_nuka", "hbm:circuit_controller", "hbm:sulfur",
-                "hbm:niter", "hbm:rbmk_blank", "hbm:crt_display", "hbm:nugget_mercury", "hbm:fusion_component_blanket",
-                "hbm:machine_condenser_powered", "hbm:piston_set_steel", "hbm:missile_shuttle"}) {
+        for (String id : new String[]{"geontm:watz_casing", "geontm:block_cap_nuka", "geontm:circuit_controller", "geontm:sulfur",
+                "geontm:niter", "geontm:rbmk_blank", "geontm:crt_display", "geontm:nugget_mercury", "geontm:fusion_component_blanket",
+                "geontm:machine_condenser_powered", "geontm:piston_set_steel", "geontm:missile_shuttle"}) {
             Fixtures.give(c, id, 1);
         }
         c.cmd("gamemode survival");   // the plain inventory screen, not a creative tab

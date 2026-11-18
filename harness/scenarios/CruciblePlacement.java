@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public final class CruciblePlacement implements Scenario {
 
         for (int i = 0; i < STANDS.length; i++) {
             int x = -24 + (i % 5) * 12, z = -20 + (i / 5) * 12;
-            String result = place(c, "hbm:machine_crucible", x, Y, z, STANDS[i][0], STANDS[i][1], false);
+            String result = place(c, "geontm:machine_crucible", x, Y, z, STANDS[i][0], STANDS[i][1], false);
             System.out.println("[CruciblePlacement] ground stand " + STANDS[i][0] + "," + STANDS[i][1] + " -> " + result);
             if (!result.contains("machine_crucible")) failed.add("ground " + STANDS[i][0] + "," + STANDS[i][1] + ": " + result);
         }
@@ -31,9 +31,9 @@ public final class CruciblePlacement implements Scenario {
         for (int i = 0; i < 4; i++) {
             int x = -18 + i * 12, z = 14;
             int[] stand = STANDS[i];
-            String heater = place(c, "hbm:heater_firebox", x, Y, z, stand[0], stand[1], false);
+            String heater = place(c, "geontm:heater_firebox", x, Y, z, stand[0], stand[1], false);
             System.out.println("[CruciblePlacement] firebox stand " + stand[0] + "," + stand[1] + " -> " + heater);
-            String result = place(c, "hbm:machine_crucible", x, L, z, stand[0], stand[1], true);
+            String result = place(c, "geontm:machine_crucible", x, L, z, stand[0], stand[1], true);
             System.out.println("[CruciblePlacement] crucible on firebox stand " + stand[0] + "," + stand[1] + " -> " + result);
             if (!result.contains("machine_crucible")) failed.add("firebox " + stand[0] + "," + stand[1] + ": " + result);
             c.teleport(x + 0.5 + stand[0] * 2, L + 2, z + 0.5 + stand[1] * 2);

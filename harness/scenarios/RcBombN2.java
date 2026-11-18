@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +27,10 @@ public final class RcBombN2 implements Scenario {
         c.cmd("gamerule mobGriefing true");
         c.teleport(x + 0.5, y + 6, z - 4.5);
         c.waitTicks(40);
-        c.cmd("setblock " + x + " " + y + " " + z + " hbm:nuke_n2");
+        c.cmd("setblock " + x + " " + y + " " + z + " geontm:nuke_n2");
         c.waitTicks(4);
         for (int i = 0; i < 12; i++) {
-            c.cmd("item replace block " + x + " " + y + " " + z + " container." + i + " with hbm:n2_charge 1");
+            c.cmd("item replace block " + x + " " + y + " " + z + " container." + i + " with geontm:n2_charge 1");
         }
         c.waitTicks(4);
         List<String> notes = new ArrayList<>();
@@ -80,7 +80,7 @@ public final class RcBombN2 implements Scenario {
         for (String n : notes) System.out.println("[RcBombN2] " + n);
         c.screenshot("n2-after");
         c.setOption("hide_gui", "false");
-        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|crash report|failed to load|unregistered geontm:|is not registered).*");
         c.resetWorld();
     }
 }

@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ public final class GemRenderMaterials implements Scenario {
             c.cmd("weather clear");
             for (int i = 0; i < MACHINES.size(); i++) {
                 Machine m = MACHINES.get(i);
-                Fixtures.setBlock(c, x(i), L, z(i), "hbm:" + m.id + m.state);
+                Fixtures.setBlock(c, x(i), L, z(i), "geontm:" + m.id + m.state);
             }
             c.cmd("gamemode spectator");
             waitForScene(c);

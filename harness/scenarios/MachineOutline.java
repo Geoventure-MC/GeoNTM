@@ -1,13 +1,13 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The hovered outline of a folded machine covers the whole machine (ntm-next). Shots: a hand-placed chemical plant
  * aimed at its front corner cell (01) and top middle cell (02), one 3x3x3 outline each; a centrifuge (03), whose cells
- * already report its silhouette, keeps vanilla's 4-tall outline. {@code hbm_outline} reports the drawn bounds.
+ * already report its silhouette, keeps vanilla's 4-tall outline. {@code geontm_outline} reports the drawn bounds.
  */
 public final class MachineOutline implements Scenario {
 
@@ -24,7 +24,7 @@ public final class MachineOutline implements Scenario {
         c.cmd("gamerule sendCommandFeedback false");
         c.markLog();
 
-        int front = place(c, "hbm:machine_chemical_plant");
+        int front = place(c, "geontm:machine_chemical_plant");
         c.cmd("clear");
         c.waitTicks(2);
         JsonObject corner = look(c, 1, G, front, "01-chemplant-corner");
@@ -37,7 +37,7 @@ public final class MachineOutline implements Scenario {
         expectSize(top, 3, 3, 3);
         clear(c);
 
-        int centrifuge = place(c, "hbm:machine_centrifuge");
+        int centrifuge = place(c, "geontm:machine_centrifuge");
         c.cmd("clear");
         c.waitTicks(2);
         JsonObject tall = look(c, 0, G, centrifuge, "03-centrifuge");
@@ -81,7 +81,7 @@ public final class MachineOutline implements Scenario {
         c.lookAt(x + 0.5, y + 0.5, z - 0.02);
         c.waitTicks(20);
         c.screenshot(shot);
-        return c.query("hbm_outline", new JsonObject());
+        return c.query("geontm_outline", new JsonObject());
     }
 
     private static void expectSize(JsonObject outline, double dx, double dy, double dz) {

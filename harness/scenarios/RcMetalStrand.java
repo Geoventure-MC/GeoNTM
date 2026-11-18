@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Strand caster against 1.7's numbers: nine small ingot molds (9 x 72 quanta) with enough water cast nine ingots
@@ -23,13 +23,13 @@ public final class RcMetalStrand implements Scenario {
         c.cmd("fill 0 " + L + " 0 40 " + (L + 10) + " 40 minecraft:air");
         c.markLog();
 
-        c.cmd("setblock 10 " + L + " 10 hbm:machine_strand_caster[facing=north]");
+        c.cmd("setblock 10 " + L + " 10 geontm:machine_strand_caster[facing=north]");
         c.waitTicks(10);
         int[] p = findBe(c, 10, L, 10);
         System.out.println("[RcMetalStrand] " + nbt(c, p));
 
         c.cmd("data merge block " + p[0] + " " + p[1] + " " + p[2]
-                + " {type:\"iron\",amount:648,w:64000,s:0,inventory:{Items:[{Slot:0b,id:\"hbm:mold_ingot\",count:1,Count:1b}]}}");
+                + " {type:\"iron\",amount:648,w:64000,s:0,inventory:{Items:[{Slot:0b,id:\"geontm:mold_ingot\",count:1,Count:1b}]}}");
         c.waitTicks(10);
         String after = nbt(c, p);
         System.out.println("[RcMetalStrand] ingots " + after);
@@ -39,7 +39,7 @@ public final class RcMetalStrand implements Scenario {
         Expect.that(count(after, "minecraft:iron_ingot") >= 1, "ingots present");
 
         c.cmd("data merge block " + p[0] + " " + p[1] + " " + p[2]
-                + " {type:\"iron\",amount:5832,w:64000,s:0,inventory:{Items:[{Slot:0b,id:\"hbm:mold_block\",count:1,Count:1b}]}}");
+                + " {type:\"iron\",amount:5832,w:64000,s:0,inventory:{Items:[{Slot:0b,id:\"geontm:mold_block\",count:1,Count:1b}]}}");
         c.waitTicks(10);
         String blocks = nbt(c, p);
         System.out.println("[RcMetalStrand] blocks " + blocks);

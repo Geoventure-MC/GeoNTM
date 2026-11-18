@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public final class Pt1012Small implements Scenario {
             for (int x = x0; x <= x1; x++) {
                 JsonObject b = c.block(x, y, z);
                 String id = b.has("block") ? b.get("block").getAsString() : b.toString();
-                id = id.replace("minecraft:", "").replace("hbm:", "");
+                id = id.replace("minecraft:", "").replace("geontm:", "");
                 sb.append(String.format("%-14s", id.length() > 13 ? id.substring(0, 13) : id));
             }
             sb.append('\n');
@@ -86,7 +86,7 @@ public final class Pt1012Small implements Scenario {
 
     private void turrets(Client c) {
         // A: placed from the floor
-        Fixtures.giveOnly(c, "hbm:turret_chekhov", 1);
+        Fixtures.giveOnly(c, "geontm:turret_chekhov", 1);
         c.teleport(-20 + 0.5, Y + 1, -20 - 2.5);
         c.waitTicks(2);
         c.look(0, 30);
@@ -120,7 +120,7 @@ public final class Pt1012Small implements Scenario {
 
     /** Sneak-right-click the top face of the block at (x, y, z) (its top is {@code top} blocks up) holding a Chekhov. */
     private static void sneakPlace(Client c, int x, int y, int z, double top) {
-        Fixtures.giveOnly(c, "hbm:turret_chekhov", 1);
+        Fixtures.giveOnly(c, "geontm:turret_chekhov", 1);
         c.teleport(x + 2.5, y + 1, z + 0.5);
         c.waitTicks(2);
         c.lookAt(x + 0.5, y + top - 0.02, z + 0.5);
@@ -144,7 +144,7 @@ public final class Pt1012Small implements Scenario {
 
     /** Place a machine on the floor at (x, Y, z), find its block entity and print its inventory + tank NBT. */
     private JsonObject machine(Client c, String id, int x, int z) {
-        Fixtures.placeOnTop(c, "hbm:" + id, x, Y, z);
+        Fixtures.placeOnTop(c, "geontm:" + id, x, Y, z);
         c.waitTicks(10);
         return findBE(c, x - 3, x + 3, Y + 1, z - 3, z + 3);
     }
@@ -157,23 +157,23 @@ public final class Pt1012Small implements Scenario {
         // 1: the universal fluid tank, fill slot 2 / empty-container slot 3, a typed infinite item (inf_water, 50 mB/t)
         JsonObject tank = machine(c, "machine_fluidtank", 15, -20);
         int tx = tank.get("pos") == null ? 14 : 14;
-        inv(c, "", 14, Y + 1, -20, 2, "hbm:inf_water");
+        inv(c, "", 14, Y + 1, -20, 2, "geontm:inf_water");
         c.waitTicks(40);
         String after = nbt(c.blockEntity(14, Y + 1, -20));
         System.out.println("[" + c.node() + "] [inf] fluidtank after 40 ticks: " + after);
-        Expect.that(after.contains("hbm:water") || after.contains("minecraft:water"), "the fluid tank filled with water: " + after);
-        Expect.that(after.matches("(?s).*Slot: 2b.*hbm:inf_water.*") || after.matches("(?s).*hbm:inf_water.*Slot: 2b.*"),
+        Expect.that(after.contains("geontm:water") || after.contains("minecraft:water"), "the fluid tank filled with water: " + after);
+        Expect.that(after.matches("(?s).*Slot: 2b.*geontm:inf_water.*") || after.matches("(?s).*geontm:inf_water.*Slot: 2b.*"),
                 "inf_water stays in the fill slot 2: " + after);
         Expect.that(!after.matches("(?s).*Slot: 3b.*"), "nothing was moved to the empty-container slot 3: " + after);
 
         // 2: the combustion engine: its own bay (slot 0 in, 1 out); the infinite barrel feeds the diesel tank in place
         machine(c, "machine_combustion_engine", 15, -10);
         int[] ep = findPos(c, 12, 18, Y + 1, -13, -7);
-        inv(c, "", ep[0], ep[1], ep[2], 0, "hbm:fluid_barrel_infinite");
+        inv(c, "", ep[0], ep[1], ep[2], 0, "geontm:fluid_barrel_infinite");
         c.waitTicks(40);
         String eng = nbt(c.blockEntity(ep[0], ep[1], ep[2]));
         System.out.println("[" + c.node() + "] [inf] engine after 40 ticks: " + eng);
-        Expect.that(eng.matches("(?s).*Slot: 0b.*hbm:fluid_barrel_infinite.*") || eng.matches("(?s).*hbm:fluid_barrel_infinite.*Slot: 0b.*"),
+        Expect.that(eng.matches("(?s).*Slot: 0b.*geontm:fluid_barrel_infinite.*") || eng.matches("(?s).*geontm:fluid_barrel_infinite.*Slot: 0b.*"),
                 "the infinite barrel stays in the engine's fill slot 0: " + eng);
         Expect.that(!eng.matches("(?s).*Slot: 1b.*"), "nothing in the engine's empty-container slot 1: " + eng);
         Expect.that(!eng.contains("tank: 0,"), "the engine's tank filled: " + eng);
@@ -212,10 +212,10 @@ public final class Pt1012Small implements Scenario {
 
     private void batterySocket(Client c) {
         boolean legacy = c.node().startsWith("1.20.1");
-        String[] items = {"hbm:battery_creative", "minecraft:diamond", "hbm:battery_lead", "none"};
+        String[] items = {"geontm:battery_creative", "minecraft:diamond", "geontm:battery_lead", "none"};
         int[][] spots = {{-25, 5}, {-20, 5}, {-15, 5}, {-10, 5}};
         for (int i = 0; i < items.length; i++) {
-            Fixtures.placeOnTop(c, "hbm:machine_battery_socket", spots[i][0], Y, spots[i][1]);
+            Fixtures.placeOnTop(c, "geontm:machine_battery_socket", spots[i][0], Y, spots[i][1]);
             c.waitTicks(8);
             int[] pos = findPos(c, spots[i][0] - 3, spots[i][0] + 3, Y + 1, spots[i][1] - 3, spots[i][1] + 3);
             Expect.that(pos != null, "socket " + i + " placed");
@@ -232,7 +232,7 @@ public final class Pt1012Small implements Scenario {
     }
 
     private void rbmkConsole(Client c) {
-        Fixtures.placeOnTop(c, "hbm:rbmk_console", 20, Y, 5);
+        Fixtures.placeOnTop(c, "geontm:rbmk_console", 20, Y, 5);
         c.waitTicks(10);
         int[] cp = findPos(c, 15, 25, Y + 1, 0, 10);
         Expect.that(cp != null, "console placed");
@@ -276,21 +276,21 @@ public final class Pt1012Small implements Scenario {
         c.cmd("fill 5 " + (Y + 1) + " 20 12 " + (Y + 4) + " 20 minecraft:stone");
         c.cmd("fill 5 " + (Y + 1) + " 21 12 " + (Y + 6) + " 21 minecraft:air");
         c.waitTicks(3);
-        for (int i = 1; i <= 4; i++) c.cmd("setblock 6 " + (Y + i) + " 21 hbm:ladder_red[facing=south]");
-        c.cmd("setblock 6 " + (Y + 5) + " 21 hbm:ladder_red_top[facing=south]");
-        c.cmd("setblock 8 " + (Y + 5) + " 21 hbm:ladder_red_top[facing=south]");
-        for (int i = 1; i <= 4; i++) c.cmd("setblock 10 " + (Y + i) + " 21 hbm:ladder_iron[facing=south]");
+        for (int i = 1; i <= 4; i++) c.cmd("setblock 6 " + (Y + i) + " 21 geontm:ladder_red[facing=south]");
+        c.cmd("setblock 6 " + (Y + 5) + " 21 geontm:ladder_red_top[facing=south]");
+        c.cmd("setblock 8 " + (Y + 5) + " 21 geontm:ladder_red_top[facing=south]");
+        for (int i = 1; i <= 4; i++) c.cmd("setblock 10 " + (Y + i) + " 21 geontm:ladder_iron[facing=south]");
         c.waitTicks(5);
         shot(c, "ladders-front", 7.5, Y + 4.0, 28.0, 7.5, Y + 3.5, 21.0);
         shot(c, "ladders-top-close", 7.0, Y + 6.2, 24.0, 7.0, Y + 5.3, 21.0);
         shot(c, "ladders-top-angle", 4.0, Y + 6.3, 24.5, 7.0, Y + 5.2, 21.0);
         shot(c, "ladders-low-angle", 3.0, Y + 2.3, 24.0, 6.5, Y + 2.0, 21.0);
         // held items (first person) and the hotbar icon
-        Fixtures.giveOnly(c, "hbm:ladder_red", 1);
+        Fixtures.giveOnly(c, "geontm:ladder_red", 1);
         c.teleport(7.5, Y + 2.3, 25.0);
         c.waitTicks(10);
         c.screenshot("item-ladder_red-held");
-        Fixtures.giveOnly(c, "hbm:ladder_red_top", 1);
+        Fixtures.giveOnly(c, "geontm:ladder_red_top", 1);
         c.waitTicks(10);
         c.screenshot("item-ladder_red_top-held");
     }

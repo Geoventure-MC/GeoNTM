@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * The rest of 1.7's {@code IBlockCT} set on Core's connected textures (2026-10-06): deco metals, the CT glasses,
  * platemetal and the graphite pile. The 1.12 {@code "ctm"} texture metadata is gone, so no CTM mod draws these.
  *
- * <p>Each family is a 3x3 wall facing the camera (-Z). The query {@code hbm_ct} returns the 24 quarter types Core
+ * <p>Each family is a 3x3 wall facing the camera (-Z). The query {@code geontm_ct} returns the 24 quarter types Core
  * computes on the client: the north face of a wall's centre must be connected on all four quarters (type 4..7),
  * a lone block unconnected (0..3). Joins 1.7 makes across blocks are walls of mixed blocks: steel with a rusty-steel
  * column, three platemetal colours. The negative control is a lead wall with an aluminium column, which 1.7 does not
@@ -40,7 +40,7 @@ public final class ConnectedTextures17 implements Scenario {
             c.cmd("time set 6000");
             hideGui = c.setOption("hide_gui", "true");
 
-            JsonObject counts = c.query("hbm_ct", new JsonObject());
+            JsonObject counts = c.query("geontm_ct", new JsonObject());
             Expect.that(counts.get("registered").getAsInt() == 45, "45 connected-texture blocks: " + counts.get("registered"));
             Expect.that(counts.get("wrapped").getAsInt() > 0, "block-state models wrapped: " + counts.get("wrapped"));
 
@@ -48,22 +48,22 @@ public final class ConnectedTextures17 implements Scenario {
             List<int[]> centres = new ArrayList<>();
             for (int i = 0; i < SINGLE.size(); i++) {
                 int x0 = X + i * 4;
-                wall(c, x0, "hbm:" + SINGLE.get(i));
+                wall(c, x0, "geontm:" + SINGLE.get(i));
                 centres.add(new int[]{x0 + 1, L + 1, Z});
             }
             // row 2 (Z + 8): the cross-block joins, the negative control, a lone block and the pile
             int z2 = Z + 8;
-            wall(c, X, z2, "hbm:deco_steel");
-            fillColumn(c, X + 2, z2, "hbm:deco_rusty_steel");
-            wall(c, X + 4, z2, "hbm:platemetal_base");
-            fillColumn(c, X + 5, z2, "hbm:platemetal_red");
-            fillColumn(c, X + 6, z2, "hbm:platemetal_blue");
-            wall(c, X + 8, z2, "hbm:deco_lead");
-            fillColumn(c, X + 10, z2, "hbm:deco_aluminium");
-            Fixtures.setBlock(c, X + 13, L, z2, "hbm:deco_steel");
-            c.cmd("fill " + (X + 16) + " " + L + " " + z2 + " " + (X + 18) + " " + (L + 2) + " " + (z2 + 2) + " hbm:pile_block");
-            Fixtures.setBlock(c, X + 17, L + 1, z2, "hbm:pile_block[meta=3]");
-            Fixtures.setBlock(c, X + 17, L + 2, z2 + 1, "hbm:pile_block[meta=7]");
+            wall(c, X, z2, "geontm:deco_steel");
+            fillColumn(c, X + 2, z2, "geontm:deco_rusty_steel");
+            wall(c, X + 4, z2, "geontm:platemetal_base");
+            fillColumn(c, X + 5, z2, "geontm:platemetal_red");
+            fillColumn(c, X + 6, z2, "geontm:platemetal_blue");
+            wall(c, X + 8, z2, "geontm:deco_lead");
+            fillColumn(c, X + 10, z2, "geontm:deco_aluminium");
+            Fixtures.setBlock(c, X + 13, L, z2, "geontm:deco_steel");
+            c.cmd("fill " + (X + 16) + " " + L + " " + z2 + " " + (X + 18) + " " + (L + 2) + " " + (z2 + 2) + " geontm:pile_block");
+            Fixtures.setBlock(c, X + 17, L + 1, z2, "geontm:pile_block[meta=3]");
+            Fixtures.setBlock(c, X + 17, L + 2, z2 + 1, "geontm:pile_block[meta=7]");
             c.waitTicks(20);
 
             JsonArray at = new JsonArray();
@@ -75,7 +75,7 @@ public final class ConnectedTextures17 implements Scenario {
             at.add(pos(X + 17, L + 1, z2));     // pile fuel port
             JsonObject params = new JsonObject();
             params.add("at", at);
-            JsonArray result = c.query("hbm_ct", params).getAsJsonArray("at");
+            JsonArray result = c.query("geontm_ct", params).getAsJsonArray("at");
 
             List<String> unjoined = new ArrayList<>();
             for (int i = 0; i < SINGLE.size(); i++) {
@@ -97,8 +97,8 @@ public final class ConnectedTextures17 implements Scenario {
             for (int i = 0; i < 24; i++) allPlain &= lone.get(i).getAsInt() < 4;
             Expect.that(allPlain, "a lone block is unconnected on every quarter: " + lone);
             JsonObject sheets = result.get(n + 4).getAsJsonObject().getAsJsonObject("sheets");
-            Expect.that(sheets.getAsJsonArray("north").toString().equals("[\"hbm:blocks/pile_block\",\"hbm:blocks/pile_block_input_ct\"]")
-                            && sheets.getAsJsonArray("up").toString().equals("[\"hbm:blocks/pile_block_top\",\"hbm:blocks/pile_block_top_ct\"]"),
+            Expect.that(sheets.getAsJsonArray("north").toString().equals("[\"geontm:blocks/pile_block\",\"geontm:blocks/pile_block_input_ct\"]")
+                            && sheets.getAsJsonArray("up").toString().equals("[\"geontm:blocks/pile_block_top\",\"geontm:blocks/pile_block_top_ct\"]"),
                     "pile fuel port: input sheet on the sides, top sheet on top (1.7 getFragments): " + sheets);
 
             c.cmd("gamemode spectator");

@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * §19ed-recipe-names: 1.7's named GenericRecipes ({@code setupNamed}) shown under their en_US.lang names where 1.7
@@ -31,18 +31,18 @@ public final class FinalRecipeNames implements Scenario {
         Fixtures.platform(c, X, Y, Z, 16);
         c.cmd("gamerule sendCommandFeedback false");
 
-        placeSouth(c, "hbm:machine_assembly_machine", ASM_X, Z);
-        Expect.block(c, ASM_X, L, Z, "hbm:machine_assembly_machine");
+        placeSouth(c, "geontm:machine_assembly_machine", ASM_X, Z);
+        Expect.block(c, ASM_X, L, Z, "geontm:machine_assembly_machine");
         pickByName(c, ASM_X, "GUIMachineAssemblyMachine", "to ammunition", "ass.nitra", "10-assembly");
 
-        placeSouth(c, "hbm:machine_chemical_plant", CHEM_X, Z);
-        Expect.block(c, CHEM_X, L, Z, "hbm:machine_chemical_plant");
+        placeSouth(c, "geontm:machine_chemical_plant", CHEM_X, Z);
+        Expect.block(c, CHEM_X, L, Z, "geontm:machine_chemical_plant");
         pickByName(c, CHEM_X, "GUIMachineChemicalPlant", "desh from", "chem.deshcracked", "20-chemplant");
 
         jei(c);
 
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|duplicate ID|translation key).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|duplicate ID|translation key).*");
     }
 
     /**
@@ -90,12 +90,12 @@ public final class FinalRecipeNames implements Scenario {
     private void jei(Client c) {
         c.cmd("gamemode survival");
         c.cmd("clear");
-        c.cmd("give @s hbm:circuit_atomic_clock 1");
+        c.cmd("give @s geontm:circuit_atomic_clock 1");
         c.waitTicks(4);
         c.key("key.inventory");
         c.waitScreen("Inventory", 5_000L);
         c.waitTicks(10);
-        JsonObject slot = c.slot(playerSlot(c, "hbm:circuit_atomic_clock"));
+        JsonObject slot = c.slot(playerSlot(c, "geontm:circuit_atomic_clock"));
         c.mouseMove(slot.get("center_x").getAsDouble(), slot.get("center_y").getAsDouble());
         c.waitTicks(5);
         c.key("r");

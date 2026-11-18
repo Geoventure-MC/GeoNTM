@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Regression for "the FAU legs vanish once the boots are on": every OBJ-modelled armour set is worn as
@@ -61,9 +61,9 @@ public final class FixArmorPieceCombos implements Scenario {
                 if (!combo.equals("boots")) put(c, "legs", set + "_legs");
                 if (!combo.equals("legs")) put(c, "feet", set + "_boots");
                 c.waitTicks(10);
-                JsonObject worn = c.query("hbm_armor_set", new JsonObject());
+                JsonObject worn = c.query("geontm_armor_set", new JsonObject());
                 Expect.that(worn.getAsJsonObject("legs").get("id").getAsString()
-                                .equals(combo.equals("boots") ? "" : "hbm:" + set + "_legs"),
+                                .equals(combo.equals("boots") ? "" : "geontm:" + set + "_legs"),
                         set + " " + combo + ": legs slot as expected, got " + worn.get("legs"));
                 c.screenshot(view + "-" + String.format("%02d", s) + "-" + set + "-" + k + "-"
                         + combo.replace('+', '_'));
@@ -73,7 +73,7 @@ public final class FixArmorPieceCombos implements Scenario {
     }
 
     private void put(Client c, String slot, String id) {
-        c.cmd("item replace entity @s armor." + slot + " with hbm:" + id);
+        c.cmd("item replace entity @s armor." + slot + " with geontm:" + id);
     }
 
     /** Presses F5 until the camera is {@code target}; the state survives between runs, so never count presses. */
@@ -87,7 +87,7 @@ public final class FixArmorPieceCombos implements Scenario {
     }
 
     private String cameraType(Client c) {
-        return c.query("hbm_armor_set_b", new JsonObject()).get("camera").getAsString();
+        return c.query("geontm_armor_set_b", new JsonObject()).get("camera").getAsString();
     }
 
     private void strip(Client c) {

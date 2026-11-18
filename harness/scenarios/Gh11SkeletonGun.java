@@ -1,21 +1,21 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 11: a skeleton holding a gun crashed the server on its first reload, because the gun looked up the
  * shooter's hand on a null player. Skeletons with the guns 1.7 hands out, spawned empty, must reload and fire at an
- * iron golem while the world keeps ticking.
+ * iron geocore while the world keeps ticking.
  */
 public final class Gh11SkeletonGun implements Scenario {
 
     private static final int Y = 100, G = 101;
-    private static final String[] GUNS = {"hbm:gun_light_revolver", "hbm:gun_greasegun", "hbm:gun_maresleg",
-            "hbm:gun_henry", "hbm:gun_uzi"};
+    private static final String[] GUNS = {"geontm:gun_light_revolver", "geontm:gun_greasegun", "geontm:gun_maresleg",
+            "geontm:gun_henry", "geontm:gun_uzi"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -41,7 +41,7 @@ public final class Gh11SkeletonGun implements Scenario {
         int maxBullets = 0;
         for (int t = 0; t < 60 && c.inWorld(); t++) {
             c.waitTicks(5);
-            maxBullets = Math.max(maxBullets, count(c, "hbm:entity_bullet_mk4"));
+            maxBullets = Math.max(maxBullets, count(c, "geontm:entity_bullet_mk4"));
         }
         System.out.println("[Gh11] most bullets in flight at once: " + maxBullets);
         c.screenshot("skeletons-firing");

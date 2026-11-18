@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,17 +32,17 @@ public final class Fix3Recipes implements Scenario {
         centrifuge(c);
 
         c.cmd("gamerule sendCommandFeedback true");
-        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered hbm:|is not registered).*");
+        Expect.logCleanSinceMark(c, "(?i)(exception|unregistered geontm:|is not registered).*");
     }
 
     private void anvil(Client c) {
-        Fixtures.placeOnTop(c, "hbm:anvil_steel", ANVIL_X, Y, Z);
-        Expect.block(c, ANVIL_X, L, Z, "hbm:anvil_steel");
+        Fixtures.placeOnTop(c, "geontm:anvil_steel", ANVIL_X, Y, Z);
+        Expect.block(c, ANVIL_X, L, Z, "geontm:anvil_steel");
         c.cmd("clear");
-        Fixtures.give(c, "hbm:plate_cast_steel", 4);
-        Fixtures.give(c, "hbm:ingot_tungsten", 8);
-        Fixtures.give(c, "hbm:machine_transformer", 1);
-        Fixtures.give(c, "hbm:arc_electrode", 2);
+        Fixtures.give(c, "geontm:plate_cast_steel", 4);
+        Fixtures.give(c, "geontm:ingot_tungsten", 8);
+        Fixtures.give(c, "geontm:machine_transformer", 1);
+        Fixtures.give(c, "geontm:arc_electrode", 2);
         c.hotbar(9);
         c.teleport(ANVIL_X + 2.5, L, Z + 0.5);
         c.waitTicks(3);
@@ -63,23 +63,23 @@ public final class Fix3Recipes implements Scenario {
         c.waitTicks(6);
         c.screenshot("11-anvil-arc-welder-crafted");
         close(c);
-        Expect.that(inventoryCount(c, "hbm:machine_arc_welder") == 1 && inventoryCount(c, "hbm:plate_cast_steel") == 0
-                        && inventoryCount(c, "hbm:ingot_tungsten") == 0 && inventoryCount(c, "hbm:arc_electrode") == 0
-                        && inventoryCount(c, "hbm:machine_transformer") == 0,
+        Expect.that(inventoryCount(c, "geontm:machine_arc_welder") == 1 && inventoryCount(c, "geontm:plate_cast_steel") == 0
+                        && inventoryCount(c, "geontm:ingot_tungsten") == 0 && inventoryCount(c, "geontm:arc_electrode") == 0
+                        && inventoryCount(c, "geontm:machine_transformer") == 0,
                 "the anvil built an arc welder from its 1.7 inputs: " + c.inventory());
     }
 
     private void centrifuge(Client c) {
-        Fixtures.placeOnTop(c, "hbm:machine_centrifuge", CENT_X, Y, Z);
+        Fixtures.placeOnTop(c, "geontm:machine_centrifuge", CENT_X, Y, Z);
         int[] core = findCore(c, CENT_X, L, Z, "power");
         int cx = core[0], cy = core[1], cz = core[2];
         c.cmd("data merge block " + cx + " " + cy + " " + cz + " {power:100000L}");
-        put(c, cx, cy, cz, 0, "hbm:block_euphemium_cluster", 1);
+        put(c, cx, cy, cz, 0, "geontm:block_euphemium_cluster", 1);
         int made = 0;
         for (int t = 0; t <= 600 && made < 7; t += 10) {
             c.waitTicks(10);
             c.cmd("data merge block " + cx + " " + cy + " " + cz + " {power:100000L}");
-            made = count(nbt(c, cx, cy, cz), "hbm:nugget_euphemium");
+            made = count(nbt(c, cx, cy, cz), "geontm:nugget_euphemium");
         }
         c.hotbar(9);
         c.teleport(CENT_X + 2.5, L, Z + 0.5);
@@ -90,8 +90,8 @@ public final class Fix3Recipes implements Scenario {
         c.screenshot("20-centrifuge-euphemium-cluster");
         close(c);
         String n = nbt(c, cx, cy, cz);
-        Expect.that(made == 7 && count(n, "hbm:powder_schrabidium") == 4 && count(n, "hbm:ingot_starmetal") == 2
-                        && count(n, "hbm:nugget_solinium") == 2 && count(n, "hbm:block_euphemium_cluster") == 0,
+        Expect.that(made == 7 && count(n, "geontm:powder_schrabidium") == 4 && count(n, "geontm:ingot_starmetal") == 2
+                        && count(n, "geontm:nugget_solinium") == 2 && count(n, "geontm:block_euphemium_cluster") == 0,
                 "the centrifuge split the euphemium cluster into 7/4/2/2; nbt " + n);
     }
 

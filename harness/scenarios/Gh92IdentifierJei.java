@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 92: the multi fluid identifier was missing from JEI (its creative tab listed every identifier twice
@@ -38,7 +38,7 @@ public final class Gh92IdentifierJei implements Scenario {
 
         c.cmd("gamemode creative");
         c.cmd("clear @s");
-        c.cmd("give @s hbm:fluid_identifier_multi 1");
+        c.cmd("give @s geontm:fluid_identifier_multi 1");
         c.hotbar(1);
         c.cmd("tp @s ~ ~ ~ 0 -90");
         c.waitTicks(5);
@@ -58,9 +58,9 @@ public final class Gh92IdentifierJei implements Scenario {
         c.waitTicks(10);
 
         String typed = c.node().startsWith("1.20.")
-                ? "hbm:fluid_identifier_multi{\"hbm:fluid_multi\":{fluid1:\"hbm:heavywater\"}}"
-                : "hbm:fluid_identifier_multi[hbm:fluid_multi={fluid1:\"hbm:heavywater\"}]";
-        JsonObject plain = focus(c, "give @s hbm:fluid_identifier_multi 1");
+                ? "geontm:fluid_identifier_multi{\"geontm:fluid_multi\":{fluid1:\"geontm:heavywater\"}}"
+                : "geontm:fluid_identifier_multi[geontm:fluid_multi={fluid1:\"geontm:heavywater\"}]";
+        JsonObject plain = focus(c, "give @s geontm:fluid_identifier_multi 1");
         JsonObject heavy = focus(c, "give @s " + typed + " 1");
         System.out.println("[Gh92] plain " + plain + " heavy water " + heavy);
         Expect.that(plain.getAsJsonObject("counts").has("minecraft:crafting"), "the plain identifier has a recipe: " + plain);

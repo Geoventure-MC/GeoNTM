@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/generic"
+        }
+      ],
+      "rolls": 8.0
+    }
+  ],
+  "random_sequence": "geontm_de:chests/generic_8_8"
+}

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -48,7 +48,7 @@ public final class Gh153ShellColours implements Scenario {
             c.teleport(0.5, Y + 1, 0.5);
             for (Load load : LOADS) reload(c, load, failures);
             Expect.that(failures.isEmpty(), "loaded shells take their casing colours: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             c.releaseAll();
@@ -58,8 +58,8 @@ public final class Gh153ShellColours implements Scenario {
 
     private static void reload(Client c, Load load, List<String> failures) throws Exception {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:" + load.gun());
-        c.cmd("item replace entity @s inventory.0 with hbm:" + load.ammo() + " 64");
+        c.cmd("give @s geontm:" + load.gun());
+        c.cmd("item replace entity @s inventory.0 with geontm:" + load.ammo() + " 64");
         c.hotbar(1);
         c.look(0, 90);
         c.waitTicks(60);

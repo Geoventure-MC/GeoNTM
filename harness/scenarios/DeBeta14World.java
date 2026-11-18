@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -38,18 +38,18 @@ public class DeBeta14World implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("tp @s 1040 66 1000");
         c.waitTicks(40);
-        Expect.that(c.block(1000, 64, 1000).toString().contains("hbm:machine_turbofan"), "the throttled fan is a Continuum turbofan");
-        Expect.that(c.block(1030, 64, 1000).toString().contains("hbm:machine_turbofan"), "the classic fan is a Continuum turbofan");
+        Expect.that(c.block(1000, 64, 1000).toString().contains("geontm:machine_turbofan"), "the throttled fan is a Continuum turbofan");
+        Expect.that(c.block(1030, 64, 1000).toString().contains("geontm:machine_turbofan"), "the classic fan is a Continuum turbofan");
         Expect.that(c.block(1070, 64, 1000).toString().contains("minecraft:air"), "the Create motor is gone from the world");
         Expect.that(c.block(1072, 64, 1000).toString().contains("minecraft:air"), "the desh Create motor is gone from the world");
 
         String chest = nbt(c, 1060, 64, 1000);
-        Expect.that(chest.contains("\"hbm:unstable_timer\": 42"), "the running fuse keeps its tick count: " + chest);
+        Expect.that(chest.contains("\"geontm:unstable_timer\": 42"), "the running fuse keeps its tick count: " + chest);
         Expect.that(!chest.contains("unstable_at"), "the old fuse deadline converted: " + chest);
         Expect.that(!chest.contains("create_motor"), "motor stacks left the chest: " + chest);
 
-        String leftovers = gunzipped(world.resolve("data/hbm_de_leftovers.dat"));
-        for (String parked : List.of("hbm:create_motor", "hbm:create_motor_desh", "controlMode"))
+        String leftovers = gunzipped(world.resolve("data/geontm_de_leftovers.dat"));
+        for (String parked : List.of("geontm:create_motor", "geontm:create_motor_desh", "controlMode"))
             Expect.that(leftovers.contains(parked), parked + " is parked, not deleted");
         c.leaveWorld(60000);
         c.joinWorld("harness", 180000);

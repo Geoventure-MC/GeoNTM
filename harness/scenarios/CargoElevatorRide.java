@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Pattern;
 
@@ -18,11 +18,11 @@ public final class CargoElevatorRide implements Scenario {
         c.waitInWorld(120_000L);
         Fixtures.platform(c, 0, FLOOR, 0, 12);
         c.cmd("fill -6 101 -6 6 115 6 minecraft:air");
-        Fixtures.placeOnTop(c, "hbm:cargo_elevator", 0, FLOOR, 0);
+        Fixtures.placeOnTop(c, "geontm:cargo_elevator", 0, FLOOR, 0);
         int[] core = findCore(c);
         c.markLog();
         c.cmd("gamemode survival");
-        Fixtures.giveOnly(c, "hbm:cargo_elevator", HEIGHT + 1);
+        Fixtures.giveOnly(c, "geontm:cargo_elevator", HEIGHT + 1);
         c.teleport(core[0] + 0.5, core[1] + 1, core[2] + 0.5);
         c.waitTicks(10);
         c.lookAt(core[0] + 0.5, core[1] + 0.99, core[2] + 0.5);

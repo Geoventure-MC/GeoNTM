@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,8 +13,8 @@ import java.util.Map;
  * <ol>
  *   <li>fallen meteorites placed ten times contain 1.7's real blocks (molten hull, meteor ores, toxic core) again;</li>
  *   <li>a sulfur cave sample: sulfur resource stone and its acid pools;</li>
- *   <li>{@code /locate structure} still answers for an HBM structure;</li>
- *   <li>crater-biome ambient radiation: a survival player in {@code hbm:crater_inner} gains 25 RAD/s;</li>
+ *   <li>{@code /locate structure} still answers for an GEONTM structure;</li>
+ *   <li>crater-biome ambient radiation: a survival player in {@code geontm:crater_inner} gains 25 RAD/s;</li>
  *   <li>Tom's impact: fire syncs to the client, burns a survival player under the sky, a fully dusty sky is dark at noon
  *       on both sides (sky darkening 11), and chunks generated after the impact have impact dirt instead of grass.</li>
  * </ol>
@@ -24,14 +24,14 @@ public final class Fix6Worldgen implements Scenario {
 
     static JsonObject wg(Client c, Object... kv) {
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         for (int i = 0; i + 1 < kv.length; i += 2) {
             Object v = kv[i + 1];
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
         JsonObject r = c.send("query", p, 240_000L);
-        if (r.has("error")) throw new HarnessException("hbm_worldgen " + p + ": " + r.get("error"));
+        if (r.has("error")) throw new HarnessException("geontm_worldgen " + p + ": " + r.get("error"));
         return r;
     }
 
@@ -49,17 +49,17 @@ public final class Fix6Worldgen implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else if (v instanceof Boolean b) p.addProperty((String) kv[i], b);
         }
-        return c.query("hbm_impact", p);
+        return c.query("geontm_impact", p);
     }
 
     static void rads(Client c, double value) {
         JsonObject p = new JsonObject();
         p.addProperty("set_rads", value);
-        c.query("hbm_props", p);
+        c.query("geontm_props", p);
     }
 
     static double rads(Client c) {
-        return c.query("hbm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
+        return c.query("geontm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
     }
 
     static void settle(Client c, int x0, int z0, int x1, int z1, int cx, int cz) {
@@ -84,7 +84,7 @@ public final class Fix6Worldgen implements Scenario {
             // a stone pillar in the air, so the feature's "solid ground two below" test passes on every node's terrain
             int x = mx + 6 + (i % 5) * 12, z = mz + 10 + (i / 5) * 24;
             c.cmd("fill " + (x - 3) + " 130 " + (z - 3) + " " + (x + 3) + " 149 " + (z + 3) + " minecraft:stone");
-            c.cmd("place feature hbm:fallen_meteorite " + x + " 150 " + z);
+            c.cmd("place feature geontm:fallen_meteorite " + x + " 150 " + z);
             c.waitTicks(10);
         }
         for (String line : c.logSinceMark("feature|Placed|Failed|nknown")) System.out.println("[Fix6] " + c.node() + " " + line);
@@ -110,7 +110,7 @@ public final class Fix6Worldgen implements Scenario {
 
         // 3. /locate structure
         c.markLog();
-        c.cmd("locate structure hbm:meteor_dungeon");
+        c.cmd("locate structure geontm:meteor_dungeon");
         boolean located = false;
         // the search is vanilla cost: 66-74 s with six clients generating at once (FINAL run), so allow 3 minutes
         for (int i = 0; i < 180 && !located; i++) {
@@ -131,7 +131,7 @@ public final class Fix6Worldgen implements Scenario {
         c.teleport(500.5, 200, 500.5);
         c.waitTicks(5);
         c.markLog();
-        c.cmd("fillbiome 490 190 490 510 210 510 hbm:crater_inner");
+        c.cmd("fillbiome 490 190 490 510 210 510 geontm:crater_inner");
         c.waitTicks(10);
         for (String line : c.logSinceMark("biome|Biome")) System.out.println("[Fix6] " + c.node() + " " + line);
         c.cmd("gamemode survival");
@@ -184,7 +184,7 @@ public final class Fix6Worldgen implements Scenario {
         c.waitTicks(60);
         c.screenshot("impact-terrain");
         Expect.that(grass.getOrDefault("minecraft:grass_block", 0) == 0, "no grass in chunks generated after the impact: " + grass);
-        Expect.that(grass.getOrDefault("hbm:impact_dirt", 0) > 0, "impact dirt instead: " + grass);
+        Expect.that(grass.getOrDefault("geontm:impact_dirt", 0) > 0, "impact dirt instead: " + grass);
         c.cmd("forceload remove all");
 
         impact(c, "set_impact", false, "set_fire", 0.0, "set_dust", 0.0);

@@ -1,8 +1,8 @@
 import com.google.gson.JsonArray;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Belts and cranes in a gallery: four belt types fed by an ejector from a chest of cobblestone, a bent loop, a lift and
@@ -22,7 +22,7 @@ public final class RcLogiBelts implements Scenario {
         c.markLog();
         Fixtures.platform(c, X, Y, Z + 8, 24);
         c.cmd("fill " + (X - 14) + " " + L + " " + (Z - 4) + " " + (X + 14) + " " + (L + 8) + " " + (Z + 30) + " minecraft:air");
-        String[] belts = {"hbm:conveyor", "hbm:conveyor_express", "hbm:conveyor_double", "hbm:conveyor_triple"};
+        String[] belts = {"geontm:conveyor", "geontm:conveyor_express", "geontm:conveyor_double", "geontm:conveyor_triple"};
         for (int row = 0; row < belts.length; row++) {
             int z = Z + row * 3;
             line(c, belts[row], z);
@@ -31,23 +31,23 @@ public final class RcLogiBelts implements Scenario {
         int z0 = Z + 14;
         c.cmd("setblock " + (X - 8) + " " + L + " " + z0 + " minecraft:chest");
         c.cmd("item replace block " + (X - 8) + " " + L + " " + z0 + " container.0 with minecraft:cobblestone 64");
-        c.cmd("setblock " + (X - 7) + " " + L + " " + z0 + " hbm:crane_extractor[input=east,output=west]");
-        for (int i = 0; i < 5; i++) c.cmd("setblock " + (X - 6 + i) + " " + L + " " + z0 + " hbm:conveyor[facing=east]");
-        c.cmd("setblock " + (X - 1) + " " + L + " " + z0 + " hbm:conveyor[facing=east,bend=left]");
-        for (int i = 1; i <= 3; i++) c.cmd("setblock " + (X - 1) + " " + L + " " + (z0 - i) + " hbm:conveyor[facing=north]");
-        c.cmd("setblock " + (X - 1) + " " + L + " " + (z0 - 4) + " hbm:conveyor[facing=north,bend=left]");
-        for (int i = 1; i <= 3; i++) c.cmd("setblock " + (X - 1 - i) + " " + L + " " + (z0 - 4) + " hbm:conveyor[facing=west]");
+        c.cmd("setblock " + (X - 7) + " " + L + " " + z0 + " geontm:crane_extractor[input=east,output=west]");
+        for (int i = 0; i < 5; i++) c.cmd("setblock " + (X - 6 + i) + " " + L + " " + z0 + " geontm:conveyor[facing=east]");
+        c.cmd("setblock " + (X - 1) + " " + L + " " + z0 + " geontm:conveyor[facing=east,bend=left]");
+        for (int i = 1; i <= 3; i++) c.cmd("setblock " + (X - 1) + " " + L + " " + (z0 - i) + " geontm:conveyor[facing=north]");
+        c.cmd("setblock " + (X - 1) + " " + L + " " + (z0 - 4) + " geontm:conveyor[facing=north,bend=left]");
+        for (int i = 1; i <= 3; i++) c.cmd("setblock " + (X - 1 - i) + " " + L + " " + (z0 - 4) + " geontm:conveyor[facing=west]");
         // lift column fed by a belt
         int zl = Z + 20;
         c.cmd("setblock " + (X + 6) + " " + L + " " + zl + " minecraft:chest");
         c.cmd("item replace block " + (X + 6) + " " + L + " " + zl + " container.0 with minecraft:cobblestone 64");
-        c.cmd("setblock " + (X + 7) + " " + L + " " + zl + " hbm:crane_extractor[input=east,output=west]");
-        c.cmd("setblock " + (X + 8) + " " + L + " " + zl + " hbm:conveyor[facing=east]");
-        for (int i = 0; i < 4; i++) c.cmd("setblock " + (X + 9) + " " + (L + i) + " " + zl + " hbm:conveyor_lift[facing=east]");
-        c.cmd("setblock " + (X + 9) + " " + (L + 4) + " " + zl + " hbm:conveyor[facing=east]");
-        c.cmd("setblock " + (X + 10) + " " + (L + 4) + " " + zl + " hbm:conveyor[facing=east]");
+        c.cmd("setblock " + (X + 7) + " " + L + " " + zl + " geontm:crane_extractor[input=east,output=west]");
+        c.cmd("setblock " + (X + 8) + " " + L + " " + zl + " geontm:conveyor[facing=east]");
+        for (int i = 0; i < 4; i++) c.cmd("setblock " + (X + 9) + " " + (L + i) + " " + zl + " geontm:conveyor_lift[facing=east]");
+        c.cmd("setblock " + (X + 9) + " " + (L + 4) + " " + zl + " geontm:conveyor[facing=east]");
+        c.cmd("setblock " + (X + 10) + " " + (L + 4) + " " + zl + " geontm:conveyor[facing=east]");
         // crane gallery
-        String[] cranes = {"hbm:crane_extractor", "hbm:crane_inserter", "hbm:crane_grabber", "hbm:crane_boxer", "hbm:crane_unboxer"};
+        String[] cranes = {"geontm:crane_extractor", "geontm:crane_inserter", "geontm:crane_grabber", "geontm:crane_boxer", "geontm:crane_unboxer"};
         String[][] facings = {{"east", "west"}, {"north", "south"}, {"up", "down"}, {"south", "north"}};
         for (int r = 0; r < cranes.length; r++) {
             for (int f = 0; f < facings.length; f++) {
@@ -55,10 +55,10 @@ public final class RcLogiBelts implements Scenario {
                         + "[input=" + facings[f][0] + ",output=" + facings[f][1] + "]");
             }
         }
-        c.cmd("setblock " + (X + 2) + " " + L + " " + (Z + 24) + " hbm:crane_router");
-        c.cmd("setblock " + (X + 4) + " " + L + " " + (Z + 24) + " hbm:crane_splitter[facing=north,cell=false]");
-        c.cmd("setblock " + (X + 6) + " " + L + " " + (Z + 24) + " hbm:crane_partitioner[facing=north]");
-        c.cmd("setblock " + (X + 8) + " " + L + " " + (Z + 24) + " hbm:piston_inserter[facing=up]");
+        c.cmd("setblock " + (X + 2) + " " + L + " " + (Z + 24) + " geontm:crane_router");
+        c.cmd("setblock " + (X + 4) + " " + L + " " + (Z + 24) + " geontm:crane_splitter[facing=north,cell=false]");
+        c.cmd("setblock " + (X + 6) + " " + L + " " + (Z + 24) + " geontm:crane_partitioner[facing=north]");
+        c.cmd("setblock " + (X + 8) + " " + L + " " + (Z + 24) + " geontm:piston_inserter[facing=up]");
 
         String hideGui = c.setOption("hide_gui", "true");
         try {
@@ -111,7 +111,7 @@ public final class RcLogiBelts implements Scenario {
     private static void line(Client c, String belt, int z) {
         c.cmd("setblock " + (X - 12) + " " + L + " " + z + " minecraft:chest");
         c.cmd("item replace block " + (X - 12) + " " + L + " " + z + " container.0 with minecraft:cobblestone 64");
-        c.cmd("setblock " + (X - 11) + " " + L + " " + z + " hbm:crane_extractor[input=east,output=west]");
+        c.cmd("setblock " + (X - 11) + " " + L + " " + z + " geontm:crane_extractor[input=east,output=west]");
         for (int i = 0; i < 20; i++) c.cmd("setblock " + (X - 10 + i) + " " + L + " " + z + " " + belt + "[facing=east]");
     }
 

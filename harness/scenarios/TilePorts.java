@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,9 +34,9 @@ public class TilePorts implements Scenario {
         barrel(c, X, y, Z + 2, 0, 0);
 
         // power: creative generator, cable, electric furnace
-        Fixtures.setBlock(c, X + 4, y, Z - 2, "hbm:creative_generator");
-        Fixtures.setBlock(c, X + 5, y, Z - 2, "hbm:red_cable");
-        Fixtures.setBlock(c, X + 6, y, Z - 2, "hbm:machine_electric_furnace_off");
+        Fixtures.setBlock(c, X + 4, y, Z - 2, "geontm:creative_generator");
+        Fixtures.setBlock(c, X + 5, y, Z - 2, "geontm:red_cable");
+        Fixtures.setBlock(c, X + 6, y, Z - 2, "geontm:machine_electric_furnace_off");
 
         c.cmd("ntmserver set DEBUG_PORT_VIEW true");
         c.teleport(X + 0.5, y, Z + 6.5);
@@ -50,7 +50,7 @@ public class TilePorts implements Scenario {
         int passed = fill(c, X, y, Z + 2);
         Expect.that(passed > 0 && middle == 0, "the disabled barrel must pass fluid through and keep none: sink " + passed + ", middle " + middle);
 
-        Fixtures.giveOnly(c, "hbm:power_net_tool", 1);
+        Fixtures.giveOnly(c, "geontm:power_net_tool", 1);
         c.markLog();
         c.teleport(X + 5.5, y, Z + 0.5);
         c.lookAt(X + 5.5, y + 0.5, Z - 1.5);
@@ -66,7 +66,7 @@ public class TilePorts implements Scenario {
     }
 
     private static void barrel(Client c, int x, int y, int z, int mode, int fill) {
-        Fixtures.setBlock(c, x, y, z, "hbm:barrel_steel{mode:" + mode + "s,tank:" + fill + ",tank_max:16000,tank_type:\"minecraft:water\"}");
+        Fixtures.setBlock(c, x, y, z, "geontm:barrel_steel{mode:" + mode + "s,tank:" + fill + ",tank_max:16000,tank_type:\"minecraft:water\"}");
     }
 
     private static final Pattern TANK = Pattern.compile("(?<![\\w_])tank\\s*:\\s*(-?\\d+)");

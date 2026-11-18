@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 
 /**
@@ -28,8 +28,8 @@ public final class X5863Fliegerfaust implements Scenario {
         StringBuilder bad = new StringBuilder();
 
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_fliegerfaust");
-        c.cmd("give @s hbm:ammo_standard_rocket_micro 18");
+        c.cmd("give @s geontm:gun_fliegerfaust");
+        c.cmd("give @s geontm:ammo_standard_rocket_micro 18");
         c.hotbar(1);
         c.cmd("summon minecraft:iron_golem 0.5 " + G + " 10.5 {NoAI:1b,PersistenceRequired:1b}");
         c.waitTicks(40);
@@ -44,15 +44,15 @@ public final class X5863Fliegerfaust implements Scenario {
         System.out.println("[X5863Fliegerfaust] " + c.node() + " loaded=" + loaded);
         if (loaded != 9) bad.append("drum holds ").append(loaded).append(" after a reload, not 9; ");
 
-        double before = golem(c);
+        double before = geocore(c);
         c.keyDown("mouse.left");
         c.waitTicks(14);
         c.keyUp("mouse.left");
         c.waitTicks(30);
         int afterAuto = num(data(c), "magcount0");
-        double afterAutoHealth = golem(c);
+        double afterAutoHealth = geocore(c);
         System.out.println("[X5863Fliegerfaust] " + c.node() + " auto mag " + loaded + " -> " + afterAuto
-                + ", golem " + before + " -> " + afterAutoHealth);
+                + ", geocore " + before + " -> " + afterAutoHealth);
         if (afterAuto < 0 || afterAuto > loaded - 2) bad.append("holding the trigger fired ").append(loaded - afterAuto).append(" rocket(s); ");
         if (afterAutoHealth >= before) bad.append("micro rockets did no damage; ");
 
@@ -133,7 +133,7 @@ public final class X5863Fliegerfaust implements Scenario {
         return j == i ? -1 : Integer.parseInt(s.substring(i, j));
     }
 
-    private static double golem(Client c) {
+    private static double geocore(Client c) {
         JsonObject p = new JsonObject();
         p.addProperty("radius", 48);
         p.addProperty("type", "minecraft:iron_golem");

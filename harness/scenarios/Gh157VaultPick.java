@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 157, point 3: a locked safe could not be picked with a bobby pin and a screwdriver. 1.7
@@ -24,17 +24,17 @@ public class Gh157VaultPick implements Scenario {
         c.cmd("kill @e[type=item]");
         c.cmd("gamemode survival");
 
-        attempt(c, "pin-in-hand-screwdriver-in-hotbar", "hbm:pin", "hbm:screwdriver", false, 1.0, true);
-        attempt(c, "pin-in-hand-screwdriver-in-offhand", "hbm:pin", "hbm:screwdriver", true, 1.0, true);
-        attempt(c, "screwdriver-in-hand-pin-in-hotbar", "hbm:screwdriver", "hbm:pin", false, 1.0, true);
-        attempt(c, "screwdriver-in-hand-pin-in-offhand", "hbm:screwdriver", "hbm:pin", true, 1.0, true);
-        attempt(c, "desh-screwdriver-in-hand", "hbm:screwdriver_desh", "hbm:pin", false, 1.0, true);
-        attempt(c, "pin-with-desh-screwdriver", "hbm:pin", "hbm:screwdriver_desh", false, 1.0, true);
-        attempt(c, "pin-alone", "hbm:pin", null, false, 1.0, false);
-        attempt(c, "unpickable-lock", "hbm:pin", "hbm:screwdriver", false, 0.0, false);
+        attempt(c, "pin-in-hand-screwdriver-in-hotbar", "geontm:pin", "geontm:screwdriver", false, 1.0, true);
+        attempt(c, "pin-in-hand-screwdriver-in-offhand", "geontm:pin", "geontm:screwdriver", true, 1.0, true);
+        attempt(c, "screwdriver-in-hand-pin-in-hotbar", "geontm:screwdriver", "geontm:pin", false, 1.0, true);
+        attempt(c, "screwdriver-in-hand-pin-in-offhand", "geontm:screwdriver", "geontm:pin", true, 1.0, true);
+        attempt(c, "desh-screwdriver-in-hand", "geontm:screwdriver_desh", "geontm:pin", false, 1.0, true);
+        attempt(c, "pin-with-desh-screwdriver", "geontm:pin", "geontm:screwdriver_desh", false, 1.0, true);
+        attempt(c, "pin-alone", "geontm:pin", null, false, 1.0, false);
+        attempt(c, "unpickable-lock", "geontm:pin", "geontm:screwdriver", false, 0.0, false);
 
         c.cmd("gamemode creative");
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore)");
         System.out.println("[Gh157] PASS");
     }
 
@@ -43,7 +43,7 @@ public class Gh157VaultPick implements Scenario {
         c.cmd("clear");
         c.cmd("setblock 0 " + G + " 0 minecraft:air");
         c.waitTicks(2);
-        c.cmd("setblock 0 " + G + " 0 hbm:safe[facing=north]");
+        c.cmd("setblock 0 " + G + " 0 geontm:safe[facing=north]");
         c.cmd("data merge block 0 " + G + " 0 {lock:123,isLocked:1b,lockMod:" + mod + "d}");
         c.waitTicks(3);
         c.cmd("give @s " + hand + " " + count(hand));
@@ -57,7 +57,7 @@ public class Gh157VaultPick implements Scenario {
         c.waitTicks(4);
         c.lookAt(0.5, G + 0.5, 0.0);
         c.waitTicks(4);
-        int pinsBefore = count(c, "hbm:pin");
+        int pinsBefore = count(c, "geontm:pin");
         c.use(2);
         c.waitTicks(15);
         String screen = c.screenClass();
@@ -68,10 +68,10 @@ public class Gh157VaultPick implements Scenario {
             c.key("escape");
             c.waitTicks(5);
         }
-        int pinsAfter = count(c, "hbm:pin");
+        int pinsAfter = count(c, "geontm:pin");
         System.out.println("[Gh157] " + label + ": opened " + open + ", pins " + pinsBefore + " -> " + pinsAfter);
         Expect.that(open == opens, label + ": the safe " + (opens ? "must" : "must not") + " open");
-        boolean picks = other != null && (hand.equals("hbm:pin") || other.equals("hbm:pin"));
+        boolean picks = other != null && (hand.equals("geontm:pin") || other.equals("geontm:pin"));
         if (picks) Expect.that(pinsAfter == pinsBefore - 1, label + ": a pick spends one pin");
         else Expect.that(pinsAfter == pinsBefore, label + ": no pick, no pin spent");
     }

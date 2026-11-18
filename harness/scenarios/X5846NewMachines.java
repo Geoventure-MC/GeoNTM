@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +33,9 @@ public final class X5846NewMachines implements Scenario {
     }
 
     private void rockMill(Client c) {
-        placeSouth(c, "hbm:machine_rockmill", MILL_X);
+        placeSouth(c, "geontm:machine_rockmill", MILL_X);
         int coreZ = Z + 1 - 2;
-        Expect.block(c, MILL_X, L, coreZ, "hbm:machine_rockmill");
+        Expect.block(c, MILL_X, L, coreZ, "geontm:machine_rockmill");
 
         open(c, MILL_X, "GUIMachineRockMill");
         checkSlots(c, "rock mill", 176, 220, new int[][] {
@@ -62,13 +62,13 @@ public final class X5846NewMachines implements Scenario {
 
         c.cmd("data merge block " + MILL_X + " " + L + " " + coreZ + " {i0:4000,i0_max:4000,i0_type:\"minecraft:water\"}");
         if (c.screenClass() == null) open(c, MILL_X, "GUIMachineRockMill");
-        give(c, "hbm:battery_creative", 1, 0);
+        give(c, "geontm:battery_creative", 1, 0);
         give(c, "minecraft:cobblestone", 4, 2);
         c.waitTicks(150);
         c.screenshot("02-rockmill-running");
         JsonObject out = machineSlots(c).get(5);
         Expect.that(out.has("id") && (out.get("id").getAsString().equals("minecraft:gravel")
-                        || out.get("id").getAsString().equals("hbm:powder_quartz")),
+                        || out.get("id").getAsString().equals("geontm:powder_quartz")),
                 "the mill crushed cobblestone into gravel or quartz: " + out);
         close(c);
 
@@ -79,14 +79,14 @@ public final class X5846NewMachines implements Scenario {
     }
 
     private void superComputer(Client c) {
-        placeSouth(c, "hbm:machine_supercomputer", COMPUTER_X);
+        placeSouth(c, "geontm:machine_supercomputer", COMPUTER_X);
         int coreZ = Z + 1 - 8;
-        Expect.block(c, COMPUTER_X, L, coreZ, "hbm:machine_supercomputer");
+        Expect.block(c, COMPUTER_X, L, coreZ, "geontm:machine_supercomputer");
 
         open(c, COMPUTER_X, "GUIMachineSuperComputer");
         checkSlots(c, "supercomputer", 176, 211, new int[][] {
                 {152, 81}, {35, 80}, {8, 27}, {26, 27}, {44, 27}, {80, 27}, {98, 27}, {116, 27}});
-        give(c, "hbm:drive_flash_empty", 1, -1);
+        give(c, "geontm:drive_flash_empty", 1, -1);
         c.screenshot("10-supercomputer-gui");
         close(c);
 
@@ -97,16 +97,16 @@ public final class X5846NewMachines implements Scenario {
     }
 
     private void tapeDrive(Client c) {
-        placeSouth(c, "hbm:machine_tape_drive", DRIVE_X);
-        Expect.block(c, DRIVE_X, L, Z + 1, "hbm:machine_tape_drive");
+        placeSouth(c, "geontm:machine_tape_drive", DRIVE_X);
+        Expect.block(c, DRIVE_X, L, Z + 1, "geontm:machine_tape_drive");
 
         open(c, DRIVE_X, "GUITapeDrive");
         int[][] slots = new int[12][];
         for (int i = 0; i < 12; i++) slots[i] = new int[] {35 + (i % 6) * 18, 27 + (i / 6) * 18};
         checkSlots(c, "drive enclosure", 176, 186, slots);
-        give(c, "hbm:drive_disk_empty", 1, 0);
-        give(c, "hbm:drive_flash_flightsim", 1, 1);
-        give(c, "hbm:drive_disk_broken", 1, 2);
+        give(c, "geontm:drive_disk_empty", 1, 0);
+        give(c, "geontm:drive_flash_flightsim", 1, 1);
+        give(c, "geontm:drive_disk_broken", 1, 2);
         c.screenshot("20-tape-drive-gui");
         close(c);
 

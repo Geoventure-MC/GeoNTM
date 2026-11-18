@@ -1,8 +1,8 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ public final class Gh158LampSpread implements Scenario {
             c.setOption("camera", "first_person");
             c.waitTicks(100);
 
-            c.cmd("item replace entity @s armor.head with hbm:no9");
+            c.cmd("item replace entity @s armor.head with geontm:no9");
             c.waitTicks(60);
             String[] helmet = plane(c);
             c.screenshot("helmet");
@@ -70,7 +70,7 @@ public final class Gh158LampSpread implements Scenario {
             String[] off = plane(c);
             JsonObject offLamp = lamp(c);
 
-            c.cmd("give @s hbm:gun_jshotgun");
+            c.cmd("give @s geontm:gun_jshotgun");
             c.hotbar(1);
             c.waitTicks(10);
             c.use(2);
@@ -118,7 +118,7 @@ public final class Gh158LampSpread implements Scenario {
     }
 
     private static JsonObject lamp(Client c) {
-        return c.query("hbm_lamp_lights", new JsonObject());
+        return c.query("geontm_lamp_lights", new JsonObject());
     }
 
     private static String[] plane(Client c) {
@@ -128,7 +128,7 @@ public final class Gh158LampSpread implements Scenario {
         p.addProperty("y1", PY1);
         p.addProperty("z0", PZ0);
         p.addProperty("z1", PZ1);
-        JsonArray rows = c.query("hbm_lamp_lights", p).getAsJsonArray("plane");
+        JsonArray rows = c.query("geontm_lamp_lights", p).getAsJsonArray("plane");
         String[] out = new String[rows.size()];
         for (int i = 0; i < out.length; i++) out[i] = rows.get(i).getAsString();
         return out;

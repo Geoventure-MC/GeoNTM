@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A complete Albion particle accelerator, placed by hand and run to a recipe result.
@@ -37,15 +37,15 @@ public class AlbionFullRun implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 28); // 57x8x57 air fill stays under the 32768-block fill limit
 
         // --- build ---
-        placeMultiblock(c, "hbm:pa_source", SX, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_rfc", RFC1, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_quadrupole", QUAD1, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_rfc", RFC2, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_quadrupole", QUAD2, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_rfc", RFC3, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_quadrupole", QUAD3, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_dipole", DIPOLE, BEAM_Y, ZC, "south", 1, 3);
-        placeMultiblock(c, "hbm:pa_detector", DET_X, BEAM_Y, DET_Z, "east", 2, 4);
+        placeMultiblock(c, "geontm:pa_source", SX, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_rfc", RFC1, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_quadrupole", QUAD1, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_rfc", RFC2, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_quadrupole", QUAD2, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_rfc", RFC3, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_quadrupole", QUAD3, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_dipole", DIPOLE, BEAM_Y, ZC, "south", 1, 3);
+        placeMultiblock(c, "geontm:pa_detector", DET_X, BEAM_Y, DET_Z, "east", 2, 4);
 
         c.teleport(RFC2 + 0.5, Y + 26, ZC - 18.5);
         c.lookAt(RFC2, BEAM_Y, ZC);
@@ -62,16 +62,16 @@ public class AlbionFullRun implements Scenario {
 
         // --- coils through the real menus ---
         for (int x : new int[]{QUAD1, QUAD2, QUAD3}) {
-            insert(c, x, BEAM_Y, ZC, "GUIPAQuadrupole", "hbm:pa_coil_gold", 1);
+            insert(c, x, BEAM_Y, ZC, "GUIPAQuadrupole", "geontm:pa_coil_gold", 1);
         }
         // The dipole is approached from the east: its north side is inside the detector's footprint.
-        insert(c, DIPOLE, BEAM_Y, ZC, DIPOLE + 4.5, ZC + 0.5, "GUIPADipole", "hbm:pa_coil_gold", 1);
+        insert(c, DIPOLE, BEAM_Y, ZC, DIPOLE + 4.5, ZC + 0.5, "GUIPADipole", "geontm:pa_coil_gold", 1);
         open(c, DIPOLE, BEAM_Y, ZC, DIPOLE + 4.5, ZC + 0.5, "GUIPADipole");
         c.screenshot("20-dipole-menu");
         close(c);
 
         // --- detector: an empty capsule in its first container slot is what the antimatter lands in ---
-        insert(c, DET_X + 2, BEAM_Y, DET_Z, DET_X + 4.5, DET_Z + 0.5, "GUIPADetector", "hbm:particle_empty", 1);
+        insert(c, DET_X + 2, BEAM_Y, DET_Z, DET_X + 4.5, DET_Z + 0.5, "GUIPADetector", "geontm:particle_empty", 1);
         open(c, DET_X + 2, BEAM_Y, DET_Z, DET_X + 4.5, DET_Z + 0.5, "GUIPADetector");
         Expect.slotEmpty(c, 3);
         c.screenshot("30-detector-before");
@@ -80,9 +80,9 @@ public class AlbionFullRun implements Scenario {
         // --- load the source: hydrogen and copper; the run starts on the tick both are in ---
         // Real clicks on the two input slots (the JEI recipe click area must be the arrow only, not the
         // slot block — a 36 x 45 area there took every slot click and opened the recipe browser).
-        insert(c, SX, BEAM_Y, ZC, "GUIPASource", "hbm:particle_hydrogen", 1);
+        insert(c, SX, BEAM_Y, ZC, "GUIPASource", "geontm:particle_hydrogen", 1);
         // The copper is consumed on the very next tick, so only its departure from the hotbar is checked.
-        insert(c, SX, BEAM_Y, ZC, SX + 0.5, ZC - 3.5, "GUIPASource", "hbm:particle_copper", 2, false);
+        insert(c, SX, BEAM_Y, ZC, SX + 0.5, ZC - 3.5, "GUIPASource", "geontm:particle_copper", 2, false);
         c.waitTicks(40);
 
         // --- result ---
@@ -90,14 +90,14 @@ public class AlbionFullRun implements Scenario {
         c.screenshot("40-source-after-run");
         Expect.slotEmpty(c, 1);
         Expect.slotEmpty(c, 2);
-        Expect.slotHolds(c, 3, "hbm:particle_empty", 1);
-        Expect.slotHolds(c, 4, "hbm:particle_empty", 1);
+        Expect.slotHolds(c, 3, "geontm:particle_empty", 1);
+        Expect.slotHolds(c, 4, "geontm:particle_empty", 1);
         close(c);
 
         open(c, DET_X + 2, BEAM_Y, DET_Z, DET_X + 4.5, DET_Z + 0.5, "GUIPADetector");
         c.screenshot("50-detector-after-run");
         Expect.slotEmpty(c, 1);
-        Expect.slotHolds(c, 3, "hbm:particle_amat", 1);
+        Expect.slotHolds(c, 3, "geontm:particle_amat", 1);
         close(c);
 
         String nbt = c.blockEntity(SX, BEAM_Y, ZC).get("nbt").getAsString();

@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -39,9 +39,9 @@ public final class RcProcAsm implements Scenario {
 
         String[][] asm = {
                 {"asm_base", "-30", "0", ""},
-                {"asm_speed3", "-30", "12", "hbm:upgrade_speed_3"},
-                {"asm_power3", "-30", "-12", "hbm:upgrade_power_3"},
-                {"asm_over3", "-18", "0", "hbm:upgrade_overdrive_3"},
+                {"asm_speed3", "-30", "12", "geontm:upgrade_speed_3"},
+                {"asm_power3", "-30", "-12", "geontm:upgrade_power_3"},
+                {"asm_over3", "-18", "0", "geontm:upgrade_overdrive_3"},
         };
         for (String[] a : asm) {
             place(c, a[0], "machine_assembly_machine", Integer.parseInt(a[1]), Integer.parseInt(a[2]));
@@ -49,20 +49,20 @@ public final class RcProcAsm implements Scenario {
             int[] core = cores.get(a[0]);
             if (core != null) {
                 String at = core[0] + " " + core[1] + " " + core[2];
-                c.cmd("item replace block " + at + " container.4 with hbm:plate_copper 8");
-                c.cmd("item replace block " + at + " container.5 with hbm:neutron_reflector 4");
-                c.cmd("item replace block " + at + " container.6 with hbm:plate_saturnite 4");
+                c.cmd("item replace block " + at + " container.4 with geontm:plate_copper 8");
+                c.cmd("item replace block " + at + " container.5 with geontm:neutron_reflector 4");
+                c.cmd("item replace block " + at + " container.6 with geontm:plate_saturnite 4");
             }
             merge(a[0], "recipe0:\"ass.platemixed\",power:100000L");
         }
         String[][] chem = {
                 {"chem_base", "-18", "12", ""},
-                {"chem_speed3", "-18", "-12", "hbm:upgrade_speed_3"},
+                {"chem_speed3", "-18", "-12", "geontm:upgrade_speed_3"},
         };
         for (String[] a : chem) {
             place(c, a[0], "machine_chemical_plant", Integer.parseInt(a[1]), Integer.parseInt(a[2]));
             if (!a[3].isEmpty()) load(c, a[0], new String[]{a[3] + " 1"});
-            merge(a[0], "recipe0:\"chem.co2\",power:100000L,i0:3000,i0_type:\"hbm:gas\"");
+            merge(a[0], "recipe0:\"chem.co2\",power:100000L,i0:3000,i0_type:\"geontm:gas\"");
         }
         place(c, "asm_factory", "machine_assembly_factory", 20, 0);
         place(c, "chem_factory", "machine_chemical_factory", 20, 15);
@@ -74,12 +74,12 @@ public final class RcProcAsm implements Scenario {
         int[] af = cores.get("asm_factory");
         if (af != null) {
             String at = af[0] + " " + af[1] + " " + af[2];
-            c.cmd("item replace block " + at + " container.5 with hbm:plate_copper 8");
-            c.cmd("item replace block " + at + " container.6 with hbm:neutron_reflector 4");
-            c.cmd("item replace block " + at + " container.7 with hbm:plate_saturnite 4");
+            c.cmd("item replace block " + at + " container.5 with geontm:plate_copper 8");
+            c.cmd("item replace block " + at + " container.6 with geontm:neutron_reflector 4");
+            c.cmd("item replace block " + at + " container.7 with geontm:plate_saturnite 4");
             merge("asm_factory", "recipe0:\"ass.platemixed\",power:500000L,w:100000,w_max:100000,w_type:\"minecraft:water\"");
         }
-        merge("chem_factory", "recipe0:\"chem.co2\",power:500000L,w:100000,w_max:100000,w_type:\"minecraft:water\",i0:3000,i0_type:\"hbm:gas\"");
+        merge("chem_factory", "recipe0:\"chem.co2\",power:500000L,w:100000,w_max:100000,w_type:\"minecraft:water\",i0:3000,i0_type:\"geontm:gas\"");
         for (String cmd : pending) c.cmd(cmd);
         c.waitTicks(1);
         for (var e : cores.entrySet()) start.put(e.getKey(), read(c, e.getValue(), "power"));
@@ -106,7 +106,7 @@ public final class RcProcAsm implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -119,7 +119,7 @@ public final class RcProcAsm implements Scenario {
         try {
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + block, 1);
+            Fixtures.giveOnly(c, "geontm:" + block, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

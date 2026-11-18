@@ -1,0 +1,42 @@
+{
+  "textures": {
+    "top": "geontm:blocks/rbmk/rbmk_outgasser_top",
+    "side": "geontm:blocks/rbmk/rbmk_outgasser_side",
+    "bottom": "geontm:blocks/rbmk/rbmk_outgasser_top",
+    "particle": "geontm:blocks/rbmk/rbmk_outgasser_side"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#side"
+        },
+        "south": {
+          "texture": "#side"
+        },
+        "west": {
+          "texture": "#side"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "down": {
+          "texture": "#bottom"
+        },
+        "up": {
+          "texture": "#top"
+        }
+      }
+    }
+  ]
+}

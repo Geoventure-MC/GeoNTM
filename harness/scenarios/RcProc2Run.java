@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -41,9 +41,9 @@ public final class RcProc2Run implements Scenario {
 
         // gas centrifuge: 150 ticks per cycle, 200 HE/t, 400 NUF6 in, 300 LEUF6 out, 1 u238 nugget; speed card 80 ticks, 300 HE/t
         add(c, only, "gascent", "machine_gascent", -28, 186, new String[]{},
-                "power:100000L,tank:2000,tank_type:\"hbm:uf6\"");
-        add(c, only, "gascent_speed", "machine_gascent", -14, 186, new String[]{"hbm:upgrade_gc_speed 1"},
-                "power:100000L,tank:2000,tank_type:\"hbm:uf6\"");
+                "power:100000L,tank:2000,tank_type:\"geontm:uf6\"");
+        add(c, only, "gascent_speed", "machine_gascent", -14, 186, new String[]{"geontm:upgrade_gc_speed 1"},
+                "power:100000L,tank:2000,tank_type:\"geontm:uf6\"");
         // rock mill: rock.cobble 100 ticks, 25 HE/t, 250 mB water -> 250 mB colloid, gravel or quartz powder
         add(c, only, "rockmill", "machine_rockmill", 0, 186, new String[]{"minecraft:cobblestone 4"},
                 "power:10000L,i0:1000,i0_type:\"minecraft:water\",recipe0:\"rock.cobble\"");
@@ -51,22 +51,22 @@ public final class RcProc2Run implements Scenario {
         add(c, only, "microwave", "machine_microwave", 14, 186, new String[]{"minecraft:beef 4"}, "power:50000L,speed:2");
         // iron furnace: 160 ticks per item (80 with speed 3), coal burns 1600 x 1.25 = 2000
         add(c, only, "iron", "furnace_iron", 28, 186, new String[]{"minecraft:iron_ore 6", "minecraft:coal 1"}, "");
-        add(c, only, "iron_speed", "furnace_iron", -28, 200, new String[]{"minecraft:iron_ore 6", "minecraft:coal 1", "hbm:upgrade_speed_3 1"}, "");
+        add(c, only, "iron_speed", "furnace_iron", -28, 200, new String[]{"minecraft:iron_ore 6", "minecraft:coal 1", "geontm:upgrade_speed_3 1"}, "");
         add(c, only, "brick", "machine_furnace_brick_off", -14, 200, new String[]{"minecraft:iron_ore 6", "minecraft:coal 1"}, "");
 
         // mixer, phosgene: 20 ticks, 50 HE/t, 500 + 500 in, 1000 out; two crafts of fluid in each tank
-        String mixer = "power:50000L,tank0:2000,tank0_type:\"hbm:unsaturateds\",tank1:2000,tank1_type:\"hbm:chlorine\",tank2_type:\"hbm:phosgene\"";
+        String mixer = "power:50000L,tank0:2000,tank0_type:\"geontm:unsaturateds\",tank1:2000,tank1_type:\"geontm:chlorine\",tank2_type:\"geontm:phosgene\"";
         add(c, only, "mixer", "machine_mixer", 0, 200, new String[]{}, mixer);
-        add(c, only, "mixer_speed", "machine_mixer", 14, 200, new String[]{"hbm:upgrade_speed_3 1"}, mixer);
-        add(c, only, "mixer_power", "machine_mixer", 28, 200, new String[]{"hbm:upgrade_power_3 1"}, mixer);
-        add(c, only, "mixer_over", "machine_mixer", -28, 214, new String[]{"hbm:upgrade_overdrive_3 1"}, mixer);
+        add(c, only, "mixer_speed", "machine_mixer", 14, 200, new String[]{"geontm:upgrade_speed_3 1"}, mixer);
+        add(c, only, "mixer_power", "machine_mixer", 28, 200, new String[]{"geontm:upgrade_power_3 1"}, mixer);
+        add(c, only, "mixer_over", "machine_mixer", -28, 214, new String[]{"geontm:upgrade_overdrive_3 1"}, mixer);
 
         // purex, purex.pilepu239: 40 ticks, 100 HE/t, rod + 100 sulfuric acid -> 2 pu239 billets + 1 uranium billet
-        String purex = "power:1000000L,i0:300,i0_type:\"hbm:sulfuric_acid\",recipe0:\"purex.pilepu239\"";
-        add(c, only, "purex", "machine_purex", -14, 214, new String[]{"hbm:pile_rod_mk2_pu239 3"}, purex);
-        add(c, only, "purex_speed", "machine_purex", 0, 214, new String[]{"hbm:pile_rod_mk2_pu239 3", "hbm:upgrade_speed_3 1"}, purex);
-        add(c, only, "purex_power", "machine_purex", 14, 214, new String[]{"hbm:pile_rod_mk2_pu239 3", "hbm:upgrade_power_3 1"}, purex);
-        add(c, only, "purex_over", "machine_purex", 28, 214, new String[]{"hbm:pile_rod_mk2_pu239 3", "hbm:upgrade_overdrive_3 1"}, purex);
+        String purex = "power:1000000L,i0:300,i0_type:\"geontm:sulfuric_acid\",recipe0:\"purex.pilepu239\"";
+        add(c, only, "purex", "machine_purex", -14, 214, new String[]{"geontm:pile_rod_mk2_pu239 3"}, purex);
+        add(c, only, "purex_speed", "machine_purex", 0, 214, new String[]{"geontm:pile_rod_mk2_pu239 3", "geontm:upgrade_speed_3 1"}, purex);
+        add(c, only, "purex_power", "machine_purex", 14, 214, new String[]{"geontm:pile_rod_mk2_pu239 3", "geontm:upgrade_power_3 1"}, purex);
+        add(c, only, "purex_over", "machine_purex", 28, 214, new String[]{"geontm:pile_rod_mk2_pu239 3", "geontm:upgrade_overdrive_3 1"}, purex);
 
         for (String cmd : pending) c.cmd(cmd);
         c.waitTicks(1);
@@ -98,7 +98,7 @@ public final class RcProc2Run implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -134,7 +134,7 @@ public final class RcProc2Run implements Scenario {
         long in = num(nbt, "inputTank");
         long tank = num(nbt, "tank");
         long n = out / 300;
-        int nuggets = itemTotal(nbt, "hbm:nugget_u238");
+        int nuggets = itemTotal(nbt, "geontm:nugget_u238");
         System.out.println("[" + name + "] used " + used + " = " + ticks + " ticks, progress " + progress + ", cycles " + n
                 + ", nuggets " + nuggets + ", in " + in + " tank " + tank);
         if (used % perTick != 0) fail(name + ": power drawn " + used + " is not a multiple of " + perTick);
@@ -154,7 +154,7 @@ public final class RcProc2Run implements Scenario {
         long n = out / 250;
         int cobble = itemTotal(nbt, "minecraft:cobblestone");
         int gravel = itemTotal(nbt, "minecraft:gravel");
-        int quartz = itemTotal(nbt, "hbm:powder_quartz");
+        int quartz = itemTotal(nbt, "geontm:powder_quartz");
         double prog = numD(nbt, "progress0");
         System.out.println("[rockmill] used " + used + ", colloid " + out + ", water " + water + ", cobble left " + cobble
                 + ", gravel " + gravel + ", quartz " + quartz + ", progress " + prog);
@@ -217,9 +217,9 @@ public final class RcProc2Run implements Scenario {
         if (core == null) return;
         String nbt = flat(c, core);
         long used = start.get(name) - num(nbt, "power");
-        int pu = itemTotal(nbt, "hbm:billet_pu239");
-        int u = itemTotal(nbt, "hbm:billet_uranium");
-        int rods = itemTotal(nbt, "hbm:pile_rod_mk2_pu239");
+        int pu = itemTotal(nbt, "geontm:billet_pu239");
+        int u = itemTotal(nbt, "geontm:billet_uranium");
+        int rods = itemTotal(nbt, "geontm:pile_rod_mk2_pu239");
         long acid = num(nbt, "i0");
         System.out.println("[" + name + "] used " + used + ", pu239 " + pu + ", uranium " + u + ", rods left " + rods + ", acid " + acid
                 + ", progress " + numD(nbt, "progress0"));
@@ -260,7 +260,7 @@ public final class RcProc2Run implements Scenario {
         try {
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + block, 1);
+            Fixtures.giveOnly(c, "geontm:" + block, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

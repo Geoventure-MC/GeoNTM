@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public final class Gh46ShaderPacks implements Scenario {
             c.cmd("gamerule doDaylightCycle false");
             c.cmd("gamerule advance_time false");
             c.cmd("weather clear");
-            for (int i = 0; i < MACHINES.length; i++) Fixtures.setBlock(c, X + OFFSETS[i], L, Z, "hbm:" + MACHINES[i]);
+            for (int i = 0; i < MACHINES.length; i++) Fixtures.setBlock(c, X + OFFSETS[i], L, Z, "geontm:" + MACHINES[i]);
             c.cmd("gamemode spectator");
             c.waitTicks(200);
             c.teleport(X + 12.5, L + 7, Z + 20.5);

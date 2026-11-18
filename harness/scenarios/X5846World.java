@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,21 +20,21 @@ import java.util.regex.Pattern;
 public final class X5846World implements Scenario {
 
     static final String[] IDS = {"falloutshelter_house", "abandoned_arcticstation", "military_base", "submarine"};
-    static final Pattern FOUND = Pattern.compile("nearest (hbm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
+    static final Pattern FOUND = Pattern.compile("nearest (geontm:[a-z0-9_]+) is at \\[(-?\\d+), ~, (-?\\d+)\\]");
 
     static int[] locate(Client c, String id) {
         c.markLog();
-        c.cmd("locate structure hbm:" + id);
+        c.cmd("locate structure geontm:" + id);
         long deadline = System.currentTimeMillis() + 600_000L;
         while (System.currentTimeMillis() < deadline) {
             c.waitTicks(10);
-            for (String line : c.logSinceMark("hbm:" + id + "|Could not find|no structure")) {
+            for (String line : c.logSinceMark("geontm:" + id + "|Could not find|no structure")) {
                 Matcher m = FOUND.matcher(line);
-                if (m.find() && m.group(1).equals("hbm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
+                if (m.find() && m.group(1).equals("geontm:" + id)) return new int[] {Integer.parseInt(m.group(2)), Integer.parseInt(m.group(3))};
                 if (line.contains("Could not find") || line.contains("no structure")) return null;
             }
         }
-        throw new HarnessException("no /locate answer for hbm:" + id + " within 600 s");
+        throw new HarnessException("no /locate answer for geontm:" + id + " within 600 s");
     }
 
     static JsonObject start(Client c, int x, int z, String spawn, boolean rebuild) {
@@ -45,7 +45,7 @@ public final class X5846World implements Scenario {
         long deadline = System.currentTimeMillis() + 300_000L;
         JsonObject last = null;
         while (System.currentTimeMillis() < deadline) {
-            last = c.query("hbm_structure", params);
+            last = c.query("geontm_structure", params);
             if (last.has("starts")) {
                 for (JsonElement e : last.getAsJsonArray("starts")) {
                     JsonObject s = e.getAsJsonObject();
@@ -103,14 +103,14 @@ public final class X5846World implements Scenario {
 
     static void manual(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:fusion_boiler 1");
+        c.cmd("give @s geontm:fusion_boiler 1");
         c.waitTicks(5);
         c.key("e");
         c.waitTicks(10);
         boolean hovered = false;
         for (JsonElement e : c.screen().getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("hbm:fusion_boiler")) {
+            if (!s.get("empty").getAsBoolean() && s.get("id").getAsString().equals("geontm:fusion_boiler")) {
                 c.mouseMove(s.get("center_x").getAsDouble(), s.get("center_y").getAsDouble());
                 hovered = true;
                 break;
@@ -123,7 +123,7 @@ public final class X5846World implements Scenario {
         c.mouseMove(2, 2);
         c.waitTicks(10);
         c.screenshot("qmaw-fusion-boiler");
-        JsonObject q = c.query("hbm_qmaw", new JsonObject());
+        JsonObject q = c.query("geontm_qmaw", new JsonObject());
         Expect.that(q.has("page") && q.get("page").getAsString().equals("Fusion Reactor Boiler"), "F1 opened the boiler page: " + q);
         Expect.that(q.get("pages").getAsInt() == q.get("files").getAsInt() && q.get("files").getAsInt() == 264, "all 264 manual pages load: " + q);
         String self = null, klystron = null;
@@ -171,10 +171,10 @@ public final class X5846World implements Scenario {
             c.cmd("forceload add " + px + " 0 " + (px + 111) + " 111");
             c.waitTicks(20);
             c.markLog();
-            c.cmd("place structure hbm:" + id + " " + px + " -60 0");
+            c.cmd("place structure geontm:" + id + " " + px + " -60 0");
             c.waitTicks(40);
             List<String> failed = c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument|not loaded");
-            Expect.that(failed.isEmpty(), "/place structure hbm:" + id + ": " + failed);
+            Expect.that(failed.isEmpty(), "/place structure geontm:" + id + ": " + failed);
             report.add(inspect(c, id, px, 0, "flat"));
             c.cmd("forceload remove " + px + " 0 " + (px + 111) + " 111");
             px += 256;

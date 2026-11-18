@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** The worn Taurun suit (1.7 ModelArmorTaurun): front, back, crouching, first person. */
 public final class RcArmorTaurun implements Scenario {
@@ -15,10 +15,10 @@ public final class RcArmorTaurun implements Scenario {
         c.cmd("time set noon");
         c.teleport(0.5, 101, 0.5);
         c.look(0, 10);
-        c.cmd("item replace entity @s armor.head with hbm:taurun_helmet");
-        c.cmd("item replace entity @s armor.chest with hbm:taurun_plate");
-        c.cmd("item replace entity @s armor.legs with hbm:taurun_legs");
-        c.cmd("item replace entity @s armor.feet with hbm:taurun_boots");
+        c.cmd("item replace entity @s armor.head with geontm:taurun_helmet");
+        c.cmd("item replace entity @s armor.chest with geontm:taurun_plate");
+        c.cmd("item replace entity @s armor.legs with geontm:taurun_legs");
+        c.cmd("item replace entity @s armor.feet with geontm:taurun_boots");
         c.waitTicks(10);
         c.key("f1");
         c.key("f5");

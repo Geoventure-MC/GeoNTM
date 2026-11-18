@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 85: JEI's R on asbestos concrete found no recipe. Under the default config it comes from the chemical
@@ -15,12 +15,12 @@ public final class Gh85RecipeLookup implements Scenario {
         c.waitInWorld(180_000L);
         c.cmd("gamemode creative");
         c.waitTicks(40);
-        for (String item : new String[] {"hbm:concrete_asbestos", "hbm:concrete_smooth", "hbm:ingot_desh",
-                "hbm:rbmk_control", "hbm:rbmk_control_reasim", "hbm:rbmk_control_reasim_auto"}) {
+        for (String item : new String[] {"geontm:concrete_asbestos", "geontm:concrete_smooth", "geontm:ingot_desh",
+                "geontm:rbmk_control", "geontm:rbmk_control_reasim", "geontm:rbmk_control_reasim_auto"}) {
             JsonObject counts = focus(c, item).getAsJsonObject("counts");
             System.out.println("[Gh85] " + item + " " + counts);
         }
-        Expect.that(focus(c, "hbm:concrete_asbestos").getAsJsonObject("counts").has("hbm:chemical_plant"),
+        Expect.that(focus(c, "geontm:concrete_asbestos").getAsJsonObject("counts").has("geontm:chemical_plant"),
                 "asbestos concrete has a chemical plant recipe");
     }
 

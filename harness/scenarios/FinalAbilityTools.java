@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,8 +74,8 @@ public final class FinalAbilityTools implements Scenario {
             c.waitTicks(2);
             List<String> batch = new ArrayList<>();
             for (int i = page * 36; i < Math.min(IDS.length, (page + 1) * 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i] + " 1");
-                batch.add("hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i] + " 1");
+                batch.add("geontm:" + IDS[i]);
             }
             c.waitTicks(5);
             for (String id : batch) {
@@ -110,7 +110,7 @@ public final class FinalAbilityTools implements Scenario {
     }
 
     private List<String> info(Client c) {
-        JsonObject json = c.query("hbm_info", new JsonObject());
+        JsonObject json = c.query("geontm_info", new JsonObject());
         List<String> out = new ArrayList<>();
         JsonArray messages = json.getAsJsonArray("messages");
         if (messages != null) for (JsonElement e : messages) out.add(e.getAsString());
@@ -137,7 +137,7 @@ public final class FinalAbilityTools implements Scenario {
     /** Steel pickaxe, vein miner (3): four coal ores in a line all go, four coal collected. */
     private void veinMiner(Client c) {
         stand(c);
-        Fixtures.giveOnly(c, "hbm:steel_pickaxe", 1);
+        Fixtures.giveOnly(c, "geontm:steel_pickaxe", 1);
         expectInfo(cycle(c, 1), "[Enabled Vein Miner (3)");
         c.screenshot("10-vein-miner-enabled");
         for (int z = 3; z <= 6; z++) Fixtures.setBlock(c, X, T, z, "minecraft:coal_ore");
@@ -153,7 +153,7 @@ public final class FinalAbilityTools implements Scenario {
     private void hammer(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:desh_pickaxe", 1);
+        Fixtures.giveOnly(c, "geontm:desh_pickaxe", 1);
         expectInfo(cycle(c, 2), "[Enabled AoE (1)");
         for (int x = -1; x <= 1; x++)
             for (int y = T - 1; y <= T + 1; y++)
@@ -192,7 +192,7 @@ public final class FinalAbilityTools implements Scenario {
     private void silk(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:cobalt_pickaxe", 1);
+        Fixtures.giveOnly(c, "geontm:cobalt_pickaxe", 1);
         expectInfo(cycle(c, 2), "[Enabled Silk Touch");
         Fixtures.setBlock(c, X, T, 3, "minecraft:stone");
         stand(c);
@@ -208,7 +208,7 @@ public final class FinalAbilityTools implements Scenario {
     private void smelter(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:cmb_pickaxe", 1);
+        Fixtures.giveOnly(c, "geontm:cmb_pickaxe", 1);
         expectInfo(cycle(c, 4), "[Enabled Auto-Smelter");
         Fixtures.setBlock(c, X, T, 3, "minecraft:iron_ore");
         stand(c);
@@ -224,7 +224,7 @@ public final class FinalAbilityTools implements Scenario {
     private void shredder(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:smashing_hammer", 1);
+        Fixtures.giveOnly(c, "geontm:smashing_hammer", 1);
         expectInfo(cycle(c, 1), "[Enabled Auto-Shredder");
         Fixtures.setBlock(c, X, T, 3, "minecraft:stone");
         stand(c);
@@ -240,9 +240,9 @@ public final class FinalAbilityTools implements Scenario {
     private void editor(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:schrabidium_pickaxe", 1);
+        Fixtures.giveOnly(c, "geontm:schrabidium_pickaxe", 1);
         c.look(0, 0);
-        c.key("key.hbm.abilityAlt");
+        c.key("key.geontm.abilityAlt");
         c.waitScreen("GUIScreenToolAbility", 5000);
         c.waitTicks(5);
         c.screenshot("60-ability-editor");
@@ -254,7 +254,7 @@ public final class FinalAbilityTools implements Scenario {
     private void stun(Client c) {
         c.cmd("clear");
         stand(c);
-        Fixtures.giveOnly(c, "hbm:steel_sword", 1);
+        Fixtures.giveOnly(c, "geontm:steel_sword", 1);
         c.cmd("summon minecraft:pig 0.5 " + (Y + 1) + " 2.5 {NoAI:1b,PersistenceRequired:1b}");
         c.waitTicks(5);
         c.lookAt(0.5, Y + 1.5, 2.5);

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public final class Assets17 implements Scenario {
             List<String> missing = new ArrayList<>();
             for (int i = 0; i < MACHINES.size(); i++) {
                 int x = X + i * SPACING;
-                Fixtures.giveOnly(c, "hbm:" + MACHINES.get(i), 1);
+                Fixtures.giveOnly(c, "geontm:" + MACHINES.get(i), 1);
                 c.teleport(x + 0.5, Y + 1, Z - 3.5);
                 c.waitTicks(2);
                 c.lookAt(x + 0.5, Y + 0.98, Z + 0.5);
@@ -83,7 +83,7 @@ public final class Assets17 implements Scenario {
             // survival, so E opens the plain inventory rather than a creative tab
             c.cmd("gamemode survival");
             c.cmd("clear");
-            for (String item : ITEMS) c.cmd("give @s hbm:" + item + " 1");
+            for (String item : ITEMS) c.cmd("give @s geontm:" + item + " 1");
             c.waitTicks(5);
             c.key("e");
             c.waitTicks(10);

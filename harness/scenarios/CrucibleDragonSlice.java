@@ -1,14 +1,14 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * old-hbm {@code PacketMobSlicer}: a cut ender dragon ends the fight. 1.12 called {@code onKillCommand()} on every victim
+ * old-geontm {@code PacketMobSlicer}: a cut ender dragon ends the fight. 1.12 called {@code onKillCommand()} on every victim
  * "for ender dragon so it spawns a portal"; the port routes a dragon through {@code EnderDragon.kill}, which tells the
  * fight ({@code setDragonKilled}: exit portal, gateway, egg on the first kill). A dedicated superflat world is restored
  * from its snapshot so the End is fresh (dragon alive, never killed); the player goes to the End, waits for the fight's
- * dragon, then the {@code hbm_crucible} query cuts every dragon through {@code MobSlicer.kill} on the server.
+ * dragon, then the {@code geontm_crucible} query cuts every dragon through {@code MobSlicer.kill} on the server.
  * Expected: before, one dragon, not previously killed, no egg, no portal blocks; after, no dragon, previously killed,
  * one egg, and the exit portal's END_PORTAL blocks.
  */
@@ -17,9 +17,9 @@ public final class CrucibleDragonSlice implements Scenario {
     private static JsonObject fight(Client c, boolean slice) throws Exception {
         JsonObject p = new JsonObject();
         p.addProperty(slice ? "slice_dragons" : "end_fight_probe", true);
-        c.query("hbm_crucible", p);
+        c.query("geontm_crucible", p);
         c.waitTicks(5);
-        return c.query("hbm_crucible", new JsonObject()).getAsJsonObject("end_fight");
+        return c.query("geontm_crucible", new JsonObject()).getAsJsonObject("end_fight");
     }
 
     @Override

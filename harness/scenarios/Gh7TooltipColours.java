@@ -1,19 +1,19 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 7: item description lines were white where 1.7 drew them gray (1.7's GuiContainer prefixed every line
  * after the name with GRAY), the radiation line read " 11.25 RAD/s" for 1.7's "11.25RAD/s", and a RESET value after a
  * coloured label kept the label's colour where 1.7 drew it white. Reads the client's own tooltip runs through
- * {@code hbm_release mode=tooltip}, then hovers each item in the survival inventory for a screenshot.
+ * {@code geontm_release mode=tooltip}, then hovers each item in the survival inventory for a screenshot.
  */
 public final class Gh7TooltipColours implements Scenario {
 
-    private static final String[] ITEMS = {"hbm:igniter", "hbm:pellet_rtg_radium", "hbm:solinium_core", "hbm:pa_coil_gold"};
+    private static final String[] ITEMS = {"geontm:igniter", "geontm:pellet_rtg_radium", "geontm:solinium_core", "geontm:pa_coil_gold"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -59,7 +59,7 @@ public final class Gh7TooltipColours implements Scenario {
         JsonObject p = new JsonObject();
         p.addProperty("mode", "tooltip");
         p.addProperty("slot", slot);
-        JsonArray styled = c.query("hbm_release", p).getAsJsonArray("styled");
+        JsonArray styled = c.query("geontm_release", p).getAsJsonArray("styled");
         String[] out = new String[styled.size()];
         for (int i = 0; i < out.length; i++) out[i] = styled.get(i).getAsString();
         System.out.println("[Gh7] slot " + slot + ": " + String.join(" / ", out));

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
@@ -70,7 +70,7 @@ public final class RcServerMenus implements Scenario {
                 rcon.command("fill " + (X - 4) + " " + L + " " + z0 + " " + (X + 4) + " " + (L + 6) + " " + (z0 + STEP - 1) + " minecraft:air");
             }
             for (int i = 0; i < MACHINES.length; i++) {
-                String reply = rcon.command("setblock " + X + " " + L + " " + (Z + i * STEP) + " hbm:" + MACHINES[i]);
+                String reply = rcon.command("setblock " + X + " " + L + " " + (Z + i * STEP) + " geontm:" + MACHINES[i]);
                 if (!reply.toLowerCase().contains("changed")) System.out.println("[RcServerMenus] setblock " + MACHINES[i] + ": " + reply);
             }
             c.waitTicks(20);

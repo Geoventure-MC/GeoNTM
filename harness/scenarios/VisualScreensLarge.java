@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public final class VisualScreensLarge implements Scenario {
             if (id.equals("machine_mining_laser")) {
                 // ceiling mount: a slab of stone at Y+6, the laser placed against its underside
                 c.cmd("fill -3 " + (Y + 6) + " -3 3 " + (Y + 6) + " 3 minecraft:stone");
-                Fixtures.giveOnly(c, "hbm:" + id, 1);
+                Fixtures.giveOnly(c, "geontm:" + id, 1);
                 c.teleport(2.5, Y + 1, 0.5);
                 c.waitTicks(2);
                 c.lookAt(0.5, Y + 6.02, 0.5);
@@ -39,7 +39,7 @@ public final class VisualScreensLarge implements Scenario {
             } else if (id.equals("pa_detector") || id.equals("launch_pad_large")) {
                 // wide footprints: place from outside the footprint (the standard helper stands inside it), aiming at
                 // the near edge of the top face so the click stays in reach
-                Fixtures.giveOnly(c, "hbm:" + id, 1);
+                Fixtures.giveOnly(c, "geontm:" + id, 1);
                 c.teleport(0.5, Y + 1, -4.7);
                 c.waitTicks(2);
                 c.lookAt(0.5, Y + 0.98, 0.06);
@@ -47,7 +47,7 @@ public final class VisualScreensLarge implements Scenario {
                 c.use(2);
                 c.waitTicks(5);
             } else {
-                Fixtures.placeOnTop(c, "hbm:" + id, 0, Y, 0);
+                Fixtures.placeOnTop(c, "geontm:" + id, 0, Y, 0);
             }
             c.waitTicks(10);
             boolean opened = false;
@@ -57,7 +57,7 @@ public final class VisualScreensLarge implements Scenario {
                     for (int dx = -6; dx <= 6; dx++) {
                         JsonObject b = c.block(dx, Y + dy, dz);
                         String block = b.has("id") ? b.get("id").getAsString() : (b.has("block") ? b.get("block").getAsString() : "");
-                        if (!block.startsWith("hbm:")) continue;
+                        if (!block.startsWith("geontm:")) continue;
                         c.teleport(dx + 0.5, Y + dy, dz - 2.5);
                         Fixtures.interact(c, dx, Y + dy, dz);
                         c.waitTicks(10);

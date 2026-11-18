@@ -1,11 +1,11 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * GitHub issue 151: leaving a world with a Sable ship of HBM blocks aborted the game while Sable saved the overworld's
+ * GitHub issue 151: leaving a world with a Sable ship of GEONTM blocks aborted the game while Sable saved the overworld's
  * sub-levels (a Rapier panic, "no entry found for key"). Builds a deck with machines, cables, ducts and a turbofan,
  * assembles it and lifts it, then leaves and rejoins the world three times, once while the
  * ship's chunk is unloaded. The client must survive
@@ -14,8 +14,8 @@ import dev.golem.harness.api.Scenario;
 public final class Gh151SableQuit implements Scenario {
 
     private static final int Y = 100, D = Y + 1;
-    private static final String[] MACHINES = {"hbm:machine_turbofan", "hbm:machine_tower_small", "hbm:machine_assembly_machine",
-            "hbm:machine_chemical_plant", "hbm:machine_press"};
+    private static final String[] MACHINES = {"geontm:machine_turbofan", "geontm:machine_tower_small", "geontm:machine_assembly_machine",
+            "geontm:machine_chemical_plant", "geontm:machine_press"};
 
     @Override
     public void run(Client c) throws Exception {
@@ -35,9 +35,9 @@ public final class Gh151SableQuit implements Scenario {
             c.use(2);
             c.waitTicks(10);
         }
-        c.cmd("fill -12 " + (D + 1) + " 16 12 " + (D + 1) + " 16 hbm:red_cable");
-        c.cmd("fill -12 " + (D + 1) + " 17 12 " + (D + 1) + " 17 hbm:fluid_duct_neo");
-        c.cmd("fill -12 " + (D + 1) + " 18 12 " + (D + 1) + " 18 hbm:concrete_smooth");
+        c.cmd("fill -12 " + (D + 1) + " 16 12 " + (D + 1) + " 16 geontm:red_cable");
+        c.cmd("fill -12 " + (D + 1) + " 17 12 " + (D + 1) + " 17 geontm:fluid_duct_neo");
+        c.cmd("fill -12 " + (D + 1) + " 18 12 " + (D + 1) + " 18 geontm:concrete_smooth");
         c.cmd("clear");
         c.waitTicks(20);
 

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.Image;
@@ -33,7 +33,7 @@ public final class Gh24IconsAndTitles implements Scenario {
         List<String> failures = new ArrayList<>();
         icons(c, failures);
 
-        JsonObject silex = place(c, "hbm:machine_silex", "TileEntitySILEX");
+        JsonObject silex = place(c, "geontm:machine_silex", "TileEntitySILEX");
         open(c, silex);
         JsonObject screen = Expect.screenOpen(c, "SILEX");
         System.out.println("[Gh24] SILEX title " + screen.get("title"));
@@ -43,7 +43,7 @@ public final class Gh24IconsAndTitles implements Scenario {
         c.waitTicks(3);
         clear(c);
 
-        JsonObject forge = place(c, "hbm:fusion_plasma_forge", "TileEntityFusionPlasmaForge");
+        JsonObject forge = place(c, "geontm:fusion_plasma_forge", "TileEntityFusionPlasmaForge");
         c.cmd("data merge block " + forge.get("target").getAsString().replace(',', ' ') + " {recipe0:\"ass.fensusan\"}");
         c.waitTicks(10);
         open(c, forge);
@@ -59,7 +59,7 @@ public final class Gh24IconsAndTitles implements Scenario {
 
     /** Opaque extent of each icon in GUI px around its 16 px slot, from a pair of audit pages on different backdrops. */
     private static void icons(Client c, List<String> failures) throws Exception {
-        String filter = "^hbm:(" + String.join("|", IDS) + "|" + String.join("|", LOOK) + ")$";
+        String filter = "^geontm:(" + String.join("|", IDS) + "|" + String.join("|", LOOK) + ")$";
         try {
             JsonObject page = page(c, false, filter);
             BufferedImage shot = ImageIO.read(c.screenshot("10-cells").toFile());
@@ -95,7 +95,7 @@ public final class Gh24IconsAndTitles implements Scenario {
         } finally {
             JsonObject close = new JsonObject();
             close.addProperty("close", true);
-            c.query("hbm_icon_audit", close);
+            c.query("geontm_icon_audit", close);
         }
     }
 
@@ -104,7 +104,7 @@ public final class Gh24IconsAndTitles implements Scenario {
         params.addProperty("page", 0);
         params.addProperty("alt", alt);
         params.addProperty("filter", filter);
-        JsonObject reply = c.query("hbm_icon_audit", params);
+        JsonObject reply = c.query("geontm_icon_audit", params);
         c.waitScreen("IconAuditScreen", 10_000L);
         c.waitTicks(4);
         return reply;
@@ -151,11 +151,11 @@ public final class Gh24IconsAndTitles implements Scenario {
         params.addProperty("y", y);
         params.addProperty("z", z);
         for (int attempt = 0; attempt < 20; attempt++) {
-            JsonObject result = c.query("hbm_block_info", params);
+            JsonObject result = c.query("geontm_block_info", params);
             if (!result.has("pending")) return result;
             c.waitTicks(5);
         }
-        Expect.that(false, "hbm_block_info at " + x + "," + y + "," + z + " stayed pending");
+        Expect.that(false, "geontm_block_info at " + x + "," + y + "," + z + " stayed pending");
         return null;
     }
 

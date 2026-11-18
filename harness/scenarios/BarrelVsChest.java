@@ -1,11 +1,11 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Acceptance scenario for the harness itself, and a real regression test: an HBM crate placed by
+ * Acceptance scenario for the harness itself, and a real regression test: an GEONTM crate placed by
  * hand and right-clicked must open its screen and keep it open, and a stack put into one of its
  * slots must stay there. A vanilla chest driven by the same clicks is the control.
  */
@@ -24,8 +24,8 @@ public class BarrelVsChest implements Scenario {
         // Control: vanilla chest.
         exercise(c, "minecraft:chest", X - 2, "chest", "Chest");
 
-        // Subject: HBM steel crate (ContainerCrate, 54 item slots), the plainest HBM container.
-        exercise(c, "hbm:crate_steel", X + 2, "crate", "Crate");
+        // Subject: GEONTM steel crate (ContainerCrate, 54 item slots), the plainest GEONTM container.
+        exercise(c, "geontm:crate_steel", X + 2, "crate", "Crate");
 
         // ERROR/FATAL lines plus the silent asset failure vanilla only reports as a WARN.
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]|Failed to load texture");
@@ -33,7 +33,7 @@ public class BarrelVsChest implements Scenario {
 
     private void exercise(Client c, String item, int x, String label, String screenContains) {
         int z = Z + 2;
-        // HBM crates follow 1.7 ItemBlockStorageCrate: with CRATE_OPEN_HELD on (the default) a plain right-click
+        // GEONTM crates follow 1.7 ItemBlockStorageCrate: with CRATE_OPEN_HELD on (the default) a plain right-click
         // opens the held crate and only a sneak-click places it. The vanilla chest places either way.
         boolean sneak = !item.startsWith("minecraft:");
         if (sneak) {

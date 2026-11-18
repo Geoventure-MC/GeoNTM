@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -68,7 +68,7 @@ public final class RcServerSync implements Scenario {
             c.waitTicks(10);
 
             // 1. server NBT change reaches the client block entity, and a machine's own tick runs
-            rcon.command("setblock " + X + " " + L + " " + Z + " hbm:machine_battery");
+            rcon.command("setblock " + X + " " + L + " " + Z + " geontm:machine_battery");
             c.waitTicks(10);
             rcon.command("data merge block " + X + " " + L + " " + Z + " {power:123456L}");
             c.waitTicks(40);
@@ -76,7 +76,7 @@ public final class RcServerSync implements Scenario {
                     Expect.that(field(clientNbt(c, X, L, Z), "power") == 123456L, "client power = " + field(clientNbt(c, X, L, Z), "power")));
 
             // 2. a crate slot move over the network lands in the server's block entity
-            rcon.command("setblock " + (X + 3) + " " + L + " " + Z + " hbm:crate_steel");
+            rcon.command("setblock " + (X + 3) + " " + L + " " + Z + " geontm:crate_steel");
             c.waitTicks(10);
             c.cmd("clear");
             c.cmd("give @s minecraft:cobblestone 16");
@@ -110,7 +110,7 @@ public final class RcServerSync implements Scenario {
             c.waitTicks(5);
 
             // 3. a screen that is not a container sends its button state with a control event
-            rcon.command("setblock " + (X - 3) + " " + L + " " + Z + " hbm:network_separator");
+            rcon.command("setblock " + (X - 3) + " " + L + " " + Z + " geontm:network_separator");
             c.waitTicks(10);
             c.teleport(X - 2.5, L, Z - 3.5);
             c.waitTicks(10);
@@ -138,7 +138,7 @@ public final class RcServerSync implements Scenario {
                 rcon.command("effect give RcServer minecraft:poison 200 0");
                 c.waitTicks(5);
                 c.cmd("clear");
-                c.cmd("give @s hbm:syringe_antidote 1");
+                c.cmd("give @s geontm:syringe_antidote 1");
                 c.waitTicks(5);
                 c.hotbar(1);
                 c.waitTicks(2);
@@ -150,7 +150,7 @@ public final class RcServerSync implements Scenario {
 
             // 5. a server-spawned effect entity and a sound reach the client without errors
             c.markLog();
-            rcon.command("summon hbm:entity_effect_torex " + (X + 6) + " " + L + " " + (Z + 14));
+            rcon.command("summon geontm:entity_effect_torex " + (X + 6) + " " + L + " " + (Z + 14));
             c.waitTicks(80);
             step("torex entity exists on the client", () -> {
                 var list = c.entities(60);
@@ -159,14 +159,14 @@ public final class RcServerSync implements Scenario {
                 Expect.that(found, "no torex entity in the client entity list");
             });
             c.screenshot("torex");
-            rcon.command("kill @e[type=hbm:entity_effect_torex]");
+            rcon.command("kill @e[type=geontm:entity_effect_torex]");
 
-            // 5b. a server-played HBM sound is started on the client
+            // 5b. a server-played GEONTM sound is started on the client
             step("server sound reaches the client", () -> {
                 c.setOption("sound_capture", "true");
                 try {
                     c.markLog();
-                    rcon.command("execute at RcServer run playsound hbm:weapon.explosion_small_near master RcServer ~ ~ ~ 1");
+                    rcon.command("execute at RcServer run playsound geontm:weapon.explosion_small_near master RcServer ~ ~ ~ 1");
                     c.waitTicks(20);
                     Expect.that(!c.logSinceMark("harness-sound.*explosion_small_near").isEmpty(), "no client sound start");
                 } finally {
@@ -175,9 +175,9 @@ public final class RcServerSync implements Scenario {
             });
 
             // 5c. a fluid tank level set on the server reaches the client, and its mode button acts on the server
-            rcon.command("setblock " + (X - 6) + " " + L + " " + (Z + 8) + " hbm:machine_fluidtank");
+            rcon.command("setblock " + (X - 6) + " " + L + " " + (Z + 8) + " geontm:machine_fluidtank");
             c.waitTicks(10);
-            rcon.command("data merge block " + (X - 6) + " " + L + " " + (Z + 8) + " {tank:8000,tank_type:\"hbm:oil\"}");
+            rcon.command("data merge block " + (X - 6) + " " + L + " " + (Z + 8) + " {tank:8000,tank_type:\"geontm:oil\"}");
             c.waitTicks(40);
             step("fluid tank level reaches the client", () ->
                     Expect.that(field(clientNbt(c, X - 6, L, Z + 8), "tank") == 8000L, "client tank = " + field(clientNbt(c, X - 6, L, Z + 8), "tank")));
@@ -200,7 +200,7 @@ public final class RcServerSync implements Scenario {
             });
 
             // 5d. a running machine: the progress counter moves on the server and the client copy follows
-            rcon.command("setblock " + (X + 3) + " " + L + " " + (Z + 8) + " hbm:machine_electric_furnace_off");
+            rcon.command("setblock " + (X + 3) + " " + L + " " + (Z + 8) + " geontm:machine_electric_furnace_off");
             c.waitTicks(10);
             rcon.command("item replace block " + (X + 3) + " " + L + " " + (Z + 8) + " container.1 with minecraft:iron_ore 8");
             rcon.command("data merge block " + (X + 3) + " " + L + " " + (Z + 8) + " {power:1000000L}");

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 151, minimal: a Sable ship with oil barrels and oil ducts touching them. Leaving the world unloads the
@@ -23,9 +23,9 @@ public final class Gh151SableDuctQuit implements Scenario {
         c.cmd("gamemode creative");
         c.cmd("fill -6 " + D + " 2 6 " + D + " 10 minecraft:iron_block");
         for (int x = -4; x <= 4; x += 4) {
-            c.cmd("setblock " + x + " " + (D + 1) + " 6 hbm:barrel_steel{tank_type:\"hbm:oil\",tank:8000}");
-            c.cmd("setblock " + (x + 1) + " " + (D + 1) + " 6 hbm:fluid_duct_neo{type:\"hbm:oil\"}");
-            c.cmd("setblock " + x + " " + (D + 1) + " 5 hbm:fluid_duct_neo{type:\"hbm:oil\"}");
+            c.cmd("setblock " + x + " " + (D + 1) + " 6 geontm:barrel_steel{tank_type:\"geontm:oil\",tank:8000}");
+            c.cmd("setblock " + (x + 1) + " " + (D + 1) + " 6 geontm:fluid_duct_neo{type:\"geontm:oil\"}");
+            c.cmd("setblock " + x + " " + (D + 1) + " 5 geontm:fluid_duct_neo{type:\"geontm:oil\"}");
         }
         c.teleport(0.5, D + 6, -6.5);
         c.lookAt(0.5, D + 1, 6.5);

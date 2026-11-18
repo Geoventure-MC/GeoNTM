@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Fix wave 1C (History §19ej-1C): a RadAway bag drunk for real removes 1.7's 1 RAD a tick (RadAway I for 140 ticks),
@@ -11,13 +11,13 @@ import dev.golem.harness.api.Scenario;
 public final class Fix1CRadAway implements Scenario {
 
     private static double rads(Client c) {
-        return c.query("hbm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
+        return c.query("geontm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
     }
 
     private static void setRads(Client c, double rads) {
         JsonObject params = new JsonObject();
         params.addProperty("set_rads", rads);
-        c.query("hbm_props", params);
+        c.query("geontm_props", params);
     }
 
     @Override
@@ -32,7 +32,7 @@ public final class Fix1CRadAway implements Scenario {
 
         // RadAway: 1 RAD per tick for 140 ticks
         setRads(c, 500);
-        Fixtures.giveOnly(c, "hbm:radaway", 1);
+        Fixtures.giveOnly(c, "geontm:radaway", 1);
         c.look(0, 60);
         c.waitTicks(2);
         long t0 = c.status().get("game_time").getAsLong();
@@ -47,8 +47,8 @@ public final class Fix1CRadAway implements Scenario {
         Expect.that(after < 470 && after > 420, "RadAway is 1.7 strength, not 0.05 RAD/t nor 25 RAD/t: " + after);
 
         // carrying a Pu-239 ingot: 5 RAD/s
-        c.cmd("effect clear @s hbm:radaway");
-        Fixtures.giveOnly(c, "hbm:ingot_pu239", 1);
+        c.cmd("effect clear @s geontm:radaway");
+        Fixtures.giveOnly(c, "geontm:ingot_pu239", 1);
         c.waitTicks(40); // let the carried-hazard scan resolve the new slot before measuring
         setRads(c, 0);
         long t2 = c.status().get("game_time").getAsLong();

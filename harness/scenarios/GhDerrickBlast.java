@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -35,12 +35,12 @@ public final class GhDerrickBlast implements Scenario {
         Expect.that(empty < 60, "TNT alone on an empty derrick makes only its own small crater: " + empty);
         Expect.that(full > 3 * Math.max(empty, 20), "the full derrick's strength 15 blast dwarfs the TNT's crater: "
                 + full + " against " + empty);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     private static int shot(Client c, int x, boolean full) throws Exception {
         String tag = full ? "full" : "empty";
-        Fixtures.setBlock(c, x, Y + 1, Z, "hbm:machine_well[facing=north]");
+        Fixtures.setBlock(c, x, Y + 1, Z, "geontm:machine_well[facing=north]");
         if (full) c.cmd("data merge block " + x + " " + (Y + 1) + " " + Z + " {t0:64000,t1:64000}");
         c.teleport(x + 0.5, Y + 1, Z - 24.5);
         c.waitTicks(10);

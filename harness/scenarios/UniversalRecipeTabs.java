@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The 1.7 NEIUniversalHandler tabs (UniversalRecipeHandler): opens each in JEI through Core's {@code jei} query, checks
@@ -11,15 +11,15 @@ import dev.golem.harness.api.Scenario;
 public final class UniversalRecipeTabs implements Scenario {
 
     private static final String[][] TABS = {
-            {"hbm:storage_drum", "Nuclear Waste Decay"},
-            {"hbm:ore_slopper", "Bedrock Ore Processor"},
-            {"hbm:outgasser", "RBMK Irradiation Channel"},
-            {"hbm:deuterium", "Deuterium Extractor"},
-            {"hbm:grenade", "Grenade Crafting"},
-            {"hbm:zirnox", "ZIRNOX Nuclear Reactor"},
-            {"hbm:pwr", "PWR Controller"},
-            {"hbm:watz", "Watz Powerplant"},
-            {"hbm:rbmk_disassembly", "RBMK Rod Disassembly"},
+            {"geontm:storage_drum", "Nuclear Waste Decay"},
+            {"geontm:ore_slopper", "Bedrock Ore Processor"},
+            {"geontm:outgasser", "RBMK Irradiation Channel"},
+            {"geontm:deuterium", "Deuterium Extractor"},
+            {"geontm:grenade", "Grenade Crafting"},
+            {"geontm:zirnox", "ZIRNOX Nuclear Reactor"},
+            {"geontm:pwr", "PWR Controller"},
+            {"geontm:watz", "Watz Powerplant"},
+            {"geontm:rbmk_disassembly", "RBMK Rod Disassembly"},
     };
 
     @Override
@@ -47,8 +47,8 @@ public final class UniversalRecipeTabs implements Scenario {
         System.out.println("[UniversalRecipeTabs] " + c.node() + " " + titles);
         for (String[] tab : TABS) Expect.that(titles.indexOf(tab[0] + "=" + tab[1] + " ") >= 0, tab[0] + " is titled '" + tab[1] + "': " + titles);
 
-        if (!c.log(40_000, "HbmReiClientPlugin").isEmpty()) {
-            for (String category : new String[] {"hbm:outgasser", "hbm:zirnox"}) {
+        if (!c.log(40_000, "GeoNtmReiClientPlugin").isEmpty()) {
+            for (String category : new String[] {"geontm:outgasser", "geontm:zirnox"}) {
                 JsonObject p = new JsonObject();
                 p.addProperty("op", "open");
                 p.addProperty("category", category);

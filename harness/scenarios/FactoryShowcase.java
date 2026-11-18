@@ -1,14 +1,14 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * An HBM factory that builds a machine, powered by its own coal, and a tour of every harness feature.
+ * An GEONTM factory that builds a machine, powered by its own coal, and a tour of every harness feature.
  *
  * <pre>
  *   ORE DEPOT (structure template) -- iron, coal blocks, coal, copper
@@ -75,11 +75,11 @@ public class FactoryShowcase implements Scenario {
     private static final int[] RTGS = {24, 26};
     private static final int RTG_Z = 24;
     // fluid registry names - a fluid is saved by name, never by its numeric id (History section 19ej-ids)
-    private static final String WATER = "hbm:water", OIL = "hbm:oil", HOTOIL = "hbm:hotoil", HEAVY = "hbm:heavyoil",
-            HEATING = "hbm:heatingoil", NAPHTHA = "hbm:naphtha", LIGHT = "hbm:lightoil", KERO = "hbm:kerosene",
-            PETRO = "hbm:petroleum", PEROX = "hbm:peroxide", H2 = "hbm:hydrogen", AROM = "hbm:aromatics",
-            UNSAT = "hbm:unsaturateds", CHLOR = "hbm:chlorine", REFORMATE = "hbm:reformate", XYLENE = "hbm:xylene",
-            REFGAS = "hbm:reformgas", DIESEL = "hbm:diesel";
+    private static final String WATER = "geontm:water", OIL = "geontm:oil", HOTOIL = "geontm:hotoil", HEAVY = "geontm:heavyoil",
+            HEATING = "geontm:heatingoil", NAPHTHA = "geontm:naphtha", LIGHT = "geontm:lightoil", KERO = "geontm:kerosene",
+            PETRO = "geontm:petroleum", PEROX = "geontm:peroxide", H2 = "geontm:hydrogen", AROM = "geontm:aromatics",
+            UNSAT = "geontm:unsaturateds", CHLOR = "geontm:chlorine", REFORMATE = "geontm:reformate", XYLENE = "geontm:xylene",
+            REFGAS = "geontm:reformgas", DIESEL = "geontm:diesel";
 
     /** Server tick rate during the long waits; 20 is normal. */
     private static final int FAST_TICKS = 60;
@@ -110,7 +110,7 @@ public class FactoryShowcase implements Scenario {
         if ("launch".equals(System.getenv("HARNESS_STAGE"))) {   // development aid: re-run the launch only
             houseBlocksBefore = houseBlocks(c);
             clearInventory(c);
-            Fixtures.give(c, "hbm:missile_stealth", 1);
+            Fixtures.give(c, "geontm:missile_stealth", 1);
             fire(c);
             return;
         }
@@ -141,19 +141,19 @@ public class FactoryShowcase implements Scenario {
         fill(-17, Y, -8, -9, Y, -2, "minecraft:gray_concrete");             // coal processing
         fill(-7, Y, -6, 0, Y, 3, "minecraft:black_concrete");               // blast furnaces
         fill(1, Y, 0, 14, Y, 10, "minecraft:light_gray_concrete");         // presses and assembly
-        c.chat("Harness demo: an HBM factory that builds a shredder, powered by its own coal");
-        Expect.logMatches(c, "Harness demo: an HBM factory", 200);
+        c.chat("Harness demo: an GEONTM factory that builds a shredder, powered by its own coal");
+        Expect.logMatches(c, "Harness demo: an GEONTM factory", 200);
 
         startFlying(c);
-        title(c, "HBM Factory", "a production line that builds a machine");
+        title(c, "GEONTM Factory", "a production line that builds a machine");
         overview(c, "00-site");
 
         title(c, "Mass placement", "structure template, /fill, /clone");
         // 1.20.1 cannot read the 1.21 template's item stacks (lowercase count, DataVersion 3955): its own copy
         Fixtures.template(c, LEGACY ? "ore_depot_1201" : "ore_depot", DEPOT_OX, Y, DEPOT_OZ);
-        Expect.block(c, CRATE_X, L, CRATE_Z, "hbm:crate_steel");
+        Expect.block(c, CRATE_X, L, CRATE_Z, "geontm:crate_steel");
         Expect.that(nbt(c, CRATE_X, L, CRATE_Z).contains("minecraft:coal_block"), "the template brought its stocked crate");
-        Expect.block(c, DEPOT_OX, L + 2, DEPOT_OZ, "hbm:steel_beam");
+        Expect.block(c, DEPOT_OX, L + 2, DEPOT_OZ, "geontm:steel_beam");
         c.cmd("data modify block " + CRATE_X + " " + L + " " + CRATE_Z + " inventory.Items[{Slot:0b}]."
                 + (LEGACY ? "Count set value 12b" : "count set value 12"));
         Expect.that(countIn(nbt(c, CRATE_X, L, CRATE_Z), "minecraft:iron_ingot") == 12, "the depot holds 12 iron; "
@@ -161,18 +161,18 @@ public class FactoryShowcase implements Scenario {
 
         // Power: cable bus behind the burners (one /fill) and a battery bank in buffer mode (one /fill with
         // block-entity data). The grid under the floor follows once the machines stand on it.
-        fill(-25, L, BUS_Z, -9, L, BUS_Z, "hbm:red_cable");
-        fill(-17, L, BUS_Z - 1, -12, L, BUS_Z - 1, "hbm:machine_battery{redLow:1s,redHigh:1s}");
+        fill(-25, L, BUS_Z, -9, L, BUS_Z, "geontm:red_cable");
+        fill(-17, L, BUS_Z - 1, -12, L, BUS_Z - 1, "geontm:machine_battery{redLow:1s,redHigh:1s}");
         c.waitTicks(3);
-        for (int x = -17; x <= -12; x++) Expect.block(c, x, L, BUS_Z - 1, "hbm:machine_battery");
+        for (int x = -17; x <= -12; x++) Expect.block(c, x, L, BUS_Z - 1, "geontm:machine_battery");
 
         // =========================================================================================
         // 2. POWER PLANT: three wood burners placed by hand, fed from router C
         // =========================================================================================
         title(c, "Power plant", "three wood burners, placed by hand");
         for (int x : BURNERS) {
-            JsonObject b = placeFrom(c, "hbm:machine_wood_burner", x, BURNER_Z, 0, 3);
-            Expect.equal("hbm:machine_wood_burner", b.get("block").getAsString(), "burner core at x=" + x);
+            JsonObject b = placeFrom(c, "geontm:machine_wood_burner", x, BURNER_Z, 0, 3);
+            Expect.equal("geontm:machine_wood_burner", b.get("block").getAsString(), "burner core at x=" + x);
             Expect.that(b.toString().contains("south"), "burner at x=" + x + " faces the player; " + b);
         }
         router(RA_X, L, RC_Z, modes(0, 0, 3, 0, 3, 3), "");                 // W / N / E wildcard
@@ -196,21 +196,21 @@ public class FactoryShowcase implements Scenario {
         // Router A drops what it cannot route, and a dropped item that lands on a belt rides it; an open depot
         // before commissioning would send raw coal into the blast furnaces' carbon slots.
         c.cmd("setblock " + X0 + " " + (L + 1) + " " + CRATE_Z + " minecraft:redstone_block");
-        fill(X0 + 1, L, 0, RA_X - 1, L, 0, "hbm:conveyor[facing=east]");
-        c.cmd("setblock " + RA_X + " " + L + " " + RA_Z + " hbm:crane_router");   // configured in its menu below
-        fill(RA_X, L, RA_Z - 1, RA_X, L, RB_Z + 1, "hbm:conveyor[facing=north]");      // coal line
+        fill(X0 + 1, L, 0, RA_X - 1, L, 0, "geontm:conveyor[facing=east]");
+        c.cmd("setblock " + RA_X + " " + L + " " + RA_Z + " geontm:crane_router");   // configured in its menu below
+        fill(RA_X, L, RA_Z - 1, RA_X, L, RB_Z + 1, "geontm:conveyor[facing=north]");      // coal line
         // B: north blacklists coal blocks, east blacklists nothing -> coal splits, coal blocks go east
         router(RA_X, L, RB_Z, modes(0, 0, 2, 0, 0, 2), slot(10, "minecraft:coal_block"));
-        fill(RA_X, L, RB_Z - 1, RA_X, L, RC_Z + 1, "hbm:conveyor[facing=north]");      // to the power plant
-        fill(RA_X + 1, L, RB_Z, RD_X - 1, L, RB_Z, "hbm:conveyor[facing=east]");       // to router D
+        fill(RA_X, L, RB_Z - 1, RA_X, L, RC_Z + 1, "geontm:conveyor[facing=north]");      // to the power plant
+        fill(RA_X + 1, L, RB_Z, RD_X - 1, L, RB_Z, "geontm:conveyor[facing=east]");       // to router D
         // D: north whitelists coal blocks (fuel), east whitelists coal (shredder)
         router(RD_X, L, RD_Z, modes(0, 0, 1, 0, 0, 1), slot(10, "minecraft:coal_block") + "," + slot(25, "minecraft:coal"));
         belt(RD_X + 1, L, RD_Z, "east");
         crane("inserter", RD_X + 2, L, RD_Z, "west", "east");
-        JsonObject shred = placeFrom(c, "hbm:machine_shredder", SHRED_X, SHRED_Z, 1, 2);
-        Expect.equal("hbm:machine_shredder", shred.get("block").getAsString(), "shredder placed by hand");
+        JsonObject shred = placeFrom(c, "geontm:machine_shredder", SHRED_X, SHRED_Z, 1, 2);
+        Expect.equal("geontm:machine_shredder", shred.get("block").getAsString(), "shredder placed by hand");
         crane("extractor", SHRED_X, L, SHRED_Z + 1, "south", "north");
-        fill(SHRED_X, L, SHRED_Z + 2, SHRED_X, L, -1, "hbm:conveyor[facing=south]");  // powder joins the iron line
+        fill(SHRED_X, L, SHRED_Z + 2, SHRED_X, L, -1, "geontm:conveyor[facing=south]");  // powder joins the iron line
 
         // =========================================================================================
         // 4. BLAST FURNACES: build unit 1, clone it, then router E and router F
@@ -218,8 +218,8 @@ public class FactoryShowcase implements Scenario {
         title(c, "Blast furnaces", "one unit by hand, the second by /clone");
         crane("extractor", DF_X, L, DF1_Z, "east", "up");
         belt(DF_X + 1, L, DF1_Z, "south");
-        sneakPlaceOnTop(c, "hbm:machine_difurnace_off", DF_X, L, DF1_Z, DF_X + 2.5, DF1_Z + 0.5);
-        Expect.block(c, DF_X, L + 1, DF1_Z, "hbm:machine_difurnace_off");
+        sneakPlaceOnTop(c, "geontm:machine_difurnace_off", DF_X, L, DF1_Z, DF_X + 2.5, DF1_Z + 0.5);
+        Expect.block(c, DF_X, L + 1, DF1_Z, "geontm:machine_difurnace_off");
         crane("inserter", DF_X, DECK, DF1_Z, "west", "down");
         belt(DF_X - 1, DECK, DF1_Z, "east");
         crane("inserter", DF_X, RF_Y, DF1_Z - 1, "north", "south");
@@ -231,10 +231,10 @@ public class FactoryShowcase implements Scenario {
         c.cmd("clone " + (DF_X - 1) + " " + L + " " + (DF1_Z - 2) + " " + (DF_X + 1) + " " + DECK + " " + DF1_Z
                 + " " + (DF_X - 1) + " " + L + " " + (DF2_Z - 2));
         c.waitTicks(3);
-        Expect.block(c, DF_X, L + 1, DF2_Z, "hbm:machine_difurnace_off");
-        Expect.block(c, DF_X, DECK, DF2_Z, "hbm:crane_inserter");
-        Expect.block(c, DF_X, L, DF2_Z, "hbm:crane_extractor");
-        fill(DF_X + 1, L, DF1_Z + 1, DF_X + 1, L, DF2_Z - 1, "hbm:conveyor[facing=south]");  // join both outputs
+        Expect.block(c, DF_X, L + 1, DF2_Z, "geontm:machine_difurnace_off");
+        Expect.block(c, DF_X, DECK, DF2_Z, "geontm:crane_inserter");
+        Expect.block(c, DF_X, L, DF2_Z, "geontm:crane_extractor");
+        fill(DF_X + 1, L, DF1_Z + 1, DF_X + 1, L, DF2_Z - 1, "geontm:conveyor[facing=south]");  // join both outputs
         belt(DF_X + 1, L, DF2_Z + 1, "east");                  // (0, 2) is the splitter, placed with the presses
         // Router E: iron and powder in from the west, out east (unit 1) and south (unit 2)
         router(RE_X, DECK, RE_Z, modes(0, 0, 0, 3, 0, 3), "");
@@ -246,30 +246,30 @@ public class FactoryShowcase implements Scenario {
         belt(RF_X, RF_Y, RF_Z + 1, "south");
         belt(RF_X, RF_Y, RF_Z + 2, "south");
         belt(RF_X, RF_Y, RF_Z + 3, "east");
-        c.cmd("setblock " + RE_X + " " + L + " " + RE_Z + " hbm:steel_scaffold");
+        c.cmd("setblock " + RE_X + " " + L + " " + RE_Z + " geontm:steel_scaffold");
 
         // =========================================================================================
         // 5. PRESSES AND ASSEMBLY
         // =========================================================================================
         title(c, "Assembly hall", "two presses and an assembler, by hand");
-        JsonObject sp = placeFrom(c, "hbm:machine_epress", STEEL_X, STEEL_Z, -2, 0);
-        Expect.equal("hbm:machine_epress", sp.get("block").getAsString(), "steel press core placed by hand");
-        JsonObject cp = placeFrom(c, "hbm:machine_epress", COPPER_X, COPPER_Z, -2, 0);
-        Expect.equal("hbm:machine_epress", cp.get("block").getAsString(), "copper press core placed by hand");
+        JsonObject sp = placeFrom(c, "geontm:machine_epress", STEEL_X, STEEL_Z, -2, 0);
+        Expect.equal("geontm:machine_epress", sp.get("block").getAsString(), "steel press core placed by hand");
+        JsonObject cp = placeFrom(c, "geontm:machine_epress", COPPER_X, COPPER_Z, -2, 0);
+        Expect.equal("geontm:machine_epress", cp.get("block").getAsString(), "copper press core placed by hand");
         // Assembler: offset 1, so aiming at x=7 from the west puts the core at x=8.
-        placeFrom(c, "hbm:machine_assembly_machine", ASM_X - 1, ASM_Z, -2, 0);
-        Expect.block(c, ASM_X, L, ASM_Z, "hbm:machine_assembly_machine");
+        placeFrom(c, "geontm:machine_assembly_machine", ASM_X - 1, ASM_Z, -2, 0);
+        Expect.block(c, ASM_X, L, ASM_Z, "geontm:machine_assembly_machine");
         Expect.that(!c.block(ASM_X + 1, L + 2, ASM_Z + 1).get("block").getAsString().equals("minecraft:air"), "assembler footprint filled");
         // steel: press -> assembler (west face, north cell)
         crane("inserter", STEEL_X - 1, L, STEEL_Z, "west", "east");
         // A conveyor splitter deals the steel 2 : 1, left lane to the press, right lane to the bolt stock.
-        JsonObject split = placeFrom(c, "hbm:crane_splitter", STEEL_X - 2, STEEL_Z, -2, 0);
-        Expect.equal("hbm:crane_splitter", split.get("block").getAsString(), "splitter placed by hand");
-        Expect.that(c.block(STEEL_X - 2, L, STEEL_Z + 1).get("block").getAsString().equals("hbm:crane_splitter"),
+        JsonObject split = placeFrom(c, "geontm:crane_splitter", STEEL_X - 2, STEEL_Z, -2, 0);
+        Expect.equal("geontm:crane_splitter", split.get("block").getAsString(), "splitter placed by hand");
+        Expect.that(c.block(STEEL_X - 2, L, STEEL_Z + 1).get("block").getAsString().equals("geontm:crane_splitter"),
                 "the splitter's right lane lies south of its core");
         c.cmd("data merge block " + (STEEL_X - 2) + " " + L + " " + STEEL_Z + " {left:2b,right:1b}");
         crane("inserter", STEEL_X - 1, L, STEEL_Z + 1, "west", "east");
-        c.cmd("setblock " + STEEL_X + " " + L + " " + (STEEL_Z + 1) + " hbm:crate_steel");
+        c.cmd("setblock " + STEEL_X + " " + L + " " + (STEEL_Z + 1) + " geontm:crate_steel");
         crane("extractor", STEEL_X + 1, L, STEEL_Z, "east", "west");
         beltRow(STEEL_X + 2, STEEL_X + 3, STEEL_Z, "east");
         belt(ASM_X - 2, L, STEEL_Z, "south");
@@ -283,7 +283,7 @@ public class FactoryShowcase implements Scenario {
         belt(ASM_X - 2, L, COPPER_Z - 1, "north");
         crane("inserter", ASM_X - 2, L, ASM_Z + 1, "south", "east");
         // motors: parts crate -> assembler (north face)
-        c.cmd("setblock " + ASM_X + " " + L + " " + PARTS_Z + " " + items("hbm:crate_steel{inventory:{Items:[{Slot:0b,id:\"hbm:motor\",count:2}]}}"));
+        c.cmd("setblock " + ASM_X + " " + L + " " + PARTS_Z + " " + items("geontm:crate_steel{inventory:{Items:[{Slot:0b,id:\"geontm:motor\",count:2}]}}"));
         crane("extractor", ASM_X, L, PARTS_Z + 1, "south", "north");
         belt(ASM_X, L, PARTS_Z + 2, "south");
         crane("inserter", ASM_X, L, PARTS_Z + 3, "north", "south");
@@ -291,38 +291,38 @@ public class FactoryShowcase implements Scenario {
         crane("extractor", ASM_X + 2, L, ASM_Z, "east", "west");
         belt(ASM_X + 3, L, ASM_Z, "east");
         crane("inserter", ASM_X + 4, L, ASM_Z, "west", "east");
-        c.cmd("setblock " + SHIP_X + " " + L + " " + ASM_Z + " hbm:crate_steel");
-        fill(RA_X, L, RA_Z + 1, RA_X, L, 5, "hbm:conveyor[facing=south]");   // copper line, first leg
+        c.cmd("setblock " + SHIP_X + " " + L + " " + ASM_Z + " geontm:crate_steel");
+        fill(RA_X, L, RA_Z + 1, RA_X, L, 5, "geontm:conveyor[facing=south]");   // copper line, first leg
         // The underfloor grid, laid after the machines were placed on solid floor: a spine from the bus and one
         // branch under each powered machine (a machine takes power through its bottom face).
-        fill(-9, Y, BUS_Z, -9, Y, 8, "hbm:red_cable");
-        fill(SHRED_X, Y, SHRED_Z, -10, Y, SHRED_Z, "hbm:red_cable");
-        fill(-8, Y, STEEL_Z, STEEL_X, Y, STEEL_Z, "hbm:red_cable");
-        fill(-8, Y, COPPER_Z, COPPER_X, Y, COPPER_Z, "hbm:red_cable");
-        fill(-8, Y, ASM_Z, ASM_X + 2, Y, ASM_Z, "hbm:red_cable");
-        fill(ASM_X + 2, Y, ASM_Z + 1, ASM_X + 2, Y, ASM_Z + 1, "hbm:red_cable");
-        c.cmd("setblock " + (ASM_X + 2) + " " + L + " " + (ASM_Z + 1) + " hbm:red_cable");   // side port (x+2, z+1)
+        fill(-9, Y, BUS_Z, -9, Y, 8, "geontm:red_cable");
+        fill(SHRED_X, Y, SHRED_Z, -10, Y, SHRED_Z, "geontm:red_cable");
+        fill(-8, Y, STEEL_Z, STEEL_X, Y, STEEL_Z, "geontm:red_cable");
+        fill(-8, Y, COPPER_Z, COPPER_X, Y, COPPER_Z, "geontm:red_cable");
+        fill(-8, Y, ASM_Z, ASM_X + 2, Y, ASM_Z, "geontm:red_cable");
+        fill(ASM_X + 2, Y, ASM_Z + 1, ASM_X + 2, Y, ASM_Z + 1, "geontm:red_cable");
+        c.cmd("setblock " + (ASM_X + 2) + " " + L + " " + (ASM_Z + 1) + " geontm:red_cable");   // side port (x+2, z+1)
         c.waitTicks(3);
-        Expect.block(c, -9, Y, 0, "hbm:red_cable");
+        Expect.block(c, -9, Y, 0, "geontm:red_cable");
 
         // =========================================================================================
         // 6. THE CONVEYOR WAND: three long routes, two clicks each
         // =========================================================================================
         title(c, "Conveyor wand", "three routes, two clicks each");
-        giveOnly(c, "hbm:conveyor_wand_regular", 1);
+        giveOnly(c, "geontm:conveyor_wand_regular", 1);
         // iron: from router A's east side up onto the deck, into router E
         wandStart(c, RA_X + 1, 0, RA_X + 1.5, 2.5);
         wandEnd(c, RE_X - 0.02, DECK + 0.5, RE_Z + 0.5, RE_X - 3.5, RE_Z + 0.5);
         Expect.that(c.log(20, "Conveyor built!").size() > 0, "the wand reports the iron route built");
-        Expect.block(c, RE_X - 1, DECK, RE_Z, "hbm:conveyor_lift");
+        Expect.block(c, RE_X - 1, DECK, RE_Z, "geontm:conveyor_lift");
         // coal blocks: from router D's north side, up into router F
         wandStart(c, RD_X, RD_Z - 1, RD_X + 0.5, RD_Z - 3.5);
         wandEnd(c, RF_X + 0.5, RF_Y + 0.5, RF_Z - 0.02, RF_X + 0.5, RF_Z - 4.5);
-        Expect.block(c, RF_X, RF_Y, RF_Z - 1, "hbm:conveyor_lift");
+        Expect.block(c, RF_X, RF_Y, RF_Z - 1, "geontm:conveyor_lift");
         // copper: from the end of the first leg to the copper press inserter
         wandStart(c, RA_X, 6, RA_X - 1.5, 6.5);
         wandEnd(c, COPPER_X - 1 - 0.02, L + 0.5, COPPER_Z + 0.5, COPPER_X - 4.5, COPPER_Z + 1.5);
-        Expect.that(c.block(COPPER_X - 2, L, COPPER_Z).get("block").getAsString().startsWith("hbm:conveyor"),
+        Expect.that(c.block(COPPER_X - 2, L, COPPER_Z).get("block").getAsString().startsWith("geontm:conveyor"),
                 "the copper route ends at the press inserter");
         overview(c, "20-built");
 
@@ -330,64 +330,64 @@ public class FactoryShowcase implements Scenario {
         // 6b. OIL FIELD AND REFINERY: every multiblock by hand, from the south
         // =========================================================================================
         title(c, "Oil field", "two pumpjacks over an oil pocket");
-        fill(PJ_X - 1, 95, PJ1_Z - 1, PJ_X + 1, 97, PJ1_Z + 1, "hbm:ore_oil");     // the pockets under the heads
-        fill(PJ_X - 1, 95, PJ2_Z - 1, PJ_X + 1, 97, PJ2_Z + 1, "hbm:ore_oil");
+        fill(PJ_X - 1, 95, PJ1_Z - 1, PJ_X + 1, 97, PJ1_Z + 1, "geontm:ore_oil");     // the pockets under the heads
+        fill(PJ_X - 1, 95, PJ2_Z - 1, PJ_X + 1, 97, PJ2_Z + 1, "geontm:ore_oil");
         for (int z : new int[]{PJ2_Z, PJ1_Z}) {
-            JsonObject pj = placeFrom(c, "hbm:machine_pumpjack", PJ_X, z, 0, 2);
-            Expect.equal("hbm:machine_pumpjack", pj.get("block").getAsString(), "pumpjack core at z=" + z);
+            JsonObject pj = placeFrom(c, "geontm:machine_pumpjack", PJ_X, z, 0, 2);
+            Expect.equal("geontm:machine_pumpjack", pj.get("block").getAsString(), "pumpjack core at z=" + z);
         }
         title(c, "Refinery", "fireboxes, heat boilers, a refinery, a fraction tower");
         for (int x : new int[]{FA_X, FB_X}) {
-            placeSouth(c, "hbm:heater_firebox", x, HEAT_Z);
-            Expect.block(c, x, L, HEAT_Z, "hbm:heater_firebox");
+            placeSouth(c, "geontm:heater_firebox", x, HEAT_Z);
+            Expect.block(c, x, L, HEAT_Z, "geontm:heater_firebox");
             // The boiler goes on the south cell of the firebox with a sneak-click (a plain click opens the firebox).
-            giveOnly(c, "hbm:heat_boiler", 1);
+            giveOnly(c, "geontm:heat_boiler", 1);
             standAt(c, x + 0.5, L, HEAT_Z + 4.5);
             sneakUse(c, x + 0.5, L + 0.98, HEAT_Z + 1.5);
-            Expect.block(c, x, L + 1, HEAT_Z, "hbm:heat_boiler");
+            Expect.block(c, x, L + 1, HEAT_Z, "geontm:heat_boiler");
         }
-        placeSouth(c, "hbm:machine_refinery", REF_X, REF_Z);
-        Expect.block(c, REF_X, L, REF_Z, "hbm:machine_refinery");
-        placeSouth(c, "hbm:machine_fraction_tower", TL_X, TL_Z);
-        Expect.block(c, TL_X, L, TL_Z, "hbm:machine_fraction_tower");
+        placeSouth(c, "geontm:machine_refinery", REF_X, REF_Z);
+        Expect.block(c, REF_X, L, REF_Z, "geontm:machine_refinery");
+        placeSouth(c, "geontm:machine_fraction_tower", TL_X, TL_Z);
+        Expect.block(c, TL_X, L, TL_Z, "geontm:machine_fraction_tower");
 
         title(c, "Petrochemicals", "reformers, towers and chemical plants");
-        placeSouth(c, "hbm:machine_catalytic_reformer", RP_X, RP_Z);
-        Expect.block(c, RP_X, L, RP_Z, "hbm:machine_catalytic_reformer");
-        placeSouth(c, "hbm:machine_fraction_tower", TN_X, CHEM_Z);
-        placeSouth(c, "hbm:machine_catalytic_reformer", RN_X, CHEM_Z);
-        placeSouth(c, "hbm:machine_fraction_tower", TR_X, CHEM_Z);
-        placeSouth(c, "hbm:machine_chemical_plant", TNT_X, CHEM_Z);
-        placeSouth(c, "hbm:machine_chemical_plant", PVC_X, CHEM_Z);
-        for (int x : new int[]{TN_X, TR_X}) Expect.block(c, x, L, CHEM_Z, "hbm:machine_fraction_tower");
-        Expect.block(c, RN_X, L, CHEM_Z, "hbm:machine_catalytic_reformer");
-        for (int x : new int[]{TNT_X, PVC_X}) Expect.block(c, x, L, CHEM_Z, "hbm:machine_chemical_plant");
+        placeSouth(c, "geontm:machine_catalytic_reformer", RP_X, RP_Z);
+        Expect.block(c, RP_X, L, RP_Z, "geontm:machine_catalytic_reformer");
+        placeSouth(c, "geontm:machine_fraction_tower", TN_X, CHEM_Z);
+        placeSouth(c, "geontm:machine_catalytic_reformer", RN_X, CHEM_Z);
+        placeSouth(c, "geontm:machine_fraction_tower", TR_X, CHEM_Z);
+        placeSouth(c, "geontm:machine_chemical_plant", TNT_X, CHEM_Z);
+        placeSouth(c, "geontm:machine_chemical_plant", PVC_X, CHEM_Z);
+        for (int x : new int[]{TN_X, TR_X}) Expect.block(c, x, L, CHEM_Z, "geontm:machine_fraction_tower");
+        Expect.block(c, RN_X, L, CHEM_Z, "geontm:machine_catalytic_reformer");
+        for (int x : new int[]{TNT_X, PVC_X}) Expect.block(c, x, L, CHEM_Z, "geontm:machine_chemical_plant");
 
         title(c, "Missile hall", "a stealth missile assembler and a plate press");
-        placeSouth(c, "hbm:machine_assembly_machine", MA_X, MA_Z);
-        Expect.block(c, MA_X, L, MA_Z, "hbm:machine_assembly_machine");
-        JsonObject ta = placeFrom(c, "hbm:machine_epress", TA_X, MA_Z, -2, 0);
-        Expect.equal("hbm:machine_epress", ta.get("block").getAsString(), "titanium/aluminium press placed by hand");
+        placeSouth(c, "geontm:machine_assembly_machine", MA_X, MA_Z);
+        Expect.block(c, MA_X, L, MA_Z, "geontm:machine_assembly_machine");
+        JsonObject ta = placeFrom(c, "geontm:machine_epress", TA_X, MA_Z, -2, 0);
+        Expect.equal("geontm:machine_epress", ta.get("block").getAsString(), "titanium/aluminium press placed by hand");
         // The base load: polonium RTG furnaces, 5 HE/t per heat unit, 15 x 50 heat = 3,750 HE/t each. Polonium
         // halves in 3.3 million ticks, so the output is constant for the whole demo, whatever the oil chain does.
         title(c, "Power station", "two RTG furnaces, 7,500 HE/t");
         for (int x : RTGS) {
-            JsonObject r = placeFrom(c, "hbm:machine_rtg_grey", x, RTG_Z, 0, 2);
-            Expect.equal("hbm:machine_rtg_grey", r.get("block").getAsString(), "RTG furnace placed by hand at x=" + x);
+            JsonObject r = placeFrom(c, "geontm:machine_rtg_grey", x, RTG_Z, 0, 2);
+            Expect.equal("geontm:machine_rtg_grey", r.get("block").getAsString(), "RTG furnace placed by hand at x=" + x);
         }
-        fill(RTGS[0] - 1, L, RTG_Z - 1, RTGS[1], L, RTG_Z - 1, "hbm:red_cable");     // an RTG outputs on all six faces
+        fill(RTGS[0] - 1, L, RTG_Z - 1, RTGS[1], L, RTG_Z - 1, "geontm:red_cable");     // an RTG outputs on all six faces
         riser(RTGS[0] - 1, RTG_Z - 1);
         title(c, "Launch site", "a launch pad and a peroxide plant");
-        placeSouth(c, "hbm:launch_pad", PAD_X, PAD_Z);
-        Expect.block(c, PAD_X, L, PAD_Z, "hbm:launch_pad");
-        placeSouth(c, "hbm:machine_chemical_plant", PEROX_X, PEROX_Z);
-        Expect.block(c, PEROX_X, L, PEROX_Z, "hbm:machine_chemical_plant");
+        placeSouth(c, "geontm:launch_pad", PAD_X, PAD_Z);
+        Expect.block(c, PAD_X, L, PAD_Z, "geontm:launch_pad");
+        placeSouth(c, "geontm:machine_chemical_plant", PEROX_X, PEROX_Z);
+        Expect.block(c, PEROX_X, L, PEROX_Z, "geontm:machine_chemical_plant");
         overviewOf(c, "21-oil-machines", -2.5, L, 18.5, 30);
 
         // ---- single blocks: generators, storage, sinks, cranes -------------------------------------
-        fill(TL_X + 3, L, TL_Z - 1, TL_X + 5, L, TL_Z - 1, "hbm:machine_diesel");    // 3 on the light-oil diesel
-        fill(-8, L, 34, -3, L, 34, "hbm:machine_diesel");                           // 6 on the naphtha diesel
-        c.cmd("setblock " + TL_X + " " + L + " " + (TL_Z - 2) + " hbm:barrel_steel{mode:0s,tank_type:\"" + KERO + "\"}");
+        fill(TL_X + 3, L, TL_Z - 1, TL_X + 5, L, TL_Z - 1, "geontm:machine_diesel");    // 3 on the light-oil diesel
+        fill(-8, L, 34, -3, L, 34, "geontm:machine_diesel");                           // 6 on the naphtha diesel
+        c.cmd("setblock " + TL_X + " " + L + " " + (TL_Z - 2) + " geontm:barrel_steel{mode:0s,tank_type:\"" + KERO + "\"}");
         sink(REF_X - 2, L, REF_Z - 1, HEAVY);                                        // heavy oil
         sink(RP_X - 1, L, RP_Z - 2, H2);
         sink(RP_X + 1, L, RP_Z - 2, REFGAS);
@@ -395,22 +395,22 @@ public class FactoryShowcase implements Scenario {
         sink(RN_X + 1, L, CHEM_Z - 2, H2);
         sink(TN_X, L, CHEM_Z - 2, HEATING);
         sink(TR_X, L, CHEM_Z - 2, XYLENE);
-        c.cmd("setblock 20 " + L + " " + CHEM_Z + " hbm:barrel_steel{mode:2s,tank:16000,tank_type:\"" + CHLOR + "\"}");
-        c.cmd("setblock " + (PEROX_X + 4) + " " + L + " " + PEROX_Z + " hbm:barrel_steel{mode:2s,tank_type:\"" + WATER + "\""
-                + items(",inventory:{Items:[{Slot:2b,id:\"hbm:inf_water_mk2\",count:1}]}}"));
+        c.cmd("setblock 20 " + L + " " + CHEM_Z + " geontm:barrel_steel{mode:2s,tank:16000,tank_type:\"" + CHLOR + "\"}");
+        c.cmd("setblock " + (PEROX_X + 4) + " " + L + " " + PEROX_Z + " geontm:barrel_steel{mode:2s,tank_type:\"" + WATER + "\""
+                + items(",inventory:{Items:[{Slot:2b,id:\"geontm:inf_water_mk2\",count:1}]}}"));
         crane("extractor", TNT_X, L, CHEM_Z + 2, "south", "north");
         crane("extractor", PVC_X, L, CHEM_Z + 2, "south", "north");
         // missile hall: Ti/Al stock -> press -> assembler; dye and circuits -> assembler; output -> hangar
-        c.cmd("setblock " + (TA_X - 4) + " " + L + " " + MA_Z + " hbm:crate_steel{inventory:{Items:["
-                + items("{Slot:0b,id:\"hbm:ingot_titanium\",count:20},{Slot:1b,id:\"hbm:ingot_aluminium\",count:20}]}}"));
+        c.cmd("setblock " + (TA_X - 4) + " " + L + " " + MA_Z + " geontm:crate_steel{inventory:{Items:["
+                + items("{Slot:0b,id:\"geontm:ingot_titanium\",count:20},{Slot:1b,id:\"geontm:ingot_aluminium\",count:20}]}}"));
         crane("extractor", TA_X - 3, L, MA_Z, "east", "west");
         belt(TA_X - 2, L, MA_Z, "east");
         crane("inserter", TA_X - 1, L, MA_Z, "west", "east");
         crane("extractor", TA_X + 1, L, MA_Z, "east", "west");
         belt(TA_X + 2, L, MA_Z, "east");
         crane("inserter", TA_X + 3, L, MA_Z, "west", "east");
-        c.cmd("setblock " + MA_X + " " + L + " " + (MA_Z - 5) + " hbm:crate_steel{inventory:{Items:["
-                + items("{Slot:0b,id:\"minecraft:black_dye\",count:16},{Slot:1b,id:\"hbm:circuit_advanced\",count:4}]}}"));
+        c.cmd("setblock " + MA_X + " " + L + " " + (MA_Z - 5) + " geontm:crate_steel{inventory:{Items:["
+                + items("{Slot:0b,id:\"minecraft:black_dye\",count:16},{Slot:1b,id:\"geontm:circuit_advanced\",count:4}]}}"));
         crane("extractor", MA_X, L, MA_Z - 4, "south", "north");
         belt(MA_X, L, MA_Z - 3, "south");
         crane("inserter", MA_X, L, MA_Z - 2, "north", "south");
@@ -418,9 +418,9 @@ public class FactoryShowcase implements Scenario {
         crane("extractor", MA_X + 2, L, MA_Z, "east", "west");
         belt(MA_X + 3, L, MA_Z, "east");
         crane("inserter", MA_X + 4, L, MA_Z, "west", "east");
-        c.cmd("setblock " + (MA_X + 5) + " " + L + " " + MA_Z + " hbm:crate_steel");        // missile hangar
+        c.cmd("setblock " + (MA_X + 5) + " " + L + " " + MA_Z + " geontm:crate_steel");        // missile hangar
         c.cmd("setblock " + (TA_X + 1) + " " + L + " " + (MA_Z + 4) + " minecraft:crafting_table");
-        fill(TNT_X, L, CHEM_Z + 3, MA_X - 1, L, CHEM_Z + 3, "hbm:conveyor[facing=east]"); // TNT + PVC belt
+        fill(TNT_X, L, CHEM_Z + 3, MA_X - 1, L, CHEM_Z + 3, "geontm:conveyor[facing=east]"); // TNT + PVC belt
 
         // ---- the machines take their fluid types BEFORE the ducts: a duct looks for receivers only when typed
         title(c, "Fluid types", "identifiers on boilers and towers, menus for reformers");
@@ -473,38 +473,38 @@ public class FactoryShowcase implements Scenario {
         // Grid A (coal burners, battery bank, light-oil diesel): the old factory, pumpjack 1 and the refinery.
         // Grid B (naphtha diesel, its own batteries): pumpjack 2, both reformers and the PVC and TNT plants. The
         // reformers buffer a million HE each; on one grid with the pumpjacks they would starve the whole start.
-        fill(-30, Y, SOUTH_BUS, 48, Y, SOUTH_BUS, "hbm:red_cable");
-        fill(-9, Y, 8, -9, Y, SOUTH_BUS, "hbm:red_cable");                                            // joins the old spine
+        fill(-30, Y, SOUTH_BUS, 48, Y, SOUTH_BUS, "geontm:red_cable");
+        fill(-9, Y, 8, -9, Y, SOUTH_BUS, "geontm:red_cable");                                            // joins the old spine
         riser(-26, PJ1_Z + 2);
-        c.cmd("setblock -26 " + L + " " + (PJ1_Z + 2) + " hbm:red_cable");                            // pumpjack 1
+        c.cmd("setblock -26 " + L + " " + (PJ1_Z + 2) + " geontm:red_cable");                            // pumpjack 1
         riser(REF_X + 1, REF_Z - 2);
-        c.cmd("setblock " + (REF_X + 1) + " " + L + " " + (REF_Z - 2) + " hbm:red_cable");
-        fill(TL_X + 3, Y, TL_Z - 1, TL_X + 5, Y, TL_Z - 1, "hbm:red_cable");
+        c.cmd("setblock " + (REF_X + 1) + " " + L + " " + (REF_Z - 2) + " geontm:red_cable");
+        fill(TL_X + 3, Y, TL_Z - 1, TL_X + 5, Y, TL_Z - 1, "geontm:red_cable");
         riser(TL_X + 4, TL_Z - 1);                                                                    // diesel bank 1
-        fill(-26, Y, GRID_B, 21, Y, GRID_B, "hbm:red_cable");                                        // grid B bus
-        fill(-8, Y, 34, -3, Y, 34, "hbm:red_cable");                                                  // diesel bank 2
-        fill(-5, Y, 35, -5, Y, 35, "hbm:red_cable");                                                  // bank 2 -> grid B bus
-        fill(-11, L, GRID_B, -10, L, GRID_B, "hbm:machine_battery{redLow:1s,redHigh:1s}");            // grid B buffer
-        fill(-26, Y, PJ2_Z + 2, -26, Y, GRID_B, "hbm:red_cable");
-        c.cmd("setblock -26 " + L + " " + (PJ2_Z + 2) + " hbm:red_cable");                            // pumpjack 2
+        fill(-26, Y, GRID_B, 21, Y, GRID_B, "geontm:red_cable");                                        // grid B bus
+        fill(-8, Y, 34, -3, Y, 34, "geontm:red_cable");                                                  // diesel bank 2
+        fill(-5, Y, 35, -5, Y, 35, "geontm:red_cable");                                                  // bank 2 -> grid B bus
+        fill(-11, L, GRID_B, -10, L, GRID_B, "geontm:machine_battery{redLow:1s,redHigh:1s}");            // grid B buffer
+        fill(-26, Y, PJ2_Z + 2, -26, Y, GRID_B, "geontm:red_cable");
+        c.cmd("setblock -26 " + L + " " + (PJ2_Z + 2) + " geontm:red_cable");                            // pumpjack 2
         // Each big consumer hangs off grid B through a cable switch set into the floor, all open at the start.
         switchedRiser(c, RP_X + 3, RP_Z, S_RP_Z);                                                    // reformer P
-        c.cmd("setblock " + (RP_X + 3) + " " + L + " " + RP_Z + " hbm:red_cable");
+        c.cmd("setblock " + (RP_X + 3) + " " + L + " " + RP_Z + " geontm:red_cable");
         switchedRiser(c, RN_X - 1, CHEM_Z + 2, S_RN_Z);                                              // reformer N
-        c.cmd("setblock " + (RN_X - 1) + " " + L + " " + (CHEM_Z + 2) + " hbm:red_cable");
+        c.cmd("setblock " + (RN_X - 1) + " " + L + " " + (CHEM_Z + 2) + " geontm:red_cable");
         switchedRiser(c, 14, CHEM_Z, S_CHEM_Z);                                                      // TNT + PVC
-        c.cmd("setblock 14 " + L + " " + CHEM_Z + " hbm:red_cable");
+        c.cmd("setblock 14 " + L + " " + CHEM_Z + " geontm:red_cable");
         // The tie between the grids: a switch in the floor between the south bus and the grid B bus.
-        fill(TIE_X, Y, SOUTH_BUS, TIE_X, Y, TIE_Z - 1, "hbm:red_cable");
-        c.cmd("setblock " + TIE_X + " " + Y + " " + TIE_Z + " hbm:cable_switch[on=false]");
-        fill(TIE_X, Y, TIE_Z + 1, TIE_X, Y, GRID_B, "hbm:red_cable");
+        fill(TIE_X, Y, SOUTH_BUS, TIE_X, Y, TIE_Z - 1, "geontm:red_cable");
+        c.cmd("setblock " + TIE_X + " " + Y + " " + TIE_Z + " geontm:cable_switch[on=false]");
+        fill(TIE_X, Y, TIE_Z + 1, TIE_X, Y, GRID_B, "geontm:red_cable");
         c.waitTicks(3);
 
         // ---- the TNT + PVC belt goes north to the assembler: one more wand route ---------------------
-        giveOnly(c, "hbm:conveyor_wand_regular", 1);
+        giveOnly(c, "geontm:conveyor_wand_regular", 1);
         wandStart(c, MA_X, CHEM_Z + 3, MA_X + 1.5, CHEM_Z + 5.5);
         wandEnd(c, MA_X + 0.5, L + 0.5, MA_Z + 2.98, MA_X + 0.5, MA_Z + 6.5);
-        Expect.that(c.block(MA_X, L, MA_Z + 3).get("block").getAsString().startsWith("hbm:conveyor"),
+        Expect.that(c.block(MA_X, L, MA_Z + 3).get("block").getAsString().startsWith("geontm:conveyor"),
                 "the wand route ends at the assembler's south inserter");
 
         // ---- the target: a house on its own island, 90 blocks east --------------------------------------
@@ -528,26 +528,26 @@ public class FactoryShowcase implements Scenario {
         // Router A: ghost filters by real clicks with the item on the cursor, modes by the side buttons.
         configureRouterA(c);
         // Depot extractor: an ejector upgrade (one item every 5 ticks instead of 20).
-        insertByClicks(c, X0, L, CRATE_Z, 0, 2.5, "GUICraneExtractor", "hbm:upgrade_ejector_2", 1, 19);
+        insertByClicks(c, X0, L, CRATE_Z, 0, 2.5, "GUICraneExtractor", "geontm:upgrade_ejector_2", 1, 19);
         // Shredder blades: shift-click, the menu routes them to the blade slots.
         clearInventory(c);
-        Fixtures.give(c, "hbm:blades_steel", 2);
+        Fixtures.give(c, "geontm:blades_steel", 2);
         open(c, SHRED_X, L, SHRED_Z, 0, -2.5, "GUIMachineShredder");
         for (int i = 0; i < 2; i++) {
-            c.slotClick(playerSlotWith(c, "hbm:blades_steel"), 0, "QUICK_MOVE");
+            c.slotClick(playerSlotWith(c, "geontm:blades_steel"), 0, "QUICK_MOVE");
             c.waitTicks(3);
             pause(c, 6);
         }
-        Expect.slotHolds(c, 27, "hbm:blades_steel", 1);
-        Expect.slotHolds(c, 28, "hbm:blades_steel", 1);
+        Expect.slotHolds(c, 27, "geontm:blades_steel", 1);
+        Expect.slotHolds(c, 28, "geontm:blades_steel", 1);
         close(c);
         // Press stamps.
-        insertByClicks(c, STEEL_X, L, STEEL_Z, 0, -2.5, "GUIMachineEPress", "hbm:stamp_iron_plate", 1, 1);
-        insertByClicks(c, COPPER_X, L, COPPER_Z, 0, 2.5, "GUIMachineEPress", "hbm:stamp_iron_plate", 1, 1);
+        insertByClicks(c, STEEL_X, L, STEEL_Z, 0, -2.5, "GUIMachineEPress", "geontm:stamp_iron_plate", 1, 1);
+        insertByClicks(c, COPPER_X, L, COPPER_Z, 0, 2.5, "GUIMachineEPress", "geontm:stamp_iron_plate", 1, 1);
         // Speed upgrades, Mk.III, into every machine that takes one (the presses in slot 4, assemblers in slot 2).
-        insertByClicks(c, STEEL_X, L, STEEL_Z, 0, -2.5, "GUIMachineEPress", "hbm:upgrade_speed_3", 1, 4);
-        insertByClicks(c, COPPER_X, L, COPPER_Z, 0, 2.5, "GUIMachineEPress", "hbm:upgrade_speed_3", 1, 4);
-        insertByClicks(c, ASM_X - 1, L, ASM_Z, -2.5, 0, "GUIMachineAssemblyMachine", "hbm:upgrade_speed_3", 1, 2);
+        insertByClicks(c, STEEL_X, L, STEEL_Z, 0, -2.5, "GUIMachineEPress", "geontm:upgrade_speed_3", 1, 4);
+        insertByClicks(c, COPPER_X, L, COPPER_Z, 0, 2.5, "GUIMachineEPress", "geontm:upgrade_speed_3", 1, 4);
+        insertByClicks(c, ASM_X - 1, L, ASM_Z, -2.5, 0, "GUIMachineAssemblyMachine", "geontm:upgrade_speed_3", 1, 2);
         // Assembler: the recipe selector, scrolled, searched by typing, picked by a click.
         selectRecipe(c, ASM_X - 1, ASM_Z, -2.5, 0, "GUIMachineAssemblyMachine", "shredder", "ass.shredder", ASM_X, ASM_Z);
         // Burners: the middle one through its menu's power button, the other two by /data merge.
@@ -587,15 +587,15 @@ public class FactoryShowcase implements Scenario {
         maxBelt = Math.max(maxBelt, waitFor(c, "the pumpjacks drawing power", 1_200, () -> longOf(nbt(c, PJ_X, L, PJ1_Z), "power") > 0
                 || longOf(nbt(c, PJ_X, L, PJ1_Z), "t0") > 0, PJ_X + 3.5, L + 6, PJ1_Z - 8.5, PJ_X + 3, L, PJ1_Z + 3));
         maxBelt = Math.max(maxBelt, waitFor(c, "powder coal from the shredder", 1_200, () -> (nbt(c, DF_X, L + 1, DF1_Z) + nbt(c, DF_X, L + 1, DF2_Z)
-                + nbt(c, SHRED_X, L, SHRED_Z)).contains("hbm:powder_coal"), SHRED_X + 0.5, L + 3, SHRED_Z + 5.5, SHRED_X, L, SHRED_Z));
+                + nbt(c, SHRED_X, L, SHRED_Z)).contains("geontm:powder_coal"), SHRED_X + 0.5, L + 3, SHRED_Z + 5.5, SHRED_X, L, SHRED_Z));
         maxBelt = Math.max(maxBelt, waitFor(c, "both blast furnaces fuelled", 1_200, () -> longOf(nbt(c, DF_X, L + 1, DF1_Z), "powerTime") > 0
                 && longOf(nbt(c, DF_X, L + 1, DF2_Z), "powerTime") > 0, DF_X + 4.5, L + 4, DF1_Z - 4.5, DF_X, L + 1, 0));
         c.screenshot("50-blast-furnaces");
         maxBelt = Math.max(maxBelt, watchOil(c));
         maxBelt = Math.max(maxBelt, waitFor(c, "steel from the blast furnaces", 3_000, () -> (nbt(c, DF_X, L + 1, DF1_Z) + nbt(c, DF_X, L + 1, DF2_Z)
-                + nbt(c, STEEL_X, L, STEEL_Z)).contains("hbm:ingot_steel") || nbt(c, STEEL_X, L, STEEL_Z).contains("hbm:plate_steel"),
+                + nbt(c, STEEL_X, L, STEEL_Z)).contains("geontm:ingot_steel") || nbt(c, STEEL_X, L, STEEL_Z).contains("geontm:plate_steel"),
                 DF_X + 4.5, L + 4, DF1_Z - 4.5, DF_X, L + 1, 0));
-        maxBelt = Math.max(maxBelt, waitFor(c, "copper plates at the assembler", 3_000, () -> nbt(c, ASM_X, L, ASM_Z).contains("hbm:plate_copper"),
+        maxBelt = Math.max(maxBelt, waitFor(c, "copper plates at the assembler", 3_000, () -> nbt(c, ASM_X, L, ASM_Z).contains("geontm:plate_copper"),
                 COPPER_X + 0.5, L + 3, COPPER_Z + 5.5, COPPER_X + 2, L, COPPER_Z));
 
         // Tour while the steel builds up: walk the hall holding W, then a third-person shot without the HUD.
@@ -625,7 +625,7 @@ public class FactoryShowcase implements Scenario {
                 {-21.5, L + 4, -5.5, -21, L, -12},                                  // power plant
                 {STEEL_X + 0.5, L + 3, STEEL_Z - 4.5, STEEL_X + 2, L, STEEL_Z}};    // steel press
         maxBelt = Math.max(maxBelt, waitFor(c, "eight steel plates in the assembler", 6_000,
-                () -> countIn(nbt(c, ASM_X, L, ASM_Z), "hbm:plate_steel") >= 8 || nbt(c, SHIP_X, L, ASM_Z).contains("hbm:machine_shredder"),
+                () -> countIn(nbt(c, ASM_X, L, ASM_Z), "geontm:plate_steel") >= 8 || nbt(c, SHIP_X, L, ASM_Z).contains("geontm:machine_shredder"),
                 tour));
         title(c, "Assembling", "8 steel plates, 4 copper plates, 2 motors");
         open(c, ASM_X - 1, L, ASM_Z, -2.5, 0, "GUIMachineAssemblyMachine");
@@ -633,7 +633,7 @@ public class FactoryShowcase implements Scenario {
         c.screenshot("70-assembler-menu");
         close(c);
         maxBelt = Math.max(maxBelt, waitFor(c, "a shredder in the shipping crate", 1_200,
-                () -> nbt(c, SHIP_X, L, ASM_Z).contains("hbm:machine_shredder"), SHIP_X - 2.5, L + 3, ASM_Z - 4.5, SHIP_X, L, ASM_Z));
+                () -> nbt(c, SHIP_X, L, ASM_Z).contains("geontm:machine_shredder"), SHIP_X - 2.5, L + 3, ASM_Z - 4.5, SHIP_X, L, ASM_Z));
         long ticks = c.status().get("game_time").getAsLong() - startTick;
         long seconds = (System.currentTimeMillis() - started) / 1000;
         Expect.that(maxBelt > 0, "the entities query saw items riding the belts (max " + maxBelt + ")");
@@ -649,7 +649,7 @@ public class FactoryShowcase implements Scenario {
         // =========================================================================================
         title(c, "Delivered", "a shredder, made by the factory");
         open(c, SHIP_X, L, ASM_Z, 0, 2.5, "GUICrate");
-        Expect.slotHolds(c, 0, "hbm:machine_shredder", 1);
+        Expect.slotHolds(c, 0, "geontm:machine_shredder", 1);
         JsonObject item = c.slot(0);
         c.mouseMove(item.get("center_x").getAsDouble(), item.get("center_y").getAsDouble());
         c.waitTicks(3);
@@ -659,15 +659,15 @@ public class FactoryShowcase implements Scenario {
         c.slotClick(0, 0, "QUICK_MOVE");
         c.waitTicks(3);
         close(c);
-        Expect.inventoryHolds(c, "hbm:machine_shredder", 1);
-        c.hotbar(hotbarOf(c, "hbm:machine_shredder"));
+        Expect.inventoryHolds(c, "geontm:machine_shredder", 1);
+        c.hotbar(hotbarOf(c, "geontm:machine_shredder"));
         standAt(c, SHIP_X + 0.5, L, ASM_Z + 3.5);
         c.lookAt(SHIP_X + 0.5, Y + 0.98, ASM_Z + 1.5);
         c.waitTicks(2);
         pause(c, 10);
         c.use(2);
         c.waitTicks(3);
-        Expect.block(c, SHIP_X, L, ASM_Z + 1, "hbm:machine_shredder");
+        Expect.block(c, SHIP_X, L, ASM_Z + 1, "geontm:machine_shredder");
 
         // =========================================================================================
         // 9b. THE STEALTH MISSILE: parts from the oil chain, bolts by hand, the assembler, the pad
@@ -699,12 +699,12 @@ public class FactoryShowcase implements Scenario {
         title(c, "Missile parts", "PVC, TNT and Ti/Al plates on their way");
         waitFor(c, "titanium and aluminium plates at the missile assembler", 3_000, () -> {
             String a = nbt(c, MA_X, L, MA_Z);
-            return countIn(a, "hbm:plate_titanium") >= 20 && countIn(a, "hbm:plate_aluminium") >= 20;
+            return countIn(a, "geontm:plate_titanium") >= 20 && countIn(a, "geontm:plate_aluminium") >= 20;
         }, missileTour);
-        waitFor(c, "TNT at the missile assembler", 6_000, () -> countIn(nbt(c, MA_X, L, MA_Z), "hbm:ball_tnt") >= 4, missileTour);
-        waitFor(c, "16 PVC bars at the missile assembler", 8_000, () -> countIn(nbt(c, MA_X, L, MA_Z), "hbm:ingot_pvc") >= 16, missileTour);
+        waitFor(c, "TNT at the missile assembler", 6_000, () -> countIn(nbt(c, MA_X, L, MA_Z), "geontm:ball_tnt") >= 4, missileTour);
+        waitFor(c, "16 PVC bars at the missile assembler", 8_000, () -> countIn(nbt(c, MA_X, L, MA_Z), "geontm:ingot_pvc") >= 16, missileTour);
         craftBolts(c);
-        waitFor(c, "a stealth missile in the hangar", 3_000, () -> nbt(c, MA_X + 5, L, MA_Z).contains("hbm:missile_stealth"),
+        waitFor(c, "a stealth missile in the hangar", 3_000, () -> nbt(c, MA_X + 5, L, MA_Z).contains("geontm:missile_stealth"),
                 new double[][]{{MA_X - 5.5, L + 5, MA_Z + 8.5, MA_X, L, MA_Z}});
         launch(c);
 
@@ -717,8 +717,8 @@ public class FactoryShowcase implements Scenario {
         Expect.that(!c.inWorld(), "the client left the world");
         c.joinWorld("harness", 180_000L);
         c.waitTicks(20);
-        Expect.block(c, SHIP_X, L, ASM_Z + 1, "hbm:machine_shredder");
-        Expect.block(c, DF_X, L + 1, DF2_Z, "hbm:machine_difurnace_off");
+        Expect.block(c, SHIP_X, L, ASM_Z + 1, "geontm:machine_shredder");
+        Expect.block(c, DF_X, L + 1, DF2_Z, "geontm:machine_difurnace_off");
         long bankAfter = 0;
         for (int x = -17; x <= -12; x++) bankAfter += longOf(nbt(c, x, L, BUS_Z - 1), "power");
         Expect.that(bankAfter > 0, "the battery bank kept its charge across the reload (" + bankAfter + " HE)");
@@ -742,15 +742,15 @@ public class FactoryShowcase implements Scenario {
     }
 
     private static void belt(int x, int y, int z, String facing) {
-        C.cmd("setblock " + x + " " + y + " " + z + " hbm:conveyor[facing=" + facing + "]");
+        C.cmd("setblock " + x + " " + y + " " + z + " geontm:conveyor[facing=" + facing + "]");
     }
 
     private static void beltRow(int x1, int x2, int z, String facing) {
-        fill(Math.min(x1, x2), L, z, Math.max(x1, x2), L, z, "hbm:conveyor[facing=" + facing + "]");
+        fill(Math.min(x1, x2), L, z, Math.max(x1, x2), L, z, "geontm:conveyor[facing=" + facing + "]");
     }
 
     private static void crane(String kind, int x, int y, int z, String input, String output) {
-        C.cmd("setblock " + x + " " + y + " " + z + " hbm:crane_" + kind + "[input=" + input + ",output=" + output + "]");
+        C.cmd("setblock " + x + " " + y + " " + z + " geontm:crane_" + kind + "[input=" + input + ",output=" + output + "]");
     }
 
     private static String modes(int d, int u, int n, int s, int w, int e) {
@@ -763,7 +763,7 @@ public class FactoryShowcase implements Scenario {
 
     /** A router with its modes (D, U, N, S, W, E) and filters (slot = side * 5 + k). */
     private static void router(int x, int y, int z, String modes, String filters) {
-        C.cmd("setblock " + x + " " + y + " " + z + " hbm:crane_router{" + modes + ",inventory:{Items:[" + filters + "]}}");
+        C.cmd("setblock " + x + " " + y + " " + z + " geontm:crane_router{" + modes + ",inventory:{Items:[" + filters + "]}}");
     }
 
     /** Right-clicks the floor's top face at (x, z) by hand, standing (dx, dz) away. Returns the block placed. */
@@ -936,10 +936,10 @@ public class FactoryShowcase implements Scenario {
     private static void reformer(Client c, int x, int z, String fluid) {
         clearInventory(c);
         Fixtures.give(c, identifier(fluid), 1);
-        Fixtures.give(c, "hbm:catalytic_converter", 1);
+        Fixtures.give(c, "geontm:catalytic_converter", 1);
         open(c, x, L, z + 1, 0, 2.5, "GUIMachineCatalyticReformer");
-        moveTo(c, "hbm:fluid_identifier", 9);
-        moveTo(c, "hbm:catalytic_converter", 10);
+        moveTo(c, "geontm:fluid_identifier", 9);
+        moveTo(c, "geontm:catalytic_converter", 10);
         pause(c, 10);
         close(c);
         c.waitTicks(3);
@@ -959,7 +959,7 @@ public class FactoryShowcase implements Scenario {
 
     /** Fills each box with ducts, then types every duct with one identifier click. */
     private static void pipe(Client c, String fluid, int[][] boxes) {
-        for (int[] b : boxes) fill(b[0], b[1], b[2], b[3], b[4], b[5], "hbm:fluid_duct_neo");
+        for (int[] b : boxes) fill(b[0], b[1], b[2], b[3], b[4], b[5], "geontm:fluid_duct_neo");
         c.waitTicks(2);
         typeDucts(c, fluid, boxes);
     }
@@ -987,7 +987,7 @@ public class FactoryShowcase implements Scenario {
             for (int x = Math.min(b[0], b[3]); x <= Math.max(b[0], b[3]); x++)
                 for (int y = Math.min(b[1], b[4]); y <= Math.max(b[1], b[4]); y++)
                     for (int z = Math.min(b[2], b[5]); z <= Math.max(b[2], b[5]); z++) {
-                        if (!ductType(c, x, y, z).equals("hbm:none")) continue;
+                        if (!ductType(c, x, y, z).equals("geontm:none")) continue;
                         for (int[] o : CLICK_FROM) {
                             int sx = x + o[0], sy = y + o[1], sz = z + o[2];
                             if (!air(c, sx, sy, sz) || !air(c, sx, sy + 1, sz)) continue;
@@ -1005,10 +1005,10 @@ public class FactoryShowcase implements Scenario {
 
     private static String ductType(Client c, int x, int y, int z) {
         JsonObject be = c.blockEntity(x, y, z);
-        Expect.equal("hbm:fluid_duct_neo", be.get("block").getAsString(), "a duct at " + x + "," + y + "," + z);
+        Expect.equal("geontm:fluid_duct_neo", be.get("block").getAsString(), "a duct at " + x + "," + y + "," + z);
         java.util.regex.Matcher m = java.util.regex.Pattern.compile("type:\"([^\"]+)\"")
                 .matcher(be.get("nbt").getAsString().replaceAll("\\s+", ""));
-        return m.find() ? m.group(1) : "hbm:none";
+        return m.find() ? m.group(1) : "geontm:none";
     }
 
     private static boolean air(Client c, int x, int y, int z) {
@@ -1017,21 +1017,21 @@ public class FactoryShowcase implements Scenario {
 
     /** An infinite drain: a barrel of one fluid with a bottomless barrel in its unload slot. */
     private static void sink(int x, int y, int z, String fluid) {
-        C.cmd("setblock " + x + " " + y + " " + z + " hbm:barrel_steel{mode:0s,tank_type:\"" + fluid + "\""
-                + items(",inventory:{Items:[{Slot:4b,id:\"hbm:fluid_barrel_infinite\",count:1}]}}"));
+        C.cmd("setblock " + x + " " + y + " " + z + " geontm:barrel_steel{mode:0s,tank_type:\"" + fluid + "\""
+                + items(",inventory:{Items:[{Slot:4b,id:\"geontm:fluid_barrel_infinite\",count:1}]}}"));
     }
 
     /** A low-priority overflow drain beside a pipe: buffer mode (LOW priority) plus a bottomless barrel. */
     private static void overflow(int x, int y, int z, String fluid) {
-        C.cmd("setblock " + x + " " + y + " " + z + " hbm:barrel_steel{mode:1s,tank_type:\"" + fluid + "\""
-                + items(",inventory:{Items:[{Slot:4b,id:\"hbm:fluid_barrel_infinite\",count:1}]}}"));
+        C.cmd("setblock " + x + " " + y + " " + z + " geontm:barrel_steel{mode:1s,tank_type:\"" + fluid + "\""
+                + items(",inventory:{Items:[{Slot:4b,id:\"geontm:fluid_barrel_infinite\",count:1}]}}"));
     }
 
     /** A floor cable from (x, z) to the grid B bus with an open cable switch at z = {@code switchZ}. */
     private static void switchedRiser(Client c, int x, int z, int switchZ) {
-        fill(x, Y, z, x, Y, switchZ - 1, "hbm:red_cable");
-        c.cmd("setblock " + x + " " + Y + " " + switchZ + " hbm:cable_switch[on=false]");
-        fill(x, Y, switchZ + 1, x, Y, GRID_B, "hbm:red_cable");
+        fill(x, Y, z, x, Y, switchZ - 1, "geontm:red_cable");
+        c.cmd("setblock " + x + " " + Y + " " + switchZ + " geontm:cable_switch[on=false]");
+        fill(x, Y, switchZ + 1, x, Y, GRID_B, "geontm:red_cable");
     }
 
     /** Flips a floor switch with a real right-click from above, empty-handed, and checks its new state. */
@@ -1050,7 +1050,7 @@ public class FactoryShowcase implements Scenario {
 
     /** A floor cable from the south bus to (x, z). */
     private static void riser(int x, int z) {
-        fill(x, Y, Math.min(z, SOUTH_BUS), x, Y, Math.max(z, SOUTH_BUS), "hbm:red_cable");
+        fill(x, Y, Math.min(z, SOUTH_BUS), x, Y, Math.max(z, SOUTH_BUS), "geontm:red_cable");
     }
 
     private static void house(Client c, int x, int z) {
@@ -1107,24 +1107,24 @@ public class FactoryShowcase implements Scenario {
 
     private static void commissionOil(Client c) {
         title(c, "Commissioning", "the petrochemical plant and the missile hall");
-        insertByClicks(c, PVC_X, L + 1, CHEM_Z + 1, 0, 2.5, "GUIMachineChemicalPlant", "hbm:powder_cadmium", 8, 4);
-        insertByClicks(c, TNT_X, L + 1, CHEM_Z + 1, 0, 2.5, "GUIMachineChemicalPlant", "hbm:niter", 1, 4);
+        insertByClicks(c, PVC_X, L + 1, CHEM_Z + 1, 0, 2.5, "GUIMachineChemicalPlant", "geontm:powder_cadmium", 8, 4);
+        insertByClicks(c, TNT_X, L + 1, CHEM_Z + 1, 0, 2.5, "GUIMachineChemicalPlant", "geontm:niter", 1, 4);
         open(c, PVC_X, L + 1, CHEM_Z + 1, 0, 2.5, "GUIMachineChemicalPlant");
         pause(c, 15);
         c.screenshot("31-pvc-plant-menu");
         close(c);
-        insertByClicks(c, TA_X, L, MA_Z, 0, 2.5, "GUIMachineEPress", "hbm:stamp_iron_plate", 1, 1);
-        insertByClicks(c, TA_X - 3, L, MA_Z, 0, 2.5, "GUICraneExtractor", "hbm:upgrade_ejector_2", 1, 19);
-        insertByClicks(c, TA_X, L, MA_Z, 0, 2.5, "GUIMachineEPress", "hbm:upgrade_speed_3", 1, 4);
-        insertByClicks(c, MA_X, L + 1, MA_Z + 1, 0, 2.5, "GUIMachineAssemblyMachine", "hbm:upgrade_speed_3", 1, 2);
+        insertByClicks(c, TA_X, L, MA_Z, 0, 2.5, "GUIMachineEPress", "geontm:stamp_iron_plate", 1, 1);
+        insertByClicks(c, TA_X - 3, L, MA_Z, 0, 2.5, "GUICraneExtractor", "geontm:upgrade_ejector_2", 1, 19);
+        insertByClicks(c, TA_X, L, MA_Z, 0, 2.5, "GUIMachineEPress", "geontm:upgrade_speed_3", 1, 4);
+        insertByClicks(c, MA_X, L + 1, MA_Z + 1, 0, 2.5, "GUIMachineAssemblyMachine", "geontm:upgrade_speed_3", 1, 2);
         for (int[] chem : new int[][]{{PVC_X, CHEM_Z}, {TNT_X, CHEM_Z}, {PEROX_X, PEROX_Z}}) {
-            insertByClicks(c, chem[0], L + 1, chem[1] + 1, 0, 2.5, "GUIMachineChemicalPlant", "hbm:upgrade_speed_3", 1, 2);
+            insertByClicks(c, chem[0], L + 1, chem[1] + 1, 0, 2.5, "GUIMachineChemicalPlant", "geontm:upgrade_speed_3", 1, 2);
         }
         // The pumpjacks' upgrade slots (5..7) through NBT; their inventories are empty at this point.
         for (int z : new int[]{PJ1_Z, PJ2_Z}) {
-            c.cmd("data merge block " + PJ_X + " " + L + " " + z + items(" {inventory:{Items:[{Slot:5b,id:\"hbm:upgrade_speed_3\",count:1}]}}"));
+            c.cmd("data merge block " + PJ_X + " " + L + " " + z + items(" {inventory:{Items:[{Slot:5b,id:\"geontm:upgrade_speed_3\",count:1}]}}"));
         }
-        Expect.that(nbt(c, PJ_X, L, PJ1_Z).contains("hbm:upgrade_speed_3"), "pumpjack 1 carries a speed upgrade");
+        Expect.that(nbt(c, PJ_X, L, PJ1_Z).contains("geontm:upgrade_speed_3"), "pumpjack 1 carries a speed upgrade");
         selectRecipe(c, MA_X, MA_Z + 1, 0, 2.5, "GUIMachineAssemblyMachine", "stealth", "ass.stealthmissile", MA_X, MA_Z);
         loadRtgs(c);
     }
@@ -1155,27 +1155,27 @@ public class FactoryShowcase implements Scenario {
     /** Missile hall, peroxide plant and pad join grid A once the diesel generators run. */
     private static void connectMissileSite(Client c) {
         title(c, "Missile site power", "the hall and the pad join the grid");
-        fill(TA_X, Y, MA_Z, MA_X + 2, Y, MA_Z, "hbm:red_cable");                                      // press + assembler
-        fill(MA_X + 2, Y, MA_Z + 1, MA_X + 2, Y, MA_Z + 1, "hbm:red_cable");
-        c.cmd("setblock " + (MA_X + 2) + " " + L + " " + (MA_Z + 1) + " hbm:red_cable");            // side port (x+2, z+1)
+        fill(TA_X, Y, MA_Z, MA_X + 2, Y, MA_Z, "geontm:red_cable");                                      // press + assembler
+        fill(MA_X + 2, Y, MA_Z + 1, MA_X + 2, Y, MA_Z + 1, "geontm:red_cable");
+        c.cmd("setblock " + (MA_X + 2) + " " + L + " " + (MA_Z + 1) + " geontm:red_cable");            // side port (x+2, z+1)
         riser(MA_X, MA_Z);
         riser(PEROX_X, PEROX_Z + 2);
-        c.cmd("setblock " + PEROX_X + " " + L + " " + (PEROX_Z + 2) + " hbm:red_cable");
+        c.cmd("setblock " + PEROX_X + " " + L + " " + (PEROX_Z + 2) + " geontm:red_cable");
         riser(PAD_X - 1, PAD_Z - 2);
-        c.cmd("setblock " + (PAD_X - 1) + " " + L + " " + (PAD_Z - 2) + " hbm:red_cable");
+        c.cmd("setblock " + (PAD_X - 1) + " " + L + " " + (PAD_Z - 2) + " geontm:red_cable");
         c.waitTicks(3);
-        Expect.block(c, MA_X, Y, MA_Z + 5, "hbm:red_cable");
+        Expect.block(c, MA_X, Y, MA_Z + 5, "geontm:red_cable");
     }
 
     /** The RTG furnaces: 15 polonium pellets each, shift-clicked in through the menu (pellets do not stack). */
     private static void loadRtgs(Client c) {
         for (int x : RTGS) {
             clearInventory(c);
-            for (int i = 0; i < 15; i++) C.cmd("give @s hbm:pellet_rtg_polonium 1");
+            for (int i = 0; i < 15; i++) C.cmd("give @s geontm:pellet_rtg_polonium 1");
             c.waitTicks(2);
             open(c, x, L, RTG_Z, 0, 2.5, "GUIMachineRTG");
             for (int i = 0; i < 15; i++) {
-                c.slotClick(playerSlotWith(c, "hbm:pellet_rtg_polonium"), 0, "QUICK_MOVE");
+                c.slotClick(playerSlotWith(c, "geontm:pellet_rtg_polonium"), 0, "QUICK_MOVE");
                 c.waitTicks(1);
             }
             pause(c, 10);
@@ -1227,18 +1227,18 @@ public class FactoryShowcase implements Scenario {
     /** Bolts: the steel the splitter set aside, crafted by hand (2 ingots, one above the other: 16 bolts). */
     private static void craftBolts(Client c) throws Exception {
         title(c, "Steel bolts", "crafted by hand from the steel set aside");
-        waitFor(c, "four steel ingots in the bolt stock", 6_000, () -> countIn(nbt(c, STEEL_X, L, STEEL_Z + 1), "hbm:ingot_steel") >= 4,
+        waitFor(c, "four steel ingots in the bolt stock", 6_000, () -> countIn(nbt(c, STEEL_X, L, STEEL_Z + 1), "geontm:ingot_steel") >= 4,
                 new double[][]{{STEEL_X - 3.5, L + 3, STEEL_Z + 5.5, STEEL_X, L, STEEL_Z + 1}});
         clearInventory(c);
         open(c, STEEL_X, L, STEEL_Z + 1, 0, 2.5, "GUICrate");
-        int s = slotOf(c, "hbm:ingot_steel", false);
+        int s = slotOf(c, "geontm:ingot_steel", false);
         c.slotClick(s, 0, "QUICK_MOVE");
         c.waitTicks(3);
         close(c);
-        Expect.inventoryHolds(c, "hbm:ingot_steel", 4);
+        Expect.inventoryHolds(c, "geontm:ingot_steel", 4);
         openAt(c, TA_X + 1, L, MA_Z + 4, TA_X + 1.5, L + 1, MA_Z + 6.5, "Crafting");
         // pick up the four ingots, drop two on the top middle cell and two on the centre cell (right-click = one)
-        int src = playerSlotWith(c, "hbm:ingot_steel");
+        int src = playerSlotWith(c, "geontm:ingot_steel");
         c.clickSlot(src);
         c.waitTicks(2);
         for (int cell : new int[]{2, 2, 5, 5}) {
@@ -1246,20 +1246,20 @@ public class FactoryShowcase implements Scenario {
             c.waitTicks(2);
             pause(c, 3);
         }
-        Expect.slotHolds(c, 0, "hbm:bolt_steel", 16);
+        Expect.slotHolds(c, 0, "geontm:bolt_steel", 16);
         pause(c, 15);
         c.screenshot("75-crafting-bolts");
         c.slotClick(0, 0, "QUICK_MOVE");           // shift-click the result: both crafts at once
         c.waitTicks(3);
         close(c);
-        Expect.inventoryHolds(c, "hbm:bolt_steel", 32);
+        Expect.inventoryHolds(c, "geontm:bolt_steel", 32);
         // into the missile assembler through its menu
         open(c, MA_X, L + 1, MA_Z + 1, 0, 2.5, "GUIMachineAssemblyMachine");
         // A real click into input slot 10: a shift-click puts the bolts into the battery slot 0 instead.
-        moveTo(c, "hbm:bolt_steel", 10);
+        moveTo(c, "geontm:bolt_steel", 10);
         pause(c, 10);
         close(c);
-        Expect.that(countIn(nbt(c, MA_X, L, MA_Z), "hbm:bolt_steel") >= 32, "32 bolts in the missile assembler; " + nbt(c, MA_X, L, MA_Z));
+        Expect.that(countIn(nbt(c, MA_X, L, MA_Z), "geontm:bolt_steel") >= 32, "32 bolts in the missile assembler; " + nbt(c, MA_X, L, MA_Z));
     }
 
     /** A slot of the open screen holding the item, on the machine side ({@code player == false}) or the player side. */
@@ -1275,7 +1275,7 @@ public class FactoryShowcase implements Scenario {
     private static void launch(Client c) throws Exception {
         title(c, "Stealth missile", "assembled from the oil chain and the steel line");
         open(c, MA_X + 5, L, MA_Z, 0, 2.5, "GUICrate");
-        Expect.slotHolds(c, 0, "hbm:missile_stealth", 1);
+        Expect.slotHolds(c, 0, "geontm:missile_stealth", 1);
         JsonObject m = c.slot(0);
         c.mouseMove(m.get("center_x").getAsDouble(), m.get("center_y").getAsDouble());
         c.waitTicks(3);
@@ -1284,7 +1284,7 @@ public class FactoryShowcase implements Scenario {
         c.slotClick(0, 0, "QUICK_MOVE");
         c.waitTicks(3);
         close(c);
-        Expect.inventoryHolds(c, "hbm:missile_stealth", 1);
+        Expect.inventoryHolds(c, "geontm:missile_stealth", 1);
         fire(c);
     }
 
@@ -1292,8 +1292,8 @@ public class FactoryShowcase implements Scenario {
     private static void fire(Client c) throws Exception {
         // Designate the house with a real right-click from the pad, 90 blocks away.
         title(c, "Target", "the long-range designator");
-        Fixtures.give(c, "hbm:designator_range", 1);
-        c.hotbar(hotbarOf(c, "hbm:designator_range"));
+        Fixtures.give(c, "geontm:designator_range", 1);
+        c.hotbar(hotbarOf(c, "geontm:designator_range"));
         standAt(c, PAD_X + 0.5, L + 6, PAD_Z + 3.5);        // high enough to see over the peroxide plant
         c.lookAt(HOUSE_X + 2.5, L + 2.0, HOUSE_Z + 0.5);
         pause(c, 15);
@@ -1310,8 +1310,8 @@ public class FactoryShowcase implements Scenario {
         // Load the pad through its menu: missile in slot 0, designator in slot 1.
         title(c, "Launch pad", "missile and designator through the menu");
         openAt(c, PAD_X, L, PAD_Z, PAD_X + 0.5, L + 2, PAD_Z + 3.5, "GUILaunchPad");
-        moveTo(c, "hbm:missile_stealth", 0);
-        moveTo(c, "hbm:designator_range", 1);
+        moveTo(c, "geontm:missile_stealth", 0);
+        moveTo(c, "geontm:designator_range", 1);
         pause(c, 15);
         c.screenshot("86-pad-loaded");
         close(c);
@@ -1361,7 +1361,7 @@ public class FactoryShowcase implements Scenario {
         for (int t = 0; t < 600; t += 2) {
             JsonObject q = new JsonObject();
             q.addProperty("radius", 256);
-            q.addProperty("type", "hbm:entity_missile_stealth");
+            q.addProperty("type", "geontm:entity_missile_stealth");
             var list = c.query("entities", q).getAsJsonArray("entities");
             if (list.size() > 0) {
                 missile = list.get(0).getAsJsonObject();
@@ -1469,7 +1469,7 @@ public class FactoryShowcase implements Scenario {
 
     /** A fluid identifier set to a fluid: a component from 1.20.5 on, item NBT on 1.20.1. */
     private static String identifier(String fluid) {
-        return LEGACY ? "hbm:fluid_identifier{\"hbm:fluid\":\"" + fluid + "\"}" : "hbm:fluid_identifier[hbm:fluid=\"" + fluid + "\"]";
+        return LEGACY ? "geontm:fluid_identifier{\"geontm:fluid\":\"" + fluid + "\"}" : "geontm:fluid_identifier[geontm:fluid=\"" + fluid + "\"]";
     }
 
     /**
@@ -1495,7 +1495,7 @@ public class FactoryShowcase implements Scenario {
     private static int beltItems(Client c) {
         JsonObject q = new JsonObject();
         q.addProperty("radius", 64);
-        q.addProperty("type", "hbm:entity_c_item");
+        q.addProperty("type", "geontm:entity_c_item");
         return c.query("entities", q).getAsJsonArray("entities").size();
     }
 

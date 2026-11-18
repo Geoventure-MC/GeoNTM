@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  * The controller torch only attaches to an ROR value provider (1.7 RadioTorchController), so it is sneak-placed on top of an
  * assembly factory (a provider; a plain click would open the factory instead).
  */
-public final class PackageLayoutMenus implements dev.golem.harness.api.Scenario {
+public final class PackageLayoutMenus implements fr.geoventure.harness.api.Scenario {
 
     private static final int X = 2600;
     private static final int Y = 100;
@@ -24,15 +24,15 @@ public final class PackageLayoutMenus implements dev.golem.harness.api.Scenario 
 
     /** item id, expected screen class simple name[, support block placed first] */
     private static final String[][] MACHINES = {
-            {"hbm:machine_assembly_factory", "GUIMachineAssemblyFactory"},
-            {"hbm:machine_chemical_factory", "GUIMachineChemicalFactory"},
-            {"hbm:machine_arc_furnace", "GUIMachineArcFurnaceLarge"},
-            {"hbm:machine_strand_caster", "GUIMachineStrandCaster"},
-            {"hbm:machine_ashpit", "GUIAshpit"},
-            {"hbm:machine_difurnace_off", "GUIDiFurnace"},
-            {"hbm:radio_torch_sender", "RadioTorchScreen"},
-            {"hbm:radio_torch_controller", "RadioControllerScreen", "hbm:machine_assembly_factory"},
-            {"hbm:radio_telex", "RadioTelexScreen"},
+            {"geontm:machine_assembly_factory", "GUIMachineAssemblyFactory"},
+            {"geontm:machine_chemical_factory", "GUIMachineChemicalFactory"},
+            {"geontm:machine_arc_furnace", "GUIMachineArcFurnaceLarge"},
+            {"geontm:machine_strand_caster", "GUIMachineStrandCaster"},
+            {"geontm:machine_ashpit", "GUIAshpit"},
+            {"geontm:machine_difurnace_off", "GUIDiFurnace"},
+            {"geontm:radio_torch_sender", "RadioTorchScreen"},
+            {"geontm:radio_torch_controller", "RadioControllerScreen", "geontm:machine_assembly_factory"},
+            {"geontm:radio_telex", "RadioTelexScreen"},
     };
 
     @Override

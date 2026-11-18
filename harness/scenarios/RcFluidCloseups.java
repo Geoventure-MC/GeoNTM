@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Close-up screenshots of duct connection shapes (straight, bend, T, cross, up and down, joined to barrels and a
@@ -12,7 +12,7 @@ public final class RcFluidCloseups implements Scenario {
     private static final int Y = 100;
     private static final int Z = 500;
     private static final int L = Y + 1;
-    private static final String DUCT = "hbm:fluid_duct_neo{type:\"hbm:water\"}";
+    private static final String DUCT = "geontm:fluid_duct_neo{type:\"geontm:water\"}";
     private static final String[] PARTS = {"fluid_pump", "flow_control_pump", "fluid_valve", "fluid_switch",
             "fluid_counter_valve", "fluid_duct_gauge", "pipe_anchor", "fluid_duct_paintable"};
     private static final String[] FACINGS = {"north", "east", "south", "west"};
@@ -37,11 +37,11 @@ public final class RcFluidCloseups implements Scenario {
         shape(c, X + 30, Z, new int[][]{{0, 0, 0}, {1, 0, 0}, {2, 0, 0}, {2, 0, 1}, {2, 0, 2}, {3, 0, 2}}); // staircase
         // ducts into barrels, and into a refinery port
         c.cmd("setblock " + (X + 36) + " " + L + " " + Z + " " + DUCT);
-        c.cmd("setblock " + (X + 35) + " " + L + " " + Z + " hbm:barrel_steel");
-        c.cmd("setblock " + (X + 37) + " " + L + " " + Z + " hbm:barrel_plastic");
-        c.cmd("setblock " + (X + 36) + " " + L + " " + (Z + 1) + " hbm:barrel_tcalloy");
-        c.cmd("setblock " + (X + 36) + " " + (L + 1) + " " + Z + " hbm:red_barrel");
-        c.cmd("setblock " + (X + 44) + " " + L + " " + (Z + 2) + " hbm:machine_refinery[facing=north]");
+        c.cmd("setblock " + (X + 35) + " " + L + " " + Z + " geontm:barrel_steel");
+        c.cmd("setblock " + (X + 37) + " " + L + " " + Z + " geontm:barrel_plastic");
+        c.cmd("setblock " + (X + 36) + " " + L + " " + (Z + 1) + " geontm:barrel_tcalloy");
+        c.cmd("setblock " + (X + 36) + " " + (L + 1) + " " + Z + " geontm:red_barrel");
+        c.cmd("setblock " + (X + 44) + " " + L + " " + (Z + 2) + " geontm:machine_refinery[facing=north]");
         c.cmd("setblock " + (X + 42) + " " + L + " " + (Z + 1) + " " + DUCT);
         c.cmd("setblock " + (X + 41) + " " + L + " " + (Z + 1) + " " + DUCT);
         c.waitTicks(30);
@@ -58,9 +58,9 @@ public final class RcFluidCloseups implements Scenario {
                 int x = X + f * 6;
                 c.cmd("setblock " + (x - 1) + " " + L + " " + z + " " + DUCT);
                 c.cmd("setblock " + (x + 1) + " " + L + " " + z + " " + DUCT);
-                c.cmd("setblock " + x + " " + L + " " + z + " hbm:" + part + "[facing=" + FACINGS[f] + "]");
+                c.cmd("setblock " + x + " " + L + " " + z + " geontm:" + part + "[facing=" + FACINGS[f] + "]");
                 String placed = c.block(x, L, z).get("block").getAsString();
-                if (placed.equals("minecraft:air")) c.cmd("setblock " + x + " " + L + " " + z + " hbm:" + part);
+                if (placed.equals("minecraft:air")) c.cmd("setblock " + x + " " + L + " " + z + " geontm:" + part);
             }
             row++;
         }

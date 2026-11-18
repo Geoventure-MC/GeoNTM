@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,8 @@ public final class Gh86WindCharge implements Scenario {
         c.cmd("fill -7 " + (Y + 1) + " -7 7 " + (Y + 6) + " 7 minecraft:air");
         c.markLog();
 
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:machine_assembly_machine", X, Y, Z);
-        Expect.equal("hbm:machine_assembly_machine", placed.get("block").getAsString(), "assembly machine placed");
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:machine_assembly_machine", X, Y, Z);
+        Expect.equal("geontm:machine_assembly_machine", placed.get("block").getAsString(), "assembly machine placed");
         List<String> before = blocks(c);
         // control: a trigger blast opens a vanilla door
         c.cmd("setblock 5 " + (Y + 1) + " 4 minecraft:oak_door[half=lower]");

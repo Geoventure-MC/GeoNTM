@@ -1,0 +1,42 @@
+package fr.geoventure.geontm.entity.mob;
+
+import fr.geoventure.geontm.blocks.ModBlocks;
+import fr.geoventure.geontm.blocks.generic.BlockSlag;
+import fr.geoventure.geontm.explosion.vanillant.ExplosionVNT;
+import fr.geoventure.geontm.explosion.vanillant.standard.BlockAllocatorBulkie;
+import fr.geoventure.geontm.explosion.vanillant.standard.BlockMutatorBulkie;
+import fr.geoventure.geontm.explosion.vanillant.standard.BlockProcessorStandard;
+import fr.geoventure.geontm.explosion.vanillant.standard.EntityProcessorStandard;
+import fr.geoventure.geontm.explosion.vanillant.standard.ExplosionEffectStandard;
+import fr.geoventure.geontm.explosion.vanillant.standard.PlayerProcessorStandard;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+
+public class EntityCreeperVolatile extends EntityCreeperBase {
+
+    public EntityCreeperVolatile(EntityType<? extends EntityCreeperVolatile> type, Level level) {
+        super(type, level);
+    }
+
+    @Override
+    protected void detonate(ServerLevel level) {
+        ExplosionVNT vnt = new ExplosionVNT(level, getX(), getY(), getZ(), isPowered() ? 14 : 7, this);
+        vnt.setBlockAllocator(new BlockAllocatorBulkie(60, isPowered() ? 32 : 16));
+        vnt.setBlockProcessor(new BlockProcessorStandard()
+                .withBlockEffect(new BlockMutatorBulkie(ModBlocks.block_slag.get().defaultBlockState()
+                        .setValue(BlockSlag.CRACKED, true))));
+        vnt.setEntityProcessor(new EntityProcessorStandard().withRangeMod(0.5F));
+        vnt.setPlayerProcessor(new PlayerProcessorStandard());
+        vnt.setSFX(new ExplosionEffectStandard());
+        vnt.explode();
+    }
+
+    @Override
+    public boolean checkSpawnRules(LevelAccessor level, EntitySpawnReason reason) {
+        return super.checkSpawnRules(level, reason) && getY() <= 40D && level().dimension() == Level.OVERWORLD;
+    }
+
+}

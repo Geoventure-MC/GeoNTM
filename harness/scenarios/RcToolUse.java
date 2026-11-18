@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public final class RcToolUse implements Scenario {
 
     private void defuser(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:defuser");
+        c.cmd("give @s geontm:defuser");
         c.cmd("summon minecraft:creeper 0.5 101 2.5 {NoAI:1b,PersistenceRequired:1b}");
         c.waitTicks(10);
         c.hotbar(1);
@@ -70,8 +70,8 @@ public final class RcToolUse implements Scenario {
 
     private void oilDetector(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:oil_detector");
-        c.cmd("setblock 0 90 0 hbm:ore_oil");
+        c.cmd("give @s geontm:oil_detector");
+        c.cmd("setblock 0 90 0 geontm:ore_oil");
         c.waitTicks(6);
         c.hotbar(1);
         c.waitTicks(3);
@@ -83,7 +83,7 @@ public final class RcToolUse implements Scenario {
         check(direct.contains("directly below"), "oil in the player's column is a bullseye: " + direct);
         c.screenshot("oil-direct");
         c.cmd("setblock 0 90 0 minecraft:stone");
-        c.cmd("setblock 5 90 5 hbm:ore_oil");
+        c.cmd("setblock 5 90 5 geontm:ore_oil");
         c.waitTicks(4);
         c.use();
         c.waitTicks(6);
@@ -91,7 +91,7 @@ public final class RcToolUse implements Scenario {
         System.out.println(c.node() + " oil on the 5 diagonal: " + near);
         check(near.contains("nearby"), "oil 5 away on the diagonal is detected: " + near);
         c.cmd("setblock 5 90 5 minecraft:stone");
-        c.cmd("setblock 7 90 0 hbm:ore_oil");
+        c.cmd("setblock 7 90 0 geontm:ore_oil");
         c.waitTicks(4);
         c.use();
         c.waitTicks(6);
@@ -99,7 +99,7 @@ public final class RcToolUse implements Scenario {
         System.out.println(c.node() + " oil 7 away (not on a probe column): " + none);
         check(none.contains("No oil"), "oil off the probe columns is not found: " + none);
         c.cmd("setblock 7 90 0 minecraft:stone");
-        c.cmd("setblock 0 90 10 hbm:ore_oil");
+        c.cmd("setblock 0 90 10 geontm:ore_oil");
         c.waitTicks(4);
         c.use();
         c.waitTicks(6);
@@ -111,7 +111,7 @@ public final class RcToolUse implements Scenario {
 
     private void rangefinder(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:rangefinder");
+        c.cmd("give @s geontm:rangefinder");
         c.cmd("setblock 0 101 10 minecraft:stone");
         c.waitTicks(6);
         c.hotbar(1);
@@ -129,8 +129,8 @@ public final class RcToolUse implements Scenario {
 
     private void designator(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:designator");
-        c.cmd("give @s hbm:designator_range");
+        c.cmd("give @s geontm:designator");
+        c.cmd("give @s geontm:designator_range");
         c.cmd("setblock 3 101 3 minecraft:stone");
         c.waitTicks(6);
         c.hotbar(1);
@@ -142,7 +142,7 @@ public final class RcToolUse implements Scenario {
         JsonObject q = new JsonObject();
         q.addProperty("mode", "tooltip");
         q.addProperty("slot", 0);
-        String tip = c.query("hbm_release", q).toString();
+        String tip = c.query("geontm_release", q).toString();
         System.out.println(c.node() + " designator tooltip: " + tip);
         check(tip.contains("X: 3") && tip.contains("Z: 3"), "designator records the clicked block: " + tip);
         c.hotbar(2);
@@ -152,7 +152,7 @@ public final class RcToolUse implements Scenario {
         c.use();
         c.waitTicks(6);
         q.addProperty("slot", 1);
-        String tip2 = c.query("hbm_release", q).toString();
+        String tip2 = c.query("geontm_release", q).toString();
         System.out.println(c.node() + " range designator tooltip: " + tip2);
         check(tip2.contains("X: 3") && tip2.contains("Z: 3"), "range designator records the aimed block: " + tip2);
         c.cmd("setblock 3 101 3 minecraft:air");
@@ -160,7 +160,7 @@ public final class RcToolUse implements Scenario {
 
     private void fertilizer(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:powder_fertilizer 3");
+        c.cmd("give @s geontm:powder_fertilizer 3");
         c.cmd("setblock 0 100 3 minecraft:farmland");
         c.cmd("setblock 0 101 3 minecraft:wheat[age=0]");
         c.waitTicks(6);
@@ -180,8 +180,8 @@ public final class RcToolUse implements Scenario {
 
     private void matches(Client c) {
         c.cmd("clear");
-        c.cmd("give @s hbm:matchstick");
-        c.cmd("give @s hbm:balefire_and_steel");
+        c.cmd("give @s geontm:matchstick");
+        c.cmd("give @s geontm:balefire_and_steel");
         c.cmd("setblock -2 100 -2 minecraft:stone");
         c.waitTicks(6);
         c.hotbar(1);
@@ -210,7 +210,7 @@ public final class RcToolUse implements Scenario {
     }
 
     private String info(Client c) {
-        JsonObject r = c.query("hbm_info", new JsonObject());
+        JsonObject r = c.query("geontm_info", new JsonObject());
         JsonArray msgs = r.has("messages") ? r.getAsJsonArray("messages") : new JsonArray();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < msgs.size(); i++) sb.append(msgs.get(i).getAsString()).append(" / ");

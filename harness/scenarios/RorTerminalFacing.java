@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** The RoR terminal in four facings: slab and screen must sit in the three-quarter shape, screen on the open quarter. */
 public final class RorTerminalFacing implements Scenario {
@@ -22,7 +22,7 @@ public final class RorTerminalFacing implements Scenario {
 
         for (int i = 0; i < FACINGS.length; i++) {
             int[] s = SPOTS[i];
-            c.cmd("setblock " + s[0] + " " + G + " " + s[1] + " hbm:rbmk_terminal[facing=" + FACINGS[i] + "]");
+            c.cmd("setblock " + s[0] + " " + G + " " + s[1] + " geontm:rbmk_terminal[facing=" + FACINGS[i] + "]");
         }
         c.waitTicks(20);
         for (int i = 0; i < FACINGS.length; i++) {

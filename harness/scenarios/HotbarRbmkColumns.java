@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /** RBMK columns in the hotbar must not hide the rest of it (ImmediatelyFast batches the HUD). */
 public final class HotbarRbmkColumns implements Scenario {
@@ -15,8 +15,8 @@ public final class HotbarRbmkColumns implements Scenario {
         c.cmd("give @s minecraft:diamond_sword 1");
         c.waitTicks(10);
         c.screenshot("01-hotbar-vanilla");
-        c.cmd("give @s hbm:rbmk_control 1");
-        c.cmd("give @s hbm:rbmk_blank 1");
+        c.cmd("give @s geontm:rbmk_control 1");
+        c.cmd("give @s geontm:rbmk_blank 1");
         c.waitTicks(10);
         c.screenshot("02-hotbar-rbmk");
         c.hotbar(3);

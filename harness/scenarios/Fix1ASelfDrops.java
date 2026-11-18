@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Fix wave 1A (2026-10-03): machines and rails that dropped nothing now drop themselves, exactly once, as 1.7's
@@ -18,7 +18,7 @@ public final class Fix1ASelfDrops implements Scenario {
     @Override
     public void run(Client c) throws Exception {
         c.markLog();
-        String[] ids = {"hbm:geiger", "hbm:furnace_iron", "hbm:rail_large_straight", "hbm:machine_armor_table"};
+        String[] ids = {"geontm:geiger", "geontm:furnace_iron", "geontm:rail_large_straight", "geontm:machine_armor_table"};
         int x = 0;
         for (String id : ids) {
             int z = 0;

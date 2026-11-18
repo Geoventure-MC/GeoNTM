@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public final class RcVisualLang implements Scenario {
         c.cmd("gamemode creative");
         c.waitTicks(10);
         List<String> out = new ArrayList<>();
-        JsonObject reg = c.query("hbm_lang_audit", obj("mode", "registries"));
+        JsonObject reg = c.query("geontm_lang_audit", obj("mode", "registries"));
         out.add("registries checked=" + reg.get("checked"));
         for (JsonElement e : reg.getAsJsonArray("missing")) out.add("MISSING " + e.getAsString());
         int missing = reg.getAsJsonArray("missing").size();
@@ -36,7 +36,7 @@ public final class RcVisualLang implements Scenario {
                 p.addProperty("from", from);
                 p.addProperty("to", from + 700);
                 p.addProperty("dump", true);
-                JsonObject r = c.query("hbm_lang_audit", p);
+                JsonObject r = c.query("geontm_lang_audit", p);
                 if (from == 0) out.add("shift=" + shift + " total=" + r.get("total"));
                 for (JsonElement e : r.getAsJsonArray("flagged")) {
                     JsonObject o = e.getAsJsonObject();

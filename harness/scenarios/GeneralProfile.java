@@ -1,12 +1,12 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Frame and tick cost of common scenes, one {@code /golem profiler 15} capture each, written to the run's {@code golem}
+ * Frame and tick cost of common scenes, one {@code /geocore profiler 15} capture each, written to the run's {@code geocore}
  * folder in this order: 48 idle machines in view, machines running (turbofans burning kerosene, arc furnaces, blast
- * furnaces and crucibles smoking, burning RBMK debris), and a crowd of HBM mobs. Asserts nothing.
+ * furnaces and crucibles smoking, burning RBMK debris), and a crowd of GEONTM mobs. Asserts nothing.
  */
 public final class GeneralProfile implements Scenario {
 
@@ -42,7 +42,7 @@ public final class GeneralProfile implements Scenario {
             for (int row = 0; row < 6; row++) {
                 for (int column = 0; column < 8; column++) {
                     String machine = IDLE[(row * 8 + column) % IDLE.length];
-                    Fixtures.setBlock(c, X - 35 + column * 10, G, Z - 25 + row * 10, "hbm:" + machine + "[facing=north]");
+                    Fixtures.setBlock(c, X - 35 + column * 10, G, Z - 25 + row * 10, "geontm:" + machine + "[facing=north]");
                 }
             }
             c.cmd("gamemode spectator");
@@ -51,25 +51,25 @@ public final class GeneralProfile implements Scenario {
 
             clear(c);
             for (int i = 0; i < 4; i++) {
-                int[] p = place(c, X - 24 + i * 12, Z - 10, "hbm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
-                c.cmd("data merge block " + at(p) + " {tank:24000,tank_type:\"hbm:kerosene\"}");
+                int[] p = place(c, X - 24 + i * 12, Z - 10, "geontm:machine_turbofan[facing=north]", "TileEntityMachineTurbofan");
+                c.cmd("data merge block " + at(p) + " {tank:24000,tank_type:\"geontm:kerosene\"}");
             }
             for (int i = 0; i < 2; i++) {
-                int[] p = place(c, X - 12 + i * 24, Z + 6, "hbm:machine_arc_furnace[facing=north]", "TileEntityMachineArcFurnaceLarge");
+                int[] p = place(c, X - 12 + i * 24, Z + 6, "geontm:machine_arc_furnace[facing=north]", "TileEntityMachineArcFurnaceLarge");
                 c.cmd("data merge block " + at(p) + " {power:100000000L,lid:1f,delay:0,inventory:{Items:["
-                        + stack(0, "hbm:arc_electrode", 1) + "," + stack(1, "hbm:arc_electrode", 1) + ","
-                        + stack(2, "hbm:arc_electrode", 1) + "," + stack(25, "minecraft:flint", 64) + "]}}");
+                        + stack(0, "geontm:arc_electrode", 1) + "," + stack(1, "geontm:arc_electrode", 1) + ","
+                        + stack(2, "geontm:arc_electrode", 1) + "," + stack(25, "minecraft:flint", 64) + "]}}");
             }
             for (int i = 0; i < 2; i++) {
-                int[] p = place(c, X - 30 + i * 60, Z + 6, "hbm:machine_blast_furnace[facing=north]", "TileEntityMachineBlastFurnace");
+                int[] p = place(c, X - 30 + i * 60, Z + 6, "geontm:machine_blast_furnace[facing=north]", "TileEntityMachineBlastFurnace");
                 c.cmd("data merge block " + at(p) + " {fuel:64000,t1:1000,inventory:{Items:["
                         + stack(1, "minecraft:iron_ingot", 64) + "," + stack(2, "minecraft:sand", 64) + "]}}");
             }
             for (int i = 0; i < 2; i++) {
-                int[] p = place(c, X - 20 + i * 40, Z + 18, "hbm:machine_crucible[facing=north]", "TileEntityCrucible");
+                int[] p = place(c, X - 20 + i * 40, Z + 18, "geontm:machine_crucible[facing=north]", "TileEntityCrucible");
                 c.cmd("data merge block " + at(p) + " {rec:[{mat:\"iron\",amount:720}]}");
             }
-            for (int x = -16; x <= 16; x += 2) Fixtures.setBlock(c, X + x, G, Z + 26, "hbm:rbmk_debris_burning");
+            for (int x = -16; x <= 16; x += 2) Fixtures.setBlock(c, X + x, G, Z + 26, "geontm:rbmk_debris_burning");
             view(c, X, G + 22, Z - 40, X, G, Z + 6);
             c.screenshot("2-running-machines");
             capture(c, "2-running-machines");
@@ -77,7 +77,7 @@ public final class GeneralProfile implements Scenario {
             clear(c);
             c.cmd("difficulty normal");
             for (int i = 0; i < 48; i++) {
-                String mob = i % 3 == 0 ? "hbm:entity_glyphid_brawler" : i % 3 == 1 ? "hbm:entity_glyphid" : "hbm:entity_mob_nuclear_creeper";
+                String mob = i % 3 == 0 ? "geontm:entity_glyphid_brawler" : i % 3 == 1 ? "geontm:entity_glyphid" : "geontm:entity_mob_nuclear_creeper";
                 c.cmd("summon " + mob + " " + (X - 21 + (i % 8) * 6) + " " + G + " " + (Z - 15 + (i / 8) * 6)
                         + " {NoAI:1b,PersistenceRequired:1b,Silent:1b}");
             }
@@ -105,7 +105,7 @@ public final class GeneralProfile implements Scenario {
 
     private static void capture(Client c, String name) throws Exception {
         c.screenshot(name);
-        c.cmd("golem profiler 15");
+        c.cmd("geocore profiler 15");
         c.waitTicks(20 * 20);
     }
 

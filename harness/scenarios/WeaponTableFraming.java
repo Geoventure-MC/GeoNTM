@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * History §19es-weapontable: the weapon table preview frames each gun with its own 1.7 {@code setupModTable}, and the
@@ -31,7 +31,7 @@ public final class WeaponTableFraming implements Scenario {
         c.cmd("fill -8 " + (Y - 1) + " -8 8 " + (Y + 6) + " 8 minecraft:air");
         Fixtures.platform(c, 0, Y, 0, 8);
         c.cmd("clear");
-        Fixtures.placeOnTop(c, "hbm:machine_weapon_table", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_weapon_table", 0, Y, 0);
         c.waitTicks(10);
         c.teleport(0.5, Y + 1, -2.5);
         Fixtures.interact(c, 0, Y + 1, 0);
@@ -51,18 +51,18 @@ public final class WeaponTableFraming implements Scenario {
 
         c.key("escape");
         c.waitTicks(5);
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(weapon|gem|scene|render|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(weapon|gem|scene|render|geontm)");
     }
 
     private static int photograph(Client c, String gun, int n, boolean akimbo) {
         c.cmd("clear");
-        c.cmd("give @s hbm:" + gun + " 1");
+        c.cmd("give @s geontm:" + gun + " 1");
         c.waitTicks(5);
-        int from = inventorySlot(c, "hbm:" + gun);
+        int from = inventorySlot(c, "geontm:" + gun);
         Expect.that(from >= 0, gun + " visible in the player inventory");
         c.slotClick(from, 0, "QUICK_MOVE");
         c.waitTicks(5);
-        int table = tableSlot(c, "hbm:" + gun);
+        int table = tableSlot(c, "geontm:" + gun);
         Expect.that(table >= 0, gun + " must move into the weapon table");
         JsonObject screen = c.screen();
         int left = screen.get("left").getAsInt(), top = screen.get("top").getAsInt();
@@ -89,7 +89,7 @@ public final class WeaponTableFraming implements Scenario {
         }
         c.slotClick(table, 0, "QUICK_MOVE");
         c.waitTicks(5);
-        Expect.that(tableSlot(c, "hbm:" + gun) < 0, gun + " must leave the weapon table");
+        Expect.that(tableSlot(c, "geontm:" + gun) < 0, gun + " must leave the weapon table");
         return n + 1;
     }
 

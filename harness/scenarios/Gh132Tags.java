@@ -1,35 +1,35 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
 /**
  * GitHub issue 132: HBM's category and convention tags are in the game. Each tag is asked through vanilla commands
  * ({@code /clear @s <tag> 0} counts the held members, {@code /execute if block} tests a placed block); with EMI in the
- * run its tag search ({@code #hbm:ammo}) is filmed in the inventory. The armour slot tags exist from 1.21 only.
+ * run its tag search ({@code #geontm:ammo}) is filmed in the inventory. The armour slot tags exist from 1.21 only.
  */
 public final class Gh132Tags implements Scenario {
 
     private static final String[][] ITEMS = {
-            {"hbm:guns", "hbm:gun_light_revolver"},
-            {"hbm:ammo", "hbm:ammo_dgk"},
-            {"hbm:food", "hbm:apple_lead"},
-            {"c:foods", "hbm:apple_lead"},
-            {"hbm:armor", "hbm:ajr_helmet"},
-            {"c:armors", "hbm:ajr_helmet"},
-            {"hbm:bombs", "hbm:bomb_multi"},
-            {"hbm:missiles", "hbm:designator"},
-            {"hbm:machines", "hbm:anvil_desh"},
-            {"hbm:hazardous/radioactive", "hbm:ingot_uranium"},
-            {"hbm:hazardous/hot", "hbm:ingot_pu238"},
-            {"hbm:hazardous", "hbm:ingot_pu238"},
-            {"hbm:blast_resistant/nuclear", "hbm:ducrete"},
-            {"hbm:blast_resistant", "hbm:concrete"},
-            {"c:tools/ranged_weapon", "hbm:gun_light_revolver"},
-            {"c:ores", "hbm:ore_aluminium"},
+            {"geontm:guns", "geontm:gun_light_revolver"},
+            {"geontm:ammo", "geontm:ammo_dgk"},
+            {"geontm:food", "geontm:apple_lead"},
+            {"c:foods", "geontm:apple_lead"},
+            {"geontm:armor", "geontm:ajr_helmet"},
+            {"c:armors", "geontm:ajr_helmet"},
+            {"geontm:bombs", "geontm:bomb_multi"},
+            {"geontm:missiles", "geontm:designator"},
+            {"geontm:machines", "geontm:anvil_desh"},
+            {"geontm:hazardous/radioactive", "geontm:ingot_uranium"},
+            {"geontm:hazardous/hot", "geontm:ingot_pu238"},
+            {"geontm:hazardous", "geontm:ingot_pu238"},
+            {"geontm:blast_resistant/nuclear", "geontm:ducrete"},
+            {"geontm:blast_resistant", "geontm:concrete"},
+            {"c:tools/ranged_weapon", "geontm:gun_light_revolver"},
+            {"c:ores", "geontm:ore_aluminium"},
     };
 
     private static final int Y = 100, G = 101;
@@ -45,15 +45,15 @@ public final class Gh132Tags implements Scenario {
             String tag = row[0].startsWith("c:") ? convention + row[0].substring(2) : row[0];
             Expect.that(counts(c, tag, row[1]), tag + " holds " + row[1]);
         }
-        Expect.that(!counts(c, "hbm:blast_resistant/nuclear", "hbm:concrete"), "concrete is below the nuclear tier");
+        Expect.that(!counts(c, "geontm:blast_resistant/nuclear", "geontm:concrete"), "concrete is below the nuclear tier");
         boolean armorSlots = !c.node().startsWith("1.20.1");
-        Expect.that(counts(c, "minecraft:head_armor", "hbm:ajr_helmet") == armorSlots, "head_armor only from 1.21");
+        Expect.that(counts(c, "minecraft:head_armor", "geontm:ajr_helmet") == armorSlots, "head_armor only from 1.21");
 
-        Fixtures.setBlock(c, 0, G, 2, "hbm:brick_ducrete");
-        Expect.that(blockIs(c, "hbm:blast_resistant/nuclear"), "ducrete bricks are a nuclear-tier block");
-        Expect.that(!blockIs(c, "hbm:blast_resistant/obsidian"), "ducrete bricks are below the obsidian tier");
-        Fixtures.setBlock(c, 0, G, 2, "hbm:cmb_brick");
-        Expect.that(blockIs(c, "hbm:blast_resistant/obsidian"), "CMB bricks are an obsidian-tier block");
+        Fixtures.setBlock(c, 0, G, 2, "geontm:brick_ducrete");
+        Expect.that(blockIs(c, "geontm:blast_resistant/nuclear"), "ducrete bricks are a nuclear-tier block");
+        Expect.that(!blockIs(c, "geontm:blast_resistant/obsidian"), "ducrete bricks are below the obsidian tier");
+        Fixtures.setBlock(c, 0, G, 2, "geontm:cmb_brick");
+        Expect.that(blockIs(c, "geontm:blast_resistant/obsidian"), "CMB bricks are an obsidian-tier block");
 
         if (has(c, "emi")) {
             c.cmd("clear");
@@ -62,7 +62,7 @@ public final class Gh132Tags implements Scenario {
                 c.waitTicks(20);
             }
             Expect.that(String.valueOf(c.screenClass()).contains("Inventory"), "the inventory is open: " + c.screenClass());
-            for (String tag : new String[] {"#hbm:ammo", "#hbm:blast_resistant/nuclear"}) {
+            for (String tag : new String[] {"#geontm:ammo", "#geontm:blast_resistant/nuclear"}) {
                 JsonObject search = new JsonObject();
                 search.addProperty("op", "search");
                 search.addProperty("text", tag);
@@ -73,7 +73,7 @@ public final class Gh132Tags implements Scenario {
             c.key("escape");
             c.waitTicks(5);
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(hbm|golem|tag)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|\\[ERROR\\]).*(geontm|geocore|tag)");
         System.out.println("[Gh132] PASS");
     }
 

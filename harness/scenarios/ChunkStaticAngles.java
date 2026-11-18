@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 
@@ -30,12 +30,12 @@ public class ChunkStaticAngles implements Scenario {
         c.cmd("gamerule doDaylightCycle false");
         Fixtures.platform(c, 0, Y, BLOCKS.size() * GAP / 2, BLOCKS.size() * GAP / 2 + 8);
         c.cmd("fill -6 " + (Y + 1) + " -6 6 " + (UP + 4) + " " + (BLOCKS.size() * GAP + 12) + " minecraft:air");
-        for (int k = 0; k < BLOCKS.size(); k++) Fixtures.setBlock(c, 0, UP, k * GAP, "hbm:" + BLOCKS.get(k));
+        for (int k = 0; k < BLOCKS.size(); k++) Fixtures.setBlock(c, 0, UP, k * GAP, "geontm:" + BLOCKS.get(k));
         int lz = BLOCKS.size() * GAP;
         c.cmd("fill 0 " + (UP + 1) + " " + lz + " 2 " + (UP + 1) + " " + lz + " minecraft:stone");
-        for (int x = 0; x <= 2; x++) Fixtures.setBlock(c, x, UP, lz, "hbm:spotlight_fluoro[facing=down]");
+        for (int x = 0; x <= 2; x++) Fixtures.setBlock(c, x, UP, lz, "geontm:spotlight_fluoro[facing=down]");
         c.cmd("setblock 0 " + UP + " " + (lz + 1) + " minecraft:stone");
-        Fixtures.setBlock(c, 0, UP, lz + 2, "hbm:spotlight_incandescent[facing=south]");
+        Fixtures.setBlock(c, 0, UP, lz + 2, "geontm:spotlight_incandescent[facing=south]");
         c.cmd("clear");
         c.key("f1");
         c.cmd("gamemode spectator");

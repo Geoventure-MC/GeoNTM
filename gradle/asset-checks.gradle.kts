@@ -2,14 +2,14 @@ import groovy.json.JsonSlurper
 
 // HBM's own resource-level regression checks for its item-model vocabulary (machine OBJ transforms, Sedna
 // gun bases, missile icons, block-space OBJ frames). They used to live in legacy-assets.gradle.kts; the
-// conversion itself is shared now (../Golem-Core/gradle/mod/legacy-assets.gradle.kts) and this file holds
-// only what is specific to HBM. Apply it after that script: the gun and missile checks read the conversion's
-// `golem.legacyAssets.parentModelOf` export, so they check the routing the build actually applies.
+// conversion itself is shared now (../GeoCore/gradle/mod/legacy-assets.gradle.kts) and this file holds
+// only what is specific to GEONTM. Apply it after that script: the gun and missile checks read the conversion's
+// `geocore.legacyAssets.parentModelOf` export, so they check the routing the build actually applies.
 
 /** The model an item definition resolves to below 1.21.4, as the shared legacy conversion computes it. */
 fun Project.parentModelOf(definition: File): String? {
     @Suppress("UNCHECKED_CAST")
-    val function = extra["golem.legacyAssets.parentModelOf"] as (File) -> String?
+    val function = extra["geocore.legacyAssets.parentModelOf"] as (File) -> String?
     return function(definition)
 }
 
@@ -43,22 +43,22 @@ data class MachineObjTransformExpectation(
  * pose no oracle produced and made the drift permanent.
  */
 val GUN_OBJ_EXPECTATIONS = mapOf(
-    "gun_pepperbox" to "hbm:item/gun_obj_pepperbox_base",
-    "gun_g3" to "hbm:item/gun_obj_g3_base",
-    "gun_light_revolver_dani" to "hbm:item/gun_obj_dani_base",
-    "gun_b92" to "hbm:item/gun_b92_base",
+    "gun_pepperbox" to "geontm:item/gun_obj_pepperbox_base",
+    "gun_g3" to "geontm:item/gun_obj_g3_base",
+    "gun_light_revolver_dani" to "geontm:item/gun_obj_dani_base",
+    "gun_b92" to "geontm:item/gun_b92_base",
 )
 
 
 val RTG_BLOCKSTATE_IDS = listOf("machine_minirtg", "rtg_polonium", "machine_rtg_grey")
-val MACHINE_OBJ_ITEM_BASE = "hbm:item/machine_obj_base"
+val MACHINE_OBJ_ITEM_BASE = "geontm:item/machine_obj_base"
 
 /** Centered item scales derived from submitted OBJ bounds, using the assembly machine's 1.05-unit frame. */
 val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     "pa_source" to MachineObjTransformExpectation(
         0.5, 90.0,
-        obj = "hbm:models/particleaccelerator/source.obj",
-        texture = "hbm:textures/models/particleaccelerator/source.png",
+        obj = "geontm:models/particleaccelerator/source.obj",
+        texture = "geontm:textures/models/particleaccelerator/source.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -1.0, 0.0),
@@ -67,8 +67,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "pa_rfc" to MachineObjTransformExpectation(
         0.5, 90.0,
-        obj = "hbm:models/particleaccelerator/rfc.obj",
-        texture = "hbm:textures/models/particleaccelerator/rfc.png",
+        obj = "geontm:models/particleaccelerator/rfc.obj",
+        texture = "geontm:textures/models/particleaccelerator/rfc.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -1.0, 0.0),
@@ -77,8 +77,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "pa_detector" to MachineObjTransformExpectation(
         0.5, 90.0,
-        obj = "hbm:models/particleaccelerator/detector.obj",
-        texture = "hbm:textures/models/particleaccelerator/detector.png",
+        obj = "geontm:models/particleaccelerator/detector.obj",
+        texture = "geontm:textures/models/particleaccelerator/detector.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -1.0, 0.0),
@@ -87,8 +87,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "pa_beamline" to MachineObjTransformExpectation(
         1.0, 90.0,
-        obj = "hbm:models/particleaccelerator/beamline.obj",
-        texture = "hbm:textures/models/particleaccelerator/beamline.png",
+        obj = "geontm:models/particleaccelerator/beamline.obj",
+        texture = "geontm:textures/models/particleaccelerator/beamline.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, 0.0, 0.0),
@@ -97,8 +97,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "pa_dipole" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/particleaccelerator/dipole.obj",
-        texture = "hbm:textures/models/particleaccelerator/dipole.png",
+        obj = "geontm:models/particleaccelerator/dipole.obj",
+        texture = "geontm:textures/models/particleaccelerator/dipole.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -3.0, 0.0),
@@ -107,8 +107,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "pa_quadrupole" to MachineObjTransformExpectation(
         1.0, 90.0,
-        obj = "hbm:models/particleaccelerator/quadrupole.obj",
-        texture = "hbm:textures/models/particleaccelerator/quadrupole.png",
+        obj = "geontm:models/particleaccelerator/quadrupole.obj",
+        texture = "geontm:textures/models/particleaccelerator/quadrupole.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -3.5, 0.0),
@@ -117,8 +117,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "dfc_emitter" to MachineObjTransformExpectation(
         2.0, 90.0,
-        obj = "hbm:models/core_emitter.obj",
-        texture = "hbm:textures/models/machines/core_emitter.png",
+        obj = "geontm:models/core_emitter.obj",
+        texture = "geontm:textures/models/machines/core_emitter.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -2.5, 0.0),
@@ -127,8 +127,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "dfc_receiver" to MachineObjTransformExpectation(
         2.0, 90.0,
-        obj = "hbm:models/core_receiver.obj",
-        texture = "hbm:textures/models/machines/core_receiver.png",
+        obj = "geontm:models/core_receiver.obj",
+        texture = "geontm:textures/models/machines/core_receiver.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -2.5, 0.0),
@@ -137,8 +137,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "dfc_injector" to MachineObjTransformExpectation(
         2.0, 90.0,
-        obj = "hbm:models/core_injector.obj",
-        texture = "hbm:textures/models/machines/core_injector.png",
+        obj = "geontm:models/core_injector.obj",
+        texture = "geontm:textures/models/machines/core_injector.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -2.5, 0.0),
@@ -147,8 +147,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "dfc_stabilizer" to MachineObjTransformExpectation(
         2.0, 90.0,
-        obj = "hbm:models/core_injector.obj",
-        texture = "hbm:textures/models/machines/core_stabilizer.png",
+        obj = "geontm:models/core_injector.obj",
+        texture = "geontm:textures/models/machines/core_stabilizer.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -2.5, 0.0),
@@ -157,8 +157,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "cargo_elevator" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/elevator.obj",
-        texture = "hbm:textures/models/machines/elevator.png",
+        obj = "geontm:models/machines/elevator.obj",
+        texture = "geontm:textures/models/machines/elevator.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -2.75, 0.0),
@@ -167,8 +167,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "machine_satlink" to MachineObjTransformExpectation(
         0.5, 0.0,
-        obj = "hbm:models/machines/satlink.obj",
-        texture = "hbm:textures/models/machines/satlink.png",
+        obj = "geontm:models/machines/satlink.obj",
+        texture = "geontm:textures/models/machines/satlink.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -5.0, 0.0),
@@ -177,8 +177,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "machine_bigasstank" to MachineObjTransformExpectation(
         0.5, 0.0,
-        obj = "hbm:models/machines/bigasstank.obj",
-        texture = "hbm:textures/models/machines/bigasstank.png",
+        obj = "geontm:models/machines/bigasstank.obj",
+        texture = "geontm:textures/models/machines/bigasstank.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -1.0, 0.0),
@@ -188,8 +188,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01): 1.7 ItemRenderLibrary inv translate(0, -3, 0) scale(2), raw
     "machine_bat9000" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/bat9000.obj",
-        texture = "hbm:textures/models/machines/bat9000.png",
+        obj = "geontm:models/machines/bat9000.obj",
+        texture = "geontm:textures/models/machines/bat9000.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -3.0, 0.0),
@@ -197,8 +197,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "machine_battery_redd" to MachineObjTransformExpectation(
         0.5, -90.0,
-        obj = "hbm:models/machines/fensu2.obj",
-        texture = "hbm:textures/models/machines/fensu2.png",
+        obj = "geontm:models/machines/fensu2.obj",
+        texture = "geontm:textures/models/machines/fensu2.png",
         exclude = listOf("Plasma"),
         directModel = true,
         rawLegacyTransform = true,
@@ -218,8 +218,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "fusion_plasma_forge" to MachineObjTransformExpectation(
         0.5, 90.0,
-        obj = "hbm:models/fusion/plasma_forge.obj",
-        texture = "hbm:textures/models/fusion/plasma_forge.png",
+        obj = "geontm:models/fusion/plasma_forge.obj",
+        texture = "geontm:textures/models/fusion/plasma_forge.png",
         exclude = listOf("Plasma"),
         blackParts = listOf("Plasma"),
         directModel = true,
@@ -239,7 +239,7 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "machine_turbofan" to MachineObjTransformExpectation(
         1.0, 0.0,
-        overlayTexture = "hbm:textures/models/machines/turbofan_back.png",
+        overlayTexture = "geontm:textures/models/machines/turbofan_back.png",
         overlayParts = listOf("Afterburner"),
         directModel = true,
         rawLegacyTransform = true,
@@ -251,8 +251,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_radgen" to MachineObjTransformExpectation(
         0.5, 0.0,
-        obj = "hbm:models/machines/radgen.obj",
-        texture = "hbm:textures/models/machines/rad_gen_body.png",
+        obj = "geontm:models/machines/radgen.obj",
+        texture = "geontm:textures/models/machines/rad_gen_body.png",
         noCull = true,
         exclude = listOf("Glass"),
         directModel = true,
@@ -330,8 +330,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_solar_boiler" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/solar_boiler.obj",
-        texture = "hbm:textures/models/machines/solar_boiler.png",
+        obj = "geontm:models/machines/solar_boiler.obj",
+        texture = "geontm:textures/models/machines/solar_boiler.png",
         noCull = true,
         exclude = listOf("Overglow_1", "Overglow_2", "Overglow_3"),
         directModel = true,
@@ -399,8 +399,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01): 1.7 RenderDiFurnaceExtension.renderInventoryBlock translate(0, -0.5, 0) on the block frame
     "machine_difurnace_ext" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/block/difurnace_extension.obj",
-        texture = "hbm:textures/blocks/difurnace_extension.png",
+        obj = "geontm:models/block/difurnace_extension.obj",
+        texture = "geontm:textures/blocks/difurnace_extension.png",
         directModel = true,
         rawLegacyTransform = true,
         itemTranslate = listOf(0.0, -0.5, 0.0),
@@ -408,8 +408,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "furnace_iron" to MachineObjTransformExpectation(
         1.0, 90.0,
-        obj = "hbm:models/machines/furnace_iron.obj",
-        texture = "hbm:textures/models/machines/furnace_iron.png",
+        obj = "geontm:models/machines/furnace_iron.obj",
+        texture = "geontm:textures/models/machines/furnace_iron.png",
         exclude = listOf("On"),
         directModel = true,
         rawLegacyTransform = true,
@@ -436,8 +436,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_gascent" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/centrifuge_gas.obj",
-        texture = "hbm:textures/models/machines/centrifuge_gas.png",
+        obj = "geontm:models/machines/centrifuge_gas.obj",
+        texture = "geontm:textures/models/machines/centrifuge_gas.png",
         exclude = listOf("Flag"),
         directModel = true,
         rawLegacyTransform = true,
@@ -456,8 +456,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_deuterium_tower" to MachineObjTransformExpectation(
         0.5, 180.0,
-        obj = "hbm:models/machines/machine_deuterium_tower.obj",
-        texture = "hbm:textures/models/machines/machine_deuterium_tower.png",
+        obj = "geontm:models/machines/machine_deuterium_tower.obj",
+        texture = "geontm:textures/models/machines/machine_deuterium_tower.png",
         noCull = true,
         directModel = true,
         rawLegacyTransform = true,
@@ -468,8 +468,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_uf6_tank" to MachineObjTransformExpectation(
         1.0, -90.0,
-        obj = "hbm:models/tank.obj",
-        texture = "hbm:textures/models/machines/uf6tank.png",
+        obj = "geontm:models/tank.obj",
+        texture = "geontm:textures/models/machines/uf6tank.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -4.0, 0.0),
@@ -479,8 +479,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     // icon-P2 (2026-10-01) raw 1.7 ItemRenderLibrary chain, see ObjItemDeclarations
     "machine_puf6_tank" to MachineObjTransformExpectation(
         1.0, -90.0,
-        obj = "hbm:models/tank.obj",
-        texture = "hbm:textures/models/machines/puf6tank.png",
+        obj = "geontm:models/tank.obj",
+        texture = "geontm:textures/models/machines/puf6tank.png",
         directModel = true,
         rawLegacyTransform = true,
         guiTranslate = listOf(0.0, -4.0, 0.0),
@@ -506,8 +506,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "radio_telex" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/telex.obj",
-        texture = "hbm:textures/models/machines/telex.png",
+        obj = "geontm:models/machines/telex.obj",
+        texture = "geontm:textures/models/machines/telex.png",
         noCull = true,
         directModel = true,
         rawLegacyTransform = true,
@@ -517,8 +517,8 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "radio_autocal" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/autocal.obj",
-        texture = "hbm:textures/models/machines/autocal.png",
+        obj = "geontm:models/machines/autocal.obj",
+        texture = "geontm:textures/models/machines/autocal.png",
         noCull = true,
         directModel = true,
         rawLegacyTransform = true,
@@ -546,23 +546,23 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
     ),
     "machine_minirtg" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/rtg.obj",
-        texture = "hbm:textures/models/machines/rtg_cell.png",
+        obj = "geontm:models/machines/rtg.obj",
+        texture = "geontm:textures/models/machines/rtg_cell.png",
         noCull = true,
         exclude = emptyList(),
     ),
     "rtg_polonium" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/rtg.obj",
-        texture = "hbm:textures/models/machines/rtg_polonium.png",
+        obj = "geontm:models/machines/rtg.obj",
+        texture = "geontm:textures/models/machines/rtg_polonium.png",
         noCull = true,
         exclude = emptyList(),
     ),
     // icon-P2 (2026-10-01): 1.7 RenderRTGBlock.renderInventoryBlock translate(0, -0.5, 0) on the block frame
     "machine_rtg_grey" to MachineObjTransformExpectation(
         1.0, 0.0,
-        obj = "hbm:models/machines/rtg.obj",
-        texture = "hbm:textures/models/machines/rtg.png",
+        obj = "geontm:models/machines/rtg.obj",
+        texture = "geontm:textures/models/machines/rtg.png",
         noCull = true,
         exclude = emptyList(),
         directModel = true,
@@ -573,26 +573,26 @@ val MACHINE_OBJ_TRANSFORM_EXPECTATIONS = mapOf(
 
 
 /**
- * The same marker for a Sedna gun. `hbm:gun` is a whole item MODEL on 26.1 (only that layer is handed the
+ * The same marker for a Sedna gun. `geontm:gun` is a whole item MODEL on 26.1 (only that layer is handed the
  * display context a weapon needs); below it the equivalent is the same per-loader BEWLR the machines use.
  * Every gun base inherits this `builtin/entity` marker, so modern properties and legacy routing consume
  * that base's one display block.
  */
-val GUN_OBJ_LEGACY_MODEL = "hbm:item/gun_obj_legacy"
-val GUN_OBJ_BASE_MODEL = "hbm:item/gun_obj_base"
+val GUN_OBJ_LEGACY_MODEL = "geontm:item/gun_obj_legacy"
+val GUN_OBJ_BASE_MODEL = "geontm:item/gun_obj_base"
 
 /** The authored gun bases. `gun_obj_base` itself is generated, so it is not among them. */
 val gunBaseChain = listOf("gun_obj_pepperbox_base", "gun_obj_g3_base", "gun_obj_dani_base", "gun_b92_base")
 
 /**
- * One hbm asset as the mod ships it: the Dejson-declared copy the build generated, or an authored file
+ * One geontm asset as the mod ships it: the Dejson-declared copy the build generated, or an authored file
  * where one still exists (an authored file wins in the jar, so it wins here too). Item definitions and
  * models are declarations now, so reading `src/main/resources` alone would find nothing.
  */
-fun Project.hbmAsset(relative: String): File {
-    val authored = rootProject.file("src/main/resources/assets/hbm/$relative")
+fun Project.geontmAsset(relative: String): File {
+    val authored = rootProject.file("src/main/resources/assets/geontm/$relative")
     if (authored.isFile) return authored
-    return layout.buildDirectory.file("generated/dejson/assets/hbm/$relative").get().asFile
+    return layout.buildDirectory.file("generated/dejson/assets/geontm/$relative").get().asFile
 }
 
 /**
@@ -626,7 +626,7 @@ fun Project.registerMachineObjTransformChecks() {
                 }
             }
             MACHINE_OBJ_TRANSFORM_EXPECTATIONS.forEach { (name, expected) ->
-                val file = hbmAsset("items/$name.json")
+                val file = geontmAsset("items/$name.json")
                 check(file.isFile) { "Missing machine OBJ item definition: $file" }
                 @Suppress("UNCHECKED_CAST")
                 val root = JsonSlurper().parse(file) as? Map<String, Any?>
@@ -634,7 +634,7 @@ fun Project.registerMachineObjTransformChecks() {
                 @Suppress("UNCHECKED_CAST")
                 val rootModel = root["model"] as? Map<String, Any?>
                     ?: error("Missing model object: $file")
-                check((rootModel["type"] == "hbm:machine_obj") == expected.directModel) {
+                check((rootModel["type"] == "geontm:machine_obj") == expected.directModel) {
                     "$file has the wrong item-model form"
                 }
                 if (!expected.directModel) {
@@ -647,18 +647,18 @@ fun Project.registerMachineObjTransformChecks() {
                 }
                 @Suppress("UNCHECKED_CAST")
                 val model = when (rootModel["type"]) {
-                    "hbm:machine_obj" -> rootModel
+                    "geontm:machine_obj" -> rootModel
                     "minecraft:special" -> {
                         check(rootModel["base"] == MACHINE_OBJ_ITEM_BASE) {
                             "$file must use $MACHINE_OBJ_ITEM_BASE as its special-model base"
                         }
                         rootModel["model"] as? Map<String, Any?>
-                            ?: error("Missing nested hbm:machine_obj model: $file")
+                            ?: error("Missing nested geontm:machine_obj model: $file")
                     }
-                    else -> error("$file must use hbm:machine_obj directly or inside minecraft:special")
+                    else -> error("$file must use geontm:machine_obj directly or inside minecraft:special")
                 }
-                check(model["type"] == "hbm:machine_obj") {
-                    "$file must use the hbm:machine_obj item-model type"
+                check(model["type"] == "geontm:machine_obj") {
+                    "$file must use the geontm:machine_obj item-model type"
                 }
                 expected.obj?.let { check(model["obj"] == it) { "$name.obj expected $it but was ${model["obj"]}" } }
                 expected.texture?.let {
@@ -725,11 +725,11 @@ fun Project.registerMachineObjTransformChecks() {
             val pending = ArrayDeque<Pair<String, Any?>>()
             // Every item definition the jar ships: the declared ones, with an authored file winning.
             val definitions = sortedMapOf<String, File>()
-            listOf(layout.buildDirectory.dir("generated/dejson/assets/hbm/items").get().asFile,
-                rootProject.file("src/main/resources/assets/hbm/items")).forEach { directory ->
+            listOf(layout.buildDirectory.dir("generated/dejson/assets/geontm/items").get().asFile,
+                rootProject.file("src/main/resources/assets/geontm/items")).forEach { directory ->
                 directory.listFiles()?.filter { it.name.endsWith(".json") }?.forEach { definitions[it.name] = it }
             }
-            // A worn-armour icon is an item whose own `model` is an hbm:machine_obj with an `armor_*` animation.
+            // A worn-armour icon is an item whose own `model` is an geontm:machine_obj with an `armor_*` animation.
             // MachineItemModel.applyTransform sends exactly those to applyArmorItemTransform, which reproduces
             // ArmorFSB.setupRenderInv/NonInv and renderStandard with their hard-coded numbers, so `scale` is never
             // read and the codec's 0.28 default is irrelevant. (Wrapped models such as the BJ/DNS armour, nested
@@ -738,7 +738,7 @@ fun Project.registerMachineObjTransformChecks() {
             definitions.values.forEach { file ->
                 val root = JsonSlurper().parse(file)
                 val model = (root as? Map<*, *>)?.get("model") as? Map<*, *>
-                if (model != null && model["type"] == "hbm:machine_obj"
+                if (model != null && model["type"] == "geontm:machine_obj"
                     && (model["animation"] as? String)?.startsWith("armor_") == true) armourRendered.add(model)
                 pending.add(file.name to root)
             }
@@ -746,9 +746,9 @@ fun Project.registerMachineObjTransformChecks() {
                 val (name, node) = pending.removeFirst()
                 when (node) {
                     is Map<*, *> -> {
-                        if (node["type"] == "hbm:machine_obj" && node !in armourRendered) {
+                        if (node["type"] == "geontm:machine_obj" && node !in armourRendered) {
                             check(node.containsKey("scale")) {
-                                "$name declares an hbm:machine_obj model with no scale"
+                                "$name declares an geontm:machine_obj model with no scale"
                             }
                             scaled++
                         }
@@ -761,8 +761,8 @@ fun Project.registerMachineObjTransformChecks() {
             // These three are declared on their registration chains (Reg) rather than written, so the
             // generated copy is the one to check and the authored path is only a fallback for a
             // blockstate somebody has taken back into a file.
-            val authoredBlockstates = rootProject.file("src/main/resources/assets/hbm/blockstates")
-            val declaredBlockstates = layout.buildDirectory.dir("generated/dejson/assets/hbm/blockstates").get().asFile
+            val authoredBlockstates = rootProject.file("src/main/resources/assets/geontm/blockstates")
+            val declaredBlockstates = layout.buildDirectory.dir("generated/dejson/assets/geontm/blockstates").get().asFile
             RTG_BLOCKSTATE_IDS.forEach { name ->
                 val declared = File(declaredBlockstates, "$name.json")
                 val file = if (declared.isFile) declared else File(authoredBlockstates, "$name.json")
@@ -778,8 +778,8 @@ fun Project.registerMachineObjTransformChecks() {
                     @Suppress("UNCHECKED_CAST")
                     val variantModel = value as? Map<String, Any?>
                         ?: error("$file variant $variant must be an object")
-                    check(variantModel["model"] == "hbm:block/machine_dummy_empty") {
-                        "$file variant $variant must map to hbm:block/machine_dummy_empty"
+                    check(variantModel["model"] == "geontm:block/machine_dummy_empty") {
+                        "$file variant $variant must map to geontm:block/machine_dummy_empty"
                     }
                 }
             }
@@ -844,7 +844,7 @@ val MISSILE_OBJ_EXPECTATIONS = mapOf(
     "missile_shuttle" to missile("missile_shuttle.obj", "missile_shuttle.png", 1.0, MISSILE_ROBIN),
 )
 
-val MISSILE_OBJ_CONTEXT_LEGACY_MODEL = "hbm:item/missile_obj_context_legacy"
+val MISSILE_OBJ_CONTEXT_LEGACY_MODEL = "geontm:item/missile_obj_context_legacy"
 
 /** Checks the dedicated old-renderer matrices and the shared modern/legacy base reference. */
 fun Project.registerGunObjTransformChecks() {
@@ -866,7 +866,7 @@ fun Project.registerGunObjTransformChecks() {
             }
 
             GUN_OBJ_EXPECTATIONS.forEach { (item, base) ->
-                val definition = hbmAsset("items/$item.json")
+                val definition = geontmAsset("items/$item.json")
                 check(definition.isFile) { "Missing gun item definition: $definition" }
                 @Suppress("UNCHECKED_CAST")
                 val root = JsonSlurper().parse(definition) as Map<String, Any?>
@@ -877,7 +877,7 @@ fun Project.registerGunObjTransformChecks() {
                     model = model["fallback"] as? Map<String, Any?>
                         ?: error("Missing select fallback: $definition")
                 }
-                check(model["type"] == "hbm:gun") { "$definition must use hbm:gun" }
+                check(model["type"] == "geontm:gun") { "$definition must use geontm:gun" }
                 check(model["base"] == base) {
                     "$definition must reference $base, not ${model["base"]}"
                 }
@@ -887,7 +887,7 @@ fun Project.registerGunObjTransformChecks() {
             }
 
             gunBaseChain.forEach { name ->
-                val baseFile = hbmAsset("models/item/$name.json")
+                val baseFile = geontmAsset("models/item/$name.json")
                 check(baseFile.isFile) { "Missing gun base: $baseFile" }
                 @Suppress("UNCHECKED_CAST")
                 val base = JsonSlurper().parse(baseFile) as Map<String, Any?>
@@ -901,7 +901,7 @@ fun Project.registerGunObjTransformChecks() {
                 }
             }
 
-            val marker = JsonSlurper().parse(hbmAsset("models/item/gun_obj_legacy.json")) as Map<*, *>
+            val marker = JsonSlurper().parse(geontmAsset("models/item/gun_obj_legacy.json")) as Map<*, *>
             check(marker["parent"] == "minecraft:builtin/entity" && !marker.containsKey("display")) {
                 "gun_obj_legacy must remain a transform-free builtin/entity marker"
             }
@@ -923,17 +923,17 @@ fun Project.registerMissileObjTransformChecks() {
         description = "Checks the launchable missiles' item icons against 1.7's per-tier GUI table."
         dependsOn("dejsonGenerate")
         doLast {
-            val assets = rootProject.file("src/main/resources/assets/hbm")
+            val assets = rootProject.file("src/main/resources/assets/geontm")
             MISSILE_OBJ_EXPECTATIONS.forEach { (item, expected) ->
-                val definition = hbmAsset("items/$item.json")
+                val definition = geontmAsset("items/$item.json")
                 check(definition.isFile) { "Missing missile item definition: $definition" }
                 @Suppress("UNCHECKED_CAST")
                 val root = JsonSlurper().parse(definition) as Map<String, Any?>
                 check(root["oversized_in_gui"] == true) { "$definition must set oversized_in_gui" }
                 @Suppress("UNCHECKED_CAST")
                 val model = root["model"] as? Map<String, Any?> ?: error("Missing model object: $definition")
-                check(model["type"] == "hbm:machine_obj") {
-                    "$definition must use hbm:machine_obj directly, or it loses the display context"
+                check(model["type"] == "geontm:machine_obj") {
+                    "$definition must use geontm:machine_obj directly, or it loses the display context"
                 }
                 check(model["frame"] == "missile") {
                     "$definition must name the missile frame, not ${model["frame"]}"
@@ -943,10 +943,10 @@ fun Project.registerMissileObjTransformChecks() {
                 }
                 check(model["rawLegacyTransform"] == true) { "$definition must set rawLegacyTransform" }
                 check(model["noCull"] == true) { "$definition must disable culling, as 1.7 does" }
-                check(model["obj"] == "hbm:models/missiles/${expected.obj}") {
+                check(model["obj"] == "geontm:models/missiles/${expected.obj}") {
                     "$definition draws ${model["obj"]}, expected ${expected.obj}"
                 }
-                check(model["texture"] == "hbm:textures/models/missiles/${expected.texture}") {
+                check(model["texture"] == "geontm:textures/models/missiles/${expected.texture}") {
                     "$definition wears ${model["texture"]}, expected ${expected.texture}"
                 }
                 check(File(assets, "models/missiles/${expected.obj}").isFile) {
@@ -998,8 +998,8 @@ fun Project.registerBlockObjFrameChecks() {
         group = "verification"
         description = "Checks that a block-space OBJ is not also given the block-centring translate."
         doLast {
-            val assets = rootProject.file("src/main/resources/assets/hbm")
-            val renderers = rootProject.file("src/main/java/com/hbm/client/render")
+            val assets = rootProject.file("src/main/resources/assets/geontm")
+            val renderers = rootProject.file("src/main/java/fr/geoventure/geontm/client/render")
 
             val blockSpace = mutableListOf<String>()
             assets.resolve("models").walkTopDown().filter { it.extension == "obj" }.forEach { obj ->

@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * A culled gem machine must come back when its block entity is replaced: broken and placed again with another
@@ -16,7 +16,7 @@ public final class RcCullReplace implements Scenario {
     private static final int Y = 100;
     private static final int Z = 780;
     private static final int L = Y + 1;
-    private static final String MACHINE = "hbm:machine_chungus";
+    private static final String MACHINE = "geontm:machine_chungus";
 
     @Override
     public void run(Client c) throws Exception {

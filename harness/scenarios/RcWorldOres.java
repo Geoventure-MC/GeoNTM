@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Counts every overworld ore of 1.7's HbmWorldGen.generateSurface in 256 generated chunks of the seeded world and
+ * Counts every overworld ore of 1.7's GeoNtmWorldGen.generateSurface in 256 generated chunks of the seeded world and
  * compares with the 1.7 numbers: veins per chunk times vein size is the ceiling; a vein loses blocks to caves, air
  * and non-stone hosts, so the ratio sits below 1. Ratios under 0.15 or above 1.5 are reported as failures.
  */
@@ -34,7 +34,7 @@ public final class RcWorldOres implements Scenario {
         c.teleport(x0 + 128, 100, z0 + 128);
         c.waitTicks(400);
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         p.addProperty("mode", "count");
         p.addProperty("x0", x0);
         p.addProperty("z0", z0);
@@ -50,7 +50,7 @@ public final class RcWorldOres implements Scenario {
         System.out.println("[RcWorldOres] " + c.node() + " chunks=" + r.get("chunks") + " all=" + counts);
         List<String> bad = new ArrayList<>();
         for (Object[] o : ORES) {
-            String id = "hbm:" + o[0];
+            String id = "geontm:" + o[0];
             int n = counts.getOrDefault(id, 0);
             double ceiling = 256.0 * (Integer) o[1] * (Integer) o[2];
             double ratio = n / ceiling;

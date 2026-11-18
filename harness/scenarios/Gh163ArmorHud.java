@@ -1,9 +1,9 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -74,7 +74,7 @@ public final class Gh163ArmorHud implements Scenario {
         c.cmd("clear @s");
         c.cmd("kill @e[type=!player]");
         Expect.that(wrong.isEmpty(), "1.7 VATS and thermal sight: " + wrong);
-        Expect.logCleanSinceMark(c, "hbm.*Exception|Exception.*hbm|/(ERROR|FATAL)[]].*hbm");
+        Expect.logCleanSinceMark(c, "geontm.*Exception|Exception.*geontm|/(ERROR|FATAL)[]].*geontm");
     }
 
     private static void check(Client c, String set, boolean vats, boolean thermal, List<String> wrong) throws Exception {
@@ -93,14 +93,14 @@ public final class Gh163ArmorHud implements Scenario {
 
     private static void wear(Client c, String set) throws Exception {
         String[] pieces = {"_helmet", "_plate", "_legs", "_boots"};
-        for (int i = 0; i < 4; i++) c.cmd("item replace entity @s armor." + SLOTS[i] + " with hbm:" + set + pieces[i]);
+        for (int i = 0; i < 4; i++) c.cmd("item replace entity @s armor." + SLOTS[i] + " with geontm:" + set + pieces[i]);
         c.waitTicks(20);
     }
 
     private static void toggle(Client c) throws Exception {
-        c.keyDown("key.hbm.toggleHUD");
+        c.keyDown("key.geontm.toggleHUD");
         c.waitTicks(4);
-        c.keyUp("key.hbm.toggleHUD");
+        c.keyUp("key.geontm.toggleHUD");
         c.waitTicks(20);
     }
 
@@ -111,7 +111,7 @@ public final class Gh163ArmorHud implements Scenario {
 
     private static JsonObject sight(Client c) {
         try {
-            return c.query("hbm_armor_sight", new JsonObject());
+            return c.query("geontm_armor_sight", new JsonObject());
         } catch (RuntimeException unknownBeforeTheFix) {
             return new JsonObject();
         }

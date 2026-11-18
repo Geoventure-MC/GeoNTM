@@ -1,7 +1,7 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Player report: with GemRender's instancing on and view bobbing on, placed machine models bob relative to the world
@@ -19,7 +19,7 @@ public final class GemViewBobbing implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 16);
         c.cmd("gamemode survival");
         c.cmd("fill -6 " + G + " -12 6 " + (G + 6) + " 8 minecraft:air");
-        JsonObject placed = Fixtures.placeOnTop(c, "hbm:machine_centrifuge", 0, Y, 4);
+        JsonObject placed = Fixtures.placeOnTop(c, "geontm:machine_centrifuge", 0, Y, 4);
         System.out.println("[Bob] placed " + placed.get("block"));
         c.cmd("fill -2 " + G + " 4 -2 " + (G + 3) + " 4 minecraft:stone");
         c.cmd("clear");

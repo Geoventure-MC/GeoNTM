@@ -1,15 +1,15 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Structure blocks placed into water hold it (user report 2026-10-07: the oil rig's chains, bars and scaffold stood
- * dry in the ocean). In the flat world the oil rig's start is assembled first (the {@code hbm_structure} rebuild gives
+ * dry in the ocean). In the flat world the oil rig's start is assembled first (the {@code geontm_structure} rebuild gives
  * its box without placing it), the lower part of that box is filled with water sources like the sea around a real rig,
- * and {@code /place structure hbm:oil_rig} builds it there. The query then counts the waterloggable blocks: some must
+ * and {@code /place structure geontm:oil_rig} builds it there. The query then counts the waterloggable blocks: some must
  * hold water, and none may stand dry beside a water source. Screenshot: the rig at the waterline.
  */
 public final class StructureWaterlogging implements Scenario {
@@ -44,10 +44,10 @@ public final class StructureWaterlogging implements Scenario {
         }
         c.waitTicks(20);
         c.markLog();
-        c.cmd("place structure hbm:oil_rig " + PX + " -60 " + PZ);
+        c.cmd("place structure geontm:oil_rig " + PX + " -60 " + PZ);
         c.waitTicks(60);
         Expect.that(c.logSinceMark("Failed to place|Unknown or incomplete|Incorrect argument|not loaded").isEmpty(),
-                "/place structure hbm:oil_rig");
+                "/place structure geontm:oil_rig");
 
         JsonObject placed = start(c, true);
         System.out.println("[StructureWaterlogging] " + c.node() + " box " + box + " water " + minY + ".." + top
@@ -73,7 +73,7 @@ public final class StructureWaterlogging implements Scenario {
         long deadline = System.currentTimeMillis() + 300_000L;
         JsonObject last = null;
         while (System.currentTimeMillis() < deadline) {
-            last = c.query("hbm_structure", params);
+            last = c.query("geontm_structure", params);
             if (last.has("starts") && !last.getAsJsonArray("starts").isEmpty()) {
                 JsonObject s = last.getAsJsonArray("starts").get(0).getAsJsonObject();
                 JsonObject piece = s.getAsJsonArray("pieces").get(0).getAsJsonObject();

@@ -1,0 +1,27 @@
+package fr.geoventure.geontm.inventory;
+
+import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.registration.Reg;
+import fr.geoventure.geontm.inventory.container.ContainerICF;
+import fr.geoventure.geontm.inventory.container.ContainerICFPress;
+import fr.geoventure.geocore.gui.Menus;
+import fr.geoventure.geocore.registry.DeferredRegister;
+import fr.geoventure.geocore.registry.RegistryObject;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.inventory.MenuType;
+
+/** Position-bound menus of the ICF reactor and its pellet maker. The laser controller has none. */
+public final class ModIcfMenus {
+
+    private ModIcfMenus() {}
+
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, Constants.MOD_ID);
+    private static final Reg REG = Reg.of(MENUS);
+
+    public static final RegistryObject<MenuType<ContainerICF>> ICF =
+            REG.menu("icf", () -> Menus.typeWithPos(ContainerICF::new));
+    public static final RegistryObject<MenuType<ContainerICFPress>> ICF_PRESS =
+            REG.menu("machine_icf_press", () -> Menus.typeWithPos(ContainerICFPress::new));
+
+    public static void init() {}
+}

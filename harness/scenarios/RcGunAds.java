@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 
 /** Aim down sights: which button toggles the aim state, and what the held gun looks like while aimed. */
@@ -19,7 +19,7 @@ public final class RcGunAds implements Scenario {
         c.setOption("camera", "first_person");
         for (String gun : new String[] {"gun_light_revolver", "gun_stg77", "gun_g3", "gun_amat"}) {
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + gun);
+            c.cmd("give @s geontm:" + gun);
             c.hotbar(1);
             c.look(0, 0);
             c.waitTicks(45);

@@ -1,0 +1,12 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "geontm:block/capacitor",
+  "textures": {
+    "top": "geontm:blocks/capacitor_copper_top",
+    "side": "geontm:blocks/capacitor_copper_side",
+    "bottom": "geontm:blocks/capacitor_copper_bottom",
+    "inner_top": "geontm:blocks/capacitor_copper_inner_top",
+    "inner_side": "geontm:blocks/capacitor_copper_inner_side",
+    "particle": "geontm:blocks/capacitor_copper_inner_side"
+  }
+}

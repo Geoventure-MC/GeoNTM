@@ -1,15 +1,15 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Playtest 2026-10-12 (task "armor"):
  * <ol>
- * <li>vanilla armour takes HBM armour modules (1.7 accepted any {@code ItemArmor}): a diamond chestplate in the armour
+ * <li>vanilla armour takes GEONTM armour modules (1.7 accepted any {@code ItemArmor}): a diamond chestplate in the armour
  * table by real clicks, servos installed, worn from the table's equipment slot, the servo effect checked by query,
  * the Shift "Mods:" tooltip captured;</li>
  * <li>port: the elytra as a chestplate module - installed in a golden chestplate, worn, a jump in mid-air starts
@@ -60,17 +60,17 @@ public final class Pt1012Armor implements Scenario {
     // ------------------------------------------------------------------ 1. vanilla armour + modules
 
     private void vanillaChestplate(Client c) {
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", TX, Y, TZ);
-        Expect.block(c, TX, Y + 1, TZ, "hbm:machine_armor_table");
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", TX, Y, TZ);
+        Expect.block(c, TX, Y + 1, TZ, "geontm:machine_armor_table");
         c.cmd("clear");
         c.cmd("give @s minecraft:diamond_chestplate 1");
-        c.cmd("give @s hbm:servo_set 1");
-        c.cmd("give @s hbm:cladding_iron 1");
+        c.cmd("give @s geontm:servo_set 1");
+        c.cmd("give @s geontm:cladding_iron 1");
         c.waitTicks(5);
         openTable(c);
         moveInto(c, "minecraft:diamond_chestplate", ARMOR);
-        moveInto(c, "hbm:servo_set", 4);
-        moveInto(c, "hbm:cladding_iron", 5);
+        moveInto(c, "geontm:servo_set", 4);
+        moveInto(c, "geontm:cladding_iron", 5);
         c.waitTicks(5);
         c.screenshot("10-table-diamond-chestplate");
         moveSlot(c, ARMOR, CHEST);
@@ -80,8 +80,8 @@ public final class Pt1012Armor implements Scenario {
         JsonObject a = armor(c);
         Expect.that(a.getAsJsonObject("chest").get("id").getAsString().equals("minecraft:diamond_chestplate"),
                 "the diamond chestplate is worn: " + a.get("chest"));
-        expectMod(a, "chest", "4:hbm:servo_set");
-        expectMod(a, "chest", "5:hbm:cladding_iron");
+        expectMod(a, "chest", "4:geontm:servo_set");
+        expectMod(a, "chest", "5:geontm:cladding_iron");
         double dmg = a.get("attack_damage").getAsDouble();
         Expect.that(Math.abs(dmg - 1.5) < 0.01, "servos on a diamond chestplate: attack damage 1 * 1.5, got " + dmg);
         double kb = a.get("knockback_resistance").getAsDouble();
@@ -229,7 +229,7 @@ public final class Pt1012Armor implements Scenario {
 
     private void tankRefuelsGlider(Client c) {
         c.cmd("clear");
-        Fixtures.giveOnly(c, "hbm:machine_fluidtank", 1);
+        Fixtures.giveOnly(c, "geontm:machine_fluidtank", 1);
         c.teleport(KX + 4.5, Y + 1, KZ + 0.5);
         c.waitTicks(3);
         c.lookAt(KX + 0.5, Y + 0.98, KZ + 0.5);
@@ -243,7 +243,7 @@ public final class Pt1012Armor implements Scenario {
         Expect.that(tank.get("fill").getAsInt() == 100000 && tank.get("fluid").getAsString().equalsIgnoreCase("KEROSENE"),
                 "tank holds 100,000 mB kerosene: " + tank);
 
-        c.cmd("give @s hbm:jetpack_glider 1");
+        c.cmd("give @s geontm:jetpack_glider 1");
         c.waitTicks(5);
         c.lookAt(KX + 0.5, Y + 1.5, KZ + 0.5);
         c.waitTicks(2);
@@ -253,7 +253,7 @@ public final class Pt1012Armor implements Scenario {
         JsonObject screen = c.screen();
         Expect.that(screen.has("menu") && screen.get("menu").getAsString().contains("FluidTank"),
                 "the fluid tank menu opened: " + (screen.has("menu") ? screen.get("menu") : screen.get("class")));
-        int from = find(c, "hbm:jetpack_glider");
+        int from = find(c, "geontm:jetpack_glider");
         Expect.that(from >= 0, "the glider is in the tank menu's inventory");
         c.clickSlot(from);
         c.waitTicks(2);
@@ -262,8 +262,8 @@ public final class Pt1012Armor implements Scenario {
         c.screenshot("30-tank-fill-bay-glider");
         JsonObject out = c.slot(5);
         JsonObject in = c.slot(4);
-        boolean moved = !out.get("empty").getAsBoolean() && out.get("id").getAsString().equals("hbm:jetpack_glider");
-        boolean stayed = !in.get("empty").getAsBoolean() && in.get("id").getAsString().equals("hbm:jetpack_glider");
+        boolean moved = !out.get("empty").getAsBoolean() && out.get("id").getAsString().equals("geontm:jetpack_glider");
+        boolean stayed = !in.get("empty").getAsBoolean() && in.get("id").getAsString().equals("geontm:jetpack_glider");
         Expect.that(moved || stayed, "the fill bay accepted the glider (in " + in + ", out " + out + ")");
         c.key("escape");
         c.waitTicks(3);
@@ -326,7 +326,7 @@ public final class Pt1012Armor implements Scenario {
     }
 
     private JsonObject armor(Client c) {
-        return c.query("hbm_armor", new JsonObject());
+        return c.query("geontm_armor", new JsonObject());
     }
 
     private static void expectMod(JsonObject armor, String slot, String want) {
@@ -355,7 +355,7 @@ public final class Pt1012Armor implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        JsonObject r = c.query("hbm_gapsb", p);
+        JsonObject r = c.query("geontm_gapsb", p);
         Expect.that(!r.has("error"), "query " + op + " failed: " + r);
         return r;
     }

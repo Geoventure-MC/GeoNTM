@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.HarnessException;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.HarnessException;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -16,13 +16,13 @@ import java.util.regex.Pattern;
  * WG-B acceptance (§19ec-worldfeatures): the 1.7 world features in the seeded world (seed 4815162342).
  *
  * <ol>
- *   <li>Ores: every HBM block in a 4 x 4 chunk sample of fresh terrain is counted and compared per chunk with 1.7's
+ *   <li>Ores: every GEONTM block in a 4 x 4 chunk sample of fresh terrain is counted and compared per chunk with 1.7's
  *       expectation (veins per chunk x the mean 1.7 vein volume in solid stone).</li>
  *   <li>Nether: the same in a 4 x 4 sample; no nitan deposit (not in 1.7), nether geysers present.</li>
  *   <li>Surface: each flower/reed is looked for where it generates naturally ({@code /locate biome}, then a block
  *       search), and put down with {@code /place feature} only when the sample has none; the rare features (chlorine
  *       geyser, fallen meteorite, glyphid hive, pink tree, Sellafield crater, oil/tar-sand/bedrock-oil bubbles) are
- *       placed with {@code /place feature hbm:<id>} at a real spot and checked block by block.</li>
+ *       placed with {@code /place feature geontm:<id>} at a real spot and checked block by block.</li>
  *   <li>Meteor strike: the scheduler's strike chance is set to 1 for one roll; the meteor must spawn, fall and leave
  *       meteorite blocks.</li>
  * </ol>
@@ -38,12 +38,12 @@ public final class FinalWorldFeatures implements Scenario {
 
     /** Overworld stone ores: block, 1.7 veins per chunk, size. */
     static final Object[][] STONE_ORES = {
-            {"hbm:ore_uranium", 7, 5}, {"hbm:ore_thorium", 7, 5}, {"hbm:ore_titanium", 8, 6}, {"hbm:ore_sulfur", 5, 8},
-            {"hbm:ore_aluminium", 7, 6}, {"hbm:ore_fluorite", 6, 4}, {"hbm:ore_niter", 6, 6},
-            {"hbm:ore_tungsten", 10, 8}, {"hbm:ore_lead", 6, 9}, {"hbm:ore_beryllium", 6, 4}, {"hbm:ore_rare", 6, 5},
-            {"hbm:ore_lignite", 2, 24}, {"hbm:ore_asbestos", 2, 4}, {"hbm:ore_cinnabar", 1, 4}, {"hbm:ore_cobalt", 2, 4},
-            {"hbm:cluster_iron", 4, 6}, {"hbm:cluster_titanium", 2, 6}, {"hbm:cluster_aluminium", 3, 6}, {"hbm:cluster_copper", 4, 6},
-            {"hbm:stone_resource_limestone", 1, 16},
+            {"geontm:ore_uranium", 7, 5}, {"geontm:ore_thorium", 7, 5}, {"geontm:ore_titanium", 8, 6}, {"geontm:ore_sulfur", 5, 8},
+            {"geontm:ore_aluminium", 7, 6}, {"geontm:ore_fluorite", 6, 4}, {"geontm:ore_niter", 6, 6},
+            {"geontm:ore_tungsten", 10, 8}, {"geontm:ore_lead", 6, 9}, {"geontm:ore_beryllium", 6, 4}, {"geontm:ore_rare", 6, 5},
+            {"geontm:ore_lignite", 2, 24}, {"geontm:ore_asbestos", 2, 4}, {"geontm:ore_cinnabar", 1, 4}, {"geontm:ore_cobalt", 2, 4},
+            {"geontm:cluster_iron", 4, 6}, {"geontm:cluster_titanium", 2, 6}, {"geontm:cluster_aluminium", 3, 6}, {"geontm:cluster_copper", 4, 6},
+            {"geontm:stone_resource_limestone", 1, 16},
     };
 
     static final Pattern BIOME = Pattern.compile("nearest (\\S+) is at \\[(-?\\d+), (-?\\d+|~), (-?\\d+)\\]");
@@ -53,7 +53,7 @@ public final class FinalWorldFeatures implements Scenario {
 
     static JsonObject q(Client c, Object... kv) {
         JsonObject p = new JsonObject();
-        p.addProperty("kind", "hbm_worldgen");
+        p.addProperty("kind", "geontm_worldgen");
         for (int i = 0; i + 1 < kv.length; i += 2) {
             Object v = kv[i + 1];
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
@@ -61,7 +61,7 @@ public final class FinalWorldFeatures implements Scenario {
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
         JsonObject r = c.send("query", p, 240_000L);
-        if (r.has("error")) throw new HarnessException("hbm_worldgen " + p + ": " + r.get("error"));
+        if (r.has("error")) throw new HarnessException("geontm_worldgen " + p + ": " + r.get("error"));
         return r;
     }
 
@@ -144,7 +144,7 @@ public final class FinalWorldFeatures implements Scenario {
         c.cmd("forceload add " + x0 + " " + z0 + " " + x1 + " " + z1);
         c.teleport(SX + 32, 200, SZ + 32);
         c.waitTicks(100);
-        Map<String, Integer> n = count(c, x0, z0, x1, z1, -64, 160, "hbm:");
+        Map<String, Integer> n = count(c, x0, z0, x1, z1, -64, 160, "geontm:");
         line(c, "overworld sample 16 chunks at " + x0 + "," + z0 + ": " + n);
         int ok = 0, checked = 0;
         for (Object[] ore : STONE_ORES) {
@@ -159,22 +159,22 @@ public final class FinalWorldFeatures implements Scenario {
             }
         }
         Expect.that(ok >= checked - 2, "most stone ores within 0.25..1.6 of the 1.7 expectation (" + ok + "/" + checked + ")");
-        int gneiss = n.getOrDefault("hbm:stone_gneiss", 0);
-        line(c, "  schist " + gneiss + " blocks; gneiss rare " + n.getOrDefault("hbm:ore_gneiss_rare", 0)
-                + ", asbestos " + n.getOrDefault("hbm:ore_gneiss_asbestos", 0) + ", iron " + n.getOrDefault("hbm:ore_gneiss_iron", 0));
-        if (n.getOrDefault("hbm:ore_gneiss_iron", 0) > 50) {
-            Expect.that(n.getOrDefault("hbm:ore_gneiss_rare", 0) > 0, "1.7 puts rare earths in the schist: " + n);
+        int gneiss = n.getOrDefault("geontm:stone_gneiss", 0);
+        line(c, "  schist " + gneiss + " blocks; gneiss rare " + n.getOrDefault("geontm:ore_gneiss_rare", 0)
+                + ", asbestos " + n.getOrDefault("geontm:ore_gneiss_asbestos", 0) + ", iron " + n.getOrDefault("geontm:ore_gneiss_iron", 0));
+        if (n.getOrDefault("geontm:ore_gneiss_iron", 0) > 50) {
+            Expect.that(n.getOrDefault("geontm:ore_gneiss_rare", 0) > 0, "1.7 puts rare earths in the schist: " + n);
         }
-        line(c, "  keyhole stones " + n.getOrDefault("hbm:stone_keyhole", 0) + " (1.7: one chunk in 4, stone at y 6..18)");
-        // one vein to look at: /place feature hbm:ore_uranium into a stone cube in the air, then clear the stone
+        line(c, "  keyhole stones " + n.getOrDefault("geontm:stone_keyhole", 0) + " (1.7: one chunk in 4, stone at y 6..18)");
+        // one vein to look at: /place feature geontm:ore_uranium into a stone cube in the air, then clear the stone
         int vy = 180, bx = SX + 30, bz = SZ + 30;
         c.cmd("fill " + bx + " " + (vy - 4) + " " + bz + " " + (bx + 16) + " " + (vy + 4) + " " + (bz + 16) + " minecraft:stone");
-        c.cmd("place feature hbm:ore_lignite " + bx + " " + vy + " " + bz);
+        c.cmd("place feature geontm:ore_lignite " + bx + " " + vy + " " + bz);
         c.cmd("fill " + bx + " " + (vy - 4) + " " + bz + " " + (bx + 16) + " " + (vy + 4) + " " + (bz + 16) + " minecraft:air replace minecraft:stone");
         c.waitTicks(10);
         Map<String, Integer> v = count(c, bx, bz, bx + 16, bz + 16, vy - 4, vy + 4, "ore_lignite");
-        line(c, "  /place feature hbm:ore_lignite (size 24, 1.7 +8 offset: centred near " + (bx + 8) + "," + (bz + 8) + "): " + v);
-        Expect.that(v.getOrDefault("hbm:ore_lignite", 0) > 0, "/place feature hbm:ore_lignite places a vein");
+        line(c, "  /place feature geontm:ore_lignite (size 24, 1.7 +8 offset: centred near " + (bx + 8) + "," + (bz + 8) + "): " + v);
+        Expect.that(v.getOrDefault("geontm:ore_lignite", 0) > 0, "/place feature geontm:ore_lignite places a vein");
         shoot(c, "ore-lignite-vein", bx + 8, vy, bz + 8, bx + 8.5, vy + 5, bz - 2.5);
         c.cmd("forceload remove " + x0 + " " + z0 + " " + x1 + " " + z1);
     }
@@ -191,17 +191,17 @@ public final class FinalWorldFeatures implements Scenario {
         c.teleport(x0 + 32, 100, z0 + 32);
         c.cmd("execute in minecraft:the_nether run forceload add " + x0 + " " + z0 + " " + x1 + " " + z1);
         c.waitTicks(100);
-        Map<String, Integer> n = count(c, x0, z0, x1, z1, 0, 127, "hbm:");
+        Map<String, Integer> n = count(c, x0, z0, x1, z1, 0, 127, "geontm:");
         line(c, "nether sample 16 chunks at " + x0 + "," + z0 + ": " + n);
-        Expect.that(n.getOrDefault("hbm:ore_depth_nether_nitan", 0) == 0, "no nitan deposit in the nether (1.7 has none): " + n);
-        Expect.that(n.getOrDefault("hbm:stone_resource_limestone", 0) == 0, "no limestone in the nether");
-        Expect.that(n.getOrDefault("hbm:ore_nether_coal", 0) > 0 && n.getOrDefault("hbm:ore_nether_sulfur", 0) > 0,
+        Expect.that(n.getOrDefault("geontm:ore_depth_nether_nitan", 0) == 0, "no nitan deposit in the nether (1.7 has none): " + n);
+        Expect.that(n.getOrDefault("geontm:stone_resource_limestone", 0) == 0, "no limestone in the nether");
+        Expect.that(n.getOrDefault("geontm:ore_nether_coal", 0) > 0 && n.getOrDefault("geontm:ore_nether_sulfur", 0) > 0,
                 "nether ores generate: " + n);
-        Expect.that(n.getOrDefault("hbm:ore_nether_smoldering", 0) > 0, "smoldering netherrack: " + n);
+        Expect.that(n.getOrDefault("geontm:ore_nether_smoldering", 0) > 0, "smoldering netherrack: " + n);
         line(c, String.format("  nether coal %.1f /chunk (1.7: 8 veins of 32 = at most %.0f in solid netherrack)",
-                n.getOrDefault("hbm:ore_nether_coal", 0) / 16.0, 8 * VEIN.get(32)));
-        JsonArray geysers = find(c, "hbm:geysir_nether", x0, z0, x1, z1, 0, 127);
-        line(c, "  nether geysers " + n.getOrDefault("hbm:geysir_nether", 0) + " (1.7: one column a chunk), first " + geysers);
+                n.getOrDefault("geontm:ore_nether_coal", 0) / 16.0, 8 * VEIN.get(32)));
+        JsonArray geysers = find(c, "geontm:geysir_nether", x0, z0, x1, z1, 0, 127);
+        line(c, "  nether geysers " + n.getOrDefault("geontm:geysir_nether", 0) + " (1.7: one column a chunk), first " + geysers);
         Expect.that(geysers.size() > 0, "a nether geyser in 16 chunks");
         JsonArray g = geysers.get(0).getAsJsonArray();
         int gx = g.get(0).getAsInt(), gy = g.get(1).getAsInt(), gz = g.get(2).getAsInt();
@@ -228,7 +228,7 @@ public final class FinalWorldFeatures implements Scenario {
             // in 1.7 either: both use the height map), then /place feature there.
             // /place feature draws from the level's unseeded random: 1.7's 64 WorldGenFlowers tries (+-8, +-4) around
             // one small clearing between dark-oak trunks can all miss. Try successive open columns, as many chunks do.
-            String ground = block.equals("hbm:plant_reeds") ? "minecraft:water" : "minecraft:grass_block";
+            String ground = block.equals("geontm:plant_reeds") ? "minecraft:water" : "minecraft:grass_block";
             int attempts = 0;
             search:
             for (int d = 0; d <= 48; d += 4) {
@@ -237,7 +237,7 @@ public final class FinalWorldFeatures implements Scenario {
                     int gx = at[0] + o[0], gz = at[2] + o[1];
                     JsonObject t = top(c, gx, gz);
                     if (!t.get("below").getAsString().equals(ground)) continue;
-                    c.cmd("place feature hbm:" + feature + " " + gx + " " + t.get("y").getAsInt() + " " + gz);
+                    c.cmd("place feature geontm:" + feature + " " + gx + " " + t.get("y").getAsInt() + " " + gz);
                     c.waitTicks(10);
                     found = find(c, block, gx - 12, gz - 12, gx + 12, gz + 12, 40, 200);
                     attempts++;
@@ -247,7 +247,7 @@ public final class FinalWorldFeatures implements Scenario {
             }
             if (attempts == 0) { // no open column of that ground: the biome's own centre, as before
                 JsonObject t = top(c, at[0], at[2]);
-                c.cmd("place feature hbm:" + feature + " " + at[0] + " " + t.get("y").getAsInt() + " " + at[2]);
+                c.cmd("place feature geontm:" + feature + " " + at[0] + " " + t.get("y").getAsInt() + " " + at[2]);
                 c.waitTicks(10);
                 found = find(c, block, at[0] - 12, at[2] - 12, at[0] + 12, at[2] + 12, 40, 200);
                 how = "placed on " + t.get("below").getAsString();
@@ -266,7 +266,7 @@ public final class FinalWorldFeatures implements Scenario {
         JsonObject t = top(c, x, z);
         int y = t.get("y").getAsInt() + yOffset;
         c.markLog();
-        c.cmd("place feature hbm:" + feature + " " + x + " " + y + " " + z);
+        c.cmd("place feature geontm:" + feature + " " + x + " " + y + " " + z);
         c.waitTicks(20);
         List<String> failed = c.logSinceMark("Failed to place|Unknown|Incorrect argument|not loaded");
         Map<String, Integer> n = count(c, x - radius, z - radius, x + radius, z + radius, y0 == Integer.MIN_VALUE ? y - 20 : y0,
@@ -431,12 +431,12 @@ public final class FinalWorldFeatures implements Scenario {
             ores(c);
             nether(c);
             c.cmd("gamemode spectator");
-            plant(c, "foxglove", "hbm:plant_flower_foxglove", "minecraft:forest");
-            plant(c, "nightshade", "hbm:plant_flower_nightshade", "minecraft:dark_forest");
-            plant(c, "tobacco", "hbm:plant_flower_tobacco", "minecraft:jungle");
-            plant(c, "weed", "hbm:plant_flower_weed", "minecraft:plains");
-            plant(c, "reeds_river", "hbm:plant_reeds", "minecraft:river");
-            plant(c, "reeds_beach", "hbm:plant_reeds", "minecraft:beach");
+            plant(c, "foxglove", "geontm:plant_flower_foxglove", "minecraft:forest");
+            plant(c, "nightshade", "geontm:plant_flower_nightshade", "minecraft:dark_forest");
+            plant(c, "tobacco", "geontm:plant_flower_tobacco", "minecraft:jungle");
+            plant(c, "weed", "geontm:plant_flower_weed", "minecraft:plains");
+            plant(c, "reeds_river", "geontm:plant_reeds", "minecraft:river");
+            plant(c, "reeds_beach", "geontm:plant_reeds", "minecraft:beach");
             rare(c);
             meteor(c);
         } finally {

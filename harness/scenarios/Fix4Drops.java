@@ -1,12 +1,12 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * Fix wave 4 (2026-10-03): block drops in a real world, through the survival break path, against original-hbm
+ * Fix wave 4 (2026-10-03): block drops in a real world, through the survival break path, against original-geontm
  * (1.7.10). Each block is hand-placed and mined with a diamond pickaxe (Efficiency V, Haste: an instant break),
  * with or without Silk Touch; the player walks onto the drops and the inventory must hold exactly the 1.7 result.
  * Then the 1.7 {@code ChestGenHooks} additions: sixty {@code /loot give} rolls of the vanilla dungeon table must
@@ -22,16 +22,16 @@ public final class Fix4Drops implements Scenario {
     public void run(Client c) throws Exception {
         c.markLog();
         Case[] cases = {
-                new Case("hbm:ore_lignite", false, "hbm:lignite", 1, 1),
-                new Case("hbm:ore_niter", false, "hbm:niter", 2, 4),
-                new Case("hbm:waste_trinitite", false, "hbm:trinitite", 1, 1),
-                new Case("hbm:waste_planks", false, "minecraft:charcoal", 1, 1),
-                new Case("hbm:reinforced_glass", false, null, 0, 0),
-                new Case("hbm:reinforced_glass", true, "hbm:reinforced_glass", 1, 1),
-                new Case("hbm:glass_uranium", true, "hbm:glass_uranium", 1, 1),
-                new Case("hbm:waste_earth", true, "hbm:waste_earth", 1, 1),
-                new Case("hbm:ore_sellafield_diamond", true, "hbm:ore_sellafield_diamond", 1, 1),
-                new Case("hbm:block_meteor_treasure", false, "*", 1, 3),
+                new Case("geontm:ore_lignite", false, "geontm:lignite", 1, 1),
+                new Case("geontm:ore_niter", false, "geontm:niter", 2, 4),
+                new Case("geontm:waste_trinitite", false, "geontm:trinitite", 1, 1),
+                new Case("geontm:waste_planks", false, "minecraft:charcoal", 1, 1),
+                new Case("geontm:reinforced_glass", false, null, 0, 0),
+                new Case("geontm:reinforced_glass", true, "geontm:reinforced_glass", 1, 1),
+                new Case("geontm:glass_uranium", true, "geontm:glass_uranium", 1, 1),
+                new Case("geontm:waste_earth", true, "geontm:waste_earth", 1, 1),
+                new Case("geontm:ore_sellafield_diamond", true, "geontm:ore_sellafield_diamond", 1, 1),
+                new Case("geontm:block_meteor_treasure", false, "*", 1, 3),
         };
         int x = 0;
         for (Case k : cases) {
@@ -81,7 +81,7 @@ public final class Fix4Drops implements Scenario {
         c.cmd("clear");
         for (int i = 0; i < 60; i++) c.cmd("loot give @s loot minecraft:chests/simple_dungeon");
         c.waitTicks(10);
-        int keys = count(c, "hbm:key_red_cracked");
+        int keys = count(c, "geontm:key_red_cracked");
         c.screenshot("99-dungeon-loot");
         Expect.that(keys > 0, "60 vanilla dungeon chests must include HBM's 1.7 key_red_cracked injection, got " + keys);
         c.cmd("clear");

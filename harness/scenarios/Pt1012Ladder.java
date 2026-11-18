@@ -1,8 +1,8 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Playtest 2026-10-12 red ladder top: a 3x3 stone pillar with a red ladder column on each of its four faces, each
- * column capped by {@code hbm:ladder_red_top} one block above the pillar (the arch goes over the wall top, as in
+ * column capped by {@code geontm:ladder_red_top} one block above the pillar (the arch goes over the wall top, as in
  * 1.12.2's red_ladder_top.obj). Screenshots per facing: front, side, from above; plus the item held and in the
  * inventory screen.
  */
@@ -31,8 +31,8 @@ public final class Pt1012Ladder implements Scenario {
         int[][] d = {{0, 2}, {0, -2}, {2, 0}, {-2, 0}};
         for (int i = 0; i < 4; i++) {
             int x = PX + d[i][0], z = PZ + d[i][1];
-            for (int k = 1; k <= 4; k++) c.cmd("setblock " + x + " " + (Y + k) + " " + z + " hbm:ladder_red[facing=" + names[i] + "]");
-            c.cmd("setblock " + x + " " + (Y + 5) + " " + z + " hbm:ladder_red_top[facing=" + names[i] + "]");
+            for (int k = 1; k <= 4; k++) c.cmd("setblock " + x + " " + (Y + k) + " " + z + " geontm:ladder_red[facing=" + names[i] + "]");
+            c.cmd("setblock " + x + " " + (Y + 5) + " " + z + " geontm:ladder_red_top[facing=" + names[i] + "]");
         }
         c.waitTicks(8);
         c.key("f1");   // hide the HUD and chat for the world shots
@@ -53,15 +53,15 @@ public final class Pt1012Ladder implements Scenario {
         c.key("f1");
         c.waitTicks(3);
         // items
-        Fixtures.giveOnly(c, "hbm:ladder_red", 1);
+        Fixtures.giveOnly(c, "geontm:ladder_red", 1);
         c.hotbar(1);
         c.waitTicks(10);
         c.screenshot("lt-item-red-held");
-        Fixtures.giveOnly(c, "hbm:ladder_red_top", 1);
+        Fixtures.giveOnly(c, "geontm:ladder_red_top", 1);
         c.hotbar(1);
         c.waitTicks(10);
         c.screenshot("lt-item-top-held");
-        c.cmd("give @s hbm:ladder_red 1");
+        c.cmd("give @s geontm:ladder_red 1");
         c.waitTicks(3);
         c.key("e");
         c.waitTicks(10);

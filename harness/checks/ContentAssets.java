@@ -1,11 +1,11 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * World and item-asset acceptance fixture for the old HBM rail/machine family.
+ * World and item-asset acceptance fixture for the old GEONTM rail/machine family.
  *
  * <p>This deliberately uses server-side {@code setblock} for rail cores.  A hand placement of a
  * folded rail builds its full track and needs a different amount of empty space for each of the
@@ -27,17 +27,17 @@ public final class ContentAssets implements Scenario {
     private static final int Z = 256;
 
     private static final String[] RAILS = {
-            "hbm:rail_large_straight",
-            "hbm:rail_large_straight_short",
-            "hbm:rail_large_curve",
-            "hbm:rail_large_curve_7",
-            "hbm:rail_large_curve_9",
-            "hbm:rail_large_ramp",
-            "hbm:rail_large_buffer",
-            "hbm:rail_large_switch",
-            "hbm:rail_large_switch_flipped",
-            "hbm:rail_narrow_straight",
-            "hbm:rail_narrow_curve"
+            "geontm:rail_large_straight",
+            "geontm:rail_large_straight_short",
+            "geontm:rail_large_curve",
+            "geontm:rail_large_curve_7",
+            "geontm:rail_large_curve_9",
+            "geontm:rail_large_ramp",
+            "geontm:rail_large_buffer",
+            "geontm:rail_large_switch",
+            "geontm:rail_large_switch_flipped",
+            "geontm:rail_narrow_straight",
+            "geontm:rail_narrow_curve"
     };
 
     private static final int[][] RAIL_POSITIONS = {
@@ -67,7 +67,7 @@ public final class ContentAssets implements Scenario {
 
         // Bulk fills performed while distant chunks load can leave stale client skylight on older
         // nodes. A fresh join receives the completed fixture's chunk/light snapshot. Keep this
-        // before any HBM placement so real machine interactions remain in the same live session.
+        // before any GEONTM placement so real machine interactions remain in the same live session.
         c.leaveWorld(60_000L);
         c.joinWorld("harness", 120_000L);
         c.waitInWorld(120_000L);
@@ -128,9 +128,9 @@ public final class ContentAssets implements Scenario {
         int z = Z + 14;
         c.teleport(x + 2.5, Y + 1, z - 2.5);
         c.waitTicks(15);
-        Fixtures.setBlock(c, x, Y + 1, z, "hbm:machine_funnel");
+        Fixtures.setBlock(c, x, Y + 1, z, "geontm:machine_funnel");
         c.waitTicks(10);
-        Expect.block(c, x, Y + 1, z, "hbm:machine_funnel");
+        Expect.block(c, x, Y + 1, z, "geontm:machine_funnel");
         JsonObject be = c.blockEntity(x, Y + 1, z);
         assertBlockEntity(be, "funnel block entity exists at " + x + "," + (Y + 1) + "," + z);
 
@@ -152,15 +152,15 @@ public final class ContentAssets implements Scenario {
         int z = Z + 25;
         c.teleport(x + 2.5, Y + 1, z - 2.5);
         c.waitTicks(15);
-        Fixtures.setBlock(c, x, Y + 1, z, "hbm:cargo_elevator[facing=east]");
+        Fixtures.setBlock(c, x, Y + 1, z, "geontm:cargo_elevator[facing=east]");
         c.waitTicks(10);
-        Expect.block(c, x, Y + 1, z, "hbm:cargo_elevator");
+        Expect.block(c, x, Y + 1, z, "geontm:cargo_elevator");
         JsonObject be = c.blockEntity(x, Y + 1, z);
         assertBlockEntity(be, "cargo elevator block entity exists at " + x + "," + (Y + 1) + "," + z);
 
         // The old BlockCargoElevator adds one 3x3 course when another elevator is used on it.  This
         // gives the renderer a visible guide/piston/platform stack and tests the actual multiblock path.
-        Fixtures.giveOnly(c, "hbm:cargo_elevator", 1);
+        Fixtures.giveOnly(c, "geontm:cargo_elevator", 1);
         // Aim down through the actual core cell. A command-placed core has no peripheral cells
         // for a side-on ray to hit even though the platform mesh extends beyond the core.
         c.teleport(x + 0.5, Y + 4, z + 0.5);
@@ -184,17 +184,17 @@ public final class ContentAssets implements Scenario {
         // placement helper's exact westward aim therefore gives stable core positions on all nodes.
         int smallX = X - 30;
         int smallZ = Z + 25;
-        JsonObject small = Fixtures.placeOnTop(c, "hbm:machine_tower_small", smallX, Y, smallZ);
-        Expect.equal("hbm:machine_tower_small", small.get("block").getAsString(), "small cooling tower placed");
-        Expect.block(c, smallX - 2, Y + 1, smallZ, "hbm:machine_tower_small");
+        JsonObject small = Fixtures.placeOnTop(c, "geontm:machine_tower_small", smallX, Y, smallZ);
+        Expect.equal("geontm:machine_tower_small", small.get("block").getAsString(), "small cooling tower placed");
+        Expect.block(c, smallX - 2, Y + 1, smallZ, "geontm:machine_tower_small");
         JsonObject smallBe = c.blockEntity(smallX - 2, Y + 1, smallZ);
         assertBlockEntity(smallBe, "small cooling tower core BE exists");
 
         int largeX = X + 20;
         int largeZ = Z + 25;
-        JsonObject large = Fixtures.placeOnTop(c, "hbm:machine_tower_large", largeX, Y, largeZ);
-        Expect.equal("hbm:machine_tower_large", large.get("block").getAsString(), "large cooling tower placed");
-        Expect.block(c, largeX - 4, Y + 1, largeZ, "hbm:machine_tower_large");
+        JsonObject large = Fixtures.placeOnTop(c, "geontm:machine_tower_large", largeX, Y, largeZ);
+        Expect.equal("geontm:machine_tower_large", large.get("block").getAsString(), "large cooling tower placed");
+        Expect.block(c, largeX - 4, Y + 1, largeZ, "geontm:machine_tower_large");
         JsonObject largeBe = c.blockEntity(largeX - 4, Y + 1, largeZ);
         assertBlockEntity(largeBe, "large cooling tower core BE exists");
 
@@ -217,15 +217,15 @@ public final class ContentAssets implements Scenario {
         c.waitTicks(2);
         c.cmd("clear");
         String[] icons = {
-                "hbm:rail_large_straight", "hbm:rail_large_straight_short", "hbm:rail_large_curve",
-                "hbm:rail_large_curve_7", "hbm:rail_large_curve_9", "hbm:rail_large_ramp",
-                "hbm:rail_large_buffer", "hbm:rail_large_switch", "hbm:rail_large_switch_flipped",
-                "hbm:rail_narrow_straight", "hbm:rail_narrow_curve", "hbm:machine_funnel",
-                "hbm:cargo_elevator", "hbm:machine_tower_small", "hbm:machine_tower_large",
-                "hbm:machine_rotary_furnace", "hbm:machine_microwave", "hbm:machine_radiolysis",
-                "hbm:machine_reactor", "hbm:machine_reactor_small", "hbm:machine_excavator",
-                "hbm:machine_ore_slopper", "hbm:machine_annihilator", "hbm:machine_hephaestus",
-                "hbm:machine_industrial_generator", "hbm:decon", "hbm:machine_compressor_compact"
+                "geontm:rail_large_straight", "geontm:rail_large_straight_short", "geontm:rail_large_curve",
+                "geontm:rail_large_curve_7", "geontm:rail_large_curve_9", "geontm:rail_large_ramp",
+                "geontm:rail_large_buffer", "geontm:rail_large_switch", "geontm:rail_large_switch_flipped",
+                "geontm:rail_narrow_straight", "geontm:rail_narrow_curve", "geontm:machine_funnel",
+                "geontm:cargo_elevator", "geontm:machine_tower_small", "geontm:machine_tower_large",
+                "geontm:machine_rotary_furnace", "geontm:machine_microwave", "geontm:machine_radiolysis",
+                "geontm:machine_reactor", "geontm:machine_reactor_small", "geontm:machine_excavator",
+                "geontm:machine_ore_slopper", "geontm:machine_annihilator", "geontm:machine_hephaestus",
+                "geontm:machine_industrial_generator", "geontm:decon", "geontm:machine_compressor_compact"
         };
         for (String id : icons) c.cmd("give @s " + id + " 1");
         c.waitTicks(4);

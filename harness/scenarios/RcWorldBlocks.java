@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,18 +38,18 @@ public final class RcWorldBlocks implements Scenario {
         for (int r = 0; r < ROWS.length; r++) {
             for (int i = 0; i < ROWS[r].length; i++) {
                 int x = -16 + i * 2, z = -10 + r * 4;
-                c.cmd("setblock " + x + " 101 " + z + " hbm:" + ROWS[r][i]);
+                c.cmd("setblock " + x + " 101 " + z + " geontm:" + ROWS[r][i]);
             }
         }
         // stalactites hang from a ceiling slab
         c.cmd("fill -16 104 12 14 104 12 minecraft:stone");
         String[] hang = {"stalactite_sulfur", "stalactite_asbestos", "stalactite_ice", "stalactite_snow"};
-        for (int i = 0; i < hang.length; i++) c.cmd("setblock " + (-16 + i * 2) + " 103 12 hbm:" + hang[i]);
+        for (int i = 0; i < hang.length; i++) c.cmd("setblock " + (-16 + i * 2) + " 103 12 geontm:" + hang[i]);
         c.waitTicks(20);
         for (int r = 0; r < ROWS.length; r++) {
             for (int i = 0; i < ROWS[r].length; i++) {
                 String b = c.block(-16 + i * 2, 101, -10 + r * 4).get("block").getAsString();
-                if (b.equals("minecraft:air") || !b.startsWith("hbm:")) failed.add(ROWS[r][i] + " -> " + b);
+                if (b.equals("minecraft:air") || !b.startsWith("geontm:")) failed.add(ROWS[r][i] + " -> " + b);
             }
         }
         for (int r = 0; r < ROWS.length; r++) {

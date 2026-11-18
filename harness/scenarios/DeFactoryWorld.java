@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -47,9 +47,9 @@ public class DeFactoryWorld implements Scenario {
 
         // The dummy keeps its charged power armour, the stand its hazmat suit, the frame its gun. Checked first: the world
         // is irradiated, and DE's own first dummy died of it before the save.
-        marker(c, "execute if entity @e[type=hbm:entity_test_dummy,nbt={ArmorItems:[{id:\"hbm:ajr_boots\"},{id:\"hbm:ajr_legs\"},{id:\"hbm:ajr_plate\",components:{\"hbm:battery_charge\":250000L}},{id:\"hbm:ajr_helmet\"}]}]", 0, "the dummy wears its charged AJR armour");
-        marker(c, "execute if entity @e[type=armor_stand,nbt={ArmorItems:[{id:\"hbm:hazmat_boots\"},{id:\"hbm:hazmat_legs\"},{id:\"hbm:hazmat_plate\"},{id:\"hbm:hazmat_helmet\"}]}]", 2, "the stand wears its hazmat suit");
-        marker(c, "execute if entity @e[type=item_frame,nbt={Item:{id:\"hbm:gun_light_revolver\"}}]", 4, "the frame holds its gun");
+        marker(c, "execute if entity @e[type=geontm:entity_test_dummy,nbt={ArmorItems:[{id:\"geontm:ajr_boots\"},{id:\"geontm:ajr_legs\"},{id:\"geontm:ajr_plate\",components:{\"geontm:battery_charge\":250000L}},{id:\"geontm:ajr_helmet\"}]}]", 0, "the dummy wears its charged AJR armour");
+        marker(c, "execute if entity @e[type=armor_stand,nbt={ArmorItems:[{id:\"geontm:hazmat_boots\"},{id:\"geontm:hazmat_legs\"},{id:\"geontm:hazmat_plate\"},{id:\"geontm:hazmat_helmet\"}]}]", 2, "the stand wears its hazmat suit");
+        marker(c, "execute if entity @e[type=item_frame,nbt={Item:{id:\"geontm:gun_light_revolver\"}}]", 4, "the frame holds its gun");
 
         // Everything running together: the battery charges, the hopper feeds the furnace, diesel leaves the barrel. DE ran
         // the world long enough to empty the hopper's chest and fill the furnace's output, so both are reset first.
@@ -69,25 +69,25 @@ public class DeFactoryWorld implements Scenario {
         c.cmd("setblock 14 -58 11 minecraft:air");
         c.cmd("setblock 14 -59 11 minecraft:air");
         for (int slot = 0; slot <= 2; slot++) c.cmd("item replace block 14 -60 11 container." + slot + " with minecraft:air");
-        c.cmd("fill 25 -60 9 27 -60 9 hbm:red_cable");
+        c.cmd("fill 25 -60 9 27 -60 9 geontm:red_cable");
         c.cmd("setblock 26 -60 10 minecraft:air");
         c.cmd("setblock 30 -60 10 minecraft:air");
         c.waitTicks(40);
         long rtg = gain(c, 100);
         Expect.that(rtg > 0, "the RTG alone charges the battery: " + rtg);
         c.cmd("setblock 2 -60 10 minecraft:air");
-        c.cmd("setblock 26 -60 10 hbm:red_cable");
+        c.cmd("setblock 26 -60 10 geontm:red_cable");
         c.waitTicks(40);
         long diesel = gain(c, 100);
         Expect.that(diesel > 0, "the diesel generator alone charges the battery: " + diesel);
         c.cmd("setblock 26 -60 10 minecraft:air");
-        c.cmd("setblock 30 -60 10 hbm:red_cable");
+        c.cmd("setblock 30 -60 10 geontm:red_cable");
         c.waitTicks(40);
         long stirling = gain(c, 200);
         Expect.that(stirling > 0, "the Stirling engine alone, heated by the coal firebox, charges the battery: " + stirling);
         System.out.println("gain per generator: rtg " + rtg + "/100t, diesel " + diesel + "/100t, stirling " + stirling + "/200t");
-        c.cmd("setblock 2 -60 10 hbm:red_cable");
-        c.cmd("setblock 26 -60 10 hbm:red_cable");
+        c.cmd("setblock 2 -60 10 geontm:red_cable");
+        c.cmd("setblock 26 -60 10 geontm:red_cable");
 
         // New work after the import: water through the pipes into the tank, ore into the centrifuge, stone into the shredder.
         long water0 = num(c, 44, -60, 4, "tank");
@@ -98,7 +98,7 @@ public class DeFactoryWorld implements Scenario {
         c.cmd("item replace block 22 -60 11 container.0 with minecraft:cobblestone 8");
         c.waitTicks(300);
         Expect.that(num(c, 44, -60, 4, "tank") > water0, "water moves from the barrel through the pipes into the tank");
-        Expect.that(count(c, 18, -60, 11, "hbm:powder_iron") > 0, "the centrifuge processes new ore: " + c.blockEntity(18, -60, 11));
+        Expect.that(count(c, 18, -60, 11, "geontm:powder_iron") > 0, "the centrifuge processes new ore: " + c.blockEntity(18, -60, 11));
         Expect.that(count(c, 22, -60, 11, "minecraft:gravel") > 0, "the shredder shreds new stone: " + c.blockEntity(22, -60, 11));
 
         esoteric(c);
@@ -116,7 +116,7 @@ public class DeFactoryWorld implements Scenario {
         // Hot sellafield cools a level now and then on a random tick, as in 1.7.
         for (int level = 0; level <= 5; level++) {
             String block = c.block(level * 2, -60, 30).get("block").getAsString();
-            Expect.that(block.startsWith("hbm:sellafield_") && Integer.parseInt(block.substring(15)) <= level,
+            Expect.that(block.startsWith("geontm:sellafield_") && Integer.parseInt(block.substring(15)) <= level,
                     "hot sellafield level " + level + ": " + block);
         }
         c.cmd("gamemode spectator");
@@ -151,7 +151,7 @@ public class DeFactoryWorld implements Scenario {
 
         c.markLog();
         c.leaveWorld(60000);
-        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(hbm|deimport|Skipping|invalid item)");
+        Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]].*(geontm|deimport|Skipping|invalid item)");
         c.joinWorld("harness", 180000);
         c.waitInWorld(180000);
     }
@@ -165,7 +165,7 @@ public class DeFactoryWorld implements Scenario {
         Expect.that(listed.contains("4242 - SatelliteResonator") && listed.contains("5151 - SatellitePrecisionLaser")
                 && listed.contains("6262 - SatelliteRadar"), "the launched satellites are in orbit: " + listed);
         c.cmd("clear");
-        c.cmd("give @s hbm:sat_designator[hbm:persistent_data={freq:5151}]");
+        c.cmd("give @s geontm:sat_designator[geontm:persistent_data={freq:5151}]");
         c.hotbar(1);
         c.teleport(60.5, -60, 50.5);
         c.waitTicks(20);
@@ -176,7 +176,7 @@ public class DeFactoryWorld implements Scenario {
         Expect.that(c.block(60, -61, 60).toString().contains("minecraft:air"), "the precision laser burns a crater: " + c.block(60, -61, 60));
         c.screenshot("laser-crater");
         c.cmd("clear");
-        c.cmd("give @s hbm:sat_coord[hbm:persistent_data={freq:4242}]");
+        c.cmd("give @s geontm:sat_coord[geontm:persistent_data={freq:4242}]");
         c.hotbar(1);
         c.waitTicks(10);
         c.use(1);
@@ -206,7 +206,7 @@ public class DeFactoryWorld implements Scenario {
         c.cmd("data merge block 100 -60 0 {ft3:0}");
         c.waitTicks(300);
         String torus = nbt(c, 100, -60, 0);
-        Expect.that(num(c, 100, -60, 0, "ft3") > 0 && torus.contains("hbm:helium4"), "the torus makes helium-4 again: " + torus);
+        Expect.that(num(c, 100, -60, 0, "ft3") > 0 && torus.contains("geontm:helium4"), "the torus makes helium-4 again: " + torus);
         Expect.that(Pattern.compile("temperature: 123\\.0f").matcher(torus).find(), "the coolant holds it at 123 K: " + torus);
         Expect.that(num(c, 112, -60, 0, "t") >= 75000, "the intakes keep the klystron's air up: " + nbt(c, 112, -60, 0));
         Expect.that(num(c, 102, -55, 6, "tank") > 0, "warm coolant returns through the ducts: " + nbt(c, 102, -55, 6));
@@ -217,17 +217,17 @@ public class DeFactoryWorld implements Scenario {
         // Recipe machines, the crane line, a cold RBMK started in Continuum, the teleporter and the siren.
         c.teleport(78.5, -60, 30.5);
         c.cmd("item replace block 70 -60 25 container.16 with minecraft:air");
-        c.cmd("item replace block 70 -60 25 container.4 with hbm:nugget_lead 64");
+        c.cmd("item replace block 70 -60 25 container.4 with geontm:nugget_lead 64");
         c.cmd("item replace block 78 -60 25 container.4 with minecraft:sugar 64");
         c.cmd("data merge block 78 -60 25 {o0:0}");
         c.cmd("item replace block 70 -60 36 container.0 with minecraft:gold_ingot 64");
         c.waitTicks(5);
-        long buckshot = count(c, 70, -60, 25, "hbm:pellet_buckshot"), ethanol = num(c, 78, -60, 25, "o0"),
+        long buckshot = count(c, 70, -60, 25, "geontm:pellet_buckshot"), ethanol = num(c, 78, -60, 25, "o0"),
                 moved0 = count(c, 76, -60, 36, "minecraft:gold_ingot");
-        c.cmd("data merge block 87 -60 32 {hasRod:1b,inventory:{Items:[{Slot:0b,count:1,id:\"hbm:rbmk_fuel_po210be\"}]}}");
+        c.cmd("data merge block 87 -60 32 {hasRod:1b,inventory:{Items:[{Slot:0b,count:1,id:\"geontm:rbmk_fuel_po210be\"}]}}");
         c.cmd("data merge block 86 -60 33 {targetLevel:1.0d}");
         c.waitTicks(200);
-        Expect.that(count(c, 70, -60, 25, "hbm:pellet_buckshot") > buckshot, "the assembler keeps making buckshot (ass.buckshot)");
+        Expect.that(count(c, 70, -60, 25, "geontm:pellet_buckshot") > buckshot, "the assembler keeps making buckshot (ass.buckshot)");
         Expect.that(num(c, 78, -60, 25, "o0") > ethanol, "the chemical plant keeps making ethanol (chem.ethanol)");
         Expect.that(count(c, 76, -60, 36, "minecraft:gold_ingot") > moved0, "the cranes and conveyor keep moving gold");
         String fuel = nbt(c, 86, -60, 32);
@@ -254,7 +254,7 @@ public class DeFactoryWorld implements Scenario {
     }
 
     private static long charge(Client c) {
-        return num(c, 8, -60, 12, "\"hbm:battery_charge\"");
+        return num(c, 8, -60, 12, "\"geontm:battery_charge\"");
     }
 
     private static long num(Client c, int x, int y, int z, String key) {

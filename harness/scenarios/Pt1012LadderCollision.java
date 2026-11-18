@@ -1,9 +1,9 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
- * Playtest 2026-10-12: HBM ladders collide like vanilla (and 1.12.2) ladders. A survival player walks south into an
- * {@code hbm:ladder_red} hanging on a stone wall: with collision the player stops at the ladder's face (z = 9.8125 - 0.3)
+ * Playtest 2026-10-12: GEONTM ladders collide like vanilla (and 1.12.2) ladders. A survival player walks south into an
+ * {@code geontm:ladder_red} hanging on a stone wall: with collision the player stops at the ladder's face (z = 9.8125 - 0.3)
  * instead of the wall (z = 9.7), and climbs it. A vanilla ladder beside it is the control.
  */
 public final class Pt1012LadderCollision implements Scenario {
@@ -17,12 +17,12 @@ public final class Pt1012LadderCollision implements Scenario {
         Fixtures.platform(c, 0, Y, 0, 20);
         c.cmd("fill 0 " + (Y + 1) + " 0 15 " + (Y + 8) + " 15 minecraft:air");
         c.cmd("fill 3 " + (Y + 1) + " 10 8 " + (Y + 6) + " 10 minecraft:stone");
-        double hbm = walk(c, 5, "hbm:ladder_red");
+        double geontm = walk(c, 5, "geontm:ladder_red");
         double vanilla = walk(c, 7, "minecraft:ladder");
         c.cmd("gamemode creative");
-        Expect.that(Math.abs(hbm - vanilla) < 0.02, "hbm ladder stops the player where a vanilla ladder does: hbm z="
-                + hbm + ", vanilla z=" + vanilla);
-        Expect.that(hbm < 9.6, "hbm ladder collides (player z " + hbm + " < 9.6; without collision it is 9.7)");
+        Expect.that(Math.abs(geontm - vanilla) < 0.02, "geontm ladder stops the player where a vanilla ladder does: geontm z="
+                + geontm + ", vanilla z=" + vanilla);
+        Expect.that(geontm < 9.6, "geontm ladder collides (player z " + geontm + " < 9.6; without collision it is 9.7)");
         Expect.logCleanSinceMark(c, "/(ERROR|FATAL)[]]");
     }
 

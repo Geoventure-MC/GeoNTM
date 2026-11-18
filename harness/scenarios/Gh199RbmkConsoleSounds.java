@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +29,8 @@ public final class Gh199RbmkConsoleSounds implements Scenario {
         c.cmd("fill " + (X - 10) + " " + L + " " + (Z - 10) + " " + (X + 10) + " " + (L + 6) + " " + (Z + 10) + " minecraft:air");
 
         int colX = X + 6, colZ = Z;
-        placeFrom(c, "hbm:rbmk_fuel_rod", colX, colZ, colX + 0.5, colZ - 2.5);
-        placeFrom(c, "hbm:rbmk_console", X - 4, Z, X - 3.5, Z - 2.5);
+        placeFrom(c, "geontm:rbmk_fuel_rod", colX, colZ, colX + 0.5, colZ - 2.5);
+        placeFrom(c, "geontm:rbmk_console", X - 4, Z, X - 3.5, Z - 2.5);
         int[] core = null;
         for (int y = L; y <= L + 3 && core == null; y++) {
             for (int dx = -3; dx <= 3 && core == null; dx++) for (int dz = -3; dz <= 3; dz++) {
@@ -40,7 +40,7 @@ public final class Gh199RbmkConsoleSounds implements Scenario {
                 params.addProperty("z", Z + dz);
                 params.addProperty("server", true);
                 JsonObject s = c.query("block", params);
-                if ("hbm:rbmk_console".equals(s.get("block").getAsString()) && !s.get("block_entity").isJsonNull()) {
+                if ("geontm:rbmk_console".equals(s.get("block").getAsString()) && !s.get("block_entity").isJsonNull()) {
                     core = new int[] {X - 4 + dx, y, Z + dz};
                     break;
                 }

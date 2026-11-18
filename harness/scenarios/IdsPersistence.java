@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -30,31 +30,31 @@ public class IdsPersistence implements Scenario {
         c.waitTicks(5);
 
         // a filled multiblock tank
-        placeFar(c, "hbm:machine_fluidtank", TX, Y, TZ, 4);
+        placeFar(c, "geontm:machine_fluidtank", TX, Y, TZ, 4);
         JsonObject tank = gapsB(c, "machine", TX, Y + 1, TZ, "fillWith", "DIESEL", "amount", 123456);
         Expect.that(tank.get("present").getAsBoolean(), "tank placed: " + tank);
 
         // a barrel holding kerosene (the saved form is the registry name)
-        c.cmd("setblock " + BX + " " + (Y + 1) + " " + BZ + " hbm:barrel_steel{tank:4321,tank_type:\"hbm:kerosene\",mode:2s}");
+        c.cmd("setblock " + BX + " " + (Y + 1) + " " + BZ + " geontm:barrel_steel{tank:4321,tank_type:\"geontm:kerosene\",mode:2s}");
 
         // a duct row typed in game with a fluid identifier, and a valve on the end
-        c.cmd("fill -3 " + (Y + 1) + " " + DZ + " 3 " + (Y + 1) + " " + DZ + " hbm:fluid_duct_neo");
-        c.cmd("setblock " + VX + " " + (Y + 1) + " " + DZ + " hbm:fluid_valve{type:\"hbm:water\"}");
+        c.cmd("fill -3 " + (Y + 1) + " " + DZ + " 3 " + (Y + 1) + " " + DZ + " geontm:fluid_duct_neo");
+        c.cmd("setblock " + VX + " " + (Y + 1) + " " + DZ + " geontm:fluid_valve{type:\"geontm:water\"}");
         c.waitTicks(5);
         boolean legacy = c.node().startsWith("1.20.");
-        Fixtures.giveOnly(c, legacy ? "hbm:fluid_identifier{\"hbm:fluid\":\"hbm:steam\"}"
-                : "hbm:fluid_identifier[hbm:fluid=\"hbm:steam\"]", 1);
+        Fixtures.giveOnly(c, legacy ? "geontm:fluid_identifier{\"geontm:fluid\":\"geontm:steam\"}"
+                : "geontm:fluid_identifier[geontm:fluid=\"geontm:steam\"]", 1);
         c.teleport(0.5, Y + 1, DZ - 2.5);
         c.waitTicks(3);
         // crouching retypes the whole run (1.7's identifier sneak spread); a plain click types the one duct
         sneakUse(c, 0.5, Y + 1.5, DZ + 0.5);
         c.waitTicks(10);
-        Expect.that(nbt(c, 0, Y + 1, DZ).contains("type:\"hbm:steam\""), "the identifier typed the duct: " + nbt(c, 0, Y + 1, DZ));
+        Expect.that(nbt(c, 0, Y + 1, DZ).contains("type:\"geontm:steam\""), "the identifier typed the duct: " + nbt(c, 0, Y + 1, DZ));
 
         // a structure wand with a blacklisted block
         c.cmd("setblock " + WX + " " + (Y + 1) + " " + WZ + " minecraft:gold_block");
         c.waitTicks(5);
-        Fixtures.giveOnly(c, "hbm:wand_s", 1);
+        Fixtures.giveOnly(c, "geontm:wand_s", 1);
         c.teleport(WX + 0.5, Y + 1, WZ - 1.5);
         c.waitTicks(10);
         c.markLog();
@@ -77,14 +77,14 @@ public class IdsPersistence implements Scenario {
         Expect.that(tankAfter.get("fluid").getAsString().equals("DIESEL") && tankAfter.get("fill").getAsInt() == 123456,
                 "the tank kept 123456 mB of diesel: " + tankAfter);
         String barrel = nbt(c, BX, Y + 1, BZ);
-        Expect.that(barrel.contains("tank_type:\"hbm:kerosene\"") && barrel.contains("tank:4321"),
+        Expect.that(barrel.contains("tank_type:\"geontm:kerosene\"") && barrel.contains("tank:4321"),
                 "the barrel kept 4321 mB of kerosene by name: " + barrel);
         for (int x = -3; x <= 3; x++) {
             String duct = nbt(c, x, Y + 1, DZ);
-            Expect.that(duct.contains("type:\"hbm:steam\""), "duct " + x + " kept steam by name: " + duct);
+            Expect.that(duct.contains("type:\"geontm:steam\""), "duct " + x + " kept steam by name: " + duct);
         }
         String valve = nbt(c, VX, Y + 1, DZ);
-        // placed with the old name hbm:water (still read, §19fa-m1); saved under vanilla's fluid id
+        // placed with the old name geontm:water (still read, §19fa-m1); saved under vanilla's fluid id
         Expect.that(valve.contains("type:\"minecraft:water\""), "the valve kept water by name: " + valve);
         for (String saved : List.of(barrel, valve, nbt(c, 0, Y + 1, DZ))) {
             Expect.that(!NUMERIC_FLUID.matcher(saved.replaceAll("\\s+", "")).find(), "no numeric fluid id on disk: " + saved);
@@ -124,7 +124,7 @@ public class IdsPersistence implements Scenario {
             if (v instanceof Number n) p.addProperty((String) kv[i], n);
             else p.addProperty((String) kv[i], String.valueOf(v));
         }
-        JsonObject r = c.query("hbm_gapsb", p);
+        JsonObject r = c.query("geontm_gapsb", p);
         Expect.that(!r.has("error"), "query " + op + " failed: " + r);
         return r;
     }

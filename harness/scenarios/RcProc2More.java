@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -37,7 +37,7 @@ public final class RcProc2More implements Scenario {
         c.cmd("fill -34 " + (Y + 1) + " 266 34 " + (Y + 14) + " 334 minecraft:air");
         c.waitTicks(40);
         String only = System.getenv("RC_PROC2_ONLY");
-        String[] cardNames = {"", "hbm:upgrade_speed_3 1", "hbm:upgrade_power_3 1", "hbm:upgrade_overdrive_3 1"};
+        String[] cardNames = {"", "geontm:upgrade_speed_3 1", "geontm:upgrade_power_3 1", "geontm:upgrade_overdrive_3 1"};
         String[] suffix = {"", "_speed", "_power", "_over"};
 
         // electrolyser, water: 2000 mB -> 200 H2 + 200 O2, 10 ticks, 10000 HE/t; 4000 mB is two crafts
@@ -50,16 +50,16 @@ public final class RcProc2More implements Scenario {
         for (int i = 0; i < 4; i++) {
             add(c, only, "compress" + suffix[i], "machine_compressor", -28 + 14 * i, 300,
                     cardNames[i].isEmpty() ? new String[]{} : new String[]{cardNames[i]},
-                    "power:100000L,0:2000,0_type:\"hbm:petroleum\"");
+                    "power:100000L,0:2000,0_type:\"geontm:petroleum\"");
         }
         // pyrolysis oven, steam 500 + coal -> 1000 syngas, 100 ticks, 10000 HE/t x (speed + 1)^2 / (power + 1)
         for (int i = 0; i < 4; i++) {
             String[] items = cardNames[i].isEmpty() ? new String[]{"minecraft:coal 2"} : new String[]{"minecraft:coal 2", cardNames[i]};
             add(c, only, "pyro" + suffix[i], "machine_pyrooven", -28 + 14 * i, 314, items,
-                    "power:100000000L,t0:1000,t0_type:\"hbm:steam\"");
+                    "power:100000000L,t0:1000,t0_type:\"geontm:steam\"");
         }
         // radiolysis: heat from RTG pellets, one crack of 100 mB water per max(30 - 0.1 (heat - 100), 5) ticks
-        add(c, only, "radiolysis", "machine_radiolysis", 28, 300, new String[]{"hbm:pellet_rtg_polonium 3"},
+        add(c, only, "radiolysis", "machine_radiolysis", 28, 300, new String[]{"geontm:pellet_rtg_polonium 3"},
                 "power:0L,input:1000,input_type:\"minecraft:water\"");
 
         for (String cmd : pending) c.cmd(cmd);
@@ -91,7 +91,7 @@ public final class RcProc2More implements Scenario {
                 c.waitTicks(3);
             }
         }
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(hbm|golem|render|screen|gui)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(geontm|geocore|render|screen|gui)");
         Expect.that(failures.isEmpty(), "soft checks failed: " + failures);
     }
 
@@ -217,7 +217,7 @@ public final class RcProc2More implements Scenario {
         try {
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + block, 1);
+            Fixtures.giveOnly(c, "geontm:" + block, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

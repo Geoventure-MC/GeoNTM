@@ -2,9 +2,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -24,13 +24,13 @@ public final class RcToolQmaw implements Scenario {
         c.markLog();
         c.cmd("gamemode creative");
         List<String> names = new ArrayList<>();
-        try (Stream<Path> files = Files.walk(Path.of("src/main/resources/assets/hbm/manual"))) {
+        try (Stream<Path> files = Files.walk(Path.of("src/main/resources/assets/geontm/manual"))) {
             for (Path p : (Iterable<Path>) files.filter(f -> f.toString().endsWith(".json"))::iterator) {
                 JsonObject o = JsonParser.parseString(Files.readString(p, StandardCharsets.UTF_8)).getAsJsonObject();
                 if (o.has("name")) names.add(o.get("name").getAsString());
             }
         }
-        JsonObject counts = c.query("hbm_qmaw", new JsonObject());
+        JsonObject counts = c.query("geontm_qmaw", new JsonObject());
         System.out.println(c.node() + " qmaw counts " + counts);
         List<String> bad = new ArrayList<>();
         int shot = 0;
@@ -38,13 +38,13 @@ public final class RcToolQmaw implements Scenario {
         for (String name : names) {
             JsonObject p = new JsonObject();
             p.addProperty("open", name);
-            JsonObject r = c.query("hbm_qmaw", p);
+            JsonObject r = c.query("geontm_qmaw", p);
             if (!r.has("opened") || !r.get("opened").getAsBoolean()) {
                 bad.add(name + ": no page with this name");
                 continue;
             }
             c.waitTicks(2);
-            r = c.query("hbm_qmaw", new JsonObject());
+            r = c.query("geontm_qmaw", new JsonObject());
             if (!r.has("lines")) {
                 bad.add(name + ": screen did not open");
                 continue;

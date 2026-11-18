@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Fix wave phase 5 (History section 19ej-5): fired through the real input path.
@@ -30,31 +30,31 @@ public final class Fix5Guns implements Scenario {
         c.cmd("gamerule doMobSpawning false");
         c.cmd("time set 18000");
         c.cmd("gamerule doDaylightCycle false");
-        c.cmd("kill @e[type=hbm:c130]");
+        c.cmd("kill @e[type=geontm:c130]");
         c.waitTicks(2);
 
         // --- Liberator: 4 rounds x 8 pellets ---
-        load(c, "hbm:gun_liberator", "hbm:ammo_standard_g12", 8, 140);
+        load(c, "geontm:gun_liberator", "geontm:ammo_standard_g12", 8, 140);
         c.look(0, -90);
         c.waitTicks(5);
         c.attack();
         c.waitTicks(1);
-        int pellets = count(c, "hbm:entity_bullet_mk4", 400);
+        int pellets = count(c, "geontm:entity_bullet_mk4", 400);
         Expect.that(pellets == 32, "Liberator fires 4 barrels x 8 pellets = 32 projectiles in one pull, saw " + pellets);
 
         // --- Airdrop flare: C-130 after 40 ticks ---
-        c.cmd("kill @e[type=hbm:entity_bullet_mk4]");
-        load(c, "hbm:gun_flaregun", "hbm:ammo_standard_g26_flare_supply", 2, 80);
+        c.cmd("kill @e[type=geontm:entity_bullet_mk4]");
+        load(c, "geontm:gun_flaregun", "geontm:ammo_standard_g26_flare_supply", 2, 80);
         c.look(0, -60);
         c.waitTicks(5);
         c.attack();
         c.waitTicks(60);
-        int planes = count(c, "hbm:c130", 1000);
+        int planes = count(c, "geontm:c130", 1000);
         Expect.that(planes == 1, "the supply flare called exactly one C-130 after 40 ticks, saw " + planes);
-        c.cmd("kill @e[type=hbm:c130]");
+        c.cmd("kill @e[type=geontm:c130]");
 
         // --- Flamer: diesel trail on the client ---
-        load(c, "hbm:gun_flamer", "hbm:ammo_standard_flame_diesel", 1, 140);
+        load(c, "geontm:gun_flamer", "geontm:ammo_standard_flame_diesel", 1, 140);
         c.look(0, 10);
         c.waitTicks(5);
         c.keyDown("mouse.left");
@@ -65,7 +65,7 @@ public final class Fix5Guns implements Scenario {
         c.keyUp("mouse.left");
         c.releaseAll();
 
-        Expect.logCleanSinceMark(c, "(Exception|ERROR.*hbm)");
+        Expect.logCleanSinceMark(c, "(Exception|ERROR.*geontm)");
     }
 
     /** Clears the inventory, gives the gun in slot 0 and its ammo, then reloads with R and waits for the reload. */

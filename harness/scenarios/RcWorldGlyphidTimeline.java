@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** Hits taken by a survival player from a glyphid grunt and a vanilla zombie over 400 server ticks (chase check). */
 public final class RcWorldGlyphidTimeline implements Scenario {
@@ -23,7 +23,7 @@ public final class RcWorldGlyphidTimeline implements Scenario {
         c.useFlatWorld();
         respawn(c);
         c.cmd("difficulty normal");
-        for (String type : new String[] {"hbm:entity_glyphid", "hbm:entity_parasite_maggot", "minecraft:zombie"}) {
+        for (String type : new String[] {"geontm:entity_glyphid", "geontm:entity_parasite_maggot", "minecraft:zombie"}) {
             c.cmd("gamemode creative");
             Fixtures.platform(c, 0, 100, 0, 12);
             c.cmd("fill -12 101 -12 12 112 -12 minecraft:barrier");
@@ -55,7 +55,7 @@ public final class RcWorldGlyphidTimeline implements Scenario {
                 }
             }
             System.out.println("[RcWorldGlyphidTimeline] " + c.node() + " " + type + " hits=" + hits + " " + sb);
-            if (type.startsWith("hbm:")) Expect.that(hits >= 12, "the grunt keeps pursuing for 400 ticks: " + hits + " hits");
+            if (type.startsWith("geontm:")) Expect.that(hits >= 12, "the grunt keeps pursuing for 400 ticks: " + hits + " hits");
         }
         c.cmd("kill @e[type=!player]");
         c.cmd("gamemode creative");

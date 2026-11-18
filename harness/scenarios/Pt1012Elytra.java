@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Playtest 2026-10-12 (task "elytra2"): elytra wings on a worn elytra and on the port-only elytra chestplate module.
@@ -55,8 +55,8 @@ public final class Pt1012Elytra implements Scenario {
         clearArmor(c);
 
         // 2. the elytra module in a golden chestplate
-        Fixtures.placeOnTop(c, "hbm:machine_armor_table", TX, Y, TZ);
-        Expect.block(c, TX, Y + 1, TZ, "hbm:machine_armor_table");
+        Fixtures.placeOnTop(c, "geontm:machine_armor_table", TX, Y, TZ);
+        Expect.block(c, TX, Y + 1, TZ, "geontm:machine_armor_table");
         c.cmd("clear");
         c.cmd("give @s minecraft:golden_chestplate 1");
         c.cmd("give @s minecraft:elytra 1");
@@ -67,7 +67,7 @@ public final class Pt1012Elytra implements Scenario {
         moveSlot(c, ARMOR, CHEST);
         c.key("escape");
         c.waitTicks(10);
-        JsonObject a = c.query("hbm_armor", new JsonObject());
+        JsonObject a = c.query("geontm_armor", new JsonObject());
         boolean found = false;
         for (JsonElement e : a.getAsJsonObject("chest").getAsJsonArray("mods")) found |= e.getAsString().startsWith("1:minecraft:elytra:");
         Expect.that(found, "the worn golden chestplate carries the elytra module: " + a.get("chest"));
@@ -105,7 +105,7 @@ public final class Pt1012Elytra implements Scenario {
         for (int i = 0; i < 4; i++) {
             c.key("space");
             c.waitTicks(6);
-            a = c.query("hbm_armor", new JsonObject());
+            a = c.query("geontm_armor", new JsonObject());
             if (a.get("fall_flying").getAsBoolean()) break;
             c.teleport(X + 0.5, Y + 70, Z - 8.5);
             c.waitTicks(4);

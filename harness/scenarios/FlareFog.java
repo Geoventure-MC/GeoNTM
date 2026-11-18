@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.7 {@code LegoClient.renderFlare} draws with fog off. A flare round and a Lambda-98 flare are photographed in clear
@@ -24,7 +24,7 @@ public final class FlareFog implements Scenario {
             c.cmd("gamerule doDaylightCycle false");
             c.cmd("gamerule advance_time false");
             c.cmd("weather clear");
-            c.cmd("kill @e[type=hbm:entity_lambda_rocket]");
+            c.cmd("kill @e[type=geontm:entity_lambda_rocket]");
             hideGui = c.setOption("hide_gui", "true");
 
             for (boolean fog : new boolean[] {false, true}) {
@@ -42,28 +42,28 @@ public final class FlareFog implements Scenario {
                 c.screenshot("round-" + tag + "-a");
                 c.waitTicks(4);
                 c.screenshot("round-" + tag + "-b");
-                c.cmd("kill @e[type=hbm:entity_bullet_mk4]");
+                c.cmd("kill @e[type=geontm:entity_bullet_mk4]");
 
                 c.cmd("clear @s");
-                c.cmd("summon hbm:entity_lambda_rocket 0.5 " + (Y + 1) + " 14.5");
+                c.cmd("summon geontm:entity_lambda_rocket 0.5 " + (Y + 1) + " 14.5");
                 c.lookAt(0.5, Y + 2, 14.5);
                 c.waitTicks(20);
                 c.screenshot("rocket-" + tag);
-                c.cmd("kill @e[type=hbm:entity_lambda_rocket]");
+                c.cmd("kill @e[type=geontm:entity_lambda_rocket]");
                 c.waitTicks(5);
             }
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.cmd("effect clear @s");
-            c.cmd("kill @e[type=hbm:entity_lambda_rocket]");
+            c.cmd("kill @e[type=geontm:entity_lambda_rocket]");
             if (hideGui != null) c.setOption("hide_gui", hideGui);
         }
     }
 
     private static void loadFlareGun(Client c) {
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_flaregun");
-        c.cmd("give @s hbm:ammo_standard_g26_flare 4");
+        c.cmd("give @s geontm:gun_flaregun");
+        c.cmd("give @s geontm:ammo_standard_g26_flare 4");
         c.hotbar(1);
         c.waitTicks(30);
         c.key("r", 2);

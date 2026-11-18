@@ -1,14 +1,14 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
- * old-hbm's Community Edition bobbleheads (2026-10-06): movblock, Leafia, Hacker6329 and EOS, types 25..28. Three wear
- * their person's Mojang skin, fetched at client start by Core {@code ProfileSkins} and voxelized (old-hbm
+ * old-geontm's Community Edition bobbleheads (2026-10-06): movblock, Leafia, Hacker6329 and EOS, types 25..28. Three wear
+ * their person's Mojang skin, fetched at client start by Core {@code ProfileSkins} and voxelized (old-geontm
  * {@code SkinBoxVoxelizer}); Leafia is her own model. Checks: each places and keeps its type, and the three skins
- * load ({@code hbm_special.bobble_skins}, a texture id each). Shots: the row from the front and close-ups.
+ * load ({@code geontm_special.bobble_skins}, a texture id each). Shots: the row from the front and close-ups.
  */
 public final class CeBobbleheads implements Scenario {
 
@@ -41,7 +41,7 @@ public final class CeBobbleheads implements Scenario {
                 c.cmd("clear");
                 c.waitTicks(1);
                 // one item per bobblehead type since History §19es-itemvariant
-                String item = "hbm:bobblehead_" + BOBBLE_NAMES[TYPES[i]];
+                String item = "geontm:bobblehead_" + BOBBLE_NAMES[TYPES[i]];
                 c.cmd("give @s " + item + " 1");
                 c.hotbar(1);
                 c.waitTicks(2);
@@ -52,7 +52,7 @@ public final class CeBobbleheads implements Scenario {
                 c.waitTicks(1);
                 c.use(2);
                 c.waitTicks(5);
-                Expect.block(c, x, Y + 1, Z, "hbm:bobblehead");
+                Expect.block(c, x, Y + 1, Z, "geontm:bobblehead");
                 // the figure is saved by name since History §19es-itemvariant
                 String nbt = c.blockEntity(x, Y + 1, Z).toString().replace(" ", "").replace("\\", "");
                 Expect.that(nbt.contains("type:\"" + BOBBLE_NAMES[TYPES[i]] + "\""),
@@ -62,7 +62,7 @@ public final class CeBobbleheads implements Scenario {
 
             JsonObject skins = new JsonObject();
             for (int wait = 0; wait < 30; wait++) {
-                skins = c.query("hbm_special", new JsonObject()).getAsJsonObject("bobble_skins");
+                skins = c.query("geontm_special", new JsonObject()).getAsJsonObject("bobble_skins");
                 if (!skins.get("MOVBLOCK").getAsString().isEmpty() && !skins.get("HACKER6329").getAsString().isEmpty()
                         && !skins.get("EOS").getAsString().isEmpty()) break;
                 c.waitTicks(20);

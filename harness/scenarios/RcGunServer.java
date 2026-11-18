@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Rcon;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Rcon;
+import fr.geoventure.harness.api.Scenario;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 /**
  * Guns over a real connection (harness up --server): reload and a held-mouse shot from the client reach the server,
- * the server's golem loses the 1.7 revolver damage, and the server's copy of the gun holds the spent round. State is
+ * the server's geocore loses the 1.7 revolver damage, and the server's copy of the gun holds the spent round. State is
  * read through rcon, not from the client.
  */
 public final class RcGunServer implements Scenario {
@@ -29,8 +29,8 @@ public final class RcGunServer implements Scenario {
             rcon.command("kill @e[type=minecraft:iron_golem]");
             rcon.command("clear " + PLAYER);
             rcon.command("execute as " + PLAYER + " at @s run tp @s 700.5 -60 700.5");
-            rcon.command("give " + PLAYER + " hbm:gun_light_revolver");
-            rcon.command("give " + PLAYER + " hbm:ammo_standard_m357_sp 12");
+            rcon.command("give " + PLAYER + " geontm:gun_light_revolver");
+            rcon.command("give " + PLAYER + " geontm:ammo_standard_m357_sp 12");
             c.waitTicks(40);
             rcon.command("summon minecraft:iron_golem 700.5 -60 704.5 {NoAI:1b,PersistenceRequired:1b}");
             c.hotbar(1);
@@ -49,7 +49,7 @@ public final class RcGunServer implements Scenario {
             System.out.println("[RcGunServer] " + c.node() + " health " + before + " | " + after);
             System.out.println("[RcGunServer] " + c.node() + " item " + item);
             double dealt = num(before) - num(after);
-            Expect.that(Math.abs(dealt - 7.5) < 0.05, "server golem lost 7.5 (1.7 revolver SP): " + dealt);
+            Expect.that(Math.abs(dealt - 7.5) < 0.05, "server geocore lost 7.5 (1.7 revolver SP): " + dealt);
             Matcher m = Pattern.compile("magcount0: ([0-9]+)").matcher(item);
             Expect.that(m.find() && Integer.parseInt(m.group(1)) == 5, "the server's gun holds 5 rounds: " + item);
             rcon.command("kill @e[type=minecraft:iron_golem]");

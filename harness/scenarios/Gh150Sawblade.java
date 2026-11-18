@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * 1.7's thrown sawblade: the sawmill's Blade model spinning in flight, a bounce off a plank wall that punches the
@@ -28,7 +28,7 @@ public final class Gh150Sawblade implements Scenario {
             c.lookAt(0, Y + 2, -5);
             c.waitTicks(20);
             float rate = c.tickRate(4F);
-            c.cmd("summon hbm:entity_sawblade 0.5 " + (Y + 2) + " 0.5 {Motion:[0.0d,0.15d,-1.0d]}");
+            c.cmd("summon geontm:entity_sawblade 0.5 " + (Y + 2) + " 0.5 {Motion:[0.0d,0.15d,-1.0d]}");
             c.waitTicks(2);
             c.screenshot("sawblade-flight");
             c.waitTicks(5);
@@ -39,11 +39,11 @@ public final class Gh150Sawblade implements Scenario {
             String wall = c.block(0, Y + 2, -7).toString();
             System.out.println("[Gh150] " + c.node() + " wall block after the hit: " + wall);
             Expect.that(wall.contains("air"), "the bounce punched the planks out: " + wall);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             if (hideGui != null) c.setOption("hide_gui", hideGui);
-            c.cmd("kill @e[type=hbm:entity_sawblade]");
+            c.cmd("kill @e[type=geontm:entity_sawblade]");
             c.cmd("fill -2 " + (Y + 1) + " -7 2 " + (Y + 3) + " -7 minecraft:air");
             c.teleport(0.5, Y + 1, 0.5);
         }

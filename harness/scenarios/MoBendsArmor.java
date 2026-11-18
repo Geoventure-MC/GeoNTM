@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.Color;
@@ -51,7 +51,7 @@ public final class MoBendsArmor implements Scenario {
             strip(c);
             String[] pieces = set[1].split(",", -1);
             for (int i = 0; i < pieces.length; i++) {
-                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + SLOTS[i] + " with hbm:" + pieces[i]);
+                if (!pieces[i].isEmpty()) c.cmd("item replace entity @s armor." + SLOTS[i] + " with geontm:" + pieces[i]);
             }
             List<BufferedImage> row = new ArrayList<>();
             for (String camera : new String[] {"third_person_back", "third_person_front"}) {
@@ -107,7 +107,7 @@ public final class MoBendsArmor implements Scenario {
             String[] pieces = SETS[i][1].split(",", -1);
             for (int s = 0; s < pieces.length; s++) {
                 c.cmd("item replace entity @e[tag=mb,limit=1,sort=nearest,x=" + x + ",y=101,z=-9.5] armor." + SLOTS[s]
-                        + " with hbm:" + pieces[s]);
+                        + " with geontm:" + pieces[s]);
             }
         }
         c.teleport(0.5, 101, -14.5);

@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,8 @@ public final class Gh94RbmkLids implements Scenario {
     private static final int L = Y + 1;
 
     private static final String[] COLUMNS = {
-            "hbm:rbmk_blank", "hbm:rbmk_storage", "hbm:rbmk_boiler", "hbm:rbmk_heater", "hbm:rbmk_fuel_rod",
-            "hbm:rbmk_reflector", "hbm:rbmk_boiler"
+            "geontm:rbmk_blank", "geontm:rbmk_storage", "geontm:rbmk_boiler", "geontm:rbmk_heater", "geontm:rbmk_fuel_rod",
+            "geontm:rbmk_reflector", "geontm:rbmk_boiler"
     };
 
     @Override
@@ -40,7 +40,7 @@ public final class Gh94RbmkLids implements Scenario {
             // the last boiler stays open to show its pipe stubs
             for (int i = 0; i < COLUMNS.length - 1; i++) {
                 int x = X - 6 + i * 2;
-                lid(c, i % 2 == 0 ? "hbm:rbmk_lid" : "hbm:rbmk_lid_glass", x, Z);
+                lid(c, i % 2 == 0 ? "geontm:rbmk_lid" : "geontm:rbmk_lid_glass", x, Z);
                 if (!c.block(x, L, Z).get("state").getAsString().contains("lid=")
                         || c.block(x, L, Z).get("state").getAsString().contains("lid=none")) missing.add(COLUMNS[i]);
             }

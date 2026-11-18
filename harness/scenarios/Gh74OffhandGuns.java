@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /** GitHub issue 74: guns held in the offhand, alone and beside a main-hand gun, at the hip and aimed. */
 public final class Gh74OffhandGuns implements Scenario {
@@ -22,11 +22,11 @@ public final class Gh74OffhandGuns implements Scenario {
         c.look(0, 0);
         for (String gun : GUNS) {
             c.cmd("clear @s");
-            c.cmd("item replace entity @s weapon.offhand with hbm:" + gun);
+            c.cmd("item replace entity @s weapon.offhand with geontm:" + gun);
             c.hotbar(1);
             c.waitTicks(45);
             c.screenshot(gun + "-offhand");
-            c.cmd("give @s hbm:" + gun);
+            c.cmd("give @s geontm:" + gun);
             c.waitTicks(45);
             c.screenshot(gun + "-both");
             c.key("mouse.right");

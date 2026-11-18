@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +64,7 @@ public final class RcArmorConsumables implements Scenario {
         c.waitTicks(3);
         double after = health(c);
         check(after - before >= 4.9 && after - before <= 7.5, "stimpak heals 5 (2.5 hearts): " + before + " -> " + after);
-        check(count(c, "hbm:syringe_metal_empty") == 1, "stimpak returns a metal syringe");
+        check(count(c, "geontm:syringe_metal_empty") == 1, "stimpak returns a metal syringe");
         c.screenshot("stimpak");
     }
 
@@ -78,7 +78,7 @@ public final class RcArmorConsumables implements Scenario {
         c.waitTicks(3);
         double after = health(c);
         check(after >= 19.9, "super syringe heals 25 (to full from " + before + "), got " + after);
-        check(effect(c, "slowness@0") > 0, "super syringe slowness I, got " + c.query("hbm_armor_set", new JsonObject()).get("effect_ticks"));
+        check(effect(c, "slowness@0") > 0, "super syringe slowness I, got " + c.query("geontm_armor_set", new JsonObject()).get("effect_ticks"));
         check(Math.abs(effect(c, "slowness@0") - 200) <= 12, "slowness 10 s, got " + effect(c, "slowness@0"));
     }
 
@@ -99,7 +99,7 @@ public final class RcArmorConsumables implements Scenario {
         c.waitTicks(3);
         check(effect(c, "taint@0") > 0 && Math.abs(effect(c, "taint@0") - 1200) <= 8, "taint 60 s, got " + effect(c, "taint@0"));
         check(effect(c, "nausea@0") > 0, "taint syringe nausea I");
-        check(count(c, "hbm:syringe_metal_empty") == 1 && count(c, "hbm:bottle2_empty") == 1,
+        check(count(c, "geontm:syringe_metal_empty") == 1 && count(c, "geontm:bottle2_empty") == 1,
                 "taint syringe returns a metal syringe and an empty bottle");
         c.cmd("effect clear @s");
     }
@@ -111,7 +111,7 @@ public final class RcArmorConsumables implements Scenario {
         c.waitTicks(6);
         int left = effect(c, effect);
         check(left > 0 && Math.abs(left - ticks) <= 24, item + " " + effect + " for " + ticks + ", got " + left);
-        check(count(c, "hbm:" + item) == 0, item + " consumed");
+        check(count(c, "geontm:" + item) == 0, item + " consumed");
         c.cmd("effect clear @s");
     }
 
@@ -123,7 +123,7 @@ public final class RcArmorConsumables implements Scenario {
         c.waitTicks(2);
         int left = effect(c, "radaway@0");
         check(left > 0 && Math.abs(left - duration) <= 6, item + " RadAway I for " + duration + " ticks, got " + left);
-        check(count(c, "hbm:iv_empty") == 1, item + " returns an IV bag");
+        check(count(c, "geontm:iv_empty") == 1, item + " returns an IV bag");
         double r0 = props(c, Double.NaN);
         c.waitTicks(40);
         double r1 = props(c, Double.NaN);
@@ -139,7 +139,7 @@ public final class RcArmorConsumables implements Scenario {
         c.use();
         c.waitTicks(3);
         check(health(c) <= h0 - 4.5, "iv_empty draws 5 health: " + h0 + " -> " + health(c));
-        check(count(c, "hbm:iv_blood") == 1, "iv_empty becomes a blood bag");
+        check(count(c, "geontm:iv_blood") == 1, "iv_empty becomes a blood bag");
         c.cmd("clear");
         c.cmd("damage @s 10 minecraft:magic");
         c.waitTicks(3);
@@ -148,7 +148,7 @@ public final class RcArmorConsumables implements Scenario {
         c.use();
         c.waitTicks(3);
         check(health(c) - h1 >= 4.9, "iv_blood heals 5: " + h1 + " -> " + health(c));
-        check(count(c, "hbm:iv_empty") == 1, "blood bag returns an empty IV");
+        check(count(c, "geontm:iv_empty") == 1, "blood bag returns an empty IV");
     }
 
     private void medBag(Client c) {
@@ -173,7 +173,7 @@ public final class RcArmorConsumables implements Scenario {
         c.use(34);
         c.waitTicks(10);
         double r1 = props(c, Double.NaN);
-        check(count(c, "hbm:cigarette") == 0, "cigarette consumed");
+        check(count(c, "geontm:cigarette") == 0, "cigarette consumed");
         check(r1 - r0 >= 99 && r1 - r0 <= 103, "cigarette adds 100 RAD: " + r0 + " -> " + r1);
         c.screenshot("cigarette");
     }
@@ -189,26 +189,26 @@ public final class RcArmorConsumables implements Scenario {
 
     private void hold(Client c, String item) {
         c.cmd("clear");
-        c.cmd("give @s hbm:" + item);
+        c.cmd("give @s geontm:" + item);
         c.waitTicks(3);
         c.hotbar(1);
         c.waitTicks(2);
     }
 
     private double health(Client c) {
-        return c.query("hbm_armor_set", new JsonObject()).get("health").getAsDouble();
+        return c.query("geontm_armor_set", new JsonObject()).get("health").getAsDouble();
     }
 
     private double props(Client c, double set) {
         JsonObject p = new JsonObject();
         if (!Double.isNaN(set)) p.addProperty("set_rads", set);
-        return c.query("hbm_props", p).getAsJsonObject("player").get("rads").getAsDouble();
+        return c.query("geontm_props", p).getAsJsonObject("player").get("rads").getAsDouble();
     }
 
     /** Remaining ticks of "name@amp" (description-id suffix), 0 when absent. */
     private int effect(Client c, String nameAmp) {
         String[] p = nameAmp.split("@");
-        for (JsonElement e : c.query("hbm_armor_set", new JsonObject()).getAsJsonArray("effect_ticks")) {
+        for (JsonElement e : c.query("geontm_armor_set", new JsonObject()).getAsJsonArray("effect_ticks")) {
             String s = e.getAsString();
             int colon = s.lastIndexOf(':');
             int at = s.lastIndexOf('@', colon);

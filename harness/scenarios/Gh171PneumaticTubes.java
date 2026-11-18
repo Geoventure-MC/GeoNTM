@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,18 +28,18 @@ public final class Gh171PneumaticTubes implements Scenario {
         c.waitTicks(5);
 
         line(c, "minecraft:chest", 0, "chest");
-        line(c, "hbm:crate_iron", 4, "crate");
+        line(c, "geontm:crate_iron", 4, "crate");
 
-        Expect.logCleanSinceMark(c, "(?i)exception.*(hbm|pneum|tube)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(geontm|pneum|tube)");
     }
 
     private static void line(Client c, String inventory, int z, String tag) {
-        for (int x = -1; x <= 1; x++) Fixtures.placeOnTop(c, "hbm:pneumatic_tube", x, Y, z);
+        for (int x = -1; x <= 1; x++) Fixtures.placeOnTop(c, "geontm:pneumatic_tube", x, Y, z);
         Fixtures.setBlock(c, -2, G, z, inventory);
         Fixtures.setBlock(c, 2, G, z, inventory);
         c.cmd("item replace block -2 " + G + " " + z + " container.0 with minecraft:cobblestone 16");
 
-        Fixtures.giveOnly(c, "hbm:screwdriver", 1);
+        Fixtures.giveOnly(c, "geontm:screwdriver", 1);
         c.hotbar(1);
         c.waitTicks(5);
         screw(c, -1, z, false);

@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * Release audit, item processing machines: places each module machine and prints its fresh block entity data and
@@ -31,7 +31,7 @@ public final class RcProcProbe implements Scenario {
             i++;
             c.teleport(cx + 2.5, Y + 1, cz + 0.5);
             c.waitTicks(2);
-            Fixtures.giveOnly(c, "hbm:" + id, 1);
+            Fixtures.giveOnly(c, "geontm:" + id, 1);
             c.lookAt(cx + 0.5, Y + 0.98, cz + 0.5);
             c.waitTicks(1);
             c.use(2);

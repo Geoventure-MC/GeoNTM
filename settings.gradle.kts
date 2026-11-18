@@ -38,17 +38,17 @@ stonecutter {
     }
 }
 
-rootProject.name = "hbm"
+rootProject.name = "geontm"
 
-// Golem Core supplies the cross-version API facades. Composite build during development so changes to
+// GeoCore supplies the cross-version API facades. Composite build during development so changes to
 // it are picked up without a publish cycle; CI resolves the published artifact instead.
 //
-// Gradle cannot infer the substitutions on its own: each Golem Core node publishes under a derived
-// artifactId (golemcore-<loader>-<mc>) that does not match its project name (<mc>-<loader>), so the
+// Gradle cannot infer the substitutions on its own: each GeoCore node publishes under a derived
+// artifactId (geocore-<loader>-<mc>) that does not match its project name (<mc>-<loader>), so the
 // mapping has to be spelled out.
-// Must list only nodes Golem Core actually declares — substituting a missing project fails the build.
-// Keep in step with Golem-Core/settings.gradle.kts as nodes are added.
-includeBuild("../Golem-Core") {
+// Must list only nodes GeoCore actually declares — substituting a missing project fails the build.
+// Keep in step with GeoCore/settings.gradle.kts as nodes are added.
+includeBuild("../GeoCore") {
     dependencySubstitution {
         listOf(
             "26.1-fabric", "26.1-neoforge",
@@ -56,7 +56,7 @@ includeBuild("../Golem-Core") {
             "1.20.1-fabric", "1.20.1-forge",
         ).forEach { node ->
             val (mc, loader) = node.split('-', limit = 2)
-            substitute(module("dev.golem:golemcore-$loader-$mc")).using(project(":$node"))
+            substitute(module("fr.geoventure:geocore-$loader-$mc")).using(project(":$node"))
         }
     }
 }

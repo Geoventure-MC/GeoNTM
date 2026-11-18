@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +14,7 @@ import java.util.Set;
 public final class RcLogiDoors implements Scenario {
 
     // the click aim of this scenario misses their offset cores or open cells (a vanilla ray cast, 1.7 was permissive)
-    private static final Set<String> AIM_LIMITED = Set.of("hbm:silo_hatch", "hbm:silo_hatch_large", "hbm:water_door", "hbm:transition_seal");
+    private static final Set<String> AIM_LIMITED = Set.of("geontm:silo_hatch", "geontm:silo_hatch_large", "geontm:water_door", "geontm:transition_seal");
 
     private static final int X = 4000;
     private static final int Y = 100;
@@ -23,20 +23,20 @@ public final class RcLogiDoors implements Scenario {
 
     // name, timeToOpen (ticks), camera distance, camera height
     private static final Object[][] DOORS = {
-            {"hbm:vault_door", 120, 14, 8},
-            {"hbm:sliding_blast_door", 24, 14, 8},
-            {"hbm:fire_door", 160, 14, 8},
-            {"hbm:silo_hatch", 60, 14, 12},
-            {"hbm:silo_hatch_large", 60, 16, 14},
-            {"hbm:secure_access_door", 120, 16, 8},
-            {"hbm:large_vehicle_door", 60, 18, 10},
-            {"hbm:qe_containment", 160, 14, 8},
-            {"hbm:qe_sliding_door", 10, 10, 6},
-            {"hbm:round_airlock_door", 60, 14, 8},
-            {"hbm:sliding_seal_door", 20, 10, 8},
-            {"hbm:water_door", 60, 14, 8},
-            {"hbm:cargo_door", 60, 14, 8},
-            {"hbm:transition_seal", 480, 46, 26},
+            {"geontm:vault_door", 120, 14, 8},
+            {"geontm:sliding_blast_door", 24, 14, 8},
+            {"geontm:fire_door", 160, 14, 8},
+            {"geontm:silo_hatch", 60, 14, 12},
+            {"geontm:silo_hatch_large", 60, 16, 14},
+            {"geontm:secure_access_door", 120, 16, 8},
+            {"geontm:large_vehicle_door", 60, 18, 10},
+            {"geontm:qe_containment", 160, 14, 8},
+            {"geontm:qe_sliding_door", 10, 10, 6},
+            {"geontm:round_airlock_door", 60, 14, 8},
+            {"geontm:sliding_seal_door", 20, 10, 8},
+            {"geontm:water_door", 60, 14, 8},
+            {"geontm:cargo_door", 60, 14, 8},
+            {"geontm:transition_seal", 480, 46, 26},
     };
 
     @Override

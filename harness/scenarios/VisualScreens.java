@@ -1,5 +1,5 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +63,7 @@ public final class VisualScreens implements Scenario {
             c.cmd("fill -12 " + (Y - 1) + " -12 12 " + (Y + 14) + " 12 minecraft:air");
             Fixtures.platform(c, 0, Y, 0, 12);
             c.waitTicks(5);
-            Fixtures.placeOnTop(c, "hbm:" + id, x, Y, z);
+            Fixtures.placeOnTop(c, "geontm:" + id, x, Y, z);
             c.waitTicks(10);
             c.teleport(x + 0.5, Y + 1, z - 3.5);
             Fixtures.interact(c, x, Y + 1, z);
@@ -86,6 +86,6 @@ public final class VisualScreens implements Scenario {
         c.cmd("fill -12 " + (Y - 1) + " -12 12 " + (Y + 14) + " 12 minecraft:air");
         System.out.println("[visual] screens failed to open: " + failed);
         Expect.that(failed.isEmpty(), "screens that did not open: " + failed);
-        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)exception.*(gui|screen|render|geontm)");
     }
 }

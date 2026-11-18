@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +32,8 @@ public final class Gh182FlareParticles implements Scenario {
             c.cmd("fill -6 " + L + " -6 6 " + (L + 24) + " 6 minecraft:air");
             c.teleport(0.5, L + 9, 12.5);
             c.lookAt(0.5, L + 13, 0.5);
-            c.cmd("setblock 0 " + L + " 0 hbm:machine_flare[facing=north]{isOn:1b,doesBurn:1b,gas:50000,gas_max:64000,"
-                    + "gas_type:\"hbm:gas\"}");
+            c.cmd("setblock 0 " + L + " 0 geontm:machine_flare[facing=north]{isOn:1b,doesBurn:1b,gas:50000,gas_max:64000,"
+                    + "gas_type:\"geontm:gas\"}");
             c.waitTicks(80);
             c.screenshot("flare-burning");
             JsonObject burning = particles(c);
@@ -49,7 +49,7 @@ public final class Gh182FlareParticles implements Scenario {
                 if (count(burning, stray) + count(venting, stray) > 0) failures.add("vanilla stand-in " + stray);
             }
             Expect.that(failures.isEmpty(), "the flare stack makes 1.7's particles: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.cmd("fill -6 " + L + " -6 6 " + (L + 24) + " 6 minecraft:air");
             c.cmd("gamemode creative");
@@ -62,7 +62,7 @@ public final class Gh182FlareParticles implements Scenario {
         params.addProperty("y", L + 14);
         params.addProperty("z", 0.5);
         params.addProperty("r", 12);
-        return c.query("hbm_turret_fx", params).getAsJsonObject("particles");
+        return c.query("geontm_turret_fx", params).getAsJsonObject("particles");
     }
 
     private static int count(JsonObject particles, String cls) {

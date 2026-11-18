@@ -1,6 +1,6 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * GitHub issue 178: the grease gun modernization kit swaps the gun to 1.7's {@code greasegun_clean} texture (dark body,
@@ -9,8 +9,8 @@ import dev.golem.harness.api.*;
 public final class Gh178GreasegunKit implements Scenario {
 
     private static final int Y = 100;
-    private static final String GUN = "hbm:gun_greasegun";
-    private static final String KIT = "hbm:weapon_mod_special_greasegun";
+    private static final String GUN = "geontm:gun_greasegun";
+    private static final String KIT = "geontm:weapon_mod_special_greasegun";
 
     @Override
     public void run(Client c) throws Exception {
@@ -19,7 +19,7 @@ public final class Gh178GreasegunKit implements Scenario {
         c.cmd("fill -8 " + (Y - 1) + " -8 8 " + (Y + 6) + " 8 minecraft:air");
         Fixtures.platform(c, 0, Y, 0, 8);
         c.cmd("clear");
-        Fixtures.placeOnTop(c, "hbm:machine_weapon_table", 0, Y, 0);
+        Fixtures.placeOnTop(c, "geontm:machine_weapon_table", 0, Y, 0);
         c.waitTicks(10);
         c.cmd("give @s " + GUN + " 1");
         c.cmd("give @s " + KIT + " 1");
@@ -70,7 +70,7 @@ public final class Gh178GreasegunKit implements Scenario {
         c.hotbar(plain + 1);
         c.waitTicks(40);
         c.screenshot("05-held-plain");
-        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(weapon|gem|render|hbm)");
+        Expect.logCleanSinceMark(c, "(?i)(exception|error).*(weapon|gem|render|geontm)");
     }
 
     private static int slot(Client c, String item, boolean player) {

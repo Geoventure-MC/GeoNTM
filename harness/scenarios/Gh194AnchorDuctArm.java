@@ -1,4 +1,4 @@
-import dev.golem.harness.api.*;
+import fr.geoventure.harness.api.*;
 
 /**
  * GitHub issue 194: a Diesel duct beside a NONE pipe anchor has no arm toward it; a click with a Diesel multi identifier on
@@ -17,13 +17,13 @@ public final class Gh194AnchorDuctArm implements Scenario {
         c.cmd("fill -6 " + G + " -6 6 " + (Y + 6) + " 6 minecraft:air");
         c.markLog();
         c.cmd("setblock -1 " + G + " 0 minecraft:stone");
-        c.cmd("setblock 0 " + G + " 0 hbm:pipe_anchor[facing=west]");
-        c.cmd("setblock 1 " + G + " 0 hbm:fluid_duct_neo");
-        c.cmd("setblock 2 " + G + " 0 hbm:fluid_duct_neo");
+        c.cmd("setblock 0 " + G + " 0 geontm:pipe_anchor[facing=west]");
+        c.cmd("setblock 1 " + G + " 0 geontm:fluid_duct_neo");
+        c.cmd("setblock 2 " + G + " 0 geontm:fluid_duct_neo");
         c.waitTicks(5);
 
         c.cmd("clear");
-        c.cmd("give @s " + multi(c, "hbm:diesel") + " 1");
+        c.cmd("give @s " + multi(c, "geontm:diesel") + " 1");
         c.waitTicks(3);
         for (int x = 1; x <= 2; x++) {
             aim(c, x);
@@ -58,7 +58,7 @@ public final class Gh194AnchorDuctArm implements Scenario {
     }
 
     private static String multi(Client c, String fluid) {
-        return c.node().startsWith("1.20.") ? "hbm:fluid_identifier_multi{\"hbm:fluid_multi\":{fluid1:\"" + fluid + "\"}}"
-                : "hbm:fluid_identifier_multi[hbm:fluid_multi={fluid1:\"" + fluid + "\"}]";
+        return c.node().startsWith("1.20.") ? "geontm:fluid_identifier_multi{\"geontm:fluid_multi\":{fluid1:\"" + fluid + "\"}}"
+                : "geontm:fluid_identifier_multi[geontm:fluid_multi={fluid1:\"" + fluid + "\"}]";
     }
 }

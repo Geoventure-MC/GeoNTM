@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "particle": "geontm:blocks/rbmk/rbmk_blank_side",
+    "side": "geontm:blocks/rbmk/rbmk_blank_side",
+    "top": "geontm:blocks/rbmk/rbmk_blank_top",
+    "cover_side": "geontm:blocks/rbmk/rbmk_blank_cover_side",
+    "cover_top": "geontm:blocks/rbmk/rbmk_blank_cover_top",
+    "glass_side": "geontm:blocks/rbmk/rbmk_blank_glass_side",
+    "glass_top": "geontm:blocks/rbmk/rbmk_blank_glass_top"
+  }
+}

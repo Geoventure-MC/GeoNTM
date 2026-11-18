@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * The tau cannon's charge with real input: the secondary held for 75 ticks spends one round per 10 ticks, and holding
@@ -12,7 +12,7 @@ import dev.golem.harness.api.Scenario;
 public final class RcGear2Tau implements Scenario {
 
     private static final int Y = 100, G = 101;
-    private static final String AMMO = "hbm:ammo_standard_tau_uranium";
+    private static final String AMMO = "geontm:ammo_standard_tau_uranium";
 
     @Override
     public void run(Client c) throws Exception {
@@ -25,7 +25,7 @@ public final class RcGear2Tau implements Scenario {
         c.cmd("effect clear @s");
         c.teleport(0.5, G, 0.5);
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_tau");
+        c.cmd("give @s geontm:gun_tau");
         c.cmd("give @s " + AMMO + " 30");
         c.hotbar(1);
         c.waitTicks(50);
@@ -39,7 +39,7 @@ public final class RcGear2Tau implements Scenario {
         c.waitTicks(30);
 
         c.cmd("clear @s");
-        c.cmd("give @s hbm:gun_tau");
+        c.cmd("give @s geontm:gun_tau");
         c.cmd("give @s " + AMMO + " 30");
         c.hotbar(1);
         c.waitTicks(50);

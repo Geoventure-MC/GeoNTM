@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * Hazards on a survival player. A carried Pu-mix ingot (1.7: 6.25 RAD/s) is held for 10 s and the dose compared with
@@ -12,7 +12,7 @@ import dev.golem.harness.api.Scenario;
 public final class RcWorldHazards implements Scenario {
 
     private static double rads(Client c) {
-        return c.query("hbm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
+        return c.query("geontm_props", new JsonObject()).getAsJsonObject("player").get("rads").getAsDouble();
     }
 
     private static long gameTime(Client c) {
@@ -25,7 +25,7 @@ public final class RcWorldHazards implements Scenario {
     private static void setRads(Client c, double value) {
         JsonObject p = new JsonObject();
         p.addProperty("set_rads", value);
-        c.query("hbm_props", p);
+        c.query("geontm_props", p);
     }
 
     private static void respawn(Client c) {
@@ -52,7 +52,7 @@ public final class RcWorldHazards implements Scenario {
         // 1. carried radioactive item
         c.cmd("gamemode survival");
         setRads(c, 0);
-        c.cmd("give @s hbm:ingot_pu_mix 1");
+        c.cmd("give @s geontm:ingot_pu_mix 1");
         long g0 = gameTime(c);
         c.waitTicks(200);
         double dose = rads(c);
@@ -64,7 +64,7 @@ public final class RcWorldHazards implements Scenario {
         // 2. hot item sets the player alight, a wet player is spared
         c.cmd("effect give @s minecraft:instant_health 1 5");
         double hp0 = c.player().get("health").getAsDouble();
-        c.cmd("give @s hbm:ingot_phosphorus 1");
+        c.cmd("give @s geontm:ingot_phosphorus 1");
         c.waitTicks(100);
         double hp1 = c.player().get("health").getAsDouble();
         System.out.println("[RcWorldHazards] " + c.node() + " phosphorus ingot 5 s: " + hp0 + " -> " + hp1);
@@ -80,7 +80,7 @@ public final class RcWorldHazards implements Scenario {
         c.cmd("effect give @s minecraft:instant_health 1 5");
         c.waitTicks(10);
         double wet0 = c.player().get("health").getAsDouble();
-        c.cmd("give @s hbm:ingot_phosphorus 1");
+        c.cmd("give @s geontm:ingot_phosphorus 1");
         c.waitTicks(100);
         double wet1 = c.player().get("health").getAsDouble();
         System.out.println("[RcWorldHazards] " + c.node() + " phosphorus ingot in water 5 s: " + wet0 + " -> " + wet1);
@@ -91,7 +91,7 @@ public final class RcWorldHazards implements Scenario {
 
         // 3. a radioactive block in the world
         c.teleport(0.5, 101, -6.5);
-        c.cmd("fill 0 101 -4 2 101 -4 hbm:block_uranium");
+        c.cmd("fill 0 101 -4 2 101 -4 geontm:block_uranium");
         c.waitTicks(20);
         setRads(c, 0);
         c.waitTicks(400);

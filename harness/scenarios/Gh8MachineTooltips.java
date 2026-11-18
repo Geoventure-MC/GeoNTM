@@ -1,9 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Scenario;
 
 /**
  * GitHub issue 8: 1.7's {@code addStandardInfo} shows a machine's description only while left Shift is held and
@@ -12,7 +12,7 @@ import dev.golem.harness.api.Scenario;
  */
 public final class Gh8MachineTooltips implements Scenario {
 
-    private static final String[] ITEMS = {"hbm:machine_stirling", "hbm:fusion_torus"};
+    private static final String[] ITEMS = {"geontm:machine_stirling", "geontm:fusion_torus"};
     private static final String HINT = "dark_gray/i:Hold <|yellow/i:LSHIFT|dark_gray/i:> to display more info";
 
     @Override
@@ -80,7 +80,7 @@ public final class Gh8MachineTooltips implements Scenario {
         JsonObject p = new JsonObject();
         p.addProperty("mode", "tooltip");
         p.addProperty("slot", slot);
-        JsonArray styled = c.query("hbm_release", p).getAsJsonArray("styled");
+        JsonArray styled = c.query("geontm_release", p).getAsJsonArray("styled");
         String[] out = new String[styled.size()];
         for (int i = 0; i < out.length; i++) out[i] = merged(styled.get(i).getAsString());
         System.out.println("[Gh8] slot " + slot + ": " + String.join(" / ", out));

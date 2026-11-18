@@ -1,17 +1,17 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The special melee / kit family (ModMeleeKitItems): every id given and shown in the inventory; each special
- * weapon hitting a NoAI iron golem with its effect checked on the integrated server (hbm_living: health, motion,
+ * weapon hitting a NoAI iron geocore with its effect checked on the integrated server (geontm_living: health, motion,
  * effects); the caber's blast; the desh screwdriver, desh hand drill and acetylene torch on their blocks; the Rod of
  * Discord's teleport; kits unpacked and their give-lists checked; the toolbox rotating the hotbar and storing and
  * retrieving through its GUI; the Book of Boxcars crafting the diamond gavel; Bobmazon buying 64 torches for 2 caps
@@ -62,7 +62,7 @@ public final class FinalMeleeKits implements Scenario {
         c.cmd("kill @e[type=!player]");
         c.waitTicks(5);
         // The hazmat suits the kits dress the player in have no legacy armor-layer textures on 1.20.1
-        // (hbm:textures/models/armor/hazmat_layer_*.png): a pre-existing armor-family gap, reported, not this family's.
+        // (geontm:textures/models/armor/hazmat_layer_*.png): a pre-existing armor-family gap, reported, not this family's.
         List<String> bad = new ArrayList<>();
         for (String line : c.logSinceMark("/(ERROR|FATAL)[]]|Failed to load texture|Missing model|Unable to play unknown soundEvent")) {
             if (!line.contains("textures/models/armor/hazmat_layer_")) bad.add(line);
@@ -78,8 +78,8 @@ public final class FinalMeleeKits implements Scenario {
             c.waitTicks(2);
             List<String> batch = new ArrayList<>();
             for (int i = page * 36; i < Math.min(IDS.length, (page + 1) * 36); i++) {
-                c.cmd("give @s hbm:" + IDS[i] + " 1");
-                batch.add("hbm:" + IDS[i]);
+                c.cmd("give @s geontm:" + IDS[i] + " 1");
+                batch.add("geontm:" + IDS[i]);
             }
             c.waitTicks(5);
             for (String id : batch) Expect.that(count(c, id) == 1, id + " was given and is in the inventory");
@@ -95,21 +95,21 @@ public final class FinalMeleeKits implements Scenario {
 
     // ------------------------------------------------------------------ melee
 
-    private JsonObject golem(Client c) {
-        for (JsonElement e : c.query("hbm_living", new JsonObject()).getAsJsonArray("living")) {
+    private JsonObject geocore(Client c) {
+        for (JsonElement e : c.query("geontm_living", new JsonObject()).getAsJsonArray("living")) {
             JsonObject o = e.getAsJsonObject();
             if (o.get("type").getAsString().equals("minecraft:iron_golem")) return o;
         }
         return null;
     }
 
-    /** A fresh 100 HP NoAI iron golem three blocks in front of the player, then one full-cooldown hit. */
+    /** A fresh 100 HP NoAI iron geocore three blocks in front of the player, then one full-cooldown hit. */
     private JsonObject hit(Client c, String weapon) {
         return hit(c, weapon, false);
     }
 
     /**
-     * {@code free}: a golem with its AI on (a NoAI mob never applies its own motion, so a launch would not show)
+     * {@code free}: a geocore with its AI on (a NoAI mob never applies its own motion, so a launch would not show)
      * and slowness 255 so it cannot walk off by itself.
      */
     private JsonObject hit(Client c, String weapon, boolean free) {
@@ -119,14 +119,14 @@ public final class FinalMeleeKits implements Scenario {
         c.cmd("summon minecraft:iron_golem " + (X + 0.5) + " " + (Y + 1) + " " + (Z + 3.5)
                 + (free ? " {PersistenceRequired:1b}" : " {NoAI:1b,PersistenceRequired:1b}"));
         if (free) c.cmd("effect give @e[type=minecraft:iron_golem] minecraft:slowness 60 255 true");
-        Fixtures.giveOnly(c, "hbm:" + weapon, 1);
+        Fixtures.giveOnly(c, "geontm:" + weapon, 1);
         c.waitTicks(25); // attack cooldown
         c.lookAt(X + 0.5, Y + 2.2, Z + 3.5);
         c.waitTicks(2);
         c.attack(1);
         c.waitTicks(4);
-        JsonObject g = golem(c);
-        Expect.that(g != null || weapon.equals("schrabidium_hammer"), weapon + ": the golem is still queryable");
+        JsonObject g = geocore(c);
+        Expect.that(g != null || weapon.equals("schrabidium_hammer"), weapon + ": the geocore is still queryable");
         return g;
     }
 
@@ -156,38 +156,38 @@ public final class FinalMeleeKits implements Scenario {
         Expect.that(h < 36 && h > 33, "shimmer axe halves what the 31 damage left (34.5), got " + h);
 
         g = hit(c, "schrabidium_hammer");
-        Expect.that(g == null || g.get("health").getAsDouble() <= 0, "schrabidium hammer one-hits the golem");
+        Expect.that(g == null || g.get("health").getAsDouble() <= 0, "schrabidium hammer one-hits the geocore");
         c.screenshot("11-schrabidium-hammer-hit");
 
         g = hit(c, "shimmer_sledge", true);
         c.waitTicks(10);
-        g = golem(c);
-        Expect.that(g != null && moved(g) > 3, "shimmer sledge launches the golem 5x along the look, moved "
+        g = geocore(c);
+        Expect.that(g != null && moved(g) > 3, "shimmer sledge launches the geocore 5x along the look, moved "
                 + (g == null ? -1 : moved(g)));
         c.screenshot("12-shimmer-sledge-launch");
 
         g = hit(c, "wrench", true);
         c.waitTicks(10);
-        g = golem(c);
-        Expect.that(g != null && moved(g) > 0.2, "pipe wrench nudges the golem, moved " + (g == null ? -1 : moved(g)));
+        g = geocore(c);
+        Expect.that(g != null && moved(g) > 0.2, "pipe wrench nudges the geocore, moved " + (g == null ? -1 : moved(g)));
 
         for (String plain : new String[]{"big_sword", "wood_gavel", "memespoon", "stopsign", "sopsign", "chernobylsign",
                 "wrench_flipped", "reer_graar", "weapon_pipe_lead", "wrench_archineer"}) {
             g = hit(c, plain);
             h = g.get("health").getAsDouble();
-            Expect.that(h < 100, plain + " deals damage, golem at " + h);
+            Expect.that(h < 100, plain + " deals damage, geocore at " + h);
         }
         c.screenshot("13-archineer-hit");
         c.cmd("kill @e[type=minecraft:iron_golem]");
     }
 
-    /** The Ullapool caber blows up on the hit: the platform under the golem is gone. */
+    /** The Ullapool caber blows up on the hit: the platform under the geocore is gone. */
     private void caber(Client c) {
         int cx = X + 8;
         c.cmd("kill @e[type=minecraft:iron_golem]");
         c.teleport(cx + 0.5, Y + 1, Z + 0.5);
         c.cmd("summon minecraft:iron_golem " + (cx + 0.5) + " " + (Y + 1) + " " + (Z + 3.5) + " {NoAI:1b}");
-        Fixtures.giveOnly(c, "hbm:ullapool_caber", 1);
+        Fixtures.giveOnly(c, "geontm:ullapool_caber", 1);
         c.waitTicks(25);
         c.lookAt(cx + 0.5, Y + 2.2, Z + 3.5);
         c.waitTicks(2);
@@ -199,7 +199,7 @@ public final class FinalMeleeKits implements Scenario {
         int damage = -1;
         for (JsonElement e : inv.getAsJsonArray("slots")) {
             JsonObject s = e.getAsJsonObject();
-            if ("hbm:ullapool_caber".equals(s.get("id").getAsString())) damage = s.get("damage").getAsInt();
+            if ("geontm:ullapool_caber".equals(s.get("id").getAsString())) damage = s.get("damage").getAsInt();
         }
         Expect.that(damage == 505, "the caber took 505 durability, took " + damage);
         c.cmd("kill @e[type=minecraft:iron_golem]");
@@ -224,27 +224,27 @@ public final class FinalMeleeKits implements Scenario {
     private void tools(Client c) {
         int tx = X - 6;
         // desh screwdriver: the fan turns round
-        Fixtures.setBlock(c, tx, Y + 1, Z + 3, "hbm:fan");
+        Fixtures.setBlock(c, tx, Y + 1, Z + 3, "geontm:fan");
         String before = c.block(tx, Y + 1, Z + 3).getAsJsonObject("properties").toString();
-        Fixtures.giveOnly(c, "hbm:screwdriver_desh", 1);
+        Fixtures.giveOnly(c, "geontm:screwdriver_desh", 1);
         useOn(c, "screwdriver_desh", tx, Y + 1, Z + 3);
         String after = c.block(tx, Y + 1, Z + 3).getAsJsonObject("properties").toString();
         Expect.that(!before.equals(after), "desh screwdriver flips the fan: " + before + " -> " + after);
         c.screenshot("20-screwdriver-fan");
 
         // desh hand drill: graphite is drilled
-        Fixtures.setBlock(c, tx, Y + 1, Z + 5, "hbm:block_graphite");
-        Fixtures.giveOnly(c, "hbm:hand_drill_desh", 1);
+        Fixtures.setBlock(c, tx, Y + 1, Z + 5, "geontm:block_graphite");
+        Fixtures.giveOnly(c, "geontm:hand_drill_desh", 1);
         useOn(c, "hand_drill_desh", tx, Y + 1, Z + 5);
-        Expect.block(c, tx, Y + 1, Z + 5, "hbm:block_graphite_drilled");
+        Expect.block(c, tx, Y + 1, Z + 5, "geontm:block_graphite_drilled");
         c.screenshot("21-hand-drill-graphite");
 
         // acetylene torch: a raw fusion component welds into the BSCCO coil (a steel cast plate is used up)
-        Fixtures.setBlock(c, tx, Y + 1, Z + 7, "hbm:fusion_component");
-        Fixtures.giveOnly(c, "hbm:acetylene_torch", 1);
-        Fixtures.give(c, "hbm:plate_cast_steel", 4);
+        Fixtures.setBlock(c, tx, Y + 1, Z + 7, "geontm:fusion_component");
+        Fixtures.giveOnly(c, "geontm:acetylene_torch", 1);
+        Fixtures.give(c, "geontm:plate_cast_steel", 4);
         useOn(c, "acetylene_torch", tx, Y + 1, Z + 7);
-        Expect.block(c, tx, Y + 1, Z + 7, "hbm:fusion_component_bscco_welded");
+        Expect.block(c, tx, Y + 1, Z + 7, "geontm:fusion_component_bscco_welded");
         c.screenshot("22-acetylene-weld");
         c.cmd("fill " + tx + " " + (Y + 1) + " " + (Z + 3) + " " + tx + " " + (Y + 1) + " " + (Z + 7) + " minecraft:air");
         c.cmd("kill @e[type=minecraft:item]");
@@ -252,7 +252,7 @@ public final class FinalMeleeKits implements Scenario {
 
     /** Rod of Discord: aim at a wall ten blocks away, arrive in front of it. */
     private void discord(Client c) {
-        Fixtures.giveOnly(c, "hbm:rod_of_discord", 1);
+        Fixtures.giveOnly(c, "geontm:rod_of_discord", 1);
         c.cmd("fill " + (X - 1) + " " + (Y + 1) + " " + (Z + 11) + " " + (X + 1) + " " + (Y + 3) + " " + (Z + 11) + " minecraft:stone");
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.waitTicks(3);
@@ -269,20 +269,20 @@ public final class FinalMeleeKits implements Scenario {
     // ------------------------------------------------------------------ kits
 
     private void openKit(Client c, String kit) {
-        Fixtures.giveOnly(c, "hbm:" + kit, 1);
+        Fixtures.giveOnly(c, "geontm:" + kit, 1);
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, -80);
         c.waitTicks(2);
         c.use(2);
         c.waitTicks(5);
-        Expect.that(count(c, "hbm:" + kit) == 0, kit + " is used up");
+        Expect.that(count(c, "geontm:" + kit) == 0, kit + " is used up");
     }
 
     private void kits(Client c) {
         openKit(c, "boy_kit");
-        for (String id : new String[]{"hbm:nuke_boy", "hbm:boy_shielding", "hbm:boy_target", "hbm:boy_bullet",
-                "hbm:boy_propellant", "hbm:boy_igniter", "hbm:hazmat_helmet", "hbm:hazmat_plate", "hbm:hazmat_legs",
-                "hbm:hazmat_boots"}) {
+        for (String id : new String[]{"geontm:nuke_boy", "geontm:boy_shielding", "geontm:boy_target", "geontm:boy_bullet",
+                "geontm:boy_propellant", "geontm:boy_igniter", "geontm:hazmat_helmet", "geontm:hazmat_plate", "geontm:hazmat_legs",
+                "geontm:hazmat_boots"}) {
             Expect.that(count(c, id) == 1, "boy kit gave " + id);
         }
         c.key("e");
@@ -291,15 +291,15 @@ public final class FinalMeleeKits implements Scenario {
         c.key("escape");
 
         openKit(c, "hazmat_red_kit");
-        Expect.that(count(c, "hbm:hazmat_helmet_red") == 1 && count(c, "hbm:hazmat_boots_red") == 1,
+        Expect.that(count(c, "geontm:hazmat_helmet_red") == 1 && count(c, "geontm:hazmat_boots_red") == 1,
                 "advanced hazmat kit dresses the red suit");
 
         openKit(c, "multi_kit");
-        Expect.that(count(c, "minecraft:tnt") == 26 && count(c, "hbm:bomb_multi") == 6
+        Expect.that(count(c, "minecraft:tnt") == 26 && count(c, "geontm:bomb_multi") == 6
                 && count(c, "minecraft:gunpowder") == 2, "multi kit gives 26 TNT, 6 multi bombs, 2 gunpowder");
 
         openKit(c, "missile_kit");
-        Expect.that(count(c, "hbm:launch_pad") == 1 && count(c, "hbm:missile_generic") == 1,
+        Expect.that(count(c, "geontm:launch_pad") == 1 && count(c, "geontm:missile_generic") == 1,
                 "missile kit gives the pad and the missiles");
         c.key("e");
         c.waitTicks(10);
@@ -307,7 +307,7 @@ public final class FinalMeleeKits implements Scenario {
         c.key("escape");
 
         openKit(c, "nuke_starter_kit");
-        Expect.that(count(c, "hbm:ingot_uranium") == 32 && count(c, "hbm:stamp_titanium_flat") == 3,
+        Expect.that(count(c, "geontm:ingot_uranium") == 32 && count(c, "geontm:stamp_titanium_flat") == 3,
                 "starter kit gives 32 uranium and 3 flat stamps");
 
         openKit(c, "stealth_boy");
@@ -320,7 +320,7 @@ public final class FinalMeleeKits implements Scenario {
     // ------------------------------------------------------------------ toolbox
 
     private void toolbox(Client c) {
-        Fixtures.giveOnly(c, "hbm:toolbox", 1);
+        Fixtures.giveOnly(c, "geontm:toolbox", 1);
         c.cmd("give @s minecraft:dirt 5");
         c.cmd("give @s minecraft:cobblestone 7");
         c.waitTicks(3);
@@ -364,9 +364,9 @@ public final class FinalMeleeKits implements Scenario {
     // ------------------------------------------------------------------ book of boxcars
 
     private void book(Client c) {
-        Fixtures.giveOnly(c, "hbm:book_of_", 1);
-        c.cmd("give @s hbm:gravel_diamond 3");
-        c.cmd("give @s hbm:lead_gavel 1");
+        Fixtures.giveOnly(c, "geontm:book_of_", 1);
+        c.cmd("give @s geontm:gravel_diamond 3");
+        c.cmd("give @s geontm:lead_gavel 1");
         c.waitTicks(3);
         c.look(0, -80);
         c.use(2);
@@ -386,12 +386,12 @@ public final class FinalMeleeKits implements Scenario {
         c.clickSlot(4);
         c.waitTicks(4);
         c.screenshot("60-book-diamond-gavel");
-        Expect.that(c.slot(0).toString().contains("hbm:diamond_gavel"), "the book offers the diamond gavel: " + c.slot(0));
+        Expect.that(c.slot(0).toString().contains("geontm:diamond_gavel"), "the book offers the diamond gavel: " + c.slot(0));
         c.slotClick(0, 0, "QUICK_MOVE");
         c.waitTicks(4);
         c.key("escape");
         c.waitTicks(4);
-        Expect.that(count(c, "hbm:diamond_gavel") == 1 && count(c, "hbm:lead_gavel") == 0,
+        Expect.that(count(c, "geontm:diamond_gavel") == 1 && count(c, "geontm:lead_gavel") == 0,
                 "crafted the diamond gavel from the lead gavel");
         c.cmd("clear");
     }
@@ -401,8 +401,8 @@ public final class FinalMeleeKits implements Scenario {
     private void bobmazon(Client c) {
         // a wide catch floor: the drone lands a gaussian ten blocks from the buyer
         c.cmd("fill " + (X - 30) + " " + Y + " " + (Z - 30) + " " + (X + 30) + " " + Y + " " + (Z + 30) + " minecraft:stone replace minecraft:air");
-        Fixtures.giveOnly(c, "hbm:bobmazon", 1);
-        c.cmd("give @s hbm:cap_nuka 5");
+        Fixtures.giveOnly(c, "geontm:bobmazon", 1);
+        c.cmd("give @s geontm:cap_nuka 5");
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.look(0, -80);
         c.waitTicks(3);
@@ -417,7 +417,7 @@ public final class FinalMeleeKits implements Scenario {
         c.waitTicks(10);
         c.key("escape");
         c.waitTicks(3);
-        Expect.that(count(c, "hbm:cap_nuka") == 3, "two caps paid, " + count(c, "hbm:cap_nuka") + " left");
+        Expect.that(count(c, "geontm:cap_nuka") == 3, "two caps paid, " + count(c, "geontm:cap_nuka") + " left");
 
         // the drone falls from y 300 at two blocks a tick and drops its payload where it lands
         JsonObject torch = null;
@@ -436,7 +436,7 @@ public final class FinalMeleeKits implements Scenario {
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
 
         // the hidden catalogue opens too (special offers)
-        Fixtures.giveOnly(c, "hbm:bobmazon_hidden", 1);
+        Fixtures.giveOnly(c, "geontm:bobmazon_hidden", 1);
         c.look(0, -80);
         c.waitTicks(3);
         c.use(2);
@@ -454,7 +454,7 @@ public final class FinalMeleeKits implements Scenario {
             openKit(c, crate);
             int parts = 0;
             for (JsonElement e : c.inventory().getAsJsonArray("slots")) {
-                if (e.getAsJsonObject().get("id").getAsString().startsWith("hbm:mp_")) parts++;
+                if (e.getAsJsonObject().get("id").getAsString().startsWith("geontm:mp_")) parts++;
             }
             Expect.that(parts == 1, crate + " gave one missile part");
         }
@@ -467,8 +467,8 @@ public final class FinalMeleeKits implements Scenario {
 
     private void spade(Client c) {
         int sx = X + 4;
-        Fixtures.setBlock(c, sx, Y + 1, Z + 3, "hbm:ntm_dirt");
-        Fixtures.giveOnly(c, "hbm:mysteryshovel", 1);
+        Fixtures.setBlock(c, sx, Y + 1, Z + 3, "geontm:ntm_dirt");
+        Fixtures.giveOnly(c, "geontm:mysteryshovel", 1);
         useOn(c, "mysteryshovel", sx, Y + 1, Z + 3);
         Expect.block(c, sx, Y + 1, Z + 3, "minecraft:air");
         c.waitTicks(5);
@@ -494,7 +494,7 @@ public final class FinalMeleeKits implements Scenario {
         c.teleport(px + 0.5, Y + 6, Z - 9.5);
         c.cmd("setblock " + px + " " + (Y + 5) + " " + (Z - 10) + " minecraft:stone");
         c.teleport(px + 0.5, Y + 6, Z - 9.5);
-        Fixtures.giveOnly(c, "hbm:stick_dynamite_fishing", 1);
+        Fixtures.giveOnly(c, "geontm:stick_dynamite_fishing", 1);
         c.lookAt(px + 0.5, Y + 2.0, Z - 5.0);
         c.waitTicks(3);
         c.use(2);
@@ -511,7 +511,7 @@ public final class FinalMeleeKits implements Scenario {
     }
 
     private void starblaster(Client c) {
-        Fixtures.giveOnly(c, "hbm:weaponized_starblaster_cell", 1);
+        Fixtures.giveOnly(c, "geontm:weaponized_starblaster_cell", 1);
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
         c.lookAt(X + 0.5, Y + 1.0, Z + 3.5);
         c.waitTicks(2);

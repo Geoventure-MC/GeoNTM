@@ -1,10 +1,10 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,36 +42,36 @@ public final class Pt1012Render implements Scenario {
             c.cmd("time set 6000");
 
             // 1. consoles, placed by hand from four blocks south-east so the player is outside the desk.
-            placeFrom(c, "hbm:rbmk_console", X - 12, Z, X - 12 + 0.5, Z - 2.5);
-            placeFrom(c, "hbm:rbmk_crane_console", X - 4, Z, X - 4 + 0.5, Z - 2.5);
+            placeFrom(c, "geontm:rbmk_console", X - 12, Z, X - 12 + 0.5, Z - 2.5);
+            placeFrom(c, "geontm:rbmk_crane_console", X - 4, Z, X - 4 + 0.5, Z - 2.5);
             // 2. turbofan
-            placeFrom(c, "hbm:machine_turbofan", X + 8, Z, X + 8 + 0.5, Z - 3.5);
+            placeFrom(c, "geontm:machine_turbofan", X + 8, Z, X + 8 + 0.5, Z - 3.5);
             // 3. exhaust pipes and silver box ducts
             int ex = X - 12, ez = Z - 14;
-            pipes(c, "hbm:fluid_duct_exhaust_0", ex, ez);
-            pipes(c, "hbm:fluid_duct_box_silver_0", ex + 12, ez);
+            pipes(c, "geontm:fluid_duct_exhaust_0", ex, ez);
+            pipes(c, "geontm:fluid_duct_box_silver_0", ex + 12, ez);
             // 4. 3x3 fuel rod columns
             int rx = X + 10, rz = Z - 14;
             // farthest row first, so the ray to the floor never crosses a column already standing
             for (int dz = 2; dz >= 0; dz--) {
                 for (int dx = 0; dx < 3; dx++) {
-                    placeFrom(c, "hbm:rbmk_fuel_rod", rx + dx, rz + dz, rx + dx + 0.5, rz + dz - 2.5);
+                    placeFrom(c, "geontm:rbmk_fuel_rod", rx + dx, rz + dz, rx + dx + 0.5, rz + dz - 2.5);
                 }
             }
-            placeFrom(c, "hbm:rbmk_fuel_rod", rx + 5, rz + 1, rx + 5.5, rz - 1.5);
+            placeFrom(c, "geontm:rbmk_fuel_rod", rx + 5, rz + 1, rx + 5.5, rz - 1.5);
             // a concrete lid on the front-left column and a glass lid on the front-right one, by hand from above
-            lid(c, "hbm:rbmk_lid", rx, rz);
-            lid(c, "hbm:rbmk_lid_glass", rx + 2, rz);
+            lid(c, "geontm:rbmk_lid", rx, rz);
+            lid(c, "geontm:rbmk_lid_glass", rx + 2, rz);
             Expect.that(c.block(rx, L, rz).get("state").getAsString().contains("lid=concrete"), "concrete lid placed");
             Expect.that(c.block(rx + 2, L, rz).get("state").getAsString().contains("lid=glass"), "glass lid placed");
             c.cmd("clear");
             c.cmd("gamemode spectator");
             c.waitTicks(20);
 
-            int consoleCores = countCores(c, "hbm:rbmk_console", X - 12, Z, 4, 5, false)
-                    + countCores(c, "hbm:rbmk_console", X - 12, Z, 4, 5, true) * 100;
-            int craneCores = countCores(c, "hbm:rbmk_crane_console", X - 4, Z, 3, 3, false)
-                    + countCores(c, "hbm:rbmk_crane_console", X - 4, Z, 3, 3, true) * 100;
+            int consoleCores = countCores(c, "geontm:rbmk_console", X - 12, Z, 4, 5, false)
+                    + countCores(c, "geontm:rbmk_console", X - 12, Z, 4, 5, true) * 100;
+            int craneCores = countCores(c, "geontm:rbmk_crane_console", X - 4, Z, 3, 3, false)
+                    + countCores(c, "geontm:rbmk_crane_console", X - 4, Z, 3, 3, true) * 100;
             c.chat("pt1012-render: console BEs (client + 100*server)=" + consoleCores + " crane=" + craneCores);
             Expect.equal(101, consoleCores, "rbmk_console: exactly one block entity (client and server)");
             Expect.equal(101, craneCores, "rbmk_crane_console: exactly one block entity (client and server)");
@@ -179,7 +179,7 @@ public final class Pt1012Render implements Scenario {
         c.cmd("clear");
         for (String id : new String[]{"rbmk_fuel_rod", "rbmk_boiler", "machine_turbofan", "fluid_duct_exhaust_0",
                 "fluid_duct_exhaust_4", "fluid_duct_box_silver_0", "fluid_duct_box_copper_2", "rbmk_console", "rbmk_crane_console"}) {
-            c.cmd("give @s hbm:" + id + " 1");
+            c.cmd("give @s geontm:" + id + " 1");
         }
         c.waitTicks(10);
         String scale = c.setOption("gui_scale", "4");

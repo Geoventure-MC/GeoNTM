@@ -1,7 +1,7 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -25,11 +25,11 @@ public final class Gh137BeamAim implements Scenario {
     private record Gun(String id, String ammo, boolean measured) {}
 
     private static final Gun[] GUNS = {
-            new Gun("hbm:gun_laser_pistol", "hbm:ammo_standard_capacitor", false),
-            new Gun("hbm:gun_lasrifle", "hbm:ammo_standard_capacitor", true),
-            new Gun("hbm:gun_tesla_cannon", "hbm:ammo_standard_capacitor", false),
-            new Gun("hbm:gun_tau", "hbm:ammo_standard_tau_uranium", false),
-            new Gun("hbm:gun_aberrator", "hbm:ammo_secret_p35_800", false),
+            new Gun("geontm:gun_laser_pistol", "geontm:ammo_standard_capacitor", false),
+            new Gun("geontm:gun_lasrifle", "geontm:ammo_standard_capacitor", true),
+            new Gun("geontm:gun_tesla_cannon", "geontm:ammo_standard_capacitor", false),
+            new Gun("geontm:gun_tau", "geontm:ammo_standard_tau_uranium", false),
+            new Gun("geontm:gun_aberrator", "geontm:ammo_secret_p35_800", false),
     };
 
     @Override
@@ -93,7 +93,7 @@ public final class Gh137BeamAim implements Scenario {
                 }
             }
             Expect.that(failures.isEmpty(), "the laser rifle's beam runs along the view at every pitch: " + failures);
-            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*hbm");
+            Expect.logCleanSinceMark(c, "Exception|/(ERROR|FATAL)[]].*geontm");
         } finally {
             c.tickRate(20F);
             if (hideGui != null) c.setOption("hide_gui", hideGui);

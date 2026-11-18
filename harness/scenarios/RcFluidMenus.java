@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,12 +42,12 @@ public final class RcFluidMenus implements Scenario {
             c.cmd("fill " + (X - 8) + " " + L + " " + z0 + " " + (X + 8) + " " + (L + 12) + " " + (z0 + STEP - 1) + " minecraft:air");
         }
         for (int i = 0; i < MACHINES.length; i++) {
-            Fixtures.setBlock(c, X, L, Z + i * STEP, "hbm:" + MACHINES[i] + "[facing=north]");
+            Fixtures.setBlock(c, X, L, Z + i * STEP, "geontm:" + MACHINES[i] + "[facing=north]");
         }
         c.waitTicks(30);
         for (int i = 0; i < MACHINES.length; i++) {
             if (c.block(X, L, Z + i * STEP).get("block").getAsString().equals("minecraft:air")) {
-                Fixtures.setBlock(c, X, L, Z + i * STEP, "hbm:" + MACHINES[i]);
+                Fixtures.setBlock(c, X, L, Z + i * STEP, "geontm:" + MACHINES[i]);
             }
         }
         c.waitTicks(30);

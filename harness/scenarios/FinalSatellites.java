@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -25,11 +25,11 @@ public final class FinalSatellites implements Scenario {
     private static final int Y = 100;
     private static final int Z = 0;
 
-    static final String[] IDS = {"hbm:sat_mapper", "hbm:sat_scanner", "hbm:sat_radar", "hbm:sat_laser",
-            "hbm:sat_foeq", "hbm:sat_resonator", "hbm:sat_miner", "hbm:sat_lunar_miner", "hbm:sat_gerald",
-            "hbm:sat_chip", "hbm:sat_coord", "hbm:sat_designator", "hbm:sat_relay", "hbm:machine_satlinker",
-            "hbm:sat_dock", "hbm:machine_satlink", "hbm:soyuz_launcher", "hbm:missile_soyuz_0",
-            "hbm:missile_soyuz_lander"};
+    static final String[] IDS = {"geontm:sat_mapper", "geontm:sat_scanner", "geontm:sat_radar", "geontm:sat_laser",
+            "geontm:sat_foeq", "geontm:sat_resonator", "geontm:sat_miner", "geontm:sat_lunar_miner", "geontm:sat_gerald",
+            "geontm:sat_chip", "geontm:sat_coord", "geontm:sat_designator", "geontm:sat_relay", "geontm:machine_satlinker",
+            "geontm:sat_dock", "geontm:machine_satlink", "geontm:soyuz_launcher", "geontm:missile_soyuz_0",
+            "geontm:missile_soyuz_lander"};
 
     // 1.7 EnumSatType ordinals
     static final int SPY = 0, SCANNER = 1, RADAR = 2, MINER_ASTRO = 3, MINER_LUNAR = 4, PRECISION_LASER = 5,
@@ -55,21 +55,21 @@ public final class FinalSatellites implements Scenario {
         inventory(c);
 
         // --- the ID manager: randomise, copy -------------------------------------------------------------------
-        place(c, "hbm:machine_satlinker", LX, Y, LZ);
-        Expect.block(c, LX, Y + 1, LZ, "hbm:machine_satlinker");
+        place(c, "geontm:machine_satlinker", LX, Y, LZ);
+        Expect.block(c, LX, Y + 1, LZ, "geontm:machine_satlinker");
         worldShot(c, "10-satlinker-block", LX + 2.5, Y + 2.2, LZ + 2.5, LX + 0.5, Y + 1.5, LZ + 0.5);
 
-        int laserFreq = tune(c, PRECISION_LASER, "hbm:sat_designator", "11-gui-satlinker-laser");
-        int resonatorFreq = tune(c, XENIUM_RESONATOR, "hbm:sat_coord", "12-gui-satlinker-resonator");
-        int minerFreq = tune(c, MINER_ASTRO, "hbm:sat_chip", "13-gui-satlinker-miner");
+        int laserFreq = tune(c, PRECISION_LASER, "geontm:sat_designator", "11-gui-satlinker-laser");
+        int resonatorFreq = tune(c, XENIUM_RESONATOR, "geontm:sat_coord", "12-gui-satlinker-resonator");
+        int minerFreq = tune(c, MINER_ASTRO, "geontm:sat_chip", "13-gui-satlinker-miner");
         Expect.that(laserFreq != resonatorFreq && resonatorFreq != minerFreq,
                 "three random frequencies: " + laserFreq + " " + resonatorFreq + " " + minerFreq);
         // the relay chip for the radar takes the resonator's frequency too
-        copyFreq(c, XENIUM_RESONATOR, resonatorFreq, "hbm:sat_relay");
+        copyFreq(c, XENIUM_RESONATOR, resonatorFreq, "geontm:sat_relay");
 
         // --- the Soyuz: placed, loaded by clicks, fuelled, launched -------------------------------------------
         c.cmd("clear");
-        c.cmd("give @s hbm:soyuz_launcher 1");
+        c.cmd("give @s geontm:soyuz_launcher 1");
         c.waitTicks(2);
         c.hotbar(1);
         // (0, -4) from the ground block is clear of the corner legs, the towers and (above head) the apron
@@ -85,10 +85,10 @@ public final class FinalSatellites implements Scenario {
 
         c.cmd("clear");
         c.cmd("give @s " + satellite(c, PRECISION_LASER, laserFreq) + " 1");
-        c.cmd("give @s hbm:missile_soyuz_0 1");
+        c.cmd("give @s geontm:missile_soyuz_0 1");
         c.waitTicks(3);
         openLauncher(c, launcher);
-        clickFromInventory(c, "hbm:missile_soyuz_0", 0);
+        clickFromInventory(c, "geontm:missile_soyuz_0", 0);
         clickFromInventory(c, satId(PRECISION_LASER), 2);
         c.waitTicks(3);
         close(c);
@@ -116,16 +116,16 @@ public final class FinalSatellites implements Scenario {
         String pad = counting;
         for (int i = 0; i < 200 && rocket == null; i++) {
             c.waitTicks(10);
-            rocket = entity(c, "hbm:entity_soyuz", 900);
+            rocket = entity(c, "geontm:entity_soyuz", 900);
             pad = c.blockEntity(launcher[0], launcher[1], launcher[2]).toString();
             lifted = !pad.contains("missile_soyuz");
-            if (lifted && rocket == null) rocket = entity(c, "hbm:entity_soyuz", 900);
+            if (lifted && rocket == null) rocket = entity(c, "geontm:entity_soyuz", 900);
             if (lifted) break;
         }
         Expect.that(lifted, "the Soyuz left the pad: " + pad);
         worldShot(c, "25-soyuz-liftoff", SX + 30.5, Y + 20, SZ - 30.5, SX + 0.5, Y + 40, SZ + 0.5);
-        for (int i = 0; i < 40 && entity(c, "hbm:entity_soyuz", 900) != null; i++) c.waitTicks(20);
-        Expect.that(entity(c, "hbm:entity_soyuz", 900) == null, "the Soyuz separated its payload above y=600");
+        for (int i = 0; i < 40 && entity(c, "geontm:entity_soyuz", 900) != null; i++) c.waitTicks(20);
+        Expect.that(entity(c, "geontm:entity_soyuz", 900) == null, "the Soyuz separated its payload above y=600");
 
         // --- /ntmsatellites orbit + list ----------------------------------------------------------------------
         c.cmd("clear");
@@ -157,7 +157,7 @@ public final class FinalSatellites implements Scenario {
 
         // --- laser designator: the precision laser --------------------------------------------------------------
         c.cmd("clear");
-        c.cmd("give @s " + chip(c, "hbm:sat_designator", laserFreq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_designator", laserFreq) + " 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(TX + 0.5, Y + 1, TZ - 10.5);
@@ -174,7 +174,7 @@ public final class FinalSatellites implements Scenario {
 
         // --- satellite designator screen: the resonator teleports ---------------------------------------------
         c.cmd("clear");
-        c.cmd("give @s " + chip(c, "hbm:sat_coord", resonatorFreq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_coord", resonatorFreq) + " 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(X + 0.5, Y + 1, Z + 0.5);
@@ -201,16 +201,16 @@ public final class FinalSatellites implements Scenario {
 
         // --- the radar's sat_relay link slot ------------------------------------------------------------------
         c.cmd("clear");
-        place(c, "hbm:machine_radar", RX, Y, RZ);
-        Expect.block(c, RX, Y + 1, RZ, "hbm:machine_radar");
+        place(c, "geontm:machine_radar", RX, Y, RZ);
+        Expect.block(c, RX, Y + 1, RZ, "geontm:machine_radar");
         c.cmd("clear");
-        c.cmd("give @s " + chip(c, "hbm:sat_relay", resonatorFreq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_relay", resonatorFreq) + " 1");
         c.waitTicks(2);
         openAt(c, RX + 2.5, RZ + 0.5, RX + 0.5, RZ + 0.5, "GUIMachineRadarNT");
         clickRadarToggle(c, 158);
         c.waitScreen("GUIMachineRadarNTSlots", 5000);
         c.waitTicks(3);
-        clickFromInventory(c, "hbm:sat_relay", 0);
+        clickFromInventory(c, "geontm:sat_relay", 0);
         c.waitTicks(3);
         c.screenshot("60-gui-radar-sat-relay");
         close(c);
@@ -235,17 +235,17 @@ public final class FinalSatellites implements Scenario {
 
         // --- cargo landing pad: a miner rocket lands and unloads ----------------------------------------------
         c.cmd("clear");
-        place(c, "hbm:sat_dock", DX, Y, DZ);
+        place(c, "geontm:sat_dock", DX, Y, DZ);
         int[] dock = findCore(c, DX, Y + 1, DZ, "sat_dock", 1);
         Expect.that(dock != null, "the cargo pad formed a core");
-        c.cmd("give @s " + chip(c, "hbm:sat_chip", minerFreq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_chip", minerFreq) + " 1");
         c.waitTicks(2);
         openAt(c, dock[0] + 3.5, dock[2] + 0.5, dock[0] + 0.5, dock[2] + 0.5, "Cargo Landing Pad");
         // 1.7 fills a miner after 15 minutes of ticks; the hook leaves one tick to go (GameTest rc_space_miner_timing covers the 18,000)
         JsonObject prime = new JsonObject();
         prime.addProperty("miner", minerFreq);
-        Expect.that(c.query("hbm_gapsc", prime).get("miner_primed").getAsBoolean(), "the miner is up and primed");
-        clickFromInventory(c, "hbm:sat_chip", 15);
+        Expect.that(c.query("geontm_gapsc", prime).get("miner_primed").getAsBoolean(), "the miner is up and primed");
+        clickFromInventory(c, "geontm:sat_chip", 15);
         c.waitTicks(5);
         c.screenshot("70-gui-sat-dock-chip");
         JsonObject dockGui = c.screen();
@@ -256,7 +256,7 @@ public final class FinalSatellites implements Scenario {
         JsonObject lander = null;
         for (int i = 0; i < 20 && lander == null; i++) {
             c.waitTicks(5);
-            lander = entity(c, "hbm:entity_miner_lander", 400);
+            lander = entity(c, "geontm:entity_miner_lander", 400);
         }
         Expect.that(lander != null, "the pad called down a miner rocket");
         c.waitTicks(160);
@@ -265,7 +265,7 @@ public final class FinalSatellites implements Scenario {
         for (int i = 0; i < 30 && !cargo; i++) {
             c.waitTicks(10);
             String nbt = c.blockEntity(dock[0], dock[1], dock[2]).toString();
-            cargo = nbt.contains("hbm:") && !nbt.replaceAll("\\s", "").matches(".*Items:\\[\\].*") && nbt.toLowerCase(java.util.Locale.ROOT).contains("count"); // 1.20.1 spells it "Count"
+            cargo = nbt.contains("geontm:") && !nbt.replaceAll("\\s", "").matches(".*Items:\\[\\].*") && nbt.toLowerCase(java.util.Locale.ROOT).contains("count"); // 1.20.1 spells it "Count"
         }
         worldShot(c, "73-miner-rocket-landed", dock[0] + 5.5, Y + 4, dock[2] + 5.5, dock[0] + 0.5, Y + 2, dock[2] + 0.5);
         String dockNbt = c.blockEntity(dock[0], dock[1], dock[2]).toString();
@@ -277,11 +277,11 @@ public final class FinalSatellites implements Scenario {
 
         // --- ground station: tuned by a chip, connected ------------------------------------------------------
         c.cmd("clear");
-        place(c, "hbm:machine_satlink", GX, Y, GZ);
+        place(c, "geontm:machine_satlink", GX, Y, GZ);
         int[] link = findCore(c, GX, Y + 1, GZ, "machine_satlink", 1);
         Expect.that(link != null, "the ground station formed a core");
         c.cmd("clear"); // creative placement kept the station item in slot 1
-        c.cmd("give @s " + chip(c, "hbm:sat_chip", minerFreq) + " 1");
+        c.cmd("give @s " + chip(c, "geontm:sat_chip", minerFreq) + " 1");
         c.waitTicks(2);
         c.hotbar(1);
         c.teleport(link[0] + 3.5, Y + 1, link[2] + 0.5);
@@ -316,7 +316,7 @@ public final class FinalSatellites implements Scenario {
             c.waitTicks(4);
             c.cmd("ntmsatellites orbit");
             c.cmd("clear");
-            c.cmd("give @s " + chip(c, "hbm:sat_coord", 424242) + " 1");
+            c.cmd("give @s " + chip(c, "geontm:sat_coord", 424242) + " 1");
             c.waitTicks(10);
             c.hotbar(1);
             c.waitTicks(4);
@@ -333,7 +333,7 @@ public final class FinalSatellites implements Scenario {
             c.cmd("gamemode spectator");
             c.teleport(180.5, Y + 30, 180.5);
             c.waitTicks(20);
-            JsonObject blast = entity(c, "hbm:entity_laser_blast", 300);
+            JsonObject blast = entity(c, "geontm:entity_laser_blast", 300);
             Expect.that(blast != null, "the death ray dropped its blast at 200 / 200");
             worldShot(c, "90-death-ray-beam", 170.5, Y + 30, 170.5, 200.5, blast.get("y").getAsDouble(), 200.5);
             c.waitTicks(80);
@@ -365,20 +365,20 @@ public final class FinalSatellites implements Scenario {
 
     /** The item id of 1.7 satellite metadata {@code variant}. */
     private static String satId(int variant) {
-        return "hbm:satellite_" + SAT_NAMES[variant];
+        return "geontm:satellite_" + SAT_NAMES[variant];
     }
 
     /** A satellite variant, optionally with a frequency already on it. */
     private static String satellite(Client c, int variant, int freq) {
         // one item per satellite since History §19es-itemvariant (ntm-next ids)
-        String id = "hbm:satellite_" + new String[] {"spy", "scanner", "radar", "miner_astro", "miner_lunar", "precision_laser", "death_ray", "xenium_resonator", "relay", "detector", "ray_scan"}[variant];
-        if (legacy(c)) return id + (freq != 0 ? "{\"hbm:persistent_data\":{freq:" + freq + "}}" : "");
-        return id + (freq != 0 ? "[hbm:persistent_data={freq:" + freq + "}]" : "");
+        String id = "geontm:satellite_" + new String[] {"spy", "scanner", "radar", "miner_astro", "miner_lunar", "precision_laser", "death_ray", "xenium_resonator", "relay", "detector", "ray_scan"}[variant];
+        if (legacy(c)) return id + (freq != 0 ? "{\"geontm:persistent_data\":{freq:" + freq + "}}" : "");
+        return id + (freq != 0 ? "[geontm:persistent_data={freq:" + freq + "}]" : "");
     }
 
     private static String chip(Client c, String id, int freq) {
-        if (legacy(c)) return id + "{\"hbm:persistent_data\":{freq:" + freq + "}}";
-        return id + "[hbm:persistent_data={freq:" + freq + "}]";
+        if (legacy(c)) return id + "{\"geontm:persistent_data\":{freq:" + freq + "}}";
+        return id + "[geontm:persistent_data={freq:" + freq + "}]";
     }
 
     private static void inventory(Client c) {
@@ -396,8 +396,8 @@ public final class FinalSatellites implements Scenario {
         c.waitTicks(10);
         c.screenshot("01-inventory");
         // hover the gerald, the precision laser satellite and the laser designator for their tooltips
-        hoverTooltip(c, "hbm:sat_gerald", "02-tooltip-gerald");
-        hoverTooltip(c, "hbm:sat_designator", "03-tooltip-designator");
+        hoverTooltip(c, "geontm:sat_gerald", "02-tooltip-gerald");
+        hoverTooltip(c, "geontm:sat_designator", "03-tooltip-designator");
         close(c);
         c.cmd("clear");
         c.cmd("gamemode creative");

@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,19 +28,19 @@ public final class Gh142HeaterAutomation implements Scenario {
         c.cmd("gamerule sendCommandFeedback false");
         c.cmd("gamerule send_command_feedback false");
 
-        int[] fireboxCore = place(c, "hbm:heater_firebox", 0, Y, 0);
+        int[] fireboxCore = place(c, "geontm:heater_firebox", 0, Y, 0);
         int fx = fireboxCore[0], fz = fireboxCore[2];
-        Fixtures.setBlock(c, fx + 2, G, fz, "hbm:crane_inserter[input=east,output=west]");
-        for (int x = fx + 3; x <= fx + 5; x++) Fixtures.setBlock(c, x, G, fz, "hbm:conveyor[facing=west]");
+        Fixtures.setBlock(c, fx + 2, G, fz, "geontm:crane_inserter[input=east,output=west]");
+        for (int x = fx + 3; x <= fx + 5; x++) Fixtures.setBlock(c, x, G, fz, "geontm:conveyor[facing=west]");
 
-        int[] ovenCore = place(c, "hbm:heater_oven", -8, Y, 0);
+        int[] ovenCore = place(c, "geontm:heater_oven", -8, Y, 0);
         int ox = ovenCore[0], oz = ovenCore[2];
-        Fixtures.setBlock(c, ox - 2, G, oz, "hbm:crane_inserter[input=west,output=east]");
-        for (int x = ox - 5; x <= ox - 3; x++) Fixtures.setBlock(c, x, G, oz, "hbm:conveyor[facing=east]");
+        Fixtures.setBlock(c, ox - 2, G, oz, "geontm:crane_inserter[input=west,output=east]");
+        for (int x = ox - 5; x <= ox - 3; x++) Fixtures.setBlock(c, x, G, oz, "geontm:conveyor[facing=east]");
 
-        int[] crucibleCore = consumerOnBurner(c, "hbm:machine_crucible", 10);
-        int[] stirlingBurner = burnerUnder(consumerOnBurner(c, "hbm:machine_stirling", 20));
-        int[] control = place(c, "hbm:heater_oilburner", -20, Y, 0);
+        int[] crucibleCore = consumerOnBurner(c, "geontm:machine_crucible", 10);
+        int[] stirlingBurner = burnerUnder(consumerOnBurner(c, "geontm:machine_stirling", 20));
+        int[] control = place(c, "geontm:heater_oilburner", -20, Y, 0);
 
         c.cmd("summon minecraft:item " + (fx + 5.5) + " " + (G + 0.3) + " " + (fz + 0.5) + " {Item:{id:\"minecraft:coal\",count:4,Count:4b},PickupDelay:32767s}");
         c.cmd("summon minecraft:item " + (ox - 4.5) + " " + (G + 0.3) + " " + (oz + 0.5) + " {Item:{id:\"minecraft:charcoal\",count:4,Count:4b},PickupDelay:32767s}");
@@ -108,7 +108,7 @@ public final class Gh142HeaterAutomation implements Scenario {
 
     /** A Fluid Burner, and the consumer placed by hand so its core sits on the burner's heat cell. */
     private static int[] consumerOnBurner(Client c, String item, int x) {
-        int[] burner = place(c, "hbm:heater_oilburner", x, Y, 0);
+        int[] burner = place(c, "geontm:heater_oilburner", x, Y, 0);
         int[] probe = place(c, item, x + 6, Y, 0);
         int dx = probe[0] - (x + 6), dz = probe[2];
         c.cmd("setblock " + probe[0] + " " + probe[1] + " " + probe[2] + " minecraft:air");

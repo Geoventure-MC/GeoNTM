@@ -1,9 +1,9 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,7 +31,7 @@ public final class FinalStructures implements Scenario {
     }
 
     private static String loadItem(Client c) {
-        return "hbm:wand_structure_load"; // 1.7 wand_structure metadata 1 (History §19es-itemvariant)
+        return "geontm:wand_structure_load"; // 1.7 wand_structure metadata 1 (History §19es-itemvariant)
     }
 
     @Override
@@ -58,8 +58,8 @@ public final class FinalStructures implements Scenario {
 
     // --- inventory ----------------------------------------------------------------------------------------------
 
-    private static final String[] BLOCKS = {"hbm:wand_air", "hbm:wand_loot", "hbm:wand_jigsaw", "hbm:wand_logic",
-            "hbm:wand_tandem", "hbm:wand_structure"};
+    private static final String[] BLOCKS = {"geontm:wand_air", "geontm:wand_loot", "geontm:wand_jigsaw", "geontm:wand_logic",
+            "geontm:wand_tandem", "geontm:wand_structure"};
 
     private static void inventory(Client c) {
         c.cmd("clear");
@@ -76,7 +76,7 @@ public final class FinalStructures implements Scenario {
         c.waitScreen("", 5000);
         c.waitTicks(10);
         c.screenshot("01-inventory");
-        for (String id : new String[]{"hbm:wand_loot", "hbm:wand_logic"}) {
+        for (String id : new String[]{"geontm:wand_loot", "geontm:wand_logic"}) {
             JsonObject slot = findSlot(c, id);
             Expect.that(slot != null, "slot of " + id);
             c.mouseMove(slot.get("x").getAsDouble() + 8, slot.get("y").getAsDouble() + 8);
@@ -190,8 +190,8 @@ public final class FinalStructures implements Scenario {
 
     private static void airWand(Client c) throws Exception {
         int ax = X - 10, az = Z - 8;
-        Fixtures.giveOnly(c, "hbm:wand_k", 1);
-        Fixtures.setBlock(c, ax, Y + 1, az, "hbm:wand_air");
+        Fixtures.giveOnly(c, "geontm:wand_k", 1);
+        Fixtures.setBlock(c, ax, Y + 1, az, "geontm:wand_air");
         c.teleport(ax + 0.5, Y + 1, az - 2.5); // the far corner (ax+2, az+1) stays within 5 blocks
         c.waitTicks(3);
         c.markLog();
@@ -203,7 +203,7 @@ public final class FinalStructures implements Scenario {
         c.waitTicks(4);
         c.keyUp("key.sneak");
         c.waitTicks(3);
-        expectChat(c, "Set block block.hbm.wand_air");
+        expectChat(c, "Set block block.geontm.wand_air");
         // a stone post inside the box must survive: air mode only fills air. Box: platform corner (ax+1, Y, az) to
         // the top of the post (ax+2, Y+1, az+1); the platform layer is stone and stays, the air layer fills.
         Fixtures.setBlock(c, ax + 2, Y + 1, az + 1, "minecraft:stone");
@@ -217,9 +217,9 @@ public final class FinalStructures implements Scenario {
         c.use(2);
         c.waitTicks(4);
         expectChat(c, "Selection filled!");
-        Expect.block(c, ax + 1, Y + 1, az, "hbm:wand_air");
-        Expect.block(c, ax + 2, Y + 1, az, "hbm:wand_air");
-        Expect.block(c, ax + 1, Y + 1, az + 1, "hbm:wand_air");
+        Expect.block(c, ax + 1, Y + 1, az, "geontm:wand_air");
+        Expect.block(c, ax + 2, Y + 1, az, "geontm:wand_air");
+        Expect.block(c, ax + 1, Y + 1, az + 1, "geontm:wand_air");
         Expect.block(c, ax + 2, Y + 1, az + 1, "minecraft:stone");
         Expect.block(c, ax + 1, Y, az, "minecraft:stone");
         c.cmd("clear");
@@ -235,10 +235,10 @@ public final class FinalStructures implements Scenario {
             // [dy][dz][dx], 3x3x3 above the platform
             {{"minecraft:oak_planks", "minecraft:oak_stairs[facing=east]", "minecraft:glass"},
                     {"minecraft:iron_block", "minecraft:air", "minecraft:oak_stairs[facing=north,half=top]"},
-                    {"minecraft:bricks", "minecraft:chest[facing=south]", "hbm:concrete_smooth"}},
+                    {"minecraft:bricks", "minecraft:chest[facing=south]", "geontm:concrete_smooth"}},
             {{"minecraft:oak_planks", "minecraft:air", "minecraft:glass"},
                     {"minecraft:air", "minecraft:gold_block", "minecraft:air"},
-                    {"minecraft:bricks", "minecraft:air", "hbm:reinforced_brick"}},
+                    {"minecraft:bricks", "minecraft:air", "geontm:reinforced_brick"}},
             {{"minecraft:oak_planks", "minecraft:oak_slab[type=top]", "minecraft:glass"},
                     {"minecraft:air", "minecraft:gold_block", "minecraft:air"},
                     {"minecraft:bricks", "minecraft:air", "minecraft:gold_block"}}
@@ -252,7 +252,7 @@ public final class FinalStructures implements Scenario {
 
         // wand_s: first corner the lowest block of the build, second the top far corner; the saving block goes
         // one below the lower corner, i.e. into the platform
-        Fixtures.giveOnly(c, "hbm:wand_s", 1);
+        Fixtures.giveOnly(c, "geontm:wand_s", 1);
         c.teleport(SX - 2.5, Y + 1, SZ + 0.5);
         c.waitTicks(3);
         c.markLog();
@@ -268,7 +268,7 @@ public final class FinalStructures implements Scenario {
         c.use(2);
         c.waitTicks(4);
         expectChat(c, "Structure block configured and added at: " + SX + ", " + Y + ", " + SZ);
-        Expect.block(c, SX, Y, SZ, "hbm:wand_structure");
+        Expect.block(c, SX, Y, SZ, "geontm:wand_structure");
         String saving = snbt(c, SX, Y, SZ);
         Expect.that(saving.contains("sizeX:3") && saving.contains("sizeY:3") && saving.contains("sizeZ:3"), "the wand sized the box 3x3x3: " + saving);
         worldShot(c, "50-save-box", SX - 3.5, Y + 5, SZ - 4.5, SX + 1.5, Y + 1.5, SZ + 1.5);
@@ -298,7 +298,7 @@ public final class FinalStructures implements Scenario {
         Expect.that(Files.isRegularFile(file) && Files.size(file) > 0, "the structure file was written: " + file);
 
         // a loading block elsewhere, opened through its exposed west face
-        Fixtures.setBlock(c, LX, Y, LZ, "hbm:wand_structure[mode=load]");
+        Fixtures.setBlock(c, LX, Y, LZ, "geontm:wand_structure[mode=load]");
         Fixtures.setBlock(c, LX - 1, Y, LZ, "minecraft:air");
         // litter inside the target box: the load wipes it where the file has no block
         Fixtures.setBlock(c, LX + 1, Y + 2, LZ, "minecraft:diamond_block");
@@ -340,14 +340,14 @@ public final class FinalStructures implements Scenario {
 
     private static void bundledDebugLoad(Client c) throws Exception {
         Path root = projectRoot();
-        Path source = root.resolve("NTM-Continuum/src/main/resources/assets/hbm/structures/desert_shack_1.nbt");
+        Path source = root.resolve("NTM-Continuum/src/main/resources/assets/geontm/structures/desert_shack_1.nbt");
         Path target = runDir(c).resolve("structures/desert_shack_1.nbt");
         Files.createDirectories(target.getParent());
         Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
 
         int bx = X - 20, bz = Z + 8;
         c.cmd("fill " + (bx - 2) + " " + (Y + 1) + " " + (bz - 2) + " " + (bx + 20) + " " + (Y + 16) + " " + (bz + 18) + " minecraft:air");
-        Fixtures.setBlock(c, bx, Y, bz, "hbm:wand_structure[mode=load]");
+        Fixtures.setBlock(c, bx, Y, bz, "geontm:wand_structure[mode=load]");
         Fixtures.setBlock(c, bx - 1, Y, bz, "minecraft:air");
         c.cmd("clear");
         c.hotbar(9);
@@ -385,7 +385,7 @@ public final class FinalStructures implements Scenario {
         }
         c.cmd("kill @e[type=!player]");
         c.waitTicks(5);
-        Fixtures.giveOnly(c, "hbm:wand_d", 1);
+        Fixtures.giveOnly(c, "geontm:wand_d", 1);
         c.teleport(CX + 0.5, Y + 1, CZ - 30.5);
         c.waitTicks(5);
         c.markLog();
@@ -400,20 +400,20 @@ public final class FinalStructures implements Scenario {
 
         // 52x69x17, centred: origin = (x - 26, y, z - 8)
         int ox = CX - 26, oy = Y + 1, oz = CZ - 8;
-        expectAt(c, ox, oy, oz, 4, 31, 8, "hbm:reinforced_brick", null);
-        expectAt(c, ox, oy, oz, 0, 32, 7, "hbm:deco_rusty_steel", null);
-        expectAt(c, ox, oy, oz, 7, 10, 7, "hbm:concrete_smooth", null);
+        expectAt(c, ox, oy, oz, 4, 31, 8, "geontm:reinforced_brick", null);
+        expectAt(c, ox, oy, oz, 0, 32, 7, "geontm:deco_rusty_steel", null);
+        expectAt(c, ox, oy, oz, 7, 10, 7, "geontm:concrete_smooth", null);
         expectAt(c, ox, oy, oz, 3, 35, 7, "minecraft:iron_bars", null);
-        expectAt(c, ox, oy, oz, 1, 31, 6, "hbm:reinforced_brick_slab", "type=top");          // brick_slab:9
-        expectAt(c, ox, oy, oz, 3, 31, 8, "hbm:reinforced_brick_stairs", "half=top");        // stairs:4
-        expectAt(c, ox, oy, oz, 1, 32, 6, "hbm:concrete_colored_ext", "type=machine");       // meta 0
-        expectAt(c, ox, oy, oz, 6, 16, 7, "hbm:concrete_colored_ext", null);                  // meta 7
+        expectAt(c, ox, oy, oz, 1, 31, 6, "geontm:reinforced_brick_slab", "type=top");          // brick_slab:9
+        expectAt(c, ox, oy, oz, 3, 31, 8, "geontm:reinforced_brick_stairs", "half=top");        // stairs:4
+        expectAt(c, ox, oy, oz, 1, 32, 6, "geontm:concrete_colored_ext", "type=machine");       // meta 0
+        expectAt(c, ox, oy, oz, 6, 16, 7, "geontm:concrete_colored_ext", null);                  // meta 7
         // loot placeholders became their containers, logic placeholders their logic blocks
         expectAt(c, ox, oy, oz, 2, 33, 8, "minecraft:chest", null);
-        expectAt(c, ox, oy, oz, 6, 33, 1, "hbm:crate_iron", null);
-        expectAt(c, ox, oy, oz, 12, 11, 10, "hbm:deco_loot", null);
-        expectAt(c, ox, oy, oz, 2, 34, 8, "hbm:logic_block_invis", null);
-        expectAt(c, ox, oy, oz, 17, 25, 7, "hbm:logic_block", null);
+        expectAt(c, ox, oy, oz, 6, 33, 1, "geontm:crate_iron", null);
+        expectAt(c, ox, oy, oz, 12, 11, 10, "geontm:deco_loot", null);
+        expectAt(c, ox, oy, oz, 2, 34, 8, "geontm:logic_block_invis", null);
+        expectAt(c, ox, oy, oz, 17, 25, 7, "geontm:logic_block", null);
         String chest = c.blockEntity(ox + 2, oy + 33, oz + 8).toString();
         Expect.that(chest.contains("Items") || chest.contains("items"), "the chest was filled from POOL_MACHINE_PARTS: " + chest);
 

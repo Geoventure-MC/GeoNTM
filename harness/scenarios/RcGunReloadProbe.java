@@ -1,6 +1,6 @@
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 import java.util.List;
 
 /** Reloads a few guns with real input and prints the magazine state after 250 ticks. */
@@ -21,8 +21,8 @@ public final class RcGunReloadProbe implements Scenario {
         c.teleport(0.5, 101, 0.5);
         for (String[] g : GUNS) {
             c.cmd("clear @s");
-            c.cmd("give @s hbm:" + g[0]);
-            c.cmd("give @s hbm:" + g[1] + " 64");
+            c.cmd("give @s geontm:" + g[0]);
+            c.cmd("give @s geontm:" + g[1] + " 64");
             c.hotbar(1);
             c.waitTicks(45);
             c.key("r");

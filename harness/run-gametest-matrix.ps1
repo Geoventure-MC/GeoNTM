@@ -12,7 +12,7 @@ try {
         $taskExit = $LASTEXITCODE
         $passSummary = Select-String -LiteralPath $log -Pattern '(?i)All (\d+) required tests passed' | Select-Object -Last 1
         $passedTests = if ($passSummary) { [int]$passSummary.Matches[0].Groups[1].Value } else { 0 }
-        # A successful process that omitted HBM registration is not a successful suite.
+        # A successful process that omitted GEONTM registration is not a successful suite.
         if ($taskExit -eq 0 -and $passedTests -lt 717) { $taskExit = 1 }
         $result = [pscustomobject]@{ node = $node; exitCode = $taskExit; passedTests = $passedTests; log = $log }
         $results += $result

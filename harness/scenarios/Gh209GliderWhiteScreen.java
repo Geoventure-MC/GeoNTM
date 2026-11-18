@@ -1,8 +1,8 @@
 import com.google.gson.JsonObject;
-import dev.golem.harness.api.Client;
-import dev.golem.harness.api.Expect;
-import dev.golem.harness.api.Fixtures;
-import dev.golem.harness.api.Scenario;
+import fr.geoventure.harness.api.Client;
+import fr.geoventure.harness.api.Expect;
+import fr.geoventure.harness.api.Fixtures;
+import fr.geoventure.harness.api.Scenario;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -36,7 +36,7 @@ public final class Gh209GliderWhiteScreen implements Scenario {
             c.setOption("camera", "first_person");
             c.cmd("fill " + room + " minecraft:stone hollow");
             c.cmd("clear");
-            c.cmd("give @s hbm:bobblehead_silentyeti 1");
+            c.cmd("give @s geontm:bobblehead_silentyeti 1");
             c.hotbar(1);
             c.teleport(X + 0.5, Y + 1, Z + 3.5);
             c.waitTicks(3);
@@ -44,9 +44,9 @@ public final class Gh209GliderWhiteScreen implements Scenario {
             c.waitTicks(1);
             c.use(2);
             c.waitTicks(5);
-            Expect.block(c, X, Y + 1, Z, "hbm:bobblehead");
+            Expect.block(c, X, Y + 1, Z, "geontm:bobblehead");
             c.cmd("clear");
-            c.cmd("item replace entity @s armor.head with hbm:no9");
+            c.cmd("item replace entity @s armor.head with geontm:no9");
             c.lookAt(X + 0.5, Y + 1.5, Z + 0.5);
             c.waitTicks(40);
 
@@ -58,16 +58,16 @@ public final class Gh209GliderWhiteScreen implements Scenario {
             Expect.equal(before.get("fallbacks").getAsLong(), after.get("fallbacks").getAsLong(), "no resident-draw fallback");
             Expect.equal(gemRender, after.get("gemrender_inputs").getAsBoolean(), "GemRender's inputs written: " + after);
 
-            c.query("golem_static_meshes", obj("mode", "off"));
+            c.query("geocore_static_meshes", obj("mode", "off"));
             c.waitTicks(10);
             checkNotWhite(c.screenshot("2-lamp-cpu"), "bobblehead under the lamp, CPU");
-            c.query("golem_static_meshes", obj("mode", "on"));
+            c.query("geocore_static_meshes", obj("mode", "on"));
 
             c.cmd("fill " + room + " minecraft:air");
             Fixtures.platform(c, X, Y, Z, 6);
             c.cmd("item replace entity @s armor.head with minecraft:air");
             c.cmd("time set 6000");
-            c.cmd("hbm jetpack_smoke");
+            c.cmd("geontm jetpack_smoke");
             c.setOption("camera", "third_person_back");
             c.look(0, 20);
             c.waitTicks(20);
@@ -76,8 +76,8 @@ public final class Gh209GliderWhiteScreen implements Scenario {
             c.waitTicks(10);
             checkNotWhite(c.screenshot("4-worn-front"), "worn glider, front");
         } finally {
-            c.query("golem_static_meshes", obj("mode", "on"));
-            c.cmd("hbm jetpack_smoke stop");
+            c.query("geocore_static_meshes", obj("mode", "on"));
+            c.cmd("geontm jetpack_smoke stop");
             c.cmd("fill " + room + " minecraft:air");
             c.setOption("camera", "first_person");
             c.cmd("clear");
@@ -87,7 +87,7 @@ public final class Gh209GliderWhiteScreen implements Scenario {
     }
 
     private static JsonObject meshes(Client c) {
-        return c.query("golem_static_meshes", new JsonObject());
+        return c.query("geocore_static_meshes", new JsonObject());
     }
 
     private static JsonObject obj(String key, String value) {
