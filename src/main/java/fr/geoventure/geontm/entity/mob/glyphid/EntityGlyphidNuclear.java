@@ -15,7 +15,7 @@ import fr.geoventure.geontm.main.Polaroid;
 import fr.geoventure.geontm.main.ResourceManager;
 import fr.geoventure.geontm.particle.helper.EntityEffects;
 import fr.geoventure.geontm.sound.ModSounds;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -59,7 +59,7 @@ public class EntityGlyphidNuclear extends EntityGlyphid {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_nuclear_tex;
     }
 
@@ -98,7 +98,7 @@ public class EntityGlyphidNuclear extends EntityGlyphid {
 
             // 1.7 getAITarget() is the revenge target (entityLivingToAttack, the last attacker), not entityToAttack
             if (getCurrentTask() == TASK_BUILD_HIVE && getLastHurtByMob() == null) {
-                addEffect(new MobEffectInstance(MobEffects.SPEED, 10 * 20, 3));
+                addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10 * 20, 3));
             }
 
             if (getCurrentTask() == TASK_TERRAFORM) {
@@ -167,7 +167,7 @@ public class EntityGlyphidNuclear extends EntityGlyphid {
                             float f = ((float) (k % 2) - 0.5F) * 0.5F;
                             float f1 = ((float) (k / 2) - 0.5F) * 0.5F;
                             EntityParasiteMaggot maggot = new EntityParasiteMaggot(EntityParasiteMaggot.TYPE.get(), server);
-                            maggot.snapTo(getX() + f, getY() + 0.5D, getZ() + f1, random.nextFloat() * 360.0F, 0F);
+                            maggot.moveTo(getX() + f, getY() + 0.5D, getZ() + f1, random.nextFloat() * 360.0F, 0F);
                             maggot.setDeltaMovement(f, 0D, f1);
                             maggot.hurtMarked = true;
                             server.addFreshEntity(maggot);

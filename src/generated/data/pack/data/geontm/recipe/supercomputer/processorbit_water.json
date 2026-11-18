@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.processorbit_water",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_orbitdata"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_disk_orbitdata_processed",
+        "weight": 75
+      },
+      {
+        "data": "geontm:drive_disk_broken",
+        "weight": 25
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:spentsteam",
+      "amount": 16000
+    }
+  ],
+  "duration": 72000,
+  "power": 10000,
+  "order": 9
+}

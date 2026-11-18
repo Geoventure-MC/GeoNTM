@@ -1,0 +1,8 @@
+{
+  "type": "liquid",
+  "color": "#787878",
+  "temperature": 20,
+  "flags": [
+    "viscous"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:ingot_biorubber"
+  },
+  "acid": {
+    "type": "geontm:sourgas",
+    "amount": 25
+  },
+  "output": "geontm:ingot_rubber",
+  "duration": 20,
+  "productivity": 0.15,
+  "order": 66
+}

@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:scrap_plastic_board_transistor"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:circuit_star_piece_board_transistor",
+  "duration": 600,
+  "order": 72
+}

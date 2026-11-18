@@ -1,0 +1,18 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:powder_ash_coal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_coal_tiny",
+      "count": 2
+    },
+    "geontm:powder_boron_tiny",
+    {
+      "id": "geontm:dust_tiny",
+      "count": 6
+    }
+  ],
+  "order": 54
+}

@@ -1,0 +1,30 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pilethorium",
+  "input_items": [
+    {
+      "ingredient": "geontm:pile_rod_mk2_thorium_fuel"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 100
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:billet_thorium_fuel",
+      "count": 2
+    },
+    "geontm:billet_nuclear_waste"
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:pile_rod_mk2_thorium_fuel"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pile",
+  "order": 5
+}

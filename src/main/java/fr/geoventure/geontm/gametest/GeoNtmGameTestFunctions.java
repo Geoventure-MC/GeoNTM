@@ -91,7 +91,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -2235,7 +2235,7 @@ public final class GeoNtmGameTestFunctions {
     private static void langCoverage(GameTestHelper helper) {
         List<String> missing = new ArrayList<>();
         for (Item item : BuiltInRegistries.ITEM) {
-            Identifier id =
+            ResourceLocation id =
                     BuiltInRegistries.ITEM.getKey(item);
             if (id == null || !Constants.MOD_ID.equals(id.getNamespace())) continue;
             // The EFFECTIVE name, not the key: the autogen material items and the fluid containers
@@ -2257,7 +2257,7 @@ public final class GeoNtmGameTestFunctions {
      * mints it while the atlas is stitched (the fluid's key is the remap's permutation name), and a screen asks
      * {@link fr.geoventure.geontm.inventory.fluid.FluidType#getIconSprite()} for it at draw time. If the shapes differ, every
      * lookup quietly returns the missing-texture sprite on a client with nothing logged. The client class cannot
-     * be named here (loading it on a dedicated server pulls in {@code GuiGraphicsExtractor}), so the test pins
+     * be named here (loading it on a dedicated server pulls in {@code GuiGraphics}), so the test pins
      * the shape both sides build.
      */
     private static void enumMultiTabVariants(GameTestHelper helper) {

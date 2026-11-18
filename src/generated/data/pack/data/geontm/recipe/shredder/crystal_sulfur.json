@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_sulfur",
+  "output": {
+    "id": "geontm:sulfur",
+    "count": 8
+  }
+}

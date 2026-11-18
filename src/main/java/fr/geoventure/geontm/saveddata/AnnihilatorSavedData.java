@@ -143,12 +143,12 @@ public final class AnnihilatorSavedData extends CompatSavedData<AnnihilatorSaved
 
     private static @Nullable Object deserializeKey(Entry entry) {
         return switch (entry.key()) {
-            case 0 -> BuiltInRegistries.ITEM.getValue(Ids.parse(entry.id()));
+            case 0 -> BuiltInRegistries.ITEM.get(Ids.parse(entry.id()));
             case 1 -> {
                 // Older saves wrote "<item>@<metadata>" for a family kept on one item. Every family is one
                 // item per type, so the count goes to the base item.
                 int at = entry.id().lastIndexOf('@');
-                yield BuiltInRegistries.ITEM.getValue(Ids.parse(at < 0 ? entry.id() : entry.id().substring(0, at)));
+                yield BuiltInRegistries.ITEM.get(Ids.parse(at < 0 ? entry.id() : entry.id().substring(0, at)));
             }
             case 2 -> Fluids.fromName(entry.id());
             case 3 -> entry.id();

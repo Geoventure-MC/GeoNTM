@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt10kero",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_10"
+    },
+    {
+      "material": "steel",
+      "shape": "pipe"
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_10_kerosene"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 71424
+}

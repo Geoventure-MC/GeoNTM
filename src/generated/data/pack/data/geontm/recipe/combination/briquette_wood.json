@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:briquette_wood"
+  },
+  "item_output": "minecraft:charcoal",
+  "fluid_output": {
+    "type": "geontm:woodoil",
+    "amount": 500
+  },
+  "order": 16
+}

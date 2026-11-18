@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_uranium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_uranium",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_uranium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_ra226",
+      "count": 2
+    },
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 160
+}

@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.platemox",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_plate_mox"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    "geontm:powder_sr90_tiny",
+    {
+      "id": "geontm:nugget_pu_mix",
+      "count": 3
+    },
+    "geontm:powder_cs137_tiny",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 4
+    }
+  ],
+  "duration": 100,
+  "power": 1500,
+  "icon": {
+    "id": "geontm:waste_plate_mox"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.plate",
+  "order": 16
+}

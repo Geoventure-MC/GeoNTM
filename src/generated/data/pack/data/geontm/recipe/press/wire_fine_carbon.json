@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/carbon"
+  },
+  "output": {
+    "id": "geontm:wire_fine_carbon",
+    "count": 8
+  },
+  "order": 28
+}

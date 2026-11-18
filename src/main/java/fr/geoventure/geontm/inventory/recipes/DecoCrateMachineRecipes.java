@@ -33,7 +33,7 @@ public final class DecoCrateMachineRecipes {
     private DecoCrateMachineRecipes() {}
 
     private static ItemStack stack(String id, int count) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of("geontm", id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of("geontm", id));
         return item == null || item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item, count);
     }
 

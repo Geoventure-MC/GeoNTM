@@ -1,0 +1,21 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.schrabidate",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/iron"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:schrabidic",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    "geontm:powder_schrabidate"
+  ],
+  "duration": 150,
+  "power": 5000,
+  "order": 66
+}

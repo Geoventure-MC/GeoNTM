@@ -1,0 +1,21 @@
+{
+  "type": "liquid",
+  "color": "#FF7FED",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 3,
+    "reactivity": 3,
+    "symbol": "none"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 65
+    },
+    "polluting": {
+      "release": {
+        "POISON": 2.0000001E-5
+      }
+    }
+  }
+}

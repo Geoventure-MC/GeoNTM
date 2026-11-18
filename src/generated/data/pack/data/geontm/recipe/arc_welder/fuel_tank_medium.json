@@ -1,0 +1,22 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "aluminium",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 12
+    }
+  ],
+  "output": "geontm:fuel_tank_medium",
+  "duration": 100,
+  "consumption": 2000,
+  "order": 22
+}

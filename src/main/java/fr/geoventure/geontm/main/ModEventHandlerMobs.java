@@ -24,8 +24,8 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.skeleton.AbstractSkeleton;
-import net.minecraft.world.entity.monster.zombie.Zombie;
+import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -67,7 +67,7 @@ public final class ModEventHandlerMobs {
 
         if (GeneralConfig.enableCataclysm) {
             EntityBurningFOEQ foeq = new EntityBurningFOEQ(ModNtmEntities.BURNING_FOEQ.get(), level);
-            foeq.snapTo(entity.getX(), 500, entity.getZ(), 0.0F, 0.0F);
+            foeq.moveTo(entity.getX(), 500, entity.getZ(), 0.0F, 0.0F);
             level.addFreshEntity(foeq);
         }
 

@@ -4,7 +4,7 @@ import fr.geoventure.geontm.inventory.RecipesCommon.AStack;
 import fr.geoventure.geontm.inventory.recipes.ArcWelderRecipes;
 import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -42,7 +42,7 @@ public class ArcWelderRecipeHandler extends JEIUniversalHandler<ArcWelderRecipes
     }
 
     @Override
-    public void draw(ArcWelderRecipes.ArcWelderRecipe recipe, GuiGraphicsExtractor graphics,
+    public void draw(ArcWelderRecipes.ArcWelderRecipe recipe, GuiGraphics graphics,
                      double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         String duration = String.format(Locale.US, "%,d", recipe.duration) + " ticks";

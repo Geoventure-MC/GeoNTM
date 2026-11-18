@@ -1,0 +1,21 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_balefire",
+    "stage": 4
+  },
+  "fluid_produced": 400,
+  "fluid_consumed": 100,
+  "laser_strength": "uv",
+  "outputs": [
+    {
+      "data": "geontm:powder_balefire",
+      "weight": 10
+    },
+    {
+      "data": "geontm:nuclear_waste_tiny",
+      "weight": 90
+    }
+  ],
+  "order": 259
+}

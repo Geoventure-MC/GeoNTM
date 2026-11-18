@@ -1,0 +1,171 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_uranium",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_th232",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_uranium_fuel",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_mox_fuel",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_thorium_fuel",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_ra226be",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:billet_beryllium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:nugget_u233",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:nugget_uranium_fuel",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_empty",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ingot_graphite",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pile_rod_mk2_nu",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pile_rod_mk2_ra226be",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pile_rod_mk2_waste",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:reacher",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:screwdriver",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

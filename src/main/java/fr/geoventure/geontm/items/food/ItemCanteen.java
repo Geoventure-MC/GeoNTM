@@ -43,7 +43,7 @@ public class ItemCanteen extends CompatItem implements ConsumableTreatments.Hand
             player.startUsingItem(hand);
             return InteractionResult.CONSUME;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

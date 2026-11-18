@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.tcalloy",
+  "frequency": 9,
+  "icon": "geontm:ingot_tcalloy",
+  "inputs": [
+    {
+      "material": "steel",
+      "amount": 64
+    },
+    {
+      "material": "technetium",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "tcalloy",
+      "amount": 72
+    }
+  ],
+  "order": 6
+}

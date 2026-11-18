@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#minecraft:logs"
+  },
+  "item_output": "minecraft:charcoal",
+  "fluid_output": {
+    "type": "geontm:woodoil",
+    "amount": 250
+  },
+  "order": 14
+}

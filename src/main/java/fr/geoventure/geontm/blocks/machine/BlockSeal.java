@@ -62,7 +62,7 @@ public class BlockSeal extends CompatBlock implements IBomb {
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         toggle(level, pos);
         return InteractionResult.SUCCESS;
     }

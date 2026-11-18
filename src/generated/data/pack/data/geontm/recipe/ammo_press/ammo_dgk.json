@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_dgk",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 5
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 5
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:plates/gunmetal",
+      "count": 5
+    },
+    ""
+  ],
+  "order": 90
+}

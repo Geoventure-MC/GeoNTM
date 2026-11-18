@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_uranium",
+  "output": {
+    "id": "geontm:powder_uranium",
+    "count": 3
+  }
+}

@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.gem.Geometry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix3f;
 
 /**
@@ -29,7 +29,7 @@ import org.joml.Matrix3f;
 public final class BalefireGlint {
 
     /** 1.7 {@code glintBF.png} pre-multiplied by the Fat Man's {@code (0, 0.8, 0.15) * 0.76}. */
-    public static final Identifier SHEET = Ids.of("geontm", "textures/misc/glint_balefire.png");
+    public static final ResourceLocation SHEET = Ids.of("geontm", "textures/misc/glint_balefire.png");
 
     private BalefireGlint() {}
 
@@ -48,7 +48,7 @@ public final class BalefireGlint {
     }
 
     /** As above with another pre-tinted sheet, for 1.7's other {@code renderClassicGlint} colours. */
-    public static void submit(PoseStack poseStack, SubmitSink sink, Geometry geometry, Identifier sheet, int layers,
+    public static void submit(PoseStack poseStack, SubmitSink sink, Geometry geometry, ResourceLocation sheet, int layers,
                               float scale, float speed) {
         LocalPlayer player = Minecraft.getInstance().player;
         float offset = (player == null ? 0 : player.tickCount) + Frames.partialTick();

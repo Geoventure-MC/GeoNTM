@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.iongel.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:pellet_charged"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 200
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:iongel",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 10
+}

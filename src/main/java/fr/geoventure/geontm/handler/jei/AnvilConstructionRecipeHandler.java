@@ -12,7 +12,7 @@ import fr.geoventure.geontm.inventory.recipes.anvil.AnvilRecipes.AnvilOutput;
 import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -95,7 +95,7 @@ public class AnvilConstructionRecipeHandler extends GeoNtmRecipeCategory<AnvilCo
     }
 
     @Override
-    public void draw(AnvilConstructionRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(AnvilConstructionRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         switch (recipe.getOverlay()) {
             case NONE -> {

@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/iron",
+  "output": "geontm:ingot_steel",
+  "order": 0
+}

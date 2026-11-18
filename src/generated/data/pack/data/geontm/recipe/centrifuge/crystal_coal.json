@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_coal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_coal",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_coal",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_coal",
+      "count": 3
+    },
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 154
+}

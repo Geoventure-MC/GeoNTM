@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:gems/cinnabar"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": {
+    "id": "geontm:nugget_mercury",
+    "count": 3
+  },
+  "duration": 600,
+  "productivity": 0.25,
+  "order": 46
+}

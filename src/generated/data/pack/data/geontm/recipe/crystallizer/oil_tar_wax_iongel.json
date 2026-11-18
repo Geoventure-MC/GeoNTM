@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:oil_tar_wax"
+  },
+  "acid": {
+    "type": "geontm:iongel",
+    "amount": 500
+  },
+  "output": "geontm:pellet_charged",
+  "duration": 200,
+  "order": 337
+}

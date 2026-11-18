@@ -15,7 +15,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
@@ -166,7 +166,7 @@ public class TileEntityPileLoader extends TileEntityPileDeviceBase implements Wo
     // Sync + save
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeDouble(this.travel);
         ItemStacks.writeOptional(buf, this.stack);
@@ -176,7 +176,7 @@ public class TileEntityPileLoader extends TileEntityPileDeviceBase implements Wo
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         double lastSync = this.syncTravel;
         this.syncTravel = buf.readDouble();

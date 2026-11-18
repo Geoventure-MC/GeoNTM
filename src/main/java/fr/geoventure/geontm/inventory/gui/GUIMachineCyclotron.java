@@ -6,9 +6,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineCyclotron;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
@@ -17,14 +17,14 @@ import java.util.Optional;
 public class GUIMachineCyclotron extends CompatContainerScreen<ContainerMachineCyclotron>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_cyclotron.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_cyclotron.png");
 
     public GUIMachineCyclotron(ContainerMachineCyclotron menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 190, 215);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityMachineCyclotron cyclotron = menu.getCyclotron();
@@ -52,14 +52,14 @@ public class GUIMachineCyclotron extends CompatContainerScreen<ContainerMachineC
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: title centred on x=79, "Inventory" at x=15.
         GuiDraw.text(graphics, font, title, 79 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, Component.translatable("container.inventory"), 15, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineCyclotron cyclotron = menu.getCyclotron();
         if (cyclotron == null) return;
 

@@ -11,10 +11,10 @@ import java.util.Optional;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public final class GuiUtil {
      * takes rectangles, so the triangle is scanline-rasterised at {@link #GAUGE_SUPERSAMPLE} times size
      * and the pose scales it back down, which keeps the rotated edges and the taper smooth.
      */
-    public static void drawSmoothGauge(GuiGraphicsExtractor graphics, int cx, int cy, double progress,
+    public static void drawSmoothGauge(GuiGraphics graphics, int cx, int cy, double progress,
                                        double tipLength, double backLength, double backSide, int color) {
         progress = Math.max(0.0, Math.min(1.0, progress));
         float angle = (float) Math.toRadians(progress * 270.0 + 45.0);
@@ -50,7 +50,7 @@ public final class GuiUtil {
     /** Supersample factor the needle is rasterised at before the pose scales it back down. */
     private static final int GAUGE_SUPERSAMPLE = 8;
 
-    private static void fillNeedle(GuiGraphicsExtractor graphics, double tipLength, double backLength,
+    private static void fillNeedle(GuiGraphics graphics, double tipLength, double backLength,
                                    double backSide, int color) {
         double tip = tipLength * GAUGE_SUPERSAMPLE;
         double back = backLength * GAUGE_SUPERSAMPLE;
@@ -104,18 +104,18 @@ public final class GuiUtil {
     }
 
     /** The shared GEONTM {@code gui_utility.png} icon sheet (info/warning glyphs), the 1.12.2 {@code GuiInfoContainer.guiUtil}. */
-    private static final Identifier GUI_UTILITY = Ids.of("geontm", "textures/gui/gui_utility.png");
+    private static final ResourceLocation GUI_UTILITY = Ids.of("geontm", "textures/gui/gui_utility.png");
 
     /** The 8×8 info-panel dimensions + a small-blue-"*" glyph, the hover target for the upgrade panel. */
     public static final int INFO_PANEL_SIZE = 8;
 
     /** Draws the "small blue *" info‑panel glyph (1.12.2 {@code drawInfoPanel(...,8)}) at screen {@code x,y}. */
-    public static void drawUpgradeInfoPanel(GuiGraphicsExtractor graphics, int x, int y) {
+    public static void drawUpgradeInfoPanel(GuiGraphics graphics, int x, int y) {
         GuiDraw.blit(graphics, GUI_UTILITY, x, y, 0.0F, 32.0F, INFO_PANEL_SIZE, INFO_PANEL_SIZE, 256, 256);
     }
 
     /** Draws one of the legacy info/warning glyphs from {@code gui_utility.png}. */
-    public static void drawInfoPanel(GuiGraphicsExtractor graphics, int x, int y, int type) {
+    public static void drawInfoPanel(GuiGraphics graphics, int x, int y, int type) {
         int sourceX = switch (type) {
             case 2, 6, 10 -> 8;
             case 3, 7, 11 -> 24;
@@ -134,7 +134,7 @@ public final class GuiUtil {
     }
 
     /** The 16×16 "large red !" warning glyph (1.12.2 {@code drawInfoPanel(...,16,16,6)}) at screen {@code x,y}. */
-    public static void drawWarningPanel(GuiGraphicsExtractor graphics, int x, int y) {
+    public static void drawWarningPanel(GuiGraphics graphics, int x, int y) {
         GuiDraw.blit(graphics, GUI_UTILITY, x, y, 8.0F, 16.0F, 16, 16, 256, 256);
     }
 
@@ -180,13 +180,13 @@ public final class GuiUtil {
      * fluid texture is tiled upward from the bottom with V wrapping, U spanning {@code width/16}, tinted with
      * {@code getTint()}. Fill height is {@code fluid * height / maxFluid} (integer, as 1.7).
      */
-    public static void tank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int yBottom, int width, int height) {
+    public static void tank(GuiGraphics graphics, FluidTankNTM tank, int x, int yBottom, int width, int height) {
         int max = tank.getMaxFill();
         int i = max <= 0 ? 0 : tank.getFill() * height / max;
         if (i <= 0) return;
         int top = yBottom - i;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier tex = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation tex = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(tex).isEmpty()) {
             graphics.fill(x, top, x + width, yBottom, tint);
             return;
@@ -204,13 +204,13 @@ public final class GuiUtil {
      * 1.7 {@code renderTank(..., orientation 1)}: fills from the left edge to {@code fluid * width / maxFluid};
      * {@code yBottom} is still the bottom edge of the {@code height}-tall gauge.
      */
-    public static void tankHorizontal(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int yBottom, int width, int height) {
+    public static void tankHorizontal(GuiGraphics graphics, FluidTankNTM tank, int x, int yBottom, int width, int height) {
         int max = tank.getMaxFill();
         int i = max <= 0 ? 0 : tank.getFill() * width / max;
         if (i <= 0) return;
         int top = yBottom - height;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier tex = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation tex = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(tex).isEmpty()) {
             graphics.fill(x, top, x + i, yBottom, tint);
             return;
@@ -225,7 +225,7 @@ public final class GuiUtil {
     }
 
     /** Shorthand for a plain multi-line tooltip at the mouse. */
-    public static void tooltip(GuiGraphicsExtractor graphics, Font font, List<Component> lines, int mouseX, int mouseY) {
+    public static void tooltip(GuiGraphics graphics, Font font, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 
@@ -235,7 +235,7 @@ public final class GuiUtil {
      * Empty stacks and {@code marked} (1.7 {@code stackSize == 0}) get the red-framed grey backing. Positioned at
      * (x+12, y-12), flipped/clamped against the screen like 1.7, at tooltip height.
      */
-    public static void stackText(GuiGraphicsExtractor graphics, Font font, int screenWidth, int screenHeight,
+    public static void stackText(GuiGraphics graphics, Font font, int screenWidth, int screenHeight,
                                  List<Object[]> lines, int x, int y, @Nullable ItemStack marked) {
         if (lines.isEmpty()) return;
         int height = 0;
@@ -295,7 +295,7 @@ public final class GuiUtil {
         GuiDraw.popMatrix(graphics);
     }
 
-    public static void stackText(GuiGraphicsExtractor graphics, Font font, int screenWidth, int screenHeight,
+    public static void stackText(GuiGraphics graphics, Font font, int screenWidth, int screenHeight,
                                  List<Object[]> lines, int x, int y) {
         stackText(graphics, font, screenWidth, screenHeight, lines, x, y, null);
     }
@@ -304,7 +304,7 @@ public final class GuiUtil {
      * 1.7's cycling list panel ({@code drawStackText} as the turrets, launch pad, plasma forge and rebar placer call it):
      * an optional title line, the stacks in rows, this second's one marked when there are several, and its name.
      */
-    public static void cycledStackText(GuiGraphicsExtractor graphics, Font font, int screenWidth, int screenHeight,
+    public static void cycledStackText(GuiGraphics graphics, Font font, int screenWidth, int screenHeight,
                                        @Nullable String title, List<ItemStack> stacks, int x, int y) {
         List<ItemStack> list = new ArrayList<>(stacks);
         int highlight = list.size() > 1 ? (int) ((System.currentTimeMillis() % (1000L * list.size())) / 1000L) : -1;
@@ -339,7 +339,7 @@ public final class GuiUtil {
      * {@code progress × 270°} (clamped to 0..1). 1.7 draws textured triangles out to the region's border; here each
      * row's covered runs (pixel-centre test against the same sector) are blitted as 1-pixel-tall strips.
      */
-    public static void smoothCircle(GuiGraphicsExtractor graphics, Identifier texture, int x, int y, int u, int v, int w, int h,
+    public static void smoothCircle(GuiGraphics graphics, ResourceLocation texture, int x, int y, int u, int v, int w, int h,
                                     double progress) {
         progress = Math.max(0D, Math.min(1D, progress));
         double sweep = progress * 270D;

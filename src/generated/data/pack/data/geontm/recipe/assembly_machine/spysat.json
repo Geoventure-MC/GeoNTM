@@ -1,0 +1,37 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.spysat",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:photo_panel",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:part_generic_glass_polarized",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:satellite_spy"
+  ],
+  "duration": 1200,
+  "power": 25000,
+  "order": 87040
+}

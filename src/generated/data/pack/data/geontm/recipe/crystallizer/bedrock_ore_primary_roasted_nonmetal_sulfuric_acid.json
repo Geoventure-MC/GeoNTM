@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_roasted_nonmetal"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_primary_sulfuric_nonmetal",
+  "duration": 200,
+  "order": 245
+}

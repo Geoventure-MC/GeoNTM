@@ -1,0 +1,44 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.icfemitter",
+  "input_items": [
+    {
+      "material": "tungsten",
+      "shape": "weldedplate",
+      "count": 4
+    },
+    {
+      "material": "magnetized_tungsten",
+      "shape": "densewire",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:xenon",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    "geontm:icf_laser_component_emitter"
+  ],
+  "duration": 800,
+  "power": 10000000,
+  "order": 26,
+  "input_items_expensive": [
+    {
+      "material": "tungsten",
+      "shape": "weldedplate",
+      "count": 8
+    },
+    {
+      "material": "magnetized_tungsten",
+      "shape": "densewire",
+      "count": 16
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chlorophyte"
+  ],
+  "ignition_temp": 1000000
+}

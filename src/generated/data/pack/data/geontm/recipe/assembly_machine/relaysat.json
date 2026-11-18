@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.relaysat",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:photo_panel",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    }
+  ],
+  "output_items": [
+    "geontm:satellite_relay"
+  ],
+  "duration": 1200,
+  "power": 25000,
+  "order": 89088
+}

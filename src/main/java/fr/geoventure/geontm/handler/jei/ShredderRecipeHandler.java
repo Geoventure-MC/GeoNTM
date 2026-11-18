@@ -6,7 +6,7 @@ import fr.geoventure.geocore.viewer.SlotLayout;
 import fr.geoventure.geontm.inventory.recipes.ShredderRecipes;
 import fr.geoventure.geontm.items.ModMachineItems;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -66,7 +66,7 @@ public class ShredderRecipeHandler extends GeoNtmRecipeCategory<ShredderRecipeHa
     }
 
     @Override
-    public void draw(ShredderPair recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(ShredderPair recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         powerBar.draw(g, 3, 6);
         progressBar.draw(g, 80, 23);

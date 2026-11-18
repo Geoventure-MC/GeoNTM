@@ -1,0 +1,21 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_tungsten",
+  "molten": [
+    {
+      "material": "tungsten",
+      "amount": 432
+    },
+    {
+      "material": "iron",
+      "amount": 144
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_lithium_tiny",
+      "count": 3
+    }
+  ],
+  "order": 7
+}

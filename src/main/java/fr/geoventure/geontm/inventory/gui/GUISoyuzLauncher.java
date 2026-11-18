@@ -8,10 +8,10 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -26,19 +26,19 @@ import java.util.Optional;
  */
 public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLauncher> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/machine/gui_soyuz.png");
 
     public GUISoyuzLauncher(ContainerSoyuzLauncher menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 194, 244);
     }
 
-    private void blit(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int w, int h) {
+    private void blit(GuiGraphics graphics, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + y, (float) u, (float) v, w, h, 256, 256);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntitySoyuzLauncher launcher = menu.getLauncher();
@@ -73,7 +73,7 @@ public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLaunch
     }
 
     /** Repeats the 16x16 fluid texture, matching the old GL_REPEAT tank quad. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int max = tank.getMaxFill();
         int filled = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (filled <= 0) return;
@@ -82,7 +82,7 @@ public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLaunch
         int bottom = topPos + y + height;
         int top = bottom - filled;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
 
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + width, bottom);
@@ -97,7 +97,7 @@ public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLaunch
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 4, 0xFFFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 17, imageHeight - 96 + 2, 0xFF404040, false);
 
@@ -113,7 +113,7 @@ public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLaunch
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntitySoyuzLauncher launcher = menu.getLauncher();
         if (launcher == null) return;
 
@@ -161,7 +161,7 @@ public class GUISoyuzLauncher extends CompatContainerScreen<ContainerSoyuzLaunch
         return lines;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, text, Optional.empty(), mouseX, mouseY);
     }
 }

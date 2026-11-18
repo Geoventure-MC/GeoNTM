@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:smear",
+  "left": {
+    "type": "geontm:naphtha",
+    "amount": 60
+  },
+  "right": {
+    "type": "geontm:petroleum",
+    "amount": 40
+  }
+}

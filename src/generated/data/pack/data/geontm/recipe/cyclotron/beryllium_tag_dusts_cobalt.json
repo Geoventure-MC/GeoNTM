@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_beryllium",
+  "input": {
+    "ingredient": "#c:dusts/cobalt"
+  },
+  "output": "geontm:powder_copper",
+  "antimatter": 25,
+  "order": 16
+}

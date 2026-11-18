@@ -1,0 +1,16 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_amat_penance",
+  "grid": [
+    "#c:ingots/starmetal",
+    "#c:plates_cast/dura_steel",
+    "#c:ingots/starmetal",
+    "geontm:weapon_mod_special_silencer",
+    "geontm:gun_amat",
+    "geontm:weapon_mod_special_furniture_black",
+    "#c:ingots/starmetal",
+    "#c:plates_cast/dura_steel",
+    "#c:ingots/starmetal"
+  ],
+  "order": 5
+}

@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_first_light"
+  },
+  "molten_outputs": [
+    {
+      "material": "iron",
+      "amount": 360
+    },
+    {
+      "material": "copper",
+      "amount": 144
+    }
+  ],
+  "order": 19
+}

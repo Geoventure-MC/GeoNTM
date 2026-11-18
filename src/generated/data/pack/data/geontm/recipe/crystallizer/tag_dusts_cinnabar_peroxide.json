@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/cinnabar"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 50
+  },
+  "output": "geontm:cinnabar",
+  "duration": 100,
+  "requires": "c:dusts/cinnabar",
+  "order": 345
+}

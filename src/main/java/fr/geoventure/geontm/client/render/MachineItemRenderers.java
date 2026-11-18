@@ -2,18 +2,18 @@ package fr.geoventure.geontm.client.render;
 
 //? if <26.1 {
 
-/*import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.render.RecordingSubmitSink;
 import fr.geoventure.geocore.world.ItemModels;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Vector3f;
 
- /^ 
+ /* 
  * Draws an OBJ machine item below 26.1, where there is no special-model system and the equivalent hook
  * is a per-loader "render this item yourself" callback (NeoForge's BEWLR, Fabric's DynamicItemRenderer).
  * Both hand over a {@code MultiBufferSource}, so the model is submitted into a {@link RecordingSubmitSink}
@@ -23,15 +23,15 @@ import org.joml.Vector3f;
  * which is true exactly when the model's parent chain ends at {@code minecraft:builtin/entity}. The build
  * generates such a model for every machine_obj item on these versions, so registering the callback for
  * every GEONTM item costs nothing and misroutes nothing.
- ^/
+ */
 public final class MachineItemRenderers {
 
     private MachineItemRenderers() {}
 
-    /^ Half a slot, in GUI pixels — vanilla renders an inventory item into a 16x16 box centred on it. ^/
+    /* Half a slot, in GUI pixels — vanilla renders an inventory item into a 16x16 box centred on it. */
     private static final float HALF_SLOT = 8.0F;
 
-    /^ Renders {@code stack} if it is an OBJ machine; does nothing otherwise. ^/
+    /* Renders {@code stack} if it is an OBJ machine; does nothing otherwise. */
     public static void render(ItemStack stack, ItemDisplayContext context, PoseStack poseStack,
                               MultiBufferSource buffers, int light, int overlay) {
         // Guns share this hook: it is the one place below 26.1 that is handed the display context, which
@@ -39,7 +39,7 @@ public final class MachineItemRenderers {
         if (fr.geoventure.geontm.client.render.weapon.GunLegacyModels.render(stack, context, poseStack, buffers, light, overlay)) return;
         // Ported 1.7 IItemRenderers (geontm:custom_item) are context-driven for the same reason.
         if (MachineItemModels.renderCustom(stack, context, poseStack, buffers, light, overlay)) return;
-        Identifier id = ItemModels.id(stack.getItem());
+        ResourceLocation id = ItemModels.id(stack.getItem());
         if (MachineItemModels.isGlider(id)) {
             fr.geoventure.geontm.client.jetpack.JetpackGliderLegacyRenderer.render(stack, context, poseStack, buffers, light, overlay);
             return;
@@ -72,7 +72,7 @@ public final class MachineItemRenderers {
         }
     }
 
-    /^ 
+    /* 
      * Clips drawing to the 16x16 slot this item is being rendered into, returning whether a scissor was
      * actually set.
      *
@@ -90,7 +90,7 @@ public final class MachineItemRenderers {
      * applied outermost ({@code T . R . S}). The machine frames translate (machine_obj_context_base: -0.707,
      * -1.567 px), so that translation is taken back out; otherwise the clip sits 1.6 px low and cuts the top
      * of tall icons (the trenchmaster and fau antennas) that 26.1, whose bound is the slot itself, keeps.
-     ^/
+     */
     private static boolean clipToSlot(PoseStack poseStack, ItemStack stack) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.getWindow() == null) return false;
@@ -107,7 +107,7 @@ public final class MachineItemRenderers {
         centre.add(-shift.x() * 16F, shift.y() * 16F, 0F);
         double guiScale = minecraft.getWindow().getGuiScale();
         // Framebuffer coordinates: origin bottom-left, so the top edge is measured from the window height.
-        // This is the same conversion GuiGraphicsExtractor.applyScissor performs.
+        // This is the same conversion GuiGraphics.applyScissor performs.
         int left = (int) ((centre.x() - HALF_SLOT) * guiScale);
         int bottom = (int) (minecraft.getWindow().getHeight() - (centre.y() + HALF_SLOT) * guiScale);
         int size = (int) (HALF_SLOT * 2 * guiScale);
@@ -117,4 +117,4 @@ public final class MachineItemRenderers {
         return fr.geoventure.geocore.gui.Scissors.push(left, bottom, size, size);
     }
 }
-*///?}
+//?}

@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.phosgene.0",
+  "input_fluids": [
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 500
+    },
+    {
+      "type": "geontm:chlorine",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:phosgene",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 8
+}

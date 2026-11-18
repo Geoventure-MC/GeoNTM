@@ -62,7 +62,7 @@ public class ItemBoltgun extends CompatItem implements IAnimatedItem {
         if (!(player.getMainHandItem().getItem() instanceof ItemBoltgun) || !entity.isAlive()) return false;
         Inventory inventory = player.getInventory();
         for (String bolt : BOLTS) {
-            Item item = BuiltInRegistries.ITEM.getValue(
+            Item item = BuiltInRegistries.ITEM.get(
                     Ids.of(Constants.MOD_ID, bolt));
             for (int i = 0; i < inventory.getContainerSize(); i++) {
                 ItemStack slot = inventory.getItem(i);
@@ -93,10 +93,10 @@ public class ItemBoltgun extends CompatItem implements IAnimatedItem {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         Block block = level.getBlockState(pos).getBlock();
-        if (!(block instanceof IToolable toolable)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(block instanceof IToolable toolable)) return InteractionResult.PASS;
 
         Player player = context.getPlayer();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         if (toolable.onScrew(level, player, pos, context.getClickedFace(), context.getClickLocation(),

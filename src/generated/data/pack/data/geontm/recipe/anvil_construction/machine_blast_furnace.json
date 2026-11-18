@@ -1,0 +1,24 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "minecraft:stone_bricks",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:ingot_firebrick",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 8
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_blast_furnace"
+    }
+  ],
+  "tier": 1,
+  "order": 56
+}

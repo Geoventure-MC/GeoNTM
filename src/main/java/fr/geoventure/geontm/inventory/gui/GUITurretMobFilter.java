@@ -14,17 +14,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 
 /** The old 242x124 searchable living-mob filter screen. */
 public final class GUITurretMobFilter extends CompatScreen {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_turret_mob_filter.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_turret_mob_filter.png");
     private static final int GUI_WIDTH = 242;
     private static final int GUI_HEIGHT = 124;
     private static final int LIST_ROWS = 8;
@@ -52,7 +52,7 @@ public final class GUITurretMobFilter extends CompatScreen {
         this.turret = turret;
 
         for (EntityType<?> type : BuiltInRegistries.ENTITY_TYPE) {
-            Identifier id = BuiltInRegistries.ENTITY_TYPE.getKey(type);
+            ResourceLocation id = BuiltInRegistries.ENTITY_TYPE.getKey(type);
             if (id == null) continue;
             String key = id.toString();
             if (!TileEntityTurretBaseNT.isFilterableMob(key, type)) continue;
@@ -79,7 +79,7 @@ public final class GUITurretMobFilter extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY,
                                            float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0F, 0F, GUI_WIDTH, GUI_HEIGHT, 256, 256);
         drawList(graphics, filteredMobList, mobScroll, mobSelected, 6, 31);
@@ -87,14 +87,14 @@ public final class GUITurretMobFilter extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY,
                                            float partialTick) {
         int textureX = turret.isBlacklistMobFilter ? 0 : 10;
         GuiDraw.blit(graphics, TEXTURE, guiLeft + 227, guiTop + 5,
                 textureX, 124F, 10, 12, 256, 256);
     }
 
-    private void drawList(GuiGraphicsExtractor graphics, List<String> values, int scroll, int selected,
+    private void drawList(GuiGraphics graphics, List<String> values, int scroll, int selected,
                           int x, int y) {
         int first = Math.min(scroll, Math.max(0, values.size() - LIST_ROWS));
         for (int row = 0; row < LIST_ROWS && first + row < values.size(); row++) {

@@ -25,7 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.MenuProvider;
@@ -336,7 +336,7 @@ public class TileEntityReactorResearch extends TileEntityMachineBase implements 
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(heat);
         buf.writeByte(water);
@@ -347,7 +347,7 @@ public class TileEntityReactorResearch extends TileEntityMachineBase implements 
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         heat = buf.readInt();
         water = buf.readByte();

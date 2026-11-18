@@ -12,11 +12,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Optional;
 
 public final class RadioReaderScreen extends CompatContainerScreen<RadioReaderMenu> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_reader.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_reader.png");
     private final EditBox[] channels = new EditBox[TileEntityRadioTorchReader.MAPPING_SIZE];
     private final EditBox[] names = new EditBox[TileEntityRadioTorchReader.MAPPING_SIZE];
     private boolean polling;
@@ -44,14 +44,14 @@ public final class RadioReaderScreen extends CompatContainerScreen<RadioReaderMe
         box.setBordered(false); box.setTextColor(0xFF00FF00); box.setTextColorUneditable(0xFF00FF00);
         box.setMaxLength(max); box.setValue(value == null ? "" : value); addRenderableWidget(box); return box;
     }
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int x, int y, float tick) {
+    @Override public void extractBackground(GuiGraphics graphics, int x, int y, float tick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0, 0, 256, 204, 256, 256);
         if (polling) GuiDraw.blit(graphics, TEXTURE, leftPos + 173, topPos + 17, 0, 204, 18, 18, 256, 256);
     }
-    @Override protected void extractLabels(GuiGraphicsExtractor graphics, int x, int y) {
+    @Override protected void renderLabels(GuiGraphics graphics, int x, int y) {
         GuiDraw.text(graphics, font, title, (256 - font.width(title)) / 2, 6, 0xFF404040, false);
     }
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (mouseX >= leftPos + 29 && mouseX < leftPos + 47 && mouseY >= topPos + 17 && mouseY < topPos + 35) {
             List<Component> lines = new ArrayList<>(); lines.add(Component.literal("Readable values:"));
             TileEntityRadioTorchReader reader = menu.reader();

@@ -1,0 +1,39 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.overdrive3",
+  "input_items": [
+    {
+      "ingredient": "geontm:upgrade_overdrive_2"
+    },
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    },
+    {
+      "ingredient": "geontm:upgrade_effect_3"
+    },
+    {
+      "ingredient": "#c:ingots/any_bismoid_bronze",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:ingot_cft",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:upgrade_overdrive_3"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 51200,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

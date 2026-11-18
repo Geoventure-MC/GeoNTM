@@ -1,0 +1,27 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_bmg50_ap",
+    "count": 12
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/weaponsteel",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 6
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large_steel"
+    },
+    ""
+  ],
+  "order": 38
+}

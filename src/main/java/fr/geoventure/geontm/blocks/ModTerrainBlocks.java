@@ -162,7 +162,7 @@ public final class ModTerrainBlocks {
             .loot(Loot.only("minecraft:stick"));
     /** Authored vine_phosphor_ground/_middle/_hang (1.12.2's three models). */
     public static final RegistryObject<BlockHangingVine> vine_phosphor = block("vine_phosphor", BlockHangingVine::new,
-            p -> p.strength(0.5F).sound(SoundType.GRASS).noOcclusion().noCollision(), GeoNtmTab.BLOCKS)
+            p -> p.strength(0.5F).sound(SoundType.GRASS).noOcclusion().noCollission(), GeoNtmTab.BLOCKS)
             .transform(Presets.statesOnly(Variants.select("part", "ground", "_ground", "middle", "_middle", "hang", "_hang")))
             .transform(Presets.sprite("geontm:blocks/vine_phosphor_item"))
             .loot(Loot.self());
@@ -413,7 +413,7 @@ public final class ModTerrainBlocks {
 
     /** 1.7 plants: {@code Material.plants}, hardness 0, grass sound, no collision. */
     private static BlockBehaviour.Properties plantProps(BlockBehaviour.Properties p) {
-        return p.strength(0.0F).sound(SoundType.GRASS).noOcclusion().noCollision();
+        return p.strength(0.0F).sound(SoundType.GRASS).noOcclusion().noCollission();
     }
 
     private static BlockBehaviour.Properties stoneOre(BlockBehaviour.Properties p) {
@@ -422,7 +422,7 @@ public final class ModTerrainBlocks {
 
     /** Old {@code BlockGasBase}: hardness 0, no collision, no occlusion, replaceable, random-ticked (as ModOreBlocks). */
     private static BlockBehaviour.Properties gasProps(BlockBehaviour.Properties p) {
-        return p.strength(0.0F, 0.0F).noOcclusion().noCollision().replaceable().randomTicks().noLootTable();
+        return p.strength(0.0F, 0.0F).noOcclusion().noCollission().replaceable().randomTicks().noLootTable();
     }
 
     private static void spike(String variant, Supplier<ItemStack> drop) {
@@ -430,7 +430,7 @@ public final class ModTerrainBlocks {
             String id = base + "_" + variant.toLowerCase(Locale.ROOT);
             Direction anchor = base.equals("stalagmite") ? Direction.DOWN : Direction.UP;
             SPIKES.put(id, block(id, p -> new BlockStalagmite(p, anchor, drop),
-                    p -> p.requiresCorrectToolForDrops().strength(0.5F, 2.0F).sound(SoundType.STONE).noOcclusion().noCollision(), GeoNtmTab.BLOCKS)
+                    p -> p.requiresCorrectToolForDrops().strength(0.5F, 2.0F).sound(SoundType.STONE).noOcclusion().noCollission(), GeoNtmTab.BLOCKS)
                     .transform(plant("geontm:blocks/" + base + "." + variant.toLowerCase(Locale.ROOT)))
                     .loot(Loot.nothing()).tag(BlockTag.PICKAXE)); // BlockStalagmite computes its own drops
         }

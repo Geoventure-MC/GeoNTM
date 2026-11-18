@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:vitriol",
+  "amount": 4000,
+  "output": "geontm:powder_iron",
+  "byproduct": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  }
+}

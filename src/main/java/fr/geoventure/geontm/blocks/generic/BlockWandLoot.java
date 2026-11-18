@@ -29,7 +29,7 @@ import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
@@ -132,7 +132,7 @@ public class BlockWandLoot extends CompatBlock implements TickingBlock, ILookOve
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof TileEntityWandLoot loot)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(level.getBlockEntity(pos) instanceof TileEntityWandLoot loot)) return InteractionResult.PASS;
 
         if (!player.isShiftKeyDown()) {
             Block block = getLootableBlock(level, held);
@@ -158,7 +158,7 @@ public class BlockWandLoot extends CompatBlock implements TickingBlock, ILookOve
             loot.setChanged();
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /** 1.7: the loot pile, or any block whose tile entity is an inventory. */
@@ -370,7 +370,7 @@ public class BlockWandLoot extends CompatBlock implements TickingBlock, ILookOve
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             buf.writeInt(Block.getId(replaceState));
             buf.writeInt(replaceMeta);
             buf.writeInt(minItems);
@@ -383,7 +383,7 @@ public class BlockWandLoot extends CompatBlock implements TickingBlock, ILookOve
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             replaceState = Block.stateById(buf.readInt());
             replaceMeta = buf.readInt();
             minItems = buf.readInt();

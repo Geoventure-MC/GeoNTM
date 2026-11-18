@@ -12,9 +12,9 @@ import fr.geoventure.geontm.items.ModItems;
 import fr.geoventure.geontm.tileentity.machine.TileEntityCrucible;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -32,7 +32,7 @@ import java.util.Optional;
  */
 public class GUICrucible extends CompatContainerScreen<ContainerCrucible> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_crucible.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_crucible.png");
 
     // Selector button (GUI-relative), matching the old click region.
     private static final int BTN_X = 106, BTN_Y = 80, BTN_W = 18, BTN_H = 18;
@@ -43,13 +43,13 @@ public class GUICrucible extends CompatContainerScreen<ContainerCrucible> {
 
     /** 1.7: white title centred at y=6, inventory at (8, ySize-96+2). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 6, 0xffffff, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, -12566464, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityCrucible te = this.menu.getCrucible();
@@ -77,7 +77,7 @@ public class GUICrucible extends CompatContainerScreen<ContainerCrucible> {
      * molten-liquid texture, bottom-anchored at v=89 so it fills upward as material accumulates. Additives sample
      * the second molten texture (u=176+34).
      */
-    private void drawStack(GuiGraphicsExtractor graphics, List<Mats.MaterialStack> stack, int capacity, int x, int y) {
+    private void drawStack(GuiGraphics graphics, List<Mats.MaterialStack> stack, int capacity, int x, int y) {
         if (stack.isEmpty()) return;
 
         int lastHeight = 0;
@@ -99,7 +99,7 @@ public class GUICrucible extends CompatContainerScreen<ContainerCrucible> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityCrucible te = this.menu.getCrucible();
         if (te == null) return;
 

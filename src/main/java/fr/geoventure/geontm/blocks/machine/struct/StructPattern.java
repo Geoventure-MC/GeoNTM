@@ -2,7 +2,7 @@ package fr.geoventure.geontm.blocks.machine.struct;
 
 import fr.geoventure.geontm.lib.Library;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.AABB;
@@ -37,7 +37,7 @@ public final class StructPattern {
      * plain cube and differ for a pillar-textured block (cooler, element), mirroring the
      * {@code renderSimpleBlockAt} / {@code renderPilarBlockAt} split in the old preview TESRs.
      */
-    public record Cell(BlockPos offset, Supplier<Block> block, Identifier top, Identifier side) {}
+    public record Cell(BlockPos offset, Supplier<Block> block, ResourceLocation top, ResourceLocation side) {}
 
     private final List<Cell> cells;
     private final AABB localBounds;
@@ -87,7 +87,7 @@ public final class StructPattern {
      * <ns>:textures/blocks/<name>.png}, a bare name in {@code geontm}, so an addon's patterns name their own textures as
      * {@code "ns:name"}.
      */
-    public static Identifier blockTexture(String name) {
+    public static ResourceLocation blockTexture(String name) {
         return Library.parseId(name, "textures/blocks/", ".png");
     }
 
@@ -97,7 +97,7 @@ public final class StructPattern {
 
         /** A plain cube: one texture on every face. */
         public Builder add(int x, int y, int z, Supplier<Block> block, String texture) {
-            Identifier tex = blockTexture(texture);
+            ResourceLocation tex = blockTexture(texture);
             cells.add(new Cell(new BlockPos(x, y, z), block, tex, tex));
             return this;
         }

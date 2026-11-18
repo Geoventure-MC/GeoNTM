@@ -1,0 +1,21 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_schrabidium",
+  "molten": [
+    {
+      "material": "schrabidium",
+      "amount": 432
+    },
+    {
+      "material": "plutonium",
+      "amount": 144
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_lithium_tiny",
+      "count": 3
+    }
+  ],
+  "order": 12
+}

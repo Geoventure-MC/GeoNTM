@@ -18,7 +18,7 @@ import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
@@ -181,7 +181,7 @@ public class TileEntityFusionMHDT extends TileEntityLoadedBase
     @Override public FluidTankNTM[] getSendingTanks() { return new FluidTankNTM[]{tanks[1]}; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(plasmaEnergySync);
         tanks[0].serialize(buf);
@@ -189,7 +189,7 @@ public class TileEntityFusionMHDT extends TileEntityLoadedBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         plasmaEnergy = buf.readLong();
         tanks[0].deserialize(buf);

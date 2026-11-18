@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
 

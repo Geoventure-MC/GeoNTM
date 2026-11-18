@@ -1,0 +1,25 @@
+{
+  "type": "liquid",
+  "color": "#776563",
+  "temperature": 1500,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:lead",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 680,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

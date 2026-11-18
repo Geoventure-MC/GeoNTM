@@ -1,0 +1,22 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.panbti",
+  "input_items": [
+    {
+      "material": "niobium",
+      "shape": "densewire",
+      "count": 64
+    },
+    {
+      "material": "titanium",
+      "shape": "densewire",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:pa_coil_niobium"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 42240
+}

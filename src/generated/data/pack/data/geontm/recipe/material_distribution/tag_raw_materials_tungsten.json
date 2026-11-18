@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:raw_materials/tungsten",
+  "materials": [
+    {
+      "material": "tungsten",
+      "amount": 96
+    },
+    {
+      "material": "stone",
+      "amount": 108
+    }
+  ]
+}

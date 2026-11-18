@@ -12,7 +12,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.MenuProvider;
@@ -102,7 +102,7 @@ public class TileEntityMachineTapeDrive extends TileEntityMachineBase implements
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (int i = 0; i < 12; i++) {
             ItemStack stack = inventory.getStackInSlot(i);
@@ -121,7 +121,7 @@ public class TileEntityMachineTapeDrive extends TileEntityMachineBase implements
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (int i = 0; i < 12; i++) tapes[i] = buf.readByte();
     }

@@ -23,18 +23,18 @@ import fr.geoventure.geocore.render.gem.GemEntityRenderer;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 /** Renders the legacy sphere, swirl/disc and axial jets of the black-hole fields. */
 public final class BlackHoleRenderer extends GemEntityRenderer<EntityBlackHole, BlackHoleRenderer.State> {
-    private static final Identifier SPHERE_TEXTURE =
+    private static final ResourceLocation SPHERE_TEXTURE =
             Ids.of(Constants.MOD_ID, "textures/models/explosion/blackhole.png");
-    private static final Identifier SWIRL_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bhole.png");
-    private static final Identifier DISC_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bholedisc.png");
+    private static final ResourceLocation SWIRL_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bhole.png");
+    private static final ResourceLocation DISC_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bholedisc.png");
     /** 1.7 {@code RenderQuasar.quasar}: {@code textures/entity/bholeD.png}. */
-    private static final Identifier QUASAR_DISC_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bholed.png");
+    private static final ResourceLocation QUASAR_DISC_TEXTURE = Ids.of(Constants.MOD_ID, "textures/entity/bholed.png");
     private static final int RAGING_COLOR = 0xE8390D;
     /** Assumed distance of the lensed background behind the hole, in blocks (no depth is sampled). */
     private static final float LENS_BACKGROUND = 32F;
@@ -169,7 +169,7 @@ public final class BlackHoleRenderer extends GemEntityRenderer<EntityBlackHole, 
             Vector3f tangent = frame.transformDirection(new Vector3f(1F, 0F, 0F)).normalize();
             int type = entity instanceof EntityRagingVortex ? 3 : entity instanceof EntityVortex ? 2
                     : entity instanceof EntityQuasar ? 1 : 0;
-            Identifier texture = type >= 2 ? SWIRL_TEXTURE : type == 1 ? QUASAR_DISC_TEXTURE : DISC_TEXTURE;
+            ResourceLocation texture = type >= 2 ? SWIRL_TEXTURE : type == 1 ? QUASAR_DISC_TEXTURE : DISC_TEXTURE;
             int colour = (type << 24) | (unit(tangent.x()) << 16) | (unit(tangent.y()) << 8) | unit(tangent.z());
             int size = Math.min(Math.round(shadow * 1024F), 65535);
             int range = Math.round(Math.min(worldEdge, edge) * 256F);
@@ -224,7 +224,7 @@ public final class BlackHoleRenderer extends GemEntityRenderer<EntityBlackHole, 
         pose.mulPose(Axis.YP.rotationDegrees(entity.getId() % 360));
         // 1.7 RenderQuasar overrides discTex() and setColorFromIteration(); steps() stays 15.
         boolean quasar = entity instanceof EntityQuasar;
-        Identifier discTexture = quasar ? QUASAR_DISC_TEXTURE : DISC_TEXTURE;
+        ResourceLocation discTexture = quasar ? QUASAR_DISC_TEXTURE : DISC_TEXTURE;
         int glow = argb(0.75F, 1F, 1F, 1F);
         for (int i = 0; i < 15; i++) {
             pose.pushPose();

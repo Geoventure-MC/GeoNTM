@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:dusts/limestone"
+  },
+  "item_output": "geontm:powder_calcium",
+  "fluid_output": {
+    "type": "geontm:carbondioxide",
+    "amount": 50
+  },
+  "order": 13
+}

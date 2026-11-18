@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:powder_desh_ready"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:ingot_desh",
+  "duration": 600,
+  "order": 63
+}

@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fleija",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell"
+    },
+    {
+      "ingredient": "geontm:fins_quad_titanium"
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    },
+    {
+      "ingredient": "#c:dyes/white",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_fleija"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 54272,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

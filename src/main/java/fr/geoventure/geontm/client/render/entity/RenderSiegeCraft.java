@@ -15,7 +15,7 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
@@ -29,8 +29,8 @@ import java.util.Random;
  */
 public class RenderSiegeCraft extends CompatEntityRenderer<EntitySiegeCraft, RenderSiegeCraft.State> {
 
-    private static final Identifier WHITE = Ids.of("geontm", "textures/models/misc/white.png");
-    private static final Identifier GLINT = Ids.of("geontm", "textures/misc/glint_siege_craft.png");
+    private static final ResourceLocation WHITE = Ids.of("geontm", "textures/models/misc/white.png");
+    private static final ResourceLocation GLINT = Ids.of("geontm", "textures/misc/glint_siege_craft.png");
 
     public RenderSiegeCraft(EntityRendererProvider.Context context) {
         super(context);
@@ -126,6 +126,6 @@ public class RenderSiegeCraft extends CompatEntityRenderer<EntitySiegeCraft, Ren
         boolean beam;
         Vec3 lockon = Vec3.ZERO;
         int age;
-        Identifier skin;
+        ResourceLocation skin;
     }
 }

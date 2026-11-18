@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "item": "geontm:ingot_aluminium",
+      "min": 2,
+      "max": 8,
+      "weight": 3
+    },
+    {
+      "item": "geontm:ingot_steel",
+      "min": 0,
+      "max": 12,
+      "weight": 4
+    },
+    {
+      "item": "geontm:plate_aluminium",
+      "min": 5,
+      "max": 12,
+      "weight": 3
+    },
+    {
+      "item": "geontm:plate_iron",
+      "min": 6,
+      "max": 16,
+      "weight": 3
+    },
+    {
+      "item": "geontm:plate_steel",
+      "min": 2,
+      "max": 12,
+      "weight": 2
+    },
+    {
+      "item": "geontm:ingot_tungsten",
+      "min": 0,
+      "max": 2,
+      "weight": 1
+    },
+    {
+      "item": "geontm:deco_aluminium",
+      "min": 12,
+      "max": 24,
+      "weight": 4
+    },
+    {
+      "item": "geontm:deco_steel",
+      "min": 5,
+      "max": 12,
+      "weight": 2
+    },
+    {
+      "item": "geontm:block_aluminium",
+      "min": 0,
+      "max": 2,
+      "weight": 1
+    },
+    {
+      "item": "geontm:block_steel",
+      "min": 0,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:bolt_steel",
+      "min": 4,
+      "max": 16,
+      "weight": 3
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 1,
+      "max": 2,
+      "weight": 4
+    },
+    {
+      "item": "geontm:circuit_analog",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    },
+    {
+      "item": "geontm:circuit_capacitor",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    }
+  ]
+}

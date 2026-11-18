@@ -1,0 +1,20 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "geontm:powder_flux",
+      "count": 2
+    }
+  ],
+  "fluid": {
+    "type": "geontm:sodium_aluminate",
+    "amount": 150
+  },
+  "output": {
+    "material": "aluminium",
+    "amount": 216
+  },
+  "duration": 40,
+  "steam": 200,
+  "order": 11
+}

@@ -1,0 +1,34 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:upgrade_afterburn_3",
+  "duration": 400,
+  "consumption": 25000,
+  "fluid": {
+    "type": "geontm:solvent",
+    "amount": 500
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 16
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:upgrade_afterburn_2"
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 4
+    }
+  ],
+  "requires": [
+    "!enable_528",
+    "!lbsm_simple_crafting"
+  ],
+  "order": 41
+}

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "geontm:powder_neodymium"
+  },
+  "output": "geontm:powder_gold",
+  "antimatter": 10,
+  "order": 24
+}

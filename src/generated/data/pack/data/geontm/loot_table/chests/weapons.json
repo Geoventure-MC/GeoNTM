@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_light_revolver",
+          "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_henry",
+          "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_maresleg",
+          "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_greasegun",
+          "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_carbine",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_heavy_revolver",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_panzerschreck",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_fliegerfaust",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_double_barrel",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_n_i_4_n_i",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

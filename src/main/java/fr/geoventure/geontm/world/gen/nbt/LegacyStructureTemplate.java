@@ -196,7 +196,7 @@ public final class LegacyStructureTemplate {
         }
 
         @Override public int getHeight() { return blocks.isEmpty() ? 0 : maxY - minY + 1; }
-        @Override public int getMinY() { return blocks.isEmpty() ? 0 : minY; }
+        @Override public int getMinBuildHeight() { return blocks.isEmpty() ? 0 : minY; }
         @Override public FluidState getFluidState(BlockPos pos) { return getBlockState(pos).getFluidState(); }
         @Override public @Nullable BlockEntity getBlockEntity(BlockPos pos) {
             var cached = entities.get(pos);

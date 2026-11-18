@@ -7,13 +7,13 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 
 /**
@@ -24,7 +24,7 @@ import net.minecraft.sounds.SoundEvents;
 abstract class RBMKPanelScreen extends CompatScreen {
     /** 1.7 {@code GUIScreenRadioTorch.MAX_CHAN_LENGTH}. */
     protected static final int MAX_CHAN_LENGTH = 15;
-    protected final Identifier texture;
+    protected final ResourceLocation texture;
     protected final int xSize, ySize;
     protected int guiLeft, guiTop;
 
@@ -55,11 +55,11 @@ abstract class RBMKPanelScreen extends CompatScreen {
         return box;
     }
 
-    protected final void blit(GuiGraphicsExtractor g, int x, int y, int u, int v, int w, int h) {
+    protected final void blit(GuiGraphics g, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(g, texture, guiLeft + x, guiTop + y, u, v, w, h, 256, 256);
     }
 
-    @Override protected void extractForegroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partial) {
+    @Override protected void extractForegroundCompat(GuiGraphics g, int mouseX, int mouseY, float partial) {
         GuiDraw.text(g, font, title, guiLeft + xSize / 2 - font.width(title) / 2, guiTop + 6, 0xFF404040, false);
     }
 

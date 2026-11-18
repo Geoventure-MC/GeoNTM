@@ -8,10 +8,10 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
@@ -35,10 +35,10 @@ public abstract class GuiInfoContainerProcessor<T extends AbstractContainerMenu>
 
     protected abstract BlockPos machinePos();
 
-    public abstract Identifier getTexture();
+    public abstract ResourceLocation getTexture();
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         ModuleMachineBase[] modules = processorModules();
         if (modules == null) return;
         int[][] selectors = getSelectorPositions();
@@ -68,7 +68,7 @@ public abstract class GuiInfoContainerProcessor<T extends AbstractContainerMenu>
     }
 
     /** The two 3×6 LEDs, five pixels apart: lit while processing, dim when a recipe is set (and powered, for the right one). */
-    protected void renderStandardLEDs(GuiGraphicsExtractor graphics, boolean didProcess, @Nullable GenericRecipe recipe, long power, int lX, int lY, int sX, int sY) {
+    protected void renderStandardLEDs(GuiGraphics graphics, boolean didProcess, @Nullable GenericRecipe recipe, long power, int lX, int lY, int sX, int sY) {
         if (didProcess) led(graphics, lX, lY, sX, sY);
         else if (recipe != null) led(graphics, lX, lY, sX - 3, sY);
 
@@ -76,12 +76,12 @@ public abstract class GuiInfoContainerProcessor<T extends AbstractContainerMenu>
         else if (recipe != null && power >= recipe.power) led(graphics, lX + 5, lY, sX - 3, sY);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int y, int u, int v) {
+    private void led(GuiGraphics graphics, int x, int y, int u, int v) {
         GuiDraw.blit(graphics, getTexture(), leftPos + x, topPos + y, (float) u, (float) v, 3, 6, 256, 256);
     }
 
     /** The selected recipe's icon on each selector and half-opacity previews of its inputs in empty slots. */
-    protected void renderRecipeIcons(GuiGraphicsExtractor graphics) {
+    protected void renderRecipeIcons(GuiGraphics graphics) {
         ModuleMachineBase[] modules = processorModules();
         if (modules == null) return;
         int[][] selectors = getSelectorPositions();

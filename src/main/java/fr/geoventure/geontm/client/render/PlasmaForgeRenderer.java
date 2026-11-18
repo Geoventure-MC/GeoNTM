@@ -18,7 +18,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemDisplayContext;

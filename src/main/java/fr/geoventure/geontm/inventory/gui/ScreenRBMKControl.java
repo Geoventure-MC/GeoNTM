@@ -9,20 +9,20 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
 
 public final class ScreenRBMKControl extends RBMKContainerScreen<MenuRBMKControl> {
-    private static final Identifier TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_control.png");
+    private static final ResourceLocation TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_control.png");
 
     public ScreenRBMKControl(MenuRBMKControl menu, Inventory inventory, Component title) { super(menu, inventory, title, 176, 186); }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         texture(graphics, TEX);
         BlockEntityRBMKControl control = menu.blockEntity();
         double level = control == null ? 0 : control.level;
@@ -37,7 +37,7 @@ public final class ScreenRBMKControl extends RBMKContainerScreen<MenuRBMKControl
         }
     }
 
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         BlockEntityRBMKControl control = menu.blockEntity();
         if (control == null) return;
         if (region(71, 29, 16, 56, mouseX, mouseY)) {

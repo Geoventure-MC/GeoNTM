@@ -1,0 +1,7 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:naphtha_ds",
+  "solid_fuel_energy": 820000,
+  "output": "geontm:coke_petroleum",
+  "byproduct_type": "geontm:naphtha_coker"
+}

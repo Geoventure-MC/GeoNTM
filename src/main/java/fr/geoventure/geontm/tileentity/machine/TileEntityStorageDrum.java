@@ -16,7 +16,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.hook.Hook;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -170,14 +170,14 @@ public class TileEntityStorageDrum extends TileEntityMachineBase implements IFlu
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         liquid.serialize(buf);
         gas.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         liquid.deserialize(buf);
         gas.deserialize(buf);

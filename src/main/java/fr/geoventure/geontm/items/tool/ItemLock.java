@@ -38,7 +38,7 @@ public class ItemLock extends ItemKeyPin {
             if (te instanceof TileEntityLockableBase tile) {
 
                 if (tile.isLocked())
-                    return InteractionResult.TRY_WITH_EMPTY_HAND;
+                    return InteractionResult.PASS;
 
                 if (!level.isClientSide()) {
                     tile.setPins(pins(stack));
@@ -53,6 +53,6 @@ public class ItemLock extends ItemKeyPin {
             }
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

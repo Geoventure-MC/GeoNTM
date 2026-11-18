@@ -1,0 +1,19 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "geontm:powder_flux"
+    }
+  ],
+  "fluid": {
+    "type": "geontm:titanium_tetrachloride",
+    "amount": 1000
+  },
+  "output": {
+    "material": "titanium",
+    "amount": 288
+  },
+  "duration": 40,
+  "steam": 100,
+  "order": 12
+}

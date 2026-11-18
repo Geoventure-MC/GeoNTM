@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render.entity;
 
 import fr.geoventure.geontm.main.ResourceManager;
 import fr.geoventure.geocore.render.CompatRenderTypes;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 
 /**
  * Render types for the nuke-cloud sphere shells (Fleija / Solinium / rainbow / death blast). The 1.7 renderers share

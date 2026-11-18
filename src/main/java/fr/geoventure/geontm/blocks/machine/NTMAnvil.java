@@ -75,7 +75,7 @@ public class NTMAnvil extends CompatBlock {
 
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, new SimpleMenuProvider(
                     (id, inventory, p) -> new ContainerAnvil(id, inventory, pos),

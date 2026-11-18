@@ -28,7 +28,7 @@ import fr.geoventure.geocore.net.GeoCoreSync;
 import io.netty.buffer.Unpooled;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -370,15 +370,15 @@ public class TileEntityLoadedBase extends CompatBlockEntity implements ILoadedTi
     /**
      * Writes per-tick sync data. The base writes the muffled flag so noisy machines that call
      * {@code super.serialize} stay in sync; quiet machines may ignore it. Counterpart of
-     * {@link #deserialize(RegistryFriendlyByteBuf)}.
+     * {@link #deserialize(FriendlyByteBuf)}.
      */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         writeMuffled(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         readMuffled(buf);
     }
 }

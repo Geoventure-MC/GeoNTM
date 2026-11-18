@@ -278,7 +278,7 @@ public final class ModDecoContent {
             .loot(Loot.nothing());
 
     private static BlockBehaviour.Properties beamProperties(BlockBehaviour.Properties p) {
-        return p.strength(-1.0F, 600_000.0F).lightLevel(s -> 15).noCollision().noOcclusion().replaceable()
+        return p.strength(-1.0F, 600_000.0F).lightLevel(s -> 15).noCollission().noOcclusion().replaceable()
                 .isSuffocating((s, l, pos) -> false).isViewBlocking((s, l, pos) -> false).noLootTable();
     }
 
@@ -406,7 +406,7 @@ public final class ModDecoContent {
             .andThen(handle -> laminatePaneStates());
     /** Chain: hanging cross or flat wall plane, "end" icon when nothing holds it from below. */
     public static final RegistryObject<BlockChain> dungeon_chain = plain("dungeon_chain", BlockChain::new,
-            p -> p.strength(0.25F, 1.2F).noOcclusion().noCollision().requiresCorrectToolForDrops(), GeoNtmTab.BLOCKS) // 1.7: no setStepSound -> default stone
+            p -> p.strength(0.25F, 1.2F).noOcclusion().noCollission().requiresCorrectToolForDrops(), GeoNtmTab.BLOCKS) // 1.7: no setStepSound -> default stone
             .model(d -> d.models(Models.group()
                             .and("", Models.parented("geontm:block/template_chain", Slots.of("chain", "geontm:blocks/chain")))
                             .and("_end", Models.parented("geontm:block/template_chain", Slots.of("chain", "geontm:blocks/chain_end")))
@@ -605,7 +605,7 @@ public final class ModDecoContent {
                 ? p -> new SpotlightModular(p, beamLength, type, on, off, onBlock)
                 : p -> new Spotlight(p, beamLength, type, on, off, onBlock);
         Reg.Handle<Spotlight> block = REG.block(id, factory,
-                p -> p.strength(0.5F).sound(SoundType.METAL).noOcclusion().noCollision().requiresCorrectToolForDrops()
+                p -> p.strength(0.5F).sound(SoundType.METAL).noOcclusion().noCollission().requiresCorrectToolForDrops()
                         .lightLevel(s -> on ? 15 : 0).isSuffocating((s, l, pos) -> false).isViewBlocking((s, l, pos) -> false)
                         .dynamicShape());
         if (on) {

@@ -9,7 +9,7 @@ import fr.geoventure.geontm.client.render.item.CustomItemRenderers;
 import fr.geoventure.geocore.Ids;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.ItemStack;
 
@@ -33,15 +33,15 @@ import java.util.Set;
  */
 public final class EntityItemRenderers {
 
-    private static Set<Identifier> machines = Set.of();
-    private static Map<Identifier, String> custom = Map.of();
+    private static Set<ResourceLocation> machines = Set.of();
+    private static Map<ResourceLocation, String> custom = Map.of();
 
     private EntityItemRenderers() {}
 
     /** Whether 1.7 drew a framed {@code stack} through its own {@code IItemRenderer}'s {@code ENTITY} chain. */
     public static boolean handles(ItemStack stack) {
         if (stack.isEmpty()) return false;
-        Identifier id = BuiltInRegistries.ITEM.getKey(stack.getItem());
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
         if (machines.contains(id)) return true;
         String renderer = custom.get(id);
         return renderer != null && CustomItemRenderers.byName(renderer).handles(stack, CustomItemRenderer.Type.ENTITY);
@@ -53,13 +53,13 @@ public final class EntityItemRenderers {
     }
 
     public static void reload() {
-        Set<Identifier> foundMachines = new HashSet<>();
-        Map<Identifier, String> foundCustom = new HashMap<>();
-        for (Map.Entry<Identifier, Resource> entry : Minecraft.getInstance().getResourceManager()
+        Set<ResourceLocation> foundMachines = new HashSet<>();
+        Map<ResourceLocation, String> foundCustom = new HashMap<>();
+        for (Map.Entry<ResourceLocation, Resource> entry : Minecraft.getInstance().getResourceManager()
                 .listResources("items", path -> path.getPath().endsWith(".json")).entrySet()) {
-            Identifier file = entry.getKey();
+            ResourceLocation file = entry.getKey();
             String path = file.getPath();
-            Identifier item = Ids.of(file.getNamespace(),
+            ResourceLocation item = Ids.of(file.getNamespace(),
                     path.substring("items/".length(), path.length() - ".json".length()));
             try (Reader reader = entry.getValue().openAsReader()) {
                 JsonElement root = JsonParser.parseReader(reader);

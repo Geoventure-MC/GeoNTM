@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.desh",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_desh_mix"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:lightoil",
+      "amount": 200
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_desh"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 35,
+  "requires": [
+    "lbsm_simple_chemistry"
+  ],
+  "geocore:requires": [
+    "lbsm_simple_chemistry"
+  ]
+}

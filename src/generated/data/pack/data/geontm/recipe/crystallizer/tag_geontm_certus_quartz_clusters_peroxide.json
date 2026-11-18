@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#geontm:certus_quartz_clusters"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": {
+    "tag": "c:gems/certus_quartz",
+    "count": 12
+  },
+  "duration": 600,
+  "requires": "c:gems/certus_quartz",
+  "order": 343
+}

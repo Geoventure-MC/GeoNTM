@@ -130,7 +130,7 @@ public class DungeonSpawner extends CompatBlock implements TickingBlock {
                     EntityUndeadSoldier mob = Entities.createTriggered(ModNtmEntities.UNDEAD_SOLDIER.get(), world);
                     // 1.7 tried seven times, each at the same spot
                     for (int j = 0; j < 7 && mob != null; j++) {
-                        mob.snapTo(x + 0.5 + vx, y - 5, z + 0.5 + vz, i * 36F, 0);
+                        mob.moveTo(x + 0.5 + vx, y - 5, z + 0.5 + vz, i * 36F, 0);
                         if (mob.canSpawnAtCurrentPosition()) {
                             Spawns.finalizeTriggered(mob, world);
                             world.addFreshEntity(mob);

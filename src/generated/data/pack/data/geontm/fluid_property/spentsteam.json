@@ -1,0 +1,14 @@
+{
+  "type": "gaseous",
+  "color": "#445772",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "nocontainer"
+  ]
+}

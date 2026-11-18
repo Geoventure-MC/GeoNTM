@@ -14,7 +14,7 @@ import fr.geoventure.geontm.tileentity.ModRBMKBlockEntities;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -93,8 +93,8 @@ public class BlockEntityRBMKHeater extends BlockEntityRBMKBase implements IFluid
     }
     @Override protected void saveData(DataOut output) { super.saveData(output); feed.writeToNBT(output, "feed"); steam.writeToNBT(output, "steam"); }
     @Override protected void loadData(DataIn input) { super.loadData(input); feed.readFromNBT(input, "feed"); steam.readFromNBT(input, "steam"); }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) { super.serialize(buffer); feed.serialize(buffer); steam.serialize(buffer); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) { super.deserialize(buffer); feed.deserialize(buffer); steam.deserialize(buffer); }
+    @Override public void serialize(FriendlyByteBuf buffer) { super.serialize(buffer); feed.serialize(buffer); steam.serialize(buffer); }
+    @Override public void deserialize(FriendlyByteBuf buffer) { super.deserialize(buffer); feed.deserialize(buffer); steam.deserialize(buffer); }
     @Override public Component getDisplayName() { return Component.translatable("container.rbmkHeater"); }
     @Override public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) { return new MenuRBMKHeater(id, inventory, this); }
     @Override public String[] getFunctionInfo() { return new String[]{PREFIX_VALUE + "in", PREFIX_VALUE + "out"}; }

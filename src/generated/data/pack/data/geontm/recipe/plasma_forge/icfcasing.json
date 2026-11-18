@@ -1,0 +1,44 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.icfcasing",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_cast/any_bismoid_bronze",
+      "count": 4
+    },
+    {
+      "material": "saturnite",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:icf_laser_component_casing"
+  ],
+  "duration": 800,
+  "power": 10000000,
+  "order": 29,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_bronze_tubes",
+      "count": 4
+    },
+    {
+      "material": "saturnite",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chlorophyte"
+  ],
+  "ignition_temp": 1000000
+}

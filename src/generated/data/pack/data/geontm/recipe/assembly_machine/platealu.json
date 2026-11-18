@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platealu",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/aluminium"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_aluminium"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 768
+}

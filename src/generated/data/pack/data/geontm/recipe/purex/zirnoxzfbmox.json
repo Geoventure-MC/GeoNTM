@@ -1,0 +1,37 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.zirnoxzfbmox",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_zfb_mox"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_zirconium",
+      "count": 3
+    },
+    "geontm:nugget_technetium",
+    "geontm:nugget_pu_mix",
+    "geontm:nuclear_waste_tiny"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:waste_zfb_mox"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.zirnox",
+  "order": 15
+}

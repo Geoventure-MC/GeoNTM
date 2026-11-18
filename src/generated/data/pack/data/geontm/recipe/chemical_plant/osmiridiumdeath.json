@@ -1,0 +1,33 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.osmiridiumdeath",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_paleogenite"
+    },
+    {
+      "ingredient": "#c:dusts/fluorite",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:nugget_bismuth",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 1000,
+      "pressure": 5
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:death",
+      "amount": 1000
+    }
+  ],
+  "duration": 240,
+  "power": 1000,
+  "order": 89
+}

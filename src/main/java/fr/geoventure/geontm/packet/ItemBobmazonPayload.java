@@ -12,7 +12,7 @@ import fr.geoventure.geocore.net.GeoCorePayload;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
@@ -37,7 +37,7 @@ public record ItemBobmazonPayload(int offer) implements GeoCorePayload {
     private static final String[] CAPS = {"cap_fritz", "cap_korl", "cap_nuka", "cap_quantum", "cap_rad", "cap_sparkle"};
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 

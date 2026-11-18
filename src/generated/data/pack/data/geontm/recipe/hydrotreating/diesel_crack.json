@@ -1,0 +1,19 @@
+{
+  "type": "geontm:hydrotreating",
+  "input": "geontm:diesel_crack",
+  "hydrogen": {
+    "type": "geontm:hydrogen",
+    "amount": 10,
+    "pressure": 1
+  },
+  "outputs": [
+    {
+      "type": "geontm:diesel",
+      "amount": 80
+    },
+    {
+      "type": "geontm:sourgas",
+      "amount": 30
+    }
+  ]
+}

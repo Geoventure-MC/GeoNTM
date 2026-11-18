@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pistonsetdura",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/dura_steel",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 8
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:piston_set_dura"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 35584
+}

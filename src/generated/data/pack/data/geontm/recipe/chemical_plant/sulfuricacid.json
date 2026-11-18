@@ -1,0 +1,28 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.sulfuricacid",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/sulfur"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 1000
+    },
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 2000
+    }
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 62
+}

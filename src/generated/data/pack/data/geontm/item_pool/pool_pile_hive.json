@@ -1,0 +1,159 @@
+{
+  "entries": [
+    {
+      "item": "minecraft:iron_ingot",
+      "min": 1,
+      "max": 3,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_steel",
+      "min": 1,
+      "max": 2,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_aluminium",
+      "min": 1,
+      "max": 2,
+      "weight": 10
+    },
+    {
+      "item": "geontm:scrap",
+      "min": 3,
+      "max": 6,
+      "weight": 10
+    },
+    {
+      "item": "geontm:gas_mask_m65",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:steel_plate",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:steel_legs",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:steel_pickaxe",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:steel_shovel",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gun_maresleg",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gun_light_revolver",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 2,
+      "weight": 5,
+      "components": {
+        "geontm:grenade": {
+          "shell": "frag",
+          "filling": "he",
+          "fuze": "s3",
+          "extra": "frag_sleeve"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 2,
+      "weight": 3,
+      "components": {
+        "geontm:grenade": {
+          "shell": "stick",
+          "filling": "demo",
+          "fuze": "impact"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:ammo_standard_g12",
+      "min": 4,
+      "max": 4,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_m357_sp",
+      "min": 6,
+      "max": 12,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_g40_he",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:bottle_nuka",
+      "min": 1,
+      "max": 2,
+      "weight": 20
+    },
+    {
+      "item": "geontm:bottle_quantum",
+      "min": 1,
+      "max": 2,
+      "weight": 1
+    },
+    {
+      "item": "geontm:definitelyfood",
+      "min": 5,
+      "max": 12,
+      "weight": 20
+    },
+    {
+      "item": "geontm:egg_glyphid",
+      "min": 1,
+      "max": 3,
+      "weight": 30
+    },
+    {
+      "item": "geontm:syringe_metal_stimpak",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:iv_blood",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "minecraft:experience_bottle",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    }
+  ]
+}

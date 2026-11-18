@@ -1,0 +1,11 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_roasted_heavy"
+  },
+  "solid_output": {
+    "id": "geontm:bedrock_ore_rad_arc_heavy",
+    "count": 4
+  },
+  "order": 29
+}

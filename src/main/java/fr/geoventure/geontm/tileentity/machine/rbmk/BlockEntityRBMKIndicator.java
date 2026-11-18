@@ -10,7 +10,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,8 +28,8 @@ public class BlockEntityRBMKIndicator extends TileEntityLoadedBase implements IC
 
     @Override public void tickServer() { for (IndicatorUnit unit : indicators) unit.update(); networkPackNT(); }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); for (IndicatorUnit u : indicators) u.serialize(buf); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); for (IndicatorUnit u : indicators) u.deserialize(buf); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); for (IndicatorUnit u : indicators) u.serialize(buf); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); for (IndicatorUnit u : indicators) u.deserialize(buf); }
     @Override protected void saveData(DataOut output) { super.saveData(output); for (int i = 0; i < INDICATORS; i++) indicators[i].save(output, i); }
     @Override protected void loadData(DataIn input) { super.loadData(input); for (int i = 0; i < INDICATORS; i++) indicators[i].load(input, i); }
 
@@ -86,11 +86,11 @@ public class BlockEntityRBMKIndicator extends TileEntityLoadedBase implements IC
             else light = value < max || value > min;
         }
 
-        void serialize(RegistryFriendlyByteBuf buf) {
+        void serialize(FriendlyByteBuf buf) {
             buf.writeBoolean(active); buf.writeBoolean(polling); buf.writeBoolean(light); buf.writeInt(color);
             buf.writeUtf(label); buf.writeUtf(rtty); buf.writeLong(min); buf.writeLong(max);
         }
-        void deserialize(RegistryFriendlyByteBuf buf) {
+        void deserialize(FriendlyByteBuf buf) {
             active = buf.readBoolean(); polling = buf.readBoolean(); light = buf.readBoolean(); color = buf.readInt();
             label = buf.readUtf(); rtty = buf.readUtf(); min = buf.readLong(); max = buf.readLong();
         }

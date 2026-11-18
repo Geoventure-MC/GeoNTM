@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.explosivelenses2",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_plasticexplosive",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:neutron_reflector",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:ball_tatb",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:man_explosive8"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 56576
+}

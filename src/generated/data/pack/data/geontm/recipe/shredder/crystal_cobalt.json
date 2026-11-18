@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_cobalt",
+  "output": {
+    "id": "geontm:powder_cobalt",
+    "count": 3
+  }
+}

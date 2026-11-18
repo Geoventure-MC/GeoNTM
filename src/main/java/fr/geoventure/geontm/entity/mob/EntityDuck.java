@@ -8,9 +8,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.chicken.Chicken;
+import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import org.jspecify.annotations.Nullable;
@@ -38,7 +38,7 @@ public class EntityDuck extends CompatChicken {
 
     @Override
     public @Nullable Chicken getBreedOffspring(ServerLevel level, AgeableMob partner) {
-        return Entities.create(ModNtmEntities.DUCK.get(), level, EntitySpawnReason.BREEDING);
+        return Entities.create(ModNtmEntities.DUCK.get(), level, MobSpawnType.BREEDING);
     }
 
     /** 1.7 overrode neither drop method, so it kept {@code EntityChicken.dropFewItems}. */

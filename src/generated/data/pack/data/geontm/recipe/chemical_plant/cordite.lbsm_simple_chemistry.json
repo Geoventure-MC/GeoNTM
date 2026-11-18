@@ -1,0 +1,35 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.cordite",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/niter",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:powder_sawdust",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:heatingoil",
+      "amount": 200
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:cordite",
+      "count": 4
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 70,
+  "requires": [
+    "lbsm_simple_chemistry"
+  ],
+  "geocore:requires": [
+    "lbsm_simple_chemistry"
+  ]
+}

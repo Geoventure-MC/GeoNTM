@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ores/lithium"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output": "geontm:crystal_lithium",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 19
+}

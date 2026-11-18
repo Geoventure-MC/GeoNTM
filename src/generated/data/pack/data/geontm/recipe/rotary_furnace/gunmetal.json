@@ -1,0 +1,19 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/aluminium"
+    }
+  ],
+  "output": {
+    "material": "gunmetal",
+    "amount": 288
+  },
+  "duration": 200,
+  "steam": 100,
+  "order": 6
+}

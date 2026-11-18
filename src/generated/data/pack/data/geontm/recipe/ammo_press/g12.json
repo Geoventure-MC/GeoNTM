@@ -1,0 +1,26 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g12",
+    "count": 6
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:nuggets/lead",
+      "count": 6
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_buckshot"
+    },
+    ""
+  ],
+  "order": 44
+}

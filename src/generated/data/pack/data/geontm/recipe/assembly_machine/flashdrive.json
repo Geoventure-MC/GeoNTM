@@ -1,0 +1,22 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.flashdrive",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_chip"
+    },
+    {
+      "ingredient": "#c:plates/gold"
+    }
+  ],
+  "output_items": [
+    "geontm:drive_flash_empty"
+  ],
+  "duration": 100,
+  "power": 250,
+  "order": 9216
+}

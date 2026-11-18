@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_fluorite",
+  "output": {
+    "id": "geontm:fluorite",
+    "count": 8
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 3,
+  "output": "geontm:ingot_meteorite_forged",
+  "left": {
+    "ingredient": "geontm:ingot_meteorite"
+  },
+  "right": {
+    "ingredient": "geontm:ingot_meteorite"
+  },
+  "hot": true,
+  "order": 28
+}

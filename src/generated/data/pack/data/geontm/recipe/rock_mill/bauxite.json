@@ -1,0 +1,49 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.bauxite",
+  "input_items": [
+    {
+      "ingredient": "#c:ores/bauxite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:gravel",
+        "weight": 25
+      },
+      {
+        "data": "minecraft:clay_ball",
+        "weight": 25
+      },
+      {
+        "data": "geontm:stone_resource_hematite",
+        "weight": 25
+      },
+      {
+        "data": "geontm:ore_titanium",
+        "weight": 25
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 25,
+  "icon": {
+    "id": "geontm:stone_resource_bauxite"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 8
+}

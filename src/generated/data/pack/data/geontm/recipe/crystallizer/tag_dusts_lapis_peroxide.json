@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/lapis"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "minecraft:lapis_lazuli",
+  "duration": 100,
+  "order": 61
+}

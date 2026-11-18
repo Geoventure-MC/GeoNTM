@@ -1,0 +1,35 @@
+{
+  "type": "liquid",
+  "color": "#7A5542",
+  "temperature": 800,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 3,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 65
+    },
+    "pwrmoderator": {
+      "multiplier": 2.5
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 400,
+          "produces": "geontm:thorium_salt_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "PWR": 1.0
+      }
+    }
+  }
+}

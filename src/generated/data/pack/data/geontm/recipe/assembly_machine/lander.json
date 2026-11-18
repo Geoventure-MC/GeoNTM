@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.lander",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:thruster_small",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:drive_flash_flightsim",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:missile_soyuz_lander"
+  ],
+  "duration": 2400,
+  "power": 25000,
+  "order": 85760,
+  "blueprint_pools_528": [
+    "528.soyuz"
+  ]
+}

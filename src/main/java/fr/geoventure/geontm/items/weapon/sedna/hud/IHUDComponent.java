@@ -1,6 +1,6 @@
 package fr.geoventure.geontm.items.weapon.sedna.hud;
 
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -10,6 +10,6 @@ public interface IHUDComponent {
     /** Height reserved before the next component in this rail is rendered. */
     int getComponentHeight(Player player, ItemStack stack);
 
-    void renderHUDComponent(GuiGraphicsExtractor graphics, Player player, ItemStack stack, int bottomOffset,
+    void renderHUDComponent(GuiGraphics graphics, Player player, ItemStack stack, int bottomOffset,
                             int configIndex);
 }

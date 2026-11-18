@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.sulfuric_acid.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/sulfur"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 800
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 500
+    }
+  ],
+  "duration": 50,
+  "order": 19
+}

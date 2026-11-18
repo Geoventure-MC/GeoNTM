@@ -18,7 +18,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -32,9 +32,9 @@ public final class RenderSnowglobe extends GemBER<TileEntitySnowglobe, RenderSno
         public SnowglobeType type = SnowglobeType.NONE;
     }
 
-    static final Identifier SOCKET = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe.png");
-    static final Identifier GLASS = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe_glass.png");
-    static final Identifier FEATURES = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe_features.png");
+    static final ResourceLocation SOCKET = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe.png");
+    static final ResourceLocation GLASS = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe_glass.png");
+    static final ResourceLocation FEATURES = Ids.of(Constants.MOD_ID, "textures/models/trinkets/snowglobe_features.png");
 
     private final WavefrontObj model = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/trinkets/snowglobe.obj"));
     private final Font font = Minecraft.getInstance().font;
@@ -86,7 +86,7 @@ public final class RenderSnowglobe extends GemBER<TileEntitySnowglobe, RenderSno
         pose.popPose();
     }
 
-    private void part(PoseStack pose, SubmitSink sink, Identifier texture, String name, int light) {
+    private void part(PoseStack pose, SubmitSink sink, ResourceLocation texture, String name, int light) {
         sink.submitCustomGeometry(pose, CompatRenderTypes.entityCutoutNoCull(texture),
                 (p, buffer) -> model.renderPart(name, p, buffer, light, OverlayTexture.NO_OVERLAY));
     }

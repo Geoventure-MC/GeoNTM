@@ -1,0 +1,35 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.excomputer",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_board",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:glass_quartz",
+      "count": 8
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 2000
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_computer"
+  ],
+  "duration": 240,
+  "power": 100000,
+  "order": 8,
+  "ignition_temp": 1000000
+}

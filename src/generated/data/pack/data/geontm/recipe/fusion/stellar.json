@@ -1,0 +1,28 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.stellar",
+  "input_fluids": [
+    {
+      "type": "geontm:stellar_flux",
+      "amount": 5
+    }
+  ],
+  "output_items": [
+    "geontm:powder_gold"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:stellar_flux"
+    }
+  },
+  "custom_localization": true,
+  "order": 9,
+  "ignition_temp": 10000000,
+  "output_temp": 50000000,
+  "neutron_flux": 10000.0,
+  "green": 0.4,
+  "blue": 0.1
+}

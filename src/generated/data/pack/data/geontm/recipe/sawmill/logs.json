@@ -1,0 +1,17 @@
+{
+  "type": "geontm:sawmill",
+  "input": {
+    "ingredient": "#minecraft:logs"
+  },
+  "output": {
+    "id": "minecraft:oak_planks",
+    "count": 6
+  },
+  "crafting_result": {
+    "require": "#minecraft:planks",
+    "multiply": 6,
+    "divide": 4
+  },
+  "sawdust_chance": 0.5,
+  "order": 2
+}

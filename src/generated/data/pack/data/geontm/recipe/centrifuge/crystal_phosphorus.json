@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_phosphorus"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_fire",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_fire",
+      "count": 3
+    },
+    {
+      "id": "geontm:ingot_phosphorus",
+      "count": 2
+    },
+    {
+      "id": "minecraft:blaze_powder",
+      "count": 2
+    }
+  ],
+  "order": 175
+}

@@ -1,0 +1,136 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ballistic_gauntlet",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:armor_polish",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bandaid",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:serum",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:quartz_plutonium",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:morning_glory",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:spider_milk",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ink",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:heart_container",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:black_diamond",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:scrumpy",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:wild_p",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:card_aos",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:card_qos",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:starmetal_sword",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gem_alexandrite",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:crackpipe",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:flask_infusion_shield",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:boxcar",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:book_of_",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_hangman",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_mas36",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:item_secret_folly",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:weapon_mod_special_nickel",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:weapon_mod_special_doubloons",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

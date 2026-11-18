@@ -85,7 +85,7 @@ public class GeigerCounter extends CompatBlock implements TickingBlock {
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
         if (!level.isClientSide()) {
             // 1.7: world.playSoundAtEntity(player, "geontm:item.techBoop", 1.0F, 1.0F), at the player, not the block

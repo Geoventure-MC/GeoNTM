@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Gun casing snapshot with the client-selected legacy animation-mode discriminator. */
 public record GunCasingEjectPayload(double x, double y, double z, double mX, double mY, double mZ,
@@ -38,7 +38,7 @@ public record GunCasingEjectPayload(double x, double y, double z, double mX, dou
                     buffer.readBoolean()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

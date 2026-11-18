@@ -1,0 +1,30 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.processflight_helium",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_flightdata"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_disk_flightdata_processed",
+        "weight": 90
+      },
+      {
+        "data": "geontm:drive_disk_broken",
+        "weight": 10
+      }
+    ]
+  ],
+  "duration": 2400,
+  "power": 10000,
+  "order": 8
+}

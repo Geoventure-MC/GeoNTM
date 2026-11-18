@@ -77,7 +77,7 @@ public class ScatteredStructure extends Structure {
     protected Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
         LegacyDungeonWorld.Terrain terrain = LegacyDungeonWorld.terrain(context.chunkGenerator(), context.randomState(), context.heightAccessor());
         return site(context.registryAccess(), context.random(), context.chunkPos(), terrain).filter(Site::buildable).map(site -> {
-            BoundingBox box = new BoundingBox(site.x(), context.heightAccessor().getMinY(), site.z(), site.x(), context.heightAccessor().getMaxY() - 1, site.z());
+            BoundingBox box = new BoundingBox(site.x(), context.heightAccessor().getMinBuildHeight(), site.z(), site.x(), context.heightAccessor().getMaxBuildHeight() - 1, site.z());
             return new GenerationStub(new BlockPos(site.x(), site.y(), site.z()), builder -> builder.addPiece(new Piece(feature, site.x(), site.z(), site.seed(), box)));
         });
     }

@@ -1,0 +1,19 @@
+{
+  "type": "gaseous",
+  "color": "#4C4C4C",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 4,
+    "symbol": "radiation"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 15
+    },
+    "ventradiation": {
+      "rad_per_mb": 0.1
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "type": "liquid",
+  "color": "#3333FF",
+  "temperature": 20,
+  "flags": [
+    "unsiphonable"
+  ],
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 200,
+          "produces": "geontm:steam",
+          "amount_produced": 100
+        },
+        {
+          "amount_req": 1,
+          "heat_req": 220,
+          "produces": "geontm:hotsteam",
+          "amount_produced": 10
+        },
+        {
+          "amount_req": 1,
+          "heat_req": 238,
+          "produces": "geontm:superhotsteam",
+          "amount_produced": 1
+        },
+        {
+          "amount_req": 10,
+          "heat_req": 2500,
+          "produces": "geontm:ultrahotsteam",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "BOILER": 1.0,
+        "HEATEXCHANGER": 0.25
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ingots/malachite"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 250
+  },
+  "output": {
+    "scraps": {
+      "material": "copper",
+      "amount": 72
+    }
+  },
+  "duration": 300,
+  "productivity": 0.1,
+  "order": 36
+}

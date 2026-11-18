@@ -1,0 +1,7 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nugget_sr90",
+  "output": "geontm:nugget_zirconium",
+  "decay": "short",
+  "divisor": 50
+}

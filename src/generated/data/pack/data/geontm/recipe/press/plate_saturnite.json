@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "plate",
+  "input": {
+    "ingredient": "#c:ingots/saturnite"
+  },
+  "output": "geontm:plate_saturnite",
+  "order": 22
+}

@@ -41,7 +41,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -520,7 +520,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
         EntityRocketSoyuz soyuz = new EntityRocketSoyuz(ModNtmEntities.SOYUZ.get(), level);
         soyuz.setSkin(this.loadedType);
         soyuz.mode = this.cargoMode ? 1 : 0;
-        soyuz.snapTo(pos.x, pos.y + 4, pos.z, 0F, 0F);
+        soyuz.moveTo(pos.x, pos.y + 4, pos.z, 0F, 0F);
         level.addFreshEntity(soyuz);
 
         tanks[0].setFill(tanks[0].getFill() - 100_000);
@@ -656,7 +656,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tanks[0].serialize(buf);
         tanks[1].serialize(buf);
@@ -669,7 +669,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tanks[0].deserialize(buf);
         tanks[1].deserialize(buf);

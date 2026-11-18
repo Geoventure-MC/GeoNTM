@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_sulfuric_washed_crystal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_sodalite",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_asbestos",
+      "count": 6
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_diamond",
+      "count": 3
+    },
+    "geontm:bedrock_ore_crumbs_crystal"
+  ],
+  "order": 148
+}

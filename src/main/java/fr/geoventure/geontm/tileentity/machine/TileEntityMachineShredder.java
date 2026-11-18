@@ -13,7 +13,7 @@ import fr.geoventure.geocore.hook.Hook;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -281,7 +281,7 @@ public class TileEntityMachineShredder extends TileEntityMachineBase implements 
     // Sync (BufPacket) + persistence
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(progress);
@@ -290,7 +290,7 @@ public class TileEntityMachineShredder extends TileEntityMachineBase implements 
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         progress = buf.readInt();

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:particle_accelerator",
+  "input1": {
+    "ingredient": "geontm:particle_muon"
+  },
+  "input2": {
+    "ingredient": "geontm:particle_dark"
+  },
+  "momentum": 12500,
+  "output1": "geontm:particle_strange",
+  "order": 6
+}

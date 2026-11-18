@@ -1,0 +1,31 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:raw_materials/copper"
+  },
+  "outputs": [
+    {
+      "item": {
+        "id": "geontm:powder_copper",
+        "count": 2
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_copper",
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_gold",
+      "chance": 0.6666667
+    },
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.6666667
+    }
+  ],
+  "requires": [
+    "lbsm_simple_centrifuge"
+  ],
+  "order": 23
+}

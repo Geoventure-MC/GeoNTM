@@ -1,0 +1,14 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_item": {
+    "ingredient": "geontm:biomass",
+    "count": 4
+  },
+  "output_fluid": {
+    "type": "geontm:syngas",
+    "amount": 1000
+  },
+  "output_item": "minecraft:charcoal",
+  "duration": 100,
+  "order": 31
+}

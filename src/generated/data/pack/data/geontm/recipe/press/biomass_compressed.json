@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "geontm:biomass"
+  },
+  "output": "geontm:biomass_compressed",
+  "order": 4
+}

@@ -79,14 +79,14 @@ public class EntityDeathBlast extends CompatEntity {
     }
 
     public void anchorAndLoad(ServerLevel level, int chunkX, int chunkZ) {
-        long chunk = ChunkPos.pack(chunkX, chunkZ);
+        long chunk = ChunkPos.asLong(chunkX, chunkZ);
         moveAnchor(level, chunk);
         ChunkUtil.loadEntityTickingChunk(level, chunk);
     }
 
     private void ensureAnchor() {
         if (level() instanceof ServerLevel server) {
-            moveAnchor(server, ChunkPos.pack(getBlockX() >> 4, getBlockZ() >> 4));
+            moveAnchor(server, ChunkPos.asLong(getBlockX() >> 4, getBlockZ() >> 4));
         }
     }
 

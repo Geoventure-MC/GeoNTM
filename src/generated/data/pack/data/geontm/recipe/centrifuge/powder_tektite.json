@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:powder_tektite"
+  },
+  "outputs": [
+    "geontm:powder_meteorite_tiny",
+    "geontm:powder_paleogenite_tiny",
+    "geontm:powder_meteorite_tiny",
+    {
+      "id": "geontm:dust",
+      "count": 6
+    }
+  ],
+  "order": 52
+}

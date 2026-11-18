@@ -1,0 +1,13 @@
+{
+  "type": "liquid",
+  "color": "#808080",
+  "temperature": 20,
+  "flags": [
+    "nocontainer"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 60
+    }
+  }
+}

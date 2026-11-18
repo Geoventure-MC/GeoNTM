@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:anvil",
+  "output": {
+    "id": "geontm:powder_iron",
+    "count": 31
+  }
+}

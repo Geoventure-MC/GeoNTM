@@ -13,7 +13,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
@@ -40,8 +40,8 @@ public class BlockEntityRBMKLever extends TileEntityLoadedBase implements IContr
     @Override public void tickServer() { for (LeverUnit lever : levers) lever.update(); networkPackNT(); }
     @Override public void tickClient() { for (LeverUnit lever : levers) lever.updateClient(); }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); for (LeverUnit lever : levers) lever.serialize(buf); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); for (LeverUnit lever : levers) lever.deserialize(buf); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); for (LeverUnit lever : levers) lever.serialize(buf); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); for (LeverUnit lever : levers) lever.deserialize(buf); }
     @Override protected void saveData(DataOut output) { super.saveData(output); for (int i = 0; i < LEVERS; i++) levers[i].save(output, i); }
     @Override protected void loadData(DataIn input) { super.loadData(input); for (int i = 0; i < LEVERS; i++) levers[i].load(input, i); }
 
@@ -148,11 +148,11 @@ public class BlockEntityRBMKLever extends TileEntityLoadedBase implements IContr
 
         public boolean canSend(String command) { return rtty != null && !rtty.isEmpty() && command != null && !command.isEmpty(); }
 
-        void serialize(RegistryFriendlyByteBuf buf) {
+        void serialize(FriendlyByteBuf buf) {
             buf.writeBoolean(active); buf.writeBoolean(polling); buf.writeFloat(flipProgress);
             buf.writeUtf(label); buf.writeUtf(rtty); buf.writeUtf(commandOn); buf.writeUtf(commandOff);
         }
-        void deserialize(RegistryFriendlyByteBuf buf) {
+        void deserialize(FriendlyByteBuf buf) {
             active = buf.readBoolean(); polling = buf.readBoolean(); flipSync = buf.readFloat();
             label = buf.readUtf(); rtty = buf.readUtf(); commandOn = buf.readUtf(); commandOff = buf.readUtf();
             turnProgress = 3; // three-ply for extra smoothness

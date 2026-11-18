@@ -17,15 +17,15 @@ import fr.geoventure.geocore.render.gem.GemEntityRenderer;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Random;
 
 /** The 1.12.2 digamma spear: full-bright lance blade, settling ghost and stable 64-spike flash. */
 public final class RenderSpear extends GemEntityRenderer<EntitySpear, RenderSpear.State> {
     private static final WavefrontObj LANCE = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/weapons/lance.obj"));
-    private static final Identifier LANCE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/weapons/lance.png");
-    private static final Identifier WHITE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/misc/white.png");
+    private static final ResourceLocation LANCE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/weapons/lance.png");
+    private static final ResourceLocation WHITE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/misc/white.png");
 
     public RenderSpear(EntityRendererProvider.Context context) { super(context); }
 

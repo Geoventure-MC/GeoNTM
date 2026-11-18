@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "geontm:plant_flower_cd0",
+  "output": {
+    "type": "geontm:ethanol",
+    "amount": 50
+  }
+}

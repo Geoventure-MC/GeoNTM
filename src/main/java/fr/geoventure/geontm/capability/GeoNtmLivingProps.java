@@ -17,7 +17,7 @@ import fr.geoventure.geontm.config.RadiationConfig;
 import fr.geoventure.geontm.entity.EntityHbmProps;
 import fr.geoventure.geontm.entity.EntityHbmProps.ContaminationEffect;
 import fr.geoventure.geontm.lib.ModDamageSources;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -34,8 +34,8 @@ import net.minecraft.world.level.block.Blocks;
  */
 public class GeoNtmLivingProps {
 
-    /** Identifier-keyed replacement for the old digamma AttributeModifier UUID. */
-    public static final Identifier DIGAMMA_ID = Ids.of(Constants.MOD_ID, "digamma");
+    /** ResourceLocation-keyed replacement for the old digamma AttributeModifier UUID. */
+    public static final ResourceLocation DIGAMMA_ID = Ids.of(Constants.MOD_ID, "digamma");
     public static final int maxAsbestos = 60 * 60 * 20;
     public static final int maxBlacklung = EntityHbmProps.MAX_BLACKLUNG;
 

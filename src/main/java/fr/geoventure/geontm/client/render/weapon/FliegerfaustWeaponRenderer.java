@@ -7,12 +7,12 @@ import com.mojang.math.Axis;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Gem port of 1.7 ItemRenderFliegerfaust. The drum shows every rocket except while UNLOADING runs. */
 public final class FliegerfaustWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID = Ids.of("geontm", "models/weapons/fliegerfaust.obj");
+    private static final ResourceLocation MODEL_ID = Ids.of("geontm", "models/weapons/fliegerfaust.obj");
     private static final Surface BODY = Surface.cutout("geontm:textures/models/weapons/fliegerfaust.png");
     private WavefrontObj model;
 

@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
@@ -78,7 +78,7 @@ public class ItemChopper extends CompatItem {
 
         ItemStack stack = player.getItemInHand(hand);
         BlockHitResult hit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
-        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.PASS;
         EntityType<? extends Mob> type = this.type.get();
         if (!type.isEnabled(level.enabledFeatures())) return InteractionResult.FAIL;
         if (!(level instanceof ServerLevel serverLevel)) return InteractionResult.SUCCESS;
@@ -86,7 +86,7 @@ public class ItemChopper extends CompatItem {
         BlockPos pos = hit.getBlockPos();
         // 1.7 BlockLiquid: vanilla water and lava, not Forge fluid blocks
         Block block = level.getBlockState(pos).getBlock();
-        if (!(block instanceof LiquidBlock) || block instanceof FluidBlock) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(block instanceof LiquidBlock) || block instanceof FluidBlock) return InteractionResult.PASS;
         if (!level.mayInteract(player, pos) || !player.mayUseItemAt(pos, hit.getDirection(), stack)) {
             return InteractionResult.FAIL;
         }
@@ -103,7 +103,7 @@ public class ItemChopper extends CompatItem {
         // 1.7: launched mobs start in open air, so target spawn settling must stay disabled.
         BlockPos spawnPos = pos.above(this.launch);
         Mob mob = type.spawn(level, stack, player, spawnPos,
-                EntitySpawnReason.SPAWN_ITEM_USE, tryMoveDown && this.launch == 0, movedUp);
+                MobSpawnType.SPAWN_EGG, tryMoveDown && this.launch == 0, movedUp);
         if (mob == null) return InteractionResult.FAIL;
 
         this.spawned.accept(mob);

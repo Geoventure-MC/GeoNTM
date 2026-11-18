@@ -10,7 +10,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -105,7 +105,7 @@ public abstract class TileEntityRadioTorchBase extends TileEntityLoadedBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeBoolean(polling);
         buffer.writeBoolean(customMap);
@@ -118,7 +118,7 @@ public abstract class TileEntityRadioTorchBase extends TileEntityLoadedBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         polling = buffer.readBoolean();
         customMap = buffer.readBoolean();

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/copper",
+  "materials": [
+    {
+      "material": "copper",
+      "amount": 144
+    },
+    {
+      "material": "stone",
+      "amount": 162
+    }
+  ]
+}

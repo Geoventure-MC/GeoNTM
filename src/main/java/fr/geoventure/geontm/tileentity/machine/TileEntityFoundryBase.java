@@ -10,7 +10,7 @@ import fr.geoventure.geontm.inventory.material.NTMMaterial;
 import fr.geoventure.geontm.lib.ForgeDirection;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -99,14 +99,14 @@ public abstract class TileEntityFoundryBase extends TileEntityLoadedBase {
     // Sync (BufPacket) + persistence (1.12.2 keys)
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(this.type == null ? -1 : this.type.id);
         buf.writeInt(this.amount);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         int id = buf.readInt();
         this.type = id < 0 ? null : Mats.matById.get(id);

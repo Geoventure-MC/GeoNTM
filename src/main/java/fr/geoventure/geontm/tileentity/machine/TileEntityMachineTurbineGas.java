@@ -29,7 +29,7 @@ import fr.geoventure.geontm.util.TickPhase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -455,7 +455,7 @@ public class TileEntityMachineTurbineGas extends TileEntityMachinePolluting
         return null;
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(powerBeforeNet);
         buf.writeInt(rpm);
@@ -467,7 +467,7 @@ public class TileEntityMachineTurbineGas extends TileEntityMachinePolluting
         buf.writeInt(state == 1 ? instantPowerOutput : counter);
         for (FluidTankNTM tank : tanks) tank.serialize(buf);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         rpm = buf.readInt();

@@ -359,7 +359,7 @@ public class EntityNukeTorex extends CompatEntity {
                 ? initial : this.entityData.get(FINAL_SPAWN_TARGET);
         if (clientHistoricalTimeline && target != Integer.MIN_VALUE) return target;
         return Math.max(level().getHeight(Heightmap.Types.MOTION_BLOCKING,
-                (int) Math.floor(getX()), (int) Math.floor(getZ())) - 3, level().getMinY() + 1);
+                (int) Math.floor(getX()), (int) Math.floor(getZ())) - 3, level().getMinBuildHeight() + 1);
     }
 
     /** Called from both tick and renderer extraction so no age-zero frame can be submitted on retrack. */
@@ -538,7 +538,7 @@ public class EntityNukeTorex extends CompatEntity {
         int initial = this.entityData.get(INITIAL_SPAWN_TARGET);
         if (initial == Integer.MIN_VALUE) return;
         int current = Math.max(level().getHeight(Heightmap.Types.MOTION_BLOCKING,
-                (int) Math.floor(getX()), (int) Math.floor(getZ())) - 3, level().getMinY() + 1);
+                (int) Math.floor(getX()), (int) Math.floor(getZ())) - 3, level().getMinBuildHeight() + 1);
         if (current != initial) {
             this.entityData.set(FINAL_SPAWN_TARGET, current);
             markTerrainChanged();
@@ -1106,7 +1106,7 @@ public class EntityNukeTorex extends CompatEntity {
 
     private void captureEnvironment(Level level, double x, double y, double z) {
         int target = Math.max(level.getHeight(Heightmap.Types.MOTION_BLOCKING,
-                (int) Math.floor(x), (int) Math.floor(z)) - 3, level.getMinY() + 1);
+                (int) Math.floor(x), (int) Math.floor(z)) - 3, level.getMinBuildHeight() + 1);
         this.entityData.set(INITIAL_SPAWN_TARGET, target);
         this.entityData.set(FINAL_SPAWN_TARGET, target);
         boolean precipitation = level.getBiome(BlockPos.containing(x, y, z)).value().hasPrecipitation();

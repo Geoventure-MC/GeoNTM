@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "aluminium",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output": "geontm:plate_welded_aluminium",
+  "duration": 300,
+  "consumption": 10000,
+  "order": 12
+}

@@ -10,11 +10,11 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -22,8 +22,8 @@ import java.util.Optional;
 
 /** Faithful 256x204 sender/receiver configuration panel. */
 public final class RadioTorchScreen extends CompatContainerScreen<RadioTorchMenu> {
-    private static final Identifier SENDER = Ids.of("geontm", "textures/gui/machine/gui_rtty_sender.png");
-    private static final Identifier RECEIVER = Ids.of("geontm", "textures/gui/machine/gui_rtty_receiver.png");
+    private static final ResourceLocation SENDER = Ids.of("geontm", "textures/gui/machine/gui_rtty_sender.png");
+    private static final ResourceLocation RECEIVER = Ids.of("geontm", "textures/gui/machine/gui_rtty_receiver.png");
 
     private EditBox frequency;
     private final EditBox[] mapping = new EditBox[TileEntityRadioTorchBase.MAPPING_SIZE];
@@ -63,8 +63,8 @@ public final class RadioTorchScreen extends CompatContainerScreen<RadioTorchMenu
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-        Identifier texture = sender ? SENDER : RECEIVER;
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        ResourceLocation texture = sender ? SENDER : RECEIVER;
         if (customMap) {
             GuiDraw.blit(graphics, texture, leftPos, topPos, 0, 0, imageWidth, imageHeight, 256, 256);
             GuiDraw.blit(graphics, texture, leftPos + 137, topPos + 17, 0, 204, 18, 18, 256, 256);
@@ -76,12 +76,12 @@ public final class RadioTorchScreen extends CompatContainerScreen<RadioTorchMenu
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - font.width(title)) / 2, 6, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (hover(137, 17, 18, 18, mouseX, mouseY)) {
             tooltip(graphics, customMap ? "Custom Mapping" : "Redstone Passthrough", mouseX, mouseY);
         } else if (hover(173, 17, 18, 18, mouseX, mouseY)) {
@@ -91,7 +91,7 @@ public final class RadioTorchScreen extends CompatContainerScreen<RadioTorchMenu
         }
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, String value, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, String value, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, List.of(Component.literal(value)), Optional.empty(), mouseX, mouseY);
     }
 

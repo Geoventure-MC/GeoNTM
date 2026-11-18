@@ -52,7 +52,7 @@ public class LegacyFlowerFeature extends Feature<LegacyFlowerFeature.Config> {
             pos.set(origin.getX() + rand.nextInt(c.xzSpread()) - rand.nextInt(c.xzSpread()),
                     origin.getY() + rand.nextInt(c.ySpread()) - rand.nextInt(c.ySpread()),
                     origin.getZ() + rand.nextInt(c.xzSpread()) - rand.nextInt(c.xzSpread()));
-            if (pos.getY() < level.getMinY() || pos.getY() >= level.getMaxY()) continue;
+            if (pos.getY() < level.getMinBuildHeight() || pos.getY() >= level.getMaxBuildHeight()) continue;
             if (!level.isEmptyBlock(pos) || !state.canSurvive(level, pos)) continue;
             level.setBlock(pos, state, 2);
             placed = true;

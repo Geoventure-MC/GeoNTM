@@ -8,7 +8,7 @@ import fr.geoventure.geontm.sound.ModSounds;
 import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
@@ -19,7 +19,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretJeremy extends TileEntityTurretBaseNT {
 
-    private static final Identifier GUI = turretGui("cannon");
+    private static final ResourceLocation GUI = turretGui("cannon");
 
     private static @Nullable List<BulletConfig> configs;
 
@@ -45,7 +45,7 @@ public class TileEntityTurretJeremy extends TileEntityTurretBaseNT {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 

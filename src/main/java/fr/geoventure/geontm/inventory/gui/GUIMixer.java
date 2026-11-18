@@ -12,10 +12,10 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.List;
 public class GUIMixer extends CompatContainerScreen<ContainerMixer>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_mixer.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_mixer.png");
 
     public GUIMixer(ContainerMixer menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
@@ -37,13 +37,13 @@ public class GUIMixer extends CompatContainerScreen<ContainerMixer>
 
     /** 1.7: title centred 20 px right of the panel centre ({@code xSize / 2 + 40 / 2}), inventory line. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 + 40 / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineMixer mixer = menu.getMixer();
         if (mixer == null) return;
@@ -80,7 +80,7 @@ public class GUIMixer extends CompatContainerScreen<ContainerMixer>
 
     /** 1.7 {@code drawScreen}: energy, upgrade text, recipe cycler (only with more than one recipe), tanks. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineMixer mixer = menu.getMixer();
         if (mixer == null) return;
         int gl = leftPos, gt = topPos;

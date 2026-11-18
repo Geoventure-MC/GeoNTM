@@ -21,7 +21,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -127,7 +127,7 @@ public final class AddonSeamGameTests {
             helper.assertTrue(config.id != null && config.id.getNamespace().equals(Constants.MOD_ID),
                     "HBM's string register must put every round in geontm, found " + config.id);
         }
-        Identifier taken = all.get(0).id;
+        ResourceLocation taken = all.get(0).id;
         int before = all.size();
         boolean rejected = false;
         try {
@@ -135,7 +135,7 @@ public final class AddonSeamGameTests {
         } catch (IllegalStateException expected) {
             rejected = true;
         }
-        helper.assertTrue(rejected, "the Identifier register must refuse a taken id (" + taken + ")");
+        helper.assertTrue(rejected, "the ResourceLocation register must refuse a taken id (" + taken + ")");
         helper.assertTrue(BulletConfigs.all().size() == before && BulletConfigs.get(taken) == all.get(0),
                 "a refused register must leave the registry untouched");
         helper.succeed();
@@ -171,7 +171,7 @@ public final class AddonSeamGameTests {
         helper.assertTrue(LegacyStructurePalette.resolve("addonseamtest:tile.nothing", 0).state().is(Blocks.AIR),
                 "an unregistered addon block must place air");
         for (var entry : BuiltInRegistries.BLOCK.entrySet()) {
-            Identifier id = Ids.keyId(entry.getKey());
+            ResourceLocation id = Ids.keyId(entry.getKey());
             if (id.getNamespace().equals("minecraft") || id.getNamespace().equals(Constants.MOD_ID)) continue;
             Block block = entry.getValue();
             if (block instanceof StairBlock) continue;

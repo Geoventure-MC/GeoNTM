@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelBackTesla}: a {@code ModelArmorBase} whose body is the whole {@code mod_tesla} OBJ,
@@ -13,7 +13,7 @@ import net.minecraft.resources.Identifier;
  */
 public class BackTeslaRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/mod_tesla.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/mod_tesla.obj");
     private static final Surface SKIN = Surface.cutout("geontm:textures/models/armor/mod_tesla.png");
 
     @Override

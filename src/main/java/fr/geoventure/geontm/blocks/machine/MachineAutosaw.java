@@ -84,7 +84,7 @@ public class MachineAutosaw extends CompatBlock
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         return level.isClientSide() || player.isShiftKeyDown()
-                ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+                ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     @Override

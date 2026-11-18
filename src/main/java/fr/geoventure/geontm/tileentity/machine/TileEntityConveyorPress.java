@@ -13,7 +13,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -178,7 +178,7 @@ public class TileEntityConveyorPress extends TileEntityMachineBase implements IE
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(this.power);
         buf.writeDouble(this.press);
@@ -186,7 +186,7 @@ public class TileEntityConveyorPress extends TileEntityMachineBase implements IE
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.power = buf.readLong();
         this.syncPress = buf.readDouble();

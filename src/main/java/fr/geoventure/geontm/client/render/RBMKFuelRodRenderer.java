@@ -20,7 +20,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /** The stacked Rods mesh and its critical-flux Cherenkov envelope. */
@@ -137,7 +137,7 @@ public final class RBMKFuelRodRenderer<T extends BlockEntityRBMKRod> extends Gem
         }
     }
 
-    private static Identifier texture(String name) {
+    private static ResourceLocation texture(String name) {
         return Ids.of(Constants.MOD_ID, "textures/blocks/rbmk/" + name + ".png");
     }
 

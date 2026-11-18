@@ -98,7 +98,7 @@ public class MachineICFController extends CompatBlock implements TickingBlock, I
     /** 1.7 {@code onBlockActivated}: true on the client, false (falls through) sneaking, else assemble if needed. */
     private InteractionResult activate(BlockState state, Level level, BlockPos pos, Player player) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.getBlockEntity(pos) instanceof TileEntityICFController controller && !controller.assembled) {
             assemble(level, pos, state, player);
         }

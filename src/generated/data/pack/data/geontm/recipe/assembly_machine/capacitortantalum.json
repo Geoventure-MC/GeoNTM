@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capacitortantalum",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/tantalium",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:capacitor_tantalum"
+  ],
+  "duration": 100,
+  "power": 10000,
+  "order": 38656
+}

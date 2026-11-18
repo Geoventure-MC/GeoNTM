@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.missileassembly",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "material": "titanium",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_basic"
+    }
+  ],
+  "output_items": [
+    "geontm:missile_assembly"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 66048
+}

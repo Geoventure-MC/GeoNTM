@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:platemetal_base",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_iron"
+    }
+  ],
+  "tier": 1,
+  "overlay": "recycling",
+  "order": 213
+}

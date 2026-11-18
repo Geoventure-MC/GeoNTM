@@ -55,7 +55,7 @@ public class ItemDetonator extends CompatItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (player == null || !player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null || !player.isShiftKeyDown()) return InteractionResult.PASS;
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         ModDataComponents.DETONATOR_TARGET.set(context.getItemInHand(), pos);
@@ -75,7 +75,7 @@ public class ItemDetonator extends CompatItem {
             if (!level.isClientSide()) {
                 player.sendSystemMessage(prefix().append(Component.literal("No position set!").withStyle(ChatFormatting.RED)));
             }
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         ServerLevel server = (ServerLevel) level;
@@ -89,7 +89,7 @@ public class ItemDetonator extends CompatItem {
         if (!(chunk.getBlockState(bound).getBlock() instanceof IBomb bomb)) {
             player.sendSystemMessage(prefix().append(Component.translatable(BombReturnCode.ERROR_NO_BOMB.getUnlocalizedMessage())
                     .withStyle(ChatFormatting.RED)));
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.TECH_BLEEP.get(),
                 SoundSource.PLAYERS, 1.0F, 1.0F);

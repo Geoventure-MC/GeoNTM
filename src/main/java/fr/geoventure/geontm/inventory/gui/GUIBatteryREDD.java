@@ -8,9 +8,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Locale;
@@ -18,7 +18,7 @@ import java.util.Locale;
 /** The FEnSU (REDD) screen, ported from 1.7.10 {@code GUIBatteryREDD} ({@code storage/gui_battery_redd.png}, 176x181). 1.7 has no hover tooltips here. */
 public final class GUIBatteryREDD extends CompatContainerScreen<ContainerBatteryREDD> {
 
-    private static final Identifier TEXTURE = Ids.of(
+    private static final ResourceLocation TEXTURE = Ids.of(
             "geontm", "textures/gui/storage/gui_battery_redd.png");
 
     public GUIBatteryREDD(ContainerBatteryREDD menu, Inventory playerInventory, Component title) {
@@ -26,7 +26,7 @@ public final class GUIBatteryREDD extends CompatContainerScreen<ContainerBattery
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         GuiDraw.blit(graphics, TEXTURE, leftPos + 133, topPos + 16,
                 176F, 52F + menu.getRedLow() * 18F, 18, 18, 256, 256);
@@ -37,7 +37,7 @@ public final class GUIBatteryREDD extends CompatContainerScreen<ContainerBattery
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
 

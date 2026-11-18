@@ -1,0 +1,20 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "geontm:warhead_cluster_large"
+    },
+    {
+      "ingredient": "geontm:fuel_tank_medium",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:thruster_medium",
+      "count": 4
+    }
+  ],
+  "output": "geontm:missile_rain",
+  "duration": 300,
+  "consumption": 25000,
+  "order": 37
+}

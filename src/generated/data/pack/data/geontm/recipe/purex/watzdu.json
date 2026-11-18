@@ -1,0 +1,47 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.watzdu",
+  "input_items": [
+    {
+      "ingredient": "geontm:watz_pellet_depleted_du"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_polonium",
+      "count": 12
+    },
+    {
+      "id": "geontm:nugget_pu238",
+      "count": 6
+    },
+    {
+      "id": "geontm:nuclear_waste",
+      "count": 2
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:watz",
+      "amount": 1000
+    }
+  ],
+  "duration": 60,
+  "power": 10000,
+  "icon": {
+    "id": "geontm:watz_pellet_depleted_du"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.watz",
+  "order": 48
+}

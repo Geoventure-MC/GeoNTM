@@ -6,7 +6,7 @@ import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * Cross-loader C2S payload carrying a {@link BlockPos} plus a control {@link CompoundTag}, the 26.1
@@ -28,7 +28,7 @@ public record ControlEventPayload(BlockPos pos, CompoundTag data) implements Geo
             buffer -> new ControlEventPayload(buffer.readBlockPos(), buffer.readNbt()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

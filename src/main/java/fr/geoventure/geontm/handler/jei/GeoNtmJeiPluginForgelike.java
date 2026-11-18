@@ -12,7 +12,7 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * The Forge-like {@code @JeiPlugin} entrypoint, shared by NeoForge and Forge. Thin by design, all
@@ -29,15 +29,15 @@ import net.minecraft.resources.Identifier;
  * That mod exists for no later target.
  */
 //? if forge {
-/*@me.shedaniel.rei.plugincompatibilities.api.REIPluginCompatIgnore
-*///?}
+@me.shedaniel.rei.plugincompatibilities.api.REIPluginCompatIgnore
+//?}
 @JeiPlugin
 public class GeoNtmJeiPluginForgelike implements IModPlugin {
 
-    private static final Identifier UID = fr.geoventure.geocore.Ids.of(Constants.MOD_ID, "jei_plugin");
+    private static final ResourceLocation UID = fr.geoventure.geocore.Ids.of(Constants.MOD_ID, "jei_plugin");
 
     @Override
-    public Identifier getPluginUid() {
+    public ResourceLocation getPluginUid() {
         return UID;
     }
 

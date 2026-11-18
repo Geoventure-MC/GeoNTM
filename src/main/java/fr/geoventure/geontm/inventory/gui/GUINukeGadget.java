@@ -4,9 +4,9 @@ import fr.geoventure.geontm.inventory.container.ContainerNukeGadget;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -15,20 +15,20 @@ import java.util.Optional;
 /** The Gadget schematic screen and its four lens/ready overlays. */
 public class GUINukeGadget extends CompatContainerScreen<ContainerNukeGadget> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/gadgetschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/gadgetschematic.png");
 
     public GUINukeGadget(ContainerNukeGadget menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 166);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         if (menu.exp1()) GuiDraw.blit(graphics, TEXTURE, leftPos + 82, topPos + 19, 176F, 0F, 24, 24, 256, 256);
         if (menu.exp2()) GuiDraw.blit(graphics, TEXTURE, leftPos + 106, topPos + 19, 200F, 0F, 24, 24, 256, 256);
@@ -39,7 +39,7 @@ public class GUINukeGadget extends CompatContainerScreen<ContainerNukeGadget> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(-16, 16, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, List.of(
                     Component.translatable("desc.gui.nukeGadget.desc.0"),

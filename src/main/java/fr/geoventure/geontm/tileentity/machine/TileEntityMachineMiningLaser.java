@@ -39,7 +39,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -168,7 +168,7 @@ public class TileEntityMachineMiningLaser extends TileEntityMachineBase
                 te.power -= consumption;
 
                 // The old "targetY <= 0" world-bottom reset, retargeted to the 26.1 world floor.
-                if (te.targetY <= level.getMinY())
+                if (te.targetY <= level.getMinBuildHeight())
                     te.targetY = pos.getY() - 2;
 
                 te.scan(range);
@@ -596,7 +596,7 @@ public class TileEntityMachineMiningLaser extends TileEntityMachineBase
     // Sync (BufPacket) + persistence (old serialize/deserialize order preserved)
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(lastTargetX);
@@ -612,7 +612,7 @@ public class TileEntityMachineMiningLaser extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         lastTargetX = buf.readInt();

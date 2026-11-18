@@ -14,7 +14,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.Vec3;
 
@@ -38,10 +38,10 @@ public class RenderCustomMachine implements CompatBER<TileEntityCustomMachine, R
 
     private static final int FULL_BRIGHT = 0xF000F0;
     private static final float ALPHA = 0.75F;
-    private static final Map<Block, Identifier[]> TEXTURES = new HashMap<>();
+    private static final Map<Block, ResourceLocation[]> TEXTURES = new HashMap<>();
 
     public static class State extends CompatRenderState {
-        public record Ghost(BlockPos offset, Identifier top, Identifier side) {}
+        public record Ghost(BlockPos offset, ResourceLocation top, ResourceLocation side) {}
         public final List<Ghost> ghosts = new ArrayList<>();
     }
 
@@ -72,16 +72,16 @@ public class RenderCustomMachine implements CompatBER<TileEntityCustomMachine, R
             if (comp.metas.isEmpty()) continue;
             BlockPos offset = TileEntityCustomMachine.componentPos(core, dir, comp).subtract(core);
             int index = (int) ((System.currentTimeMillis() / 1000) % comp.metas.size());
-            Identifier[] textures = textures(comp.blocks().get(index));
+            ResourceLocation[] textures = textures(comp.blocks().get(index));
             if (textures == null) continue;
             state.ghosts.add(new State.Ghost(offset, textures[0], textures[1]));
         }
     }
 
     /** {top, side} for a block, or null when neither file exists. */
-    private static Identifier[] textures(Block block) {
+    private static ResourceLocation[] textures(Block block) {
         return TEXTURES.computeIfAbsent(block, b -> {
-            Identifier id = BuiltInRegistries.BLOCK.getKey(b);
+            ResourceLocation id = BuiltInRegistries.BLOCK.getKey(b);
             String ns = id.getNamespace(), path = id.getPath();
             String top = path, side = path;
             if ("geontm".equals(ns)) {
@@ -93,12 +93,12 @@ public class RenderCustomMachine implements CompatBER<TileEntityCustomMachine, R
                 }
             }
             String dir = "geontm".equals(ns) ? "textures/blocks/" : "textures/block/";
-            Identifier topTex = Ids.of(ns, dir + top + ".png");
-            Identifier sideTex = Ids.of(ns, dir + side + ".png");
+            ResourceLocation topTex = Ids.of(ns, dir + top + ".png");
+            ResourceLocation sideTex = Ids.of(ns, dir + side + ".png");
             var resources = Minecraft.getInstance().getResourceManager();
             if (resources.getResource(sideTex).isEmpty()) return null;
             if (resources.getResource(topTex).isEmpty()) topTex = sideTex;
-            return new Identifier[]{topTex, sideTex};
+            return new ResourceLocation[]{topTex, sideTex};
         });
     }
 
@@ -106,8 +106,8 @@ public class RenderCustomMachine implements CompatBER<TileEntityCustomMachine, R
     public void submit(State state, PoseStack poseStack, SubmitSink sink, CameraInfo camera) {
         if (state.ghosts.isEmpty()) return;
 
-        Map<Identifier, List<BlockPos>> sides = new LinkedHashMap<>();
-        Map<Identifier, List<BlockPos>> ends = new LinkedHashMap<>();
+        Map<ResourceLocation, List<BlockPos>> sides = new LinkedHashMap<>();
+        Map<ResourceLocation, List<BlockPos>> ends = new LinkedHashMap<>();
         for (State.Ghost ghost : state.ghosts) {
             sides.computeIfAbsent(ghost.side(), k -> new ArrayList<>()).add(ghost.offset());
             ends.computeIfAbsent(ghost.top(), k -> new ArrayList<>()).add(ghost.offset());

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:rbmk_moderator"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:rbmk_blank"
+    },
+    {
+      "id": "geontm:block_graphite",
+      "count": 4
+    }
+  ],
+  "tier": 4,
+  "order": 237
+}

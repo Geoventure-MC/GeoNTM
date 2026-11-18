@@ -9,9 +9,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityFEL;
 import fr.geoventure.geocore.gui.MouseInput;
 import java.awt.Color;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
@@ -28,7 +28,7 @@ import java.util.Optional;
  */
 public class GUIFEL extends CompatContainerScreen<ContainerFEL> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_fel.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_fel.png");
 
     private static final int POWER_X = 182, POWER_Y = 27, POWER_W = 16, POWER_H = 113;
     private static final int TOGGLE_X = 142, TOGGLE_Y = 41, TOGGLE_W = 29, TOGGLE_H = 17;
@@ -38,7 +38,7 @@ public class GUIFEL extends CompatContainerScreen<ContainerFEL> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F,
                 this.imageWidth, this.imageHeight, 256, 256);
 
@@ -86,7 +86,7 @@ public class GUIFEL extends CompatContainerScreen<ContainerFEL> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         int nameWidth = this.font.width(this.title);
         GuiDraw.text(graphics, this.font, this.title, 90 + this.imageWidth / 2 - nameWidth / 2, 7, 0xffffff, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 98, 4210752, false);
@@ -103,7 +103,7 @@ public class GUIFEL extends CompatContainerScreen<ContainerFEL> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFEL te = this.menu.getFel();
         if (te == null) return;
 

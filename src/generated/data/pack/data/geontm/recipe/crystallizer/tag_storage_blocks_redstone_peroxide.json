@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:storage_blocks/redstone"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:nugget_mercury",
+  "duration": 600,
+  "productivity": 0.25,
+  "order": 45
+}

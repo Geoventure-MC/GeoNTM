@@ -343,7 +343,7 @@ public final class FluidContainerRegistry implements FilledContainers.Dictionary
 
     private static ItemStack item(String id) {
         if (id.isEmpty()) return ItemStack.EMPTY;
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.parse(id));
         return item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
     }
 }

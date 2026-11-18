@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:calcium_solution",
+  "amount": 125,
+  "output": "geontm:powder_calcium",
+  "byproduct": {
+    "type": "geontm:spentsteam",
+    "amount": 100
+  }
+}

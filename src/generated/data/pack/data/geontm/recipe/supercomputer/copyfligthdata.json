@@ -1,0 +1,34 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.copyfligthdata",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_flightdata_processed"
+    },
+    {
+      "ingredient": "geontm:drive_disk_empty"
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": {
+          "id": "geontm:drive_disk_flightdata_processed",
+          "count": 2
+        },
+        "weight": 75
+      },
+      {
+        "data": {
+          "id": "geontm:drive_disk_broken",
+          "count": 2
+        },
+        "weight": 25
+      }
+    ]
+  ],
+  "duration": 18000,
+  "power": 10000,
+  "name_wrapper": "com.copy",
+  "order": 14
+}

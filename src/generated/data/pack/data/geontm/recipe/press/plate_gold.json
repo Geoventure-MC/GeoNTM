@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "plate",
+  "input": {
+    "ingredient": "#c:ingots/gold"
+  },
+  "output": "geontm:plate_gold",
+  "order": 12
+}

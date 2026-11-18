@@ -84,7 +84,7 @@ public final class GiantTankGameTests {
                         && menu.slots.get(5).x == 125 && menu.slots.get(5).y == 53,
                 "Giant tank menu slot layout changed");
         helper.assertFalse(menu.slots.get(1).mayPlace(new ItemStack(Items.BUCKET)),
-                "Identifier output must be take-only");
+                "ResourceLocation output must be take-only");
         helper.assertFalse(menu.slots.get(3).mayPlace(new ItemStack(Items.BUCKET)),
                 "Load output must be take-only");
         helper.assertFalse(menu.slots.get(5).mayPlace(new ItemStack(Items.BUCKET)),

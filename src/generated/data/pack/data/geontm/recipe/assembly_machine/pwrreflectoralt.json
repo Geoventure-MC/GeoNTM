@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrreflectoralt",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:plates/weaponsteel",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:pwr_reflector",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 45824,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating"
+    },
+    {
+      "ingredient": "#c:plates/weaponsteel",
+      "count": 32
+    }
+  ]
+}

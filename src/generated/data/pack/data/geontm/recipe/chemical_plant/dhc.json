@@ -1,0 +1,33 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.dhc",
+  "input_fluids": [
+    {
+      "type": "geontm:deuterium",
+      "amount": 500
+    },
+    {
+      "type": "geontm:reformgas",
+      "amount": 250
+    },
+    {
+      "type": "geontm:syngas",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:dhc",
+      "amount": 500
+    }
+  ],
+  "duration": 400,
+  "power": 500,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:dhc"
+    }
+  },
+  "order": 88
+}

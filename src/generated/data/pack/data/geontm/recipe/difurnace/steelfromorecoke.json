@@ -1,0 +1,20 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.steelFromOreCoke",
+  "input_items": [
+    {
+      "ingredient": "#c:ores/iron"
+    },
+    {
+      "ingredient": "#c:cokes"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_steel",
+      "count": 3
+    }
+  ],
+  "duration": 400,
+  "order": 3
+}

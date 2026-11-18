@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadhe3",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_generic_large"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 66816
+}

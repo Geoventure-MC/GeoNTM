@@ -1,0 +1,17 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_roasted_nonmetal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_coal",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_sulfur",
+      "count": 9
+    }
+  ],
+  "order": 126
+}

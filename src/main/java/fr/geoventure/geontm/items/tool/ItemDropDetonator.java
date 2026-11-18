@@ -63,7 +63,7 @@ public class ItemDropDetonator extends CompatItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (kind != Kind.DEADMAN || player == null || !player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (kind != Kind.DEADMAN || player == null || !player.isShiftKeyDown()) return InteractionResult.PASS;
 
         ModDataComponents.DETONATOR_TARGET.set(context.getItemInHand(), context.getClickedPos());
         Level level = context.getLevel();

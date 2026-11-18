@@ -9,9 +9,9 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import java.util.HashMap;
 import java.util.Map;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -21,8 +21,8 @@ import org.jspecify.annotations.Nullable;
  */
 public final class MissilePronter {
 
-    private final Map<Identifier, WavefrontObj> meshes = new HashMap<>();
-    private final Map<Identifier, RenderType> skins = new HashMap<>();
+    private final Map<ResourceLocation, WavefrontObj> meshes = new HashMap<>();
+    private final Map<ResourceLocation, RenderType> skins = new HashMap<>();
 
     public void pront(MissileStruct missile, PoseStack pose, SubmitSink sink, int light) {
         pose.pushPose();
@@ -49,8 +49,8 @@ public final class MissilePronter {
     }
 
     private void draw(ItemCustomMissilePart part, PoseStack pose, SubmitSink sink, int light) {
-        Identifier meshId = part.mesh;
-        Identifier skinId = part.skin;
+        ResourceLocation meshId = part.mesh;
+        ResourceLocation skinId = part.skin;
         if (meshId == null || skinId == null) return;
         WavefrontObj mesh = meshes.computeIfAbsent(meshId,
                 id -> WavefrontObj.load(id, ItemCustomMissilePart.useVertexNormals(id)));

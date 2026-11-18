@@ -5,7 +5,7 @@ import fr.geoventure.geocore.render.CompatParticle;
 import fr.geoventure.geocore.render.ParticleLayer;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Random;
 
@@ -16,7 +16,7 @@ import java.util.Random;
  */
 public class ParticleContrail extends CompatParticle {
 
-    public static final Identifier CONTRAIL = Ids.of("geontm", "contrail");
+    public static final ResourceLocation CONTRAIL = Ids.of("geontm", "contrail");
 
     public static final int SUBQUADS = 6;
 

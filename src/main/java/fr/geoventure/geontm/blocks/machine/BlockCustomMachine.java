@@ -73,7 +73,7 @@ public class BlockCustomMachine extends CompatBlock implements TickingBlock {
 
     private InteractionResult activate(Level level, BlockPos pos, Player player) {
         if (level.isClientSide()) {
-            return player.isShiftKeyDown() ? InteractionResult.TRY_WITH_EMPTY_HAND : InteractionResult.SUCCESS;
+            return player.isShiftKeyDown() ? InteractionResult.PASS : InteractionResult.SUCCESS;
         } else if (!player.isShiftKeyDown()) {
 
             if (level.getBlockEntity(pos) instanceof TileEntityCustomMachine tile) {
@@ -89,7 +89,7 @@ public class BlockCustomMachine extends CompatBlock implements TickingBlock {
             return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     private static boolean isStructureWand(ItemStack held) {

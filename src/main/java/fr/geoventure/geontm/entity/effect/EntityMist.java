@@ -219,8 +219,8 @@ public class EntityMist extends CompatEntity implements Owners.Carrier {
             // The old formula is 0.2 + (temperature + 20) * -0.05; the strict branch starts below -20.
             EntityDamageUtil.attackEntityFromIgnoreIFrame(living,
                     ModDamageSources.source(server, ModDamageSources.ICE), 0.2F + (temperature + 20) * -0.05F);
-            living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 100, 2));
-            living.addEffect(new MobEffectInstance(MobEffects.MINING_FATIGUE, 100, 4));
+            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+            living.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 100, 4));
         }
 
         if (type.hasTrait(FluidTraitSimple.FT_Delicious.class) && living != null && living.isAlive()) {

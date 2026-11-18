@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.processflight_pfm",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_flightdata"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_disk_flightdata_processed",
+        "weight": 95
+      },
+      {
+        "data": "geontm:drive_disk_broken",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 16000
+    }
+  ],
+  "duration": 18000,
+  "power": 10000,
+  "order": 7
+}

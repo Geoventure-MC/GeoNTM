@@ -1,0 +1,25 @@
+{
+  "type": "liquid",
+  "color": "#4D007B",
+  "temperature": 600,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:heavywater",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 300,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

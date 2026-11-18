@@ -11,9 +11,9 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.living.LivingLooks;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -193,7 +193,7 @@ public class RenderGlyphid<T extends EntityGlyphid> extends CompatEntityRenderer
     }
 
     public static class State extends CompatEntityRenderState {
-        public Identifier texture = ResourceManager.glyphid_tex;
+        public ResourceLocation texture = ResourceManager.glyphid_tex;
         public float bodyYaw;
         public double scale = 1D;
         public byte armor;

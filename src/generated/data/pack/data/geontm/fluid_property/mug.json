@@ -1,0 +1,28 @@
+{
+  "type": "liquid",
+  "color": "#4B2D28",
+  "temperature": 20,
+  "flags": [
+    "delicious"
+  ],
+  "traits": {
+    "pwrmoderator": {
+      "multiplier": 1.15
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 400,
+          "produces": "geontm:mug_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "HEATEXCHANGER": 1.0,
+        "PWR": 1.0,
+        "ICF": 1.25
+      }
+    }
+  }
+}

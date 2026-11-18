@@ -269,7 +269,7 @@ public final class LootTableGameTests {
         final Map<Item, int[]> counts = new HashMap<>();
 
         void expect(List<String> failures, String label, String item, double mean, int min, int max) {
-            int[] perRoll = counts.getOrDefault(BuiltInRegistries.ITEM.getValue(Ids.parse(item)), new int[ROLLS]);
+            int[] perRoll = counts.getOrDefault(BuiltInRegistries.ITEM.get(Ids.parse(item)), new int[ROLLS]);
             double sum = 0;
             double squares = 0;
             int low = Integer.MAX_VALUE;

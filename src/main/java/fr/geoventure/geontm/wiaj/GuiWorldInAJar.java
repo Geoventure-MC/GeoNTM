@@ -21,11 +21,11 @@ import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -46,7 +46,7 @@ import java.util.Map.Entry;
 //krass
 public class GuiWorldInAJar extends CompatScreen {
 
-    private static final Identifier guiUtil = Ids.of("geontm", "textures/gui/gui_utility.png");
+    private static final ResourceLocation guiUtil = Ids.of("geontm", "textures/gui/gui_utility.png");
 
     JarScript jarScript;
     ItemStack icon;
@@ -78,7 +78,7 @@ public class GuiWorldInAJar extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // drawDefaultBackground: the in-world gradient.
         GuiDraw.fillGradient(graphics, 0, 0, this.width, this.height, 0xC0101010, 0xD0101010);
 
@@ -93,7 +93,7 @@ public class GuiWorldInAJar extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         try {
             this.drawGuiContainerForegroundLayer(graphics, mouseX, mouseY);
         } catch(Exception ex) {
@@ -160,7 +160,7 @@ public class GuiWorldInAJar extends CompatScreen {
         Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_BUTTON_CLICK, 1.0F));
     }
 
-    private void drawGuiContainerForegroundLayer(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    private void drawGuiContainerForegroundLayer(GuiGraphics graphics, int mouseX, int mouseY) {
 
         for(Entry<Integer, ISpecialActor> actor : this.jarScript.actors.entrySet()) {
             actor.getValue().drawForegroundComponent(graphics, this.width, this.height, this.jarScript.ticksElapsed, this.jarScript.interp);
@@ -215,7 +215,7 @@ public class GuiWorldInAJar extends CompatScreen {
         }
     }
 
-    private void drawTexturedModalRect(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int w, int h) {
+    private void drawTexturedModalRect(GuiGraphics graphics, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(graphics, guiUtil, x, y, u, v, w, h, 256, 256);
     }
 
@@ -223,7 +223,7 @@ public class GuiWorldInAJar extends CompatScreen {
      * The jar and its actors. Both passes run inside one scene so they share one depth buffer, as the 1.7
      * block pass and actor pass shared the screen's.
      */
-    private void drawGuiContainerBackgroundLayer(GuiGraphicsExtractor graphics) {
+    private void drawGuiContainerBackgroundLayer(GuiGraphics graphics) {
         final JarScript script = this.jarScript;
         final WorldInAJar world = script.world;
         final int ticks = script.ticksElapsed;

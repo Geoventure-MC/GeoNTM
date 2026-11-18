@@ -1,0 +1,19 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "geontm:powder_desh_ready"
+    }
+  ],
+  "fluid": {
+    "type": "geontm:lightoil",
+    "amount": 100
+  },
+  "output": {
+    "material": "desh",
+    "amount": 72
+  },
+  "duration": 100,
+  "steam": 200,
+  "order": 5
+}

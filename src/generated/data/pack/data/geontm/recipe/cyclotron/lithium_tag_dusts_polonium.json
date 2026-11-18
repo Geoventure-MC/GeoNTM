@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/polonium"
+  },
+  "output": "geontm:powder_astatine",
+  "antimatter": 50,
+  "order": 8
+}

@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client;
 
 import fr.geoventure.geontm.config.ClientConfig;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.Mth;
 
 /**
@@ -31,7 +31,7 @@ public final class NukeScreenEffects {
 
     // Flash (HUD layer)
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         if (!ClientConfig.NUKE_HUD_FLASH) return;
         Minecraft mc = Minecraft.getInstance();
         if (mc.options.hideGui) return;

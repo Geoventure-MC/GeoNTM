@@ -1,0 +1,7 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nugget_au198",
+  "output": "geontm:nugget_mercury_tiny",
+  "decay": "short",
+  "divisor": 100
+}

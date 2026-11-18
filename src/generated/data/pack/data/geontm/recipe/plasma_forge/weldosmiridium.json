@@ -1,0 +1,25 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.weldosmiridium",
+  "input_items": [
+    {
+      "material": "osmiridium",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:reformgas",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    "geontm:plate_welded_osmiridium"
+  ],
+  "duration": 3000,
+  "power": 50000000,
+  "auto_switch_group": "autoswitch.weldPlates",
+  "order": 23,
+  "ignition_temp": 500000
+}

@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/gold"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_gold"
+    }
+  ],
+  "tier": 3,
+  "order": 1
+}

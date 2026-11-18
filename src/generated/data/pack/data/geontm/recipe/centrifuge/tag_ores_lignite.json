@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/lignite"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_lignite",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_lignite",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_lignite",
+      "count": 2
+    },
+    "minecraft:gravel"
+  ],
+  "order": 2
+}

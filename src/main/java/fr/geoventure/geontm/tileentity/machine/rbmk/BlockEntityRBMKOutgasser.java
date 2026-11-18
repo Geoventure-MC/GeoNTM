@@ -20,7 +20,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -84,8 +84,8 @@ public class BlockEntityRBMKOutgasser extends BlockEntityRBMKBase implements IRB
     @Override public void useUpFluid(FluidType type, int pressure, long amount) { if (gas.provides(type) && pressure == gas.getPressure()) { gas.setFill(gas.getFill() - (int) Math.min(amount, gas.getFill())); markChanged(); } }
     @Override protected void saveData(DataOut output) { super.saveData(output); output.putDouble("progress", progress); gas.writeToNBT(output, "gas"); }
     @Override protected void loadData(DataIn input) { super.loadData(input); progress = input.getDoubleOr("progress", progress); gas.readFromNBT(input, "gas"); }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) { super.serialize(buffer); gas.serialize(buffer); buffer.writeDouble(progress); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) { super.deserialize(buffer); gas.deserialize(buffer); progress = buffer.readDouble(); }
+    @Override public void serialize(FriendlyByteBuf buffer) { super.serialize(buffer); gas.serialize(buffer); buffer.writeDouble(progress); }
+    @Override public void deserialize(FriendlyByteBuf buffer) { super.deserialize(buffer); gas.deserialize(buffer); progress = buffer.readDouble(); }
     @Override public Component getDisplayName() { return Component.translatable("container.rbmkOutgasser"); }
     @Override public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) { return new MenuRBMKOutgasser(id, inventory, this); }
     @Override protected void getDiagData(Map<String, String> data) { super.getDiagData(data); data.put("progress", String.valueOf(progress)); diagTank(data, "gas", gas); }

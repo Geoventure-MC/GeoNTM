@@ -1,0 +1,27 @@
+{
+  "type": "liquid",
+  "color": "#86653E",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 3,
+    "symbol": "acid"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 60
+    },
+    "ventradiation": {
+      "rad_per_mb": 0.1
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-4
+      }
+    }
+  }
+}

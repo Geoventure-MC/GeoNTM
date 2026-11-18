@@ -15,7 +15,7 @@ import fr.geoventure.geocore.data.Inventories;
 import java.util.function.Predicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -114,7 +114,7 @@ public abstract class TileEntityLockableBase extends TileEntityLoadedBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(lock);
         buf.writeBoolean(cheesable);
@@ -123,7 +123,7 @@ public abstract class TileEntityLockableBase extends TileEntityLoadedBase {
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         lock = buf.readInt();
         cheesable = buf.readBoolean();

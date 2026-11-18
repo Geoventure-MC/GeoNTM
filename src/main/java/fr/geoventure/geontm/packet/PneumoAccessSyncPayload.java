@@ -8,7 +8,7 @@ import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.net.GeoCorePayload;
 import fr.geoventure.geocore.world.ItemStacks;
 import io.netty.buffer.Unpooled;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -90,7 +90,7 @@ public record PneumoAccessSyncPayload(int containerId, byte[] data) implements G
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.platepu239",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_plate_pu239"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_pu240",
+      "count": 2
+    },
+    "geontm:nugget_technetium",
+    "geontm:powder_cs137_tiny",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 5
+    }
+  ],
+  "duration": 100,
+  "power": 1500,
+  "icon": {
+    "id": "geontm:waste_plate_pu239"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.plate",
+  "order": 18
+}

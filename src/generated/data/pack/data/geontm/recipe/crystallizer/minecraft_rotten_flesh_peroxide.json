@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "minecraft:rotten_flesh"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "minecraft:leather",
+  "duration": 100,
+  "productivity": 0.25,
+  "order": 51
+}

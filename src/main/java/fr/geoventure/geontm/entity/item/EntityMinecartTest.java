@@ -2,7 +2,7 @@ package fr.geoventure.geontm.entity.item;
 
 import fr.geoventure.geocore.data.CompatMinecartTNT;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.vehicle.minecart.MinecartTNT;
+import net.minecraft.world.entity.vehicle.MinecartTNT;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;

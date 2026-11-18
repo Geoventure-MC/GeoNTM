@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.blastdoor",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:ingots/any_rubber",
+      "count": 2
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor"
+    }
+  ],
+  "output_items": [
+    "geontm:blast_door"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 16384
+}

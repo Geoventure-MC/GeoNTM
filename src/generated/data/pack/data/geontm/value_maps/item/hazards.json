@@ -1,0 +1,7416 @@
+{
+  "values": {
+    "#c:dusts/coal": {
+      "entries": [
+        {
+          "type": "geontm:coal",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:dusts_tiny/coal": {
+      "entries": [
+        {
+          "type": "geontm:coal",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:dusts/lignite": {
+      "entries": [
+        {
+          "type": "geontm:coal",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:dusts_tiny/lignite": {
+      "entries": [
+        {
+          "type": "geontm:coal",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:nuggets/uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.034999999925494185
+        }
+      ]
+    },
+    "#c:billets/uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.17499999701976776
+        }
+      ]
+    },
+    "#c:ingots/uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.3499999940395355
+        }
+      ]
+    },
+    "#c:dusts/uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0499999821186066
+        }
+      ]
+    },
+    "#c:storage_blocks/uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.4999999403953552
+        }
+      ]
+    },
+    "#c:nuggets/u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "#c:billets/u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:ingots/u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "#c:storage_blocks/u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:nuggets/u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:billets/u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "#c:ingots/u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "#c:storage_blocks/u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "#c:nuggets/u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.02500000037252903
+        }
+      ]
+    },
+    "#c:billets/u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.125
+        }
+      ]
+    },
+    "#c:ingots/u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "#c:storage_blocks/u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:nuggets/thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.010000000298023226
+        }
+      ]
+    },
+    "#c:billets/thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "#c:ingots/thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:dusts/thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "#c:storage_blocks/thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0000000149011612
+        }
+      ]
+    },
+    "#c:nuggets/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "#c:billets/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "#c:ingots/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:dusts/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5
+        }
+      ]
+    },
+    "#c:storage_blocks/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "#c:ores/plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:nuggets/pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.6250000093132257
+        }
+      ]
+    },
+    "#c:billets/pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.125
+        }
+      ]
+    },
+    "#c:ingots/pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.25
+        }
+      ]
+    },
+    "#c:storage_blocks/pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 62.5
+        }
+      ]
+    },
+    "#c:nuggets/pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0000000149011612
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "#c:billets/pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 1.5
+        }
+      ]
+    },
+    "#c:ingots/pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:storage_blocks/pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "#c:nuggets/pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "#c:billets/pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:ingots/pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "#c:storage_blocks/pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:nuggets/pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "#c:billets/pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "#c:ingots/pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:storage_blocks/pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "#c:nuggets/pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.500000037252903
+        }
+      ]
+    },
+    "#c:billets/pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.5
+        }
+      ]
+    },
+    "#c:ingots/pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "#c:nuggets/am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.850000012665987
+        }
+      ]
+    },
+    "#c:billets/am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.25
+        }
+      ]
+    },
+    "#c:ingots/am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 8.5
+        }
+      ]
+    },
+    "#c:nuggets/am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.9500000141561031
+        }
+      ]
+    },
+    "#c:billets/am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.75
+        }
+      ]
+    },
+    "#c:ingots/am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.5
+        }
+      ]
+    },
+    "#c:nuggets/am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.9000000134110451
+        }
+      ]
+    },
+    "#c:billets/am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5
+        }
+      ]
+    },
+    "#c:ingots/am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.0
+        }
+      ]
+    },
+    "#c:nuggets/neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.2500000037252903
+        }
+      ]
+    },
+    "#c:billets/neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25
+        }
+      ]
+    },
+    "#c:ingots/neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:dusts/neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:storage_blocks/neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "#c:nuggets/polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.500000111758709
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "#c:billets/polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 37.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 1.5
+        }
+      ]
+    },
+    "#c:ingots/polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:dusts/polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 225.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 9.0
+        }
+      ]
+    },
+    "#c:storage_blocks/polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 750.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "#c:nuggets/technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.27500000409781933
+        }
+      ]
+    },
+    "#c:billets/technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.375
+        }
+      ]
+    },
+    "#c:ingots/technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.75
+        }
+      ]
+    },
+    "#c:nuggets/ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "#c:billets/ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "#c:ingots/ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:dusts/ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5
+        }
+      ]
+    },
+    "#c:storage_blocks/ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "#c:nuggets/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0000000447034836
+        }
+      ]
+    },
+    "#c:billets/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "#c:ingots/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "#c:dusts/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        }
+      ]
+    },
+    "#c:storage_blocks/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 300.0
+        }
+      ]
+    },
+    "#c:dusts_tiny/actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.000000357627869
+        }
+      ]
+    },
+    "#c:nuggets/co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0000000447034836
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:billets/co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5
+        }
+      ]
+    },
+    "#c:ingots/co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot"
+        }
+      ]
+    },
+    "#c:dusts/co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:nuggets/au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.00000074505806
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "#c:billets/au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:ingots/au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "#c:dusts/au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 15.0
+        }
+      ]
+    },
+    "#c:nuggets/pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1000.0000149011612
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.7000000104308128
+        }
+      ]
+    },
+    "#c:billets/pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5000.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.5
+        }
+      ]
+    },
+    "#c:ingots/pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10000.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 7.0
+        }
+      ]
+    },
+    "#c:nuggets/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5000000223517418
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        }
+      ]
+    },
+    "#c:billets/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        }
+      ]
+    },
+    "#c:ingots/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:dusts/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "#c:plates/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:plates_cast/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "#c:storage_blocks/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "#c:ores/schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:nuggets/solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.750000026077032
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        }
+      ]
+    },
+    "#c:billets/solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 8.75
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        }
+      ]
+    },
+    "#c:ingots/solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 17.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:storage_blocks/solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 175.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "#c:ingots/schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:dusts/schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "#c:storage_blocks/schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "#c:ingots/schraranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:storage_blocks/schraranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "#c:nuggets/gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "#c:billets/gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "#c:ingots/gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "#c:ingots/mud": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "#c:ingots/asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "#c:dusts/asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:storage_blocks/asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 10.0
+        }
+      ]
+    },
+    "#c:ores/asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "#c:nuggets/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:ingots/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "#c:dusts_tiny/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:dusts/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:storage_blocks/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 10.0
+        }
+      ]
+    },
+    "#c:ores/lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "#c:nuggets/sodium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:ingots/sodium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "#c:dusts/sodium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:ingots/white_phosphorus": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "#c:storage_blocks/white_phosphorus": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:ingots/strontium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot"
+        },
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "#c:dusts/strontium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:nuggets/strontium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 0.10000000149011612
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:dusts_tiny/sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.500000178813934
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000001192092896
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:dusts/sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:ingots/sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:hot"
+        },
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "#c:billets/sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.5
+        }
+      ]
+    },
+    "#c:nuggets/sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5000000223517418
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.10000000149011612
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:dusts_tiny/i131": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.00000178813934
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:dusts/i131": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 450.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "#c:dusts_tiny/xe135": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 375.0000149011612
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0000001192092896
+        }
+      ]
+    },
+    "#c:dusts/xe135": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3750.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "#c:dusts_tiny/cs137": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.000000238418579
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.9000000357627869
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.9000000357627869
+        }
+      ]
+    },
+    "#c:dusts/cs137": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 9.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 9.0
+        }
+      ]
+    },
+    "#c:dusts/at209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 60.0
+        }
+      ]
+    },
+    "#c:raw_materials/uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.3499999940395355
+        }
+      ]
+    },
+    "#c:raw_materials/thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "#c:raw_materials/plutonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "#c:raw_materials/schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "#c:raw_materials/lithium": {
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "geontm:ancient_scrap": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:ball_dynamite": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:ballistite": {
+      "entries": [
+        {
+          "type": "geontm:explosive"
+        }
+      ]
+    },
+    "geontm:billet_actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:billet_am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.25
+        }
+      ]
+    },
+    "geontm:billet_am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.75
+        }
+      ]
+    },
+    "geontm:billet_am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5
+        }
+      ]
+    },
+    "geontm:billet_americium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.375
+        }
+      ]
+    },
+    "geontm:billet_au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:billet_balefire_gold": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        }
+      ]
+    },
+    "geontm:billet_co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:billet_flashlead": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6250.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 7.0
+        }
+      ]
+    },
+    "geontm:billet_gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:billet_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284
+        }
+      ]
+    },
+    "geontm:billet_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284
+        }
+      ]
+    },
+    "geontm:billet_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25
+        }
+      ]
+    },
+    "geontm:billet_neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25
+        }
+      ]
+    },
+    "geontm:billet_neptunium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.75
+        }
+      ]
+    },
+    "geontm:billet_nuclear_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:billet_pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5000.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.5
+        }
+      ]
+    },
+    "geontm:billet_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "geontm:billet_plutonium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.125
+        }
+      ]
+    },
+    "geontm:billet_po210be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 112.5
+        }
+      ]
+    },
+    "geontm:billet_polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 37.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:billet_pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:billet_pu238be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:billet_pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:billet_pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "geontm:billet_pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.5
+        }
+      ]
+    },
+    "geontm:billet_pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.125
+        }
+      ]
+    },
+    "geontm:billet_ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "geontm:billet_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 11.25
+        }
+      ]
+    },
+    "geontm:billet_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:billet_schrabidium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:billet_solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 8.75
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:billet_sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:billet_technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.375
+        }
+      ]
+    },
+    "geontm:billet_th232": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:billet_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.875
+        }
+      ]
+    },
+    "geontm:billet_u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:billet_u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:billet_u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.125
+        }
+      ]
+    },
+    "geontm:billet_uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.17499999701976776
+        }
+      ]
+    },
+    "geontm:billet_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:billet_uzh": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0625
+        }
+      ]
+    },
+    "geontm:block_actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 300.0
+        }
+      ]
+    },
+    "geontm:block_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:block_au198": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5000.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:block_corium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:block_corium_cobble": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:block_fallout": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.5
+        }
+      ]
+    },
+    "geontm:block_lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:block_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:block_neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:block_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:block_plutonium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 42.5
+        }
+      ]
+    },
+    "geontm:block_polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 750.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:block_pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:block_pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:block_pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:block_pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 62.5
+        }
+      ]
+    },
+    "geontm:block_ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:block_schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "geontm:block_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "geontm:block_schrabidium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 58.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:block_schraranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "geontm:block_solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 175.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 500.0
+        }
+      ]
+    },
+    "geontm:block_thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0000000149011612
+        }
+      ]
+    },
+    "geontm:block_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 17.5
+        }
+      ]
+    },
+    "geontm:block_trinitite": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:block_u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:block_u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:block_u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:block_uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.4999999403953552
+        }
+      ]
+    },
+    "geontm:block_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:block_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:block_waste_painted": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:block_waste_vitrified": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:block_white_phosphorus": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:block_yellowcake": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.5
+        }
+      ]
+    },
+    "geontm:boy_bullet": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:boy_propellant": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:boy_target": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:brick_asbestos": {
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:cell_balefire": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:cordite": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:crystal_asbestos": {
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:crystal_lithium": {
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:crystal_phosphorus": {
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 20.0
+        }
+      ]
+    },
+    "geontm:crystal_plutonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:crystal_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:crystal_schraranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:crystal_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:crystal_trixite": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        }
+      ]
+    },
+    "geontm:crystal_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.5
+        }
+      ]
+    },
+    "geontm:debris_concrete": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:debris_element": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100.0
+        }
+      ]
+    },
+    "geontm:debris_exchanger": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:debris_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:debris_graphite": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 70.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:debris_metal": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:debris_shrapnel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:demon_core_closed": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100000.0
+        }
+      ]
+    },
+    "geontm:demon_core_open": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:egg_balefire": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 300000.0
+        }
+      ]
+    },
+    "geontm:egg_balefire_shard": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30000.0
+        }
+      ]
+    },
+    "geontm:fallout": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:falloutitem": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:fleija_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:fleija_propellant": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:explosive",
+          "level": 8.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:gadget_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:gem_rad": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:holotape_damaged": {
+      "entries": [
+        {
+          "type": "geontm:digamma",
+          "level": 1000.0
+        }
+      ]
+    },
+    "geontm:ingot_actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:ingot_am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 8.5
+        }
+      ]
+    },
+    "geontm:ingot_am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.5
+        }
+      ]
+    },
+    "geontm:ingot_am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.0
+        }
+      ]
+    },
+    "geontm:ingot_americium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.75
+        }
+      ]
+    },
+    "geontm:ingot_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:ingot_au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot"
+        }
+      ]
+    },
+    "geontm:ingot_gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.849999904632568
+        }
+      ]
+    },
+    "geontm:ingot_i131": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        },
+        {
+          "type": "geontm:hot"
+        }
+      ]
+    },
+    "geontm:ingot_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.849999904632568
+        }
+      ]
+    },
+    "geontm:ingot_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:ingot_mud": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:ingot_neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:ingot_neptunium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:ingot_pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10000.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 7.0
+        }
+      ]
+    },
+    "geontm:ingot_phosphorus": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:ingot_plutonium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.25
+        }
+      ]
+    },
+    "geontm:ingot_polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:ingot_pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:ingot_pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:ingot_pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:ingot_pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.25
+        }
+      ]
+    },
+    "geontm:ingot_ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:ingot_schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ingot_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ingot_schrabidium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.849999904632568
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_schraranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ingot_solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 17.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ingot_sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:hot"
+        },
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "geontm:ingot_technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.75
+        }
+      ]
+    },
+    "geontm:ingot_th232": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:ingot_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.75
+        }
+      ]
+    },
+    "geontm:ingot_u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:ingot_u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:ingot_u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:ingot_uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.3499999940395355
+        }
+      ]
+    },
+    "geontm:ingot_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:insert_polonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100.0
+        }
+      ]
+    },
+    "geontm:lamp_demon": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100000.0
+        }
+      ]
+    },
+    "geontm:lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "geontm:man_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:mike_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:nuclear_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_tiny": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_vitrified": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_vitrified_tiny": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.75
+        }
+      ]
+    },
+    "geontm:nugget_actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0000000447034836
+        }
+      ]
+    },
+    "geontm:nugget_am241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.850000012665987
+        }
+      ]
+    },
+    "geontm:nugget_am242": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.9500000141561031
+        }
+      ]
+    },
+    "geontm:nugget_am_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.9000000134110451
+        }
+      ]
+    },
+    "geontm:nugget_americium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.4749999940395355
+        }
+      ]
+    },
+    "geontm:nugget_au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.00000074505806
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0000000447034836
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:nugget_gh336": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5849999785423279
+        }
+      ]
+    },
+    "geontm:nugget_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5849999785423279
+        }
+      ]
+    },
+    "geontm:nugget_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:nugget_neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.2500000037252903
+        }
+      ]
+    },
+    "geontm:nugget_neptunium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.15000000596046448
+        }
+      ]
+    },
+    "geontm:nugget_pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1000.0000149011612
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.7000000104308128
+        }
+      ]
+    },
+    "geontm:nugget_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "geontm:nugget_plutonium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.42500001192092896
+        }
+      ]
+    },
+    "geontm:nugget_polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.500000111758709
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "geontm:nugget_pu238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0000000149011612
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "geontm:nugget_pu239": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_pu240": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "geontm:nugget_pu241": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.500000037252903
+        }
+      ]
+    },
+    "geontm:nugget_pu_mix": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.6250000093132257
+        }
+      ]
+    },
+    "geontm:nugget_ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.7500000111758709
+        }
+      ]
+    },
+    "geontm:nugget_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5000000223517418
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_schrabidium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5849999785423279
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nugget_solinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.750000026077032
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 5.000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5000000223517418
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.10000000149011612
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:nugget_technetium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.27500000409781933
+        }
+      ]
+    },
+    "geontm:nugget_th232": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.010000000298023226
+        }
+      ]
+    },
+    "geontm:nugget_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.17499999701976776
+        }
+      ]
+    },
+    "geontm:nugget_u233": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5000000074505806
+        }
+      ]
+    },
+    "geontm:nugget_u235": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:nugget_u238": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.02500000037252903
+        }
+      ]
+    },
+    "geontm:nugget_uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.034999999925494185
+        }
+      ]
+    },
+    "geontm:nugget_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuke_fstbmb": {
+      "entries": [
+        {
+          "type": "geontm:digamma",
+          "level": 0.009999999776482582
+        }
+      ]
+    },
+    "geontm:ore_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:ore_asbestos_deepslate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:ore_basalt_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:ore_gneiss_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:ore_gneiss_lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        }
+      ]
+    },
+    "geontm:ore_gneiss_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ore_nether_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:ore_nether_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ore_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:ore_sellafield_radgem": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:ore_sellafield_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:pellet_rtg": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:pellet_rtg_actinium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pellet_rtg_americium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.75,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pellet_rtg_cobalt": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pellet_rtg_depleted_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.75
+        }
+      ]
+    },
+    "geontm:pellet_rtg_gold": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 750.0,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pellet_rtg_lead": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15000.0,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 7.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:pellet_rtg_polonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 112.5,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:pellet_rtg_radium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 11.25,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pellet_rtg_strontium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pellet_rtg_weak": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.25,
+          "modifiers": [
+            {
+              "target": 0.0,
+              "type": "geontm:rtg_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_nu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5249999761581421
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_po210be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 337.5
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 33.75
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_rgp": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.375
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.15000000596046448
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.625
+        }
+      ]
+    },
+    "geontm:pile_rod_mk2_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5
+        }
+      ]
+    },
+    "geontm:pile_rod_plutonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.425000190734863
+        }
+      ]
+    },
+    "geontm:pile_rod_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.800000190734863
+        }
+      ]
+    },
+    "geontm:pile_rod_source": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 33.75
+        }
+      ]
+    },
+    "geontm:pile_rod_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5249999761581421
+        }
+      ]
+    },
+    "geontm:plate_cast_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:plate_fuel_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5,
+          "modifiers": [
+            {
+              "target": 240.0,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_fuel_pu238be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0,
+          "modifiers": [
+            {
+              "target": 3.0,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_fuel_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "target": 202.5,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_fuel_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 11.25,
+          "modifiers": [
+            {
+              "target": 67.5,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_fuel_sa326": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0,
+          "modifiers": [
+            {
+              "target": 150.0,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 20.0
+        }
+      ]
+    },
+    "geontm:plate_fuel_u233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "target": 195.0,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_fuel_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "modifiers": [
+            {
+              "target": 150.0,
+              "type": "geontm:fuel_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:plate_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:powder_actinium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        }
+      ]
+    },
+    "geontm:powder_actinium_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.000000357627869
+        }
+      ]
+    },
+    "geontm:powder_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_at209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:powder_at209_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2250.000089406967
+        },
+        {
+          "type": "geontm:hot",
+          "level": 6.000000238418579
+        }
+      ]
+    },
+    "geontm:powder_au198": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1500.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:powder_au198_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.00000596046448
+        },
+        {
+          "type": "geontm:hot",
+          "level": 1.5000000596046448
+        }
+      ]
+    },
+    "geontm:powder_balefire": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 500.0
+        }
+      ]
+    },
+    "geontm:powder_caesium": {
+      "entries": [
+        {
+          "type": "geontm:hydroactive"
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_co60": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_co60_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.000000357627869
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:powder_coltan_ore": {
+      "entries": [
+        {
+          "type": "geontm:asbestos",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_cs137": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 9.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 9.0
+        }
+      ]
+    },
+    "geontm:powder_cs137_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.000000238418579
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.9000000357627869
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.9000000357627869
+        }
+      ]
+    },
+    "geontm:powder_i131": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 450.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_i131_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.00000178813934
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:powder_lithium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_lithium_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:powder_neptunium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:powder_pb209": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30000.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 21.0
+        }
+      ]
+    },
+    "geontm:powder_pb209_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3000.0001192092896
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 15.000000596046448
+        },
+        {
+          "type": "geontm:hot",
+          "level": 2.1000000834465027
+        }
+      ]
+    },
+    "geontm:powder_plutonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5
+        }
+      ]
+    },
+    "geontm:powder_polonium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 225.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 9.0
+        }
+      ]
+    },
+    "geontm:powder_ra226": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 22.5
+        }
+      ]
+    },
+    "geontm:powder_schrabidate": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:powder_schrabidium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:powder_sodium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_sr90": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_sr90_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.500000178813934
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.30000001192092896
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:powder_strontium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:hot",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hydroactive",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:powder_thorium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000000447034836
+        }
+      ]
+    },
+    "geontm:powder_uranium": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0499999821186066
+        }
+      ]
+    },
+    "geontm:powder_xe135": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3750.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:powder_xe135_tiny": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 375.0000149011612
+        },
+        {
+          "type": "geontm:hot",
+          "level": 3.0000001192092896
+        }
+      ]
+    },
+    "geontm:powder_yellowcake": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.0499999523162842
+        }
+      ]
+    },
+    "geontm:pwr_fuel_bfb_am_mix": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_bfb_pu241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_bfb_am_mix": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_bfb_pu241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 125.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hea242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 95.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hen237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hep239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hep241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hes326": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_hes327": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 175.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_heu233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_heu235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_mea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_men": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 62.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_depleted_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hea242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hen237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hep239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hep241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hes326": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hes327": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 17.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_heu233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_heu235": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_bfb_am_mix": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 45.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_bfb_pu241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 125.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hea242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 95.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hen237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hep239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hep241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hes326": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_hes327": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 175.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_heu233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_heu235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_mea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_men": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 62.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_hot_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_mea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 9.0
+        }
+      ]
+    },
+    "geontm:pwr_fuel_men": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.25
+        }
+      ]
+    },
+    "geontm:pwr_fuel_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:pwr_fuel_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_balefire": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1200000.0,
+          "modifiers": [
+            {
+              "target": 1.2E8,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_balefire_gold": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2000.0,
+          "modifiers": [
+            {
+              "target": 600000.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_drx": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1200000.0,
+          "modifiers": [
+            {
+              "target": 1.2E8,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        },
+        {
+          "type": "geontm:digamma",
+          "level": 0.3333333432674408
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_flashlead": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 50000.0,
+          "modifiers": [
+            {
+              "target": 200.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hea241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 34.0,
+          "modifiers": [
+            {
+              "target": 2010.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hea242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 38.0,
+          "modifiers": [
+            {
+              "target": 2040.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_heaus": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "target": 1950.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hen": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0,
+          "modifiers": [
+            {
+              "target": 1800.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 20.0,
+          "modifiers": [
+            {
+              "target": 1950.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hep241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 100.0,
+          "modifiers": [
+            {
+              "target": 2100.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273,
+          "modifiers": [
+            {
+              "target": 3000.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_heu233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 20.0,
+          "modifiers": [
+            {
+              "target": 1860.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_heu235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.0,
+          "modifiers": [
+            {
+              "target": 1800.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_lea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 19.0,
+          "modifiers": [
+            {
+              "target": 1560.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_leaus": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "target": 2250.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_lep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 17.0,
+          "modifiers": [
+            {
+              "target": 1500.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273,
+          "modifiers": [
+            {
+              "target": 1470.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_mea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 36.0,
+          "modifiers": [
+            {
+              "target": 1830.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_men": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.0,
+          "modifiers": [
+            {
+              "target": 1350.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0,
+          "modifiers": [
+            {
+              "target": 1800.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_mes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273,
+          "modifiers": [
+            {
+              "target": 1800.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.0,
+          "modifiers": [
+            {
+              "target": 1290.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0,
+          "modifiers": [
+            {
+              "target": 1530.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_po210be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 900.0,
+          "modifiers": [
+            {
+              "target": 90.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_pu238be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 120.0,
+          "modifiers": [
+            {
+              "target": 150.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 90.0,
+          "modifiers": [
+            {
+              "target": 36.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_thmeu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.0,
+          "modifiers": [
+            {
+              "target": 1050.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_ueu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.399999976158142,
+          "modifiers": [
+            {
+              "target": 1200.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_uzh": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5,
+          "modifiers": [
+            {
+              "target": 1200.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_zfb_am_mix": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0,
+          "modifiers": [
+            {
+              "target": 600.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_zfb_bismuth": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0,
+          "modifiers": [
+            {
+              "target": 300.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_fuel_zfb_pu241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.0,
+          "modifiers": [
+            {
+              "target": 450.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "type": "geontm:rbmk_hot"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_balefire": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150000.0,
+          "modifiers": [
+            {
+              "target": 1.5E7,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_balefire_gold": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 250.0,
+          "modifiers": [
+            {
+              "target": 75000.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_drx": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150000.0,
+          "modifiers": [
+            {
+              "target": 1.5E7,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        },
+        {
+          "type": "geontm:digamma",
+          "level": 0.0416666679084301
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_flashlead": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6250.0,
+          "modifiers": [
+            {
+              "target": 50.0,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hea241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.25,
+          "modifiers": [
+            {
+              "target": 251.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hea242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.75,
+          "modifiers": [
+            {
+              "target": 255.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_heaus": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "target": 243.75,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hen": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25,
+          "modifiers": [
+            {
+              "target": 225.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5,
+          "modifiers": [
+            {
+              "target": 243.75,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hep241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.5,
+          "modifiers": [
+            {
+              "target": 262.5,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284,
+          "modifiers": [
+            {
+              "target": 375.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_heu233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5,
+          "modifiers": [
+            {
+              "target": 232.5,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_heu235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5,
+          "modifiers": [
+            {
+              "target": 225.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_lea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.375,
+          "modifiers": [
+            {
+              "target": 195.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_leaus": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0,
+          "modifiers": [
+            {
+              "target": 281.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_lep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.125,
+          "modifiers": [
+            {
+              "target": 187.5,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284,
+          "modifiers": [
+            {
+              "target": 183.75,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_mea": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.5,
+          "modifiers": [
+            {
+              "target": 228.75,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_men": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.75,
+          "modifiers": [
+            {
+              "target": 168.75,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.125,
+          "modifiers": [
+            {
+              "target": 225.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_mes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.924999952316284,
+          "modifiers": [
+            {
+              "target": 225.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25,
+          "modifiers": [
+            {
+              "target": 161.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25,
+          "modifiers": [
+            {
+              "target": 191.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_po210be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 112.5,
+          "modifiers": [
+            {
+              "target": 11.25,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_pu238be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0,
+          "modifiers": [
+            {
+              "target": 22.5,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 11.25,
+          "modifiers": [
+            {
+              "target": 4.5,
+              "linear": true,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_thmeu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.875,
+          "modifiers": [
+            {
+              "target": 131.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_ueu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.17499999701976776,
+          "modifiers": [
+            {
+              "target": 150.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_uzh": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0625,
+          "modifiers": [
+            {
+              "target": 150.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_zfb_am_mix": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25,
+          "modifiers": [
+            {
+              "target": 75.0,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_zfb_bismuth": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.25,
+          "modifiers": [
+            {
+              "target": 37.5,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rbmk_pellet_zfb_pu241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25,
+          "modifiers": [
+            {
+              "target": 56.25,
+              "type": "geontm:rbmk_radiation"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:rod_ac227": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:rod_co60": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:rod_dual_ac227": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:rod_dual_co60": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:rod_dual_np237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:rod_dual_pu238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:rod_dual_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:rod_dual_ra226": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:rod_dual_rgp": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.25
+        }
+      ]
+    },
+    "geontm:rod_dual_th232": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:rod_dual_thf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.75
+        }
+      ]
+    },
+    "geontm:rod_dual_tritium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0010000000474974513
+        }
+      ]
+    },
+    "geontm:rod_dual_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:rod_dual_u238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:rod_dual_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.3499999940395355
+        }
+      ]
+    },
+    "geontm:rod_dual_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:rod_np237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:rod_pu238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:rod_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:rod_quad_ac227": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:rod_quad_co60": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:rod_quad_np237": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:rod_quad_pu238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 20.0
+        }
+      ]
+    },
+    "geontm:rod_quad_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:rod_quad_ra226": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:rod_quad_rgp": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 12.5
+        }
+      ]
+    },
+    "geontm:rod_quad_th232": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.20000000298023224
+        }
+      ]
+    },
+    "geontm:rod_quad_thf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.5
+        }
+      ]
+    },
+    "geontm:rod_quad_tritium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0020000000949949026
+        }
+      ]
+    },
+    "geontm:rod_quad_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:rod_quad_u238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:rod_quad_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.699999988079071
+        }
+      ]
+    },
+    "geontm:rod_quad_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        }
+      ]
+    },
+    "geontm:rod_ra226": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:rod_rgp": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.25
+        }
+      ]
+    },
+    "geontm:rod_th232": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:rod_thf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1.75
+        }
+      ]
+    },
+    "geontm:rod_tritium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0010000000474974513
+        }
+      ]
+    },
+    "geontm:rod_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:rod_u238": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.25
+        }
+      ]
+    },
+    "geontm:rod_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.3499999940395355
+        }
+      ]
+    },
+    "geontm:rod_waste": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 15.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_les_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 225.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 20.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_natural_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 172.5
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_plutonium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 187.5
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_thorium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 112.5
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_u233_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_u235_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 165.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_uranium_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_depleted_zfb_mox_fuel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 75.0
+        }
+      ]
+    },
+    "geontm:rod_zirnox_tritium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0010000000474974513
+        }
+      ]
+    },
+    "geontm:scrap_nuclear": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:sellafield_0": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:sellafield_1": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:sellafield_2": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:sellafield_3": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.0
+        }
+      ]
+    },
+    "geontm:sellafield_4": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:sellafield_5": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:solid_fuel_bf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 1000.0
+        }
+      ]
+    },
+    "geontm:solid_fuel_presto_bf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2000.0
+        }
+      ]
+    },
+    "geontm:solid_fuel_presto_triplet_bf": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6000.0
+        }
+      ]
+    },
+    "geontm:solinium_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 14.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 45.0
+        }
+      ]
+    },
+    "geontm:solinium_propellant": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:stick_c4": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:stick_dynamite": {
+      "entries": [
+        {
+          "type": "geontm:explosive"
+        }
+      ]
+    },
+    "geontm:stick_semtex": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 2.5
+        }
+      ]
+    },
+    "geontm:stick_tnt": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 1.5
+        }
+      ]
+    },
+    "geontm:stone_resource_asbestos": {
+      "mutex": 1,
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:tile_lab_broken": {
+      "entries": [
+        {
+          "type": "geontm:asbestos"
+        }
+      ]
+    },
+    "geontm:trinitite": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.10000000149011612
+        }
+      ]
+    },
+    "geontm:tsar_core": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.5
+        }
+      ]
+    },
+    "geontm:waste_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.625
+        }
+      ]
+    },
+    "geontm:waste_natural_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.468750476837158
+        }
+      ]
+    },
+    "geontm:waste_plate_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 240.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.07500000298023224,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_pu238be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_pu239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 202.5,
+          "modifiers": [
+            {
+              "cold_factor": 0.07500000298023224,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_ra226be": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 67.5
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_sa326": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.07500000298023224,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_u233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 195.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.07500000298023224,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plate_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.07500000298023224,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0,
+          "modifiers": [
+            {
+              "cold_factor": 0.0,
+              "type": "geontm:hot_scale"
+            }
+          ]
+        }
+      ]
+    },
+    "geontm:waste_plutonium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 7.031250476837158
+        }
+      ]
+    },
+    "geontm:waste_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 8.4375
+        }
+      ]
+    },
+    "geontm:waste_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.21875
+        }
+      ]
+    },
+    "geontm:waste_u233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.625
+        }
+      ]
+    },
+    "geontm:waste_u235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 6.187500476837158
+        }
+      ]
+    },
+    "geontm:waste_uranium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.625
+        }
+      ]
+    },
+    "geontm:waste_zfb_mox": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.8125
+        }
+      ]
+    },
+    "geontm:watz_pellet_du": {
+      "entries": [
+        {
+          "type": "geontm:radiation"
+        }
+      ]
+    },
+    "geontm:watz_pellet_hen": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 10.0
+        }
+      ]
+    },
+    "geontm:watz_pellet_hes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273
+        }
+      ]
+    },
+    "geontm:watz_pellet_les": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273
+        }
+      ]
+    },
+    "geontm:watz_pellet_mep": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 25.0
+        }
+      ]
+    },
+    "geontm:watz_pellet_mes": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 23.399999618530273
+        }
+      ]
+    },
+    "geontm:watz_pellet_meu": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 2.0
+        }
+      ]
+    },
+    "geontm:watz_pellet_nqd": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 4.0
+        }
+      ]
+    },
+    "geontm:watz_pellet_nqr": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 20.0
+        }
+      ]
+    },
+    "geontm:watz_pellet_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:yellow_barrel": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 150.0
+        }
+      ]
+    },
+    "minecraft:gunpowder": {
+      "entries": [
+        {
+          "type": "geontm:explosive"
+        }
+      ]
+    },
+    "minecraft:pumpkin_pie": {
+      "entries": [
+        {
+          "type": "geontm:explosive"
+        }
+      ]
+    },
+    "minecraft:tnt": {
+      "entries": [
+        {
+          "type": "geontm:explosive",
+          "level": 4.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_tiny_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_tiny_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_tiny_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_tiny_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_tiny_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_plutonium239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_plutonium240": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_plutonium241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_americium242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 30.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_plutonium239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_plutonium240": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_plutonium241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_americium242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_tiny_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        },
+        {
+          "type": "geontm:hot",
+          "level": 5.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.5
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_tiny_thorium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_tiny_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_tiny_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_tiny_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuclear_waste_long_depleted_tiny_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.05000000074505806
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_plutonium239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_plutonium240": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_plutonium241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_americium242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 3.0
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_uranium233": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_uranium235": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_neptunium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_plutonium239": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_plutonium240": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_plutonium241": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_americium242": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "geontm:nuclear_waste_short_depleted_tiny_schrabidium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.30000001192092896
+        }
+      ]
+    },
+    "#c:ores/thorium": {
+      "immune": true
+    },
+    "#c:ores/uranium": {
+      "immune": true
+    }
+  }
+}

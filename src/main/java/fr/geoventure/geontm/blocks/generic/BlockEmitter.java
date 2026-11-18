@@ -65,7 +65,7 @@ public class BlockEmitter extends CompatBlock implements TickingBlock, IToolable
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
         DyeColor dye = Dyes.colorOf(held);
-        if (dye == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (dye == null) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (level.getBlockEntity(pos) instanceof TileEntityEmitter te) {
             // 1.7 ItemDye.field_150922_c, the firework colour table

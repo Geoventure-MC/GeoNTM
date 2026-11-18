@@ -1,0 +1,19 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.co2",
+  "input_fluids": [
+    {
+      "type": "geontm:gas",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:carbondioxide",
+      "amount": 1000
+    }
+  ],
+  "duration": 60,
+  "power": 100,
+  "order": 6
+}

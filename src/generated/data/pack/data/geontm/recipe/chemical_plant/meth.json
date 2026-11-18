@@ -1,0 +1,32 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.meth",
+  "input_items": [
+    {
+      "ingredient": "minecraft:wheat"
+    },
+    {
+      "ingredient": "minecraft:cocoa_beans",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:lubricant",
+      "amount": 400
+    },
+    {
+      "type": "geontm:peroxide",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:chocolate",
+      "count": 4
+    }
+  ],
+  "duration": 60,
+  "power": 300,
+  "order": 53
+}

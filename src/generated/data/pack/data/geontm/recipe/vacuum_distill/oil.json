@@ -1,0 +1,22 @@
+{
+  "type": "geontm:vacuum_distill",
+  "input": "geontm:oil",
+  "outputs": [
+    {
+      "type": "geontm:heavyoil_vacuum",
+      "amount": 40
+    },
+    {
+      "type": "geontm:reformate",
+      "amount": 25
+    },
+    {
+      "type": "geontm:lightoil_vacuum",
+      "amount": 20
+    },
+    {
+      "type": "geontm:sourgas",
+      "amount": 15
+    }
+  ]
+}

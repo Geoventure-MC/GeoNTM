@@ -1,0 +1,44 @@
+{
+  "type": "liquid",
+  "color": "#D85638",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 4,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous",
+    "leadcontainer"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 60
+    },
+    "flammable": {
+      "energy": 1000
+    },
+    "toxin": {
+      "entries": [
+        {
+          "kind": "effects",
+          "effects": [
+            {
+              "id": "minecraft:wither",
+              "duration": 600,
+              "amplifier": 2
+            }
+          ],
+          "hazard": "GAS_BLISTERING",
+          "full_body": false
+        }
+      ]
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-4
+      }
+    }
+  }
+}

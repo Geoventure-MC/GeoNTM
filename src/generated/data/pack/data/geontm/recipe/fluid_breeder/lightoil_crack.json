@@ -1,0 +1,17 @@
+{
+  "type": "geontm:fluid_breeder",
+  "name": "fluid_breeder.lightoil_crack",
+  "input_fluids": [
+    {
+      "type": "geontm:lightoil_crack",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:reformgas",
+      "amount": 1000
+    }
+  ],
+  "order": 2
+}

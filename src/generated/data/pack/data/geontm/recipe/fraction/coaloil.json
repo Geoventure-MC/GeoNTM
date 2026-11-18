@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:coaloil",
+  "left": {
+    "type": "geontm:coalgas",
+    "amount": 30
+  },
+  "right": {
+    "type": "geontm:oil",
+    "amount": 70
+  }
+}

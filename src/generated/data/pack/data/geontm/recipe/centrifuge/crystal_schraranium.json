@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_schraranium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:nugget_schrabidium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_schrabidium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_uranium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_neptunium",
+      "count": 2
+    }
+  ],
+  "order": 172
+}

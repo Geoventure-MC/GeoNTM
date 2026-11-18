@@ -18,7 +18,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -201,13 +201,13 @@ public class BlockEntityRBMKAutoloader extends TileEntityMachineBase implements 
     @Override public boolean canPlaceItemThroughFace(int slot, ItemStack stack, @Nullable Direction side) { return isItemValidForSlot(slot, stack); }
     @Override public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) { return slot >= 9; }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeDouble(piston);
         buf.writeInt(cycle);
     }
 
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         syncPiston = buf.readDouble();
         cycle = buf.readInt();

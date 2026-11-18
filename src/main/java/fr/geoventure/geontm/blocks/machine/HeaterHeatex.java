@@ -61,7 +61,7 @@ public class HeaterHeatex extends BlockMultiblockMachine implements IFluidConnec
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (player.isShiftKeyDown()) {
             if (!(stack.getItem() instanceof IItemFluidId identifier)) {
-                return InteractionResult.TRY_WITH_EMPTY_HAND;
+                return InteractionResult.PASS;
             }
             if (level.isClientSide()) return InteractionResult.SUCCESS;
 
@@ -81,18 +81,18 @@ public class HeaterHeatex extends BlockMultiblockMachine implements IFluidConnec
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         return openMenu(level, pos, player);
     }
 
     private InteractionResult openMenu(Level level, BlockPos pos, Player player) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (!(player instanceof ServerPlayer serverPlayer)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);
         if (core == null || !(level.getBlockEntity(core) instanceof TileEntityHeaterHeatex heater)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         Menus.openWithPos(serverPlayer, heater, core);
         return InteractionResult.SUCCESS;

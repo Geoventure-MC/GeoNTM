@@ -9,9 +9,9 @@ import fr.geoventure.geocore.viewer.Drawable;
 import fr.geoventure.geocore.viewer.ViewerCategory;
 import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -42,18 +42,18 @@ public abstract class GeoNtmRecipeCategory<T> extends ViewerCategory<T> {
 
     /** A background from any texture, cropped like the others. */
     protected GeoNtmRecipeCategory(ViewerType<T> type, Component title, ItemStack icon,
-                                Identifier texture, int width, int height, int textureX, int textureY) {
+                                ResourceLocation texture, int width, int height, int textureX, int textureY) {
         super(type, title, icon, width, height);
         this.background = Drawable.texture(texture, textureX, textureY, width, height);
     }
 
     /** {@code <ns>:textures/gui/jei/<name>}; a bare name is HBM's, an addon category names its own as {@code "ns:name"}. */
-    protected static Identifier tex(String name) {
+    protected static ResourceLocation tex(String name) {
         return Library.parseId(name, "textures/gui/jei/", "");
     }
 
     @Override
-    public void draw(T recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(T recipe, GuiGraphics g, double mouseX, double mouseY) {
         background.draw(g, 0, 0);
     }
 
@@ -65,12 +65,12 @@ public abstract class GeoNtmRecipeCategory<T> extends ViewerCategory<T> {
     }
 
     /** Draws a dark stat string exactly like the old handlers' {@code fontRenderer.drawString(s, x, y, 0x404040)}. */
-    protected static void text(GuiGraphicsExtractor g, String s, int x, int y) {
+    protected static void text(GuiGraphics g, String s, int x, int y) {
         text(g, s, x, y, 0x404040);
     }
 
     /** {@code fontRenderer.drawString(s, x, y, rgb)}: 1.7 colours have no alpha byte. */
-    protected static void text(GuiGraphicsExtractor g, String s, int x, int y, int rgb) {
+    protected static void text(GuiGraphics g, String s, int x, int y, int rgb) {
         GuiDraw.text(g, Minecraft.getInstance().font, s, x, y, 0xFF000000 | rgb, false);
     }
 

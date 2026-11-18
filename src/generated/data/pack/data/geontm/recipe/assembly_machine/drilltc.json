@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drilltc",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 20
+    },
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_tcalloy"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 31488
+}

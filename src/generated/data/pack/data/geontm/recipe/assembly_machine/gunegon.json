@@ -1,0 +1,48 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.gunegon",
+  "input_items": [
+    {
+      "ingredient": "#c:mechanisms/saturnite",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:coil_gold_torus",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:battery_lithium",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:machine_waste_drum"
+    },
+    {
+      "material": "copper",
+      "shape": "wire",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:gun_egon"
+  ],
+  "duration": 256,
+  "power": 100,
+  "order": 90624
+}

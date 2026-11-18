@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -99,7 +99,7 @@ public final class DoorColladaModel {
         return pose;
     }
 
-    public static DoorColladaModel load(Identifier obj, Identifier animation, Identifier texture) {
+    public static DoorColladaModel load(ResourceLocation obj, ResourceLocation animation, ResourceLocation texture) {
         try (BufferedReader reader = Minecraft.getInstance().getResourceManager()
                 .getResourceOrThrow(animation).openAsReader()) {
             JsonObject root = JsonParser.parseReader(reader).getAsJsonObject();

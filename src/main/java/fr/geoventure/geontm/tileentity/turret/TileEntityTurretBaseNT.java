@@ -39,8 +39,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.MenuProvider;
@@ -53,13 +53,13 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
-import net.minecraft.world.entity.boss.enderdragon.EnderDragonPart;
+import net.minecraft.world.entity.boss.EnderDragonPart;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.level.Level;
@@ -86,7 +86,7 @@ import fr.geoventure.geontm.tileentity.TilePort.PortDef;
 public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
         implements IEnergyReceiverMK2, IControlReceiver, MenuProvider, IRORInteractive, WorldlyContainer {
 
-    private static final Identifier TURRET_GUI_BASE = turretGui("base");
+    private static final ResourceLocation TURRET_GUI_BASE = turretGui("base");
 
     public static final int SLOT_CHIP = 0;
     public static final int SLOT_AMMO_FIRST = 1;
@@ -380,7 +380,7 @@ public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
         }
 
         if (!mobFilter.isEmpty() && e instanceof Mob) {
-            Identifier id = BuiltInRegistries.ENTITY_TYPE.getKey(e.getType());
+            ResourceLocation id = BuiltInRegistries.ENTITY_TYPE.getKey(e.getType());
             if (id != null) {
                 boolean listed = mobFilter.contains(id.toString());
                 if (isBlacklistMobFilter ? listed : !listed) return false;
@@ -549,7 +549,7 @@ public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
      * 1.12.2 spells the background and label colour as a {@code GUITurret*} subclass per turret; the
      * layout never varies, so the pair lives here and one screen serves every turret.
      */
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return TURRET_GUI_BASE;
     }
 
@@ -557,7 +557,7 @@ public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
         return 0x808080;
     }
 
-    protected static Identifier turretGui(String name) {
+    protected static ResourceLocation turretGui(String name) {
         return Ids.of(Constants.MOD_ID, "textures/gui/weapon/gui_turret_" + name + ".png");
     }
 
@@ -893,7 +893,7 @@ public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
     @Override public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) { return false; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(tPos != null);
         if (tPos != null) {
@@ -917,7 +917,7 @@ public abstract class TileEntityTurretBaseNT extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tPos = buf.readBoolean() ? new Vec3(buf.readDouble(), buf.readDouble(), buf.readDouble()) : null;
         syncRotationPitch = buf.readDouble();

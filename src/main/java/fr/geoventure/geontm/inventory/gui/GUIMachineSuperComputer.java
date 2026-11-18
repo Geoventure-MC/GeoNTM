@@ -5,24 +5,24 @@ import fr.geoventure.geontm.module.machine.ModuleMachineBase;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineSuperComputer;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
 
 /** 1.7 {@code GUIMachineSuperComputer}. */
 public class GUIMachineSuperComputer extends GuiInfoContainerProcessor<ContainerMachineSuperComputer> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_supercomputer.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_supercomputer.png");
 
     public GUIMachineSuperComputer(ContainerMachineSuperComputer menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 211);
     }
 
     @Override public int[][] getSelectorPositions() { return new int[][] {{7, 80, 1}}; }
-    @Override public Identifier getTexture() { return TEXTURE; }
+    @Override public ResourceLocation getTexture() { return TEXTURE; }
 
     @Override
     protected ModuleMachineBase @Nullable [] processorModules() {
@@ -37,13 +37,13 @@ public class GUIMachineSuperComputer extends GuiInfoContainerProcessor<Container
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0.0F, 0.0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityMachineSuperComputer computer = this.menu.getComputer();
@@ -65,7 +65,7 @@ public class GUIMachineSuperComputer extends GuiInfoContainerProcessor<Container
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         super.extractOwnTooltip(graphics, mouseX, mouseY);
         TileEntityMachineSuperComputer computer = this.menu.getComputer();
         if (computer == null) return;

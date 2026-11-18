@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platecopper",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/copper"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_copper"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 1536
+}

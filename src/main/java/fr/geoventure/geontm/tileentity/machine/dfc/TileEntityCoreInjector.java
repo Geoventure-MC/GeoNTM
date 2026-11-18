@@ -13,7 +13,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -116,7 +116,7 @@ public class TileEntityCoreInjector extends TileEntityMachineBase
     @Override public FluidTankNTM[] getAllTanks() { return tanks; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(beam);
         tanks[0].serialize(buf);
@@ -124,7 +124,7 @@ public class TileEntityCoreInjector extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.beam = buf.readInt();
         tanks[0].deserialize(buf);

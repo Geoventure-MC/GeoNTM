@@ -1,0 +1,36 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.beigeprints",
+  "input_items": [
+    {
+      "ingredient": "minecraft:paper",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:gems/cinnabar",
+      "count": 24
+    },
+    {
+      "ingredient": "minecraft:pufferfish",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:blueprint_folder_discover",
+        "weight": 5
+      },
+      {
+        "data": {
+          "id": "minecraft:paper",
+          "count": 24
+        },
+        "weight": 95
+      }
+    ]
+  ],
+  "duration": 6000,
+  "power": 50000,
+  "order": 43
+}

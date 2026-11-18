@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:coalcreosote",
+  "left": {
+    "type": "geontm:coaloil",
+    "amount": 10
+  },
+  "right": {
+    "type": "geontm:bitumen",
+    "amount": 90
+  }
+}

@@ -58,9 +58,9 @@ final class TreatmentLegacy {
                 GeoNtmLivingProps.setAsbestos(player, 0);
                 GeoNtmLivingProps.setBlackLung(player, Math.min(GeoNtmLivingProps.getBlackLung(player), GeoNtmLivingProps.maxBlacklung / 5));
                 GeoNtmLivingProps.incrementRadiation(player, -100F);
-                Effects.add(player, MobEffects.NAUSEA, 10 * 20, 0);
+                Effects.add(player, MobEffects.CONFUSION, 10 * 20, 0);
                 Effects.add(player, MobEffects.WEAKNESS, 10 * 60 * 20, 2);
-                Effects.add(player, MobEffects.MINING_FATIGUE, 10 * 60 * 20, 2);
+                Effects.add(player, MobEffects.DIG_SLOWDOWN, 10 * 60 * 20, 2);
                 Effects.add(player, MobEffects.POISON, 5 * 20, 2);
                 Effects.addRegistered(player, ModEffects.POTION_SICKNESS.get(), 10 * 60 * 20, 0);
             }
@@ -85,7 +85,7 @@ final class TreatmentLegacy {
 
     /** {@code ItemCanteen.finishUsingItem}'s effects. */
     static void canteen(LivingEntity entity) {
-        Effects.add(entity, MobEffects.NAUSEA, 10 * 20, 0);
+        Effects.add(entity, MobEffects.CONFUSION, 10 * 20, 0);
         Effects.add(entity, Effects.strength(), 30 * 20, 2);
         VersatileConfig.applyPotionSickness(entity, 5);
     }
@@ -112,7 +112,7 @@ final class TreatmentLegacy {
                 Effects.add(target, Effects.jumpBoost(), 50 * 20, 9);
                 Effects.add(target, MobEffects.HEALTH_BOOST, 50 * 20, 9);
                 Effects.add(target, MobEffects.ABSORPTION, 50 * 20, 4);
-                Effects.add(target, MobEffects.NAUSEA, 5 * 20, 4);
+                Effects.add(target, MobEffects.CONFUSION, 5 * 20, 4);
                 Effects.addRegistered(target, ModEffects.RADX.get(), 50 * 20, 9);
                 play(level, target, ModSounds.SYRINGE.get());
                 shrinkAndReplace(user, hand, ModItems.syringe_empty.get());
@@ -150,7 +150,7 @@ final class TreatmentLegacy {
             case "syringe_metal_super" -> {
                 if (VersatileConfig.hasPotionSickness(target)) return;
                 target.heal(25F);
-                Effects.add(target, MobEffects.SLOWNESS, 10 * 20, 0);
+                Effects.add(target, MobEffects.MOVEMENT_SLOWDOWN, 10 * 20, 0);
                 VersatileConfig.applyPotionSickness(target, 15);
                 play(level, target, ModSounds.SYRINGE.get());
                 shrinkAndReplace(user, hand, ModItems.syringe_metal_empty.get());
@@ -164,7 +164,7 @@ final class TreatmentLegacy {
             }
             case "syringe_taint" -> {
                 Effects.addRegistered(target, ModEffects.TAINT.get(), 60 * 20, 0);
-                Effects.add(target, MobEffects.NAUSEA, 5 * 20, 0);
+                Effects.add(target, MobEffects.CONFUSION, 5 * 20, 0);
                 play(level, target, ModSounds.SYRINGE.get());
                 shrinkAndReplace(user, hand, ModItems.syringe_metal_empty.get());
                 giveOrDrop(user, ModItems.bottle2_empty.get().getDefaultInstance());
@@ -181,8 +181,8 @@ final class TreatmentLegacy {
             }
             case "euphemium_stopper" -> {
                 Effects.add(target, MobEffects.WEAKNESS, 30 * 20, 9);
-                Effects.add(target, MobEffects.SLOWNESS, 30 * 20, 9);
-                Effects.add(target, MobEffects.MINING_FATIGUE, 30 * 20, 9);
+                Effects.add(target, MobEffects.MOVEMENT_SLOWDOWN, 30 * 20, 9);
+                Effects.add(target, MobEffects.DIG_SLOWDOWN, 30 * 20, 9);
             }
             default -> throw new IllegalArgumentException(id);
         }
@@ -238,7 +238,7 @@ final class TreatmentLegacy {
             case "can_mrsugar" -> { add(player, Effects.speed(), 30 * 20, 0); add(player, Effects.haste(), 30 * 20, 1); add(player, Effects.jumpBoost(), 30 * 20, 2); }
             case "can_luna" -> { add(player, Effects.speed(), 30 * 20, 1); add(player, Effects.resistance(), 30 * 20, 2); add(player, Effects.strength(), 30 * 20, 1); add(player, MobEffects.REGENERATION, 30 * 20, 2); }
             case "can_bepis" -> { add(player, Effects.speed(), 30 * 20, 3); add(player, Effects.resistance(), 30 * 20, 3); }
-            case "can_breen" -> add(player, MobEffects.NAUSEA, 30 * 20, 0);
+            case "can_breen" -> add(player, MobEffects.CONFUSION, 30 * 20, 0);
             case "can_mug" -> { add(player, Effects.resistance(), 3 * 60 * 20, 2); add(player, MobEffects.REGENERATION, 60 * 20, 2); }
             case "bottle_nuka" -> { player.heal(4F); add(player, Effects.speed(), 30 * 20, 1); add(player, Effects.haste(), 30 * 20, 1); GeoNtmLivingProps.incrementRadiation(player, 5F); }
             case "bottle_cherry" -> { player.heal(6F); add(player, Effects.speed(), 30 * 20, 0); add(player, Effects.jumpBoost(), 30 * 20, 2); GeoNtmLivingProps.incrementRadiation(player, 5F); }
@@ -332,7 +332,7 @@ final class TreatmentLegacy {
             case "mucho_mango" -> Effects.add(player, Effects.speed(), 200, 0);
             case "schnitzel_vegan" -> {
                 Effects.add(player, MobEffects.BLINDNESS, 10 * 20, 0);
-                Effects.add(player, MobEffects.NAUSEA, 30 * 20, 0);
+                Effects.add(player, MobEffects.CONFUSION, 30 * 20, 0);
                 Effects.add(player, MobEffects.HUNGER, 3 * 60 * 20, 4);
                 Effects.add(player, MobEffects.WITHER, 3 * 20, 0);
                 Effects.ignite(player, 5 * 20);
@@ -354,7 +354,7 @@ final class TreatmentLegacy {
             GeoNtmLivingProps.incrementRadiation(entity, 100F);
         } else {
             GeoNtmLivingProps.incrementBlackLung(entity, 500);
-            Effects.add(entity, MobEffects.NAUSEA, 200, 0);
+            Effects.add(entity, MobEffects.CONFUSION, 200, 0);
             entity.heal(10F);
         }
         play(level, entity, ModSounds.COUGH.get());
@@ -370,10 +370,10 @@ final class TreatmentLegacy {
 
     private static void removeNegative(LivingEntity entity) {
         Effects.remove(entity, MobEffects.BLINDNESS);
-        Effects.remove(entity, MobEffects.NAUSEA);
-        Effects.remove(entity, MobEffects.MINING_FATIGUE);
+        Effects.remove(entity, MobEffects.CONFUSION);
+        Effects.remove(entity, MobEffects.DIG_SLOWDOWN);
         Effects.remove(entity, MobEffects.HUNGER);
-        Effects.remove(entity, MobEffects.SLOWNESS);
+        Effects.remove(entity, MobEffects.MOVEMENT_SLOWDOWN);
         Effects.remove(entity, MobEffects.POISON);
         Effects.remove(entity, MobEffects.WEAKNESS);
         Effects.remove(entity, MobEffects.WITHER);

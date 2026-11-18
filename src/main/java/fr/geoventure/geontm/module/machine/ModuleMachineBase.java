@@ -13,7 +13,7 @@ import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipe;
 import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipes;
 import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geocore.world.ItemStacks;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -356,13 +356,13 @@ public abstract class ModuleMachineBase {
 
     // Sync + persistence
 
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeDouble(progress);
         buf.writeBoolean(restrictedMode);
         buf.writeUtf(recipe);
     }
 
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         this.progress = buf.readDouble();
         this.restrictedMode = buf.readBoolean();
         this.recipe = buf.readUtf();

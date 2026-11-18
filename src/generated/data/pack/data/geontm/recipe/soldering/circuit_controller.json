@@ -1,0 +1,45 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_controller",
+  "duration": 400,
+  "consumption": 15000,
+  "fluid": {
+    "type": "geontm:perfluoromethyl",
+    "amount": 1000
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_tantalium",
+      "count": 16
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_controller_chassis"
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 4
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 16
+    }
+  ],
+  "requires": [
+    "!enable_528",
+    "!lbsm_simple_crafting"
+  ],
+  "order": 9
+}

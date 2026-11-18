@@ -147,10 +147,10 @@ public final class AE2GameTests {
             helper.succeed();
             return;
         }
-        ItemStack ingot = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse("geontm:ingot_u235")));
+        ItemStack ingot = new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse("geontm:ingot_u235")));
         double each = HazardSystem.getHazardLevelFromStack(ingot, HazardRegistry.RADIATION);
         helper.assertTrue(each > 0, "U-235 ingots are not radioactive");
-        ItemStack empty = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse("ae2:item_storage_cell_1k")));
+        ItemStack empty = new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse("ae2:item_storage_cell_1k")));
         helper.assertTrue(HazardSystem.getHazardLevelFromStack(empty, HazardRegistry.RADIATION) == 0, "An empty cell is radioactive");
         ItemStack cell = ItemStacks.withComponents(empty, JsonParser.parseString(
                         "{\"ae2:storage_cell_inv\":[{\"#t\":\"ae2:i\",\"id\":\"geontm:ingot_u235\",\"#\":10}]}").getAsJsonObject(),
@@ -241,8 +241,8 @@ public final class AE2GameTests {
             helper.succeed();
             return;
         }
-        ItemStack cluster = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse("ae2:quartz_cluster")));
-        ItemStack crystal = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse("ae2:certus_quartz_crystal")));
+        ItemStack cluster = new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse("ae2:quartz_cluster")));
+        ItemStack crystal = new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse("ae2:certus_quartz_crystal")));
         ItemStack[] spun = CentrifugeRecipes.getOutput(cluster);
         helper.assertTrue(spun != null && spun.length == 4 && ItemStack.isSameItem(spun[0], crystal) && spun[0].getCount() == 2,
                 "The centrifuge does not turn a quartz cluster into 4 x 2 certus crystals");

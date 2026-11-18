@@ -163,7 +163,7 @@ public final class Gh171To183GameTests {
         BlockPos chest = new BlockPos(0, 3, 8);
         helper.setBlock(chest, Blocks.CHEST);
         layTubes(helper, chest.east(), port.west());
-        Item fuel = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "pwr_fuel_meu"));
+        Item fuel = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "pwr_fuel_meu"));
         ((Container) helper.getLevel().getBlockEntity(helper.absolutePos(chest))).setItem(0, new ItemStack(fuel, 4));
         helper.runAfterDelay(160, () -> {
             helper.assertTrue(controller.getItem(0).is(fuel), "no fuel reached the PWR through its port: " + controller.getItem(0));
@@ -247,7 +247,7 @@ public final class Gh171To183GameTests {
     }
 
     private static void setUp(TileEntityBatterySocket socket, long charge, ConnectionPriority priority) {
-        Item lead = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "battery_lead"));
+        Item lead = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "battery_lead"));
         ItemStack stack = new ItemStack(lead);
         ((IBatteryItem) lead).setCharge(stack, charge);
         socket.inventory.setStackInSlot(0, stack);
@@ -366,7 +366,7 @@ public final class Gh171To183GameTests {
     }
 
     private static Item item(String path) {
-        return BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, path));
+        return BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, path));
     }
 
     private static void tick(TileEntityBarrel barrel) {

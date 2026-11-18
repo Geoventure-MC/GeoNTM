@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_nosolvent_light"
+  },
+  "acid": {
+    "type": "geontm:chlorine",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_primary_second_light",
+  "duration": 200,
+  "order": 127
+}

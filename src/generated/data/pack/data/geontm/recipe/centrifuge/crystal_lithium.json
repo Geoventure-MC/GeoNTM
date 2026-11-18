@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_lithium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_lithium",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_lithium",
+      "count": 2
+    },
+    "geontm:powder_quartz",
+    "geontm:fluorite"
+  ],
+  "order": 177
+}

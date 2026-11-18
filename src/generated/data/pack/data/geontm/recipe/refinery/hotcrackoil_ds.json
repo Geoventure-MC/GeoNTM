@@ -1,0 +1,23 @@
+{
+  "type": "geontm:refinery",
+  "input": "geontm:hotcrackoil_ds",
+  "outputs": [
+    {
+      "type": "geontm:naphtha_ds",
+      "amount": 35
+    },
+    {
+      "type": "geontm:lightoil_ds",
+      "amount": 35
+    },
+    {
+      "type": "geontm:aromatics",
+      "amount": 15
+    },
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 15
+    }
+  ],
+  "byproduct": "geontm:oil_tar_paraffin"
+}

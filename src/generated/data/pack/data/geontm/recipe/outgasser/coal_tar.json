@@ -1,0 +1,17 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.coal_tar",
+  "input_items": [
+    {
+      "ingredient": "geontm:oil_tar_coal"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:coaloil",
+      "amount": 100
+    }
+  ],
+  "duration": 10000,
+  "order": 17
+}

@@ -1,0 +1,45 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.hematite",
+  "input_items": [
+    {
+      "ingredient": "#c:ores/hematite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:gravel",
+        "weight": 65
+      },
+      {
+        "data": "geontm:powder_iron",
+        "weight": 25
+      },
+      {
+        "data": "geontm:powder_titanium",
+        "weight": 10
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 25,
+  "icon": {
+    "id": "geontm:stone_resource_hematite"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 7
+}

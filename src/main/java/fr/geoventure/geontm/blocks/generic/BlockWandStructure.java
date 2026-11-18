@@ -17,7 +17,7 @@ import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
@@ -102,7 +102,7 @@ public class BlockWandStructure extends CompatBlock implements TickingBlock, ILo
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof TileEntityWandStructure structure)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(level.getBlockEntity(pos) instanceof TileEntityWandStructure structure)) return InteractionResult.PASS;
 
         if (!player.isShiftKeyDown()) {
             Block block = ModStructureWandBlocks.getBlockFromStack(held);
@@ -128,7 +128,7 @@ public class BlockWandStructure extends CompatBlock implements TickingBlock, ILo
             return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -286,7 +286,7 @@ public class BlockWandStructure extends CompatBlock implements TickingBlock, ILo
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             buf.writeUtf(name);
 
             buf.writeInt(sizeX);
@@ -301,7 +301,7 @@ public class BlockWandStructure extends CompatBlock implements TickingBlock, ILo
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             name = buf.readUtf();
 
             sizeX = buf.readInt();

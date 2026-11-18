@@ -18,7 +18,7 @@ import fr.geoventure.geocore.world.Effects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.cow.Cow;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerLevel;
@@ -59,7 +59,7 @@ public final class GeoNtmEffect extends CompatMobEffect {
                     BlockPos below = BlockPos.containing(
                             Math.floor(entity.getX()), Math.floor(entity.getY()) - 1, Math.floor(entity.getZ()));
                     BlockState b = level.getBlockState(below);
-                    if (below.getY() + 1 > level.getMinY() + 1 && Compat.isSolidRender(b) && !b.isAir()
+                    if (below.getY() + 1 > level.getMinBuildHeight() + 1 && Compat.isSolidRender(b) && !b.isAir()
                             && Protection.mayAlter(level, below, Protection.Source.NONE, Protection.Cause.FLUID)) { // 1.7 y > 1: the world floor
                         level.setBlock(below, ModBombBlocks.taint.get().defaultBlockState()
                                 .setValue(BlockTaint.TAINTAGE, 14), Block.UPDATE_CLIENTS);

@@ -152,14 +152,14 @@ public final class LegacyBiomes {
             seed = context.seed();
             minX = context.chunkPos().getMinBlockX();
             minZ = context.chunkPos().getMinBlockZ();
-            minY = context.heightAccessor().getMinY();
+            minY = context.heightAccessor().getMinBuildHeight();
             height = context.heightAccessor().getHeight();
         }
 
         boolean matches(Structure.GenerationContext context) {
             return minX == context.chunkPos().getMinBlockX() && minZ == context.chunkPos().getMinBlockZ() && seed == context.seed()
                     && generator.get() == context.chunkGenerator() && random.get() == context.randomState()
-                    && minY == context.heightAccessor().getMinY() && height == context.heightAccessor().getHeight();
+                    && minY == context.heightAccessor().getMinBuildHeight() && height == context.heightAccessor().getHeight();
         }
     }
 

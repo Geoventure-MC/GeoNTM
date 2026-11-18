@@ -1,0 +1,8 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_long_tiny_schrabidium",
+  "output": "geontm:nuclear_waste_long_depleted_tiny_schrabidium",
+  "decay": "long",
+  "divisor": 10,
+  "gas": 25
+}

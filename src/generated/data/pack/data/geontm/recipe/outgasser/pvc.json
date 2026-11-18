@@ -1,0 +1,20 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.pvc",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/pvc"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_c4"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 10000,
+  "order": 16
+}

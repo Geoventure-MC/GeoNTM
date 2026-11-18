@@ -1,0 +1,21 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.firebrickLimestone",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/limestone"
+    },
+    {
+      "ingredient": "minecraft:clay_ball",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_firebrick",
+      "count": 8
+    }
+  ],
+  "duration": 800,
+  "order": 17
+}

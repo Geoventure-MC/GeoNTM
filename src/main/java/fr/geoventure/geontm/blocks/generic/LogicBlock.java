@@ -66,14 +66,14 @@ public class LogicBlock extends CompatBlock implements TickingBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (hand != InteractionHand.MAIN_HAND) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         if (level.getBlockEntity(pos) instanceof TileEntityLogicBlock logic && logic.interaction != null) {
             logic.interaction.accept(new Object[]{level, logic, pos.getX(), pos.getY(), pos.getZ(), player,
                     hit.getDirection().ordinal(), (float) (hit.getLocation().x - pos.getX()),
                     (float) (hit.getLocation().y - pos.getY()), (float) (hit.getLocation().z - pos.getZ())});
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     public static class TileEntityLogicBlock extends TileEntityLoadedBase {

@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_washed_light"
+  },
+  "molten_outputs": [
+    {
+      "material": "lithium",
+      "amount": 144
+    },
+    {
+      "material": "sodium",
+      "amount": 144
+    }
+  ],
+  "order": 23
+}

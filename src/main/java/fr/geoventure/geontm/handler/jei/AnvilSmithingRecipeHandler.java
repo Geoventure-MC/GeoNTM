@@ -6,7 +6,7 @@ import fr.geoventure.geontm.inventory.recipes.anvil.AnvilRecipes;
 import fr.geoventure.geontm.inventory.recipes.anvil.AnvilSmithingRecipe;
 import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -43,7 +43,7 @@ public class AnvilSmithingRecipeHandler extends GeoNtmRecipeCategory<AnvilSmithi
     }
 
     @Override
-    public void draw(AnvilSmithingRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(AnvilSmithingRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         text(g, "Tier " + recipe.tier, 52, 43);
     }

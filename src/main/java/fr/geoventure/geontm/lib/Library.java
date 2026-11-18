@@ -16,7 +16,7 @@ import fr.geoventure.geocore.Ids;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -31,7 +31,7 @@ import net.minecraft.world.phys.Vec3;
 public final class Library {
 
     /** {@code geontm:<path>}; the ntm-next spelling kept by the copied entity classes. */
-    public static Identifier id(String path) {
+    public static ResourceLocation id(String path) {
         return Ids.of(Constants.MOD_ID, path);
     }
 
@@ -40,12 +40,12 @@ public final class Library {
      * {@code geontm} (the form every GEONTM table already uses). {@link fr.geoventure.geocore.Ids#parse} would put a bare path in
      * {@code minecraft} instead, which is why HBM's lookups that also take addon ids go through this.
      */
-    public static Identifier parseId(String ref) {
+    public static ResourceLocation parseId(String ref) {
         return parseId(ref, "", "");
     }
 
     /** {@link #parseId(String)} with {@code prefix} and {@code suffix} around the path (asset paths, e.g. textures). */
-    public static Identifier parseId(String ref, String prefix, String suffix) {
+    public static ResourceLocation parseId(String ref, String prefix, String suffix) {
         int colon = ref.indexOf(':');
         String namespace = colon < 0 ? Constants.MOD_ID : ref.substring(0, colon);
         String path = colon < 0 ? ref : ref.substring(colon + 1);

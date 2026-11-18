@@ -1,0 +1,18 @@
+{
+  "type": "geontm:annihilator",
+  "tag": "c:ingots/any_plastic",
+  "milestones": [
+    {
+      "amount": 512,
+      "payout": {
+        "id": "geontm:blueprints",
+        "item_data": {
+          "blueprint_pool": "528.plastic"
+        }
+      }
+    }
+  ],
+  "requires": [
+    "enable_528"
+  ]
+}

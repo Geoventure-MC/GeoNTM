@@ -9,11 +9,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -24,7 +24,7 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUINukeFstbmb extends CompatContainerScreen<ContainerNukeFstbmb> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/fstbmbschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/fstbmbschematic.png");
 
     private EditBox timer;
 
@@ -85,7 +85,7 @@ public class GUINukeFstbmb extends CompatContainerScreen<ContainerNukeFstbmb> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
 
@@ -103,7 +103,7 @@ public class GUINukeFstbmb extends CompatContainerScreen<ContainerNukeFstbmb> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityNukeBalefire bomb = menu.getBalefire();
         if (bomb == null) return;

@@ -9,18 +9,18 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
 import java.util.Optional;
 
 public final class RadioLogicScreen extends CompatContainerScreen<RadioLogicMenu> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_logic_receiver.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_logic_receiver.png");
     private final EditBox[] mapping = new EditBox[TileEntityRadioTorchLogic.MAPPING_SIZE];
     private final int[] conditions = new int[TileEntityRadioTorchLogic.MAPPING_SIZE];
     private EditBox frequency;
@@ -43,7 +43,7 @@ public final class RadioLogicScreen extends CompatContainerScreen<RadioLogicMenu
         box.setBordered(false); box.setTextColor(0xFF00FF00); box.setTextColorUneditable(0xFF00FF00);
         box.setMaxLength(max); box.setValue(value == null ? "" : value); addRenderableWidget(box); return box;
     }
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int x, int y, float tick) {
+    @Override public void extractBackground(GuiGraphics graphics, int x, int y, float tick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0, 0, 256, 204, 256, 256);
         if (descending) GuiDraw.blit(graphics, TEXTURE, leftPos + 137, topPos + 17, 0, 204, 18, 18, 256, 256);
         if (polling) GuiDraw.blit(graphics, TEXTURE, leftPos + 173, topPos + 17, 0, 222, 18, 18, 256, 256);
@@ -53,10 +53,10 @@ public final class RadioLogicScreen extends CompatContainerScreen<RadioLogicMenu
             GuiDraw.blit(graphics, TEXTURE, leftPos + 7 + 130 * (i / 8), topPos + 53 + 18 * (i % 8), u, v, 18, 18, 256, 256);
         }
     }
-    @Override protected void extractLabels(GuiGraphicsExtractor graphics, int x, int y) {
+    @Override protected void renderLabels(GuiGraphics graphics, int x, int y) {
         GuiDraw.text(graphics, font, title, (256 - font.width(title)) / 2, 6, 0xFF404040, false);
     }
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (over(mouseX, mouseY, 137, 17, 18, 18)) tooltip(graphics, descending ? "Descending Order" : "Ascending Order", mouseX, mouseY);
         else if (over(mouseX, mouseY, 173, 17, 18, 18)) tooltip(graphics, polling ? "Polling" : "State Change", mouseX, mouseY);
         else if (over(mouseX, mouseY, 209, 17, 18, 18)) tooltip(graphics, "Save Settings", mouseX, mouseY);
@@ -64,7 +64,7 @@ public final class RadioLogicScreen extends CompatContainerScreen<RadioLogicMenu
             GuiDraw.tooltip(graphics, font, List.of(Component.translatable("desc.gui.rttyLogic.cond" + conditions[i])), Optional.empty(), mouseX, mouseY); break;
         }
     }
-    private void tooltip(GuiGraphicsExtractor graphics, String text, int x, int y) {
+    private void tooltip(GuiGraphics graphics, String text, int x, int y) {
         GuiDraw.tooltip(graphics, font, List.of(Component.literal(text)), Optional.empty(), x, y);
     }
     @Override protected boolean mouseClicked(MouseInput event, boolean doubleClick) {

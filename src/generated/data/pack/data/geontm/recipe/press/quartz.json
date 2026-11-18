@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:dusts/quartz"
+  },
+  "output": "minecraft:quartz",
+  "order": 0
+}

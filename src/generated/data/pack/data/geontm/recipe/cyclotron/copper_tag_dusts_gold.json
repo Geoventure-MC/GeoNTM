@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_copper",
+  "input": {
+    "ingredient": "#c:dusts/gold"
+  },
+  "output": "geontm:powder_uranium",
+  "antimatter": 15,
+  "order": 37
+}

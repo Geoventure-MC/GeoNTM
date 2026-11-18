@@ -11,7 +11,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -108,12 +108,12 @@ public class TileEntityRadioTorchReader extends TileEntityLoadedBase
     private static String limit(String value, int max) { return value.length() <= max ? value : value.substring(0, max); }
 
     @Override public boolean hasPermission(Player player) { return player.distanceToSqr(worldPosition.getCenter()) < 256D; }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) {
+    @Override public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer); buffer.writeBoolean(polling);
         for (String value : channels) buffer.writeUtf(value);
         for (String value : names) buffer.writeUtf(value);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) {
+    @Override public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer); polling = buffer.readBoolean();
         for (int i = 0; i < MAPPING_SIZE; i++) channels[i] = buffer.readUtf(15);
         for (int i = 0; i < MAPPING_SIZE; i++) names[i] = buffer.readUtf(25);

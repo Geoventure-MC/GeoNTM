@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.turretchekhov",
+  "input_items": [
+    {
+      "ingredient": "geontm:battery_lead"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:mechanisms/gunmetal",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:crate_iron"
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_chekhov"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 61440,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

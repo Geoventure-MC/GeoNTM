@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:dusts/chlorocalcite"
+  },
+  "item_output": "geontm:powder_calcium",
+  "fluid_output": {
+    "type": "geontm:chlorine",
+    "amount": 250
+  },
+  "order": 6
+}

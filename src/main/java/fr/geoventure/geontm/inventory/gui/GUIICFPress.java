@@ -6,9 +6,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -21,14 +21,14 @@ import java.util.Optional;
  */
 public class GUIICFPress extends CompatContainerScreen<ContainerICFPress> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_icf_press.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_icf_press.png");
 
     public GUIICFPress(ContainerICFPress menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 179);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityICFPress press = menu.getPress();
@@ -42,14 +42,14 @@ public class GUIICFPress extends CompatContainerScreen<ContainerICFPress> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         String name = title.getString();
         GuiDraw.text(graphics, font, name, imageWidth / 2 - font.width(name) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityICFPress press = menu.getPress();
         if (press == null) return;
 
@@ -77,7 +77,7 @@ public class GUIICFPress extends CompatContainerScreen<ContainerICFPress> {
                 && mouseY > topPos + y && mouseY <= topPos + y + height;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 }

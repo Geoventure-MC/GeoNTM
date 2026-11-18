@@ -1,0 +1,20 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:missile_assembly"
+    },
+    {
+      "ingredient": "geontm:thruster_small",
+      "count": 4
+    }
+  ],
+  "output": "geontm:missile_anti_ballistic",
+  "duration": 100,
+  "consumption": 5000,
+  "order": 24
+}

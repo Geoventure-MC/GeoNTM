@@ -1,0 +1,31 @@
+{
+  "type": "gaseous",
+  "color": "#BAB572",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "oxidizer"
+  },
+  "shares": [
+    "#c:chlorine"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 25
+    },
+    "toxin": {
+      "entries": [
+        {
+          "kind": "direct_damage",
+          "damage": "geontm:cloud",
+          "amount": 2.0,
+          "delay": 20,
+          "hazard": "GAS_LUNG",
+          "full_body": false
+        }
+      ]
+    }
+  }
+}

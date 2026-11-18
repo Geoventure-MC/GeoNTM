@@ -1,0 +1,45 @@
+{
+  "type": "liquid",
+  "color": "#020202",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 1,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:crude_oil",
+    "#c:oil"
+  ],
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 25000
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 10,
+          "produces": "geontm:hotoil",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "BOILER": 1.0,
+        "HEATEXCHANGER": 1.0
+      }
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.004
+      }
+    }
+  }
+}

@@ -39,7 +39,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -438,7 +438,7 @@ public class TileEntityMachineFluidTank extends TileEntityMachineBase implements
     // Sync (BufPacket) + persistence
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(mode);
         tank.serialize(buf);
@@ -446,7 +446,7 @@ public class TileEntityMachineFluidTank extends TileEntityMachineBase implements
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         mode = buf.readShort();
         tank.deserialize(buf);

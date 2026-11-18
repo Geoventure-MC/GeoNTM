@@ -1,0 +1,7 @@
+{
+  "type": "geontm:breeder",
+  "input": "geontm:rod_quad_co",
+  "output": "geontm:rod_quad_co60",
+  "flux": 300,
+  "order": 5
+}

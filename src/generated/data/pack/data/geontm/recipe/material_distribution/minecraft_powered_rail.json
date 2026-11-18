@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "minecraft:powered_rail",
+  "materials": [
+    {
+      "material": "gold",
+      "amount": 72
+    },
+    {
+      "material": "redstone",
+      "amount": 12
+    }
+  ]
+}

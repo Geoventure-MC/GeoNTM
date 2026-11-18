@@ -76,7 +76,7 @@ public class FluidPipeAnchor extends BlockFluidDuct implements BasePipeAnchor {
      */
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof IItemFluidId ident)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof IItemFluidId ident)) return InteractionResult.PASS;
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof TileEntityFluidPipeAnchor anchor) {
             FluidType type = ident.getType(level, pos.getX(), pos.getY(), pos.getZ(), stack);
             if (type != anchor.getFluidType()) {

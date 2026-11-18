@@ -4,7 +4,7 @@ import fr.geoventure.geontm.main.MainRegistry;
 import fr.geoventure.geontm.util.ShadyUtil;
 import fr.geoventure.geocore.Ids;
 import java.util.UUID;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -23,39 +23,39 @@ public final class RenderAccessoryUtility {
 
     private RenderAccessoryUtility() {}
 
-    private static final Identifier geontm = cape("capehbm3");
-    private static final Identifier geontm2 = cape("capehbm2");
-    private static final Identifier drillgon = cape("capedrillgon");
-    private static final Identifier dafnik = cape("capedafnik");
-    private static final Identifier lpkukin = cape("capeshield");
-    private static final Identifier vertice = cape("capevertice_2");
-    private static final Identifier nostalgia2 = cape("capenostalgia2");
-    private static final Identifier sam = cape("capesam");
-    private static final Identifier hoboy = cape("capehoboy_mk3");
-    private static final Identifier master = cape("capemaster");
-    private static final Identifier mek = cape("capemek");
-    private static final Identifier zippy = cape("capezippysqrl");
-    private static final Identifier test = cape("capetest");
-    private static final Identifier schrabby = cape("capeschrabbyalt");
-    private static final Identifier swiggs = cape("capesweatyswiggs");
-    private static final Identifier doctor17 = cape("capedoctor17");
-    private static final Identifier shimmeringblaze = cape("capeblaze");
-    private static final Identifier blaze2 = cape("capeblaze2");
-    private static final Identifier wiki = cape("capewiki");
-    private static final Identifier leftnugget = cape("capeleftnugget");
-    private static final Identifier rightnugget = cape("caperightnugget");
-    private static final Identifier tankish = cape("capetankish");
-    private static final Identifier frizzlefrazzle = cape("capefrizzlefrazzle");
-    private static final Identifier vaer = cape("capevaer");
-    private static final Identifier adam = cape("capeadam");
-    private static final Identifier jame = cape("capejame");
-    private static final Identifier geocore = cape("capegolem"); // 1.12.2
+    private static final ResourceLocation geontm = cape("capehbm3");
+    private static final ResourceLocation geontm2 = cape("capehbm2");
+    private static final ResourceLocation drillgon = cape("capedrillgon");
+    private static final ResourceLocation dafnik = cape("capedafnik");
+    private static final ResourceLocation lpkukin = cape("capeshield");
+    private static final ResourceLocation vertice = cape("capevertice_2");
+    private static final ResourceLocation nostalgia2 = cape("capenostalgia2");
+    private static final ResourceLocation sam = cape("capesam");
+    private static final ResourceLocation hoboy = cape("capehoboy_mk3");
+    private static final ResourceLocation master = cape("capemaster");
+    private static final ResourceLocation mek = cape("capemek");
+    private static final ResourceLocation zippy = cape("capezippysqrl");
+    private static final ResourceLocation test = cape("capetest");
+    private static final ResourceLocation schrabby = cape("capeschrabbyalt");
+    private static final ResourceLocation swiggs = cape("capesweatyswiggs");
+    private static final ResourceLocation doctor17 = cape("capedoctor17");
+    private static final ResourceLocation shimmeringblaze = cape("capeblaze");
+    private static final ResourceLocation blaze2 = cape("capeblaze2");
+    private static final ResourceLocation wiki = cape("capewiki");
+    private static final ResourceLocation leftnugget = cape("capeleftnugget");
+    private static final ResourceLocation rightnugget = cape("caperightnugget");
+    private static final ResourceLocation tankish = cape("capetankish");
+    private static final ResourceLocation frizzlefrazzle = cape("capefrizzlefrazzle");
+    private static final ResourceLocation vaer = cape("capevaer");
+    private static final ResourceLocation adam = cape("capeadam");
+    private static final ResourceLocation jame = cape("capejame");
+    private static final ResourceLocation geocore = cape("capegolem"); // 1.12.2
 
-    private static Identifier cape(String name) {
+    private static ResourceLocation cape(String name) {
         return Ids.of("geontm", "textures/models/capes/" + name + ".png");
     }
 
-    public static @Nullable Identifier getCloakFromPlayer(UUID id, String name) {
+    public static @Nullable ResourceLocation getCloakFromPlayer(UUID id, String name) {
         String uuid = id.toString();
 
         if (uuid.equals(ShadyUtil.HbMinecraft)) return MainRegistry.polaroidID == 11 ? geontm2 : geontm;

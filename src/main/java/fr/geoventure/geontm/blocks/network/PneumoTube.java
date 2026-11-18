@@ -214,7 +214,7 @@ public class PneumoTube extends CompatBlock implements TickingBlock, IToolable, 
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (useGasIdentifier(level, pos, player, stack)) return InteractionResult.SUCCESS;
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /** Both tube forms use the same identifier action and compressor gate. */
@@ -253,15 +253,15 @@ public class PneumoTube extends CompatBlock implements TickingBlock, IToolable, 
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         // 1.7: the screwdriver is handled by onScrew, not by the GUI arm
-        if (ToolType.getType(player.getMainHandItem()) == ToolType.SCREWDRIVER) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (ToolType.getType(player.getMainHandItem()) == ToolType.SCREWDRIVER) return InteractionResult.PASS;
         return openTubeMenu(level, pos, player);
     }
 
     /** 1.7: the full GUI for compressors, the endpoint-only GUI for endpoints, nothing for a plain tube. */
     public static InteractionResult openTubeMenu(Level level, BlockPos pos, Player player) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(level.getBlockEntity(pos) instanceof TileEntityPneumoTube tube)) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!tube.isCompressor() && !tube.isEndpoint()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof TileEntityPneumoTube tube)) return InteractionResult.PASS;
+        if (!tube.isCompressor() && !tube.isEndpoint()) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, tube, pos);
         }

@@ -1,0 +1,9 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:salient",
+  "amount": 1280,
+  "output": {
+    "id": "geontm:bio_wafer",
+    "count": 8
+  }
+}

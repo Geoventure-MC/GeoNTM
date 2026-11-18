@@ -1,0 +1,82 @@
+{
+  "values": {
+    "geontm:battery_redstone": {
+      "capacity": 1800000,
+      "charge_rate": 1000,
+      "discharge_rate": 100,
+      "texture": "geontm:textures/models/machines/battery_redstone.png"
+    },
+    "geontm:battery_lead": {
+      "capacity": 18000000,
+      "charge_rate": 10000,
+      "discharge_rate": 1000,
+      "texture": "geontm:textures/models/machines/battery_lead.png"
+    },
+    "geontm:battery_lithium": {
+      "capacity": 180000000,
+      "charge_rate": 100000,
+      "discharge_rate": 10000,
+      "texture": "geontm:textures/models/machines/battery_lithium.png"
+    },
+    "geontm:battery_sodium": {
+      "capacity": 900000000,
+      "charge_rate": 500000,
+      "discharge_rate": 50000,
+      "texture": "geontm:textures/models/machines/battery_sodium.png"
+    },
+    "geontm:battery_schrabidium": {
+      "capacity": 4500000000,
+      "charge_rate": 2500000,
+      "discharge_rate": 250000,
+      "texture": "geontm:textures/models/machines/battery_schrabidium.png"
+    },
+    "geontm:battery_quantum": {
+      "capacity": 72000000000,
+      "charge_rate": 10000000,
+      "discharge_rate": 1000000,
+      "texture": "geontm:textures/models/machines/battery_quantum.png"
+    },
+    "geontm:capacitor_copper": {
+      "capacity": 600000,
+      "charge_rate": 1000,
+      "discharge_rate": 1000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_copper.png"
+    },
+    "geontm:capacitor_gold": {
+      "capacity": 6000000,
+      "charge_rate": 10000,
+      "discharge_rate": 10000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_gold.png"
+    },
+    "geontm:capacitor_niobium": {
+      "capacity": 60000000,
+      "charge_rate": 100000,
+      "discharge_rate": 100000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_niobium.png"
+    },
+    "geontm:capacitor_tantalum": {
+      "capacity": 300000000,
+      "charge_rate": 500000,
+      "discharge_rate": 500000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_tantalum.png"
+    },
+    "geontm:capacitor_bismuth": {
+      "capacity": 1500000000,
+      "charge_rate": 2500000,
+      "discharge_rate": 2500000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_bismuth.png"
+    },
+    "geontm:capacitor_spark": {
+      "capacity": 6000000000,
+      "charge_rate": 10000000,
+      "discharge_rate": 10000000,
+      "capacitor": true,
+      "texture": "geontm:textures/models/machines/capacitor_spark.png"
+    }
+  }
+}

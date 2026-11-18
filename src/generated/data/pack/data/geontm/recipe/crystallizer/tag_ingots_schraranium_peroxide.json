@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ingots/schraranium"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:crystal_schraranium",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 42
+}

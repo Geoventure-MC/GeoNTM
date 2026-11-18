@@ -165,7 +165,7 @@ public class LevelNodeGraph<D> extends CompatSavedData<LevelNodeGraph<D>> {
     }
 
     public static long chunkOf(long posKey) {
-        return ChunkPos.pack(SectionPos.blockToSectionCoord(BlockPos.getX(posKey)),
+        return ChunkPos.asLong(SectionPos.blockToSectionCoord(BlockPos.getX(posKey)),
                 SectionPos.blockToSectionCoord(BlockPos.getZ(posKey)));
     }
 

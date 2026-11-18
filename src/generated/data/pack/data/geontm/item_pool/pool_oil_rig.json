@@ -1,0 +1,35 @@
+{
+  "entries": [
+    {
+      "item": "geontm:oil_detector",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 4,
+      "weight": 5,
+      "fluid": "OIL"
+    },
+    {
+      "item": "geontm:canister_empty",
+      "min": 4,
+      "max": 16,
+      "weight": 10
+    },
+    {
+      "item": "geontm:circuit_analog",
+      "min": 1,
+      "max": 4,
+      "weight": 1
+    },
+    {
+      "item": "geontm:circuit_capacitor",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    }
+  ]
+}

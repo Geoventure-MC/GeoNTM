@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_washed_rare"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_neodymium",
+      "count": 3
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_strontium",
+      "count": 3
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_zirconium",
+      "count": 3
+    },
+    "geontm:bedrock_ore_crumbs_rare"
+  ],
+  "order": 101
+}

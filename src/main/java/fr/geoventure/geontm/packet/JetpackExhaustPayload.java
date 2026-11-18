@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C exhaust cue for the old remote jetpack plume effects. */
 public record JetpackExhaustPayload(int playerId, int mode) implements GeoCorePayload {
@@ -18,7 +18,7 @@ public record JetpackExhaustPayload(int playerId, int mode) implements GeoCorePa
             buffer -> new JetpackExhaustPayload(buffer.readInt(), buffer.readByte()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

@@ -44,7 +44,7 @@ public class HazardTypeToxic implements IHazardType {
             Effects.add(target, MobEffects.WEAKNESS, 110, (int) (level - 1));
 
             if (level > 2) {
-                Effects.add(target, MobEffects.SLOWNESS, 110, (int) Math.min(4, level - 4));
+                Effects.add(target, MobEffects.MOVEMENT_SLOWDOWN, 110, (int) Math.min(4, level - 4));
             }
 
             if (level > 4) {
@@ -58,11 +58,11 @@ public class HazardTypeToxic implements IHazardType {
 
         if (!hasHazmat || !hasToxFilter || !reacher) {
             if (level > 8) {
-                Effects.add(target, MobEffects.MINING_FATIGUE, 110, (int) (level - 8));
+                Effects.add(target, MobEffects.DIG_SLOWDOWN, 110, (int) (level - 8));
             }
 
             if (level > 16) {
-                Effects.add(target, MobEffects.INSTANT_DAMAGE, 110, (int) (level - 16));
+                Effects.add(target, MobEffects.HARM, 110, (int) (level - 16));
             }
         }
     }

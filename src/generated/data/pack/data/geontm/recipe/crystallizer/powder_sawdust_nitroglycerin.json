@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:powder_sawdust"
+  },
+  "acid": {
+    "type": "geontm:nitroglycerin",
+    "amount": 250
+  },
+  "output": "geontm:cordite",
+  "duration": 20,
+  "productivity": 0.25,
+  "order": 67
+}

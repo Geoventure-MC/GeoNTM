@@ -8,9 +8,9 @@ import fr.geoventure.geontm.inventory.container.ContainerMachineHydrotreater;
 import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
 import fr.geoventure.geontm.tileentity.machine.oil.TileEntityMachineHydrotreater;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -21,7 +21,7 @@ import net.minecraft.world.item.ItemStack;
  * texture). Power bar at x=17; 4 tank bars at x=35/53/125/143 (bottom y=70). */
 public class GUIMachineHydrotreater extends CompatContainerScreen<ContainerMachineHydrotreater> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_hydrotreater.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_hydrotreater.png");
     private static final int[] TANK_X = {35, 53, 125, 143};
 
     public GUIMachineHydrotreater(ContainerMachineHydrotreater menu, Inventory playerInventory, Component title) {
@@ -38,13 +38,13 @@ public class GUIMachineHydrotreater extends CompatContainerScreen<ContainerMachi
 
     /** 1.7 foreground: the name centred in white at y 5, then the inventory caption. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 5, 0xFFFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineHydrotreater te = this.menu.getTile();
@@ -56,14 +56,14 @@ public class GUIMachineHydrotreater extends CompatContainerScreen<ContainerMachi
         for (int i = 0; i < 4; i++) drawTank(graphics, te.tanks[i], TANK_X[i], 18, 16, 52);
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int barX, int barTop, int w, int h) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int barX, int barTop, int w, int h) {
         int maxF = tank.getMaxFill();
         int fh = maxF <= 0 ? 0 : (int) ((long) tank.getFill() * h / maxF);
         if (fh <= 0) return;
         int x0 = this.leftPos + barX;
         int yBottom = this.topPos + barTop + h;
         int yTop = yBottom - fh;
-        Identifier fluidTex = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTex = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTex).isPresent()) {
             graphics.enableScissor(x0, yTop, x0 + w, yBottom);
             for (int ty = yBottom - 16; ty > yTop - 16; ty -= 16) {
@@ -76,7 +76,7 @@ public class GUIMachineHydrotreater extends CompatContainerScreen<ContainerMachi
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineHydrotreater te = this.menu.getTile();
         if (te == null) return;
 

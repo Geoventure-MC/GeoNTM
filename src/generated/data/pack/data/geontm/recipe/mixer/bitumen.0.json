@@ -1,0 +1,17 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.bitumen.0",
+  "input_items": [
+    {
+      "ingredient": "#c:tars"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:bitumen",
+      "amount": 50
+    }
+  ],
+  "duration": 20,
+  "order": 49
+}

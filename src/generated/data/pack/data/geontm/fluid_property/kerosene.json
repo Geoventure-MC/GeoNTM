@@ -1,0 +1,31 @@
+{
+  "type": "liquid",
+  "color": "#FFA5D2",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 2,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:kerosene"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 2560000
+    },
+    "combustible": {
+      "grade": "AERO",
+      "energy": 3850000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.001
+      }
+    }
+  }
+}

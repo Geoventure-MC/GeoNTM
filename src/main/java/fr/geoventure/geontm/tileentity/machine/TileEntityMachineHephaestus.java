@@ -18,7 +18,7 @@ import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -71,7 +71,7 @@ public class TileEntityMachineHephaestus extends TileEntityLoadedBase implements
 
         heatex.heat[height] = 0;
 
-        if (y >= level.getMinY()) {
+        if (y >= level.getMinBuildHeight()) {
             BlockPos.MutableBlockPos scan = new BlockPos.MutableBlockPos();
             for (int x = -range; x <= range; x++) {
                 for (int z = -range; z <= range; z++) {
@@ -220,7 +220,7 @@ public class TileEntityMachineHephaestus extends TileEntityLoadedBase implements
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         input.serialize(buf);
         output.serialize(buf);
@@ -228,7 +228,7 @@ public class TileEntityMachineHephaestus extends TileEntityLoadedBase implements
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         input.deserialize(buf);
         output.deserialize(buf);

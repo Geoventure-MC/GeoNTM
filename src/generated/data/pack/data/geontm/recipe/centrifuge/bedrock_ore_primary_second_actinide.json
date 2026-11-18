@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_second_actinide"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_uranium",
+      "count": 4
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_thorium",
+      "count": 4
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_thorium",
+      "count": 4
+    },
+    "geontm:bedrock_ore_crumbs_actinide"
+  ],
+  "order": 115
+}

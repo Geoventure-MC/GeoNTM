@@ -13,9 +13,9 @@ import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineChemicalPlant;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -31,7 +31,7 @@ import java.util.Optional;
  */
 public class GUIMachineChemicalPlant extends CompatContainerScreen<ContainerMachineChemicalPlant> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_chemplant.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_chemplant.png");
     private static final int BTN_X = 7, BTN_Y = 125, BTN_W = 18, BTN_H = 18;
     // Tank bars: 16 wide × 34 tall, top at y=18 (so bottom at y=52).
     private static final int TANK_TOP = 18, TANK_W = 16, TANK_H = 34;
@@ -41,7 +41,7 @@ public class GUIMachineChemicalPlant extends CompatContainerScreen<ContainerMach
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineChemicalPlant te = this.menu.getChemplant();
@@ -88,16 +88,16 @@ public class GUIMachineChemicalPlant extends CompatContainerScreen<ContainerMach
     }
 
     /** 1.7 {@code renderTank(guiLeft + barX, guiTop + 52, z, 16, 34)}: the tinted fluid column, bottom-anchored. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int barX) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int barX) {
         Production2Gui.drawTank(graphics, tank, this.leftPos + barX, this.topPos + TANK_TOP + TANK_H, TANK_W, TANK_H);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int u) {
+    private void led(GuiGraphics graphics, int x, int u) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos + x, this.topPos + 121, (float) u, 0.0F, 3, 6, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineChemicalPlant te = this.menu.getChemplant();
         if (te == null) return;
 
@@ -126,13 +126,13 @@ public class GUIMachineChemicalPlant extends CompatContainerScreen<ContainerMach
         return this.menu.getChemplant();
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int mouseX, int mouseY) {
+    private void tankTooltip(GuiGraphics graphics, FluidTankNTM tank, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, this.font, GuiUtil.tankTooltip(tank), Optional.empty(), mouseX, mouseY);
     }
 
     /** 1.7 {@code GUIMachineChemicalPlant.drawGuiContainerForegroundLayer}: title centred on x 70 at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }

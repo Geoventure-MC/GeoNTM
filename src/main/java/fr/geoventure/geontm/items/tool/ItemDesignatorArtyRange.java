@@ -62,7 +62,7 @@ public class ItemDesignatorArtyRange extends CompatItem {
         if (core == null) core = clicked;
 
         if (!(level.getBlockEntity(core) instanceof TileEntityTurretBaseArtillery)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
@@ -79,11 +79,11 @@ public class ItemDesignatorArtyRange extends CompatItem {
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         Long packed = ModDataComponents.ARTY_DESIGNATOR_TARGET.get(stack).orElse(null);
-        if (packed == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (packed == null) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         HitResult hit = player.pick(REACH, 1.0F, false);
-        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.PASS;
         BlockPos aim = SubLevels.toWorldBlock(level, ((BlockHitResult) hit).getBlockPos());
 
         BlockEntity blockEntity = level.getBlockEntity(BlockPos.of(packed));

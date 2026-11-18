@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.waterdoor",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:dyes/red"
+    }
+  ],
+  "output_items": [
+    "geontm:water_door"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 17664
+}

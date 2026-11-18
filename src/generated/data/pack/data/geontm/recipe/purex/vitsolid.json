@@ -1,0 +1,22 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.vitsolid",
+  "input_items": [
+    {
+      "ingredient": "geontm:sand_lead"
+    },
+    {
+      "ingredient": "geontm:nuclear_waste",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nuclear_waste_vitrified",
+      "count": 4
+    }
+  ],
+  "duration": 300,
+  "power": 1000,
+  "order": 54
+}

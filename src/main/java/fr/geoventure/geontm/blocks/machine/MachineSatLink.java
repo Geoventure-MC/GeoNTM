@@ -60,10 +60,10 @@ public class MachineSatLink extends BlockMultiblockMachine implements ILookOverl
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                          InteractionHand hand, ItemStack stack,
                                          BlockHitResult hit) {
-        if (!(stack.getItem() instanceof ISatChip)) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof ISatChip)) return InteractionResult.PASS;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        return tuneTo(level, pos, stack, player) ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+        return tuneTo(level, pos, stack, player) ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     /** Retunes the dish to the frequency a chip carries. */

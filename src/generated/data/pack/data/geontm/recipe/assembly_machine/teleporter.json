@@ -1,0 +1,31 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.teleporter",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 12
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:entanglement_kit"
+    },
+    {
+      "ingredient": "geontm:battery_lithium"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_teleporter"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 33024
+}

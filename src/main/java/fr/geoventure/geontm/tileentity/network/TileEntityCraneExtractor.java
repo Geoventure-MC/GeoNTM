@@ -11,7 +11,7 @@ import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -153,7 +153,7 @@ public class TileEntityCraneExtractor extends TileEntityCraneBase implements ICo
                 worldPosition.getY() + 0.5 + outputSide.getStepY() * 0.55,
                 worldPosition.getZ() + 0.5 + outputSide.getStepZ() * 0.55);
         Vec3 snap = belt.getClosestSnappingPosition(level, target, pos);
-        moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+        moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
         moving.setItemStack(stack);
         level.addFreshEntity(moving);
 
@@ -166,7 +166,7 @@ public class TileEntityCraneExtractor extends TileEntityCraneBase implements ICo
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isWhitelist);
         buf.writeBoolean(maxEject);
@@ -174,7 +174,7 @@ public class TileEntityCraneExtractor extends TileEntityCraneBase implements ICo
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isWhitelist = buf.readBoolean();
         maxEject = buf.readBoolean();

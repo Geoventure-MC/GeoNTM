@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "#c:ingots/copper",
+  "output": "geontm:powder_copper"
+}

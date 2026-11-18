@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:storage_blocks/fiberglass"
+  },
+  "solid_output": {
+    "id": "geontm:nugget_silicon",
+    "count": 40
+  },
+  "molten_outputs": [
+    {
+      "material": "silicon",
+      "amount": 324
+    }
+  ],
+  "order": 6
+}

@@ -1,0 +1,28 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:raw_materials/plutonium"
+  },
+  "outputs": [
+    {
+      "item": "geontm:powder_plutonium",
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_plutonium",
+      "chance": 0.6666667
+    },
+    {
+      "item": {
+        "id": "geontm:nugget_polonium",
+        "count": 3
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.6666667
+    }
+  ],
+  "order": 34
+}

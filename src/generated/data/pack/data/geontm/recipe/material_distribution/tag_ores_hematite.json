@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/hematite",
+  "materials": [
+    {
+      "material": "hematite",
+      "amount": 72
+    }
+  ]
+}

@@ -7,9 +7,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import java.util.concurrent.ConcurrentHashMap;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -114,7 +114,7 @@ public final class CustomItemRenderers {
 
     // Shared by the renderers
 
-    static Identifier tex(String path) {
+    static ResourceLocation tex(String path) {
         return Ids.of(Constants.MOD_ID, path);
     }
 
@@ -136,11 +136,11 @@ public final class CustomItemRenderers {
         sink.submitCustomGeometry(pose, type, (p, buffer) -> model.renderPart(part, p, buffer, light, overlay));
     }
 
-    static RenderType culled(Identifier texture) {
+    static RenderType culled(ResourceLocation texture) {
         return CompatRenderTypes.entityCutoutCull(texture);
     }
 
-    static RenderType open(Identifier texture) {
+    static RenderType open(ResourceLocation texture) {
         return CompatRenderTypes.entityCutoutNoCull(texture);
     }
 
@@ -150,7 +150,7 @@ public final class CustomItemRenderers {
      * item. That matters for a full-3D item: its hand pose ({@code weapon_full3d}) is a mirror, which turns culling
      * inside out, and 1.7 never culled it there.
      */
-    static RenderType heldFaces(CustomItemRenderer.Type type, Identifier texture) {
+    static RenderType heldFaces(CustomItemRenderer.Type type, ResourceLocation texture) {
         return type == CustomItemRenderer.Type.EQUIPPED ? open(texture) : culled(texture);
     }
 }

@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -73,8 +73,8 @@ public class StructPreviewRenderer<T extends TileEntityStructBase> implements Co
 
         // Batch by texture: one submission per distinct texture rather than per cube, since each
         // texture is its own RenderType.
-        Map<Identifier, List<BlockPos>> sides = new LinkedHashMap<>();
-        Map<Identifier, List<BlockPos>> ends = new LinkedHashMap<>();
+        Map<ResourceLocation, List<BlockPos>> sides = new LinkedHashMap<>();
+        Map<ResourceLocation, List<BlockPos>> ends = new LinkedHashMap<>();
         for (StructPreviewRenderState.Ghost ghost : state.missing) {
             sides.computeIfAbsent(ghost.side(), k -> new ArrayList<>()).add(ghost.offset());
             ends.computeIfAbsent(ghost.top(), k -> new ArrayList<>()).add(ghost.offset());

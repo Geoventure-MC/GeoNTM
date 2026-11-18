@@ -1,0 +1,50 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.quadrupole",
+  "input_items": [
+    {
+      "ingredient": "geontm:pa_beamline"
+    },
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid"
+    }
+  ],
+  "output_items": [
+    "geontm:pa_quadrupole"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 40960,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:pa_beamline"
+    },
+    {
+      "ingredient": "geontm:item_expensive_cmb_tubes",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:item_expensive_plastic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_computer"
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chip_quantum"
+  ]
+}

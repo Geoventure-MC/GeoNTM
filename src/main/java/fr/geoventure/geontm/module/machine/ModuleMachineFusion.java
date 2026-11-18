@@ -10,7 +10,7 @@ import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipe;
 import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipes;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 
 /**
  * The fusion torus's processing module. It differs from every other machine module in two ways, both
@@ -111,13 +111,13 @@ public class ModuleMachineFusion extends ModuleMachineBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeDouble(bonus);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.bonus = buf.readDouble();
     }

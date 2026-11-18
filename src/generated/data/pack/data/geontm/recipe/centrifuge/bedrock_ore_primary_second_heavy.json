@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_second_heavy"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_tungsten",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_lead",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_lead",
+      "count": 9
+    },
+    "geontm:bedrock_ore_crumbs_heavy"
+  ],
+  "order": 83
+}

@@ -1,0 +1,50 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.upgrade_overdive_i",
+  "input_items": [
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    },
+    {
+      "ingredient": "geontm:upgrade_effect_3"
+    },
+    {
+      "ingredient": "#c:ingots/saturnite",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:upgrade_overdrive_1",
+        "weight": 50
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:upgrade_overdrive_1"
+          }
+        },
+        "weight": 50
+      }
+    ]
+  ],
+  "duration": 200,
+  "power": 1000,
+  "order": 36,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

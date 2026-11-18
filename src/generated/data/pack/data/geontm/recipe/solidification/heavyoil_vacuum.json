@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:heavyoil_vacuum",
+  "amount": 150,
+  "output": "geontm:oil_tar_crude"
+}

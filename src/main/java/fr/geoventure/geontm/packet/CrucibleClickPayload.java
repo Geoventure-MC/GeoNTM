@@ -5,7 +5,7 @@ import fr.geoventure.geontm.items.weapon.ItemCrucible;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
 /**
@@ -24,7 +24,7 @@ public record CrucibleClickPayload(boolean clicked) implements GeoCorePayload {
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

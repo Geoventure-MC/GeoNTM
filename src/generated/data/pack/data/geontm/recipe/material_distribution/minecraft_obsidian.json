@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "minecraft:obsidian",
+  "materials": [
+    {
+      "material": "obsidian",
+      "amount": 648
+    }
+  ]
+}

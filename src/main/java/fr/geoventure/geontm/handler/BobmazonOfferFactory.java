@@ -59,7 +59,7 @@ public final class BobmazonOfferFactory {
     }
 
     private static ItemStack of(String namespace, String id, int count) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of(namespace, id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of(namespace, id));
         if (item == null || item == Items.AIR) {
             UNRESOLVED.add(namespace + ":" + id);
             return ItemStack.EMPTY;

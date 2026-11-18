@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.explosivelenses1",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:det_cord",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/saturnite",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 20
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:gadget_explosive8"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 56320
+}

@@ -10,8 +10,8 @@ import fr.geoventure.geocore.data.Inventories;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -25,12 +25,12 @@ public final class RadCounterOverlay {
 
     private RadCounterOverlay() {}
 
-    private static final Identifier MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
+    private static final ResourceLocation MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
 
     private static float lastResult, prevResult;
     private static long lastSurvey;
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || mc.player == null || mc.screen != null || mc.options.hideGui) return;
         if (!carriesCounter(mc.player) || hasCustomGeiger(mc.player)) return;

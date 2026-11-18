@@ -5,12 +5,12 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** DNT suit model. The old DNT model has no physical Jetpack group; exhaust is packet-driven. */
 public final class DNTArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/dnt.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/dnt.obj");
 
     private static final Surface HELMET = skin("dnt_helmet");
     private static final Surface CHEST = skin("dnt_chest");

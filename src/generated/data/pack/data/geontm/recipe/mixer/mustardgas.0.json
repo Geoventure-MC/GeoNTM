@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.mustardgas.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/sulfur"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:reformgas",
+      "amount": 750
+    },
+    {
+      "type": "geontm:chlorine",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:mustardgas",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 9
+}

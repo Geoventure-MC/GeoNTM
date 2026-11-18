@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/tungsten"
+  },
+  "outputs": [
+    "geontm:powder_tungsten",
+    "geontm:powder_tungsten",
+    "geontm:powder_iron",
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "!lbsm_simple_centrifuge"
+  ],
+  "order": 16
+}

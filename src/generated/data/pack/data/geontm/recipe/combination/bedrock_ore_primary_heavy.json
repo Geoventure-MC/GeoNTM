@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_heavy"
+  },
+  "item_output": "geontm:bedrock_ore_primary_roasted_heavy",
+  "fluid_output": {
+    "type": "geontm:vitriol",
+    "amount": 50
+  },
+  "order": 29
+}

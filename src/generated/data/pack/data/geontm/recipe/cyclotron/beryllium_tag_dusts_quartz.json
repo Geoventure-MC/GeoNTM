@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_beryllium",
+  "input": {
+    "ingredient": "#c:dusts/quartz"
+  },
+  "output": "geontm:sulfur",
+  "antimatter": 25,
+  "order": 14
+}

@@ -1,0 +1,17 @@
+{
+  "type": "geontm:gas_centrifuge",
+  "input": {
+    "type": "geontm:watz",
+    "amount": 1000
+  },
+  "outputs": [
+    "geontm:powder_iron",
+    "geontm:powder_lead",
+    "geontm:nuclear_waste_tiny",
+    {
+      "id": "geontm:dust",
+      "count": 2
+    }
+  ],
+  "centrifuges": 2
+}

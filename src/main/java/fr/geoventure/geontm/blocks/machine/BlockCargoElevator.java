@@ -88,7 +88,7 @@ public class BlockCargoElevator extends BlockMultiblockMachine {
     @Override
     protected void visitTeardownCells(ServerLevel level, BlockPos core, Direction facing, CellVisitor visitor) {
         // The removed core's entity may already be gone. Demolition checks the index before removing any cell.
-        visitCourses(core, level.getMinY() + level.getHeight() - 1 - core.getY(), visitor);
+        visitCourses(core, level.getMinBuildHeight() + level.getHeight() - 1 - core.getY(), visitor);
     }
 
     private static void visitCourses(BlockPos core, int height, CellVisitor visitor) {
@@ -113,7 +113,7 @@ public class BlockCargoElevator extends BlockMultiblockMachine {
 
     @Override
     public @Nullable BlockPos findClientCore(BlockGetter level, BlockPos cell) {
-        int floor = level.getMinY();
+        int floor = level.getMinBuildHeight();
         if (!(level instanceof Level)) floor = Math.max(floor, cell.getY() - MultiblockSurface.REGION_REACH);
         var probe = new BlockPos.MutableBlockPos();
         for (int dx = -1; dx <= 1; dx++) {
@@ -168,7 +168,7 @@ public class BlockCargoElevator extends BlockMultiblockMachine {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);
@@ -187,7 +187,7 @@ public class BlockCargoElevator extends BlockMultiblockMachine {
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);

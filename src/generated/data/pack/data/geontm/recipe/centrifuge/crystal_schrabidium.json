@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_schrabidium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_schrabidium",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_schrabidium",
+      "count": 2
+    },
+    "geontm:powder_plutonium",
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 173
+}

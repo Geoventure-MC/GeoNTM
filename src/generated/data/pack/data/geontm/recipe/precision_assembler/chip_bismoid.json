@@ -1,0 +1,58 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.chip_bismoid",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_silicon",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:nuggets/any_bismoid",
+      "count": 2
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_chip_bismoid",
+        "weight": 75
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_chip_bismoid"
+          }
+        },
+        "weight": 25
+      }
+    ]
+  ],
+  "duration": 200,
+  "power": 1000,
+  "blueprint_pools": [
+    "528.chip_bismoid"
+  ],
+  "order": 4,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

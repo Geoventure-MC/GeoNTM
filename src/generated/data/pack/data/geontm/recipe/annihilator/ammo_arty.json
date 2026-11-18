@@ -1,0 +1,18 @@
+{
+  "type": "geontm:annihilator",
+  "item": "geontm:ammo_arty",
+  "milestones": [
+    {
+      "amount": 128,
+      "payout": {
+        "id": "geontm:blueprints",
+        "item_data": {
+          "blueprint_pool": "528.arty"
+        }
+      }
+    }
+  ],
+  "requires": [
+    "enable_528"
+  ]
+}

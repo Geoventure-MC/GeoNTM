@@ -49,7 +49,7 @@ public class BlockMush extends BlockTerrainPlant implements CompatBonemealableBl
 
     @Override
     protected boolean canStay(BlockState state, LevelReader level, BlockPos pos) {
-        if (pos.getY() < level.getMinY() || pos.getY() > level.getMaxY()) return false;
+        if (pos.getY() < level.getMinBuildHeight() || pos.getY() > level.getMaxBuildHeight()) return false;
         // 1.7 canBlockStay: Forge's canSustainPlant for EnumPlantType.Cave is isSideSolid(UP), which is any solid top, OR the waste set
         BlockPos below = pos.below();
         BlockState ground = level.getBlockState(below);

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ores/coal"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:crystal_coal",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 0
+}

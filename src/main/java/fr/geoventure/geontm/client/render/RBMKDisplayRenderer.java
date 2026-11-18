@@ -17,7 +17,7 @@ import fr.geoventure.geocore.render.Vertexes;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -26,7 +26,7 @@ import net.minecraft.world.phys.Vec3;
  * full brightness and stretched by 8/7 so the grid fills the panel face.
  */
 public final class RBMKDisplayRenderer extends GemBER<BlockEntityRBMKDisplay, RBMKDisplayRenderer.State> {
-    private static final Identifier WHITE = Ids.of(Constants.MOD_ID, "textures/models/misc/white.png");
+    private static final ResourceLocation WHITE = Ids.of(Constants.MOD_ID, "textures/models/misc/white.png");
 
     @Override protected void setup(Gem.Model<State> declaration) { declaration.offScreen(); }
 

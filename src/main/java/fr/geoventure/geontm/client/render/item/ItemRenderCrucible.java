@@ -9,7 +9,7 @@ import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -42,9 +42,9 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderCrucible implements CustomItemRenderer {
 
-    static final Identifier HILT = tex("textures/models/weapons/crucible_hilt.png");
-    static final Identifier GUARD = tex("textures/models/weapons/crucible_guard.png");
-    static final Identifier BLADE = tex("textures/models/weapons/crucible_blade.png");
+    static final ResourceLocation HILT = tex("textures/models/weapons/crucible_hilt.png");
+    static final ResourceLocation GUARD = tex("textures/models/weapons/crucible_guard.png");
+    static final ResourceLocation BLADE = tex("textures/models/weapons/crucible_blade.png");
 
     private final WavefrontObj crucible = obj("models/weapons/crucible.obj");
 

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadbb3",
+  "input_items": [
+    {
+      "ingredient": "geontm:warhead_generic_large"
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_buster_large"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 69120
+}

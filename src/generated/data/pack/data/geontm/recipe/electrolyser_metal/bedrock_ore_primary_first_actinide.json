@@ -1,0 +1,19 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:bedrock_ore_primary_first_actinide",
+  "molten": [
+    {
+      "material": "uranium",
+      "amount": 256
+    },
+    {
+      "material": "thorium",
+      "amount": 128
+    }
+  ],
+  "byproducts": [
+    "geontm:bedrock_ore_crumbs_actinide"
+  ],
+  "duration": 20,
+  "order": 27
+}

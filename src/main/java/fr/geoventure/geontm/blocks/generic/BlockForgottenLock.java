@@ -37,7 +37,7 @@ public class BlockForgottenLock extends CompatBlock {
         boolean cracked = stack.is(ModItems.key_red_cracked.get());
         Direction side = hit.getDirection();
         if ((!stack.is(ModItems.key_red.get()) && !cracked) || side.getAxis() == Direction.Axis.Y) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (cracked) stack.shrink(1);
         if (level.isClientSide()) return InteractionResult.SUCCESS;

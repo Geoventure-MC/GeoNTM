@@ -12,7 +12,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -165,14 +165,14 @@ public class TileEntityRefueler extends TileEntityLoadedBase implements IFluidSt
     @Override public FluidTankNTM[] getAllTanks() { return new FluidTankNTM[]{tank}; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isOperating);
         tank.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isOperating = buf.readBoolean();
         tank.deserialize(buf);

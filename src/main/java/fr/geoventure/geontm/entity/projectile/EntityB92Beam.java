@@ -154,7 +154,7 @@ public final class EntityB92Beam extends CompatEntity {
         if (level().isClientSide()) return;
         EntityNukeExplosionMK5 blast = EntityNukeExplosionMK5.statFac(level(), 10, getX(), getY(), getZ());
         if (level().addFreshEntity(blast)) blast.startChunkLoading();
-        level().playSound(null, getX(), getY(), getZ(), SoundEvents.GENERIC_EXPLODE.value(),
+        level().playSound(null, getX(), getY(), getZ(), SoundEvents.GENERIC_EXPLODE,
                 SoundSource.BLOCKS, 100.0F, level().getRandom().nextFloat() * 0.1F + 0.9F);
     }
 

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/lithium"
+  },
+  "output": "geontm:powder_beryllium",
+  "antimatter": 50,
+  "order": 0
+}

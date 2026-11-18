@@ -10,13 +10,13 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.squid.Squid;
+import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -64,7 +64,7 @@ public class EntityPlasticBag extends CompatSquid {
      */
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                                                  EntitySpawnReason reason, @Nullable SpawnGroupData data) {
+                                                  MobSpawnType reason, @Nullable SpawnGroupData data) {
         return super.finalizeSpawn(level, difficulty, reason, data != null ? data : new AgeableMob.AgeableMobGroupData(false));
     }
 
@@ -96,7 +96,7 @@ public class EntityPlasticBag extends CompatSquid {
     // hook below it. Recorded in entity-port-manifest.md.
 
     @Override
-    public boolean checkSpawnRules(LevelAccessor level, EntitySpawnReason reason) {
+    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType reason) {
         return getY() > 45.0D && getY() < 63.0D && random.nextInt(10) == 0
                 && super.checkSpawnRules(level, reason);
     }

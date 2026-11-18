@@ -85,8 +85,8 @@ public class Radiobox extends CompatBlock implements TickingBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (held.getItem() != ModItems.battery_spark.get() || player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(level.getBlockEntity(pos) instanceof TileEntityRadiobox box) || box.infinite) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (held.getItem() != ModItems.battery_spark.get() || player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof TileEntityRadiobox box) || box.infinite) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         held.shrink(1);
         level.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, ModSounds.UPGRADE_PLUG.get(),
@@ -100,7 +100,7 @@ public class Radiobox extends CompatBlock implements TickingBlock {
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         boolean on = state.getValue(ON);
         level.setBlock(pos, state.setValue(ON, !on), 2);
         // 1.7 played it at the block's corner, 0.85 pitch when switching off

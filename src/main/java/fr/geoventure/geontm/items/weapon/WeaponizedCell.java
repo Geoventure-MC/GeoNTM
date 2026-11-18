@@ -41,7 +41,7 @@ public class WeaponizedCell extends CompatItem {
             if (WeaponConfig.dropStar) {
                 EntityNukeExplosionMK3 ex = EntityNukeExplosionMK3.statFacFleija(world, item.getX(), item.getY(), item.getZ(), 100);
                 if (!ex.isRemoved()) {
-                    world.playSound(null, item.getX(), item.getY(), item.getZ(), SoundEvents.GENERIC_EXPLODE.value(),
+                    world.playSound(null, item.getX(), item.getY(), item.getZ(), SoundEvents.GENERIC_EXPLODE,
                             SoundSource.BLOCKS, 100.0F, world.getRandom().nextFloat() * 0.1F + 0.9F);
                     world.addFreshEntity(ex);
                     world.addFreshEntity(EntityCloudFleijaRainbow.statFac(world, 100, item.getX(), item.getY(), item.getZ()));

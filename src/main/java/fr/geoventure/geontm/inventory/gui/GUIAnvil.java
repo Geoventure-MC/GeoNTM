@@ -17,11 +17,11 @@ import fr.geoventure.geocore.gui.TextSearch;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
@@ -41,7 +41,7 @@ import java.util.Optional;
  */
 public class GUIAnvil extends CompatContainerScreen<ContainerAnvil> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_anvil.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_anvil.png");
 
     private final int tier;
     private final List<AnvilConstructionRecipe> originList = new ArrayList<>();
@@ -146,7 +146,7 @@ public class GUIAnvil extends CompatContainerScreen<ContainerAnvil> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0.0F, 0.0F, imageWidth, imageHeight, 256, 256);
 
         // Slide-out info panel, widened to fit the selected recipe's (half-scale) text.
@@ -199,7 +199,7 @@ public class GUIAnvil extends CompatContainerScreen<ContainerAnvil> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         String name = Component.translatable("container.anvil", this.tier).getString();
         GuiDraw.text(graphics, this.font, name, 61 - this.font.width(name) / 2, 8, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 8, this.imageHeight - 96 + 2, 4210752, false);
@@ -318,7 +318,7 @@ public class GUIAnvil extends CompatContainerScreen<ContainerAnvil> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (!isOver(mouseX, mouseY, 88, 53, 18, 18)) return;
         String label = switch (this.state) {
             case NONE -> "All recipes";

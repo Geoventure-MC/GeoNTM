@@ -113,7 +113,7 @@ public abstract class MapGenFeature<C extends FeatureConfiguration> extends Feat
      */
     protected static int top(WorldGenLevel level, int x, int z) {
         Heightmap.Types type = level instanceof WorldGenRegion ? Heightmap.Types.WORLD_SURFACE_WG : Heightmap.Types.WORLD_SURFACE;
-        return Math.min(level.getMaxY() - 1, level.getHeight(type, x, z));
+        return Math.min(level.getMaxBuildHeight() - 1, level.getHeight(type, x, z));
     }
 
     /** 1.7 {@code Block.isOpaqueCube()}: an opaque full cube. */

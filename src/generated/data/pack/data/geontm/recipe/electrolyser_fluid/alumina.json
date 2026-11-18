@@ -1,0 +1,20 @@
+{
+  "type": "geontm:electrolyser_fluid",
+  "input": "geontm:alumina",
+  "amount": 200,
+  "output1": {
+    "type": "geontm:carbondioxide",
+    "amount": 100
+  },
+  "duration": 40,
+  "byproducts": [
+    {
+      "id": "geontm:powder_aluminium",
+      "count": 7
+    },
+    {
+      "id": "geontm:fluorite",
+      "count": 2
+    }
+  ]
+}

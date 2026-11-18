@@ -67,7 +67,7 @@ public class TileEntityCraneUnboxer extends TileEntityCraneBase {
                                 worldPosition.getY() + 0.5 + outputSide.getStepY() * 0.55,
                                 worldPosition.getZ() + 0.5 + outputSide.getStepZ() * 0.55);
                         Vec3 snap = belt.getClosestSnappingPosition(level, target, pos);
-                        moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+                        moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
                         moving.setItemStack(stack);
                         level.addFreshEntity(moving);
                         break;

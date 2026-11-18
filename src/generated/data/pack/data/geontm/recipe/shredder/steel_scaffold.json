@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:steel_scaffold",
+  "output": {
+    "id": "geontm:powder_steel_tiny",
+    "count": 4
+  }
+}

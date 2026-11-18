@@ -1,0 +1,9 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:watz",
+  "amount": 4000,
+  "output": {
+    "id": "geontm:ingot_mud",
+    "count": 4
+  }
+}

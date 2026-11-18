@@ -7,21 +7,21 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /** 1.7 {@code GUIRBMKAutoloader}: the two rod grids, the -/+ cycle buttons and the green percentage. */
 public final class ScreenRBMKAutoloader extends RBMKContainerScreen<ContainerRBMKAutoloader> {
-    private static final Identifier TEX = Ids.of("geontm", "textures/gui/machine/gui_autoloader.png");
+    private static final ResourceLocation TEX = Ids.of("geontm", "textures/gui/machine/gui_autoloader.png");
 
     public ScreenRBMKAutoloader(ContainerRBMKAutoloader menu, Inventory inventory, Component title) { super(menu, inventory, title, 176, 182); }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) { texture(graphics, TEX); }
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) { texture(graphics, TEX); }
 
-    @Override protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFFFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
         BlockEntityRBMKAutoloader loader = menu.loader();

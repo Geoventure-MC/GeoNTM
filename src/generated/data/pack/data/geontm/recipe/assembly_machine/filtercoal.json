@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.filtercoal",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/coal",
+      "count": 4
+    },
+    {
+      "ingredient": "minecraft:string",
+      "count": 2
+    },
+    {
+      "ingredient": "minecraft:paper"
+    }
+  ],
+  "output_items": [
+    "geontm:filter_coal"
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 7168
+}

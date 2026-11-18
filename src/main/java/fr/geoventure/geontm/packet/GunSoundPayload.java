@@ -9,7 +9,7 @@ import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.net.GeoCorePayload;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -82,12 +82,12 @@ public record GunSoundPayload(boolean legacy, String soundId, SoundSource source
     }
 
     private static String idOf(SoundEvent sound) {
-        Identifier id = BuiltInRegistries.SOUND_EVENT.getKey(sound);
+        ResourceLocation id = BuiltInRegistries.SOUND_EVENT.getKey(sound);
         return id == null ? "minecraft:empty" : id.toString();
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

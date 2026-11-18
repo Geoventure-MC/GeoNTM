@@ -1,0 +1,140 @@
+{
+  "values": {
+    "geontm:upgrade_ejector_1": {
+      "type": "SPECIAL",
+      "tier": 1
+    },
+    "geontm:upgrade_ejector_2": {
+      "type": "SPECIAL",
+      "tier": 2
+    },
+    "geontm:upgrade_ejector_3": {
+      "type": "SPECIAL",
+      "tier": 3
+    },
+    "geontm:upgrade_stack_1": {
+      "type": "SPECIAL",
+      "tier": 1
+    },
+    "geontm:upgrade_stack_2": {
+      "type": "SPECIAL",
+      "tier": 2
+    },
+    "geontm:upgrade_stack_3": {
+      "type": "SPECIAL",
+      "tier": 3
+    },
+    "geontm:upgrade_radius": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_health": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_5g": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_speed_1": {
+      "type": "SPEED",
+      "tier": 1
+    },
+    "geontm:upgrade_speed_2": {
+      "type": "SPEED",
+      "tier": 2
+    },
+    "geontm:upgrade_speed_3": {
+      "type": "SPEED",
+      "tier": 3
+    },
+    "geontm:upgrade_effect_1": {
+      "type": "EFFECT",
+      "tier": 1
+    },
+    "geontm:upgrade_effect_2": {
+      "type": "EFFECT",
+      "tier": 2
+    },
+    "geontm:upgrade_effect_3": {
+      "type": "EFFECT",
+      "tier": 3
+    },
+    "geontm:upgrade_power_1": {
+      "type": "POWER",
+      "tier": 1
+    },
+    "geontm:upgrade_power_2": {
+      "type": "POWER",
+      "tier": 2
+    },
+    "geontm:upgrade_power_3": {
+      "type": "POWER",
+      "tier": 3
+    },
+    "geontm:upgrade_overdrive_1": {
+      "type": "OVERDRIVE",
+      "tier": 1
+    },
+    "geontm:upgrade_overdrive_2": {
+      "type": "OVERDRIVE",
+      "tier": 2
+    },
+    "geontm:upgrade_overdrive_3": {
+      "type": "OVERDRIVE",
+      "tier": 3
+    },
+    "geontm:upgrade_afterburn_1": {
+      "type": "AFTERBURN",
+      "tier": 1
+    },
+    "geontm:upgrade_afterburn_2": {
+      "type": "AFTERBURN",
+      "tier": 2
+    },
+    "geontm:upgrade_afterburn_3": {
+      "type": "AFTERBURN",
+      "tier": 3
+    },
+    "geontm:upgrade_fortune_1": {
+      "type": "FORTUNE",
+      "tier": 1
+    },
+    "geontm:upgrade_fortune_2": {
+      "type": "FORTUNE",
+      "tier": 2
+    },
+    "geontm:upgrade_fortune_3": {
+      "type": "FORTUNE",
+      "tier": 3
+    },
+    "geontm:upgrade_nullifier": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_smelter": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_shredder": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_centrifuge": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_crystallizer": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_gc_speed": {
+      "type": "SPECIAL",
+      "tier": 0
+    },
+    "geontm:upgrade_screm": {
+      "type": "SPECIAL",
+      "tier": 0
+    }
+  }
+}

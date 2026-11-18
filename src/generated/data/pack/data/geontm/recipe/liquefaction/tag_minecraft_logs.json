@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#minecraft:logs",
+  "output": {
+    "type": "geontm:mug",
+    "amount": 100
+  }
+}

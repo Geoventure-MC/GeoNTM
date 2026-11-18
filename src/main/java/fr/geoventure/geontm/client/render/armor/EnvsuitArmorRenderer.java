@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelArmorEnvsuit}: the helmet is alpha-blended; its {@code Lamps} copy the head pose and are drawn
@@ -14,7 +14,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class EnvsuitArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/envsuit.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/envsuit.obj");
 
     private static final Surface HELMET = Surface.translucent("geontm:textures/armor/envsuit_helmet.png");
     private static final Surface LAMPS = Surface.emissive("geontm:textures/models/misc/white.png");

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pilezr",
+  "input_items": [
+    {
+      "ingredient": "#c:billets/zirconium"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:pile_rod_mk2_zr",
+      "count": 3
+    }
+  ],
+  "duration": 40,
+  "power": 200,
+  "auto_switch_group": "autoswitch.pilerod",
+  "order": 12544
+}

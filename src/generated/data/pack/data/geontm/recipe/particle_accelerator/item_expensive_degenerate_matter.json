@@ -1,0 +1,12 @@
+{
+  "type": "geontm:particle_accelerator",
+  "input1": {
+    "ingredient": "geontm:item_expensive_gold_dust"
+  },
+  "input2": {
+    "ingredient": "#c:ingots/schrabidate"
+  },
+  "momentum": 10000,
+  "output1": "geontm:item_expensive_degenerate_matter",
+  "order": 9
+}

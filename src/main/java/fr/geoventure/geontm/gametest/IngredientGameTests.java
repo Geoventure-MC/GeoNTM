@@ -19,7 +19,7 @@ import fr.geoventure.geocore.Ids;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -124,7 +124,7 @@ public final class IngredientGameTests {
     }
 
     private static void assertId(GameTestHelper helper, Item item, String path) {
-        Identifier expected = Ids.of("geontm", path);
+        ResourceLocation expected = Ids.of("geontm", path);
         helper.assertTrue(expected.equals(BuiltInRegistries.ITEM.getKey(item)),
                 "Expected item id " + expected + ", got "
                         + BuiltInRegistries.ITEM.getKey(item));

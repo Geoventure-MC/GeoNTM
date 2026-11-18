@@ -1,0 +1,8 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:oil_tar_wood"
+  },
+  "item_output": "geontm:coke_coal",
+  "order": 20
+}

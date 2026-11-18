@@ -22,7 +22,7 @@ import fr.geoventure.geocore.world.Compat;
 import fr.geoventure.geocore.world.Effects;
 import fr.geoventure.geocore.world.Raycasts;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -158,13 +158,13 @@ public class TileEntityCore extends TileEntityMachineBase implements MenuProvide
                 pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
         if (level.addFreshEntity(explosion)) explosion.startChunkLoading();
 
-        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.GENERIC_EXPLODE.value(),
+        level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.GENERIC_EXPLODE,
                 SoundSource.BLOCKS, 100_000.0F, 1.0F);
 
         EntityCloudFleijaRainbow cloud =
                 new EntityCloudFleijaRainbow(ModNtmEntities.CLOUD_RAINBOW.get(), level);
         cloud.setMaxAge(size);
-        cloud.snapTo(pos.getX(), pos.getY(), pos.getZ(), 0F, 0F);
+        cloud.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0F, 0F);
         level.addFreshEntity(cloud);
     }
 
@@ -275,7 +275,7 @@ public class TileEntityCore extends TileEntityMachineBase implements MenuProvide
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tanks[0].serialize(buf);
         tanks[1].serialize(buf);
@@ -286,7 +286,7 @@ public class TileEntityCore extends TileEntityMachineBase implements MenuProvide
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tanks[0].deserialize(buf);
         tanks[1].deserialize(buf);

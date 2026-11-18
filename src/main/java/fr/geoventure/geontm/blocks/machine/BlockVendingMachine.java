@@ -83,7 +83,7 @@ public class BlockVendingMachine extends BlockMultiblockMachine {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (held.isEmpty() || held.getItem() != ModItems.coin_token.get()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (held.isEmpty() || held.getItem() != ModItems.coin_token.get()) return InteractionResult.PASS;
         held.shrink(1);
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 

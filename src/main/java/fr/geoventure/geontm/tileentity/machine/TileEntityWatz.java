@@ -38,7 +38,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -166,7 +166,7 @@ public class TileEntityWatz extends TileEntityMachineBase
         segments.add(te);
 
         // Accumulate the column downward. Upstream scans to y=0; a 26.1 world can start lower.
-        for (int y = pos.getY() - SEGMENT_HEIGHT; y >= level.getMinY(); y -= SEGMENT_HEIGHT) {
+        for (int y = pos.getY() - SEGMENT_HEIGHT; y >= level.getMinBuildHeight(); y -= SEGMENT_HEIGHT) {
             if (!(level.getBlockEntity(new BlockPos(pos.getX(), y, pos.getZ())) instanceof TileEntityWatz below)) break;
             segments.add(below);
         }
@@ -520,7 +520,7 @@ public class TileEntityWatz extends TileEntityMachineBase
     // --- persistence + sync ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(heat);
         buf.writeBoolean(isOn);
@@ -532,7 +532,7 @@ public class TileEntityWatz extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         heat = buf.readInt();
         isOn = buf.readBoolean();

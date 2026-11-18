@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/uranium"
+  },
+  "outputs": [
+    "geontm:powder_uranium",
+    "geontm:powder_uranium",
+    "geontm:nugget_ra226",
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "!lbsm_simple_centrifuge"
+  ],
+  "order": 35
+}

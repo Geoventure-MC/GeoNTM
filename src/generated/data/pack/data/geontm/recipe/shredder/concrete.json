@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:concrete",
+  "output": "minecraft:gravel"
+}

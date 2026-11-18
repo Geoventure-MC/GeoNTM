@@ -1,0 +1,39 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.rpaplate",
+  "input_items": [
+    {
+      "ingredient": "geontm:plate_armor_ajr",
+      "count": 24
+    },
+    {
+      "material": "saturnite",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:mechanisms/saturnite",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:plate_kevlar",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:parts_legendary_tier2"
+    }
+  ],
+  "output_items": [
+    "geontm:rpa_plate"
+  ],
+  "duration": 3600,
+  "power": 25000,
+  "blueprint_pools": [
+    "discover..rpa"
+  ],
+  "order": 45
+}

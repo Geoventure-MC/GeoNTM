@@ -6,7 +6,7 @@ import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -53,12 +53,12 @@ public final class GUIWandJigsaw extends CompatScreen {
 
     /** 1.7 {@code drawDefaultBackground} in a world: the dark gradient over the scene. */
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.fillGradient(g, 0, 0, this.width, this.height, 0xC0101010, 0xD0101010);
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.text(g, font, "Target pool:", this.width / 2 - 150, 37, 0xFFA0A0A0, true);
         GuiDraw.text(g, font, "Name:", this.width / 2 - 150, 87, 0xFFA0A0A0, true);
         GuiDraw.text(g, font, "Target name:", this.width / 2 + 10, 87, 0xFFA0A0A0, true);

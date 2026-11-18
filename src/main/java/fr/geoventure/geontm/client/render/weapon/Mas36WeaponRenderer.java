@@ -8,7 +8,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -17,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
  * is not in it).
  */
 public final class Mas36WeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/mas36.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/mas36.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/mas36.png");
     private WavefrontObj model;
     private WavefrontObj model(){if(model==null)model=WavefrontObj.load(MODEL_ID);return model;}

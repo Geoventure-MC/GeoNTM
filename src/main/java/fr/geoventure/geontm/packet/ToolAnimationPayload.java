@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * S2C: 1.7 {@code GeoNtmAnimationPacket} for an {@code IAnimatedItem} tool (receiver and item index are always 0 there).
@@ -21,7 +21,7 @@ public record ToolAnimationPayload(int animation, String itemId) implements GeoC
             buffer -> new ToolAnimationPayload(buffer.readVarInt(), buffer.readUtf(256)));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "minecraft:glowstone_dust"
+  },
+  "item_output": "geontm:sulfur",
+  "fluid_output": {
+    "type": "geontm:chlorine",
+    "amount": 100
+  },
+  "order": 9
+}

@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C, on join: the server's {@code geontmMachines.json} values ({@code MachineDynConfig.values()}), for GUIs and renderers. */
 public record MachineConfigPayload(String json) implements GeoCorePayload {
@@ -17,7 +17,7 @@ public record MachineConfigPayload(String json) implements GeoCorePayload {
             buffer -> new MachineConfigPayload(buffer.readUtf(MAX_LENGTH)));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

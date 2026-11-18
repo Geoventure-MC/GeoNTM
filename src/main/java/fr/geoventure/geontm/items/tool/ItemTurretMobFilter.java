@@ -32,12 +32,12 @@ public final class ItemTurretMobFilter extends CompatItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (player == null || !player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null || !player.isShiftKeyDown()) return InteractionResult.PASS;
 
         Level level = context.getLevel();
         BlockPos core = MultiblockSurface.coreOfAny(level, context.getClickedPos());
         if (core == null || !(level.getBlockEntity(core) instanceof TileEntityTurretBaseNT turret)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
 
         if (level.isClientSide()) {

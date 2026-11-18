@@ -1,0 +1,27 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.exsteelplating",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 4
+    },
+    {
+      "material": "steel",
+      "shape": "bolt",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_steel_plating"
+  ],
+  "duration": 40,
+  "power": 100000,
+  "order": 3,
+  "ignition_temp": 1000000
+}

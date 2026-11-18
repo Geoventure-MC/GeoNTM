@@ -2,7 +2,7 @@ package fr.geoventure.geontm.inventory.gui;
 
 import fr.geoventure.geontm.tileentity.machine.rbmk.BlockEntityRBMKGraph;
 import fr.geoventure.geocore.gui.MouseInput;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 
@@ -26,7 +26,7 @@ public final class ScreenRBMKGraph extends RBMKPanelScreen {
         }
     }
 
-    @Override protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partial) {
+    @Override protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partial) {
         blit(g, 0, 0, 0, 0, xSize, ySize);
         for (int i = 0; i < 2; i++) {
             if (active[i]) blit(g, 111, i * 54 + 54, 18, 150, 16, 16);

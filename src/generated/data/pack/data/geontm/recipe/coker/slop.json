@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:slop",
+  "amount": 1000,
+  "output": "geontm:powder_limestone",
+  "byproduct": {
+    "type": "geontm:colloid",
+    "amount": 250
+  }
+}

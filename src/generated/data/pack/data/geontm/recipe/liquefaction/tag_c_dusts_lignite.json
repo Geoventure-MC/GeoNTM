@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#c:dusts/lignite",
+  "output": {
+    "type": "geontm:coaloil",
+    "amount": 150
+  }
+}

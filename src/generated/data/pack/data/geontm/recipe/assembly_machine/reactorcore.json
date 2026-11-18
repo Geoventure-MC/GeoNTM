@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.reactorcore",
+  "input_items": [
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/beryllium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/asbestos",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:reactor_core"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 9984
+}

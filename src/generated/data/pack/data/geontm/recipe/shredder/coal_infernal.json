@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:coal_infernal",
+  "output": {
+    "id": "geontm:powder_coal",
+    "count": 2
+  }
+}

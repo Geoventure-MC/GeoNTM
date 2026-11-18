@@ -1,0 +1,8 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:kerosene",
+  "left": {
+    "type": "geontm:petroleum",
+    "amount": 60
+  }
+}

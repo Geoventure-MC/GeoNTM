@@ -14,7 +14,7 @@ import fr.geoventure.geocore.world.Compat;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -264,7 +264,7 @@ public class TileEntityDiFurnace extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(progress);
         buf.writeShort(fuel);
@@ -274,7 +274,7 @@ public class TileEntityDiFurnace extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         progress = buf.readShort();
         fuel = buf.readShort();

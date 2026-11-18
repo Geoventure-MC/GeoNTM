@@ -117,12 +117,12 @@ public final class RcLogiGameTests {
         EntityMovingItem regular = new EntityMovingItem(level);
         regular.setItemStack(new ItemStack(Items.COBBLESTONE));
         Vec3 snap = ModConveyorBlocks.CONVEYOR.get().getClosestSnappingPosition(level, start, Vec3.atCenterOf(start));
-        regular.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+        regular.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
         level.addFreshEntity(regular);
         EntityMovingItem express = new EntityMovingItem(level);
         express.setItemStack(new ItemStack(Items.COBBLESTONE));
         Vec3 snapE = ModConveyorBlocks.CONVEYOR_EXPRESS.get().getClosestSnappingPosition(level, startExpress, Vec3.atCenterOf(startExpress));
-        express.snapTo(snapE.x, snapE.y, snapE.z, 0F, 0F);
+        express.moveTo(snapE.x, snapE.y, snapE.z, 0F, 0F);
         level.addFreshEntity(express);
 
         double[] x0 = new double[2];
@@ -668,7 +668,7 @@ public final class RcLogiGameTests {
         var level = helper.getLevel();
         var block = ModMachineBlocks.cargo_elevator.get();
         var core = helper.absolutePos(new BlockPos(4, 1, 4));
-        var ceiling = core.atY(level.getMinY() + level.getHeight() - 1);
+        var ceiling = core.atY(level.getMinBuildHeight() + level.getHeight() - 1);
         MultiblockHandlerXR.placeAssembled(level, core, block, Direction.NORTH);
         MultiblockHandlerXR.placeAssembled(level, ceiling, block, Direction.NORTH);
         var player = GameTestHelpers.mockServerPlayerInLevel(helper);
@@ -710,7 +710,7 @@ public final class RcLogiGameTests {
             @Override public BlockState getBlockState(BlockPos pos) { return level.getBlockState(pos); }
             @Override public FluidState getFluidState(BlockPos pos) { return level.getFluidState(pos); }
             @Override public int getHeight() { return level.getHeight(); }
-            @Override public int getMinY() { return level.getMinY(); }
+            @Override public int getMinBuildHeight() { return level.getMinBuildHeight(); }
         };
     }
 

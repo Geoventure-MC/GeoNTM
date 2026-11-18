@@ -13,9 +13,9 @@ import fr.geoventure.geocore.render.CompatItemRenderState;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -32,7 +32,7 @@ public class RenderTrainCargoTram<T extends EntityRailCarBase> extends CompatEnt
         this(context, NtmEntityModels.TRAIN_CARGO_TRAM, ResourceManager.train_tram_tex);
     }
 
-    protected RenderTrainCargoTram(EntityRendererProvider.Context context, WavefrontObj mesh, Identifier texture) {
+    protected RenderTrainCargoTram(EntityRendererProvider.Context context, WavefrontObj mesh, ResourceLocation texture) {
         super(context);
         this.mesh = mesh;
         this.type = CompatRenderTypes.entityCutoutNoCull(texture);

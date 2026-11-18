@@ -6,9 +6,9 @@ import fr.geoventure.geontm.util.BobMathUtil;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -21,14 +21,14 @@ import java.util.Optional;
  */
 public class GUIICF extends CompatContainerScreen<ContainerICF> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_icf.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_icf.png");
 
     public GUIICF(ContainerICF menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 248, 222);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, 114, 256, 256);
         GuiDraw.blit(graphics, TEXTURE, leftPos + 36, topPos + 122, 36F, 122F, 176, 108, 256, 256);
 
@@ -49,14 +49,14 @@ public class GUIICF extends CompatContainerScreen<ContainerICF> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         String name = title.getString();
         GuiDraw.text(graphics, font, name, imageWidth / 2 - font.width(name) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 44, imageHeight - 93, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityICF icf = menu.getIcf();
         if (icf == null) return;
 
@@ -82,7 +82,7 @@ public class GUIICF extends CompatContainerScreen<ContainerICF> {
                 && mouseY > topPos + y && mouseY <= topPos + y + height;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 }

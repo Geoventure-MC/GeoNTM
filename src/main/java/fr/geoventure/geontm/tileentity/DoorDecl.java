@@ -6,7 +6,7 @@ import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.render.anim.BusAnimation;
 import fr.geoventure.geocore.render.anim.BusAnimationKeyframe.IType;
 import fr.geoventure.geocore.render.anim.BusAnimationSequence;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -34,76 +34,76 @@ public abstract class DoorDecl {
         NONE, VAULT, FIRE, SLIDING_BLAST, SEAL, SECURE, AIRLOCK, SLIDING, CONTAINMENT, WATER, VEHICLE, CARGO
     }
 
-    private static Identifier tex(String path) {
+    private static ResourceLocation tex(String path) {
         return Ids.of(Constants.MOD_ID, "textures/models/" + path + ".png");
     }
 
-    private static Identifier obj(String path) {
+    private static ResourceLocation obj(String path) {
         return Ids.of(Constants.MOD_ID, "models/" + path + ".obj");
     }
 
-    public static final Identifier TRANSITION_SEAL_TEX = tex("doors/transition_seal");
-    public static final Identifier SILO_HATCH_TEX = tex("doors/silo_hatch");
-    public static final Identifier SILO_HATCH_LARGE_TEX = tex("doors/silo_hatch_large");
-    public static final Identifier SILO_HATCH_OBJ = obj("doors/silo_hatch");
-    public static final Identifier SILO_HATCH_LARGE_OBJ = obj("doors/silo_hatch_large");
+    public static final ResourceLocation TRANSITION_SEAL_TEX = tex("doors/transition_seal");
+    public static final ResourceLocation SILO_HATCH_TEX = tex("doors/silo_hatch");
+    public static final ResourceLocation SILO_HATCH_LARGE_TEX = tex("doors/silo_hatch_large");
+    public static final ResourceLocation SILO_HATCH_OBJ = obj("doors/silo_hatch");
+    public static final ResourceLocation SILO_HATCH_LARGE_OBJ = obj("doors/silo_hatch_large");
     /** The Collada seal converted to an OBJ plus an animation sidecar (see {@code port-brief} report). */
-    public static final Identifier TRANSITION_SEAL_OBJ = obj("doors/seal");
-    public static final Identifier TRANSITION_SEAL_ANIM = Ids.of(Constants.MOD_ID, "models/doors/seal_animation.json");
+    public static final ResourceLocation TRANSITION_SEAL_OBJ = obj("doors/seal");
+    public static final ResourceLocation TRANSITION_SEAL_ANIM = Ids.of(Constants.MOD_ID, "models/doors/seal_animation.json");
 
-    public static final Identifier PHEO_FIRE_DOOR_TEX = tex("pheodoors/fire_door");
-    public static final Identifier PHEO_FIRE_DOOR_BLACK_TEX = tex("pheodoors/fire_door_black");
-    public static final Identifier PHEO_FIRE_DOOR_ORANGE_TEX = tex("pheodoors/fire_door_orange");
-    public static final Identifier PHEO_FIRE_DOOR_YELLOW_TEX = tex("pheodoors/fire_door_yellow");
-    public static final Identifier PHEO_FIRE_DOOR_TREFOIL_TEX = tex("pheodoors/fire_door_trefoil");
-    public static final Identifier PHEO_FIRE_DOOR_OBJ = obj("pheodoors/fire_door");
-    public static final Identifier PHEO_AIRLOCK_DOOR_TEX = tex("pheodoors/airlock_door");
-    public static final Identifier PHEO_AIRLOCK_DOOR_CLEAN_TEX = tex("pheodoors/airlock_door_clean");
-    public static final Identifier PHEO_AIRLOCK_DOOR_GREEN_TEX = tex("pheodoors/airlock_door_green");
-    public static final Identifier PHEO_AIRLOCK_DOOR_OBJ = obj("pheodoors/airlock_door");
-    public static final Identifier PHEO_BLAST_DOOR_TEX = tex("pheodoors/blast_door");
-    public static final Identifier PHEO_BLAST_DOOR_INDUSTRIAL_TEX = tex("pheodoors/blast_door_industrial");
-    public static final Identifier PHEO_BLAST_DOOR_OBJ = obj("pheodoors/blast_door");
-    public static final Identifier PHEO_CONTAINMENT_DOOR_TEX = tex("pheodoors/containment_door");
-    public static final Identifier PHEO_CONTAINMENT_DOOR_TREFOIL_TEX = tex("pheodoors/containment_door_trefoil");
-    public static final Identifier PHEO_CONTAINMENT_DOOR_TREFOIL_YELLOW_TEX = tex("pheodoors/containment_door_trefoil_yellow");
-    public static final Identifier PHEO_CONTAINMENT_DOOR_OBJ = obj("pheodoors/containment_door");
-    public static final Identifier PHEO_SEAL_DOOR_TEX = tex("pheodoors/seal_door");
-    public static final Identifier PHEO_SEAL_DOOR_CLEAN_TEX = tex("pheodoors/seal_door_clean");
-    public static final Identifier PHEO_SEAL_DOOR_TREFOIL_TEX = tex("pheodoors/seal_door_trefoil");
-    public static final Identifier PHEO_SEAL_DOOR_OBJ = obj("pheodoors/seal_door");
-    public static final Identifier PHEO_SECURE_DOOR_TEX = tex("pheodoors/secure_door");
-    public static final Identifier PHEO_SECURE_DOOR_GREY_TEX = tex("pheodoors/secure_door_grey");
-    public static final Identifier PHEO_SECURE_DOOR_BLACK_TEX = tex("pheodoors/secure_door_black");
-    public static final Identifier PHEO_SECURE_DOOR_YELLOW_TEX = tex("pheodoors/secure_door_yellow");
-    public static final Identifier PHEO_SECURE_DOOR_OBJ = obj("pheodoors/secure_door");
-    public static final Identifier PHEO_SLIDING_DOOR_TEX = tex("pheodoors/sliding_door");
-    public static final Identifier PHEO_SLIDING_DOOR_BLACK_TEX = tex("pheodoors/sliding_door_black");
-    public static final Identifier PHEO_SLIDING_DOOR_GRID_TEX = tex("pheodoors/sliding_door_grid");
-    public static final Identifier PHEO_SLIDING_DOOR_PLATE_TEX = tex("pheodoors/sliding_door_plate");
-    public static final Identifier PHEO_SLIDING_DOOR_WHITE_TEX = tex("pheodoors/sliding_door_white");
-    public static final Identifier PHEO_SLIDING_DOOR_OBJ = obj("pheodoors/sliding_door");
-    public static final Identifier PHEO_VEHICLE_DOOR_TEX = tex("pheodoors/vehicle_door");
-    public static final Identifier PHEO_VEHICLE_DOOR_BLACK_TEX = tex("pheodoors/vehicle_door_black");
-    public static final Identifier PHEO_VEHICLE_DOOR_BLUE_TEX = tex("pheodoors/vehicle_door_blue");
-    public static final Identifier PHEO_VEHICLE_DOOR_RED_TEX = tex("pheodoors/vehicle_door_red");
-    public static final Identifier PHEO_VEHICLE_DOOR_OBJ = obj("pheodoors/vehicle_door");
-    public static final Identifier PHEO_WATER_DOOR_TEX = tex("pheodoors/water_door");
-    public static final Identifier PHEO_WATER_DOOR_CLEAN_TEX = tex("pheodoors/water_door_clean");
-    public static final Identifier PHEO_WATER_DOOR_OBJ = obj("pheodoors/water_door");
-    public static final Identifier PHEO_VAULT_DOOR_3 = tex("pheodoors/vault/vault_door_3");
-    public static final Identifier PHEO_VAULT_DOOR_4 = tex("pheodoors/vault/vault_door_4");
-    public static final Identifier PHEO_VAULT_DOOR_S = tex("pheodoors/vault/vault_door_s");
-    public static final Identifier PHEO_LABEL_2 = tex("pheodoors/vault/label_2");
-    public static final Identifier PHEO_LABEL_81 = tex("pheodoors/vault/label_81");
-    public static final Identifier PHEO_LABEL_87 = tex("pheodoors/vault/label_87");
-    public static final Identifier PHEO_LABEL_99 = tex("pheodoors/vault/label_99");
-    public static final Identifier PHEO_LABEL_101 = tex("pheodoors/vault/label_101");
-    public static final Identifier PHEO_LABEL_106 = tex("pheodoors/vault/label_106");
-    public static final Identifier PHEO_LABEL_111 = tex("pheodoors/vault/label_111");
-    public static final Identifier PHEO_VAULT_DOOR_OBJ = obj("pheodoors/vault_door");
-    public static final Identifier PHEO_CARGO_DOOR_TEX = tex("pheodoors/cargo_door");
-    public static final Identifier PHEO_CARGO_DOOR_OBJ = obj("pheodoors/cargo_door");
+    public static final ResourceLocation PHEO_FIRE_DOOR_TEX = tex("pheodoors/fire_door");
+    public static final ResourceLocation PHEO_FIRE_DOOR_BLACK_TEX = tex("pheodoors/fire_door_black");
+    public static final ResourceLocation PHEO_FIRE_DOOR_ORANGE_TEX = tex("pheodoors/fire_door_orange");
+    public static final ResourceLocation PHEO_FIRE_DOOR_YELLOW_TEX = tex("pheodoors/fire_door_yellow");
+    public static final ResourceLocation PHEO_FIRE_DOOR_TREFOIL_TEX = tex("pheodoors/fire_door_trefoil");
+    public static final ResourceLocation PHEO_FIRE_DOOR_OBJ = obj("pheodoors/fire_door");
+    public static final ResourceLocation PHEO_AIRLOCK_DOOR_TEX = tex("pheodoors/airlock_door");
+    public static final ResourceLocation PHEO_AIRLOCK_DOOR_CLEAN_TEX = tex("pheodoors/airlock_door_clean");
+    public static final ResourceLocation PHEO_AIRLOCK_DOOR_GREEN_TEX = tex("pheodoors/airlock_door_green");
+    public static final ResourceLocation PHEO_AIRLOCK_DOOR_OBJ = obj("pheodoors/airlock_door");
+    public static final ResourceLocation PHEO_BLAST_DOOR_TEX = tex("pheodoors/blast_door");
+    public static final ResourceLocation PHEO_BLAST_DOOR_INDUSTRIAL_TEX = tex("pheodoors/blast_door_industrial");
+    public static final ResourceLocation PHEO_BLAST_DOOR_OBJ = obj("pheodoors/blast_door");
+    public static final ResourceLocation PHEO_CONTAINMENT_DOOR_TEX = tex("pheodoors/containment_door");
+    public static final ResourceLocation PHEO_CONTAINMENT_DOOR_TREFOIL_TEX = tex("pheodoors/containment_door_trefoil");
+    public static final ResourceLocation PHEO_CONTAINMENT_DOOR_TREFOIL_YELLOW_TEX = tex("pheodoors/containment_door_trefoil_yellow");
+    public static final ResourceLocation PHEO_CONTAINMENT_DOOR_OBJ = obj("pheodoors/containment_door");
+    public static final ResourceLocation PHEO_SEAL_DOOR_TEX = tex("pheodoors/seal_door");
+    public static final ResourceLocation PHEO_SEAL_DOOR_CLEAN_TEX = tex("pheodoors/seal_door_clean");
+    public static final ResourceLocation PHEO_SEAL_DOOR_TREFOIL_TEX = tex("pheodoors/seal_door_trefoil");
+    public static final ResourceLocation PHEO_SEAL_DOOR_OBJ = obj("pheodoors/seal_door");
+    public static final ResourceLocation PHEO_SECURE_DOOR_TEX = tex("pheodoors/secure_door");
+    public static final ResourceLocation PHEO_SECURE_DOOR_GREY_TEX = tex("pheodoors/secure_door_grey");
+    public static final ResourceLocation PHEO_SECURE_DOOR_BLACK_TEX = tex("pheodoors/secure_door_black");
+    public static final ResourceLocation PHEO_SECURE_DOOR_YELLOW_TEX = tex("pheodoors/secure_door_yellow");
+    public static final ResourceLocation PHEO_SECURE_DOOR_OBJ = obj("pheodoors/secure_door");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_TEX = tex("pheodoors/sliding_door");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_BLACK_TEX = tex("pheodoors/sliding_door_black");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_GRID_TEX = tex("pheodoors/sliding_door_grid");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_PLATE_TEX = tex("pheodoors/sliding_door_plate");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_WHITE_TEX = tex("pheodoors/sliding_door_white");
+    public static final ResourceLocation PHEO_SLIDING_DOOR_OBJ = obj("pheodoors/sliding_door");
+    public static final ResourceLocation PHEO_VEHICLE_DOOR_TEX = tex("pheodoors/vehicle_door");
+    public static final ResourceLocation PHEO_VEHICLE_DOOR_BLACK_TEX = tex("pheodoors/vehicle_door_black");
+    public static final ResourceLocation PHEO_VEHICLE_DOOR_BLUE_TEX = tex("pheodoors/vehicle_door_blue");
+    public static final ResourceLocation PHEO_VEHICLE_DOOR_RED_TEX = tex("pheodoors/vehicle_door_red");
+    public static final ResourceLocation PHEO_VEHICLE_DOOR_OBJ = obj("pheodoors/vehicle_door");
+    public static final ResourceLocation PHEO_WATER_DOOR_TEX = tex("pheodoors/water_door");
+    public static final ResourceLocation PHEO_WATER_DOOR_CLEAN_TEX = tex("pheodoors/water_door_clean");
+    public static final ResourceLocation PHEO_WATER_DOOR_OBJ = obj("pheodoors/water_door");
+    public static final ResourceLocation PHEO_VAULT_DOOR_3 = tex("pheodoors/vault/vault_door_3");
+    public static final ResourceLocation PHEO_VAULT_DOOR_4 = tex("pheodoors/vault/vault_door_4");
+    public static final ResourceLocation PHEO_VAULT_DOOR_S = tex("pheodoors/vault/vault_door_s");
+    public static final ResourceLocation PHEO_LABEL_2 = tex("pheodoors/vault/label_2");
+    public static final ResourceLocation PHEO_LABEL_81 = tex("pheodoors/vault/label_81");
+    public static final ResourceLocation PHEO_LABEL_87 = tex("pheodoors/vault/label_87");
+    public static final ResourceLocation PHEO_LABEL_99 = tex("pheodoors/vault/label_99");
+    public static final ResourceLocation PHEO_LABEL_101 = tex("pheodoors/vault/label_101");
+    public static final ResourceLocation PHEO_LABEL_106 = tex("pheodoors/vault/label_106");
+    public static final ResourceLocation PHEO_LABEL_111 = tex("pheodoors/vault/label_111");
+    public static final ResourceLocation PHEO_VAULT_DOOR_OBJ = obj("pheodoors/vault_door");
+    public static final ResourceLocation PHEO_CARGO_DOOR_TEX = tex("pheodoors/cargo_door");
+    public static final ResourceLocation PHEO_CARGO_DOOR_OBJ = obj("pheodoors/cargo_door");
 
     private static final AABB EMPTY = new AABB(0, 0, 0, 0, 0, 0);
     private static final AABB FULL = new AABB(0, 0, 0, 1, 1, 1);
@@ -148,10 +148,10 @@ public abstract class DoorDecl {
         }
 
         @Override public int[] getDimensions() { return new int[] { 23, 0, 0, 0, 13, 12 }; }
-        @Override public Identifier getTextureForPart(int skinIndex, String partName) { return TRANSITION_SEAL_TEX; }
+        @Override public ResourceLocation getTextureForPart(int skinIndex, String partName) { return TRANSITION_SEAL_TEX; }
         /** The animated Collada model; there is no static OBJ path for this door. */
         @Override public boolean hasAnimatedModel() { return true; }
-        @Override public @Nullable Identifier getModel() { return null; }
+        @Override public @Nullable ResourceLocation getModel() { return null; }
     };
 
     public static final DoorDecl VAULT_DOOR = new DoorDecl() {
@@ -213,11 +213,11 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = {
+        private final ResourceLocation[] skins = {
                 PHEO_FIRE_DOOR_TEX, PHEO_FIRE_DOOR_BLACK_TEX, PHEO_FIRE_DOOR_ORANGE_TEX,
                 PHEO_FIRE_DOOR_YELLOW_TEX, PHEO_FIRE_DOOR_TREFOIL_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 5; }
         @Override public int timeToOpen() { return 160; }
         @Override public int[][] getDoorOpenRanges() { return new int[][] { { -1, 0, 0, 3, 4, 1 } }; }
@@ -254,9 +254,9 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = { PHEO_BLAST_DOOR_TEX, PHEO_BLAST_DOOR_INDUSTRIAL_TEX };
+        private final ResourceLocation[] skins = { PHEO_BLAST_DOOR_TEX, PHEO_BLAST_DOOR_INDUSTRIAL_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 2; }
 
         @Override public int timeToOpen() { return 24; }
@@ -287,9 +287,9 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = { PHEO_SEAL_DOOR_TEX, PHEO_SEAL_DOOR_CLEAN_TEX, PHEO_SEAL_DOOR_TREFOIL_TEX };
+        private final ResourceLocation[] skins = { PHEO_SEAL_DOOR_TEX, PHEO_SEAL_DOOR_CLEAN_TEX, PHEO_SEAL_DOOR_TREFOIL_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 3; }
 
         @Override public int timeToOpen() { return 20; }
@@ -336,10 +336,10 @@ public abstract class DoorDecl {
             else return super.getBlockBound(x, y, z, open, forCollision);
         }
 
-        private final Identifier[] skins = {
+        private final ResourceLocation[] skins = {
                 PHEO_SECURE_DOOR_TEX, PHEO_SECURE_DOOR_GREY_TEX, PHEO_SECURE_DOOR_BLACK_TEX, PHEO_SECURE_DOOR_YELLOW_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 4; }
     };
 
@@ -357,10 +357,10 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = {
+        private final ResourceLocation[] skins = {
                 PHEO_AIRLOCK_DOOR_TEX, PHEO_AIRLOCK_DOOR_CLEAN_TEX, PHEO_AIRLOCK_DOOR_GREEN_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 3; }
 
         @Override
@@ -394,10 +394,10 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = { PHEO_SLIDING_DOOR_TEX, PHEO_SLIDING_DOOR_BLACK_TEX, PHEO_SLIDING_DOOR_GRID_TEX,
+        private final ResourceLocation[] skins = { PHEO_SLIDING_DOOR_TEX, PHEO_SLIDING_DOOR_BLACK_TEX, PHEO_SLIDING_DOOR_GRID_TEX,
                 PHEO_SLIDING_DOOR_PLATE_TEX, PHEO_SLIDING_DOOR_WHITE_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 5; }
 
         @Override
@@ -428,10 +428,10 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = {
+        private final ResourceLocation[] skins = {
                 PHEO_CONTAINMENT_DOOR_TEX, PHEO_CONTAINMENT_DOOR_TREFOIL_TEX, PHEO_CONTAINMENT_DOOR_TREFOIL_YELLOW_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 3; }
         @Override public int timeToOpen() { return 160; }
         @Override public int[][] getDoorOpenRanges() { return new int[][] { { -1, 0, 0, 3, 3, 1 } }; }
@@ -468,9 +468,9 @@ public abstract class DoorDecl {
             return null;
         }
 
-        private final Identifier[] skins = { PHEO_WATER_DOOR_TEX, PHEO_WATER_DOOR_CLEAN_TEX };
+        private final ResourceLocation[] skins = { PHEO_WATER_DOOR_TEX, PHEO_WATER_DOOR_CLEAN_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 2; }
 
         @Override
@@ -530,8 +530,8 @@ public abstract class DoorDecl {
         @Override public float getDoorRangeOpenTime(int ticks, int idx) { return getNormTime(ticks, 20, 20); }
         @Override public int getBlockOffset() { return 2; }
         @Override public int[] getDimensions() { return new int[] { 0, 0, 2, 2, 2, 2 }; }
-        @Override public Identifier getTextureForPart(int skinIndex, String partName) { return SILO_HATCH_TEX; }
-        @Override public Identifier getModel() { return SILO_HATCH_OBJ; }
+        @Override public ResourceLocation getTextureForPart(int skinIndex, String partName) { return SILO_HATCH_TEX; }
+        @Override public ResourceLocation getModel() { return SILO_HATCH_OBJ; }
     };
 
     public static final DoorDecl SILO_HATCH_LARGE = new DoorDecl() {
@@ -577,8 +577,8 @@ public abstract class DoorDecl {
         @Override public float getDoorRangeOpenTime(int ticks, int idx) { return getNormTime(ticks, 20, 20); }
         @Override public int getBlockOffset() { return 3; }
         @Override public int[] getDimensions() { return new int[] { 0, 0, 3, 3, 3, 3 }; }
-        @Override public Identifier getTextureForPart(int skinIndex, String partName) { return SILO_HATCH_LARGE_TEX; }
-        @Override public Identifier getModel() { return SILO_HATCH_LARGE_OBJ; }
+        @Override public ResourceLocation getTextureForPart(int skinIndex, String partName) { return SILO_HATCH_LARGE_TEX; }
+        @Override public ResourceLocation getModel() { return SILO_HATCH_LARGE_OBJ; }
     };
 
     public static final DoorDecl LARGE_VEHICLE_DOOR = new DoorDecl() {
@@ -604,10 +604,10 @@ public abstract class DoorDecl {
             return super.getBlockBound(x, y, z, open, forCollision);
         }
 
-        private final Identifier[] skins = { PHEO_VEHICLE_DOOR_TEX, PHEO_VEHICLE_DOOR_BLACK_TEX, PHEO_VEHICLE_DOOR_BLUE_TEX,
+        private final ResourceLocation[] skins = { PHEO_VEHICLE_DOOR_TEX, PHEO_VEHICLE_DOOR_BLACK_TEX, PHEO_VEHICLE_DOOR_BLUE_TEX,
                 PHEO_VEHICLE_DOOR_RED_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 4; }
 
         @Override public int timeToOpen() { return 60; }
@@ -648,9 +648,9 @@ public abstract class DoorDecl {
             return super.getBlockBound(x, y, z, open, forCollision);
         }
 
-        private final Identifier[] skins = { PHEO_CARGO_DOOR_TEX };
+        private final ResourceLocation[] skins = { PHEO_CARGO_DOOR_TEX };
 
-        @Override public Identifier[] getSEDNASkins() { return skins; }
+        @Override public ResourceLocation[] getSEDNASkins() { return skins; }
         @Override public int getSkinCount() { return 1; }
     };
 
@@ -681,13 +681,13 @@ public abstract class DoorDecl {
         return Mth.clamp((time - min) / (max - min), 0, 1);
     }
 
-    public @Nullable Identifier getTextureForPart(String partName) {
+    public @Nullable ResourceLocation getTextureForPart(String partName) {
         return getTextureForPart(0, partName);
     }
 
-    public @Nullable Identifier getTextureForPart(int skinIndex, String partName) { return null; }
+    public @Nullable ResourceLocation getTextureForPart(int skinIndex, String partName) { return null; }
     /** The OBJ drawn by the generic part-transform path, or null. */
-    public @Nullable Identifier getModel() { return null; }
+    public @Nullable ResourceLocation getModel() { return null; }
     /** True for the transition seal, whose model is the animated Collada scene. */
     public boolean hasAnimatedModel() { return false; }
 
@@ -732,20 +732,20 @@ public abstract class DoorDecl {
         return f;
     }
 
-    public Identifier @Nullable [] getSEDNASkins() { return null; }
+    public ResourceLocation @Nullable [] getSEDNASkins() { return null; }
     public boolean hasSkins() { return getSkinCount() > 0; }
 
     public int getSkinCount() { return 0; }
 
     /** The original's inventory preview cycles the skins once per second on the wall clock. */
-    public Identifier getCyclingSkins(long millis) {
-        Identifier[] skins = this.getSEDNASkins();
+    public ResourceLocation getCyclingSkins(long millis) {
+        ResourceLocation[] skins = this.getSEDNASkins();
         int index = (int) ((millis % (skins.length * 1000L)) / 1000L);
         return skins[index];
     }
 
-    public Identifier getSkinFromIndex(int index) {
-        Identifier[] skins = this.getSEDNASkins();
+    public ResourceLocation getSkinFromIndex(int index) {
+        ResourceLocation[] skins = this.getSEDNASkins();
         return skins[Math.abs(index) % skins.length];
     }
 

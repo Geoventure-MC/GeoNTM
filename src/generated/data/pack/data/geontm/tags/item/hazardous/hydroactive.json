@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:billet_sr90",
+    "geontm:block_lithium",
+    "geontm:crystal_lithium",
+    "geontm:ingot_raw_sodium",
+    "geontm:ingot_raw_strontium",
+    "geontm:ingot_sr90",
+    "geontm:lithium",
+    "geontm:nugget_raw_lithium",
+    "geontm:nugget_raw_sodium",
+    "geontm:nugget_raw_strontium",
+    "geontm:nugget_sr90",
+    "geontm:nugget_strontium",
+    "geontm:ore_gneiss_lithium",
+    "geontm:powder_caesium",
+    "geontm:powder_cs137",
+    "geontm:powder_cs137_tiny",
+    "geontm:powder_lithium",
+    "geontm:powder_lithium_tiny",
+    "geontm:powder_sodium",
+    "geontm:powder_sr90",
+    "geontm:powder_sr90_tiny",
+    "geontm:powder_strontium",
+    "geontm:raw_lithium"
+  ]
+}

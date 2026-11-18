@@ -15,7 +15,7 @@ import fr.geoventure.geocore.render.gem.GemEntityRenderer;
 import java.awt.Color;
 import java.util.Random;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
@@ -23,7 +23,7 @@ import org.joml.Vector3f;
 public final class ChemicalProjectileRenderer
         extends GemEntityRenderer<EntityChemical, ChemicalProjectileRenderer.State> {
 
-    private static final Identifier PARTICLE_TEXTURE =
+    private static final ResourceLocation PARTICLE_TEXTURE =
             Ids.of("geontm", "textures/particle/particle_base.png");
 
     public ChemicalProjectileRenderer(EntityRendererProvider.Context context) {

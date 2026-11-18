@@ -163,7 +163,7 @@ public class ItemCMStructure extends CompatItem implements IItemLookOverlay {
         }
 
         if (getAnchor(stack) == null) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 

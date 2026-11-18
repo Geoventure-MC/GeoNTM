@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.gem.Geometry;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -26,7 +26,7 @@ public class RenderRebarFill implements CompatBER<TileEntityRebar, RenderRebarFi
         int progress;
     }
 
-    private static final Identifier CONCRETE = Ids.of("geontm", "textures/blocks/concrete_liquid.png");
+    private static final ResourceLocation CONCRETE = Ids.of("geontm", "textures/blocks/concrete_liquid.png");
     private static final Geometry[] BOXES = new Geometry[1001];
 
     private static Geometry box(int progress) {

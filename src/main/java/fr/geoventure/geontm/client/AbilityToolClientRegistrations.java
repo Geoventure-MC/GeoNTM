@@ -18,7 +18,7 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.harness.HarnessQueryRegistry;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.HashMap;
@@ -118,7 +118,7 @@ public final class AbilityToolClientRegistrations {
     }
 
     /** 1.7 {@code ItemToolAbility.renderHUD}: the area ability's icon, inverted like the crosshair. */
-    private static void renderAbilityHud(GuiGraphicsExtractor graphics) {
+    private static void renderAbilityHud(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.options.hideGui || mc.screen != null) return;
 

@@ -10,9 +10,9 @@ import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.CompatBER;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -36,23 +36,23 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
     private static final float[] orig = new float[3];
     private static final float[] rot = new float[3];
 
-    private final Map<Identifier, WavefrontObj> models = new HashMap<>();
+    private final Map<ResourceLocation, WavefrontObj> models = new HashMap<>();
     private final Map<String, ClippedObjPart> clipped = new HashMap<>();
     private @Nullable DoorColladaModel seal;
 
-    private WavefrontObj model(Identifier id) {
+    private WavefrontObj model(ResourceLocation id) {
         return models.computeIfAbsent(id, WavefrontObj::load);
     }
 
-    private ClippedObjPart clippedPart(Identifier id, String part) {
+    private ClippedObjPart clippedPart(ResourceLocation id, String part) {
         return clipped.computeIfAbsent(id + "#" + part, key -> new ClippedObjPart(model(id), part));
     }
 
-    private static RenderType cull(Identifier texture) {
+    private static RenderType cull(ResourceLocation texture) {
         return CompatRenderTypes.entityCutoutCull(texture);
     }
 
-    private static RenderType noCull(Identifier texture) {
+    private static RenderType noCull(ResourceLocation texture) {
         return CompatRenderTypes.entityCutoutNoCull(texture);
     }
 
@@ -133,7 +133,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             return;
         }
 
-        Identifier modelId = door.getModel();
+        ResourceLocation modelId = door.getModel();
         if (modelId == null) return;
         WavefrontObj model = model(modelId);
         float openTicks = state.openTicks;
@@ -144,7 +144,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
 
             poseStack.pushPose();
             {
-                Identifier texture = door.getTextureForPart(state.skinIndex, partName);
+                ResourceLocation texture = door.getTextureForPart(state.skinIndex, partName);
                 doPartTransform(door, partName, openTicks, false, poseStack);
                 drawPart(model, modelId, partName, texture, clip, poseStack, sink, light, overlay);
 
@@ -154,7 +154,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
 
                     poseStack.pushPose();
                     {
-                        Identifier innerTexture = door.getTextureForPart(state.skinIndex, innerPartName);
+                        ResourceLocation innerTexture = door.getTextureForPart(state.skinIndex, innerPartName);
                         doPartTransform(door, innerPartName, openTicks, true, poseStack);
                         drawPart(model, modelId, innerPartName, innerTexture, clip, poseStack, sink, light, overlay);
                     }
@@ -165,7 +165,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
         }
     }
 
-    private void drawPart(WavefrontObj model, Identifier modelId, String part, @Nullable Identifier texture, double[][] clip,
+    private void drawPart(WavefrontObj model, ResourceLocation modelId, String part, @Nullable ResourceLocation texture, double[][] clip,
                           PoseStack poseStack, SubmitSink sink, int light, int overlay) {
         if (texture == null) return;
         if (clip.length == 0) {
@@ -191,7 +191,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
         sink.submitCustomGeometry(poseStack, type, (pose, buffer) -> model.renderPart(part, pose, buffer, light, overlay));
     }
 
-    private void clippedPart(Identifier modelId, String part, RenderType type, double[][] planes, double ox, double oy, double oz,
+    private void clippedPart(ResourceLocation modelId, String part, RenderType type, double[][] planes, double ox, double oy, double oz,
                              PoseStack poseStack, SubmitSink sink, int light, int overlay) {
         ClippedObjPart clippedPart = clippedPart(modelId, part);
         sink.submitCustomGeometry(poseStack, type, (pose, buffer) -> clippedPart.draw(pose, buffer, light, overlay, planes, ox, oy, oz));
@@ -200,8 +200,8 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
     // --- RenderVaultDoor ---
 
     private void renderVaultDoor(DoorRenderState state, PoseStack poseStack, SubmitSink sink, int light, int overlay) {
-        Identifier doorTex = DoorDecl.PHEO_VAULT_DOOR_3;
-        Identifier labelTex = DoorDecl.PHEO_LABEL_101;
+        ResourceLocation doorTex = DoorDecl.PHEO_VAULT_DOOR_3;
+        ResourceLocation labelTex = DoorDecl.PHEO_LABEL_101;
 
         switch (state.skinIndex) {
             case 1 -> labelTex = DoorDecl.PHEO_LABEL_87;
@@ -281,7 +281,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             lock = state.bus("LOCK")[0] * 90;
         }
 
-        Identifier obj = DoorDecl.PHEO_BLAST_DOOR_OBJ;
+        ResourceLocation obj = DoorDecl.PHEO_BLAST_DOOR_OBJ;
         WavefrontObj model = model(obj);
         part(model, "Frame", type, poseStack, sink, light, overlay);
 
@@ -326,7 +326,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             raise = state.bus("DOOR")[1] * maxRaise;
         }
 
-        Identifier obj = DoorDecl.PHEO_SEAL_DOOR_OBJ;
+        ResourceLocation obj = DoorDecl.PHEO_SEAL_DOOR_OBJ;
         WavefrontObj model = model(obj);
         poseStack.translate(0.5, 0, 0);
         part(model, "Frame", type, poseStack, sink, light, overlay);
@@ -370,7 +370,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             open = state.bus("DOOR")[1] * maxOpen;
         }
 
-        Identifier obj = DoorDecl.PHEO_AIRLOCK_DOOR_OBJ;
+        ResourceLocation obj = DoorDecl.PHEO_AIRLOCK_DOOR_OBJ;
         WavefrontObj model = model(obj);
         poseStack.translate(0, 0, 0.5);
         part(model, "Frame", type, poseStack, sink, light, overlay);
@@ -430,7 +430,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             raise = state.bus("DOOR")[1] * maxRaise;
         }
 
-        Identifier obj = DoorDecl.PHEO_CONTAINMENT_DOOR_OBJ;
+        ResourceLocation obj = DoorDecl.PHEO_CONTAINMENT_DOOR_OBJ;
         WavefrontObj model = model(obj);
         poseStack.translate(0.25, 0.0, 0.0);
         part(model, "Frame", type, poseStack, sink, light, overlay);
@@ -501,7 +501,7 @@ public class RenderDoorGeneric implements CompatBER<TileEntityDoorGeneric, DoorR
             open = state.bus("DOOR")[1] * maxOpen;
         }
 
-        Identifier obj = DoorDecl.PHEO_VEHICLE_DOOR_OBJ;
+        ResourceLocation obj = DoorDecl.PHEO_VEHICLE_DOOR_OBJ;
         WavefrontObj model = model(obj);
         poseStack.mulPose(Axis.YP.rotationDegrees(90));
         part(model, "Frame", type, poseStack, sink, light, overlay);

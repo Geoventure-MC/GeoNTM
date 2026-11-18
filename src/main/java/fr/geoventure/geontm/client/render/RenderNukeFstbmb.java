@@ -17,7 +17,7 @@ import java.util.Set;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -31,7 +31,7 @@ import fr.geoventure.geontm.blocks.bomb.NukeBalefire;
 public class RenderNukeFstbmb extends GemBER<TileEntityNukeBalefire, RenderNukeFstbmb.State> {
 
     private static final WavefrontObj MODEL = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/bombs/fstbmb.obj"));
-    private static final Identifier TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/bombs/fstbmb.png");
+    private static final ResourceLocation TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/bombs/fstbmb.png");
     /**
      * Legacy facing 2..5 in the port's numbering. 1.7 RenderNukeFstbmb: meta 2 -> 90, 4 -> 180, 3 -> 270,
      * 5 -> 0. Unlike the BlockContainer bombs, NukeBalefire was a rotatable BlockMachineBase whose 1.7

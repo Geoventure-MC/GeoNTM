@@ -25,7 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
  * ore's depth-rock cap use). Without it only the bedrock cells of the sphere would be replaced.
  *
  * <p>1.7 clamps to {@code 1 <= y <= 126}, so the bottom bedrock layer and the nether roof's top layer survive
- * and a deposit never opens the world to the void. The band is kept relative to {@link WorldGenLevel#getMinY()}.
+ * and a deposit never opens the world to the void. The band is kept relative to {@link WorldGenLevel#getMinBuildHeight()}.
  */
 public final class DepthDepositPlacer {
 
@@ -37,7 +37,7 @@ public final class DepthDepositPlacer {
      */
     public static void overworld(WorldGenLevel level, RandomSource rand, int chunkMinX, int chunkMinZ,
                                  int size, double fill, BlockState ore, int chance) {
-        generate(level, rand, chunkMinX, chunkMinZ, level.getMinY(), 3, size, fill, ore,
+        generate(level, rand, chunkMinX, chunkMinZ, level.getMinBuildHeight(), 3, size, fill, ore,
                 Blocks.STONE.defaultBlockState(), ModOreBlocks.stone_depth.get().defaultBlockState(), chance);
     }
 
@@ -73,8 +73,8 @@ public final class DepthDepositPlacer {
     public static void generateSphere(WorldGenLevel level, RandomSource rand, int cx, int cy, int cz,
                                       int size, double fill, BlockState ore, BlockState genTarget, BlockState filler) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int floor = level.getMinY() + 1;
-        int ceiling = Math.min(level.getMaxY(), level.getMinY() + 126);
+        int floor = level.getMinBuildHeight() + 1;
+        int ceiling = Math.min(level.getMaxBuildHeight(), level.getMinBuildHeight() + 126);
 
         for (int ix = cx - size; ix <= cx + size; ix++) {
             int dx = ix - cx;

@@ -20,8 +20,8 @@ import fr.geoventure.geocore.data.DataOut;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -35,7 +35,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretFritz extends TileEntityTurretBaseNT implements IFluidStandardReceiverMK2 {
 
-    private static final Identifier GUI = turretGui("fritz");
+    private static final ResourceLocation GUI = turretGui("fritz");
     private static final int[] FRITZ_SLOTS = {1, 2, 3, 4, 5, 6, 7, 8};
 
     public final FluidTankNTM tank = new FluidTankNTM(Fluids.DIESEL, 16000);
@@ -84,7 +84,7 @@ public class TileEntityTurretFritz extends TileEntityTurretBaseNT implements IFl
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -172,13 +172,13 @@ public class TileEntityTurretFritz extends TileEntityTurretBaseNT implements IFl
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tank.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tank.deserialize(buf);
     }

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_fluid": {
+    "type": "geontm:gas",
+    "amount": 12000
+  },
+  "output_fluid": {
+    "type": "geontm:hydrogen",
+    "amount": 8000
+  },
+  "output_item": "geontm:ingot_graphite",
+  "duration": 60,
+  "order": 39
+}

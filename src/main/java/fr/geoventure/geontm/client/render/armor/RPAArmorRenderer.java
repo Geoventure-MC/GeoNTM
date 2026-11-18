@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelArmorRPA} (Remnant power armour): {@code remnant.obj}, textures per region like T-51 (the chestplate
@@ -19,7 +19,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class RPAArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/remnant.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/remnant.obj");
 
     private static final Surface HELMET = skin("rpa_helmet");
     private static final Surface CHEST = skin("rpa_chest");

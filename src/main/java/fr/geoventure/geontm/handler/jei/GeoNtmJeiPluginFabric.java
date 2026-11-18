@@ -12,7 +12,7 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeTransferRegistration;
 import mezz.jei.api.registration.ISubtypeRegistration;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /^*
  * Fabric {@code @JeiPlugin} entrypoint. Thin by design, all category/recipe/catalyst logic lives in
@@ -23,10 +23,10 @@ import net.minecraft.resources.Identifier;
 @JeiPlugin
 public class GeoNtmJeiPluginFabric implements IModPlugin {
 
-    private static final Identifier UID = fr.geoventure.geocore.Ids.of(Constants.MOD_ID, "jei_plugin");
+    private static final ResourceLocation UID = fr.geoventure.geocore.Ids.of(Constants.MOD_ID, "jei_plugin");
 
     @Override
-    public Identifier getPluginUid() {
+    public ResourceLocation getPluginUid() {
         return UID;
     }
 

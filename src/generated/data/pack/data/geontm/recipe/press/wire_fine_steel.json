@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/steel"
+  },
+  "output": {
+    "id": "geontm:wire_fine_steel",
+    "count": 8
+  },
+  "order": 36
+}

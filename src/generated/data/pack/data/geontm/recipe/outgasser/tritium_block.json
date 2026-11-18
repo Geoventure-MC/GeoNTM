@@ -1,0 +1,17 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.tritium_block",
+  "input_items": [
+    {
+      "ingredient": "#c:storage_blocks/lithium"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:tritium",
+      "amount": 10000
+    }
+  ],
+  "duration": 10000,
+  "order": 0
+}

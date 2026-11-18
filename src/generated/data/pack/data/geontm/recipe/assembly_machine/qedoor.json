@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.qedoor",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:dyes/black",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:qe_containment"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 17920
+}

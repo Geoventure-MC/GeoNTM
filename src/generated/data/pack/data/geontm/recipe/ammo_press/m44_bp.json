@@ -1,0 +1,26 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_m44_bp",
+    "count": 12
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/lead",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "minecraft:gunpowder"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small"
+    },
+    ""
+  ],
+  "order": 6
+}

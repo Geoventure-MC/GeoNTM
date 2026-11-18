@@ -1,0 +1,19 @@
+{
+  "type": "liquid",
+  "color": "#6B2A20",
+  "temperature": 500,
+  "flags": [
+    "delicious"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:mug",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 400,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

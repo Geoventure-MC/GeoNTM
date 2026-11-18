@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "red_copper",
+      "shape": "wire",
+      "count": 8
+    }
+  ],
+  "output": "geontm:wire_dense_red_copper",
+  "duration": 100,
+  "consumption": 10000,
+  "order": 5
+}

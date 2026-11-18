@@ -1,0 +1,28 @@
+{
+  "type": "liquid",
+  "color": "#3E3627",
+  "temperature": 1600,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 3,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 65
+    },
+    "coolable": {
+      "cools_to": "geontm:thorium_salt_depleted",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 400,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

@@ -21,10 +21,10 @@ import fr.geoventure.geocore.harness.HarnessQueryRegistry;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.world.StepHeight;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -39,7 +39,7 @@ public final class ArmorSetClient {
 
     private ArmorSetClient() {}
 
-    private static final Identifier MISC = Ids.of("geontm", "textures/misc/overlay_misc.png");
+    private static final ResourceLocation MISC = Ids.of("geontm", "textures/misc/overlay_misc.png");
 
     public static KeyMappings.Mapping dashKey;
     private static boolean lastDash;
@@ -136,7 +136,7 @@ public final class ArmorSetClient {
     }
 
     /** 1.7 {@code RenderScreenOverlay.renderDashBar}, drawn after the hotbar while dashes are available. */
-    public static void renderDashBar(GuiGraphicsExtractor graphics) {
+    public static void renderDashBar(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.options.hideGui) return;
         ArmorDashHandler.State props = ArmorDashHandler.state(mc.player);

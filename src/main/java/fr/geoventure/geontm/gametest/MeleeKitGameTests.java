@@ -94,7 +94,7 @@ public final class MeleeKitGameTests {
 
     /** MagicRecipes compares the compacted grid in order: three diamond gravels then the lead gavel. */
     public static void book(GameTestHelper helper) {
-        ItemStack gravel = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "gravel_diamond")));
+        ItemStack gravel = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("geontm", "gravel_diamond")));
         ItemStack lead = new ItemStack(ModMeleeKitItems.lead_gavel.get());
         ItemStack out = MagicRecipes.getRecipe(List.of(gravel, gravel, gravel, lead));
         helper.assertTrue(out.is(ModMeleeKitItems.diamond_gavel.get()), "diamond gavel recipe, got " + out);

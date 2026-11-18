@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pipe_steel"
+    }
+  ],
+  "tier": 1,
+  "order": 49
+}

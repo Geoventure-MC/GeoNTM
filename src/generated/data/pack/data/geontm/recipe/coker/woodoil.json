@@ -1,0 +1,7 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:woodoil",
+  "solid_fuel_energy": 340000,
+  "output": "minecraft:charcoal",
+  "byproduct_type": "geontm:gas_coker"
+}

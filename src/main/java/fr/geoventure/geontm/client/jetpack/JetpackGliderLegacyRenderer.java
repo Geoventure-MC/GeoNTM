@@ -2,13 +2,13 @@ package fr.geoventure.geontm.client.jetpack;
 
 //? if <26.1 {
 
-/*import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.render.RecordingSubmitSink;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
-/^ Legacy BEWLR/DynamicItemRenderer adapter for the same generated glider model. ^/
+/* Legacy BEWLR/DynamicItemRenderer adapter for the same generated glider model. */
 public final class JetpackGliderLegacyRenderer {
 
     private JetpackGliderLegacyRenderer() {}
@@ -20,4 +20,4 @@ public final class JetpackGliderLegacyRenderer {
         sink.flush(buffers, null);
     }
 }
-*///?}
+//?}

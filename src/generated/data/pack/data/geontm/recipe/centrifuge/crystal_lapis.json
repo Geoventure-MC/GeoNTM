@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_lapis"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_lapis",
+      "count": 4
+    },
+    {
+      "id": "geontm:powder_lapis",
+      "count": 4
+    },
+    "geontm:powder_cobalt",
+    {
+      "id": "geontm:gem_sodalite",
+      "count": 2
+    }
+  ],
+  "order": 158
+}

@@ -8,9 +8,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -20,8 +20,8 @@ import java.util.Optional;
 /** 1.7 {@code GUIPneumoTube}: the compressor's full GUI, or the endpoint's filter-only one. */
 public class GUIPneumoTube extends PneumaticScreenBase<ContainerPneumoTube> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_pipe.png");
-    private static final Identifier TEXTURE_ENDPOINT = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_endpoint.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_pipe.png");
+    private static final ResourceLocation TEXTURE_ENDPOINT = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_endpoint.png");
 
     private final boolean endpointOnly;
 
@@ -31,8 +31,8 @@ public class GUIPneumoTube extends PneumaticScreenBase<ContainerPneumoTube> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-        Identifier tex = endpointOnly ? TEXTURE_ENDPOINT : TEXTURE;
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        ResourceLocation tex = endpointOnly ? TEXTURE_ENDPOINT : TEXTURE;
         GuiDraw.blit(graphics, tex, leftPos, topPos, 0, 0, imageWidth, imageHeight, 256, 256);
 
         TileEntityPneumoTube tube = menu.tube();
@@ -56,13 +56,13 @@ public class GUIPneumoTube extends PneumaticScreenBase<ContainerPneumoTube> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 5, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityPneumoTube tube = menu.tube();
         if (tube == null) return;
 

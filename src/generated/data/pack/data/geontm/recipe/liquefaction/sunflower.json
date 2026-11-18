@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:sunflower",
+  "output": {
+    "type": "geontm:sunfloweroil",
+    "amount": 100
+  }
+}

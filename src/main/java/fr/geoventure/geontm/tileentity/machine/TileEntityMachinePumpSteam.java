@@ -15,7 +15,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -130,7 +130,7 @@ public class TileEntityMachinePumpSteam extends TileEntityMachineBase
     @Override public float getLastRotor() { return lastRotor; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isOn);
         buf.writeBoolean(onGround);
@@ -140,7 +140,7 @@ public class TileEntityMachinePumpSteam extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isOn = buf.readBoolean();
         onGround = buf.readBoolean();

@@ -1,0 +1,35 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.polymer",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/coal",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dusts/fluorite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 1000,
+      "pressure": 1
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_polymer",
+      "count": 4
+    }
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 39,
+  "requires": [
+    "enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "enable_528_pressurized"
+  ]
+}

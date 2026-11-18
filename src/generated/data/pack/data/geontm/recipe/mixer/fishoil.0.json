@@ -1,0 +1,17 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.fishoil.0",
+  "input_items": [
+    {
+      "ingredient": "#geontm:raw_fishes"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:fishoil",
+      "amount": 100
+    }
+  ],
+  "duration": 50,
+  "order": 12
+}

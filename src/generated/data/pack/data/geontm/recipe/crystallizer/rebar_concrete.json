@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:rebar"
+  },
+  "acid": {
+    "type": "geontm:concrete",
+    "amount": 1000
+  },
+  "output": "geontm:concrete_rebar",
+  "duration": 1,
+  "order": 68
+}

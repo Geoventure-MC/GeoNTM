@@ -1,0 +1,18 @@
+{
+  "type": "gaseous",
+  "color": "#404040",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "asphyxiant"
+  },
+  "traits": {
+    "polluting": {
+      "release": {
+        "POISON": 2.0000001E-5
+      }
+    }
+  }
+}

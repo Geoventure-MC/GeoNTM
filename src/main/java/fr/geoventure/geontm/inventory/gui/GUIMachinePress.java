@@ -5,9 +5,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachinePress;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachinePress;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -20,14 +20,14 @@ import java.util.Optional;
  */
 public class GUIMachinePress extends CompatContainerScreen<ContainerMachinePress> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_press.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_press.png");
 
     public GUIMachinePress(ContainerMachinePress menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 214);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachinePress press = this.menu.getPress();
@@ -48,14 +48,14 @@ public class GUIMachinePress extends CompatContainerScreen<ContainerMachinePress
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: white title at y=5, grey "Inventory" at ySize - 96 + 2.
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 5, 0xffffff, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachinePress press = this.menu.getPress();
         if (press == null) return;
         if (this.isHovering(25, 16, 18, 18, mouseX, mouseY)) {

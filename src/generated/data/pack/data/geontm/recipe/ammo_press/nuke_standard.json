@@ -1,0 +1,20 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_nuke_standard",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:nuggets/pu239"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:assembly_nuke"
+    },
+    "",
+    "",
+    "",
+    ""
+  ],
+  "order": 82
+}

@@ -1,0 +1,17 @@
+{
+  "values": {
+    "geontm:satellite_spy": "mapper",
+    "geontm:satellite_scanner": "scanner",
+    "geontm:satellite_radar": "radar",
+    "geontm:satellite_miner_astro": "miner",
+    "geontm:satellite_miner_lunar": "lunar_miner",
+    "geontm:satellite_precision_laser": "precision_laser",
+    "geontm:satellite_death_ray": "laser",
+    "geontm:satellite_xenium_resonator": "resonator",
+    "geontm:satellite_relay": "relay",
+    "geontm:satellite_detector": "detector",
+    "geontm:satellite_ray_scan": "ray_scan",
+    "geontm:satellite_science": "science",
+    "geontm:sat_gerald": "horizons"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_fluid": {
+    "type": "geontm:heavyoil",
+    "amount": 500
+  },
+  "input_item": {
+    "ingredient": "#c:cokes"
+  },
+  "output_fluid": {
+    "type": "geontm:coalgas",
+    "amount": 1000
+  },
+  "duration": 50,
+  "order": 37
+}

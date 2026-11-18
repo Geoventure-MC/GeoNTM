@@ -10,10 +10,10 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.registry.RegistryObject;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -24,14 +24,14 @@ import java.util.Optional;
 /** 1.7 {@code GUIMachineDiFurnaceRTG}: {@code gui_rtg_difurnace.png}, 176x166, two info panels on the left edge. */
 public final class GUIMachineDiFurnaceRTG extends CompatContainerScreen<ContainerMachineDiFurnaceRTG> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_rtg_difurnace.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_rtg_difurnace.png");
 
     public GUIMachineDiFurnaceRTG(ContainerMachineDiFurnaceRTG menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 166);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityDiFurnaceRTG furnace = menu.getFurnace();
@@ -47,13 +47,13 @@ public final class GUIMachineDiFurnaceRTG extends CompatContainerScreen<Containe
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityDiFurnaceRTG furnace = menu.getFurnace();
         if (furnace == null) return;
 

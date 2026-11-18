@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:chunk_ore_cryolite",
+  "materials": [
+    {
+      "material": "aluminium",
+      "amount": 72
+    },
+    {
+      "material": "sodium",
+      "amount": 72
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.overdrive2",
+  "input_items": [
+    {
+      "ingredient": "geontm:upgrade_overdrive_1"
+    },
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    },
+    {
+      "ingredient": "geontm:upgrade_effect_3"
+    },
+    {
+      "ingredient": "#c:ingots/saturnite",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:ingot_cft",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_board",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:upgrade_overdrive_2"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 50944,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:scrap_oil",
+    "count": 16
+  },
+  "acid": {
+    "type": "geontm:radiosolvent",
+    "amount": 100
+  },
+  "output": "geontm:nugget_arsenic",
+  "duration": 100,
+  "productivity": 0.3,
+  "order": 57
+}

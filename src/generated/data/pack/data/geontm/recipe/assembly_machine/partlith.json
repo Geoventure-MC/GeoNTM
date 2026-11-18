@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.partlith",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/lithium"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:part_lithium",
+      "count": 8
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "auto_switch_group": "autoswitch.cyclotron",
+  "order": 13312
+}

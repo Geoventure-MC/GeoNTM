@@ -1,0 +1,19 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:bedrock_ore_primary_first_light",
+  "molten": [
+    {
+      "material": "iron",
+      "amount": 576
+    },
+    {
+      "material": "copper",
+      "amount": 288
+    }
+  ],
+  "byproducts": [
+    "geontm:bedrock_ore_crumbs_light"
+  ],
+  "duration": 20,
+  "order": 18
+}

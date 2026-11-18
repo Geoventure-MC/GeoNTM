@@ -10,12 +10,12 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
@@ -25,7 +25,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIScreenPager extends CompatScreen {
 
-    private final Identifier texture;
+    private final ResourceLocation texture;
     public final String startingChannel;
     protected int xSize = 184;
     protected int ySize = 42;
@@ -39,7 +39,7 @@ public class GUIScreenPager extends CompatScreen {
     }
 
     /** 1.7 {@code GUIRTTYDesignator} is this screen with its own title and texture. */
-    public GUIScreenPager(ItemStack pager, Component title, Identifier texture) {
+    public GUIScreenPager(ItemStack pager, Component title, ResourceLocation texture) {
         super(title);
         this.texture = texture;
         String start = pager == null ? null : ItemRTTYPager.channel(pager);
@@ -66,12 +66,12 @@ public class GUIScreenPager extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, texture, guiLeft, guiTop, 0F, 0F, xSize, ySize, 256, 256);
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int x, int y, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int x, int y, float partialTick) {
         String name = title.getString();
         GuiDraw.text(graphics, font, name, this.guiLeft + this.xSize / 2 - font.width(name) / 2, this.guiTop + 6,
                 0xFF404040, false);

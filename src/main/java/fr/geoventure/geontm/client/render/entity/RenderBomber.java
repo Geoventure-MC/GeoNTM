@@ -12,9 +12,9 @@ import fr.geoventure.geocore.render.SubmitSink;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -27,7 +27,7 @@ public final class RenderBomber extends CompatEntityRenderer<EntityBomber, Rende
         shadowRadius = 0F;
     }
 
-    private static Identifier texture(int style) {
+    private static ResourceLocation texture(int style) {
         return switch (style) {
             case 2 -> ResourceManager.dornier_2_tex;
             case 4 -> ResourceManager.dornier_4_tex;

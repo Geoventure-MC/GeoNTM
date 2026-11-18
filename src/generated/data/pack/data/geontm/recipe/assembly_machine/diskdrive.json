@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.diskdrive",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_basic"
+    },
+    {
+      "material": "neodymium",
+      "shape": "densewire"
+    }
+  ],
+  "output_items": [
+    "geontm:drive_disk_empty"
+  ],
+  "duration": 200,
+  "power": 250,
+  "order": 9472
+}

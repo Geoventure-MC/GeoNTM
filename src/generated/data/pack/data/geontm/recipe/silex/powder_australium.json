@@ -1,0 +1,20 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:powder_australium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_australium_lesser",
+      "weight": 5
+    },
+    {
+      "data": "geontm:nugget_australium_greater",
+      "weight": 1
+    }
+  ],
+  "order": 10
+}

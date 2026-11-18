@@ -1,0 +1,6 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_long_uranium235",
+  "output": "geontm:nuclear_waste_long_depleted_uranium235",
+  "decay": "long"
+}

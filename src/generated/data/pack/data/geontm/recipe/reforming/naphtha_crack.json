@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:naphtha_crack",
+  "outputs": [
+    {
+      "type": "geontm:reformate",
+      "amount": 50
+    },
+    {
+      "type": "geontm:aromatics",
+      "amount": 10
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 5
+    }
+  ]
+}

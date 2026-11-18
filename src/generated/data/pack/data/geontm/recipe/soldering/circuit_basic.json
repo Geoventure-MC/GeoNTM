@@ -1,0 +1,26 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_basic",
+  "duration": 200,
+  "consumption": 250,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 4
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "order": 1
+}

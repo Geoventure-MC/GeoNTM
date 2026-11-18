@@ -41,6 +41,6 @@ public class BlockLantern extends BlockMultiblockMachine {
     /** 1.7 {@code BlockDummyable} default: no {@code onBlockActivated} override, so the click falls through. */
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

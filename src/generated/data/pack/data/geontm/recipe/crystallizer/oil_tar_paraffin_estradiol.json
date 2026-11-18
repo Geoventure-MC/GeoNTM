@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:oil_tar_paraffin"
+  },
+  "acid": {
+    "type": "geontm:estradiol",
+    "amount": 250
+  },
+  "output": "geontm:pill_red",
+  "duration": 200,
+  "order": 338
+}

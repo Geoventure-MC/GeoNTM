@@ -37,7 +37,7 @@ public class RBMKKeyPad extends RBMKMiniPanelBase implements IToolable, TickingB
      */
     @Override protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         double hitX = hit.getLocation().x - pos.getX(), hitY = hit.getLocation().y - pos.getY(), hitZ = hit.getLocation().z - pos.getZ();
         Direction side = hit.getDirection();
         if (hitX != 0 && hitX != 1 && hitZ != 0 && hitZ != 1 && side != Direction.DOWN && side != Direction.UP
@@ -49,7 +49,7 @@ public class RBMKKeyPad extends RBMKMiniPanelBase implements IToolable, TickingB
             if (facing == Direction.WEST && hitZ > 0.5) indexHit = 1;
             if (facing == Direction.EAST && hitZ < 0.5) indexHit = 1;
             if (hitY < 0.5) indexHit += 2;
-            if (!tile.keys[indexHit].active) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (!tile.keys[indexHit].active) return InteractionResult.PASS;
             tile.keys[indexHit].click();
         }
         return InteractionResult.SUCCESS;

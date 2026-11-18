@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.chlorocalcite_solution.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/chlorocalcite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:chlorocalcite_solution",
+      "amount": 500
+    }
+  ],
+  "duration": 50,
+  "order": 41
+}

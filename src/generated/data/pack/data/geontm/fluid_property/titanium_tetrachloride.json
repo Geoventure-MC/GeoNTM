@@ -1,0 +1,11 @@
+{
+  "type": "liquid",
+  "color": "#DBF796",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 2,
+    "symbol": "nowater"
+  }
+}

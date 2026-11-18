@@ -4,7 +4,7 @@ import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geontm.packet.SyncUnitSchema;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -39,8 +39,8 @@ public class TileEntityMachineLPW2 extends TileEntityMachineBase implements Sync
         if (unit != MACHINE_FLAGS_UNIT) throw new IllegalArgumentException("Unknown LPW2 state unit: " + unit);
         readMuffled(input);
     }
-    @Override public void serialize(RegistryFriendlyByteBuf output) { writeSyncUnit(MACHINE_FLAGS_UNIT, output); }
-    @Override public void deserialize(RegistryFriendlyByteBuf input) { readSyncUnit(MACHINE_FLAGS_UNIT, input); }
+    @Override public void serialize(FriendlyByteBuf output) { writeSyncUnit(MACHINE_FLAGS_UNIT, output); }
+    @Override public void deserialize(FriendlyByteBuf input) { readSyncUnit(MACHINE_FLAGS_UNIT, input); }
 
     /**
      * The clock {@code RenderLPW2}'s moving parts follow, in ticks: 1.7's world time ({@code getTotalWorldTime() %

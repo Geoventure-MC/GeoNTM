@@ -10,7 +10,7 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 
 /**
@@ -23,8 +23,8 @@ public class RenderHumanoidMob<T extends Mob> extends CompatHumanoidMobRenderer<
     private static final LayerDefinition BIPED_64X32 =
             LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0F), 64, 32);
 
-    private RenderHumanoidMob(EntityRendererProvider.Context context, Identifier texture, boolean translucent) {
-        super(context, 0.5F, new Identifier[]{texture}, HumanoidBody.plain(BIPED_64X32, translucent));
+    private RenderHumanoidMob(EntityRendererProvider.Context context, ResourceLocation texture, boolean translucent) {
+        super(context, 0.5F, new ResourceLocation[]{texture}, HumanoidBody.plain(BIPED_64X32, translucent));
     }
 
     // 1.7 RenderGhost wrapped the whole draw in SRC_ALPHA/ONE_MINUS_SRC_ALPHA with the alpha test off

@@ -1,0 +1,14 @@
+{
+  "type": "gaseous",
+  "color": "#B50000",
+  "temperature": 20,
+  "hazard": {
+    "poison": 5,
+    "flammability": 0,
+    "reactivity": 5,
+    "symbol": "antimatter"
+  },
+  "flags": [
+    "amat"
+  ]
+}

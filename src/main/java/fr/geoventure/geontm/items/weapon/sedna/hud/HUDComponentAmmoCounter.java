@@ -4,7 +4,7 @@ import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT;
 import fr.geoventure.geontm.items.weapon.sedna.mags.IMagazine;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -35,7 +35,7 @@ public class HUDComponentAmmoCounter implements IHUDComponent {
     }
 
     @Override
-    public void renderHUDComponent(GuiGraphicsExtractor graphics, Player player, ItemStack stack, int bottomOffset,
+    public void renderHUDComponent(GuiGraphics graphics, Player player, ItemStack stack, int bottomOffset,
                                    int configIndex) {
         boolean offhandOccupied = !player.getOffhandItem().isEmpty();
         int x = graphics.guiWidth() / 2 + (mirrored

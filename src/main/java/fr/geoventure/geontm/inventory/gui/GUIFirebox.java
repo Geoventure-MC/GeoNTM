@@ -6,9 +6,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerFirebox;
 import fr.geoventure.geontm.tileentity.machine.TileEntityFireboxBase;
 import fr.geoventure.geontm.tileentity.machine.TileEntityHeaterOven;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -23,8 +23,8 @@ import java.util.Locale;
  */
 public class GUIFirebox extends CompatContainerScreen<ContainerFirebox> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_firebox.png");
-    private static final Identifier OVEN_TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_heating_oven.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_firebox.png");
+    private static final ResourceLocation OVEN_TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_heating_oven.png");
 
     public GUIFirebox(ContainerFirebox menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 168);
@@ -32,16 +32,16 @@ public class GUIFirebox extends CompatContainerScreen<ContainerFirebox> {
 
     /** 1.7: centred title at y=6 (white for the heating oven, 4210752 otherwise), inventory line at (8, ySize-96+2). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         int color = this.menu.getFirebox() instanceof TileEntityHeaterOven ? 0xffffff : 4210752;
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 6, color, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         TileEntityFireboxBase te = this.menu.getFirebox();
-        Identifier texture = te instanceof TileEntityHeaterOven ? OVEN_TEXTURE : TEXTURE;
+        ResourceLocation texture = te instanceof TileEntityHeaterOven ? OVEN_TEXTURE : TEXTURE;
         GuiDraw.blit(graphics, texture, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
         if (te == null) return;
 
@@ -65,7 +65,7 @@ public class GUIFirebox extends CompatContainerScreen<ContainerFirebox> {
 
     /** 1.7 {@code drawScreen}: burn-module bonuses over an empty fuel slot, then the heat and burn readouts. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFireboxBase te = this.menu.getFirebox();
         if (te == null) return;
         if (this.menu.getCarried().isEmpty()) {

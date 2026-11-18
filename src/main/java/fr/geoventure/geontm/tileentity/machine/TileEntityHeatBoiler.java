@@ -17,7 +17,7 @@ import fr.geoventure.geontm.tileentity.MachineCore;
 import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geocore.data.DataIn;
@@ -205,7 +205,7 @@ public class TileEntityHeatBoiler extends TileEntityLoadedBase implements IFluid
     // --- sync + persistence (old serialize order: hasExploded gate first) ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(hasExploded);
         if (!this.hasExploded) {
@@ -217,7 +217,7 @@ public class TileEntityHeatBoiler extends TileEntityLoadedBase implements IFluid
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.hasExploded = buf.readBoolean();
         if (!this.hasExploded) {

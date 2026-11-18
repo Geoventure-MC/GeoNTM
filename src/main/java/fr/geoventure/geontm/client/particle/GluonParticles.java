@@ -18,10 +18,10 @@ import fr.geoventure.geocore.render.WorldEffects;
 import fr.geoventure.geocore.world.LivingHurtAccess;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -54,10 +54,10 @@ import java.util.Map;
  */
 public final class GluonParticles {
 
-    static final Identifier FLARE = Ids.of("geontm", "textures/misc/flare2.png");
-    static final Identifier FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
-    static final Identifier BURN = Ids.of("geontm", "textures/misc/gluon_burn.png");
-    static final Identifier BEAM_GENERIC = Ids.of("geontm", "textures/misc/beam_generic.png");
+    static final ResourceLocation FLARE = Ids.of("geontm", "textures/misc/flare2.png");
+    static final ResourceLocation FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
+    static final ResourceLocation BURN = Ids.of("geontm", "textures/misc/gluon_burn.png");
+    static final ResourceLocation BEAM_GENERIC = Ids.of("geontm", "textures/misc/beam_generic.png");
 
     private static final int FULLBRIGHT = 0xF000F0;
 
@@ -568,7 +568,7 @@ public final class GluonParticles {
      */
     static final class Cube {
         final Level level;
-        final Identifier texture;
+        final ResourceLocation texture;
         /** The cube's 24 vertices relative to its centre: x, y, z, u, v. */
         final float[] local;
         final Vec3 corner;
@@ -584,7 +584,7 @@ public final class GluonParticles {
         final List<Glow> glows = new ArrayList<>();
         final RandomSource rand;
 
-        Cube(Level level, Identifier texture, float[] data, double x, double y, double z) {
+        Cube(Level level, ResourceLocation texture, float[] data, double x, double y, double z) {
             this.level = level;
             this.texture = texture;
             this.rand = level.getRandom();

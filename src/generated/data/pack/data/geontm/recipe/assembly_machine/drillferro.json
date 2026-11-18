@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drillferro",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/ferrouranium",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/bismuth",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_ferro"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 32000
+}

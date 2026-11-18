@@ -1,0 +1,67 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.vaccumrefinery",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:sphere_steel"
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_vacuum_distill"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 26880,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_bronze_tubes",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 2
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor_bismuth",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:item_expensive_computer"
+    }
+  ]
+}

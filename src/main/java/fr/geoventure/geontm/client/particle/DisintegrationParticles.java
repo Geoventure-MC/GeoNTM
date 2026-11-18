@@ -24,7 +24,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -44,14 +44,14 @@ import org.joml.Vector3f;
 
 /** Client lifetime and Core submission path for 1.7's skeleton and giblet effects. */
 public final class DisintegrationParticles {
-    private static final Identifier SKELETON_MODEL = Ids.of(Constants.MOD_ID, "models/effect/skeleton.obj");
-    private static final Identifier SKELETON_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/skeleton.png");
-    private static final Identifier SKELETON_TEXTURE_EXT = Ids.of(Constants.MOD_ID, "textures/particle/skoilet.png");
-    private static final Identifier SKELETON_BLOOD = Ids.of(Constants.MOD_ID, "textures/particle/skeleton_blood.png");
-    private static final Identifier SKELETON_BLOOD_EXT = Ids.of(Constants.MOD_ID, "textures/particle/skoilet_blood.png");
-    private static final Identifier MEAT = Ids.of(Constants.MOD_ID, "textures/particle/meat.png");
-    private static final Identifier SLIME = Ids.of(Constants.MOD_ID, "textures/particle/slime.png");
-    private static final Identifier METAL = Ids.of(Constants.MOD_ID, "textures/particle/metal.png");
+    private static final ResourceLocation SKELETON_MODEL = Ids.of(Constants.MOD_ID, "models/effect/skeleton.obj");
+    private static final ResourceLocation SKELETON_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/skeleton.png");
+    private static final ResourceLocation SKELETON_TEXTURE_EXT = Ids.of(Constants.MOD_ID, "textures/particle/skoilet.png");
+    private static final ResourceLocation SKELETON_BLOOD = Ids.of(Constants.MOD_ID, "textures/particle/skeleton_blood.png");
+    private static final ResourceLocation SKELETON_BLOOD_EXT = Ids.of(Constants.MOD_ID, "textures/particle/skoilet_blood.png");
+    private static final ResourceLocation MEAT = Ids.of(Constants.MOD_ID, "textures/particle/meat.png");
+    private static final ResourceLocation SLIME = Ids.of(Constants.MOD_ID, "textures/particle/slime.png");
+    private static final ResourceLocation METAL = Ids.of(Constants.MOD_ID, "textures/particle/metal.png");
     private static final Surface SKELETON_SKIN = Surface.translucent(SKELETON_TEXTURE.toString());
     private static final Surface SKELETON_SKIN_EXT = Surface.translucent(SKELETON_TEXTURE_EXT.toString());
     private static final Surface SKELETON_SKIN_BLOOD = Surface.translucent(SKELETON_BLOOD.toString());
@@ -151,7 +151,7 @@ public final class DisintegrationParticles {
         if (GIBLETS.isEmpty()) return;
         Vector3f right = camera.orientation.transform(new Vector3f(1F, 0F, 0F));
         Vector3f up = camera.orientation.transform(new Vector3f(0F, 1F, 0F));
-        Identifier[] textures = {MEAT, SLIME, METAL};
+        ResourceLocation[] textures = {MEAT, SLIME, METAL};
         for (int layer = 0; layer < textures.length; layer++) {
             final int type = layer;
             WorldEffects.submit(new PoseStack(), CompatRenderTypes.entityTranslucent(textures[layer]), 0,
@@ -250,7 +250,7 @@ public final class DisintegrationParticles {
         private boolean onGround;
         private final Part part;
         private final float brightness;
-        private final Identifier texture;
+        private final ResourceLocation texture;
         private int initialDelay;
         private final float gravity;
         private final int lifetime;

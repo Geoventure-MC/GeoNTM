@@ -1,0 +1,15 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "HEUF6",
+  "consumed": 300,
+  "produced": 0,
+  "high_speed": true,
+  "outputs": [
+    {
+      "id": "geontm:nugget_u238",
+      "count": 2
+    },
+    "geontm:nugget_u235",
+    "geontm:fluorite"
+  ]
+}

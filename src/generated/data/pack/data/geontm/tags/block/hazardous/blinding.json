@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:block_schrabidate",
+    "geontm:block_schrabidium",
+    "geontm:block_schrabidium_fuel",
+    "geontm:block_schraranium",
+    "geontm:block_solinium",
+    "geontm:ore_gneiss_schrabidium",
+    "geontm:ore_nether_schrabidium",
+    "geontm:ore_schrabidium",
+    "geontm:ore_sellafield_schrabidium"
+  ]
+}

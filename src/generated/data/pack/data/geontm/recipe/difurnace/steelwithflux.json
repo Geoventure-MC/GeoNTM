@@ -1,0 +1,20 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.steelWithFlux",
+  "input_items": [
+    {
+      "ingredient": "#c:ores/iron"
+    },
+    {
+      "ingredient": "geontm:powder_flux"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_steel",
+      "count": 3
+    }
+  ],
+  "duration": 400,
+  "order": 4
+}

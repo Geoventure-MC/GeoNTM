@@ -1,0 +1,56 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.upgrade_speed_iii.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:upgrade_speed_3"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_chip",
+      "count": 16,
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:circuit_capacitor_tantalium",
+      "count": 16,
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:upgrade_speed_2",
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:ingot_rubber",
+      "count": 4,
+      "chance": 0.75
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:solvent",
+      "amount": 375
+    }
+  ],
+  "duration": 400,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:upgrade_speed_3"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 19,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

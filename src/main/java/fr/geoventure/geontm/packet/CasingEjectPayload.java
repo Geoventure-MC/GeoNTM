@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Immutable casing spawn snapshot; the particle owner consumes this on the client main thread. */
 public record CasingEjectPayload(double x, double y, double z, double mX, double mY, double mZ,
@@ -36,7 +36,7 @@ public record CasingEjectPayload(double x, double y, double z, double mX, double
                     buffer.readBoolean(), buffer.readInt(), buffer.readDouble(), buffer.readInt()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

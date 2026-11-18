@@ -1,0 +1,30 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.solinium",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:fins_quad_titanium"
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    },
+    {
+      "ingredient": "#c:dyes/gray",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_solinium"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 54528,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

@@ -2,12 +2,12 @@ package fr.geoventure.geontm.client.render;
 
 import fr.geoventure.geontm.inventory.fluid.FluidHazard;
 import fr.geoventure.geocore.render.CompatRenderState;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Render state for {@link FluidTankRenderer}: facing yaw + the fluid-specific body texture. */
 public class FluidTankRenderState extends CompatRenderState {
     public float yaw;
-    public Identifier bodyTexture;
+    public ResourceLocation bodyTexture;
     /** 1.7 {@code hasExploded}: draw {@code fluidtank_exploded.obj} instead. */
     public boolean exploded;
     /** The stored fluid's NFPA diamond; null when the tank holds nothing (1.7 draws none then). */

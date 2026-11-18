@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:ball_resin",
+    "geontm:cinnabar",
+    "geontm:coke_coal",
+    "geontm:coke_lignite",
+    "geontm:coke_petroleum",
+    "geontm:gem_alexandrite",
+    "geontm:gem_rad",
+    "geontm:gem_sodalite",
+    "geontm:gem_tantalium",
+    "geontm:gem_volcanic",
+    "geontm:lignite",
+    "geontm:stone_resource_bauxite"
+  ]
+}

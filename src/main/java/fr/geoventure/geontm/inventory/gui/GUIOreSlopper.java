@@ -6,9 +6,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineOreSlopper;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
@@ -16,14 +16,14 @@ import java.util.Optional;
 /** 1.7 {@code GUIOreSlopper}: {@code gui_ore_slopper.png}, 176x204. */
 public final class GUIOreSlopper extends CompatContainerScreen<ContainerOreSlopper> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_ore_slopper.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_ore_slopper.png");
 
     public GUIOreSlopper(ContainerOreSlopper menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityMachineOreSlopper slopper = menu.getSlopper();
@@ -43,13 +43,13 @@ public final class GUIOreSlopper extends CompatContainerScreen<ContainerOreSlopp
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2 - 9, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineOreSlopper slopper = menu.getSlopper();
         if (slopper == null) return;
 

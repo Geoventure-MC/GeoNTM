@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:raw_materials/thorium"
+  },
+  "outputs": [
+    {
+      "item": "geontm:powder_thorium",
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_thorium",
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_uranium",
+      "chance": 0.6666667
+    },
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.6666667
+    }
+  ],
+  "order": 40
+}

@@ -35,7 +35,7 @@ import fr.geoventure.geontm.inventory.material.NTMMaterial;
 import fr.geoventure.geontm.items.special.ItemCell;
 import fr.geoventure.geocore.Ids;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import org.jspecify.annotations.Nullable;
@@ -81,8 +81,8 @@ public class HazardRegistry {
             rod_quad = rod * 4, rod_rbmk = rod * 8;
 
     /** Named hazard types, in registration order. Declaration order is the built-ins' order. */
-    private static final Map<Identifier, IHazardType> TYPES = new LinkedHashMap<>();
-    private static final Map<IHazardType, Identifier> TYPE_IDS = new IdentityHashMap<>();
+    private static final Map<ResourceLocation, IHazardType> TYPES = new LinkedHashMap<>();
+    private static final Map<IHazardType, ResourceLocation> TYPE_IDS = new IdentityHashMap<>();
 
     /**
      * Names a hazard type so a recipe, a command or another mod's registration pass can find it without the
@@ -90,7 +90,7 @@ public class HazardRegistry {
      *
      * <p>{@link HazardSystem} keys everything off type identity, so an unnamed type works everywhere.
      */
-    public static <T extends IHazardType> T registerType(final Identifier id, final T type) {
+    public static <T extends IHazardType> T registerType(final ResourceLocation id, final T type) {
         final IHazardType existing = TYPES.putIfAbsent(id, type);
         if (existing != null && existing != type) {
             throw new IllegalStateException("Hazard type " + id + " is already registered to " + existing);
@@ -99,20 +99,20 @@ public class HazardRegistry {
         return type;
     }
 
-    public static @Nullable IHazardType getType(final Identifier id) {
+    public static @Nullable IHazardType getType(final ResourceLocation id) {
         return TYPES.get(id);
     }
 
-    public static @Nullable Identifier getTypeId(final IHazardType type) {
+    public static @Nullable ResourceLocation getTypeId(final IHazardType type) {
         return TYPE_IDS.get(type);
     }
 
     /** Every named hazard type, built-in and third-party alike. */
-    public static Map<Identifier, IHazardType> types() {
+    public static Map<ResourceLocation, IHazardType> types() {
         return Collections.unmodifiableMap(TYPES);
     }
 
-    private static Identifier hazardId(final String path) {
+    private static ResourceLocation hazardId(final String path) {
         return Ids.of(Constants.MOD_ID, path);
     }
 

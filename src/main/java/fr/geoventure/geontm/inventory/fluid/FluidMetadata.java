@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.inventory.fluid;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 import fr.geoventure.geontm.api.data.FluidDataMaps;
 import java.util.HashMap;
@@ -37,8 +37,8 @@ public final class FluidMetadata {
     public FluidDataMaps.@Nullable Containers containers() { return containers; }
     public FluidType naming() { return naming; }
     public Component getDisplayName() { return naming.ownDisplayName(); }
-    public Identifier getIconSprite() { return naming.ownIconSprite(); }
-    public Identifier getTexture() { return naming.ownTexture(); }
+    public ResourceLocation getIconSprite() { return naming.ownIconSprite(); }
+    public ResourceLocation getTexture() { return naming.ownTexture(); }
     public boolean hasProperties() { return defined; }
 
     public void addInfo(List<Component> info, boolean shiftHeld) {

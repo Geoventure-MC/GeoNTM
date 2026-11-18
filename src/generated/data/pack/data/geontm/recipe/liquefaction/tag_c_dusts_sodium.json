@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#c:dusts/sodium",
+  "output": {
+    "type": "geontm:sodium",
+    "amount": 100
+  }
+}

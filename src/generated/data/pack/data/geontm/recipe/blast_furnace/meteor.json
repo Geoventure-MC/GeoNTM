@@ -1,0 +1,17 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.meteor",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/cobalt"
+    },
+    {
+      "ingredient": "geontm:powder_meteorite"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_meteorite"
+  ],
+  "duration": 600,
+  "order": 13
+}

@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.caprad",
+  "input_items": [
+    {
+      "ingredient": "geontm:cap_rad",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:cap_rad",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:block_cap_rad"
+  ],
+  "duration": 10,
+  "power": 100,
+  "order": 20736
+}

@@ -84,7 +84,7 @@ public final class PendingDetonations extends CompatSavedData<PendingDetonations
         Set<Long> targetChunks = new HashSet<>();
         for (long packed : data.entries.keySet()) {
             BlockPos pos = BlockPos.of(packed);
-            targetChunks.add(ChunkPos.pack(pos.getX() >> 4, pos.getZ() >> 4));
+            targetChunks.add(ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4));
         }
 
         for (long packed : targetChunks) {
@@ -154,7 +154,7 @@ public final class PendingDetonations extends CompatSavedData<PendingDetonations
     public static boolean isLoading(ServerLevel level, BlockPos pos) {
         LoadingState state = LOADING.get(level);
         return state != null && state.ticket != null
-                && state.ticket.chunks().contains(ChunkPos.pack(pos.getX() >> 4, pos.getZ() >> 4));
+                && state.ticket.chunks().contains(ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4));
     }
 
     public static void forget(ServerLevel level) {
@@ -166,7 +166,7 @@ public final class PendingDetonations extends CompatSavedData<PendingDetonations
         if (state.ticket == null || state.ticket.isReleased()) {
             state.ticket = ChunkLoadingManager.requestTicket(level, "pending detonations");
         }
-        long packed = ChunkPos.pack(chunkX, chunkZ);
+        long packed = ChunkPos.asLong(chunkX, chunkZ);
         state.releaseAt.remove(packed);
         state.ticket.force(chunkX, chunkZ);
     }
@@ -175,14 +175,14 @@ public final class PendingDetonations extends CompatSavedData<PendingDetonations
         LoadingState state = LOADING.get(level);
         if (state != null && state.ticket != null) {
             // Keep the source ticking long enough for a spawned MK5 entity to claim it for itself.
-            state.releaseAt.put(ChunkPos.pack(chunkX, chunkZ), level.getGameTime() + 2L);
+            state.releaseAt.put(ChunkPos.asLong(chunkX, chunkZ), level.getGameTime() + 2L);
         }
     }
 
     private static void releaseIfUnused(ServerLevel level, int chunkX, int chunkZ) {
         PendingDetonations data = get(level);
         if (hasRequestInChunk(data, chunkX, chunkZ)) return;
-        long chunk = ChunkPos.pack(chunkX, chunkZ);
+        long chunk = ChunkPos.asLong(chunkX, chunkZ);
         LoadingState state = LOADING.get(level);
         if (state == null || state.ticket == null) return;
         state.releaseAt.remove(chunk);
@@ -194,10 +194,10 @@ public final class PendingDetonations extends CompatSavedData<PendingDetonations
     }
 
     private static boolean hasRequestInChunk(PendingDetonations data, int chunkX, int chunkZ) {
-        long chunk = ChunkPos.pack(chunkX, chunkZ);
+        long chunk = ChunkPos.asLong(chunkX, chunkZ);
         for (long packed : data.entries.keySet()) {
             BlockPos pos = BlockPos.of(packed);
-            if (ChunkPos.pack(pos.getX() >> 4, pos.getZ() >> 4) == chunk) return true;
+            if (ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4) == chunk) return true;
         }
         return false;
     }

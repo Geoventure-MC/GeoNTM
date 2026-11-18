@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.schraranium",
+  "input_items": [
+    {
+      "ingredient": "geontm:ingot_schraranium"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 2000
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_schrabidium",
+      "count": 3
+    },
+    {
+      "id": "geontm:nugget_uranium",
+      "count": 3
+    },
+    {
+      "id": "geontm:nugget_neptunium",
+      "count": 2
+    }
+  ],
+  "duration": 200,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:ingot_schraranium"
+  },
+  "name_wrapper": "purex.schrab",
+  "order": 55
+}

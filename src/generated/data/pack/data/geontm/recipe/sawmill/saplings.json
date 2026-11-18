@@ -1,0 +1,9 @@
+{
+  "type": "geontm:sawmill",
+  "input": {
+    "ingredient": "#minecraft:saplings"
+  },
+  "output": "minecraft:stick",
+  "sawdust_chance": 0.1,
+  "order": 4
+}

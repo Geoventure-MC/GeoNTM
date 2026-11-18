@@ -9,7 +9,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -93,7 +93,7 @@ public abstract class TileEntityCooledBase extends TileEntityMachineBase
     @Override public FluidTankNTM[] getAllTanks() { return coolantTanks; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         coolantTanks[0].serialize(buf);
         coolantTanks[1].serialize(buf);
@@ -102,7 +102,7 @@ public abstract class TileEntityCooledBase extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         coolantTanks[0].deserialize(buf);
         coolantTanks[1].deserialize(buf);

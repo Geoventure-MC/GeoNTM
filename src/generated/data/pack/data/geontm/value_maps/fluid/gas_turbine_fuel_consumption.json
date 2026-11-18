@@ -1,0 +1,8 @@
+{
+  "values": {
+    "geontm:gas": 50.0,
+    "geontm:syngas": 10.0,
+    "geontm:oxyhydrogen": 100.0,
+    "geontm:reformgas": 5.0
+  }
+}

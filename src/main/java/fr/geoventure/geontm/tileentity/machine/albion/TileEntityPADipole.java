@@ -18,7 +18,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
@@ -161,7 +161,7 @@ public class TileEntityPADipole extends TileEntityCooledBase
     // --- sync + save ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(dirLower);
         buf.writeInt(dirUpper);
@@ -170,7 +170,7 @@ public class TileEntityPADipole extends TileEntityCooledBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         dirLower = buf.readInt();
         dirUpper = buf.readInt();

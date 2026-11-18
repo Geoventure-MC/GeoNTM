@@ -1,0 +1,61 @@
+{
+  "values": {
+    "geontm:pellet_rtg_radium": {
+      "heat": 3,
+      "lifespan": 11520000000,
+      "decays_to": "geontm:pellet_rtg_depleted_lead"
+    },
+    "geontm:pellet_rtg_weak": {
+      "heat": 5,
+      "lifespan": 720000000,
+      "decays_to": "geontm:pellet_rtg_depleted_lead"
+    },
+    "geontm:pellet_rtg": {
+      "heat": 10,
+      "lifespan": 631440000,
+      "decays_to": "geontm:pellet_rtg_depleted_lead"
+    },
+    "geontm:pellet_rtg_strontium": {
+      "heat": 15,
+      "lifespan": 208800000,
+      "decays_to": "geontm:pellet_rtg_depleted_zirconium"
+    },
+    "geontm:pellet_rtg_cobalt": {
+      "heat": 15,
+      "lifespan": 38160000,
+      "decays_to": "geontm:pellet_rtg_depleted_nickel"
+    },
+    "geontm:pellet_rtg_actinium": {
+      "heat": 20,
+      "lifespan": 156960000,
+      "decays_to": "geontm:pellet_rtg_depleted_lead"
+    },
+    "geontm:pellet_rtg_americium": {
+      "heat": 20,
+      "lifespan": 3384000000,
+      "decays_to": "geontm:pellet_rtg_depleted_neptunium"
+    },
+    "geontm:pellet_rtg_polonium": {
+      "heat": 50,
+      "lifespan": 9936000,
+      "decays_to": "geontm:pellet_rtg_depleted_lead"
+    },
+    "geontm:pellet_rtg_gold": {
+      "heat": 100,
+      "heat_decaying": 200,
+      "lifespan": 194400,
+      "decays_to": "geontm:pellet_rtg_depleted_mercury"
+    },
+    "geontm:pellet_rtg_lead": {
+      "heat": 200,
+      "heat_decaying": 600,
+      "lifespan": 21600,
+      "decays_to": "geontm:pellet_rtg_depleted_bismuth"
+    },
+    "geontm:pellet_rtg_balefire": {
+      "heat": 6000,
+      "lifespan": 12000,
+      "decays_to": "geontm:pellet_rtg_depleted_neptunium"
+    }
+  }
+}

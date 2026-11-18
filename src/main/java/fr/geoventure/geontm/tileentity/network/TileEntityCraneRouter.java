@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -60,14 +60,14 @@ public class TileEntityCraneRouter extends TileEntityMachineBase implements ICon
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (ModulePatternMatcher pattern : patterns) pattern.serialize(buf);
         buf.writeVarIntArray(this.modes);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (ModulePatternMatcher pattern : patterns) pattern.deserialize(buf);
         int[] read = buf.readVarIntArray();

@@ -21,7 +21,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -240,7 +240,7 @@ public class TileEntityMachineEPress extends TileEntityMachineBase implements Me
     // Sync (BufPacket) + persistence
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(progress);
@@ -248,7 +248,7 @@ public class TileEntityMachineEPress extends TileEntityMachineBase implements Me
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         progress = buf.readInt();

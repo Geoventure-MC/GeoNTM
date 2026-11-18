@@ -138,7 +138,7 @@ public class EntityRocketSoyuz extends EntityRocketBase {
     }
 
     private void forcePayloadChunk(ServerLevel server, int cx, int cz) {
-        long key = ChunkPos.pack(cx, cz);
+        long key = ChunkPos.asLong(cx, cz);
         if (key == forcedChunk) return;
         releaseForcedChunk();
         ChunkUtil.claimForced(server, key);

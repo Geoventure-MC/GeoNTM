@@ -1,0 +1,28 @@
+{
+  "type": "gaseous",
+  "color": "#FFFEED",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 4,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "traits": {
+    "flammable": {
+      "energy": 50000
+    },
+    "combustible": {
+      "grade": "GAS",
+      "energy": 75000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 2.0E-4
+      }
+    }
+  }
+}

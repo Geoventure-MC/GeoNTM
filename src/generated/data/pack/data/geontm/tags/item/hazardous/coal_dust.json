@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:powder_coal",
+    "geontm:powder_coal_tiny",
+    "geontm:powder_lignite"
+  ]
+}

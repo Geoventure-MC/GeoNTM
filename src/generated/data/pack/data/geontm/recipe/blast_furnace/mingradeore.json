@@ -1,0 +1,22 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.mingradeOre",
+  "input_items": [
+    {
+      "ingredient": "#c:ores/copper"
+    },
+    {
+      "ingredient": "#c:dusts/redstone",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_red_copper",
+      "count": 6
+    },
+    "geontm:ingot_raw_slag"
+  ],
+  "duration": 1200,
+  "order": 10
+}

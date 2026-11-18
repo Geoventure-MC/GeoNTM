@@ -93,9 +93,9 @@ public abstract class BlockCraneBase extends CompatBlock implements TickingBlock
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         Item held = player.getMainHandItem().getItem();
-        if (held instanceof ItemTooling || held instanceof ItemConveyorWand) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(level.getBlockEntity(pos) instanceof MenuProvider provider)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (held instanceof ItemTooling || held instanceof ItemConveyorWand) return InteractionResult.PASS;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof MenuProvider provider)) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, provider, pos);
         }

@@ -1,0 +1,25 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:upgrade_fortune_1",
+  "duration": 200,
+  "consumption": 1000,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_vacuum_tube",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor"
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:upgrade_template"
+    },
+    {
+      "ingredient": "#c:dusts/niobium",
+      "count": 4
+    }
+  ],
+  "order": 19
+}

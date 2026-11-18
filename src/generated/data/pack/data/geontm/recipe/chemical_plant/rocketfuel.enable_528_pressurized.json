@@ -1,0 +1,36 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.rocketfuel",
+  "input_items": [
+    {
+      "ingredient": "geontm:solid_fuel",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 200,
+      "pressure": 1
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 100
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:rocket_fuel",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 72,
+  "requires": [
+    "enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "enable_528_pressurized"
+  ]
+}

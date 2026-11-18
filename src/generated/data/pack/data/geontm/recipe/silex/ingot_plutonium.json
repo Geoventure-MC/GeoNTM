@@ -1,0 +1,24 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "#c:ingots/plutonium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_pu238",
+      "weight": 3
+    },
+    {
+      "data": "geontm:nugget_pu239",
+      "weight": 4
+    },
+    {
+      "data": "geontm:nugget_pu240",
+      "weight": 2
+    }
+  ],
+  "order": 5
+}

@@ -52,7 +52,7 @@ public class ItemFusionCore extends CompatItem {
                     SoundSource.PLAYERS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

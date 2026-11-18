@@ -1,0 +1,60 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.schrabhammer",
+  "input_items": [
+    {
+      "ingredient": "#c:storage_blocks/schrabidium",
+      "count": 35
+    },
+    {
+      "ingredient": "geontm:billet_yharonite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:billet_yharonite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:coin_ufo"
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:fragment_meteorite",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:schrabidium_hammer"
+  ],
+  "duration": 6000,
+  "power": 10000000,
+  "order": 37,
+  "ignition_temp": 25000000
+}

@@ -14,7 +14,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
@@ -270,12 +270,12 @@ public class FluidTankNTM implements Cloneable {
         var held = resource(heldId);
         restoreIdentities(resource(in.getStringOr(key + "_pin", "")), held, !heldId.isEmpty() && held == null);
     }
-    public void serialize(RegistryFriendlyByteBuf buffer) { serialize(buffer, fluid); }
-    public void serialize(RegistryFriendlyByteBuf buffer, int fill) {
+    public void serialize(FriendlyByteBuf buffer) { serialize(buffer, fluid); }
+    public void serialize(FriendlyByteBuf buffer, int fill) {
         serialize(buffer, fill, getFluid(), pin);
     }
     /** The resource and pin accompany a caller's pre-processing fill snapshot without allocating per tick. */
-    public void serialize(RegistryFriendlyByteBuf buffer, int fill, FluidType resource, @Nullable FluidType snapshotPin) {
+    public void serialize(FriendlyByteBuf buffer, int fill, FluidType resource, @Nullable FluidType snapshotPin) {
         packetSerialize(buffer, fill, resource, snapshotPin);
     }
     /** The same native tank payload in an independently encoded state unit. */
@@ -289,7 +289,7 @@ public class FluidTankNTM implements Cloneable {
         var snapshotHeld = fill > 0 && (resource.isForeign() || resource != type) ? resource : null;
         buffer.writeInt(snapshotHeld == null ? -1 : Fluids.networkId(snapshotHeld));
     }
-    public void deserialize(RegistryFriendlyByteBuf buffer) { packetDeserialize(buffer); }
+    public void deserialize(FriendlyByteBuf buffer) { packetDeserialize(buffer); }
     public void packetDeserialize(ByteBuf buffer) {
         fluid = buffer.readInt();
         maxFluid = buffer.readInt();

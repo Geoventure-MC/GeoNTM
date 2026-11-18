@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_washed_heavy"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_tungsten",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_lead",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_gold",
+      "count": 5
+    },
+    "geontm:bedrock_ore_crumbs_heavy"
+  ],
+  "order": 85
+}

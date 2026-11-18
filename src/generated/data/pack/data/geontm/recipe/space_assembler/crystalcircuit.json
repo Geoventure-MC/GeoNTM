@@ -1,0 +1,14 @@
+{
+  "type": "geontm:space_assembler",
+  "name": "space.crystalcircuit",
+  "input_items": [
+    {
+      "ingredient": "geontm:orbital_assembly_crystal_circuit"
+    }
+  ],
+  "output_items": [
+    "geontm:circuit_crystal"
+  ],
+  "duration": 3600,
+  "order": 0
+}

@@ -9,9 +9,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -21,14 +21,14 @@ import java.util.Optional;
 /** 1.7 {@code GUIMachineRotaryFurnace}: {@code gui_rotary_furnace.png}, 176x186. */
 public final class GUIMachineRotaryFurnace extends CompatContainerScreen<ContainerMachineRotaryFurnace> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_rotary_furnace.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_rotary_furnace.png");
 
     public GUIMachineRotaryFurnace(ContainerMachineRotaryFurnace menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 186);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineRotaryFurnace furnace = menu.getFurnace();
         if (furnace == null) return;
@@ -58,13 +58,13 @@ public final class GUIMachineRotaryFurnace extends CompatContainerScreen<Contain
         drawTank(graphics, furnace.tanks[2], 152, 18);
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y) {
         int height = tank.getMaxFill() <= 0 ? 0 : tank.getFill() * 52 / tank.getMaxFill();
         if (height <= 0) return;
         int x0 = leftPos + x;
         int bottom = topPos + y + 52;
         int top = bottom - height;
-        Identifier texture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation texture = tank.getTankType().clientMetadata().getTexture();
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
         if (Minecraft.getInstance().getResourceManager().getResource(texture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + 16, bottom);
@@ -78,12 +78,12 @@ public final class GUIMachineRotaryFurnace extends CompatContainerScreen<Contain
     }
 
     /** The old {@code renderTank(x, y, z, width, height, 1)}: a horizontal bar filling left to right. */
-    private void drawTankHorizontal(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTankHorizontal(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int fill = tank.getMaxFill() <= 0 ? 0 : tank.getFill() * width / tank.getMaxFill();
         if (fill <= 0) return;
         int x0 = leftPos + x;
         int y0 = topPos + y;
-        Identifier texture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation texture = tank.getTankType().clientMetadata().getTexture();
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
         if (Minecraft.getInstance().getResourceManager().getResource(texture).isPresent()) {
             graphics.enableScissor(x0, y0, x0 + fill, y0 + height);
@@ -97,13 +97,13 @@ public final class GUIMachineRotaryFurnace extends CompatContainerScreen<Contain
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - 54) / 2 - font.width(title) / 2, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineRotaryFurnace furnace = menu.getFurnace();
         if (furnace == null) return;
 

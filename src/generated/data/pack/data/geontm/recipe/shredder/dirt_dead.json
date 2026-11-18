@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:dirt_dead",
+  "output": "geontm:scrap_oil"
+}

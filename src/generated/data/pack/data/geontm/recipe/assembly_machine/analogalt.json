@@ -1,0 +1,38 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.analogAlt",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    },
+    {
+      "material": "tungsten",
+      "shape": "wire",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/niobium"
+    }
+  ],
+  "output_items": [
+    "geontm:circuit_analog"
+  ],
+  "duration": 200,
+  "power": 250,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..circuit"
+  ],
+  "order": 8448,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

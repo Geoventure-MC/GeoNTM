@@ -86,7 +86,7 @@ public class ItemModLens extends ItemArmorMod implements ISatChip {
 
     /** 1.7's scanned layer at {@code time}: heights count from the world floor, where 1.7's y 0 was. */
     public static int layer(Level level, int y, long time) {
-        int floor = level.getMinY();
+        int floor = level.getMinBuildHeight();
         int height = Math.max(Math.min(y - floor + 10, level.getHeight() - 1), 64);
         return floor + (int) (time % height);
     }

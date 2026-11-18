@@ -37,8 +37,8 @@ public class BlockGasChlorine extends BlockGasBase {
             Effects.add(living, MobEffects.BLINDNESS, 5 * 20, 0);
             Effects.add(living, MobEffects.POISON, 20 * 20, 2);
             Effects.add(living, MobEffects.WITHER, 1 * 20, 1);
-            Effects.add(living, MobEffects.SLOWNESS, 30 * 20, 1);
-            Effects.add(living, MobEffects.MINING_FATIGUE, 30 * 20, 2);
+            Effects.add(living, MobEffects.MOVEMENT_SLOWDOWN, 30 * 20, 1);
+            Effects.add(living, MobEffects.DIG_SLOWDOWN, 30 * 20, 2);
         }
     }
 

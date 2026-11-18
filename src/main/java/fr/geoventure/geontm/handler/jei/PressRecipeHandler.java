@@ -9,7 +9,7 @@ import fr.geoventure.geontm.items.machine.ItemStamp.StampType;
 import fr.geoventure.geontm.items.machine.ModStampItems;
 import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -62,7 +62,7 @@ public class PressRecipeHandler extends GeoNtmRecipeCategory<PressRecipes.PressR
     }
 
     @Override
-    public void draw(PressRecipes.PressRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(PressRecipes.PressRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         progress.draw(g, 47, 24);
     }

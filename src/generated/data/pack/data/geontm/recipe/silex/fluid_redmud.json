@@ -1,0 +1,46 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "fluid_icon": "geontm:redmud"
+  },
+  "fluid_produced": 300,
+  "fluid_consumed": 50,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:powder_aluminium",
+      "weight": 10
+    },
+    {
+      "data": {
+        "id": "geontm:powder_neodymium_tiny",
+        "count": 3
+      },
+      "weight": 5
+    },
+    {
+      "data": {
+        "id": "geontm:powder_boron_tiny",
+        "count": 3
+      },
+      "weight": 5
+    },
+    {
+      "data": "geontm:nugget_zirconium",
+      "weight": 5
+    },
+    {
+      "data": "geontm:powder_iron",
+      "weight": 20
+    },
+    {
+      "data": "geontm:powder_titanium",
+      "weight": 15
+    },
+    {
+      "data": "geontm:powder_sodium",
+      "weight": 10
+    }
+  ],
+  "order": 18
+}

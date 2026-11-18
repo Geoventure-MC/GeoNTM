@@ -1,0 +1,179 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:nugget_u235",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:nugget_pu238",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:nugget_ra226",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_u235",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_dual_u235",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_quad_u235",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_uranium_fuel",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_mox_fuel",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_lithium_fuel",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_thorium_fuel",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_dual_thf",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_tritium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_u233_fuel",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rod_zirnox_u235_fuel",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pellet_rtg",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_thorium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_neptunium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_strontium",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_cobalt",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bottle_quantum",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_m65",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:damage": 60
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:hazmat_kit",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_filter",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:yellow_barrel",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

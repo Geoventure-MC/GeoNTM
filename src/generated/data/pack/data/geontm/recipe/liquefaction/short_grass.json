@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:short_grass",
+  "output": {
+    "type": "geontm:seedslurry",
+    "amount": 100
+  }
+}

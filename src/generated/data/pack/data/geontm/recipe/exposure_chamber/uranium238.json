@@ -1,0 +1,18 @@
+{
+  "type": "geontm:exposure_chamber",
+  "name": "exposure.uranium238",
+  "input_items": [
+    {
+      "ingredient": "geontm:particle_higgs"
+    },
+    {
+      "ingredient": "#c:ingots/u238"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_schrabidium"
+  ],
+  "duration": 200,
+  "power": 10000,
+  "order": 1
+}

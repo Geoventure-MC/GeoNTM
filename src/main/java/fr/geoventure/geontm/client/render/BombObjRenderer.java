@@ -5,7 +5,7 @@ import fr.geoventure.geontm.client.model.WavefrontObj;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -29,19 +29,19 @@ public class BombObjRenderer<T extends BlockEntity> extends GemBER<T, MachineRen
     private final float[] yawsByFacing;
     private final boolean doubleSided;
 
-    public BombObjRenderer(Identifier obj, Identifier texture, float scale) {
+    public BombObjRenderer(ResourceLocation obj, ResourceLocation texture, float scale) {
         this(obj, texture, scale, false, NukeMan.FACING, 0F, 0F, 0F, 270F, 90F, 0F, 180F);
     }
 
     /**
      * @param yawsByFacing values for legacy facing 2, 3, 4, and 5 respectively
      */
-    public BombObjRenderer(Identifier obj, Identifier texture, float scale, IntegerProperty facingProperty,
+    public BombObjRenderer(ResourceLocation obj, ResourceLocation texture, float scale, IntegerProperty facingProperty,
                            float preTranslateX, float preTranslateY, float preTranslateZ, float... yawsByFacing) {
         this(obj, texture, scale, true, facingProperty, preTranslateX, preTranslateY, preTranslateZ, yawsByFacing);
     }
 
-    private BombObjRenderer(Identifier obj, Identifier texture, float scale, boolean doubleSided,
+    private BombObjRenderer(ResourceLocation obj, ResourceLocation texture, float scale, boolean doubleSided,
                            IntegerProperty facingProperty, float preTranslateX, float preTranslateY,
                            float preTranslateZ, float... yawsByFacing) {
         this.model = WavefrontObj.load(obj);

@@ -1,0 +1,24 @@
+{
+  "values": {
+    "geontm:amat": {
+      "type": "amat",
+      "value": 5.0
+    },
+    "geontm:aschrab": {
+      "type": "schrab",
+      "value": 15.0
+    },
+    "geontm:deuterium": {
+      "type": "hydro",
+      "value": 20.0
+    },
+    "geontm:sas3": {
+      "type": "schrab",
+      "value": 7.5
+    },
+    "geontm:tritium": {
+      "type": "hydro",
+      "value": 30.0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.oxygen",
+  "input_fluids": [
+    {
+      "type": "geontm:air",
+      "amount": 8000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:oxygen",
+      "amount": 500
+    }
+  ],
+  "duration": 20,
+  "power": 400,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:oxygen",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 2
+}

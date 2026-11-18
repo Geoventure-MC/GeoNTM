@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/iron"
+  },
+  "output": "geontm:powder_cobalt",
+  "antimatter": 50,
+  "order": 5
+}

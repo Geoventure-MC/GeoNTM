@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_fluorite"
+  },
+  "outputs": [
+    {
+      "id": "geontm:fluorite",
+      "count": 4
+    },
+    {
+      "id": "geontm:fluorite",
+      "count": 4
+    },
+    {
+      "id": "geontm:gem_sodalite",
+      "count": 2
+    },
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 169
+}

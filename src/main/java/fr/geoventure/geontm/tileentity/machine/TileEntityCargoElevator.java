@@ -13,7 +13,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.OrderedShape;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
@@ -164,14 +164,14 @@ public class TileEntityCargoElevator extends TileEntityLoadedBase implements IRO
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(height);
         buf.writeDouble(extension);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         height = buf.readShort();
         syncExtension = buf.readDouble();

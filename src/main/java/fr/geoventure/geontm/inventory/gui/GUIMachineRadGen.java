@@ -5,9 +5,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineRadGen;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -15,14 +15,14 @@ import java.util.Optional;
 
 /** Compact RadGen screen with one progress bar and one output bar per channel. */
 public class GUIMachineRadGen extends CompatContainerScreen<ContainerMachineRadGen> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_radgen.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_radgen.png");
 
     public GUIMachineRadGen(ContainerMachineRadGen menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 184);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineRadGen generator = getGenerator();
         if (generator == null) return;
@@ -37,13 +37,13 @@ public class GUIMachineRadGen extends CompatContainerScreen<ContainerMachineRadG
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, 90, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineRadGen generator = getGenerator();
         if (generator == null) return;
 

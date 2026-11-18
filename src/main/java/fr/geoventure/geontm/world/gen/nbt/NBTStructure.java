@@ -496,7 +496,7 @@ public class NBTStructure {
                     }
 
                     int ry = by + y;
-                    if (ry < level.getMinY() + 1) continue;
+                    if (ry < level.getMinBuildHeight() + 1) continue;
 
                     placer.place(bx, by, bz, new BlockPos(rx, ry, rz), state);
                 }
@@ -573,7 +573,7 @@ public class NBTStructure {
                     if (state == null) continue;
 
                     int ry = by + oy;
-                    if (ry < level.getMinY() + 1) continue;
+                    if (ry < level.getMinBuildHeight() + 1) continue;
 
                     placer.place(bx, by, bz, new BlockPos(rx, ry, rz), state);
                 }
@@ -978,7 +978,7 @@ public class NBTStructure {
                         if (block == Blocks.STONE || block == Blocks.DIRT || block == Blocks.GRAVEL) continue;
                         // never placed (1.7 skipped y < 1): the superflat rule does not clamp, so a sunk piece reaches the floor
                         int placedY = boundingBox.minY() + by;
-                        if (!piece.conformToTerrain && (level.isOutsideBuildHeight(placedY) || placedY < level.getMinY() + 1)) continue;
+                        if (!piece.conformToTerrain && (level.isOutsideBuildHeight(placedY) || placedY < level.getMinBuildHeight() + 1)) continue;
                         expected[by] = block;
                         columnTotal++;
                     }

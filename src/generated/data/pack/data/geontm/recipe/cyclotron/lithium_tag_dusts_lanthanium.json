@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/lanthanium"
+  },
+  "output": "geontm:powder_cerium",
+  "antimatter": 50,
+  "order": 9
+}

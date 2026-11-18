@@ -29,7 +29,7 @@ public final class ItemPill extends CompatItem implements ConsumableTreatments.H
 
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
-        if (ConsumableTreatments.blocked(this, player)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (ConsumableTreatments.blocked(this, player)) return InteractionResult.PASS;
         return compatVanillaUse(level, player, hand);
     }
 

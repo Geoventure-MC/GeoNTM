@@ -28,7 +28,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -193,7 +193,7 @@ public class TileEntityFurnaceIron extends TileEntityMachineBase implements Menu
         return new ContainerFurnaceIron(id, inventory, this);
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(maxBurnTime);
         buf.writeInt(burnTime);
@@ -202,7 +202,7 @@ public class TileEntityFurnaceIron extends TileEntityMachineBase implements Menu
         buf.writeBoolean(wasOn);
     }
 
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         maxBurnTime = buf.readInt();
         burnTime = buf.readInt();

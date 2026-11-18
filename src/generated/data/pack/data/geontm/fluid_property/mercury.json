@@ -1,0 +1,20 @@
+{
+  "type": "liquid",
+  "color": "#808080",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:mercury"
+  ],
+  "traits": {
+    "poison": {
+      "withering": false,
+      "level": 2
+    }
+  }
+}

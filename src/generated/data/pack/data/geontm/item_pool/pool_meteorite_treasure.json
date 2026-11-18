@@ -1,0 +1,118 @@
+{
+  "entries": [
+    {
+      "item": "geontm:cobalt_pickaxe",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_zirconium",
+      "min": 1,
+      "max": 16,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_niobium",
+      "min": 1,
+      "max": 16,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_cobalt",
+      "min": 1,
+      "max": 16,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_boron",
+      "min": 1,
+      "max": 16,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_starmetal",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:crystal_gold",
+      "min": 1,
+      "max": 4,
+      "weight": 10
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 4,
+      "max": 8,
+      "weight": 10
+    },
+    {
+      "item": "geontm:circuit_chip",
+      "min": 2,
+      "max": 4,
+      "weight": 10
+    },
+    {
+      "item": "geontm:definitelyfood",
+      "min": 16,
+      "max": 32,
+      "weight": 25
+    },
+    {
+      "item": "geontm:crate_can",
+      "min": 1,
+      "max": 3,
+      "weight": 10
+    },
+    {
+      "item": "geontm:pill_herbal",
+      "min": 1,
+      "max": 2,
+      "weight": 10
+    },
+    {
+      "item": "geontm:serum",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:heart_piece",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:scrumpy",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:launch_code_piece",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:egg_glyphid",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gem_alexandrite",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:blueprint_folder_discover",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

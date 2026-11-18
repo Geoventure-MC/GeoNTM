@@ -18,7 +18,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import fr.geoventure.geocore.world.Recipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.MenuProvider;
@@ -172,7 +172,7 @@ public class TileEntityFurnaceBrick extends TileEntityMachineBase implements Men
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(burnTime);
         buf.writeInt(maxBurnTime);
@@ -183,7 +183,7 @@ public class TileEntityFurnaceBrick extends TileEntityMachineBase implements Men
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         burnTime = buf.readInt();
         maxBurnTime = buf.readInt();

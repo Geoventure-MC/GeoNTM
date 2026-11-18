@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "c50",
+  "input": {
+    "ingredient": "#c:plates/weaponsteel"
+  },
+  "output": {
+    "id": "geontm:casing_large_steel",
+    "count": 2
+  },
+  "order": 27
+}

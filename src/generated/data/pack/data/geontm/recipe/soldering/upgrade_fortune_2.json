@@ -1,0 +1,30 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:upgrade_fortune_2",
+  "duration": 300,
+  "consumption": 10000,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:upgrade_fortune_1"
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    }
+  ],
+  "requires": [
+    "!enable_528",
+    "!lbsm_simple_crafting"
+  ],
+  "order": 35
+}

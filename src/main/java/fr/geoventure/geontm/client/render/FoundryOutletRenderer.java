@@ -16,10 +16,10 @@ import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
@@ -49,7 +49,7 @@ public class FoundryOutletRenderer<T extends TileEntityFoundryOutlet> extends Ge
         this.body = WavefrontObj.load(Ids.of(Constants.MOD_ID, objPath));
         var mtl = WavefrontObj.loadMtl(Ids.of(Constants.MOD_ID, objPath.replace(".obj", ".mtl")));
         for (String mat : body.materialNames()) {
-            Identifier tex = mtl.get(mat);
+            ResourceLocation tex = mtl.get(mat);
             if (tex != null) materials.put(mat, Surface.cutout(tex.toString()));
         }
         // The stream is a self-overlapping tube and must write depth, which translucent-emissive does

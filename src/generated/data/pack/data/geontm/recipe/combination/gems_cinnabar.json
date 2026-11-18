@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:gems/cinnabar"
+  },
+  "item_output": "geontm:sulfur",
+  "fluid_output": {
+    "type": "geontm:mercury",
+    "amount": 100
+  },
+  "order": 8
+}

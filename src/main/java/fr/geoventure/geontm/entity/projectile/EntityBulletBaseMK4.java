@@ -103,7 +103,7 @@ public class EntityBulletBaseMK4 extends CompatEntity implements Owners.Carrier 
 
         this.damage = damage;
 
-        this.snapTo(posX, posY, posZ, 0, 0);
+        this.moveTo(posX, posY, posZ, 0, 0);
 
         this.setDeltaMovement(motionX, motionY, motionZ);
         this.shoot(motionX, motionY, motionZ, this.config.spread + gunSpread);

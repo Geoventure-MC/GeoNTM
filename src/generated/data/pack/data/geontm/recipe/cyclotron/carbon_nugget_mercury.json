@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "geontm:nugget_mercury"
+  },
+  "output": "geontm:powder_polonium",
+  "antimatter": 10,
+  "order": 25
+}

@@ -19,13 +19,13 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.phys.Vec3;
 
 public final class RBMKConsoleRenderer extends GemBER<BlockEntityRBMKConsole, RBMKConsoleRenderer.State> {
     private static final WavefrontObj MODEL = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/rbmk/rbmk_console.obj"));
-    private static final Identifier TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_console.png");
+    private static final ResourceLocation TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_console.png");
     private final Font font;
     public RBMKConsoleRenderer() { font = Minecraft.getInstance().font; }
     @Override protected void setup(Gem.Model<State> declaration) {

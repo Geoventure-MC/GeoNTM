@@ -1,0 +1,31 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:raw_materials/titanium"
+  },
+  "outputs": [
+    {
+      "item": "geontm:powder_titanium",
+      "chance": 0.6666667
+    },
+    {
+      "item": {
+        "id": "geontm:chunk_ore_ilmenite",
+        "count": 2
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": "geontm:powder_iron",
+      "chance": 0.6666667
+    },
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.6666667
+    }
+  ],
+  "requires": [
+    "!lbsm_simple_centrifuge"
+  ],
+  "order": 12
+}

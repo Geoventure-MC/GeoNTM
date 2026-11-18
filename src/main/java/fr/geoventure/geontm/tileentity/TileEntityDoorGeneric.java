@@ -11,7 +11,7 @@ import fr.geoventure.geocore.hook.Hook;
 import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.render.anim.BusAnimation;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -194,14 +194,14 @@ public class TileEntityDoorGeneric extends TileEntityLockableBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeByte(state);
         buf.writeByte(skinIndex);
         buf.writeBoolean(shouldUseBB);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         handleNewState(buf.readByte());
         skinIndex = buf.readByte();
         shouldUseBB = buf.readBoolean();

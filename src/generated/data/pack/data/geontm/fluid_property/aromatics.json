@@ -1,0 +1,27 @@
+{
+  "type": "liquid",
+  "color": "#68A09A",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 4,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 458000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 2.0E-4
+      }
+    }
+  }
+}

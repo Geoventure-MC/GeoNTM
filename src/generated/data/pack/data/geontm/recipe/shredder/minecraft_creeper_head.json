@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:creeper_head",
+  "output": {
+    "id": "geontm:biomass",
+    "count": 4
+  }
+}

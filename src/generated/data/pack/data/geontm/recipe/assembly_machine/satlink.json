@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.satlink",
+  "input_items": [
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_satlink"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 89856
+}

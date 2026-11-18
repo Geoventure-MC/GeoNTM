@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:wheat_seeds",
+  "output": {
+    "type": "geontm:seedslurry",
+    "amount": 50
+  }
+}

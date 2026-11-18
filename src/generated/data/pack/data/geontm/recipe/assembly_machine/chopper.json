@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.chopper",
+  "input_items": [
+    {
+      "material": "combine_steel",
+      "shape": "castplate",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 32
+    },
+    {
+      "material": "magnetized_tungsten",
+      "shape": "wire",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 5
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:chopper"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 51456
+}

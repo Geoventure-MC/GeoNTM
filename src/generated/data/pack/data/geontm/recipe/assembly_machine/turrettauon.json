@@ -1,0 +1,47 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.turrettauon",
+  "input_items": [
+    {
+      "ingredient": "geontm:capacitor_niobium"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "geontm:motor_desh"
+    },
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:mechanisms/saturnite",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_tauon"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 62208,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

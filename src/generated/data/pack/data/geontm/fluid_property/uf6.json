@@ -1,0 +1,22 @@
+{
+  "type": "gaseous",
+  "color": "#D1CEBE",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 2,
+    "symbol": "radiation"
+  },
+  "shares": [
+    "#c:uranium_hexafluoride"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 15
+    },
+    "ventradiation": {
+      "rad_per_mb": 0.2
+    }
+  }
+}

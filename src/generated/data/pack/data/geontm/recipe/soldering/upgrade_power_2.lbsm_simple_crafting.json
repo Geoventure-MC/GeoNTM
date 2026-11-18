@@ -1,0 +1,30 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:upgrade_power_2",
+  "duration": 300,
+  "consumption": 10000,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 2
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:upgrade_power_1"
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    }
+  ],
+  "requires": [
+    "!enable_528",
+    "lbsm_simple_crafting"
+  ],
+  "order": 32
+}

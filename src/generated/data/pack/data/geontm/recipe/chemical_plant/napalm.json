@@ -1,0 +1,25 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.napalm",
+  "input_items": [
+    {
+      "ingredient": "geontm:canister_empty"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:gasoline",
+      "amount": 100
+    },
+    {
+      "type": "geontm:aromatics",
+      "amount": 50
+    }
+  ],
+  "output_items": [
+    "geontm:canister_napalm"
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 80
+}

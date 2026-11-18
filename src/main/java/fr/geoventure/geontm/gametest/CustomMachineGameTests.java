@@ -134,7 +134,7 @@ public final class CustomMachineGameTests {
         long overshoot = port.transferPower(20_000L, false);
         helper.assertTrue(tile.power == 10_000L && overshoot == 10_000L, "port power " + tile.power + " / " + overshoot);
 
-        tile.inventory.setStackInSlot(4, new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "powder_sawdust")), 2));
+        tile.inventory.setStackInSlot(4, new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("geontm", "powder_sawdust")), 2));
         for (int i = 0; i < 60; i++) TileEntityCustomMachine.serverTick(helper.getLevel(), core, tile.getBlockState(), tile);
 
         ItemStack out = tile.inventory.getStackInSlot(16);
@@ -147,9 +147,9 @@ public final class CustomMachineGameTests {
 
     /** IPI / PCP / IPI with steel ingots, steel plates and a basic circuit yields the Paper Press controller. */
     public static void controllerRecipe(GameTestHelper helper) {
-        ItemStack i = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "ingot_steel")));
-        ItemStack p = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "plate_steel")));
-        ItemStack c = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "circuit_basic")));
+        ItemStack i = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("geontm", "ingot_steel")));
+        ItemStack p = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("geontm", "plate_steel")));
+        ItemStack c = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("geontm", "circuit_basic")));
         List<ItemStack> grid = new ArrayList<>(List.of(i, p, i, p, c, p, i, p, i));
         Integer index = CustomMachineCraftingRecipe.find(3, 3, grid);
         helper.assertTrue(index != null && index == 0, "controller recipe did not match: " + index);

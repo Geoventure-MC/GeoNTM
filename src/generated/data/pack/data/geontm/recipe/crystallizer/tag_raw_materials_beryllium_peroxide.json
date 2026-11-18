@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:raw_materials/beryllium"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 333
+  },
+  "output": {
+    "item": "geontm:crystal_beryllium",
+    "chance": 0.6666667
+  },
+  "duration": 400,
+  "productivity": 0.05,
+  "order": 25
+}

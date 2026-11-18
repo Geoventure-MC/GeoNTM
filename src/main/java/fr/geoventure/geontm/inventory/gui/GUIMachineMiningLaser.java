@@ -9,11 +9,11 @@ import fr.geoventure.geontm.packet.ControlEventPayload;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineMiningLaser;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -28,7 +28,7 @@ import java.util.Optional;
  */
 public class GUIMachineMiningLaser extends CompatContainerScreen<ContainerMachineMiningLaser> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_laser_miner.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_laser_miner.png");
 
     // On/off button hot-zone (GUI-relative), matching the 1.12.2 click region.
     private static final int BTN_X = 61, BTN_Y = 17, BTN_W = 18, BTN_H = 18;
@@ -55,7 +55,7 @@ public class GUIMachineMiningLaser extends CompatContainerScreen<ContainerMachin
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 GUIMiningLaser: centred title at y=4, "Inventory", then the mining-square width readout.
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 4, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 8, this.imageHeight - 96 + 2, 4210752, false);
@@ -67,7 +67,7 @@ public class GUIMachineMiningLaser extends CompatContainerScreen<ContainerMachin
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineMiningLaser te = this.menu.getLaser();
@@ -98,7 +98,7 @@ public class GUIMachineMiningLaser extends CompatContainerScreen<ContainerMachin
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineMiningLaser te = this.menu.getLaser();
         if (te == null) return;
 

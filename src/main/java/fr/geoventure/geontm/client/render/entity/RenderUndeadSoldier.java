@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.living.CompatHumanoidMobRenderer;
 import fr.geoventure.geocore.render.living.HumanoidBody;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 RenderUndeadSoldier: switches vanilla zombie/skeleton geometry and skin from the synced type byte.
@@ -15,11 +15,11 @@ import net.minecraft.resources.Identifier;
  */
 public final class RenderUndeadSoldier extends CompatHumanoidMobRenderer<EntityUndeadSoldier> {
 
-    private static final Identifier ZOMBIE_TEXTURE = Ids.minecraft("textures/entity/zombie/zombie.png");
-    private static final Identifier SKELETON_TEXTURE = Ids.minecraft("textures/entity/skeleton/skeleton.png");
+    private static final ResourceLocation ZOMBIE_TEXTURE = Ids.minecraft("textures/entity/zombie/zombie.png");
+    private static final ResourceLocation SKELETON_TEXTURE = Ids.minecraft("textures/entity/skeleton/skeleton.png");
 
     public RenderUndeadSoldier(EntityRendererProvider.Context context) {
-        super(context, 0.5F, new Identifier[]{ZOMBIE_TEXTURE, SKELETON_TEXTURE},
+        super(context, 0.5F, new ResourceLocation[]{ZOMBIE_TEXTURE, SKELETON_TEXTURE},
                 HumanoidBody.zombie(context), HumanoidBody.skeleton(context));
         addZombieArmorLayer(context);
     }

@@ -4,8 +4,8 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.client.FrameTime;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
@@ -13,13 +13,13 @@ import net.minecraft.world.entity.player.Player;
 /** The old 50px compact and 80px large jetpack HUD layouts, including their needle transforms. */
 public final class JetpackHudOverlay {
 
-    private static final Identifier LARGE = Ids.of("geontm", "textures/gui/hud/jetpack_hud_large.png");
-    private static final Identifier SMALL = Ids.of("geontm", "textures/gui/hud/jetpack_hud_small.png");
-    private static final Identifier SMALL_TEXT = Ids.of("geontm", "textures/gui/hud/jetpack_hud_small_text.png");
+    private static final ResourceLocation LARGE = Ids.of("geontm", "textures/gui/hud/jetpack_hud_large.png");
+    private static final ResourceLocation SMALL = Ids.of("geontm", "textures/gui/hud/jetpack_hud_small.png");
+    private static final ResourceLocation SMALL_TEXT = Ids.of("geontm", "textures/gui/hud/jetpack_hud_small_text.png");
 
     private JetpackHudOverlay() {}
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null || mc.level == null || mc.options.hideGui) return;
@@ -34,7 +34,7 @@ public final class JetpackHudOverlay {
         else large(graphics, player, state, fuel, width, height);
     }
 
-    private static void compact(GuiGraphicsExtractor graphics, Player player,
+    private static void compact(GuiGraphics graphics, Player player,
             JetpackClientBridge.State state, JetpackClientBridge.Fuel fuel, int width, int height) {
         int hudYOffset = 45;
         float maxHeight = 0.78125F;
@@ -94,7 +94,7 @@ public final class JetpackHudOverlay {
                 50, Math.round(25F * yHeight), 0F, yOffset, 1F, yOffset + yHeight, 128, 128);
     }
 
-    private static void large(GuiGraphicsExtractor graphics, Player player,
+    private static void large(GuiGraphics graphics, Player player,
             JetpackClientBridge.State state, JetpackClientBridge.Fuel fuel, int width, int height) {
         int hudYOffset = 45;
         int top = height - 80 - hudYOffset;
@@ -139,7 +139,7 @@ public final class JetpackHudOverlay {
         GuiDraw.popMatrix(graphics);
 
         if (fuel != null && fuel.type() != null && !fuel.type().isEmpty()) {
-            Identifier sprite = Ids.of("geontm", "textures/gui/fluids/" + fuel.type().toLowerCase() + ".png");
+            ResourceLocation sprite = Ids.of("geontm", "textures/gui/fluids/" + fuel.type().toLowerCase() + ".png");
             GuiDraw.blit(graphics, sprite, 67, height - 71 - hudYOffset, 0F, 0F, 7, 7, 16, 16);
         }
     }

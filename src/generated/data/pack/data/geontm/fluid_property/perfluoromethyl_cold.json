@@ -1,0 +1,26 @@
+{
+  "type": "liquid",
+  "color": "#99DADE",
+  "temperature": -150,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 300,
+          "produces": "geontm:perfluoromethyl",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "PA": 1.0
+      }
+    }
+  }
+}

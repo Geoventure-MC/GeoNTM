@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drillferrodiamond",
+  "input_items": [
+    {
+      "ingredient": "geontm:drillbit_ferro"
+    },
+    {
+      "ingredient": "#c:dusts/diamond",
+      "count": 56
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_ferro_diamond"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 32256
+}

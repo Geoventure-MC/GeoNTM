@@ -1,0 +1,28 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g10_explosive",
+    "count": 4
+  },
+  "grid": [
+    {
+      "ingredient": "#c:ingots/any_highexplosive"
+    },
+    {
+      "ingredient": "#c:ingots/ferrouranium"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_buckshot_advanced"
+    },
+    ""
+  ],
+  "order": 54
+}

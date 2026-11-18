@@ -1,0 +1,24 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.alumina.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/fluorite",
+      "count": 3
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sodium_aluminate",
+      "amount": 150
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:alumina",
+      "amount": 200
+    }
+  ],
+  "duration": 40,
+  "order": 46
+}

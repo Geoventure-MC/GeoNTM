@@ -11,10 +11,10 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.awt.Desktop;
@@ -26,14 +26,14 @@ import java.util.Optional;
 
 /** The AUTOCAL screen, from 1.7.10 {@code GUIScreenRadioAUTOCAL} ({@code machine/gui_rtty_autocal.png}, 170x138), with its file workflow. */
 public final class RadioAutocalScreen extends CompatContainerScreen<RadioAutocalMenu> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_autocal.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_autocal.png");
 
     public RadioAutocalScreen(RadioAutocalMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title, 170, 138);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityRadioAUTOCAL autocal = menu.autocal();
         if (autocal == null) return;
@@ -43,7 +43,7 @@ public final class RadioAutocalScreen extends CompatContainerScreen<RadioAutocal
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityRadioAUTOCAL autocal = menu.autocal();
         if (autocal == null) return;
         for (int i = 0; i < autocal.history.length; i++) {
@@ -55,7 +55,7 @@ public final class RadioAutocalScreen extends CompatContainerScreen<RadioAutocal
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (over(mouseX, mouseY, 8, 36, 18, 18)) {
             tooltip(graphics, List.of(Component.literal("ON/OFF").withStyle(ChatFormatting.RED)), mouseX, mouseY);
         } else if (over(mouseX, mouseY, 28, 36, 18, 18)) {
@@ -84,7 +84,7 @@ public final class RadioAutocalScreen extends CompatContainerScreen<RadioAutocal
         }
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 

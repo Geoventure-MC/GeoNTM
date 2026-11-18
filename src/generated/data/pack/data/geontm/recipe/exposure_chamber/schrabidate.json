@@ -1,0 +1,26 @@
+{
+  "type": "geontm:exposure_chamber",
+  "name": "exposure.schrabidate",
+  "input_items": [
+    {
+      "ingredient": "geontm:particle_sparkticle"
+    },
+    {
+      "ingredient": "#c:ingots/schrabidate"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_dineutronium"
+  ],
+  "duration": 200,
+  "power": 10000,
+  "order": 3,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:particle_sparkticle"
+    },
+    {
+      "ingredient": "geontm:item_expensive_degenerate_matter"
+    }
+  ]
+}

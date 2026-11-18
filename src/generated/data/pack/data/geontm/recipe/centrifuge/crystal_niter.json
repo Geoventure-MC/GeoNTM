@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_niter"
+  },
+  "outputs": [
+    {
+      "id": "geontm:niter",
+      "count": 3
+    },
+    {
+      "id": "geontm:niter",
+      "count": 3
+    },
+    {
+      "id": "geontm:niter",
+      "count": 3
+    },
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 165
+}

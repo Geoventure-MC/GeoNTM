@@ -4,7 +4,7 @@ import fr.geoventure.geontm.inventory.container.ContainerCrateTemplate;
 import fr.geoventure.geontm.tileentity.machine.storage.TemplateCrateLayout;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -16,13 +16,13 @@ public class GUICrateTemplate extends CompatContainerScreen<ContainerCrateTempla
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TemplateCrateLayout.TEXTURE, leftPos, topPos, 0F, 0F,
                 imageWidth, imageHeight, 256, 256);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - font.width(title)) / 2, 6,
                 TemplateCrateLayout.LABEL_COLOR, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, TemplateCrateLayout.LABEL_X,

@@ -7,9 +7,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.blocks.machine.MachineElectricFurnace;
 import fr.geoventure.geontm.inventory.container.ContainerMachineElectricFurnace;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineElectricFurnace;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -23,7 +23,7 @@ import java.util.Optional;
  */
 public class GUIMachineElectricFurnace extends CompatContainerScreen<ContainerMachineElectricFurnace> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electric_furnace.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electric_furnace.png");
 
     // 1.7 drawInfoPanel(guiLeft + 115, guiTop + 19, 8, 8, 8).
     private static final int INFO_X = 115, INFO_Y = 19;
@@ -33,7 +33,7 @@ public class GUIMachineElectricFurnace extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineElectricFurnace furnace = this.menu.getFurnace();
@@ -61,14 +61,14 @@ public class GUIMachineElectricFurnace extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 centres the title on x=70, not xSize/2.
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineElectricFurnace furnace = this.menu.getFurnace();
         if (furnace == null) return;
         if (this.isHovering(152, 52 - 34, 16, 34, mouseX, mouseY)) {

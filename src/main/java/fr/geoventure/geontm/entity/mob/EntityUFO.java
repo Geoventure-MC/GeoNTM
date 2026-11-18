@@ -364,11 +364,11 @@ public class EntityUFO extends CompatMob implements Enemy, IRadiationImmune {
         int x = Mth.floor(getX());
         int z = Mth.floor(getZ());
 
-        for (int y = (int) Math.ceil(getY()); y >= level().getMinY(); y--) {
+        for (int y = (int) Math.ceil(getY()); y >= level().getMinBuildHeight(); y--) {
             if (!level().getBlockState(pos.set(x, y, z)).isAir()) return y;
         }
 
-        return level().getMinY();
+        return level().getMinBuildHeight();
     }
 
 

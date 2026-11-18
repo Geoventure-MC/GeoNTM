@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.helium3",
+  "input_items": [
+    {
+      "ingredient": "geontm:moon_turf"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:helium3",
+      "amount": 500
+    }
+  ],
+  "duration": 25,
+  "power": 2000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:helium3",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 5
+}

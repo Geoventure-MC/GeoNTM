@@ -7,10 +7,10 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
- * The registry of every declared {@link BulletConfig}, keyed by {@link Identifier}.
+ * The registry of every declared {@link BulletConfig}, keyed by {@link ResourceLocation}.
  *
  * <p>This replaces upstream's mutable {@code static List<BulletConfig> BulletConfig.configs}, whose
  * <i>list index</i> was written into gun NBT and bullet-entity synched data. That made declaration
@@ -24,7 +24,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class BulletConfigs {
 
-    private static final Map<Identifier, BulletConfig> BY_ID = new LinkedHashMap<>();
+    private static final Map<ResourceLocation, BulletConfig> BY_ID = new LinkedHashMap<>();
     private static final List<BulletConfig> BY_INDEX = new ArrayList<>();
 
     private BulletConfigs() {}
@@ -46,7 +46,7 @@ public final class BulletConfigs {
      * tracer audit only insists on HBM's own rounds, an addon gives its rounds a tracer with
      * {@code TracerRegistry.setBulletRenderer}/{@code setBeamRenderer}.
      */
-    public static synchronized BulletConfig register(Identifier id, BulletConfig config) {
+    public static synchronized BulletConfig register(ResourceLocation id, BulletConfig config) {
         if (BY_ID.containsKey(id)) {
             throw new IllegalStateException("Duplicate bullet config id: " + id);
         }
@@ -57,7 +57,7 @@ public final class BulletConfigs {
     }
 
     /** The config registered under {@code id}, or null if none is. */
-    public static BulletConfig get(Identifier id) {
+    public static BulletConfig get(ResourceLocation id) {
         return id == null ? null : BY_ID.get(id);
     }
 

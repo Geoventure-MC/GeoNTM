@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:obsidian",
+  "output": {
+    "type": "minecraft:lava",
+    "amount": 500
+  }
+}

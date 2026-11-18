@@ -1,0 +1,33 @@
+{
+  "type": "liquid",
+  "color": "#666672",
+  "temperature": 350,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "pwrmoderator": {
+      "multiplier": 0.75
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 800,
+          "produces": "geontm:lead_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "PWR": 0.75,
+        "ICF": 4.0
+      }
+    }
+  }
+}

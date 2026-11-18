@@ -24,7 +24,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -375,7 +375,7 @@ public class TileEntityMachineThresher extends TileEntityLoadedBase implements I
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(this.isOn);
         buf.writeBoolean(this.isSuspended);
@@ -384,7 +384,7 @@ public class TileEntityMachineThresher extends TileEntityLoadedBase implements I
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.isOn = buf.readBoolean();
         this.isSuspended = buf.readBoolean();

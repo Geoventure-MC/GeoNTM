@@ -1,0 +1,186 @@
+{
+  "values": {
+    "geontm:watz_pellet_schrabidium": {
+      "color": "#32FFFF",
+      "color_dark": "#005C5C",
+      "passive": 2000.0,
+      "heat": 20.0,
+      "mud": 0.005,
+      "burn": {
+        "type": "linear",
+        "level": 1.5
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.1,
+        "off": 100.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_schrabidium"
+    },
+    "geontm:watz_pellet_hes": {
+      "color": "#66DCD6",
+      "color_dark": "#023933",
+      "passive": 1750.0,
+      "heat": 20.0,
+      "mud": 0.0025,
+      "burn": {
+        "type": "linear",
+        "level": 1.25
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.06666666666666667,
+        "off": 225.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_hes"
+    },
+    "geontm:watz_pellet_mes": {
+      "color": "#CBEADF",
+      "color_dark": "#28473C",
+      "passive": 1500.0,
+      "heat": 15.0,
+      "mud": 0.00125,
+      "burn": {
+        "type": "linear",
+        "level": 1.15
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.06666666666666667,
+        "off": 225.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_mes"
+    },
+    "geontm:watz_pellet_les": {
+      "color": "#ABB4A8",
+      "color_dark": "#0C1105",
+      "passive": 1250.0,
+      "heat": 15.0,
+      "mud": 6.25E-4,
+      "burn": {
+        "type": "linear",
+        "level": 1.0
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.05,
+        "off": 400.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_les"
+    },
+    "geontm:watz_pellet_hen": {
+      "color": "#A6B2A6",
+      "color_dark": "#030F03",
+      "heat": 10.0,
+      "mud": 2.5E-4,
+      "burn": {
+        "type": "sqrt",
+        "level": 100.0
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.1,
+        "off": 100.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_hen"
+    },
+    "geontm:watz_pellet_meu": {
+      "color": "#C1C7BD",
+      "color_dark": "#2B3227",
+      "heat": 10.0,
+      "mud": 2.5E-4,
+      "burn": {
+        "type": "sqrt",
+        "level": 75.0
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.1,
+        "off": 100.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_meu"
+    },
+    "geontm:watz_pellet_mep": {
+      "color": "#9AA3A0",
+      "color_dark": "#111A17",
+      "heat": 15.0,
+      "mud": 2.5E-4,
+      "burn": {
+        "type": "sqrt",
+        "level": 150.0
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.1,
+        "off": 100.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_mep"
+    },
+    "geontm:watz_pellet_lead": {
+      "color": "#A6A6B2",
+      "color_dark": "#03030F",
+      "mud": 0.00125,
+      "absorb": {
+        "type": "sqrt",
+        "level": 10.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_lead"
+    },
+    "geontm:watz_pellet_boron": {
+      "color": "#BDC8D2",
+      "color_dark": "#29343E",
+      "mud": 0.00125,
+      "absorb": {
+        "type": "linear",
+        "level": 10.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_boron"
+    },
+    "geontm:watz_pellet_du": {
+      "color": "#C1C7BD",
+      "color_dark": "#2B3227",
+      "mud": 0.00125,
+      "absorb": {
+        "type": "quadratic",
+        "level": 1.0,
+        "v_off": 1.0,
+        "div": 100.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_du"
+    },
+    "geontm:watz_pellet_nqd": {
+      "color": "#4B4B4B",
+      "color_dark": "#121212",
+      "passive": 2000.0,
+      "heat": 20.0,
+      "mud": 0.005,
+      "burn": {
+        "type": "linear",
+        "level": 2.0
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.04,
+        "off": 625.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_nqd"
+    },
+    "geontm:watz_pellet_nqr": {
+      "color": "#2D2D2D",
+      "color_dark": "#0B0B0B",
+      "passive": 2500.0,
+      "heat": 30.0,
+      "mud": 0.005,
+      "burn": {
+        "type": "linear",
+        "level": 1.5
+      },
+      "heat_div": {
+        "type": "sqrt",
+        "level": 0.04,
+        "off": 625.0
+      },
+      "depleted": "geontm:watz_pellet_depleted_nqr"
+    }
+  }
+}

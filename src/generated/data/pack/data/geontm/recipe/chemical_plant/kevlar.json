@@ -1,0 +1,33 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.kevlar",
+  "input_fluids": [
+    {
+      "type": "geontm:aromatics",
+      "amount": 200
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 100
+    },
+    {
+      "type": "geontm:chlorine",
+      "amount": 100
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:plate_kevlar",
+      "count": 4
+    }
+  ],
+  "duration": 60,
+  "power": 300,
+  "order": 49,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

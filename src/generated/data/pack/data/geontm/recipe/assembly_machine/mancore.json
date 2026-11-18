@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mancore",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/pu239",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:nuggets/beryllium",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:man_core"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 58880
+}

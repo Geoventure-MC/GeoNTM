@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:briquette_lignite"
+  },
+  "item_output": "geontm:coke_lignite",
+  "fluid_output": {
+    "type": "geontm:coalcreosote",
+    "amount": 100
+  },
+  "order": 5
+}

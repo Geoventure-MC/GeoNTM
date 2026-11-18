@@ -8,7 +8,7 @@ import fr.geoventure.geontm.explosion.vanillant.standard.EntityProcessorStandard
 import fr.geoventure.geontm.explosion.vanillant.standard.ExplosionEffectStandard;
 import fr.geoventure.geontm.explosion.vanillant.standard.PlayerProcessorStandard;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
@@ -34,7 +34,7 @@ public class EntityCreeperGold extends EntityCreeperBase {
     }
 
     @Override
-    public boolean checkSpawnRules(LevelAccessor level, EntitySpawnReason reason) {
+    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType reason) {
         return super.checkSpawnRules(level, reason) && getY() <= 40D && level().dimension() == Level.OVERWORLD;
     }
 

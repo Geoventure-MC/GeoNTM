@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Resolved server metadata, independent of mutable fluid objects and registry numeric ids. */
 public record FluidPropertySnapshot(Map<String, Entry> entries, Map<String, String> kinds) implements GeoCorePayload {
@@ -30,7 +30,7 @@ public record FluidPropertySnapshot(Map<String, Entry> entries, Map<String, Stri
             Ids.of(Constants.MOD_ID, "fluid_properties"), FluidPropertySnapshot::encode, FluidPropertySnapshot::decode);
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 

@@ -69,11 +69,11 @@ public final class ChunkShapeHelper {
         LongOpenHashSet checked = new LongOpenHashSet();
 
         while (true) {
-            out.add(ChunkPos.pack(x0 >> 4, z0 >> 4));
+            out.add(ChunkPos.asLong(x0 >> 4, z0 >> 4));
 
             int[][] corners = {{-1, -1}, {0, -1}, {1, -1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
             for (int[] corner : corners) {
-                long cornerCoords = ChunkPos.pack((x0 >> 4) + corner[0], (z0 >> 4) + corner[1]);
+                long cornerCoords = ChunkPos.asLong((x0 >> 4) + corner[0], (z0 >> 4) + corner[1]);
                 if (!checked.add(cornerCoords)) continue;
 
                 if (!out.contains(cornerCoords)

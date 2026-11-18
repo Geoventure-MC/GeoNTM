@@ -1,0 +1,39 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.zirnoxmep",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_plutonium"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_pu_mix",
+      "count": 2
+    },
+    "geontm:nugget_technetium",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 3
+    }
+  ],
+  "duration": 100,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:waste_plutonium"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.zirnox",
+  "order": 11
+}

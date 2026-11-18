@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:stamp_iron_flat"
+    },
+    {
+      "ingredient": "#c:ingots/gunmetal",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:stamp_9"
+    }
+  ],
+  "tier": 2,
+  "order": 170
+}

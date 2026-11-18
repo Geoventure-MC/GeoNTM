@@ -1,0 +1,30 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pilergp",
+  "input_items": [
+    {
+      "ingredient": "geontm:pile_rod_mk2_rgp"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 100
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:billet_pu_mix",
+      "count": 2
+    },
+    "geontm:billet_nuclear_waste"
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:pile_rod_mk2_rgp"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pile",
+  "order": 4
+}

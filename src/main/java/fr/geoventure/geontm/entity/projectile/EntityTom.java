@@ -41,7 +41,7 @@ public class EntityTom extends EntityThrowableNT {
         setDeltaMovement(motion.x, -0.5D, motion.z);
 
         // 1.7: getBlock((int) posX, ...) != Blocks.air - int truncation, not floor
-        if (!level().getBlockState(new BlockPos((int) getX(), (int) getY(), (int) getZ())).isAir() || getY() < level().getMinY() + 10) {
+        if (!level().getBlockState(new BlockPos((int) getX(), (int) getY(), (int) getZ())).isAir() || getY() < level().getMinBuildHeight() + 10) {
             if (!level().isClientSide()) {
 
                 EntityTomBlast tom = new EntityTomBlast(ModNtmEntities.TOM_BUST.get(), level());
@@ -56,14 +56,14 @@ public class EntityTom extends EntityThrowableNT {
     }
 
     public void anchorAndLoad(ServerLevel level, int chunkX, int chunkZ) {
-        long chunk = ChunkPos.pack(chunkX, chunkZ);
+        long chunk = ChunkPos.asLong(chunkX, chunkZ);
         moveAnchor(level, chunk);
         ChunkUtil.loadEntityTickingChunk(level, chunk);
     }
 
     private void ensureAnchor() {
         if (level() instanceof ServerLevel server) {
-            moveAnchor(server, ChunkPos.pack(getBlockX() >> 4, getBlockZ() >> 4));
+            moveAnchor(server, ChunkPos.asLong(getBlockX() >> 4, getBlockZ() >> 4));
         }
     }
 

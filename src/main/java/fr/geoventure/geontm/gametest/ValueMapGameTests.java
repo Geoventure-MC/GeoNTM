@@ -286,7 +286,7 @@ public final class ValueMapGameTests {
     }
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     /** 1.7 FuelHandler burn times (the NeoForge data map declarations before they became one table). */

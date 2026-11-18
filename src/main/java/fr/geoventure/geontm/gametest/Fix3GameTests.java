@@ -95,7 +95,7 @@ public final class Fix3GameTests {
     public static void init() {}
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     private static ItemStack of(String id) {

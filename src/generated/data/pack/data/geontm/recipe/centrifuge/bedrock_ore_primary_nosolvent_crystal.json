@@ -1,0 +1,18 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_nosolvent_crystal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_redstone",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_cinnabar",
+      "count": 4
+    },
+    "geontm:bedrock_ore_crumbs_crystal"
+  ],
+  "order": 144
+}

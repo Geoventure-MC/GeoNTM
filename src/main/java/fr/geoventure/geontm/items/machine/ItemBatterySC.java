@@ -9,7 +9,7 @@ import fr.geoventure.geocore.world.CompatTooltipContext;
 import java.util.Locale;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -60,7 +60,7 @@ public class ItemBatterySC extends CompatItem implements IBatteryItem {
     }
 
     /** 1.7 {@code ResourceManager.battery_sc_tex}: the socket's battery body texture for every variant. */
-    public static final Identifier SOCKET_TEXTURE = Ids.of("geontm", "textures/models/machines/battery_sc.png");
+    public static final ResourceLocation SOCKET_TEXTURE = Ids.of("geontm", "textures/models/machines/battery_sc.png");
 
     @Override public void chargeBattery(ItemStack stack, long i) {}
     @Override public void setCharge(ItemStack stack, long i) {}

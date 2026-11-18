@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:snowball",
+  "output": {
+    "type": "minecraft:water",
+    "amount": 125
+  }
+}

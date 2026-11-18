@@ -195,7 +195,7 @@ public class Spotlight extends CompatBlock implements ISpotlight {
     // Replace bulbs on broken lights with a click
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if (!state.getValue(BROKEN)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!state.getValue(BROKEN)) return InteractionResult.PASS;
         if (!level.isClientSide()) repair(level, pos);
         return InteractionResult.SUCCESS;
     }

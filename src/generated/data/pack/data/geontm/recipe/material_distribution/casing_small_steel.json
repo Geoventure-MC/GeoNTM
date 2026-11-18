@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:casing_small_steel",
+  "materials": [
+    {
+      "material": "weaponsteel",
+      "amount": 18
+    }
+  ]
+}

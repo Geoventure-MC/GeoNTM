@@ -1,0 +1,28 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.sas3",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/schrabidium"
+    },
+    {
+      "ingredient": "#c:dusts/sulfur",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 2000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:sas3",
+      "amount": 1000
+    }
+  ],
+  "duration": 200,
+  "power": 5000,
+  "order": 86
+}

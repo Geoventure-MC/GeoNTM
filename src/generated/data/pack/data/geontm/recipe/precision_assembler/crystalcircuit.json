@@ -1,0 +1,49 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.crystalcircuit",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:ingot_cft",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 16
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 32
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:orbital_assembly_crystal_circuit",
+        "weight": 50
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:orbital_assembly_crystal_circuit"
+          }
+        },
+        "weight": 50
+      }
+    ]
+  ],
+  "duration": 600,
+  "power": 20000,
+  "order": 0,
+  "requires": [
+    "!expensive_mode"
+  ],
+  "geocore:requires": [
+    "!expensive_mode"
+  ]
+}

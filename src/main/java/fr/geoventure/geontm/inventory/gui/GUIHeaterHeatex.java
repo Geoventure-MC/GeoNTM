@@ -10,11 +10,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.Optional;
 /** The legacy 176x204 Heatex screen, including live tank fills and the two control fields. */
 public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/machine/gui_heatex.png");
 
     private EditBox fieldCycles;
@@ -81,7 +81,7 @@ public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityHeaterHeatex heater = menu.getHeater();
@@ -91,7 +91,7 @@ public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex
     }
 
     /** Repeats the 16x16 fluid texture, matching the old GL_REPEAT tank quad. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int max = tank.getMaxFill();
         int filled = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (filled <= 0) return;
@@ -100,7 +100,7 @@ public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex
         int bottom = topPos + y + height;
         int top = bottom - filled;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
 
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + width, bottom);
@@ -115,13 +115,13 @@ public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - font.width(title)) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityHeaterHeatex heater = menu.getHeater();
         if (heater == null) return;
 
@@ -142,14 +142,14 @@ public class GUIHeaterHeatex extends CompatContainerScreen<ContainerHeaterHeatex
                 && mouseY > topPos + y && mouseY <= topPos + y + height;
     }
 
-    private void fluidTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height,
+    private void fluidTooltip(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height,
                                int mouseX, int mouseY) {
         if (legacyHover(x, y, width, height, mouseX, mouseY)) {
             tooltip(graphics, GuiUtil.tankTooltip(tank), mouseX, mouseY);
         }
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 

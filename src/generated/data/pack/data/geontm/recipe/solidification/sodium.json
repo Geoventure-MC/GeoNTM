@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:sodium",
+  "amount": 100,
+  "output": "geontm:powder_sodium"
+}

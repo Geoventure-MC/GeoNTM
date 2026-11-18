@@ -57,7 +57,7 @@ public final class SteelStructureGameTests {
         }
 
         Player player = GameTestHelpers.mockPlayer(helper, GameType.SURVIVAL);
-        ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "steel_grate")));
+        ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "steel_grate")));
         helper.assertTrue(grate.getStateForPlacement(context(helper, player, stack, Direction.DOWN, 0.5D)).getValue(BlockGrate.HEIGHT) == 7,
                 "downward grate placement must use height 7");
         helper.assertTrue(grate.getStateForPlacement(context(helper, player, stack, Direction.UP, 0.5D)).getValue(BlockGrate.HEIGHT) == 0,
@@ -70,7 +70,7 @@ public final class SteelStructureGameTests {
     public static void scaffoldPlacement(GameTestHelper helper) {
         BlockScaffold scaffold = ModSteelBlocks.steel_scaffold.get();
         Player player = GameTestHelpers.mockPlayer(helper, GameType.SURVIVAL);
-        ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "steel_scaffold_white")));
+        ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "steel_scaffold_white")));
 
         player.setYRot(0F);
         var horizontalNs = scaffold.getStateForPlacement(context(helper, player, stack, Direction.UP, 0.5D));

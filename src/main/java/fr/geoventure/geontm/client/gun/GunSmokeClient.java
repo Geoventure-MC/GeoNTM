@@ -36,14 +36,14 @@ import java.util.function.Consumer;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
@@ -591,7 +591,7 @@ public final class GunSmokeClient {
     }
 
     private static ItemStack fixtureStack(String path, int count) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, path));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, path));
         if (item == null) throw new IllegalStateException("missing fixture item geontm:" + path);
         return new ItemStack(item, count);
     }
@@ -715,7 +715,7 @@ public final class GunSmokeClient {
     }
 
     /** Render callback paired with {@link #capture}; unlike a tick callback it sees the current frame. */
-    public static void render(GuiGraphicsExtractor ignored) {
+    public static void render(GuiGraphics ignored) {
         if (pendingCapture == null || client == null || client.level == null || restored) return;
         String[] capture = pendingCapture.split("\\|", 2);
         int frame = pendingCaptureIndex++;
@@ -753,10 +753,10 @@ public final class GunSmokeClient {
         List<String> guns = new ArrayList<>();
         boolean valid = true;
         for (Item item : BuiltInRegistries.ITEM) {
-            Identifier id = BuiltInRegistries.ITEM.getKey(item);
+            ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
             if (!Constants.MOD_ID.equals(id.getNamespace()) || !id.getPath().startsWith("gun_")
                     || !(item instanceof ItemGunBaseNT)) continue;
-            Identifier definition = Ids.of(Constants.MOD_ID, "items/" + id.getPath() + ".json");
+            ResourceLocation definition = Ids.of(Constants.MOD_ID, "items/" + id.getPath() + ".json");
             String renderer = "<missing>";
             boolean definitionPresent = false;
             boolean basePresent = false;
@@ -771,13 +771,13 @@ public final class GunSmokeClient {
                         if ("geontm:gun".equals(type)) {
                             renderer = model.get("weapon").getAsString();
                             WeaponRenderers.byName(renderer);
-                            Identifier base = Ids.parse(model.get("base").getAsString());
+                            ResourceLocation base = Ids.parse(model.get("base").getAsString());
                             basePresent = mc.getResourceManager().getResource(
                                     Ids.of(base.getNamespace(), "models/" + base.getPath() + ".json")).isPresent();
                         } else if ("minecraft:model".equals(type)) {
                             // Upstream's PA ranged gun is a plain sprite, not a weapon renderer.
                             renderer = "sprite";
-                            Identifier modelId = Ids.parse(model.get("model").getAsString());
+                            ResourceLocation modelId = Ids.parse(model.get("model").getAsString());
                             basePresent = mc.getResourceManager().getResource(
                                     Ids.of(modelId.getNamespace(), "models/" + modelId.getPath() + ".json")).isPresent();
                         } else {

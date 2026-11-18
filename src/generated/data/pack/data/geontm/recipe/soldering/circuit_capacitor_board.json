@@ -1,0 +1,29 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_capacitor_board",
+  "duration": 200,
+  "consumption": 300,
+  "fluid": {
+    "type": "geontm:peroxide",
+    "amount": 250
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_capacitor_tantalium",
+      "count": 3
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb"
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 3
+    }
+  ],
+  "order": 4
+}

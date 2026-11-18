@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:gems/sodalite",
+  "output": "geontm:gem_volcanic",
+  "order": 32
+}

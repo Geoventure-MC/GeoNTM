@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_redstone",
+  "output": {
+    "id": "minecraft:redstone",
+    "count": 8
+  }
+}

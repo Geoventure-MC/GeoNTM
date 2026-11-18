@@ -26,7 +26,7 @@ public class ItemDrone extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (context.getClickedFace() != Direction.UP) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (context.getClickedFace() != Direction.UP) return InteractionResult.PASS;
 
         Level level = context.getLevel();
         if (level.isClientSide()) return InteractionResult.SUCCESS;

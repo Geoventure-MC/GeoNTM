@@ -14,7 +14,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -32,18 +32,18 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class FluidTankRenderer extends GemBER<TileEntityMachineFluidTank, FluidTankRenderState> {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/fluidtank.obj");
-    private static final Identifier FRAME_TEX = Ids.of("geontm", "textures/models/machines/tank.png");
-    private static final Identifier TANK_NONE = Ids.of("geontm", "textures/models/tank/tank_none.png");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/fluidtank.obj");
+    private static final ResourceLocation FRAME_TEX = Ids.of("geontm", "textures/models/machines/tank.png");
+    private static final ResourceLocation TANK_NONE = Ids.of("geontm", "textures/models/tank/tank_none.png");
     private static final float BASE_YAW = 180F;
 
     private final WavefrontObj model = WavefrontObj.load(OBJ);
     private final WavefrontObj exploded = WavefrontObj.load(Ids.of("geontm", "models/fluidtank_exploded.obj"));
     private final Surface inner = Surface.cutout(Ids.of("geontm", "textures/models/tank/tank_inner.png").toString());
     private final Surface frame = Surface.cutout(FRAME_TEX.toString());
-    private final Map<Identifier, Surface> skins = new ConcurrentHashMap<>();
+    private final Map<ResourceLocation, Surface> skins = new ConcurrentHashMap<>();
     /** Cache of fluid registry name -> resolved body texture (falling back to tank_none when a fluid has no skin). */
-    private static final Map<String, Identifier> BODY_TEX = new ConcurrentHashMap<>();
+    private static final Map<String, ResourceLocation> BODY_TEX = new ConcurrentHashMap<>();
 
     /**
      * The body skin for a fluid, falling back to {@code tank_none} when that fluid ships no
@@ -51,10 +51,10 @@ public class FluidTankRenderer extends GemBER<TileEntityMachineFluidTank, FluidT
      * tank texture and would render the missing-texture sprite. Existence is checked once per fluid
      * against the client resource manager and cached.
      */
-    private static Identifier bodyTextureFor(FluidType fluid) {
+    private static ResourceLocation bodyTextureFor(FluidType fluid) {
         // in the fluid's own namespace: an addon fluid ships <ns>:textures/models/tank/tank_<key>.png
         return BODY_TEX.computeIfAbsent(fluid.getNamespace() + ":" + fluid.getKey(), name -> {
-            Identifier tex = Ids.of(fluid.getNamespace(), "textures/models/tank/tank_" + fluid.getKey() + ".png");
+            ResourceLocation tex = Ids.of(fluid.getNamespace(), "textures/models/tank/tank_" + fluid.getKey() + ".png");
             return Minecraft.getInstance().getResourceManager().getResource(tex).isPresent() ? tex : TANK_NONE;
         });
     }

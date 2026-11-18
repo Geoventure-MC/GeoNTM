@@ -1,0 +1,39 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.tsarbomba",
+  "input_items": [
+    {
+      "ingredient": "geontm:sphere_steel"
+    },
+    {
+      "material": "titanium",
+      "shape": "shell",
+      "count": 6
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:fins_tri_steel"
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:dyes/black",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_tsar"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 53760,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

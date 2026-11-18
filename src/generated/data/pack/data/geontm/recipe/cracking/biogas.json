@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:biogas",
+  "left": {
+    "type": "geontm:petroleum",
+    "amount": 20
+  },
+  "right": {
+    "type": "geontm:aromatics",
+    "amount": 20
+  }
+}

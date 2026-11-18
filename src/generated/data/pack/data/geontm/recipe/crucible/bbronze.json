@@ -1,0 +1,31 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.bbronze",
+  "frequency": 9,
+  "icon": "geontm:ingot_bismuth_bronze",
+  "inputs": [
+    {
+      "material": "copper",
+      "amount": 64
+    },
+    {
+      "material": "bismuth",
+      "amount": 8
+    },
+    {
+      "material": "flux",
+      "amount": 24
+    }
+  ],
+  "outputs": [
+    {
+      "material": "bismuth_bronze",
+      "amount": 72
+    },
+    {
+      "material": "slag",
+      "amount": 24
+    }
+  ],
+  "order": 8
+}

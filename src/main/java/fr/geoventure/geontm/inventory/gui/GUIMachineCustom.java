@@ -9,9 +9,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -27,14 +27,14 @@ import java.util.Optional;
  */
 public final class GUIMachineCustom extends CompatContainerScreen<ContainerMachineCustom> {
 
-    private static final Identifier texture = Ids.of("geontm", "textures/gui/processing/gui_custom.png");
+    private static final ResourceLocation texture = Ids.of("geontm", "textures/gui/processing/gui_custom.png");
 
     public GUIMachineCustom(ContainerMachineCustom menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int x, int y) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int x, int y) {
         TileEntityCustomMachine custom = menu.getCustom();
         if (custom == null || custom.config == null) return;
 
@@ -77,7 +77,7 @@ public final class GUIMachineCustom extends CompatContainerScreen<ContainerMachi
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int i, int j) {
+    protected void renderLabels(GuiGraphics graphics, int i, int j) {
         TileEntityCustomMachine custom = menu.getCustom();
         // 1.7 drew the config's name for the client language, not the name the server sent
         String name = custom != null && custom.config != null ? custom.config.displayName() : title.getString();
@@ -88,13 +88,13 @@ public final class GUIMachineCustom extends CompatContainerScreen<ContainerMachi
         }
     }
 
-    private void blit(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int w, int h) {
+    private void blit(GuiGraphics graphics, int x, int y, int u, int v, int w, int h) {
         if (w <= 0 || h <= 0) return;
         GuiDraw.blit(graphics, texture, x, y, (float) u, (float) v, w, h, 256, 256);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int x, int y, float interp) {
+    public void extractBackground(GuiGraphics graphics, int x, int y, float interp) {
         blit(graphics, leftPos, topPos, 0, 0, imageWidth, imageHeight);
         TileEntityCustomMachine custom = menu.getCustom();
         if (custom == null || custom.config == null) return;
@@ -148,11 +148,11 @@ public final class GUIMachineCustom extends CompatContainerScreen<ContainerMachi
     }
 
     /** 1.7 {@code FluidTank.renderTank(x, bottom, z, width, height)}: the fluid texture tiled up from the bottom. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         TankDisplay.Fill visible = TankDisplay.visibleFill(tank, x, y, width, height, true);
         if (visible == null) return;
         int x0 = leftPos + visible.x(), top = topPos + visible.top(), bottom = topPos + visible.bottom();
-        Identifier fluid = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluid = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(fluid).isPresent()) {
             graphics.enableScissor(x0, top, x0 + visible.width(), bottom);
             for (int ty = bottom - 16; ty > top - 16; ty -= 16)

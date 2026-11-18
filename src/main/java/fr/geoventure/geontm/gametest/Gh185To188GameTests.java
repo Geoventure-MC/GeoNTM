@@ -126,7 +126,7 @@ public final class Gh185To188GameTests {
             helper.assertTrue(BuiltInRegistries.BLOCK.getOptional(Ids.parse(id)).isPresent(), "lens looks for unknown " + id);
         }
         ServerLevel level = helper.getLevel();
-        int y = 70, floor = level.getMinY();
+        int y = 70, floor = level.getMinBuildHeight();
         int lowest = Integer.MAX_VALUE, highest = Integer.MIN_VALUE;
         for (long time = 0; time < 1000; time++) {
             int layer = ItemModLens.layer(level, y, time);

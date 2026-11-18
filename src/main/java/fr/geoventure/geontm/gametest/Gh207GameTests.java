@@ -50,7 +50,7 @@ public final class Gh207GameTests {
         FoldedTestSupport.assemble(helper, ModBatteryBlocks.machine_battery_socket.get(), core);
         TileEntityBatterySocket socket = GameTestHelpers.blockEntity(helper, core, TileEntityBatterySocket.class);
         Direction dir = socket.getConPos()[0].getDir().toDirection();
-        Item lead = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "battery_lead"));
+        Item lead = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "battery_lead"));
         ItemStack stack = new ItemStack(lead);
         ((IBatteryItem) lead).setCharge(stack, CHARGE);
         socket.inventory.setStackInSlot(0, stack);

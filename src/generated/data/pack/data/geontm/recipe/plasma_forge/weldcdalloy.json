@@ -1,0 +1,25 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.weldcdalloy",
+  "input_items": [
+    {
+      "material": "cdalloy",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:oxygen",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:plate_welded_cdalloy"
+  ],
+  "duration": 600,
+  "power": 1000000,
+  "auto_switch_group": "autoswitch.weldPlates",
+  "order": 20,
+  "ignition_temp": 500000
+}

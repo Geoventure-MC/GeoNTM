@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.ethanol",
+  "input_items": [
+    {
+      "ingredient": "minecraft:sugar",
+      "count": 10
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:ethanol",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "power": 100,
+  "icon": {
+    "id": "geontm:canister_full",
+    "item_data": {
+      "fluid": "geontm:ethanol",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 10
+}

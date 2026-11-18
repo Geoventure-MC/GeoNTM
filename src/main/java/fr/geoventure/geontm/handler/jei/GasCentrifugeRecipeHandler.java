@@ -10,7 +10,7 @@ import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geocore.viewer.ViewerType;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -56,7 +56,7 @@ public final class GasCentrifugeRecipeHandler extends GeoNtmRecipeCategory<GasCe
     }
 
     @Override
-    public void draw(GasCentrifugeRecipes.GasCentrifugeRecipe recipe, GuiGraphicsExtractor graphics, double mouseX, double mouseY) {
+    public void draw(GasCentrifugeRecipes.GasCentrifugeRecipe recipe, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         powerAnimated.draw(graphics, 1, 1);
         progressAnimated.draw(graphics, 72, 12);

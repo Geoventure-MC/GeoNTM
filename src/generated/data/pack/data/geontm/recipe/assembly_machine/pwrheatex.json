@@ -1,0 +1,40 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrheatex",
+  "input_items": [
+    {
+      "material": "copper",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:pwr_heatex",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 45056,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 2
+    },
+    {
+      "material": "copper",
+      "shape": "castplate",
+      "count": 4
+    }
+  ],
+  "input_fluids_expensive": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 4000
+    }
+  ]
+}

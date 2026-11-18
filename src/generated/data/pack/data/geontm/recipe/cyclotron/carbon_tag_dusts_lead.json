@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "#c:dusts/lead"
+  },
+  "output": "geontm:powder_ra226",
+  "antimatter": 10,
+  "order": 26
+}

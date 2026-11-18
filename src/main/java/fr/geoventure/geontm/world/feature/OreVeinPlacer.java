@@ -152,6 +152,6 @@ public final class OreVeinPlacer {
      */
     private static boolean isWritable(WorldGenLevel level, BlockPos pos) {
         return level.hasChunk(pos.getX() >> 4, pos.getZ() >> 4)
-                && pos.getY() >= level.getMinY() && pos.getY() <= level.getMaxY();
+                && pos.getY() >= level.getMinBuildHeight() && pos.getY() <= level.getMaxBuildHeight();
     }
 }

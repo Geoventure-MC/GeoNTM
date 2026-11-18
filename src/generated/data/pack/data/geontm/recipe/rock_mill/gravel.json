@@ -1,0 +1,45 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.gravel",
+  "input_items": [
+    {
+      "ingredient": "minecraft:gravel"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:sand",
+        "weight": 75
+      },
+      {
+        "data": "minecraft:flint",
+        "weight": 20
+      },
+      {
+        "data": "geontm:powder_boron",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 100,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:gravel"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 1
+}

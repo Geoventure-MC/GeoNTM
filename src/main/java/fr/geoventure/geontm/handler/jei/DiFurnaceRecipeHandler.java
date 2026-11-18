@@ -9,9 +9,9 @@ import fr.geoventure.geontm.inventory.recipes.DiFurnaceRecipes;
 import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipe;
 import fr.geoventure.geocore.viewer.ViewerCategory;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import fr.geoventure.geontm.blocks.machine.ModMachineBlocks;
 /** Feature-local recipe-viewer (JEI and REI) category for the old alloy-furnace/DiFurnace recipe handler. */
 public final class DiFurnaceRecipeHandler extends ViewerCategory<GenericRecipe> {
 
-    private static final Identifier TEXTURE = Ids.of(
+    private static final ResourceLocation TEXTURE = Ids.of(
             Constants.MOD_ID, "textures/gui/guidifurnace.png");
 
     private final Drawable background;
@@ -62,7 +62,7 @@ public final class DiFurnaceRecipeHandler extends ViewerCategory<GenericRecipe> 
     }
 
     @Override
-    public void draw(GenericRecipe recipe, GuiGraphicsExtractor graphics,
+    public void draw(GenericRecipe recipe, GuiGraphics graphics,
                      double mouseX, double mouseY) {
         background.draw(graphics, 0, 0);
         power.draw(graphics, 56, 21);

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:particle_accelerator",
+  "input1": {
+    "ingredient": "geontm:particle_hydrogen"
+  },
+  "input2": {
+    "ingredient": "geontm:particle_amat"
+  },
+  "momentum": 2500,
+  "output1": "geontm:particle_muon",
+  "order": 3
+}

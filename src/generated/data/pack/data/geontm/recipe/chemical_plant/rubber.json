@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.rubber",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/sulfur"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_rubber",
+      "count": 2
+    }
+  ],
+  "duration": 100,
+  "power": 200,
+  "order": 43,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

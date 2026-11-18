@@ -1,0 +1,8 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:oil_tar_crack"
+  },
+  "item_output": "geontm:coke_petroleum",
+  "order": 18
+}

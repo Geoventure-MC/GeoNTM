@@ -264,8 +264,8 @@ public final class NTMComponentStructureGameTests {
         // lower floors under the world bottom, so its box floor is fixed at the test floor (the surface floats above)
         // (y -1 is 1.7's "no height yet" marker, which the silo's builder would recompute: one higher then)
         if (piece instanceof SiloComponent) piece.fixHeight(origin.getY() == -1 ? 0 : origin.getY());
-        BoundingBox all = new BoundingBox(piece.getBoundingBox().minX() - 2, level.getMinY(), piece.getBoundingBox().minZ() - 2,
-                piece.getBoundingBox().maxX() + 2, level.getMaxY() - 1, piece.getBoundingBox().maxZ() + 2);
+        BoundingBox all = new BoundingBox(piece.getBoundingBox().minX() - 2, level.getMinBuildHeight(), piece.getBoundingBox().minZ() - 2,
+                piece.getBoundingBox().maxX() + 2, level.getMaxBuildHeight() - 1, piece.getBoundingBox().maxZ() + 2);
         piece.build(level, rand, all);
         BoundingBox built = piece.getBoundingBox();
         Map<String, Integer> found = count(level, new BoundingBox(built.minX(), built.minY() - 20, built.minZ(), built.maxX(), built.maxY(), built.maxZ()));

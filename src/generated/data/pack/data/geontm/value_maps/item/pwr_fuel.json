@@ -1,0 +1,149 @@
+{
+  "values": {
+    "geontm:pwr_fuel_meu": {
+      "heat": 5.0,
+      "function": {
+        "type": "log",
+        "level": 600.0,
+        "div": 2500.0,
+        "off": 1.0
+      },
+      "hot": "geontm:pwr_fuel_hot_meu",
+      "depleted": "geontm:pwr_fuel_depleted_meu"
+    },
+    "geontm:pwr_fuel_heu233": {
+      "heat": 7.5,
+      "function": {
+        "type": "sqrt",
+        "level": 25.0
+      },
+      "hot": "geontm:pwr_fuel_hot_heu233",
+      "depleted": "geontm:pwr_fuel_depleted_heu233"
+    },
+    "geontm:pwr_fuel_heu235": {
+      "heat": 7.5,
+      "function": {
+        "type": "sqrt",
+        "level": 22.5
+      },
+      "hot": "geontm:pwr_fuel_hot_heu235",
+      "depleted": "geontm:pwr_fuel_depleted_heu235"
+    },
+    "geontm:pwr_fuel_men": {
+      "heat": 7.5,
+      "function": {
+        "type": "log",
+        "level": 675.0,
+        "div": 2500.0,
+        "off": 1.0
+      },
+      "hot": "geontm:pwr_fuel_hot_men",
+      "depleted": "geontm:pwr_fuel_depleted_men"
+    },
+    "geontm:pwr_fuel_hen237": {
+      "heat": 7.5,
+      "function": {
+        "type": "sqrt",
+        "level": 27.5
+      },
+      "hot": "geontm:pwr_fuel_hot_hen237",
+      "depleted": "geontm:pwr_fuel_depleted_hen237"
+    },
+    "geontm:pwr_fuel_mox": {
+      "heat": 7.5,
+      "function": {
+        "type": "log",
+        "level": 600.0,
+        "div": 2500.0,
+        "off": 1.0
+      },
+      "hot": "geontm:pwr_fuel_hot_mox",
+      "depleted": "geontm:pwr_fuel_depleted_mox"
+    },
+    "geontm:pwr_fuel_mep": {
+      "heat": 7.5,
+      "function": {
+        "type": "log",
+        "level": 675.0,
+        "div": 2500.0,
+        "off": 1.0
+      },
+      "hot": "geontm:pwr_fuel_hot_mep",
+      "depleted": "geontm:pwr_fuel_depleted_mep"
+    },
+    "geontm:pwr_fuel_hep239": {
+      "heat": 10.0,
+      "function": {
+        "type": "sqrt",
+        "level": 22.5
+      },
+      "hot": "geontm:pwr_fuel_hot_hep239",
+      "depleted": "geontm:pwr_fuel_depleted_hep239"
+    },
+    "geontm:pwr_fuel_hep241": {
+      "heat": 10.0,
+      "function": {
+        "type": "sqrt",
+        "level": 25.0
+      },
+      "hot": "geontm:pwr_fuel_hot_hep241",
+      "depleted": "geontm:pwr_fuel_depleted_hep241"
+    },
+    "geontm:pwr_fuel_mea": {
+      "heat": 7.5,
+      "function": {
+        "type": "log",
+        "level": 750.0,
+        "div": 2500.0,
+        "off": 1.0
+      },
+      "hot": "geontm:pwr_fuel_hot_mea",
+      "depleted": "geontm:pwr_fuel_depleted_mea"
+    },
+    "geontm:pwr_fuel_hea242": {
+      "heat": 10.0,
+      "function": {
+        "type": "sqrt",
+        "level": 25.0
+      },
+      "hot": "geontm:pwr_fuel_hot_hea242",
+      "depleted": "geontm:pwr_fuel_depleted_hea242"
+    },
+    "geontm:pwr_fuel_hes326": {
+      "heat": 12.5,
+      "function": {
+        "type": "sqrt",
+        "level": 27.5
+      },
+      "hot": "geontm:pwr_fuel_hot_hes326",
+      "depleted": "geontm:pwr_fuel_depleted_hes326"
+    },
+    "geontm:pwr_fuel_hes327": {
+      "heat": 12.5,
+      "function": {
+        "type": "sqrt",
+        "level": 30.0
+      },
+      "hot": "geontm:pwr_fuel_hot_hes327",
+      "depleted": "geontm:pwr_fuel_depleted_hes327"
+    },
+    "geontm:pwr_fuel_bfb_am_mix": {
+      "heat": 2.5,
+      "function": {
+        "type": "sqrt",
+        "level": 15.0
+      },
+      "hot": "geontm:pwr_fuel_hot_bfb_am_mix",
+      "depleted": "geontm:pwr_fuel_depleted_bfb_am_mix"
+    },
+    "geontm:pwr_fuel_bfb_pu241": {
+      "heat": 2.5,
+      "function": {
+        "type": "sqrt",
+        "level": 15.0
+      },
+      "hot": "geontm:pwr_fuel_hot_bfb_pu241",
+      "depleted": "geontm:pwr_fuel_depleted_bfb_pu241"
+    }
+  }
+}

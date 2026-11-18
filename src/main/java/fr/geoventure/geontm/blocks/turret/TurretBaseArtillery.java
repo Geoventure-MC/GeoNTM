@@ -107,7 +107,7 @@ public abstract class TurretBaseArtillery extends BlockMultiblockCore implements
     protected InteractionResult useAtCore(BlockState coreState, Level level, BlockPos core, Player player,
                                           BlockHitResult hit) {
         if (player.getMainHandItem().getItem() instanceof ItemDesignatorArtyRange) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (player.isShiftKeyDown()) return InteractionResult.SUCCESS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;

@@ -348,7 +348,7 @@ public final class LegacyStructureTiles {
         if (colon <= 0) return null;
         var key = Ids.of(id.substring(0, colon), id.substring(colon + 1));
         if (!BuiltInRegistries.ITEM.containsKey(key)) return null;
-        Item item = BuiltInRegistries.ITEM.getValue(key);
+        Item item = BuiltInRegistries.ITEM.get(key);
         return item == Items.AIR ? null : item;
     }
 

@@ -118,9 +118,9 @@ public class WeaponSpecial extends CompatSwordItem {
                 // 1.7: one in seven hits blinds (5 min), slows III (5 min), fatigues III (5 min) or nauseates (1 min)
                 int i = world.getRandom().nextInt(7);
                 if (i == 0) Effects.add(entity, MobEffects.BLINDNESS, 5 * 60 * 20, 0);
-                if (i == 1) Effects.add(entity, MobEffects.SLOWNESS, 5 * 60 * 20, 2);
-                if (i == 2) Effects.add(entity, MobEffects.MINING_FATIGUE, 5 * 60 * 20, 2);
-                if (i == 3) Effects.add(entity, MobEffects.NAUSEA, 1 * 60 * 20, 0);
+                if (i == 1) Effects.add(entity, MobEffects.MOVEMENT_SLOWDOWN, 5 * 60 * 20, 2);
+                if (i == 2) Effects.add(entity, MobEffects.DIG_SLOWDOWN, 5 * 60 * 20, 2);
+                if (i == 3) Effects.add(entity, MobEffects.CONFUSION, 1 * 60 * 20, 0);
                 // 1.7 NTMSounds.VANILLA_ANVIL ("random.anvil_land")
                 playAt(world, entity, SoundEvents.ANVIL_LAND, 3.0F, 1.0F);
             }

@@ -1,0 +1,31 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.himarslarge",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 36
+    },
+    {
+      "ingredient": "geontm:ball_tatb",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:ammo_himars_single"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 65536
+}

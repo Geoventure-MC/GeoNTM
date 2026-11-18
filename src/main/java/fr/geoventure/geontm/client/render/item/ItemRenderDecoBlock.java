@@ -4,7 +4,7 @@ import fr.geoventure.geontm.client.model.WavefrontObj;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -19,7 +19,7 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderDecoBlock implements CustomItemRenderer {
 
-    private static final Identifier TEXTURE = tex("textures/models/deco/steelroof.png");
+    private static final ResourceLocation TEXTURE = tex("textures/models/deco/steelroof.png");
 
     private final WavefrontObj roof = obj("models/deco/steel_roof.obj");
 

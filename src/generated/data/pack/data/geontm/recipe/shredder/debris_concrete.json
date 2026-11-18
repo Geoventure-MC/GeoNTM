@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:debris_concrete",
+  "output": {
+    "id": "geontm:scrap_nuclear",
+    "count": 2
+  }
+}

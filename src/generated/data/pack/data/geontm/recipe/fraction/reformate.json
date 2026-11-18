@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:reformate",
+  "left": {
+    "type": "geontm:aromatics",
+    "amount": 40
+  },
+  "right": {
+    "type": "geontm:xylene",
+    "amount": 60
+  }
+}

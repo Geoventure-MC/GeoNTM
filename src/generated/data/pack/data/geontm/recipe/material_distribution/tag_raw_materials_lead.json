@@ -1,0 +1,18 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:raw_materials/lead",
+  "materials": [
+    {
+      "material": "lead",
+      "amount": 96
+    },
+    {
+      "material": "gold",
+      "amount": 5
+    },
+    {
+      "material": "stone",
+      "amount": 108
+    }
+  ]
+}

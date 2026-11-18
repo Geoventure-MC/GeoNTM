@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.Locale;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
@@ -144,12 +144,12 @@ public class ItemPool {
         int max = row.max();
         int weight = row.weight();
         if (row.item() == null) return Entry.empty(min, max, weight);
-        Identifier id = Ids.parse(row.item());
+        ResourceLocation id = Ids.parse(row.item());
         if (!BuiltInRegistries.ITEM.containsKey(id)) {
             Constants.LOG.debug("{} names {}, which this port has not registered; entry skipped", FOLDER, id);
             return null;
         }
-        Item item = BuiltInRegistries.ITEM.getValue(id);
+        Item item = BuiltInRegistries.ITEM.get(id);
         ItemStack template = new ItemStack(item);
         if (row.fluid() != null) {
             // 1.7 metadata fluid containers (canister_full meta = fluid id, cell_deuterium ...): the port keeps the

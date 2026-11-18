@@ -224,7 +224,7 @@ public class EntityChemical extends EntityThrowableNT {
                 if (level() instanceof ServerLevel server)
                     EntityDamageUtil.attackEntityFromIgnoreIFrame(entity, ModDamageSources.electricity(server), 0.5F);
                 if (living != null) {
-                    living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 60, 9));
+                    living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 9));
                     living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60, 9));
                 }
                 if (living != null) return;
@@ -349,7 +349,7 @@ public class EntityChemical extends EntityThrowableNT {
 
         if (level.isLoaded(pos)) {
             boolean ground = false;
-            while (!ground && pos.getY() > level.getMinY()) {
+            while (!ground && pos.getY() > level.getMinBuildHeight()) {
                 if (level.getBlockState(pos.below()).blocksMotion()) {
                     ground = true;
                 } else {

@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.hardplastic",
+  "input_fluids": [
+    {
+      "type": "geontm:xylene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:phosgene",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_pc"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 45,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

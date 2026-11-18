@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.schrabidic.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:pellet_charged"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sas3",
+      "amount": 8000
+    },
+    {
+      "type": "geontm:peroxide",
+      "amount": 6000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:schrabidic",
+      "amount": 16000
+    }
+  ],
+  "duration": 100,
+  "order": 22
+}

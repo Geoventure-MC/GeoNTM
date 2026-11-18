@@ -63,15 +63,15 @@ public final class ConsumableTreatments {
     /** Public for the GameTests, which cannot raise the loader event. */
     public static InteractionResult clicked(Player player, InteractionHand hand) {
         ItemStack held = player.getItemInHand(hand);
-        if (held.getItem() instanceof Handled) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (held.getItem() instanceof Handled) return InteractionResult.PASS;
         ConsumableTreatment treatment = of(held);
-        if (treatment == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (treatment == null) return InteractionResult.PASS;
         if (treatment.has(Trigger.USE)) {
             if (treatment.blocked(player)) return InteractionResult.FAIL;
             if (player.level() instanceof ServerLevel level) treatment.run(Context.use(level, player, player, hand));
             return InteractionResult.SUCCESS;
         }
         if (treatment.has(Trigger.CONSUME) && treatment.blocked(player)) return InteractionResult.FAIL;
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

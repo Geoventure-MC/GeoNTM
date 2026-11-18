@@ -8,7 +8,7 @@ import fr.geoventure.geocore.render.living.CompatLivingRenderState;
 import fr.geoventure.geocore.render.living.CompatMobRenderer;
 import fr.geoventure.geocore.render.living.LivingModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 RenderCyberCrab. 1.7's ModelCrab lifted itself 1.5 blocks and yawed -90 inside {@code renderAll}; here that is
@@ -33,7 +33,7 @@ public class RenderCyberCrab extends CompatMobRenderer<EntityCyberCrab, CompatLi
     }
 
     @Override
-    protected Identifier texture(CompatLivingRenderState state) {
+    protected ResourceLocation texture(CompatLivingRenderState state) {
         return ResourceManager.crab_tex;
     }
 }

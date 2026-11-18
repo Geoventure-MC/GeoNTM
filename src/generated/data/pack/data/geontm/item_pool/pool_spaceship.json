@@ -1,0 +1,91 @@
+{
+  "entries": [
+    {
+      "item": "geontm:battery_lead",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:coil_copper",
+      "min": 2,
+      "max": 16,
+      "weight": 5
+    },
+    {
+      "item": "geontm:wire_fine_red_copper",
+      "min": 8,
+      "max": 32,
+      "weight": 5
+    },
+    {
+      "item": "geontm:cell",
+      "min": 1,
+      "max": 8,
+      "weight": 5,
+      "fluid": "DEUTERIUM"
+    },
+    {
+      "item": "geontm:cell",
+      "min": 1,
+      "max": 8,
+      "weight": 5,
+      "fluid": "TRITIUM"
+    },
+    {
+      "item": "geontm:cell",
+      "min": 1,
+      "max": 1,
+      "weight": 1,
+      "fluid": "AMAT"
+    },
+    {
+      "item": "geontm:powder_neodymium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_niobium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:wire_dense_red_copper",
+      "min": 2,
+      "max": 4,
+      "weight": 5
+    },
+    {
+      "item": "geontm:wire_dense_gold",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    },
+    {
+      "item": "geontm:pwr_fuel",
+      "min": 1,
+      "max": 2,
+      "weight": 5
+    },
+    {
+      "item": "geontm:block_tungsten",
+      "min": 3,
+      "max": 8,
+      "weight": 5
+    },
+    {
+      "item": "geontm:red_wire_coated",
+      "min": 4,
+      "max": 8,
+      "weight": 5
+    },
+    {
+      "item": "geontm:red_cable",
+      "min": 8,
+      "max": 16,
+      "weight": 5
+    }
+  ]
+}

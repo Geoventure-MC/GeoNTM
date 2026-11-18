@@ -8,9 +8,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -18,7 +18,7 @@ import java.util.List;
 
 /** Wood Burner screen, from 1.7.10 {@code GUIMachineWoodBurner} ({@code generators/gui_wood_burner_alt.png}, 176×186). */
 public class GUIMachineWoodBurner extends CompatContainerScreen<ContainerMachineWoodBurner> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_wood_burner_alt.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_wood_burner_alt.png");
 
     public GUIMachineWoodBurner(ContainerMachineWoodBurner menu, Inventory inventory, Component title) {
         super(menu, inventory, title, 176, 186);
@@ -26,13 +26,13 @@ public class GUIMachineWoodBurner extends CompatContainerScreen<ContainerMachine
 
     /** 1.7: title centred on x=70 at y=6 in 0xffffff, inventory at (8, ySize-96+2) in 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 70 - font.width(title) / 2, 6, 0xffffff, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineWoodBurner te = menu.getBurner();
         if (te == null) return;
@@ -53,7 +53,7 @@ public class GUIMachineWoodBurner extends CompatContainerScreen<ContainerMachine
 
     /** 1.7 {@code drawScreen}: energy, burn-module bonuses over the empty fuel slot, tank, burn time, ON/OFF. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineWoodBurner te = menu.getBurner();
         if (te == null) return;
         int gl = leftPos, gt = topPos;

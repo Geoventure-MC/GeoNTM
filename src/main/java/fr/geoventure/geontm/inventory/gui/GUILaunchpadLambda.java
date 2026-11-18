@@ -9,11 +9,11 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -23,18 +23,18 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUILaunchpadLambda extends CompatContainerScreen<ContainerLaunchpadLambda> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_launchpad_lambda.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_launchpad_lambda.png");
 
     public GUILaunchpadLambda(ContainerLaunchpadLambda menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 226);
     }
 
-    private void blit(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int w, int h) {
+    private void blit(GuiGraphics graphics, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + y, (float) u, (float) v, w, h, 256, 256);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityLaunchpadLambda pad = menu.getLauncher();
@@ -60,7 +60,7 @@ public class GUILaunchpadLambda extends CompatContainerScreen<ContainerLaunchpad
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
 
         TileEntityLaunchpadLambda pad = menu.getLauncher();
@@ -82,7 +82,7 @@ public class GUILaunchpadLambda extends CompatContainerScreen<ContainerLaunchpad
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityLaunchpadLambda pad = menu.getLauncher();
         if (pad == null) return;
 

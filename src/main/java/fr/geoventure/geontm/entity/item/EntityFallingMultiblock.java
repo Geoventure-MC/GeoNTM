@@ -168,7 +168,7 @@ public class EntityFallingMultiblock extends CompatEntity implements StoredItems
         for (long packed : members) {
             BlockPos target = memberAt(packed, drop);
             if (memberPosSet.contains(target.above(drop - 1).asLong())) continue;
-            if (target.getY() < level.getMinY()) return false;
+            if (target.getY() < level.getMinBuildHeight()) return false;
             BlockState state = level.getBlockState(target);
             if (!(state.isAir() || (state.canBeReplaced() && !state.liquid()))) return false;
         }

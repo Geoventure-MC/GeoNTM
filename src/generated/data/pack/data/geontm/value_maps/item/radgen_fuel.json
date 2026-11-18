@@ -1,0 +1,13 @@
+{
+  "values": {
+    "geontm:scrap_nuclear": {
+      "production": 50,
+      "duration": 6000
+    },
+    "geontm:gem_rad": {
+      "production": 25000,
+      "duration": 36000,
+      "output": "minecraft:diamond"
+    }
+  }
+}

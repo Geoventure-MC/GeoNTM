@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -32,7 +32,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBase> {
 
-    private static final Identifier FALLBACK_TEXTURE =
+    private static final ResourceLocation FALLBACK_TEXTURE =
             Ids.of("geontm", "textures/gui/weapon/gui_turret_base.png");
 
     private static final int SWITCH_X = 115, SWITCH_Y = 26, SWITCH_SIZE = 18;
@@ -51,7 +51,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
         super(menu, playerInventory, title, 176, 222);
     }
 
-    private Identifier getTexture() {
+    private ResourceLocation getTexture() {
         TileEntityTurretBaseNT turret = this.menu.turret();
         return turret == null ? FALLBACK_TEXTURE : turret.guiTexture();
     }
@@ -71,7 +71,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, getTexture(), this.leftPos, this.topPos, 0.0F, 0.0F,
                 this.imageWidth, this.imageHeight, 256, 256);
 
@@ -113,13 +113,13 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
     }
 
     /** 1.7 {@code GUITurretFritz}: {@code tank.renderTank(guiLeft + 134, guiTop + 115, z, 7, 52)}; only the Fritz has one. */
-    private void drawTank(GuiGraphicsExtractor graphics, TileEntityTurretBaseNT turret) {
+    private void drawTank(GuiGraphics graphics, TileEntityTurretBaseNT turret) {
         FluidTankNTM tank = turret.turretTank();
         if (tank == null || tank.getMaxFill() <= 0) return;
         GuiUtil.tank(graphics, tank, this.leftPos + TANK_X, this.topPos + TANK_Y + TANK_H, TANK_W, TANK_H);
     }
 
-    private void drawTally(GuiGraphicsExtractor graphics, int tallies) {
+    private void drawTally(GuiGraphics graphics, int tallies) {
         if (tallies >= 36) {
             GuiDraw.blit(graphics, getTexture(), this.leftPos + 77, this.topPos + 50, 176.0F, 120.0F, 63, 6, 256, 256);
             return;
@@ -138,7 +138,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
         }
     }
 
-    private void hover(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
+    private void hover(GuiGraphics graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
         if (over(x, y, LIST_SIZE, LIST_SIZE, mouseX, mouseY)) {
             GuiDraw.blit(graphics, getTexture(), this.leftPos + x, this.topPos + y, (float) u, (float) v,
                     LIST_SIZE, LIST_SIZE, 256, 256);
@@ -146,7 +146,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: both labels in 4210752 on every turret (the per-turret label colours were 1.12.2's).
         Component name = this.title;
         GuiDraw.text(graphics, this.font, name, this.imageWidth / 2 - this.font.width(name) / 2, 6, 4210752, false);
@@ -174,7 +174,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityTurretBaseNT turret = this.menu.turret();
         if (turret == null) return;
 
@@ -212,7 +212,7 @@ public final class GUITurretBase extends CompatContainerScreen<ContainerTurretBa
     }
 
     /** Suppressed while a hovered ammo slot has its own tooltip, exactly as 1.7 does. Returns whether it drew. */
-    private boolean drawAmmo(GuiGraphicsExtractor graphics, TileEntityTurretBaseNT turret, int mouseX, int mouseY) {
+    private boolean drawAmmo(GuiGraphics graphics, TileEntityTurretBaseNT turret, int mouseX, int mouseY) {
         for (int i = TileEntityTurretBaseNT.SLOT_AMMO_FIRST; i <= TileEntityTurretBaseNT.SLOT_AMMO_LAST; i++) {
             if (this.menu.getSlot(i).hasItem() && over(this.menu.getSlot(i).x, this.menu.getSlot(i).y,
                     16, 16, mouseX, mouseY)) {

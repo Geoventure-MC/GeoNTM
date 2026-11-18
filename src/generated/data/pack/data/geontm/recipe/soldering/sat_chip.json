@@ -1,0 +1,30 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:sat_chip",
+  "duration": 100,
+  "consumption": 100,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 2
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 2
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "order": 15
+}

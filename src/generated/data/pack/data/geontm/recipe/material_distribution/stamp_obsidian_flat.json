@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:stamp_obsidian_flat",
+  "materials": [
+    {
+      "material": "obsidian",
+      "amount": 216
+    }
+  ]
+}

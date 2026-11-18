@@ -22,7 +22,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -44,8 +44,8 @@ public final class RenderDecoBlockAlt extends GemBER<TileEntityDecoBlockAltF, Re
         public final CompatItemRenderState watch = new CompatItemRenderState();
     }
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/models/modelstatue.png");
-    private static final Identifier GUN_TEXTURE = Ids.of("geontm", "textures/models/modelgun.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/models/modelstatue.png");
+    private static final ResourceLocation GUN_TEXTURE = Ids.of("geontm", "textures/models/modelgun.png");
 
     private static final ModelPart STATUE = statue();
     private static final ModelPart GUN = gun();

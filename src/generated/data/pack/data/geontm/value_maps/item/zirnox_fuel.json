@@ -1,0 +1,92 @@
+{
+  "values": {
+    "geontm:rod_zirnox_natural_uranium_fuel": {
+      "max_life": 250000,
+      "heat": 30,
+      "base_radiation": 0.35,
+      "depleted_radiation": 172.5,
+      "depletes_into": "geontm:rod_zirnox_depleted_natural_uranium_fuel",
+      "waste": "geontm:waste_natural_uranium"
+    },
+    "geontm:rod_zirnox_uranium_fuel": {
+      "max_life": 200000,
+      "heat": 50,
+      "base_radiation": 0.5,
+      "depleted_radiation": 150.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_uranium_fuel",
+      "waste": "geontm:waste_uranium"
+    },
+    "geontm:rod_zirnox_th232_fuel": {
+      "max_life": 20000,
+      "heat": 0,
+      "breeding": true,
+      "base_radiation": 0.1,
+      "depleted_radiation": 1.75,
+      "depletes_into": "geontm:rod_zirnox_thorium_fuel"
+    },
+    "geontm:rod_zirnox_thorium_fuel": {
+      "max_life": 200000,
+      "heat": 40,
+      "base_radiation": 1.75,
+      "depleted_radiation": 112.5,
+      "depletes_into": "geontm:rod_zirnox_depleted_thorium_fuel",
+      "waste": "geontm:waste_thorium"
+    },
+    "geontm:rod_zirnox_mox_fuel": {
+      "max_life": 165000,
+      "heat": 75,
+      "base_radiation": 2.5,
+      "depleted_radiation": 150.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_mox_fuel",
+      "waste": "geontm:waste_mox"
+    },
+    "geontm:rod_zirnox_plutonium_fuel": {
+      "max_life": 175000,
+      "heat": 65,
+      "base_radiation": 4.25,
+      "depleted_radiation": 187.5,
+      "depletes_into": "geontm:rod_zirnox_depleted_plutonium_fuel",
+      "waste": "geontm:waste_plutonium"
+    },
+    "geontm:rod_zirnox_u233_fuel": {
+      "max_life": 150000,
+      "heat": 100,
+      "base_radiation": 5.0,
+      "depleted_radiation": 150.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_u233_fuel",
+      "waste": "geontm:waste_u233"
+    },
+    "geontm:rod_zirnox_u235_fuel": {
+      "max_life": 165000,
+      "heat": 85,
+      "base_radiation": 1.0,
+      "depleted_radiation": 165.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_u235_fuel",
+      "waste": "geontm:waste_u235"
+    },
+    "geontm:rod_zirnox_les_fuel": {
+      "max_life": 150000,
+      "heat": 150,
+      "base_radiation": 5.85,
+      "depleted_radiation": 225.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_les_fuel",
+      "waste": "geontm:waste_schrabidium"
+    },
+    "geontm:rod_zirnox_lithium_fuel": {
+      "max_life": 20000,
+      "heat": 0,
+      "breeding": true,
+      "base_radiation": 0.0,
+      "depleted_radiation": 0.001,
+      "depletes_into": "geontm:rod_zirnox_tritium"
+    },
+    "geontm:rod_zirnox_zfb_mox_fuel": {
+      "max_life": 50000,
+      "heat": 35,
+      "base_radiation": 2.5,
+      "depleted_radiation": 75.0,
+      "depletes_into": "geontm:rod_zirnox_depleted_zfb_mox_fuel",
+      "waste": "geontm:waste_zfb_mox"
+    }
+  }
+}

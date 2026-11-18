@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fleijaigniter",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 6
+    },
+    {
+      "material": "schrabidium",
+      "shape": "wire",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:fleija_igniter"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 59904
+}

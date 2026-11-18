@@ -8,12 +8,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact Gem port of 1.7 ItemRenderDoubleBarrel, including Sacred Dragon skin support. */
 public final class DoubleBarrelWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/sacred_dragon.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/sacred_dragon.obj");
     private final Surface body;
     private WavefrontObj model;
     public DoubleBarrelWeaponRenderer(String texture){body=Surface.cutout("geontm:textures/models/weapons/"+texture+".png");}

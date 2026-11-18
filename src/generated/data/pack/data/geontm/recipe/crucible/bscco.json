@@ -1,0 +1,31 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.bscco",
+  "frequency": 3,
+  "icon": "geontm:ingot_bscco",
+  "inputs": [
+    {
+      "material": "bismuth",
+      "amount": 16
+    },
+    {
+      "material": "strontium",
+      "amount": 16
+    },
+    {
+      "material": "calcium",
+      "amount": 16
+    },
+    {
+      "material": "copper",
+      "amount": 24
+    }
+  ],
+  "outputs": [
+    {
+      "material": "bscco",
+      "amount": 72
+    }
+  ],
+  "order": 12
+}

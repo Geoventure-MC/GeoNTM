@@ -902,11 +902,11 @@ public abstract class BlockMultiblockCore extends CompatBlock implements Ticking
      */
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
         if (!(level.getBlockEntity(core) instanceof MenuProvider menu)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (!(player instanceof ServerPlayer serverPlayer)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         Menus.openWithPos(serverPlayer, menu, core);
         return InteractionResult.SUCCESS;

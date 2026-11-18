@@ -1,0 +1,28 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#geontm:certus_quartz_clusters"
+  },
+  "outputs": [
+    {
+      "tag": "c:gems/certus_quartz",
+      "count": 2
+    },
+    {
+      "tag": "c:gems/certus_quartz",
+      "count": 2
+    },
+    {
+      "tag": "c:gems/certus_quartz",
+      "count": 2
+    },
+    {
+      "tag": "c:gems/certus_quartz",
+      "count": 2
+    }
+  ],
+  "requires": [
+    "#c:gems/certus_quartz"
+  ],
+  "order": 152
+}

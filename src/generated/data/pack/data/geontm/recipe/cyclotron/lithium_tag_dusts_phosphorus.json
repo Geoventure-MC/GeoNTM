@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/phosphorus"
+  },
+  "output": "geontm:sulfur",
+  "antimatter": 50,
+  "order": 4
+}

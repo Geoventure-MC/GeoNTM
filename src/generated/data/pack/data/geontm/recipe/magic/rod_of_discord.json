@@ -1,0 +1,10 @@
+{
+  "type": "geontm:magic",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:blaze_rod",
+    "geontm:nugget_euphemium"
+  ],
+  "result": "geontm:rod_of_discord",
+  "order": 1
+}

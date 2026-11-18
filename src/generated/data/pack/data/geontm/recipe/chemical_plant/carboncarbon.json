@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.carboncarbon",
+  "input_items": [
+    {
+      "ingredient": "#c:cokes",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/titanium"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:heavyoil_vacuum",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:syngas",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:part_generic_alclad"
+  ],
+  "duration": 400,
+  "power": 100000,
+  "custom_localization": true,
+  "order": 52
+}

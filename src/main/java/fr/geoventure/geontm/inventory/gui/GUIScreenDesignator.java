@@ -10,16 +10,16 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
 /** The source-shaped 176x178 manual designator coordinate editor. */
 public final class GUIScreenDesignator extends CompatScreen {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_designator.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_designator.png");
     private static final int WIDTH = 176;
     private static final int HEIGHT = 178;
     private final ItemStack stack;
@@ -43,7 +43,7 @@ public final class GUIScreenDesignator extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY,
                                            float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, left, top, 0F, 0F, WIDTH, HEIGHT, 256, 256);
         for (Button button : buttons()) {
@@ -55,7 +55,7 @@ public final class GUIScreenDesignator extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY,
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY,
                                            float partialTick) {
         String x = "X: " + shownX;
         String z = "Z: " + shownZ;

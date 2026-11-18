@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fusioncoupler",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_welded/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 32
+    },
+    {
+      "material": "bscco",
+      "shape": "densewire",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:fusion_coupler"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 49408,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 4
+    },
+    {
+      "material": "bscco",
+      "shape": "densewire",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:item_expensive_computer",
+      "count": 2
+    }
+  ]
+}

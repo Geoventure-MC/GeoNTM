@@ -1,0 +1,35 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.himarssmalllava",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:ball_tatb",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:gems/volcanic"
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    "geontm:ammo_himars_standard_lava"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 65280
+}

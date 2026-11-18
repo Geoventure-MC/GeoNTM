@@ -1,0 +1,11 @@
+{
+  "type": "geontm:magic",
+  "ingredients": [
+    "geontm:pellet_charged",
+    "geontm:pellet_charged",
+    "geontm:ingot_dineutronium",
+    "geontm:ingot_dineutronium"
+  ],
+  "result": "geontm:ingot_electronium",
+  "order": 4
+}

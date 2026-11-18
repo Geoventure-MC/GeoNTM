@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/copper"
+  },
+  "acid": {
+    "type": "geontm:woodoil",
+    "amount": 100
+  },
+  "output": {
+    "id": "geontm:chemical_dye_green",
+    "count": 4
+  },
+  "duration": 20,
+  "productivity": 0.15,
+  "order": 320
+}

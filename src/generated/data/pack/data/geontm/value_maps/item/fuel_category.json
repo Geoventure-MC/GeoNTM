@@ -1,0 +1,11 @@
+{
+  "values": {
+    "geontm:solid_fuel": "solid",
+    "geontm:solid_fuel_presto": "solid",
+    "geontm:solid_fuel_presto_triplet": "solid",
+    "geontm:solid_fuel_bf": "balefire",
+    "geontm:solid_fuel_presto_bf": "balefire",
+    "geontm:solid_fuel_presto_triplet_bf": "balefire",
+    "geontm:rocket_fuel": "rocket"
+  }
+}

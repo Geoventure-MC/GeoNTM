@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/beryllium"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:deco_beryllium",
+      "count": 4
+    }
+  ],
+  "tier": 1,
+  "overlay": "construction",
+  "order": 32
+}

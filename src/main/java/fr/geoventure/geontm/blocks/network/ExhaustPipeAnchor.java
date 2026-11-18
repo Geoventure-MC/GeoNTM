@@ -31,7 +31,7 @@ public class ExhaustPipeAnchor extends FluidPipeAnchor {
     /** 1.7 has no click action on it: an identifier does nothing. */
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

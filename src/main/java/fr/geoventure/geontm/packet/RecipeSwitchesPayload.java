@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C, with every datapack sync: the server's {@code GeneralConfig.recipeSwitches()}, so tables list its rows. */
 public record RecipeSwitchesPayload(int bits) implements GeoCorePayload {
@@ -15,7 +15,7 @@ public record RecipeSwitchesPayload(int bits) implements GeoCorePayload {
             buffer -> new RecipeSwitchesPayload(buffer.readVarInt()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

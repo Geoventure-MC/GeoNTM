@@ -416,7 +416,7 @@ public final class GapsBHarnessQueries {
                 // the 1.7 aberrator EOTT ritual (GOOD_KARMA): eight secrets around sixteen saturnite mechanisms
                 int[][] ring = {{-2, -2}, {0, -3}, {2, -2}, {-3, 0}, {3, 0}, {-2, 2}, {0, 3}, {2, 2}};
                 if (p.has("fill") && p.get("fill").getAsBoolean()) {
-                    Item secret = BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "item_secret_aberrator"));
+                    Item secret = BuiltInRegistries.ITEM.get(Ids.of("geontm", "item_secret_aberrator"));
                     for (int[] r : ring) {
                         if (level.getBlockEntity(pos.offset(r[0], 0, r[1])) instanceof BlockPedestal.TileEntityPedestal ped) {
                             ped.setItem(new ItemStack(secret));

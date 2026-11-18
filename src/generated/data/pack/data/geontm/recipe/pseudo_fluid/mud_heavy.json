@@ -1,0 +1,11 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "MUD_HEAVY",
+  "consumed": 500,
+  "produced": 0,
+  "outputs": [
+    "geontm:powder_iron",
+    "geontm:dust",
+    "geontm:nuclear_waste_tiny"
+  ]
+}

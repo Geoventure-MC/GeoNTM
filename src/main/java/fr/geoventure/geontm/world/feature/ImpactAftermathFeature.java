@@ -114,7 +114,7 @@ public class ImpactAftermathFeature extends Feature<ImpactAftermathFeature.Confi
 
     /** GRASS, REED, FLOWERS, DEAD_BUSH, PUMPKIN, LILYPAD: the plants 1.7's decorator scattered. */
     static boolean isDecorationPlant(BlockState state) {
-        return state.is(Blocks.SHORT_GRASS) || state.is(Blocks.TALL_GRASS) || state.is(Blocks.FERN)
+        return state.is(Blocks.GRASS) || state.is(Blocks.TALL_GRASS) || state.is(Blocks.FERN)
                 || state.is(Blocks.LARGE_FERN) || state.is(Blocks.SUGAR_CANE) || state.is(BlockTags.FLOWERS)
                 || state.is(Blocks.DEAD_BUSH) || state.is(Blocks.PUMPKIN) || state.is(Blocks.LILY_PAD);
     }
@@ -206,7 +206,7 @@ public class ImpactAftermathFeature extends Feature<ImpactAftermathFeature.Confi
         for (int i = 0; i < sections.length; i++) {
             LevelChunkSection section = sections[i];
             if (section == null || section.hasOnlyAir()) continue;
-            int baseY = (chunk.getMinSectionY() + i) << 4;
+            int baseY = (chunk.getMinSection() + i) << 4;
             for (int y = 0; y < 16; y++) {
                 for (int z = 0; z < 16; z++) {
                     for (int x = 0; x < 16; x++) {

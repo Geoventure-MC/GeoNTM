@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fleijacore",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/u235",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:nuggets/neptunium",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:nuggets/beryllium",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:fleija_core"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 60160
+}

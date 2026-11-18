@@ -1,0 +1,25 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_leaus",
+    "stage": 4
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_australium_lesser",
+      "weight": 10
+    },
+    {
+      "data": "geontm:nugget_lead",
+      "weight": 54
+    },
+    {
+      "data": "geontm:nugget_pb209",
+      "weight": 36
+    }
+  ],
+  "order": 249
+}

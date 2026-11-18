@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:storage_blocks/quartz"
+  },
+  "solid_output": {
+    "id": "geontm:nugget_silicon",
+    "count": 12
+  },
+  "molten_outputs": [
+    {
+      "material": "silicon",
+      "amount": 96
+    }
+  ],
+  "order": 4
+}

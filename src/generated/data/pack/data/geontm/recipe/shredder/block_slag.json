@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:block_slag",
+  "output": {
+    "id": "geontm:powder_cement",
+    "count": 4
+  }
+}

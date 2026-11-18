@@ -1,0 +1,17 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.paa",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/gold"
+    },
+    {
+      "ingredient": "geontm:plate_mixed"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_paa"
+  ],
+  "duration": 600,
+  "order": 15
+}

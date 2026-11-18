@@ -96,7 +96,7 @@ public class EntityC130 extends EntityPlaneBase {
 
         this.payload = payload;
 
-        snapTo(x - vector.x * 100, y + 100, z - vector.z * 100, 0.0F, 0.0F);
+        moveTo(x - vector.x * 100, y + 100, z - vector.z * 100, 0.0F, 0.0F);
         setDeltaMovement(vector.x, 0, vector.z);
         rotation();
         forceSpawnChunk();

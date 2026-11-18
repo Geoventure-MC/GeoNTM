@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.lubricant.2",
+  "input_fluids": [
+    {
+      "type": "geontm:sunfloweroil",
+      "amount": 800
+    },
+    {
+      "type": "geontm:ethanol",
+      "amount": 200
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:lubricant",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 26
+}

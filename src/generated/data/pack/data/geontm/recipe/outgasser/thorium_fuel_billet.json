@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.thorium_fuel_billet",
+  "input_items": [
+    {
+      "ingredient": "#c:billets/thorium"
+    }
+  ],
+  "output_items": [
+    "geontm:billet_thorium_fuel"
+  ],
+  "duration": 10000,
+  "order": 9
+}

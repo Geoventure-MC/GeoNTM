@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "geontm:oil_tar_crude",
+  "output": {
+    "type": "geontm:bitumen",
+    "amount": 75
+  }
+}

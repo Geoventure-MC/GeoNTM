@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/borax"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output": {
+    "id": "geontm:powder_boron_tiny",
+    "count": 3
+  },
+  "duration": 600,
+  "productivity": 0.25,
+  "order": 47
+}

@@ -1,0 +1,25 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.weldtungsten",
+  "input_items": [
+    {
+      "material": "tungsten",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:oxygen",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:plate_welded_tungsten"
+  ],
+  "duration": 600,
+  "power": 250000,
+  "auto_switch_group": "autoswitch.weldPlates",
+  "order": 21,
+  "ignition_temp": 500000
+}

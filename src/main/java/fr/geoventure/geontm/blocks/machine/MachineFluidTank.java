@@ -165,10 +165,10 @@ public class MachineFluidTank extends BlockMultiblockMachine implements IFluidCo
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (!player.isShiftKeyDown() || !(stack.getItem() instanceof IItemFluidId identifier)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!(MultiblockSurface.coreEntity(level, pos) instanceof TileEntityMachineFluidTank tank) || tank.hasExploded) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!level.isClientSide()) {
             BlockPos core = tank.getBlockPos();
@@ -184,7 +184,7 @@ public class MachineFluidTank extends BlockMultiblockMachine implements IFluidCo
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core,
             Player player, BlockHitResult hit) {
-        if (MachineExplosionDamage.blownOpen(level, core)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (MachineExplosionDamage.blownOpen(level, core)) return InteractionResult.PASS;
         return super.useAtCore(state, level, core, player, hit);
     }
 

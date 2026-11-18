@@ -34,10 +34,10 @@ public class BlockGraphiteRod extends BlockGraphiteDrilledBase {
 
     /** Click the channel face: toggles this rod and every identically-set rod in line with it. */
     private InteractionResult toggle(BlockState oldState, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
         Direction side = hit.getDirection();
-        if (!isChannelFace(oldState, side)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!isChannelFace(oldState, side)) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         BlockState newState = oldState.setValue(OUT, !oldState.getValue(OUT)); // toggle bit #4

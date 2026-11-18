@@ -18,8 +18,8 @@ import fr.geoventure.geocore.data.DataOut;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
@@ -43,7 +43,7 @@ public class TileEntityTurretHIMARS extends TileEntityTurretBaseArtillery {
     /** The mode button's id in the shared turret screen. */
     public static final int BUTTON_MODE = 5;
 
-    private static final Identifier GUI = turretGui("himars");
+    private static final ResourceLocation GUI = turretGui("himars");
     private static final int FIRE_INTERVAL = 40;
     private static final float CRANE_STEP = 0.0125F;
 
@@ -88,7 +88,7 @@ public class TileEntityTurretHIMARS extends TileEntityTurretBaseArtillery {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -335,7 +335,7 @@ public class TileEntityTurretHIMARS extends TileEntityTurretBaseArtillery {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(mode);
         buf.writeInt(typeLoaded);
@@ -344,7 +344,7 @@ public class TileEntityTurretHIMARS extends TileEntityTurretBaseArtillery {
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         mode = buf.readShort();
         typeLoaded = buf.readInt();

@@ -1,0 +1,13 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_washed_crystal"
+  },
+  "molten_outputs": [
+    {
+      "material": "borax",
+      "amount": 72
+    }
+  ],
+  "order": 78
+}

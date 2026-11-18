@@ -1,0 +1,9 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_short_tiny_uranium233",
+  "output": "geontm:nuclear_waste_short_depleted_tiny_uranium233",
+  "decay": "short",
+  "divisor": 10,
+  "liquid": 5,
+  "gas": 10
+}

@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:slop",
+  "amount": 250,
+  "output": "geontm:ore_oil_sand"
+}

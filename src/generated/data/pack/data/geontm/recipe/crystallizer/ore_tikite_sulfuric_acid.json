@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:ore_tikite"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output": "geontm:crystal_trixite",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 40
+}

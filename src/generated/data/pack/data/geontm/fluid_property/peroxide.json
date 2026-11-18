@@ -1,0 +1,16 @@
+{
+  "type": "liquid",
+  "color": "#FFF7AA",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 3,
+    "symbol": "oxidizer"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 40
+    }
+  }
+}

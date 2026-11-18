@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.exgold",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/gold",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:dusts/gold",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_gold_dust"
+  ],
+  "duration": 600,
+  "power": 10000,
+  "order": 6400
+}

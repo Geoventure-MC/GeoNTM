@@ -1,0 +1,70 @@
+{
+  "entries": [
+    {
+      "item": "geontm:defuser",
+      "min": 1,
+      "max": 1,
+      "weight": 40
+    },
+    {
+      "item": "geontm:screwdriver",
+      "min": 1,
+      "max": 1,
+      "weight": 30
+    },
+    {
+      "item": "geontm:canteen_vodka",
+      "min": 1,
+      "max": 1,
+      "weight": 40
+    },
+    {
+      "item": "geontm:casing_small_steel",
+      "min": 1,
+      "max": 4,
+      "weight": 30
+    },
+    {
+      "item": "geontm:casing_small",
+      "min": 3,
+      "max": 8,
+      "weight": 40
+    },
+    {
+      "item": "geontm:casing_buckshot",
+      "min": 3,
+      "max": 8,
+      "weight": 40
+    },
+    {
+      "item": "geontm:canned_conserve_beef",
+      "min": 2,
+      "max": 5,
+      "weight": 40
+    },
+    {
+      "item": "geontm:taurun_helmet",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    },
+    {
+      "item": "geontm:taurun_plate",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    },
+    {
+      "item": "geontm:taurun_legs",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    },
+    {
+      "item": "geontm:taurun_boots",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    }
+  ]
+}

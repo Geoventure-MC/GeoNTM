@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/copper"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_copper"
+    }
+  ],
+  "tier": 3,
+  "order": 6
+}

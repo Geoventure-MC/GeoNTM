@@ -31,7 +31,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -258,7 +258,7 @@ public class TileEntityMachineBlastFurnace extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isProgressing);
         buf.writeFloat(progress);
@@ -269,7 +269,7 @@ public class TileEntityMachineBlastFurnace extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isProgressing = buf.readBoolean();
         progress = buf.readFloat();

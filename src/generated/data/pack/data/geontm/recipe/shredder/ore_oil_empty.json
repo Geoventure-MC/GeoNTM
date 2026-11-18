@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ore_oil_empty",
+  "output": "minecraft:gravel"
+}

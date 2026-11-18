@@ -16,14 +16,14 @@ import fr.geoventure.geocore.render.NoiseDisplacedRenderType;
 import fr.geoventure.geocore.render.WorldEffects;
 import fr.geoventure.geocore.world.TimeOfDay;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
@@ -52,12 +52,12 @@ import java.util.Map;
  */
 public final class GluonGunClient {
 
-    static final Identifier NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
-    static final Identifier BEAM = Ids.of("geontm", "textures/misc/gluonbeam.png");
-    static final Identifier LIGHTNING = Ids.of("geontm", "textures/models/bfg/additivebeam.png");
-    static final Identifier HUD = Ids.of("geontm", "textures/misc/gluontau_hud.png");
-    public static final Identifier MUZZLE_SMOKE = Ids.of("geontm", "textures/misc/gluon_muzzle_smoke.png");
-    public static final Identifier MUZZLE_GLOW = Ids.of("geontm", "textures/misc/gluon_muzzle_glow.png");
+    static final ResourceLocation NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
+    static final ResourceLocation BEAM = Ids.of("geontm", "textures/misc/gluonbeam.png");
+    static final ResourceLocation LIGHTNING = Ids.of("geontm", "textures/models/bfg/additivebeam.png");
+    static final ResourceLocation HUD = Ids.of("geontm", "textures/misc/gluontau_hud.png");
+    public static final ResourceLocation MUZZLE_SMOKE = Ids.of("geontm", "textures/misc/gluon_muzzle_smoke.png");
+    public static final ResourceLocation MUZZLE_GLOW = Ids.of("geontm", "textures/misc/gluon_muzzle_glow.png");
 
     /** 1.12 {@code ItemGunEgon.activeTicks}: the local beam's ramp, 0 to 5, frozen while the gun is not held. */
     public static int activeTicks;
@@ -359,7 +359,7 @@ public final class GluonGunClient {
      * 1.12 {@code ItemGunEgon.renderHud}: a 4 by 4 dot of {@code gluontau_hud} on the crosshair, tinted (0.9, 0.9, 0)
      * and added to the screen.
      */
-    public static void renderCrosshair(GuiGraphicsExtractor graphics) {
+    public static void renderCrosshair(GuiGraphics graphics) {
         int x = graphics.guiWidth() / 2;
         int y = graphics.guiHeight() / 2;
         GuiDraw.blitUv(graphics, HUD, x - 2, y - 2, 4, 4, 0F, 0F, 1F, 1F, 32, 32, true, 0xFFE5E500);
@@ -370,7 +370,7 @@ public final class GluonGunClient {
      * fading over its life; type 1 drifts back along the barrel.
      */
     public static final class MuzzleSmoke {
-        public final Identifier texture;
+        public final ResourceLocation texture;
         final int type;
         double posX, posY, posZ, prevPosX, prevPosY, prevPosZ;
         final float scale;
@@ -381,7 +381,7 @@ public final class GluonGunClient {
         int age;
         int maxAge;
 
-        MuzzleSmoke(RandomSource rand, double x, double y, double z, int type, Identifier texture, float scale, float rot,
+        MuzzleSmoke(RandomSource rand, double x, double y, double z, int type, ResourceLocation texture, float scale, float rot,
                     float scaleOverLife) {
             posX = prevPosX = x;
             posY = prevPosY = y;

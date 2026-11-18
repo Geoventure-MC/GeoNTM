@@ -1,0 +1,4 @@
+minecraft/tags/item/chest_armor.json 1.21
+minecraft/tags/item/foot_armor.json 1.21
+minecraft/tags/item/head_armor.json 1.21
+minecraft/tags/item/leg_armor.json 1.21

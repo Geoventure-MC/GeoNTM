@@ -69,7 +69,7 @@ public final class EntityChunkLoader implements IChunkLoader {
         LongOpenHashSet wanted = new LongOpenHashSet((radius * 2 + 1) * (radius * 2 + 1));
         for (int i = -radius; i <= radius; i++) {
             for (int j = -radius; j <= radius; j++) {
-                wanted.add(ChunkPos.pack(chunkX + i, chunkZ + j));
+                wanted.add(ChunkPos.asLong(chunkX + i, chunkZ + j));
             }
         }
         ticket.setChunks(wanted);

@@ -1,0 +1,17 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pilenu",
+  "input_items": [
+    {
+      "ingredient": "#c:billets/uranium",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:pile_rod_mk2_nu"
+  ],
+  "duration": 40,
+  "power": 200,
+  "auto_switch_group": "autoswitch.pilerod",
+  "order": 12800
+}

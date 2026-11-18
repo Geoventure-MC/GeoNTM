@@ -1,0 +1,20 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.biosolidfuel",
+  "input_items": [
+    {
+      "ingredient": "geontm:biomass_compressed",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:solid_fuel"
+  ],
+  "duration": 40,
+  "power": 100,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..biosolidfuel"
+  ],
+  "order": 57
+}

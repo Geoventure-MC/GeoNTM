@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/copper",
+  "output": "geontm:ingot_red_copper",
+  "order": 7
+}

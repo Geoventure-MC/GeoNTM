@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import fr.geoventure.geontm.sound.ModSounds;
@@ -26,7 +26,7 @@ import fr.geoventure.geontm.sound.ModSounds;
  */
 public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirnox> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/reactors/gui_zirnox.png");
     /** Supersample factor the polygon gauges are rasterised at before the pose scales them back down. */
     private static final int SUPERSAMPLE = 8;
@@ -36,7 +36,7 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = this.leftPos;
         int y = this.topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
@@ -73,14 +73,14 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 6, 4210752, false);
         // 1.7 uses ySize - 96 here, not the usual - 94.
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityReactorZirnox reactor = this.menu.getReactor();
         if (reactor == null) return;
 
@@ -123,7 +123,7 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
         return false;
     }
 
-    private void blit(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int width, int height) {
+    private void blit(GuiGraphics graphics, int x, int y, int u, int v, int width, int height) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos + x, this.topPos + y, (float) u, (float) v, width, height, 256, 256);
     }
 
@@ -136,7 +136,7 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
      * above, a {@code 2 * backSide} wide stem of {@code backLength} below) slid right by {@code progress * scale}.
      * The black outline is the same shape at 1.5x, except that 1.7 forgets to scale the stem's length.
      */
-    private static void drawLinearGauge(GuiGraphicsExtractor graphics, int x, int y, double progress,
+    private static void drawLinearGauge(GuiGraphics graphics, int x, int y, double progress,
                                         double tipLength, double backLength, double backSide, double scale, int color) {
         progress = Math.max(0, Math.min(1, progress)) * Math.max(scale, 1);
         GuiDraw.pushMatrix(graphics);
@@ -147,7 +147,7 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
         GuiDraw.popMatrix(graphics);
     }
 
-    private static void fillPointer(GuiGraphicsExtractor graphics, double tipLength, double backLength, double backSide,
+    private static void fillPointer(GuiGraphics graphics, double tipLength, double backLength, double backSide,
                                     int color) {
         double tip = tipLength * SUPERSAMPLE;
         double side = backSide * SUPERSAMPLE;
@@ -167,7 +167,7 @@ public class GUIReactorZirnox extends CompatContainerScreen<ContainerReactorZirn
         return lines;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, this.font, text, Optional.empty(), mouseX, mouseY);
     }
 }

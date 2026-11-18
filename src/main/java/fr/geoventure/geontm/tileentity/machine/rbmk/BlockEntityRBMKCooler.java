@@ -14,7 +14,7 @@ import fr.geoventure.geontm.tileentity.ModRBMKBlockEntities;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geontm.module.portmanager.ModulePortManFluidAdaptive;
 
@@ -29,7 +29,7 @@ public class BlockEntityRBMKCooler extends BlockEntityRBMKBase implements IFluid
     @Override public long getFluidAvailable(FluidType t,int p){return hot.provides(t)&&p==hot.getPressure()?hot.getFill():0;} @Override public void useUpFluid(FluidType t,int p,long a){if(getFluidAvailable(t,p)>0){hot.setFill(hot.getFill()-(int)Math.min(a,hot.getFill()));setChanged();}} @Override public long getDemand(FluidType t,int p){return Fluids.kindOf(t) == Fluids.PERFLUOROMETHYL_COLD && cold.accepts(t)&&p==cold.getPressure()?cold.getMaxFill()-cold.getFill():0;} @Override public long transferFluid(FluidType t,int p,long a){if(Fluids.kindOf(t) != Fluids.PERFLUOROMETHYL_COLD || !cold.accepts(t)||p!=cold.getPressure())return a;int n=cold.fill(t,(int)Math.min(a,Integer.MAX_VALUE),true);if(n>0)setChanged();return a-n;}
     @Override public FluidTankNTM[] getReceivingTanks(){return new FluidTankNTM[]{cold};} @Override public FluidTankNTM[] getSendingTanks(){return new FluidTankNTM[]{hot};}
     @Override protected void saveData(DataOut o){super.saveData(o);cold.writeToNBT(o,"cold");hot.writeToNBT(o,"hot");o.putInt("timer",timer);} @Override protected void loadData(DataIn i){super.loadData(i);cold.readFromNBT(i,"cold");hot.readFromNBT(i,"hot");timer=i.getIntOr("timer",0);}
-    @Override public void serialize(RegistryFriendlyByteBuf buffer){super.serialize(buffer);cold.serialize(buffer);hot.serialize(buffer);}
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer){super.deserialize(buffer);cold.deserialize(buffer);hot.deserialize(buffer);}
+    @Override public void serialize(FriendlyByteBuf buffer){super.serialize(buffer);cold.serialize(buffer);hot.serialize(buffer);}
+    @Override public void deserialize(FriendlyByteBuf buffer){super.deserialize(buffer);cold.deserialize(buffer);hot.deserialize(buffer);}
     @Override protected void getDiagData(Map<String,String> d){super.getDiagData(d);diagTank(d,"t0",cold);diagTank(d,"t1",hot);}
 }

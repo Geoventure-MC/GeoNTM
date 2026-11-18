@@ -30,11 +30,9 @@ stonecutter {
             version("$version-$it", version).buildscript = "build.$it.gradle.kts"
         }
 
-        match("26.1", "fabric", "neoforge")
-        match("1.21.1", "fabric", "neoforge")
-        match("1.20.1", "fabric", "forge")
+        match("1.20.1", "forge")
 
-        vcsVersion = "26.1-neoforge"
+        vcsVersion = "1.20.1-forge"
     }
 }
 
@@ -50,11 +48,7 @@ rootProject.name = "geontm"
 // Keep in step with GeoCore/settings.gradle.kts as nodes are added.
 includeBuild("../GeoCore") {
     dependencySubstitution {
-        listOf(
-            "26.1-fabric", "26.1-neoforge",
-            "1.21.1-fabric", "1.21.1-neoforge",
-            "1.20.1-fabric", "1.20.1-forge",
-        ).forEach { node ->
+        listOf("1.20.1-forge").forEach { node ->
             val (mc, loader) = node.split('-', limit = 2)
             substitute(module("fr.geoventure:geocore-$loader-$mc")).using(project(":$node"))
         }

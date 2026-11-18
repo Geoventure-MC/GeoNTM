@@ -51,22 +51,22 @@ public final class ModNuclearBlocks {
             .tag(BlockTag.PICKAXE)
             .tag(BlockTag.NEEDS_IRON_TOOL);
     public static final RegistryObject<BlockGasRadon> gas_radon = REG.block("gas_radon",
-            (BlockBehaviour.Properties p) -> new BlockGasRadon(p.noOcclusion().noCollision().replaceable().randomTicks(), 0.05F, false))
+            (BlockBehaviour.Properties p) -> new BlockGasRadon(p.noOcclusion().noCollission().replaceable().randomTicks(), 0.05F, false))
             .transform(GAS).loot(Loot.nothing());
     public static final RegistryObject<BlockGasRadon> gas_radon_dense = REG.block("gas_radon_dense",
-            (BlockBehaviour.Properties p) -> new BlockGasRadon(p.noOcclusion().noCollision().replaceable().randomTicks(), 0.5F, true))
+            (BlockBehaviour.Properties p) -> new BlockGasRadon(p.noOcclusion().noCollission().replaceable().randomTicks(), 0.5F, true))
             .transform(GAS).loot(Loot.nothing());
     public static final RegistryObject<BlockGasMeltdown> gas_meltdown = REG.block("gas_meltdown",
-            (BlockBehaviour.Properties p) -> new BlockGasMeltdown(p.noOcclusion().noCollision().replaceable().randomTicks()))
+            (BlockBehaviour.Properties p) -> new BlockGasMeltdown(p.noOcclusion().noCollission().replaceable().randomTicks()))
             .transform(GAS);
     public static final RegistryObject<BlockGasRadonTomb> gas_radon_tomb = REG.block("gas_radon_tomb",
-            (BlockBehaviour.Properties p) -> new BlockGasRadonTomb(p.noOcclusion().noCollision().replaceable().randomTicks()))
+            (BlockBehaviour.Properties p) -> new BlockGasRadonTomb(p.noOcclusion().noCollission().replaceable().randomTicks()))
             .transform(GAS);
     public static final RegistryObject<BlockGasMonoxide> gas_monoxide = REG.block("gas_monoxide",
-            (BlockBehaviour.Properties p) -> new BlockGasMonoxide(p.noOcclusion().noCollision().replaceable().randomTicks()))
+            (BlockBehaviour.Properties p) -> new BlockGasMonoxide(p.noOcclusion().noCollission().replaceable().randomTicks()))
             .transform(GAS);
     public static final RegistryObject<BlockGasAsbestos> gas_asbestos = REG.block("gas_asbestos",
-            (BlockBehaviour.Properties p) -> new BlockGasAsbestos(p.noOcclusion().noCollision().replaceable().randomTicks()))
+            (BlockBehaviour.Properties p) -> new BlockGasAsbestos(p.noOcclusion().noCollission().replaceable().randomTicks()))
             .transform(GAS);
 
     /**

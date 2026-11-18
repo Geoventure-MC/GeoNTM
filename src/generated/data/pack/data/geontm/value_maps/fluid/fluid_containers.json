@@ -1,0 +1,209 @@
+{
+  "values": {
+    "geontm:oil": {
+      "canister": "#424242"
+    },
+    "geontm:heavyoil": {
+      "canister": "#513F39"
+    },
+    "geontm:bitumen": {
+      "canister": "#5A5877"
+    },
+    "geontm:smear": {
+      "canister": "#624F3B"
+    },
+    "geontm:heatingoil": {
+      "canister": "#694235"
+    },
+    "geontm:reclaimed": {
+      "canister": "#F65723"
+    },
+    "geontm:petroil": {
+      "canister": "#2369F6"
+    },
+    "geontm:lubricant": {
+      "canister": "#F1CC05"
+    },
+    "geontm:naphtha": {
+      "canister": "#5F6D44"
+    },
+    "geontm:diesel": {
+      "canister": "#FF2C2C"
+    },
+    "geontm:lightoil": {
+      "canister": "#B46B52"
+    },
+    "geontm:kerosene": {
+      "canister": "#FF377D"
+    },
+    "geontm:biofuel": {
+      "canister": "#9EB623"
+    },
+    "geontm:nitan": {
+      "canister": "#6B238C"
+    },
+    "geontm:gasoline": {
+      "canister": "#2F7747"
+    },
+    "geontm:coalgas": {
+      "canister": "#2E155F"
+    },
+    "geontm:fracksol": {
+      "canister": "#4F887F"
+    },
+    "geontm:ethanol": {
+      "canister": "#EAFFF3"
+    },
+    "geontm:crackoil": {
+      "canister": "#424242"
+    },
+    "geontm:coaloil": {
+      "canister": "#424242"
+    },
+    "geontm:naphtha_crack": {
+      "canister": "#5F6D44"
+    },
+    "geontm:lightoil_crack": {
+      "canister": "#B46B52"
+    },
+    "geontm:diesel_crack": {
+      "canister": "#FF2C2C"
+    },
+    "geontm:petroil_leaded": {
+      "canister": "#2331F6"
+    },
+    "geontm:gasoline_leaded": {
+      "canister": "#2F775A"
+    },
+    "geontm:coalgas_leaded": {
+      "canister": "#1E155F"
+    },
+    "geontm:woodoil": {
+      "canister": "#BF7E4F"
+    },
+    "geontm:coalcreosote": {
+      "canister": "#285A3F"
+    },
+    "geontm:seedslurry": {
+      "canister": "#7CC35E"
+    },
+    "geontm:solvent": {
+      "canister": "#E4E3EF"
+    },
+    "geontm:heavyoil_vacuum": {
+      "canister": "#513F39"
+    },
+    "geontm:reformate": {
+      "canister": "#D180D6"
+    },
+    "geontm:lightoil_vacuum": {
+      "canister": "#B46B52"
+    },
+    "geontm:xylene": {
+      "canister": "#A380D6"
+    },
+    "geontm:heatingoil_vacuum": {
+      "canister": "#694235"
+    },
+    "geontm:diesel_reform": {
+      "canister": "#FFC500"
+    },
+    "geontm:diesel_crack_reform": {
+      "canister": "#FFC500"
+    },
+    "geontm:kerosene_reform": {
+      "canister": "#FF377D"
+    },
+    "geontm:oil_ds": {
+      "canister": "#424242"
+    },
+    "geontm:crackoil_ds": {
+      "canister": "#424242"
+    },
+    "geontm:naphtha_ds": {
+      "canister": "#5F6D44"
+    },
+    "geontm:lightoil_ds": {
+      "canister": "#B46B52"
+    },
+    "geontm:titanium_tetrachloride": {
+      "canister": "#E1E549"
+    },
+    "geontm:deuterium": {
+      "gas_bottle": "#0000FF",
+      "gas_label": "#FFFFFF"
+    },
+    "geontm:tritium": {
+      "gas_bottle": "#000099",
+      "gas_label": "#E9FFAA"
+    },
+    "geontm:gas": {
+      "gas_bottle": "#FF4545",
+      "gas_label": "#FFE97F"
+    },
+    "geontm:petroleum": {
+      "gas_bottle": "#5E7CFF",
+      "gas_label": "#FFE97F"
+    },
+    "geontm:biogas": {
+      "gas_bottle": "#C8FF1F",
+      "gas_label": "#303030"
+    },
+    "geontm:hydrogen": {
+      "gas_bottle": "#4286F4",
+      "gas_label": "#FFFFFF"
+    },
+    "geontm:oxygen": {
+      "gas_bottle": "#98BDF9",
+      "gas_label": "#FFFFFF"
+    },
+    "geontm:xenon": {
+      "gas_bottle": "#8C21FF",
+      "gas_label": "#303030"
+    },
+    "geontm:helium3": {
+      "gas_bottle": "#FD631F",
+      "gas_label": "#FFFFFF"
+    },
+    "geontm:aromatics": {
+      "gas_bottle": "#68A09A",
+      "gas_label": "#EDCF27"
+    },
+    "geontm:unsaturateds": {
+      "gas_bottle": "#628FAE",
+      "gas_label": "#EDCF27"
+    },
+    "geontm:syngas": {
+      "gas_bottle": "#FFFFFF",
+      "gas_label": "#131313"
+    },
+    "geontm:chlorine": {
+      "gas_bottle": "#BAB572",
+      "gas_label": "#887B34"
+    },
+    "geontm:sourgas": {
+      "gas_bottle": "#C9BE0D",
+      "gas_label": "#303030"
+    },
+    "geontm:reformgas": {
+      "gas_bottle": "#9392FF",
+      "gas_label": "#FFB992"
+    },
+    "geontm:phosgene": {
+      "gas_bottle": "#CFC4A4",
+      "gas_label": "#361414"
+    },
+    "geontm:mustardgas": {
+      "gas_bottle": "#BAB572",
+      "gas_label": "#361414"
+    },
+    "geontm:helium4": {
+      "gas_bottle": "#FD631F",
+      "gas_label": "#FFFF00"
+    },
+    "geontm:flue": {
+      "gas_bottle": "#FF4545",
+      "gas_label": "#FFE97F"
+    }
+  }
+}

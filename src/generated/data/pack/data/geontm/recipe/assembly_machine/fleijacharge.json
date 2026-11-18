@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fleijacharge",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:plates/schrabidium",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:fleija_propellant"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 60416
+}

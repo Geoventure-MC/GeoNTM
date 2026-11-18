@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:brick",
+  "output": "minecraft:clay_ball"
+}

@@ -1,0 +1,32 @@
+{
+  "values": {
+    "geontm:plate_fuel_u233": {
+      "output": "geontm:waste_plate_u233",
+      "hot": true
+    },
+    "geontm:plate_fuel_u235": {
+      "output": "geontm:waste_plate_u235",
+      "hot": true
+    },
+    "geontm:plate_fuel_mox": {
+      "output": "geontm:waste_plate_mox",
+      "hot": true
+    },
+    "geontm:plate_fuel_pu239": {
+      "output": "geontm:waste_plate_pu239",
+      "hot": true
+    },
+    "geontm:plate_fuel_sa326": {
+      "output": "geontm:waste_plate_sa326",
+      "hot": true
+    },
+    "geontm:plate_fuel_ra226be": {
+      "output": "geontm:waste_plate_ra226be",
+      "hot": true
+    },
+    "geontm:plate_fuel_pu238be": {
+      "output": "geontm:waste_plate_pu238be",
+      "hot": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.epearl",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/diamond"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:xpjuice",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:enderjuice",
+      "amount": 100
+    }
+  ],
+  "duration": 100,
+  "power": 300,
+  "order": 54
+}

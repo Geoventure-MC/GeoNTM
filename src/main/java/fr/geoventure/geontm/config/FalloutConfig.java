@@ -33,7 +33,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GrassBlock;
-import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
@@ -68,7 +68,7 @@ public final class FalloutConfig {
 
     static {
         registerPreset("geontm:ignited_by_lava", BlockState::ignitedByLava);
-        registerPreset("geontm:vegetation", state -> state.getBlock() instanceof VegetationBlock
+        registerPreset("geontm:vegetation", state -> state.getBlock() instanceof BushBlock
                 || state.is(Blocks.VINE) || state.is(Blocks.SUGAR_CANE));
         // 1.7 Material.rock / iron / sand / ground: what a pickaxe or shovel mines, opaque, without 1.7's other materials
         // that modern tools also mine (ice and packed ice, craftedSnow and snow, redstoneLight)
@@ -284,7 +284,7 @@ public final class FalloutConfig {
                 conversion = conversion.setValue(BlockStateProperties.AXIS, state.getValue(BlockStateProperties.AXIS));
             }
             // A destroyed block leaves the fluid it stood in, not air. 1.7 had no underwater plants; here
-            // seagrass and sea pickles are VegetationBlocks, and turning them to air cut a hole in the ocean
+            // seagrass and sea pickles are BushBlocks, and turning them to air cut a hole in the ocean
             // floor's water that the sweep then filled with ash (fallout "spawning" deep under the sea).
             if (conversion.isAir() && !state.getFluidState().isEmpty()) {
                 return state.getFluidState().createLegacyBlock();

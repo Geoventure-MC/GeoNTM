@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/white_phosphorus"
+  },
+  "acid": {
+    "type": "geontm:aromatics",
+    "amount": 50
+  },
+  "output": "geontm:ingot_phosphorus",
+  "duration": 100,
+  "requires": "c:dusts/white_phosphorus",
+  "order": 344
+}

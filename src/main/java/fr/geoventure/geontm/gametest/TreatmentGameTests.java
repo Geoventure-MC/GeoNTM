@@ -311,8 +311,8 @@ public final class TreatmentGameTests {
         GeoNtmLivingProps.setDigamma(player, 0.6D);
         player.setHealth(10F);
         Effects.add(player, MobEffects.POISON, 200, 0);
-        Effects.add(player, MobEffects.NAUSEA, 200, 0);
-        Effects.add(player, MobEffects.SLOWNESS, 100, 0);
+        Effects.add(player, MobEffects.CONFUSION, 200, 0);
+        Effects.add(player, MobEffects.MOVEMENT_SLOWDOWN, 100, 0);
         Effects.add(player, MobEffects.WEAKNESS, 100, 0);
         Effects.addRegistered(player, ModEffects.RADAWAY.get(), 100, 0);
         Effects.addRegistered(player, ModEffects.RADIATION.get(), 100, 0);

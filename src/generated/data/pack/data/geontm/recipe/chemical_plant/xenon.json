@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.xenon",
+  "input_fluids": [
+    {
+      "type": "geontm:air",
+      "amount": 16000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:xenon",
+      "amount": 50
+    }
+  ],
+  "duration": 300,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:xenon",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 3
+}

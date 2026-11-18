@@ -1,0 +1,45 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_quantum",
+  "duration": 400,
+  "consumption": 100000,
+  "fluid": {
+    "type": "geontm:helium4",
+    "amount": 1000
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_atomic_clock",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 4
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 16
+    }
+  ],
+  "requires": [
+    "!lbsm_simple_crafting"
+  ],
+  "order": 7
+}

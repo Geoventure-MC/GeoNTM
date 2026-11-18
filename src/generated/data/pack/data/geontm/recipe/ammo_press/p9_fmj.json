@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_p9_fmj",
+    "count": 12
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/steel"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small"
+    },
+    ""
+  ],
+  "order": 17
+}

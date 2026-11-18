@@ -6,9 +6,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerLiquefactor;
 import fr.geoventure.geontm.tileentity.machine.oil.TileEntityMachineLiquefactor;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -18,7 +18,7 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUILiquefactor extends CompatContainerScreen<ContainerLiquefactor> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_liquefactor.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_liquefactor.png");
 
     public GUILiquefactor(ContainerLiquefactor menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
@@ -26,13 +26,13 @@ public class GUILiquefactor extends CompatContainerScreen<ContainerLiquefactor> 
 
     /** 1.7: title centred on x=70 at y=6 in 0xC7C1A3; inventory at (8, ySize-96+2) in 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int xm, int ym) {
+    protected void renderLabels(GuiGraphics graphics, int xm, int ym) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 0xC7C1A3, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineLiquefactor te = this.menu.getLiquefactor();
@@ -50,7 +50,7 @@ public class GUILiquefactor extends CompatContainerScreen<ContainerLiquefactor> 
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineLiquefactor te = this.menu.getLiquefactor();
         if (te == null) return;
 

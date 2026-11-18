@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/coal",
+  "materials": [
+    {
+      "material": "carbon",
+      "amount": 216
+    },
+    {
+      "material": "stone",
+      "amount": 162
+    }
+  ]
+}

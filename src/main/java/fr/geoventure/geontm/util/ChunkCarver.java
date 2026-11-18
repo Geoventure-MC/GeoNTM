@@ -112,7 +112,7 @@ public final class ChunkCarver {
         this.chunkX = chunkX;
         this.chunkZ = chunkZ;
         this.maxY = maxY;
-        this.minSectionY = level.getMinSectionY();
+        this.minSectionY = level.getMinSection();
         this.touched = new boolean[chunk.getSections().length];
         this.cursor = hits.nextSetBit(0);
     }
@@ -246,7 +246,7 @@ public final class ChunkCarver {
      */
     public static void repairAndResend(ServerLevel level, LevelChunk chunk, int chunkX, int chunkZ,
                                        boolean[] touched) {
-        int minSectionY = level.getMinSectionY();
+        int minSectionY = level.getMinSection();
         LevelChunkSection[] sections = chunk.getSections();
 
         Heightmap.primeHeightmaps(chunk, CARVED_HEIGHTMAPS);

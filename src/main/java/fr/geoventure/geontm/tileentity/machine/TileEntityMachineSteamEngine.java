@@ -14,7 +14,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
@@ -146,7 +146,7 @@ public class TileEntityMachineSteamEngine extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tanks[0].serialize(buf);
         buf.writeLong(powerBuffer);
@@ -155,7 +155,7 @@ public class TileEntityMachineSteamEngine extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tanks[0].deserialize(buf);
         powerBuffer = buf.readLong();

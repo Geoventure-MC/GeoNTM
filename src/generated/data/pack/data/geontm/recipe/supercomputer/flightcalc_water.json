@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.flightcalc_water",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_flash_empty"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_flash_flightsim",
+        "weight": 95
+      },
+      {
+        "data": "geontm:drive_flash_broken",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:spentsteam",
+      "amount": 16000
+    }
+  ],
+  "duration": 18000,
+  "power": 10000,
+  "order": 0
+}

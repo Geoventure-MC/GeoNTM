@@ -1,0 +1,32 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.rpahelmet",
+  "input_items": [
+    {
+      "ingredient": "geontm:plate_armor_ajr",
+      "count": 12
+    },
+    {
+      "material": "saturnite",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:plate_kevlar",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:rpa_helmet"
+  ],
+  "duration": 3600,
+  "power": 25000,
+  "blueprint_pools": [
+    "discover..rpa"
+  ],
+  "order": 44
+}

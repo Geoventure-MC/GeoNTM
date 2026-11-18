@@ -1,0 +1,38 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.vaultdoor",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:ingots/dura_steel",
+      "count": 32
+    },
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_rubber",
+      "count": 12
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:vault_door"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 16128
+}

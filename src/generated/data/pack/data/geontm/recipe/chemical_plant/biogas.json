@@ -1,0 +1,33 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.biogas",
+  "input_items": [
+    {
+      "ingredient": "geontm:biomass",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:air",
+      "amount": 4000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:biogas",
+      "amount": 2000
+    }
+  ],
+  "duration": 60,
+  "power": 100,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:biogas",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 11
+}

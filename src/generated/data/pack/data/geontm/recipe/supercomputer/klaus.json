@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.klaus",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_empty",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:drive_disk_empty",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:drive_disk_empty",
+      "count": 64
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000000
+    }
+  ],
+  "output_items": [
+    "geontm:drive_klaus"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:slop",
+      "amount": 1000
+    }
+  ],
+  "duration": 72000,
+  "power": 5000000,
+  "order": 17
+}

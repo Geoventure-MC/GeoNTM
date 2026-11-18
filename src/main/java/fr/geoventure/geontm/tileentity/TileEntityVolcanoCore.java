@@ -143,7 +143,7 @@ public class TileEntityVolcanoCore extends CompatBlockEntity {
         lavaBlast(world, getLava(), x + 0.5, y + rand.nextInt(15) + 1.5, z + 0.5, 7);
         // 1.7: rand.nextInt(y + 1), i.e. anywhere between bedrock (y 0) and the core; the world floor is negative now,
         // and Random.nextInt throws for a bound <= 0 when the core sits at or below y 0.
-        int floor = world.getMinY();
+        int floor = world.getMinBuildHeight();
         lavaBlast(world, getLava(), x + 0.5 + rand.nextGaussian() * 3, floor + rand.nextInt(Math.max(1, y - floor + 1)), z + 0.5 + rand.nextGaussian() * 3, 10);
     }
 

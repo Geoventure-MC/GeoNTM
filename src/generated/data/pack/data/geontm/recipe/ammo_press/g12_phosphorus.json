@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g12_phosphorus",
+    "count": 6
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/white_phosphorus"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_buckshot_advanced"
+    },
+    ""
+  ],
+  "order": 49
+}

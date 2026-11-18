@@ -12,7 +12,7 @@ import fr.geoventure.geocore.world.SubLevels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.state.BlockState;
@@ -89,7 +89,7 @@ public class TileEntityDroneWaypoint extends TileEntityLoadedBase implements IDr
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(height);
         buf.writeBoolean(next != null);
@@ -97,7 +97,7 @@ public class TileEntityDroneWaypoint extends TileEntityLoadedBase implements IDr
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         height = buf.readInt();
         next = buf.readBoolean() ? buf.readBlockPos() : null;

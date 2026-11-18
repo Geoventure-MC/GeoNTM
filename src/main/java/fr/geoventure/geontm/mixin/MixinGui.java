@@ -3,14 +3,14 @@ package fr.geoventure.geontm.mixin;
 
 import fr.geoventure.geontm.client.NukeScreenEffects;
 //? if >=1.21.1 {
-import net.minecraft.client.DeltaTracker;
-//?}
+/*import net.minecraft.client.DeltaTracker;
+*///?}
 import net.minecraft.client.gui.Gui;
 //? if >=26.1 {
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-//?} else {
-/*import net.minecraft.client.gui.GuiGraphicsExtractor;
-*///?}
+/*import net.minecraft.client.gui.GuiGraphics;
+*///?} else {
+import net.minecraft.client.gui.GuiGraphics;
+//?}
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * element wobbles for {@link NukeScreenEffects#SHAKE_DURATION} ms after a nearby detonation. Ported from
  * 1.12.2's {@code ModEventHandlerClient} GUI-shake block (which translated the in-progress overlay pose).
  *
- * <p>26.1 built the HUD by extracting element positions through the {@link GuiGraphicsExtractor} pose, so
+ * <p>26.1 built the HUD by extracting element positions through the {@link GuiGraphics} pose, so
  * shifting that pose during extraction moves the whole HUD, the cross-loader equivalent of the old GL
  * translate. Divergence from 1.12.2: the original only shifted from the hotbar onward (a GL-state leak);
  * this shifts the entire HUD.
@@ -37,54 +37,54 @@ public class MixinGui {
     @Unique private boolean geontm$shaking;
 
     // The injector's parameters and target name must match the target method's descriptor exactly, so
-    // both differ per version: 26.1 extracts the HUD through a GuiGraphicsExtractor, older versions
+    // both differ per version: 26.1 extracts the HUD through a GuiGraphics, older versions
     // render it directly. The pose type differs too: a Matrix3x2fStack versus a PoseStack.
     //? if >=26.1 {
-    @Inject(method = "extractRenderState", at = @At("HEAD"))
-    private void geontm$shakePush(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    /*@Inject(method = "extractRenderState", at = @At("HEAD"))
+    private void geontm$shakePush(GuiGraphics graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         geontm$shaking = NukeScreenEffects.isShakeActive();
         if (!geontm$shaking) return;
         graphics.pose().pushMatrix();
         graphics.pose().translate((float) NukeScreenEffects.shakeOffsetX(), (float) NukeScreenEffects.shakeOffsetY());
     }
-    //?} else if >=1.21.1 {
+    *///?} else if >=1.21.1 {
     /*@Inject(method = "render", at = @At("HEAD"))
-    private void geontm$shakePush(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    private void geontm$shakePush(GuiGraphics graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         geontm$shaking = NukeScreenEffects.isShakeActive();
         if (!geontm$shaking) return;
         graphics.pose().pushPose();
         graphics.pose().translate(NukeScreenEffects.shakeOffsetX(), NukeScreenEffects.shakeOffsetY(), 0D);
     }
     *///?} else {
-    /*@Inject(method = "render", at = @At("HEAD"))
-    private void geontm$shakePush(GuiGraphicsExtractor graphics, float partialTick, CallbackInfo ci) {
+    @Inject(method = "render", at = @At("HEAD"))
+    private void geontm$shakePush(GuiGraphics graphics, float partialTick, CallbackInfo ci) {
         geontm$shaking = NukeScreenEffects.isShakeActive();
         if (!geontm$shaking) return;
         graphics.pose().pushPose();
         graphics.pose().translate(NukeScreenEffects.shakeOffsetX(), NukeScreenEffects.shakeOffsetY(), 0D);
     }
-    *///?}
+    //?}
 
     //? if >=26.1 {
-    @Inject(method = "extractRenderState", at = @At("RETURN"))
-    private void geontm$shakePop(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    /*@Inject(method = "extractRenderState", at = @At("RETURN"))
+    private void geontm$shakePop(GuiGraphics graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         if (!geontm$shaking) return;
         geontm$shaking = false;
         graphics.pose().popMatrix();
     }
-    //?} else if >=1.21.1 {
+    *///?} else if >=1.21.1 {
     /*@Inject(method = "render", at = @At("RETURN"))
-    private void geontm$shakePop(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    private void geontm$shakePop(GuiGraphics graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         if (!geontm$shaking) return;
         geontm$shaking = false;
         graphics.pose().popPose();
     }
     *///?} else {
-    /*@Inject(method = "render", at = @At("RETURN"))
-    private void geontm$shakePop(GuiGraphicsExtractor graphics, float partialTick, CallbackInfo ci) {
+    @Inject(method = "render", at = @At("RETURN"))
+    private void geontm$shakePop(GuiGraphics graphics, float partialTick, CallbackInfo ci) {
         if (!geontm$shaking) return;
         geontm$shaking = false;
         graphics.pose().popPose();
     }
-    *///?}
+    //?}
 }

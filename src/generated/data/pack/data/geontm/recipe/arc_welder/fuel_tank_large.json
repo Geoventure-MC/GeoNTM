@@ -1,0 +1,22 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "aluminium",
+      "shape": "weldedplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/saturnite",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 16
+    }
+  ],
+  "output": "geontm:fuel_tank_large",
+  "duration": 200,
+  "consumption": 5000,
+  "order": 23
+}

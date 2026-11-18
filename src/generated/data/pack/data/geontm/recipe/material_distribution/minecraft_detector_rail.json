@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "minecraft:detector_rail",
+  "materials": [
+    {
+      "material": "iron",
+      "amount": 72
+    },
+    {
+      "material": "redstone",
+      "amount": 12
+    }
+  ]
+}

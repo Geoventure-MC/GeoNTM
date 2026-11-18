@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -92,7 +92,7 @@ public class TileEntityDiFurnaceRTG extends TileEntityMachineBase implements Men
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(progress);
         buf.writeShort(processSpeed);
@@ -101,7 +101,7 @@ public class TileEntityDiFurnaceRTG extends TileEntityMachineBase implements Men
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         progress = buf.readShort();
         processSpeed = buf.readShort();

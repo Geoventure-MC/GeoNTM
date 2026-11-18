@@ -251,12 +251,12 @@ public final class PollutionHandler {
         if (getPollution(level, pos, PollutionType.SOOT) < MobConfig.rampantScoutSpawnThresh) return;
 
         EntityGlyphidScout scout = new EntityGlyphidScout(ModNtmEntities.GLYPHID_SCOUT.get(), level);
-        scout.snapTo(pos.getX(), pos.getY(), pos.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
+        scout.moveTo(pos.getX(), pos.getY(), pos.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
         if (!scout.isValidLightLevel()) return;
 
         // The escort digs the scout out of whatever it spawned inside.
         EntityGlyphidDigger digger = new EntityGlyphidDigger(EntityGlyphidDigger.TYPE.get(), level);
-        digger.snapTo(pos.getX(), pos.getY(), pos.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
+        digger.moveTo(pos.getX(), pos.getY(), pos.getZ(), level.getRandom().nextFloat() * 360.0F, 0.0F);
 
         if (canSpawnHere(level, scout)) level.addFreshEntity(scout);
         if (canSpawnHere(level, digger)) level.addFreshEntity(digger);

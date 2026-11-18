@@ -1,0 +1,31 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.ivymike",
+  "input_items": [
+    {
+      "ingredient": "geontm:sphere_steel"
+    },
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:dyes/light_gray",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_mike"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 53504,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

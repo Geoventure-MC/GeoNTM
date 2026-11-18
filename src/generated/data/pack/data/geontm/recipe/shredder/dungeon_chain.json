@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:dungeon_chain",
+  "output": "geontm:powder_steel_tiny"
+}

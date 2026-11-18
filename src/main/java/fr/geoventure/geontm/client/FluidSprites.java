@@ -6,7 +6,7 @@ import fr.geoventure.geontm.inventory.fluid.FluidType;
 import fr.geoventure.geontm.inventory.fluid.Fluids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.render.Sprites;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 /**
  * The fluid droplet sprites, computed while the atlas is stitched instead of shipped as files.
@@ -66,12 +66,12 @@ public final class FluidSprites {
     }
 
     /** Draws {@code fluid}'s droplet at the size an item slot would have drawn it. */
-    public static void draw(GuiGraphicsExtractor graphics, FluidType fluid, int x, int y) {
+    public static void draw(GuiGraphics graphics, FluidType fluid, int x, int y) {
         draw(graphics, fluid, x, y, ICON_SIZE, ICON_SIZE);
     }
 
     /** Draws {@code fluid}'s droplet stretched into a rectangle of its own. */
-    public static void draw(GuiGraphicsExtractor graphics, FluidType fluid, int x, int y, int width, int height) {
+    public static void draw(GuiGraphics graphics, FluidType fluid, int x, int y, int width, int height) {
         var art = Sprites.sprite(Sprites.Atlas.ITEMS, Ids.parse(ART));
         var u0 = art.getU0();
         var v0 = art.getV0();

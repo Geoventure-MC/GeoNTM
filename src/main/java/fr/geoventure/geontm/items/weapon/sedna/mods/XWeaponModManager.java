@@ -320,7 +320,7 @@ public final class XWeaponModManager {
     }
 
     private static Supplier<Item> item(String id) {
-        return () -> BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, id));
+        return () -> BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, id));
     }
 
     @SafeVarargs

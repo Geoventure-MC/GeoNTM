@@ -1,0 +1,33 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_zfb_pu241",
+    "stage": 7
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:powder_xe135_tiny",
+      "weight": 3
+    },
+    {
+      "data": "geontm:nugget_u235",
+      "weight": 30
+    },
+    {
+      "data": "geontm:nugget_pu240",
+      "weight": 30
+    },
+    {
+      "data": "geontm:nugget_pu241",
+      "weight": 90
+    },
+    {
+      "data": "geontm:nugget_zirconium",
+      "weight": 147
+    }
+  ],
+  "order": 169
+}

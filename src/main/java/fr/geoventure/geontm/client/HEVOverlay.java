@@ -5,7 +5,7 @@ import fr.geoventure.geontm.items.armor.ArmorFSBPowered;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -33,7 +33,7 @@ public final class HEVOverlay {
     private static float lastResult;
 
     public static void render(Object target, Player player) {
-        GuiGraphicsExtractor graphics = (GuiGraphicsExtractor) target;
+        GuiGraphics graphics = (GuiGraphics) target;
         Minecraft mc = Minecraft.getInstance();
         Font font = mc.font;
         int height = mc.getWindow().getGuiScaledHeight();

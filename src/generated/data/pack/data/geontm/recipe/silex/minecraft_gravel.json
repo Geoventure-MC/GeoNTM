@@ -1,0 +1,28 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "minecraft:gravel"
+  },
+  "fluid_produced": 1000,
+  "fluid_consumed": 250,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "minecraft:flint",
+      "weight": 80
+    },
+    {
+      "data": "geontm:powder_boron",
+      "weight": 5
+    },
+    {
+      "data": "geontm:powder_lithium",
+      "weight": 10
+    },
+    {
+      "data": "geontm:fluorite",
+      "weight": 5
+    }
+  ],
+  "order": 299
+}

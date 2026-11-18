@@ -31,7 +31,7 @@ import net.minecraft.world.level.Level;
 import org.jspecify.annotations.Nullable;
 
 /**
- * 1.7 {@code ItemFluidIDMulti}, the Multi Fluid Identifier: carries a primary and a secondary fluid
+ * 1.7 {@code ItemFluidIDMulti}, the Multi Fluid ResourceLocation: carries a primary and a secondary fluid
  * ({@code fluid1}/{@code fluid2}). Right-click swaps them and names the new primary on the info HUD;
  * sneak-right-click opens the fluid picker ({@code GUIScreenFluid}), whose left/right clicks set primary and
  * secondary through {@link IItemControlReceiver}. Machines and ducts read the primary.

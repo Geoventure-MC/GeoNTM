@@ -1,0 +1,26 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mikedeut",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/weaponsteel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:deuterium",
+      "amount": 10000
+    }
+  ],
+  "output_items": [
+    "geontm:mike_deut"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 59392
+}

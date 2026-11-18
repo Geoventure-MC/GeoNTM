@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.batterylead",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/lead",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:battery_lead"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 30
+}

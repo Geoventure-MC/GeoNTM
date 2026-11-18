@@ -3,7 +3,7 @@ package fr.geoventure.geontm.client;
 import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import java.util.List;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -63,7 +63,7 @@ public final class IconAuditScreen extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int[] c = this.colours;
         GuiDraw.fill(graphics, 0, 0, this.width, this.height, c[0]);
         for (int i = 0; i < this.slots; i++) {
@@ -79,7 +79,7 @@ public final class IconAuditScreen extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         for (int i = 0; i < this.stacks.size() && i < this.slots; i++) {
             ItemStack stack = this.stacks.get(i);
             if (stack.isEmpty()) continue;

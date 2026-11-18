@@ -89,7 +89,7 @@ public class MapGenCrater extends MapGenFeature<MapGenCrater.Config> {
         double radius = rand.nextInt(c.maxSize() - c.minSize()) + c.minSize();
         double depth = radius * c.depthFactor();
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int floor = level.getMinY();
+        int floor = level.getMinBuildHeight();
         boolean placed = false;
 
         for (int bx = 15; bx >= 0; bx--) {

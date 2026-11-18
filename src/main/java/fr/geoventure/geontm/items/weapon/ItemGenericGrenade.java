@@ -3,7 +3,7 @@ package fr.geoventure.geontm.items.weapon;
 import fr.geoventure.geontm.entity.grenade.EntityGrenadeBouncyGeneric;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -55,7 +55,7 @@ public class ItemGenericGrenade extends ItemGrenade {
     /**
      * Bare sprite name (no item/ prefix - Sheets.ITEMS_MAPPER adds it) of the icon RenderGenericGrenade billboards, standing in for 1.7's getIconFromDamage(0); both shipped grenades declare a 1.7 setTextureName equal to their item name, so the registry id is the sprite.
      */
-    public Identifier iconTexture() {
+    public ResourceLocation iconTexture() {
         return BuiltInRegistries.ITEM.getKey(this);
     }
 }

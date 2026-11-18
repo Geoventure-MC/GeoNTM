@@ -10,7 +10,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -33,8 +33,8 @@ public class BlockEntityRBMKGraph extends TileEntityLoadedBase implements IContr
         networkPackNT();
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); for (GraphUnit g : graphs) g.serialize(buf); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); for (GraphUnit g : graphs) g.deserialize(buf); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); for (GraphUnit g : graphs) g.serialize(buf); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); for (GraphUnit g : graphs) g.deserialize(buf); }
     @Override protected void saveData(DataOut output) { super.saveData(output); for (int i = 0; i < GRAPHS; i++) graphs[i].save(output, i); }
     @Override protected void loadData(DataIn input) { super.loadData(input); for (int i = 0; i < GRAPHS; i++) graphs[i].load(input, i); }
 
@@ -94,13 +94,13 @@ public class BlockEntityRBMKGraph extends TileEntityLoadedBase implements IContr
             values[values.length - 1] = value;
         }
 
-        void serialize(RegistryFriendlyByteBuf buf) {
+        void serialize(FriendlyByteBuf buf) {
             buf.writeBoolean(active); buf.writeBoolean(polling); buf.writeUtf(label); buf.writeUtf(rtty);
             buf.writeBoolean(minBound); if (minBound) buf.writeLong(min);
             buf.writeBoolean(maxBound); if (maxBound) buf.writeLong(max);
             if (active) for (long value : values) buf.writeLong(value);
         }
-        void deserialize(RegistryFriendlyByteBuf buf) {
+        void deserialize(FriendlyByteBuf buf) {
             active = buf.readBoolean(); polling = buf.readBoolean(); label = buf.readUtf(); rtty = buf.readUtf();
             minBound = buf.readBoolean(); if (minBound) min = buf.readLong();
             maxBound = buf.readBoolean(); if (maxBound) max = buf.readLong();

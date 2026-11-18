@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:redmud",
+  "amount": 450,
+  "output": "minecraft:iron_ingot"
+}

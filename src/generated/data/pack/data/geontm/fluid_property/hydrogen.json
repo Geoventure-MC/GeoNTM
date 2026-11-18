@@ -1,0 +1,26 @@
+{
+  "type": "liquid",
+  "color": "#4286F4",
+  "temperature": -260,
+  "hazard": {
+    "poison": 3,
+    "flammability": 4,
+    "reactivity": 0,
+    "symbol": "cryogenic"
+  },
+  "shares": [
+    "#c:hydrogen"
+  ],
+  "flags": [
+    "gaseous_art"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 5000
+    },
+    "combustible": {
+      "grade": "HIGH",
+      "energy": 10000
+    }
+  }
+}

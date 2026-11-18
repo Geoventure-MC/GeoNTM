@@ -9,7 +9,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** OBJ renderers for the Gen-3 AM180, Star F, and Star F akimbo guns. */
@@ -29,11 +29,11 @@ public final class Sedna22lrWeaponRenderer extends WeaponRenderer {
         }
     }
 
-    private static final Identifier SILENCER_MODEL = Ids.of("geontm", "models/weapons/uzi.obj");
+    private static final ResourceLocation SILENCER_MODEL = Ids.of("geontm", "models/weapons/uzi.obj");
     private static final Surface SILENCER = Surface.cutout("geontm:textures/models/weapons/uzi.png");
 
     private final Variant variant;
-    private final Identifier modelId;
+    private final ResourceLocation modelId;
     private final Surface body;
     private WavefrontObj model;
     private WavefrontObj silencerModel;

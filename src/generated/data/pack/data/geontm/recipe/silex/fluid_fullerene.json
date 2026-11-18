@@ -1,0 +1,16 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "fluid_icon": "geontm:fullerene"
+  },
+  "fluid_produced": 1000,
+  "fluid_consumed": 1000,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:powder_ash_fullerene",
+      "weight": 1
+    }
+  ],
+  "order": 300
+}

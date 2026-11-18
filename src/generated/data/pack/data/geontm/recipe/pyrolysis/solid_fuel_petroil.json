@@ -1,0 +1,8 @@
+{
+  "type": "geontm:pyrolysis",
+  "output_item": "geontm:solid_fuel",
+  "duration": 60,
+  "solid_fuel": "geontm:petroil",
+  "solid_fuel_energy": 1440000,
+  "order": 4
+}

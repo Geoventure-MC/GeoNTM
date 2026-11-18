@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.solvent.0",
+  "input_fluids": [
+    {
+      "type": "geontm:naphtha",
+      "amount": 500
+    },
+    {
+      "type": "geontm:aromatics",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:solvent",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 15
+}

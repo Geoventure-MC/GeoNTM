@@ -112,8 +112,8 @@ public class OreLayer3DFeature extends Feature<OreLayer3DFeature.Config> {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         int startX = cx + 8;   // the 1.7 +8 decoration offset
         int startZ = cz + 8;
-        int floor = level.getMinY();
-        int ceiling = level.getMaxY();
+        int floor = level.getMinBuildHeight();
+        int ceiling = level.getMaxBuildHeight();
         int height = c.maxY() - c.minY() + 1;
         if (height <= 0) return;
         // 1.7 cacheX[o][y]: noiseX at (y, chunk z + 8 + o), read as nX by z offset and as nZ by x offset

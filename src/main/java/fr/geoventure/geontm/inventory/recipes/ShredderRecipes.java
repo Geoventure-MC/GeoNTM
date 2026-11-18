@@ -16,7 +16,7 @@ import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -183,7 +183,7 @@ public final class ShredderRecipes {
         // bucket every c:<shape>/<material> item tag by material
         Map<String, Map<String, TagKey<Item>>> byMat = new HashMap<>();
         Compat.itemTagKeys().forEach(tag -> {
-            Identifier id = tag.location();
+            ResourceLocation id = tag.location();
             int slash = id.getPath().indexOf('/');
             if (!id.getNamespace().equals("c") || slash < 0) return;
             String shape = id.getPath().substring(0, slash);

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:electrolyser_fluid",
+  "input": "geontm:potassium_chloride",
+  "amount": 250,
+  "output1": {
+    "type": "geontm:chlorine",
+    "amount": 125
+  },
+  "byproducts": [
+    "geontm:dust"
+  ]
+}

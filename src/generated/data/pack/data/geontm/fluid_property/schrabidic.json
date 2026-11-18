@@ -1,0 +1,23 @@
+{
+  "type": "liquid",
+  "color": "#006B6B",
+  "temperature": 20,
+  "hazard": {
+    "poison": 5,
+    "flammability": 0,
+    "reactivity": 5,
+    "symbol": "acid"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 75
+    },
+    "poison": {
+      "withering": true,
+      "level": 2
+    },
+    "ventradiation": {
+      "rad_per_mb": 1.0
+    }
+  }
+}

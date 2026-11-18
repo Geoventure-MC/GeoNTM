@@ -1,0 +1,28 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:ore_tikite"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "uv",
+  "outputs": [
+    {
+      "data": "geontm:powder_plutonium",
+      "weight": 2
+    },
+    {
+      "data": "geontm:powder_cobalt",
+      "weight": 3
+    },
+    {
+      "data": "geontm:powder_niobium",
+      "weight": 3
+    },
+    {
+      "data": "geontm:powder_nitan_mix",
+      "weight": 2
+    }
+  ],
+  "order": 12
+}

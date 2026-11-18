@@ -118,7 +118,7 @@ public abstract class EntityPlaneBase extends CompatEntity {
         if (this.health <= 0) {
             setDeltaMovement(motion.x, motion.y - 0.025, motion.z);
 
-            if (!level().getBlockState(blockPosition()).isAir() || getY() < level().getMinY()) {
+            if (!level().getBlockState(blockPosition()).isAir() || getY() < level().getMinBuildHeight()) {
                 double x = getX(), y = getY(), z = getZ();
                 discard();
                 new ExplosionVNT(level(), x, y, z, 15F).makeStandard().explode();
@@ -216,7 +216,7 @@ public abstract class EntityPlaneBase extends CompatEntity {
         if (!(level() instanceof ServerLevel server)) return;
         int cx = getBlockX() >> 4;
         int cz = getBlockZ() >> 4;
-        long key = ChunkPos.pack(cx, cz);
+        long key = ChunkPos.asLong(cx, cz);
         if (key == forcedChunk) return;
         ChunkUtil.claimForced(server, key);
         if (forcedChunk != NONE) ChunkUtil.releaseForced(server, forcedChunk);

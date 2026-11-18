@@ -110,7 +110,7 @@ public class TileEntityMachineFrackingTower extends TileEntityOilDrillBase {
 
     @Override
     public int getDrillDepth() {
-        return level.getMinY(); // old: 0 (drill to bedrock)
+        return level.getMinBuildHeight(); // old: 0 (drill to bedrock)
     }
 
     @Override

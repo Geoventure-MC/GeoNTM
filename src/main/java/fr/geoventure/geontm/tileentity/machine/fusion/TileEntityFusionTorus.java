@@ -27,7 +27,7 @@ import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
@@ -354,7 +354,7 @@ public class TileEntityFusionTorus extends TileEntityCooledBase implements MenuP
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(didProcess);
         buf.writeLong(klystronEnergySync);
@@ -366,7 +366,7 @@ public class TileEntityFusionTorus extends TileEntityCooledBase implements MenuP
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         didProcess = buf.readBoolean();
         klystronEnergy = buf.readLong();

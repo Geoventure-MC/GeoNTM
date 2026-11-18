@@ -15,7 +15,7 @@ import fr.geoventure.geocore.world.Compat;
 import java.io.IOException;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -212,7 +212,7 @@ public class TileEntityICFController extends TileEntityLoadedBase implements IEn
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(capacitorCount);
@@ -221,7 +221,7 @@ public class TileEntityICFController extends TileEntityLoadedBase implements IEn
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.power = buf.readLong();
         this.capacitorCount = buf.readInt();

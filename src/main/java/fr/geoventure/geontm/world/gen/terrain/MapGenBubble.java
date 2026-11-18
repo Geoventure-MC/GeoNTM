@@ -130,8 +130,8 @@ public class MapGenBubble extends MapGenFeature<MapGenBubble.Config> {
         double radius = rand.nextInt(c.maxSize() - c.minSize()) + c.minSize();
         double radiusSqr = (radius * radius) / 2; // 1.7: "original OilBubble implementation divided the square by 2 for some reason"
 
-        int yMin = Math.max(Math.max(1, level.getMinY()), Mth.floor(yCoord - radius));
-        int yMax = Math.min(Math.min(127, level.getMaxY()), Mth.ceil(yCoord + radius));
+        int yMin = Math.max(Math.max(1, level.getMinBuildHeight()), Mth.floor(yCoord - radius));
+        int yMax = Math.min(Math.min(127, level.getMaxBuildHeight()), Mth.ceil(yCoord + radius));
 
         RandomSource hostRand = RandomSource.create(originSeed);
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -174,7 +174,7 @@ public class MapGenBubble extends MapGenFeature<MapGenBubble.Config> {
             if (rx < 0 || rx >= 16 || rz < 0 || rz >= 16) continue;
 
             int ax = (chunkX << 4) + rx, az = (chunkZ << 4) + rz;
-            for (int y = top(level, ax, az); y >= level.getMinY(); y--) {
+            for (int y = top(level, ax, az); y >= level.getMinBuildHeight(); y--) {
                 pos.set(ax, y, az);
                 if (!opaque(level, pos, level.getBlockState(pos))) continue;
                 for (int oy = 1; oy > -3; oy--) {
@@ -211,7 +211,7 @@ public class MapGenBubble extends MapGenFeature<MapGenBubble.Config> {
             if (x < 0 || x >= 16 || z < 0 || z >= 16) continue;
             int ax = (chunkX << 4) + x, az = (chunkZ << 4) + z;
             int solids = 0;
-            for (int y = top(level, ax, az); y >= level.getMinY(); y--) {
+            for (int y = top(level, ax, az); y >= level.getMinBuildHeight(); y--) {
                 pos.set(ax, y, az);
                 BlockState state = level.getBlockState(pos);
                 if (state.isAir()) continue;

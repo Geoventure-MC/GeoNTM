@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.cargodoor",
+  "input_items": [
+    {
+      "ingredient": "geontm:steel_beam",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dyes/gray"
+    }
+  ],
+  "output_items": [
+    "geontm:cargo_door"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 19712
+}

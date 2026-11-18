@@ -8,7 +8,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -27,7 +27,7 @@ public class GUIMachineLaunchTable extends GUICustomMissileLauncher<ContainerLau
     }
 
     @Override
-    protected void extractExtras(GuiGraphicsExtractor graphics, TileEntityCustomMissileLauncher launcher) {
+    protected void extractExtras(GuiGraphics graphics, TileEntityCustomMissileLauncher launcher) {
         if (!(launcher instanceof TileEntityLaunchTable table)) return;
         switch (table.padSize) {
             case SIZE_10 -> GuiDraw.blit(graphics, texture(), leftPos + 7, topPos + 98, 176F, 8F, 18, 18, 256, 256);
@@ -62,7 +62,7 @@ public class GUIMachineLaunchTable extends GUICustomMissileLauncher<ContainerLau
     }
 
     @Override
-    protected void extraTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extraTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         String[] labels = {"Size 10 & 10/15", "Size 15 & 15/20", "Size 20"};
         for (int i = 0; i < 3; i++) {
             if (isHovering(7 + 18 * i, 98, 18, 18, mouseX, mouseY)) {

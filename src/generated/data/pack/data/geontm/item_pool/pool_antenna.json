@@ -1,0 +1,142 @@
+{
+  "entries": [
+    {
+      "item": "geontm:twinkie",
+      "min": 1,
+      "max": 3,
+      "weight": 4
+    },
+    {
+      "item": "geontm:ingot_steel",
+      "min": 1,
+      "max": 2,
+      "weight": 7
+    },
+    {
+      "item": "geontm:ingot_red_copper",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:ingot_titanium",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    },
+    {
+      "item": "geontm:wire_fine_red_copper",
+      "min": 2,
+      "max": 3,
+      "weight": 7
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:circuit_capacitor",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:battery_redstone",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_iodine",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_bromine",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:steel_poles",
+      "min": 1,
+      "max": 4,
+      "weight": 8
+    },
+    {
+      "item": "geontm:steel_scaffold",
+      "min": 1,
+      "max": 3,
+      "weight": 8
+    },
+    {
+      "item": "geontm:pole_top",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:pole_satellite_receiver",
+      "min": 1,
+      "max": 1,
+      "weight": 7
+    },
+    {
+      "item": "geontm:scrap",
+      "min": 1,
+      "max": 3,
+      "weight": 10
+    },
+    {
+      "item": "geontm:dust",
+      "min": 2,
+      "max": 4,
+      "weight": 9
+    },
+    {
+      "item": "geontm:bottle_opener",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:bottle_nuka",
+      "min": 1,
+      "max": 3,
+      "weight": 4
+    },
+    {
+      "item": "geontm:bottle_cherry",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:stealth_boy",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:cap_nuka",
+      "min": 1,
+      "max": 15,
+      "weight": 7
+    },
+    {
+      "item": "geontm:bomb_caller_carpet",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gas_mask_filter",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    }
+  ]
+}

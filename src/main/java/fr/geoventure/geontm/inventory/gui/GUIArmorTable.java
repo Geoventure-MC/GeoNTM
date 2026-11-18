@@ -9,16 +9,16 @@ import fr.geoventure.geocore.world.Armors;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 /** The legacy nine-module armor table layout with safe component-backed storage. */
 public final class GUIArmorTable extends CompatContainerScreen<ContainerArmorTable> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/machine/gui_armor_modifier.png");
     private static final String[] SLOT_KEYS = {
             "armorMod.type.helmet", "armorMod.type.chestplate", "armorMod.type.leggings",
@@ -31,7 +31,7 @@ public final class GUIArmorTable extends CompatContainerScreen<ContainerArmorTab
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + 22, topPos, 0F, 0F, 176, imageHeight, 256, 256);
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos + 31, 176F, 96F, 22, 100, 256, 256);
 
@@ -55,13 +55,13 @@ public final class GUIArmorTable extends CompatContainerScreen<ContainerArmorTab
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 22 + (176 - font.width(title)) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 30, imageHeight - 94 + 2, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (!menu.getCarried().isEmpty()) return;
         for (int i = 0; i <= ArmorModHandler.MOD_SLOTS; i++) {
             var slot = menu.getSlot(i);

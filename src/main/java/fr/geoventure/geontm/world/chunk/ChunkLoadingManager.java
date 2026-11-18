@@ -75,7 +75,7 @@ public final class ChunkLoadingManager {
     /** Whether GEONTM currently holds {@code (chunkX, chunkZ)} in {@code level}. */
     public static boolean isForced(ServerLevel level, int chunkX, int chunkZ) {
         LevelState state = STATES.get(level.dimension());
-        return state != null && state.refCounts.get(ChunkPos.pack(chunkX, chunkZ)) > 0;
+        return state != null && state.refCounts.get(ChunkPos.asLong(chunkX, chunkZ)) > 0;
     }
 
     /** How many chunks GEONTM holds in {@code level}. Diagnostics and tests. */

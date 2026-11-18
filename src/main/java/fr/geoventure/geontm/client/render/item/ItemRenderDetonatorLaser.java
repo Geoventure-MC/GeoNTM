@@ -11,7 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -29,8 +29,8 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderDetonatorLaser implements CustomItemRenderer {
 
-    private static final Identifier TEXTURE = tex("textures/models/weapons/detonator_laser.png");
-    private static final Identifier WHITE = tex("textures/models/misc/white.png");
+    private static final ResourceLocation TEXTURE = tex("textures/models/weapons/detonator_laser.png");
+    private static final ResourceLocation WHITE = tex("textures/models/misc/white.png");
 
     private final WavefrontObj model = obj("models/weapons/detonator_laser.obj");
 

@@ -1,0 +1,18 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "combine_steel",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "fluid": {
+    "type": "geontm:reformgas",
+    "amount": 1000
+  },
+  "output": "geontm:plate_welded_combine_steel",
+  "duration": 1200,
+  "consumption": 10000000,
+  "order": 16
+}

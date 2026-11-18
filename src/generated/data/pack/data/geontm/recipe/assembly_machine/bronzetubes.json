@@ -1,0 +1,39 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.bronzetubes",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating"
+    },
+    {
+      "ingredient": "#c:plates_cast/any_bismoid_bronze",
+      "count": 4
+    },
+    {
+      "material": "zirconium",
+      "shape": "weldedplate"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_bronze_tubes"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 4000
+    }
+  ],
+  "duration": 3000,
+  "power": 250000,
+  "order": 5888
+}

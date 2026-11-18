@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_phosphorus",
+  "output": {
+    "id": "geontm:powder_fire",
+    "count": 8
+  }
+}

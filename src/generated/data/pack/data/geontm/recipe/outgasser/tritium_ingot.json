@@ -1,0 +1,17 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.tritium_ingot",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/lithium"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:tritium",
+      "amount": 1000
+    }
+  ],
+  "duration": 10000,
+  "order": 1
+}

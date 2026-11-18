@@ -61,7 +61,7 @@ public class ItemRBMKRod extends CompatItem {
 
     /** The recycling pellet of this rod, or null. */
     public net.minecraft.world.item.@org.jspecify.annotations.Nullable Item pelletItem() {
-        return stats().pellet().map(id -> BuiltInRegistries.ITEM.getValue(Ids.parse(id)))
+        return stats().pellet().map(id -> BuiltInRegistries.ITEM.get(Ids.parse(id)))
                 .filter(item -> item != Items.AIR).orElse(null);
     }
     public static RBMKFuelData getData(ItemStack stack) {

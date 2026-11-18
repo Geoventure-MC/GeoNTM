@@ -1,0 +1,46 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "geontm:deco_crt_clean"
+        },
+        {
+          "ingredient": "geontm:deco_crt_broken"
+        },
+        {
+          "ingredient": "geontm:deco_crt_blinking"
+        },
+        {
+          "ingredient": "geontm:deco_crt_bsod"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:crt_display"
+    },
+    {
+      "id": "geontm:scrap",
+      "count": 2
+    },
+    {
+      "id": "geontm:wire_fine_copper",
+      "count": 2
+    },
+    {
+      "id": "geontm:wire_fine_gold",
+      "count": 2,
+      "chance": 0.25
+    },
+    {
+      "id": "geontm:circuit_vacuum_tube",
+      "chance": 0.25
+    }
+  ],
+  "tier": 2,
+  "order": 224
+}

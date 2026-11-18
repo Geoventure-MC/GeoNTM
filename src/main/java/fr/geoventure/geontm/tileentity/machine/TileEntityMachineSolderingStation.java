@@ -31,7 +31,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -279,7 +279,7 @@ public class TileEntityMachineSolderingStation extends TileEntityMachineBase
     // Sync (BufPacket) + persistence
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeLong(maxPower);
@@ -291,7 +291,7 @@ public class TileEntityMachineSolderingStation extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         maxPower = buf.readLong();

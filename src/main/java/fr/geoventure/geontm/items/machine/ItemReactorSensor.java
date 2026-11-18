@@ -57,7 +57,7 @@ public class ItemReactorSensor extends CompatItem {
         }
         InteractionResult other = USE.invoker().useOn(context);
         if (other != null) return other;
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /** What the sensor does on a block that is not a research reactor; null means "not mine". */

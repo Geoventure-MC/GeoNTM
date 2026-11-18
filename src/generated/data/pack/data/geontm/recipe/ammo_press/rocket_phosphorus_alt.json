@@ -1,0 +1,27 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_rocket_phosphorus",
+    "count": 2
+  },
+  "grid": [
+    {
+      "ingredient": "#c:ingots/white_phosphorus"
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:rocket_fuel"
+    },
+    ""
+  ],
+  "order": 70
+}

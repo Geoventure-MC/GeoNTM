@@ -6,8 +6,8 @@ import fr.geoventure.geocore.render.Poses;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Vertexes;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -150,7 +150,7 @@ public final class ColladaModel {
     // Loading
 
     /** {@code ColladaLoader.load(file, flipV)}. */
-    public static ColladaModel load(Identifier file, boolean flipV) {
+    public static ColladaModel load(ResourceLocation file, boolean flipV) {
         Element root = read(file);
         Element scene = firstElement(first(root, "library_visual_scenes"));
         List<NodeData> roots = new ArrayList<>();
@@ -163,7 +163,7 @@ public final class ColladaModel {
     }
 
     /** {@code ColladaLoader.loadAnim(length, file)}. */
-    public static Animation loadAnimation(int length, Identifier file) {
+    public static Animation loadAnimation(int length, ResourceLocation file) {
         Element root = read(file);
         Map<String, Transform[]> tracks = new HashMap<>();
         int frames = 0;
@@ -187,7 +187,7 @@ public final class ColladaModel {
         return new Animation(length, frames, tracks);
     }
 
-    private static Element read(Identifier file) {
+    private static Element read(ResourceLocation file) {
         try (InputStream stream = Minecraft.getInstance().getResourceManager().getResourceOrThrow(file).open()) {
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(stream);
             return doc.getDocumentElement();

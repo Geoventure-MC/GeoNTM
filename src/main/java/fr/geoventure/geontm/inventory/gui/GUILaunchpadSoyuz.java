@@ -10,11 +10,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -25,18 +25,18 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUILaunchpadSoyuz extends CompatContainerScreen<ContainerLaunchpadSoyuz> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_launchpad_soyuz.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_launchpad_soyuz.png");
 
     public GUILaunchpadSoyuz(ContainerLaunchpadSoyuz menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 194, 244);
     }
 
-    private void blit(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int w, int h) {
+    private void blit(GuiGraphics graphics, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + y, (float) u, (float) v, w, h, 256, 256);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityLaunchpadSoyuz pad = menu.getLauncher();
@@ -69,7 +69,7 @@ public class GUILaunchpadSoyuz extends CompatContainerScreen<ContainerLaunchpadS
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 4, 0xFFFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 17, imageHeight - 96 + 2, 0xFF404040, false);
 
@@ -101,7 +101,7 @@ public class GUILaunchpadSoyuz extends CompatContainerScreen<ContainerLaunchpadS
     }
 
     /** 1.7 {@code GuiInfoContainer.drawConstrainedLabel}: centred on (x, y), shrunk to fit 22 px. */
-    static void constrainedLabel(GuiGraphicsExtractor graphics, Font font, String label, int x, int y, int color) {
+    static void constrainedLabel(GuiGraphics graphics, Font font, String label, int x, int y, int color) {
         float scale = Math.min(1F, 22F / font.width(label));
         GuiDraw.pushMatrix(graphics);
         GuiDraw.scale(graphics, scale, scale);
@@ -111,7 +111,7 @@ public class GUILaunchpadSoyuz extends CompatContainerScreen<ContainerLaunchpadS
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityLaunchpadSoyuz pad = menu.getLauncher();
         if (pad == null) return;
 

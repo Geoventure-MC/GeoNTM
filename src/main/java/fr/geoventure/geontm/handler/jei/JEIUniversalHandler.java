@@ -5,7 +5,7 @@ import fr.geoventure.geocore.viewer.Role;
 import fr.geoventure.geocore.viewer.SlotLayout;
 import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -88,7 +88,7 @@ public abstract class JEIUniversalHandler<T> extends GeoNtmRecipeCategory<T> {
     }
 
     @Override
-    public void draw(T recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(T recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         machinePill.draw(g, 74, 14);
     }

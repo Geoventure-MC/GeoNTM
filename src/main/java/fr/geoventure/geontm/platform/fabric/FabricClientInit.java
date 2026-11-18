@@ -13,7 +13,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -70,7 +70,7 @@ public class FabricClientInit implements ClientModInitializer {
                 .get(net.minecraft.server.packs.PackType.CLIENT_RESOURCES)
                 .registerReloadListener(new net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener() {
                     @Override
-                    public net.minecraft.resources.Identifier getFabricId() {
+                    public net.minecraft.resources.ResourceLocation getFabricId() {
                         return fr.geoventure.geocore.Ids.of(
                                 fr.geoventure.geontm.Constants.MOD_ID, "machine_item_models");
                     }

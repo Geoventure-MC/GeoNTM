@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.reoil",
+  "input_fluids": [
+    {
+      "type": "geontm:smear",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:reclaimed",
+      "amount": 800
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:canister_full",
+    "item_data": {
+      "fluid": "geontm:reclaimed",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 13
+}

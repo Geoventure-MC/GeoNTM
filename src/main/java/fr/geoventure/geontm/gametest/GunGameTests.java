@@ -41,7 +41,7 @@ import java.util.Set;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -272,7 +272,7 @@ public final class GunGameTests {
     }
 
     /** Source akimbo/dual second rails are selected by secondary press, not primary press. */
-    private static boolean isSourceSecondaryOnly(Identifier id, int index) {
+    private static boolean isSourceSecondaryOnly(ResourceLocation id, int index) {
         return "geontm".equals(id.getNamespace()) && index == 1
                 && SOURCE_SECONDARY_ONLY_CONFIGS.contains(id.getPath());
     }

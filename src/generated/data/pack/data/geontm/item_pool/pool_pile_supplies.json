@@ -1,0 +1,73 @@
+{
+  "entries": [
+    {
+      "item": "geontm:grenade_universal",
+      "min": 3,
+      "max": 5,
+      "weight": 10,
+      "components": {
+        "geontm:grenade": {
+          "shell": "frag",
+          "filling": "he",
+          "fuze": "s3",
+          "extra": "frag_sleeve"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 3,
+      "max": 5,
+      "weight": 10,
+      "components": {
+        "geontm:grenade": {
+          "shell": "frag",
+          "filling": "he",
+          "fuze": "s3",
+          "extra": "frag_sleeve"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 3,
+      "max": 5,
+      "weight": 10,
+      "components": {
+        "geontm:grenade": {
+          "shell": "frag",
+          "filling": "he",
+          "fuze": "s3",
+          "extra": "frag_sleeve"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:syringe_metal_stimpak",
+      "min": 3,
+      "max": 5,
+      "weight": 30
+    },
+    {
+      "item": "geontm:syringe_metal_psycho",
+      "min": 3,
+      "max": 5,
+      "weight": 30
+    },
+    {
+      "item": "geontm:syringe_antidote",
+      "min": 1,
+      "max": 2,
+      "weight": 30
+    },
+    {
+      "item": "geontm:ammo_container",
+      "min": 2,
+      "max": 3,
+      "weight": 40
+    }
+  ]
+}

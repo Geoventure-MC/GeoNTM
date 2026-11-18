@@ -7,7 +7,7 @@ import fr.geoventure.geocore.render.CompatParticle;
 import fr.geoventure.geocore.render.ParticleLayer;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ParticleRadiationFog} ({@code radFog}): a stationary cloud of 25 camera-facing {@code fog.png}
@@ -21,7 +21,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class ParticleRadiationFog extends CompatParticle {
 
-    private static final Identifier FOG = Ids.of("geontm", "fog");
+    private static final ResourceLocation FOG = Ids.of("geontm", "fog");
     private static final float PARTICLE_SCALE = 7.5F;
 
     public ParticleRadiationFog(ClientLevel level, double x, double y, double z) {

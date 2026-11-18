@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.perfluoromethyl.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/fluorite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 48
+}

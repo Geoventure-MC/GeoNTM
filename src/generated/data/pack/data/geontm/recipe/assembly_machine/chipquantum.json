@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.chipQuantum",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 2
+    },
+    {
+      "material": "bscco",
+      "shape": "densewire"
+    },
+    {
+      "ingredient": "geontm:pellet_charged"
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:circuit_chip_quantum"
+  ],
+  "duration": 200,
+  "power": 15000,
+  "order": 7936,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_rad_heavy"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_primary_norad_heavy",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_sulfuric_byproduct_heavy",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_solvent_byproduct_heavy",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_rad_byproduct_heavy",
+      "count": 2
+    }
+  ],
+  "order": 76
+}

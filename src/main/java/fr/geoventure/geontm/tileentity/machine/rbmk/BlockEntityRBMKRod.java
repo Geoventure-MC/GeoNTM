@@ -23,7 +23,7 @@ import fr.geoventure.geontm.items.machine.ItemRBMKRod;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -106,7 +106,7 @@ public class BlockEntityRBMKRod extends BlockEntityRBMKBase implements IRBMKFlux
     @Override public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) { return new MenuRBMKRod(id, inventory, this); }
     @Override protected void loadData(DataIn input) { super.loadData(input); fluxQuantity = input.getDoubleOr("fluxQuantity", fluxQuantity); fluxFastRatio = input.getDoubleOr("fluxMod", fluxFastRatio); hasRod = input.getBooleanOr("hasRod", hasRod); }
     @Override protected void saveData(DataOut output) { super.saveData(output); output.putDouble("fluxQuantity", lastFluxQuantity); output.putDouble("fluxMod", lastFluxRatio); output.putBoolean("hasRod", hasRod); }
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf); buf.writeDouble(lastFluxQuantity); buf.writeDouble(lastFluxRatio); buf.writeBoolean(hasRod); buf.writeInt(rodColor); buf.writeDouble(lastFluxOut);
         ItemStack fuel = inventory.getStackInSlot(0);
         boolean fuelled = hasRod && fuel.getItem() instanceof ItemRBMKRod;
@@ -120,7 +120,7 @@ public class BlockEntityRBMKRod extends BlockEntityRBMKBase implements IRBMKFlux
                     + " / " + String.format("%.2f", rod.stats().meltingPoint()));
         }
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf); fluxQuantity = buf.readDouble(); fluxFastRatio = buf.readDouble(); hasRod = buf.readBoolean(); rodColor = buf.readInt(); lastFluxOut = buf.readDouble();
         if (buf.readBoolean()) { fuelYield = buf.readUtf(); fuelXenon = buf.readUtf(); fuelHeat = buf.readUtf(); }
         else fuelYield = fuelXenon = fuelHeat = null;

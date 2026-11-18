@@ -13,7 +13,7 @@ import fr.geoventure.geocore.render.Vertexes;
 import fr.geoventure.geocore.render.gem.GemBER;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -36,8 +36,8 @@ public abstract class RenderPylonBase<T extends TileEntityPylonBase> extends Gem
     /** The old {@code ClientConfig.RENDER_CABLE_HANG}: straight wires when off. */
     public static boolean RENDER_CABLE_HANG = true;
 
-    private static final Identifier WIRE = Ids.of(Constants.MOD_ID, "textures/models/network/wire.png");
-    private static final Identifier WIRE_GREYSCALE = Ids.of(Constants.MOD_ID, "textures/models/network/wire_greyscale.png");
+    private static final ResourceLocation WIRE = Ids.of(Constants.MOD_ID, "textures/models/network/wire.png");
+    private static final ResourceLocation WIRE_GREYSCALE = Ids.of(Constants.MOD_ID, "textures/models/network/wire_greyscale.png");
     private static final int COUNT = 10;
     public static final int LINE_COLOR = 0xBB3311;
 
@@ -109,7 +109,7 @@ public abstract class RenderPylonBase<T extends TileEntityPylonBase> extends Gem
     @Override
     protected void submitUndeclared(PylonRenderState state, PoseStack ps, SubmitSink sink, CameraInfo camera) {
         if (state.wires.isEmpty()) return;
-        Identifier tex = state.color == 0 ? WIRE : WIRE_GREYSCALE;
+        ResourceLocation tex = state.color == 0 ? WIRE : WIRE_GREYSCALE;
         int color = 0xFF000000 | (state.color == 0 ? 0xFFFFFF : state.color);
         int ownLight = state.lightCoords;
         // one submit for the whole run: every segment shares this pose and render type

@@ -247,7 +247,7 @@ public class ItemGrenadeFilling extends Item {
         // 1.7 !ex.isDead - fleija kills outright, skipping sound and cloud.
         if (!ex.isRemoved()) {
             level.playSound(null, grenade.getX(), grenade.getY(), grenade.getZ(),
-                    SoundEvents.GENERIC_EXPLODE.value(),
+                    SoundEvents.GENERIC_EXPLODE,
                     SoundSource.BLOCKS, 100.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
             level.addFreshEntity(ex);
             level.addFreshEntity(

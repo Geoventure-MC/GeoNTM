@@ -107,13 +107,13 @@ public final class FinalCellHudFixGameTests {
         ItemStack empty = new ItemStack(ModSingularityItems.cell.get());
         List<ItemStack> grid = new ArrayList<>();
         for (int i = 0; i < 9; i++) grid.add(empty.copy());
-        grid.set(4, new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "mike_deut"))));
+        grid.set(4, new ItemStack(BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "mike_deut"))));
         ItemStack deuterium = Recipes.craftingResult(helper.getLevel(), 3, 3, grid).orElse(ItemStack.EMPTY);
         helper.assertTrue(deuterium.getCount() == 8 && ItemStacks.sameItemAndData(deuterium, ItemCell.getFullCell(Fluids.DEUTERIUM)),
                 "deuterium cell recipe output differs from getFullCell: " + deuterium);
         List<ItemStack> rod = new ArrayList<>();
         for (int i = 0; i < 9; i++) rod.add(ItemStack.EMPTY);
-        rod.set(0, new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "rod_tritium"))));
+        rod.set(0, new ItemStack(BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "rod_tritium"))));
         rod.set(1, empty.copy());
         ItemStack tritium = Recipes.craftingResult(helper.getLevel(), 3, 3, rod).orElse(ItemStack.EMPTY);
         helper.assertTrue(ItemStacks.sameItemAndData(tritium, ItemCell.getFullCell(Fluids.TRITIUM)),

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/lead"
+  },
+  "output": {
+    "id": "geontm:wire_fine_lead",
+    "count": 8
+  },
+  "order": 34
+}

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:block_meteor",
+  "output": {
+    "id": "geontm:powder_meteorite",
+    "count": 10
+  }
+}

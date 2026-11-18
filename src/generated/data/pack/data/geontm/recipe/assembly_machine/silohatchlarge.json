@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.silohatchlarge",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "bolt",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:dyes/green",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:silo_hatch_large"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 19456
+}

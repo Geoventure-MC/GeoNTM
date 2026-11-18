@@ -1,0 +1,14 @@
+{
+  "type": "geontm:rotary_furnace",
+  "fluid": {
+    "type": "geontm:sodium_aluminate",
+    "amount": 150
+  },
+  "output": {
+    "material": "aluminium",
+    "amount": 144
+  },
+  "duration": 100,
+  "steam": 400,
+  "order": 10
+}

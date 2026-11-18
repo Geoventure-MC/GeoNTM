@@ -8,7 +8,7 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -99,7 +99,7 @@ public final class GUIStructureLoad extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.fill(g, 0, top(), width, bottom(), 0xC0101010);
 
         int left = width / 2 - LIST_WIDTH / 2;
@@ -115,7 +115,7 @@ public final class GUIStructureLoad extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         performAction.draw(g, font, mouseX, mouseY);
     }
 

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:stamp_titanium_flat",
+  "materials": [
+    {
+      "material": "titanium",
+      "amount": 216
+    }
+  ]
+}

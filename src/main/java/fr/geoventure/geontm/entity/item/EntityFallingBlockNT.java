@@ -104,8 +104,8 @@ public class EntityFallingBlockNT extends CompatFallingEntity {
             }
 
             if (!this.onGround() && !isStuckInWater) {
-                if ((this.time > 100 && (pos.getY() <= this.level().getMinY() || pos.getY() > this.level()
-                                                                                                  .getMaxY())) || this.time > 600) {
+                if ((this.time > 100 && (pos.getY() <= this.level().getMinBuildHeight() || pos.getY() > this.level()
+                                                                                                  .getMaxBuildHeight())) || this.time > 600) {
                     if (this.dropItem && Compat.entityDrops(serverLevel)) {
                         this.spawnAtLocation(serverLevel, block);
                     }

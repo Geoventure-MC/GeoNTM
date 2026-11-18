@@ -1,0 +1,24 @@
+{
+  "type": "liquid",
+  "color": "#717A88",
+  "temperature": 300,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "acid"
+  },
+  "flags": [
+    "viscous",
+    "leadcontainer"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 80
+    },
+    "poison": {
+      "withering": true,
+      "level": 4
+    }
+  }
+}

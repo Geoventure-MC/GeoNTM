@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -42,7 +42,7 @@ import org.joml.Vector3f;
  */
 public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/weapon/gui_launch_pad_large.png");
 
     /**
@@ -77,13 +77,13 @@ public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 4, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityLaunchPadBase pad = this.menu.getPad();
@@ -110,13 +110,13 @@ public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
         drawStatus(graphics, pad);
     }
 
-    private void drawLamp(GuiGraphicsExtractor graphics, int x, int gaugeState) {
+    private void drawLamp(GuiGraphics graphics, int x, int gaugeState) {
         if (gaugeState == 0) return;
         GuiDraw.blit(graphics, TEXTURE, this.leftPos + x, this.topPos + 23,
                 gaugeState == 1 ? 192.0F : 198.0F, 0.0F, 6, 8, 256, 256);
     }
 
-    private void drawStatus(GuiGraphicsExtractor graphics, TileEntityLaunchPadBase pad) {
+    private void drawStatus(GuiGraphics graphics, TileEntityLaunchPadBase pad) {
         String text;
         int colour;
         switch (pad.state) {
@@ -145,7 +145,7 @@ public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
      * to a level and cached until the slot changes; 26.1 draws 3D in a screen only through an entity
      * render state, see {@code GuiEntities}.
      */
-    private void drawMissile(GuiGraphicsExtractor graphics, ItemStack stack) {
+    private void drawMissile(GuiGraphics graphics, ItemStack stack) {
         if (stack.isEmpty()) {
             this.previewFor = ItemStack.EMPTY;
             this.previewEntity = null;
@@ -203,7 +203,7 @@ public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
                     ModMissileItems.designator_manual);
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityLaunchPadBase pad = this.menu.getPad();
         if (pad == null) return;
 
@@ -227,7 +227,7 @@ public class GUILaunchPad extends CompatContainerScreen<ContainerLaunchPad> {
     }
 
     /** 1.7: the three designators with this second's one marked, and its name. */
-    private void drawDesignatorPanel(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    private void drawDesignatorPanel(GuiGraphics graphics, int mouseX, int mouseY) {
         List<ItemStack> stacks = new ArrayList<>();
         for (Supplier<? extends Item> designator : DESIGNATORS) stacks.add(new ItemStack(designator.get()));
         GuiUtil.cycledStackText(graphics, this.font, this.width, this.height, null, stacks, mouseX, mouseY);

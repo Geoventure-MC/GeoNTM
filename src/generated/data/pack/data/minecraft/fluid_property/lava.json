@@ -1,0 +1,14 @@
+{
+  "type": "liquid",
+  "color": "#FF3300",
+  "temperature": 1200,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "nowater"
+  },
+  "flags": [
+    "viscous"
+  ]
+}

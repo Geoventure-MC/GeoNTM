@@ -1,0 +1,45 @@
+{
+  "values": {
+    "geontm:pile_rod_mk2_ra226be": {
+      "source": 1.0
+    },
+    "geontm:pile_rod_mk2_po210be": {
+      "source": 1.0
+    },
+    "geontm:pile_rod_mk2_zr": {},
+    "geontm:pile_rod_mk2_nu": {
+      "reaction": 1.0,
+      "life": 25000.0,
+      "heat": 0.25,
+      "turns_into": "geontm:pile_rod_mk2_pu239"
+    },
+    "geontm:pile_rod_mk2_pu239": {
+      "reaction": 1.0,
+      "life": 500.0,
+      "heat": 0.5,
+      "turns_into": "geontm:pile_rod_mk2_rgp"
+    },
+    "geontm:pile_rod_mk2_rgp": {
+      "reaction": 1.0,
+      "life": 1000.0,
+      "heat": 0.5,
+      "turns_into": "geontm:pile_rod_mk2_waste"
+    },
+    "geontm:pile_rod_mk2_waste": {
+      "reaction": 1.0,
+      "heat": 1.5
+    },
+    "geontm:pile_rod_mk2_thorium": {
+      "reaction": 1.0,
+      "life": 35000.0,
+      "heat": 0.25,
+      "turns_into": "geontm:pile_rod_mk2_thorium_fuel"
+    },
+    "geontm:pile_rod_mk2_thorium_fuel": {
+      "reaction": 1.0,
+      "life": 2000.0,
+      "heat": 0.5,
+      "turns_into": "geontm:pile_rod_mk2_waste"
+    }
+  }
+}

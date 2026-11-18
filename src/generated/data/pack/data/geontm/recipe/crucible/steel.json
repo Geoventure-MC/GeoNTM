@@ -1,0 +1,27 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.steel",
+  "frequency": 20,
+  "icon": "geontm:ingot_steel",
+  "inputs": [
+    {
+      "material": "iron",
+      "amount": 16
+    },
+    {
+      "material": "carbon",
+      "amount": 24
+    },
+    {
+      "material": "flux",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "steel",
+      "amount": 16
+    }
+  ],
+  "order": 0
+}

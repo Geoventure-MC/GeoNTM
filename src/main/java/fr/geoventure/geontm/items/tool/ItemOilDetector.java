@@ -57,7 +57,7 @@ public class ItemOilDetector extends CompatItem {
         int x = (int) player.getX();
         int y = (int) player.getY();
         int z = (int) player.getZ();
-        int floor = level.getMinY();
+        int floor = level.getMinBuildHeight();
         MutableBlockPos mPos = new MutableBlockPos();
 
         boolean direct = column(level, mPos, x, y, z, floor + 5);

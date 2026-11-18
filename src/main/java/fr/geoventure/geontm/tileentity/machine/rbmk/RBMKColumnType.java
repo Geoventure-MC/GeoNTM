@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.tileentity.machine.rbmk;
 
 import fr.geoventure.geontm.api.registry.NamedRegistry;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 
 import java.util.List;
@@ -37,11 +37,11 @@ public final class RBMKColumnType {
     /** The icon's u on the console sheet (row v = 172, 10x10). */
     public final int offset;
     /** The console sheet the icon is on; null for HBM's console texture. */
-    public final @Nullable Identifier sheet;
+    public final @Nullable ResourceLocation sheet;
     /** The console data of such a column; null for a plain column (heat only). */
     public final @Nullable Function<RBMKColumnType, RBMKColumn> column;
 
-    private RBMKColumnType(String name, int offset, @Nullable Identifier sheet, @Nullable Function<RBMKColumnType, RBMKColumn> column) {
+    private RBMKColumnType(String name, int offset, @Nullable ResourceLocation sheet, @Nullable Function<RBMKColumnType, RBMKColumn> column) {
         this.name = name;
         this.offset = offset;
         this.sheet = sheet;
@@ -56,7 +56,7 @@ public final class RBMKColumnType {
      * Registers an addon column type: its icon at ({@code offset}, 172) on {@code sheet} (256x256), and the console
      * data its columns carry ({@code column}, or null for heat only). Call at mod construction, on both sides.
      */
-    public static RBMKColumnType register(String name, Identifier sheet, int offset,
+    public static RBMKColumnType register(String name, ResourceLocation sheet, int offset,
                                           @Nullable Function<RBMKColumnType, RBMKColumn> column) {
         return REGISTRY.register(new RBMKColumnType(name, offset, sheet, column));
     }

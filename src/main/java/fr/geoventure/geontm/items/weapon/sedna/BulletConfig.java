@@ -9,7 +9,7 @@ import fr.geoventure.geontm.particle.SpentCasing;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,7 +27,7 @@ import net.minecraft.world.phys.HitResult;
  *   <li><b>Identity.</b> Upstream keeps a mutable {@code static List<BulletConfig> configs} and stores
  *       the <i>list index</i> in both the gun's NBT and the bullet entity's synched data; the source
  *       itself carries a {@code //TODO: replace with named tags to avoid ID shifting}. Here every config
- *       is registered under an {@link Identifier} in {@link BulletConfigs}, so save data and packets
+ *       is registered under an {@link ResourceLocation} in {@link BulletConfigs}, so save data and packets
  *       survive any change in declaration order.
  *   <li><b>Ammo matching.</b> Upstream's {@code ComparableStack(ammo_standard, 1, meta)} relies on item
  *       metadata, which does not exist; each ammo variant is its own item, so the binding is a plain
@@ -49,7 +49,7 @@ public class BulletConfig {
             BulletImpact::standardEntityHit;
 
     /** This config's registry id. Assigned by {@link BulletConfigs#register}. */
-    public Identifier id;
+    public ResourceLocation id;
 
     /**
      * The item one round is loaded from, held as a supplier.

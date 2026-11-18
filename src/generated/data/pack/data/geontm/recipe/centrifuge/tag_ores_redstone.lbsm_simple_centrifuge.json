@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/redstone"
+  },
+  "outputs": [
+    {
+      "id": "minecraft:redstone",
+      "count": 3
+    },
+    {
+      "id": "minecraft:redstone",
+      "count": 3
+    },
+    {
+      "id": "geontm:nugget_mercury",
+      "count": 3
+    },
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "lbsm_simple_centrifuge"
+  ],
+  "order": 45
+}

@@ -7,7 +7,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.world.Mobs;
 import java.util.TreeMap;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +15,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
-import net.minecraft.world.entity.monster.skeleton.AbstractSkeleton;
+import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
 
@@ -180,9 +180,9 @@ public final class MobUtil {
     /** The stack a pool id names, or empty when this port has no such item. */
     public static ItemStack stack(@Nullable String id) {
         if (id == null) return ItemStack.EMPTY;
-        Identifier key = Ids.parse(id.contains(":") ? id : "geontm:" + id);
+        ResourceLocation key = Ids.parse(id.contains(":") ? id : "geontm:" + id);
         if (!BuiltInRegistries.ITEM.containsKey(key)) return ItemStack.EMPTY;
-        return new ItemStack(BuiltInRegistries.ITEM.getValue(key));
+        return new ItemStack(BuiltInRegistries.ITEM.get(key));
     }
 
     public static void assignItemsToEntity(LivingEntity entity, Map<Integer, List<Choice>> slotPools, RandomSource rand) {
@@ -192,9 +192,9 @@ public final class MobUtil {
 
             Choice choice = draw(pool, rand);
             if (choice == null || choice.id() == null) continue;
-            Identifier id = Ids.parse(choice.id());
+            ResourceLocation id = Ids.parse(choice.id());
             if (!BuiltInRegistries.ITEM.containsKey(id)) continue;
-            ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.getValue(id));
+            ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.get(id));
 
             String path = id.getPath();
             if (path.equals("gas_mask_m65") || path.equals("gas_mask_olde") || path.equals("gas_mask_mono")) {

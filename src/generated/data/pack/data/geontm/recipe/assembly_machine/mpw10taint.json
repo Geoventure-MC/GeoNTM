@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpw10taint",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_10"
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:det_cord",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:powder_magic",
+      "count": 12
+    },
+    {
+      "type": "geontm:fluid_container",
+      "fluid": "geontm:watz",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:mp_warhead_10_taint"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 81152
+}

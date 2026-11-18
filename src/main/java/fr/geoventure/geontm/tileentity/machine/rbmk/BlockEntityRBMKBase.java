@@ -52,7 +52,7 @@ import java.util.Collections;
 import java.util.IdentityHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -346,8 +346,8 @@ public abstract class BlockEntityRBMKBase extends TileEntityMachineBase implemen
     }
     @Override protected void loadData(DataIn input) { super.loadData(input); heat = input.getDoubleOr("heat", heat); reasimWater = input.getIntOr("reasimWater", reasimWater); reasimSteam = input.getIntOr("reasimSteam", reasimSteam); }
     @Override protected void saveData(DataOut output) { super.saveData(output); output.putDouble("heat", heat); output.putInt("reasimWater", reasimWater); output.putInt("reasimSteam", reasimSteam); }
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); buf.writeDouble(heat); buf.writeInt(reasimWater); buf.writeInt(reasimSteam); buf.writeByte(craneIndicator); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); heat = buf.readDouble(); reasimWater = buf.readInt(); reasimSteam = buf.readInt(); craneIndicator = buf.readByte(); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); buf.writeDouble(heat); buf.writeInt(reasimWater); buf.writeInt(reasimSteam); buf.writeByte(craneIndicator); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); heat = buf.readDouble(); reasimWater = buf.readInt(); reasimSteam = buf.readInt(); craneIndicator = buf.readByte(); }
 
     /**
      * 1.7 {@code diagnosticPrintHook}: the column's diag-mode NBT, one line per key in key order. Values are written as 1.7's

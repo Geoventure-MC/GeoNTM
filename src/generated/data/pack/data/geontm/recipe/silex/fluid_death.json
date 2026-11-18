@@ -1,0 +1,16 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "fluid_icon": "geontm:death"
+  },
+  "fluid_produced": 1000,
+  "fluid_consumed": 1000,
+  "laser_strength": "gamma",
+  "outputs": [
+    {
+      "data": "geontm:powder_impure_osmiridium",
+      "weight": 1
+    }
+  ],
+  "order": 16
+}

@@ -30,7 +30,7 @@ import fr.geoventure.geocore.world.EntityTicks;
  * {@code geontm} under {@code depends}; NeoForge/Forge: its {@code mods.toml} dependency on {@code geontm} has
  * {@code ordering = "AFTER"}, so its constructor, which starts the entry, follows HBM's). So in the addon's
  * {@code declare()} HBM's fluids ({@code Fluids.register(ns, ...)}), materials ({@code Mats.register}), bullet configs
- * ({@code BulletConfigs.register(Identifier, ...)}) and registers already exist, and in its {@code registered()} HBM's
+ * ({@code BulletConfigs.register(ResourceLocation, ...)}) and registers already exist, and in its {@code registered()} HBM's
  * hazards, armor protection and launch table are filled: an addon entry added there extends or overrides them.
  */
 public class GeoNtmEntry implements ModEntry {

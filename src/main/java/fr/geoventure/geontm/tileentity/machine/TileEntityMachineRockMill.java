@@ -24,7 +24,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -184,7 +184,7 @@ public class TileEntityMachineRockMill extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.serialize(buf);
         for (FluidTankNTM tank : outputTanks) tank.serialize(buf);
@@ -195,7 +195,7 @@ public class TileEntityMachineRockMill extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.deserialize(buf);
         for (FluidTankNTM tank : outputTanks) tank.deserialize(buf);

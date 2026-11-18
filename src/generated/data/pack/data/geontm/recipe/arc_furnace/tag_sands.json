@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:sands"
+  },
+  "solid_output": "geontm:nugget_silicon",
+  "molten_outputs": [
+    {
+      "material": "silicon",
+      "amount": 8
+    }
+  ],
+  "order": 0
+}

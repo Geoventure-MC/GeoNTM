@@ -1,0 +1,15 @@
+{
+  "type": "plasma",
+  "color": "#D1ABF2",
+  "temperature": 3000,
+  "hazard": {
+    "poison": 0,
+    "flammability": 4,
+    "reactivity": 0,
+    "symbol": "radiation"
+  },
+  "flags": [
+    "noid",
+    "nocontainer"
+  ]
+}

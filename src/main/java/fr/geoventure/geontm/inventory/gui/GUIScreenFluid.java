@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
@@ -35,7 +35,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIScreenFluid extends CompatScreen {
 
-    protected static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_fluid.png");
+    protected static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_fluid.png");
     protected int xSize = 176;
     protected int ySize = 72;
     protected int guiLeft;
@@ -135,7 +135,7 @@ public class GUIScreenFluid extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int i, int j, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int i, int j, float partialTick) {
         for (int k = 0; k < this.searchArray.length; k++) {
             if (this.searchArray[k] == null) return;
 
@@ -149,7 +149,7 @@ public class GUIScreenFluid extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int i, int j, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int i, int j, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0F, 0F, xSize, ySize, 256, 256);
 
         if (this.search.isFocused())

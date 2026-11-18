@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.au198_nugget",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/gold"
+    }
+  ],
+  "output_items": [
+    "geontm:nugget_au198"
+  ],
+  "duration": 10000,
+  "order": 5
+}

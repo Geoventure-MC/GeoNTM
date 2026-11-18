@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_byproduct_actinide"
+  },
+  "item_output": "geontm:bedrock_ore_rad_roasted_actinide",
+  "fluid_output": {
+    "type": "geontm:vitriol",
+    "amount": 50
+  },
+  "order": 42
+}

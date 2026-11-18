@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render;
 
 //? if >=26.1 {
 
-import fr.geoventure.geocore.render.VanillaSubmitSink;
+/*import fr.geoventure.geocore.render.VanillaSubmitSink;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import fr.geoventure.geocore.render.CompatBlockEntityRenderState;
 import fr.geoventure.geocore.render.CompatBlockRenderState;
@@ -11,7 +11,7 @@ import fr.geoventure.geocore.render.CompatMovingBlock;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.model.ResolvableModel;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,7 +29,7 @@ import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.renderer.item.ModelRenderProperties;
 import net.minecraft.client.renderer.special.NoDataSpecialModelRenderer;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ItemOwner;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -45,7 +45,7 @@ import java.util.Set;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-/**
+/^*
  * Renders a GEONTM machine's OBJ model as its inventory/hand item, via 26.1's special-model system (the
  * modern replacement for {@code ItemStackTileEntityRenderer}/BEWLR). Data-driven: the obj/texture and
  * a scale/yaw/vertical offset come from the item-model JSON, so the icon's framing can be tuned without
@@ -54,11 +54,11 @@ import java.util.function.Consumer;
  * <p>This class is only the 26.1 plumbing: the codec, and the bridge from vanilla's collector to
  * {@link fr.geoventure.geocore.render.SubmitSink}. The model itself lives in {@link MachineItemModel}, which
  * older versions drive from a BEWLR instead.
- */
+ ^/
 public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
 
-    /** Registration id of this special-model codec (referenced by {@code "type"} in the item JSON). */
-    public static final Identifier ID = fr.geoventure.geocore.Ids.of("geontm", "machine_obj");
+    /^* Registration id of this special-model codec (referenced by {@code "type"} in the item JSON). ^/
+    public static final ResourceLocation ID = fr.geoventure.geocore.Ids.of("geontm", "machine_obj");
 
     private final MachineItemModel model;
 
@@ -76,14 +76,14 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
         model.extents(output);
     }
 
-    /** One additional ordered OBJ/texture pass; an omitted OBJ reuses the primary OBJ. */
-    public record Pass(Optional<Identifier> obj, Identifier texture, List<String> parts, List<Float> translate,
+    /^* One additional ordered OBJ/texture pass; an omitted OBJ reuses the primary OBJ. ^/
+    public record Pass(Optional<ResourceLocation> obj, ResourceLocation texture, List<String> parts, List<Float> translate,
                        List<Step> steps, int tint, float scale) {}
 
-    /** One step of a pass's own transform; exactly one of the two is present. */
+    /^* One step of a pass's own transform; exactly one of the two is present. ^/
     public record Step(List<Float> rotate, List<Float> translate) {}
 
-    /** One {@link MachineItemModel.GuiStep} as the item JSON spells it; exactly one of the four is present. */
+    /^* One {@link MachineItemModel.GuiStep} as the item JSON spells it; exactly one of the four is present. ^/
     public record GuiStepJson(List<Float> rotate, List<Float> translate, List<Float> scale, List<Float> spin) {
 
         MachineItemModel.GuiStep step() {
@@ -94,13 +94,13 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
         }
     }
 
-    /** The data-driven, codec-backed factory for this renderer (one entry per machine in the item JSON). */
-    public record Unbaked(Identifier obj, Identifier texture, boolean noCull, float scale, boolean rawLegacyTransform,
+    /^* The data-driven, codec-backed factory for this renderer (one entry per machine in the item JSON). ^/
+    public record Unbaked(ResourceLocation obj, ResourceLocation texture, boolean noCull, float scale, boolean rawLegacyTransform,
                            float yaw, float pitch, float ty,
                            List<Float> itemTranslate, List<Float> itemPreTranslate, List<Float> guiTranslate,
                            float guiScale, float guiYaw, List<String> exclude, List<String> blackParts,
-                            Optional<Identifier> overlayTexture, List<String> overlayParts, boolean mtl,
-                            Map<String, Identifier> partTextures,
+                            Optional<ResourceLocation> overlayTexture, List<String> overlayParts, boolean mtl,
+                            Map<String, ResourceLocation> partTextures,
                             List<String> rotateParts, float rotateX, List<Float> rotatePivot,
                              List<String> spinParts, List<Float> spinPivot,
                              Map<String, MachineItemModel.ContextTransform> contextTransforms, String animation,
@@ -109,15 +109,15 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                  implements NoDataSpecialModelRenderer.Unbaked, ItemModel.Unbaked {
 
         private static final MapCodec<Unbaked> BASE_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
-                Identifier.CODEC.fieldOf("obj").forGetter(Unbaked::obj),
-                Identifier.CODEC.optionalFieldOf("texture", fr.geoventure.geocore.Ids.of("geontm", "textures/models/machines/lava_gray.png")).forGetter(Unbaked::texture),
+                ResourceLocation.CODEC.fieldOf("obj").forGetter(Unbaked::obj),
+                ResourceLocation.CODEC.optionalFieldOf("texture", fr.geoventure.geocore.Ids.of("geontm", "textures/models/machines/lava_gray.png")).forGetter(Unbaked::texture),
                 Codec.BOOL.optionalFieldOf("noCull", false).forGetter(Unbaked::noCull),
                 Codec.FLOAT.optionalFieldOf("scale", 0.28F).forGetter(Unbaked::scale),
                 Codec.FLOAT.optionalFieldOf("yaw", 90.0F).forGetter(Unbaked::yaw),
                 Codec.FLOAT.optionalFieldOf("pitch", 0.0F).forGetter(Unbaked::pitch),
                 Codec.FLOAT.optionalFieldOf("ty", 0.0F).forGetter(Unbaked::ty),
                  Codec.STRING.listOf().optionalFieldOf("exclude", List.of()).forGetter(Unbaked::exclude),
-                 Identifier.CODEC.optionalFieldOf("overlayTexture").forGetter(Unbaked::overlayTexture),
+                 ResourceLocation.CODEC.optionalFieldOf("overlayTexture").forGetter(Unbaked::overlayTexture),
                  Codec.STRING.listOf().optionalFieldOf("overlayParts", List.of()).forGetter(Unbaked::overlayParts),
                 Codec.BOOL.optionalFieldOf("mtl", false).forGetter(Unbaked::mtl),
                 Codec.STRING.listOf().optionalFieldOf("rotateParts", List.of()).forGetter(Unbaked::rotateParts),
@@ -131,8 +131,8 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                               overlayTexture, overlayParts, mtl, Map.of(), rotateParts, rotateX, rotatePivot, spinParts, spinPivot,
                               Map.of(), "", List.of(), List.of(), List.of(), 0F, MACHINE_FRAME, List.of())));
 
-        private static final MapCodec<Map<String, Identifier>> PART_TEXTURES =
-                Codec.unboundedMap(Codec.STRING, Identifier.CODEC).optionalFieldOf("partTextures", Map.of());
+        private static final MapCodec<Map<String, ResourceLocation>> PART_TEXTURES =
+                Codec.unboundedMap(Codec.STRING, ResourceLocation.CODEC).optionalFieldOf("partTextures", Map.of());
 
         private static final MapCodec<List<Float>> ITEM_TRANSLATE =
                 Codec.FLOAT.listOf().optionalFieldOf("itemTranslate", List.of());
@@ -168,8 +168,8 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                   Codec.FLOAT.listOf().optionalFieldOf("translate", List.of()).forGetter(Step::translate)
           ).apply(i, Step::new));
           private static final Codec<Pass> PASS_CODEC = RecordCodecBuilder.create(i -> i.group(
-                  Identifier.CODEC.optionalFieldOf("obj").forGetter(Pass::obj),
-                  Identifier.CODEC.fieldOf("texture").forGetter(Pass::texture),
+                  ResourceLocation.CODEC.optionalFieldOf("obj").forGetter(Pass::obj),
+                  ResourceLocation.CODEC.fieldOf("texture").forGetter(Pass::texture),
                   Codec.STRING.listOf().optionalFieldOf("parts", List.of()).forGetter(Pass::parts),
                   Codec.FLOAT.listOf().optionalFieldOf("translate", List.of()).forGetter(Pass::translate),
                   STEP_CODEC.listOf().optionalFieldOf("steps", List.of()).forGetter(Pass::steps),
@@ -188,7 +188,7 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
           ).apply(i, GuiStepJson::new));
           private static final MapCodec<List<GuiStepJson>> GUI_STEPS =
                   GUI_STEP_CODEC.listOf().optionalFieldOf("guiSteps", List.of());
-          private record Extensions(Map<String, Identifier> partTextures, List<Float> itemTranslate,
+          private record Extensions(Map<String, ResourceLocation> partTextures, List<Float> itemTranslate,
                                     List<Float> itemPreTranslate, List<Float> guiTranslate, float guiScale,
                                     boolean rawLegacyTransform, float guiYaw, List<String> blackParts,
                                     Map<String, MachineItemModel.ContextTransform> contextTransforms,
@@ -214,7 +214,7 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                   GUI_STEPS.forGetter(Extensions::guiSteps)
           ).apply(i, Extensions::new));
 
-         /** Adds the legacy transform extensions without exceeding RecordCodecBuilder's 16-field limit. */
+         /^* Adds the legacy transform extensions without exceeding RecordCodecBuilder's 16-field limit. ^/
         public static final MapCodec<Unbaked> MAP_CODEC = MapCodec.of(
                 new com.mojang.serialization.MapEncoder<>() {
                     @Override
@@ -313,7 +313,7 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                 var lib = WavefrontObj.loadMtl(fr.geoventure.geocore.Ids.of(obj.getNamespace(), obj.getPath().replace(".obj", ".mtl")));
                 java.util.Map<String, Surface> resolved = new java.util.LinkedHashMap<>();
                 for (String mat : loaded.materialNames()) {
-                    Identifier tex = lib.get(mat);
+                    ResourceLocation tex = lib.get(mat);
                     if (tex != null) resolved.put(mat, cutout(tex, noCull));
                 }
                  types = resolved;
@@ -322,14 +322,14 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
              if (!partTextures.isEmpty()) {
                   java.util.Map<String, Surface> resolved = new java.util.LinkedHashMap<>();
                  resolved.put("Body", cutout(texture, noCull));
-                 for (Map.Entry<String, Identifier> entry : partTextures.entrySet()) {
+                 for (Map.Entry<String, ResourceLocation> entry : partTextures.entrySet()) {
                      resolved.put(entry.getKey(), cutout(entry.getValue(), noCull));
                  }
                   partTypes = resolved;
               }
               List<MachineItemModel.ModelPass> modelPasses = new ArrayList<>();
               for (Pass pass : passes) {
-                  Identifier passObj = pass.obj().orElse(obj);
+                  ResourceLocation passObj = pass.obj().orElse(obj);
                   Vector3f translation = vector(pass.translate());
                   WavefrontObj passModel = obj.equals(passObj) ? loaded : WavefrontObj.load(passObj);
                   List<MachineItemModel.PassStep> steps = new java.util.ArrayList<>();
@@ -353,22 +353,22 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                       .withGuiSteps(guiSteps.stream().map(GuiStepJson::step).toList());
          }
 
-        /**
+        /^*
          * The shared {@code display{}} this body is framed by. One per 1.7 item-render class, named by the
          * {@code frame} field: {@code machine} is {@code ItemRenderBase}, {@code missile} is
          * {@code ItemRenderMissileGeneric}, which frames its body from the slot origin rather than centring
          * it.
-         */
-        private Identifier frameModel() {
+         ^/
+        private ResourceLocation frameModel() {
             return fr.geoventure.geocore.Ids.of("geontm", "item/" + frame + "_obj_context_base");
         }
      }
 
-    /** The default {@code frame}: 1.7's {@code ItemRenderBase}, which every OBJ machine wore. */
+    /^* The default {@code frame}: 1.7's {@code ItemRenderBase}, which every OBJ machine wore. ^/
     public static final String MACHINE_FRAME = "machine";
 
     private static Unbaked withItemTranslations(Unbaked base, boolean rawLegacyTransform,
-                                                 Map<String, Identifier> partTextures,
+                                                 Map<String, ResourceLocation> partTextures,
                                                  List<Float> itemTranslate, List<Float> itemPreTranslate,
                                                   List<Float> guiTranslate, float guiScale, float guiYaw,
                                                   List<String> blackParts,
@@ -433,11 +433,11 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
         }
     }
 
-    private static Surface cutout(Identifier texture, boolean noCull) {
+    private static Surface cutout(ResourceLocation texture, boolean noCull) {
         return noCull ? Surface.cutoutNoCull(texture.toString()) : Surface.cutout(texture.toString());
     }
 
-    /**
+    /^*
      * {@code {"type": "geontm:custom_item", "renderer": ..., "frame": ..., "flat": ...}}: a ported 1.7 item renderer.
      *
      * <p>An item model rather than a special model, for the reason {@code GunItemModel} is one: only
@@ -448,10 +448,10 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
      *
      * <p>Below 26.1 {@code MachineItemModels} reads the same definition and draws the same renderer from the
      * loader's item-renderer hook.
-     */
+     ^/
     public static final class CustomItem implements ItemModel {
 
-        public static final Identifier ID = fr.geoventure.geocore.Ids.of("geontm", "custom_item");
+        public static final ResourceLocation ID = fr.geoventure.geocore.Ids.of("geontm", "custom_item");
 
         private final fr.geoventure.geontm.client.render.item.CustomItemRenderer renderer;
         private final boolean full3d;
@@ -488,10 +488,10 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
             properties.applyToLayer(layer, displayContext);
         }
 
-        /**
+        /^*
          * The drawn geometry's corners in body space. Measured by running the renderer into a sink that only records
          * positions: a renderer's body is code, so there is no declared box to read.
-         */
+         ^/
         private Vector3fc[] extents(ItemStack item, fr.geoventure.geontm.client.render.item.CustomItemRenderer.Type type, @Nullable LivingEntity owner) {
             Bounds bounds = new Bounds();
             renderer.render(item, type, new PoseStack(), bounds, 0xF000F0, 0, owner);
@@ -520,7 +520,7 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
             }
         }
 
-        /** A sink that keeps the axis-aligned box of every vertex written to it and draws nothing. */
+        /^* A sink that keeps the axis-aligned box of every vertex written to it and draws nothing. ^/
         private static final class Bounds implements SubmitSink, VertexConsumer {
             private float minX = Float.MAX_VALUE, minY = Float.MAX_VALUE, minZ = Float.MAX_VALUE;
             private float maxX = -Float.MAX_VALUE, maxY = -Float.MAX_VALUE, maxZ = -Float.MAX_VALUE;
@@ -577,20 +577,20 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
             @Override public VertexConsumer setLineWidth(float width) { return this; }
         }
 
-        /**
+        /^*
          * {@code renderer} names the ported 1.7 renderer; {@code frame} the shared engine pose it sits in
          * ({@code weapon}: the bare slot an {@code IItemRenderer} got; {@code machine}: {@code ItemRenderBase}'s);
          * {@code flat}, optional, the model shown in a slot the renderer declines. {@code generated} and
          * {@code handheld} are sprite frames: the renderer is posed in {@code flat}'s own display and draws the
          * sprite itself before what it adds (see {@code ItemSprites}). {@code sprite} is read only by the
          * pre-26.1 path, which has no baked flat model to fall back on.
-         */
-        public record Unbaked(String renderer, String frame, Optional<Identifier> flat) implements ItemModel.Unbaked {
+         ^/
+        public record Unbaked(String renderer, String frame, Optional<ResourceLocation> flat) implements ItemModel.Unbaked {
 
             public static final MapCodec<Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
                     Codec.STRING.fieldOf("renderer").forGetter(Unbaked::renderer),
                     Codec.STRING.optionalFieldOf("frame", "weapon").forGetter(Unbaked::frame),
-                    Identifier.CODEC.optionalFieldOf("flat").forGetter(Unbaked::flat)
+                    ResourceLocation.CODEC.optionalFieldOf("flat").forGetter(Unbaked::flat)
             ).apply(i, Unbaked::new));
 
             @Override
@@ -602,7 +602,7 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
                 return flat.isPresent() && (frame.equals("generated") || frame.equals("handheld"));
             }
 
-            private Identifier frameModel() {
+            private ResourceLocation frameModel() {
                 return spriteFrame() ? flat.get() : fr.geoventure.geocore.Ids.of("geontm", "item/" + frame + "_obj_context_base");
             }
 
@@ -626,4 +626,4 @@ public class MachineItemModelRenderer implements NoDataSpecialModelRenderer {
         }
     }
 }
-//?}
+*///?}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ores/rare"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output": "geontm:crystal_rare",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 37
+}

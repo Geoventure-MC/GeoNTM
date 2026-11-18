@@ -11,7 +11,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geontm.tileentity.bomb.TileEntityCustomMissileLauncher;
 import fr.geoventure.geocore.data.DataIn;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -146,13 +146,13 @@ public class TileEntityMachineMissileAssembly extends TileEntityMachineBase impl
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         TileEntityCustomMissileLauncher.writeStruct(buf, currentStruct());
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         load = TileEntityCustomMissileLauncher.readStruct(buf);
     }

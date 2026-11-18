@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#c:ingots/lead",
+  "output": {
+    "type": "geontm:lead",
+    "amount": 100
+  }
+}

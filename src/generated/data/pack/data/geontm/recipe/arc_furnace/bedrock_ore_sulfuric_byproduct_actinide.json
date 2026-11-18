@@ -1,0 +1,11 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_sulfuric_byproduct_actinide"
+  },
+  "solid_output": {
+    "id": "geontm:bedrock_ore_sulfuric_arc_actinide",
+    "count": 2
+  },
+  "order": 48
+}

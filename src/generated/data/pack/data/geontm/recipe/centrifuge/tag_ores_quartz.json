@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/quartz"
+  },
+  "outputs": [
+    "geontm:powder_quartz",
+    "geontm:powder_quartz",
+    "geontm:powder_lithium_tiny",
+    "minecraft:netherrack"
+  ],
+  "order": 15
+}

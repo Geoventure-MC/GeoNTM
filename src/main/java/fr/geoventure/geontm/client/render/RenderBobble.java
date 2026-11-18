@@ -28,11 +28,11 @@ import java.util.Map;
 import java.util.UUID;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -58,24 +58,24 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
 
     private static final int FULLBRIGHT = 0xF000F0;
 
-    private static Identifier tex(String path) {
+    private static ResourceLocation tex(String path) {
         return Ids.of(Constants.MOD_ID, path);
     }
 
-    static final Identifier SOCKET = tex("textures/models/trinkets/socket.png");
-    static final Identifier GLOW = tex("textures/models/trinkets/glow.png");
-    static final Identifier LAMP = tex("textures/blocks/fluorescent_lamp.png");
-    static final Identifier MELLOW_GLOW = tex("textures/models/trinkets/mellowrpg8_glow.png");
-    static final Identifier ABEL_GLOW = tex("textures/models/trinkets/abel_glow.png");
-    static final Identifier HEV_HELMET = tex("textures/armor/hev_helmet.png");
-    static final Identifier HAT = tex("textures/armor/hat.png");
-    static final Identifier NI4NI = tex("textures/models/weapons/n_i_4_n_i.png");
-    static final Identifier SHIMMER_AXE = tex("textures/models/shimmer_axe.png");
-    static final Identifier MININUKE = tex("textures/models/weapons/fatman_mininuke.png");
-    static final Identifier SACRED_DRAGON = tex("textures/models/weapons/double_barrel_sacred_dragon.png");
-    static final Identifier LASER_PISTOL = tex("textures/models/weapons/laser_pistol.png");
-    static final Identifier EGON_HOSE = tex("textures/models/weapons/egon_hose.png");
-    static final Identifier EGON_DISPLAY = tex("textures/models/weapons/egon_display.png");
+    static final ResourceLocation SOCKET = tex("textures/models/trinkets/socket.png");
+    static final ResourceLocation GLOW = tex("textures/models/trinkets/glow.png");
+    static final ResourceLocation LAMP = tex("textures/blocks/fluorescent_lamp.png");
+    static final ResourceLocation MELLOW_GLOW = tex("textures/models/trinkets/mellowrpg8_glow.png");
+    static final ResourceLocation ABEL_GLOW = tex("textures/models/trinkets/abel_glow.png");
+    static final ResourceLocation HEV_HELMET = tex("textures/armor/hev_helmet.png");
+    static final ResourceLocation HAT = tex("textures/armor/hat.png");
+    static final ResourceLocation NI4NI = tex("textures/models/weapons/n_i_4_n_i.png");
+    static final ResourceLocation SHIMMER_AXE = tex("textures/models/shimmer_axe.png");
+    static final ResourceLocation MININUKE = tex("textures/models/weapons/fatman_mininuke.png");
+    static final ResourceLocation SACRED_DRAGON = tex("textures/models/weapons/double_barrel_sacred_dragon.png");
+    static final ResourceLocation LASER_PISTOL = tex("textures/models/weapons/laser_pistol.png");
+    static final ResourceLocation EGON_HOSE = tex("textures/models/weapons/egon_hose.png");
+    static final ResourceLocation EGON_DISPLAY = tex("textures/models/weapons/egon_display.png");
 
     private final WavefrontObj bobble = WavefrontObj.load(tex("models/trinkets/bobble.obj"));
     private final WavefrontObj hev = WavefrontObj.load(tex("models/armor/hev.obj"));
@@ -89,12 +89,12 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
     private final WavefrontObj laserPistol = WavefrontObj.load(tex("models/weapons/laser_pistol.obj"));
     private final WavefrontObj egon = WavefrontObj.load(tex("models/weapons/egon_hose.obj"));
     private final WavefrontObj egonPack = WavefrontObj.load(tex("models/weapons/egon.obj"));
-    static final Identifier EGON_PACK = tex("textures/models/weapons/egon.png");
+    static final ResourceLocation EGON_PACK = tex("textures/models/weapons/egon.png");
 
     /** 1.12.2 {@code skinModelCache}: one voxelized figure per skin, built the first frame the skin is in. */
     private static final Map<UUID, BobbleSkinModel> SKIN_MODELS =
             new HashMap<>();
-    private static final Identifier GRAY_SKIN = tex("bobble_gray_skin");
+    private static final ResourceLocation GRAY_SKIN = tex("bobble_gray_skin");
     private static boolean grayRegistered;
 
     /** 1.12.2 {@code ClientHttpHandler.preinit}: start fetching every skinned figure's skin at client start. */
@@ -125,7 +125,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
     /** The prop the figure holds: VAER's cigarette, FRIZZLE's doubloons, ADAM29's can. */
     private static void extractHeld(State state, net.minecraft.world.level.@org.jspecify.annotations.Nullable Level level) {
         ItemStack held = switch (BobbleFigure.NAMES[state.type]) {
-            case "VAER" -> new ItemStack(BuiltInRegistries.ITEM.getValue(tex("cigarette")));
+            case "VAER" -> new ItemStack(BuiltInRegistries.ITEM.get(tex("cigarette")));
             case "FRIZZLE" -> ModWeaponModItems.weapon_mod_special.stack(GunFactory.EnumModSpecial.DOUBLOONS);
             case "ADAM29" -> new ItemStack(ModConsumableTailItems.can_redbomb.get());
             default -> ItemStack.EMPTY;
@@ -165,7 +165,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
         int type = state.type;
         part(pose, sink, bobble, CompatRenderTypes.entityCutoutCull(SOCKET), "Socket", light);
 
-        Identifier skin = tex("textures/models/" + BobbleFigure.texture(type) + ".png");
+        ResourceLocation skin = tex("textures/models/" + BobbleFigure.texture(type) + ".png");
         switch (BobbleFigure.body(type)) {
             case PELLET -> renderPellet(pose, sink, skin, state);
             case FUMO -> renderFumo(pose, sink, skin, state, light);
@@ -183,13 +183,13 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
         renderSocket(pose, sink, state, light);
     }
 
-    private void renderGuy(PoseStack pose, SubmitSink sink, Identifier skin, State state, int light) {
+    private void renderGuy(PoseStack pose, SubmitSink sink, ResourceLocation skin, State state, int light) {
         int type = state.type;
         guy(pose, sink, skin, BobbleFigure.pose(type), BobbleFigure.NAMES[type], BobbleFigure.suffix(type), state.time, light, state);
     }
 
     /** 1.7 {@code renderGuy} for one figure: {@code name} picks the per-person extras, {@code state} holds a held prop. */
-    private void guy(PoseStack pose, SubmitSink sink, Identifier skin, BobbleFigure.Pose figure, String name, String suffix,
+    private void guy(PoseStack pose, SubmitSink sink, ResourceLocation skin, BobbleFigure.Pose figure, String name, String suffix,
                      long time, int light, @org.jspecify.annotations.Nullable State state) {
         RenderType culled = CompatRenderTypes.entityCutoutCull(skin);
         RenderType open = CompatRenderTypes.entityCutoutNoCull(skin);
@@ -256,7 +256,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
         UUID id = UUID.fromString(BobbleType.of(state.type).skinUuid);
         var loaded = ProfileSkins.get(id);
         BobbleSkinModel model;
-        Identifier texture;
+        ResourceLocation texture;
         if (loaded != null) {
             model = SKIN_MODELS.computeIfAbsent(id, k -> new BobbleSkinModel(loaded.argb()));
             texture = loaded.texture();
@@ -281,7 +281,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
      * SilentYeti: lifted and leaning into the glider's thrust, wings spread, aiming a laser pistol one-handed. The figure and its gear share
      * one frame so the gear follows the lean. Literals stay in this body so a debugger can hot-swap them.
      */
-    private void renderSilentYeti(PoseStack pose, SubmitSink sink, BobbleSkinModel model, Identifier texture, State state,
+    private void renderSilentYeti(PoseStack pose, SubmitSink sink, BobbleSkinModel model, ResourceLocation texture, State state,
                                   int light) {
         pose.pushPose();
         pose.translate(0D, 0.1D, 0D); // lift: tiptoes still on the socket
@@ -315,7 +315,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
         pose.popPose();
     }
 
-    private void renderPellet(PoseStack pose, SubmitSink sink, Identifier skin, State state) {
+    private void renderPellet(PoseStack pose, SubmitSink sink, ResourceLocation skin, State state) {
         part(pose, sink, bobble, CompatRenderTypes.entityCutoutCull(skin), "Pellet", FULLBRIGHT);
         float alpha = 0.1F + (float) Math.sin(state.time * 0.001D) * 0.05F;
         int color = ((int) (alpha * 255F) & 0xFF) << 24 | 0xFFFF00;
@@ -323,7 +323,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
                 (p, buffer) -> bobble.renderPartColor("PelletShine", p, buffer, color));
     }
 
-    private void renderFumo(PoseStack pose, SubmitSink sink, Identifier skin, State state, int light) {
+    private void renderFumo(PoseStack pose, SubmitSink sink, ResourceLocation skin, State state, int light) {
         part(pose, sink, bobble, CompatRenderTypes.entityCutoutCull(skin), "Fumo", light);
         double speed = 0.005;
         double amplitude = 1;
@@ -461,7 +461,7 @@ public final class RenderBobble extends GemBER<TileEntityBobble, RenderBobble.St
      * engraved in white. Without {@code guy} the caller draws its own figure. The pose stack is the figure's space, as
      * HBM's renderer sets it up (block centre, quarter scale, turned {@code -(22.5 * rotation + 90)}).
      */
-    public static void renderFigure(PoseStack pose, SubmitSink sink, Identifier skin, boolean layers, boolean guy, String label,
+    public static void renderFigure(PoseStack pose, SubmitSink sink, ResourceLocation skin, boolean layers, boolean guy, String label,
                                     long time, int light) {
         if (itemRenderer == null) itemRenderer = new RenderBobble();
         RenderBobble renderer = itemRenderer;

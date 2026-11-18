@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.batterylithium",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/lithium",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:dusts/cobalt",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:oxygen",
+      "amount": 2000
+    }
+  ],
+  "output_items": [
+    "geontm:battery_lithium"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 31
+}

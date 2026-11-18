@@ -9,7 +9,7 @@ import java.util.Collections;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -124,20 +124,20 @@ public class TileEntityCraneBoxer extends TileEntityCraneBase implements IContro
                 worldPosition.getY() + 0.5 + outputSide.getStepY() * 0.55,
                 worldPosition.getZ() + 0.5 + outputSide.getStepZ() * 0.55);
         Vec3 snap = belt.getClosestSnappingPosition(level, target, pos);
-        moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+        moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
         moving.setItemStacks(box);
         level.addFreshEntity(moving);
         setChanged();
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeByte(this.mode);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.mode = buf.readByte();
     }

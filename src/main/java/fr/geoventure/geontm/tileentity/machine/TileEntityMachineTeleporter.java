@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -164,7 +164,7 @@ public class TileEntityMachineTeleporter extends TileEntityLoadedBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeLong(power);
         buf.writeBoolean(target != null);
         if (target != null) {
@@ -175,7 +175,7 @@ public class TileEntityMachineTeleporter extends TileEntityLoadedBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         power = buf.readLong();
         target = buf.readBoolean() ? GlobalPos.of(ResourceKey.create(Registries.DIMENSION, Ids.parse(buf.readUtf())),
                 buf.readBlockPos()) : null;

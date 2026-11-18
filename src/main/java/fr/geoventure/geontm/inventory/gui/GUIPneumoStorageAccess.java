@@ -12,10 +12,10 @@ import fr.geoventure.geocore.gui.TextSearch;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
@@ -31,7 +31,7 @@ import java.util.function.Predicate;
  */
 public class GUIPneumoStorageAccess extends PneumaticScreenBase<ContainerPneumoStorageAccess> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_access.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_pneumatic_access.png");
     private static final int PANEL_X = 34;
     private static final int SCROLL_BAR_X = 154;
     private static final int SCROLL_TRAVEL = 106 - 15; // bar height minus the scroll knob's height
@@ -102,7 +102,7 @@ public class GUIPneumoStorageAccess extends PneumaticScreenBase<ContainerPneumoS
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         this.scrollBounds = Math.max(1, (int) Math.ceil(menu.listingSize() / 8.0D - 6.0D));
         if (menu.listingStart() > scrollBounds) setScroll(scrollBounds);
 
@@ -125,13 +125,13 @@ public class GUIPneumoStorageAccess extends PneumaticScreenBase<ContainerPneumoS
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, PANEL_X + 176 / 2 - font.width(title) / 2, 5, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, PANEL_X + 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     /** The totals ride over the stacks at half scale in each slot's corner; 26.1 draws the label hook before the slots. */
-    private void extractTotals(GuiGraphicsExtractor graphics) {
+    private void extractTotals(GuiGraphics graphics) {
         GuiDraw.pushMatrix(graphics);
         GuiDraw.aboveSlots(graphics);
         GuiDraw.scale(graphics, 0.5F, 0.5F);
@@ -146,7 +146,7 @@ public class GUIPneumoStorageAccess extends PneumaticScreenBase<ContainerPneumoS
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         extractTotals(graphics);
         drawCustomInfoStat(graphics, mouseX, mouseY, 7, 7, 18, 18, "Sorting: " + ChatFormatting.YELLOW + "Amount");
         drawCustomInfoStat(graphics, mouseX, mouseY, 7, 25, 18, 18, "Sorting: " + ChatFormatting.YELLOW + "Item ID");

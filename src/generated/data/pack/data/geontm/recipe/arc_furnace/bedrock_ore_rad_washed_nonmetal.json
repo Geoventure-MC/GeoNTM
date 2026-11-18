@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_washed_nonmetal"
+  },
+  "molten_outputs": [
+    {
+      "material": "silicon",
+      "amount": 48
+    },
+    {
+      "material": "silicon",
+      "amount": 48
+    }
+  ],
+  "order": 66
+}

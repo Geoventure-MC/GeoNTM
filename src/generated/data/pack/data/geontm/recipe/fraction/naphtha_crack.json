@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:naphtha_crack",
+  "left": {
+    "type": "geontm:heatingoil",
+    "amount": 30
+  },
+  "right": {
+    "type": "geontm:diesel_crack",
+    "amount": 70
+  }
+}

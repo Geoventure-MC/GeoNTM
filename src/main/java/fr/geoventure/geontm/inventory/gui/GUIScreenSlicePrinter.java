@@ -7,7 +7,7 @@ import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Screenshot;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -71,7 +71,7 @@ public class GUIScreenSlicePrinter extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.fill(graphics, 0, 0, width, height, 0xFFFF00FF);
         if (finished || minecraft == null || minecraft.level == null) return;
 

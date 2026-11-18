@@ -86,11 +86,11 @@ public class MachineHephaestus extends BlockMultiblockMachine implements IFluidC
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (player.isShiftKeyDown() || !(stack.getItem() instanceof IItemFluidId identifier)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);
         if (core == null || !(level.getBlockEntity(core) instanceof TileEntityMachineHephaestus heatex)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!level.isClientSide()) {
             FluidType type = identifier.getType(level, core.getX(), core.getY(), core.getZ(), stack);
@@ -104,7 +104,7 @@ public class MachineHephaestus extends BlockMultiblockMachine implements IFluidC
 
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

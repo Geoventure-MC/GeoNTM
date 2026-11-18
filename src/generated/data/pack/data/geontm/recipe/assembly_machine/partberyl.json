@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.partberyl",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/beryllium"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:part_beryllium",
+      "count": 8
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "auto_switch_group": "autoswitch.cyclotron",
+  "order": 13568
+}

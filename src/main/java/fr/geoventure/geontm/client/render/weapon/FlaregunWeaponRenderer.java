@@ -7,12 +7,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact Gem port of 1.7 ItemRenderFlaregun. */
 public final class FlaregunWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID = Ids.of("geontm", "models/weapons/flaregun.obj");
+    private static final ResourceLocation MODEL_ID = Ids.of("geontm", "models/weapons/flaregun.obj");
     private static final Surface BODY = Surface.cutout("geontm:textures/models/weapons/flaregun.png");
     private WavefrontObj model;
 

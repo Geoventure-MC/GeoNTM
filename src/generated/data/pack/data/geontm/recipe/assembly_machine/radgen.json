@@ -1,0 +1,70 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.radgen",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:coil_magnetized_tungsten",
+      "count": 6
+    },
+    {
+      "material": "magnetized_tungsten",
+      "shape": "wire",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:reactor_core",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/starmetal"
+    },
+    {
+      "ingredient": "#c:dyes/red"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_radgen"
+  ],
+  "duration": 400,
+  "power": 100,
+  "blueprint_pools": [
+    "discover.radgen"
+  ],
+  "order": 37632,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:coil_magnetized_tungsten",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:reactor_core",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/starmetal"
+    },
+    {
+      "ingredient": "#c:dyes/red"
+    },
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 3
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt15bflarge",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 10
+    },
+    {
+      "material": "tungsten",
+      "shape": "castplate",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/saturnite",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_15_balefire_large"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 74496
+}

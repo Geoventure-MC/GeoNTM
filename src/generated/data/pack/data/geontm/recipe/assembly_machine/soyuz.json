@@ -1,0 +1,48 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.soyuz",
+  "input_items": [
+    {
+      "material": "titanium",
+      "shape": "shell",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:thruster_small",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:thruster_medium",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:drive_flash_flightsim",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:missile_soyuz_0"
+  ],
+  "duration": 6000,
+  "power": 25000,
+  "order": 85504,
+  "blueprint_pools_528": [
+    "528.soyuz"
+  ]
+}

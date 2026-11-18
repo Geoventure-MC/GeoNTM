@@ -9,7 +9,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -22,7 +22,7 @@ public final class PumpRenderer<T extends BlockEntity & PumpAnimationState>
             Ids.of(Constants.MOD_ID, "models/machines/pump.obj"));
     private final Surface surface;
 
-    public PumpRenderer(Identifier texture) {
+    public PumpRenderer(ResourceLocation texture) {
         this.surface = Surface.cutoutNoCull(texture.toString());
     }
 

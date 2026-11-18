@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:powder_calcium"
+  },
+  "acid": {
+    "type": "geontm:redmud",
+    "amount": 75
+  },
+  "output": {
+    "id": "geontm:powder_cement",
+    "count": 8
+  },
+  "duration": 100,
+  "productivity": 0.1,
+  "order": 35
+}

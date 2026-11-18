@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt15solid16",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_15_solid_hexdecuple"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 73216
+}

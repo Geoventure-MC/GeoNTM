@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:deco_pipe_rim",
+  "output": "geontm:powder_steel"
+}

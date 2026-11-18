@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:sandstone_stairs",
+  "output": {
+    "id": "minecraft:sand",
+    "count": 6
+  }
+}

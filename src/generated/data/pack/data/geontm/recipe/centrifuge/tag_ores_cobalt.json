@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/cobalt"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_cobalt",
+      "count": 2
+    },
+    "geontm:powder_iron",
+    "geontm:powder_copper",
+    "minecraft:gravel"
+  ],
+  "order": 50
+}

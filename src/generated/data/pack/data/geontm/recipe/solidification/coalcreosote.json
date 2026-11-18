@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:coalcreosote",
+  "amount": 200,
+  "output": "geontm:oil_tar_coal"
+}

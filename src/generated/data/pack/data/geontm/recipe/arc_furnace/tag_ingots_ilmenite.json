@@ -1,0 +1,21 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:ingots/ilmenite"
+  },
+  "solid_output": {
+    "id": "geontm:ingot_titanium",
+    "count": 3
+  },
+  "molten_outputs": [
+    {
+      "material": "titanium",
+      "amount": 216
+    },
+    {
+      "material": "iron",
+      "amount": 144
+    }
+  ],
+  "order": 10
+}

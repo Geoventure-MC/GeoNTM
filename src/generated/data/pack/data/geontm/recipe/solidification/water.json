@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "minecraft:water",
+  "amount": 1000,
+  "output": "minecraft:ice"
+}

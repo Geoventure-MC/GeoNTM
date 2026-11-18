@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ores/copper"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:crystal_copper",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 12
+}

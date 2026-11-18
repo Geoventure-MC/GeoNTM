@@ -76,7 +76,7 @@ public abstract class NukeBombBlock extends CompatBlock implements TickingBlock,
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (player instanceof ServerPlayer serverPlayer
                 && level.getBlockEntity(pos) instanceof MenuProvider provider) {
             Menus.openWithPos(serverPlayer, provider, pos);
@@ -120,7 +120,7 @@ public abstract class NukeBombBlock extends CompatBlock implements TickingBlock,
 
     private void ignite(Level level, BlockPos pos, int radius, @Nullable UUID detonatorId,
                         @Nullable UUID placer) {
-        level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS,
+        level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS,
                 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
 
         EntityNukeExplosionMK5 mk5 = noRadiation()

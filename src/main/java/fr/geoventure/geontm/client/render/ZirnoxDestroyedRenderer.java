@@ -12,13 +12,13 @@ import fr.geoventure.geocore.render.Poses;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Vertexes;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
 /** Draws the old RBMK flame quads directly, preserving their additive and vertical billboard appearance. */
 public class ZirnoxDestroyedRenderer extends MachineObjRenderer<TileEntityZirnoxDestroyed> {
-    private static final Identifier FLAME_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
+    private static final ResourceLocation FLAME_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
     /**
      * Vertical centre of the flame quads. The 1.12.2 renderer put them at 1.75; raised one block so the
      * fire sits on top of the wreck's upper shell instead of inside it.

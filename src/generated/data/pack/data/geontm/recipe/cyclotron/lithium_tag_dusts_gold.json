@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/gold"
+  },
+  "output": "geontm:nugget_mercury",
+  "antimatter": 50,
+  "order": 7
+}

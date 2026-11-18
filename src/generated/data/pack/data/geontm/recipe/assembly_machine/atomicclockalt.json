@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.atomicClockAlt",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:dusts/cs137"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_atomic_clock",
+      "count": 4
+    }
+  ],
+  "duration": 300,
+  "power": 20000,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..circuit"
+  ],
+  "order": 8960,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

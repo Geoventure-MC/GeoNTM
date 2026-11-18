@@ -1,0 +1,28 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.ticl4",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/ilmenite",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:cokes"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:chlorine",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:titanium_tetrachloride",
+      "amount": 4000
+    }
+  ],
+  "duration": 60,
+  "power": 500,
+  "order": 9
+}

@@ -61,7 +61,7 @@ public final class ExplosionNukeCustom {
             // flag (the waste=true ExplosionNukeAdvanced path is unported), so it already behaves as waste=false.
             level.addFreshEntity(Owners.give(ex, owner));
 
-            level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 100000.0F, 1.0F);
+            level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 100000.0F, 1.0F);
 
             level.addFreshEntity(EntityCloudFleijaRainbow.statFac(level, 50, x, y, z));
 

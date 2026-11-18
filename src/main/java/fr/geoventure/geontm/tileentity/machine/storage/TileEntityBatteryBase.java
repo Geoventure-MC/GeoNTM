@@ -14,7 +14,7 @@ import fr.geoventure.geontm.uninos.graph.LevelNodeGraph;
 import fr.geoventure.geontm.util.SavedIds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -188,7 +188,7 @@ public abstract class TileEntityBatteryBase extends TileEntityMachineBase
     // --- sync + persistence (subclasses extend with their own fields) ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(redLow);
         buf.writeShort(redHigh);
@@ -196,7 +196,7 @@ public abstract class TileEntityBatteryBase extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         redLow = buf.readShort();
         redHigh = buf.readShort();

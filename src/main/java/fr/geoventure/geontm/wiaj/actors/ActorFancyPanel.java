@@ -8,9 +8,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class ActorFancyPanel implements ISpecialActor {
 
-    static final Identifier guiUtil = Ids.of("geontm", "textures/gui/gui_utility.png");
+    static final ResourceLocation guiUtil = Ids.of("geontm", "textures/gui/gui_utility.png");
 
     List<Object[]> lines = new ArrayList<>();
     Font font;
@@ -232,7 +232,7 @@ public class ActorFancyPanel implements ISpecialActor {
     }
 
     @Override
-    public void drawForegroundComponent(GuiGraphicsExtractor graphics, int w, int h, int ticks, float interp) {
+    public void drawForegroundComponent(GuiGraphics graphics, int w, int h, int ticks, float interp) {
 
         int height = this.getBlockHeight();
         int width = this.getBlockWidth();
@@ -316,14 +316,14 @@ public class ActorFancyPanel implements ISpecialActor {
         }
     }
 
-    private void drawArrow(GuiGraphicsExtractor graphics, int posX, int posY, int sourceX, int sourceY, int sizeX, int sizeY) {
+    private void drawArrow(GuiGraphics graphics, int posX, int posY, int sourceX, int sourceY, int sizeX, int sizeY) {
         this.drawTexturedModalRect(graphics, posX, posY, sourceX + 28 * 0, sourceY, sizeX, sizeY, this.colorBrighter);
         this.drawTexturedModalRect(graphics, posX, posY, sourceX + 28 * 1, sourceY, sizeX, sizeY, this.colorFrame);
         this.drawTexturedModalRect(graphics, posX, posY, sourceX + 28 * 2, sourceY, sizeX, sizeY, this.colorDarker);
         this.drawTexturedModalRect(graphics, posX, posY, sourceX + 28 * 3, sourceY, sizeX, sizeY, this.colorBg);
     }
 
-    private void drawElement(GuiGraphicsExtractor graphics, int x, int y, Object element) {
+    private void drawElement(GuiGraphics graphics, int x, int y, Object element) {
 
         if(element instanceof String text) {
             GuiDraw.text(graphics, this.font, text, x, y - this.font.lineHeight / 2, 0xFFFFFFFF, false);
@@ -341,11 +341,11 @@ public class ActorFancyPanel implements ISpecialActor {
     @Override public void setActorData(CompoundTag data) { }
     @Override public void setDataPoint(String tag, Object o) { }
 
-    protected void drawRect(GuiGraphicsExtractor graphics, int minX, int minY, int maxX, int maxY, int color) {
+    protected void drawRect(GuiGraphics graphics, int minX, int minY, int maxX, int maxY, int color) {
         GuiDraw.fill(graphics, minX, minY, maxX, maxY, color);
     }
 
-    public void drawTexturedModalRect(GuiGraphicsExtractor graphics, int posX, int posY, int u, int v, int sizeX, int sizeY, int color) {
+    public void drawTexturedModalRect(GuiGraphics graphics, int posX, int posY, int u, int v, int sizeX, int sizeY, int color) {
         GuiDraw.blit(graphics, guiUtil, posX, posY, u, v, sizeX, sizeY, 256, 256, color);
     }
 

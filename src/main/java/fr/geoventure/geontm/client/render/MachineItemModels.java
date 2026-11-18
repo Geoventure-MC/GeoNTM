@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render;
 
 //? if <26.1 {
 
-/*import com.google.gson.JsonElement;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fr.geoventure.geontm.Constants;
@@ -11,7 +11,7 @@ import fr.geoventure.geontm.client.model.WavefrontObj;
 import fr.geoventure.geocore.data.CarriedState;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ItemModels;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
- /^ 
+ /* 
  * The pre-26.1 half of the OBJ item renderer: reads the same `assets/<ns>/items/<name>.json` item
  * definitions 26.1 uses, and builds a {@link MachineItemModel} for every one that names the
  * `geontm:machine_obj` special renderer.
@@ -38,30 +38,30 @@ import java.util.Set;
  * <p>Fields and defaults are kept in lockstep with {@code MachineItemModelRenderer.Unbaked}'s codec.
  * A definition that is malformed is skipped with a warning rather than failing the reload: a bad icon
  * must not cost the player their whole resource pack.
- ^/
+ */
 public final class MachineItemModels {
 
     private MachineItemModels() {}
 
-    private static final Identifier DEFAULT_TEXTURE =
+    private static final ResourceLocation DEFAULT_TEXTURE =
             fr.geoventure.geocore.Ids.of("geontm", "textures/models/machines/lava_gray.png");
 
-    /^ Item id -> its OBJ model. Rebuilt on every resource reload; empty until the first one. ^/
-private static Map<Identifier, MachineItemModel> models = Map.of();
- private static Map<Identifier, Map<Integer, MachineItemModel>> variantModels = Map.of();
-    private static Map<Identifier, BlockStateChoice> blockStateModels = Map.of();
-    private static Map<Identifier, fr.geoventure.geontm.client.jetpack.JetpackGliderItemModel> gliders = Map.of();
-    private static Map<Identifier, RBMKColumnItemModel> rbmkColumns = Map.of();
-    private static Map<Identifier, RBMKBlockColumnItemModel> blockColumns = Map.of();
-    private static Set<Identifier> oversized = Set.of();
+    /* Item id -> its OBJ model. Rebuilt on every resource reload; empty until the first one. */
+private static Map<ResourceLocation, MachineItemModel> models = Map.of();
+ private static Map<ResourceLocation, Map<Integer, MachineItemModel>> variantModels = Map.of();
+    private static Map<ResourceLocation, BlockStateChoice> blockStateModels = Map.of();
+    private static Map<ResourceLocation, fr.geoventure.geontm.client.jetpack.JetpackGliderItemModel> gliders = Map.of();
+    private static Map<ResourceLocation, RBMKColumnItemModel> rbmkColumns = Map.of();
+    private static Map<ResourceLocation, RBMKBlockColumnItemModel> blockColumns = Map.of();
+    private static Set<ResourceLocation> oversized = Set.of();
 
-    /^ The model for an item, or null if that item is not an OBJ machine. ^/
-public static MachineItemModel get(Identifier item) {
+    /* The model for an item, or null if that item is not an OBJ machine. */
+public static MachineItemModel get(ResourceLocation item) {
     return models.get(item);
 }
 
- /^ The selected OBJ model for an item-definition variant, falling back to its default branch. ^/
-public static MachineItemModel get(Identifier item, ItemStack stack) {
+ /* The selected OBJ model for an item-definition variant, falling back to its default branch. */
+public static MachineItemModel get(ResourceLocation item, ItemStack stack) {
     BlockStateChoice byState = blockStateModels.get(item);
     if (byState != null && CarriedState.readItemFlag(stack, byState.property())) {
         MachineItemModel chosen = byState.whenTrue();
@@ -73,45 +73,45 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
     return choices.getOrDefault(variant, choices.get(-1));
 }
 
-    /^ Whether any OBJ item models are loaded (used to skip work when a pack removes them all). ^/
+    /* Whether any OBJ item models are loaded (used to skip work when a pack removes them all). */
     public static boolean isEmpty() {
         return models.isEmpty() && gliders.isEmpty() && rbmkColumns.isEmpty() && blockColumns.isEmpty();
     }
 
-    public static boolean isGlider(Identifier item) { return gliders.containsKey(item); }
+    public static boolean isGlider(ResourceLocation item) { return gliders.containsKey(item); }
 
-    /^ Whether the definition opted out of slot clipping, the way 26.1's item properties do. ^/
-    public static boolean isOversizedInGui(Identifier item) { return oversized.contains(item); }
+    /* Whether the definition opted out of slot clipping, the way 26.1's item properties do. */
+    public static boolean isOversizedInGui(ResourceLocation item) { return oversized.contains(item); }
 
-    /^ The dedicated four-section fuel-channel model, or null for every other item. ^/
-    public static RBMKColumnItemModel rbmkColumn(Identifier item) { return rbmkColumns.get(item); }
+    /* The dedicated four-section fuel-channel model, or null for every other item. */
+    public static RBMKColumnItemModel rbmkColumn(ResourceLocation item) { return rbmkColumns.get(item); }
 
-    /^ The plain/piped/lidded column preview, or null for every other item. ^/
-    public static RBMKBlockColumnItemModel blockColumn(Identifier item) { return blockColumns.get(item); }
+    /* The plain/piped/lidded column preview, or null for every other item. */
+    public static RBMKBlockColumnItemModel blockColumn(ResourceLocation item) { return blockColumns.get(item); }
 
-    /^ Reparses every item definition. Call from a client resource-reload listener. ^/
+    /* Reparses every item definition. Call from a client resource-reload listener. */
     public static void reload(ResourceManager resources) {
         // One reload listener drives both parsers: guns read the same item definitions for the weapon
         // renderer they name.
         fr.geoventure.geontm.client.render.weapon.GunLegacyModels.reload(resources);
         reloadCustom(resources);
-        Map<Identifier, MachineItemModel> built = new HashMap<>();
-        Map<Identifier, Map<Integer, MachineItemModel>> builtVariants = new HashMap<>();
-        Map<Identifier, BlockStateChoice> builtStates = new HashMap<>();
-        Map<Identifier, RBMKColumnItemModel> columns = new HashMap<>();
-        Map<Identifier, RBMKBlockColumnItemModel> blocks = new HashMap<>();
-        Map<Identifier, fr.geoventure.geontm.client.jetpack.JetpackGliderItemModel> gliderItems = new HashMap<>();
-        Set<Identifier> oversizedItems = new HashSet<>();
-        for (Map.Entry<Identifier, Resource> entry :
+        Map<ResourceLocation, MachineItemModel> built = new HashMap<>();
+        Map<ResourceLocation, Map<Integer, MachineItemModel>> builtVariants = new HashMap<>();
+        Map<ResourceLocation, BlockStateChoice> builtStates = new HashMap<>();
+        Map<ResourceLocation, RBMKColumnItemModel> columns = new HashMap<>();
+        Map<ResourceLocation, RBMKBlockColumnItemModel> blocks = new HashMap<>();
+        Map<ResourceLocation, fr.geoventure.geontm.client.jetpack.JetpackGliderItemModel> gliderItems = new HashMap<>();
+        Set<ResourceLocation> oversizedItems = new HashSet<>();
+        for (Map.Entry<ResourceLocation, Resource> entry :
                 resources.listResources("items", path -> path.getPath().endsWith(".json")).entrySet()) {
-            Identifier file = entry.getKey();
+            ResourceLocation file = entry.getKey();
             try (BufferedReader reader = entry.getValue().openAsReader()) {
                 JsonElement root = JsonParser.parseReader(reader);
                 JsonObject machine = machineObjOf(root);
                 // "items/<name>.json" -> "<name>", the item's registry path.
                 String path = file.getPath();
                 String name = path.substring("items/".length(), path.length() - ".json".length());
-                Identifier item = fr.geoventure.geocore.Ids.of(file.getNamespace(), name);
+                ResourceLocation item = fr.geoventure.geocore.Ids.of(file.getNamespace(), name);
                 if (jetpackGliderOf(root) != null) gliderItems.put(item,
                         new fr.geoventure.geontm.client.jetpack.JetpackGliderItemModel());
                 if (machine != null) built.put(item, parse(machine, isBlockFramed(root)));
@@ -163,11 +163,11 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
                 ? inner.getAsJsonObject() : null;
     }
 
-     /^ 
+     /* 
      * The `geontm:machine_obj` object inside an item definition, or null if this definition is not one.
       * Shape: `{"model": {"type": "minecraft:special", "base": ..., "model": {"type": "geontm:machine_obj", ...}}}`
       * or the context-aware direct form `{"model": {"type": "geontm:machine_obj", ...}}`.
-     ^/
+     */
     private static JsonObject machineObjOf(JsonElement root) {
         if (!root.isJsonObject()) return null;
         JsonElement model = root.getAsJsonObject().get("model");
@@ -189,7 +189,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
                 || !"geontm:machine_obj".equals(string(model.getAsJsonObject(), "type", ""));
     }
 
-     /^ Reads both direct special models and the component-select form used by metadata-backed items. ^/
+     /* Reads both direct special models and the component-select form used by metadata-backed items. */
     private static Map<Integer, JsonObject> machineObjVariantsOf(JsonElement root) {
         Map<Integer, JsonObject> out = new LinkedHashMap<>();
         if (!root.isJsonObject()) return out;
@@ -231,7 +231,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         return out;
     }
 
-    /^ A {@code minecraft:select} on {@code minecraft:block_state}, as NTM: Space's damaged machines use. ^/
+    /* A {@code minecraft:select} on {@code minecraft:block_state}, as NTM: Space's damaged machines use. */
     private static JsonObject blockStateSelectOf(JsonElement root) {
         if (!root.isJsonObject()) return null;
         JsonElement model = root.getAsJsonObject().get("model");
@@ -241,9 +241,9 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
                 && "minecraft:block_state".equals(string(select, "property", "")) ? select : null;
     }
 
-    /^ Carried block data is read as a boolean flag below 26.1, so only a "true" case is kept. ^/
-    private static void readBlockStateSelect(JsonObject select, Identifier item, Map<Identifier, MachineItemModel> built,
-                                             Map<Identifier, BlockStateChoice> states) {
+    /* Carried block data is read as a boolean flag below 26.1, so only a "true" case is kept. */
+    private static void readBlockStateSelect(JsonObject select, ResourceLocation item, Map<ResourceLocation, MachineItemModel> built,
+                                             Map<ResourceLocation, BlockStateChoice> states) {
         JsonElement fallback = select.get("fallback");
         if (fallback != null && fallback.isJsonObject()) {
             MachineItemModel model = parseBranch(fallback.getAsJsonObject());
@@ -291,10 +291,10 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         return "geontm:rbmk_fuel_column".equals(string(column, "type", "")) ? column : null;
     }
 
-     /^ 
+     /* 
      * The `geontm:rbmk_block_column` object inside an item definition, or null if this definition is not
      * one. Same shape as {@link #rbmkColumnOf}, only the type id differs.
-     ^/
+     */
     private static JsonObject blockColumnOf(JsonElement root) {
         if (!root.isJsonObject()) return null;
         JsonElement model = root.getAsJsonObject().get("model");
@@ -319,11 +319,11 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
     }
 
     private static MachineItemModel parse(JsonObject json, boolean blockFramed) {
-         Identifier objId = id(json, "obj", null);
+         ResourceLocation objId = id(json, "obj", null);
          WavefrontObj obj = WavefrontObj.load(objId);
-        Identifier texture = id(json, "texture", DEFAULT_TEXTURE);
+        ResourceLocation texture = id(json, "texture", DEFAULT_TEXTURE);
         boolean noCull = bool(json, "noCull", false);
-        Identifier overlayTexture = id(json, "overlayTexture", null);
+        ResourceLocation overlayTexture = id(json, "overlayTexture", null);
         List<Float> pivot = floats(json, "rotatePivot");
         List<Float> spinPivot = floats(json, "spinPivot");
          List<Float> itemTranslate = floats(json, "itemTranslate");
@@ -336,8 +336,8 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
              for (JsonElement passValue : passesValue.getAsJsonArray()) {
                  if (!passValue.isJsonObject()) continue;
                  JsonObject pass = passValue.getAsJsonObject();
-                 Identifier passObj = id(pass, "obj", objId);
-                 Identifier passTexture = id(pass, "texture", texture);
+                 ResourceLocation passObj = id(pass, "obj", objId);
+                 ResourceLocation passTexture = id(pass, "texture", texture);
                  List<Float> translate = floats(pass, "translate");
                  WavefrontObj passModel = objId.equals(passObj) ? obj : WavefrontObj.load(passObj);
                  modelPasses.add(new MachineItemModel.ModelPass(passModel,
@@ -350,11 +350,11 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
          Map<String, Surface> materialTypes = Map.of();
           if (bool(json, "mtl", false)) {
             // Multi-texture OBJ: resolve per-material textures from the .mtl next to the model.
-             Map<String, Identifier> lib = WavefrontObj.loadMtl(fr.geoventure.geocore.Ids.of(
+             Map<String, ResourceLocation> lib = WavefrontObj.loadMtl(fr.geoventure.geocore.Ids.of(
                     objId.getNamespace(), objId.getPath().replace(".obj", ".mtl")));
             Map<String, Surface> resolved = new LinkedHashMap<>();
             for (String mat : obj.materialNames()) {
-                Identifier tex = lib.get(mat);
+                ResourceLocation tex = lib.get(mat);
                 if (tex != null) resolved.put(mat, cutout(tex, noCull));
             }
                    materialTypes = resolved;
@@ -403,7 +403,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
                     .withGuiSteps(guiSteps(json));
      }
 
-    private static Surface cutout(Identifier texture, boolean noCull) {
+    private static Surface cutout(ResourceLocation texture, boolean noCull) {
         return noCull ? Surface.cutoutNoCull(texture.toString()) : Surface.cutout(texture.toString());
     }
 
@@ -467,7 +467,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         return e != null && e.isJsonPrimitive() ? e.getAsString() : fallback;
     }
 
-    private static Identifier id(JsonObject json, String key, Identifier fallback) {
+    private static ResourceLocation id(JsonObject json, String key, ResourceLocation fallback) {
         String value = string(json, key, null);
         return value == null ? fallback : fr.geoventure.geocore.Ids.parse(value);
     }
@@ -504,19 +504,19 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
     // when the inventory is the sprite, <generated|handheld>_sprite_legacy for a sprite the renderer draws on), so
     // vanilla applies the frame exactly as 26.1 does; a declined slot is drawn from the definition's sprite.
 
-    /^* {@code spriteFrame}: a declined slot is the extruded sprite rather than the inventory square. ^/
-    private record CustomEntry(fr.geoventure.geontm.client.render.item.CustomItemRenderer renderer, Identifier sprite, boolean oversized,
+    /** {@code spriteFrame}: a declined slot is the extruded sprite rather than the inventory square. */
+    private record CustomEntry(fr.geoventure.geontm.client.render.item.CustomItemRenderer renderer, ResourceLocation sprite, boolean oversized,
                          boolean spriteFrame, boolean full3d) {}
 
-    private static Map<Identifier, CustomEntry> customModels = Map.of();
+    private static Map<ResourceLocation, CustomEntry> customModels = Map.of();
 
     
-    /^* Re-reads every {@code assets/<ns>/items/<name>.json} and records the custom-rendered items among them. ^/
+    /** Re-reads every {@code assets/<ns>/items/<name>.json} and records the custom-rendered items among them. */
     static void reloadCustom(ResourceManager resources) {
-        Map<Identifier, CustomEntry> parsed = new HashMap<>();
-        for (Map.Entry<Identifier, Resource> entry : resources.listResources(
+        Map<ResourceLocation, CustomEntry> parsed = new HashMap<>();
+        for (Map.Entry<ResourceLocation, Resource> entry : resources.listResources(
                 "items", id -> id.getPath().endsWith(".json")).entrySet()) {
-            Identifier file = entry.getKey();
+            ResourceLocation file = entry.getKey();
             try (BufferedReader reader = entry.getValue().openAsReader()) {
                 JsonElement root = JsonParser.parseReader(reader);
                 if (!root.isJsonObject()) continue;
@@ -532,7 +532,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
                 String sprite = customString(custom, "sprite");
                 String frame = customString(custom, "frame");
                 boolean spriteFrame = sprite != null && ("generated".equals(frame) || "handheld".equals(frame));
-                Identifier texture = sprite == null ? null : customTexture(fr.geoventure.geocore.Ids.parse(sprite));
+                ResourceLocation texture = sprite == null ? null : customTexture(fr.geoventure.geocore.Ids.parse(sprite));
                 JsonElement oversized = root.getAsJsonObject().get("oversized_in_gui");
                 String path = file.getPath();
                 String name = path.substring("items/".length(), path.length() - ".json".length());
@@ -550,7 +550,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         Constants.LOG.info("Loaded {} custom item renderer model(s)", customModels.size());
     }
 
-    private static Identifier customTexture(Identifier sprite) {
+    private static ResourceLocation customTexture(ResourceLocation sprite) {
         return fr.geoventure.geocore.Ids.of(sprite.getNamespace(), "textures/" + sprite.getPath() + ".png");
     }
 
@@ -559,7 +559,7 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         return e != null && e.isJsonPrimitive() ? e.getAsString() : null;
     }
 
-    /^* Draws {@code stack} if its definition names a custom renderer; returns whether it did. ^/
+    /** Draws {@code stack} if its definition names a custom renderer; returns whether it did. */
     public static boolean renderCustom(ItemStack stack, net.minecraft.world.item.ItemDisplayContext context, com.mojang.blaze3d.vertex.PoseStack poseStack,
                                  net.minecraft.client.renderer.MultiBufferSource buffers, int light, int overlay) {
         if (customModels.isEmpty()) return false;
@@ -584,11 +584,11 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         return true;
     }
 
-    /^*
+    /**
      * The sprite over the slot's sixteen pixels, facing the viewer. The weapon frame's inventory space runs y
      * down from the slot's corner, so pixel {@code (0, 0)} takes the texture's top left.
-     ^/
-    public static void customSprite(com.mojang.blaze3d.vertex.PoseStack pose, fr.geoventure.geocore.render.SubmitSink sink, Identifier texture, int light, int overlay) {
+     */
+    public static void customSprite(com.mojang.blaze3d.vertex.PoseStack pose, fr.geoventure.geocore.render.SubmitSink sink, ResourceLocation texture, int light, int overlay) {
         sink.submitCustomGeometry(pose, fr.geoventure.geocore.render.CompatRenderTypes.entityCutoutNoCull(texture), (p, buffer) -> {
             fr.geoventure.geocore.render.Vertexes.vertex(buffer, p, 0F, 0F, 0F, 0xFFFFFFFF, 0F, 0F, overlay, light, 0F, 0F, 1F);
             fr.geoventure.geocore.render.Vertexes.vertex(buffer, p, 0F, 16F, 0F, 0xFFFFFFFF, 0F, 1F, overlay, light, 0F, 0F, 1F);
@@ -597,4 +597,4 @@ public static MachineItemModel get(Identifier item, ItemStack stack) {
         });
     }
 }
-*///?}
+//?}

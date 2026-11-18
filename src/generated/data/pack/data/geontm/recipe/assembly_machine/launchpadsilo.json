@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.launchpadsilo",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:concretes",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:launch_pad"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 71168
+}

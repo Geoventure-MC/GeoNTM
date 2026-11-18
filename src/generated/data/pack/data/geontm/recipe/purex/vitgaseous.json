@@ -1,0 +1,21 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.vitgaseous",
+  "input_items": [
+    {
+      "ingredient": "geontm:sand_lead"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:wastegas",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:nuclear_waste_vitrified"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 53
+}

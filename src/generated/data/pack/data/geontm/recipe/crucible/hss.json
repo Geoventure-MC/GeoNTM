@@ -1,0 +1,27 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.hss",
+  "frequency": 9,
+  "icon": "geontm:ingot_dura_steel",
+  "inputs": [
+    {
+      "material": "steel",
+      "amount": 40
+    },
+    {
+      "material": "tungsten",
+      "amount": 24
+    },
+    {
+      "material": "cobalt",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "dura_steel",
+      "amount": 72
+    }
+  ],
+  "order": 4
+}

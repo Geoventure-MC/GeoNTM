@@ -1,0 +1,28 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:concretes",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:red_pylon_large"
+    }
+  ],
+  "tier": 2,
+  "order": 86
+}

@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:bedrock_ore_primary_rare",
+  "output": "minecraft:gravel"
+}

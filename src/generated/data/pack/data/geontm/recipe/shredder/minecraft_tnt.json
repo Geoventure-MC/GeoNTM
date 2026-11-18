@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:tnt",
+  "output": {
+    "id": "minecraft:gunpowder",
+    "count": 5
+  }
+}

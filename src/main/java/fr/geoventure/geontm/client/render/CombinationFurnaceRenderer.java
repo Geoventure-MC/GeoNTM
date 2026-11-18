@@ -16,15 +16,15 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /** Static combination-oven OBJ plus the legacy fullbright, camera-facing RBMK flame quad. */
 public final class CombinationFurnaceRenderer extends GemBER<TileEntityFurnaceCombination, CombinationFurnaceRenderState> {
 
-    private static final Identifier OBJ = Ids.of(Constants.MOD_ID, "models/machines/combination_oven.obj");
-    private static final Identifier MACHINE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/combination_oven.png");
-    private static final Identifier FLAME_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
+    private static final ResourceLocation OBJ = Ids.of(Constants.MOD_ID, "models/machines/combination_oven.obj");
+    private static final ResourceLocation MACHINE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/combination_oven.png");
+    private static final ResourceLocation FLAME_TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
 
     private final WavefrontObj model = WavefrontObj.load(OBJ);
     private final Surface surface = Surface.cutout(MACHINE_TEXTURE.toString());

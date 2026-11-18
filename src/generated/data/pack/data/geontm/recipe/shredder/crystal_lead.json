@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_lead",
+  "output": {
+    "id": "geontm:powder_lead",
+    "count": 3
+  }
+}

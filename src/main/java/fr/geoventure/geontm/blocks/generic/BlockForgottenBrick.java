@@ -36,7 +36,7 @@ public class BlockForgottenBrick extends CompatBlock {
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (variant != Variant.HOLE || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!level.isClientSide()) {
             player.getInventory().setItem(Compat.selectedSlot(player), new ItemStack(ModItems.coal_eternal.get()));

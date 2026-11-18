@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:bitumen",
+  "amount": 16000,
+  "output": "geontm:coke_petroleum",
+  "byproduct": {
+    "type": "geontm:oil_coker",
+    "amount": 1600
+  }
+}

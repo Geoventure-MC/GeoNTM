@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelArmorTaurun}. The legs and boots are nudged apart by 0.01 block: upstream translated -0.01
@@ -13,7 +13,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class TaurunArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/taurun.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/taurun.obj");
 
     private static final Surface HELMET = skin("taurun_helmet");
     private static final Surface CHEST = skin("taurun_chest");

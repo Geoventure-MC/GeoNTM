@@ -1,0 +1,23 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:dusts/dura_steel",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:dusts/copper"
+    }
+  ],
+  "fluid": {
+    "type": "geontm:reformgas",
+    "amount": 250
+  },
+  "output": {
+    "material": "saturnite",
+    "amount": 144
+  },
+  "duration": 200,
+  "steam": 400,
+  "order": 8
+}

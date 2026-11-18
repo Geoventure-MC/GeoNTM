@@ -51,7 +51,7 @@ public final class ItemBlueprintFolder extends CompatItem implements LegacyMeta 
         for (String pool : GenericRecipes.blueprintPools.keySet()) {
             if (pool.startsWith(prefix)) pools.add(pool);
         }
-        if (pools.isEmpty()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (pools.isEmpty()) return InteractionResult.PASS;
 
         String selected = pools.get(player.getRandom().nextInt(pools.size()));
         ItemStack blueprint = ItemBlueprints.make(selected);

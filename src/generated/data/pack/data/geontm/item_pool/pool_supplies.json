@@ -1,0 +1,53 @@
+{
+  "entries": [
+    {
+      "item": "geontm:definitelyfood",
+      "min": 3,
+      "max": 10,
+      "weight": 25
+    },
+    {
+      "item": "geontm:syringe_metal_stimpak",
+      "min": 1,
+      "max": 3,
+      "weight": 10
+    },
+    {
+      "item": "geontm:pill_iodine",
+      "min": 1,
+      "max": 2,
+      "weight": 2
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 4,
+      "weight": 5,
+      "fluid": "DIESEL"
+    },
+    {
+      "item": "geontm:machine_diesel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:geiger_counter",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:med_bag",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:radaway",
+      "min": 1,
+      "max": 5,
+      "weight": 10
+    }
+  ]
+}

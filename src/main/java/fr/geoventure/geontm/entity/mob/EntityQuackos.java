@@ -17,10 +17,10 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.animal.chicken.Chicken;
+import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -63,7 +63,7 @@ public class EntityQuackos extends EntityDuck {
 
     @Override
     public @Nullable Chicken getBreedOffspring(ServerLevel level, AgeableMob partner) {
-        return Entities.create(ModNtmEntities.QUACKOS.get(), level, EntitySpawnReason.BREEDING);
+        return Entities.create(ModNtmEntities.QUACKOS.get(), level, MobSpawnType.BREEDING);
     }
 
     @Override

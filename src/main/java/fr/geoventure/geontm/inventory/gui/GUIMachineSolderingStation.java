@@ -11,9 +11,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachineSolderingStation;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineSolderingStation;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class GUIMachineSolderingStation extends CompatContainerScreen<ContainerMachineSolderingStation> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_soldering_station.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_soldering_station.png");
     // Fluid gauge (GUI-relative), matching the 1.12.2 layout: a 34×16 area at (35, 63).
     private static final int FLUID_X = 35, FLUID_TOP = 63, FLUID_W = 34, FLUID_H = 16;
     // "Acceptable Upgrades" info-panel glyph (1.12.2 drawInfoPanel at 78, 67).
@@ -36,7 +36,7 @@ public class GUIMachineSolderingStation extends CompatContainerScreen<ContainerM
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineSolderingStation te = this.menu.getStation();
@@ -65,14 +65,14 @@ public class GUIMachineSolderingStation extends CompatContainerScreen<ContainerM
 
     /** 1.7 {@code drawGuiContainerForegroundLayer}: title centred 18 px left of centre, inventory line. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2 - 18, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     /** 1.7 {@code drawScreen}: tank info, energy info, upgrade list anchored at the panel. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineSolderingStation te = this.menu.getStation();
         if (te == null) return;
         int gl = this.leftPos, gt = this.topPos;

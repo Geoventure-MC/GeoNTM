@@ -1,0 +1,23 @@
+{
+  "type": "gaseous",
+  "color": "#0000FF",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 4,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:deuterium"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 5000
+    },
+    "combustible": {
+      "grade": "HIGH",
+      "energy": 10000
+    }
+  }
+}

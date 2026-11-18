@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/gold"
+  },
+  "output": {
+    "id": "geontm:wire_fine_gold",
+    "count": 8
+  },
+  "order": 29
+}

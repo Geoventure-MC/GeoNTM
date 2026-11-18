@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:casing_large",
+  "materials": [
+    {
+      "material": "gunmetal",
+      "amount": 36
+    }
+  ]
+}

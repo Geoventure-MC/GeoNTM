@@ -2,7 +2,7 @@ package fr.geoventure.geontm.platform.forge;
 
 //? if forge {
 
-/*import fr.geoventure.geontm.creativetabs.ModTabs;
+import fr.geoventure.geontm.creativetabs.ModTabs;
 import fr.geoventure.geontm.hazard.HazardSystem;
 import fr.geoventure.geontm.util.TooltipColours;
 import fr.geoventure.geontm.packet.AnvilCraftPayload;
@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
@@ -33,7 +33,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-/^* Forge 1.20.1 bootstrap; client code is only referenced after the physical-side check. ^/
+/** Forge 1.20.1 bootstrap; client code is only referenced after the physical-side check. */
 @Mod(fr.geoventure.geontm.Constants.MOD_ID)
 public final class ForgeInit {
 
@@ -97,14 +97,14 @@ public final class ForgeInit {
     }
 
     private static void auditWorldgen(MinecraftServer server) {
-        Set<Identifier> features = new TreeSet<>();
+        Set<ResourceLocation> features = new TreeSet<>();
         server.registryAccess().registryOrThrow(Registries.BIOME).holders().forEach(biome ->
                 biome.value().getGenerationSettings().features().forEach(step -> step.forEach(feature ->
                         feature.unwrapKey().map(ResourceKey::location)
                                 .filter(id -> id.getNamespace().equals(fr.geoventure.geontm.Constants.MOD_ID))
                                 .ifPresent(features::add))));
         // every geontm placed feature named by a loaded forge:add_features modifier must reach a biome
-        Set<Identifier> expected = new TreeSet<>();
+        Set<ResourceLocation> expected = new TreeSet<>();
         server.registryAccess().registryOrThrow(net.minecraftforge.registries.ForgeRegistries.Keys.BIOME_MODIFIERS)
                 .forEach(modifier -> {
                     if (modifier instanceof net.minecraftforge.common.world.ForgeBiomeModifiers.AddFeaturesBiomeModifier add) {
@@ -113,7 +113,7 @@ public final class ForgeInit {
                                 .ifPresent(expected::add));
                     }
                 });
-        Set<Identifier> missing = new TreeSet<>(expected);
+        Set<ResourceLocation> missing = new TreeSet<>(expected);
         missing.removeAll(features);
         if (missing.isEmpty()) {
             fr.geoventure.geontm.Constants.LOG.info("[GEONTM] Forge biome modifiers injected all {} modifier features ({} geontm placed features in biomes): {}",
@@ -124,4 +124,4 @@ public final class ForgeInit {
         }
     }
 }
-*///?}
+//?}

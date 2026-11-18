@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "#c:dusts/titanium"
+  },
+  "output": "geontm:powder_cobalt",
+  "antimatter": 10,
+  "order": 22
+}

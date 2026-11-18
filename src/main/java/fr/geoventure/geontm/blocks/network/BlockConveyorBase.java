@@ -163,7 +163,7 @@ public abstract class BlockConveyorBase extends CompatBlock implements IConveyor
         EntityMovingItem moving = new EntityMovingItem(level);
         moving.setItemStack(item.getItem().copy());
         Vec3 snap = getClosestSnappingPosition(level, pos, entity.position());
-        moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+        moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
         level.addFreshEntity(moving);
 
         entity.discard();

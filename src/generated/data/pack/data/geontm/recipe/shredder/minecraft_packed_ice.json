@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:packed_ice",
+  "output": "geontm:powder_ice"
+}

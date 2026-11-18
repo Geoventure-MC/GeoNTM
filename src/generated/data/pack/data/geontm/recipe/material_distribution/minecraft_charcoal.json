@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "minecraft:charcoal",
+  "materials": [
+    {
+      "material": "carbon",
+      "amount": 24
+    }
+  ]
+}

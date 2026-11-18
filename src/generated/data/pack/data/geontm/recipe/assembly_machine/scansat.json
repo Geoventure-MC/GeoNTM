@@ -1,0 +1,38 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.scansat",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:photo_panel",
+      "count": 32
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:satellite_scanner"
+  ],
+  "duration": 1200,
+  "power": 25000,
+  "order": 87296
+}

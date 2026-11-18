@@ -56,7 +56,7 @@ public class MachineRadar extends CompatBlock implements TickingBlock {
 
     /** The shared 1.7 {@code onBlockActivated} of both radars; {@code core} is the radar's own block. */
     static InteractionResult use(Level level, BlockPos clicked, BlockPos core, Player player) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
         if (clicked.getY() < TileEntityMachineRadarNT.radarAltitude) {
             if (!level.isClientSide()) {

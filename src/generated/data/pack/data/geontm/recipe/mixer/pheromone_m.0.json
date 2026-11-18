@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.pheromone_m.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:pill_herbal"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:pheromone",
+      "amount": 1500
+    },
+    {
+      "type": "geontm:blood",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:pheromone_m",
+      "amount": 2000
+    }
+  ],
+  "duration": 10,
+  "order": 43
+}

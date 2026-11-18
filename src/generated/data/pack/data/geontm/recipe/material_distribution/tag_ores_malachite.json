@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/malachite",
+  "materials": [
+    {
+      "material": "malachite",
+      "amount": 432
+    }
+  ]
+}

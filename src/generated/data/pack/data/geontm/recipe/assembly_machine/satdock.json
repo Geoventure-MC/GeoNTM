@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.satdock",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    }
+  ],
+  "output_items": [
+    "geontm:sat_dock"
+  ],
+  "duration": 100,
+  "power": 5000,
+  "order": 84736
+}

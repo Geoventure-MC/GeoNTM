@@ -43,7 +43,7 @@ public class PinkTreeFeature extends Feature<PinkTreeFeature.Config> {
         BlockPos origin = context.origin();
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         boolean done = false;
-        for (int y = level.getMinY(); y < level.getMaxY(); y++) {
+        for (int y = level.getMinBuildHeight(); y < level.getMaxBuildHeight(); y++) {
             pos.set(origin.getX(), y, origin.getZ());
             if (c.target().test(level.getBlockState(pos), rand)) {
                 level.setBlock(pos, c.state(), 2);

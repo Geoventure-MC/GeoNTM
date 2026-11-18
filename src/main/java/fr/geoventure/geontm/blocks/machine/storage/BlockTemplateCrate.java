@@ -64,7 +64,7 @@ public class BlockTemplateCrate extends CarriedBlock {
             Menus.openWithPos(serverPlayer, provider, pos);
         }
         return level.isClientSide() || !player.isShiftKeyDown()
-                ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+                ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     @Override

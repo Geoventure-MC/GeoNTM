@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.c4",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/niter"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_c4",
+      "count": 4
+    }
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 78,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

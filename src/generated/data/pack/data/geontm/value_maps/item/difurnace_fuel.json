@@ -1,0 +1,23 @@
+{
+  "values": {
+    "minecraft:coal": 200,
+    "minecraft:charcoal": 200,
+    "minecraft:coal_block": 2000,
+    "geontm:block_coke_coal": 4000,
+    "geontm:block_coke_lignite": 4000,
+    "geontm:block_coke_petroleum": 4000,
+    "minecraft:lava_bucket": 12800,
+    "minecraft:blaze_rod": 1000,
+    "minecraft:blaze_powder": 300,
+    "geontm:lignite": 150,
+    "geontm:powder_lignite": 150,
+    "geontm:powder_coal": 200,
+    "geontm:briquette_coal": 200,
+    "geontm:briquette_lignite": 200,
+    "geontm:briquette_wood": 200,
+    "geontm:coke_coal": 400,
+    "geontm:coke_lignite": 400,
+    "geontm:coke_petroleum": 400,
+    "geontm:solid_fuel": 400
+  }
+}

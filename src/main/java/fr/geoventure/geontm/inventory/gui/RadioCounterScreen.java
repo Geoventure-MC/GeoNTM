@@ -11,11 +11,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.Optional;
 
 /** Faithful 218x238 ROR counter GUI. */
 public final class RadioCounterScreen extends CompatContainerScreen<RadioCounterMenu> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_counter.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_rtty_counter.png");
     private final EditBox[] frequency = new EditBox[TileEntityRadioTorchCounter.MAPPING_SIZE];
     private boolean polling;
 
@@ -54,14 +54,14 @@ public final class RadioCounterScreen extends CompatContainerScreen<RadioCounter
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0, 0, imageWidth, imageHeight, 256, 256);
         if (polling) GuiDraw.blit(graphics, TEXTURE, leftPos + 193, topPos + 8,
                 218, 0, 18, 18, 256, 256);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (184 - font.width(title)) / 2, 6,
                 0xFF404040, false);
         GuiDraw.text(graphics, font, Component.translatable("container.inventory"),
@@ -69,7 +69,7 @@ public final class RadioCounterScreen extends CompatContainerScreen<RadioCounter
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (hover(193, 8, 18, 18, mouseX, mouseY)) {
             tooltip(graphics, polling ? "Polling" : "State Change", mouseX, mouseY);
             return;
@@ -94,7 +94,7 @@ public final class RadioCounterScreen extends CompatContainerScreen<RadioCounter
         }
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, String value, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, String value, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, List.of(Component.literal(value)), Optional.empty(), mouseX, mouseY);
     }
 

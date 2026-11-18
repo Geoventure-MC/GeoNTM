@@ -95,7 +95,7 @@ public class BlockCablePaintable extends CompatBlock implements TickingBlock, IT
             if (!level.isClientSide()) pipe.setPaint(ItemStateBlock.of(ib, stack));
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

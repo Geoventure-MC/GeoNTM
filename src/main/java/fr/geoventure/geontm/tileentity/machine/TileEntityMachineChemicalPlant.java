@@ -29,7 +29,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -272,7 +272,7 @@ public class TileEntityMachineChemicalPlant extends TileEntityMachineBase
     // --- sync (BufPacket) + persistence ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.serialize(buf);
         for (FluidTankNTM tank : outputTanks) tank.serialize(buf);
@@ -283,7 +283,7 @@ public class TileEntityMachineChemicalPlant extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.deserialize(buf);
         for (FluidTankNTM tank : outputTanks) tank.deserialize(buf);

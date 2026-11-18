@@ -1,0 +1,53 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.soulsand",
+  "input_items": [
+    {
+      "ingredient": "minecraft:soul_sand"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:sand",
+        "weight": 50
+      },
+      {
+        "data": "geontm:powder_fire",
+        "weight": 25
+      },
+      {
+        "data": "geontm:powder_uranium",
+        "weight": 15
+      },
+      {
+        "data": "minecraft:blaze_powder",
+        "weight": 5
+      },
+      {
+        "data": "minecraft:nether_wart",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "minecraft:lava",
+      "amount": 100
+    }
+  ],
+  "duration": 100,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:soul_sand"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 4
+}

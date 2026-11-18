@@ -165,7 +165,7 @@ public class ItemConveyorWand extends CompatItem implements IItemLookOverlay {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
 
         Level level = context.getLevel();
         ItemStack stack = context.getItemInHand();

@@ -1,0 +1,29 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:filing_cabinet_green"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_steel",
+      "count": 2
+    },
+    {
+      "id": "geontm:plate_steel",
+      "count": 2,
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:plate_polymer",
+      "count": 2,
+      "chance": 0.25
+    },
+    {
+      "id": "geontm:scrap"
+    }
+  ],
+  "tier": 1,
+  "order": 232
+}

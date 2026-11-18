@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:petroleum",
+  "outputs": [
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 85
+    },
+    {
+      "type": "geontm:reformgas",
+      "amount": 10
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 5
+    }
+  ]
+}

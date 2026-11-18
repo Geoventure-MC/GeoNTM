@@ -43,7 +43,7 @@ public class FallenMeteoriteFeature extends Feature<FallenMeteoriteFeature.Confi
         BlockPos top = context.origin();
         int y = top.getY() - rand.nextInt(c.maxSink());
         BlockState b = level.getBlockState(new BlockPos(top.getX(), y - 2, top.getZ()));
-        if (b.isAir() || !b.getFluidState().isEmpty() || y <= level.getMinY() + 1) return false;
+        if (b.isAir() || !b.getFluidState().isEmpty() || y <= level.getMinBuildHeight() + 1) return false;
         new Meteorite().generate(level, rand, new BlockPos(top.getX(), y, top.getZ()), c.safe(), c.specials(), c.damage());
         return true;
     }

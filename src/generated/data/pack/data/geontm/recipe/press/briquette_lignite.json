@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:dusts/lignite"
+  },
+  "output": "geontm:briquette_lignite",
+  "order": 9
+}

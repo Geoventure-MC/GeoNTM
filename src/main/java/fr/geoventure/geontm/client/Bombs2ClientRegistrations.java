@@ -7,7 +7,7 @@ import fr.geoventure.geontm.inventory.ModBombs2Menus;
 import fr.geoventure.geontm.client.render.BombObjRenderer;
 import fr.geoventure.geontm.client.render.GeoNtmBlockEntityRenderers;
 import fr.geoventure.geocore.Ids;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import fr.geoventure.geontm.client.render.RenderNukeFstbmb;
 import fr.geoventure.geontm.inventory.gui.GUINukeCustom;
 import fr.geoventure.geontm.inventory.gui.GUINukeFleija;
@@ -51,11 +51,11 @@ public final class Bombs2ClientRegistrations {
         GeoNtmBlockEntityRenderers.regGem(sink, ModBombs2BlockEntities.NUKE_FSTBMB.get(), RenderNukeFstbmb::new);
     }
 
-    private static Identifier obj(String file) {
+    private static ResourceLocation obj(String file) {
         return Ids.of(Constants.MOD_ID, "models/bombs/" + file);
     }
 
-    private static Identifier tex(String file) {
+    private static ResourceLocation tex(String file) {
         return Ids.of(Constants.MOD_ID, "textures/models/bombs/" + file);
     }
 }

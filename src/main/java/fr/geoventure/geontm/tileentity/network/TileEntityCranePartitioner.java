@@ -82,7 +82,7 @@ public class TileEntityCranePartitioner extends TileEntityMachineBase implements
                 stack.shrink(amount);
                 EntityMovingItem item = new EntityMovingItem(level);
                 item.setItemStack(entityStack);
-                item.snapTo(worldPosition.getX() + 0.5, worldPosition.getY() + 0.25, worldPosition.getZ() + 0.5, 0F, 0F);
+                item.moveTo(worldPosition.getX() + 0.5, worldPosition.getY() + 0.25, worldPosition.getZ() + 0.5, 0F, 0F);
                 level.addFreshEntity(item);
                 setChanged();
             }

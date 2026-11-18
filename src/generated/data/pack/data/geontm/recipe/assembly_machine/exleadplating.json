@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.exleadplating",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 2
+    },
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/boron",
+      "count": 2
+    },
+    {
+      "material": "tungsten",
+      "shape": "bolt",
+      "count": 32
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:lubricant",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_lead_plating"
+  ],
+  "duration": 400,
+  "power": 4000,
+  "order": 5120
+}

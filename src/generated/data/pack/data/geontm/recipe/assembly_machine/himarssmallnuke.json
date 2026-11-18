@@ -1,0 +1,40 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.himarssmallnuke",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:ball_tatb",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:nuggets/pu239",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:neutron_reflector",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    "geontm:ammo_himars_standard_mini_nuke"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 65024
+}

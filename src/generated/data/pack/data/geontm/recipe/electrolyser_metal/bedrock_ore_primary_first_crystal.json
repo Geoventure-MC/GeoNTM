@@ -1,0 +1,19 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:bedrock_ore_primary_first_crystal",
+  "molten": [
+    {
+      "material": "redstone",
+      "amount": 576
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:bedrock_ore_fragment_cinnabar",
+      "count": 16
+    },
+    "geontm:bedrock_ore_crumbs_crystal"
+  ],
+  "duration": 20,
+  "order": 33
+}

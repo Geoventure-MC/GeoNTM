@@ -4,7 +4,7 @@ import fr.geoventure.geontm.client.model.WavefrontObj;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -17,10 +17,10 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderGavel implements CustomItemRenderer {
 
-    private static final Identifier WOOD = tex("textures/models/weapons/gavel_wood.png");
-    private static final Identifier LEAD = tex("textures/models/weapons/gavel_lead.png");
-    private static final Identifier DIAMOND = tex("textures/models/weapons/gavel_diamond.png");
-    private static final Identifier MESE = tex("textures/models/weapons/gavel_mese.png");
+    private static final ResourceLocation WOOD = tex("textures/models/weapons/gavel_wood.png");
+    private static final ResourceLocation LEAD = tex("textures/models/weapons/gavel_lead.png");
+    private static final ResourceLocation DIAMOND = tex("textures/models/weapons/gavel_diamond.png");
+    private static final ResourceLocation MESE = tex("textures/models/weapons/gavel_mese.png");
 
     private final WavefrontObj gavel = obj("models/weapons/gavel.obj");
 
@@ -33,7 +33,7 @@ final class ItemRenderGavel implements CustomItemRenderer {
     public void render(ItemStack stack, Type type, PoseStack pose, SubmitSink sink, int light, int overlay,
                        @Nullable LivingEntity owner) {
         String id = id(stack);
-        Identifier skin = switch (id) {
+        ResourceLocation skin = switch (id) {
             case "lead_gavel" -> LEAD;
             case "diamond_gavel" -> DIAMOND;
             case "mese_gavel" -> MESE;

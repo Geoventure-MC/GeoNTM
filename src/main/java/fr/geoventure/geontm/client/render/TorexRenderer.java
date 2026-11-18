@@ -17,9 +17,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
@@ -44,8 +44,8 @@ import org.joml.Vector3f;
 public class TorexRenderer
         extends GemEntityRenderer<EntityNukeTorex, TorexRenderState> {
 
-    private static final Identifier CLOUDLET_TEX = Ids.of(Constants.MOD_ID, "textures/particle/particle_base.png");
-    private static final Identifier FLARE_TEX = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
+    private static final ResourceLocation CLOUDLET_TEX = Ids.of(Constants.MOD_ID, "textures/particle/particle_base.png");
+    private static final ResourceLocation FLARE_TEX = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
 
     /**
      * The cloudlet layer. {@code RenderType.create} is package-private (common can't build a custom type on

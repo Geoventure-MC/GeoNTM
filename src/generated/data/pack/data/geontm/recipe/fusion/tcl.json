@@ -1,0 +1,30 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.tcl",
+  "input_fluids": [
+    {
+      "type": "geontm:tritium",
+      "amount": 10
+    },
+    {
+      "type": "geontm:chlorine",
+      "amount": 10
+    }
+  ],
+  "output_items": [
+    "geontm:powder_chlorophyte"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:powder_chlorophyte"
+  },
+  "custom_localization": true,
+  "order": 3,
+  "ignition_temp": 2500000,
+  "output_temp": 6250000,
+  "neutron_flux": 500.0,
+  "red": 0.8,
+  "green": 0.6,
+  "blue": 0.4
+}

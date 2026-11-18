@@ -6,7 +6,7 @@ import fr.geoventure.geontm.inventory.fluid.Fluids;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
@@ -32,7 +32,7 @@ public class EntityCreeperPhosgene extends EntityCreeperBase {
     }
 
     @Override
-    public boolean checkSpawnRules(LevelAccessor level, EntitySpawnReason reason) {
+    public boolean checkSpawnRules(LevelAccessor level, MobSpawnType reason) {
         return super.checkSpawnRules(level, reason) && level().dimension() == Level.OVERWORLD;
     }
 

@@ -25,10 +25,10 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import java.util.HashMap;
 import java.util.Map;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -47,7 +47,7 @@ public final class CustomMissileRenderers {
         return WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/" + path));
     }
 
-    private static Identifier tex(String path) {
+    private static ResourceLocation tex(String path) {
         return Ids.of(Constants.MOD_ID, "textures/models/" + path);
     }
 

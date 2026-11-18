@@ -5,15 +5,15 @@ import fr.geoventure.geontm.tileentity.bomb.TileEntityNukeSolinium;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /** 1.7 {@code GUINukeSolinium}: overlays drawn from the texture's bottom strip (v = 222 / 236), plus the ready lamp. */
 public class GUINukeSolinium extends CompatContainerScreen<ContainerNukeSolinium> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/soliniumschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/soliniumschematic.png");
 
     /** Per slot: destination x, y, source u, v, width, height. */
     private static final int[][] OVERLAYS = {
@@ -33,13 +33,13 @@ public class GUINukeSolinium extends CompatContainerScreen<ContainerNukeSolinium
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityNukeSolinium bomb = menu.getSolinium();
         if (bomb == null) return;

@@ -9,7 +9,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
@@ -51,9 +51,9 @@ public abstract class RenderTurretBase<T extends TileEntityTurretBaseNT>
      * The shared base plus the yawing carriage and the pitching gun mounted on it. Returns the gun's
      * pose so a turret with moving parts of its own can hang them off it.
      */
-    protected static Matrix4f mount(TurretFrame frame, TurretState<?> state, Identifier baseTexture,
-                                    WavefrontObj carriage, String carriageGroup, Identifier carriageTexture,
-                                    float pivot, WavefrontObj gun, String gunGroup, Identifier gunTexture) {
+    protected static Matrix4f mount(TurretFrame frame, TurretState<?> state, ResourceLocation baseTexture,
+                                    WavefrontObj carriage, String carriageGroup, ResourceLocation carriageTexture,
+                                    float pivot, WavefrontObj gun, String gunGroup, ResourceLocation gunTexture) {
         frame.push().obj(TurretResources.CHEKHOV, "Base").texture(baseTexture);
         TurretFrame.Part mount = frame.push().obj(carriage, carriageGroup).texture(carriageTexture);
         mount.pose.rotateY((state.yaw - 90F) * Mth.DEG_TO_RAD);

@@ -3,15 +3,15 @@ package fr.geoventure.geontm.inventory.gui;
 import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 
 /** The old {@code FluidTank.renderTank} quad, repeated 16x16 like the GL_REPEAT texture it replaced. */
 public final class NuclearMiscGuiUtil {
     private NuclearMiscGuiUtil() {}
 
     /** {@code x, y} is the top-left of the gauge, unlike the old bottom-left {@code renderTank(x, y, z, w, h)}. */
-    public static void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    public static void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int max = tank.getMaxFill();
         int filled = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (filled <= 0) return;
@@ -19,7 +19,7 @@ public final class NuclearMiscGuiUtil {
         int bottom = y + height;
         int top = bottom - filled;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
 
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x, top, x + width, bottom);

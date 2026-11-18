@@ -1,0 +1,29 @@
+{
+  "type": "gaseous",
+  "color": "#E5E5E5",
+  "temperature": 100,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:steam"
+  ],
+  "flags": [
+    "unsiphonable"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:spentsteam",
+      "amount_req": 100,
+      "amount_produced": 1,
+      "heat_energy": 200,
+      "efficiency": {
+        "TURBINE": 1.0,
+        "HEATEXCHANGER": 0.5
+      }
+    }
+  }
+}

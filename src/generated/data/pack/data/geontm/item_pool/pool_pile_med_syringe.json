@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "item": "geontm:syringe_metal_stimpak",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:syringe_metal_medx",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:syringe_metal_psycho",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    }
+  ]
+}

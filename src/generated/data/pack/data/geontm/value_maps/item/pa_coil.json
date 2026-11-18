@@ -1,0 +1,32 @@
+{
+  "values": {
+    "geontm:pa_coil_gold": {
+      "quadrupole_min": 0,
+      "quadrupole_max": 2200,
+      "dipole_min": 0,
+      "dipole_max": 2200,
+      "dipole_min_distance": 15
+    },
+    "geontm:pa_coil_niobium": {
+      "quadrupole_min": 1500,
+      "quadrupole_max": 8400,
+      "dipole_min": 1500,
+      "dipole_max": 8400,
+      "dipole_min_distance": 21
+    },
+    "geontm:pa_coil_bscco": {
+      "quadrupole_min": 7500,
+      "quadrupole_max": 15000,
+      "dipole_min": 7500,
+      "dipole_max": 15000,
+      "dipole_min_distance": 27
+    },
+    "geontm:pa_coil_chlorophyte": {
+      "quadrupole_min": 14500,
+      "quadrupole_max": 75000,
+      "dipole_min": 14500,
+      "dipole_max": 75000,
+      "dipole_min_distance": 51
+    }
+  }
+}

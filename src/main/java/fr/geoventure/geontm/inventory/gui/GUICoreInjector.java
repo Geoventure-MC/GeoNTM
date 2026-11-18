@@ -4,27 +4,27 @@ import fr.geoventure.geontm.inventory.container.ContainerCoreInjector;
 import fr.geoventure.geontm.tileentity.machine.dfc.TileEntityCoreInjector;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /** The injector's panel: the two fuel tanks and the identifier bay that picks what each one carries. */
 public class GUICoreInjector extends GUIDFCBase<ContainerCoreInjector> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/dfc/gui_injector.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/dfc/gui_injector.png");
 
     public GUICoreInjector(ContainerCoreInjector menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 166);
     }
 
     @Override
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return TEXTURE;
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityCoreInjector injector = menu.getInjector();
@@ -35,12 +35,12 @@ public class GUICoreInjector extends GUIDFCBase<ContainerCoreInjector> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         drawTitleAndInventory(graphics);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityCoreInjector injector = menu.getInjector();
         if (injector == null) return;
 

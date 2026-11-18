@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ore_sellafield_diamond",
+  "output": {
+    "id": "geontm:gravel_diamond",
+    "count": 2
+  }
+}

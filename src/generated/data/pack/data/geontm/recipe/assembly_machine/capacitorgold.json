@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capacitorgold",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 8
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:capacitor_gold"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 38144
+}

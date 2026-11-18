@@ -87,9 +87,9 @@ public class MachineOrbus extends BlockMultiblockMachine implements IFluidConnec
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
                                           ItemStack stack, BlockHitResult hit) {
-        if (!player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!player.isShiftKeyDown()) return InteractionResult.PASS;
         BlockPos core = coreOf(level, pos, state);
-        if (core == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (core == null) return InteractionResult.PASS;
         if (stack.getItem() instanceof IItemFluidId ident && !level.isClientSide()
                 && level.getBlockEntity(core) instanceof TileEntityMachineOrbus orbus) {
             FluidType type = ident.getType(level, core.getX(), core.getY(), core.getZ(), stack);

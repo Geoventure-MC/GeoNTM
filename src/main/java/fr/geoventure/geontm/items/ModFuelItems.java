@@ -55,7 +55,7 @@ public final class ModFuelItems {
 
     static {
         FuelDataMapDeclarations.BURN_TIMES.forEach((id, ticks) -> BURN_TIMES.put(
-                () -> BuiltInRegistries.ITEM.getValue(Ids.parse(id)), ticks));
+                () -> BuiltInRegistries.ITEM.get(Ids.parse(id)), ticks));
     }
 
     /** A fuel item; its burn time is in {@link FuelDataMapDeclarations#BURN_TIMES}. */

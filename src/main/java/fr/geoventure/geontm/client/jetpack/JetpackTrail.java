@@ -7,7 +7,7 @@ import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.WorldEffects;
 import fr.geoventure.geocore.render.Vertexes;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import org.joml.Vector3f;
  */
 public final class JetpackTrail {
 
-    private static final Identifier FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
+    private static final ResourceLocation FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
     private static final float WIDTH = 0.025F;
     private static final float END_FADE = 0.15F;
 

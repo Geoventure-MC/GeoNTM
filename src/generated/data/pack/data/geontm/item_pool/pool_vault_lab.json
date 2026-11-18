@@ -1,0 +1,103 @@
+{
+  "entries": [
+    {
+      "item": "geontm:blowtorch",
+      "min": 1,
+      "max": 1,
+      "weight": 4,
+      "components": {
+        "geontm:fluid_amount": 0
+      }
+    },
+    {
+      "item": "geontm:chemistry_set",
+      "min": 1,
+      "max": 1,
+      "weight": 15
+    },
+    {
+      "item": "geontm:screwdriver",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:nugget_mercury_tiny",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:morning_glory",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:filter_coal",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:dust",
+      "min": 1,
+      "max": 3,
+      "weight": 25
+    },
+    {
+      "item": "minecraft:paper",
+      "min": 1,
+      "max": 2,
+      "weight": 15
+    },
+    {
+      "item": "geontm:cell",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:powder_iodine",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_bromine",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_cobalt",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_neodymium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_boron",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:blueprint_folder_discover",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

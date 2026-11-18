@@ -95,8 +95,8 @@ public final class WorldFeatureHarnessQueries {
         switch (mode) {
             case "count", "find" -> {
                 int x0 = i(p, "x0", 0), z0 = i(p, "z0", 0), x1 = i(p, "x1", 15), z1 = i(p, "z1", 15);
-                int y0 = Math.max(level.getMinY(), i(p, "y0", level.getMinY()));
-                int y1 = Math.min(level.getMaxY() - 1, i(p, "y1", level.getMaxY() - 1));
+                int y0 = Math.max(level.getMinBuildHeight(), i(p, "y0", level.getMinBuildHeight()));
+                int y1 = Math.min(level.getMaxBuildHeight() - 1, i(p, "y1", level.getMaxBuildHeight() - 1));
                 Set<String> ids = new HashSet<>();
                 if (p.has("ids")) for (String s : p.get("ids").getAsString().split(",")) ids.add(s.trim());
                 List<String> contains = new ArrayList<>();

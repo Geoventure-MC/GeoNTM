@@ -1,0 +1,11 @@
+{
+  "type": "geontm:compressor",
+  "input": "geontm:perfluoromethyl",
+  "amount": 1000,
+  "output": {
+    "type": "geontm:perfluoromethyl",
+    "amount": 1000,
+    "pressure": 1
+  },
+  "duration": 50
+}

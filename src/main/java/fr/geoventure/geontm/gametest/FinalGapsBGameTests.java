@@ -126,7 +126,7 @@ public final class FinalGapsBGameTests {
         ServerPlayer player = mock.player();
         MOCKS.put(player, mock);
         BlockPos abs = helper.absolutePos(relative);
-        player.snapTo(abs.getX() + 0.5, abs.getY(), abs.getZ() + 0.5, 0, 0);
+        player.moveTo(abs.getX() + 0.5, abs.getY(), abs.getZ() + 0.5, 0, 0);
         return player;
     }
 
@@ -234,7 +234,7 @@ public final class FinalGapsBGameTests {
 
     /** The old lantern's repair: two steel plates and a basic circuit. */
     private static void giveRepairMaterials(Player player) {
-        player.getInventory().add(new ItemStack(BuiltInRegistries.ITEM.getValue(
+        player.getInventory().add(new ItemStack(BuiltInRegistries.ITEM.get(
                 Ids.of("geontm", "plate_steel")), 2));
         player.getInventory().add(ModIntermediateItems.circuit(ItemEnums.EnumCircuitType.BASIC, 1));
     }
@@ -372,7 +372,7 @@ public final class FinalGapsBGameTests {
                     if (done[0]) return;
                     pushed[0] = Math.max(pushed[0], cow.position().distanceTo(Vec3.atBottomCenterOf(cowAt)));
                     cow.setDeltaMovement(Vec3.ZERO);
-                    cow.snapTo(cowAt.getX() + 0.5, cowAt.getY(), cowAt.getZ() + 0.5, cow.getYRot(), cow.getXRot());
+                    cow.moveTo(cowAt.getX() + 0.5, cowAt.getY(), cowAt.getZ() + 0.5, cow.getYRot(), cow.getXRot());
                     boolean tainted = false;
                     for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++) {
                         tainted |= helper.getBlockState(new BlockPos(4 + dx, 1, 4 + dz)).is(ModBombBlocks.taint.get());

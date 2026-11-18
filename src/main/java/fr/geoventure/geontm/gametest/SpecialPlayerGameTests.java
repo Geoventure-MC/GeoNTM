@@ -25,7 +25,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -61,7 +61,7 @@ public final class SpecialPlayerGameTests {
         }
 
         UUID stranger = UUID.fromString("00000000-0000-4000-8000-000000000001");
-        Identifier bob = RenderAccessoryUtility.getCloakFromPlayer(UUID.fromString(ShadyUtil.HbMinecraft), "x");
+        ResourceLocation bob = RenderAccessoryUtility.getCloakFromPlayer(UUID.fromString(ShadyUtil.HbMinecraft), "x");
         helper.assertTrue(bob != null && (bob.getPath().endsWith("capehbm3.png") || bob.getPath().endsWith("capehbm2.png")),
                 "Bob does not wear CapeHbm3/CapeHbm2: " + bob);
         expect(helper, ShadyUtil.Dr_Nostalgia, "x", "capenostalgia2"); // 1.7 over 1.12.2's CapeNostalgia
@@ -80,7 +80,7 @@ public final class SpecialPlayerGameTests {
     }
 
     private static void expect(GameTestHelper helper, String uuid, String name, String cape) {
-        Identifier found = RenderAccessoryUtility.getCloakFromPlayer(UUID.fromString(uuid), name);
+        ResourceLocation found = RenderAccessoryUtility.getCloakFromPlayer(UUID.fromString(uuid), name);
         helper.assertTrue(found != null && found.getPath().equals("textures/models/capes/" + cape + ".png"),
                 "expected " + cape + " for " + name + "/" + uuid + ", got " + found);
     }

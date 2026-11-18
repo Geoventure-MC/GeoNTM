@@ -1,0 +1,29 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_r762_he",
+    "count": 12
+  },
+  "grid": [
+    {
+      "ingredient": "#c:ingots/any_highexplosive"
+    },
+    {
+      "ingredient": "#c:ingots/ferrouranium"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 4
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small_steel",
+      "count": 2
+    },
+    ""
+  ],
+  "order": 34
+}

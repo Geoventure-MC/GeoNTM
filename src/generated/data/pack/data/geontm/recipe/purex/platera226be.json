@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.platera226be",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_plate_ra226be"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_beryllium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_polonium",
+      "count": 2
+    },
+    "geontm:powder_coal_tiny",
+    "geontm:nugget_lead"
+  ],
+  "duration": 100,
+  "power": 1500,
+  "icon": {
+    "id": "geontm:waste_plate_ra226be"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.plate",
+  "order": 19
+}

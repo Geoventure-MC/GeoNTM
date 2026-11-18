@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:lubricant",
+  "amount": 100,
+  "output": "geontm:oil_tar_paraffin"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 4,
+  "output": "geontm:flask_infusion_shield",
+  "left": {
+    "ingredient": "geontm:gem_alexandrite"
+  },
+  "right": {
+    "ingredient": "geontm:bottle_nuka"
+  },
+  "order": 37
+}

@@ -149,7 +149,7 @@ public class HazmatRegistry {
                     JsonObject object = element.getAsJsonObject();
                     String name = object.get("item").getAsString();
                     // 1.7 names were "geontm:x" / "minecraft:x" as well; a bare name is read as minecraft's.
-                    Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(name));
+                    Item item = BuiltInRegistries.ITEM.get(Ids.parse(name));
                     double resistance = object.get("resistance").getAsDouble();
                     if (item != null && item != Items.AIR) {
                         conf.put(item, resistance);

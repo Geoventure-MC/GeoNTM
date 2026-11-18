@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:meteor_polished",
+  "output": "geontm:powder_meteorite"
+}

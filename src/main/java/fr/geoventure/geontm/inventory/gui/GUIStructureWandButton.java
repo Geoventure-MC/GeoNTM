@@ -3,7 +3,7 @@ package fr.geoventure.geontm.inventory.gui;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.sounds.SoundEvents;
 
@@ -28,7 +28,7 @@ final class GUIStructureWandButton {
         return mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + height;
     }
 
-    void draw(GuiGraphicsExtractor g, Font font, int mouseX, int mouseY) {
+    void draw(GuiGraphics g, Font font, int mouseX, int mouseY) {
         boolean hover = isOver(mouseX, mouseY);
         GuiDraw.fill(g, x, y, x + width, y + height, 0xFF000000);
         GuiDraw.fill(g, x + 1, y + 1, x + width - 1, y + height - 1, hover ? 0xFF7A7AA0 : 0xFF6F6F6F);

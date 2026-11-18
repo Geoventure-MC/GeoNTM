@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadnuke",
+  "input_items": [
+    {
+      "material": "titanium",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:billets/u235",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:cordite",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:circuit_controller"
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_nuclear"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 69376,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_aberrator_eott",
+  "grid": [
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator",
+    {
+      "id": "#c:mechanisms/saturnite",
+      "count": 16
+    },
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator",
+    "geontm:item_secret_aberrator"
+  ],
+  "extra": "good_karma",
+  "set": 1,
+  "order": 12
+}

@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/thorium"
+  },
+  "outputs": [
+    "geontm:powder_thorium",
+    "geontm:powder_thorium",
+    "geontm:powder_uranium",
+    "minecraft:gravel"
+  ],
+  "order": 39
+}

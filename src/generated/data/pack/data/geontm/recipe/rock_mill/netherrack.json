@@ -1,0 +1,49 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.netherrack",
+  "input_items": [
+    {
+      "ingredient": "minecraft:netherrack"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:gravel",
+        "weight": 50
+      },
+      {
+        "data": "minecraft:soul_sand",
+        "weight": 25
+      },
+      {
+        "data": "minecraft:glowstone_dust",
+        "weight": 15
+      },
+      {
+        "data": "geontm:powder_quartz",
+        "weight": 10
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "minecraft:lava",
+      "amount": 100
+    }
+  ],
+  "duration": 100,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:netherrack"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 3
+}

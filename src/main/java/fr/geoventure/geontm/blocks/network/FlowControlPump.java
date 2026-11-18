@@ -74,8 +74,8 @@ public class FlowControlPump extends BlockMultiblockMachine implements IFluidCon
 
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof IItemFluidId id)) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(MultiblockSurface.coreEntity(level, pos) instanceof TileEntityFlowControlPump pump)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof IItemFluidId id)) return InteractionResult.PASS;
+        if (!(MultiblockSurface.coreEntity(level, pos) instanceof TileEntityFlowControlPump pump)) return InteractionResult.PASS;
         if (!level.isClientSide()) {
             FluidType type = id.getType(level, pos.getX(), pos.getY(), pos.getZ(), stack);
             pump.tank[0].setTankType(type);
@@ -89,7 +89,7 @@ public class FlowControlPump extends BlockMultiblockMachine implements IFluidCon
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
         if (player.isShiftKeyDown() || !(level.getBlockEntity(core) instanceof TileEntityFlowControlPump pump)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) OPEN_SCREEN.accept(pump);
         return InteractionResult.SUCCESS;

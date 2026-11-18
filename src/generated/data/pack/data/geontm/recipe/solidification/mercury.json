@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:mercury",
+  "amount": 125,
+  "output": "geontm:nugget_mercury"
+}

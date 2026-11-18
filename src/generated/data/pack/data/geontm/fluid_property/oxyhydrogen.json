@@ -1,0 +1,20 @@
+{
+  "type": "gaseous",
+  "color": "#483FC1",
+  "temperature": 20,
+  "hazard": {
+    "poison": 0,
+    "flammability": 4,
+    "reactivity": 2,
+    "symbol": "none"
+  },
+  "traits": {
+    "flammable": {
+      "energy": 5000
+    },
+    "combustible": {
+      "grade": "GAS",
+      "energy": 15000
+    }
+  }
+}

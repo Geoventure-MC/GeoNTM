@@ -1,0 +1,20 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.deicer",
+  "input_fluids": [
+    {
+      "type": "geontm:gas",
+      "amount": 100
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 50
+    }
+  ],
+  "output_items": [
+    "geontm:fuel_additive_deicer"
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 19
+}

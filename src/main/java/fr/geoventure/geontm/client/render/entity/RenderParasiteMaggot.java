@@ -6,7 +6,7 @@ import fr.geoventure.geocore.render.living.CompatLivingRenderState;
 import fr.geoventure.geocore.render.living.CompatMobRenderer;
 import fr.geoventure.geocore.render.living.LivingModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Vanilla silverfish geometry under the maggot's own sheet; it dies flat on its back like a silverfish. */
 public final class RenderParasiteMaggot extends CompatMobRenderer<EntityParasiteMaggot, CompatLivingRenderState> {
@@ -26,7 +26,7 @@ public final class RenderParasiteMaggot extends CompatMobRenderer<EntityParasite
     }
 
     @Override
-    protected Identifier texture(CompatLivingRenderState state) {
+    protected ResourceLocation texture(CompatLivingRenderState state) {
         return ResourceManager.parasite_maggot_tex;
     }
 }

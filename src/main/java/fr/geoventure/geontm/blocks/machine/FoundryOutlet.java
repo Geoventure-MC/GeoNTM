@@ -116,7 +116,7 @@ public class FoundryOutlet extends CompatBlock implements TickingBlock, ICrucibl
 
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if (player.getMainHandItem().getItem() instanceof ItemTooling) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.getMainHandItem().getItem() instanceof ItemTooling) return InteractionResult.PASS;
         if (!level.isClientSide()) {
             TileEntityFoundryOutlet te = getTE(level, pos);
             if (te != null) {

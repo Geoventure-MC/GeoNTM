@@ -1,0 +1,18 @@
+{
+  "type": "geontm:annihilator",
+  "item": "geontm:ammo_standard_bmg50_fmj",
+  "milestones": [
+    {
+      "amount": 256,
+      "payout": {
+        "id": "geontm:blueprints",
+        "item_data": {
+          "blueprint_pool": "528.bmg"
+        }
+      }
+    }
+  ],
+  "requires": [
+    "enable_528"
+  ]
+}

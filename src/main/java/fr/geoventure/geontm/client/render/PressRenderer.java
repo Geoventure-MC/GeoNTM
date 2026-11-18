@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -53,7 +53,7 @@ public class PressRenderer<T extends BlockEntity> extends GemBER<T, PressRenderS
     private final float itemYaw;
     private final Function<T, ItemStack> pressed;
 
-    public PressRenderer(Identifier bodyObj, Identifier bodyTex, Identifier headObj, Identifier headTex,
+    public PressRenderer(ResourceLocation bodyObj, ResourceLocation bodyTex, ResourceLocation headObj, ResourceLocation headTex,
                          float baseYaw, boolean applyFacing, float headBaseOffset, float headScaleXZ,
                          boolean headTurnsWithBody, int maxProgress, ToIntFunction<T> progress,
                          ToIntFunction<T> lastProgress, float itemOffsetX, float itemYaw,

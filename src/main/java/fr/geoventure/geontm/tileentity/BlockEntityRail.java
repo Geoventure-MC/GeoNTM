@@ -4,7 +4,7 @@ import fr.geoventure.geontm.blocks.ModRailBlocks;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.block.state.BlockState;
 
 /** The switch-state block entity every folded rail carries (ntm-next's BlockEntityRail on this port's sync base). */
@@ -36,12 +36,12 @@ public class BlockEntityRail extends TileEntityLoadedBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(isSwitched);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         isSwitched = buf.readBoolean();
     }
 }

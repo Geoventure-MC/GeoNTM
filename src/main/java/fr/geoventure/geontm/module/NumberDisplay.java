@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.module;
 
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 
 /**
  * The old seven-segment {@code NumberDisplay} GUI module (integer part only: the research reactor and
@@ -25,7 +25,7 @@ public final class NumberDisplay {
     private final int horizontalLength = 4;
     private final int thickness = 1;
 
-    private GuiGraphicsExtractor graphics;
+    private GuiGraphics graphics;
     private int guiLeft;
     private int guiTop;
 
@@ -49,7 +49,7 @@ public final class NumberDisplay {
         return System.currentTimeMillis() % 1000 < 500;
     }
 
-    public void drawNumber(GuiGraphicsExtractor graphics, int guiLeft, int guiTop, Number num) {
+    public void drawNumber(GuiGraphics graphics, int guiLeft, int guiTop, Number num) {
         this.graphics = graphics;
         this.guiLeft = guiLeft;
         this.guiTop = guiTop;

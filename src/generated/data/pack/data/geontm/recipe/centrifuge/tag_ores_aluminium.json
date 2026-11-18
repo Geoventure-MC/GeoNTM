@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/aluminium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:chunk_ore_cryolite",
+      "count": 2
+    },
+    "geontm:powder_titanium",
+    "geontm:powder_iron",
+    "minecraft:gravel"
+  ],
+  "order": 24
+}

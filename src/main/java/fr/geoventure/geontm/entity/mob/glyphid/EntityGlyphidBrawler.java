@@ -7,7 +7,7 @@ import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.registry.Entities;
 import fr.geoventure.geontm.entity.mob.glyphid.GlyphidStats.StatBundle;
 import fr.geoventure.geontm.main.ResourceManager;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -132,7 +132,7 @@ public class EntityGlyphidBrawler extends EntityGlyphid {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_brawler_tex;
     }
 

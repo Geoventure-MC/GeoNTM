@@ -1,0 +1,31 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.abronze",
+  "frequency": 9,
+  "icon": "geontm:ingot_arsenic_bronze",
+  "inputs": [
+    {
+      "material": "copper",
+      "amount": 64
+    },
+    {
+      "material": "arsenic",
+      "amount": 8
+    },
+    {
+      "material": "flux",
+      "amount": 24
+    }
+  ],
+  "outputs": [
+    {
+      "material": "arsenic_bronze",
+      "amount": 72
+    },
+    {
+      "material": "slag",
+      "amount": 24
+    }
+  ],
+  "order": 9
+}

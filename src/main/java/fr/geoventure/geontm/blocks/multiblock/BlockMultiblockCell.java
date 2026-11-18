@@ -52,10 +52,10 @@ public class BlockMultiblockCell extends CompatBlock {
 
     @Override protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         BlockPos core = MultiblockSurface.coreOfCell(level, pos);
-        if (core == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (core == null) return InteractionResult.PASS;
         BlockState coreState = level.getBlockState(core);
         BlockMultiblockCore block = MultiblockSurface.foldedCore(coreState);
-        return block == null ? InteractionResult.TRY_WITH_EMPTY_HAND : block.useAtCore(coreState, level, core, player, hit);
+        return block == null ? InteractionResult.PASS : block.useAtCore(coreState, level, core, player, hit);
     }
 
     @Override protected void onBlockRemoved(BlockState state, Level level, BlockPos pos, boolean movedByPiston) {

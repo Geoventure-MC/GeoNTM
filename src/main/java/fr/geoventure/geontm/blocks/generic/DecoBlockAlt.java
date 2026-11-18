@@ -84,7 +84,7 @@ public class DecoBlockAlt extends CompatBlock implements TickingBlock {
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
         boolean cracked = stack.getItem() == ModItems.key_red_cracked.get();
         if (stack.getItem() == ModItems.key_red.get() || cracked) {
@@ -92,14 +92,14 @@ public class DecoBlockAlt extends CompatBlock implements TickingBlock {
             level.destroyBlock(pos, true);
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         // 1.7 answered true on the client for any click and false on the server without a key.
-        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     /** Structure rotation and mirroring turn the horizontal facing, as vanilla's directional blocks do. */

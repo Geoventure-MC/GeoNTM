@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_byproduct_rare",
+    "count": 4
+  },
+  "acid": {
+    "type": "minecraft:water",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_solvent_washed_rare",
+  "duration": 100,
+  "order": 182
+}

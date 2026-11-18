@@ -7,7 +7,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geocore.data.CompatBlockEntity;
 import fr.geoventure.geocore.registry.Entities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -63,10 +63,10 @@ public class TileEntityCyberCrab extends CompatBlockEntity {
 
         if (nearby.size() < POPULATION_CAP) {
             EntityCyberCrab crab = level.getRandom().nextInt(TESLA_CHANCE) == 0
-                    ? Entities.create(ModNtmEntities.TESLA_CRAB.get(), level, EntitySpawnReason.SPAWNER)
-                    : Entities.create(ModNtmEntities.CYBER_CRAB.get(), level, EntitySpawnReason.SPAWNER);
+                    ? Entities.create(ModNtmEntities.TESLA_CRAB.get(), level, MobSpawnType.SPAWNER)
+                    : Entities.create(ModNtmEntities.CYBER_CRAB.get(), level, MobSpawnType.SPAWNER);
             if (crab != null) {
-                crab.snapTo(x, y, z, crab.getYRot(), crab.getXRot());
+                crab.moveTo(x, y, z, crab.getYRot(), crab.getXRot());
                 level.addFreshEntity(crab);
             }
         }

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.plategold",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/gold"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_gold"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 256
+}

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/fluorite"
+  },
+  "outputs": [
+    {
+      "id": "geontm:fluorite",
+      "count": 3
+    },
+    {
+      "id": "geontm:fluorite",
+      "count": 3
+    },
+    "geontm:gem_sodalite",
+    "minecraft:gravel"
+  ],
+  "order": 43
+}

@@ -1,0 +1,24 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:powder_lapis"
+  },
+  "fluid_produced": 100,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:sulfur",
+      "weight": 4
+    },
+    {
+      "data": "geontm:powder_aluminium",
+      "weight": 3
+    },
+    {
+      "data": "geontm:powder_cobalt",
+      "weight": 3
+    }
+  ],
+  "order": 15
+}

@@ -39,7 +39,7 @@ public abstract class EntityGrenadeBouncyBase extends CompatProjectile {
      */
     public void initThrower(LivingEntity thrower) {
         setOwner(thrower);
-        snapTo(thrower.getX(), thrower.getY() + thrower.getEyeHeight(), thrower.getZ(), thrower.getYRot(),
+        moveTo(thrower.getX(), thrower.getY() + thrower.getEyeHeight(), thrower.getZ(), thrower.getYRot(),
                 thrower.getXRot());
         double px = getX() - Math.cos(getYRot() / 180.0F * Math.PI) * 0.16F;
         double py = getY() - 0.10000000149011612D;

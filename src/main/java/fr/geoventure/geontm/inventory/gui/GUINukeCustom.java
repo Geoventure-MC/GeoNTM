@@ -7,9 +7,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -23,20 +23,20 @@ import java.util.Optional;
  */
 public class GUINukeCustom extends CompatContainerScreen<ContainerNukeCustom> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/gunbombschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/gunbombschematic.png");
 
     public GUINukeCustom(ContainerNukeCustom menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 222);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityNukeCustom bomb = menu.getCustom();
         if (bomb == null) return;
@@ -54,7 +54,7 @@ public class GUINukeCustom extends CompatContainerScreen<ContainerNukeCustom> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityNukeCustom bomb = menu.getCustom();
         if (bomb == null) return;
 
@@ -111,7 +111,7 @@ public class GUINukeCustom extends CompatContainerScreen<ContainerNukeCustom> {
         return leftPos + x <= mouseX && leftPos + x + 18 > mouseX && topPos + y < mouseY && topPos + y + 18 >= mouseY;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY, String... lines) {
+    private void tooltip(GuiGraphics graphics, int mouseX, int mouseY, String... lines) {
         List<Component> components = new ArrayList<>(lines.length);
         for (String line : lines) components.add(Component.literal(line));
         GuiDraw.tooltip(graphics, font, components, Optional.empty(), mouseX, mouseY);

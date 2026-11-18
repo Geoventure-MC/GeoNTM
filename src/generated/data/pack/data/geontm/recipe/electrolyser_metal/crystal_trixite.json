@@ -1,0 +1,25 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_trixite",
+  "molten": [
+    {
+      "material": "plutonium",
+      "amount": 216
+    },
+    {
+      "material": "cobalt",
+      "amount": 288
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_niobium",
+      "count": 4
+    },
+    {
+      "id": "geontm:powder_nitan_mix",
+      "count": 2
+    }
+  ],
+  "order": 14
+}

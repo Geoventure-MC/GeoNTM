@@ -22,7 +22,7 @@ import java.util.Arrays;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -125,7 +125,7 @@ public final class BatteryReddGameTests {
         original.priority = IEnergyReceiverMK2.ConnectionPriority.HIGH;
         original.muffled = true;
 
-        RegistryFriendlyByteBuf buffer = GeoCoreBuffers.wrap(
+        FriendlyByteBuf buffer = GeoCoreBuffers.wrap(
                 Unpooled.buffer(), helper.getLevel());
         original.serialize(buffer);
         TileEntityBatteryREDD copy = new TileEntityBatteryREDD(BlockPos.ZERO,

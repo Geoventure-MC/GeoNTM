@@ -6,9 +6,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineArcWelder;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 
@@ -16,7 +16,7 @@ import net.minecraft.world.entity.player.Inventory;
 public class GUIMachineArcWelder extends CompatContainerScreen<ContainerMachineArcWelder>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_arc_welder.png");
     private static final int FLUID_X = 35, FLUID_TOP = 63, FLUID_W = 34, FLUID_H = 16;
     private static final int INFO_X = 78, INFO_Y = 67;
@@ -26,7 +26,7 @@ public class GUIMachineArcWelder extends CompatContainerScreen<ContainerMachineA
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineArcWelder welder = menu.getWelder();
         if (welder == null) return;
@@ -56,7 +56,7 @@ public class GUIMachineArcWelder extends CompatContainerScreen<ContainerMachineA
 
     /** 1.7 {@code drawScreen}: tank info, energy info, then the upgrade list anchored at the panel. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineArcWelder welder = menu.getWelder();
         if (welder == null) return;
         if (GuiUtil.hover(mouseX, mouseY, leftPos + FLUID_X, topPos + FLUID_TOP, FLUID_W, FLUID_H)) {
@@ -69,7 +69,7 @@ public class GUIMachineArcWelder extends CompatContainerScreen<ContainerMachineA
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2 - 18,
                 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);

@@ -1,0 +1,27 @@
+{
+  "type": "geontm:electrolyser_fluid",
+  "input": "geontm:redmud",
+  "amount": 450,
+  "output1": {
+    "type": "geontm:mercury",
+    "amount": 150
+  },
+  "output2": {
+    "type": "geontm:lye",
+    "amount": 50
+  },
+  "byproducts": [
+    {
+      "id": "geontm:powder_titanium",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_iron",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_aluminium",
+      "count": 2
+    }
+  ]
+}

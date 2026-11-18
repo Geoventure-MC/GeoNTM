@@ -18,14 +18,14 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /** Source {@code CasingParticleGroup}, submitted through Core's world-effects seam. */
 public final class CasingParticleGroup {
-    private static final Identifier MODEL_ID = Ids.of("geontm", "models/effect/casings.obj");
-    private static final Identifier CASING_TEXTURE = Ids.of("geontm", "textures/particle/casings.png");
-    private static final Identifier WHITE_TEXTURE = Ids.of("geontm", "textures/models/misc/white.png");
+    private static final ResourceLocation MODEL_ID = Ids.of("geontm", "models/effect/casings.obj");
+    private static final ResourceLocation CASING_TEXTURE = Ids.of("geontm", "textures/particle/casings.png");
+    private static final ResourceLocation WHITE_TEXTURE = Ids.of("geontm", "textures/models/misc/white.png");
     private static final Surface CASING_SKIN = Surface.cutoutCull(CASING_TEXTURE.toString());
     private static final int MAX_PARTS = maxParts();
     private static WavefrontObj model;

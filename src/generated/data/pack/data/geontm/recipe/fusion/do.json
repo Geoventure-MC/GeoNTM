@@ -1,0 +1,31 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.do",
+  "input_fluids": [
+    {
+      "type": "geontm:deuterium",
+      "amount": 10
+    },
+    {
+      "type": "geontm:oxygen",
+      "amount": 10
+    }
+  ],
+  "output_items": [
+    "geontm:pellet_charged"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:oxygen",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 1,
+  "ignition_temp": 250000,
+  "output_temp": 1250000,
+  "neutron_flux": 50.0
+}

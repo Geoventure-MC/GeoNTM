@@ -7,7 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Matrix4f;
@@ -17,7 +17,7 @@ import org.joml.Vector3f;
 /** Day And Night's two independently animated break-action revolvers. */
 public final class DaniWeaponRenderer extends WeaponRenderer {
 
-    private static final Identifier MODEL = Ids.of("geontm", "models/weapons/bio_revolver.obj");
+    private static final ResourceLocation MODEL = Ids.of("geontm", "models/weapons/bio_revolver.obj");
     private static final Surface CELESTIAL = Surface.cutout("geontm:textures/models/weapons/dani_celestial.png");
     private static final Surface LUNAR = Surface.cutout("geontm:textures/models/weapons/dani_lunar.png");
     private static final String[] PARTS = {"Grip", "Barrel", "Latch", "Drum", "Hammer"};

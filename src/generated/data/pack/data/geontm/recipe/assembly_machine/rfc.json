@@ -1,0 +1,58 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.rfc",
+  "input_items": [
+    {
+      "ingredient": "geontm:pa_beamline",
+      "count": 3
+    },
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:pa_rfc"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 40704,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:pa_beamline",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:item_expensive_lead_plating",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:item_expensive_plastic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 16
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chip_quantum"
+  ]
+}

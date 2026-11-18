@@ -383,6 +383,6 @@ public final class Gh156GameTests {
     }
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 }

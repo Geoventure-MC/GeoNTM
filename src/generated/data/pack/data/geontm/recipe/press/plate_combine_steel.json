@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "plate",
+  "input": {
+    "ingredient": "#c:ingots/combine_steel"
+  },
+  "output": "geontm:plate_combine_steel",
+  "order": 19
+}

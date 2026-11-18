@@ -37,7 +37,7 @@ public final class RadioAUTOCAL extends BlockMultiblockMachine {
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                   BlockHitResult hit) {
-        return player.isShiftKeyDown() ? InteractionResult.TRY_WITH_EMPTY_HAND
+        return player.isShiftKeyDown() ? InteractionResult.PASS
                 : super.onUseWithoutItem(state, level, pos, player, hit);
     }
 

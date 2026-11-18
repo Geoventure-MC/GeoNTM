@@ -2,7 +2,7 @@ plugins {
     id("dev.kikugie.stonecutter")
 }
 
-stonecutter active "26.1-neoforge" /* [SC] DO NOT EDIT */
+stonecutter active "1.20.1-forge" /* [SC] DO NOT EDIT */
 
 // Builds every node in one invocation. Stonecutter 0.9 replaced the old `registerChiseled` API with
 // task aggregation: `stonecutter.tasks.named` returns a lazy collection of that task across all nodes.

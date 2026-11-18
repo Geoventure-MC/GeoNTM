@@ -4,9 +4,9 @@ import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 
@@ -24,10 +24,10 @@ public abstract class GUIDFCBase<T extends AbstractContainerMenu> extends Compat
         super(menu, playerInventory, title, width, height);
     }
 
-    protected abstract Identifier texture();
+    protected abstract ResourceLocation texture();
 
     /** Repeats the 16x16 fluid texture, matching the old GL_REPEAT tank quad; {@code y} is the tank's top. */
-    protected void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    protected void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int max = tank.getMaxFill();
         int filled = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (filled <= 0) return;
@@ -36,7 +36,7 @@ public abstract class GUIDFCBase<T extends AbstractContainerMenu> extends Compat
         int bottom = topPos + y + height;
         int top = bottom - filled;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
 
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + width, bottom);
@@ -50,12 +50,12 @@ public abstract class GUIDFCBase<T extends AbstractContainerMenu> extends Compat
         }
     }
 
-    protected void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    protected void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, text, Optional.empty(), mouseX, mouseY);
     }
 
     /** 1.7 {@code drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94), 4210752. */
-    protected void drawTitleAndInventory(GuiGraphicsExtractor graphics) {
+    protected void drawTitleAndInventory(GuiGraphics graphics) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }

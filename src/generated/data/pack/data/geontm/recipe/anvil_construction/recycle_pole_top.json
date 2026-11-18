@@ -1,0 +1,27 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:pole_top"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_tungsten",
+      "count": 3
+    },
+    {
+      "id": "geontm:ingot_red_copper"
+    },
+    {
+      "id": "geontm:ingot_beryllium",
+      "count": 2
+    },
+    {
+      "id": "geontm:ingot_beryllium",
+      "chance": 0.5
+    }
+  ],
+  "tier": 2,
+  "order": 230
+}

@@ -1,0 +1,49 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.turrethoward",
+  "input_items": [
+    {
+      "ingredient": "geontm:battery_lead"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 3
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 10
+    },
+    {
+      "ingredient": "#c:mechanisms/weaponsteel",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:crate_steel"
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_howard"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 62720,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

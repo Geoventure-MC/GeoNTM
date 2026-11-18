@@ -66,7 +66,7 @@ public class EntityMovingItem extends EntityMovingConveyorObject implements ICon
 
     @Override
     protected InteractionResult onInteract(Player player, InteractionHand hand) {
-        if (level().isClientSide() || isRemoved()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level().isClientSide() || isRemoved()) return InteractionResult.PASS;
 
         player.getInventory().placeItemBackInInventory(getItemStack().copy());
         discard();

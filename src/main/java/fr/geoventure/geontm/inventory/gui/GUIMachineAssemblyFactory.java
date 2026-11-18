@@ -13,9 +13,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -28,7 +28,7 @@ public final class GUIMachineAssemblyFactory
         extends CompatContainerScreen<ContainerMachineAssemblyFactory>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_assembly_factory.png");
     private static final int TANK_W = 5;
 
@@ -37,7 +37,7 @@ public final class GUIMachineAssemblyFactory
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, 256, 140, 256, 256);
         GuiDraw.blit(graphics, TEXTURE, leftPos + 25, topPos + 140, 25F, 140F, 231, 100, 256, 256);
 
@@ -99,18 +99,18 @@ public final class GUIMachineAssemblyFactory
         drawTank(graphics, factory.lps, 241, 201, 7, 52);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int y, int u) {
+    private void led(GuiGraphics graphics, int x, int y, int u) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + y, u, 236F, 4, 4, 256, 256);
     }
 
     /** 1.7 {@code renderTank(guiLeft + x, guiTop + bottom, z, width, height)}: y is the bottom edge. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank,
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank,
                           int x, int bottom, int width, int height) {
         GuiUtil.tank(graphics, tank, leftPos + x, topPos + bottom, width, height);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineAssemblyFactory factory = menu.getFactory();
         if (factory == null) return;
 
@@ -145,12 +145,12 @@ public final class GUIMachineAssemblyFactory
         }
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y) {
+    private void tankTooltip(GuiGraphics graphics, FluidTankNTM tank, int x, int y) {
         GuiUtil.tooltip(graphics, font, GuiUtil.tankTooltip(tank), x, y);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 113 - font.width(title) / 2, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 33, imageHeight - 96 + 2, 0x404040, false);
     }

@@ -31,7 +31,7 @@ public class BlockBallsSpawner extends CompatBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!stack.is(ModItems.mech_key.get())) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!stack.is(ModItems.mech_key.get())) return InteractionResult.PASS;
         stack.shrink(1);
 
         if (level instanceof ServerLevel server) {
@@ -46,6 +46,6 @@ public class BlockBallsSpawner extends CompatBlock {
             }
             level.setBlockAndUpdate(pos, ModBlocks.brick_jungle_cracked.get().defaultBlockState());
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

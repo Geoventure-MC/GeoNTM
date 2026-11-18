@@ -1,0 +1,14 @@
+{
+  "type": "liquid",
+  "color": "#32FFFF",
+  "temperature": -170,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "cryogenic"
+  },
+  "flags": [
+    "viscous"
+  ]
+}

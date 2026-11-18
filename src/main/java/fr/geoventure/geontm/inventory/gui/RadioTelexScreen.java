@@ -11,12 +11,12 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
@@ -27,7 +27,7 @@ import java.util.Random;
 
 /** The original 256x244 TELEX panel, including its character waveform and five-line editor. */
 public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_telex.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_telex.png");
     private static final int GUI_WIDTH = 256;
     private static final int GUI_HEIGHT = 244;
 
@@ -81,7 +81,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, GUI_WIDTH, GUI_HEIGHT, 256, 256);
 
         for (int line = 0; line < txLines.length; line++) {
@@ -98,10 +98,10 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
 
     /** 1.7 {@code GUIScreenRadioTelex} is a plain GuiScreen whose foreground pass draws only tooltips: no title, no "Inventory". */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
     }
 
-    private void drawTxLine(GuiGraphicsExtractor graphics, String text, int line) {
+    private void drawTxLine(GuiGraphics graphics, String text, int line) {
         String format = "\u00a7r";
         int y = 11 + 14 * line;
         for (int index = 0; index < text.length(); index++) {
@@ -125,7 +125,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
         }
     }
 
-    private void drawRxLine(GuiGraphicsExtractor graphics, String text, int line) {
+    private void drawRxLine(GuiGraphics graphics, String text, int line) {
         String format = "\u00a7r";
         int x = 11;
         int y = 145 + 14 * line;
@@ -147,7 +147,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
     }
 
     /** Re-expresses the old GL_LINES waveform with 3px GUI quads while retaining all 48 samples and RNG. */
-    private void drawWaveform(GuiGraphicsExtractor graphics, TileEntityRadioTelex telex) {
+    private void drawWaveform(GuiGraphics graphics, TileEntityRadioTelex telex) {
         Random random = new Random(telex.sendingChar);
         double offset = 0D;
         for (int i = 0; i < 48; i++) {
@@ -162,7 +162,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
         }
     }
 
-    private void drawWaveSegment(GuiGraphicsExtractor graphics, int x0, int y0, int x1, int y1) {
+    private void drawWaveSegment(GuiGraphics graphics, int x0, int y0, int x1, int y1) {
         int dx = Math.abs(x1 - x0);
         int sx = x0 < x1 ? 1 : -1;
         int dy = -Math.abs(y1 - y0);
@@ -184,7 +184,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (over(mouseX, mouseY, 7, 85, 18, 18)) tooltip(graphics, "BELL",
                 "Plays a bell when this character is received", ChatFormatting.GOLD, mouseX, mouseY);
         if (over(mouseX, mouseY, 27, 85, 18, 18)) tooltip(graphics, "PRINT",
@@ -208,7 +208,7 @@ public final class RadioTelexScreen extends CompatContainerScreen<RadioTelexMenu
             tooltip(graphics, "CLEAR SCREEN", null, ChatFormatting.RED, mouseX, mouseY);
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, String title, @Nullable String description,
+    private void tooltip(GuiGraphics graphics, String title, @Nullable String description,
                          ChatFormatting color, int mouseX, int mouseY) {
         List<Component> lines = description == null
                 ? List.of(Component.literal(title).withStyle(color))

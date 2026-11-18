@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.gasoline_leaded.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:fuel_additive_antiknock"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:gasoline",
+      "amount": 10000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:gasoline_leaded",
+      "amount": 12000
+    }
+  ],
+  "duration": 40,
+  "order": 36
+}

@@ -1,0 +1,41 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.thoriumsalt",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/thorium",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:thorium_salt_depleted",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_u233",
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "chance": 0.25
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:thorium_salt",
+      "amount": 16000
+    }
+  ],
+  "duration": 20,
+  "power": 10000,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:thorium_salt"
+    }
+  },
+  "order": 38
+}

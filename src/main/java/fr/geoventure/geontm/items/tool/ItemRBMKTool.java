@@ -61,7 +61,7 @@ public class ItemRBMKTool extends CompatItem {
         // 1.7 ItemRBMKTool: the display panel takes the stored reactor position directly.
         if (block instanceof RBMKDisplay) {
             Long target = ModDataComponents.RBMK_TOOL_TARGET.get(stack).orElse(null);
-            if (target == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (target == null) return InteractionResult.PASS;
             if (!level.isClientSide() && level.getBlockEntity(pos) instanceof BlockEntityRBMKDisplay display) {
                 BlockPos targetPos = BlockPos.of(target);
                 display.setTarget(targetPos.getX(), targetPos.getY(), targetPos.getZ());
@@ -72,10 +72,10 @@ public class ItemRBMKTool extends CompatItem {
 
         // 1.7 findCore: a console cell is the console's own block too, so the core comes from the index
         BlockPos consoleCore = MultiblockSurface.coreOfAny(level, pos);
-        if (consoleCore == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (consoleCore == null) return InteractionResult.PASS;
         Block coreBlock = level.getBlockState(consoleCore).getBlock();
         if (!(coreBlock instanceof RBMKConsole) && !(coreBlock instanceof RBMKCraneConsole)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!level.isClientSide()) {
             Long target = ModDataComponents.RBMK_TOOL_TARGET.get(stack).orElse(null);

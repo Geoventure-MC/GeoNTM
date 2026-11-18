@@ -12,8 +12,8 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -27,7 +27,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretRichard extends TileEntityTurretBaseNT {
 
-    private static final Identifier GUI = turretGui("richard");
+    private static final ResourceLocation GUI = turretGui("richard");
     private static final int RACK_SIZE = 17;
 
     private static @Nullable List<BulletConfig> configs;
@@ -54,7 +54,7 @@ public class TileEntityTurretRichard extends TileEntityTurretBaseNT {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -143,14 +143,14 @@ public class TileEntityTurretRichard extends TileEntityTurretBaseNT {
 
     /** The rack count rides its own packet so the racks empty on screen as they are fired. */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(rackPacket);
         if (rackPacket) buf.writeInt(loaded);
         else super.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         if (buf.readBoolean()) loaded = buf.readInt();
         else super.deserialize(buf);
     }

@@ -1,0 +1,63 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.chip_quantum",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_silicon",
+      "count": 8
+    },
+    {
+      "material": "bscco",
+      "shape": "densewire",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:pellet_charged",
+      "count": 4
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 8
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_chip_quantum",
+        "weight": 90
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_chip_quantum"
+          }
+        },
+        "weight": 10
+      }
+    ]
+  ],
+  "duration": 300,
+  "power": 20000,
+  "blueprint_pools": [
+    "528.chip_quantum"
+  ],
+  "order": 6,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

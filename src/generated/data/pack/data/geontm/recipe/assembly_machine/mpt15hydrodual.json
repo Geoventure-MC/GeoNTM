@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt15hydrodual",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_15_hydrogen_dual"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 73728
+}

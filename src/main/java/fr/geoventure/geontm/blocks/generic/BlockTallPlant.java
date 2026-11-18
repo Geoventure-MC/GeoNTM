@@ -102,7 +102,7 @@ public class BlockTallPlant extends BlockTerrainPlant implements CompatBonemeala
         BlockPos pos = context.getClickedPos();
         Level level = context.getLevel();
         // 1.7 canPlaceBlockAt: ground below and air above
-        if (pos.getY() < level.getMaxY() && level.getBlockState(pos.above()).isAir()
+        if (pos.getY() < level.getMaxBuildHeight() && level.getBlockState(pos.above()).isAir()
                 && isFlowerGround(level.getBlockState(pos.below()))) {
             return defaultBlockState();
         }

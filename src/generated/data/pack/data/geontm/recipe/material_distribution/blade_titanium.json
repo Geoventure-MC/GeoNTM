@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:blade_titanium",
+  "materials": [
+    {
+      "material": "titanium",
+      "amount": 216
+    }
+  ]
+}

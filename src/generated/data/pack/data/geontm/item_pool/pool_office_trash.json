@@ -1,0 +1,94 @@
+{
+  "entries": [
+    {
+      "item": "minecraft:paper",
+      "min": 1,
+      "max": 12,
+      "weight": 10
+    },
+    {
+      "item": "minecraft:book",
+      "min": 1,
+      "max": 3,
+      "weight": 4
+    },
+    {
+      "item": "geontm:twinkie",
+      "min": 1,
+      "max": 2,
+      "weight": 6
+    },
+    {
+      "item": "geontm:coffee",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:flame_politics",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:ring_pull",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:can_empty",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:can_creature",
+      "min": 1,
+      "max": 2,
+      "weight": 2
+    },
+    {
+      "item": "geontm:can_smart",
+      "min": 1,
+      "max": 3,
+      "weight": 2
+    },
+    {
+      "item": "geontm:can_mrsugar",
+      "min": 1,
+      "max": 2,
+      "weight": 2
+    },
+    {
+      "item": "geontm:cap_nuka",
+      "min": 1,
+      "max": 16,
+      "weight": 2
+    },
+    {
+      "item": "geontm:book_guide_starter",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:deco_computer_ibm_300pl",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:blueprint_folder",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:coin_token",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "entries": [
+    {
+      "item": "geontm:chlorine_pinwheel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:circuit_analog",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:circuit_chip",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:gun_kit_1",
+      "min": 1,
+      "max": 3,
+      "weight": 6
+    },
+    {
+      "item": "geontm:gun_kit_2",
+      "min": 1,
+      "max": 2,
+      "weight": 3
+    },
+    {
+      "item": "geontm:gun_panzerschreck",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:ammo_standard_rocket_he",
+      "min": 1,
+      "max": 4,
+      "weight": 5
+    },
+    {
+      "item": "geontm:ammo_standard_g26_flare_supply",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:ammo_standard_g26_flare_weapon",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 1,
+      "weight": 2,
+      "components": {
+        "geontm:grenade": {
+          "shell": "nuke",
+          "filling": "nuclear",
+          "fuze": "s7"
+        },
+        "minecraft:max_stack_size": 1
+      }
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 3,
+      "weight": 3,
+      "components": {
+        "geontm:grenade": {
+          "shell": "frag",
+          "filling": "cluster",
+          "fuze": "s7"
+        },
+        "minecraft:max_stack_size": 4
+      }
+    },
+    {
+      "item": "geontm:grenade_extra_triplex",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:stealth_boy",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:battery_lithium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:syringe_awesome",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:fusion_core",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:bottle_nuka",
+      "min": 1,
+      "max": 3,
+      "weight": 6
+    },
+    {
+      "item": "geontm:bottle_quantum",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:red_barrel",
+      "min": 1,
+      "max": 1,
+      "weight": 6
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 2,
+      "weight": 2,
+      "fluid": "DIESEL"
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 2,
+      "weight": 3,
+      "fluid": "BIOFUEL"
+    },
+    {
+      "item": "geontm:gas_mask_m65",
+      "min": 1,
+      "max": 1,
+      "weight": 5,
+      "components": {
+        "minecraft:damage": 60
+      }
+    },
+    {
+      "item": "geontm:bomb_caller_carpet",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:bomb_caller_napalm",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:bomb_caller_chlorine",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gas_mask_filter",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:launch_code_piece",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gun_double_barrel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:blueprint_folder_discover",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

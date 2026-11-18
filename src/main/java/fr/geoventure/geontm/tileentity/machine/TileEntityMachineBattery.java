@@ -17,7 +17,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -206,7 +206,7 @@ public class TileEntityMachineBattery extends TileEntityMachineBase implements M
     // Per-tick sync
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeLong(delta);
@@ -216,7 +216,7 @@ public class TileEntityMachineBattery extends TileEntityMachineBase implements M
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         delta = buf.readLong();

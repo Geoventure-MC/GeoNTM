@@ -1,0 +1,215 @@
+{
+  "values": {
+    "geontm:ajr_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:ajro_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:asbestos_helmet": [
+      "SAND",
+      "LIGHT"
+    ],
+    "geontm:ashglasses": [
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:attachment_mask": [
+      "SAND"
+    ],
+    "geontm:dns_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:envsuit_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:euphemium_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:fau_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:gas_mask": [
+      "SAND",
+      "LIGHT"
+    ],
+    "geontm:gas_mask_filter": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "GAS_BLISTERING",
+      "BACTERIA"
+    ],
+    "geontm:gas_mask_filter_combo": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "GAS_BLISTERING",
+      "BACTERIA",
+      "GAS_MONOXIDE"
+    ],
+    "geontm:gas_mask_filter_mono": [
+      "PARTICLE_COARSE",
+      "GAS_MONOXIDE"
+    ],
+    "geontm:gas_mask_filter_piss": [
+      "PARTICLE_COARSE",
+      "GAS_LUNG"
+    ],
+    "geontm:gas_mask_filter_rag": [
+      "PARTICLE_COARSE"
+    ],
+    "geontm:gas_mask_m65": [
+      "SAND"
+    ],
+    "geontm:goggles": [
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:hazmat_helmet": [
+      "SAND"
+    ],
+    "geontm:hazmat_helmet_grey": [
+      "SAND"
+    ],
+    "geontm:hazmat_helmet_red": [
+      "SAND"
+    ],
+    "geontm:hazmat_paa_helmet": [
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:hev_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:liquidator_helmet": [
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:mask_piss": [
+      "PARTICLE_COARSE",
+      "GAS_LUNG"
+    ],
+    "geontm:mask_rag": [
+      "PARTICLE_COARSE"
+    ],
+    "geontm:ncrpa_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:rpa_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:schrabidium_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:steamsuit_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:t51_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "SAND"
+    ],
+    "geontm:taurun_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ],
+    "geontm:trenchmaster_helmet": [
+      "PARTICLE_COARSE",
+      "PARTICLE_FINE",
+      "GAS_LUNG",
+      "BACTERIA",
+      "GAS_BLISTERING",
+      "GAS_MONOXIDE",
+      "LIGHT",
+      "SAND"
+    ]
+  }
+}

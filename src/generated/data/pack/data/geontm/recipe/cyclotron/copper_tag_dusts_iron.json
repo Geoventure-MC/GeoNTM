@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_copper",
+  "input": {
+    "ingredient": "#c:dusts/iron"
+  },
+  "output": "geontm:powder_niobium",
+  "antimatter": 15,
+  "order": 31
+}

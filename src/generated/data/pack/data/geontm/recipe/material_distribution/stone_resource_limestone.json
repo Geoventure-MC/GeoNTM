@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:stone_resource_limestone",
+  "materials": [
+    {
+      "material": "flux",
+      "amount": 720
+    }
+  ]
+}

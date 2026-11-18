@@ -12,12 +12,12 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 
@@ -38,7 +38,7 @@ import java.util.Optional;
  */
 public class GUIMachineRadarNT extends CompatScreen {
 
-    public static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_radar_nt.png");
+    public static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_radar_nt.png");
 
     protected final TileEntityMachineRadarNT radar;
     protected int xSize = 216;
@@ -105,7 +105,7 @@ public class GUIMachineRadarNT extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float f) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float f) {
         this.lastMouseX = mouseX;
         this.lastMouseY = mouseY;
 
@@ -155,7 +155,7 @@ public class GUIMachineRadarNT extends CompatScreen {
     }
 
     /** The height map: one opaque pixel per byte, green by height, 1.7's single quad per cell run together. */
-    private void drawMap(GuiGraphicsExtractor graphics) {
+    private void drawMap(GuiGraphics graphics) {
         byte[] map = radar.map;
         for (int iZ = 0; iZ < 200; iZ++) {
             int iX = 0;
@@ -174,7 +174,7 @@ public class GUIMachineRadarNT extends CompatScreen {
      * 1.7's {@code Vec3.rotateAroundZ} maps {@code (x, y)} to {@code (x cos + y sin, y cos - x sin)}; the leading
      * edge is {@code (100, 0)} turned by {@code rot}, the trailing edge the same turned by {@code rot + 0.25}.
      */
-    private void drawSweep(GuiGraphicsExtractor graphics, float rot) {
+    private void drawSweep(GuiGraphics graphics, float rot) {
         float trX = (float) (100 * Math.cos(rot));
         float trY = (float) (-100 * Math.sin(rot));
         float tlX = (float) (100 * Math.cos(rot + 0.25F));
@@ -205,7 +205,7 @@ public class GUIMachineRadarNT extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
 
         if (checkClick(mouseX, mouseY, 8, 221, 200, 7)) {
             tip(graphics, List.of(Component.literal(Library.getShortNumber(radar.power) + "/"
@@ -240,7 +240,7 @@ public class GUIMachineRadarNT extends CompatScreen {
         }
     }
 
-    private void tip(GuiGraphicsExtractor graphics, List<Component> lines, int x, int y) {
+    private void tip(GuiGraphics graphics, List<Component> lines, int x, int y) {
         GuiDraw.tooltip(graphics, this.font, lines, Optional.empty(), x, y);
     }
 

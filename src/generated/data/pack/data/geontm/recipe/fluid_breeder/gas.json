@@ -1,0 +1,17 @@
+{
+  "type": "geontm:fluid_breeder",
+  "name": "fluid_breeder.gas",
+  "input_fluids": [
+    {
+      "type": "geontm:gas",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:syngas",
+      "amount": 1000
+    }
+  ],
+  "order": 0
+}

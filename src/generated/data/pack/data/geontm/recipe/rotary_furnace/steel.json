@@ -1,0 +1,18 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/iron"
+    },
+    {
+      "ingredient": "#c:gems/coal"
+    }
+  ],
+  "output": {
+    "material": "steel",
+    "amount": 72
+  },
+  "duration": 100,
+  "steam": 100,
+  "order": 0
+}

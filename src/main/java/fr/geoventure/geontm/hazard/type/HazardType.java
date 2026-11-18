@@ -7,7 +7,7 @@ import fr.geoventure.geontm.hazard.HazardEntry;
 import fr.geoventure.geontm.hazard.modifier.IHazardModifier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +24,7 @@ import org.jspecify.annotations.Nullable;
  * <pre>{@code
  * record Acid(int seconds, boolean eatsArmour) {}
  *
- * static final Identifier ID = fr.geoventure.geocore.Ids.of("mymod", "corrosive");
+ * static final ResourceLocation ID = fr.geoventure.geocore.Ids.of("mymod", "corrosive");
  * public static final HazardType<Acid> CORROSIVE = HazardRegistry.registerType(ID,
  *         HazardType.builder(ID, Acid.class)
  *                 .trait(ChatFormatting.DARK_GREEN)
@@ -67,7 +67,7 @@ public final class HazardType<P> implements IHazardType {
                 List<IHazardModifier> modifiers, @Nullable P payload);
     }
 
-    private final Identifier id;
+    private final ResourceLocation id;
     private final Class<P> payloadType;
     private final @Nullable P defaultPayload;
     private final @Nullable Carried<P> carried;
@@ -86,15 +86,15 @@ public final class HazardType<P> implements IHazardType {
     }
 
     /** A hazard with no payload, every lambda receives {@code null} for it. */
-    public static Builder<Void> builder(final Identifier id) {
+    public static Builder<Void> builder(final ResourceLocation id) {
         return new Builder<>(id, Void.class);
     }
 
-    public static <P> Builder<P> builder(final Identifier id, final Class<P> payloadType) {
+    public static <P> Builder<P> builder(final ResourceLocation id, final Class<P> payloadType) {
         return new Builder<>(id, payloadType);
     }
 
-    public Identifier id() {
+    public ResourceLocation id() {
         return id;
     }
 
@@ -171,7 +171,7 @@ public final class HazardType<P> implements IHazardType {
 
     public static final class Builder<P> {
 
-        private final Identifier id;
+        private final ResourceLocation id;
         private final Class<P> payloadType;
         private @Nullable P defaultPayload;
         private @Nullable Carried<P> carried;
@@ -179,7 +179,7 @@ public final class HazardType<P> implements IHazardType {
         private @Nullable Info<P> info;
         private ChatFormatting trait = ChatFormatting.GRAY;
 
-        private Builder(final Identifier id, final Class<P> payloadType) {
+        private Builder(final ResourceLocation id, final Class<P> payloadType) {
             this.id = id;
             this.payloadType = payloadType;
         }

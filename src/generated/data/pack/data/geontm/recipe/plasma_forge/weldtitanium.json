@@ -1,0 +1,19 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.weldtitanium",
+  "input_items": [
+    {
+      "material": "titanium",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:plate_welded_titanium"
+  ],
+  "duration": 300,
+  "power": 50000,
+  "auto_switch_group": "autoswitch.weldPlates",
+  "order": 16,
+  "ignition_temp": 500000
+}

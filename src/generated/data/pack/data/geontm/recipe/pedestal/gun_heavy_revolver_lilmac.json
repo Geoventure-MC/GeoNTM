@@ -1,0 +1,19 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_heavy_revolver_lilmac",
+  "grid": [
+    "",
+    "geontm:weapon_mod_special_scope",
+    "",
+    "geontm:powder_magic",
+    "geontm:gun_heavy_revolver",
+    "#c:plates/weaponsteel",
+    "",
+    "#c:grips/bone",
+    {
+      "id": "minecraft:apple",
+      "count": 3
+    }
+  ],
+  "order": 2
+}

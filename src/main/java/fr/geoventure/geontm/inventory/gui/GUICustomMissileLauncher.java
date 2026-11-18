@@ -11,9 +11,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.GuiEntities;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Quaternionf;
@@ -36,27 +36,27 @@ import java.util.Optional;
  */
 public abstract class GUICustomMissileLauncher<M extends ContainerCustomMissileLauncher> extends CompatContainerScreen<M> {
 
-    private final Identifier texture;
+    private final ResourceLocation texture;
     private @Nullable EntityMissileCustom preview;
     private @Nullable MissileStruct previewFor;
 
-    protected GUICustomMissileLauncher(M menu, Inventory playerInventory, Component title, Identifier texture) {
+    protected GUICustomMissileLauncher(M menu, Inventory playerInventory, Component title, ResourceLocation texture) {
         super(menu, playerInventory, title, 176, 222);
         this.texture = texture;
     }
 
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return texture;
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, texture, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityCustomMissileLauncher launcher = menu.getLauncher();
         if (launcher == null) return;
@@ -86,18 +86,18 @@ public abstract class GUICustomMissileLauncher<M extends ContainerCustomMissileL
     }
 
     /** The table's pad-size highlight. */
-    protected void extractExtras(GuiGraphicsExtractor graphics, TileEntityCustomMissileLauncher launcher) {}
+    protected void extractExtras(GuiGraphics graphics, TileEntityCustomMissileLauncher launcher) {}
 
-    private void lamp(GuiGraphicsExtractor graphics, int x, int state) {
+    private void lamp(GuiGraphics graphics, int x, int state) {
         if (state == 1) GuiDraw.blit(graphics, texture, leftPos + x, topPos + 23, 176F, 0F, 6, 8, 256, 256);
         if (state == 0) GuiDraw.blit(graphics, texture, leftPos + x, topPos + 23, 182F, 0F, 6, 8, 256, 256);
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         TankDisplay.Fill visible = TankDisplay.visibleFill(tank, x, y, width, height, true);
         if (visible == null) return;
         int x0 = leftPos + visible.x(), top = topPos + visible.top(), bottom = topPos + visible.bottom();
-        Identifier fluid = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluid = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(fluid).isPresent()) {
             graphics.enableScissor(x0, top, x0 + visible.width(), bottom);
             for (int ty = bottom - 16; ty > top - 16; ty -= 16)
@@ -108,7 +108,7 @@ public abstract class GUICustomMissileLauncher<M extends ContainerCustomMissileL
         }
     }
 
-    private void drawMissile(GuiGraphicsExtractor graphics, ItemStack stack) {
+    private void drawMissile(GuiGraphics graphics, ItemStack stack) {
         MissileStruct struct = ItemCustomMissile.getStruct(stack);
         if (struct == null || this.minecraft == null || this.minecraft.level == null) return;
         EntityMissileCustom entity = previewEntity(struct);
@@ -143,7 +143,7 @@ public abstract class GUICustomMissileLauncher<M extends ContainerCustomMissileL
     protected abstract List<Component> sizeHint();
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityCustomMissileLauncher launcher = menu.getLauncher();
         if (launcher == null) return;
         if (isHovering(116, 36, 16, 34, mouseX, mouseY)) {
@@ -166,5 +166,5 @@ public abstract class GUICustomMissileLauncher<M extends ContainerCustomMissileL
         }
     }
 
-    protected void extraTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {}
+    protected void extraTooltip(GuiGraphics graphics, int mouseX, int mouseY) {}
 }

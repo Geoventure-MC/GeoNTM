@@ -1,0 +1,51 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.crystalcircuit.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:orbital_assembly_crystal_circuit"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_chip_quantum",
+      "count": 4,
+      "chance": 1.0
+    },
+    {
+      "id": "geontm:ingot_cft",
+      "count": 4,
+      "chance": 1.0
+    },
+    {
+      "id": "geontm:circuit_pcb",
+      "count": 16,
+      "chance": 1.0
+    },
+    {
+      "id": "geontm:wire_fine_gold",
+      "count": 32,
+      "chance": 1.0
+    }
+  ],
+  "duration": 600,
+  "power": 20000,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:orbital_assembly_crystal_circuit"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 1,
+  "requires": [
+    "!expensive_mode"
+  ],
+  "geocore:requires": [
+    "!expensive_mode"
+  ]
+}

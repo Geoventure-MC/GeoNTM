@@ -1,0 +1,41 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capacitorspark",
+  "input_items": [
+    {
+      "material": "combine_steel",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:powder_spark_mix",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:pellet_charged",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:capacitor_spark"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 8000
+    }
+  ],
+  "duration": 100,
+  "power": 100000,
+  "order": 39168
+}

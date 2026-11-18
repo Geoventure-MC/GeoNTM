@@ -1,0 +1,13 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 3,
+  "output": "geontm:cobalt_decorated_pickaxe",
+  "left": {
+    "ingredient": "geontm:cobalt_pickaxe"
+  },
+  "right": {
+    "ingredient": "geontm:ingot_meteorite"
+  },
+  "hot": true,
+  "order": 32
+}

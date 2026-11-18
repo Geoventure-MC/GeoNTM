@@ -1,0 +1,20 @@
+{
+  "type": "gaseous",
+  "color": "#E7EAEB",
+  "temperature": 20,
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 5,
+          "produces": "geontm:airblast",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "BOILER": 1.0
+      }
+    }
+  }
+}

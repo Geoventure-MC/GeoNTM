@@ -1,0 +1,25 @@
+{
+  "type": "liquid",
+  "color": "#F22419",
+  "temperature": 666,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:blood",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 500,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

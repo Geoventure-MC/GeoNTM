@@ -54,7 +54,7 @@ public class BlockReeds extends BlockTerrainPlant implements EntityBlock {
     public static int columnDepth(BlockGetter level, BlockPos pos) {
         int depth = 0;
         BlockPos.MutableBlockPos cursor = pos.mutable();
-        for (int y = pos.getY() - 1; y > level.getMinY(); y--) {
+        for (int y = pos.getY() - 1; y > level.getMinBuildHeight(); y--) {
             depth = pos.getY() - y;
             if (!isWater(level.getBlockState(cursor.setY(y)))) break;
         }

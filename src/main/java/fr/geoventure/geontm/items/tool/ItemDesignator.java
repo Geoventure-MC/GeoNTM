@@ -70,8 +70,8 @@ public class ItemDesignator extends CompatItem implements IDesignatorItem {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
 
-        if (level.getBlockState(pos).getBlock() instanceof LaunchPad) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (context.getPlayer() == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.getBlockState(pos).getBlock() instanceof LaunchPad) return InteractionResult.PASS;
+        if (context.getPlayer() == null) return InteractionResult.PASS;
 
         // A block on a moving sub-level (Create Aeronautics) is targeted where it is seen, not in its plot.
         BlockPos target = SubLevels.toWorldBlock(level, pos);

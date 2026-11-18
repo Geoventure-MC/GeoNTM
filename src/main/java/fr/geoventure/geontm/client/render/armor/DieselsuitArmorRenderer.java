@@ -5,12 +5,12 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** 1.7 {@code ModelArmorDiesel}: {@code bnuuy.obj} with the {@code bnuuy_*} textures, boots on the leg bones. */
 public final class DieselsuitArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/bnuuy.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/bnuuy.obj");
 
     private static final Surface HELMET = skin("bnuuy_helmet");
     private static final Surface CHEST = skin("bnuuy_chest");

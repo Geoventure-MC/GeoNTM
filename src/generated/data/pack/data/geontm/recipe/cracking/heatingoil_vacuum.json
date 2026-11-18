@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:heatingoil_vacuum",
+  "left": {
+    "type": "geontm:heatingoil",
+    "amount": 80
+  },
+  "right": {
+    "type": "geontm:reformgas",
+    "amount": 20
+  }
+}

@@ -5,7 +5,7 @@ import fr.geoventure.geocore.viewer.Role;
 import fr.geoventure.geocore.viewer.SlotLayout;
 import fr.geoventure.geontm.inventory.recipes.CyclotronRecipes;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -33,7 +33,7 @@ public final class CyclotronRecipeHandler extends GeoNtmRecipeCategory<Cyclotron
     }
 
     @Override
-    public void draw(CyclotronRecipes.CyclotronRecipe recipe, GuiGraphicsExtractor graphics, double mouseX, double mouseY) {
+    public void draw(CyclotronRecipes.CyclotronRecipe recipe, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         arrow.draw(graphics, 25, 18);
     }

@@ -7,9 +7,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
@@ -17,7 +17,7 @@ import java.util.Optional;
 /** The 1.7 {@code GUIBarrel} (176x166), shared by both giant storage machines (1.7 BAT9000/Orbus extend TileEntityBarrel). */
 public class GUIMachineGiantTank extends CompatContainerScreen<ContainerMachineGiantTank> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_barrel.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_barrel.png");
     private static final int TANK_X = 71, TANK_TOP = 17, TANK_WIDTH = 34, TANK_HEIGHT = 52;
     private static final int MODE_X = 151, MODE_Y = 34, MODE_SIZE = 18;
 
@@ -26,7 +26,7 @@ public class GUIMachineGiantTank extends CompatContainerScreen<ContainerMachineG
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineGiantTank tank = menu.getTank();
         if (tank == null) return;
@@ -40,14 +40,14 @@ public class GUIMachineGiantTank extends CompatContainerScreen<ContainerMachineG
 
     /** 1.7 {@code GUIBarrel.drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     /** 1.7 GUIBarrel draws only the tank tooltip; the mode button has none. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineGiantTank tank = menu.getTank();
         if (tank == null) return;
         if (in17(TANK_X, TANK_TOP, TANK_WIDTH, TANK_HEIGHT, mouseX, mouseY)) {

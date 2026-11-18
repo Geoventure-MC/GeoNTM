@@ -13,11 +13,11 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.gui.TextSearch;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import net.minecraft.world.item.ItemStack;
 /** The 176x200 positional recipe browser and inventory screen from the old Ammo Press. */
 public class GUIMachineAmmoPress extends CompatContainerScreen<ContainerMachineAmmoPress> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_ammo_press.png");
 
     private final List<AmmoPressRecipe> recipes = new ArrayList<>();
@@ -76,7 +76,7 @@ public class GUIMachineAmmoPress extends CompatContainerScreen<ContainerMachineA
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         if (search != null && search.isFocused()) {
@@ -125,7 +125,7 @@ public class GUIMachineAmmoPress extends CompatContainerScreen<ContainerMachineA
         }
     }
 
-    private void drawCount(GuiGraphicsExtractor graphics, ItemStack stack, int x, int y) {
+    private void drawCount(GuiGraphics graphics, ItemStack stack, int x, int y) {
         if (stack.isEmpty() || stack.getCount() <= 1) return;
         String count = Integer.toString(stack.getCount());
         GuiDraw.pushMatrix(graphics);
@@ -135,19 +135,19 @@ public class GUIMachineAmmoPress extends CompatContainerScreen<ContainerMachineA
         GuiDraw.popMatrix(graphics);
     }
 
-    private void hoverBlit(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
+    private void hoverBlit(GuiGraphics graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
         if (isOver(mouseX, mouseY, x, y, 9, 54)) {
             GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + y, u, v, 9, 54, 256, 256);
         }
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94 + 2, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         for (int i = page * 3; i < page * 3 + 12 && i < recipes.size(); i++) {
             int displayed = i - page * 3;
             if (isOver(mouseX, mouseY, 16 + 18 * (displayed / 3), 17 + 18 * (displayed % 3), 18, 18)) {

@@ -1,0 +1,33 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.th4",
+  "input_fluids": [
+    {
+      "type": "geontm:tritium",
+      "amount": 10
+    },
+    {
+      "type": "geontm:helium4",
+      "amount": 10
+    }
+  ],
+  "output_items": [
+    "geontm:pellet_charged"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:tritium",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 5,
+  "ignition_temp": 875000,
+  "output_temp": 4000000,
+  "neutron_flux": 500.0,
+  "red": 0.2,
+  "blue": 1.0
+}

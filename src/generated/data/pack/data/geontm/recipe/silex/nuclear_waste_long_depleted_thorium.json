@@ -1,0 +1,28 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:nuclear_waste_long_depleted_thorium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:nugget_lead",
+      "weight": 35
+    },
+    {
+      "data": "geontm:nugget_bismuth",
+      "weight": 40
+    },
+    {
+      "data": "geontm:dust_tiny",
+      "weight": 15
+    },
+    {
+      "data": "geontm:nuclear_waste_tiny",
+      "weight": 10
+    }
+  ],
+  "order": 289
+}

@@ -7,13 +7,13 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Matrix4f;
 
 /** Exact Gem port of 1.7 ItemRenderSexy; the constructor selects Sexy or Heretic skin. */
 public final class SexyWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/sexy.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/sexy.obj");
     private final Surface body;
     private static final Surface WHISKEY=Surface.cutout("geontm:textures/models/weapons/whiskey.png");
     private WavefrontObj model,whiskey;

@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.fullerene.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_ash_soot"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:radiosolvent",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:fullerene",
+      "amount": 250
+    }
+  ],
+  "duration": 50,
+  "order": 14
+}

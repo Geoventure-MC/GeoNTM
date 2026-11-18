@@ -342,7 +342,7 @@ public final class DamageResistanceHandler {
     }
 
     private static Item piece(Optional<String> id) {
-        return id.map(s -> BuiltInRegistries.ITEM.getValue(Ids.parse(s))).orElse(null);
+        return id.map(s -> BuiltInRegistries.ITEM.get(Ids.parse(s))).orElse(null);
     }
 
     private static Item item(LivingEntity entity, EquipmentSlot slot) {

@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:scrap",
+  "output": "geontm:dust"
+}

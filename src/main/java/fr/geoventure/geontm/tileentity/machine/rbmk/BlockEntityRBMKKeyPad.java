@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -36,8 +36,8 @@ public class BlockEntityRBMKKeyPad extends TileEntityLoadedBase implements ICont
         networkPackNT();
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); for (KeyUnit key : keys) key.serialize(buf); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); for (KeyUnit key : keys) key.deserialize(buf); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); for (KeyUnit key : keys) key.serialize(buf); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); for (KeyUnit key : keys) key.deserialize(buf); }
     @Override protected void saveData(DataOut output) { super.saveData(output); for (int i = 0; i < KEYS; i++) keys[i].save(output, i); }
     @Override protected void loadData(DataIn input) { super.loadData(input); for (int i = 0; i < KEYS; i++) keys[i].load(input, i); }
 
@@ -103,11 +103,11 @@ public class BlockEntityRBMKKeyPad extends TileEntityLoadedBase implements ICont
 
         public boolean canSend() { return rtty != null && !rtty.isEmpty() && command != null && !command.isEmpty(); }
 
-        void serialize(RegistryFriendlyByteBuf buf) {
+        void serialize(FriendlyByteBuf buf) {
             buf.writeBoolean(active); buf.writeBoolean(polling); buf.writeBoolean(isPressed); buf.writeInt(color);
             buf.writeUtf(label); buf.writeUtf(rtty); buf.writeUtf(command);
         }
-        void deserialize(RegistryFriendlyByteBuf buf) {
+        void deserialize(FriendlyByteBuf buf) {
             active = buf.readBoolean(); polling = buf.readBoolean(); isPressed = buf.readBoolean(); color = buf.readInt();
             label = buf.readUtf(); rtty = buf.readUtf(); command = buf.readUtf();
         }

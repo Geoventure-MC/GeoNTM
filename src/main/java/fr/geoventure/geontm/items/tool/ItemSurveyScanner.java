@@ -127,7 +127,7 @@ public class ItemSurveyScanner extends CompatItem {
         BedrockOreBlockEntity tile = null;
         var x = origin.getX(); var y = origin.getY(); var z = origin.getZ();
         for (var a = -5; a <= 5; a++) for (var b = -5; b <= 5; b++) {
-            for (var i = y + 15; i > world.getMinY() + 1; i -= 2) {
+            for (var i = y + 15; i > world.getMinBuildHeight() + 1; i -= 2) {
                 var at = new BlockPos(x + a * 5, i, z + b * 5);
                 var block = world.getBlockState(at).getBlock();
                 var alias = aliases.get(block);
@@ -150,7 +150,7 @@ public class ItemSurveyScanner extends CompatItem {
         var cX = ((x >> 4) << 4) + 8;
         var cZ = ((z >> 4) << 4) + 8;
         for (var i = -2; i <= 2; i++) for (var j = -2; j <= 2; j++) {
-            var floor = new BlockPos(cX + i, world.getMinY(), cZ + j);
+            var floor = new BlockPos(cX + i, world.getMinBuildHeight(), cZ + j);
             if (!world.getBlockState(floor).is(ModOreBlocks.ore_bedrock_block.get())) continue;
             if (marked != null) OverheadMarkers.send(marked, floor, 0xff0000, "Bedrock Ore", 15_000, 300D);
             if (world.getBlockEntity(floor) instanceof BedrockOreBlockEntity ore) tile = ore;
@@ -191,7 +191,7 @@ public class ItemSurveyScanner extends CompatItem {
             }
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     private static boolean hasEntanglementKit(Player player) {

@@ -38,6 +38,6 @@ public class ItemDyatlov extends CompatItem {
                 zirnox.heat = 200000;
             }
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

@@ -1,0 +1,23 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/steel"
+    },
+    {
+      "ingredient": "geontm:powder_flux",
+      "count": 2
+    }
+  ],
+  "fluid": {
+    "type": "geontm:gas_coker",
+    "amount": 100
+  },
+  "output": {
+    "material": "weaponsteel",
+    "amount": 72
+  },
+  "duration": 200,
+  "steam": 400,
+  "order": 7
+}

@@ -1,0 +1,55 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.coker",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 8
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_coker"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 26624,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 4
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.rubber"
+  ]
+}

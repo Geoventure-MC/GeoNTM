@@ -338,15 +338,15 @@ public final class DejsonGameTests {
                 others++;
             }
             //? if <1.21.2 {
-            /*// legacy-recipes.gradle.kts rewrites every recipe's ingredient shape for this era, so a packed
+            // legacy-recipes.gradle.kts rewrites every recipe's ingredient shape for this era, so a packed
             // recipe is expected to differ from its declaration; that it was packed at all is the check.
             if (path.contains("/recipe/")) continue;
-            *///?}
+            //?}
             //? if <1.20.5 {
-            /*// The same script converts component-era loot tables (crate drops, match_tool predicates) to
+            // The same script converts component-era loot tables (crate drops, match_tool predicates) to
             // the NBT shape below 1.20.5, so their packed content is expected to differ too.
             if (path.contains("/loot_table/")) continue;
-            *///?}
+            //?}
             JsonElement expected = unwrapped(folded.getOrDefault(path, declared.getValue()));
             if (path.contains("/tags/") && tagMatches(copies, expected)) continue;
             if (copies.stream().noneMatch(copy -> unwrapped(withoutAddedOptionalBiomeTags(path, copy, expected)).equals(expected))) {

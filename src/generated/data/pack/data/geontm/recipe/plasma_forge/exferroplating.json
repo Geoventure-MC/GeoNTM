@@ -1,0 +1,32 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.exferroplating",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_lead_plating",
+      "count": 3
+    },
+    {
+      "material": "ferrouranium",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_ferro_plating"
+  ],
+  "duration": 240,
+  "power": 100000,
+  "order": 7,
+  "ignition_temp": 1000000
+}

@@ -107,14 +107,14 @@ public class ItemSettingsTool extends CompatItem {
 
     /** 1.7 {@code onItemUseFirst}. */
     public static InteractionResult useFirst(ItemStack stack, UseOnContext context) {
-        if (!(stack.getItem() instanceof ItemSettingsTool)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof ItemSettingsTool)) return InteractionResult.PASS;
         Level world = context.getLevel();
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
 
         ICopiable copiable = getCopyInfoSource(world, pos);
-        if (copiable == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (copiable == null) return InteractionResult.PASS;
 
         if (player.isShiftKeyDown()) {
             CompoundTag settings = copiable.getSettings(world, pos);

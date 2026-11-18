@@ -1,0 +1,51 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.atomic_clock",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 4
+    },
+    {
+      "material": "zirconium",
+      "shape": "wire",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:dusts/strontium"
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_atomic_clock",
+        "weight": 50
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_atomic_clock"
+          }
+        },
+        "weight": 50
+      }
+    ]
+  ],
+  "duration": 200,
+  "power": 2000,
+  "blueprint_pools": [
+    "528.strontium"
+  ],
+  "order": 8,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

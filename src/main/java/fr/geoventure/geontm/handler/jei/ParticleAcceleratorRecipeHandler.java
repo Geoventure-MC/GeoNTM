@@ -3,7 +3,7 @@ package fr.geoventure.geontm.handler.jei;
 import fr.geoventure.geontm.inventory.recipes.ParticleAcceleratorRecipes;
 import fr.geoventure.geontm.inventory.recipes.ParticleAcceleratorRecipes.ParticleAcceleratorRecipe;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -36,7 +36,7 @@ public class ParticleAcceleratorRecipeHandler extends JEIUniversalHandler<Partic
     }
 
     @Override
-    public void draw(ParticleAcceleratorRecipe recipe, GuiGraphicsExtractor g,
+    public void draw(ParticleAcceleratorRecipe recipe, GuiGraphics g,
                      double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         text(g, "Momentum: " + String.format(Locale.US, "%,d", recipe.momentum), 8, 52);

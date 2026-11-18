@@ -1,0 +1,14 @@
+{
+  "values": {
+    "geontm:battery_sc_empty": 0,
+    "geontm:battery_sc_waste": 150,
+    "geontm:battery_sc_ra226": 200,
+    "geontm:battery_sc_tc99": 500,
+    "geontm:battery_sc_co60": 750,
+    "geontm:battery_sc_pu238": 1000,
+    "geontm:battery_sc_po210": 1250,
+    "geontm:battery_sc_au198": 1500,
+    "geontm:battery_sc_pb209": 2000,
+    "geontm:battery_sc_am241": 2500
+  }
+}

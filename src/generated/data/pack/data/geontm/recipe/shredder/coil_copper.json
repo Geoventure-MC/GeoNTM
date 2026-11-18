@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:coil_copper",
+  "output": "geontm:powder_red_copper"
+}

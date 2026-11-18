@@ -364,7 +364,7 @@ public final class ForeignEnergyGameTests {
         BlockPos abs = helper.absolutePos(at);
         ServerPlayer player = GameTestHelpers.mockServerPlayerInLevel(helper);
         player.teleportTo(abs.getX() + 0.5, abs.getY(), abs.getZ() + 0.5);
-        Item lead = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "battery_lead"));
+        Item lead = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "battery_lead"));
         EquipmentSlot[] slots = {EquipmentSlot.MAINHAND, EquipmentSlot.FEET, EquipmentSlot.LEGS, EquipmentSlot.CHEST,
                 EquipmentSlot.HEAD};
         for (int i = 0; i < items; i++) player.setItemSlot(slots[i], new ItemStack(lead));
@@ -450,7 +450,7 @@ public final class ForeignEnergyGameTests {
         BlockPos core = GameTests.paddedCentre(4, 1).atY(Y);
         FoldedTestSupport.assemble(helper, ModBatteryBlocks.machine_battery_socket.get(), core);
         TileEntityBatterySocket socket = GameTestHelpers.blockEntity(helper, core, TileEntityBatterySocket.class);
-        ItemBatteryPack capacitor = (ItemBatteryPack) BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "capacitor_copper"));
+        ItemBatteryPack capacitor = (ItemBatteryPack) BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "capacitor_copper"));
         ItemStack full = new ItemStack(capacitor);
         capacitor.setCharge(full, capacitor.getMaxCharge(full));
         socket.inventory.setStackInSlot(0, full);

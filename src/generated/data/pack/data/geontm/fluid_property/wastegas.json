@@ -1,0 +1,19 @@
+{
+  "type": "gaseous",
+  "color": "#B8B8B8",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "radiation"
+  },
+  "flags": [
+    "nocontainer"
+  ],
+  "traits": {
+    "ventradiation": {
+      "rad_per_mb": 0.5
+    }
+  }
+}

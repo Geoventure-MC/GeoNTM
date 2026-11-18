@@ -1,0 +1,7 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:powder_sr90",
+  "output": "geontm:powder_zirconium",
+  "decay": "short",
+  "divisor": 10
+}

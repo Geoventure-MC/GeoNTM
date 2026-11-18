@@ -108,7 +108,7 @@ public class CraneSplitter extends BlockMultiblockMachine implements IConveyorBe
 
         Vec3 snap = getClosestSnappingPosition(level, pos, Vec3.atCenterOf(pos));
         EntityMovingItem moving = new EntityMovingItem(level);
-        moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+        moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
         moving.setItemStack(stack);
         level.addFreshEntity(moving);
     }

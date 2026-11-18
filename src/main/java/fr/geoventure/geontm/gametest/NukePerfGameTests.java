@@ -117,7 +117,7 @@ public final class NukePerfGameTests {
                 LevelChunk chunk = level.getChunk(x >> 4, z >> 4);
                 for (int dy = -half; dy <= 0; dy++) {
                     int fy = y + dy;
-                    if (fy < level.getMinY() || fy > level.getMaxY()) continue;
+                    if (fy < level.getMinBuildHeight() || fy > level.getMaxBuildHeight()) continue;
                     chunk.getSection(chunk.getSectionIndex(fy))
                             .setBlockState(x & 15, fy & 15, z & 15, stone, false);
                     filled++;
@@ -264,7 +264,7 @@ public final class NukePerfGameTests {
 
         // The crater's own bit layout, over the top half of each cube so the heightmap has to move and a
         // solid floor is left behind for it to move to.
-        int maxY = level.getMaxY();
+        int maxY = level.getMaxBuildHeight();
         BitSet carveBits = new BitSet();
         BitSet writeBits = new BitSet();
         for (int dx = 0; dx < side; dx++) {
@@ -356,7 +356,7 @@ public final class NukePerfGameTests {
         ServerLevel level = helper.getLevel();
         BlockPos plot = helper.absolutePos(BlockPos.ZERO);
         BlockState stone = Blocks.STONE.defaultBlockState();
-        int maxY = level.getMaxY();
+        int maxY = level.getMaxBuildHeight();
 
         // Chunk-aligned and far from the plots, like the other tests here.
         int baseY = plot.getY() + 8;
@@ -540,7 +540,7 @@ public final class NukePerfGameTests {
                 LevelChunk chunk = level.getChunk(x >> 4, z >> 4);
                 for (int dy = -8; dy <= 0; dy++) {
                     int y = centre.getY() + dy;
-                    if (y < level.getMinY() || y > level.getMaxY()) continue;
+                    if (y < level.getMinBuildHeight() || y > level.getMaxBuildHeight()) continue;
                     chunk.getSection(chunk.getSectionIndex(y))
                             .setBlockState(x & 15, y & 15, z & 15, dirt, false);
                     filled++;
@@ -707,7 +707,7 @@ public final class NukePerfGameTests {
         EntityFalloutRain rain = new EntityFalloutRain(
                 ModEntities.FALLOUT_RAIN.get(), level);
         rain.setScale(scale);
-        rain.snapTo(centre.getX() + 0.5, centre.getY(), centre.getZ() + 0.5);
+        rain.moveTo(centre.getX() + 0.5, centre.getY(), centre.getZ() + 0.5);
         level.addFreshEntity(rain);
         return rain;
     }
@@ -838,7 +838,7 @@ public final class NukePerfGameTests {
                 int x = origin.getX() + dx;
                 int z = origin.getZ() + dz;
                 LevelChunk chunk = level.getChunk(x >> 4, z >> 4);
-                chunks.add(ChunkPos.pack(x >> 4, z >> 4));
+                chunks.add(ChunkPos.asLong(x >> 4, z >> 4));
                 for (int dy = 0; dy < side; dy++) {
                     int y = baseY + dy;
                     chunk.getSection(chunk.getSectionIndex(y)).setBlockState(x & 15, y & 15, z & 15, state, false);
@@ -871,7 +871,7 @@ public final class NukePerfGameTests {
             var sections = chunk.getSections();
             for (int index = 0; index < sections.length; index++) {
                 lightEngine.updateSectionStatus(
-                        SectionPos.of(chunk.getPos(), index + level.getMinSectionY()),
+                        SectionPos.of(chunk.getPos(), index + level.getMinSection()),
                         sections[index].hasOnlyAir());
             }
             lightEngine.lightChunk(chunk, false);
@@ -1169,7 +1169,7 @@ public final class NukePerfGameTests {
             for (int dz = -half; dz <= half; dz++) {
                 for (int dy = -depth; dy <= depth; dy++) {
                     fill.set(centre.getX() + dx, centre.getY() + dy, centre.getZ() + dz);
-                    if (fill.getY() < level.getMinY() || fill.getY() > level.getMaxY()) continue;
+                    if (fill.getY() < level.getMinBuildHeight() || fill.getY() > level.getMaxBuildHeight()) continue;
                     level.setBlock(fill, state, Block.UPDATE_CLIENTS);
                 }
             }
@@ -1232,10 +1232,10 @@ public final class NukePerfGameTests {
         helper.assertTrue(!hit.isEmpty() && structure > hit.size() + 1, "the tank has cells below its top layer");
 
         if (carve) {
-            int maxY = level.getMaxY();
+            int maxY = level.getMaxBuildHeight();
             Map<Long, BitSet> perChunk = new HashMap<>();
             for (BlockPos p : hit) {
-                perChunk.computeIfAbsent(ChunkPos.pack(p.getX() >> 4, p.getZ() >> 4),
+                perChunk.computeIfAbsent(ChunkPos.asLong(p.getX() >> 4, p.getZ() >> 4),
                         k -> new BitSet()).set(((maxY - p.getY()) << 8) | ((p.getX() & 15) << 4) | (p.getZ() & 15));
             }
             for (var entry : perChunk.entrySet()) {

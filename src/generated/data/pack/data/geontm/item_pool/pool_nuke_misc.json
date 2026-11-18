@@ -1,0 +1,151 @@
+{
+  "entries": [
+    {
+      "item": "geontm:nugget_u235",
+      "min": 3,
+      "max": 12,
+      "weight": 5
+    },
+    {
+      "item": "geontm:nugget_pu238",
+      "min": 3,
+      "max": 12,
+      "weight": 5
+    },
+    {
+      "item": "geontm:nugget_ra226",
+      "min": 3,
+      "max": 6,
+      "weight": 5
+    },
+    {
+      "item": "geontm:rod_u235",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_dual_u235",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_quad_u235",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_zirnox_uranium_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:rod_zirnox_mox_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 4
+    },
+    {
+      "item": "geontm:rod_zirnox_lithium_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_zirnox_thorium_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_dual_thf",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:rod_zirnox_tritium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:rod_zirnox_u233_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:rod_zirnox_u235_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:pellet_rtg",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:powder_thorium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_neptunium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_strontium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_cobalt",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:bottle_quantum",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gas_mask_m65",
+      "min": 1,
+      "max": 1,
+      "weight": 5,
+      "components": {
+        "minecraft:damage": 60
+      }
+    },
+    {
+      "item": "geontm:hazmat_kit",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:gas_mask_filter",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:yellow_barrel",
+      "min": 1,
+      "max": 3,
+      "weight": 3
+    }
+  ]
+}

@@ -19,7 +19,7 @@ import fr.geoventure.geocore.render.gem.GemBER;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
@@ -41,12 +41,12 @@ public final class RenderPlushie extends GemBER<TileEntityPlushie, RenderPlushie
         public final CompatItemRenderState cigarette = new CompatItemRenderState();
     }
 
-    static final Identifier YOMI = Ids.of(Constants.MOD_ID, "textures/models/trinkets/yomi.png");
-    static final Identifier NUMBERNINE = Ids.of(Constants.MOD_ID, "textures/models/horse/numbernine.png");
-    static final Identifier HUNDUN = Ids.of(Constants.MOD_ID, "textures/models/trinkets/hundun.png");
-    static final Identifier DERG = Ids.of(Constants.MOD_ID, "textures/models/trinkets/derg.png");
-    static final Identifier NO9 = Ids.of(Constants.MOD_ID, "textures/armor/no9.png");
-    static final Identifier NO9_INSIGNIA = Ids.of(Constants.MOD_ID, "textures/armor/no9_insignia.png");
+    static final ResourceLocation YOMI = Ids.of(Constants.MOD_ID, "textures/models/trinkets/yomi.png");
+    static final ResourceLocation NUMBERNINE = Ids.of(Constants.MOD_ID, "textures/models/horse/numbernine.png");
+    static final ResourceLocation HUNDUN = Ids.of(Constants.MOD_ID, "textures/models/trinkets/hundun.png");
+    static final ResourceLocation DERG = Ids.of(Constants.MOD_ID, "textures/models/trinkets/derg.png");
+    static final ResourceLocation NO9 = Ids.of(Constants.MOD_ID, "textures/armor/no9.png");
+    static final ResourceLocation NO9_INSIGNIA = Ids.of(Constants.MOD_ID, "textures/armor/no9_insignia.png");
 
     private final WavefrontObj yomi = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/trinkets/yomi.obj"));
     private final WavefrontObj hundun = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/trinkets/hundun.obj"));
@@ -71,7 +71,7 @@ public final class RenderPlushie extends GemBER<TileEntityPlushie, RenderPlushie
         state.miserable = plushie.miseryFactor > 0.01F;
         state.misery = plushie.lastMiseryFactor + (plushie.miseryFactor - plushie.lastMiseryFactor) * interp;
         if (state.type == PlushieType.NUMBERNINE) {
-            state.cigarette.extract(plushie.getLevel(), new ItemStack(BuiltInRegistries.ITEM.getValue(
+            state.cigarette.extract(plushie.getLevel(), new ItemStack(BuiltInRegistries.ITEM.get(
                     Ids.of(Constants.MOD_ID, "cigarette"))), ItemDisplayContext.NONE);
         } else {
             state.cigarette.clear();
@@ -106,7 +106,7 @@ public final class RenderPlushie extends GemBER<TileEntityPlushie, RenderPlushie
         state.squish = -1F;
         if (type == PlushieType.NUMBERNINE) {
             state.cigarette.extract(Minecraft.getInstance().level, new ItemStack(
-                    BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "cigarette"))), ItemDisplayContext.NONE);
+                    BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "cigarette"))), ItemDisplayContext.NONE);
         } else {
             state.cigarette.clear();
         }
@@ -176,7 +176,7 @@ public final class RenderPlushie extends GemBER<TileEntityPlushie, RenderPlushie
         pose.popPose();
     }
 
-    static void part(PoseStack pose, SubmitSink sink, WavefrontObj model, Identifier texture, String name, int light,
+    static void part(PoseStack pose, SubmitSink sink, WavefrontObj model, ResourceLocation texture, String name, int light,
                      boolean cull) {
         sink.submitCustomGeometry(pose, cull ? CompatRenderTypes.entityCutoutCull(texture)
                         : CompatRenderTypes.entityCutoutNoCull(texture),

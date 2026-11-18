@@ -13,9 +13,9 @@ import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachinePrecAss;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -26,7 +26,7 @@ import java.util.Optional;
 public final class GUIMachinePrecAss extends CompatContainerScreen<ContainerMachinePrecAss>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_precass.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_precass.png");
     private static final int BTN_X = 7, BTN_Y = 125, BTN_W = 18, BTN_H = 18;
 
     public GUIMachinePrecAss(ContainerMachinePrecAss menu, Inventory playerInventory, Component title) {
@@ -34,7 +34,7 @@ public final class GUIMachinePrecAss extends CompatContainerScreen<ContainerMach
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachinePrecAss te = menu.getAssembler();
         if (te == null) return;
@@ -77,12 +77,12 @@ public final class GUIMachinePrecAss extends CompatContainerScreen<ContainerMach
         }
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int u) {
+    private void led(GuiGraphics graphics, int x, int u) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + 121, u, 0F, 3, 6, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachinePrecAss te = menu.getAssembler();
         if (te == null) return;
         if (GuiUtil.hover(mouseX, mouseY, leftPos + 152, topPos + 18, 16, 61)) {
@@ -99,12 +99,12 @@ public final class GUIMachinePrecAss extends CompatContainerScreen<ContainerMach
         }
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int mouseX, int mouseY) {
+    private void tankTooltip(GuiGraphics graphics, FluidTankNTM tank, int mouseX, int mouseY) {
         GuiUtil.tooltip(graphics, font, GuiUtil.tankTooltip(tank), mouseX, mouseY);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 70 - font.width(title) / 2, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }

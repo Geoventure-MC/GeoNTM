@@ -13,16 +13,16 @@ import fr.geoventure.geocore.gui.GuiScenes;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 /** The source 176x240 weapon-table screen with 1.7's rotatable, per-gun framed preview. */
 public final class GUIWeaponTable extends CompatContainerScreen<ContainerWeaponTable> {
-    private static final Identifier TEXTURE = Ids.of(
+    private static final ResourceLocation TEXTURE = Ids.of(
             "geontm", "textures/gui/machine/gui_weapon_modifier.png");
     private static final int PREVIEW_X = 8, PREVIEW_Y = 17, PREVIEW_W = 160, PREVIEW_H = 80;
     private static final int CONFIG_X = 26, CONFIG_Y = 111, CONFIG_W = 7, CONFIG_H = 10;
@@ -40,7 +40,7 @@ public final class GUIWeaponTable extends CompatContainerScreen<ContainerWeaponT
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         ItemStack gun = menu.previewStack();
         // 1.7 drawScreen: the turn follows the held left button only while the cursor is over the box.
@@ -57,7 +57,7 @@ public final class GUIWeaponTable extends CompatContainerScreen<ContainerWeaponT
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - font.width(title)) / 2, 5, 0xFFFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }
@@ -71,7 +71,7 @@ public final class GUIWeaponTable extends CompatContainerScreen<ContainerWeaponT
      * centre), so the 1.7 calls apply unchanged after moving the origin to the preview centre. Only a gun with
      * an {@code ItemRenderWeaponBase} in 1.7 is drawn; {@code gun_fireext} shows no preview, as there.
      */
-    private void submitPreview(GuiGraphicsExtractor graphics, ItemStack gun, int config) {
+    private void submitPreview(GuiGraphics graphics, ItemStack gun, int config) {
         WeaponRenderer renderer = WeaponRenderers.forStack(gun);
         WeaponTableFrames.Frame frame = WeaponTableFrames.forItem(
                 BuiltInRegistries.ITEM.getKey(gun.getItem()).getPath());

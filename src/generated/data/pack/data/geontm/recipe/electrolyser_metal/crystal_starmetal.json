@@ -1,0 +1,25 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_starmetal",
+  "molten": [
+    {
+      "material": "dura_steel",
+      "amount": 288
+    },
+    {
+      "material": "cobalt",
+      "amount": 288
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_astatine",
+      "count": 3
+    },
+    {
+      "id": "geontm:nugget_mercury",
+      "count": 8
+    }
+  ],
+  "order": 16
+}

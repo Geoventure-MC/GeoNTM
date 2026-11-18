@@ -1,0 +1,17 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.meteorSword",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/cobalt"
+    },
+    {
+      "ingredient": "geontm:meteorite_sword_hardened"
+    }
+  ],
+  "output_items": [
+    "geontm:meteorite_sword_alloyed"
+  ],
+  "duration": 1200,
+  "order": 12
+}

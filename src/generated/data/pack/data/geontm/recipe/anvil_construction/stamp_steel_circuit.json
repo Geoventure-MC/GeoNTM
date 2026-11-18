@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:stamp_steel_flat"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:stamp_steel_circuit"
+    }
+  ],
+  "tier": 2,
+  "order": 160
+}

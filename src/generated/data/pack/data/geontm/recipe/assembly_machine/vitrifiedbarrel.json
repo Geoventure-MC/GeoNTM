@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.vitrifiedbarrel",
+  "input_items": [
+    {
+      "ingredient": "geontm:tank_steel"
+    },
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:nuclear_waste_vitrified",
+      "count": 10
+    }
+  ],
+  "output_items": [
+    "geontm:vitrified_barrel"
+  ],
+  "duration": 400,
+  "power": 400,
+  "order": 15872
+}

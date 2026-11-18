@@ -6,9 +6,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachineOilWell;
 import fr.geoventure.geontm.tileentity.machine.oil.TileEntityOilDrillBase;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
@@ -21,14 +21,14 @@ import java.util.Optional;
  */
 public class GUIMachineOilWell extends CompatContainerScreen<ContainerMachineOilWell> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_well.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_well.png");
 
     public GUIMachineOilWell(ContainerMachineOilWell menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 184, 190);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int guiLeft = this.leftPos, guiTop = this.topPos;
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
@@ -55,14 +55,14 @@ public class GUIMachineOilWell extends CompatContainerScreen<ContainerMachineOil
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: title centred on x=126 at y=10; "Inventory" at x=12.
         GuiDraw.text(graphics, this.font, this.title, 126 - this.font.width(this.title) / 2, 10, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 12, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityOilDrillBase derrick = this.menu.getDrill();
         if (derrick == null) return;
         int guiLeft = this.leftPos, guiTop = this.topPos;

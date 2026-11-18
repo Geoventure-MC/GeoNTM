@@ -25,7 +25,7 @@ import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -103,7 +103,7 @@ public class BlockWandLogic extends CompatBlock implements TickingBlock, ILookOv
                 }
             }
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -257,7 +257,7 @@ public class BlockWandLogic extends CompatBlock implements TickingBlock, ILookOv
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             buf.writeInt(placedRotation);
             buf.writeUtf(actionID);
             buf.writeUtf(conditionID);
@@ -266,7 +266,7 @@ public class BlockWandLogic extends CompatBlock implements TickingBlock, ILookOv
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             placedRotation = buf.readInt();
             actionID = buf.readUtf();
             conditionID = buf.readUtf();

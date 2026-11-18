@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/redstone",
+  "materials": [
+    {
+      "material": "redstone",
+      "amount": 288
+    },
+    {
+      "material": "stone",
+      "amount": 162
+    }
+  ]
+}

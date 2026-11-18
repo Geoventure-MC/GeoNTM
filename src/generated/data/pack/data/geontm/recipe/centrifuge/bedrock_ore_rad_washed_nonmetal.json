@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_washed_nonmetal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_chlorocalcite",
+      "count": 6
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_silicon",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_silicon",
+      "count": 2
+    },
+    "geontm:bedrock_ore_crumbs_nonmetal"
+  ],
+  "order": 134
+}

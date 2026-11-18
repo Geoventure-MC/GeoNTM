@@ -16,12 +16,12 @@ import fr.geoventure.geocore.render.WorldEffects;
 import fr.geoventure.geocore.render.anim.BusAnimation;
 import fr.geoventure.geocore.render.anim.BusAnimationSequence;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -41,8 +41,8 @@ import java.util.List;
  */
 public final class JadeShotgunClient {
 
-    static final Identifier CROSSHAIR = Ids.of("geontm", "textures/misc/shotgun_crosshair.png");
-    static final Identifier SMOKE = Ids.of("geontm", "textures/misc/smo0_blur4.png");
+    static final ResourceLocation CROSSHAIR = Ids.of("geontm", "textures/misc/shotgun_crosshair.png");
+    static final ResourceLocation SMOKE = Ids.of("geontm", "textures/misc/smo0_blur4.png");
 
     /** The Collada reloads: one shell over 1.5 seconds, two over 3. */
     public static final String RELOAD_ONE = "JS_RELOAD0";
@@ -168,7 +168,7 @@ public final class JadeShotgunClient {
      * 1.12.2 {@code ItemGunJShotty.renderHUD}: the 40 by 40 {@code shotgun_crosshair}, tinted (0.7, 1, 0.5) and added
      * to the screen, in place of the vanilla crosshair.
      */
-    public static void renderCrosshair(GuiGraphicsExtractor graphics) {
+    public static void renderCrosshair(GuiGraphics graphics) {
         int x = graphics.guiWidth() / 2;
         int y = graphics.guiHeight() / 2;
         GuiDraw.blitUv(graphics, CROSSHAIR, x - 20, y - 20, 40, 40, 0F, 0F, 1F, 1F, 256, 256, true, 0xFFB2FF7F);

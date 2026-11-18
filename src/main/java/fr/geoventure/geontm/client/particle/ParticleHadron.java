@@ -5,7 +5,7 @@ import fr.geoventure.geocore.render.CompatParticle;
 import fr.geoventure.geocore.render.ParticleLayer;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ParticleHadron}: the {@code hadron} flash, a camera-facing white quad drawn additively at full
@@ -14,7 +14,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class ParticleHadron extends CompatParticle {
 
-    private static final Identifier HADRON = Ids.of("geontm", "hadron");
+    private static final ResourceLocation HADRON = Ids.of("geontm", "hadron");
     private float particleScale;
 
     public ParticleHadron(ClientLevel level, double x, double y, double z) {

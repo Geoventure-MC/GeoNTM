@@ -100,13 +100,13 @@ public class ConnectorRedWire extends CompatBlock implements TickingBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.isClientSide()) {
-            return PylonDyes.colorFromDye(stack) != 0 ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+            return PylonDyes.colorFromDye(stack) != 0 ? InteractionResult.SUCCESS : InteractionResult.PASS;
         }
         if (level.getBlockEntity(pos) instanceof TileEntityPylonBase pylon && pylon.setColor(stack)) {
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

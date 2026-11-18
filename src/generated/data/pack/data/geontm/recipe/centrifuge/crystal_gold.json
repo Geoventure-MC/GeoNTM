@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_gold"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_gold",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_gold",
+      "count": 2
+    },
+    "geontm:nugget_mercury",
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 156
+}

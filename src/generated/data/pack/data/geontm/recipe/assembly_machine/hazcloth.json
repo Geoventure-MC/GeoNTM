@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.hazcloth",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/lead",
+      "count": 4
+    },
+    {
+      "ingredient": "minecraft:string",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:hazmat_cloth",
+      "count": 4
+    }
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 6656
+}

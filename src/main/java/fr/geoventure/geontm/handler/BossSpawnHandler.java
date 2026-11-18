@@ -254,7 +254,7 @@ public final class BossSpawnHandler {
      * {@code spawnEntityInWorld} refused a (non-player) entity whose chunk was not loaded; so does this.
      */
     private static boolean trySpawn(ServerLevel level, float x, float y, float z, Mob e) {
-        e.snapTo(x, y, z, level.getRandom().nextFloat() * 360.0F, 0.0F);
+        e.moveTo(x, y, z, level.getRandom().nextFloat() * 360.0F, 0.0F);
         if (!level.hasChunk(Mth.floor(x) >> 4, Mth.floor(z) >> 4)) return false;
         if (!level.addFreshEntity(e)) return false;
         Spawns.finalizeTriggered(e, level);

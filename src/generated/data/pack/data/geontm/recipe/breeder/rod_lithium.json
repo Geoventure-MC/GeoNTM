@@ -1,0 +1,7 @@
+{
+  "type": "geontm:breeder",
+  "input": "geontm:rod_lithium",
+  "output": "geontm:rod_tritium",
+  "flux": 200,
+  "order": 0
+}

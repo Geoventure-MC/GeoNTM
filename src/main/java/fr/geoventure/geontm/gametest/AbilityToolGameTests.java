@@ -180,7 +180,7 @@ public final class AbilityToolGameTests {
         ServerPlayer player = GameTestHelpers.mockServerPlayerInLevel(helper);
         LivingEntity pig = helper.spawnWithNoFreeWill(EntityType.PIG, new BlockPos(1, 2, 1));
         IWeaponAbility.STUN.onHit(0, helper.getLevel(), player, pig, ModAbilityToolItems.steel_sword.get());
-        MobEffectInstance slow = pig.getEffect(MobEffects.SLOWNESS);
+        MobEffectInstance slow = pig.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
         helper.assertTrue(slow != null && slow.getAmplifier() == 4 && slow.getDuration() == 40,
                 "stun must apply slowness V for 40 ticks");
         helper.assertTrue(pig.getEffect(MobEffects.WEAKNESS) != null, "stun must apply weakness");

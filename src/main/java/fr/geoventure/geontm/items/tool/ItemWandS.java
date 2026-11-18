@@ -84,7 +84,7 @@ public class ItemWandS extends CompatItem {
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
         Level level = context.getLevel();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         ItemStack stack = context.getItemInHand();
@@ -168,7 +168,7 @@ public class ItemWandS extends CompatItem {
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (level.isClientSide()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.isClientSide()) return InteractionResult.PASS;
 
         CompoundTag tag = data(stack);
         if (player.isShiftKeyDown()) {
@@ -178,6 +178,6 @@ public class ItemWandS extends CompatItem {
         }
         ModDataComponents.PERSISTENT_DATA.set(stack, tag);
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

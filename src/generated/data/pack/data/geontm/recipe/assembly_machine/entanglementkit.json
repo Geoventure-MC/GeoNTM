@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.entanglementkit",
+  "input_items": [
+    {
+      "material": "dura_steel",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 24
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:xenon",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:entanglement_kit"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 11520
+}

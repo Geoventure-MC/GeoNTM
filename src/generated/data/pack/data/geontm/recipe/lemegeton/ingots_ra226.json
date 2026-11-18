@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/ra226",
+  "output": "geontm:ingot_polonium",
+  "order": 23
+}

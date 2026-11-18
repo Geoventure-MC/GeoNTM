@@ -33,7 +33,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -129,7 +129,7 @@ public class EntityGlyphid extends CompatMonster implements IResistanceProvider 
                       .add(Attributes.ATTACK_DAMAGE, GlyphidStats.getStats().getGrunt().damage);
     }
 
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_tex;
     }
 
@@ -417,7 +417,7 @@ public class EntityGlyphid extends CompatMonster implements IResistanceProvider 
             float f1 = ((float) (k / 2) - 0.5F) * 0.5F;
             if (EntityParasiteMaggot.TYPE != null) {
                 EntityParasiteMaggot maggot = new EntityParasiteMaggot(EntityParasiteMaggot.TYPE.get(), serverLevel);
-                maggot.snapTo(getX() + f, getY() + 0.5D, getZ() + f1, random.nextFloat() * 360.0F, 0F);
+                maggot.moveTo(getX() + f, getY() + 0.5D, getZ() + f1, random.nextFloat() * 360.0F, 0F);
                 maggot.setDeltaMovement(f, 0D, f1);
                 maggot.hurtMarked = true;
                 serverLevel.addFreshEntity(maggot);
@@ -535,7 +535,7 @@ public class EntityGlyphid extends CompatMonster implements IResistanceProvider 
 
         if (subtype() == TYPE_INFECTED && target instanceof LivingEntity livingTarget) {
             livingTarget.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 2));
-            livingTarget.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 100, 0));
+            livingTarget.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
         }
 
         return super.doHurtTarget(level, target);
@@ -584,13 +584,13 @@ public class EntityGlyphid extends CompatMonster implements IResistanceProvider 
                     EntityType<EntityWaypoint> type = EntityWaypoint.TYPE.get();
 
                     EntityWaypoint additional = new EntityWaypoint(type, serverLevel);
-                    additional.snapTo(getX(), getY(), getZ(), 0F, 0F);
+                    additional.moveTo(getX(), getY(), getZ(), 0F, 0F);
 
                     EntityWaypoint home = new EntityWaypoint(type, serverLevel);
                     home.setWaypointType(TASK_RETREAT_FOR_REINFORCEMENTS);
                     home.setAdditionalWaypoint(additional);
                     home.setHighPriority();
-                    home.snapTo(homeX, homeY, homeZ, 0F, 0F);
+                    home.moveTo(homeX, homeY, homeZ, 0F, 0F);
                     serverLevel.addFreshEntity(home);
 
                     this.taskWaypoint = home;
@@ -652,7 +652,7 @@ public class EntityGlyphid extends CompatMonster implements IResistanceProvider 
 
         BlockPos pos = obstacle.getBlockPos();
         EntityWaypoint target = new EntityWaypoint(EntityWaypoint.TYPE.get(), level);
-        target.snapTo(pos.getX(), pos.getY(), pos.getZ(), 0F, 0F);
+        target.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0F, 0F);
         target.radius = 5;
         level.addFreshEntity(target);
 

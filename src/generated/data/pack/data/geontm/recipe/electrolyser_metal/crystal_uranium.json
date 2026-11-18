@@ -1,0 +1,21 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_uranium",
+  "molten": [
+    {
+      "material": "uranium",
+      "amount": 432
+    },
+    {
+      "material": "ra226",
+      "amount": 32
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_lithium_tiny",
+      "count": 3
+    }
+  ],
+  "order": 2
+}

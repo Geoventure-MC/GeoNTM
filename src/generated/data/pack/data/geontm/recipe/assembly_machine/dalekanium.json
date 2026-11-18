@@ -1,0 +1,15 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.dalekanium",
+  "input_items": [
+    {
+      "ingredient": "geontm:block_meteor"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_dalekanium"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 3584
+}

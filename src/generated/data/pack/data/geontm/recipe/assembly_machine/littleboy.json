@@ -1,0 +1,31 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.littleboy",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:fins_small_steel"
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dyes/blue",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_boy"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 52992,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

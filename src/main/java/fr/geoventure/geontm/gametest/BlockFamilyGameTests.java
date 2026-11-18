@@ -15,7 +15,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -117,10 +117,10 @@ public final class BlockFamilyGameTests {
                                      List<String> ids, boolean beacon, boolean ladder) {
         for (int i = 0; i < entries.size(); i++) {
             Block block = entries.get(i).get();
-            Identifier expected = Ids.of(Constants.MOD_ID, ids.get(i));
+            ResourceLocation expected = Ids.of(Constants.MOD_ID, ids.get(i));
             helper.assertTrue(expected.equals(BuiltInRegistries.BLOCK.getKey(block)),
                     "Wrong block id: expected " + expected + ", got " + BuiltInRegistries.BLOCK.getKey(block));
-            Item item = BuiltInRegistries.ITEM.getValue(expected);
+            Item item = BuiltInRegistries.ITEM.get(expected);
             helper.assertTrue(expected.equals(BuiltInRegistries.ITEM.getKey(item)),
                     "Missing block item for " + expected);
             if (beacon) helper.assertTrue(block.defaultBlockState().is(BEACON_BASE_BLOCKS), expected + " is not beaconable");

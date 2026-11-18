@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:dusts/coal"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:coal"
+    }
+  ],
+  "tier": 3,
+  "order": 24
+}

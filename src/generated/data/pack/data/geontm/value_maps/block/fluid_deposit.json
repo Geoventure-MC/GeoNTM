@@ -1,0 +1,15 @@
+{
+  "values": {
+    "geontm:ore_oil": {
+      "primary": "geontm:oil",
+      "secondary": "geontm:gas",
+      "empty": "geontm:ore_oil_empty"
+    },
+    "geontm:ore_bedrock_oil": {
+      "primary": "geontm:oil",
+      "secondary": "geontm:gas",
+      "yield": 0.1,
+      "fracking_only": true
+    }
+  }
+}

@@ -2,11 +2,11 @@ package fr.geoventure.geontm.platform.neoforge;
 
 //? if neoforge {
 
-import fr.geoventure.geontm.client.GeoNtmClientRegistrations;
+/*import fr.geoventure.geontm.client.GeoNtmClientRegistrations;
 import fr.geoventure.geontm.packet.GeoNtmPackets;
 //? if >=26.1 {
-import fr.geoventure.geontm.client.render.MachineItemModelRenderer;
-//?}
+/^import fr.geoventure.geontm.client.render.MachineItemModelRenderer;
+^///?}
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.world.entity.Entity;
@@ -19,15 +19,15 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 //? if >=26.1 {
-import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
-//?}
-import net.minecraft.resources.Identifier;
+/^import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
+^///?}
+import net.minecraft.resources.ResourceLocation;
 
-/**
+/^*
  * Client-only NeoForge setup. Isolated in its own class so it is never loaded on a dedicated server
  * (it references client-only screen/renderer classes). Wired from the mod constructor behind a
  * Dist.CLIENT guard.
- */
+ ^/
 public final class NeoForgeClientInit {
 
     private NeoForgeClientInit() {}
@@ -75,7 +75,7 @@ public final class NeoForgeClientInit {
         // it the equivalent hook is a BEWLR hung off the item's client extensions, fed by the same item
         // definitions parsed on resource reload.
         //? if >=26.1 {
-        modBus.addListener((RegisterSpecialModelRendererEvent event) ->
+        /^modBus.addListener((RegisterSpecialModelRendererEvent event) ->
                 event.register(MachineItemModelRenderer.ID, MachineItemModelRenderer.Unbaked.MAP_CODEC));
         modBus.addListener((RegisterSpecialModelRendererEvent event) ->
                 event.register(fr.geoventure.geontm.client.jetpack.JetpackGliderItemModelRenderer.ID,
@@ -100,8 +100,8 @@ public final class NeoForgeClientInit {
         modBus.addListener((net.neoforged.neoforge.client.event.RegisterItemModelsEvent event) ->
                 event.register(fr.geoventure.geontm.client.jetpack.JetpackGliderItemModelRenderer.ID,
                         fr.geoventure.geontm.client.jetpack.JetpackGliderItemModelRenderer.Unbaked.MAP_CODEC));
-        //?} else {
-        /*modBus.addListener((net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent event) ->
+        ^///?} else {
+        modBus.addListener((net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent event) ->
                 event.registerReloadListener(
                         (net.minecraft.server.packs.resources.ResourceManagerReloadListener)
                                 fr.geoventure.geontm.client.render.MachineItemModels::reload));
@@ -140,7 +140,7 @@ public final class NeoForgeClientInit {
                             .forEach(e -> event.registerItem(extension, e.getValue())));
             fr.geoventure.geontm.client.render.MachineItemNamespaces.bind(null);
         });
-        *///?}
+        //?}
     }
 }
-//?}
+*///?}

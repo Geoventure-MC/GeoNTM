@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:chlorocalcite_mix",
+  "left": {
+    "type": "geontm:chlorocalcite_cleaned",
+    "amount": 50
+  },
+  "right": {
+    "type": "geontm:colloid",
+    "amount": 50
+  }
+}

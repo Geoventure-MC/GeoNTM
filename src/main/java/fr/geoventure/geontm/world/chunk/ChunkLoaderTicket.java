@@ -50,14 +50,14 @@ public final class ChunkLoaderTicket {
     /** Adds one chunk to this ticket's claim. Idempotent. */
     public void force(int chunkX, int chunkZ) {
         if (released) return;
-        long packed = ChunkPos.pack(chunkX, chunkZ);
+        long packed = ChunkPos.asLong(chunkX, chunkZ);
         if (chunks.add(packed)) ChunkLoadingManager.acquire(level, packed);
     }
 
     /** Drops one chunk from this ticket's claim. Idempotent. */
     public void unforce(int chunkX, int chunkZ) {
         if (released) return;
-        long packed = ChunkPos.pack(chunkX, chunkZ);
+        long packed = ChunkPos.asLong(chunkX, chunkZ);
         if (chunks.remove(packed)) ChunkLoadingManager.releaseChunk(level, packed);
     }
 

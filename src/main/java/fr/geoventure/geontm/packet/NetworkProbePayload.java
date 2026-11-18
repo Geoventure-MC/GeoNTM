@@ -7,7 +7,7 @@ import fr.geoventure.geocore.net.GeoCorePayload;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * A liveness probe, and the mod's one off-thread handler.
@@ -33,7 +33,7 @@ public record NetworkProbePayload(long nonce, long sentAtMillis) implements GeoC
     private static final AtomicLong RECEIVED = new AtomicLong();
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 

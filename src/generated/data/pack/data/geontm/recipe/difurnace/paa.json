@@ -1,0 +1,20 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.paa",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/gold"
+    },
+    {
+      "ingredient": "geontm:plate_mixed"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:plate_paa",
+      "count": 2
+    }
+  ],
+  "duration": 400,
+  "order": 9
+}

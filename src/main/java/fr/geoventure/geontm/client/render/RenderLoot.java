@@ -21,7 +21,7 @@ import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Quads;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -46,23 +46,23 @@ public class RenderLoot implements CompatBER<TileEntityLoot, RenderLoot.State> {
         final List<Entry> entries = new ArrayList<>();
     }
 
-    private static final Identifier NCR_HELMET = Ids.of("geontm", "textures/armor/ncrpa_helmet.png");
-    private static final Identifier NCR_CHEST = Ids.of("geontm", "textures/armor/ncrpa_chest.png");
-    private static final Identifier NCR_ARM = Ids.of("geontm", "textures/armor/ncrpa_arm.png");
-    private static final Identifier NCR_LEG = Ids.of("geontm", "textures/armor/ncrpa_leg.png");
-    private static final Identifier MINI_NUKE = Ids.of("geontm", "textures/models/projectiles/mini_nuke.png");
-    private static final Identifier MARESLEG = Ids.of("geontm", "textures/models/weapons/maresleg.png");
+    private static final ResourceLocation NCR_HELMET = Ids.of("geontm", "textures/armor/ncrpa_helmet.png");
+    private static final ResourceLocation NCR_CHEST = Ids.of("geontm", "textures/armor/ncrpa_chest.png");
+    private static final ResourceLocation NCR_ARM = Ids.of("geontm", "textures/armor/ncrpa_arm.png");
+    private static final ResourceLocation NCR_LEG = Ids.of("geontm", "textures/armor/ncrpa_leg.png");
+    private static final ResourceLocation MINI_NUKE = Ids.of("geontm", "textures/models/projectiles/mini_nuke.png");
+    private static final ResourceLocation MARESLEG = Ids.of("geontm", "textures/models/weapons/maresleg.png");
     // 1.7 ItemGunBaseNT's constructor: every Sedna gun's IIcon is gun_darter; only gun_pa_ranged renames it
-    private static final Identifier GUN_ICON = Ids.of("geontm", "textures/items/gun_darter.png");
-    private static final Identifier PA_RANGED_ICON = Ids.of("geontm", "textures/items/gun_pa_ranged.png");
+    private static final ResourceLocation GUN_ICON = Ids.of("geontm", "textures/items/gun_darter.png");
+    private static final ResourceLocation PA_RANGED_ICON = Ids.of("geontm", "textures/items/gun_pa_ranged.png");
     private static final Geometry ICON_2D = itemIn2D("geontm:loot_icon_2d", 16, 16, 0.0625F);
 
     private WavefrontObj ncr;
     private WavefrontObj trenchmaster;
-    private static final Identifier TRENCH_HELMET = Ids.of("geontm", "textures/armor/trenchmaster_helmet.png");
-    private static final Identifier TRENCH_CHEST = Ids.of("geontm", "textures/armor/trenchmaster_chest.png");
-    private static final Identifier TRENCH_ARM = Ids.of("geontm", "textures/armor/trenchmaster_arm.png");
-    private static final Identifier TRENCH_LEG = Ids.of("geontm", "textures/armor/trenchmaster_leg.png");
+    private static final ResourceLocation TRENCH_HELMET = Ids.of("geontm", "textures/armor/trenchmaster_helmet.png");
+    private static final ResourceLocation TRENCH_CHEST = Ids.of("geontm", "textures/armor/trenchmaster_chest.png");
+    private static final ResourceLocation TRENCH_ARM = Ids.of("geontm", "textures/armor/trenchmaster_arm.png");
+    private static final ResourceLocation TRENCH_LEG = Ids.of("geontm", "textures/armor/trenchmaster_leg.png");
     private WavefrontObj projectiles;
     private WavefrontObj maresleg;
 
@@ -99,7 +99,7 @@ public class RenderLoot implements CompatBER<TileEntityLoot, RenderLoot.State> {
         }
     }
 
-    private static void draw(SubmitSink sink, PoseStack pose, Identifier texture, Geometry geometry, int light) {
+    private static void draw(SubmitSink sink, PoseStack pose, ResourceLocation texture, Geometry geometry, int light) {
         sink.submitCustomGeometry(pose, CompatRenderTypes.entityCutoutNoCull(texture),
                 (p, buffer) -> geometry.draw(p, buffer, light, OverlayTexture.NO_OVERLAY, -1));
     }

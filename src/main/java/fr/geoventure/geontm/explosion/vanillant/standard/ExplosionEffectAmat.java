@@ -22,7 +22,7 @@ public class ExplosionEffectAmat implements IExplosionSFX {
         if (world.isClientSide()) return;
         RandomSource rand = world.getRandom();
         if (size < 15) {
-            world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 4.0F,
+            world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 4.0F,
                     (1.4F + (rand.nextFloat() - rand.nextFloat()) * 0.2F) * 0.7F);
         } else {
             world.playSound(null, x, y, z, ModSounds.MUKE_EXPLOSION.get(), SoundSource.BLOCKS, 15.0F, 1.0F);

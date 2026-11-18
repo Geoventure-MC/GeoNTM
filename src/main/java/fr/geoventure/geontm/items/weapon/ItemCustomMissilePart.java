@@ -9,7 +9,7 @@ import fr.geoventure.geontm.inventory.fluid.FluidType;
 import fr.geoventure.geontm.inventory.fluid.Fluids;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import fr.geoventure.geocore.world.CompatItem;
 import fr.geoventure.geocore.world.CompatTooltipContext;
@@ -54,8 +54,8 @@ public class ItemCustomMissilePart extends CompatItem {
      */
     public float height;
     public float guiHeight;
-    public @Nullable Identifier mesh;
-    public @Nullable Identifier skin;
+    public @Nullable ResourceLocation mesh;
+    public @Nullable ResourceLocation skin;
 
     private String title;
     private String author;
@@ -337,11 +337,11 @@ public class ItemCustomMissilePart extends CompatItem {
         return this;
     }
 
-    public ItemCustomMissilePart setAssembly(float height, Identifier mesh, Identifier skin) {
+    public ItemCustomMissilePart setAssembly(float height, ResourceLocation mesh, ResourceLocation skin) {
         return setAssembly(height, height, mesh, skin);
     }
 
-    public ItemCustomMissilePart setAssembly(float height, float guiHeight, Identifier mesh, Identifier skin) {
+    public ItemCustomMissilePart setAssembly(float height, float guiHeight, ResourceLocation mesh, ResourceLocation skin) {
         this.height = height;
         this.guiHeight = guiHeight;
         this.mesh = mesh;
@@ -349,20 +349,20 @@ public class ItemCustomMissilePart extends CompatItem {
         return this;
     }
 
-    private static Set<Identifier> vertexNormalMeshes = Set.of();
+    private static Set<ResourceLocation> vertexNormalMeshes = Set.of();
     private static boolean normalPolicyInstalled;
 
-    public static void configureVertexNormals(Set<Identifier> meshes) {
+    public static void configureVertexNormals(Set<ResourceLocation> meshes) {
         vertexNormalMeshes = Set.copyOf(meshes);
         normalPolicyInstalled = true;
     }
 
-    public static Set<Identifier> vertexNormalMeshes() {
+    public static Set<ResourceLocation> vertexNormalMeshes() {
         return vertexNormalMeshes;
     }
 
     /** Without an addon policy, retain the native renderer's supplied OBJ normals. */
-    public static boolean useVertexNormals(Identifier mesh) {
+    public static boolean useVertexNormals(ResourceLocation mesh) {
         return !normalPolicyInstalled || vertexNormalMeshes.contains(mesh);
     }
 

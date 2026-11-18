@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** C2S edge update for the copy tool's two modifier keys (1.7 {@code TOOL_ALT} / {@code TOOL_CTRL}). */
 public record ToolKeyPayload(int key, boolean pressed) implements GeoCorePayload {
@@ -16,5 +16,5 @@ public record ToolKeyPayload(int key, boolean pressed) implements GeoCorePayload
             },
             buffer -> new ToolKeyPayload(buffer.readVarInt(), buffer.readBoolean()));
 
-    @Override public Identifier id() { return CODEC.id(); }
+    @Override public ResourceLocation id() { return CODEC.id(); }
 }

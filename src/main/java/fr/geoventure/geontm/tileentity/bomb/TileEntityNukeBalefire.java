@@ -14,7 +14,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -167,7 +167,7 @@ public class TileEntityNukeBalefire extends TileEntityNukeBomb implements IContr
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeInt(timer);
         buffer.writeBoolean(started);
@@ -175,7 +175,7 @@ public class TileEntityNukeBalefire extends TileEntityNukeBomb implements IContr
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         timer = buffer.readInt();
         started = buffer.readBoolean();

@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "item": "geontm:billet_uranium",
+      "min": 1,
+      "max": 4,
+      "weight": 4
+    },
+    {
+      "item": "geontm:billet_th232",
+      "min": 1,
+      "max": 3,
+      "weight": 3
+    },
+    {
+      "item": "geontm:billet_uranium_fuel",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    },
+    {
+      "item": "geontm:billet_mox_fuel",
+      "min": 1,
+      "max": 3,
+      "weight": 5
+    },
+    {
+      "item": "geontm:billet_thorium_fuel",
+      "min": 1,
+      "max": 3,
+      "weight": 3
+    },
+    {
+      "item": "geontm:billet_ra226be",
+      "min": 1,
+      "max": 2,
+      "weight": 2
+    },
+    {
+      "item": "geontm:billet_beryllium",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:nugget_u233",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:nugget_uranium_fuel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:rod_zirnox_empty",
+      "min": 1,
+      "max": 3,
+      "weight": 3
+    },
+    {
+      "item": "geontm:ingot_graphite",
+      "min": 1,
+      "max": 4,
+      "weight": 3
+    },
+    {
+      "item": "geontm:pile_rod_mk2_nu",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:pile_rod_mk2_ra226be",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:pile_rod_mk2_waste",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:reacher",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:screwdriver",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    }
+  ]
+}

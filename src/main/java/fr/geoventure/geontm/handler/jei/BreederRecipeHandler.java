@@ -3,7 +3,7 @@ package fr.geoventure.geontm.handler.jei;
 import fr.geoventure.geontm.inventory.recipes.BreederRecipes;
 import fr.geoventure.geontm.blocks.ModNuclearMiscBlocks;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -41,7 +41,7 @@ public final class BreederRecipeHandler extends JEIUniversalHandler<BreederRecip
     }
 
     @Override
-    public void draw(Entry recipe, GuiGraphicsExtractor graphics, double mouseX, double mouseY) {
+    public void draw(Entry recipe, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         String flux = "Flux: " + recipe.flux();
         text(graphics, flux, 160 - textWidth(flux), 55);

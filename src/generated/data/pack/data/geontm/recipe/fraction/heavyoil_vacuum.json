@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:heavyoil_vacuum",
+  "left": {
+    "type": "geontm:smear",
+    "amount": 40
+  },
+  "right": {
+    "type": "geontm:heatingoil_vacuum",
+    "amount": 60
+  }
+}

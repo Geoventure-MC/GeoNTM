@@ -8,7 +8,7 @@ import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geontm.tileentity.TilePort.PortDef;
@@ -53,13 +53,13 @@ public class TileEntityMachineMiniRTG extends TileEntityLoadedBase
     @Override public void setPower(long power) { this.power = power; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
     }

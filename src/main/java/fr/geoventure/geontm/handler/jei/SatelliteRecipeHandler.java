@@ -13,7 +13,7 @@ import fr.geoventure.geocore.viewer.ViewerType;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -111,7 +111,7 @@ public class SatelliteRecipeHandler extends GeoNtmRecipeCategory<SatelliteRecipe
     }
 
     @Override
-    public void draw(Entry recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(Entry recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         smallSlot.draw(g, 11, 23);
         area108.draw(g, 47, 5);

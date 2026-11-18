@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * S2C: 1.12.2 {@code PacketSpecialDeath}: an entity id, an effect id and a float array. Effect 0 is the gluon gun's
@@ -36,7 +36,7 @@ public record SpecialDeathPayload(int entityId, int effectId, float[] auxData) i
             });
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

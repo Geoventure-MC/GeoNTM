@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:bitumen",
+  "left": {
+    "type": "geontm:oil",
+    "amount": 80
+  },
+  "right": {
+    "type": "geontm:aromatics",
+    "amount": 20
+  }
+}

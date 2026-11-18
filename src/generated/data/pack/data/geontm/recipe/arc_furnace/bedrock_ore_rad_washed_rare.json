@@ -1,0 +1,21 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_washed_rare"
+  },
+  "molten_outputs": [
+    {
+      "material": "niobium",
+      "amount": 120
+    },
+    {
+      "material": "neodymium",
+      "amount": 120
+    },
+    {
+      "material": "strontium",
+      "amount": 72
+    }
+  ],
+  "order": 47
+}

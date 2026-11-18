@@ -1,0 +1,20 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:ingots/dura_steel",
+      "count": 10
+    },
+    {
+      "ingredient": "geontm:motor"
+    },
+    {
+      "ingredient": "#c:ingots/tungsten_carbide",
+      "count": 12
+    }
+  ],
+  "output": "geontm:thruster_large",
+  "duration": 200,
+  "consumption": 5000,
+  "order": 20
+}

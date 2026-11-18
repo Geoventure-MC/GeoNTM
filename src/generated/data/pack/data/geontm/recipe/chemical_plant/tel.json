@@ -1,0 +1,28 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.tel",
+  "input_items": [
+    {
+      "ingredient": "#c:tars"
+    },
+    {
+      "ingredient": "#c:dusts/lead"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 100
+    },
+    {
+      "type": "geontm:steam",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "geontm:fuel_additive_antiknock"
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 18
+}

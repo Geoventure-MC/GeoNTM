@@ -9,7 +9,7 @@ import fr.geoventure.geocore.render.CompatBER;
 import fr.geoventure.geocore.render.CompatRenderState;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +34,9 @@ public final class SoyuzStructPreviewRenderer implements CompatBER<TileEntitySoy
     private static final int FULL_BRIGHT = 0xF000F0;
     private static final float ALPHA = 0.75F;
 
-    private static final Identifier PLATE = tex("struct_launcher");
-    private static final Identifier CONCRETE = tex("concrete");
-    private static final Identifier SCAFFOLD = tex("struct_scaffold");
+    private static final ResourceLocation PLATE = tex("struct_launcher");
+    private static final ResourceLocation CONCRETE = tex("concrete");
+    private static final ResourceLocation SCAFFOLD = tex("struct_scaffold");
 
     private static final int[][] PLATE_BOXES = {
             {-6, 3, -6, 6, 4, 6}, {-1, 3, -8, 1, 4, -7}, {-2, 3, 7, 2, 4, 9},
@@ -75,7 +75,7 @@ public final class SoyuzStructPreviewRenderer implements CompatBER<TileEntitySoy
         draw(poseStack, sink, SCAFFOLD, SCAFFOLD_CELLS);
     }
 
-    private static void draw(PoseStack poseStack, SubmitSink sink, Identifier texture, float[] cells) {
+    private static void draw(PoseStack poseStack, SubmitSink sink, ResourceLocation texture, float[] cells) {
         // 1.7 enabled GL_CULL_FACE: back faces of the 0.75-alpha cubes are not drawn.
         sink.submitCustomGeometry(poseStack, CompatRenderTypes.entityTranslucentCull(texture), (pose, buffer) -> {
             for (int i = 0; i < cells.length; i += 3) {
@@ -99,7 +99,7 @@ public final class SoyuzStructPreviewRenderer implements CompatBER<TileEntitySoy
         return flat;
     }
 
-    private static Identifier tex(String name) {
+    private static ResourceLocation tex(String name) {
         return Ids.of(Constants.MOD_ID, "textures/blocks/" + name + ".png");
     }
 }

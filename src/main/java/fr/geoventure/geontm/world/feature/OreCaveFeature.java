@@ -130,8 +130,8 @@ public class OreCaveFeature extends Feature<OreCaveFeature.Config> {
 
     private static void generate(WorldGenLevel level, RandomSource rand, int cx, int cz, LegacyPerlinNoise noise, Cave cave) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int floor = level.getMinY();
-        int ceiling = level.getMaxY();
+        int floor = level.getMinBuildHeight();
+        int ceiling = level.getMaxBuildHeight();
         BlockState ore = cave.ore();
         BlockState fluid = cave.fluid().orElse(null);
 

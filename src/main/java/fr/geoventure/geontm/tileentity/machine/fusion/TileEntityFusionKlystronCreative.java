@@ -6,7 +6,7 @@ import fr.geoventure.geontm.lib.DirPos;
 import fr.geoventure.geontm.tileentity.TilePort.PortDef;
 import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -56,13 +56,13 @@ public class TileEntityFusionKlystronCreative extends TileEntityFusionKlystron {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isConnected);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isConnected = buf.readBoolean();
     }

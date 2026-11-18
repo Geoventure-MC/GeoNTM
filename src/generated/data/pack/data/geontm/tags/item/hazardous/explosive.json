@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:ball_dynamite",
+    "geontm:ballistite",
+    "geontm:boy_propellant",
+    "geontm:cordite",
+    "geontm:fleija_propellant",
+    "geontm:solinium_propellant",
+    "geontm:stick_c4",
+    "geontm:stick_dynamite",
+    "geontm:stick_semtex",
+    "geontm:stick_tnt"
+  ]
+}

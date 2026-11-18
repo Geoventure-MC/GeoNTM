@@ -5,16 +5,16 @@ import fr.geoventure.geontm.tileentity.machine.albion.TileEntityCooledBase;
 import fr.geoventure.geontm.tileentity.machine.albion.TileEntityPARFC;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
 
 /** RF cavity panel: power, coolant and temperature, with no controls of its own. */
 public class GUIPARFC extends GUIPABase<ContainerPARFC> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/particleaccelerator/gui_rfc.png");
 
     public GUIPARFC(ContainerPARFC menu, Inventory playerInventory, Component title) {
@@ -22,7 +22,7 @@ public class GUIPARFC extends GUIPABase<ContainerPARFC> {
     }
 
     @Override
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return TEXTURE;
     }
 
@@ -32,7 +32,7 @@ public class GUIPARFC extends GUIPABase<ContainerPARFC> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos;
         int y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
@@ -46,14 +46,14 @@ public class GUIPARFC extends GUIPABase<ContainerPARFC> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 GUIPARFC draws no title, only "Inventory".
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
         drawTemperature(graphics, 91, 22, 121, 12);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         commonTooltip(graphics, mouseX, mouseY, 53, 18, 89, 36);
     }
 }

@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * S2C payload syncing the local player's {@link fr.geoventure.geontm.entity.EntityHbmProps}: the 26.1 replacement
@@ -21,7 +21,7 @@ public record EntityPropsSyncPayload(byte[] data) implements GeoCorePayload {
             buffer -> new EntityPropsSyncPayload(buffer.readByteArray()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

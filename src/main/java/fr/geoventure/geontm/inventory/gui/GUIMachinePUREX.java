@@ -13,9 +13,9 @@ import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachinePUREX;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -31,7 +31,7 @@ import java.util.Optional;
  */
 public class GUIMachinePUREX extends CompatContainerScreen<ContainerMachinePUREX> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_purex.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_purex.png");
     private static final int BTN_X = 7, BTN_Y = 125, BTN_W = 18, BTN_H = 18;
     private static final int TANK_W = 16, TANK_H = 52;
     private static final int IN_TANK_TOP = 18, OUT_TANK_TOP = 36, OUT_TANK_X = 116;
@@ -42,13 +42,13 @@ public class GUIMachinePUREX extends CompatContainerScreen<ContainerMachinePUREX
 
     /** 1.7: title centred on x=70 at y=6, inventory at (8, ySize-96+2), both 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachinePUREX te = this.menu.getPurex();
@@ -89,16 +89,16 @@ public class GUIMachinePUREX extends CompatContainerScreen<ContainerMachinePUREX
     }
 
     /** 1.7 {@code renderTank(guiLeft + x, guiTop + top + 52, ...)}: the 1.7 call passes the bottom edge. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int barX, int barTop) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int barX, int barTop) {
         GuiUtil.tank(graphics, tank, this.leftPos + barX, this.topPos + barTop + TANK_H, TANK_W, TANK_H);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int u) {
+    private void led(GuiGraphics graphics, int x, int u) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos + x, this.topPos + 121, (float) u, 0.0F, 3, 6, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachinePUREX te = this.menu.getPurex();
         if (te == null) return;
 
@@ -124,7 +124,7 @@ public class GUIMachinePUREX extends CompatContainerScreen<ContainerMachinePUREX
         }
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int mouseX, int mouseY) {
+    private void tankTooltip(GuiGraphics graphics, FluidTankNTM tank, int mouseX, int mouseY) {
         GuiUtil.tooltip(graphics, this.font, GuiUtil.tankTooltip(tank), mouseX, mouseY);
     }
 

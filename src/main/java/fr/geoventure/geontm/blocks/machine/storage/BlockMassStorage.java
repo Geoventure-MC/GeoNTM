@@ -106,13 +106,13 @@ public class BlockMassStorage extends CarriedBlock implements TickingBlock, ILoo
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                   BlockHitResult hit) {
-        if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.PASS;
         if (!level.isClientSide() && !player.isShiftKeyDown() && player instanceof ServerPlayer serverPlayer
                 && level.getBlockEntity(pos) instanceof TileEntityMassStorage storage && storage.canAccess(player)) {
             Menus.openWithPos(serverPlayer, storage, pos);
         }
         return level.isClientSide() || !player.isShiftKeyDown()
-                ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+                ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     @Override

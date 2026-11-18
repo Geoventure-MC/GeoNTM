@@ -231,7 +231,7 @@ public class EntityFalloutRain extends CompatEntity implements Owners.Carrier {
     /** Diagnostics seam: the state writes one column's stomp emits (last write per position wins). */
     public static Map<BlockPos, BlockState> stompColumnForTest(ServerLevel level, int x, int z,
                                                                         double distPercent, RandomSource rand) {
-        ChunkScan scan = new ChunkScan(ChunkPos.pack(x >> 4, z >> 4));
+        ChunkScan scan = new ChunkScan(ChunkPos.asLong(x >> 4, z >> 4));
         stompColumn(scan, level.getChunk(x >> 4, z >> 4), x, z, distPercent, rand, ModFalloutBlocks.fallout.get());
         Map<BlockPos, BlockState> writes = new LinkedHashMap<>();
         for (BlockWrite write : scan.stateWrites) writes.put(BlockPos.of(write.pos()), write.state());
@@ -400,13 +400,13 @@ public class EntityFalloutRain extends CompatEntity implements Owners.Carrier {
      */
     private void claimWithNeighbours(int chunkX, int chunkZ) {
         for (int dx = -1; dx <= 1; dx++) {
-            for (int dz = -1; dz <= 1; dz++) claimOne(ChunkPos.pack(chunkX + dx, chunkZ + dz));
+            for (int dz = -1; dz <= 1; dz++) claimOne(ChunkPos.asLong(chunkX + dx, chunkZ + dz));
         }
     }
 
     private void releaseWithNeighbours(int chunkX, int chunkZ) {
         for (int dx = -1; dx <= 1; dx++) {
-            for (int dz = -1; dz <= 1; dz++) releaseOne(ChunkPos.pack(chunkX + dx, chunkZ + dz));
+            for (int dz = -1; dz <= 1; dz++) releaseOne(ChunkPos.asLong(chunkX + dx, chunkZ + dz));
         }
     }
 
@@ -926,12 +926,12 @@ public class EntityFalloutRain extends CompatEntity implements Owners.Carrier {
 
             int cx = ((int) Math.floor(px + radius * cos)) >> 4;
             int cz = ((int) Math.floor(pz - radius * sin)) >> 4;
-            outer.add(ChunkPos.pack(cx, cz));
+            outer.add(ChunkPos.asLong(cx, cz));
 
             for (int d = 0; d <= radius; d += SPOKE_STEP_BLOCKS) {
                 int ix = ((int) Math.floor(px + d * cos)) >> 4;
                 int iz = ((int) Math.floor(pz - d * sin)) >> 4;
-                long packed = ChunkPos.pack(ix, iz);
+                long packed = ChunkPos.asLong(ix, iz);
                 if (!outer.contains(packed)) inner.add(packed);
             }
         }
@@ -1014,8 +1014,8 @@ public class EntityFalloutRain extends CompatEntity implements Owners.Carrier {
     private static void stompColumn(ChunkScan scan, LevelChunk chunk, int x, int z, double distPercent,
                                       RandomSource rand, Block layer) {
         int solidDepth = 0;
-        int bottomY = chunk.getMinY();
-        int maxY = chunk.getMaxY();
+        int bottomY = chunk.getMinBuildHeight();
+        int maxY = chunk.getMaxBuildHeight();
         float stonebrickRes = Blocks.STONE_BRICKS.getExplosionResistance();
         List<FalloutEntry> entries = FalloutConfig.entries();
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -1183,7 +1183,7 @@ public class EntityFalloutRain extends CompatEntity implements Owners.Carrier {
 
     private static LongArrayList fromPairs(int[] data) {
         LongArrayList list = new LongArrayList(data.length / 2);
-        for (int i = 0; i + 1 < data.length; i += 2) list.add(ChunkPos.pack(data[i], data[i + 1]));
+        for (int i = 0; i + 1 < data.length; i += 2) list.add(ChunkPos.asLong(data[i], data[i + 1]));
         return list;
     }
 

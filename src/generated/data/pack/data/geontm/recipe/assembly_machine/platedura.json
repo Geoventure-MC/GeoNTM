@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platedura",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/dura_steel"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_dura_steel"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 3072
+}

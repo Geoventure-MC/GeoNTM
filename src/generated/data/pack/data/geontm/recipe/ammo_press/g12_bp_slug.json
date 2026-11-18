@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g12_bp_slug",
+    "count": 6
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/lead"
+    },
+    "",
+    "",
+    {
+      "ingredient": "minecraft:gunpowder"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_shotshell"
+    },
+    ""
+  ],
+  "order": 43
+}

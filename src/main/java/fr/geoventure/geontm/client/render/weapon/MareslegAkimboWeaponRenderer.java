@@ -7,7 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
@@ -16,7 +16,7 @@ import net.minecraft.world.item.ItemStack;
  * renderModTable = renderOther(INVENTORY): the one Gun + Lever at the origin, for either configuration.
  */
 public final class MareslegAkimboWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/maresleg.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/maresleg.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/maresleg.png");
     private WavefrontObj model;
     private WavefrontObj model(){if(model==null)model=WavefrontObj.load(MODEL_ID);return model;}

@@ -1,0 +1,189 @@
+{
+  "entries": [
+    {
+      "item": "minecraft:bread",
+      "min": 1,
+      "max": 5,
+      "weight": 8
+    },
+    {
+      "item": "geontm:twinkie",
+      "min": 1,
+      "max": 3,
+      "weight": 6
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "min": 2,
+      "max": 6,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ingot_steel",
+      "min": 2,
+      "max": 5,
+      "weight": 7
+    },
+    {
+      "item": "geontm:ingot_beryllium",
+      "min": 1,
+      "max": 2,
+      "weight": 4
+    },
+    {
+      "item": "geontm:ingot_titanium",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gun_light_revolver",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:ammo_standard_m357_sp",
+      "min": 2,
+      "max": 6,
+      "weight": 4
+    },
+    {
+      "item": "geontm:ammo_standard_g12_bp",
+      "min": 3,
+      "max": 6,
+      "weight": 3
+    },
+    {
+      "item": "geontm:ammo_standard_g26_flare_supply",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gun_kit_1",
+      "min": 1,
+      "max": 3,
+      "weight": 4
+    },
+    {
+      "item": "geontm:gun_maresleg",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:casing_small",
+      "min": 4,
+      "max": 10,
+      "weight": 3
+    },
+    {
+      "item": "geontm:casing_shotshell",
+      "min": 4,
+      "max": 10,
+      "weight": 3
+    },
+    {
+      "item": "geontm:cordite",
+      "min": 4,
+      "max": 6,
+      "weight": 5
+    },
+    {
+      "item": "geontm:battery_redstone",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:scrap",
+      "min": 1,
+      "max": 3,
+      "weight": 10
+    },
+    {
+      "item": "geontm:dust",
+      "min": 2,
+      "max": 4,
+      "weight": 9
+    },
+    {
+      "item": "geontm:bottle_opener",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:bottle_nuka",
+      "min": 1,
+      "max": 3,
+      "weight": 4
+    },
+    {
+      "item": "geontm:bottle_cherry",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    },
+    {
+      "item": "geontm:stealth_boy",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:cap_nuka",
+      "min": 1,
+      "max": 15,
+      "weight": 7
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 2,
+      "weight": 2,
+      "fluid": "DIESEL"
+    },
+    {
+      "item": "geontm:canister_full",
+      "min": 1,
+      "max": 2,
+      "weight": 3,
+      "fluid": "BIOFUEL"
+    },
+    {
+      "item": "geontm:gas_mask_m65",
+      "min": 1,
+      "max": 1,
+      "weight": 2,
+      "components": {
+        "minecraft:damage": 60
+      }
+    },
+    {
+      "item": "geontm:gas_mask_filter",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:blueprint_folder",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:coin_token",
+      "min": 1,
+      "max": 1,
+      "weight": 2
+    }
+  ]
+}

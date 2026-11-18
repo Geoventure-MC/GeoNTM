@@ -1,0 +1,11 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_base_crystal"
+  },
+  "outputs": [
+    "geontm:bedrock_ore_primary_crystal",
+    "minecraft:gravel"
+  ],
+  "order": 135
+}

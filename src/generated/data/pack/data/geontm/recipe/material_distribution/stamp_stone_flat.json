@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:stamp_stone_flat",
+  "materials": [
+    {
+      "material": "stone",
+      "amount": 216
+    }
+  ]
+}

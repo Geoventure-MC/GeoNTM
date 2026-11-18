@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.thrusternerva",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/dura_steel",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:ingots/boron",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 16
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:thruster_nuclear"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 70144
+}

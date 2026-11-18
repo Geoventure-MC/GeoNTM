@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:cokes"
+  },
+  "output": "geontm:ingot_graphite",
+  "order": 5
+}

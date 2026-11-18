@@ -1,0 +1,22 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    },
+    {
+      "material": "aluminium",
+      "shape": "wire",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    }
+  ],
+  "output": "geontm:thruster_small",
+  "duration": 60,
+  "consumption": 1000,
+  "order": 18
+}

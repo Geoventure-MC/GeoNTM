@@ -60,7 +60,7 @@ public class BlockNetworkSeparator extends BlockMultiblockMachine implements IEn
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
         if (player.isShiftKeyDown() || !(level.getBlockEntity(core) instanceof TileEntityNetworkSeparator sep)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) OPEN_SCREEN.accept(sep);
         return InteractionResult.SUCCESS;

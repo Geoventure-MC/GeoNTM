@@ -1,0 +1,29 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g40_inc",
+    "count": 4
+  },
+  "grid": [
+    {
+      "type": "geontm:fluid_container",
+      "fluid": "geontm:diesel",
+      "amount": 1000
+    },
+    {
+      "ingredient": "geontm:ball_dynamite"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    ""
+  ],
+  "order": 59
+}

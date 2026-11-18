@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.magnetron",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 3
+    },
+    {
+      "material": "tungsten",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:magnetron"
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 11008
+}

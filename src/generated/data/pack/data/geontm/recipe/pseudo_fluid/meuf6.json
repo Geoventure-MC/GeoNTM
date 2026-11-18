@@ -1,0 +1,10 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "MEUF6",
+  "consumed": 200,
+  "produced": 100,
+  "next": "HEUF6",
+  "outputs": [
+    "geontm:nugget_u238"
+  ]
+}

@@ -5,15 +5,15 @@ import fr.geoventure.geontm.tileentity.bomb.TileEntityNukeFleija;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /** 1.7 {@code GUINukeFleija}: the schematic with one overlay per correctly filled slot. */
 public class GUINukeFleija extends CompatContainerScreen<ContainerNukeFleija> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/fleijaschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/fleijaschematic.png");
 
     /** Per slot: destination x, y, source u, v, width, height. */
     private static final int[][] OVERLAYS = {
@@ -35,13 +35,13 @@ public class GUINukeFleija extends CompatContainerScreen<ContainerNukeFleija> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityNukeFleija bomb = menu.getFleija();
         if (bomb == null) return;

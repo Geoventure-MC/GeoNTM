@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:dusts/lapis"
+  },
+  "output": "minecraft:lapis_lazuli",
+  "order": 1
+}

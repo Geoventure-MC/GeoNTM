@@ -1,0 +1,45 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_controller_quantum",
+  "duration": 600,
+  "consumption": 250000,
+  "fluid": {
+    "type": "geontm:perfluoromethyl_cold",
+    "amount": 6000
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:circuit_atomic_clock",
+      "count": 8
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_controller_advanced",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 32
+    }
+  ],
+  "requires": [
+    "!enable_528",
+    "!lbsm_simple_crafting"
+  ],
+  "order": 13
+}

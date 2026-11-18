@@ -151,7 +151,7 @@ public final class RenderOverhead {
         });
 
         // port: 1.7's 100 blocks plus the depth its world floor (y 0) lies above this one's, so deposits keep their labels
-        int labelRange = 100 - Math.min(0, mc.level.getMinY());
+        int labelRange = 100 - Math.min(0, mc.level.getMinBuildHeight());
         Vec3 look = player.getViewVector(partial);
         float viewY = player.getViewYRot(partial);
         float viewX = player.getViewXRot(partial);

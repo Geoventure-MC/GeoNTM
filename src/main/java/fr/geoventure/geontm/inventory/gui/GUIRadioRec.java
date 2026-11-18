@@ -9,12 +9,12 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.Optional;
  */
 public class GUIRadioRec extends CompatScreen {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_radio.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_radio.png");
     private final TileEntityRadioRec radio;
     private final int xSize = 220;
     private final int ySize = 42;
@@ -58,13 +58,13 @@ public class GUIRadioRec extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(g, TEXTURE, guiLeft, guiTop, 0, 0, xSize, ySize, 256, 256);
         if (radio.isOn) GuiDraw.blit(g, TEXTURE, guiLeft + 173, guiTop + 17, 0, 42, 18, 18, 256, 256);
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int x, int y, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int x, int y, float partialTick) {
         GuiDraw.text(g, font, title, guiLeft + xSize / 2 - font.width(title) / 2, guiTop + 6, 0xFF404040, false);
         if (guiLeft + 137 <= x && guiLeft + 137 + 18 > x && guiTop + 17 < y && guiTop + 17 + 18 >= y)
             GuiDraw.tooltip(g, font, List.of(Component.literal("Save Settings")), Optional.empty(), x, y);

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ore_nether_fire",
+  "output": {
+    "id": "geontm:powder_fire",
+    "count": 6
+  }
+}

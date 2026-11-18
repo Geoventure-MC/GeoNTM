@@ -25,7 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -96,7 +96,7 @@ public class BlockWandTandem extends CompatBlock implements TickingBlock, ILookO
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (!(level.getBlockEntity(pos) instanceof TileEntityWandTandem jigsaw)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(level.getBlockEntity(pos) instanceof TileEntityWandTandem jigsaw)) return InteractionResult.PASS;
 
         if (held.is(Items.PAPER)) {
             if (!level.isClientSide()) {
@@ -126,14 +126,14 @@ public class BlockWandTandem extends CompatBlock implements TickingBlock, ILookO
                 return InteractionResult.SUCCESS;
             }
 
-            if (held.is(ModWandItems.wand_s.get())) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (held.is(ModWandItems.wand_s.get())) return InteractionResult.PASS;
 
             if (level.isClientSide()) OPEN_SCREEN.accept(jigsaw);
 
             return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -213,7 +213,7 @@ public class BlockWandTandem extends CompatBlock implements TickingBlock, ILookO
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             buf.writeUtf(pool);
             buf.writeUtf(target);
             buf.writeInt(Block.getId(replaceState));
@@ -222,7 +222,7 @@ public class BlockWandTandem extends CompatBlock implements TickingBlock, ILookO
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             pool = buf.readUtf();
             target = buf.readUtf();
             replaceState = Block.stateById(buf.readInt());

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:holotape_damaged",
+    "geontm:holotape_image_holo_restored",
+    "geontm:nuke_fstbmb",
+    "geontm:rbmk_fuel_drx",
+    "geontm:rbmk_pellet_drx"
+  ]
+}

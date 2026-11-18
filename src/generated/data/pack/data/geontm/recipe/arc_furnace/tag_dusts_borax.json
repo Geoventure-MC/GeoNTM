@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:dusts/borax"
+  },
+  "solid_output": {
+    "id": "geontm:powder_boron_tiny",
+    "count": 3
+  },
+  "molten_outputs": [
+    {
+      "material": "boron",
+      "amount": 24
+    }
+  ],
+  "order": 12
+}

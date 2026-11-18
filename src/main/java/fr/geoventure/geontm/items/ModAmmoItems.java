@@ -29,7 +29,7 @@ public final class ModAmmoItems {
     /** Returns an already-declared ammo item without creating another registry entry. */
     public static Supplier<Item> ammo(String id) {
         if (!id.startsWith("ammo_")) throw new IllegalArgumentException("Not an ammo id: " + id);
-        return () -> BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, id));
+        return () -> BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, id));
     }
 
     /** Resolves the flattened identity produced from GunFactory.EnumAmmo. */

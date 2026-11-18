@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:coil_magnetized_tungsten",
+  "output": "geontm:powder_magnetized_tungsten"
+}

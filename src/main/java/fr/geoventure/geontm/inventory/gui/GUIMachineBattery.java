@@ -6,10 +6,10 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachineBattery;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -28,21 +28,21 @@ import java.util.Optional;
  */
 public class GUIMachineBattery extends CompatContainerScreen<ContainerMachineBattery> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_battery.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_battery.png");
 
     public GUIMachineBattery(ContainerMachineBattery menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 166);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         Component name = Component.literal(this.title.getString() + " (" + this.menu.getPower() + " HE)");
         GuiDraw.text(graphics, font, name, this.imageWidth / 2 - font.width(name) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, this.imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         drawBattery(graphics, TEXTURE, leftPos, topPos, imageWidth, imageHeight, scaled(this.menu.getPower(), this.menu.getMaxPower()),
                 this.menu.getRedLow(), this.menu.getRedHigh(), this.menu.getPriorityOrdinal());
     }
@@ -54,7 +54,7 @@ public class GUIMachineBattery extends CompatContainerScreen<ContainerMachineBat
     }
 
     /** The 1.7 battery background: bar, two mode buttons and the priority button. */
-    static void drawBattery(GuiGraphicsExtractor graphics, Identifier texture, int left, int top, int w, int h,
+    static void drawBattery(GuiGraphics graphics, ResourceLocation texture, int left, int top, int w, int h,
                             int bar, int redLow, int redHigh, int priority) {
         GuiDraw.blit(graphics, texture, left, top, 0.0F, 0.0F, w, h, 256, 256);
         if (bar > 0) GuiDraw.blit(graphics, texture, left + 62, top + 69 - bar, 176.0F, (float) (52 - bar), 52, bar, 256, 256);
@@ -89,7 +89,7 @@ public class GUIMachineBattery extends CompatContainerScreen<ContainerMachineBat
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (this.isHovering(62, 17, 52, 52, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, this.font, barInfo(this.menu.getPower(), this.menu.getMaxPower(), this.menu.getDelta()),
                     Optional.empty(), mouseX, mouseY);

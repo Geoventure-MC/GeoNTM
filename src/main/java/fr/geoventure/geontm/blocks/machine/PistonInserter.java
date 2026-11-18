@@ -114,7 +114,7 @@ public class PistonInserter extends CompatBlock implements TickingBlock, IToolti
 
     private InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
                                   ItemStack held, BlockHitResult hit) {
-        if (hit.getDirection() != state.getValue(FACING)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getDirection() != state.getValue(FACING)) return InteractionResult.PASS;
 
         if (player.isShiftKeyDown()) {
             if (!level.isClientSide() && level.getBlockEntity(pos) instanceof TileEntityPistonInserter piston) {
@@ -142,6 +142,6 @@ public class PistonInserter extends CompatBlock implements TickingBlock, IToolti
             return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

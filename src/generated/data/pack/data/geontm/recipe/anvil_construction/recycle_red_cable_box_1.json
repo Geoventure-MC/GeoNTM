@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:red_cable_box_1",
+      "count": 16
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_red_copper"
+    },
+    {
+      "id": "geontm:plate_polymer"
+    }
+  ],
+  "tier": 2,
+  "order": 145
+}

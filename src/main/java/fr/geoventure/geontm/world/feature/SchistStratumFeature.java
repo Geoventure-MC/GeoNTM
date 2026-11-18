@@ -70,8 +70,8 @@ public class SchistStratumFeature extends Feature<SchistStratumFeature.Config> {
         LegacyPerlinNoise perlin = NoiseCache.get(level.getSeed() + c.seedOffset(), c.octaves());
 
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int minY = level.getMinY() + 1;
-        int maxY = level.getMaxY() - 1;
+        int minY = level.getMinBuildHeight() + 1;
+        int maxY = level.getMaxBuildHeight() - 1;
 
         for (int x = cx; x < cx + 16; x++) {
             for (int z = cz; z < cz + 16; z++) {

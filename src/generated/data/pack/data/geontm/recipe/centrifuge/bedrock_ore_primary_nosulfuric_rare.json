@@ -1,0 +1,18 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_nosulfuric_rare"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_cobalt",
+      "count": 5
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_rare",
+      "count": 5
+    },
+    "geontm:bedrock_ore_crumbs_rare"
+  ],
+  "order": 95
+}

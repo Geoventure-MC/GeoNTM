@@ -1,0 +1,17 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.wiring",
+  "input_items": [
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:gadget_wireing"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 56832
+}

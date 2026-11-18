@@ -72,7 +72,7 @@ public class EntitySawblade extends EntityThrowableInterp {
     @Override
     protected InteractionResult onInteract(Player player, InteractionHand hand) {
         if (!level().isClientSide() && player.getInventory().add(new ItemStack(ModItems.sawblade.get()))) discard();
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

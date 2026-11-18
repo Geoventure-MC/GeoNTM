@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pistonsetsteel",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 8
+    },
+    {
+      "material": "tungsten",
+      "shape": "bolt",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:piston_set_steel"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 35328
+}

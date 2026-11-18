@@ -1,0 +1,31 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.h3",
+  "input_fluids": [
+    {
+      "type": "geontm:helium3",
+      "amount": 20
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 1000
+    }
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:helium3",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 4,
+  "ignition_temp": 500000,
+  "output_temp": 3750000,
+  "red": 0.2,
+  "blue": 1.0
+}

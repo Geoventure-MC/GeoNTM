@@ -1,0 +1,41 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.cobble",
+  "input_items": [
+    {
+      "ingredient": "#c:cobblestones"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:gravel",
+        "weight": 95
+      },
+      {
+        "data": "geontm:powder_quartz",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 100,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:cobblestone"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 0
+}

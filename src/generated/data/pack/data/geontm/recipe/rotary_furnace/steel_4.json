@@ -1,0 +1,19 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:fragments/iron",
+      "count": 9
+    },
+    {
+      "ingredient": "#c:cokes"
+    }
+  ],
+  "output": {
+    "material": "steel",
+    "amount": 216
+  },
+  "duration": 200,
+  "steam": 25,
+  "order": 3
+}

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:powder_flux",
+  "materials": [
+    {
+      "material": "flux",
+      "amount": 72
+    }
+  ]
+}

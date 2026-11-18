@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_second_actinide"
+  },
+  "molten_outputs": [
+    {
+      "material": "uranium",
+      "amount": 64
+    },
+    {
+      "material": "thorium",
+      "amount": 160
+    }
+  ],
+  "order": 55
+}

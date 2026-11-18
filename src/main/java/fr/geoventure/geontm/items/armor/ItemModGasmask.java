@@ -116,7 +116,7 @@ public class ItemModGasmask extends ItemArmorMod implements IGasMask {
         }
         ItemStack offered = player.getItemInHand(hand == InteractionHand.MAIN_HAND
                 ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND);
-        if (!isFilterApplicable(mask, offered)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!isFilterApplicable(mask, offered)) return InteractionResult.PASS;
         ItemStack previous = getFilter(mask);
         installFilter(mask, offered);
         if (!player.isCreative()) offered.shrink(1);

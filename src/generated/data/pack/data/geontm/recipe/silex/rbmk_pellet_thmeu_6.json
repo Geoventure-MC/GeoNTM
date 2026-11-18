@@ -1,0 +1,29 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_thmeu",
+    "stage": 6
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:powder_xe135_tiny",
+      "weight": 1
+    },
+    {
+      "data": "geontm:nugget_thorium_fuel",
+      "weight": 63
+    },
+    {
+      "data": "geontm:nugget_u233",
+      "weight": 10
+    },
+    {
+      "data": "geontm:nuclear_waste_long_tiny_thorium",
+      "weight": 26
+    }
+  ],
+  "order": 81
+}

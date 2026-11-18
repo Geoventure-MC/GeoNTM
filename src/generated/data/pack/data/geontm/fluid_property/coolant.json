@@ -1,0 +1,28 @@
+{
+  "type": "liquid",
+  "color": "#D8FCFF",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 300,
+          "produces": "geontm:coolant_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "HEATEXCHANGER": 1.0,
+        "PWR": 1.0,
+        "ICF": 1.0
+      }
+    }
+  }
+}

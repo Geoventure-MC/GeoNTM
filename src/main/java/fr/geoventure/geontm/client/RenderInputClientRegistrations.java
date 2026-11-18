@@ -27,13 +27,13 @@ import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -41,7 +41,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 /** G-C (rendering and input gaps): the client halves - packet handlers, key mappings, overlays and world renderers. */
 public final class RenderInputClientRegistrations {
 
-    private static final Identifier MISC = Ids.of("geontm", "textures/misc/overlay_misc.png");
+    private static final ResourceLocation MISC = Ids.of("geontm", "textures/misc/overlay_misc.png");
 
     /** 1.7 {@code GeoNtmKeybinds.magnetKey}: "geontm.key.toggleMagnet" on Z. */
     public static KeyMappings.Mapping magnetKey;
@@ -91,7 +91,7 @@ public final class RenderInputClientRegistrations {
      * armour row moved up above it. No loader here lets an overlay join that stacking on every node, so the bar goes
      * to the row above vanilla's armour row when armour shows (at the armour row otherwise): same bar, rows swapped.
      */
-    public static void renderShieldBar(GuiGraphicsExtractor graphics) {
+    public static void renderShieldBar(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
         if (player == null || mc.options.hideGui || mc.gameMode == null || !mc.gameMode.canHurtPlayer()) return;

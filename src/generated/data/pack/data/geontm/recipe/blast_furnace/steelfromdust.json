@@ -1,0 +1,22 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.steelFromDust",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/iron",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:sands"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_steel",
+      "count": 2
+    },
+    "geontm:ingot_raw_slag"
+  ],
+  "duration": 800,
+  "order": 1
+}

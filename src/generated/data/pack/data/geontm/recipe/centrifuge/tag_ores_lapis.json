@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/lapis"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_lapis",
+      "count": 6
+    },
+    "geontm:powder_cobalt_tiny",
+    "geontm:gem_sodalite",
+    "minecraft:gravel"
+  ],
+  "order": 47
+}

@@ -1,0 +1,31 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_analog",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_assembly_machine"
+    }
+  ],
+  "tier": 2,
+  "requires": [
+    "expensive_mode"
+  ],
+  "order": 58
+}

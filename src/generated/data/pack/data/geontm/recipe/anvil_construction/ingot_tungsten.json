@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:deco_tungsten",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_tungsten"
+    }
+  ],
+  "tier": 1,
+  "overlay": "recycling",
+  "order": 206
+}

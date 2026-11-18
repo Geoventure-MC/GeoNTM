@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:ore_gneiss_uranium",
+    "geontm:ore_gneiss_uranium_scorched",
+    "geontm:ore_nether_uranium",
+    "geontm:ore_nether_uranium_scorched",
+    "geontm:ore_uranium",
+    "geontm:ore_uranium_deepslate",
+    "geontm:ore_uranium_scorched"
+  ]
+}

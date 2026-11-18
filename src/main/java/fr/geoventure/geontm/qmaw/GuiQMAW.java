@@ -9,9 +9,9 @@ import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
@@ -21,9 +21,9 @@ import java.util.List;
 
 /** 1.7 {@code GuiQMAW}: the 340x224 manual screen (gui_wiki.png, plus gui_wiki_flix.png on the last line). */
 public final class GuiQMAW extends CompatScreen {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_wiki.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_wiki.png");
     /** 1.7 {@code the_man}: drawn instead of the text once the page is scrolled to its last line. */
-    private static final Identifier THE_MAN = Ids.of("geontm", "textures/gui/gui_wiki_flix.png");
+    private static final ResourceLocation THE_MAN = Ids.of("geontm", "textures/gui/gui_wiki_flix.png");
     private static final int WIDTH = 340;
     private static final int HEIGHT = 224;
     private static final int CONTENT_WIDTH = WIDTH - 29;
@@ -167,7 +167,7 @@ public final class GuiQMAW extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         updateDragging(mouseY);
         GuiDraw.fill(graphics, 0, 0, width, height, 0xe0000000);
         GuiDraw.blit(graphics, TEXTURE, left, top, 0, 0, 170, HEIGHT, 256, 256);
@@ -180,7 +180,7 @@ public final class GuiQMAW extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         if (showTheMan()) {
             GuiDraw.blit(graphics, THE_MAN, left + 60, top + HEIGHT - 84, 0, 0, 80, 80, 256, 256);
             GuiDraw.blit(graphics, THE_MAN, left + 140, top + HEIGHT - 60, 0, 80, 77, 39, 256, 256);
@@ -433,7 +433,7 @@ public final class GuiQMAW extends CompatScreen {
             return Math.max(font.lineHeight, icon != null && !icon.isEmpty() ? 16 : 0);
         }
 
-        private void draw(GuiGraphicsExtractor graphics, Font font,
+        private void draw(GuiGraphics graphics, Font font,
                           int x, int y, boolean mouseOver, String currentPage) {
             if (icon != null && !icon.isEmpty()) {
                 GuiDraw.item(graphics, icon, x, y - 1);

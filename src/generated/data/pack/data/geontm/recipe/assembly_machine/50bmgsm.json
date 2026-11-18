@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.50bmgsm",
+  "input_items": [
+    {
+      "ingredient": "geontm:casing_large_steel"
+    },
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:ingots/starmetal",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ammo_standard_bmg50_sm",
+      "count": 6
+    }
+  ],
+  "duration": 100,
+  "power": 100,
+  "blueprint_pools": [
+    "discover.silverstorm"
+  ],
+  "order": 82944
+}

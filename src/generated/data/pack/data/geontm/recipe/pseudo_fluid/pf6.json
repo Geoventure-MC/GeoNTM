@@ -1,0 +1,15 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "PF6",
+  "from": "geontm:puf6",
+  "consumed": 300,
+  "produced": 0,
+  "outputs": [
+    "geontm:nugget_pu238",
+    {
+      "id": "geontm:nugget_pu_mix",
+      "count": 2
+    },
+    "geontm:fluorite"
+  ]
+}

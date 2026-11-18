@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ores/schrabidium"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output": "geontm:crystal_schrabidium",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 18
+}

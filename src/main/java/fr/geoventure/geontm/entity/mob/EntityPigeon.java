@@ -107,7 +107,7 @@ public class EntityPigeon extends CompatPathfinderMob implements IFlyingCreature
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        playSound(SoundEvents.CHICKEN_STEP.value(), 0.15F, 1.0F);
+        playSound(SoundEvents.CHICKEN_STEP, 0.15F, 1.0F);
     }
 
     /** 1.7 {@code canTriggerWalking() = false}, which already made its {@link #playStepSound} override dead. */

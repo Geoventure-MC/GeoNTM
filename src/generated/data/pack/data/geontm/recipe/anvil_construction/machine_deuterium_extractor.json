@@ -1,0 +1,30 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:sulfur",
+      "count": 12
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "material": "copper",
+      "shape": "castplate",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_deuterium_extractor"
+    }
+  ],
+  "tier": 2,
+  "order": 84
+}

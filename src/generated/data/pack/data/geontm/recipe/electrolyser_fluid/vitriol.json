@@ -1,0 +1,17 @@
+{
+  "type": "geontm:electrolyser_fluid",
+  "input": "geontm:vitriol",
+  "amount": 1000,
+  "output1": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 500
+  },
+  "output2": {
+    "type": "geontm:chlorine",
+    "amount": 500
+  },
+  "byproducts": [
+    "geontm:powder_iron",
+    "geontm:nugget_mercury"
+  ]
+}

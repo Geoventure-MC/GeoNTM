@@ -14,7 +14,7 @@ import fr.geoventure.geocore.data.DataOut;
 import java.util.Arrays;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -187,26 +187,26 @@ public class TileEntityBatteryREDD extends TileEntityBatteryBase implements Menu
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         writeBigInteger(buf, power);
         writeBigInteger(buf, delta);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = readBigInteger(buf);
         delta = readBigInteger(buf);
     }
 
-    private static void writeBigInteger(RegistryFriendlyByteBuf buf, BigInteger value) {
+    private static void writeBigInteger(FriendlyByteBuf buf, BigInteger value) {
         byte[] bytes = value.toByteArray();
         buf.writeInt(bytes.length);
         buf.writeBytes(bytes);
     }
 
-    private static BigInteger readBigInteger(RegistryFriendlyByteBuf buf) {
+    private static BigInteger readBigInteger(FriendlyByteBuf buf) {
         int length = buf.readInt();
         if (length < 1 || length > 4096) return BigInteger.ZERO;
         byte[] bytes = new byte[length];

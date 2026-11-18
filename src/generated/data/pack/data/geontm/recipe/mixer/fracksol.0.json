@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.fracksol.0",
+  "input_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 900
+    },
+    {
+      "type": "geontm:petroleum",
+      "amount": 100
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:fracksol",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 3
+}

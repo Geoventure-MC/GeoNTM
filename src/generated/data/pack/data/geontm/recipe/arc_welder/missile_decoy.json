@@ -1,0 +1,18 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:ingots/steel"
+    },
+    {
+      "ingredient": "geontm:fuel_tank_small"
+    },
+    {
+      "ingredient": "geontm:thruster_small"
+    }
+  ],
+  "output": "geontm:missile_decoy",
+  "duration": 60,
+  "consumption": 2500,
+  "order": 29
+}

@@ -1,0 +1,20 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.oilelectrodes",
+  "input_fluids": [
+    {
+      "type": "geontm:heatingoil",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "geontm:arc_electrode"
+  ],
+  "duration": 600,
+  "power": 100,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..electrodes"
+  ],
+  "order": 59
+}

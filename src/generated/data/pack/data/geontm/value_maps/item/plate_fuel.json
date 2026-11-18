@@ -1,0 +1,39 @@
+{
+  "values": {
+    "geontm:plate_fuel_u233": {
+      "life_time": 2200000,
+      "function": "SQUARE_ROOT",
+      "reactivity": 50
+    },
+    "geontm:plate_fuel_u235": {
+      "life_time": 2200000,
+      "function": "SQUARE_ROOT",
+      "reactivity": 40
+    },
+    "geontm:plate_fuel_mox": {
+      "life_time": 2400000,
+      "function": "LOGARITHM",
+      "reactivity": 50
+    },
+    "geontm:plate_fuel_pu239": {
+      "life_time": 2000000,
+      "function": "NEGATIVE_QUADRATIC",
+      "reactivity": 50
+    },
+    "geontm:plate_fuel_sa326": {
+      "life_time": 2000000,
+      "function": "LINEAR",
+      "reactivity": 80
+    },
+    "geontm:plate_fuel_ra226be": {
+      "life_time": 1300000,
+      "function": "PASSIVE",
+      "reactivity": 30
+    },
+    "geontm:plate_fuel_pu238be": {
+      "life_time": 1000000,
+      "function": "PASSIVE",
+      "reactivity": 50
+    }
+  }
+}

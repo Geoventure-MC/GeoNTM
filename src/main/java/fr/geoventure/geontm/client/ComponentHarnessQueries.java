@@ -119,7 +119,7 @@ public final class ComponentHarnessQueries {
             piece.move(x - piece.getBoundingBox().minX(), 0, z - piece.getBoundingBox().minZ());
             if (p.has("y")) piece.fixHeight(p.get("y").getAsInt()); // else 1.7's own height rule on the terrain
             BoundingBox b = piece.getBoundingBox();
-            BoundingBox all = new BoundingBox(b.minX() - 8, level.getMinY(), b.minZ() - 8, b.maxX() + 8, level.getMaxY() - 1, b.maxZ() + 8);
+            BoundingBox all = new BoundingBox(b.minX() - 8, level.getMinBuildHeight(), b.minZ() - 8, b.maxX() + 8, level.getMaxBuildHeight() - 1, b.maxZ() + 8);
             if (p.has("chunked")) {
                 for (BoundingBox chunk : chunkBoxes(all, rand)) piece.build(level, rand, chunk);
             } else {
@@ -143,7 +143,7 @@ public final class ComponentHarnessQueries {
             NBTStructure.Component piece = new NBTStructure.Component(spawn, spawn.structure, x, p.get("y").getAsInt(), z, rot);
             BoundingBox b = piece.getBoundingBox();
             RandomSource rand = RandomSource.create(p.has("seed") ? p.get("seed").getAsLong() : 0L);
-            BoundingBox all = new BoundingBox(b.minX(), level.getMinY(), b.minZ(), b.maxX(), level.getMaxY() - 1, b.maxZ());
+            BoundingBox all = new BoundingBox(b.minX(), level.getMinBuildHeight(), b.minZ(), b.maxX(), level.getMaxBuildHeight() - 1, b.maxZ());
             for (BoundingBox chunk : chunkBoxes(all, rand)) {
                 piece.postProcess(level, level.structureManager(), level.getChunkSource().getGenerator(), rand, chunk,
                         new ChunkPos(chunk.minX() >> 4, chunk.minZ() >> 4), b.getCenter());

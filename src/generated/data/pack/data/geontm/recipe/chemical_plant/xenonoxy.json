@@ -1,0 +1,34 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.xenonoxy",
+  "input_fluids": [
+    {
+      "type": "geontm:air",
+      "amount": 8000
+    },
+    {
+      "type": "geontm:oxygen",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:xenon",
+      "amount": 50
+    }
+  ],
+  "duration": 20,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:xenon",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..xenonoxy"
+  ],
+  "order": 4
+}

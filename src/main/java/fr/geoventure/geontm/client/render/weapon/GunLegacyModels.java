@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render.weapon;
 
 //? if <26.1 {
 
-/*import com.google.gson.JsonElement;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fr.geoventure.geontm.Constants;
@@ -17,13 +17,13 @@ import java.util.Map;
 import java.util.Set;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
-/^*
+/**
  * The gun item models below 26.1, where there is no item-model system to declare one in.
  *
  * <p>26.1 resolves {@code {"type": "geontm:gun", "weapon": "atlas"}} in an item definition to a
@@ -34,12 +34,12 @@ import net.minecraft.world.item.ItemStack;
  *
  * <p>Mirrors {@code MachineItemModels}, which does the same job for OBJ machines. A gun behind a
  * {@code display_context} select draws its sprite case's {@code layer0} in those contexts, as 1.7's B92 does in the inventory.
- ^/
+ */
 public final class GunLegacyModels {
 
-    private record GunModel(WeaponRenderer renderer, Set<String> spriteContexts, Identifier sprite) {}
+    private record GunModel(WeaponRenderer renderer, Set<String> spriteContexts, ResourceLocation sprite) {}
 
-    private static Map<Identifier, GunModel> models = Map.of();
+    private static Map<ResourceLocation, GunModel> models = Map.of();
 
     private GunLegacyModels() {}
 
@@ -47,19 +47,19 @@ public final class GunLegacyModels {
         return models.isEmpty();
     }
 
-    public static WeaponRenderer get(Identifier item) {
+    public static WeaponRenderer get(ResourceLocation item) {
         GunModel model = models.get(item);
         return model == null ? null : model.renderer();
     }
 
-    /^* Re-reads every {@code assets/geontm/items/^.json} and records the guns among them. ^/
+    /** Re-reads every {@code assets/geontm/items/*.json} and records the guns among them. */
     public static void reload(ResourceManager resources) {
-        Map<Identifier, GunModel> parsed = new HashMap<>();
+        Map<ResourceLocation, GunModel> parsed = new HashMap<>();
         String prefix = "items/";
 
-        for (Map.Entry<Identifier, Resource> entry : resources.listResources(
+        for (Map.Entry<ResourceLocation, Resource> entry : resources.listResources(
                 "items", id -> id.getPath().endsWith(".json")).entrySet()) {
-            Identifier file = entry.getKey();
+            ResourceLocation file = entry.getKey();
             if (!Constants.MOD_ID.equals(file.getNamespace())) continue;
 
             try (BufferedReader reader = entry.getValue().openAsReader()) {
@@ -67,7 +67,7 @@ public final class GunLegacyModels {
                 if (!root.isJsonObject() || !root.getAsJsonObject().has("model")) continue;
                 JsonElement model = root.getAsJsonObject().get("model");
                 Set<String> spriteContexts = new HashSet<>();
-                Identifier sprite = null;
+                ResourceLocation sprite = null;
                 if (model.isJsonObject() && "minecraft:select".equals(string(model.getAsJsonObject(), "type"))
                         && "minecraft:display_context".equals(string(model.getAsJsonObject(), "property"))) {
                     JsonObject select = model.getAsJsonObject();
@@ -97,7 +97,7 @@ public final class GunLegacyModels {
         Constants.LOG.info("Loaded {} gun item model(s)", models.size());
     }
 
-    /^* The weapon named by {@code {"type": "geontm:gun", "weapon": ...}}, or null. ^/
+    /** The weapon named by {@code {"type": "geontm:gun", "weapon": ...}}, or null. */
     private static String weaponOf(JsonElement model) {
         if (model == null || !model.isJsonObject()) return null;
         JsonObject gun = model.getAsJsonObject();
@@ -109,22 +109,22 @@ public final class GunLegacyModels {
         return e != null && e.isJsonPrimitive() ? e.getAsString() : null;
     }
 
-    /^* The texture file of a sprite model's {@code layer0}. ^/
-    private static Identifier layer0(ResourceManager resources, Identifier model) throws IOException {
-        Identifier file = fr.geoventure.geocore.Ids.of(model.getNamespace(), "models/" + model.getPath() + ".json");
+    /** The texture file of a sprite model's {@code layer0}. */
+    private static ResourceLocation layer0(ResourceManager resources, ResourceLocation model) throws IOException {
+        ResourceLocation file = fr.geoventure.geocore.Ids.of(model.getNamespace(), "models/" + model.getPath() + ".json");
         try (BufferedReader reader = resources.getResourceOrThrow(file).openAsReader()) {
-            Identifier sprite = fr.geoventure.geocore.Ids.parse(JsonParser.parseReader(reader).getAsJsonObject()
+            ResourceLocation sprite = fr.geoventure.geocore.Ids.parse(JsonParser.parseReader(reader).getAsJsonObject()
                     .getAsJsonObject("textures").get("layer0").getAsString());
             return fr.geoventure.geocore.Ids.of(sprite.getNamespace(), "textures/" + sprite.getPath() + ".png");
         }
     }
 
-    /^*
+    /**
      * Draws {@code stack} if it is a gun; returns whether it did.
      *
      * <p>The first-person body rebuilds its own pose from the camera, so the transform vanilla has
      * already applied for the hand is discarded inside, exactly as on 26.1.
-     ^/
+     */
     public static boolean render(ItemStack stack, ItemDisplayContext context, PoseStack poseStack,
             MultiBufferSource buffers, int light, int overlay) {
         if (models.isEmpty()) return false;
@@ -160,4 +160,4 @@ public final class GunLegacyModels {
         return true;
     }
 }
-*///?}
+//?}

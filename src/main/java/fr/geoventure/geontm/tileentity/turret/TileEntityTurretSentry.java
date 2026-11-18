@@ -11,8 +11,8 @@ import fr.geoventure.geontm.sound.ModSounds;
 import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -27,7 +27,7 @@ import fr.geoventure.geontm.tileentity.TilePort.PortDef;
  */
 public class TileEntityTurretSentry extends TileEntityTurretBaseNT {
 
-    private static final Identifier GUI = turretGui("sentry");
+    private static final ResourceLocation GUI = turretGui("sentry");
 
     private static @Nullable List<BulletConfig> configs;
 
@@ -87,7 +87,7 @@ public class TileEntityTurretSentry extends TileEntityTurretBaseNT {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -229,7 +229,7 @@ public class TileEntityTurretSentry extends TileEntityTurretBaseNT {
      * shot taken minutes earlier.
      */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(didJustShootLeft);
         buf.writeBoolean(didJustShootRight);
@@ -243,7 +243,7 @@ public class TileEntityTurretSentry extends TileEntityTurretBaseNT {
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         if (buf.readBoolean()) retractingLeft = true;
         if (buf.readBoolean()) retractingRight = true;

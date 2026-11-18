@@ -61,7 +61,7 @@ public final class ModStructureWandBlocks {
     // 1.7 Material.glass, no hardness
     public static final RegistryObject<BlockWand> wand_air = REG.block("wand_air",
             p -> new BlockWand(p, () -> Blocks.AIR),
-            p -> p.instabreak().sound(SoundType.GLASS).noOcclusion().noCollision()
+            p -> p.instabreak().sound(SoundType.GLASS).noOcclusion().noCollission()
                     .isSuffocating((s, l, pos) -> false).isViewBlocking((s, l, pos) -> false))
             // The 1..15 px box with outside faces plus six inward faces (1.7 renderFromInside) is hand-built
             // geometry, so its model is authored: assets/geontm/models/block/wand_air.json (cutout).

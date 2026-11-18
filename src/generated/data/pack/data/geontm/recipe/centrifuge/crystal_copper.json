@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_copper"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_copper",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_copper",
+      "count": 2
+    },
+    "geontm:sulfur",
+    "geontm:powder_cobalt_tiny"
+  ],
+  "order": 166
+}

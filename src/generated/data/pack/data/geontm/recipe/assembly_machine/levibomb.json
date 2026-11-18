@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.levibomb",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:nuggets/schrabidium",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 4
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:float_bomb"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 55552
+}

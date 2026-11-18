@@ -13,7 +13,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -38,8 +38,8 @@ import java.util.Map;
  */
 public final class CrucibleEquipModel {
 
-    public static final Identifier OBJ = Ids.of("geontm", "models/anim/crucible_equip.obj");
-    public static final Identifier ANIMATION = Ids.of("geontm", "models/anim/crucible_equip_animation.json");
+    public static final ResourceLocation OBJ = Ids.of("geontm", "models/anim/crucible_equip.obj");
+    public static final ResourceLocation ANIMATION = Ids.of("geontm", "models/anim/crucible_equip_animation.json");
 
     final WavefrontObj model;
     private final List<Node> roots;
@@ -66,14 +66,14 @@ public final class CrucibleEquipModel {
     /** One {@link Geometry} per drawn node, kept so its resident mesh (Core {@code StaticMeshes}) is uploaded once. */
     private final Map<String, Geometry> parts = new HashMap<>();
     /** The cutout surfaces by texture; the arms' is the player's skin. */
-    private static final Map<Identifier, Surface> SURFACES = new HashMap<>();
+    private static final Map<ResourceLocation, Surface> SURFACES = new HashMap<>();
 
     /**
      * Draws node {@code name}'s mesh at {@code pose}, alpha-tested and culled, as
      * {@code renderPart(name, pose, buffer, light, overlay)} into {@code entityCutoutCull(texture)} did, but from a copy
      * kept on the GPU when Core can draw it identically (it falls back to that immediate draw otherwise).
      */
-    public void submitPart(SubmitSink sink, PoseStack pose, Identifier texture, String name, int light, int overlay) {
+    public void submitPart(SubmitSink sink, PoseStack pose, ResourceLocation texture, String name, int light, int overlay) {
         Geometry geometry = parts.computeIfAbsent(name, model::part);
         Surface surface = SURFACES.computeIfAbsent(texture, id -> Surface.cutoutCull(id.toString()));
         StaticMeshes.submit(sink, pose, surface, geometry, light, overlay, -1);

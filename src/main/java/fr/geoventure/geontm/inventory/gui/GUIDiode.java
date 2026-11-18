@@ -9,7 +9,7 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
@@ -45,7 +45,7 @@ public final class GUIDiode extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.text(g, font, "Throughput:", this.width / 2 - 150, 80, 0xFFA0A0A0, false);
         GuiDraw.text(g, font, "(max. 10,000,000,000 HE)", this.width / 2 - 150, 90, 0xFFA0A0A0, false);
         GuiDraw.text(g, font, "Priority:", this.width / 2 + 20, 80, 0xFFA0A0A0, false);

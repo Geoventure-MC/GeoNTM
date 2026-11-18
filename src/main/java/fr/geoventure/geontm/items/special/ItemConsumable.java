@@ -45,7 +45,7 @@ public final class ItemConsumable extends CompatItem implements ConsumableTreatm
             ConsumableTreatment treatment = ConsumableTreatments.of(this);
             if (treatment != null && treatment.has(Trigger.USE)) apply(treatment, serverLevel, player, player, hand);
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

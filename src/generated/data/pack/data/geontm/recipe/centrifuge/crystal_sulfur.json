@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_sulfur"
+  },
+  "outputs": [
+    {
+      "id": "geontm:sulfur",
+      "count": 4
+    },
+    {
+      "id": "geontm:sulfur",
+      "count": 4
+    },
+    "geontm:powder_iron",
+    "geontm:nugget_mercury"
+  ],
+  "order": 164
+}

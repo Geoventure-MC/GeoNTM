@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:stone_gneiss"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:powder_lithium",
+  "duration": 100,
+  "productivity": 0.25,
+  "order": 53
+}

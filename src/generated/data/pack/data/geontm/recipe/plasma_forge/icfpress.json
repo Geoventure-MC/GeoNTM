@@ -1,0 +1,28 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.icfpress",
+  "input_items": [
+    {
+      "material": "gold",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_icf_press"
+  ],
+  "duration": 800,
+  "power": 10000000,
+  "order": 36,
+  "blueprint_pools_528": [
+    "528.chlorophyte"
+  ],
+  "ignition_temp": 1000000
+}

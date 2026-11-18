@@ -1,0 +1,25 @@
+{
+  "type": "liquid",
+  "color": "#B22424",
+  "temperature": 20,
+  "flags": [
+    "viscous",
+    "delicious"
+  ],
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 500,
+          "produces": "geontm:blood_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "HEATEXCHANGER": 1.0,
+        "ICF": 1.25
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:pyrolysis",
+  "output_item": "geontm:solid_fuel_bf",
+  "duration": 60,
+  "solid_fuel": "geontm:balefire",
+  "solid_fuel_energy": 24000000,
+  "order": 26
+}

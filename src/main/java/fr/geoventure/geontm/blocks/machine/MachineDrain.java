@@ -58,7 +58,7 @@ public class MachineDrain extends BlockMultiblockMachine implements IFluidConnec
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof IItemFluidId identifier)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof IItemFluidId identifier)) return InteractionResult.PASS;
 
         if (!level.isClientSide() && !player.isShiftKeyDown()
                 && MultiblockSurface.coreEntity(level, pos) instanceof TileEntityMachineDrain drain) {
@@ -74,7 +74,7 @@ public class MachineDrain extends BlockMultiblockMachine implements IFluidConnec
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        return level.isClientSide() || player.isShiftKeyDown() ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+        return level.isClientSide() || player.isShiftKeyDown() ? InteractionResult.SUCCESS : InteractionResult.PASS;
     }
 
     @Override

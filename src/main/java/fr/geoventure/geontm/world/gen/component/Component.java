@@ -238,7 +238,7 @@ public abstract class Component extends StructurePiece {
      */
     public static int topSolid(LevelAccessor world, int x, int z) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        int min = world.getMinY();
+        int min = world.getMinBuildHeight();
         for (int y = world.getHeight(Heightmap.Types.OCEAN_FLOOR, x, z) - 1; y >= min; y--) {
             BlockState state = world.getBlockState(pos.set(x, y, z));
             if (state.blocksMotion() && !state.is(BlockTags.LEAVES)) return y + 1;
@@ -1000,7 +1000,7 @@ public abstract class Component extends StructurePiece {
 
                     // 1.7: air, a non-solid material, or foliage/leaves; stops at y 1 or after 16 blocks
                     while ((block.isAir() || !block.isSolid() || block.is(BlockTags.LEAVES))
-                            && posY > world.getMinY() + 1 && brake <= 15) {
+                            && posY > world.getMinBuildHeight() + 1 && brake <= 15) {
                         setBlock(world, posX, posY, posZ, placeBlock, meta);
                         block = getState(world, posX, --posY, posZ);
 

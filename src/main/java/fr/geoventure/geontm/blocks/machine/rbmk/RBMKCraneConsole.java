@@ -91,7 +91,7 @@ public class RBMKCraneConsole extends BlockMultiblockMachine implements IToolabl
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player,
                                           BlockHitResult hit) {
-        if (!player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (level.getBlockEntity(core) instanceof BlockEntityCraneConsole crane) crane.cycleCraneRotation();
         return InteractionResult.SUCCESS;

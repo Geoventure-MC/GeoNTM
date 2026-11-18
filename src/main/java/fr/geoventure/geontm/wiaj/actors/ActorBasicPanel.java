@@ -8,7 +8,7 @@ import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 
@@ -33,7 +33,7 @@ public class ActorBasicPanel implements ISpecialActor {
     }
 
     @Override
-    public void drawForegroundComponent(GuiGraphicsExtractor graphics, int w, int h, int ticks, float interp) {
+    public void drawForegroundComponent(GuiGraphics graphics, int w, int h, int ticks, float interp) {
         drawStackText(graphics, lines, x, y, Minecraft.getInstance().font, w, h);
     }
 
@@ -49,7 +49,7 @@ public class ActorBasicPanel implements ISpecialActor {
     @Override
     public void setDataPoint(String tag, Object o) { }
 
-    protected void drawStackText(GuiGraphicsExtractor graphics, List<Object[]> lines, int x, int y, Font font, int w, int h) {
+    protected void drawStackText(GuiGraphics graphics, List<Object[]> lines, int x, int y, Font font, int w, int h) {
 
         x += w / 2;
         y += h / 2;

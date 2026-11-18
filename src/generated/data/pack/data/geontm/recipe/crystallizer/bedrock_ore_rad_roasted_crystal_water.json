@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_rad_roasted_crystal",
+    "count": 4
+  },
+  "acid": {
+    "type": "minecraft:water",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_rad_washed_crystal",
+  "duration": 100,
+  "order": 297
+}

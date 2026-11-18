@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.ferro",
+  "frequency": 3,
+  "icon": "geontm:ingot_ferrouranium",
+  "inputs": [
+    {
+      "material": "steel",
+      "amount": 16
+    },
+    {
+      "material": "u238",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "ferrouranium",
+      "amount": 24
+    }
+  ],
+  "order": 5
+}

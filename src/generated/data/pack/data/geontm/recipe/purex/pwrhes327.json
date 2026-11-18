@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pwrhes327",
+  "input_items": [
+    {
+      "ingredient": "geontm:pwr_fuel_depleted_hes327",
+      "exact": true
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_australium",
+      "count": 4
+    },
+    "geontm:nugget_lead",
+    "geontm:nugget_euphemium",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 6
+    }
+  ],
+  "duration": 100,
+  "power": 2500,
+  "icon": {
+    "id": "geontm:pwr_fuel_depleted_hes327"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pwr",
+  "order": 35
+}

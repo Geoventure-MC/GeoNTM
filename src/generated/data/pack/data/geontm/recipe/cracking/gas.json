@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:gas",
+  "left": {
+    "type": "geontm:petroleum",
+    "amount": 30
+  },
+  "right": {
+    "type": "geontm:unsaturateds",
+    "amount": 20
+  }
+}

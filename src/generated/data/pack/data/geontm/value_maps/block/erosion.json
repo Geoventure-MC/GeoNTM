@@ -1,0 +1,8 @@
+{
+  "values": {
+    "geontm:concrete": "minecraft:gravel",
+    "geontm:concrete_smooth": "minecraft:gravel",
+    "geontm:brick_concrete": "geontm:brick_concrete_broken",
+    "geontm:brick_concrete_broken": "minecraft:gravel"
+  }
+}

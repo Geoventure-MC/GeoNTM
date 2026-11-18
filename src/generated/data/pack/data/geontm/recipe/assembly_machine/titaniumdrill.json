@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.titaniumdrill",
+  "input_items": [
+    {
+      "material": "dura_steel",
+      "shape": "castplate"
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:drill_titanium"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 11264
+}

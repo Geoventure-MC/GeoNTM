@@ -1,0 +1,8 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_short_americium242",
+  "output": "geontm:nuclear_waste_short_depleted_americium242",
+  "decay": "short",
+  "liquid": 50,
+  "gas": 100
+}

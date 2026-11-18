@@ -7,12 +7,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact Gem port of 1.7 ItemRenderShredder for both autoshotgun skins. */
 public final class ShredderWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/shredder.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/shredder.obj");
     private final Surface body;
     private WavefrontObj model;
     public ShredderWeaponRenderer(String texture){body=Surface.cutout("geontm:textures/models/weapons/"+texture+".png");}

@@ -8,7 +8,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -182,14 +182,14 @@ public class TileEntityFloodlight extends TileEntityLoadedBase implements IEnerg
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeFloat(rotation);
         buf.writeBoolean(isOn);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         rotation = buf.readFloat();
         isOn = buf.readBoolean();

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_lapis",
+  "output": {
+    "id": "geontm:powder_lapis",
+    "count": 8
+  }
+}

@@ -9,11 +9,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
 
@@ -29,7 +29,7 @@ import java.util.Locale;
  */
 public class GUIPASource extends GUIPABase<ContainerPASource> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/particleaccelerator/gui_source.png");
 
     public GUIPASource(ContainerPASource menu, Inventory playerInventory, Component title) {
@@ -37,7 +37,7 @@ public class GUIPASource extends GUIPABase<ContainerPASource> {
     }
 
     @Override
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return TEXTURE;
     }
 
@@ -47,7 +47,7 @@ public class GUIPASource extends GUIPABase<ContainerPASource> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos;
         int y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
@@ -72,7 +72,7 @@ public class GUIPASource extends GUIPABase<ContainerPASource> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         drawTitleAndInventory(graphics, -9, 4, 0xffffff);
         drawTemperature(graphics, 136, 22, 166, 12);
 
@@ -85,7 +85,7 @@ public class GUIPASource extends GUIPABase<ContainerPASource> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (commonTooltip(graphics, mouseX, mouseY, 8, 18, 134, 36)) return;
 
         TileEntityPASource source = menu.getSource();

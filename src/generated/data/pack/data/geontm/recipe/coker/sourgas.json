@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:sourgas",
+  "amount": 1000,
+  "output": "geontm:sulfur",
+  "byproduct": {
+    "type": "geontm:gas_coker",
+    "amount": 150
+  }
+}

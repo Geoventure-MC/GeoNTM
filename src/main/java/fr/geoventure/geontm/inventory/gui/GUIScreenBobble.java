@@ -7,7 +7,7 @@ import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.KeyInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 
@@ -55,7 +55,7 @@ public class GUIScreenBobble extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int sizeX = 300;
         int sizeY = 150;
         int left = (this.width - sizeX) / 2;
@@ -92,7 +92,7 @@ public class GUIScreenBobble extends CompatScreen {
         }
     }
 
-    private void centered(GuiGraphicsExtractor graphics, String text, int left, int sizeX, int y, int color) {
+    private void centered(GuiGraphics graphics, String text, int left, int sizeX, int y, int color) {
         GuiDraw.text(graphics, font, text, left + sizeX / 2 - font.width(text) / 2, y, 0xFF000000 | color, true);
     }
 

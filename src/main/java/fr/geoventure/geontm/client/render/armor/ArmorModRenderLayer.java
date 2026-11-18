@@ -21,7 +21,7 @@ import fr.geoventure.geocore.world.ArmorSlot;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -40,15 +40,15 @@ import net.minecraft.world.item.ItemStack;
  */
 public class ArmorModRenderLayer extends CompatHumanoidLayer {
 
-    private static final Identifier LIQUIDATOR = Ids.of("geontm", "textures/models/armor/liquidator_helmet.png");
-    private static final Identifier M65 = Ids.of("geontm", "textures/models/armor/m65.png");
-    private static final Identifier M65_MONO = Ids.of("geontm", "textures/models/armor/m65_mono.png");
+    private static final ResourceLocation LIQUIDATOR = Ids.of("geontm", "textures/models/armor/liquidator_helmet.png");
+    private static final ResourceLocation M65 = Ids.of("geontm", "textures/models/armor/m65.png");
+    private static final ResourceLocation M65_MONO = Ids.of("geontm", "textures/models/armor/m65_mono.png");
     /** 1.7 {@code ArmorGasMask.getArmorTexture}: {@code models/GasMask.png} and {@code armor/mask_olde.png}. */
-    private static final Identifier GAS_MASK = Ids.of("geontm", "textures/models/armor/gas_mask.png");
-    private static final Identifier MASK_OLDE = Ids.of("geontm", "textures/models/armor/mask_olde.png");
+    private static final ResourceLocation GAS_MASK = Ids.of("geontm", "textures/models/armor/gas_mask.png");
+    private static final ResourceLocation MASK_OLDE = Ids.of("geontm", "textures/models/armor/mask_olde.png");
     /** 1.7 {@code ArmorHazmatMask} hoods: {@code models/ModelHazRed.png} and {@code models/ModelHazGrey.png}. */
-    private static final Identifier HAZ_RED = Ids.of("geontm", "textures/models/armor/haz_red.png");
-    private static final Identifier HAZ_GREY = Ids.of("geontm", "textures/models/armor/haz_grey.png");
+    private static final ResourceLocation HAZ_RED = Ids.of("geontm", "textures/models/armor/haz_red.png");
+    private static final ResourceLocation HAZ_GREY = Ids.of("geontm", "textures/models/armor/haz_grey.png");
     /** {@code ModelGasMask.render}: an adult mask is drawn at 1.15. */
     private static final float GAS_MASK_SCALE = 1.15F;
 
@@ -121,7 +121,7 @@ public class ArmorModRenderLayer extends CompatHumanoidLayer {
         pose.popPose();
     }
 
-    private static void m65(PoseStack pose, SubmitSink sink, int light, HumanoidPose parts, Identifier texture,
+    private static void m65(PoseStack pose, SubmitSink sink, int light, HumanoidPose parts, ResourceLocation texture,
                             boolean filter) {
         ModelPart head = parts.head();
         if (!head.visible) return;

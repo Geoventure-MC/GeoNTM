@@ -223,10 +223,10 @@ public final class Gh191To197GameTests {
         ServerLevel level = helper.getLevel();
         BlockPos pos = helper.absolutePos(rel);
         EntityGlyphidScout scout = new EntityGlyphidScout(ModNtmEntities.GLYPHID_SCOUT.get(), level);
-        scout.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0F, 0F);
+        scout.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0F, 0F);
         level.addFreshEntity(scout);
         EntityWaypoint waypoint = new EntityWaypoint(EntityWaypoint.TYPE.get(), level);
-        waypoint.snapTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0F, 0F);
+        waypoint.moveTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0F, 0F);
         waypoint.setWaypointType(waypointType);
         level.addFreshEntity(waypoint);
         scout.setCurrentTask(EntityGlyphid.TASK_FOLLOW, waypoint);

@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:fragment_neodymium",
+  "output": "geontm:powder_neodymium_tiny"
+}

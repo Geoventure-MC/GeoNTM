@@ -8,7 +8,7 @@ import com.mojang.math.Axis;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** OBJ renderers for the Gen-3 Henry, heavy revolver, and Hangman .44 guns. */
@@ -34,7 +34,7 @@ public final class Sedna44WeaponRenderer extends WeaponRenderer {
     }
 
     private final Variant variant;
-    private final Identifier modelId;
+    private final ResourceLocation modelId;
     private static final Surface SCOPE = Surface.cutout("geontm:textures/misc/scope_44.png");
 
     private final Surface body;

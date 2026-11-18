@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:dusts/molysite"
+  },
+  "item_output": "minecraft:iron_ingot",
+  "fluid_output": {
+    "type": "geontm:chlorine",
+    "amount": 250
+  },
+  "order": 7
+}

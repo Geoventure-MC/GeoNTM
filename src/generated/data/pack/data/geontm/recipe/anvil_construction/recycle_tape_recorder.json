@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:tape_recorder"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_steel"
+    },
+    {
+      "id": "geontm:ingot_tungsten",
+      "chance": 0.25
+    }
+  ],
+  "tier": 2,
+  "order": 229
+}

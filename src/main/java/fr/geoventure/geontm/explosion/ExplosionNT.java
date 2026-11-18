@@ -87,7 +87,7 @@ public final class ExplosionNT {
     private static void soundOnly(ExplosionVNT explosion, Level level, double x, double y, double z, float size) {
         if (level.isClientSide()) return;
         RandomSource rand = level.getRandom();
-        level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(),
+        level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE,
                 SoundSource.BLOCKS, 4.0F, (1.0F + (rand.nextFloat() - rand.nextFloat()) * 0.2F) * 0.7F);
     }
 }

@@ -13,7 +13,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -41,7 +41,7 @@ public final class FoodCatalystGameTests {
     public static void foodUseAnimation(GameTestHelper helper) {
         List<String> silent = new ArrayList<>();
         for (Item item : BuiltInRegistries.ITEM) {
-            Identifier id = BuiltInRegistries.ITEM.getKey(item);
+            ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
             ItemStack stack = new ItemStack(item);
             if (!Constants.MOD_ID.equals(id.getNamespace()) || ItemStacks.foodProperties(stack) == null) continue;
             if ("NONE".equals(stack.getUseAnimation().name())) silent.add(id.getPath());

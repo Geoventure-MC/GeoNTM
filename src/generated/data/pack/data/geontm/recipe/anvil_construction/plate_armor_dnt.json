@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:plate_dineutronium",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:particle_sparkticle"
+    },
+    {
+      "ingredient": "geontm:plate_armor_fau",
+      "count": 6
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_armor_dnt"
+    }
+  ],
+  "tier": 7,
+  "order": 100
+}

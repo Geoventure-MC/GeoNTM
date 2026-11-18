@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * S2C, on every join of a world: the client says in chat that GemRender is missing, if it is. Only the
@@ -16,7 +16,7 @@ public record GemRenderNoticePayload() implements GeoCorePayload {
             Ids.of(Constants.MOD_ID, "gemrender_notice"), (payload, buffer) -> {}, buffer -> new GemRenderNoticePayload());
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

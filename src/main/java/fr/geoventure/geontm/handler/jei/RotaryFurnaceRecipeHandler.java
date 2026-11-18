@@ -6,7 +6,7 @@ import fr.geoventure.geontm.inventory.recipes.RotaryFurnaceRecipes;
 import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geontm.items.machine.ItemScraps;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -47,7 +47,7 @@ public class RotaryFurnaceRecipeHandler extends JEIUniversalHandler<RotaryFurnac
     }
 
     @Override
-    public void draw(RotaryFurnaceRecipes.RotaryFurnaceRecipe recipe, GuiGraphicsExtractor graphics,
+    public void draw(RotaryFurnaceRecipes.RotaryFurnaceRecipe recipe, GuiGraphics graphics,
                      double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         String duration = String.format(Locale.US, "%,d", recipe.duration) + " ticks";

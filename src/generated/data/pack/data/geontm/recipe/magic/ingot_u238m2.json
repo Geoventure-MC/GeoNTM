@@ -1,0 +1,10 @@
+{
+  "type": "geontm:magic",
+  "ingredients": [
+    "geontm:hs_elements",
+    "geontm:hs_arsenic",
+    "geontm:hs_vault"
+  ],
+  "result": "geontm:ingot_u238m2",
+  "order": 0
+}

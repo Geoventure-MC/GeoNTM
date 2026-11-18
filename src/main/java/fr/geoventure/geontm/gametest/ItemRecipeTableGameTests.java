@@ -235,10 +235,10 @@ public final class ItemRecipeTableGameTests {
                 "radiation generator fuels differ from 1.7: " + radgen.byId());
         List<String> plates = List.of("u233", "u235", "mox", "pu239", "sa326", "ra226be", "pu238be");
         for (String plate : plates) {
-            Item fresh = BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "plate_fuel_" + plate));
+            Item fresh = BuiltInRegistries.ITEM.get(Ids.of("geontm", "plate_fuel_" + plate));
             ItemStack waste = TileEntityReactorResearch.wasteOf(fresh);
             ItemStack hot = ItemDepletedFuel.makeHot(
-                    BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "waste_plate_" + plate)), 1);
+                    BuiltInRegistries.ITEM.get(Ids.of("geontm", "waste_plate_" + plate)), 1);
             helper.assertTrue(waste != null && ItemStacks.sameItemAndData(waste, hot) && waste.getCount() == 1,
                     "research reactor plate_fuel_" + plate + " must leave a hot waste_plate_" + plate + ": " + waste);
         }

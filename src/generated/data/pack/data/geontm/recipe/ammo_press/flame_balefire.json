@@ -1,0 +1,24 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_flame_balefire",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:plates/steel"
+    },
+    "",
+    "",
+    {
+      "type": "geontm:fluid_container",
+      "fluid": "geontm:balefire",
+      "amount": 1000
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:plates/steel"
+    },
+    ""
+  ],
+  "order": 75
+}

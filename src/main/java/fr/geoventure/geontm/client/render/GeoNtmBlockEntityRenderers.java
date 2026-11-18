@@ -60,7 +60,7 @@ import fr.geoventure.geocore.render.CompatBERProvider;
 import fr.geoventure.geocore.render.CompatRenderState;
 import fr.geoventure.geocore.render.Visuals;
 import fr.geoventure.geocore.render.gem.GemBER;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
@@ -582,11 +582,11 @@ public final class GeoNtmBlockEntityRenderers {
         regGem(sink, type, () -> new MachineObjRenderer<T>(yaw, scale, frameParts, frameHeight, defs));
     }
 
-    private static Identifier obj(String path) {
+    private static ResourceLocation obj(String path) {
         return Ids.of(Constants.MOD_ID, "models/" + path);
     }
 
-    private static Identifier tex(String path) {
+    private static ResourceLocation tex(String path) {
         return Ids.of(Constants.MOD_ID, "textures/models/" + path);
     }
 }

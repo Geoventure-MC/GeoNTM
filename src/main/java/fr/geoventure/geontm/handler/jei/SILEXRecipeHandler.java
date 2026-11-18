@@ -9,7 +9,7 @@ import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -48,7 +48,7 @@ public class SILEXRecipeHandler extends GeoNtmRecipeCategory<SILEXRecipes.SILEXR
     }
 
     @Override
-    public void draw(SILEXRecipes.SILEXRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(SILEXRecipes.SILEXRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         Font font = Minecraft.getInstance().font;
 

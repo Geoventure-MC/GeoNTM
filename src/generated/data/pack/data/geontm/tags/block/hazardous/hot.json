@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:block_au198",
+    "geontm:block_polonium",
+    "geontm:block_pu238",
+    "geontm:block_white_phosphorus"
+  ]
+}

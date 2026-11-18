@@ -28,6 +28,6 @@ public class TurretHowardDamaged extends TurretBaseNT {
     @Override
     protected InteractionResult useAtCore(BlockState coreState, Level level, BlockPos core, Player player,
                                           BlockHitResult hit) {
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

@@ -49,11 +49,11 @@ public abstract class FoundryCastingBase extends CompatBlock implements TickingB
 
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-        if (player.getMainHandItem().getItem() instanceof ItemTooling) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.getMainHandItem().getItem() instanceof ItemTooling) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         TileEntityFoundryCastingBase cast = getTE(level, pos);
-        if (cast == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (cast == null) return InteractionResult.PASS;
 
         // take the finished item
         if (!cast.inventory.getStackInSlot(1).isEmpty()) {
@@ -71,7 +71,7 @@ public abstract class FoundryCastingBase extends CompatBlock implements TickingB
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         TileEntityFoundryCastingBase cast = getTE(level, pos);
-        if (cast == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (cast == null) return InteractionResult.PASS;
 
         // take the finished item first, regardless of what's held
         if (!cast.inventory.getStackInSlot(1).isEmpty()) {

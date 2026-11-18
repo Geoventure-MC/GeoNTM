@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.lubricant.0",
+  "input_fluids": [
+    {
+      "type": "geontm:heatingoil",
+      "amount": 500
+    },
+    {
+      "type": "geontm:unsaturateds",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:lubricant",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 24
+}

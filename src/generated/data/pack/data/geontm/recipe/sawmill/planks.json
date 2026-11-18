@@ -1,0 +1,12 @@
+{
+  "type": "geontm:sawmill",
+  "input": {
+    "ingredient": "#minecraft:planks"
+  },
+  "output": {
+    "id": "minecraft:stick",
+    "count": 6
+  },
+  "sawdust_chance": 0.1,
+  "order": 3
+}

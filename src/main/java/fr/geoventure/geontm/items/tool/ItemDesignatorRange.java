@@ -42,10 +42,10 @@ public class ItemDesignatorRange extends CompatItem implements IDesignatorItem {
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         HitResult hit = player.pick(RANGE, 1.0F, false);
-        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.PASS;
 
         BlockPos hitPos = ((BlockHitResult) hit).getBlockPos();
-        if (level.getBlockState(hitPos).getBlock() instanceof LaunchPad) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.getBlockState(hitPos).getBlock() instanceof LaunchPad) return InteractionResult.PASS;
         BlockPos pos = SubLevels.toWorldBlock(level, hitPos);
 
         ItemDesignator.setTarget(level, player, player.getItemInHand(hand), pos.getX(), pos.getZ(),

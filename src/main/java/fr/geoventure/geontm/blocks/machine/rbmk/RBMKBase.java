@@ -99,14 +99,14 @@ public abstract class RBMKBase extends BlockMultiblockCore implements IFluidConn
     @Override protected int onAnalogOutputSignal(BlockState state, Level level, BlockPos pos) { BlockPos core = coreOf(level, pos, state); return core == null ? 0 : super.onAnalogOutputSignal(level.getBlockState(core), level, core); }
     @Override protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (this instanceof RBMKRod || this instanceof RBMKStorage) BossSpawnHandler.markFBI(player); // 1.7: rods and storage mark on any use
-        BlockPos core = coreOf(level, pos, state); if (core == null) return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+        BlockPos core = coreOf(level, pos, state); if (core == null) return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.PASS;
         BlockState coreState = level.getBlockState(core);
         // 1.7 openInv: a lid in hand on a lidless column is the lid's click (ItemRBMKLid.onItemUse), not the GUI's.
-        if (player.getMainHandItem().getItem() instanceof ItemRBMKLid && !hasOwnLid() && !lidOf(coreState).present()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.getMainHandItem().getItem() instanceof ItemRBMKLid && !hasOwnLid() && !lidOf(coreState).present()) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         if (player.isShiftKeyDown() && !hasOwnLid() && takeLid(level, core, coreState)) return InteractionResult.SUCCESS;
         if (level.getBlockEntity(core) instanceof MenuProvider menu && player instanceof ServerPlayer serverPlayer) { Menus.openWithPos(serverPlayer, menu, core); return InteractionResult.SUCCESS; }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
     /** 1.7 {@code printHook}: every column shows its DODD while the client config allows it. */
     @Override

@@ -6,7 +6,7 @@ import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.Screenshots;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -49,12 +49,12 @@ public class GUIScreenWikiRender extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.fill(g, 0, 0, this.width, this.height, MAGENTA);
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         if (index >= preview.length) return;
         GuiDraw.pushMatrix(g);
         GuiDraw.scale(g, scale, scale);

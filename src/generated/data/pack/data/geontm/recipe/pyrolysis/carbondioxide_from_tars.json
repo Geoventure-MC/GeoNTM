@@ -1,0 +1,14 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_item": {
+    "ingredient": "#c:tars",
+    "count": 4
+  },
+  "output_fluid": {
+    "type": "geontm:carbondioxide",
+    "amount": 1000
+  },
+  "output_item": "geontm:powder_ash_soot",
+  "duration": 40,
+  "order": 32
+}

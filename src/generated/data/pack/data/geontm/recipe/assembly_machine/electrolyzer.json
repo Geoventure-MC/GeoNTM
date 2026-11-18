@@ -1,0 +1,58 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.electrolyzer",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:ingot_firebrick",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:arc_electrode"
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_electrolyser"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 24320,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:ingot_firebrick",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 4
+    }
+  ]
+}

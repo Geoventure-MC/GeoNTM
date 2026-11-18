@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "copper",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output": "geontm:plate_welded_copper",
+  "duration": 200,
+  "consumption": 1000,
+  "order": 9
+}

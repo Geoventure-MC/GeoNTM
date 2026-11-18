@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:woodoil",
+  "left": {
+    "type": "geontm:heatingoil",
+    "amount": 40
+  },
+  "right": {
+    "type": "geontm:aromatics",
+    "amount": 10
+  }
+}

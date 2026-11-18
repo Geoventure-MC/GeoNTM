@@ -1,0 +1,20 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.cobble",
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    },
+    {
+      "type": "minecraft:lava",
+      "amount": 25
+    }
+  ],
+  "output_items": [
+    "minecraft:cobblestone"
+  ],
+  "duration": 20,
+  "power": 100,
+  "order": 20
+}

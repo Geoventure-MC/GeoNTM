@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelArmorNCRPA} (NCR ranger power armour): {@code ncrpa.obj}, textures per region, boots on the leg
@@ -14,7 +14,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class NCRPAArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/ncrpa.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/ncrpa.obj");
 
     private static final Surface HELMET = skin("ncrpa_helmet");
     private static final Surface EYES = Surface.emissive("geontm:textures/armor/ncrpa_helmet.png");

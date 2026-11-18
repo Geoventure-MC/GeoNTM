@@ -16,7 +16,7 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
 /**
@@ -26,7 +26,7 @@ import net.minecraft.world.level.Level;
  */
 public final class RBMKFlameParticles {
 
-    private static final Identifier TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
+    private static final ResourceLocation TEXTURE = Ids.of(Constants.MOD_ID, "textures/particle/rbmk_fire.png");
     private static final List<Flame> ACTIVE = new ArrayList<>();
     private static boolean initialized;
     private static ClientLevel lastLevel;

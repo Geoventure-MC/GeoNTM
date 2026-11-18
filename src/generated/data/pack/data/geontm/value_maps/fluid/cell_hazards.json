@@ -1,0 +1,24 @@
+{
+  "values": {
+    "geontm:sas3": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 5.0
+        },
+        {
+          "type": "geontm:blinding",
+          "level": 60.0
+        }
+      ]
+    },
+    "geontm:tritium": {
+      "entries": [
+        {
+          "type": "geontm:radiation",
+          "level": 0.0010000000474974513
+        }
+      ]
+    }
+  }
+}

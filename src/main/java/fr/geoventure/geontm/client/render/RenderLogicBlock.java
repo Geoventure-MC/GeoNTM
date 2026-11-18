@@ -12,7 +12,7 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.gem.Geometry;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -28,7 +28,7 @@ public class RenderLogicBlock implements CompatBER<TileEntityLogicBlock, RenderL
         boolean disguised;
     }
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/blocks/logic_block.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/blocks/logic_block.png");
     private static final Geometry CUBE = TubeBoxes.box("logic_block_cube", 0, 0, 0, 1, 1, 1, TubeBoxes.ALL, 0);
 
     @Override

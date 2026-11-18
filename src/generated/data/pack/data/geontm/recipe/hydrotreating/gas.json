@@ -1,0 +1,19 @@
+{
+  "type": "geontm:hydrotreating",
+  "input": "geontm:gas",
+  "hydrogen": {
+    "type": "geontm:hydrogen",
+    "amount": 5,
+    "pressure": 1
+  },
+  "outputs": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 80
+    },
+    {
+      "type": "geontm:sourgas",
+      "amount": 15
+    }
+  ]
+}

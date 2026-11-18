@@ -1,0 +1,45 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_bismoid",
+  "duration": 400,
+  "consumption": 10000,
+  "fluid": {
+    "type": "geontm:solvent",
+    "amount": 1000
+  },
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 24
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 2
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 12
+    }
+  ],
+  "requires": [
+    "!lbsm_simple_crafting"
+  ],
+  "order": 5
+}

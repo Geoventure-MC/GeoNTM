@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/titanium"
+  },
+  "outputs": [
+    "geontm:powder_titanium",
+    {
+      "id": "geontm:chunk_ore_ilmenite",
+      "count": 2
+    },
+    "geontm:powder_iron",
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "!lbsm_simple_centrifuge"
+  ],
+  "order": 11
+}

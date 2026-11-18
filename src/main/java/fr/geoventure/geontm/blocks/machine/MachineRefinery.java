@@ -123,7 +123,7 @@ public class MachineRefinery extends BlockMultiblockMachine implements IEnergyCo
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core,
             Player player, BlockHitResult hit) {
-        if (MachineExplosionDamage.blownOpen(level, core)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (MachineExplosionDamage.blownOpen(level, core)) return InteractionResult.PASS;
         return super.useAtCore(state, level, core, player, hit);
     }
 

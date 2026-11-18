@@ -13,7 +13,7 @@ import fr.geoventure.geocore.render.Vertexes;
 import java.util.UUID;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
@@ -24,7 +24,7 @@ import net.minecraft.world.phys.Vec3;
  */
 final class HookWire implements TracerRegistry.BulletTracer {
 
-    private static final Identifier WIRE = Ids.of("geontm", "textures/models/network/wire_greyscale.png");
+    private static final ResourceLocation WIRE = Ids.of("geontm", "textures/models/network/wire_greyscale.png");
     private static final int COUNT = 10;
     private static final int COLOR = 0xFF606060;
 

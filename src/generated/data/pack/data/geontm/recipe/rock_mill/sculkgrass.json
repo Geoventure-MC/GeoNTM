@@ -1,0 +1,45 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.sculkgrass",
+  "input_items": [
+    {
+      "ingredient": "minecraft:sculk"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:dirt",
+        "weight": 50
+      },
+      {
+        "data": "geontm:powder_lead",
+        "weight": 25
+      },
+      {
+        "data": "geontm:powder_asbestos",
+        "weight": 25
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:slop",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:sculk"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 9
+}

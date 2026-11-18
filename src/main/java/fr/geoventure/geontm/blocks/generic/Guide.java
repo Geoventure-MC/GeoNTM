@@ -66,7 +66,7 @@ public class Guide extends CompatBlock implements ILookOverlay {
             Links.open(WIKI);
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

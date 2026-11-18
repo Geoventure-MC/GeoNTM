@@ -1,0 +1,21 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_balefire_gold",
+    "stage": 1
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_au198",
+      "weight": 70
+    },
+    {
+      "data": "geontm:powder_balefire",
+      "weight": 30
+    }
+  ],
+  "order": 107
+}

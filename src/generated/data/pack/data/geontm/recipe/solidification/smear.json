@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:smear",
+  "solid_fuel_energy": 1440000,
+  "output": "geontm:solid_fuel"
+}

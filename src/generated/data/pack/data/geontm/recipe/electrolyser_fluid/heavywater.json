@@ -1,0 +1,14 @@
+{
+  "type": "geontm:electrolyser_fluid",
+  "input": "geontm:heavywater",
+  "amount": 2000,
+  "output1": {
+    "type": "geontm:deuterium",
+    "amount": 200
+  },
+  "output2": {
+    "type": "geontm:oxygen",
+    "amount": 200
+  },
+  "duration": 10
+}

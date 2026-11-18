@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:coil_copper_torus",
+  "output": {
+    "id": "geontm:powder_red_copper",
+    "count": 2
+  }
+}

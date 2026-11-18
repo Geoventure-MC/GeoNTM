@@ -1,0 +1,11 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "NUF6",
+  "from": "geontm:uf6",
+  "consumed": 400,
+  "produced": 300,
+  "next": "LEUF6",
+  "outputs": [
+    "geontm:nugget_u238"
+  ]
+}

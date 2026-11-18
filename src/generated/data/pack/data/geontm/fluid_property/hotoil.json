@@ -1,0 +1,33 @@
+{
+  "type": "liquid",
+  "color": "#300900",
+  "temperature": 350,
+  "hazard": {
+    "poison": 2,
+    "flammability": 3,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:oil",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 10,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.004
+      }
+    }
+  }
+}

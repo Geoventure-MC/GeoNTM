@@ -12,10 +12,10 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
@@ -27,7 +27,7 @@ import java.util.Locale;
  * power bar x=143, tank bar x=35 (bottom y=69). */
 public class GUICombustionEngine extends CompatContainerScreen<ContainerCombustionEngine> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_combustion.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_combustion.png");
 
     public GUICombustionEngine(ContainerCombustionEngine menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 203);
@@ -35,12 +35,12 @@ public class GUICombustionEngine extends CompatContainerScreen<ContainerCombusti
 
     /** 1.7 {@code drawGuiContainerForegroundLayer}: only the inventory line at (8, ySize-96+2), 4210752: no title. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int xm, int ym) {
+    protected void renderLabels(GuiGraphics graphics, int xm, int ym) {
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         // 1.7: the locked slider re-reads mouseX every frame in drawScreen (so holding still off-axis still tracks).
@@ -70,7 +70,7 @@ public class GUICombustionEngine extends CompatContainerScreen<ContainerCombusti
 
     /** 1.7 {@code drawScreen} tooltips, same regions, order and strings. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineCombustionEngine te = this.menu.getTile();
         if (te == null) return;
         int gl = this.leftPos, gt = this.topPos;

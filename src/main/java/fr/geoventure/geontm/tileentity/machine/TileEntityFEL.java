@@ -22,7 +22,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geontm.util.ContaminationUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -388,7 +388,7 @@ public class TileEntityFEL extends TileEntityMachineBase implements MenuProvider
      * menu handles the slots.
      */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeLong(power);
         buf.writeUtf(mode.name());
         buf.writeBoolean(isOn);
@@ -397,7 +397,7 @@ public class TileEntityFEL extends TileEntityMachineBase implements MenuProvider
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         power = buf.readLong();
         mode = EnumWavelengths.byName(buf.readUtf());
         isOn = buf.readBoolean();

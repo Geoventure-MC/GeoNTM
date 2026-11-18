@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "minecraft:lava",
+  "amount": 1000,
+  "output": "minecraft:obsidian"
+}

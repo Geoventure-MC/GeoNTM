@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.mush_red",
+  "input_items": [
+    {
+      "ingredient": "minecraft:red_mushroom"
+    }
+  ],
+  "output_items": [
+    "geontm:mush"
+  ],
+  "duration": 10000,
+  "order": 11
+}

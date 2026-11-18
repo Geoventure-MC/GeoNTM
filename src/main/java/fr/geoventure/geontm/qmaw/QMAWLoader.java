@@ -18,7 +18,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.language.LanguageManager;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.Item;
@@ -60,13 +60,13 @@ public final class QMAWLoader {
         // ResourceManager.listResources has already applied pack priority: one highest-priority Resource
         // is returned for each path. Do not walk jars directly, or pack overrides would be lost. 1.7 read only
         // assets/geontm/manual; other mods' manual folders (Immersive Engineering's) are not QMAW pages.
-        List<Map.Entry<Identifier, Resource>> resourcesToRead = new ArrayList<>(resources.listResources("manual",
+        List<Map.Entry<ResourceLocation, Resource>> resourcesToRead = new ArrayList<>(resources.listResources("manual",
                 path -> path.getNamespace().equals(Constants.MOD_ID) && path.getPath().endsWith(".json")).entrySet());
         resourcesToRead.sort(Comparator.comparing(entry -> entry.getKey().toString()));
 
-        for (Map.Entry<Identifier, Resource> entry : resourcesToRead) {
+        for (Map.Entry<ResourceLocation, Resource> entry : resourcesToRead) {
             files++;
-            Identifier location = entry.getKey();
+            ResourceLocation location = entry.getKey();
             try (BufferedReader reader = entry.getValue().openAsReader()) {
                 JsonElement root = JsonParser.parseReader(reader);
                 if (!root.isJsonObject()) throw new IllegalArgumentException("root is not an object");
@@ -121,7 +121,7 @@ public final class QMAWLoader {
         }
         QuickManualAndWiki wildcard = wildcardTriggers.get(stack.getItem());
         if (wildcard != null) return wildcard;
-        Identifier id = BuiltInRegistries.ITEM.getKey(stack.getItem());
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
         if (id == null) return null;
         for (Map.Entry<String, QuickManualAndWiki> entry : wildcardPrefixes.entrySet()) {
             if (id.getPath().startsWith(entry.getKey())) return entry.getValue();
@@ -223,7 +223,7 @@ public final class QMAWLoader {
 
     private static List<ItemStack> splitMembers(JsonElement element) {
         try {
-            Identifier id = Ids.parse(element.getAsJsonArray().get(0).getAsString());
+            ResourceLocation id = Ids.parse(element.getAsJsonArray().get(0).getAsString());
             if (!id.getNamespace().equals("geontm")) return List.of();
             List<ItemStack> out = new ArrayList<>();
             for (String member : LegacyMetaIds.members(id.getPath())) {
@@ -271,7 +271,7 @@ public final class QMAWLoader {
                 ? third.getAsString() : null;
         int metadata = third == null || fluidName != null ? 0 : third.getAsInt();
         if (count <= 0) return null;
-        Identifier oldLocation;
+        ResourceLocation oldLocation;
         try {
             oldLocation = Ids.parse(oldId);
         } catch (RuntimeException e) {
@@ -291,7 +291,7 @@ public final class QMAWLoader {
             return ItemStacks.copyWithCount(ItemFluidId.make(fluid), count);
         }
 
-        Identifier current = flattenedId(oldLocation, metadata);
+        ResourceLocation current = flattenedId(oldLocation, metadata);
         if (current == null) return null;
         ItemStack stack = stack(current, count);
         if (stack == null) return null;
@@ -305,8 +305,8 @@ public final class QMAWLoader {
         return stack;
     }
 
-    private static ItemStack stack(Identifier id, int count) {
-        Item item = BuiltInRegistries.ITEM.getValue(id);
+    private static ItemStack stack(ResourceLocation id, int count) {
+        Item item = BuiltInRegistries.ITEM.get(id);
         return item == null || item == Items.AIR ? null : new ItemStack(item, count);
     }
 
@@ -330,7 +330,7 @@ public final class QMAWLoader {
             "ct_hook", "ct_mortar", "ct_mortar_charge", "nuke_balefire", "bmg50_sm", "rocket_micro"
     };
 
-    private static Identifier flattenedId(Identifier oldId, int metadata) {
+    private static ResourceLocation flattenedId(ResourceLocation oldId, int metadata) {
         String path = oldId.getPath();
         // the metadata families that are one item per type
         if (oldId.getNamespace().equals("geontm") && LegacyMetaIds.isSplit(path)) {

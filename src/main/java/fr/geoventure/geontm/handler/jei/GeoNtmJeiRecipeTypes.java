@@ -26,7 +26,7 @@ import fr.geoventure.geontm.inventory.recipes.anvil.AnvilRecipes;
 import fr.geoventure.geontm.inventory.recipes.anvil.AnvilSmithingRecipe;
 import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipe;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * The mod's recipe-viewer category identifiers, the modern-API equivalent of the old {@code JEIConfig}'s

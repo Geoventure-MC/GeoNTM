@@ -53,7 +53,7 @@ public class ItemPowerNetTool extends CompatItem {
 
         BlockEntity te = world.getBlockEntity(pos);
         if (world.isClientSide()) return InteractionResult.SUCCESS;
-        if (!(te instanceof IEnergyConductorMK2) || player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(te instanceof IEnergyConductorMK2) || player == null) return InteractionResult.PASS;
 
         ServerLevel server = (ServerLevel) world;
         NodeNetwork<CableData> net = PowerGraph.get(server).networkAt(pos.asLong());

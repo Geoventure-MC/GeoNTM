@@ -478,22 +478,22 @@ public class EntityEffectHandler {
                 GeoNtmCriteria.RADIATION.fire(player, "death");
             }
         } else if (eRad >= 800) {
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.NAUSEA, 5 * 30, 0);
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.SLOWNESS, 10 * 20, 2);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.CONFUSION, 5 * 30, 0);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.MOVEMENT_SLOWDOWN, 10 * 20, 2);
             if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.WEAKNESS, 10 * 20, 2);
             if (rand.nextInt(500) == 0) Effects.add(entity, MobEffects.POISON, 3 * 20, 2);
             if (rand.nextInt(700) == 0) Effects.add(entity, MobEffects.WITHER, 3 * 20, 1);
         } else if (eRad >= 600) {
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.NAUSEA, 5 * 30, 0);
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.SLOWNESS, 10 * 20, 2);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.CONFUSION, 5 * 30, 0);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.MOVEMENT_SLOWDOWN, 10 * 20, 2);
             if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.WEAKNESS, 10 * 20, 2);
             if (rand.nextInt(500) == 0) Effects.add(entity, MobEffects.POISON, 3 * 20, 1);
         } else if (eRad >= 400) {
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.NAUSEA, 5 * 30, 0);
-            if (rand.nextInt(500) == 0) Effects.add(entity, MobEffects.SLOWNESS, 5 * 20, 0);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.CONFUSION, 5 * 30, 0);
+            if (rand.nextInt(500) == 0) Effects.add(entity, MobEffects.MOVEMENT_SLOWDOWN, 5 * 20, 0);
             if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.WEAKNESS, 5 * 20, 1);
         } else {
-            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.NAUSEA, 5 * 20, 0);
+            if (rand.nextInt(300) == 0) Effects.add(entity, MobEffects.CONFUSION, 5 * 20, 0);
             if (rand.nextInt(500) == 0) Effects.add(entity, MobEffects.WEAKNESS, 5 * 20, 0);
             // 1.7 achRadPoison: only the 200-400 band grants it, exactly as 1.7's else-if chain did
             if (entity instanceof ServerPlayer player) GeoNtmCriteria.RADIATION.fire(player, "poison");
@@ -506,7 +506,7 @@ public class EntityEffectHandler {
             if (BAD_RESULTS.add(toType)) Constants.LOG.warn("Radiation transformation: {} is not a mob type", toType);
             return;
         }
-        to.snapTo(from.getX(), from.getY(), from.getZ(), from.getYRot(), from.getXRot());
+        to.moveTo(from.getX(), from.getY(), from.getZ(), from.getYRot(), from.getXRot());
         if (from.isAlive() && level.addFreshEntity(to)) {
             from.discard();
         }
@@ -577,11 +577,11 @@ public class EntityEffectHandler {
 
             // one hour in, add rare and subtle screen fuckery
             if (contagion < 2 * hour && rand.nextInt(1000) == 0) {
-                Effects.add(entity, MobEffects.NAUSEA, 20, 0);
+                Effects.add(entity, MobEffects.CONFUSION, 20, 0);
             }
             // two hours in, give 'em the full blast
             if (contagion < hour && rand.nextInt(100) == 0) {
-                Effects.add(entity, MobEffects.NAUSEA, 60, 0);
+                Effects.add(entity, MobEffects.CONFUSION, 60, 0);
                 Effects.add(entity, MobEffects.WEAKNESS, 300, 4);
             }
             // T-30 minutes, take damage every 20 seconds
@@ -652,7 +652,7 @@ public class EntityEffectHandler {
         double total = 1 - (blacklungDelta * asbestosDelta);
 
         if (total > 0.75D) Effects.add(entity, MobEffects.WEAKNESS, 100, 2);
-        if (total > 0.95D) Effects.add(entity, MobEffects.NAUSEA, 100, 0);
+        if (total > 0.95D) Effects.add(entity, MobEffects.CONFUSION, 100, 0);
 
         total = 1 - (blacklungDelta * asbestosDelta * sootDelta);
         Level level = entity.level();

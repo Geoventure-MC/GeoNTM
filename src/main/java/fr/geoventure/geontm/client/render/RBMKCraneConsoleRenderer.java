@@ -10,15 +10,15 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
 public final class RBMKCraneConsoleRenderer extends GemBER<BlockEntityCraneConsole, RBMKCraneConsoleRenderer.State> {
     private static final WavefrontObj DESK = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/rbmk/crane_console.obj"));
     private static final WavefrontObj CRANE = WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/rbmk/crane.obj"));
-    private static final Identifier DESK_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_crane_console.png");
-    private static final Identifier CRANE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_crane.png");
+    private static final ResourceLocation DESK_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_crane_console.png");
+    private static final ResourceLocation CRANE_TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/rbmk_crane.png");
     /** {@code findRoomExtent} caps each half-span at 16, so the rail cannot be longer than this. */
     private static final int MAX_SPAN = 33;
     private static final int MAX_TUBES = 16;

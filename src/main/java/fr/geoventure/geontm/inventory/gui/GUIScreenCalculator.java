@@ -11,7 +11,7 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.gui.TextSearch;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.language.LanguageManager;
 import net.minecraft.network.chat.Component;
@@ -244,7 +244,7 @@ public final class GUIScreenCalculator extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         int x = startX();
         int y = startY();
         int histHeight = (font.lineHeight + 4) * MAX_HISTORY;
@@ -261,7 +261,7 @@ public final class GUIScreenCalculator extends CompatScreen {
         else drawCalc(g, x, y);
     }
 
-    private void drawCalc(GuiGraphicsExtractor g, int x, int y) {
+    private void drawCalc(GuiGraphics g, int x, int y) {
         GuiDraw.text(g, font, "=" + latestResult, x + 5, y + 32, -1, false);
 
         int i = 0;
@@ -273,7 +273,7 @@ public final class GUIScreenCalculator extends CompatScreen {
         }
     }
 
-    private void drawQMAW(GuiGraphicsExtractor g, int mouseX, int mouseY, int x, int y) {
+    private void drawQMAW(GuiGraphics g, int mouseX, int mouseY, int x, int y) {
         LanguageManager lang = Minecraft.getInstance().getLanguageManager();
         int hover = mouseEntrySelected(mouseX, mouseY);
         int i = 0;

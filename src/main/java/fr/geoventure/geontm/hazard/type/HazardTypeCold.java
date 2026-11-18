@@ -27,8 +27,8 @@ public class HazardTypeCold implements IHazardType {
         final int baseLevel = (int) level - 1;
         final int witherLevel = (int) level - 3;
 
-        Effects.add(target, MobEffects.MINING_FATIGUE, 110, baseLevel);
-        Effects.add(target, MobEffects.SLOWNESS, 110, Math.min(4, baseLevel));
+        Effects.add(target, MobEffects.DIG_SLOWDOWN, 110, baseLevel);
+        Effects.add(target, MobEffects.MOVEMENT_SLOWDOWN, 110, Math.min(4, baseLevel));
         Effects.add(target, MobEffects.WEAKNESS, 110, baseLevel);
 
         if (level > 4) {

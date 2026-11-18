@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.n2mine",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 6
+    },
+    {
+      "material": "magnetized_tungsten",
+      "shape": "wire",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dyes/green",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_n2"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 54784,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

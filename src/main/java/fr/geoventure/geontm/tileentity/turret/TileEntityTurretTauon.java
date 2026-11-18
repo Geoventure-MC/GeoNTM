@@ -12,8 +12,8 @@ import fr.geoventure.geocore.world.Compat;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,7 +26,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretTauon extends TileEntityTurretBaseNT {
 
-    private static final Identifier GUI = turretGui("tau");
+    private static final ResourceLocation GUI = turretGui("tau");
 
     private static @Nullable List<BulletConfig> configs;
 
@@ -54,7 +54,7 @@ public class TileEntityTurretTauon extends TileEntityTurretBaseNT {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -154,13 +154,13 @@ public class TileEntityTurretTauon extends TileEntityTurretBaseNT {
      * drawn on the tick it was fired rather than whenever the next full update lands.
      */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(shot);
         if (!shot) super.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         if (buf.readBoolean()) beam = 3;
         else super.deserialize(buf);
     }

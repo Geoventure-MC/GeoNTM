@@ -1,0 +1,16 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_fluid": {
+    "type": "geontm:hydrogen",
+    "amount": 500
+  },
+  "input_item": {
+    "ingredient": "#c:dusts/coal"
+  },
+  "output_fluid": {
+    "type": "geontm:heavyoil",
+    "amount": 1000
+  },
+  "duration": 100,
+  "order": 34
+}

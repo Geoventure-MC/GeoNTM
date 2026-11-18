@@ -1,0 +1,10 @@
+{
+  "type": "geontm:coker",
+  "input": "geontm:redmud",
+  "amount": 450,
+  "output": "minecraft:iron_ingot",
+  "byproduct": {
+    "type": "geontm:mercury",
+    "amount": 50
+  }
+}

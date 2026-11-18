@@ -1,0 +1,154 @@
+{
+  "entries": [
+    {
+      "item": "geontm:ballistic_gauntlet",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:armor_polish",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:bandaid",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:serum",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:quartz_plutonium",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:morning_glory",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:spider_milk",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ink",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:heart_container",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:black_diamond",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:scrumpy",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:wild_p",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:card_aos",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:card_qos",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:starmetal_sword",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gem_alexandrite",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:crackpipe",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:flask_infusion_shield",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:boxcar",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:book_of_",
+      "min": 1,
+      "max": 1,
+      "weight": 5
+    },
+    {
+      "item": "geontm:gun_hangman",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gun_mas36",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:item_secret_folly",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:weapon_mod_special_nickel",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:weapon_mod_special_doubloons",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

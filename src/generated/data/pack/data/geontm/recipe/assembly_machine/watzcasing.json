@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.watzcasing",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_welded/any_resistant_alloy"
+    },
+    {
+      "ingredient": "#c:ingots/boron",
+      "count": 3
+    },
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:watz_casing",
+      "count": 3
+    }
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 50432,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:plates_welded/any_resistant_alloy"
+    },
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 2
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.tcalloy"
+  ]
+}

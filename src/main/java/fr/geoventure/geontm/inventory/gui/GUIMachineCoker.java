@@ -5,9 +5,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachineCoker;
 import fr.geoventure.geontm.tileentity.machine.oil.TileEntityMachineCoker;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.Optional;
  * texture). Progress bar (61,46) src(176,0), heat bar (61,55) src(176,5); tank bars at x=35/125 (bottom y=70). */
 public class GUIMachineCoker extends CompatContainerScreen<ContainerMachineCoker> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_coker.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_coker.png");
 
     public GUIMachineCoker(ContainerMachineCoker menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
@@ -26,13 +26,13 @@ public class GUIMachineCoker extends CompatContainerScreen<ContainerMachineCoker
 
     /** 1.7 {@code GUIMachineCoker.drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xC7C1A3, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineCoker te = this.menu.getTile();
@@ -50,7 +50,7 @@ public class GUIMachineCoker extends CompatContainerScreen<ContainerMachineCoker
 
     /** 1.7 {@code GUIMachineCoker.drawScreen}: both tank readouts, then progress and heat stats ("TU" unspaced, as 1.7). */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineCoker te = this.menu.getTile();
         if (te == null) return;
         if (in17(35, 18, 16, 52, mouseX, mouseY)) {

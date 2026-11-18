@@ -22,7 +22,7 @@ public final class BlockWeaponTable extends CompatBlock {
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                   BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, new SimpleMenuProvider(
                     (id, inventory, ignored) -> new ContainerWeaponTable(id, inventory, pos),

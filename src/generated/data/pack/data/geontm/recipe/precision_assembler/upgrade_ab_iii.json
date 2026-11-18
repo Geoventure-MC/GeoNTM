@@ -1,0 +1,53 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.upgrade_ab_iii",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_tantalium",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:upgrade_afterburn_2"
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:solvent",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:upgrade_afterburn_3",
+        "weight": 25
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:upgrade_afterburn_3"
+          }
+        },
+        "weight": 75
+      }
+    ]
+  ],
+  "duration": 400,
+  "power": 25000,
+  "order": 34,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

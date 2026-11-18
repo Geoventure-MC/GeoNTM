@@ -1,0 +1,19 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:bedrock_ore_primary_first_rare",
+  "molten": [
+    {
+      "material": "cobalt",
+      "amount": 320
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:bedrock_ore_fragment_rare",
+      "count": 20
+    },
+    "geontm:bedrock_ore_crumbs_rare"
+  ],
+  "duration": 20,
+  "order": 24
+}

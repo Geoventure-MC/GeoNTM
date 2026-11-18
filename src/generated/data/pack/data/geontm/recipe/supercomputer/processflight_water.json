@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.processflight_water",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_disk_flightdata"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_disk_flightdata_processed",
+        "weight": 99
+      },
+      {
+        "data": "geontm:drive_disk_broken",
+        "weight": 1
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:spentsteam",
+      "amount": 16000
+    }
+  ],
+  "duration": 36000,
+  "power": 10000,
+  "order": 6
+}

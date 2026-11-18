@@ -1,0 +1,20 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_nuke_balefire",
+  "grid": [
+    "",
+    {
+      "ingredient": "geontm:egg_balefire_shard"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:assembly_nuke"
+    },
+    "",
+    "",
+    "",
+    ""
+  ],
+  "order": 87
+}

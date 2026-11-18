@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.assembler",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_basic"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_assembly_machine"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 21760
+}

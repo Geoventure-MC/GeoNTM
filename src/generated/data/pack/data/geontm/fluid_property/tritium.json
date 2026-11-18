@@ -1,0 +1,26 @@
+{
+  "type": "gaseous",
+  "color": "#000099",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 4,
+    "reactivity": 0,
+    "symbol": "radiation"
+  },
+  "shares": [
+    "#c:tritium"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 5000
+    },
+    "combustible": {
+      "grade": "HIGH",
+      "energy": 10000
+    },
+    "ventradiation": {
+      "rad_per_mb": 0.001
+    }
+  }
+}

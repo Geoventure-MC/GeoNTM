@@ -35,7 +35,7 @@ public class ItemCounterfeitKeys extends CompatItem {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         Player player = context.getPlayer();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
 
         BlockEntity te = LockTargets.coreAt(level, pos);
 
@@ -68,7 +68,7 @@ public class ItemCounterfeitKeys extends CompatItem {
             }
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

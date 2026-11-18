@@ -1,0 +1,20 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/fiberglass",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic"
+    }
+  ],
+  "output": "geontm:part_generic_lde",
+  "duration": 200,
+  "consumption": 10000,
+  "order": 2
+}

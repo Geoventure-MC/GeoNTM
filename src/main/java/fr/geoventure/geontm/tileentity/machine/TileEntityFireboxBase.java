@@ -16,7 +16,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachinePolluting;
 import fr.geoventure.geontm.util.TickPhase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -231,7 +231,7 @@ public abstract class TileEntityFireboxBase extends TileEntityMachinePolluting i
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(maxBurnTime);
         buf.writeInt(burnTime);
@@ -242,7 +242,7 @@ public abstract class TileEntityFireboxBase extends TileEntityMachinePolluting i
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         maxBurnTime = buf.readInt();
         burnTime = buf.readInt();

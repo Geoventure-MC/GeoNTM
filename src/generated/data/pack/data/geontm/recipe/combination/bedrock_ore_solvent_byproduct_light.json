@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_byproduct_light"
+  },
+  "item_output": "geontm:bedrock_ore_solvent_roasted_light",
+  "fluid_output": {
+    "type": "geontm:vitriol",
+    "amount": 50
+  },
+  "order": 26
+}

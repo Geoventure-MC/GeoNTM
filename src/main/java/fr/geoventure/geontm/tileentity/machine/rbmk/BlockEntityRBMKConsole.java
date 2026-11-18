@@ -13,7 +13,7 @@ import fr.geoventure.geocore.data.Tags;
 import fr.geoventure.geocore.world.SubLevels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
@@ -291,7 +291,7 @@ public class BlockEntityRBMKConsole extends TileEntityMachineBase implements ICo
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         for (RBMKColumn column : columns) {
             RBMKColumn.writeToBuf(buffer, column);
@@ -317,7 +317,7 @@ public class BlockEntityRBMKConsole extends TileEntityMachineBase implements ICo
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         for (int i = 0; i < columns.length; i++) {
             columns[i] = RBMKColumn.readFromBuf(buffer);

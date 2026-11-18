@@ -8,7 +8,7 @@ import fr.geoventure.geontm.tileentity.MachineCore;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -30,10 +30,10 @@ import java.util.Set;
  */
 public class MachineObjRenderer<T extends BlockEntity> extends GemBER<T, MachineRenderState> {
 
-    private static final Map<Identifier, ModelDef> MODEL_OVERRIDES = new HashMap<>();
+    private static final Map<ResourceLocation, ModelDef> MODEL_OVERRIDES = new HashMap<>();
 
     /** Register during client initialization, before the lazy renderer factories load their models. */
-    public static void overrideModel(Identifier inherited, ModelDef replacement) {
+    public static void overrideModel(ResourceLocation inherited, ModelDef replacement) {
         MODEL_OVERRIDES.put(inherited, replacement);
     }
 
@@ -42,17 +42,17 @@ public class MachineObjRenderer<T extends BlockEntity> extends GemBER<T, Machine
      * set of OBJ parts to skip (e.g. dynamic fluid overlays, or a frame that only shows conditionally),
      * and whether the old renderer drew the model with face culling disabled.
      */
-    public record ModelDef(Identifier obj, Identifier texture, float yOffset, Set<String> exclude, boolean noCull) {
-        public ModelDef(Identifier obj, Identifier texture) { this(obj, texture, 0F, Set.of(), false); }
-        public ModelDef(Identifier obj, Identifier texture, float yOffset) { this(obj, texture, yOffset, Set.of(), false); }
-        public ModelDef(Identifier obj, Identifier texture, Set<String> exclude) { this(obj, texture, 0F, exclude, false); }
-        public ModelDef(Identifier obj, Identifier texture, boolean noCull) { this(obj, texture, 0F, Set.of(), noCull); }
-        public ModelDef(Identifier obj, Identifier texture, float yOffset, Set<String> exclude) {
+    public record ModelDef(ResourceLocation obj, ResourceLocation texture, float yOffset, Set<String> exclude, boolean noCull) {
+        public ModelDef(ResourceLocation obj, ResourceLocation texture) { this(obj, texture, 0F, Set.of(), false); }
+        public ModelDef(ResourceLocation obj, ResourceLocation texture, float yOffset) { this(obj, texture, yOffset, Set.of(), false); }
+        public ModelDef(ResourceLocation obj, ResourceLocation texture, Set<String> exclude) { this(obj, texture, 0F, exclude, false); }
+        public ModelDef(ResourceLocation obj, ResourceLocation texture, boolean noCull) { this(obj, texture, 0F, Set.of(), noCull); }
+        public ModelDef(ResourceLocation obj, ResourceLocation texture, float yOffset, Set<String> exclude) {
             this(obj, texture, yOffset, exclude, false);
         }
     }
 
-    private record Body(WavefrontObj model, Identifier texture, float yOffset, Set<String> exclude, boolean noCull) {}
+    private record Body(WavefrontObj model, ResourceLocation texture, float yOffset, Set<String> exclude, boolean noCull) {}
 
     private final List<Body> bodies;
     private final float baseYaw;

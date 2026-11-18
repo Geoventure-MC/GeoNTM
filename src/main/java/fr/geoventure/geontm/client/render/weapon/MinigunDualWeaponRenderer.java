@@ -7,7 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
@@ -16,7 +16,7 @@ import net.minecraft.world.item.ItemStack;
  * renderModTable: configuration 0 the "GunDual" body, any other the "Gun" body, each with its barrels.
  */
 public final class MinigunDualWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/minigun.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/minigun.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/minigun_dual.png");
     private WavefrontObj model;
     private WavefrontObj model(){if(model==null)model=WavefrontObj.load(MODEL_ID);return model;}

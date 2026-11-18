@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ore_tektite_osmiridium",
+  "output": "geontm:powder_tektite"
+}

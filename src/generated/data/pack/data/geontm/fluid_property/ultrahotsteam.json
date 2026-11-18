@@ -1,0 +1,26 @@
+{
+  "type": "gaseous",
+  "color": "#E39393",
+  "temperature": 600,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "unsiphonable"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:superhotsteam",
+      "amount_req": 1,
+      "amount_produced": 10,
+      "heat_energy": 120,
+      "efficiency": {
+        "TURBINE": 1.0,
+        "HEATEXCHANGER": 0.5
+      }
+    }
+  }
+}

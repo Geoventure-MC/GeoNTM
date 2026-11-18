@@ -4,7 +4,7 @@ import fr.geoventure.geontm.client.model.WavefrontObj;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -18,11 +18,11 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderShim implements CustomItemRenderer {
 
-    private static final Identifier SLEDGE_TEX = tex("textures/models/shimmer_sledge.png");
-    private static final Identifier AXE_TEX = tex("textures/models/shimmer_axe.png");
-    private static final Identifier STOPSIGN_TEX = tex("textures/models/weapons/stopsign.png");
-    private static final Identifier SOPSIGN_TEX = tex("textures/models/weapons/sopsign.png");
-    private static final Identifier CHERNOBYLSIGN_TEX = tex("textures/models/weapons/chernobylsign.png");
+    private static final ResourceLocation SLEDGE_TEX = tex("textures/models/shimmer_sledge.png");
+    private static final ResourceLocation AXE_TEX = tex("textures/models/shimmer_axe.png");
+    private static final ResourceLocation STOPSIGN_TEX = tex("textures/models/weapons/stopsign.png");
+    private static final ResourceLocation SOPSIGN_TEX = tex("textures/models/weapons/sopsign.png");
+    private static final ResourceLocation CHERNOBYLSIGN_TEX = tex("textures/models/weapons/chernobylsign.png");
 
     private final WavefrontObj sledge = obj("models/shimmer_sledge.obj");
     private final WavefrontObj axe = obj("models/shimmer_axe.obj");

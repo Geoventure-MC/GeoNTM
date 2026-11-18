@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.slidingseal",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:dyes/white",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:sliding_seal_door"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 18944
+}

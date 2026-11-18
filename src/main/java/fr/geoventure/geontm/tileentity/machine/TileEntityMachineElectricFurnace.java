@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
@@ -238,7 +238,7 @@ public class TileEntityMachineElectricFurnace extends TileEntityMachineBase impl
     // Sync (BufPacket) + persistence
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(maxProgress);
@@ -248,7 +248,7 @@ public class TileEntityMachineElectricFurnace extends TileEntityMachineBase impl
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         maxProgress = buf.readInt();

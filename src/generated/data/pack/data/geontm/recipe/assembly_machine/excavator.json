@@ -1,0 +1,31 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.excavator",
+  "input_items": [
+    {
+      "ingredient": "minecraft:stone_bricks",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/iron",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_analog"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_excavator"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 29696
+}

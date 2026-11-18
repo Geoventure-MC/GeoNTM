@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:block_asbestos",
+    "geontm:brick_asbestos",
+    "geontm:crystal_asbestos",
+    "geontm:ingot_asbestos",
+    "geontm:ore_asbestos",
+    "geontm:ore_asbestos_deepslate",
+    "geontm:ore_basalt_asbestos",
+    "geontm:ore_gneiss_asbestos",
+    "geontm:powder_asbestos",
+    "geontm:powder_coltan_ore",
+    "geontm:stone_resource_asbestos",
+    "geontm:tile_lab_broken"
+  ]
+}

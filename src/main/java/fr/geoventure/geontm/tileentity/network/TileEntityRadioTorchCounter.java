@@ -11,7 +11,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
@@ -129,7 +129,7 @@ public class TileEntityRadioTorchCounter extends TileEntityInventoryBase impleme
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeBoolean(polling);
         for (int count : lastCount) buffer.writeInt(count);
@@ -138,7 +138,7 @@ public class TileEntityRadioTorchCounter extends TileEntityInventoryBase impleme
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         polling = buffer.readBoolean();
         for (int i = 0; i < MAPPING_SIZE; i++) lastCount[i] = buffer.readInt();

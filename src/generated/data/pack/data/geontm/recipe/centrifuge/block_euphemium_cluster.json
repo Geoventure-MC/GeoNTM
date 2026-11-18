@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:block_euphemium_cluster"
+  },
+  "outputs": [
+    {
+      "id": "geontm:nugget_euphemium",
+      "count": 7
+    },
+    {
+      "id": "geontm:powder_schrabidium",
+      "count": 4
+    },
+    {
+      "id": "geontm:ingot_starmetal",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_solinium",
+      "count": 2
+    }
+  ],
+  "order": 48
+}

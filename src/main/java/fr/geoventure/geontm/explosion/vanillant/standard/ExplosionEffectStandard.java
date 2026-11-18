@@ -21,7 +21,7 @@ public class ExplosionEffectStandard implements IExplosionSFX {
         if (!(world instanceof ServerLevel level)) return;
 
         RandomSource rand = world.getRandom();
-        world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 4.0F,
+        world.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 4.0F,
                 (1.0F + (rand.nextFloat() - rand.nextFloat()) * 0.2F) * 0.7F);
 
         ExplosionBlocksPayload.send(level, x, y, z, explosion.size, explosion.affectedBlockPositions);

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:debris_shrapnel",
+  "output": {
+    "id": "geontm:powder_steel_tiny",
+    "count": 5
+  }
+}

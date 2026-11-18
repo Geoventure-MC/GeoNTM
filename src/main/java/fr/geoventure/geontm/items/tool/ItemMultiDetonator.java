@@ -59,7 +59,7 @@ public class ItemMultiDetonator extends CompatItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (player == null || !player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null || !player.isShiftKeyDown()) return InteractionResult.PASS;
 
         Level level = context.getLevel();
         addLocation(context.getItemInHand(), context.getClickedPos());

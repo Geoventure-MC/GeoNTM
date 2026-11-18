@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:bedrock_ore_solvent_roasted_light",
+  "output": "minecraft:gravel"
+}

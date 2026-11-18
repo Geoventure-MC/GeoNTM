@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * C2S payload for the anvil's construction crafting, the 26.1 port of {@code AnvilCraftPacket}. Carries
@@ -23,7 +23,7 @@ public record AnvilCraftPayload(String recipeId, int mode) implements GeoCorePay
             buffer -> new AnvilCraftPayload(buffer.readUtf(256), buffer.readVarInt()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

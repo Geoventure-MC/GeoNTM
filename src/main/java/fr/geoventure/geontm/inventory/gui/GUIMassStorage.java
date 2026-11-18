@@ -6,9 +6,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -18,14 +18,14 @@ import java.util.Optional;
 /** The old 176x221 mass-storage screen, including the stockpile gauge and two controls. */
 public class GUIMassStorage extends CompatContainerScreen<ContainerMassStorage> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_mass_storage.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_mass_storage.png");
 
     public GUIMassStorage(ContainerMassStorage menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 221);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         int capacity = menu.getCapacity();
@@ -40,13 +40,13 @@ public class GUIMassStorage extends CompatContainerScreen<ContainerMassStorage> 
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, (imageWidth - font.width(title)) / 2, 6, 0x404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0x404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(96, 16, 18, 90, mouseX, mouseY)) {
             int capacity = menu.getCapacity();
             double percent = capacity <= 0 ? 0D : ((int) (menu.getStockpile() * 1000D / capacity)) / 10D;

@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:sands"
+  },
+  "acid": {
+    "type": "geontm:colloid",
+    "amount": 1000
+  },
+  "output": "minecraft:clay",
+  "duration": 20,
+  "order": 339
+}

@@ -7,7 +7,7 @@ import fr.geoventure.geocore.render.Particles;
 import java.awt.Color;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -29,7 +29,7 @@ public abstract class ParticleRotating extends CompatParticle {
      * {@code assets/geontm/textures/particle/particle_base.png} stitches as {@code geontm:particle_base}. A wrong
      * id does not throw: the atlas returns its missing sprite and the particle renders as a checkerboard.
      */
-    public static final Identifier PARTICLE_BASE = Ids.of("geontm", "particle_base");
+    public static final ResourceLocation PARTICLE_BASE = Ids.of("geontm", "particle_base");
 
     protected ParticleRotating(ClientLevel level, double x, double y, double z) {
         this(level, x, y, z, Particles.sprite(PARTICLE_BASE));

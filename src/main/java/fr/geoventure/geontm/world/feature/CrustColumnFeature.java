@@ -49,7 +49,7 @@ public class CrustColumnFeature extends Feature<CrustColumnFeature.Config> {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         int placed = 0;
         for (int y = top.getY() - depth; y <= top.getY(); y++) {
-            if (y < level.getMinY() || y >= level.getMaxY()) continue;
+            if (y < level.getMinBuildHeight() || y >= level.getMaxBuildHeight()) continue;
             pos.set(top.getX(), y, top.getZ());
             if (!host.test(level.getBlockState(pos), rand)) continue;
             if (!level.getBlockState(pos.above()).isAir()) continue;

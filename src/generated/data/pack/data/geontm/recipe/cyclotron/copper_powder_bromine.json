@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_copper",
+  "input": {
+    "ingredient": "geontm:powder_bromine"
+  },
+  "output": "geontm:powder_iodine",
+  "antimatter": 15,
+  "order": 32
+}

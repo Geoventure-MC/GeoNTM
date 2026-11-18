@@ -7,7 +7,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -18,8 +18,8 @@ import net.minecraft.world.item.ItemStack;
  */
 public class AtlasWeaponRenderer extends WeaponRenderer {
 
-    private static final Identifier MODEL = Ids.of("geontm", "models/weapons/bio_revolver.obj");
-    private final Identifier texture;
+    private static final ResourceLocation MODEL = Ids.of("geontm", "models/weapons/bio_revolver.obj");
+    private final ResourceLocation texture;
 
     private WavefrontObj model;
 

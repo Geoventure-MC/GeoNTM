@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -41,7 +41,7 @@ public class GUIScreenClayTablet extends CompatScreen {
     protected int guiTop;
     protected int tabletMeta = 0;
 
-    protected static final Identifier texture = Ids.of("geontm", "textures/gui/guide_pedestal.png");
+    protected static final ResourceLocation texture = Ids.of("geontm", "textures/gui/guide_pedestal.png");
 
     public GUIScreenClayTablet() {
         super(Component.empty());
@@ -54,7 +54,7 @@ public class GUIScreenClayTablet extends CompatScreen {
         this.guiTop = (this.height - this.ySize) / 2;
     }
 
-    private void blit(GuiGraphicsExtractor g, int x, int y, int u, int v, int w, int h) {
+    private void blit(GuiGraphics g, int x, int y, int u, int v, int w, int h) {
         GuiDraw.blit(g, texture, x, y, u, v, w, h, 256, 256);
     }
 
@@ -69,19 +69,19 @@ public class GUIScreenClayTablet extends CompatScreen {
             }
             return list;
         }
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.parse(id));
         if (item == null || item == Items.AIR) return list;
         list.add(new ItemStack(item, input.count()));
         return list;
     }
 
     private static ItemStack output(PedestalRecipe recipe) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(recipe.output));
+        Item item = BuiltInRegistries.ITEM.get(Ids.parse(recipe.output));
         return item == null ? ItemStack.EMPTY : new ItemStack(item, recipe.outputCount);
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int i, int j, float f) {
+    protected void extractBackgroundCompat(GuiGraphics g, int i, int j, float f) {
         Player player = Minecraft.getInstance().player;
         if (player == null) return;
         ItemStack held = player.getMainHandItem();

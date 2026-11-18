@@ -39,7 +39,7 @@ public class ItemWandD extends CompatItem {
 
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
-        if (level.isClientSide()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (level.isClientSide()) return InteractionResult.PASS;
 
         // 1.7 Library.rayTrace(player, 500, 1, false, true, false): blocks only, fluids passed through
         HitResult hit = player.pick(500.0D, 1.0F, false);
@@ -55,7 +55,7 @@ public class ItemWandD extends CompatItem {
             StructureManager.crane.build(level, pos.getX(), y, pos.getZ());
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

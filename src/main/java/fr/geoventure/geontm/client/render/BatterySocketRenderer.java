@@ -22,7 +22,7 @@ import fr.geoventure.geontm.tileentity.machine.storage.TileEntityBatterySocket;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -43,13 +43,13 @@ public class BatterySocketRenderer extends GemBER<TileEntityBatterySocket, Batte
     /** 1.7's {@code battery.obj} "Supports" part, split into its own file so the pack icons need not exclude it. */
     private final WavefrontObj supports = WavefrontObj.load(Ids.of("geontm", "models/battery_socket_supports.obj"));
     private final WavefrontObj chuddie = WavefrontObj.load(Ids.of("geontm", "models/mobs/chuddie.obj"));
-    private static final Identifier CHUDDIE = Ids.of("geontm", "textures/models/chuddie.png");
+    private static final ResourceLocation CHUDDIE = Ids.of("geontm", "textures/models/chuddie.png");
     private static final String ENERGY_BALL = "geontm:energy_ball";
-    private static final Identifier NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
+    private static final ResourceLocation NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
     /** The ball's centre between chuddie's hands, in model units, and its radius in blocks (below 1, see the shader). */
     private static final float BALL_X = 0.64F, BALL_Y = 1.13F, BALL_RADIUS = 0.24F;
     // read by GemRender's instancing workers as well as the render thread
-    private final Map<Identifier, Surface> skins = new ConcurrentHashMap<>();
+    private final Map<ResourceLocation, Surface> skins = new ConcurrentHashMap<>();
 
     /** Match the 1.12.2 RenderBatterySocket placement: centre, facing-rotate, then its model offset. */
     @Override
@@ -75,7 +75,7 @@ public class BatterySocketRenderer extends GemBER<TileEntityBatterySocket, Batte
     }
 
     private Surface skinOf(BatterySocketRenderState state) {
-        Identifier texture = state.batteryTexture;
+        ResourceLocation texture = state.batteryTexture;
         return texture == null ? EMPTY : skins.computeIfAbsent(texture, id -> Surface.cutout(id.toString()));
     }
 

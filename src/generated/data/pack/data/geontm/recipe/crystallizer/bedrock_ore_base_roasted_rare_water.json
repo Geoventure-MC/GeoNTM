@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_base_roasted_rare"
+  },
+  "acid": {
+    "type": "minecraft:water",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_base_washed_rare",
+  "duration": 100,
+  "order": 169
+}

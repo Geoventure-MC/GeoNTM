@@ -1,0 +1,17 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.tritium_dust_tiny",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts_tiny/lithium"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:tritium",
+      "amount": 100
+    }
+  ],
+  "duration": 10000,
+  "order": 3
+}

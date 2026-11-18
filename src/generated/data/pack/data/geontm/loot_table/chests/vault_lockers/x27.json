@@ -1,0 +1,21 @@
+{
+  "geocore:conditions": [
+    {
+      "type": "mod_loaded",
+      "mod": "lootr"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 27,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/vault_lockers"
+        }
+      ]
+    }
+  ]
+}

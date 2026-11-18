@@ -1,0 +1,18 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:raw_materials/uranium",
+  "materials": [
+    {
+      "material": "uranium",
+      "amount": 96
+    },
+    {
+      "material": "lead",
+      "amount": 16
+    },
+    {
+      "material": "stone",
+      "amount": 108
+    }
+  ]
+}

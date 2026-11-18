@@ -1,0 +1,20 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.mingradeCursed",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/copper"
+    },
+    {
+      "ingredient": "#c:ingots/redstone"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_red_copper",
+      "count": 2
+    }
+  ],
+  "duration": 400,
+  "order": 9
+}

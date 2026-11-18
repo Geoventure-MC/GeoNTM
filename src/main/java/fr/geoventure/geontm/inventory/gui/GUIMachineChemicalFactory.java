@@ -13,9 +13,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -27,7 +27,7 @@ public class GUIMachineChemicalFactory
         extends CompatContainerScreen<ContainerMachineChemicalFactory>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of(
+    private static final ResourceLocation TEXTURE = Ids.of(
             "geontm", "textures/gui/processing/gui_chemical_factory.png");
 
     public GUIMachineChemicalFactory(ContainerMachineChemicalFactory menu, Inventory playerInventory,
@@ -36,7 +36,7 @@ public class GUIMachineChemicalFactory
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, 248, 116, 256, 256);
         GuiDraw.blit(graphics, TEXTURE, leftPos + 18, topPos + 116,
                 18F, 116F, 230, 100, 256, 256);
@@ -100,23 +100,23 @@ public class GUIMachineChemicalFactory
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 106 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 26, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     /** 1.7 {@code renderTank(guiLeft + x, guiTop + y + height, ...)}: the 1.7 call passes the bottom edge. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         GuiUtil.tank(graphics, tank, leftPos + x, topPos + y + height, width, height);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int sourceX, int lane) {
+    private void led(GuiGraphics graphics, int x, int sourceX, int lane) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + 21 + lane * 22,
                 sourceX, 222F, 4, 4, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineChemicalFactory factory = menu.getFactory();
         if (factory == null) return;
 
@@ -154,7 +154,7 @@ public class GUIMachineChemicalFactory
         }
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, FluidTankNTM tank, int mouseX, int mouseY) {
+    private void tankTooltip(GuiGraphics graphics, FluidTankNTM tank, int mouseX, int mouseY) {
         GuiUtil.tooltip(graphics, font, GuiUtil.tankTooltip(tank), mouseX, mouseY);
     }
 

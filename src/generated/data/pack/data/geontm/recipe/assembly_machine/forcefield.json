@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.forcefield",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:plate_desh",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:coil_gold_torus",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:coil_magnetized_tungsten",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:motor"
+    },
+    {
+      "ingredient": "geontm:upgrade_radius"
+    },
+    {
+      "ingredient": "geontm:upgrade_health"
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:machine_transformer"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_forcefield"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 33792
+}

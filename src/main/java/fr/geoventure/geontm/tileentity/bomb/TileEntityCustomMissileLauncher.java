@@ -28,7 +28,7 @@ import fr.geoventure.geocore.world.SubLevels;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
@@ -376,7 +376,7 @@ public abstract class TileEntityCustomMissileLauncher extends TileEntityMachineB
     // --- sync + persistence ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeInt(solid);
@@ -388,7 +388,7 @@ public abstract class TileEntityCustomMissileLauncher extends TileEntityMachineB
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         solid = buf.readInt();
@@ -398,14 +398,14 @@ public abstract class TileEntityCustomMissileLauncher extends TileEntityMachineB
     }
 
     /** 1.7 {@code MissileStruct.writeToByteBuffer}: four item ids, 0 for an empty or misplaced slot. */
-    public static void writeStruct(RegistryFriendlyByteBuf buf, MissileStruct struct) {
+    public static void writeStruct(FriendlyByteBuf buf, MissileStruct struct) {
         MissileStruct clean = struct.sanitised();
         for (Item item : new Item[]{clean.warhead(), clean.fuselage(), clean.fins(), clean.thruster()}) {
             buf.writeVarInt(item == null ? -1 : BuiltInRegistries.ITEM.getId(item));
         }
     }
 
-    public static MissileStruct readStruct(RegistryFriendlyByteBuf buf) {
+    public static MissileStruct readStruct(FriendlyByteBuf buf) {
         ItemCustomMissilePart[] parts = new ItemCustomMissilePart[4];
         for (int i = 0; i < 4; i++) {
             int id = buf.readVarInt();

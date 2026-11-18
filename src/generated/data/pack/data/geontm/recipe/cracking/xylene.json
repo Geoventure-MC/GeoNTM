@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:xylene",
+  "left": {
+    "type": "geontm:aromatics",
+    "amount": 80
+  },
+  "right": {
+    "type": "geontm:petroleum",
+    "amount": 20
+  }
+}

@@ -59,7 +59,7 @@ final class RadiationWorldHandler {
 
         // Re-resolve the section. Stale keys (chunk unloaded / section rebuilt since the roll) drop silently
         // but still count as a consumed poll (return true so the caller keeps draining the queue).
-        RadiationSystemNT.ChunkRad cr = data.chunks.get(ChunkPos.pack(cx, cz));
+        RadiationSystemNT.ChunkRad cr = data.chunks.get(ChunkPos.asLong(cx, cz));
         if (cr == null) return true;
         int idx = sy - data.minSectionY;
         if (idx < 0 || idx >= cr.sections.length) return true;
@@ -127,7 +127,7 @@ final class RadiationWorldHandler {
             level.setBlock(pos, ModFalloutBlocks.waste_earth.get().defaultBlockState(), Block.UPDATE_CLIENTS);
             return;
         }
-        if (state.is(Blocks.SHORT_GRASS) || state.is(Blocks.FERN)) { // old TALLGRASS metas (grass + fern)
+        if (state.is(Blocks.GRASS) || state.is(Blocks.FERN)) { // old TALLGRASS metas (grass + fern)
             level.setBlock(pos, AIR, Block.UPDATE_CLIENTS);
             return;
         }

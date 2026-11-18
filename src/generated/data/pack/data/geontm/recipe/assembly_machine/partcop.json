@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.partcop",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/copper"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:part_copper",
+      "count": 8
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "auto_switch_group": "autoswitch.cyclotron",
+  "order": 14080
+}

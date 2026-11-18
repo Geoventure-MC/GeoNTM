@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/plutonium"
+  },
+  "outputs": [
+    "geontm:powder_plutonium",
+    "geontm:powder_plutonium",
+    {
+      "id": "geontm:nugget_polonium",
+      "count": 3
+    },
+    "minecraft:gravel"
+  ],
+  "order": 33
+}

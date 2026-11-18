@@ -1,0 +1,25 @@
+{
+  "type": "liquid",
+  "color": "#E2ADC1",
+  "temperature": 1200,
+  "hazard": {
+    "poison": 1,
+    "flammability": 2,
+    "reactivity": 3,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:sodium",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 400,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

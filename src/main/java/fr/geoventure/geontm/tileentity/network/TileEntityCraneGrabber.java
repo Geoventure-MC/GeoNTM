@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -92,7 +92,7 @@ public class TileEntityCraneGrabber extends TileEntityCraneBase implements ICont
                     Vec3 snap = belt.getClosestSnappingPosition(level, outputPos, pos);
                     EntityMovingItem newItem = new EntityMovingItem(level);
                     newItem.setItemStack(item.getItemStack().copy());
-                    newItem.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+                    newItem.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
                     item.discard();
                     level.addFreshEntity(newItem);
                     break;
@@ -165,14 +165,14 @@ public class TileEntityCraneGrabber extends TileEntityCraneBase implements ICont
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(this.isWhitelist);
         this.matcher.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.isWhitelist = buf.readBoolean();
         this.matcher.deserialize(buf);

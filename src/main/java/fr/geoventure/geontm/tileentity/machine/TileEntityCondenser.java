@@ -8,7 +8,7 @@ import fr.geoventure.geontm.lib.DirPos;
 import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geocore.data.DataIn;
@@ -137,7 +137,7 @@ public class TileEntityCondenser extends TileEntityMachineBase implements IFluid
     @Override public FluidTankNTM[] getAllTanks() { return tanks; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         input.serialize(buf);
         output.serialize(buf);
@@ -145,7 +145,7 @@ public class TileEntityCondenser extends TileEntityMachineBase implements IFluid
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         input.deserialize(buf);
         output.deserialize(buf);

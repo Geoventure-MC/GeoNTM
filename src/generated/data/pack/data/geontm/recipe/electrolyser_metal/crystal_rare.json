@@ -1,0 +1,21 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_rare",
+  "molten": [
+    {
+      "material": "zirconium",
+      "amount": 48
+    },
+    {
+      "material": "boron",
+      "amount": 16
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_desh_mix",
+      "count": 3
+    }
+  ],
+  "order": 13
+}

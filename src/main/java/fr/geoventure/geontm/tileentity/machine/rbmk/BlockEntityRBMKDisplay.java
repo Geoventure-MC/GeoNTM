@@ -7,7 +7,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.SubLevels;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -71,12 +71,12 @@ public class BlockEntityRBMKDisplay extends TileEntityLoadedBase implements IRBM
         return switch (rotation) { case 1 -> i; case 2 -> -j; case 3 -> -i; default -> j; };
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (RBMKColumn column : columns) RBMKColumn.writeToBuf(buf, column);
     }
 
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (int i = 0; i < columns.length; i++) columns[i] = RBMKColumn.readFromBuf(buf);
     }

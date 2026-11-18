@@ -20,9 +20,9 @@ import java.util.HashMap;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -41,7 +41,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretMaxwell extends TileEntityTurretBaseNT implements IUpgradeInfoProvider {
 
-    private static final Identifier GUI = turretGui("maxwell");
+    private static final ResourceLocation GUI = turretGui("maxwell");
 
     private static @Nullable List<ItemStack> upgradeDisplay;
 
@@ -93,7 +93,7 @@ public class TileEntityTurretMaxwell extends TileEntityTurretBaseNT implements I
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -227,13 +227,13 @@ public class TileEntityTurretMaxwell extends TileEntityTurretBaseNT implements I
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(shot);
         if (!shot) super.serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         if (buf.readBoolean()) beam = 5;
         else super.deserialize(buf);
     }

@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * T-51b's worn body: the port's first modelled armour set.
@@ -20,7 +20,7 @@ import net.minecraft.resources.Identifier;
  */
 public class T51ArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/t51.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/t51.obj");
 
     private static final Surface HELMET = skin("t51_helmet");
     private static final Surface CHEST = skin("t51_chest");

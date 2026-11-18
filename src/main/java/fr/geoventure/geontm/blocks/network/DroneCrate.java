@@ -46,12 +46,12 @@ public class DroneCrate extends CompatBlock implements TickingBlock, ILookOverla
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (holdsLinker(player)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (holdsLinker(player)) return InteractionResult.PASS;
         return open(level, pos, player);
     }
 
     static InteractionResult open(Level level, BlockPos pos, Player player) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer
                 && level.getBlockEntity(pos) instanceof MenuProvider provider) {
             Menus.openWithPos(serverPlayer, provider, pos);

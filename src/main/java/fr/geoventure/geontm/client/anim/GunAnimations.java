@@ -281,7 +281,7 @@ public final class GunAnimations {
     }
 
     private static void registerById(String itemId, AnimationTable table) {
-        register(() -> BuiltInRegistries.ITEM.getValue(Ids.of("geontm", itemId)), table);
+        register(() -> BuiltInRegistries.ITEM.get(Ids.of("geontm", itemId)), table);
     }
 
     private static BusAnimation amat(ItemStack stack, GunAnimation type, int rail) {

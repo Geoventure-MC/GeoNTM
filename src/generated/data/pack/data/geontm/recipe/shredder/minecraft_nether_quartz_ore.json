@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:nether_quartz_ore",
+  "output": {
+    "id": "geontm:powder_quartz",
+    "count": 2
+  }
+}

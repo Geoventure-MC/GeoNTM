@@ -16,7 +16,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -112,7 +112,7 @@ public class TileEntityFluidPump extends TileEntityLoadedBase implements IFluidS
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tank[0].serialize(buf);
         buf.writeByte((byte) priority.ordinal());
@@ -121,7 +121,7 @@ public class TileEntityFluidPump extends TileEntityLoadedBase implements IFluidS
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tank[0].deserialize(buf);
         int p = buf.readByte();

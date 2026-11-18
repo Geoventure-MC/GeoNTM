@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.boypropellant",
+  "input_items": [
+    {
+      "ingredient": "geontm:cordite",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/iron",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 4
+    },
+    {
+      "material": "red_copper",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:boy_propellant"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 58112
+}

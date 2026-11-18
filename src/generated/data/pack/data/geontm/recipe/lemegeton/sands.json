@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:sands",
+  "output": "geontm:ingot_fiberglass",
+  "order": 35
+}

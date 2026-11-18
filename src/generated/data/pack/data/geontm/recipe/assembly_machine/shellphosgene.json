@@ -1,0 +1,25 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.shellphosgene",
+  "input_items": [
+    {
+      "ingredient": "geontm:ammo_arty",
+      "exact": true
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:phosgene",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "geontm:ammo_arty_phosgene"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 83712
+}

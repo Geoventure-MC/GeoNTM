@@ -15,9 +15,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -28,7 +28,7 @@ import java.util.Optional;
 /** Plasma forge control panel, including recipe selection, energy, plasma ignition and fluid status. */
 public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachinePlasmaForge> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_fusion_plasmaforge.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_fusion_plasmaforge.png");
     private static final int RECIPE_X = PlasmaForgeGuiLayout.RECIPE_X;
     private static final int RECIPE_Y = PlasmaForgeGuiLayout.RECIPE_Y;
     private static final int RECIPE_SIZE = PlasmaForgeGuiLayout.RECIPE_SIZE;
@@ -38,7 +38,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos, y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityFusionPlasmaForge forge = menu.getForge();
@@ -78,17 +78,17 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         }
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int y, int u) {
+    private void led(GuiGraphics graphics, int x, int y, int u) {
         GuiDraw.blit(graphics, TEXTURE, x, y, u, 0F, 3, 6, 256, 256);
     }
 
-    private void drawGauge(GuiGraphicsExtractor graphics, int x, int y, PlasmaForgeRecipe recipe) {
+    private void drawGauge(GuiGraphics graphics, int x, int y, PlasmaForgeRecipe recipe) {
         double progress = recipe == null || recipe.ignitionTemp <= 0 ? 0D
                 : Math.min((double) forgeEnergy() / recipe.ignitionTemp, 1.5D) / 1.5D;
         drawNeedle(graphics, x, y, progress, 0xFFA00000);
     }
 
-    private void drawGauge(GuiGraphicsExtractor graphics, int x, int y, int value, int max) {
+    private void drawGauge(GuiGraphics graphics, int x, int y, int value, int max) {
         drawNeedle(graphics, x, y, max <= 0 ? 0D : (double) value / max, 0xFFA00000);
     }
 
@@ -97,7 +97,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         return forge == null ? 0L : forge.plasmaEnergySync;
     }
 
-    private static void drawNeedle(GuiGraphicsExtractor graphics, int x, int y, double progress, int color) {
+    private static void drawNeedle(GuiGraphics graphics, int x, int y, double progress, int color) {
         progress = Math.max(0D, Math.min(1D, progress));
         GuiDraw.pushMatrix(graphics);
         GuiDraw.translate(graphics, x, y);
@@ -108,7 +108,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         GuiDraw.popMatrix(graphics);
     }
 
-    private static void fillNeedle(GuiGraphicsExtractor graphics, double multiplier, int color) {
+    private static void fillNeedle(GuiGraphics graphics, double multiplier, int color) {
         double tip = 5D * multiplier * 8D;
         double back = 2D * multiplier * 8D;
         double side = multiplier * 8D;
@@ -119,7 +119,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         }
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y) {
         int max = tank.getMaxFill();
         int height = max <= 0 ? 0 : tank.getFill() * 52 / max;
         if (height <= 0) return;
@@ -127,7 +127,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         int bottom = y + 52;
         int top = bottom - height;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x, top, x + 16, bottom);
             for (int tileY = bottom - 16; tileY > top - 16; tileY -= 16) {
@@ -140,13 +140,13 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 70 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94, 0xFF404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFusionPlasmaForge forge = menu.getForge();
         if (forge == null) return;
         GenericRecipe recipe = forge.plasmaModule.getRecipe();
@@ -175,7 +175,7 @@ public class GUIMachinePlasmaForge extends CompatContainerScreen<ContainerMachin
         }
     }
 
-    private void drawBoosterTooltip(GuiGraphicsExtractor graphics, TileEntityFusionPlasmaForge forge,
+    private void drawBoosterTooltip(GuiGraphics graphics, TileEntityFusionPlasmaForge forge,
                                     int mouseX, int mouseY) {
         List<ItemStack> boosters = forge.getBoosterDisplayStacks();
         if (boosters.isEmpty()) return;

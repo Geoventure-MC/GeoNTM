@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
@@ -320,14 +320,14 @@ public class TileEntityBatterySocket extends TileEntityBatteryBase implements Me
     // Sync (BufPacket) + persistence: add delta + the carried stack on top of the base fields
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(delta);
         ItemStacks.writeOptional(buf, inventory.getStackInSlot(0));
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         delta = buf.readLong();
         syncStack = ItemStacks.readOptional(buf);

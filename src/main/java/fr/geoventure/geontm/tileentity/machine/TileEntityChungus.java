@@ -19,7 +19,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -286,7 +286,7 @@ public class TileEntityChungus extends TileEntityLoadedBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         if (syncedInputResource == null) tanks[0].serialize(buf, syncedInputFill);
         else tanks[0].serialize(buf, syncedInputFill, syncedInputResource, syncedInputPin);
@@ -296,7 +296,7 @@ public class TileEntityChungus extends TileEntityLoadedBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tanks[0].deserialize(buf);
         tanks[1].deserialize(buf);

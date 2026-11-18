@@ -1,0 +1,37 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_drx",
+    "stage": 6
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "gamma",
+  "outputs": [
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    },
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    },
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    },
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    },
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    },
+    {
+      "data": "geontm:undefined",
+      "weight": 1
+    }
+  ],
+  "order": 114
+}

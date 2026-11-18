@@ -13,9 +13,9 @@ import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineAssemblyMachine;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -29,7 +29,7 @@ import java.util.Optional;
  */
 public class GUIMachineAssemblyMachine extends CompatContainerScreen<ContainerMachineAssemblyMachine> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_assembler.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_assembler.png");
 
     public GUIMachineAssemblyMachine(ContainerMachineAssemblyMachine menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 256);
@@ -37,13 +37,13 @@ public class GUIMachineAssemblyMachine extends CompatContainerScreen<ContainerMa
 
     /** 1.7 foreground: the name centred on x 70 at y 6, then the inventory caption. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 70 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineAssemblyMachine te = this.menu.getAssembler();
@@ -111,12 +111,12 @@ public class GUIMachineAssemblyMachine extends CompatContainerScreen<ContainerMa
     }
 
     /** 1.7 {@code renderTank(x, y + 16, z, 52, 16, 1)}: a horizontal tank filling left to right, tinted. */
-    private void drawHorizontalTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y) {
+    private void drawHorizontalTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y) {
         int max = tank.getMaxFill();
         int w = max <= 0 ? 0 : tank.getFill() * 52 / max;
         if (w <= 0) return;
         int x0 = this.leftPos + x, y0 = this.topPos + y;
-        Identifier fluidTex = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTex = tank.getTankType().clientMetadata().getTexture();
         int tint = TankDisplay.tint(tank, true);
         graphics.enableScissor(x0, y0, x0 + w, y0 + 16);
         for (int tx = x0; tx < x0 + w; tx += 16) {
@@ -140,12 +140,12 @@ public class GUIMachineAssemblyMachine extends CompatContainerScreen<ContainerMa
     }
 
     /** Draws a 3×6 status LED at GUI-relative x / topPos+121 from texture column {@code u} (192 = orange, 195 = green). */
-    private void led(GuiGraphicsExtractor graphics, int x, int u) {
+    private void led(GuiGraphics graphics, int x, int u) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos + x, this.topPos + 121, (float) u, 0.0F, 3, 6, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         // Power bar hover region (GUI-relative): the full 16×61 bar at (152, 18)..(152, 79).
         TileEntityMachineAssemblyMachine te = this.menu.getAssembler();
         if (te == null) return;

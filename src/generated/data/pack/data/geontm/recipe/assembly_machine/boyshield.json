@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.boyshield",
+  "input_items": [
+    {
+      "ingredient": "geontm:neutron_reflector",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:boy_shielding"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 57344
+}

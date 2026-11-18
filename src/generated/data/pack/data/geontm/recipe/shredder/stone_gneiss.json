@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:stone_gneiss",
+  "output": "geontm:powder_lithium_tiny"
+}

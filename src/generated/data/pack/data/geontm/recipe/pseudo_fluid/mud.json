@@ -1,0 +1,12 @@
+{
+  "type": "geontm:pseudo_fluid",
+  "name": "MUD",
+  "from": "geontm:watz",
+  "consumed": 1000,
+  "produced": 500,
+  "next": "MUD_HEAVY",
+  "outputs": [
+    "geontm:powder_lead",
+    "geontm:dust"
+  ]
+}

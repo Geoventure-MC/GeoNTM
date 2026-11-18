@@ -23,12 +23,12 @@ public class ItemRBMKLid extends Item {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
         if (!(level.getBlockState(pos).getBlock() instanceof RBMKBase rbmk) || rbmk.hasOwnLid()) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);
-        if (core == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (core == null) return InteractionResult.PASS;
         BlockState coreState = level.getBlockState(core);
-        if (RBMKBase.lidOf(coreState).present()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (RBMKBase.lidOf(coreState).present()) return InteractionResult.PASS;
 
         if (!level.isClientSide()) {
             if (level instanceof ServerLevel server) rbmk.writeLid(server, core, coreState, lid);

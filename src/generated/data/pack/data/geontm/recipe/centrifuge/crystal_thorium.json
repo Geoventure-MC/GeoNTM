@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_thorium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_thorium",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_thorium",
+      "count": 2
+    },
+    "geontm:powder_uranium",
+    "geontm:nugget_ra226"
+  ],
+  "order": 161
+}

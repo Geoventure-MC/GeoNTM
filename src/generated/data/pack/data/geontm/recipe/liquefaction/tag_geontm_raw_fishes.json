@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#geontm:raw_fishes",
+  "output": {
+    "type": "geontm:fishoil",
+    "amount": 100
+  }
+}

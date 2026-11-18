@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.soliniumcore",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/solinium",
+      "count": 9
+    },
+    {
+      "ingredient": "#c:nuggets/euphemium"
+    }
+  ],
+  "output_items": [
+    "geontm:solinium_core"
+  ],
+  "duration": 600,
+  "power": 100,
+  "order": 60928
+}

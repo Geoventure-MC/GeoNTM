@@ -15,7 +15,7 @@ import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
@@ -25,7 +25,7 @@ public final class RBMKDebrisRenderer extends GemEntityRenderer<EntityRBMKDebris
     private static final float DIAG = 0.57735026F;
     private static final WavefrontObj[] MODELS = {
             model("deb_blank"), model("deb_element"), model("deb_fuel"), model("deb_rod"), model("deb_graphite"), model("deb_lid")};
-    private static final Identifier[] TEXTURES = {
+    private static final ResourceLocation[] TEXTURES = {
             texture("blank"), texture("element"), texture("fuel"), texture("control"), texture("graphite"), texture("lid")};
 
     public RBMKDebrisRenderer(EntityRendererProvider.Context context) { super(context); shadowRadius = .5F; }
@@ -54,7 +54,7 @@ public final class RBMKDebrisRenderer extends GemEntityRenderer<EntityRBMKDebris
         state.tumble.rotation(new Quaternionf().rotationAxis((float) Math.toRadians(state.rot), DIAG, DIAG, DIAG));
     }
     private static WavefrontObj model(String name) { return WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/projectiles/" + name + ".obj")); }
-    private static Identifier texture(String name) { return Ids.of(Constants.MOD_ID, "textures/entity/rbmk_debris/" + name + ".png"); }
+    private static ResourceLocation texture(String name) { return Ids.of(Constants.MOD_ID, "textures/entity/rbmk_debris/" + name + ".png"); }
     public static final class State extends CompatEntityRenderState {
         int type = 1;
         int spin;

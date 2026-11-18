@@ -16,8 +16,8 @@ import fr.geoventure.geocore.data.DataOut;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,7 +41,7 @@ public class TileEntityTurretArty extends TileEntityTurretBaseArtillery {
     /** The mode button's id in the shared turret screen. */
     public static final int BUTTON_MODE = 5;
 
-    private static final Identifier GUI = turretGui("arty");
+    private static final ResourceLocation GUI = turretGui("arty");
     /** Gravity per tick, matching {@link EntityArtilleryShell#getGravityVelocity}. */
     private static final double GRAVITY = 9.81D * 0.05D;
 
@@ -82,7 +82,7 @@ public class TileEntityTurretArty extends TileEntityTurretBaseArtillery {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 
@@ -378,14 +378,14 @@ public class TileEntityTurretArty extends TileEntityTurretBaseArtillery {
      * {@code didJustShoot} and the client reads it back into {@code retracting}.
      */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort(mode);
         buf.writeBoolean(didJustShoot);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         mode = buf.readShort();
         retracting = buf.readBoolean();

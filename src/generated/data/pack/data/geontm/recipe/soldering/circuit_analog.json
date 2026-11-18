@@ -1,0 +1,30 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:circuit_analog",
+  "duration": 100,
+  "consumption": 100,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_vacuum_tube",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 2
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 4
+    }
+  ],
+  "solder": [
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "order": 0
+}

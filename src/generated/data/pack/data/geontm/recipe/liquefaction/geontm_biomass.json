@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "geontm:biomass",
+  "output": {
+    "type": "geontm:biogas",
+    "amount": 125
+  }
+}

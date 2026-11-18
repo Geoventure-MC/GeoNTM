@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:oil_tar_crack"
+  },
+  "acid": {
+    "type": "geontm:chlorine",
+    "amount": 100
+  },
+  "output": "geontm:oil_tar_wax",
+  "duration": 20,
+  "order": 335
+}

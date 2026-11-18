@@ -24,7 +24,7 @@ public class BlockFrozenGrass extends CompatBlock {
     public void stepOn(Level level, BlockPos pos, BlockState onState, Entity entity) {
         super.stepOn(level, pos, onState, entity);
         if (!level.isClientSide() && entity instanceof LivingEntity living) {
-            living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 2 * 60 * 20, 2));
+            living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2 * 60 * 20, 2));
         }
     }
 }

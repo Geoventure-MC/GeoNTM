@@ -1,0 +1,27 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g40_heat",
+    "count": 4
+  },
+  "grid": [
+    {
+      "ingredient": "#c:plates/copper"
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    ""
+  ],
+  "order": 57
+}

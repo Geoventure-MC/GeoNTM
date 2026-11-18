@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_second_heavy"
+  },
+  "molten_outputs": [
+    {
+      "material": "tungsten",
+      "amount": 144
+    },
+    {
+      "material": "lead",
+      "amount": 360
+    }
+  ],
+  "order": 31
+}

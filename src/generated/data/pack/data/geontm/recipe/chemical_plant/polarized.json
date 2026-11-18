@@ -1,0 +1,24 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.polarized",
+  "input_items": [
+    {
+      "ingredient": "#c:glass_panes"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:part_generic_glass_polarized",
+      "count": 16
+    }
+  ],
+  "duration": 100,
+  "power": 500,
+  "order": 82
+}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.glowing_stew",
+  "input_items": [
+    {
+      "ingredient": "minecraft:mushroom_stew"
+    }
+  ],
+  "output_items": [
+    "geontm:glowing_stew"
+  ],
+  "duration": 10000,
+  "order": 12
+}

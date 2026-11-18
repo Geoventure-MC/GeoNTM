@@ -8,12 +8,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact Gem port of 1.7 ItemRenderCarbine. */
 public final class CarbineWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/carbine.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/carbine.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/huntsman.png");
     private static final Surface SCOPE=Surface.cutout("geontm:textures/models/weapons/carbine_scope.png");
     private static final Surface BAYONET=Surface.cutout("geontm:textures/models/weapons/carbine_bayonet.png");

@@ -1,0 +1,22 @@
+{
+  "type": "liquid",
+  "color": "#B899DE",
+  "temperature": 250,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:perfluoromethyl",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 300,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

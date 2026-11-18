@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_starmetal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_dura_steel",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_cobalt",
+      "count": 3
+    },
+    {
+      "id": "geontm:powder_astatine",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_mercury",
+      "count": 5
+    }
+  ],
+  "order": 178
+}

@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.client.render.turret;
 
 import fr.geoventure.geontm.tileentity.turret.TileEntityTurretChekhov;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.joml.Matrix4f;
 
@@ -12,7 +12,7 @@ public class RenderTurretChekhov extends RenderTurretBase<TileEntityTurretChekho
                     TurretResources.BASE, TurretResources.CARRIAGE);
 
     static void emit(TileEntityTurretChekhov turret, TurretState<?> state, TurretFrame frame,
-                     Identifier baseTexture, Identifier carriageTexture) {
+                     ResourceLocation baseTexture, ResourceLocation carriageTexture) {
         connectors(frame, state.connectorMask);
         Matrix4f body = mount(frame, state, baseTexture,
                 TurretResources.CHEKHOV, "Carriage", carriageTexture, 1.5F,

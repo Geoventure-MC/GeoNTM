@@ -1,0 +1,7 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:ingot_pb209",
+  "output": "geontm:ingot_bismuth",
+  "decay": "short",
+  "divisor": 10
+}

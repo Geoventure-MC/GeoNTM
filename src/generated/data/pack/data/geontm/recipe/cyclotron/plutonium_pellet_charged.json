@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_plutonium",
+  "input": {
+    "ingredient": "geontm:pellet_charged"
+  },
+  "output": "geontm:nugget_schrabidium",
+  "antimatter": 1000,
+  "order": 41
+}

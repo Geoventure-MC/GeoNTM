@@ -1,0 +1,713 @@
+{
+  "values": {
+    "geontm:ajr_plate": {
+      "helmet": "geontm:ajr_helmet",
+      "legs": "geontm:ajr_legs",
+      "boots": "geontm:ajr_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.35
+          },
+          "PHYS": {
+            "threshold": 4.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "threshold": 7.5,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "resistance": 0.15
+        }
+      }
+    },
+    "geontm:ajro_plate": {
+      "helmet": "geontm:ajro_helmet",
+      "legs": "geontm:ajro_legs",
+      "boots": "geontm:ajro_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.35
+          },
+          "PHYS": {
+            "threshold": 4.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "threshold": 7.5,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "resistance": 0.15
+        }
+      }
+    },
+    "geontm:alloy_plate": {
+      "helmet": "geontm:alloy_helmet",
+      "legs": "geontm:alloy_legs",
+      "boots": "geontm:alloy_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.1
+          }
+        }
+      }
+    },
+    "geontm:asbestos_plate": {
+      "helmet": "geontm:asbestos_helmet",
+      "legs": "geontm:asbestos_legs",
+      "boots": "geontm:asbestos_boots",
+      "checks": [
+        "asbestos"
+      ],
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 10.0,
+            "resistance": 0.9
+          }
+        }
+      }
+    },
+    "geontm:bismuth_plate": {
+      "helmet": "geontm:bismuth_helmet",
+      "legs": "geontm:bismuth_legs",
+      "boots": "geontm:bismuth_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "threshold": 5.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 2.0,
+          "resistance": 0.25
+        }
+      }
+    },
+    "geontm:bj_plate": {
+      "helmet": "geontm:bj_helmet",
+      "legs": "geontm:bj_legs",
+      "boots": "geontm:bj_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 2.5,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "EXPL": {
+            "threshold": 10.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 2.0,
+          "resistance": 0.15
+        }
+      }
+    },
+    "geontm:bj_plate_jetpack": {
+      "helmet": "geontm:bj_helmet",
+      "legs": "geontm:bj_legs",
+      "boots": "geontm:bj_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 2.5,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "EXPL": {
+            "threshold": 10.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 2.0,
+          "resistance": 0.15
+        }
+      }
+    },
+    "geontm:cmb_plate": {
+      "helmet": "geontm:cmb_helmet",
+      "legs": "geontm:cmb_legs",
+      "boots": "geontm:cmb_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          }
+        },
+        "other": {
+          "threshold": 5.0,
+          "resistance": 0.25
+        }
+      }
+    },
+    "geontm:cobalt_plate": {
+      "helmet": "geontm:cobalt_helmet",
+      "legs": "geontm:cobalt_legs",
+      "boots": "geontm:cobalt_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.1
+          }
+        }
+      }
+    },
+    "geontm:dieselsuit_plate": {
+      "helmet": "geontm:dieselsuit_helmet",
+      "legs": "geontm:dieselsuit_legs",
+      "boots": "geontm:dieselsuit_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 1.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "threshold": 2.0,
+            "resistance": 0.15
+          }
+        },
+        "other": {
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:dns_plate": {
+      "helmet": "geontm:dns_helmet",
+      "legs": "geontm:dns_legs",
+      "boots": "geontm:dns_boots",
+      "checks": [
+        "hazmat2",
+        "digamma"
+      ],
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "resistance": 1.0
+          },
+          "PHYS": {
+            "threshold": 1000.0,
+            "resistance": 1.0
+          },
+          "EXPL": {
+            "threshold": 100.0,
+            "resistance": 0.99
+          }
+        },
+        "other": {
+          "threshold": 1000.0,
+          "resistance": 1.0
+        }
+      }
+    },
+    "geontm:dnt_plate": {
+      "helmet": "geontm:dnt_helmet",
+      "legs": "geontm:dnt_legs",
+      "boots": "geontm:dnt_boots",
+      "resistance": {}
+    },
+    "geontm:envsuit_plate": {
+      "helmet": "geontm:envsuit_helmet",
+      "legs": "geontm:envsuit_legs",
+      "boots": "geontm:envsuit_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 2.0,
+            "resistance": 0.75
+          }
+        },
+        "exact": {
+          "fall": {
+            "threshold": 5.0,
+            "resistance": 0.75
+          },
+          "drown": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:euphemium_plate": {
+      "helmet": "geontm:euphemium_helmet",
+      "legs": "geontm:euphemium_legs",
+      "boots": "geontm:euphemium_boots",
+      "checks": [
+        "hazmat2"
+      ],
+      "resistance": {
+        "other": {
+          "threshold": 1000000.0,
+          "resistance": 1.0
+        }
+      }
+    },
+    "geontm:fau_plate": {
+      "helmet": "geontm:fau_helmet",
+      "legs": "geontm:fau_legs",
+      "boots": "geontm:fau_boots",
+      "checks": [
+        "hazmat2",
+        "digamma"
+      ],
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 100.0,
+            "resistance": 1.0
+          },
+          "PHYS": {
+            "threshold": 100.0,
+            "resistance": 0.99
+          },
+          "EXPL": {
+            "threshold": 50.0,
+            "resistance": 0.95
+          }
+        },
+        "exact": {
+          "laser": {
+            "threshold": 25.0,
+            "resistance": 0.95
+          },
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 100.0,
+          "resistance": 0.99
+        }
+      }
+    },
+    "geontm:hazmat_paa_plate": {
+      "helmet": "geontm:hazmat_paa_helmet",
+      "legs": "geontm:hazmat_paa_legs",
+      "boots": "geontm:hazmat_paa_boots",
+      "checks": [
+        "hazmat2"
+      ],
+      "resistance": {}
+    },
+    "geontm:hazmat_plate": {
+      "helmet": "geontm:hazmat_helmet",
+      "legs": "geontm:hazmat_legs",
+      "boots": "geontm:hazmat_boots",
+      "checks": [
+        "hazmat"
+      ],
+      "resistance": {}
+    },
+    "geontm:hazmat_plate_grey": {
+      "helmet": "geontm:hazmat_helmet_grey",
+      "legs": "geontm:hazmat_legs_grey",
+      "boots": "geontm:hazmat_boots_grey",
+      "checks": [
+        "hazmat"
+      ],
+      "resistance": {}
+    },
+    "geontm:hazmat_plate_red": {
+      "helmet": "geontm:hazmat_helmet_red",
+      "legs": "geontm:hazmat_legs_red",
+      "boots": "geontm:hazmat_boots_red",
+      "checks": [
+        "hazmat"
+      ],
+      "resistance": {}
+    },
+    "geontm:hev_plate": {
+      "helmet": "geontm:hev_helmet",
+      "legs": "geontm:hev_legs",
+      "boots": "geontm:hev_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.25
+          },
+          "EXPL": {
+            "threshold": 5.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "onfire": {
+            "resistance": 1.0
+          },
+          "fall": {
+            "threshold": 10.0
+          }
+        },
+        "other": {
+          "threshold": 2.0,
+          "resistance": 0.25
+        }
+      }
+    },
+    "geontm:liquidator_plate": {
+      "helmet": "geontm:liquidator_helmet",
+      "legs": "geontm:liquidator_legs",
+      "boots": "geontm:liquidator_boots",
+      "checks": [
+        "hazmat2"
+      ],
+      "resistance": {}
+    },
+    "geontm:ncrpa_plate": {
+      "helmet": "geontm:ncrpa_helmet",
+      "legs": "geontm:ncrpa_legs",
+      "boots": "geontm:ncrpa_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 10.0,
+            "resistance": 0.9
+          },
+          "PHYS": {
+            "threshold": 25.0,
+            "resistance": 0.65
+          },
+          "EN": {
+            "threshold": 10.0,
+            "resistance": 0.5
+          },
+          "EXPL": {
+            "threshold": 15.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 15.0,
+          "resistance": 0.25
+        }
+      }
+    },
+    "geontm:robes_plate": {
+      "helmet": "geontm:robes_helmet",
+      "legs": "geontm:robes_legs",
+      "boots": "geontm:robes_boots",
+      "checks": [
+        "digamma2"
+      ],
+      "resistance": {}
+    },
+    "geontm:rpa_plate": {
+      "helmet": "geontm:rpa_helmet",
+      "legs": "geontm:rpa_legs",
+      "boots": "geontm:rpa_boots",
+      "checks": [
+        "hazmat2"
+      ],
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 25.0,
+            "resistance": 0.9
+          },
+          "PHYS": {
+            "threshold": 50.0,
+            "resistance": 0.75
+          },
+          "EN": {
+            "threshold": 30.0,
+            "resistance": 0.8
+          },
+          "EXPL": {
+            "threshold": 15.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "threshold": 15.0,
+          "resistance": 0.45
+        }
+      }
+    },
+    "geontm:schrabidium_plate": {
+      "helmet": "geontm:schrabidium_helmet",
+      "legs": "geontm:schrabidium_legs",
+      "boots": "geontm:schrabidium_boots",
+      "checks": [
+        "hazmat"
+      ],
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 10.0,
+            "resistance": 0.65
+          }
+        },
+        "other": {
+          "threshold": 5.0,
+          "resistance": 0.5
+        }
+      }
+    },
+    "geontm:security_plate": {
+      "helmet": "geontm:security_helmet",
+      "legs": "geontm:security_legs",
+      "boots": "geontm:security_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "EXPL": {
+            "threshold": 2.0,
+            "resistance": 0.25
+          }
+        }
+      }
+    },
+    "geontm:starmetal_plate": {
+      "helmet": "geontm:starmetal_helmet",
+      "legs": "geontm:starmetal_legs",
+      "boots": "geontm:starmetal_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 3.0,
+            "resistance": 0.25
+          }
+        },
+        "other": {
+          "threshold": 1.0,
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:steamsuit_plate": {
+      "helmet": "geontm:steamsuit_helmet",
+      "legs": "geontm:steamsuit_legs",
+      "boots": "geontm:steamsuit_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.25
+          },
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.15
+          }
+        },
+        "exact": {
+          "fall": {
+            "threshold": 5.0,
+            "resistance": 0.25
+          }
+        },
+        "other": {
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:steel_plate": {
+      "helmet": "geontm:steel_helmet",
+      "legs": "geontm:steel_legs",
+      "boots": "geontm:steel_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.1
+          }
+        }
+      }
+    },
+    "geontm:t51_plate": {
+      "helmet": "geontm:t51_helmet",
+      "legs": "geontm:t51_legs",
+      "boots": "geontm:t51_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 0.5,
+            "resistance": 0.35
+          },
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "threshold": 5.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "resistance": 1.0
+          }
+        },
+        "other": {
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:taurun_plate": {
+      "helmet": "geontm:taurun_helmet",
+      "legs": "geontm:taurun_legs",
+      "boots": "geontm:taurun_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "resistance": 0.25
+          },
+          "PHYS": {
+            "threshold": 2.0,
+            "resistance": 0.15
+          },
+          "EXPL": {
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "fall": {
+            "threshold": 4.0,
+            "resistance": 0.5
+          }
+        },
+        "other": {
+          "threshold": 2.0,
+          "resistance": 0.1
+        }
+      }
+    },
+    "geontm:titanium_plate": {
+      "helmet": "geontm:titanium_helmet",
+      "legs": "geontm:titanium_legs",
+      "boots": "geontm:titanium_boots",
+      "resistance": {
+        "category": {
+          "PHYS": {
+            "threshold": 3.0,
+            "resistance": 0.1
+          }
+        }
+      }
+    },
+    "geontm:trenchmaster_plate": {
+      "helmet": "geontm:trenchmaster_helmet",
+      "legs": "geontm:trenchmaster_legs",
+      "boots": "geontm:trenchmaster_boots",
+      "resistance": {
+        "category": {
+          "FIRE": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "PHYS": {
+            "threshold": 5.0,
+            "resistance": 0.5
+          },
+          "EXPL": {
+            "threshold": 5.0,
+            "resistance": 0.25
+          }
+        },
+        "exact": {
+          "laser": {
+            "threshold": 15.0,
+            "resistance": 0.9
+          },
+          "fall": {
+            "threshold": 10.0,
+            "resistance": 0.5
+          }
+        },
+        "other": {
+          "threshold": 5.0,
+          "resistance": 0.25
+        }
+      }
+    },
+    "geontm:zirconium_legs": {
+      "helmet": "geontm:zirconium_legs",
+      "legs": "geontm:zirconium_legs",
+      "boots": "geontm:zirconium_legs",
+      "resistance": {
+        "other": {
+          "resistance": 1.0
+        }
+      }
+    }
+  }
+}

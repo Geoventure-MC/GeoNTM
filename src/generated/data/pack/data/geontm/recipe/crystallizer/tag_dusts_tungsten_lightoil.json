@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/tungsten"
+  },
+  "acid": {
+    "type": "geontm:lightoil",
+    "amount": 100
+  },
+  "output": {
+    "id": "geontm:chemical_dye_yellow",
+    "count": 4
+  },
+  "duration": 20,
+  "productivity": 0.15,
+  "order": 331
+}

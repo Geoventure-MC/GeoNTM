@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.heavylube",
+  "input_fluids": [
+    {
+      "type": "geontm:heavyoil",
+      "amount": 2000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:lubricant",
+      "amount": 1000
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:canister_full",
+    "item_data": {
+      "fluid": "geontm:lubricant",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..lube"
+  ],
+  "order": 16
+}

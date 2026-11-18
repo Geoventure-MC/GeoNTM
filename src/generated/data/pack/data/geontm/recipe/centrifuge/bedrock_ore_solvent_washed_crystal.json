@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_washed_crystal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_cinnabar",
+      "count": 3
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_asbestos",
+      "count": 5
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_emerald",
+      "count": 3
+    },
+    "geontm:bedrock_ore_crumbs_crystal"
+  ],
+  "order": 149
+}

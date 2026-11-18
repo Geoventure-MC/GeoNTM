@@ -1,0 +1,36 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.flightcalc_pfm",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_flash_empty"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 16000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:drive_flash_flightsim",
+        "weight": 50
+      },
+      {
+        "data": "geontm:drive_flash_broken",
+        "weight": 50
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 16000
+    }
+  ],
+  "duration": 3000,
+  "power": 10000,
+  "order": 1
+}

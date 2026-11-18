@@ -20,7 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootParams;
 
@@ -67,7 +67,7 @@ public class BlockTerrainEarth extends CompatBlock {
     }
 
     private static boolean isLeavesOrBush(BlockState state) {
-        return state.getBlock() instanceof LeavesBlock || state.is(BlockTags.LEAVES) || state.getBlock() instanceof VegetationBlock;
+        return state.getBlock() instanceof LeavesBlock || state.is(BlockTags.LEAVES) || state.getBlock() instanceof BushBlock;
     }
 
     /** 1.7 {@code WasteEarth.updateTick}, burning branch: one in five ticks it spreads; every tick it burns out. */

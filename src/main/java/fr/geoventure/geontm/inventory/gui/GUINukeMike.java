@@ -6,15 +6,15 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import java.util.List;
 import java.util.Optional;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /** Ivy Mike's 176x217 legacy assembly schematic and installed-component overlays. */
 public class GUINukeMike extends CompatContainerScreen<ContainerNukeMike> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/weapon/ivymikeschematic.png");
 
     public GUINukeMike(ContainerNukeMike menu, Inventory playerInventory, Component title) {
@@ -22,7 +22,7 @@ public class GUINukeMike extends CompatContainerScreen<ContainerNukeMike> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6,
                 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94,
@@ -30,7 +30,7 @@ public class GUINukeMike extends CompatContainerScreen<ContainerNukeMike> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         if (menu.isFilled()) {
@@ -49,7 +49,7 @@ public class GUINukeMike extends CompatContainerScreen<ContainerNukeMike> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(-16, 16, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, List.of(
                     Component.translatable("desc.gui.nukeMike.desc.0"),

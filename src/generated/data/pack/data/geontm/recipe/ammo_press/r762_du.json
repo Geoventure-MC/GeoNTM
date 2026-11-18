@@ -1,0 +1,28 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_r762_du",
+    "count": 12
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/u238",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 4
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small_steel",
+      "count": 2
+    },
+    ""
+  ],
+  "order": 33
+}

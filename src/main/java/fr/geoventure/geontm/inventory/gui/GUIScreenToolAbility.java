@@ -18,11 +18,11 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
@@ -38,7 +38,7 @@ import java.util.List;
  */
 public class GUIScreenToolAbility extends CompatScreen {
 
-    public static final Identifier texture = Ids.of(Constants.MOD_ID, "textures/gui/tool/gui_tool_ability.png");
+    public static final ResourceLocation texture = Ids.of(Constants.MOD_ID, "textures/gui/tool/gui_tool_ability.png");
 
     protected int guiLeft;
     protected int guiTop;
@@ -54,13 +54,13 @@ public class GUIScreenToolAbility extends CompatScreen {
     public static class AbilityInfo {
         public IBaseAbility ability;
         public int textureU, textureV;
-        public Identifier sheet;
+        public ResourceLocation sheet;
 
         public AbilityInfo(IBaseAbility ability, int textureU, int textureV) {
             this(ability, texture, textureU, textureV);
         }
 
-        public AbilityInfo(IBaseAbility ability, Identifier sheet, int textureU, int textureV) {
+        public AbilityInfo(IBaseAbility ability, ResourceLocation sheet, int textureU, int textureV) {
             this.ability = ability;
             this.sheet = sheet;
             this.textureU = textureU;
@@ -126,7 +126,7 @@ public class GUIScreenToolAbility extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         if (config == null) return;
 
         // Draw window background
@@ -156,7 +156,7 @@ public class GUIScreenToolAbility extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         if (config == null) return;
         ToolPreset activePreset = config.getActivePreset();
 
@@ -192,7 +192,7 @@ public class GUIScreenToolAbility extends CompatScreen {
         }
     }
 
-    protected void drawStretchedRect(GuiGraphicsExtractor graphics, int x, int y, int u, int v, int realWidth, int width,
+    protected void drawStretchedRect(GuiGraphics graphics, int x, int y, int u, int v, int realWidth, int width,
                                      int height, int keepLeft, int keepRight) {
         int midWidth = width - keepLeft - keepRight;
         int realMidWidth = realWidth - keepLeft - keepRight;
@@ -204,7 +204,7 @@ public class GUIScreenToolAbility extends CompatScreen {
         GuiDraw.blit(graphics, texture, x + keepLeft + realMidWidth, y, u + keepLeft + midWidth, v, keepRight, height, 256, 256);
     }
 
-    protected int drawSwitches(GuiGraphicsExtractor graphics, List<AbilityInfo> abilities, IBaseAbility selectedAbility,
+    protected int drawSwitches(GuiGraphics graphics, List<AbilityInfo> abilities, IBaseAbility selectedAbility,
                                int selectedLevel, int x, int y, int mouseX, int mouseY) {
         int hoverIdx = -1;
 
@@ -248,13 +248,13 @@ public class GUIScreenToolAbility extends CompatScreen {
         return hoverIdx;
     }
 
-    protected void drawNumber(GuiGraphicsExtractor graphics, int number, int x, int y) {
+    protected void drawNumber(GuiGraphics graphics, int number, int x, int y) {
         number += 100; // Against accidental negatives
         drawDigit(graphics, (number / 10) % 10, x, y);
         drawDigit(graphics, number % 10, x + 12, y);
     }
 
-    protected void drawDigit(GuiGraphicsExtractor graphics, int digit, int x, int y) {
+    protected void drawDigit(GuiGraphics graphics, int digit, int x, int y) {
         GuiDraw.blit(graphics, texture, x, y, digit * 10, 123, 10, 15, 256, 256);
     }
 

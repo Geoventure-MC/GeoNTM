@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadinc1",
+  "input_items": [
+    {
+      "ingredient": "geontm:warhead_generic_small"
+    },
+    {
+      "ingredient": "#c:dusts/red_phosphorus",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_incendiary_small"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 67072
+}

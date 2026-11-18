@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.colloid.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:dust"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 500
+    }
+  ],
+  "duration": 20,
+  "order": 7
+}

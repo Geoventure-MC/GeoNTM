@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:shell_copper"
+    }
+  ],
+  "tier": 1,
+  "order": 40
+}

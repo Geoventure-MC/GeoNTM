@@ -51,7 +51,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -153,7 +153,7 @@ public final class GhIssue108To115GameTests {
         ServerLevel level = helper.getLevel();
         for (EntityType<? extends EntityDuck> type : List.<EntityType<? extends EntityDuck>>of(
                 ModNtmEntities.DUCK.get(), ModNtmEntities.QUACKOS.get())) {
-            EntityDuck duck = Entities.create(type, level, EntitySpawnReason.MOB_SUMMONED);
+            EntityDuck duck = Entities.create(type, level, MobSpawnType.MOB_SUMMONED);
             float health = duck.getHealth();
             duck.causeFallDamage(30.0D, 1.0F, level.damageSources().fall());
             helper.assertTrue(duck.getHealth() == health, type + " lost health to a fall");
@@ -216,7 +216,7 @@ public final class GhIssue108To115GameTests {
     /** 1.7 {@code headingForceMult} 1: looking along z, sideways scatter has the standard deviation of the spread. */
     public static void bulletSpread(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
-        ArmorStand shooter = Entities.create(EntityType.ARMOR_STAND, level, EntitySpawnReason.MOB_SUMMONED);
+        ArmorStand shooter = Entities.create(EntityType.ARMOR_STAND, level, MobSpawnType.MOB_SUMMONED);
         shooter.setPos(helper.absolutePos(new BlockPos(1, 2, 1)).getCenter());
         shooter.setYRot(0F);
         shooter.setXRot(0F);

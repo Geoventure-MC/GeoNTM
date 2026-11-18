@@ -1,0 +1,31 @@
+{
+  "type": "gaseous",
+  "color": "#7CB7C9",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 4,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:petroleum_gas"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 1650000
+    },
+    "combustible": {
+      "grade": "GAS",
+      "energy": 2470000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 2.0E-4
+      }
+    }
+  }
+}

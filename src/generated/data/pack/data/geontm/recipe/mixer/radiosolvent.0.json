@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.radiosolvent.0",
+  "input_fluids": [
+    {
+      "type": "geontm:reformgas",
+      "amount": 750
+    },
+    {
+      "type": "geontm:chlorine",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:radiosolvent",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 21
+}

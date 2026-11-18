@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:lightoil_crack",
+  "outputs": [
+    {
+      "type": "geontm:aromatics",
+      "amount": 50
+    },
+    {
+      "type": "geontm:reformgas",
+      "amount": 5
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 20
+    }
+  ]
+}

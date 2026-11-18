@@ -56,7 +56,7 @@ public class DetMiner extends CompatBlock implements IBomb, IFuckingExplode, IBl
         explosion.setBlockAllocator(new BlockAllocatorStandard());
         explosion.setBlockProcessor(new BlockProcessorStandard().setAllDrop());
         explosion.explode();
-        level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 4.0F,
+        level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 4.0F,
                 (1.0F + (level.getRandom().nextFloat() - level.getRandom().nextFloat()) * 0.2F) * 0.7F);
 
         ExplosionLarge.spawnParticles(level, x, y, z, 30);

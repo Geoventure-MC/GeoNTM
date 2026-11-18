@@ -1,0 +1,21 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 4
+    }
+  ],
+  "output": "geontm:fuel_tank_small",
+  "duration": 60,
+  "consumption": 1000,
+  "order": 21
+}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.thorium_fuel_ingot",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/thorium"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_thorium_fuel"
+  ],
+  "duration": 10000,
+  "order": 7
+}

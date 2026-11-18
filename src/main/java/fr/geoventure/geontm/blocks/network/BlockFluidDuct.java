@@ -288,7 +288,7 @@ public class BlockFluidDuct extends CompatBlock implements TickingBlock, SimpleW
     /** Right-click with a fluid identifier -> set the duct's fluid type and recompute its connections. */
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof IItemFluidId ident)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof IItemFluidId ident)) return InteractionResult.PASS;
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof TileEntityFluidDuctNT duct) {
             FluidType type = ident.getType(level, pos.getX(), pos.getY(), pos.getZ(), stack);
             FluidType before = duct.getFluidType();

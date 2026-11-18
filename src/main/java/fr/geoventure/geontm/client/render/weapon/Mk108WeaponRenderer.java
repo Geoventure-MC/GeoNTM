@@ -7,13 +7,13 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Matrix4f;
 
 /** Exact Gem port of 1.7 ItemRenderMK108, including its procedural grenade belt. */
 public final class Mk108WeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/mk108.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/mk108.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/mk108.png");
     private WavefrontObj model;
     private WavefrontObj model(){if(model==null)model=WavefrontObj.load(MODEL_ID);return model;}

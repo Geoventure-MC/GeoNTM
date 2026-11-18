@@ -8,9 +8,9 @@ import fr.geoventure.geontm.util.BobMathUtil;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -23,14 +23,14 @@ import java.util.List;
  */
 public class GUIBatterySocket extends CompatContainerScreen<ContainerBatterySocket> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_battery_socket.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_battery_socket.png");
 
     public GUIBatterySocket(ContainerBatterySocket menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 181);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         if (!this.menu.getBattery().isEmpty()) {
@@ -49,14 +49,14 @@ public class GUIBatterySocket extends CompatContainerScreen<ContainerBatterySock
 
     /** 1.7: centred title at y=6, inventory at (8, ySize-96+2), both 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     /** 1.7 {@code drawScreen}: the charge readout over the bar (battery present only), then the priority text. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         int gl = this.leftPos, gt = this.topPos;
         if (!this.menu.getBattery().isEmpty() && GuiUtil.hover(mouseX, mouseY, gl + 62, gt + 69 - 52, 34, 52)) {
             long delta = this.menu.getDelta();

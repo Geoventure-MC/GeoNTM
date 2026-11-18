@@ -1,0 +1,16 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "minecraft:bone"
+  },
+  "acid": {
+    "type": "geontm:sulfuric_acid",
+    "amount": 1000
+  },
+  "output": {
+    "id": "minecraft:slime_ball",
+    "count": 16
+  },
+  "duration": 20,
+  "order": 55
+}

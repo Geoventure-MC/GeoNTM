@@ -8,9 +8,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.registry.RegistryObject;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
@@ -23,14 +23,14 @@ import java.util.Optional;
  * heat gauge at (124,10) and power gauge at (146,10), both 16x51, and the pellet info panel off the left edge.
  */
 public final class GUIMachineRTG extends CompatContainerScreen<ContainerMachineRTG> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_rtg.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_rtg.png");
 
     public GUIMachineRTG(ContainerMachineRTG menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 188);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineRTG rtg = menu.getRtg();
         if (rtg != null && rtg.hasHeat()) {
@@ -45,14 +45,14 @@ public final class GUIMachineRTG extends CompatContainerScreen<ContainerMachineR
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: light grey (10925486) title centred on x=60 at y=7.
         GuiDraw.text(graphics, font, title, 60 - font.width(title) / 2, 7, 10925486, false);
         GuiDraw.text(graphics, font, Component.translatable("container.inventory"), 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineRTG rtg = menu.getRtg();
         if (rtg == null) return;
         if (GuiUtil.hover(mouseX, mouseY, leftPos + 146, topPos + 9, 16, 51)) {

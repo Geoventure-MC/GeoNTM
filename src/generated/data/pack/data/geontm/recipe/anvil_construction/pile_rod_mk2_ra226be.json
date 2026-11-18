@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:billet_ra226be",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pile_rod_mk2_ra226be"
+    }
+  ],
+  "tier": 2,
+  "overlay": "recycling",
+  "order": 233
+}

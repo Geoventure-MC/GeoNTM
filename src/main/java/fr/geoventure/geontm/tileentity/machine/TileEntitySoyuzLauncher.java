@@ -23,7 +23,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -191,7 +191,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
         EntityRocketSoyuz soyuz = new EntityRocketSoyuz(ModNtmEntities.SOYUZ.get(), level);
         soyuz.setSkin(Math.max(0, rocketType()));
         soyuz.mode = this.mode;
-        soyuz.snapTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0F, 0F);
+        soyuz.moveTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0F, 0F);
         level.addFreshEntity(soyuz);
 
         level.playSound(null, pos, ModSounds.SOYUZ_TAKEOFF.get(), SoundSource.BLOCKS, 100F, 1.1F);
@@ -336,7 +336,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
     @Override public boolean canConnect(ForgeDirection dir) { return dir != ForgeDirection.UNKNOWN; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeByte(mode);
@@ -348,7 +348,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong();
         mode = buf.readByte();

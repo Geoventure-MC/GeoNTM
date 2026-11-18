@@ -1,0 +1,29 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "item": "geontm:machine_stirling",
+      "has_cog": true,
+      "type": "geontm:stirling"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_steel",
+      "count": 6
+    },
+    {
+      "id": "minecraft:copper_ingot",
+      "count": 8
+    },
+    {
+      "id": "geontm:coil_copper",
+      "count": 4
+    },
+    {
+      "id": "geontm:gear_large"
+    }
+  ],
+  "tier": 2,
+  "order": 216
+}

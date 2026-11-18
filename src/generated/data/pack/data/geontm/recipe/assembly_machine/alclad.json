@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.alclad",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/aluminium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:part_generic_alclad"
+  ],
+  "duration": 200,
+  "power": 50000,
+  "custom_localization": true,
+  "order": 84992
+}

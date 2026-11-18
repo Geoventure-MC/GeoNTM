@@ -1,0 +1,15 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "minecraft:sugar_cane"
+  },
+  "item_output": {
+    "id": "minecraft:sugar",
+    "count": 2
+  },
+  "fluid_output": {
+    "type": "geontm:ethanol",
+    "amount": 50
+  },
+  "order": 21
+}

@@ -1,0 +1,31 @@
+{
+  "type": "liquid",
+  "color": "#EEF274",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 2,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:biodiesel"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 500000
+    },
+    "combustible": {
+      "grade": "HIGH",
+      "energy": 1250000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.001
+      }
+    }
+  }
+}

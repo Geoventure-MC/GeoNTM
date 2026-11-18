@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_nosulfuric_light"
+  },
+  "acid": {
+    "type": "geontm:radiosolvent",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_primary_rad_light",
+  "duration": 200,
+  "order": 103
+}

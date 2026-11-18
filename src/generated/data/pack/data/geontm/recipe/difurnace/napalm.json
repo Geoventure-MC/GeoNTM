@@ -1,0 +1,19 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.napalm",
+  "input_items": [
+    {
+      "type": "geontm:fluid_item",
+      "item": "geontm:canister_full",
+      "fluid": "geontm:gasoline"
+    },
+    {
+      "ingredient": "#c:slime_balls"
+    }
+  ],
+  "output_items": [
+    "geontm:canister_napalm"
+  ],
+  "duration": 400,
+  "order": 6
+}

@@ -39,7 +39,7 @@ public abstract class CanneryBase {
 
     /** The registered item {@code id} ({@code namespace:path}); 1.7's meta items are flattened to their own ids. */
     protected static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     protected static ItemStack stack(String id) {

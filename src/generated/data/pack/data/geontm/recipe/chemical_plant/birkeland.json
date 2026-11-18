@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.birkeland",
+  "input_fluids": [
+    {
+      "type": "geontm:air",
+      "amount": 8000
+    },
+    {
+      "type": "minecraft:water",
+      "amount": 2000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 1000
+    }
+  ],
+  "duration": 200,
+  "power": 5000,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "alt..birkeland"
+  ],
+  "order": 64
+}

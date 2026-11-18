@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "minecraft:minecart",
+  "materials": [
+    {
+      "material": "iron",
+      "amount": 360
+    }
+  ]
+}

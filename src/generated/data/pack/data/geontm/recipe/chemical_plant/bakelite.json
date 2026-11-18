@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.bakelite",
+  "input_fluids": [
+    {
+      "type": "geontm:aromatics",
+      "amount": 500
+    },
+    {
+      "type": "geontm:petroleum",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_bakelite"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 41,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

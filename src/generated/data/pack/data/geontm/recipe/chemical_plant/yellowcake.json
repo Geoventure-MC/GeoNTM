@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.yellowcake",
+  "input_items": [
+    {
+      "ingredient": "#c:billets/uranium",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dusts/sulfur",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    "geontm:powder_yellowcake"
+  ],
+  "duration": 250,
+  "power": 500,
+  "order": 83
+}

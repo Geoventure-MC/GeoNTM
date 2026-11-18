@@ -1,0 +1,50 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.maxwell",
+  "input_items": [
+    {
+      "ingredient": "geontm:capacitor_niobium"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:mechanisms/saturnite",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_maxwell"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 62976,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

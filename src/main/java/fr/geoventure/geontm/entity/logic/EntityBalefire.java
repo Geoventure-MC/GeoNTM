@@ -11,7 +11,7 @@ import fr.geoventure.geontm.explosion.ExplosionNukeGeneric;
 import fr.geoventure.geontm.explosion.SubLevelBlasts;
 import fr.geoventure.geocore.hook.Hook;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 import net.minecraft.world.level.Level;
 import fr.geoventure.geocore.data.DataIn;
@@ -32,7 +32,7 @@ public class EntityBalefire extends EntityExplosionChunkloading {
      * The crater variant ({@link ExplosionBalefire#registerVariant}); null is 1.7's balefire. Saved by name
      * ({@code variant}). NTM: Space's antimatter balefire is {@code ntmspace:antimatter}.
      */
-    public @Nullable Identifier variant;
+    public @Nullable ResourceLocation variant;
 
     /** A listener on every balefire tick. */
     @FunctionalInterface
@@ -133,7 +133,7 @@ public class EntityBalefire extends EntityExplosionChunkloading {
         if (exp != null) exp.saveToNbt(output, "exp_");
     }
 
-    private static @Nullable Identifier parseVariant(String name) {
+    private static @Nullable ResourceLocation parseVariant(String name) {
         try {
             return Ids.parse(name);
         } catch (RuntimeException e) {

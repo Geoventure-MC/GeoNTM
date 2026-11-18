@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_beryllium",
+  "output": {
+    "id": "geontm:powder_beryllium",
+    "count": 3
+  }
+}

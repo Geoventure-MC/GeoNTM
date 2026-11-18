@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/tcalloy",
+  "output": "geontm:ingot_combine_steel",
+  "order": 3
+}

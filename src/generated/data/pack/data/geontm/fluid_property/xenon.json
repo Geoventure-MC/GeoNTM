@@ -1,0 +1,11 @@
+{
+  "type": "gaseous",
+  "color": "#BA45E8",
+  "temperature": 20,
+  "hazard": {
+    "poison": 0,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "asphyxiant"
+  }
+}

@@ -2,7 +2,7 @@ package fr.geoventure.geontm.platform.forge;
 
 //? if forge {
 
-/*import fr.geoventure.geontm.client.GeoNtmClientRegistrations;
+import fr.geoventure.geontm.client.GeoNtmClientRegistrations;
 import fr.geoventure.geontm.packet.BlockEntitySyncPayload;
 import fr.geoventure.geontm.packet.EntityPropsSyncPayload;
 import fr.geoventure.geontm.packet.GeoNtmPackets;
@@ -19,7 +19,7 @@ import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
-/^* Client bootstrap, isolated from {@link ForgeInit} so dedicated servers never load client classes. ^/
+/** Client bootstrap, isolated from {@link ForgeInit} so dedicated servers never load client classes. */
 final class ForgeClientInit {
 
     private ForgeClientInit() {}
@@ -68,4 +68,4 @@ final class ForgeClientInit {
         });
     }
 }
-*///?}
+//?}

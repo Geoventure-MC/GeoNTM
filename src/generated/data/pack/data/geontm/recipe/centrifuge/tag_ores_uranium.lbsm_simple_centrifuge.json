@@ -1,0 +1,25 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/uranium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_uranium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_technetium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_ra226",
+      "count": 2
+    },
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "lbsm_simple_centrifuge"
+  ],
+  "order": 37
+}

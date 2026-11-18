@@ -4,10 +4,10 @@ import fr.geoventure.geontm.inventory.container.ContainerMachineKeyForge;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -22,14 +22,14 @@ import java.util.Optional;
  */
 public class GUIMachineKeyForge extends CompatContainerScreen<ContainerMachineKeyForge> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_keyforge.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/machine/gui_keyforge.png");
 
     public GUIMachineKeyForge(ContainerMachineKeyForge menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 186);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         GuiUtil.drawInfoPanel(graphics, this.leftPos + 12, this.topPos + 28, 2);
@@ -37,13 +37,13 @@ public class GUIMachineKeyForge extends CompatContainerScreen<ContainerMachineKe
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, this.imageWidth / 2 - font.width(title) / 2, 6, 0xffffff, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (this.isHovering(12, 28, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, this.font, lines("desc.gui.keyforge.key"), Optional.empty(), mouseX, mouseY);
         } else if (this.isHovering(12, 28 + 16, 16, 16, mouseX, mouseY)) {

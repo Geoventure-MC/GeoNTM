@@ -1,0 +1,31 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.tcalloy",
+  "input_items": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/steel"
+        },
+        {
+          "ingredient": "#c:plates/steel"
+        },
+        {
+          "ingredient": "#c:gems/steel"
+        },
+        {
+          "ingredient": "#c:dusts/steel"
+        }
+      ]
+    },
+    {
+      "ingredient": "#c:nuggets/technetium"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_tcalloy"
+  ],
+  "duration": 400,
+  "order": 8
+}

@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:gems/coal",
+  "output": "geontm:ingot_graphite",
+  "order": 28
+}

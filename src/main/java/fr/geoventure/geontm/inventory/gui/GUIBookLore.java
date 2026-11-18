@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.IllegalFormatException;
 import java.util.List;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
@@ -27,7 +27,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIBookLore extends CompatScreen {
 
-    private static final Identifier texture = Ids.of("geontm", "textures/gui/book/book_lore.png");
+    private static final ResourceLocation texture = Ids.of("geontm", "textures/gui/book/book_lore.png");
 
     protected int guiLeft;
     protected int guiTop;
@@ -64,7 +64,7 @@ public class GUIBookLore extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int i, int j, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int i, int j, float partialTick) {
         GuiDraw.blit(g, texture, guiLeft, guiTop, 0F, 0F, sizeX, sizeY, 512, 512, 0xFF000000 | color);
         // the pages and the text go above the tinted binding (older versions order the GUI by depth)
         GuiDraw.nextStratum(g);
@@ -92,7 +92,7 @@ public class GUIBookLore extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int x, int y, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int x, int y, float partialTick) {
         if (tag == null) return;
         String k = "book_lore." + key + ".page.";
 

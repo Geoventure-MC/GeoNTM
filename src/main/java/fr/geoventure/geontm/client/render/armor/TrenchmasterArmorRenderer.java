@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelArmorTrenchmaster}. The helmet is alpha-blended, and its {@code Light} group copies the
@@ -15,7 +15,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class TrenchmasterArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/trenchmaster.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/trenchmaster.obj");
 
     private static final Surface HELMET = Surface.translucent("geontm:textures/armor/trenchmaster_helmet.png");
     private static final Surface LIGHT = Surface.emissive("geontm:textures/armor/trenchmaster_helmet.png");

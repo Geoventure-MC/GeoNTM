@@ -26,7 +26,7 @@ public final class BobmazonSignHandler {
         installed = true;
         ItemFirstUse.registerBlock((stack, context) ->
                 onSignUsed(context.getLevel(), context.getClickedPos(), context.getPlayer())
-                        ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND);
+                        ? InteractionResult.SUCCESS : InteractionResult.PASS);
     }
 
     public static boolean onSignUsed(Level level, BlockPos pos, Player player) {

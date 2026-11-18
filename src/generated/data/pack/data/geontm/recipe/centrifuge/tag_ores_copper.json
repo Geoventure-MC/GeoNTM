@@ -1,0 +1,16 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/copper"
+  },
+  "outputs": [
+    "geontm:powder_copper",
+    "geontm:powder_copper",
+    "geontm:powder_gold",
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "!lbsm_simple_centrifuge"
+  ],
+  "order": 20
+}

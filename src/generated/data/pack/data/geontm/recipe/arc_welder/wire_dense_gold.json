@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 8
+    }
+  ],
+  "output": "geontm:wire_dense_gold",
+  "duration": 100,
+  "consumption": 10000,
+  "order": 6
+}

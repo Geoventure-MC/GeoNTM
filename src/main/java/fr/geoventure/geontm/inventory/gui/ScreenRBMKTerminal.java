@@ -6,7 +6,7 @@ import fr.geoventure.geocore.gui.CompatScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import fr.geoventure.geocore.gui.KeyInput;
@@ -52,7 +52,7 @@ public final class ScreenRBMKTerminal extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partial) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partial) {
         if (terminal.isRemoved()) {
             onClose();
             return;

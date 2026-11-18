@@ -11,12 +11,12 @@ public final class FabricGameTests {
     public FabricGameTests() {}
 
     //? if <26.1 {
-    /*@net.minecraft.gametest.framework.GameTestGenerator
+    @net.minecraft.gametest.framework.GameTestGenerator
     public static java.util.Collection<net.minecraft.gametest.framework.TestFunction> generate() {
         for (fr.geoventure.geocore.gametest.GameTests.Suite suite : fr.geoventure.geontm.gametest.GeoNtmGameTestSuites.all()) {
             fr.geoventure.geocore.gametest.GameTests.register(suite);
         }
         return fr.geoventure.geocore.gametest.GameTests.pending();
     }
-    *///?}
+    //?}
 }

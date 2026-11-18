@@ -188,7 +188,7 @@ public final class RecipeContentGameTests {
     static final String[] CHEMICAL = {"chem.hydrogencoke", "chem.batteryschrabidium", "chem.meatprocessing"};
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.of("geontm", id));
+        return BuiltInRegistries.ITEM.get(Ids.of("geontm", id));
     }
 
     /** Registered, with a real output and every ingredient backed by at least one item (tags are loaded here). */

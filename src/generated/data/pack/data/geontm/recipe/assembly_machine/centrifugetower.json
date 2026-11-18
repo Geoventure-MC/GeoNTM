@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.centrifugetower",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor"
+    }
+  ],
+  "output_items": [
+    "geontm:centrifuge_element"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 9728
+}

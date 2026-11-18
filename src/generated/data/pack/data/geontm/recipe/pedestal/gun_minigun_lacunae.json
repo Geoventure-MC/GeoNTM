@@ -1,0 +1,29 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_minigun_lacunae",
+  "grid": [
+    "",
+    {
+      "id": "geontm:powder_magic",
+      "count": 4
+    },
+    "",
+    {
+      "id": "geontm:item_secret_selenium_steel",
+      "count": 4
+    },
+    "geontm:gun_minigun",
+    {
+      "id": "geontm:item_secret_selenium_steel",
+      "count": 4
+    },
+    "",
+    {
+      "id": "geontm:powder_magic",
+      "count": 4
+    },
+    ""
+  ],
+  "extra": "full_moon",
+  "order": 8
+}

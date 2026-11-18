@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrneutronsource",
+  "input_items": [
+    {
+      "material": "zirconium",
+      "shape": "weldedplate"
+    },
+    {
+      "ingredient": "geontm:billet_ra226be",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:pwr_neutron_source"
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 46848,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_lead_plating"
+    },
+    {
+      "material": "zirconium",
+      "shape": "weldedplate"
+    },
+    {
+      "ingredient": "geontm:billet_ra226be",
+      "count": 3
+    }
+  ]
+}

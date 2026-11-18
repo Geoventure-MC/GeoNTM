@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:block_slag"
+  },
+  "outputs": [
+    "minecraft:gravel",
+    "geontm:powder_fire",
+    "geontm:powder_calcium",
+    "geontm:dust"
+  ],
+  "order": 53
+}

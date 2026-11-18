@@ -87,7 +87,7 @@ public class NukeMan extends CompatBlock implements TickingBlock, IBomb {
                 Menus.openWithPos(serverPlayer, provider, pos);
             }
         }
-        return player.isShiftKeyDown() ? InteractionResult.TRY_WITH_EMPTY_HAND : InteractionResult.SUCCESS;
+        return player.isShiftKeyDown() ? InteractionResult.PASS : InteractionResult.SUCCESS;
     }
 
     @Override
@@ -130,7 +130,7 @@ public class NukeMan extends CompatBlock implements TickingBlock, IBomb {
      */
     public static void detonate(Level level, double x, double y, double z, @Nullable UUID detonator) {
         level.playSound(null, x, y, z,
-                SoundEvents.GENERIC_EXPLODE.value(),
+                SoundEvents.GENERIC_EXPLODE,
                 SoundSource.BLOCKS, 1.0F,
                 level.getRandom().nextFloat() * 0.1F + 0.9F);
 

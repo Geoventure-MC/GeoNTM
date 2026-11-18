@@ -1,0 +1,33 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_ra226be",
+    "stage": 1
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:nugget_ra226",
+      "weight": 35
+    },
+    {
+      "data": "geontm:nugget_beryllium",
+      "weight": 35
+    },
+    {
+      "data": "geontm:nugget_lead",
+      "weight": 8
+    },
+    {
+      "data": "geontm:nugget_polonium",
+      "weight": 7
+    },
+    {
+      "data": "geontm:powder_coal_tiny",
+      "weight": 15
+    }
+  ],
+  "order": 112
+}

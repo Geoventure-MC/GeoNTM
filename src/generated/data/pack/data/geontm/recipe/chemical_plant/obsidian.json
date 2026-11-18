@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.obsidian",
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    },
+    {
+      "type": "minecraft:lava",
+      "amount": 500
+    },
+    {
+      "type": "geontm:air",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "minecraft:obsidian"
+  ],
+  "duration": 60,
+  "power": 500,
+  "blueprint_pools": [
+    "discover..stone"
+  ],
+  "order": 22
+}

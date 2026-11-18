@@ -124,8 +124,8 @@ public class ExplosionTom {
         double Z = Math.pow(this.posZ - pZ, 2);
         double distance = Math.sqrt(X + Z); // distance calculations used for crater rim stuff
 
-        int minY = level.getMinY();
-        int maxY = level.getMaxY();
+        int minY = level.getMinBuildHeight();
+        int maxY = level.getMaxBuildHeight();
         int y = maxY;
         int terrain = 63;
         double planar = Math.sqrt(x * x + z * z);

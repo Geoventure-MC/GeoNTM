@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_schrabidium",
+  "output": {
+    "id": "geontm:powder_schrabidium",
+    "count": 3
+  }
+}

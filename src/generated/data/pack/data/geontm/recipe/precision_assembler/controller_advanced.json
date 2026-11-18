@@ -1,0 +1,60 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.controller_advanced",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_tantalium",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:circuit_atomic_clock"
+    },
+    {
+      "ingredient": "geontm:circuit_controller_chassis"
+    },
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    },
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 24
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_controller_advanced",
+        "weight": 50
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_controller_advanced"
+          }
+        },
+        "weight": 50
+      }
+    ]
+  ],
+  "duration": 600,
+  "power": 25000,
+  "order": 12,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "geontm:breeder",
+  "input": "geontm:rod_pu238",
+  "output": "geontm:rod_pu239",
+  "flux": 1000,
+  "order": 18
+}

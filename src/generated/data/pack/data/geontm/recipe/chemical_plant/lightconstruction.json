@@ -1,0 +1,31 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.lightconstruction",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 2
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:xylene",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:phosgene",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:sourgas",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "geontm:part_generic_alclad"
+  ],
+  "duration": 400,
+  "power": 25000,
+  "custom_localization": true,
+  "order": 51
+}

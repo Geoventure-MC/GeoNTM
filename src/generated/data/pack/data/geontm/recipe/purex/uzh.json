@@ -1,0 +1,32 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.uzh",
+  "input_items": [
+    {
+      "ingredient": "geontm:billet_uranium_fuel"
+    },
+    {
+      "ingredient": "#c:billets/zirconium",
+      "count": 3
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:billet_uzh",
+      "count": 4
+    }
+  ],
+  "duration": 600,
+  "power": 1000,
+  "order": 0
+}

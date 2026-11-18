@@ -1,0 +1,24 @@
+{
+  "values": {
+    "#c:nuggets/co60": 20,
+    "#c:billets/co60": 120,
+    "#c:ingots/co60": 200,
+    "#c:dusts/co60": 200,
+    "#c:nuggets/sr90": 40,
+    "#c:dusts_tiny/sr90": 40,
+    "#c:billets/sr90": 240,
+    "#c:ingots/sr90": 400,
+    "#c:dusts/sr90": 400,
+    "#c:nuggets/au198": 60,
+    "#c:billets/au198": 360,
+    "#c:ingots/au198": 600,
+    "#c:dusts/au198": 600,
+    "#c:dusts_tiny/i131": 60,
+    "#c:dusts/i131": 600,
+    "#c:dusts_tiny/xe135": 60,
+    "#c:dusts/xe135": 600,
+    "#c:dusts_tiny/cs137": 50,
+    "#c:dusts/cs137": 500,
+    "#c:dusts/at209": 1200
+  }
+}

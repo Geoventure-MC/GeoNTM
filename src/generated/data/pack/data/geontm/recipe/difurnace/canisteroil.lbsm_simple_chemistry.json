@@ -1,0 +1,43 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.canisterOil",
+  "input_items": [
+    {
+      "ingredient": "geontm:canister_empty"
+    },
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/coal"
+        },
+        {
+          "ingredient": "#c:plates/coal"
+        },
+        {
+          "ingredient": "#c:gems/coal"
+        },
+        {
+          "ingredient": "#c:dusts/coal"
+        }
+      ]
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:canister_full",
+      "item_data": {
+        "fluid": "geontm:oil",
+        "fluid_amount": 1000
+      }
+    }
+  ],
+  "duration": 400,
+  "order": 13,
+  "requires": [
+    "lbsm_simple_chemistry"
+  ],
+  "geocore:requires": [
+    "lbsm_simple_chemistry"
+  ]
+}

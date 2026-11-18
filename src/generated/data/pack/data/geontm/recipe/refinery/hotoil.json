@@ -1,0 +1,23 @@
+{
+  "type": "geontm:refinery",
+  "input": "geontm:hotoil",
+  "outputs": [
+    {
+      "type": "geontm:heavyoil",
+      "amount": 50
+    },
+    {
+      "type": "geontm:naphtha",
+      "amount": 25
+    },
+    {
+      "type": "geontm:lightoil",
+      "amount": 15
+    },
+    {
+      "type": "geontm:petroleum",
+      "amount": 10
+    }
+  ],
+  "byproduct": "geontm:sulfur"
+}

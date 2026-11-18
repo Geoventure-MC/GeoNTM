@@ -6,7 +6,7 @@ import fr.geoventure.geocore.data.Tags;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -110,14 +110,14 @@ public class TileEntityBlastDoor extends TileEntityLockableBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(isOpening);
         buf.writeByte(state);
         buf.writeInt(toggleSerial);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         isOpening = buf.readBoolean();
         state = buf.readByte();
         int serial = buf.readInt();

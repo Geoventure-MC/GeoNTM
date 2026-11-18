@@ -121,7 +121,7 @@ public final class GunB92 extends CompatWeaponItem {
                         .statFacFleija(level, owner.getX(), owner.getY(), owner.getZ(), 50);
                 if (!blast.isRemoved()) {
                     level.playSound(null, owner.getX(), owner.getY(), owner.getZ(),
-                            SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS, 100.0F,
+                            SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 100.0F,
                             level.getRandom().nextFloat() * 0.1F + 0.9F);
                     level.addFreshEntity(blast);
                     level.addFreshEntity(EntityCloudFleijaRainbow.statFac(level, 50,

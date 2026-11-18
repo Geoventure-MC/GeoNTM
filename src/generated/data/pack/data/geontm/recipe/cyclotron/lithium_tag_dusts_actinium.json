@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/actinium"
+  },
+  "output": "geontm:powder_thorium",
+  "antimatter": 50,
+  "order": 10
+}

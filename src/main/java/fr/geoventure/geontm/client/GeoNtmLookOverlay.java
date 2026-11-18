@@ -7,7 +7,7 @@ import fr.geoventure.geontm.interfaces.ILookOverlay;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -30,7 +30,7 @@ public final class GeoNtmLookOverlay {
 
     private GeoNtmLookOverlay() {}
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen != null || mc.options.hideGui) return;
         ILookOverlay.Data data = current(mc);
@@ -67,7 +67,7 @@ public final class GeoNtmLookOverlay {
         return null;
     }
 
-    private static void render(GuiGraphicsExtractor graphics, ILookOverlay.Data data) {
+    private static void render(GuiGraphics graphics, ILookOverlay.Data data) {
         Minecraft mc = Minecraft.getInstance();
         Font font = mc.font;
         int pX = mc.getWindow().getGuiScaledWidth() / 2 + 8;

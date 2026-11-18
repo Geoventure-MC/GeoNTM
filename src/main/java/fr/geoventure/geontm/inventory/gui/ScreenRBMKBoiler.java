@@ -9,20 +9,20 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
 
 public final class ScreenRBMKBoiler extends RBMKContainerScreen<MenuRBMKBoiler> {
-    private static final Identifier TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_boiler.png");
+    private static final ResourceLocation TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_boiler.png");
 
     public ScreenRBMKBoiler(MenuRBMKBoiler menu, Inventory inventory, Component title) { super(menu, inventory, title, 176, 186); }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         texture(graphics, TEX);
         BlockEntityRBMKBoiler boiler = menu.blockEntity();
         if (boiler == null) return;
@@ -35,7 +35,7 @@ public final class ScreenRBMKBoiler extends RBMKContainerScreen<MenuRBMKBoiler> 
         GuiDraw.blit(graphics, TEX, leftPos + 36, topPos + 24, steamTypeU(boiler.steam.getTankType()), 0, 14, 58, 256, 256);
     }
 
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         BlockEntityRBMKBoiler boiler = menu.blockEntity();
         if (boiler == null) return;
         fluidTooltip(graphics, boiler.feed, 126, 24, 16, 58, mouseX, mouseY);

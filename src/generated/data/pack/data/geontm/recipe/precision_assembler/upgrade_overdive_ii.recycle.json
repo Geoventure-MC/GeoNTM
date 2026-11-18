@@ -1,0 +1,60 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.upgrade_overdive_ii.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:upgrade_overdrive_2"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:upgrade_overdrive_1",
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:upgrade_speed_3",
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:upgrade_effect_3",
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:ingot_saturnite",
+      "count": 16,
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:ingot_cft",
+      "count": 8,
+      "chance": 0.75
+    },
+    {
+      "id": "geontm:circuit_capacitor_board",
+      "count": 16,
+      "chance": 0.75
+    }
+  ],
+  "duration": 600,
+  "power": 5000,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:upgrade_overdrive_2"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 39,
+  "requires": [
+    "enable_528",
+    "!expensive_mode"
+  ],
+  "geocore:requires": [
+    "enable_528",
+    "!expensive_mode"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.endobomb",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:powder_ice",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "geontm:coil_gold",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:therm_endo"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 55808
+}

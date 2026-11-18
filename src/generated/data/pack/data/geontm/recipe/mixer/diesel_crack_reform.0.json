@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.diesel_crack_reform.0",
+  "input_fluids": [
+    {
+      "type": "geontm:diesel_crack",
+      "amount": 900
+    },
+    {
+      "type": "geontm:reformate",
+      "amount": 100
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:diesel_crack_reform",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 39
+}

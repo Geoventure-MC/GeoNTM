@@ -36,7 +36,7 @@ import java.util.function.Supplier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -96,7 +96,7 @@ public class ArmorFSB extends CompatArmorItem implements IArmorDisableModel, IFi
     public Supplier<SoundEvent> jump;
     public Supplier<SoundEvent> fall;
     public double radResist = 0;
-    private Identifier overlay = null;
+    private ResourceLocation overlay = null;
     private String armorModel = null;
 
     private final Set<EnumPlayerPart> hidden = EnumSet.noneOf(EnumPlayerPart.class);
@@ -539,13 +539,13 @@ public class ArmorFSB extends CompatArmorItem implements IArmorDisableModel, IFi
         return this;
     }
 
-    public ArmorFSB setOverlay(Identifier path) {
+    public ArmorFSB setOverlay(ResourceLocation path) {
         this.overlay = path;
         return this;
     }
 
     /** The fullscreen helmet overlay texture, or null. Drawn by the client HUD. */
-    public Identifier overlay() {
+    public ResourceLocation overlay() {
         return overlay;
     }
 

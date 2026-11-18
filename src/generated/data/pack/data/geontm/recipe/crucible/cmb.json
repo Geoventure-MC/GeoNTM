@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.cmb",
+  "frequency": 3,
+  "icon": "geontm:ingot_combine_steel",
+  "inputs": [
+    {
+      "material": "magnetized_tungsten",
+      "amount": 48
+    },
+    {
+      "material": "mud",
+      "amount": 24
+    }
+  ],
+  "outputs": [
+    {
+      "material": "combine_steel",
+      "amount": 72
+    }
+  ],
+  "order": 10
+}

@@ -1,0 +1,26 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_g10_slug",
+    "count": 4
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/lead"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_buckshot_advanced"
+    },
+    ""
+  ],
+  "order": 53
+}

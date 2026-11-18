@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "#c:storage_blocks/lead",
+  "output": {
+    "type": "geontm:lead",
+    "amount": 900
+  }
+}

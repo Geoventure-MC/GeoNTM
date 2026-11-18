@@ -3,7 +3,7 @@ package fr.geoventure.geontm.handler.jei;
 import fr.geoventure.geontm.inventory.recipes.CrystallizerRecipes;
 import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -42,7 +42,7 @@ public class CrystallizerRecipeHandler extends JEIUniversalHandler<CrystallizerR
     }
 
     @Override
-    public void draw(CrystallizerRecipes.CrystallizerRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(CrystallizerRecipes.CrystallizerRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         int productivity = (int) (recipe.productivity * 100);
         if (productivity > 0) {

@@ -5,8 +5,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.12.2 {@code BobbleSkinModel}: a bobblehead figure built from a player's real skin, each body part a base box and a
@@ -99,7 +99,7 @@ public final class BobbleSkinModel {
     }
 
     /** 1.12.2 {@code render(time, rotLeftArm, rotRightArm, rotLeftLeg, rotRightLeg, rotBody, rotHead)}. */
-    public void render(PoseStack pose, SubmitSink sink, Identifier texture, long time, BobbleFigure.Pose figure, int light) {
+    public void render(PoseStack pose, SubmitSink sink, ResourceLocation texture, long time, BobbleFigure.Pose figure, int light) {
         RenderType type = CompatRenderTypes.entityTranslucent(texture);
         pose.pushPose();
         pose.mulPose(Axis.YP.rotationDegrees((float) figure.body() - 90.0F));

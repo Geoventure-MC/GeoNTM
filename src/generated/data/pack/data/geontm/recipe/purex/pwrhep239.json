@@ -1,0 +1,43 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pwrhep239",
+  "input_items": [
+    {
+      "ingredient": "geontm:pwr_fuel_depleted_hep239",
+      "exact": true
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_pu_mix",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_pu240",
+      "count": 4
+    },
+    "geontm:nugget_technetium",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 5
+    }
+  ],
+  "duration": 100,
+  "power": 2500,
+  "icon": {
+    "id": "geontm:pwr_fuel_depleted_hep239"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pwr",
+  "order": 30
+}

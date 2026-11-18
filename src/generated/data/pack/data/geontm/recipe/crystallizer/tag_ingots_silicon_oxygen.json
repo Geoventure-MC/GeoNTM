@@ -1,0 +1,17 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:ingots/silicon"
+  },
+  "acid": {
+    "type": "geontm:oxygen",
+    "amount": 250
+  },
+  "output": {
+    "id": "minecraft:quartz",
+    "count": 2
+  },
+  "duration": 100,
+  "productivity": 0.1,
+  "order": 44
+}

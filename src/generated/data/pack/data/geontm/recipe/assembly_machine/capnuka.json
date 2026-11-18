@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capnuka",
+  "input_items": [
+    {
+      "ingredient": "geontm:cap_nuka",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:cap_nuka",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:block_cap_nuka"
+  ],
+  "duration": 10,
+  "power": 100,
+  "order": 19968
+}

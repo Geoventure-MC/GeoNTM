@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:ender_pearl",
+  "output": {
+    "type": "geontm:enderjuice",
+    "amount": 100
+  }
+}

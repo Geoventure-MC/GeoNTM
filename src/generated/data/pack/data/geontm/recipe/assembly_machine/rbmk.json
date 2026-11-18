@@ -1,0 +1,45 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.rbmk",
+  "input_items": [
+    {
+      "ingredient": "geontm:concrete_asbestos",
+      "count": 4
+    },
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:rbmk_blank"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 43776,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:concrete_asbestos",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_lead_plating"
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 16
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.ferrouranium"
+  ]
+}

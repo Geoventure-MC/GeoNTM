@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/saturnite",
+  "output": "geontm:ingot_starmetal",
+  "order": 6
+}

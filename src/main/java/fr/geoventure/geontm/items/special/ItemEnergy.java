@@ -60,8 +60,8 @@ public final class ItemEnergy extends CompatItem implements ConsumableTreatments
 
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
-        if (ConsumableTreatments.blocked(this, player)) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (container == Container.BOTTLE && !hasBottleOpener(player)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (ConsumableTreatments.blocked(this, player)) return InteractionResult.PASS;
+        if (container == Container.BOTTLE && !hasBottleOpener(player)) return InteractionResult.PASS;
         player.startUsingItem(hand);
         return InteractionResult.CONSUME;
     }

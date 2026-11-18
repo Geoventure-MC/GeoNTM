@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "iron",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output": "geontm:plate_welded_iron",
+  "duration": 100,
+  "consumption": 100,
+  "order": 7
+}

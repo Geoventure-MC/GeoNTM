@@ -1,0 +1,32 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.hydrogencoke",
+  "input_items": [
+    {
+      "ingredient": "#c:cokes"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 8000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:hydrogen",
+      "amount": 500
+    }
+  ],
+  "duration": 20,
+  "power": 400,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:hydrogen",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 1
+}

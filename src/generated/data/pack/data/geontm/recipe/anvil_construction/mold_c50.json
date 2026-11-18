@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:mold_base"
+    },
+    {
+      "ingredient": "#c:ingots/iron",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:mold_c50"
+    }
+  ],
+  "tier": 1,
+  "order": 175
+}

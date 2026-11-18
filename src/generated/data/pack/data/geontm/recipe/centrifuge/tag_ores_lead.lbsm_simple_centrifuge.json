@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/lead"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_lead",
+      "count": 2
+    },
+    "geontm:nugget_bismuth",
+    "geontm:powder_gold",
+    "minecraft:gravel"
+  ],
+  "requires": [
+    "lbsm_simple_centrifuge"
+  ],
+  "order": 28
+}

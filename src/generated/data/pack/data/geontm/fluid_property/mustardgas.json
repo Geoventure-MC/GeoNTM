@@ -1,0 +1,47 @@
+{
+  "type": "gaseous",
+  "color": "#BAB572",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 1,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "traits": {
+    "toxin": {
+      "entries": [
+        {
+          "kind": "direct_damage",
+          "damage": "geontm:cloud",
+          "amount": 4.0,
+          "delay": 10,
+          "hazard": "GAS_BLISTERING",
+          "full_body": false
+        },
+        {
+          "kind": "effects",
+          "effects": [
+            {
+              "id": "minecraft:wither",
+              "duration": 100,
+              "amplifier": 1
+            },
+            {
+              "id": "minecraft:nausea",
+              "duration": 100,
+              "amplifier": 0
+            }
+          ],
+          "hazard": "GAS_BLISTERING",
+          "full_body": true
+        }
+      ]
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-4
+      }
+    }
+  }
+}

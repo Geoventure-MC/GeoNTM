@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -68,7 +68,7 @@ public class FoundryCastingRenderer<T extends TileEntityFoundryCastingBase> exte
             this.body = WavefrontObj.load(Ids.of(Constants.MOD_ID, bodyObjPath));
             var mtl = WavefrontObj.loadMtl(Ids.of(Constants.MOD_ID, bodyObjPath.replace(".obj", ".mtl")));
             for (String mat : body.materialNames()) {
-                Identifier tex = mtl.get(mat);
+                ResourceLocation tex = mtl.get(mat);
                 if (tex != null) materials.put(mat, Surface.cutout(tex.toString()));
             }
         } else {

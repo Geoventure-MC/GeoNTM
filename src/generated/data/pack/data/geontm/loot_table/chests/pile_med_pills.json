@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:radaway",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:radx",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:iv_blood",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:siox",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

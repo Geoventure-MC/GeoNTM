@@ -183,7 +183,7 @@ public final class ItemCell extends CompatItem implements IFillableItem, ModelSt
                 EntityNukeExplosionMK3 ex =
                         EntityNukeExplosionMK3.statFacFleija(level, x, y, z, radius);
                 if (!ex.isRemoved()) {
-                    level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE.value(),
+                    level.playSound(null, x, y, z, SoundEvents.GENERIC_EXPLODE,
                             SoundSource.BLOCKS, 100.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                     level.addFreshEntity(ex);
                     level.addFreshEntity(EntityCloudFleija.statFac(level, radius, x, y, z));

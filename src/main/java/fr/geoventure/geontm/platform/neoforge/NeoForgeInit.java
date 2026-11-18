@@ -2,7 +2,7 @@ package fr.geoventure.geontm.platform.neoforge;
 
 //? if neoforge {
 
-import fr.geoventure.geontm.Constants;
+/*import fr.geoventure.geontm.Constants;
 import fr.geoventure.geontm.creativetabs.ModTabs;
 import fr.geoventure.geocore.registry.RegistryObject;
 
@@ -88,4 +88,4 @@ public class NeoForgeInit {
         ModTabs.accept(event.getTabKey(), event::accept);
     }
 }
-//?}
+*///?}

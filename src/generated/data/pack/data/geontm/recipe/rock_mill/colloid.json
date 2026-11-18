@@ -1,0 +1,16 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.colloid",
+  "input_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    "minecraft:sand"
+  ],
+  "duration": 100,
+  "power": 25,
+  "order": 12
+}

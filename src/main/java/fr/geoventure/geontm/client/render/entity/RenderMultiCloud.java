@@ -12,9 +12,9 @@ import fr.geoventure.geocore.render.Vertexes;
 import java.util.Random;
 import java.util.function.ToIntFunction;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import org.joml.Quaternionf;
@@ -36,7 +36,7 @@ public final class RenderMultiCloud<T extends Entity> extends CompatEntityRender
         super(context);
         this.stages = new RenderType[8];
         for (int i = 0; i < 8; i++) {
-            Identifier texture = Library.id("textures/items/" + sprite + (i + 1) + ".png");
+            ResourceLocation texture = Library.id("textures/items/" + sprite + (i + 1) + ".png");
             this.stages[i] = CompatRenderTypes.entityCutout(texture);
         }
         this.age = age;

@@ -11,7 +11,7 @@ import fr.geoventure.geontm.items.ModIntermediateItems;
 import fr.geoventure.geontm.items.machine.ModStampItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -565,7 +565,7 @@ public final class Mats {
 
         outer:
         for (var tag : stack.getItem().builtInRegistryHolder().tags().toList()) {
-            Identifier id = tag.location();
+            ResourceLocation id = tag.location();
             // a material_distribution tag row (1.7 registerOre) replaces the shape scan; HBM's own rows are all c: tags,
             // a datapack may name any tag
             List<MaterialStack> tagEntries = materialTagEntries.get(id.toString());

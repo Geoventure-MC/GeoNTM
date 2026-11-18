@@ -36,9 +36,9 @@ import fr.geoventure.geontm.sound.ModSounds;
 import fr.geoventure.geontm.Constants;
 import java.util.stream.IntStream;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -355,11 +355,11 @@ public class TileEntityReactorZirnox extends TileEntityMachineBase implements IF
     @Override public boolean canPlaceItemThroughFace(int slot, ItemStack stack, Direction side) { return isItemValidForSlot(slot, stack); }
     @Override public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction side) { return slot < 24 && !(stack.getItem() instanceof ItemZirnoxRod); }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf); buf.writeInt(heat); buf.writeInt(pressure); buf.writeBoolean(isOn); buf.writeBoolean(redstonePowered);
         steam.serialize(buf); carbonDioxide.serialize(buf); water.serialize(buf);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf); heat = buf.readInt(); pressure = buf.readInt(); isOn = buf.readBoolean(); redstonePowered = buf.readBoolean();
         steam.deserialize(buf); carbonDioxide.deserialize(buf); water.deserialize(buf);
     }

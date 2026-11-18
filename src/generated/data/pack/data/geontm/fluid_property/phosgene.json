@@ -1,0 +1,30 @@
+{
+  "type": "gaseous",
+  "color": "#CFC4A4",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "none"
+  },
+  "traits": {
+    "toxin": {
+      "entries": [
+        {
+          "kind": "direct_damage",
+          "damage": "geontm:cloud",
+          "amount": 4.0,
+          "delay": 20,
+          "hazard": "GAS_LUNG",
+          "full_body": false
+        }
+      ]
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-4
+      }
+    }
+  }
+}

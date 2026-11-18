@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * C2S: one of HBM's keybinds changed state.
@@ -25,7 +25,7 @@ public record KeybindPayload(int keybind, boolean state) implements GeoCorePaylo
             buffer -> new KeybindPayload(buffer.readVarInt(), buffer.readBoolean()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

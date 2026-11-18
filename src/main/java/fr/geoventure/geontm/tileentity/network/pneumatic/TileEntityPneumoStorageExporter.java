@@ -14,7 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Containers;
 import net.minecraft.world.WorldlyContainer;
@@ -72,7 +72,7 @@ public class TileEntityPneumoStorageExporter extends TileEntityPneumaticMachineB
 
     private static ItemStack itemFromId(String id) {
         try {
-            Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+            Item item = BuiltInRegistries.ITEM.get(Ids.parse(id));
             return item == null || item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
         } catch (Exception e) {
             return ItemStack.EMPTY;
@@ -251,7 +251,7 @@ public class TileEntityPneumoStorageExporter extends TileEntityPneumaticMachineB
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(continuousRequest);
         buf.writeBoolean(rorConfiguredMode);
@@ -260,7 +260,7 @@ public class TileEntityPneumoStorageExporter extends TileEntityPneumaticMachineB
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.continuousRequest = buf.readBoolean();
         this.rorConfiguredMode = buf.readBoolean();

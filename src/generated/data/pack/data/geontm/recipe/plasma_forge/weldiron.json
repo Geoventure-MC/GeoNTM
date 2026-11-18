@@ -1,0 +1,19 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.weldiron",
+  "input_items": [
+    {
+      "material": "iron",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:plate_welded_iron"
+  ],
+  "duration": 50,
+  "power": 100,
+  "auto_switch_group": "autoswitch.weldPlates",
+  "order": 13,
+  "ignition_temp": 500000
+}

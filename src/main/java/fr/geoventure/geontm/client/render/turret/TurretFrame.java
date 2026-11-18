@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 import java.util.Map;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.jspecify.annotations.Nullable;
 
@@ -20,7 +20,7 @@ public final class TurretFrame {
      * instanced backend re-upload the same triangles on every one of them.
      */
     private static final Map<WavefrontObj, Map<String, Geometry>> MESHES = new IdentityHashMap<>();
-    private static final Map<Identifier, Surface> SKINS = new HashMap<>();
+    private static final Map<ResourceLocation, Surface> SKINS = new HashMap<>();
 
     private final ArrayList<Part> parts = new ArrayList<>();
     private int size;
@@ -49,7 +49,7 @@ public final class TurretFrame {
                 .computeIfAbsent(group, model::part);
     }
 
-    private static synchronized Surface skinOf(Identifier texture) {
+    private static synchronized Surface skinOf(ResourceLocation texture) {
         return SKINS.computeIfAbsent(texture, id -> Surface.cutout(id.toString()));
     }
 
@@ -58,7 +58,7 @@ public final class TurretFrame {
         public final Matrix4f pose = new Matrix4f();
         public @Nullable WavefrontObj model;
         public @Nullable String group;
-        public @Nullable Identifier texture;
+        public @Nullable ResourceLocation texture;
         private @Nullable Geometry geometry;
         private @Nullable Surface surface;
 
@@ -78,7 +78,7 @@ public final class TurretFrame {
             return this;
         }
 
-        public Part texture(Identifier texture) {
+        public Part texture(ResourceLocation texture) {
             this.texture = texture;
             this.surface = skinOf(texture);
             return this;

@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * 1.7 {@code ModelNo9}, the mining helmet: {@code Helmet} and {@code Insignia} with their own textures, and while the
@@ -14,7 +14,7 @@ import net.minecraft.resources.Identifier;
  */
 public final class No9ArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/no9.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/no9.obj");
 
     /** Set by the layer for the stack being drawn; the replay reads it synchronously inside {@code submit}. */
     static boolean lampOn;

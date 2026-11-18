@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/beryllium"
+  },
+  "outputs": [
+    "geontm:powder_beryllium",
+    "geontm:powder_beryllium",
+    "geontm:powder_emerald",
+    "minecraft:gravel"
+  ],
+  "order": 41
+}

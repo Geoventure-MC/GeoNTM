@@ -1,0 +1,33 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_flashlead",
+    "stage": 2
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_au198",
+      "weight": 24
+    },
+    {
+      "data": "geontm:nugget_pb209",
+      "weight": 24
+    },
+    {
+      "data": "geontm:nugget_bismuth",
+      "weight": 13
+    },
+    {
+      "data": "geontm:nugget_mercury_tiny",
+      "weight": 13
+    },
+    {
+      "data": "geontm:nugget_gh336",
+      "weight": 26
+    }
+  ],
+  "order": 159
+}

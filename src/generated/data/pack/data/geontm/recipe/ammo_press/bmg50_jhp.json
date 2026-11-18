@@ -1,0 +1,29 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_bmg50_jhp",
+    "count": 12
+  },
+  "grid": [
+    {
+      "ingredient": "#c:ingots/any_plastic"
+    },
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 3
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    ""
+  ],
+  "order": 37
+}

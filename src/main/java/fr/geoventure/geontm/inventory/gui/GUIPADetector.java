@@ -5,16 +5,16 @@ import fr.geoventure.geontm.tileentity.machine.albion.TileEntityCooledBase;
 import fr.geoventure.geontm.tileentity.machine.albion.TileEntityPADetector;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
 
 /** Detector panel: the collision chamber's power and coolant readouts, plus its product slots. */
 public class GUIPADetector extends GUIPABase<ContainerPADetector> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/particleaccelerator/gui_detector.png");
 
     public GUIPADetector(ContainerPADetector menu, Inventory playerInventory, Component title) {
@@ -22,7 +22,7 @@ public class GUIPADetector extends GUIPABase<ContainerPADetector> {
     }
 
     @Override
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return TEXTURE;
     }
 
@@ -32,7 +32,7 @@ public class GUIPADetector extends GUIPABase<ContainerPADetector> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos;
         int y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
@@ -50,13 +50,13 @@ public class GUIPADetector extends GUIPABase<ContainerPADetector> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         drawTitleAndInventory(graphics, -8, 5, 0xffffff);
         drawTemperature(graphics, 136, 22, 166, 12);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         commonTooltip(graphics, mouseX, mouseY, 8, 18, 134, 36);
     }
 }

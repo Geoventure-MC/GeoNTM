@@ -75,7 +75,7 @@ public final class MassStorageGameTests {
         helper.assertFalse(ItemStacks.sameItemAndData(stone, dirt), "mass-storage identity ignored item type");
 
         //? if >=1.20.5 {
-        net.minecraft.nbt.CompoundTag first = new net.minecraft.nbt.CompoundTag();
+        /*net.minecraft.nbt.CompoundTag first = new net.minecraft.nbt.CompoundTag();
         first.putInt("variant", 1);
         net.minecraft.nbt.CompoundTag second = new net.minecraft.nbt.CompoundTag();
         second.putInt("variant", 2);
@@ -86,7 +86,7 @@ public final class MassStorageGameTests {
                 net.minecraft.world.item.component.CustomData.of(second));
         helper.assertFalse(ItemStacks.sameItemAndData(stone, otherComponents),
                 "mass-storage identity ignored item components");
-        //?}
+        *///?}
         helper.succeed();
     }
 

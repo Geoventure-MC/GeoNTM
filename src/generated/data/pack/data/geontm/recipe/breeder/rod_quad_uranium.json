@@ -1,0 +1,7 @@
+{
+  "type": "geontm:breeder",
+  "input": "geontm:rod_quad_uranium",
+  "output": "geontm:rod_quad_rgp",
+  "flux": 600,
+  "order": 26
+}

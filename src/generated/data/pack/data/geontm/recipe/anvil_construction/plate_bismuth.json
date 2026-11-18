@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:nugget_bismuth",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:billets/u238",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dusts/niobium"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_bismuth"
+    }
+  ],
+  "tier": 4,
+  "order": 94
+}

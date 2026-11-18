@@ -1,0 +1,45 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.steelFromIron",
+  "input_items": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/iron"
+        },
+        {
+          "ingredient": "#c:plates/iron"
+        },
+        {
+          "ingredient": "#c:gems/iron"
+        },
+        {
+          "ingredient": "#c:dusts/iron"
+        }
+      ]
+    },
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/coal"
+        },
+        {
+          "ingredient": "#c:plates/coal"
+        },
+        {
+          "ingredient": "#c:gems/coal"
+        },
+        {
+          "ingredient": "#c:dusts/coal"
+        }
+      ]
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_steel"
+  ],
+  "duration": 400,
+  "order": 0
+}

@@ -14,13 +14,13 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
@@ -36,7 +36,7 @@ import java.util.Optional;
  */
 public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_pwr.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_pwr.png");
 
     private EditBox field;
 
@@ -63,7 +63,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
 
         TileEntityPWRController controller = menu.getController();
@@ -103,7 +103,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
     /** 1.7 {@code GUIElements.drawSmoothGauge(x, y, z, progress, 5, 2, 1, 0x7F0000)}: the same needle the press uses. */
     private static final int SS = 8;
 
-    private static void drawSmoothGauge(GuiGraphicsExtractor graphics, int cx, int cy, double progress) {
+    private static void drawSmoothGauge(GuiGraphics graphics, int cx, int cy, double progress) {
         progress = Mth.clamp(progress, 0.0, 1.0);
         float angle = (float) Math.toRadians(progress * 270.0 + 45.0);
         GuiDraw.pushMatrix(graphics);
@@ -115,7 +115,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
         GuiDraw.popMatrix(graphics);
     }
 
-    private static void fillNeedle(GuiGraphicsExtractor g, double mult, int color) {
+    private static void fillNeedle(GuiGraphics g, double mult, int color) {
         double tipLen = 5 * mult * SS, backLen = 2 * mult * SS, backSide = 1 * mult * SS;
         double total = tipLen + backLen;
         int top = (int) Math.round(tipLen), bot = (int) Math.round(-backLen);
@@ -126,7 +126,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
     }
 
     /** Repeats the 16x16 fluid texture up from the tank's bottom, matching the old GL_REPEAT quad. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y, int width, int height) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y, int width, int height) {
         int max = tank.getMaxFill();
         int filled = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (filled <= 0) return;
@@ -135,7 +135,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
         int bottom = topPos + y + height;
         int top = bottom - filled;
         int tint = 0xFF000000 | (tank.getTankType().clientMetadata().getTint() & 0xFFFFFF);
-        Identifier fluidTexture = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTexture = tank.getTankType().clientMetadata().getTexture();
 
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTexture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + width, bottom);
@@ -149,7 +149,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
 
         TileEntityPWRController controller = menu.getController();
@@ -163,7 +163,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityPWRController controller = menu.getController();
         if (controller == null) return;
 
@@ -197,7 +197,7 @@ public class GUIPWR extends CompatContainerScreen<ContainerPWR> {
                 && mouseY > topPos + y && mouseY <= topPos + y + height;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
     }
 

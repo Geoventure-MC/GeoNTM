@@ -3,7 +3,7 @@ package fr.geoventure.geontm.tileentity.bomb;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -36,7 +36,7 @@ public abstract class TileEntityNukeBomb extends TileEntityMachineBase implement
 
     /** The BufPacket replacement carries component identities/counts for live GUI updates. */
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeVarInt(inventory.getSlots());
         for (int i = 0; i < inventory.getSlots(); i++) {
@@ -50,7 +50,7 @@ public abstract class TileEntityNukeBomb extends TileEntityMachineBase implement
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         int slots = buffer.readVarInt();
         for (int i = 0; i < slots; i++) {

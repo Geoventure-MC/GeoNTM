@@ -12,9 +12,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntitySILEX;
 import fr.geoventure.geocore.gui.MouseInput;
 import java.awt.Color;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -39,7 +39,7 @@ import java.util.Optional;
  */
 public class GUISILEX extends CompatContainerScreen<ContainerSILEX> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_silex.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_silex.png");
 
     private static final int VOID_X = 10, VOID_Y = 92, VOID_W = 12;
     private static final int TANK_X = 8, TANK_Y = 42, TANK_W = 52, TANK_H = 7;
@@ -50,7 +50,7 @@ public class GUISILEX extends CompatContainerScreen<ContainerSILEX> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F,
                 this.imageWidth, this.imageHeight, 256, 256);
 
@@ -113,7 +113,7 @@ public class GUISILEX extends CompatContainerScreen<ContainerSILEX> {
      *   y(x)    = y + scale · sin((x + offset) · freq)
      * </pre>
      */
-    private void drawWave(GuiGraphicsExtractor graphics, int x, int y, int height, int width,
+    private void drawWave(GuiGraphics graphics, int x, int y, int height, int width,
                           float resolution, float freq, int color) {
         int argb = 0xFF000000 | (color & 0xFFFFFF);
         float samples = width / resolution;
@@ -140,7 +140,7 @@ public class GUISILEX extends CompatContainerScreen<ContainerSILEX> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // Upstream nudges the title 54px LEFT of centre to clear the wave display, and draws the
         // wavelength name in the panel to its right. Both are GUI-local coordinates.
         Component title = this.title;
@@ -156,7 +156,7 @@ public class GUISILEX extends CompatContainerScreen<ContainerSILEX> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntitySILEX te = this.menu.getSilex();
         if (te == null) return;
 

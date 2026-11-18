@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/dineutronium",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:depth_brick"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:depth_dnt"
+    }
+  ],
+  "tier": 1916169,
+  "order": 38
+}

@@ -7,7 +7,7 @@ import fr.geoventure.geocore.net.GeoCorePayload;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +99,7 @@ public record PlayerInformPayload(int infoId, int millis, String color, List<Str
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

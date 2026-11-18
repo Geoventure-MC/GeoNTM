@@ -84,7 +84,7 @@ public final class XFactoryFolly {
             for (int ix = x - 1; ix <= x + 1; ix++) {
                 for (int iy = y - 1; iy <= y + 1; iy++) {
                     for (int iz = z - 1; iz <= z + 1; iz++) {
-                        if (iy > server.getMinY() && iy < server.getMaxY()) {
+                        if (iy > server.getMinBuildHeight() && iy < server.getMaxBuildHeight()) {
                             server.setBlockAndUpdate(new BlockPos(ix, iy, iz),
                                     Blocks.AIR.defaultBlockState());
                         }

@@ -7,12 +7,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact 1.7 G3 renderer with the Zebra's permanent scope and silencer skin. */
 public final class G3ZebraWeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/g3.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/g3.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/g3_zebra.png");
     private static final Surface ATTACHMENTS=Surface.cutout("geontm:textures/models/weapons/g3_attachments.png");
     private WavefrontObj model;

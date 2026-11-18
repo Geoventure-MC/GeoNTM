@@ -13,7 +13,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geontm.tileentity.TilePort.PortDef;
 import fr.geoventure.geontm.tileentity.TilePortShapes;
@@ -45,6 +45,6 @@ public class BlockEntityRBMKInlet extends TileEntityMachineBase implements IFlui
     @Override public long transferFluid(FluidType type, int pressure, long amount) { if (Fluids.kindOf(type) != Fluids.WATER || !water.accepts(type) || pressure != water.getPressure()) return amount; int accepted = water.fill(type, (int)Math.min(amount, Integer.MAX_VALUE), true); if (accepted > 0) setChanged(); return amount - accepted; }
     @Override protected void saveData(DataOut out) { super.saveData(out); water.writeToNBT(out, "tank"); }
     @Override protected void loadData(DataIn in) { super.loadData(in); water.readFromNBT(in, "tank"); }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) { super.serialize(buffer); water.serialize(buffer); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) { super.deserialize(buffer); water.deserialize(buffer); }
+    @Override public void serialize(FriendlyByteBuf buffer) { super.serialize(buffer); water.serialize(buffer); }
+    @Override public void deserialize(FriendlyByteBuf buffer) { super.deserialize(buffer); water.deserialize(buffer); }
 }

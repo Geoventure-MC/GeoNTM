@@ -12,7 +12,7 @@ import fr.geoventure.geontm.particle.helper.GeoNtmEffectNT;
 import fr.geoventure.geontm.util.TickPhase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -143,12 +143,12 @@ public abstract class TileEntityChimneyBase extends TileEntityLoadedBase impleme
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeInt(onTicks);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         onTicks = buf.readInt();
     }
 }

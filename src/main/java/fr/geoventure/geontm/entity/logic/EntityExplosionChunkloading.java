@@ -40,7 +40,7 @@ public abstract class EntityExplosionChunkloading extends CompatEntity implement
         int cz = blockPosition().getZ() >> 4;
         for (int x = cx - chunkRadius; x <= cx + chunkRadius; x++) {
             for (int z = cz - chunkRadius; z <= cz + chunkRadius; z++) {
-                long key = ChunkPos.pack(x, z);
+                long key = ChunkPos.asLong(x, z);
                 if (forcedChunks.add(key)) ChunkUtil.addAnchor(server, key);
             }
         }
@@ -94,7 +94,7 @@ public abstract class EntityExplosionChunkloading extends CompatEntity implement
         owner = Owners.load(input);
         int[] packed = input.getIntArray("forcedChunks").orElse(null);
         if (packed != null)
-            for (int i = 0; i + 1 < packed.length; i += 2) forcedChunks.add(ChunkPos.pack(packed[i], packed[i + 1]));
+            for (int i = 0; i + 1 < packed.length; i += 2) forcedChunks.add(ChunkPos.asLong(packed[i], packed[i + 1]));
     }
 
     @Override

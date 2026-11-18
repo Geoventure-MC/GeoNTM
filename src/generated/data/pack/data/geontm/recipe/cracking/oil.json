@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:oil",
+  "left": {
+    "type": "geontm:crackoil",
+    "amount": 80
+  },
+  "right": {
+    "type": "geontm:petroleum",
+    "amount": 20
+  }
+}

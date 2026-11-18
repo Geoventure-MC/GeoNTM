@@ -30,7 +30,7 @@ public class ItemFertilizer extends CompatItem {
         ItemStack stack = context.getItemInHand();
         BlockPos center = context.getClickedPos();
 
-        if (player != null && !player.mayUseItemAt(center, context.getClickedFace(), stack)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player != null && !player.mayUseItemAt(center, context.getClickedFace(), stack)) return InteractionResult.PASS;
 
         boolean didSomething = false;
         for (int i = -1; i <= 1; i++) {
@@ -45,6 +45,6 @@ public class ItemFertilizer extends CompatItem {
         }
 
         if (didSomething && (player == null || !player.getAbilities().instabuild)) stack.shrink(1);
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

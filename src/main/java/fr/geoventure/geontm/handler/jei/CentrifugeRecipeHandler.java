@@ -3,7 +3,7 @@ package fr.geoventure.geontm.handler.jei;
 import fr.geoventure.geontm.inventory.RecipesCommon.AStack;
 import fr.geoventure.geontm.inventory.recipes.CentrifugeRecipes;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -42,7 +42,7 @@ public final class CentrifugeRecipeHandler extends JEIUniversalHandler<Centrifug
     }
 
     @Override
-    public void draw(CentrifugeRecipes.CentrifugeRecipe recipe, GuiGraphicsExtractor graphics, double mouseX, double mouseY) {
+    public void draw(CentrifugeRecipes.CentrifugeRecipe recipe, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(recipe, graphics, mouseX, mouseY);
         text(graphics, "200 ticks", 8, 52);
         text(graphics, "200 HE/t", 101, 52);

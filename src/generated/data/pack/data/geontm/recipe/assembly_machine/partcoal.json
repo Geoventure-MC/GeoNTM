@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.partcoal",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/coal"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:part_carbon",
+      "count": 8
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "auto_switch_group": "autoswitch.cyclotron",
+  "order": 13824
+}

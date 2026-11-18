@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:stamp_steel_flat",
+  "materials": [
+    {
+      "material": "steel",
+      "amount": 216
+    }
+  ]
+}

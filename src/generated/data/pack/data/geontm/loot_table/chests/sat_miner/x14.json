@@ -1,0 +1,21 @@
+{
+  "geocore:conditions": [
+    {
+      "type": "mod_loaded",
+      "mod": "lootr"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 14,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/sat_miner"
+        }
+      ]
+    }
+  ]
+}

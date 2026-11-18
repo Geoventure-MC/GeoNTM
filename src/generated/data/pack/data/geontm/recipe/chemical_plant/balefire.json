@@ -1,0 +1,33 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.balefire",
+  "input_items": [
+    {
+      "ingredient": "geontm:egg_balefire_shard"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 6000
+    }
+  ],
+  "output_items": [
+    "geontm:powder_balefire"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:balefire",
+      "amount": 8000
+    }
+  ],
+  "duration": 100,
+  "power": 10000,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:balefire"
+    }
+  },
+  "order": 87
+}

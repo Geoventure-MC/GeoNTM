@@ -1,0 +1,8 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_short_neptunium",
+  "output": "geontm:nuclear_waste_short_depleted_neptunium",
+  "decay": "short",
+  "liquid": 150,
+  "gas": 500
+}

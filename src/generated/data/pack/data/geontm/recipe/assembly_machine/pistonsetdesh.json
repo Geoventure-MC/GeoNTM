@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pistonsetdesh",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 16
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:piston_set_desh"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 35840
+}

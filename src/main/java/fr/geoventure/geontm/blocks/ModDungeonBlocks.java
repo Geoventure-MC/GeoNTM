@@ -253,7 +253,7 @@ public final class ModDungeonBlocks {
     /** The vanilla {@code rail} blockstate and models over this rail's textures, on the cutout layer; a vanilla rail. */
     private static <R extends RailGeneric> Reg.Handle<R> rail(String id, Function<BlockBehaviour.Properties, R> factory,
                                                               String straight, String turned) {
-        Reg.Handle<R> block = REG.block(id, factory, p -> p.strength(5.0F, 6.0F).noCollision());
+        Reg.Handle<R> block = REG.block(id, factory, p -> p.strength(5.0F, 6.0F).noCollission());
         REG.item(id, p -> new RailBlockItem(block.get(), p), Compat::blockDescription).tab(GeoNtmTab.MACHINES)
                 .tag(ItemTag.of("minecraft:rails"));
         IDS.add(id);

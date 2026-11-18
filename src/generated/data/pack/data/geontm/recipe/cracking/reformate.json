@@ -1,0 +1,12 @@
+{
+  "type": "geontm:cracking",
+  "input": "geontm:reformate",
+  "left": {
+    "type": "geontm:unsaturateds",
+    "amount": 40
+  },
+  "right": {
+    "type": "geontm:reformgas",
+    "amount": 60
+  }
+}

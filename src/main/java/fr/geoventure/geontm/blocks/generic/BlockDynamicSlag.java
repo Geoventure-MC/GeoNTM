@@ -15,7 +15,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
@@ -77,7 +77,7 @@ public class BlockDynamicSlag extends CompatBlock implements TickingBlock {
         BlockPos below = pos.below();
 
         /* flow down: move the whole pile */
-        if (world.getBlockState(below).canBeReplaced() && y > world.getMinY()
+        if (world.getBlockState(below).canBeReplaced() && y > world.getMinBuildHeight()
                 && Protection.mayAlter(world, below, Protection.Source.NONE, Protection.Cause.FLUID)) {
             world.setBlockAndUpdate(below, this.defaultBlockState());
             if (world.getBlockEntity(below) instanceof TileEntitySlag tile) {
@@ -157,14 +157,14 @@ public class BlockDynamicSlag extends CompatBlock implements TickingBlock {
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             super.serialize(buf);
             buf.writeInt(mat == null ? -1 : mat.id);
             buf.writeInt(amount);
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             super.deserialize(buf);
             int id = buf.readInt();
             mat = id < 0 ? null : Mats.matById.get(id);

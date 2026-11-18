@@ -1,0 +1,22 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_flame_napalm",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:plates/steel"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:canister_napalm"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:plates/steel"
+    },
+    ""
+  ],
+  "order": 73
+}

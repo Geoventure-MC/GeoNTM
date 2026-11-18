@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.WeakHashMap;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 
 /**
@@ -19,7 +19,7 @@ import net.minecraft.world.entity.player.Player;
  */
 public final class ModelMan extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/player_fem.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/player_fem.obj");
     private static final Surface SKIN = Surface.cutout("geontm:textures/entity/player_fem.png");
 
     private static final IntOpenHashSet PLAYERS = new IntOpenHashSet();

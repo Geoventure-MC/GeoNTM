@@ -1,0 +1,20 @@
+{
+  "type": "liquid",
+  "color": "#544400",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "radiation"
+  },
+  "flags": [
+    "viscous",
+    "nocontainer"
+  ],
+  "traits": {
+    "ventradiation": {
+      "rad_per_mb": 0.5
+    }
+  }
+}

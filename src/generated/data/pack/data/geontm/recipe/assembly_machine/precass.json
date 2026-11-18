@@ -1,0 +1,47 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.precass",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/zirconium",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_board",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_precass"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 22784,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/zirconium",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_board",
+      "count": 8
+    }
+  ]
+}

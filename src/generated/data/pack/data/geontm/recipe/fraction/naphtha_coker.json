@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:naphtha_coker",
+  "left": {
+    "type": "geontm:naphtha_crack",
+    "amount": 75
+  },
+  "right": {
+    "type": "geontm:lightoil_crack",
+    "amount": 25
+  }
+}

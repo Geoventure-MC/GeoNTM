@@ -27,7 +27,7 @@ public class ItemFlask extends CompatItem {
 
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
-        if (GeoNtmLivingProps.getData(player).maxShield >= SHIELD_CAP) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (GeoNtmLivingProps.getData(player).maxShield >= SHIELD_CAP) return InteractionResult.PASS;
         player.startUsingItem(hand);
         return InteractionResult.CONSUME;
     }

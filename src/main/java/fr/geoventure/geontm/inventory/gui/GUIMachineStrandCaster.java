@@ -9,9 +9,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import java.util.Optional;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.List;
 /** The old 176x214 Strand Caster screen, including the melt, water, and spent-steam columns. */
 public class GUIMachineStrandCaster extends CompatContainerScreen<ContainerMachineStrandCaster> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_strand_caster.png");
 
     public GUIMachineStrandCaster(ContainerMachineStrandCaster menu, Inventory inventory, Component title) {
@@ -27,7 +27,7 @@ public class GUIMachineStrandCaster extends CompatContainerScreen<ContainerMachi
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineStrandCaster caster = menu.getCaster();
         if (caster == null) return;
@@ -42,7 +42,7 @@ public class GUIMachineStrandCaster extends CompatContainerScreen<ContainerMachi
         drawTank(graphics, caster.steam, 82, 89);
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank,
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank,
                           int x, int bottom) {
         int height = tank.getMaxFill() <= 0 ? 0 : tank.getFill() * 24 / tank.getMaxFill();
         if (height <= 0) return;
@@ -51,12 +51,12 @@ public class GUIMachineStrandCaster extends CompatContainerScreen<ContainerMachi
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineStrandCaster caster = menu.getCaster();
         if (caster == null) return;
         if (isHovering(16, 17, 36, 81, mouseX, mouseY)) {

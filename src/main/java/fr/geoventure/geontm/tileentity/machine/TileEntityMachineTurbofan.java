@@ -37,7 +37,7 @@ import fr.geoventure.geocore.world.Compat;
 import fr.geoventure.geocore.world.SubLevels;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -329,12 +329,12 @@ public class TileEntityMachineTurbofan extends TileEntityMachinePolluting
         return result;
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power); buf.writeInt(afterburner); buf.writeBoolean(wasOn); buf.writeBoolean(showBlood);
         tank.serialize(buf); blood.serialize(buf);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         power = buf.readLong(); afterburner = buf.readInt(); wasOn = buf.readBoolean(); showBlood = buf.readBoolean();
         tank.deserialize(buf); blood.deserialize(buf);

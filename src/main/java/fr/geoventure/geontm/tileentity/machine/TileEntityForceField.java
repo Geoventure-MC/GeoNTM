@@ -12,7 +12,7 @@ import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -267,7 +267,7 @@ public class TileEntityForceField extends TileEntityMachineBase implements IEner
         double my = -vec.y * shell;
         double mz = -vec.z * shell;
 
-        entity.snapTo(cx + mx, cy + my, cz + mz, 0, 0);
+        entity.moveTo(cx + mx, cy + my, cz + mz, 0, 0);
 
         Vec3 motion = entity.getDeltaMovement();
         double mo = motion.length();
@@ -314,7 +314,7 @@ public class TileEntityForceField extends TileEntityMachineBase implements IEner
     // --- sync: 1.7 TEFFPacket (radius, health, maxHealth, power as an int, isOn, color, cooldown) ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeFloat(radius);
         buf.writeInt(health);
@@ -326,7 +326,7 @@ public class TileEntityForceField extends TileEntityMachineBase implements IEner
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         radius = buf.readFloat();
         health = buf.readInt();

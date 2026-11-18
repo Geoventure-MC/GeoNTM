@@ -26,7 +26,7 @@ public class ItemFilter extends CompatItem {
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         ItemStack filter = player.getItemInHand(hand);
         ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
-        if (helmet.isEmpty()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (helmet.isEmpty()) return InteractionResult.PASS;
 
         if (!(helmet.getItem() instanceof IGasMask) && ArmorModHandler.hasMods(helmet)) {
             ItemStack mask = ArmorModHandler.pryMod(helmet, ArmorModHandler.helmet_only);
@@ -42,7 +42,7 @@ public class ItemFilter extends CompatItem {
     private static InteractionResult installOn(Level level, Player player, InteractionHand hand, ItemStack helmet,
                                                ItemStack filter) {
         if (!(helmet.getItem() instanceof IGasMask mask) || !mask.isFilterApplicable(helmet, filter)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:drive_flash_broken",
+  "output": {
+    "id": "geontm:powder_polymer",
+    "count": 2
+  }
+}

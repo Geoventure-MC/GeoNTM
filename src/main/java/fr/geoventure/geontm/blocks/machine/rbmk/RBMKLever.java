@@ -37,7 +37,7 @@ public class RBMKLever extends RBMKMiniPanelBase implements IToolable, TickingBl
      */
     @Override protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         double hitX = hit.getLocation().x - pos.getX(), hitY = hit.getLocation().y - pos.getY(), hitZ = hit.getLocation().z - pos.getZ();
         Direction side = hit.getDirection();
         if (hitX != 0 && hitX != 1 && hitZ != 0 && hitZ != 1 && side != Direction.DOWN && side != Direction.UP
@@ -48,7 +48,7 @@ public class RBMKLever extends RBMKMiniPanelBase implements IToolable, TickingBl
             if (facing == Direction.SOUTH && hitX > 0.5) indexHit = 1;
             if (facing == Direction.WEST && hitZ > 0.5) indexHit = 1;
             if (facing == Direction.EAST && hitZ < 0.5) indexHit = 1;
-            if (!tile.levers[indexHit].active) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (!tile.levers[indexHit].active) return InteractionResult.PASS;
             tile.levers[indexHit].click();
         }
         return InteractionResult.SUCCESS;

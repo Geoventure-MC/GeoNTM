@@ -1,0 +1,26 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpf1015hydro",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_10"
+    },
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:mp_fuselage_10_15_hydrogen"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 78080
+}

@@ -121,7 +121,7 @@ public class MachineChungus extends BlockMultiblockMachine
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                   BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
 
         BlockPos core = MultiblockSurface.coreOfAny(level, pos);
         if (core == null || !(level.getBlockEntity(core) instanceof TileEntityChungus turbine)) {
@@ -149,7 +149,7 @@ public class MachineChungus extends BlockMultiblockMachine
             return InteractionResult.SUCCESS;
         }
         // 1.7 returns false for any other click on the machine: no menu, the click falls through.
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     protected boolean canChangeTierWhileRunning() { return false; }

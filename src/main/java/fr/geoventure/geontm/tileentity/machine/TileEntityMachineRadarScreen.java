@@ -4,7 +4,7 @@ import fr.geoventure.geontm.api.entity.RadarEntry;
 import fr.geoventure.geontm.tileentity.ModRadarUtilityBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -38,7 +38,7 @@ public class TileEntityMachineRadarScreen extends TileEntityLoadedBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(linked);
         buf.writeInt(refX);
         buf.writeInt(refY);
@@ -50,7 +50,7 @@ public class TileEntityMachineRadarScreen extends TileEntityLoadedBase {
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         linked = buf.readBoolean();
         refX = buf.readInt();
         refY = buf.readInt();

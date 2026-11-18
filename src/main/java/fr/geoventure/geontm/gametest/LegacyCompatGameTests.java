@@ -83,8 +83,8 @@ public final class LegacyCompatGameTests {
         helper.setBlock(rel, Blocks.FURNACE);
         AbstractFurnaceBlockEntity furnace = GameTestHelpers.blockEntity(
                 helper, rel, AbstractFurnaceBlockEntity.class);
-        Item in = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, input));
-        Item out = output == null ? Items.DIAMOND : BuiltInRegistries.ITEM.getValue(
+        Item in = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, input));
+        Item out = output == null ? Items.DIAMOND : BuiltInRegistries.ITEM.get(
                 output.contains(":") ? Ids.parse(output) : Ids.of(Constants.MOD_ID, output));
         // The recipe itself, before the furnace: a count lost here is lost for every consumer of the recipe.
         ItemStack recipeResult = Recipes.smeltingResult(helper.getLevel(), new ItemStack(in))

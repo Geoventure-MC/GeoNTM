@@ -1,0 +1,20 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.coal_gem",
+  "input_items": [
+    {
+      "ingredient": "#c:gems/coal"
+    }
+  ],
+  "output_items": [
+    "geontm:oil_tar_coal"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:syngas",
+      "amount": 50
+    }
+  ],
+  "duration": 10000,
+  "order": 13
+}

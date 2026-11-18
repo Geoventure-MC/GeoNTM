@@ -1,0 +1,25 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_aluminium",
+  "molten": [
+    {
+      "material": "aluminium",
+      "amount": 144
+    },
+    {
+      "material": "iron",
+      "amount": 144
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:chunk_ore_cryolite",
+      "count": 4
+    },
+    {
+      "id": "geontm:powder_lithium_tiny",
+      "count": 3
+    }
+  ],
+  "order": 8
+}

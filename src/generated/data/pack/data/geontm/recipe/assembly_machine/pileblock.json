@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pileblock",
+  "input_items": [
+    {
+      "ingredient": "#minecraft:planks"
+    },
+    {
+      "ingredient": "#c:ingots/graphite",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "bolt",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:pile_brick"
+  ],
+  "duration": 20,
+  "power": 250,
+  "order": 43264,
+  "input_items_expensive": [
+    {
+      "ingredient": "#minecraft:planks"
+    },
+    {
+      "ingredient": "#c:ingots/graphite",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/steel"
+    }
+  ]
+}

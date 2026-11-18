@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_niter",
+  "output": {
+    "id": "geontm:niter",
+    "count": 8
+  }
+}

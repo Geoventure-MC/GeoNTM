@@ -150,7 +150,7 @@ public abstract class EntityRailCarBase extends CompatEntity {
                     DummyConfig def = definitions[i];
                     BoundingBoxDummyEntity dummy = new BoundingBoxDummyEntity(ModNtmEntities.BOUNDING_DUMMY.get(), this.level(), this, def.width, def.height);
                     rotateOffset(def.offsetX, def.offsetY, def.offsetZ, 0F, this.getYRot());
-                    dummy.snapTo(getX() + rotX, getY() + rotY, getZ() + rotZ, 0F, 0F);
+                    dummy.moveTo(getX() + rotX, getY() + rotY, getZ() + rotZ, 0F, 0F);
                     this.level().addFreshEntity(dummy);
                     this.dummies[i] = dummy;
                 }
@@ -502,7 +502,7 @@ public abstract class EntityRailCarBase extends CompatEntity {
             }
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     public static class LogicalTrainUnit {

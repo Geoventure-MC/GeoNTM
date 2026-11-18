@@ -19,7 +19,7 @@ final class SetSource {
     }
 
     private static ItemStack stack(Optional<String> id) {
-        return id.map(s -> new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse(s))))
+        return id.map(s -> new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse(s))))
                 .orElse(ItemStack.EMPTY);
     }
 }

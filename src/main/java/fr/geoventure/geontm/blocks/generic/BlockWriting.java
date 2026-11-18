@@ -43,6 +43,6 @@ public class BlockWriting extends CompatBlock {
             }
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

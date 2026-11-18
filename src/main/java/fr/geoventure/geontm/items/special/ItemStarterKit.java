@@ -77,7 +77,7 @@ public class ItemStarterKit extends CompatItem {
     }
 
     private static ItemStack of(String namespace, String id, int count) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of(namespace, id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of(namespace, id));
         if (item == null || item == Items.AIR) {
             UNRESOLVED.add(namespace + ":" + id);
             LOGGER.warn("[{}] starter kit entry {}:{} is not registered in this port; skipped", Constants.MOD_ID, namespace, id);

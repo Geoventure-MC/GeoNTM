@@ -1,0 +1,26 @@
+{
+  "values": {
+    "geontm:gas_mask": [
+      "GAS_BLISTERING"
+    ],
+    "geontm:gas_mask_m65": [
+      "GAS_BLISTERING"
+    ],
+    "geontm:gas_mask_mono": [
+      "GAS_LUNG",
+      "GAS_BLISTERING",
+      "BACTERIA"
+    ],
+    "geontm:gas_mask_olde": [
+      "GAS_BLISTERING"
+    ],
+    "geontm:attachment_mask": [
+      "GAS_BLISTERING"
+    ],
+    "geontm:attachment_mask_mono": [
+      "GAS_LUNG",
+      "GAS_BLISTERING",
+      "BACTERIA"
+    ]
+  }
+}

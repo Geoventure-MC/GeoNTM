@@ -1,0 +1,34 @@
+{
+  "type": "liquid",
+  "color": "#595744",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 1,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:naphtha"
+  ],
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 110000
+    },
+    "combustible": {
+      "grade": "MEDIUM",
+      "energy": 165000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.001
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:bauxite_solution",
+  "left": {
+    "type": "geontm:redmud",
+    "amount": 50
+  },
+  "right": {
+    "type": "geontm:sodium_aluminate",
+    "amount": 50
+  }
+}

@@ -21,7 +21,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.MenuProvider;
@@ -177,7 +177,7 @@ public class TileEntityFurnaceSteel extends TileEntityMachineBase implements Men
         return new ContainerFurnaceSteel(id, inventory, this);
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (int value : progress) buf.writeInt(value);
         for (int value : bonus) buf.writeInt(value);
@@ -185,7 +185,7 @@ public class TileEntityFurnaceSteel extends TileEntityMachineBase implements Men
         buf.writeBoolean(wasOn);
     }
 
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (int i = 0; i < 3; i++) progress[i] = buf.readInt();
         for (int i = 0; i < 3; i++) bonus[i] = buf.readInt();

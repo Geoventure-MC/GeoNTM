@@ -20,7 +20,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
@@ -248,7 +248,7 @@ public class TileEntitySawmill extends TileEntityMachineBase implements WorldlyC
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(syncHeat);
         buf.writeInt(progress);
@@ -256,7 +256,7 @@ public class TileEntitySawmill extends TileEntityMachineBase implements WorldlyC
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         heat = buf.readInt();
         progress = buf.readInt();

@@ -7,9 +7,9 @@ import fr.geoventure.geontm.inventory.container.ContainerMachineRefinery;
 import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
 import fr.geoventure.geontm.inventory.recipes.RefineryRecipes;
 import fr.geoventure.geontm.tileentity.machine.oil.TileEntityMachineRefinery;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -20,14 +20,14 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUIMachineRefinery extends CompatContainerScreen<ContainerMachineRefinery> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_refinery.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_refinery.png");
 
     public GUIMachineRefinery(ContainerMachineRefinery menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 182, 240);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int guiLeft = this.leftPos, guiTop = this.topPos;
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
@@ -67,14 +67,14 @@ public class GUIMachineRefinery extends CompatContainerScreen<ContainerMachineRe
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7: title centred on xSize/2 - 36/2; "Inventory" at x=11 (the player inventory is shifted right by 3).
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - 36 / 2 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 11, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineRefinery te = this.menu.getRefinery();
         if (te == null) return;
         int guiLeft = this.leftPos, guiTop = this.topPos;

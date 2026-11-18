@@ -27,7 +27,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -316,7 +316,7 @@ public class TileEntityMachineOreSlopper extends TileEntityMachineBase
 
     @Override protected int[] getUpgradeSlotRange() { return new int[]{9, 10}; }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeLong(power);
         buf.writeLong(consumption);
@@ -326,7 +326,7 @@ public class TileEntityMachineOreSlopper extends TileEntityMachineBase
         tanks[1].serialize(buf);
     }
 
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.power = buf.readLong();
         this.consumption = buf.readLong();

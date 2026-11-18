@@ -1,0 +1,21 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_hep241",
+    "stage": 4
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_pu241",
+      "weight": 5
+    },
+    {
+      "data": "geontm:nuclear_waste_short_tiny_plutonium241",
+      "weight": 95
+    }
+  ],
+  "order": 241
+}

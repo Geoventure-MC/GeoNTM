@@ -15,7 +15,7 @@ import fr.geoventure.geontm.tileentity.machine.rbmk.RBMKDials;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.CompatRenderState;
 import fr.geoventure.geocore.render.Renderers;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 

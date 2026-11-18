@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:block_schrabidate",
+  "output": {
+    "id": "geontm:powder_schrabidate",
+    "count": 9
+  }
+}

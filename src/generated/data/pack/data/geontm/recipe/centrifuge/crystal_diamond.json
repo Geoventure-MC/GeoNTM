@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_diamond"
+  },
+  "outputs": [
+    "geontm:powder_diamond",
+    "geontm:powder_diamond",
+    "geontm:powder_diamond",
+    "geontm:powder_diamond"
+  ],
+  "order": 159
+}

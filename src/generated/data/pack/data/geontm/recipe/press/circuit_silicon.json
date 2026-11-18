@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "circuit",
+  "input": {
+    "ingredient": "#c:billets/silicon"
+  },
+  "output": "geontm:circuit_silicon",
+  "order": 39
+}

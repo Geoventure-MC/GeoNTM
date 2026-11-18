@@ -141,7 +141,7 @@ public final class Gh132GameTests {
     }
 
     private static ItemStack stack(String id) {
-        return new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse(id)));
+        return new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse(id)));
     }
 
     private static String name(Block block) {

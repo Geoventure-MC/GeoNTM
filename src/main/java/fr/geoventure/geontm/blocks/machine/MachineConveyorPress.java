@@ -69,7 +69,7 @@ public final class MachineConveyorPress extends BlockMultiblockMachine
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         TileEntityConveyorPress press = pressAt(level, pos);
-        if (press == null || !press.inventory.getStackInSlot(0).isEmpty()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (press == null || !press.inventory.getStackInSlot(0).isEmpty()) return InteractionResult.PASS;
 
         press.inventory.setStackInSlot(0, stack.copyWithCount(1));
         stack.shrink(1);
@@ -82,7 +82,7 @@ public final class MachineConveyorPress extends BlockMultiblockMachine
     /** No menu: a bare right-click on the press does nothing, as in 1.7. */
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

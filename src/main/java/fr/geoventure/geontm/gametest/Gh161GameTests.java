@@ -231,7 +231,7 @@ public final class Gh161GameTests {
         List<BoundingBox> chunks = new ArrayList<>();
         for (int cx = (b.minX() - 2) >> 4; cx <= (b.maxX() + 2) >> 4; cx++) {
             for (int cz = (b.minZ() - 2) >> 4; cz <= (b.maxZ() + 2) >> 4; cz++) {
-                chunks.add(new BoundingBox(cx << 4, level.getMinY(), cz << 4, (cx << 4) + 15, level.getMaxY() - 1, (cz << 4) + 15));
+                chunks.add(new BoundingBox(cx << 4, level.getMinBuildHeight(), cz << 4, (cx << 4) + 15, level.getMaxBuildHeight() - 1, (cz << 4) + 15));
             }
         }
         Collections.shuffle(chunks, new Random(seed));

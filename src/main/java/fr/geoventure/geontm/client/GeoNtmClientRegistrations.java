@@ -198,7 +198,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -223,7 +223,7 @@ public final class GeoNtmClientRegistrations {
     }
 
     public interface HudSink {
-        void register(String id, Consumer<GuiGraphicsExtractor> renderer);
+        void register(String id, Consumer<GuiGraphics> renderer);
     }
 
     public static void registerScreens(ScreenSink sink) {

@@ -88,7 +88,7 @@ public abstract class MachineGiantTank extends BlockMultiblockMachine
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
         if (!player.isShiftKeyDown() || !(stack.getItem() instanceof IItemFluidId identifier)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (!level.isClientSide() && MultiblockSurface.coreEntity(level, pos) instanceof TileEntityMachineGiantTank tank) {
             BlockPos core = tank.getBlockPos();

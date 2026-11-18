@@ -91,9 +91,9 @@ public final class XFactoryEnergy {
 
         if (mop instanceof EntityHitResult entityHit && entityHit.getEntity() instanceof LivingEntity living) {
             living.addEffect(new MobEffectInstance(
-                    MobEffects.SLOWNESS, 60, 9));
+                    MobEffects.MOVEMENT_SLOWDOWN, 60, 9));
             living.addEffect(new MobEffectInstance(
-                    MobEffects.MINING_FATIGUE, 60, 9));
+                    MobEffects.DIG_SLOWDOWN, 60, 9));
         }
     };
 

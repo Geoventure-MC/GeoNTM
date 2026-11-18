@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.magtung",
+  "frequency": 3,
+  "icon": "geontm:ingot_magnetized_tungsten",
+  "inputs": [
+    {
+      "material": "tungsten",
+      "amount": 72
+    },
+    {
+      "material": "schrabidium",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "magnetized_tungsten",
+      "amount": 72
+    }
+  ],
+  "order": 11
+}

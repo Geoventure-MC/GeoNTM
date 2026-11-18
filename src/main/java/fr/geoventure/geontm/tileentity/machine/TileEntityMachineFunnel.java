@@ -11,7 +11,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import fr.geoventure.geocore.world.Recipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -127,8 +127,8 @@ public class TileEntityMachineFunnel extends TileEntityMachineBase
 
     @Override public void handleButtonPacket(int value, int meta) { if (value == 0) cycleMode(); }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); buf.writeInt(mode); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); mode = buf.readInt(); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); buf.writeInt(mode); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); mode = buf.readInt(); }
 
     @Override protected void loadData(DataIn input) {
         super.loadData(input);

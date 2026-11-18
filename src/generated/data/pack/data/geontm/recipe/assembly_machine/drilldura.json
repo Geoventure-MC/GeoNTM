@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drilldura",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/dura_steel",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/titanium",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_hss"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 30464
+}

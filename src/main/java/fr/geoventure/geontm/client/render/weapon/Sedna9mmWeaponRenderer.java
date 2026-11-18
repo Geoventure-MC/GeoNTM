@@ -8,7 +8,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** OBJ renderers for the Gen-3 Greasegun, LAG, Uzi, and Uzi akimbo guns. */
@@ -33,7 +33,7 @@ public final class Sedna9mmWeaponRenderer extends WeaponRenderer {
     private static final Surface GREASEGUN_CLEAN = Surface.cutout("geontm:textures/models/weapons/greasegun_clean.png");
 
     private final Variant variant;
-    private final Identifier modelId;
+    private final ResourceLocation modelId;
     private final Surface body;
     private WavefrontObj model;
 

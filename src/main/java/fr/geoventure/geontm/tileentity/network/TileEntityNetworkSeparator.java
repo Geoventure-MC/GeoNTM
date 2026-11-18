@@ -19,7 +19,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -174,7 +174,7 @@ public class TileEntityNetworkSeparator extends TileEntityLoadedBase implements 
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeByte((byte) priority.ordinal());
         buf.writeBoolean(redstone);
@@ -184,7 +184,7 @@ public class TileEntityNetworkSeparator extends TileEntityLoadedBase implements 
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         priority = priorityOf(buf.readByte());
         redstone = buf.readBoolean();

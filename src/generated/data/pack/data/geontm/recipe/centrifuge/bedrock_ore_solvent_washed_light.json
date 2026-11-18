@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_solvent_washed_light"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_chlorocalcite",
+      "count": 5
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_lithium",
+      "count": 5
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_sodium",
+      "count": 3
+    },
+    "geontm:bedrock_ore_crumbs_light"
+  ],
+  "order": 69
+}

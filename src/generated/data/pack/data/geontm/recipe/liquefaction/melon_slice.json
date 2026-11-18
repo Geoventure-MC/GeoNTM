@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:melon_slice",
+  "output": {
+    "type": "geontm:ethanol",
+    "amount": 100
+  }
+}

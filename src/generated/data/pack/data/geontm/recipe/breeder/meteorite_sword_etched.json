@@ -1,0 +1,7 @@
+{
+  "type": "geontm:breeder",
+  "input": "geontm:meteorite_sword_etched",
+  "output": "geontm:meteorite_sword_bred",
+  "flux": 1000,
+  "order": 30
+}

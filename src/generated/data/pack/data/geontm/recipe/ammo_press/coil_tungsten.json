@@ -1,0 +1,21 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_coil_tungsten",
+    "count": 4
+  },
+  "grid": [
+    "",
+    "",
+    "",
+    "",
+    {
+      "ingredient": "#c:ingots/tungsten"
+    },
+    "",
+    "",
+    "",
+    ""
+  ],
+  "order": 80
+}

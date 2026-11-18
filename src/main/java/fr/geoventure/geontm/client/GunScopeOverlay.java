@@ -4,8 +4,8 @@ import fr.geoventure.geontm.items.weapon.sedna.GunConfig;
 import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -20,7 +20,7 @@ public final class GunScopeOverlay {
 
     private GunScopeOverlay() {}
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.level == null || minecraft.player == null
                 || (minecraft.options.hideGui && minecraft.screen == null)) return;
@@ -31,7 +31,7 @@ public final class GunScopeOverlay {
                 || ItemGunBaseNT.prevAimingProgress != ItemGunBaseNT.aimingProgress) return;
 
         GunConfig config = gun.getConfig(stack, 0);
-        Identifier texture = config.getScopeTexture(stack);
+        ResourceLocation texture = config.getScopeTexture(stack);
         if (texture == null) return;
 
         int width = graphics.guiWidth();

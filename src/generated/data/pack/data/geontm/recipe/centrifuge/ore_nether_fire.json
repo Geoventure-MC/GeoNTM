@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:ore_nether_fire"
+  },
+  "outputs": [
+    {
+      "id": "minecraft:blaze_powder",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_fire",
+      "count": 2
+    },
+    "geontm:ingot_phosphorus",
+    "minecraft:netherrack"
+  ],
+  "order": 49
+}

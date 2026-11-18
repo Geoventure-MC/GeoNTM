@@ -1,0 +1,18 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/steel"
+    },
+    {
+      "ingredient": "geontm:plate_polymer"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:siren_track_siren"
+    }
+  ],
+  "tier": 2,
+  "order": 191
+}

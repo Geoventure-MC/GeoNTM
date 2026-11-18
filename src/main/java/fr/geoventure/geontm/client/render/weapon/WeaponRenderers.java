@@ -117,6 +117,6 @@ public final class WeaponRenderers {
     }
 
     private static void registerCatalogueEntry(String name, WeaponRenderer renderer) {
-        register(name, () -> BuiltInRegistries.ITEM.getValue(Ids.of("geontm", "gun_" + name)), renderer);
+        register(name, () -> BuiltInRegistries.ITEM.get(Ids.of("geontm", "gun_" + name)), renderer);
     }
 }

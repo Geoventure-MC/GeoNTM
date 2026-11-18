@@ -1,0 +1,34 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.copyflightcalc",
+  "input_items": [
+    {
+      "ingredient": "geontm:drive_flash_flightsim"
+    },
+    {
+      "ingredient": "geontm:drive_flash_empty"
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": {
+          "id": "geontm:drive_flash_flightsim",
+          "count": 2
+        },
+        "weight": 95
+      },
+      {
+        "data": {
+          "id": "geontm:drive_flash_broken",
+          "count": 2
+        },
+        "weight": 5
+      }
+    ]
+  ],
+  "duration": 18000,
+  "power": 10000,
+  "name_wrapper": "com.copy",
+  "order": 12
+}

@@ -11,7 +11,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -28,9 +28,9 @@ import java.util.Set;
 /** Runtime for the generated jetpack Collada scene and its exact local transform tracks. */
 public final class JetpackColladaModel {
 
-    public static final Identifier OBJ = Ids.of("geontm", "models/anim/jetpack.obj");
-    public static final Identifier ANIMATION = Ids.of("geontm", "models/anim/jetpack_animation.json");
-    public static final Identifier TEXTURE = Ids.of("geontm", "textures/armor/jetpack_anim.png");
+    public static final ResourceLocation OBJ = Ids.of("geontm", "models/anim/jetpack.obj");
+    public static final ResourceLocation ANIMATION = Ids.of("geontm", "models/anim/jetpack_animation.json");
+    public static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/armor/jetpack_anim.png");
 
     private static final Surface SURFACE = Surface.cutoutCull(TEXTURE.toString());
 

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#geontm:hazardous/asbestos",
+    "#geontm:hazardous/blinding",
+    "#geontm:hazardous/coal_dust",
+    "#geontm:hazardous/digamma",
+    "#geontm:hazardous/explosive",
+    "#geontm:hazardous/hot",
+    "#geontm:hazardous/hydroactive",
+    "#geontm:hazardous/radioactive"
+  ]
+}

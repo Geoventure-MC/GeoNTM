@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "geontm:powder_sawdust"
+  },
+  "output": "geontm:briquette_wood",
+  "order": 10
+}

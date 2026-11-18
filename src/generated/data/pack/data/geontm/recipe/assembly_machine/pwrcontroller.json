@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrcontroller",
+  "input_items": [
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:pwr_controller"
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 46336,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_lead_plating"
+    },
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 3
+    }
+  ]
+}

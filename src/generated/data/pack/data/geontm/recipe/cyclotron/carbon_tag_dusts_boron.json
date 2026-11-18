@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "#c:dusts/boron"
+  },
+  "output": "geontm:powder_aluminium",
+  "antimatter": 10,
+  "order": 20
+}

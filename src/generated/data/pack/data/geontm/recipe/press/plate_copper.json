@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "plate",
+  "input": {
+    "ingredient": "#c:ingots/copper"
+  },
+  "output": "geontm:plate_copper",
+  "order": 17
+}

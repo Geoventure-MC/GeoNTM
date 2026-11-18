@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:egg",
+  "left": {
+    "type": "geontm:cholesterol",
+    "amount": 50
+  },
+  "right": {
+    "type": "geontm:radiosolvent",
+    "amount": 50
+  }
+}

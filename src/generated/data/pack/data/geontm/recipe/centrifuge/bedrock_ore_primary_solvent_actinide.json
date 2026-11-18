@@ -1,0 +1,21 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_solvent_actinide"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_primary_nosolvent_actinide",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_sulfuric_byproduct_actinide",
+      "count": 2
+    },
+    {
+      "id": "geontm:bedrock_ore_solvent_byproduct_actinide",
+      "count": 2
+    }
+  ],
+  "order": 107
+}

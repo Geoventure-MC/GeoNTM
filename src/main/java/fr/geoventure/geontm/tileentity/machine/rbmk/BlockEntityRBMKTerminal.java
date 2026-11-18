@@ -15,7 +15,7 @@ import fr.geoventure.geocore.data.Tags;
 import java.util.Arrays;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -143,14 +143,14 @@ public class BlockEntityRBMKTerminal extends TileEntityLoadedBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(!repeatCmd.isEmpty());
         for (String line : history) buf.writeUtf(line);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         doesRepeat = buf.readBoolean();
         for (int i = 0; i < history.length; i++) history[i] = buf.readUtf();

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:fern",
+  "output": {
+    "type": "geontm:seedslurry",
+    "amount": 100
+  }
+}

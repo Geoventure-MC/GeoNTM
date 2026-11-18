@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.api.entity;
 
 import fr.geoventure.geocore.Ids;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
@@ -54,7 +54,7 @@ public class RadarEntry {
         return Ids.keyId(entity.level().dimension()).toString();
     }
 
-    public void fromBytes(RegistryFriendlyByteBuf buf) {
+    public void fromBytes(FriendlyByteBuf buf) {
         this.unlocalizedName = buf.readUtf();
         this.blipLevel = buf.readShort();
         this.posX = buf.readInt();
@@ -64,7 +64,7 @@ public class RadarEntry {
         this.entityID = buf.readInt();
     }
 
-    public void toBytes(RegistryFriendlyByteBuf buf) {
+    public void toBytes(FriendlyByteBuf buf) {
         buf.writeUtf(this.unlocalizedName);
         buf.writeShort(this.blipLevel);
         buf.writeInt(this.posX);

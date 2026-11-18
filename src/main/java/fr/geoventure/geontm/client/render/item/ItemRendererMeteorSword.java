@@ -6,7 +6,7 @@ import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.ItemSprites;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Vertexes;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Matrix3f;
@@ -45,7 +45,7 @@ final class ItemRendererMeteorSword implements CustomItemRenderer {
     }
 
     /** {@code meteorite_sword_<tier>} to the tier's sheet; the untiered sword had no renderer in 1.7. */
-    private static @Nullable Identifier tint(ItemStack stack) {
+    private static @Nullable ResourceLocation tint(ItemStack stack) {
         String id = id(stack);
         if (!id.startsWith("meteorite_sword_")) return null;
         return tex("textures/misc/glint_meteorite_" + id.substring("meteorite_sword_".length()) + ".png");
@@ -54,7 +54,7 @@ final class ItemRendererMeteorSword implements CustomItemRenderer {
     @Override
     public void render(ItemStack stack, Type type, PoseStack pose, SubmitSink sink, int light, int overlay,
                        @Nullable LivingEntity owner) {
-        Identifier sheet = tint(stack);
+        ResourceLocation sheet = tint(stack);
         if (sheet == null) return;
         // the sword itself, then the glint on it (see Core ItemSprites for why the sprite is drawn here)
         ItemSprites.submit(pose, sink, tex("textures/items/meteorite_sword.png"), light, overlay);

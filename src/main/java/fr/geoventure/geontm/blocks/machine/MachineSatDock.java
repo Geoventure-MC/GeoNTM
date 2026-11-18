@@ -56,7 +56,7 @@ public class MachineSatDock extends BlockMultiblockMachine implements WorldlyCon
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player,
                                           BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         return super.useAtCore(state, level, core, player, hit);
     }
 

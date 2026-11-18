@@ -5,12 +5,12 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** BJ suit model, including the common body/limb passes; its Jetpack group is owned by JetpackRenderLayer. */
 public final class BJArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/bj.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/bj.obj");
 
     private static final Surface HELMET = skin("bj_eyepatch");
     private static final Surface CHEST = skin("bj_chest");

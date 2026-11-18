@@ -8,7 +8,7 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
@@ -44,7 +44,7 @@ public final class GUIPump extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         GuiDraw.text(g, font, "Throughput:", this.width / 2 - 150, 80, 0xFFA0A0A0, false);
         GuiDraw.text(g, font, "(max. 10,000mB)", this.width / 2 - 150, 90, 0xFFA0A0A0, false);
         GuiDraw.text(g, font, "Pressure:", this.width / 2 - 50, 80, 0xFFA0A0A0, false);
@@ -53,7 +53,7 @@ public final class GUIPump extends CompatScreen {
         button(g, this.width / 2 + 50, 100, priorityName(), mouseX, mouseY);
     }
 
-    private void button(GuiGraphicsExtractor g, int x, int y, String label, int mouseX, int mouseY) {
+    private void button(GuiGraphics g, int x, int y, String label, int mouseX, int mouseY) {
         boolean hover = mouseX >= x && mouseX < x + 90 && mouseY >= y && mouseY < y + 20;
         GuiDraw.fill(g, x, y, x + 90, y + 20, 0xFF000000);
         GuiDraw.fill(g, x + 1, y + 1, x + 89, y + 19, hover ? 0xFF8A8AC0 : 0xFF6F6F6F);

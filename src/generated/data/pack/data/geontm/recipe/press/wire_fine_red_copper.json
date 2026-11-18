@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/red_copper"
+  },
+  "output": {
+    "id": "geontm:wire_fine_red_copper",
+    "count": 8
+  },
+  "order": 37
+}

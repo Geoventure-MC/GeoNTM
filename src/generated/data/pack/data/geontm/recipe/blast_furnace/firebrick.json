@@ -1,0 +1,21 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.firebrick",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/aluminium"
+    },
+    {
+      "ingredient": "minecraft:clay_ball",
+      "count": 7
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_firebrick",
+      "count": 8
+    }
+  ],
+  "duration": 800,
+  "order": 16
+}

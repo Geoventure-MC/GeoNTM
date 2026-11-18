@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:watz",
+  "amount": 1000,
+  "output": "geontm:ingot_mud"
+}

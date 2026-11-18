@@ -1,0 +1,19 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.peroxide",
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:peroxide",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 61
+}

@@ -24,7 +24,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -284,7 +284,7 @@ public class TileEntityMachineExposureChamber extends TileEntityMachineBase impl
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isOn);
         buf.writeInt(progress);
@@ -295,7 +295,7 @@ public class TileEntityMachineExposureChamber extends TileEntityMachineBase impl
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isOn = buf.readBoolean();
         progress = buf.readInt();

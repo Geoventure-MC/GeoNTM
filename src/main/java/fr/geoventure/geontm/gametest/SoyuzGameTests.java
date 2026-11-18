@@ -111,7 +111,7 @@ public final class SoyuzGameTests {
                 ModNtmEntities.SOYUZ.get(), helper.getLevel());
         rocket.setSat(satellite);
         BlockPos pad = helper.absolutePos(LAUNCHER);
-        rocket.snapTo(pad.getX() + 0.5, EntityRocketSoyuz.ORBIT_ALTITUDE + 1, pad.getZ() + 0.5, 0F, 0F);
+        rocket.moveTo(pad.getX() + 0.5, EntityRocketSoyuz.ORBIT_ALTITUDE + 1, pad.getZ() + 0.5, 0F, 0F);
         helper.getLevel().addFreshEntity(rocket);
 
         rocket.tick();

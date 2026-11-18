@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:naphtha_coker",
+  "outputs": [
+    {
+      "type": "geontm:reformate",
+      "amount": 50
+    },
+    {
+      "type": "geontm:reformgas",
+      "amount": 10
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 5
+    }
+  ]
+}

@@ -89,7 +89,7 @@ public final class MagicRecipes {
 
         public boolean matches(ItemStack stack) {
             if (isTag) return stack.is(TagKey.create(Registries.ITEM, Ids.parse(id)));
-            Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+            Item item = BuiltInRegistries.ITEM.get(Ids.parse(id));
             return item != Items.AIR && stack.is(item);
         }
     }
@@ -113,7 +113,7 @@ public final class MagicRecipes {
         }
 
         public ItemStack getResult() {
-            Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(out));
+            Item item = BuiltInRegistries.ITEM.get(Ids.parse(out));
             return item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
         }
     }

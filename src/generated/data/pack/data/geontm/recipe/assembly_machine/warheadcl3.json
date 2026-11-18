@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadcl3",
+  "input_items": [
+    {
+      "ingredient": "geontm:warhead_generic_large"
+    },
+    {
+      "ingredient": "geontm:pellet_cluster",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_cluster_large"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 68352
+}

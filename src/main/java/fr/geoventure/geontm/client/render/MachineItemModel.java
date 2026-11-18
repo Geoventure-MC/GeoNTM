@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import org.joml.Vector3f;
 import org.joml.Vector3fc;
@@ -582,9 +582,9 @@ public final class MachineItemModel {
         }
         DoorDecl door = CYCLING_DOORS.get(animation);
         if (primary != null && door != null) {
-            Map<Identifier, Surface> skins = new HashMap<>();
+            Map<ResourceLocation, Surface> skins = new HashMap<>();
             boolean noCull = surface.blend() == Surface.Blend.CUTOUT_NO_CULL;
-            for (Identifier skin : door.getSEDNASkins()) {
+            for (ResourceLocation skin : door.getSEDNASkins()) {
                 skins.put(skin, noCull ? Surface.cutoutNoCull(skin.toString()) : Surface.cutout(skin.toString()));
             }
             primary.skin(state -> skins.get(door.getCyclingSkins(System.currentTimeMillis())));

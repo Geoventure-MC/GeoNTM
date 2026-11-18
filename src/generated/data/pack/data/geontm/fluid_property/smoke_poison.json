@@ -1,0 +1,9 @@
+{
+  "type": "gaseous",
+  "color": "#808080",
+  "temperature": 20,
+  "flags": [
+    "noid",
+    "nocontainer"
+  ]
+}

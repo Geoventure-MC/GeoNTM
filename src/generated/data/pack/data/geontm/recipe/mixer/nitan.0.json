@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.nitan.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_nitan_mix"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 600
+    },
+    {
+      "type": "geontm:mercury",
+      "amount": 200
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:nitan",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 2
+}

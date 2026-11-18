@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -36,7 +36,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -277,7 +277,7 @@ public class TileEntityMachineAutosaw extends TileEntityLoadedBase implements IF
     private static boolean isPlant(BlockState state) {
         Block block = state.getBlock();
         return state.is(BlockTags.FLOWERS) || state.is(BlockTags.CROPS) || state.is(BlockTags.SAPLINGS)
-                || block instanceof VegetationBlock || state.is(Blocks.VINE) || state.is(Blocks.SUGAR_CANE);
+                || block instanceof BushBlock || state.is(Blocks.VINE) || state.is(Blocks.SUGAR_CANE);
     }
 
     /** Crops and bonemealable growth stages are ignored until their vanilla growth target is exhausted. */
@@ -407,8 +407,8 @@ public class TileEntityMachineAutosaw extends TileEntityLoadedBase implements IF
             deque.addFirst(new BlockPos[]{trunk.getValue(), trunk.getKey()});
         }
 
-        int minY = Math.max(level.getMinY(), hitPos.getY() - FELL_MAX_BASE_DEPTH);
-        int maxY = Math.min(level.getMaxY() - 1, hitPos.getY() + FELL_VERTICAL_RANGE);
+        int minY = Math.max(level.getMinBuildHeight(), hitPos.getY() - FELL_MAX_BASE_DEPTH);
+        int maxY = Math.min(level.getMaxBuildHeight() - 1, hitPos.getY() + FELL_VERTICAL_RANGE);
 
         while (!deque.isEmpty()) {
             BlockPos[] pair = deque.pollFirst();
@@ -520,7 +520,7 @@ public class TileEntityMachineAutosaw extends TileEntityLoadedBase implements IF
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(isOn);
         buf.writeBoolean(isSuspended);
@@ -530,7 +530,7 @@ public class TileEntityMachineAutosaw extends TileEntityLoadedBase implements IF
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         isOn = buf.readBoolean();
         isSuspended = buf.readBoolean();

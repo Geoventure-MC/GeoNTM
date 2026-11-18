@@ -1,0 +1,11 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:dusts/sodium"
+  },
+  "fluid_output": {
+    "type": "geontm:sodium",
+    "amount": 100
+  },
+  "order": 12
+}

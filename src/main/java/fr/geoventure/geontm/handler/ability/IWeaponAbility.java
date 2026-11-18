@@ -23,7 +23,7 @@ import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.zombie.Zombie;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -108,7 +108,7 @@ public interface IWeaponAbility extends IBaseAbility {
             int duration = durationAtLevel[level];
 
             if (victim instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, duration * 20, 4));
+                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration * 20, 4));
                 living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, duration * 20, 4));
             }
         }

@@ -17,9 +17,9 @@ import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Quads;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -44,10 +44,10 @@ public class CrucibleRenderer extends GemBER<TileEntityCrucible, CrucibleRenderS
     private final RenderType streamType;
 
     public CrucibleRenderer() {
-        Identifier obj = Ids.of(Constants.MOD_ID, "models/machines/crucible.obj");
-        Identifier tex = Ids.of(Constants.MOD_ID, "textures/models/machines/crucible_heat.png");
-        Identifier lavaPool = Ids.of(Constants.MOD_ID, "textures/models/machines/lava.png");
-        Identifier lavaGray = Ids.of(Constants.MOD_ID, "textures/models/machines/lava_gray.png");
+        ResourceLocation obj = Ids.of(Constants.MOD_ID, "models/machines/crucible.obj");
+        ResourceLocation tex = Ids.of(Constants.MOD_ID, "textures/models/machines/crucible_heat.png");
+        ResourceLocation lavaPool = Ids.of(Constants.MOD_ID, "textures/models/machines/lava.png");
+        ResourceLocation lavaGray = Ids.of(Constants.MOD_ID, "textures/models/machines/lava_gray.png");
         this.model = WavefrontObj.load(obj);
         this.basin = Surface.cutout(tex.toString());
         this.lava = Surface.emissive(lavaPool.toString());

@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.jetpack;
 
 //? if >=26.1 {
 
-import com.mojang.blaze3d.vertex.PoseStack;
+/*import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -19,7 +19,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.entity.ItemOwner;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4fc;
 import org.joml.Vector3f;
 import org.joml.Vector3fc;
@@ -28,10 +28,10 @@ import java.util.List;
 import java.util.function.Consumer;
 import org.jspecify.annotations.Nullable;
 
-/** Modern special-item renderer for the glider's animated Collada body. */
+/^* Modern special-item renderer for the glider's animated Collada body. ^/
 public final class JetpackGliderItemModelRenderer implements NoDataSpecialModelRenderer {
 
-    public static final Identifier ID = Ids.of("geontm", "jetpack_glider");
+    public static final ResourceLocation ID = Ids.of("geontm", "jetpack_glider");
     private final JetpackGliderItemModel model;
     private final float scale;
     private final List<Float> translation;
@@ -58,12 +58,12 @@ public final class JetpackGliderItemModelRenderer implements NoDataSpecialModelR
         output.accept(new Vector3f(1.075F));
     }
 
-    public record Unbaked(Identifier obj, Identifier texture, Identifier animation, float scale,
+    public record Unbaked(ResourceLocation obj, ResourceLocation texture, ResourceLocation animation, float scale,
             List<Float> translate) implements NoDataSpecialModelRenderer.Unbaked, ItemModel.Unbaked {
         public static final MapCodec<Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                Identifier.CODEC.optionalFieldOf("obj", JetpackColladaModel.OBJ).forGetter(Unbaked::obj),
-                Identifier.CODEC.optionalFieldOf("texture", JetpackColladaModel.TEXTURE).forGetter(Unbaked::texture),
-                Identifier.CODEC.optionalFieldOf("animation", JetpackColladaModel.ANIMATION).forGetter(Unbaked::animation),
+                ResourceLocation.CODEC.optionalFieldOf("obj", JetpackColladaModel.OBJ).forGetter(Unbaked::obj),
+                ResourceLocation.CODEC.optionalFieldOf("texture", JetpackColladaModel.TEXTURE).forGetter(Unbaked::texture),
+                ResourceLocation.CODEC.optionalFieldOf("animation", JetpackColladaModel.ANIMATION).forGetter(Unbaked::animation),
                 Codec.FLOAT.optionalFieldOf("scale", 1.5F).forGetter(Unbaked::scale),
                 Codec.FLOAT.listOf().optionalFieldOf("translate", List.of(-5F, -6F, 0F)).forGetter(Unbaked::translate)
         ).apply(instance, Unbaked::new));
@@ -138,4 +138,4 @@ public final class JetpackGliderItemModelRenderer implements NoDataSpecialModelR
         }
     }
 }
-//?}
+*///?}

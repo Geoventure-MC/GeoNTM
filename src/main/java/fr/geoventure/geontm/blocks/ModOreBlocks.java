@@ -310,12 +310,12 @@ public final class ModOreBlocks {
 
     private static Reg.Handle<BlockStalagmite> spike(String id, Direction anchor, Supplier<Item> drop) {
         return reg(id, p -> new BlockStalagmite(p, anchor, () -> new ItemStack(drop.get())),
-                p -> p.requiresCorrectToolForDrops().strength(0.5F, 2.0F).sound(SoundType.STONE).noOcclusion().noCollision().noLootTable());
+                p -> p.requiresCorrectToolForDrops().strength(0.5F, 2.0F).sound(SoundType.STONE).noOcclusion().noCollission().noLootTable());
     }
 
     /** Old {@code BlockGasBase}: hardness 0, no collision, no occlusion, replaceable, random-ticked. */
     private static BlockBehaviour.Properties gasProps(BlockBehaviour.Properties p) {
-        return p.strength(0.0F, 0.0F).noOcclusion().noCollision().replaceable().randomTicks().noLootTable();
+        return p.strength(0.0F, 0.0F).noOcclusion().noCollission().replaceable().randomTicks().noLootTable();
     }
 
     static {

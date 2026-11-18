@@ -10,7 +10,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
@@ -96,13 +96,13 @@ public class TileEntityPistonInserter extends TileEntityLoadedBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeInt(extend);
         ItemStacks.writeOptional(buf, slot);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         this.syncExtend = buf.readInt();
         this.slot = ItemStacks.readOptional(buf);
         this.turnProgress = 2;

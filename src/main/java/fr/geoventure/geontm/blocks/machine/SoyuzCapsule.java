@@ -52,7 +52,7 @@ public class SoyuzCapsule extends CompatBlock implements TickingBlock {
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer
                 && level.getBlockEntity(pos) instanceof TileEntitySoyuzCapsule capsule) {
             Menus.openWithPos(serverPlayer, capsule, pos);

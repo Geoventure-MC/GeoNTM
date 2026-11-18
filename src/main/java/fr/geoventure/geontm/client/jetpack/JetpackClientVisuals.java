@@ -28,13 +28,13 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -63,11 +63,11 @@ public final class JetpackClientVisuals {
     public static final String BJ = "bj";
     public static final String DNS = "dns";
 
-    static final Identifier JETPACK_MODEL = Ids.of("geontm", "models/armor/jetpack.obj");
-    static final Identifier BJ_MODEL = Ids.of("geontm", "models/armor/bj.obj");
-    static final Identifier WINGS_MODEL = Ids.of("geontm", "models/armor/murk.obj");
-    private static final Identifier MASK = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
-    private static final Identifier NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
+    static final ResourceLocation JETPACK_MODEL = Ids.of("geontm", "models/armor/jetpack.obj");
+    static final ResourceLocation BJ_MODEL = Ids.of("geontm", "models/armor/bj.obj");
+    static final ResourceLocation WINGS_MODEL = Ids.of("geontm", "models/armor/murk.obj");
+    private static final ResourceLocation MASK = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
+    private static final ResourceLocation NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
 
     private static JetpackColladaModel gliderModel;
     /** Harness only, see {@link #init}. */

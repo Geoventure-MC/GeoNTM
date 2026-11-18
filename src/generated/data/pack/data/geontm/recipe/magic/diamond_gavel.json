@@ -1,0 +1,11 @@
+{
+  "type": "geontm:magic",
+  "ingredients": [
+    "geontm:gravel_diamond",
+    "geontm:gravel_diamond",
+    "geontm:gravel_diamond",
+    "geontm:lead_gavel"
+  ],
+  "result": "geontm:diamond_gavel",
+  "order": 5
+}

@@ -9,15 +9,15 @@ import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Vertexes;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /** 1.7 {@code LegoClient.renderFlare}: a rocket's engine glow, an additive fog-free billboard growing over 12 ticks. */
 public final class RocketFlare {
 
-    private static final Identifier FLARE = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
+    private static final ResourceLocation FLARE = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
     private static final RenderType TYPE = CompatRenderTypes.flare(FLARE);
 
     private RocketFlare() {}

@@ -10,7 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import fr.geoventure.geocore.render.anim.BusAnimation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 
 /**
@@ -73,7 +73,7 @@ public class GunConfig {
     protected boolean thermalSights_DNA = false;
     protected boolean reloadRequiresTypeChange_DNA = false;
     protected boolean reloadAnimationsSequential_DNA;
-    protected Identifier scopeTexture_DNA;
+    protected ResourceLocation scopeTexture_DNA;
     protected BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> smokeHandler_DNA;
     protected BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> orchestra_DNA;
     /** Button handlers, press side. */
@@ -101,7 +101,7 @@ public class GunConfig {
     public boolean hasThermalSights(ItemStack stack) { return XWeaponModManager.eval(thermalSights_DNA, stack, B_THERMALSIGHTS, this, index); }
     public boolean getReloadChangesType(ItemStack stack) { return XWeaponModManager.eval(reloadRequiresTypeChange_DNA, stack, B_RELOADREQUIRESTYPECHANGE, this, index); }
     public boolean getReloadAnimSequential(ItemStack stack) { return XWeaponModManager.eval(reloadAnimationsSequential_DNA, stack, B_RELOADANIMATIONSEQUENTIAL, this, index); }
-    public Identifier getScopeTexture(ItemStack stack) { return XWeaponModManager.eval(scopeTexture_DNA, stack, O_SCOPETEXTURE, this, index); }
+    public ResourceLocation getScopeTexture(ItemStack stack) { return XWeaponModManager.eval(scopeTexture_DNA, stack, O_SCOPETEXTURE, this, index); }
     public BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> getSmokeHandler(ItemStack stack) { return XWeaponModManager.eval(smokeHandler_DNA, stack, CON_SMOKE, this, index); }
     public BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> getOrchestra(ItemStack stack) { return XWeaponModManager.eval(orchestra_DNA, stack, CON_ORCHESTRA, this, index); }
     public BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> getPressPrimary(ItemStack stack) { return XWeaponModManager.eval(onPressPrimary_DNA, stack, CON_ONPRESSPRIMARY, this, index); }
@@ -135,7 +135,7 @@ public class GunConfig {
     public GunConfig thermalSights(boolean flag) { this.thermalSights_DNA = flag; return this; }
     public GunConfig reloadChangeType(boolean flag) { this.reloadRequiresTypeChange_DNA = flag; return this; }
     public GunConfig reloadSequential(boolean flag) { this.reloadAnimationsSequential_DNA = flag; return this; }
-    public GunConfig scopeTexture(Identifier texture) { this.scopeTexture_DNA = texture; return this; }
+    public GunConfig scopeTexture(ResourceLocation texture) { this.scopeTexture_DNA = texture; return this; }
     public GunConfig smoke(BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> smoke) { this.smokeHandler_DNA = smoke; return this; }
     public GunConfig orchestra(BiConsumer<ItemStack, ItemGunBaseNT.LambdaContext> orchestra) { this.orchestra_DNA = orchestra; return this; }
 

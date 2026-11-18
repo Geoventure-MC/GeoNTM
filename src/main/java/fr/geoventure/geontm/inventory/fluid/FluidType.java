@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 
 import java.util.HashMap;
@@ -66,8 +66,8 @@ public class FluidType {
     private int guiTint;
     /** The lowercase id, which every asset path and translation key for this fluid is built from. */
     private final String key;
-    private final Identifier texture;
-    private final Identifier icon;
+    private final ResourceLocation texture;
+    private final ResourceLocation icon;
     // replaced whole (never mutated in place) so a reload on one thread never tears a read on another
     private volatile Map<Class<?>, Object> traits = Map.of();
     private volatile List<TagKey<Fluid>> sharedTags = List.of();
@@ -248,14 +248,14 @@ public class FluidType {
     public int getColor(boolean client) { return client ? clientMetadata().getColor() : getColor(); }
 
     Component ownDisplayName() { return Component.translatableWithFallback(unlocalized, fallbackName); }
-    Identifier ownIconSprite() { return icon; }
-    Identifier ownTexture() { return texture; }
+    ResourceLocation ownIconSprite() { return icon; }
+    ResourceLocation ownTexture() { return texture; }
 
     public int getColor() { return metadataType().color; }
 
     public int getTint() { return metadataType().guiTint; }
 
-    public Identifier getTexture() { return metadataType().texture; }
+    public ResourceLocation getTexture() { return metadataType().texture; }
 
     /** The lowercase id every asset this fluid names is built from. */
     public String getKey() { return this.key; }
@@ -268,7 +268,7 @@ public class FluidType {
      * {@link fr.geoventure.geontm.client.FluidSprites#draw}, which is what a screen or a JEI category wants when it
      * has somewhere to put a droplet but no item slot to put it in.
      */
-    public Identifier getIconSprite() { return metadataType().icon; }
+    public ResourceLocation getIconSprite() { return metadataType().icon; }
 
     public String getTranslationKey() { return metadataType().unlocalized; }
 

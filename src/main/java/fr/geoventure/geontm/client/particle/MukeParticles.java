@@ -26,7 +26,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -37,10 +37,10 @@ import org.joml.Vector3f;
 
 /** The source muke/tinytot detonation visuals, submitted through Core's late world-effects pass. */
 public final class MukeParticles {
-    private static final Identifier SHOCKWAVE = Ids.of(Constants.MOD_ID, "textures/particle/shockwave.png");
-    private static final Identifier FLARE = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
-    private static final Identifier EXPLOSION = Ids.of(Constants.MOD_ID, "textures/particle/explosion.png");
-    private static final Identifier EXPLOSION_BF = Ids.of(Constants.MOD_ID, "textures/particle/explosion_bf.png");
+    private static final ResourceLocation SHOCKWAVE = Ids.of(Constants.MOD_ID, "textures/particle/shockwave.png");
+    private static final ResourceLocation FLARE = Ids.of(Constants.MOD_ID, "textures/particle/flare.png");
+    private static final ResourceLocation EXPLOSION = Ids.of(Constants.MOD_ID, "textures/particle/explosion.png");
+    private static final ResourceLocation EXPLOSION_BF = Ids.of(Constants.MOD_ID, "textures/particle/explosion_bf.png");
     private static final int WAVE_LIFETIME = 25;
     private static final int FLASH_LIFETIME = 20;
     private static final int FULLBRIGHT = 0xF000F0;
@@ -275,7 +275,7 @@ public final class MukeParticles {
                         (drawPose, buffer) -> writeFlash(quads(drawPose, buffer, right, up), partial));
             }
             if (!clouds.isEmpty()) {
-                Identifier texture = !tiny && balefire ? EXPLOSION_BF : EXPLOSION;
+                ResourceLocation texture = !tiny && balefire ? EXPLOSION_BF : EXPLOSION;
                 Vector3f locked = new Vector3f(up.x, 1F, up.z);
                 WorldEffects.submit(pose, CompatRenderTypes.entityTranslucentEmissive(texture), 2,
                         (drawPose, buffer) -> writeClouds(quads(drawPose, buffer, right, locked), partial));

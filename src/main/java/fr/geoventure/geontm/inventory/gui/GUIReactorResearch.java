@@ -10,12 +10,12 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -26,7 +26,7 @@ import fr.geoventure.geontm.module.NumberDisplay;
 /** The 176x222 research reactor screen: three seven-segment readouts, the level field and its confirm button. */
 public final class GUIReactorResearch extends CompatContainerScreen<ContainerReactorResearch> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_research_reactor.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/reactors/gui_research_reactor.png");
 
     private final NumberDisplay[] displays = new NumberDisplay[3];
     private byte timer;
@@ -52,7 +52,7 @@ public final class GUIReactorResearch extends CompatContainerScreen<ContainerRea
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityReactorResearch reactor = menu.getReactor();
 
@@ -94,7 +94,7 @@ public final class GUIReactorResearch extends CompatContainerScreen<ContainerRea
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 121 - font.width(title) / 2, 6, 0xFFE5E5E5, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
         GuiDraw.text(graphics, font, Component.literal("Flux"), 6, 13, 0xFFE5E5E5, false);
@@ -103,7 +103,7 @@ public final class GUIReactorResearch extends CompatContainerScreen<ContainerRea
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(-14, 23, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, List.of(
                     Component.literal("The reactor has to be submerged"),

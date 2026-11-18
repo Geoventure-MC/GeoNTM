@@ -20,7 +20,7 @@ import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -227,7 +227,7 @@ public class TileEntityMachineRadGen extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (int value : progress) buf.writeInt(value);
         for (int value : maxProgress) buf.writeInt(value);
@@ -237,7 +237,7 @@ public class TileEntityMachineRadGen extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (int i = 0; i < CHANNELS; i++) progress[i] = buf.readInt();
         for (int i = 0; i < CHANNELS; i++) maxProgress[i] = buf.readInt();

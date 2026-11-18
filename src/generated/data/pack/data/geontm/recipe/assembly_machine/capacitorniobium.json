@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capacitorniobium",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 12
+    },
+    {
+      "material": "niobium",
+      "shape": "densewire",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:capacitor_niobium"
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 38400
+}

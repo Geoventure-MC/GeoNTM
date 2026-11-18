@@ -1,0 +1,17 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pilepobe",
+  "input_items": [
+    {
+      "ingredient": "geontm:billet_po210be",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:pile_rod_mk2_po210be"
+  ],
+  "duration": 40,
+  "power": 200,
+  "auto_switch_group": "autoswitch.pilerod",
+  "order": 12288
+}

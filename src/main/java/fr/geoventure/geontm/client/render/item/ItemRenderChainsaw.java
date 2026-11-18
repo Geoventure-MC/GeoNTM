@@ -8,8 +8,8 @@ import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -29,7 +29,7 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderChainsaw implements CustomItemRenderer {
 
-    private static final Identifier TEXTURE = tex("textures/models/weapons/chainsaw.png");
+    private static final ResourceLocation TEXTURE = tex("textures/models/weapons/chainsaw.png");
 
     private final WavefrontObj chainsaw = obj("models/weapons/chainsaw.obj");
 

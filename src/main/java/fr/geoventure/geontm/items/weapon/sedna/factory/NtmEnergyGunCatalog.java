@@ -21,7 +21,7 @@ import fr.geoventure.geocore.registry.DeferredRegister;
 import fr.geoventure.geocore.registry.RegistryObject;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -36,7 +36,7 @@ public final class NtmEnergyGunCatalog {
     public static final DeferredRegister.Items GUNS = DeferredRegister.createItems(Constants.MOD_ID);
     private static final Reg REG = Reg.of(GUNS);
 
-    private static final Identifier SCOPE_LUNA =
+    private static final ResourceLocation SCOPE_LUNA =
             Ids.of(Constants.MOD_ID, "textures/misc/scope_luna.png");
 
     public static final RegistryObject<ItemGunBaseNT> gun_tesla_cannon = gun("gun_tesla_cannon", WeaponQuality.A_SIDE,

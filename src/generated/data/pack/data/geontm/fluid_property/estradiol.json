@@ -1,0 +1,23 @@
+{
+  "type": "liquid",
+  "color": "#CDD5D8",
+  "temperature": 20,
+  "traits": {
+    "toxin": {
+      "entries": [
+        {
+          "kind": "effects",
+          "effects": [
+            {
+              "id": "geontm:death",
+              "duration": 72000,
+              "amplifier": 0
+            }
+          ],
+          "hazard": "PARTICLE_FINE",
+          "full_body": false
+        }
+      ]
+    }
+  }
+}

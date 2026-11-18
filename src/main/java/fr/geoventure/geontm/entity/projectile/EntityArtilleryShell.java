@@ -226,7 +226,7 @@ public class EntityArtilleryShell extends EntityThrowableInterp implements IChun
             if (!this.cargo.isEmpty()) player.getInventory().add(this.cargo.copy());
             discard();
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

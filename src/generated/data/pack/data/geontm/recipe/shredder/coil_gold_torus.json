@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:coil_gold_torus",
+  "output": {
+    "id": "geontm:powder_gold",
+    "count": 2
+  }
+}

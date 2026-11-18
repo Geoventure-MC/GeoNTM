@@ -8,7 +8,7 @@ import fr.geoventure.geocore.gametest.GameTestHelpers;
 import fr.geoventure.geocore.registry.RegistryObject;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -42,7 +42,7 @@ public final class SteelTitaniumArmorGameTests {
     private static void assertPiece(GameTestHelper helper, RegistryObject<? extends Item> entry, String path,
             EquipmentSlot slot, int defense, int maxDamage) {
         Item item = entry.get();
-        Identifier expected = Ids.of("geontm", path);
+        ResourceLocation expected = Ids.of("geontm", path);
         helper.assertTrue(expected.equals(BuiltInRegistries.ITEM.getKey(item)), "Wrong armour id for " + path);
 
         ItemStack stack = new ItemStack(item);

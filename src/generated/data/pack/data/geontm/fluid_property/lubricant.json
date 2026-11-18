@@ -1,0 +1,24 @@
+{
+  "type": "liquid",
+  "color": "#606060",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 1,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:lubricant"
+  ],
+  "traits": {
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.004
+      }
+    }
+  }
+}

@@ -5,9 +5,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityFurnaceIron;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -16,7 +16,7 @@ import java.util.Optional;
 
 /** Iron furnace screen, preserving the old progress and burn bars. */
 public class GUIFurnaceIron extends CompatContainerScreen<ContainerFurnaceIron> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_furnace_iron.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_furnace_iron.png");
 
     public GUIFurnaceIron(ContainerFurnaceIron menu, Inventory inventory, Component title) {
         super(menu, inventory, title, 176, 166);
@@ -24,12 +24,12 @@ public class GUIFurnaceIron extends CompatContainerScreen<ContainerFurnaceIron> 
 
     /** 1.7 {@code GUIFurnaceIron.drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityFurnaceIron furnace = menu.getFurnace();
         if (furnace == null) return;
@@ -47,7 +47,7 @@ public class GUIFurnaceIron extends CompatContainerScreen<ContainerFurnaceIron> 
      * is carried, then the progress and burn-time stats.
      */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFurnaceIron furnace = menu.getFurnace();
         if (furnace == null) return;
         if (menu.getCarried().isEmpty()) {

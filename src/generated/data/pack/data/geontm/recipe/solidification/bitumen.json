@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:bitumen",
+  "amount": 100,
+  "output": "geontm:oil_tar_crude"
+}

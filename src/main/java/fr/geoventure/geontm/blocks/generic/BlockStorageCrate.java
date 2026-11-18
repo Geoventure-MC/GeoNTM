@@ -100,8 +100,8 @@ public class BlockStorageCrate extends CarriedBlock implements TickingBlock, IRa
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.PASS;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (level.getBlockEntity(pos) instanceof TileEntityCrateBase crate && crate.canAccess(player)
                 && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, crate, pos);

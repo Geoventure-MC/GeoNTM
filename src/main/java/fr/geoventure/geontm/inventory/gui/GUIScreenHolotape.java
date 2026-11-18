@@ -9,7 +9,7 @@ import fr.geoventure.geocore.gui.KeyInput;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -41,7 +41,7 @@ public class GUIScreenHolotape extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int mouseX, int mouseY, float f) {
+    protected void extractBackgroundCompat(GuiGraphics g, int mouseX, int mouseY, float f) {
         if (this.holo == null) return;
 
         double sizeX = 300;

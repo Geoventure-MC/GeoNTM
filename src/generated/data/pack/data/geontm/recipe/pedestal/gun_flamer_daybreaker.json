@@ -1,0 +1,17 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_flamer_daybreaker",
+  "grid": [
+    "#c:plates_cast/gold",
+    "geontm:canned_conserve_slime",
+    "#c:plates_cast/gold",
+    "#c:ingots/phosphorus",
+    "geontm:gun_flamer",
+    "#c:ingots/phosphorus",
+    "#c:plates_cast/gold",
+    "geontm:stick_dynamite",
+    "#c:plates_cast/gold"
+  ],
+  "extra": "sun",
+  "order": 6
+}

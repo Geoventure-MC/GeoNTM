@@ -5,7 +5,7 @@ import fr.geoventure.geocore.world.CompatItem;
 import fr.geoventure.geocore.world.CompatTooltipContext;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
@@ -61,7 +61,7 @@ public class ItemPWRPrinter extends CompatItem {
     }
 
     /** Piggybacking on the controller's BlockEntity sync. */
-    public static void serialize(RegistryFriendlyByteBuf buf) {
+    public static void serialize(FriendlyByteBuf buf) {
         buf.writeInt(x1);
         buf.writeInt(y1);
         buf.writeInt(z1);
@@ -79,7 +79,7 @@ public class ItemPWRPrinter extends CompatItem {
     }
 
     /** Client: applies the snapshot to the cells and opens the printer for a player holding one. */
-    public static void deserialize(Level level, RegistryFriendlyByteBuf buf) {
+    public static void deserialize(Level level, FriendlyByteBuf buf) {
         x1 = buf.readInt();
         y1 = buf.readInt();
         z1 = buf.readInt();
@@ -112,7 +112,7 @@ public class ItemPWRPrinter extends CompatItem {
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         BlockEntity tile = level.getBlockEntity(context.getClickedPos());
-        if (!(tile instanceof TileEntityPWRController pwr)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(tile instanceof TileEntityPWRController pwr)) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         syncAndScreenshot(level, pwr);

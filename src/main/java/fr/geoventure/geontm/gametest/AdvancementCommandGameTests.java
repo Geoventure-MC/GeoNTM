@@ -166,6 +166,6 @@ public final class AdvancementCommandGameTests {
     }
 
     private static Item item(String path) {
-        return BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, path));
+        return BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, path));
     }
 }

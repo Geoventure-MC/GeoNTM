@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:debris_exchanger",
+  "output": {
+    "id": "geontm:powder_steel",
+    "count": 3
+  }
+}

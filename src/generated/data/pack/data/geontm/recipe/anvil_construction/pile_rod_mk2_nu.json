@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:billets/uranium",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pile_rod_mk2_nu"
+    }
+  ],
+  "tier": 2,
+  "overlay": "recycling",
+  "order": 236
+}

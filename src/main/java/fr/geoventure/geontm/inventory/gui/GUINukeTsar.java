@@ -4,9 +4,9 @@ import fr.geoventure.geontm.inventory.container.ContainerNukeTsar;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -15,21 +15,21 @@ import java.util.Optional;
 /** Tsar Bomba schematic, including the optional sixth-stage core overlay. */
 public class GUINukeTsar extends CompatContainerScreen<ContainerNukeTsar> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/tsarbombaschematic.png");
-    private static final Identifier MIKE_TEXTURE = Ids.of("geontm", "textures/gui/weapon/ivymikeschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/tsarbombaschematic.png");
+    private static final ResourceLocation MIKE_TEXTURE = Ids.of("geontm", "textures/gui/weapon/ivymikeschematic.png");
 
     public GUINukeTsar(ContainerNukeTsar menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 256, 233);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 48, imageHeight - 94, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         if (menu.isFilled()) GuiDraw.blit(graphics, MIKE_TEXTURE, leftPos + 18, topPos + 50, 176F, 18F, 16, 16, 256, 256);
         else if (menu.isReady()) GuiDraw.blit(graphics, MIKE_TEXTURE, leftPos + 18, topPos + 50, 176F, 0F, 16, 16, 256, 256);
@@ -43,7 +43,7 @@ public class GUINukeTsar extends CompatContainerScreen<ContainerNukeTsar> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(-16, 16, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, List.of(
                     Component.translatable("desc.gui.nukeTsar.desc.0"),

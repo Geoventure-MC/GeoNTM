@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.CompatEntityRenderer;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 
 /**
  * 1.7 RenderChopperMine: the dropped mine cube, 1.5x and flipped.

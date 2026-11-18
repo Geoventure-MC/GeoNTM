@@ -30,7 +30,7 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.level.block.Blocks;
@@ -238,18 +238,18 @@ public final class WorldgenImpactGameTests {
         List<Entity> spawned = new ArrayList<>();
         try {
             data.impact = true;
-            helper.assertTrue(!added(level, spawned, EntityType.PILLAGER.spawn(level, at, EntitySpawnReason.PATROL)),
+            helper.assertTrue(!added(level, spawned, EntityType.PILLAGER.spawn(level, at, MobSpawnType.PATROL)),
                     "a patrol pillager must be refused after the impact");
-            helper.assertTrue(!added(level, spawned, EntityType.WANDERING_TRADER.spawn(level, at, EntitySpawnReason.EVENT)),
+            helper.assertTrue(!added(level, spawned, EntityType.WANDERING_TRADER.spawn(level, at, MobSpawnType.EVENT)),
                     "a wandering trader must be refused after the impact");
-            helper.assertTrue(!added(level, spawned, EntityType.TRADER_LLAMA.spawn(level, at, EntitySpawnReason.EVENT)),
+            helper.assertTrue(!added(level, spawned, EntityType.TRADER_LLAMA.spawn(level, at, MobSpawnType.EVENT)),
                     "a trader llama must be refused after the impact");
-            helper.assertTrue(!added(level, spawned, EntityType.PHANTOM.spawn(level, at, EntitySpawnReason.NATURAL)),
+            helper.assertTrue(!added(level, spawned, EntityType.PHANTOM.spawn(level, at, MobSpawnType.NATURAL)),
                     "a phantom (0.9 wide) must be refused after the impact");
-            helper.assertTrue(added(level, spawned, EntityType.PILLAGER.spawn(level, at, EntitySpawnReason.EVENT)),
+            helper.assertTrue(added(level, spawned, EntityType.PILLAGER.spawn(level, at, MobSpawnType.EVENT)),
                     "a raid pillager (EVENT) is not a world spawner and must spawn");
             data.impact = false;
-            helper.assertTrue(added(level, spawned, EntityType.PILLAGER.spawn(level, at, EntitySpawnReason.PATROL)),
+            helper.assertTrue(added(level, spawned, EntityType.PILLAGER.spawn(level, at, MobSpawnType.PATROL)),
                     "without the impact a patrol pillager must spawn");
         } finally {
             data.impact = before;

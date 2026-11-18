@@ -7,7 +7,7 @@ import fr.geoventure.geocore.render.ItemSprites;
 import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Vertexes;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -37,7 +37,7 @@ final class ItemRendererHot implements CustomItemRenderer {
         ItemSprites.submit(pose, sink, tex("textures/items/" + id(stack) + ".png"), light, overlay);
         double h = ItemHot.getHeat(stack);
         if (h <= 0) return;
-        Identifier hot = tex("textures/items/" + id(stack) + "_hot.png");
+        ResourceLocation hot = tex("textures/items/" + id(stack) + "_hot.png");
         int color = (int) Math.round(Math.min(1D, h) * 255D) << 24 | 0xFFFFFF;
         int o = OverlayTexture.NO_OVERLAY;
         sink.submitCustomGeometry(pose, CompatRenderTypes.entityTranslucent(hot), (p, buffer) -> {

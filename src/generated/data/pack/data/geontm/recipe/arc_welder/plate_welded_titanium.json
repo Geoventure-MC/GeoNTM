@@ -1,0 +1,14 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "material": "titanium",
+      "shape": "castplate",
+      "count": 2
+    }
+  ],
+  "output": "geontm:plate_welded_titanium",
+  "duration": 600,
+  "consumption": 50000,
+  "order": 10
+}

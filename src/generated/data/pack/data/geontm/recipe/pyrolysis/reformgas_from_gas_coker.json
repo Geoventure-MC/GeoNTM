@@ -1,0 +1,13 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_fluid": {
+    "type": "geontm:gas_coker",
+    "amount": 4000
+  },
+  "output_fluid": {
+    "type": "geontm:reformgas",
+    "amount": 100
+  },
+  "duration": 60,
+  "order": 38
+}

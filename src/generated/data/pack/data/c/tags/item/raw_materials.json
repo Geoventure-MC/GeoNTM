@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:raw_aluminium",
+    "geontm:raw_beryllium",
+    "geontm:raw_cobalt",
+    "geontm:raw_lead",
+    "geontm:raw_lithium",
+    "geontm:raw_plutonium",
+    "geontm:raw_schrabidium",
+    "geontm:raw_thorium",
+    "geontm:raw_titanium",
+    "geontm:raw_tungsten",
+    "geontm:raw_uranium"
+  ]
+}

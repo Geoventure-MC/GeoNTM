@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.sealframe",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/dura_steel"
+    },
+    {
+      "material": "steel",
+      "shape": "castplate"
+    },
+    {
+      "material": "red_copper",
+      "shape": "densewire"
+    }
+  ],
+  "output_items": [
+    "geontm:seal_frame"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 15104
+}

@@ -86,8 +86,8 @@ public class BlockPedestal extends CompatBlock implements TickingBlock {
 
     /** 1.7 {@code onBlockActivated}, shared with the skeleton holder, which is the same code. */
     static InteractionResult takeOrPlace(Level level, BlockPos pos, Player player, InteractionHand hand) {
-        if (player.isShiftKeyDown() || hand != InteractionHand.MAIN_HAND) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(level.getBlockEntity(pos) instanceof ItemHolder holder)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown() || hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof ItemHolder holder)) return InteractionResult.PASS;
         ItemStack held = player.getMainHandItem();
 
         if (holder.getItem().isEmpty() && !held.isEmpty()) {
@@ -101,7 +101,7 @@ public class BlockPedestal extends CompatBlock implements TickingBlock {
             holder.setItem(ItemStack.EMPTY);
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /** 1.7 {@code breakBlock}: the held stack pops out at the block's foot. */

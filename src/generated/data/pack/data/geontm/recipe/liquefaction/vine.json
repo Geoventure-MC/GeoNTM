@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:vine",
+  "output": {
+    "type": "geontm:seedslurry",
+    "amount": 100
+  }
+}

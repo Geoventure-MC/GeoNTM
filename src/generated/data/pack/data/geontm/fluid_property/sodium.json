@@ -1,0 +1,33 @@
+{
+  "type": "liquid",
+  "color": "#CCD4D5",
+  "temperature": 400,
+  "hazard": {
+    "poison": 1,
+    "flammability": 2,
+    "reactivity": 3,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:sodium"
+  ],
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 400,
+          "produces": "geontm:sodium_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "PWR": 2.5,
+        "ICF": 3.0
+      }
+    }
+  }
+}

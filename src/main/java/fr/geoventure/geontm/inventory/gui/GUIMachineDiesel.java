@@ -8,10 +8,10 @@ import fr.geoventure.geontm.inventory.fluid.tank.FluidTankNTM;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineDiesel;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -27,20 +27,20 @@ import java.util.Optional;
  */
 public class GUIMachineDiesel extends CompatContainerScreen<ContainerMachineDiesel> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_diesel.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_diesel.png");
 
     public GUIMachineDiesel(ContainerMachineDiesel menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 203);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 draws only the inventory caption.
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineDiesel te = this.menu.getDiesel();
@@ -72,14 +72,14 @@ public class GUIMachineDiesel extends CompatContainerScreen<ContainerMachineDies
         return false;
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int barX, int barTop) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int barX, int barTop) {
         int maxF = tank.getMaxFill();
         int h = maxF <= 0 ? 0 : (int) ((long) tank.getFill() * 52 / maxF);
         if (h <= 0) return;
         int x0 = this.leftPos + barX;
         int yBottom = this.topPos + barTop + 52;
         int yTop = yBottom - h;
-        Identifier fluidTex = tank.getTankType().clientMetadata().getTexture();
+        ResourceLocation fluidTex = tank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(fluidTex).isPresent()) {
             graphics.enableScissor(x0, yTop, x0 + 16, yBottom);
             for (int ty = yBottom - 16; ty > yTop - 16; ty -= 16) {
@@ -92,7 +92,7 @@ public class GUIMachineDiesel extends CompatContainerScreen<ContainerMachineDies
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineDiesel te = this.menu.getDiesel();
         if (te == null) return;
 

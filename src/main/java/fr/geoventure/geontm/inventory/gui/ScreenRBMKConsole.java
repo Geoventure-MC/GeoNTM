@@ -13,12 +13,12 @@ import fr.geoventure.geocore.net.GeoCoreNetwork;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import net.minecraft.sounds.SoundEvent;
 
 /** The 15 by 15 RBMK scanner, monitor bank, setpoint, and AZ-5 controls. */
 public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole> {
-    private static final Identifier TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_console.png");
+    private static final ResourceLocation TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_console.png");
     private final boolean[] selection = new boolean[15 * 15];
     private boolean az5Lid = true;
     private long lastPress;
@@ -49,7 +49,7 @@ public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole
         addRenderableWidget(field);
     }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         texture(graphics, TEX);
         BlockEntityRBMKConsole console = menu.blockEntity();
         if (az5Lid) GuiDraw.blit(graphics, TEX, leftPos + 30, topPos + 138, 228, 172, 28, 28, 256, 256);
@@ -63,7 +63,7 @@ public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole
         drawFluxGraph(graphics, console);
     }
 
-    private void drawGrid(GuiGraphicsExtractor graphics, BlockEntityRBMKConsole console) {
+    private void drawGrid(GuiGraphics graphics, BlockEntityRBMKConsole console) {
         int steam = RBMKColumn.fluidId(Fluids.STEAM), hot = RBMKColumn.fluidId(Fluids.HOTSTEAM);
         int superhot = RBMKColumn.fluidId(Fluids.SUPERHOTSTEAM), ultra = RBMKColumn.fluidId(Fluids.ULTRAHOTSTEAM);
         for (int i = 0; i < console.columns.length; i++) {
@@ -105,12 +105,12 @@ public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole
         }
     }
 
-    private static void line(GuiGraphicsExtractor graphics, int x0, int y0, int x1, int y1) {
+    private static void line(GuiGraphics graphics, int x0, int y0, int x1, int y1) {
         int dx = Math.abs(x1 - x0), dy = Math.abs(y1 - y0), sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1, error = dx - dy;
         while (true) { graphics.fill(x0, y0, x0 + 1, y0 + 1, 0xFF00FF00); if (x0 == x1 && y0 == y1) return; int twice = error * 2; if (twice > -dy) { error -= dy; x0 += sx; } if (twice < dx) { error += dx; y0 += sy; } }
     }
 
-    private void drawFluxGraph(GuiGraphicsExtractor graphics, BlockEntityRBMKConsole console) {
+    private void drawFluxGraph(GuiGraphics graphics, BlockEntityRBMKConsole console) {
         int highest = Integer.MIN_VALUE, lowest = Integer.MAX_VALUE;
         for (int flux : console.fluxBuffer) { highest = Math.max(highest, flux); lowest = Math.min(lowest, flux); }
         int range = Math.max(highest - lowest, 1);
@@ -125,13 +125,13 @@ public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole
         GuiDraw.popMatrix(graphics);
     }
 
-    private void bar(GuiGraphicsExtractor graphics, int x, int y, int u, double value, double max) {
+    private void bar(GuiGraphics graphics, int x, int y, int u, double value, double max) {
         if (max <= 0) return;
         int fill = Math.min((int) Math.ceil(value * 8 / max), 8);
         if (fill > 0) GuiDraw.blit(graphics, TEX, x, y + 9 - fill, u, 191 - fill, u == 41 || u == 46 || u == 131 || u == 136 ? 3 : 2, fill, 256, 256);
     }
 
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         BlockEntityRBMKConsole console = menu.blockEntity();
         if (console != null && region(86, 11, 150, 150, mouseX, mouseY)) {
             int index = (mouseX - leftPos - 86) / 10 + (mouseY - topPos - 11) / 10 * 15;
@@ -156,7 +156,7 @@ public final class ScreenRBMKConsole extends RBMKContainerScreen<MenuRBMKConsole
         }
     }
 
-    @Override protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) { }
+    @Override protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) { }
 
     @Override protected boolean mouseClicked(MouseInput event, boolean doubleClick) {
         BlockEntityRBMKConsole console = menu.blockEntity();

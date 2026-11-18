@@ -69,7 +69,7 @@ public class FluidValve extends CompatBlock
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof IItemFluidId identifier)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof IItemFluidId identifier)) return InteractionResult.PASS;
 
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof TileEntityFluidValve valve) {
             FluidType type = identifier.getType(level, pos.getX(), pos.getY(), pos.getZ(), stack);
@@ -103,7 +103,7 @@ public class FluidValve extends CompatBlock
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.isShiftKeyDown()) return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.PASS;
 
         if (!level.isClientSide()) {
             boolean open = !state.getValue(OPEN);

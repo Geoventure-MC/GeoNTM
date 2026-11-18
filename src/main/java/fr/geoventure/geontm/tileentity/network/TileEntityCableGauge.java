@@ -10,7 +10,7 @@ import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geontm.uninos.graph.LevelNodeGraph;
 import fr.geoventure.geontm.uninos.graph.NodeNetwork;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,13 +58,13 @@ public class TileEntityCableGauge extends TileEntityLoadedBase implements IEnerg
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeLong(deltaTick);
         buf.writeLong(deltaLastSecond);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         deltaTick = Math.max(buf.readLong(), 0);
         deltaLastSecond = Math.max(buf.readLong(), 0);
     }

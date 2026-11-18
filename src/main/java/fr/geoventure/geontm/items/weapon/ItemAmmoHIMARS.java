@@ -30,7 +30,7 @@ import java.util.function.Supplier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
@@ -198,7 +198,7 @@ public class ItemAmmoHIMARS extends ItemEnumMulti {
 
         public final String name;
         /** The skin the renderer paints on the rocket in flight. */
-        public final Identifier texture;
+        public final ResourceLocation texture;
         /** Six rockets to a pod of the small ones, one of the big. */
         public final int amount;
         /** 0 = the sixfold pod, 1 = the single rocket. */

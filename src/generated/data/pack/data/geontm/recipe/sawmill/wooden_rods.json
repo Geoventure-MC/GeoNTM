@@ -1,0 +1,8 @@
+{
+  "type": "geontm:sawmill",
+  "input": {
+    "ingredient": "#c:rods/wooden"
+  },
+  "output": "geontm:powder_sawdust",
+  "order": 0
+}

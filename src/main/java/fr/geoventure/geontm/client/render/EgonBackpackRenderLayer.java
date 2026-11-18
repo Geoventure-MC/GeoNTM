@@ -13,7 +13,7 @@ import fr.geoventure.geocore.render.SubmitSink;
 import fr.geoventure.geocore.render.Worn;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 
 /**
@@ -22,7 +22,7 @@ import net.minecraft.world.entity.player.Player;
  */
 public final class EgonBackpackRenderLayer extends CompatHumanoidLayer {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/models/weapons/egon.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/models/weapons/egon.png");
     private static WavefrontObj model;
 
     @SuppressWarnings("rawtypes")

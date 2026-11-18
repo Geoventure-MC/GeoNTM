@@ -8,12 +8,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** Exact Gem port of 1.7 ItemRenderSPAS12. */
 public final class Spas12WeaponRenderer extends WeaponRenderer {
-    private static final Identifier MODEL_ID=Ids.of("geontm","models/weapons/spas-12.obj");
+    private static final ResourceLocation MODEL_ID=Ids.of("geontm","models/weapons/spas-12.obj");
     private static final Surface BODY=Surface.cutout("geontm:textures/models/weapons/spas-12.png");
     private static final Surface CASING=Surface.cutout("geontm:textures/particle/casings.png");
     private WavefrontObj model;

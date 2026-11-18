@@ -76,7 +76,7 @@ public class EntityAIEatBread extends Goal {
         }
 
         pigeon.setFat(true);
-        pigeon.playSound(SoundEvents.GENERIC_EAT.value(), 0.5F + 0.5F * pigeon.getRandom().nextInt(2),
+        pigeon.playSound(SoundEvents.GENERIC_EAT, 0.5F + 0.5F * pigeon.getRandom().nextInt(2),
                 (pigeon.getRandom().nextFloat() - pigeon.getRandom().nextFloat()) * 0.2F + 1.0F);
     }
 }

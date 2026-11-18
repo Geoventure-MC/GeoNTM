@@ -1,0 +1,27 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.icf",
+  "input_items": [
+    {
+      "ingredient": "geontm:icf_pellet_depleted"
+    }
+  ],
+  "output_items": [
+    "geontm:icf_pellet_empty",
+    "geontm:pellet_charged",
+    "geontm:powder_iron"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 1250
+    }
+  ],
+  "duration": 300,
+  "power": 10000,
+  "icon": {
+    "id": "geontm:icf_pellet_depleted"
+  },
+  "name_wrapper": "purex.recycle",
+  "order": 51
+}

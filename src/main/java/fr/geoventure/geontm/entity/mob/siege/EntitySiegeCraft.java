@@ -28,7 +28,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -319,7 +319,7 @@ public class EntitySiegeCraft extends EntityUFOBase {
 
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                                                  EntitySpawnReason reason, @Nullable SpawnGroupData data) {
+                                                  MobSpawnType reason, @Nullable SpawnGroupData data) {
         setTier(SiegeTier.tiers[this.random.nextInt(SiegeTier.getLength())]);
         return super.finalizeSpawn(level, difficulty, reason, data);
     }

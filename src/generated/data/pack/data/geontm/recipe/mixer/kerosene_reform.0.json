@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.kerosene_reform.0",
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 900
+    },
+    {
+      "type": "geontm:reformate",
+      "amount": 100
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:kerosene_reform",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 40
+}

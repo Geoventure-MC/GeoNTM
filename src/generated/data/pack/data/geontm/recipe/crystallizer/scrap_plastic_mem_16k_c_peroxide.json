@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:scrap_plastic_mem_16k_c"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:circuit_star_piece_mem_16k_c",
+  "duration": 600,
+  "order": 90
+}

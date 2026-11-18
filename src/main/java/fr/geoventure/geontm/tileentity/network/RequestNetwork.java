@@ -66,7 +66,7 @@ public final class RequestNetwork {
 
         for (int i = -chunkRange; i <= chunkRange; i++) {
             for (int j = -chunkRange; j <= chunkRange; j++) {
-                Map<BlockPos, PathNode> inChunk = chunks.get(ChunkPos.pack(x + i, z + j));
+                Map<BlockPos, PathNode> inChunk = chunks.get(ChunkPos.asLong(x + i, z + j));
                 if (inChunk != null) nodes.putAll(inChunk);
             }
         }
@@ -134,7 +134,7 @@ public final class RequestNetwork {
     }
 
     private static long chunkKey(BlockPos pos) {
-        return ChunkPos.pack(SectionPos.blockToSectionCoord(pos.getX()),
+        return ChunkPos.asLong(SectionPos.blockToSectionCoord(pos.getX()),
                 SectionPos.blockToSectionCoord(pos.getZ()));
     }
 

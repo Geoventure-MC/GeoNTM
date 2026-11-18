@@ -1,0 +1,17 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pilepabe",
+  "input_items": [
+    {
+      "ingredient": "geontm:billet_ra226be",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:pile_rod_mk2_ra226be"
+  ],
+  "duration": 40,
+  "power": 200,
+  "auto_switch_group": "autoswitch.pilerod",
+  "order": 12032
+}

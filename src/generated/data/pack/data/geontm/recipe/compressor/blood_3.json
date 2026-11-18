@@ -1,0 +1,11 @@
+{
+  "type": "geontm:compressor",
+  "input": "geontm:blood",
+  "pressure": 3,
+  "amount": 1000,
+  "output": {
+    "type": "geontm:heavyoil",
+    "amount": 250
+  },
+  "duration": 200
+}

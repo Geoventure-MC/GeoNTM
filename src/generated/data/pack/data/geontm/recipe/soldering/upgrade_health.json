@@ -1,0 +1,26 @@
+{
+  "type": "geontm:soldering",
+  "output": "geontm:upgrade_health",
+  "duration": 200,
+  "consumption": 1000,
+  "toppings": [
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 4
+    }
+  ],
+  "pcb": [
+    {
+      "ingredient": "geontm:upgrade_template"
+    },
+    {
+      "ingredient": "#c:dusts/lithium",
+      "count": 4
+    }
+  ],
+  "order": 22
+}

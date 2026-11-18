@@ -1,0 +1,17 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.sunfloweroil.0",
+  "input_items": [
+    {
+      "ingredient": "minecraft:sunflower"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:sunfloweroil",
+      "amount": 100
+    }
+  ],
+  "duration": 50,
+  "order": 13
+}

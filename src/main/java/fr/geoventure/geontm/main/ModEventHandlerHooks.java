@@ -132,11 +132,11 @@ public final class ModEventHandlerHooks {
     /** 1.7 {@code onPlayerInteract}: in 528 mode, right-clicking any AE2 block blows it up. */
     public static InteractionResult explosiveEnergistics(Player player, InteractionHand hand, BlockHitResult hit) {
         if (!GeneralConfig.enable528ExplosiveEnergistics || !(player.level() instanceof ServerLevel level)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         BlockPos pos = hit.getBlockPos();
         if (!BuiltInRegistries.BLOCK.getKey(level.getBlockState(pos).getBlock()).getNamespace().equals(CraftingMachines.AE2)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         level.destroyBlock(pos, false);
         ExplosionVNT vnt = new ExplosionVNT(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 5, null);

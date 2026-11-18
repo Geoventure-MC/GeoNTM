@@ -465,7 +465,7 @@ public final class LegacyDungeonWorld {
 
             @Override
             public LegacyBlock block(int x, int y, int z) {
-                if (y < height.getMinY() || y >= height.getMaxY()) return Blocks.air;
+                if (y < height.getMinBuildHeight() || y >= height.getMaxBuildHeight()) return Blocks.air;
                 NoiseColumn column = columns.computeIfAbsent(column(x, z), k -> generator.getBaseColumn(x, z, height, random));
                 BlockState state = column.getBlock(y);
                 if (state.isAir()) return Blocks.air;
@@ -487,7 +487,7 @@ public final class LegacyDungeonWorld {
 
             @Override
             public int minY() {
-                return height.getMinY();
+                return height.getMinBuildHeight();
             }
         };
     }

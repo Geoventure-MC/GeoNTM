@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pistonsetstar",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/starmetal",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/saturnite",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 16
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:piston_set_starmetal"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 36096
+}

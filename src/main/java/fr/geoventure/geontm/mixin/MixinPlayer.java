@@ -39,14 +39,14 @@ public class MixinPlayer {
 
     @Inject(method = "causeFallDamage", at = @At("HEAD"))
     //? if >=26.1 {
-    private void geontm$fall(double fallDistance, float damageModifier,
+    /*private void geontm$fall(double fallDistance, float damageModifier,
             net.minecraft.world.damagesource.DamageSource source, CallbackInfoReturnable<Boolean> cir) {
         ArmorFSB.handleFall((Player) (Object) this, (float) fallDistance);
     }
-    //?} else {
-    /*private void geontm$fall(float fallDistance, float damageModifier,
+    *///?} else {
+    private void geontm$fall(float fallDistance, float damageModifier,
             net.minecraft.world.damagesource.DamageSource source, CallbackInfoReturnable<Boolean> cir) {
         ArmorFSB.handleFall((Player) (Object) this, fallDistance);
     }
-    *///?}
+    //?}
 }

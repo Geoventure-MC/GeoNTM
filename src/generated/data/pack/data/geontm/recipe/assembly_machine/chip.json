@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.chip",
+  "input_items": [
+    {
+      "ingredient": "geontm:plate_polymer"
+    },
+    {
+      "ingredient": "geontm:circuit_silicon"
+    },
+    {
+      "material": "gold",
+      "shape": "wire"
+    }
+  ],
+  "output_items": [
+    "geontm:circuit_chip"
+  ],
+  "duration": 50,
+  "power": 250,
+  "order": 7424,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

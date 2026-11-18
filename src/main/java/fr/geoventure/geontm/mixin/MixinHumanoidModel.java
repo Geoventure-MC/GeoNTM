@@ -8,11 +8,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 //? if >=26.1 {
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
-//?} else {
-/*import net.minecraft.world.entity.EquipmentSlot;
+/*import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+*///?} else {
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-*///?}
+//?}
 
 /**
  * Hides the wearer's own body parts under a modelled GEONTM suit.
@@ -44,14 +44,14 @@ import net.minecraft.world.entity.LivingEntity;
 public class MixinHumanoidModel {
 
     //? if >=26.1 {
-    @Inject(method = "setupAnim", at = @At("TAIL"))
+    /*@Inject(method = "setupAnim", at = @At("TAIL"))
     private void geontm$hideParts(HumanoidRenderState state, CallbackInfo ci) {
         ArmorPartHiding.apply((HumanoidModel<?>) (Object) this,
                 fr.geoventure.geocore.client.PlayerRenderHooks.playerForState(state), state.headEquipment,
                 state.chestEquipment, state.legsEquipment, state.feetEquipment);
     }
-    //?} else {
-    /*@Inject(method = "setupAnim", at = @At("TAIL"))
+    *///?} else {
+    @Inject(method = "setupAnim", at = @At("TAIL"))
     private void geontm$hideParts(LivingEntity entity, float limbSwing, float limbSwingAmount,
             float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
         // the first-person hand runs setupAnim too, but without the third-person pose hook first
@@ -62,5 +62,5 @@ public class MixinHumanoidModel {
                 entity.getItemBySlot(EquipmentSlot.HEAD), entity.getItemBySlot(EquipmentSlot.CHEST),
                 entity.getItemBySlot(EquipmentSlot.LEGS), entity.getItemBySlot(EquipmentSlot.FEET));
     }
-    *///?}
+    //?}
 }

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:powder_ash_wood",
+  "materials": [
+    {
+      "material": "carbon",
+      "amount": 8
+    }
+  ]
+}

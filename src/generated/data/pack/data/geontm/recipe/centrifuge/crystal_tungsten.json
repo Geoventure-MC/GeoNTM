@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_tungsten"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_tungsten",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_tungsten",
+      "count": 2
+    },
+    "geontm:powder_iron",
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 167
+}

@@ -28,7 +28,7 @@ import java.util.Locale;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -440,7 +440,7 @@ public class TileEntityPWRController extends TileEntityMachineBase
     // --- sync ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         buf.writeBoolean(isPrinting);
         if (isPrinting) {
             // piggybacking off of this packet so that we don't have to sync EVERY PWR block continuously to
@@ -467,7 +467,7 @@ public class TileEntityPWRController extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         if (buf.readBoolean()) {
             if (level != null) ItemPWRPrinter.deserialize(level, buf);
             return;

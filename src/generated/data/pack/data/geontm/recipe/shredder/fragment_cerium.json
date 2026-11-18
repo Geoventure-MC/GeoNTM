@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:fragment_cerium",
+  "output": "geontm:powder_cerium_tiny"
+}

@@ -11,11 +11,11 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -28,7 +28,7 @@ import java.util.Optional;
  */
 public class GUIFusionKlystron extends CompatContainerScreen<ContainerFusionKlystron> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/reactors/gui_fusion_klystron.png");
 
     private EditBox field;
@@ -60,7 +60,7 @@ public class GUIFusionKlystron extends CompatContainerScreen<ContainerFusionKlys
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = this.leftPos;
         int y = this.topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, this.imageWidth, this.imageHeight, 256, 256);
@@ -92,13 +92,13 @@ public class GUIFusionKlystron extends CompatContainerScreen<ContainerFusionKlys
         GuiUtil.drawSmoothGauge(graphics, x + 124, y + 80, powerGauge, 5, 2, 1, 0xA00000);
     }
 
-    private void light(GuiGraphicsExtractor graphics, int x, int y, double gauge, boolean emitting) {
+    private void light(GuiGraphics graphics, int x, int y, double gauge, boolean emitting) {
         if (gauge >= 0.5 && emitting) GuiDraw.blit(graphics, TEXTURE, x, y, 210F, 8F, 8, 8, 256, 256);
         else if (gauge > 0) GuiDraw.blit(graphics, TEXTURE, x, y, 210F, 0F, 8, 8, 256, 256);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 115 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 35, this.imageHeight - 93, 4210752, false);
 
@@ -110,7 +110,7 @@ public class GUIFusionKlystron extends CompatContainerScreen<ContainerFusionKlys
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFusionKlystron klystron = this.menu.getKlystron();
         if (klystron == null) return;
 
@@ -183,7 +183,7 @@ public class GUIFusionKlystron extends CompatContainerScreen<ContainerFusionKlys
         GeoCoreNetwork.sendToServer(ControlEventPayload.CODEC, new ControlEventPayload(klystron.getBlockPos(), data));
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, this.font, text, Optional.empty(), mouseX, mouseY);
     }
 }

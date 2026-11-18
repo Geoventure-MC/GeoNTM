@@ -1,0 +1,28 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:concretes",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:steel_grate",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:filter_coal",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:chimney_industrial"
+    }
+  ],
+  "tier": 3,
+  "order": 89
+}

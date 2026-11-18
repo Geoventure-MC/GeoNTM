@@ -75,18 +75,18 @@ public class ItemAnchorRemote extends CompatItem implements IBatteryItem {
             ModRadarUtilityItems.ANCHOR_POSITION.set(context.getItemInHand(), pos.immutable());
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if (player.isShiftKeyDown() || level.isClientSide()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown() || level.isClientSide()) return InteractionResult.PASS;
 
         BlockPos pos = ModRadarUtilityItems.ANCHOR_POSITION.get(stack).orElse(null);
         if (pos == null || this.getCharge(stack) < USE_COST) {
             orb(level, player);
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
 
         level.getChunk(pos.getX() >> 4, pos.getZ() >> 4);
@@ -105,7 +105,7 @@ public class ItemAnchorRemote extends CompatItem implements IBatteryItem {
         } else {
             orb(level, player);
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     private static void orb(Level level, Player player) {

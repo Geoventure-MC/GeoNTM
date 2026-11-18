@@ -4,7 +4,7 @@ import fr.geoventure.geontm.blocks.machine.pile.BlockPileDevice;
 import fr.geoventure.geontm.lib.ForgeDirection;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -29,13 +29,13 @@ public abstract class TileEntityPileDeviceBase extends TileEntityLoadedBase {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(this.chanNum);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.chanNum = buf.readInt();
     }

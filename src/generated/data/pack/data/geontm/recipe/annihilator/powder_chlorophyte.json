@@ -1,0 +1,18 @@
+{
+  "type": "geontm:annihilator",
+  "item": "geontm:powder_chlorophyte",
+  "milestones": [
+    {
+      "amount": 1024,
+      "payout": {
+        "id": "geontm:blueprints",
+        "item_data": {
+          "blueprint_pool": "528.chlorophyte"
+        }
+      }
+    }
+  ],
+  "requires": [
+    "enable_528"
+  ]
+}

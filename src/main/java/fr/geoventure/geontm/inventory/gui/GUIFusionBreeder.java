@@ -6,10 +6,10 @@ import fr.geoventure.geontm.util.BobMathUtil;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.Optional;
 /** Fusion breeder control panel, ported from 1.7 {@code GUIFusionBreeder} (176 x 200). */
 public class GUIFusionBreeder extends CompatContainerScreen<ContainerFusionBreeder> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/reactors/gui_fusion_breeder.png");
 
     public GUIFusionBreeder(ContainerFusionBreeder menu, Inventory playerInventory, Component title) {
@@ -26,7 +26,7 @@ public class GUIFusionBreeder extends CompatContainerScreen<ContainerFusionBreed
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos;
         int y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
@@ -46,13 +46,13 @@ public class GUIFusionBreeder extends CompatContainerScreen<ContainerFusionBreed
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 35, imageHeight - 93, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFusionBreeder breeder = menu.getBreeder();
         if (breeder == null) return;
 
@@ -70,7 +70,7 @@ public class GUIFusionBreeder extends CompatContainerScreen<ContainerFusionBreed
         }
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, text, Optional.empty(), mouseX, mouseY);
     }
 }

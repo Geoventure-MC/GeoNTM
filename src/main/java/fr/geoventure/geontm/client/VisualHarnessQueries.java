@@ -12,7 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.locale.Language;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -98,7 +98,7 @@ public final class VisualHarnessQueries {
         JsonArray items = new JsonArray(), blocks = new JsonArray(), entities = new JsonArray();
         int itemCount = 0, blockCount = 0, entityCount = 0;
         for (Item item : BuiltInRegistries.ITEM) {
-            Identifier key = BuiltInRegistries.ITEM.getKey(item);
+            ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
             if (!"geontm".equals(key.getNamespace())) continue;
             itemCount++;
             String key0 = item.getDescriptionId();
@@ -114,13 +114,13 @@ public final class VisualHarnessQueries {
             }
         }
         for (Block block : BuiltInRegistries.BLOCK) {
-            Identifier key = BuiltInRegistries.BLOCK.getKey(block);
+            ResourceLocation key = BuiltInRegistries.BLOCK.getKey(block);
             if (!"geontm".equals(key.getNamespace())) continue;
             blockCount++;
             if (!lang.has(block.getDescriptionId())) blocks.add(key.getPath() + " = " + block.getDescriptionId());
         }
         for (EntityType<?> type : BuiltInRegistries.ENTITY_TYPE) {
-            Identifier key = BuiltInRegistries.ENTITY_TYPE.getKey(type);
+            ResourceLocation key = BuiltInRegistries.ENTITY_TYPE.getKey(type);
             if (!"geontm".equals(key.getNamespace())) continue;
             entityCount++;
             if (!lang.has(type.getDescriptionId())) entities.add(key.getPath() + " = " + type.getDescriptionId());
@@ -138,7 +138,7 @@ public final class VisualHarnessQueries {
     private static JsonObject sound(Minecraft mc, JsonObject params) {
         JsonObject json = new JsonObject();
         String id = params.has("id") ? params.get("id").getAsString() : "geontm:rbmk_shutdown";
-        Identifier location = Ids.parse(id);
+        ResourceLocation location = Ids.parse(id);
         var events = mc.getSoundManager().getSoundEvent(location);
         json.addProperty("id", id);
         json.addProperty("resolved", events != null);

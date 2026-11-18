@@ -1,0 +1,21 @@
+{
+  "geocore:conditions": [
+    {
+      "type": "mod_loaded",
+      "mod": "lootr"
+    }
+  ],
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 2,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/nuke_fuel"
+        }
+      ]
+    }
+  ]
+}

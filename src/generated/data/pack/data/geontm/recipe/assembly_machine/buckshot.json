@@ -1,0 +1,16 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.buckshot",
+  "input_items": [
+    {
+      "ingredient": "#c:nuggets/lead",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    "geontm:pellet_buckshot"
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 52224
+}

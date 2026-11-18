@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.cryogel.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_ice"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:coolant",
+      "amount": 1800
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:cryogel",
+      "amount": 2000
+    }
+  ],
+  "duration": 50,
+  "order": 1
+}

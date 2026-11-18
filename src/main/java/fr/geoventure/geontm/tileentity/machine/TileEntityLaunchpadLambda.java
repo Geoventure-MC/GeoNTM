@@ -30,7 +30,7 @@ import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -349,7 +349,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
 
     public void liftOff(ServerLevel level) {
         EntityRocketLambda rocket = new EntityRocketLambda(ModNtmEntities.LAMBDA_ROCKET.get(), level);
-        rocket.snapTo(worldPosition.getX() + 0.5, worldPosition.getY() + 2, worldPosition.getZ() + 0.5, 0F, 0F);
+        rocket.moveTo(worldPosition.getX() + 0.5, worldPosition.getY() + 2, worldPosition.getZ() + 0.5, 0F, 0F);
         level.addFreshEntity(rocket);
 
         tanks[0].setFill(tanks[0].getFill() - 24_000);
@@ -412,7 +412,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         tanks[0].serialize(buf);
         tanks[1].serialize(buf);
@@ -426,7 +426,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         tanks[0].deserialize(buf);
         tanks[1].deserialize(buf);

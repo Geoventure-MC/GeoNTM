@@ -36,7 +36,7 @@ public final class VanillaChestLoot {
     private VanillaChestLoot() {}
 
     private static ChestLoot.Entry one(String id, int weight) {
-        Supplier<Item> item = () -> BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        Supplier<Item> item = () -> BuiltInRegistries.ITEM.get(Ids.parse(id));
         return new ChestLoot.Entry(item, 1, 1, weight);
     }
 

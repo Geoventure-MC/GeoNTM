@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/desh",
+  "output": "geontm:ingot_bscco",
+  "order": 9
+}

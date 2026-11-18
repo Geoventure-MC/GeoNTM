@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.batteryschrabidium",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/schrabidium",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:plates_cast/any_bismoid_bronze",
+      "count": 8
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:battery_schrabidium"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "order": 33
+}

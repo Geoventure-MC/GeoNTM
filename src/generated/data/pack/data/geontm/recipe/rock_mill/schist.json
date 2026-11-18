@@ -1,0 +1,57 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.schist",
+  "input_items": [
+    {
+      "ingredient": "geontm:stone_gneiss"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:gravel",
+        "weight": 50
+      },
+      {
+        "data": "minecraft:sand",
+        "weight": 10
+      },
+      {
+        "data": "geontm:powder_lithium",
+        "weight": 25
+      },
+      {
+        "data": "geontm:powder_niobium",
+        "weight": 5
+      },
+      {
+        "data": "geontm:powder_uranium",
+        "weight": 5
+      },
+      {
+        "data": "geontm:powder_gold",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 25,
+  "icon": {
+    "id": "geontm:stone_gneiss"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 5
+}

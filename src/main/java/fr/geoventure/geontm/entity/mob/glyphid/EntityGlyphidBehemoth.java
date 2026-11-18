@@ -8,7 +8,7 @@ import fr.geoventure.geontm.entity.projectile.EntityChemical;
 import fr.geoventure.geontm.inventory.fluid.Fluids;
 import fr.geoventure.geontm.items.weapon.ItemDisperser;
 import fr.geoventure.geontm.main.ResourceManager;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -46,7 +46,7 @@ public class EntityGlyphidBehemoth extends EntityGlyphid {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_behemoth_tex;
     }
 
@@ -101,7 +101,7 @@ public class EntityGlyphidBehemoth extends EntityGlyphid {
     public void acidAttack() {
         LivingEntity target = getTarget();
         if (!level().isClientSide() && target != null && distanceTo(target) < 20) {
-            addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 2 * 20, 6));
+            addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2 * 20, 6));
             EntityChemical chem = new EntityChemical(level(), this, 0, 0, 0);
             chem.setFluid(Fluids.SULFURIC_ACID);
             level().addFreshEntity(chem);

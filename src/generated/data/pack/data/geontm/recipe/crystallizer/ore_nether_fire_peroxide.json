@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:ore_nether_fire"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:crystal_phosphorus",
+  "duration": 600,
+  "productivity": 0.05,
+  "order": 39
+}

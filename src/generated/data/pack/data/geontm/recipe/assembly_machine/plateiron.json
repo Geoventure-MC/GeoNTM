@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.plateiron",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/iron"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_iron"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 0
+}

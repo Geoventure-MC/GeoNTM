@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.salient.0",
+  "input_fluids": [
+    {
+      "type": "geontm:seedslurry",
+      "amount": 500
+    },
+    {
+      "type": "geontm:blood",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:salient",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 6
+}

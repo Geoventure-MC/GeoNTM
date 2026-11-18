@@ -1,0 +1,22 @@
+{
+  "type": "liquid",
+  "color": "#99525E",
+  "temperature": 600,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "traits": {
+    "coolable": {
+      "cools_to": "geontm:coolant",
+      "amount_req": 1,
+      "amount_produced": 1,
+      "heat_energy": 300,
+      "efficiency": {
+        "HEATEXCHANGER": 1.0
+      }
+    }
+  }
+}

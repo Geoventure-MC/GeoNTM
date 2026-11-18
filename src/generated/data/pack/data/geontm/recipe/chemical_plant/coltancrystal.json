@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.coltancrystal",
+  "input_fluids": [
+    {
+      "type": "geontm:pain",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:peroxide",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    "geontm:gem_tantalium",
+    {
+      "id": "geontm:dust",
+      "count": 3
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "duration": 80,
+  "power": 100,
+  "order": 69
+}

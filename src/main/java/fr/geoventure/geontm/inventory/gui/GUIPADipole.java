@@ -13,11 +13,11 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jspecify.annotations.Nullable;
 
@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class GUIPADipole extends GUIPABase<ContainerPADipole> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/particleaccelerator/gui_dipole.png");
 
     private EditBox threshold;
@@ -42,7 +42,7 @@ public class GUIPADipole extends GUIPABase<ContainerPADipole> {
     }
 
     @Override
-    protected Identifier texture() {
+    protected ResourceLocation texture() {
         return TEXTURE;
     }
 
@@ -70,7 +70,7 @@ public class GUIPADipole extends GUIPABase<ContainerPADipole> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = leftPos;
         int y = topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, imageWidth, imageHeight, 256, 256);
@@ -104,12 +104,12 @@ public class GUIPADipole extends GUIPABase<ContainerPADipole> {
     }
 
     /** The player-facing reference needle and the configured-direction needle, both six pixels long. */
-    private void dial(GuiGraphicsExtractor graphics, int x, int y, float playerYaw, int dir) {
+    private void dial(GuiGraphics graphics, int x, int y, float playerYaw, int dir) {
         needle(graphics, x, y, 180F, 0xFF8080FF);
         needle(graphics, x, y, playerYaw - dir * 90F, 0xFFFF0000);
     }
 
-    private void needle(GuiGraphicsExtractor graphics, int x, int y, float yawDegrees, int color) {
+    private void needle(GuiGraphics graphics, int x, int y, float yawDegrees, int color) {
         GuiDraw.pushMatrix(graphics);
         GuiDraw.translate(graphics, x, y);
         GuiDraw.rotate(graphics, (float) Math.toRadians(yawDegrees));
@@ -119,13 +119,13 @@ public class GUIPADipole extends GUIPABase<ContainerPADipole> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         drawTitleAndInventory(graphics, -9, 6, 0xffffff);
         drawTemperature(graphics, 136, 22, 166, 12);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (commonTooltip(graphics, mouseX, mouseY, 8, 18, 134, 36)) return;
 
         TileEntityPADipole dipole = menu.getMachine();

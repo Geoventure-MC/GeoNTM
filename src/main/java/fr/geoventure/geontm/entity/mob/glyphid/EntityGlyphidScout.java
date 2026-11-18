@@ -11,7 +11,7 @@ import fr.geoventure.geontm.world.feature.GlyphidHive;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -63,7 +63,7 @@ public class EntityGlyphidScout extends EntityGlyphid {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_scout_tex;
     }
 
@@ -129,7 +129,7 @@ public class EntityGlyphidScout extends EntityGlyphid {
 
                     if (level() instanceof ServerLevel serverLevel && EntityWaypoint.TYPE != null) {
                         EntityWaypoint target = new EntityWaypoint(EntityWaypoint.TYPE.get(), serverLevel);
-                        target.snapTo(dirVec.x, dirVec.y, dirVec.z, 0F, 0F);
+                        target.moveTo(dirVec.x, dirVec.y, dirVec.z, 0F, 0F);
                         target.maxAge = 300;
                         target.radius = 6;
                         target.setWaypointType(TASK_BUILD_HIVE);
@@ -181,19 +181,19 @@ public class EntityGlyphidScout extends EntityGlyphid {
                         if (level() instanceof ServerLevel serverLevel && EntityWaypoint.TYPE != null) {
 
                             EntityWaypoint additional = new EntityWaypoint(EntityWaypoint.TYPE.get(), serverLevel);
-                            additional.snapTo(getX(), getY(), getZ(), 0F, 0F);
+                            additional.moveTo(getX(), getY(), getZ(), 0F, 0F);
                             additional.setWaypointType(TASK_IDLE);
 
                             EntityWaypoint home = new EntityWaypoint(EntityWaypoint.TYPE.get(), serverLevel);
                             home.setWaypointType(TASK_RETREAT_FOR_REINFORCEMENTS);
                             home.setAdditionalWaypoint(additional);
-                            home.snapTo(homeX, homeY, homeZ, 0F, 0F);
+                            home.moveTo(homeX, homeY, homeZ, 0F, 0F);
                             home.maxAge = 1200;
                             home.radius = 6;
                             serverLevel.addFreshEntity(home);
 
                             this.taskWaypoint = home;
-                            addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 40 * 20, 10));
+                            addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40 * 20, 10));
                             communicate(TASK_RETREAT_FOR_REINFORCEMENTS, getWaypoint());
                         }
 
@@ -277,7 +277,7 @@ public class EntityGlyphidScout extends EntityGlyphid {
             if (isBasalt(b)) {
                 useLargeHive = true;
                 largeHiveChance /= 2;
-                addEffect(new MobEffectInstance(MobEffects.SPEED, 60 * 20, 3));
+                addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60 * 20, 3));
             }
 
             if (!level().isClientSide() && level() instanceof ServerLevel serverLevel
@@ -289,7 +289,7 @@ public class EntityGlyphidScout extends EntityGlyphid {
 
                 if (useLargeHive) nest.setHighPriority();
 
-                nest.snapTo(nestX, nestY, nestZ, 0F, 0F);
+                nest.moveTo(nestX, nestY, nestZ, 0F, 0F);
                 serverLevel.addFreshEntity(nest);
 
                 this.taskWaypoint = nest;
@@ -315,13 +315,13 @@ public class EntityGlyphidScout extends EntityGlyphid {
             switch (getCurrentTask()) {
 
                 case TASK_INITIATE_RETREAT -> {
-                    removeEffect(MobEffects.SLOWNESS);
-                    addEffect(new MobEffectInstance(MobEffects.SPEED, 20 * 20, 4));
+                    removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+                    addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 20, 4));
 
                     if (level() instanceof ServerLevel serverLevel && EntityWaypoint.TYPE != null) {
 
                         EntityWaypoint additional = new EntityWaypoint(EntityWaypoint.TYPE.get(), serverLevel);
-                        additional.snapTo(getX(), getY(), getZ(), 0F, 0F);
+                        additional.moveTo(getX(), getY(), getZ(), 0F, 0F);
                         additional.setWaypointType(TASK_IDLE);
 
                         EntityWaypoint home = new EntityWaypoint(EntityWaypoint.TYPE.get(), serverLevel);
@@ -329,7 +329,7 @@ public class EntityGlyphidScout extends EntityGlyphid {
                         home.setAdditionalWaypoint(additional);
                         home.setHighPriority();
                         home.radius = 6;
-                        home.snapTo(homeX, homeY, homeZ, 0F, 0F);
+                        home.moveTo(homeX, homeY, homeZ, 0F, 0F);
                         serverLevel.addFreshEntity(home);
 
                         communicate(TASK_FOLLOW, home);

@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Bounded C2S flight input; the authenticated transport context supplies the player identity. */
 public record JetpackInputPayload(float forward, float strafe, boolean jump, boolean sneak, boolean sprint)
@@ -33,7 +33,7 @@ public record JetpackInputPayload(float forward, float strafe, boolean jump, boo
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

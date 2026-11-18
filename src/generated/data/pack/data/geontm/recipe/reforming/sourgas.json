@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:sourgas",
+  "outputs": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 75
+    },
+    {
+      "type": "geontm:petroleum",
+      "amount": 10
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 15
+    }
+  ]
+}

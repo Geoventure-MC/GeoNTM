@@ -19,7 +19,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +37,7 @@ public final class RenderMassStorage implements CompatBER<TileEntityMassStorage,
     private static final int FULL_BRIGHT = 0xF000F0;
     private static final int TEXT_COLOR = 0xFF00FF00;
     /** 1.7 draws the bar with texturing and lighting off; a white sprite on a flat, unlit sheet is that. */
-    private static final Identifier WHITE =
+    private static final ResourceLocation WHITE =
             Ids.of(Constants.MOD_ID, "textures/models/misc/white.png");
 
     private final Font font = Minecraft.getInstance().font;

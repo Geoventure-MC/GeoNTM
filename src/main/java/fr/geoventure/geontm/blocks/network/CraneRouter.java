@@ -53,9 +53,9 @@ public class CraneRouter extends CompatBlock implements TickingBlock, IEnterable
     @Override
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
-        if (player.getMainHandItem().getItem() instanceof ItemConveyorWand) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (!(level.getBlockEntity(pos) instanceof MenuProvider provider)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.getMainHandItem().getItem() instanceof ItemConveyorWand) return InteractionResult.PASS;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (!(level.getBlockEntity(pos) instanceof MenuProvider provider)) return InteractionResult.PASS;
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
             Menus.openWithPos(serverPlayer, provider, pos);
         }
@@ -97,7 +97,7 @@ public class CraneRouter extends CompatBlock implements TickingBlock, IEnterable
         if (block instanceof IConveyorBelt belt) {
             EntityMovingItem moving = new EntityMovingItem(level);
             Vec3 snap = belt.getClosestSnappingPosition(level, target, new Vec3(x, y, z));
-            moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+            moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
             moving.setItemStack(item);
             level.addFreshEntity(moving);
         } else {
@@ -126,7 +126,7 @@ public class CraneRouter extends CompatBlock implements TickingBlock, IEnterable
                 if (block instanceof IConveyorBelt belt) {
                     EntityMovingPackage moving = new EntityMovingPackage(level);
                     Vec3 snap = belt.getClosestSnappingPosition(level, target, new Vec3(x, y, z));
-                    moving.snapTo(snap.x, snap.y, snap.z, 0F, 0F);
+                    moving.moveTo(snap.x, snap.y, snap.z, 0F, 0F);
                     moving.setItemStacks(list);
                     level.addFreshEntity(moving);
                 } else {

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:sellafield_4",
+  "output": {
+    "id": "geontm:scrap_nuclear",
+    "count": 7
+  }
+}

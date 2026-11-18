@@ -1,0 +1,23 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.coal_block",
+  "input_items": [
+    {
+      "ingredient": "#c:storage_blocks/coal"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:oil_tar_coal",
+      "count": 9
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:syngas",
+      "amount": 500
+    }
+  ],
+  "duration": 10000,
+  "order": 15
+}

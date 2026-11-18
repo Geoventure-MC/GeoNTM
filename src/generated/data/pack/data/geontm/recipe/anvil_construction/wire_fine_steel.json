@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/steel"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:wire_fine_steel",
+      "count": 8
+    }
+  ],
+  "tier": 4,
+  "order": 21
+}

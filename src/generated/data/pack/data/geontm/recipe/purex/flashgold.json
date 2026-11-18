@@ -1,0 +1,27 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.flashgold",
+  "input_items": [
+    {
+      "ingredient": "#c:billets/au198"
+    },
+    {
+      "ingredient": "geontm:pellet_charged"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:amat",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:billet_balefire_gold",
+      "count": 2
+    }
+  ],
+  "duration": 600,
+  "power": 1000,
+  "order": 1
+}

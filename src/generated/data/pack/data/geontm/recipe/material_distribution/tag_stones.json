@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:stones",
+  "materials": [
+    {
+      "material": "stone",
+      "amount": 648
+    }
+  ]
+}

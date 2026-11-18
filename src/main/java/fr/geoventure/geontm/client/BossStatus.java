@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.client;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBossEventPacket;
@@ -64,7 +64,7 @@ public final class BossStatus {
     }
 
     /** 1.7 {@code GuiIngame.renderBossHealth}: one HUD frame. */
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         // vanilla clears its overlay on login and respawn (a new ClientLevel); forget what it held
         if (mc.level != shownLevel) {

@@ -11,11 +11,11 @@ import fr.geoventure.geocore.gui.KeyInput;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIScreenBobmazon extends CompatScreen {
 
-    protected static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_bobmazon.png");
+    protected static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_bobmazon.png");
     protected final int xSize = 176 + 41;
     protected final int ySize = 229;
     protected int guiLeft;
@@ -97,7 +97,7 @@ public class GUIScreenBobmazon extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0F, 0F, xSize, ySize, 256, 256);
 
         for (FolderButton b : buttons) b.drawButton(graphics, b.isMouseOnButton(mouseX, mouseY));
@@ -109,7 +109,7 @@ public class GUIScreenBobmazon extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         String page = (currentPage + 1) + "/" + (getPageCount() + 1);
         GuiDraw.text(graphics, font, page, guiLeft + this.xSize / 2 - font.width(page) / 2, guiTop + 205, 0xFF404040, false);
 
@@ -121,7 +121,7 @@ public class GUIScreenBobmazon extends CompatScreen {
     }
 
     /** 1.7 {@code Offer.drawRequirement}. */
-    private void drawRequirement(GuiGraphicsExtractor graphics, Offer offer, int x, int y) {
+    private void drawRequirement(GuiGraphics graphics, Offer offer, int x, int y) {
         GuiDraw.blit(graphics, TEXTURE, x + 19, y - 4, 176 + 41, 62, 39, 8, 256, 256);
         if (offer.rating > 0) GuiDraw.blit(graphics, TEXTURE, x + 19, y - 4, 176 + 41, 54, offer.rating, 8, 256, 256);
 
@@ -192,12 +192,12 @@ public class GUIScreenBobmazon extends CompatScreen {
             return xPos <= mouseX && xPos + 18 > mouseX && yPos < mouseY && yPos + 18 >= mouseY;
         }
 
-        void drawButton(GuiGraphicsExtractor graphics, boolean b) {
+        void drawButton(GuiGraphics graphics, boolean b) {
             GuiDraw.blit(graphics, TEXTURE, xPos, yPos, b ? 176 + 41 + 18 : 176 + 41, type == 1 ? 18 : (type == 2 ? 36 : 0),
                     18, 18, 256, 256);
         }
 
-        void drawIcon(GuiGraphicsExtractor graphics) {
+        void drawIcon(GuiGraphics graphics) {
             if (offer != null) GuiDraw.item(graphics, offer.offer, xPos + 1, yPos + 1);
         }
 

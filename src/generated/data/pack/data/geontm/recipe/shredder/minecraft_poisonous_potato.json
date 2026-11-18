@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:poisonous_potato",
+  "output": "geontm:powder_poison"
+}

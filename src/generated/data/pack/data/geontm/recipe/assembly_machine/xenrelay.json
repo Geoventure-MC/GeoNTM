@@ -1,0 +1,35 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.xenrelay",
+  "input_items": [
+    {
+      "material": "gold",
+      "shape": "castplate",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:photo_panel",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:crystal_xen"
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:part_generic_lde",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:satellite_xenium_resonator"
+  ],
+  "duration": 1200,
+  "power": 25000,
+  "order": 88832
+}

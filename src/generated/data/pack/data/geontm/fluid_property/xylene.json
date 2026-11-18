@@ -1,0 +1,34 @@
+{
+  "type": "liquid",
+  "color": "#5C4E76",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 3,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:benzol"
+  ],
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 3150000
+    },
+    "combustible": {
+      "grade": "HIGH",
+      "energy": 7870000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.001
+      }
+    }
+  }
+}

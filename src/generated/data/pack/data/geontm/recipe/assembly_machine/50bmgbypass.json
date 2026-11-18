@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.50bmgbypass",
+  "input_items": [
+    {
+      "ingredient": "geontm:casing_large_steel",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:item_secret_selenium_steel"
+    },
+    {
+      "ingredient": "geontm:black_diamond"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ammo_secret_bmg50_black",
+      "count": 12
+    }
+  ],
+  "duration": 100,
+  "power": 100,
+  "blueprint_pools": [
+    "secret.psalm"
+  ],
+  "order": 83200
+}

@@ -1,0 +1,28 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:nuclear_waste_long_depleted_neptunium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:nugget_u238",
+      "weight": 16
+    },
+    {
+      "data": "geontm:nugget_lead",
+      "weight": 55
+    },
+    {
+      "data": "geontm:dust_tiny",
+      "weight": 20
+    },
+    {
+      "data": "geontm:nuclear_waste_tiny",
+      "weight": 9
+    }
+  ],
+  "order": 291
+}

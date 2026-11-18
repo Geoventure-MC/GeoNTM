@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_starmetal",
+  "output": {
+    "id": "geontm:powder_dura_steel",
+    "count": 6
+  }
+}

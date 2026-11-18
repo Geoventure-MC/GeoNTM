@@ -1,0 +1,27 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.chlorocalcite_mix.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_flux"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:chlorocalcite_solution",
+      "amount": 500
+    },
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:chlorocalcite_mix",
+      "amount": 1000
+    }
+  ],
+  "duration": 50,
+  "order": 42
+}

@@ -171,7 +171,7 @@ public final class PrecisionAssemblerGameTests {
         secretPlayer.getInventory().add(new ItemStack(Items.PAPER));
         int secretPaper = secretPlayer.getInventory().countItem(Items.PAPER);
         helper.assertTrue(ModMachineItems.blueprints.get().tryCopy(helper.getLevel(), secretPlayer,
-                        InteractionHand.MAIN_HAND) == InteractionResult.TRY_WITH_EMPTY_HAND,
+                        InteractionHand.MAIN_HAND) == InteractionResult.PASS,
                 "Secret blueprint must reject the copy action");
         helper.assertTrue(secretPlayer.getInventory().countItem(Items.PAPER) == secretPaper,
                 "Rejected secret blueprint must not consume paper");

@@ -13,7 +13,7 @@ import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geontm.items.machine.ItemBlueprints;
 import fr.geoventure.geontm.util.BobMathUtil;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -163,7 +163,7 @@ public class JEIGenericRecipeHandler extends GeoNtmRecipeCategory<GenericRecipe>
     }
 
     @Override
-    public void draw(GenericRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(GenericRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         if (blueprintTemplates(recipe).isEmpty()) {
             machinePill.draw(g, 74 + xOffset(recipe), 14);
@@ -173,7 +173,7 @@ public class JEIGenericRecipeHandler extends GeoNtmRecipeCategory<GenericRecipe>
         drawExtras(recipe, g);
     }
 
-    private void drawExtras(GenericRecipe recipe, GuiGraphicsExtractor g) {
+    private void drawExtras(GenericRecipe recipe, GuiGraphics g) {
         if (extras == Extras.NONE) return;
         int side = 164;
         String duration = BobMathUtil.getShortNumber(recipe.duration) + " ticks";

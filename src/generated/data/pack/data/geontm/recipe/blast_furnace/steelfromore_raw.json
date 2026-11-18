@@ -1,0 +1,26 @@
+{
+  "type": "geontm:blast_furnace",
+  "name": "blast.steelFromOre_raw",
+  "input_items": [
+    {
+      "ingredient": "#c:raw_materials/iron"
+    },
+    {
+      "ingredient": "#c:sands"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ingot_steel",
+      "count": 2,
+      "chance": 0.6666667
+    },
+    {
+      "id": "geontm:ingot_raw_slag",
+      "count": 2,
+      "chance": 0.6666667
+    }
+  ],
+  "duration": 800,
+  "order": 4
+}

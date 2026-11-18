@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.au198_dust",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/gold"
+    }
+  ],
+  "output_items": [
+    "geontm:powder_au198"
+  ],
+  "duration": 10000,
+  "order": 6
+}

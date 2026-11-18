@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:apple",
+  "output": "minecraft:sugar"
+}

@@ -1,0 +1,32 @@
+{
+  "type": "geontm:supercomputer",
+  "name": "com.beigeprints",
+  "input_items": [
+    {
+      "ingredient": "minecraft:paper",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:gems/cinnabar",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:blueprint_folder_discover",
+        "weight": 10
+      },
+      {
+        "data": {
+          "id": "minecraft:paper",
+          "count": 24
+        },
+        "weight": 90
+      }
+    ]
+  ],
+  "duration": 18000,
+  "power": 50000,
+  "order": 16
+}

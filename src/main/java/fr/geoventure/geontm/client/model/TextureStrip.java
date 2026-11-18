@@ -10,7 +10,7 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 
@@ -22,7 +22,7 @@ public record TextureStrip(int frames, int frameTime) {
 
     private static final TextureStrip STILL = new TextureStrip(1, 1);
 
-    public static TextureStrip of(Identifier texture) {
+    public static TextureStrip of(ResourceLocation texture) {
         ResourceManager resources = Minecraft.getInstance().getResourceManager();
         Optional<Resource> meta = resources.getResource(Ids.of(texture.getNamespace(), texture.getPath() + ".mcmeta"));
         if (meta.isEmpty()) return STILL;

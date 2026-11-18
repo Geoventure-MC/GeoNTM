@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.alumina.1",
+  "input_items": [
+    {
+      "ingredient": "geontm:chunk_ore_cryolite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sodium_aluminate",
+      "amount": 150
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:alumina",
+      "amount": 300
+    }
+  ],
+  "duration": 40,
+  "order": 47
+}

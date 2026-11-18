@@ -6,7 +6,7 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -34,7 +34,7 @@ public abstract class PneumaticScreenBase<T extends AbstractContainerMenu> exten
     }
 
     /** 1.7 {@code drawCustomInfoStat}: the given lines while the mouse is over the region. */
-    protected void drawCustomInfoStat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int x, int y,
+    protected void drawCustomInfoStat(GuiGraphics graphics, int mouseX, int mouseY, int x, int y,
                                       int width, int height, String... lines) {
         if (!hover(x, y, width, height, mouseX, mouseY)) return;
         List<Component> components = new ArrayList<>(lines.length);
@@ -42,7 +42,7 @@ public abstract class PneumaticScreenBase<T extends AbstractContainerMenu> exten
         GuiDraw.tooltip(graphics, font, components, Optional.empty(), mouseX, mouseY);
     }
 
-    protected void drawCustomInfoStat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int x, int y,
+    protected void drawCustomInfoStat(GuiGraphics graphics, int mouseX, int mouseY, int x, int y,
                                       int width, int height, List<Component> lines) {
         if (!hover(x, y, width, height, mouseX, mouseY)) return;
         GuiDraw.tooltip(graphics, font, lines, Optional.empty(), mouseX, mouseY);
@@ -63,7 +63,7 @@ public abstract class PneumaticScreenBase<T extends AbstractContainerMenu> exten
      * 1.7 {@code FluidTank.renderTank(x, y, z, width, height)}: the fluid's own sprite tiled up from the bar's bottom
      * edge ({@code y} is the bottom, as 1.7 took it) to the filled height, the way the fluid tank GUI ports it.
      */
-    protected void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int bottom, int width, int height) {
+    protected void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int bottom, int width, int height) {
         int max = tank.getMaxFill();
         int h = max <= 0 ? 0 : (int) ((long) tank.getFill() * height / max);
         if (h <= 0) return;
@@ -92,7 +92,7 @@ public abstract class PneumaticScreenBase<T extends AbstractContainerMenu> exten
      * 1.7 {@code GUIElements.drawSmoothGauge}: a needle turned by {@code -progress * 270 - 45} degrees, an outer
      * triangle 1.5 times the inner one behind it. The ported rasteriser from the press dial.
      */
-    protected static void drawSmoothGauge(GuiGraphicsExtractor graphics, int cx, int cy, double progress,
+    protected static void drawSmoothGauge(GuiGraphics graphics, int cx, int cy, double progress,
                                           double tipLength, double backLength, double backSide,
                                           int color, int colorOuter) {
         progress = Math.max(0.0, Math.min(1.0, progress));
@@ -106,7 +106,7 @@ public abstract class PneumaticScreenBase<T extends AbstractContainerMenu> exten
         GuiDraw.popMatrix(graphics);
     }
 
-    private static void fillNeedle(GuiGraphicsExtractor g, double mult, double tipLength, double backLength,
+    private static void fillNeedle(GuiGraphics g, double mult, double tipLength, double backLength,
                                    double backSide, int color) {
         double tipLen = tipLength * mult * SS, backLen = backLength * mult * SS, side = backSide * mult * SS;
         double total = tipLen + backLen;

@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.aggregate",
+  "input_items": [
+    {
+      "ingredient": "minecraft:cobblestone",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    {
+      "id": "minecraft:gravel",
+      "count": 8
+    },
+    {
+      "id": "minecraft:sand",
+      "count": 8
+    }
+  ],
+  "duration": 320,
+  "power": 500,
+  "custom_localization": true,
+  "blueprint_pools": [
+    "discover..stone"
+  ],
+  "order": 23
+}

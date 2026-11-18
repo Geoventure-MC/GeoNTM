@@ -58,7 +58,7 @@ public final class FinalRecipeGapGameTests {
     public static void init() {}
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     /** The first item of a tag, so the test does not hard-code which material table owns it. */

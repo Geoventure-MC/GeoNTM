@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt20kerotriple",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_20"
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_20_kerosene_triple"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 75264
+}

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/zirconium"
+  },
+  "output": {
+    "id": "geontm:wire_fine_zirconium",
+    "count": 8
+  },
+  "order": 35
+}

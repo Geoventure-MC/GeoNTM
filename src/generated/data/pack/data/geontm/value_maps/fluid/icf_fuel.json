@@ -1,0 +1,11 @@
+{
+  "values": {
+    "geontm:chlorine": "chlorine",
+    "geontm:deuterium": "deuterium",
+    "geontm:helium3": "helium3",
+    "geontm:helium4": "helium4",
+    "geontm:hydrogen": "hydrogen",
+    "geontm:oxygen": "oxygen",
+    "geontm:tritium": "tritium"
+  }
+}

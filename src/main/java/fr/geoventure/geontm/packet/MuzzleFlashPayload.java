@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C: a tracked gun holder fired; the client records the observer-side flash timestamp. */
 public record MuzzleFlashPayload(int entityId) implements GeoCorePayload {
@@ -15,7 +15,7 @@ public record MuzzleFlashPayload(int entityId) implements GeoCorePayload {
             buffer -> new MuzzleFlashPayload(buffer.readVarInt()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#minecraft:saplings"
+  },
+  "item_output": "geontm:powder_ash_wood",
+  "fluid_output": {
+    "type": "geontm:woodoil",
+    "amount": 50
+  },
+  "order": 15
+}

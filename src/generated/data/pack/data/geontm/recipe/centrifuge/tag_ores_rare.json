@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/rare"
+  },
+  "outputs": [
+    "geontm:powder_desh_mix",
+    "geontm:nugget_zirconium",
+    "geontm:nugget_zirconium",
+    "minecraft:gravel"
+  ],
+  "order": 32
+}

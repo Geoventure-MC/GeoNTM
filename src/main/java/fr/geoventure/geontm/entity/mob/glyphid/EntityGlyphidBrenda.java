@@ -8,7 +8,7 @@ import fr.geoventure.geontm.items.weapon.ItemDisperser;
 import fr.geoventure.geontm.main.ResourceManager;
 import fr.geoventure.geontm.entity.ModNtmEntities;
 import java.util.function.Supplier;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
@@ -50,7 +50,7 @@ public class EntityGlyphidBrenda extends EntityGlyphid {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_brenda_tex;
     }
 
@@ -92,7 +92,7 @@ public class EntityGlyphidBrenda extends EntityGlyphid {
             if (level() instanceof ServerLevel serverLevel) {
                 for (int i = 0; i < 12; i++) {
                     EntityGlyphid glyphid = new EntityGlyphid(GRUNT_TYPE.get(), serverLevel);
-                    glyphid.snapTo(getX(), getY() + 0.5D, getZ(), random.nextFloat() * 360.0F, 0.0F);
+                    glyphid.moveTo(getX(), getY() + 0.5D, getZ(), random.nextFloat() * 360.0F, 0.0F);
                     serverLevel.addFreshEntity(glyphid);
                     glyphid.move(MoverType.SELF, new Vec3(random.nextGaussian(), 0, random.nextGaussian()));
                 }

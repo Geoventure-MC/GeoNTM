@@ -14,7 +14,7 @@ import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -207,7 +207,7 @@ public class MachineFan extends CompatBlock implements TickingBlock, IToolable, 
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             super.serialize(buf);
             buf.writeBoolean(falloff);
             buf.writeBoolean(suck);
@@ -215,7 +215,7 @@ public class MachineFan extends CompatBlock implements TickingBlock, IToolable, 
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             super.deserialize(buf);
             falloff = buf.readBoolean();
             suck = buf.readBoolean();

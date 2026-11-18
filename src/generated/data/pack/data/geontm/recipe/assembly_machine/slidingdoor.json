@@ -1,0 +1,37 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.slidingdoor",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/tungsten",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:reinforced_glass",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_rubber",
+      "count": 4
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:sliding_blast_door"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 17152
+}

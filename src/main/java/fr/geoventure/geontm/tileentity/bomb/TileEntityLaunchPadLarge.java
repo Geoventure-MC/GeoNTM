@@ -13,7 +13,7 @@ import fr.geoventure.geontm.util.SavedIds;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.MenuProvider;
@@ -213,7 +213,7 @@ public class TileEntityLaunchPadLarge extends TileEntityLaunchPadBase implements
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(this.liftMoving);
         buf.writeBoolean(this.erectorMoving);
@@ -225,7 +225,7 @@ public class TileEntityLaunchPadLarge extends TileEntityLaunchPadBase implements
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.liftMoving = buf.readBoolean();
         this.erectorMoving = buf.readBoolean();

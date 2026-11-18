@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.Nullable;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -68,18 +68,18 @@ public class ExplosionBalefire {
         default void floor(ExplosionBalefire explosion, int x, int depth, int z, int dist, int layer) {}
     }
 
-    private static final Map<Identifier, Variant> VARIANTS =
+    private static final Map<ResourceLocation, Variant> VARIANTS =
             new ConcurrentHashMap<>();
 
     /** Registers a crater variant under {@code id} (a second registration of one id is an error). */
-    public static void registerVariant(Identifier id, Variant variant) {
+    public static void registerVariant(ResourceLocation id, Variant variant) {
         if (VARIANTS.putIfAbsent(id, Objects.requireNonNull(variant)) != null) {
             throw new IllegalStateException("Balefire variant " + id + " registered twice");
         }
     }
 
     /** The variant registered as {@code id}, or null (null id, or unknown: plain 1.7 balefire). */
-    public static @Nullable Variant variant(@Nullable Identifier id) {
+    public static @Nullable Variant variant(@Nullable ResourceLocation id) {
         return id == null ? null : VARIANTS.get(id);
     }
 
@@ -165,7 +165,7 @@ public class ExplosionBalefire {
         int maxdepth = (int) (10 + radius * 0.25);
         int depth = (int) ((maxdepth * dist / (double) radius) + (Math.sin(dist * 0.15 + 2) * 2));
 
-        depth = Math.max(y - depth, level.getMinY());
+        depth = Math.max(y - depth, level.getMinBuildHeight());
 
         boolean balefire = variant == null || variant.balefire();
 

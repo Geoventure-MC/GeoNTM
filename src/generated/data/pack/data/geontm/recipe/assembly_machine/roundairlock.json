@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.roundairlock",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 4
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:dyes/green",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:round_airlock_door"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 18432
+}

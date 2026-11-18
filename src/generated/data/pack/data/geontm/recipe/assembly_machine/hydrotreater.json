@@ -1,0 +1,80 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.hydrotreater",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 8
+    },
+    {
+      "material": "copper",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_hydrotreater"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 27392,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_bronze_tubes",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "material": "dura_steel",
+      "shape": "pipe",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor_bismuth",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_computer"
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.hardplastic"
+  ]
+}

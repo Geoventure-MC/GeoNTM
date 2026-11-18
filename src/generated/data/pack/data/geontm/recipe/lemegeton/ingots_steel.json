@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/steel",
+  "output": "geontm:ingot_dura_steel",
+  "order": 1
+}

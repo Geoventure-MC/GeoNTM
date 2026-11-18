@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:quartz_stairs",
+  "output": {
+    "id": "geontm:powder_quartz",
+    "count": 3
+  }
+}

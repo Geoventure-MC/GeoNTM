@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "minecraft:sugar",
+  "output": {
+    "type": "geontm:ethanol",
+    "amount": 100
+  }
+}

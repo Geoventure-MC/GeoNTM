@@ -1,0 +1,19 @@
+{
+  "type": "liquid",
+  "color": "#B0AA64",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 2,
+    "symbol": "acid"
+  },
+  "shares": [
+    "#c:sulfuric_acid"
+  ],
+  "traits": {
+    "corrosive": {
+      "rating": 50
+    }
+  }
+}

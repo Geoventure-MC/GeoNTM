@@ -1,0 +1,18 @@
+{
+  "type": "geontm:reforming",
+  "input": "geontm:cholesterol",
+  "outputs": [
+    {
+      "type": "geontm:estradiol",
+      "amount": 50
+    },
+    {
+      "type": "geontm:reformgas",
+      "amount": 35
+    },
+    {
+      "type": "geontm:hydrogen",
+      "amount": 15
+    }
+  ]
+}

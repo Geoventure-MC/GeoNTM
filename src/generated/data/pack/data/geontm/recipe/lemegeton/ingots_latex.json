@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/latex",
+  "output": "geontm:ingot_rubber",
+  "order": 27
+}

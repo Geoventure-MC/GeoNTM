@@ -43,7 +43,7 @@ public class BlockCanCrate extends CompatBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (!held.is(BlockCrateSupply.CROWBAR)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!held.is(BlockCrateSupply.CROWBAR)) return InteractionResult.PASS;
         if (!level.isClientSide()) {
             dropContents(level, pos);
             level.removeBlock(pos, false);
@@ -87,7 +87,7 @@ public class BlockCanCrate extends CompatBlock {
     }
 
     private static ItemStack stackOf(String id) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of("geontm", id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of("geontm", id));
         return item == null || item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
     }
 }

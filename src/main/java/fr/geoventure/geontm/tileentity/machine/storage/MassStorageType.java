@@ -2,7 +2,7 @@ package fr.geoventure.geontm.tileentity.machine.storage;
 
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geontm.inventory.container.ContainerMassStorage;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
@@ -18,7 +18,7 @@ public enum MassStorageType {
     public final String id;
     public final String defaultName;
     public final int capacity;
-    public final Identifier guiTexture = Ids.of("geontm", "textures/gui/storage/gui_mass_storage.png");
+    public final ResourceLocation guiTexture = Ids.of("geontm", "textures/gui/storage/gui_mass_storage.png");
     private Supplier<BlockEntityType<TileEntityMassStorage>> blockEntityType;
     private Supplier<MenuType<ContainerMassStorage>> menuType;
 

@@ -13,10 +13,10 @@ import fr.geoventure.geocore.net.GeoCoreNetwork;
 import fr.geoventure.geocore.net.GeoCorePayload;
 import fr.geoventure.geocore.registry.Entities;
 import net.minecraft.ChatFormatting;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -42,7 +42,7 @@ public record DuckPayload() implements GeoCorePayload {
         EntityHbmProps props = GeoNtmPlayerProps.getData(player);
         if (!MobConfig.enableDucks || props.hasDucked) return;
         ServerLevel level = (ServerLevel) player.level();
-        EntityDuck duck = Entities.create(ModNtmEntities.DUCK.get(), level, EntitySpawnReason.EVENT);
+        EntityDuck duck = Entities.create(ModNtmEntities.DUCK.get(), level, MobSpawnType.EVENT);
         duck.setPos(player.getX(), player.getEyeY(), player.getZ());
         Vec3 look = player.getLookAngle();
         duck.setDeltaMovement(look);
@@ -53,7 +53,7 @@ public record DuckPayload() implements GeoCorePayload {
     }
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

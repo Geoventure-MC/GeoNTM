@@ -1,0 +1,48 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.turretrichard",
+  "input_items": [
+    {
+      "ingredient": "geontm:battery_lead"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:mechanisms/weaponsteel",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:crate_steel"
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_richard"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 62464,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

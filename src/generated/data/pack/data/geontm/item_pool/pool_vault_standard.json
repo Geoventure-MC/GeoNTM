@@ -1,0 +1,86 @@
+{
+  "entries": [
+    {
+      "item": "geontm:ingot_desh",
+      "min": 2,
+      "max": 6,
+      "weight": 1
+    },
+    {
+      "item": "geontm:powder_desh_mix",
+      "min": 1,
+      "max": 5,
+      "weight": 1
+    },
+    {
+      "item": "minecraft:diamond",
+      "min": 3,
+      "max": 6,
+      "weight": 1
+    },
+    {
+      "item": "geontm:ammo_standard_nuke_standard",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:ammo_container",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 1,
+      "weight": 1,
+      "components": {
+        "geontm:grenade": {
+          "shell": "nuke",
+          "filling": "nuclear",
+          "fuze": "s7"
+        },
+        "minecraft:max_stack_size": 1
+      }
+    },
+    {
+      "item": "geontm:grenade_universal",
+      "min": 1,
+      "max": 6,
+      "weight": 1,
+      "components": {
+        "geontm:grenade": {
+          "shell": "tech",
+          "filling": "emp",
+          "fuze": "s3"
+        },
+        "minecraft:max_stack_size": 2
+      }
+    },
+    {
+      "item": "geontm:powder_yellowcake",
+      "min": 16,
+      "max": 24,
+      "weight": 1
+    },
+    {
+      "item": "geontm:gun_uzi",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    },
+    {
+      "item": "geontm:circuit_vacuum_tube",
+      "min": 12,
+      "max": 16,
+      "weight": 1
+    },
+    {
+      "item": "geontm:circuit_chip",
+      "min": 2,
+      "max": 6,
+      "weight": 1
+    }
+  ]
+}

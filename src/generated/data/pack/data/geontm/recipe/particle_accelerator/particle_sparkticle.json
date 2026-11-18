@@ -1,0 +1,13 @@
+{
+  "type": "geontm:particle_accelerator",
+  "input1": {
+    "ingredient": "geontm:particle_strange"
+  },
+  "input2": {
+    "ingredient": "geontm:powder_magic"
+  },
+  "momentum": 12500,
+  "output1": "geontm:particle_sparkticle",
+  "output2": "geontm:dust",
+  "order": 7
+}

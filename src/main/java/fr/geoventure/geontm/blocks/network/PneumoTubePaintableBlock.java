@@ -80,7 +80,7 @@ public class PneumoTubePaintableBlock extends CompatBlock
             }
         }
         if (PneumoTube.useGasIdentifier(level, pos, player, stack)) return InteractionResult.SUCCESS;
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class PneumoTubePaintableBlock extends CompatBlock
                                                  BlockHitResult hit) {
         ToolType tool = ToolType.getType(player.getMainHandItem());
         if (tool == ToolType.SCREWDRIVER || tool == ToolType.HAND_DRILL || tool == ToolType.DEFUSER) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         return PneumoTube.openTubeMenu(level, pos, player);
     }

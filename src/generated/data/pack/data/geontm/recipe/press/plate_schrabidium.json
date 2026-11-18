@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "plate",
+  "input": {
+    "ingredient": "#c:ingots/schrabidium"
+  },
+  "output": "geontm:plate_schrabidium",
+  "order": 18
+}

@@ -178,8 +178,8 @@ public final class ConveyorRoute {
         }
 
         @Override
-        public int getMinY() {
-            return level.getMinY();
+        public int getMinBuildHeight() {
+            return level.getMinBuildHeight();
         }
     }
 

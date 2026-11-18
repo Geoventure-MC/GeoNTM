@@ -44,12 +44,12 @@ import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.animal.cow.MushroomCow;
+import net.minecraft.world.entity.animal.MushroomCow;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
-import net.minecraft.world.entity.monster.zombie.Zombie;
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.ClipContext;
@@ -116,7 +116,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
 
     public EntityBullet(EntityType<? extends EntityBullet> type, Level level, double x, double y, double z) {
         this(type, level);
-        this.snapTo(x, y, z); // 1.7: setPosition + yOffset = 0 (no yOffset in 26.1)
+        this.moveTo(x, y, z); // 1.7: setPosition + yOffset = 0 (no yOffset in 26.1)
     }
 
     public EntityBullet(EntityType<? extends EntityBullet> type, Level level, LivingEntity shooter, LivingEntity target,
@@ -139,7 +139,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
             float f3 = (float) (-(Math.atan2(d1, d3) * 180.0D / Math.PI));
             double d4 = d0 / d3;
             double d5 = d2 / d3;
-            this.snapTo(shooter.getX() + d4, this.getY(), shooter.getZ() + d5, f2, f3);
+            this.moveTo(shooter.getX() + d4, this.getY(), shooter.getZ() + d5, f2, f3);
             float f4 = 0;//(float) d3 * 0.2F;
             this.setThrowableHeading(d0, d1 + f4, d2, velocity, inaccuracy);
         }
@@ -154,7 +154,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
             this.canBePickedUp = 1;
         }
 
-        this.snapTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(), shooter.getYRot(),
+        this.moveTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(), shooter.getYRot(),
                 shooter.getXRot());
         this.setPos(this.getX() - Mth.cos(this.getYRot() / 180.0F * (float) Math.PI) * 0.16F,
                 this.getY() - 0.10000000149011612D,
@@ -182,7 +182,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
             this.canBePickedUp = 1;
         }
 
-        this.snapTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(), shooter.getYRot(),
+        this.moveTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(), shooter.getYRot(),
                 shooter.getXRot());
         this.setPos(this.getX() - Mth.cos(this.getYRot() / 180.0F * (float) Math.PI) * 0.16F,
                 this.getY() - 0.10000000149011612D,
@@ -206,7 +206,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
             this.canBePickedUp = 1;
         }
 
-        if(shooter != null) this.snapTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(),
+        if(shooter != null) this.moveTo(shooter.getX(), shooter.getY() + shooter.getEyeHeight(), shooter.getZ(),
                 shooter.getYRot(), shooter.getXRot());
         this.setPos(this.getX() - Mth.cos(this.getYRot() / 180.0F * (float) Math.PI) * 0.16F,
                 this.getY() - 0.10000000149011612D,
@@ -442,7 +442,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
                                     } else if (entitylivingbase instanceof Creeper) {
                                         EntityCreeperNuclear creep =
                                                 new EntityCreeperNuclear(ModNtmEntities.CREEPER_NUCLEAR.get(), level());
-                                        creep.snapTo(entitylivingbase.getX(), entitylivingbase.getY(),
+                                        creep.moveTo(entitylivingbase.getX(), entitylivingbase.getY(),
                                                 entitylivingbase.getZ(), entitylivingbase.getYRot(),
                                                 entitylivingbase.getXRot());
                                         entitylivingbase.discard();
@@ -450,7 +450,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
                                             level().addFreshEntity(creep);
                                     } else if (entitylivingbase instanceof Villager) {
                                         Zombie creep = new Zombie(level());
-                                        creep.snapTo(entitylivingbase.getX(), entitylivingbase.getY(),
+                                        creep.moveTo(entitylivingbase.getX(), entitylivingbase.getY(),
                                                 entitylivingbase.getZ(), entitylivingbase.getYRot(),
                                                 entitylivingbase.getXRot());
                                         entitylivingbase.discard();
@@ -461,7 +461,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
                                             && !(entitylivingbase instanceof EntityCreeperNuclear)) {
                                         entitylivingbase.addEffect(new MobEffectInstance(MobEffects.POISON, 2 * 60 * 20, 2));
                                         entitylivingbase.addEffect(new MobEffectInstance(MobEffects.WITHER, 20, 4));
-                                        entitylivingbase.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 1 * 60 * 20, 1)); // 1.7 Potion.moveSlowdown
+                                        entitylivingbase.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1 * 60 * 20, 1)); // 1.7 Potion.moveSlowdown
                                     }
                                 }
 
@@ -486,7 +486,7 @@ public class EntityBullet extends CompatEntity implements Protection.Owned {
                                 if (this.shootingEntity instanceof ServerPlayer shooterPlayer
                                         && hit != this.shootingEntity && hit instanceof Player) {
                                     shooterPlayer.connection.send(new ClientboundGameEventPacket(
-                                            ClientboundGameEventPacket.PLAY_ARROW_HIT_SOUND, 0.0F)); // 1.7 S2BPacketChangeGameState(6, 0)
+                                            ClientboundGameEventPacket.ARROW_HIT_PLAYER, 0.0F)); // 1.7 S2BPacketChangeGameState(6, 0)
                                 }
                             }
 

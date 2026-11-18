@@ -24,7 +24,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -52,11 +52,11 @@ import java.util.List;
  */
 public final class SlicedMobs {
 
-    private static final Identifier GORE_GENERIC = Ids.of("geontm", "textures/misc/gore_generic.png");
-    private static final Identifier CRUCIBLE_CAP = Ids.of("geontm", "textures/misc/crucible_cap.png");
-    private static final Identifier BLOOD = Ids.of("geontm", "textures/misc/blood0.png");
-    private static final Identifier BLOOD_DECAL = Ids.of("geontm", "textures/misc/blood_dec1.png");
-    private static final Identifier SPARK = Ids.of("geontm", "textures/models/bfg/particle.png");
+    private static final ResourceLocation GORE_GENERIC = Ids.of("geontm", "textures/misc/gore_generic.png");
+    private static final ResourceLocation CRUCIBLE_CAP = Ids.of("geontm", "textures/misc/crucible_cap.png");
+    private static final ResourceLocation BLOOD = Ids.of("geontm", "textures/misc/blood0.png");
+    private static final ResourceLocation BLOOD_DECAL = Ids.of("geontm", "textures/misc/blood_dec1.png");
+    private static final ResourceLocation SPARK = Ids.of("geontm", "textures/models/bfg/particle.png");
 
     static final List<Sliced> SLICED = new ArrayList<>();
     static final List<Blood> BLOOD_STREAKS = new ArrayList<>();
@@ -95,7 +95,7 @@ public final class SlicedMobs {
         if (!(ent instanceof LivingEntity living)) return;
         float[] data = payload.auxData();
         int id = Float.floatToIntBits(data[4]);
-        Identifier capTex = id == 0 ? GORE_GENERIC : CRUCIBLE_CAP;
+        ResourceLocation capTex = id == 0 ? GORE_GENERIC : CRUCIBLE_CAP;
         boolean capBloom = id == 1;
 
         EntityMeshes.Mesh mesh = EntityMeshes.capture(living, Frames.partialTick());
@@ -217,13 +217,13 @@ public final class SlicedMobs {
     /** {@code ParticleSlicedMob}: a rigid body stepped every tick for 80..99 ticks. */
     static final class Sliced {
         final MobCutter.Piece piece;
-        final Identifier texture;
-        final Identifier capTex;
+        final ResourceLocation texture;
+        final ResourceLocation capTex;
         final boolean capBloom;
         final int maxAge;
         int age;
 
-        Sliced(MobCutter.Piece piece, Identifier texture, Identifier capTex, boolean capBloom, int maxAge) {
+        Sliced(MobCutter.Piece piece, ResourceLocation texture, ResourceLocation capTex, boolean capBloom, int maxAge) {
             this.piece = piece;
             this.texture = texture;
             this.capTex = capTex;

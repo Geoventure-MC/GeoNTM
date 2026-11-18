@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "geontm:powder_strontium"
+  },
+  "output": "geontm:powder_zirconium",
+  "antimatter": 50,
+  "order": 6
+}

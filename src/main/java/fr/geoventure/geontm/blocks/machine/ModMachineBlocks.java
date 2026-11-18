@@ -1423,32 +1423,32 @@ public final class ModMachineBlocks {
     public static final RegistryObject<RadioTorchSender> radio_torch_sender = REG.block(
             "radio_torch_sender", RadioTorchSender::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSwitching("rtty_sender_off", "rtty_sender_on"));
     public static final RegistryObject<RadioTorchReceiver> radio_torch_receiver = REG.block(
             "radio_torch_receiver", RadioTorchReceiver::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSwitching("rtty_rec_off", "rtty_rec_on"));
     public static final RegistryObject<RadioTorchReader> radio_torch_reader = REG.block(
             "radio_torch_reader", RadioTorchReader::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSteady("rtty_reader"));
     public static final RegistryObject<RadioTorchLogic> radio_torch_logic = REG.block(
             "radio_torch_logic", RadioTorchLogic::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSwitching("rtty_logic_off", "rtty_logic_on"));
     public static final RegistryObject<RadioTorchCounter> radio_torch_counter = REG.block(
             "radio_torch_counter", RadioTorchCounter::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSteady("rtty_counter"));
     public static final RegistryObject<RadioTorchController> radio_torch_controller = REG.block(
             "radio_torch_controller", RadioTorchController::new,
             properties -> properties.strength(0.1F, 6.0F).sound(SoundType.WOOD)
-                    .noCollision().noOcclusion())
+                    .noCollission().noOcclusion())
             .transform(radioSteady("rtty_controller"));
     public static final RegistryObject<RadioTelex> radio_telex = REG.block(
             "radio_telex", RadioTelex::new,

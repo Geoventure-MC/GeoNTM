@@ -1,0 +1,32 @@
+{
+  "values": {
+    "geontm:piston_set_steel": {
+      "LOW": 1.0,
+      "MEDIUM": 0.75,
+      "HIGH": 0.25,
+      "AERO": 0.0,
+      "GAS": 0.0
+    },
+    "geontm:piston_set_dura": {
+      "LOW": 0.5,
+      "MEDIUM": 1.0,
+      "HIGH": 0.9,
+      "AERO": 0.5,
+      "GAS": 0.0
+    },
+    "geontm:piston_set_desh": {
+      "LOW": 0.0,
+      "MEDIUM": 0.5,
+      "HIGH": 1.0,
+      "AERO": 0.75,
+      "GAS": 0.0
+    },
+    "geontm:piston_set_starmetal": {
+      "LOW": 0.5,
+      "MEDIUM": 0.75,
+      "HIGH": 1.0,
+      "AERO": 0.9,
+      "GAS": 0.5
+    }
+  }
+}

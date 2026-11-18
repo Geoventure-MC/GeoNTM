@@ -1,0 +1,53 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.crystalcircuit",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor_tantalium",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:ingot_cft",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_pcb",
+      "count": 16
+    },
+    {
+      "material": "bscco",
+      "shape": "densewire",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:orbital_assembly_crystal_circuit",
+        "weight": 25
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:orbital_assembly_crystal_circuit"
+          }
+        },
+        "weight": 75
+      }
+    ]
+  ],
+  "duration": 600,
+  "power": 20000,
+  "order": 0,
+  "requires": [
+    "expensive_mode"
+  ],
+  "geocore:requires": [
+    "expensive_mode"
+  ]
+}

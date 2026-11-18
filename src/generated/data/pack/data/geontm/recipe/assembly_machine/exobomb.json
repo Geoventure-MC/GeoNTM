@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.exobomb",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:dusts/red_phosphorus",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "geontm:coil_gold",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:therm_exo"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 56064
+}

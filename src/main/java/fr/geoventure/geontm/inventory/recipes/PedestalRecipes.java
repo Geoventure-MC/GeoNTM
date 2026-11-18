@@ -63,7 +63,7 @@ public final class PedestalRecipes {
          * The tablet's 16x16 icon: on HBM's tablet sheet at v ({@code sheet} null; u follows the tablet), or at (u, v) of
          * an addon's own 256x256 {@code sheet}. Null for a condition the tablet does not show.
          */
-        public record Icon(net.minecraft.resources.@org.jspecify.annotations.Nullable Identifier sheet, int u, int v) {}
+        public record Icon(net.minecraft.resources.@org.jspecify.annotations.Nullable ResourceLocation sheet, int u, int v) {}
 
         public static final NamedRegistry<PedestalExtraCondition> REGISTRY =
                 new NamedRegistry<>("pedestal condition", PedestalExtraCondition::name);
@@ -237,9 +237,9 @@ public final class PedestalRecipes {
 
     /** The recipe's product, or empty if its item is not registered in this port. */
     public static ItemStack output(PedestalRecipe recipe) {
-        net.minecraft.resources.Identifier id = Ids.parse(recipe.output);
+        net.minecraft.resources.ResourceLocation id = Ids.parse(recipe.output);
         if (!BuiltInRegistries.ITEM.containsKey(id)) return ItemStack.EMPTY;
-        return new ItemStack(BuiltInRegistries.ITEM.getValue(id),
+        return new ItemStack(BuiltInRegistries.ITEM.get(id),
                 recipe.outputCount);
     }
 }

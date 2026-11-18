@@ -1,0 +1,16 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:dusts/cadmium"
+  },
+  "acid": {
+    "type": "geontm:fishoil",
+    "amount": 4000
+  },
+  "output": {
+    "id": "geontm:ingot_rubber",
+    "count": 16
+  },
+  "duration": 100,
+  "order": 65
+}

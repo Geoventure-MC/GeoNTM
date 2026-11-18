@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:moon_turf",
+    "count": 16
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:chunk_ore_moonstone",
+  "duration": 1200,
+  "order": 346
+}

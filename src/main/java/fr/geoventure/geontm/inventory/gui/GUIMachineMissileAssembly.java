@@ -11,9 +11,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.GuiEntities;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -33,7 +33,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class GUIMachineMissileAssembly extends CompatContainerScreen<ContainerMachineMissileAssembly> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/gui_missile_assembly.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/gui_missile_assembly.png");
 
     private @Nullable EntityMissileCustom preview;
     private @Nullable MissileStruct previewFor;
@@ -43,7 +43,7 @@ public class GUIMachineMissileAssembly extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
@@ -62,7 +62,7 @@ public class GUIMachineMissileAssembly extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineMissileAssembly assembler = menu.getAssembly();
         if (assembler == null) return;
@@ -79,11 +79,11 @@ public class GUIMachineMissileAssembly extends CompatContainerScreen<ContainerMa
         drawMissile(graphics, assembler.currentStruct());
     }
 
-    private void lamp(GuiGraphicsExtractor graphics, int x, float u) {
+    private void lamp(GuiGraphics graphics, int x, float u) {
         GuiDraw.blit(graphics, TEXTURE, leftPos + x, topPos + 23, u, 0F, 6, 8, 256, 256);
     }
 
-    private void drawMissile(GuiGraphicsExtractor graphics, MissileStruct struct) {
+    private void drawMissile(GuiGraphics graphics, MissileStruct struct) {
         if (this.minecraft == null || this.minecraft.level == null) return;
         if (struct.warhead() == null && struct.fuselage() == null && struct.fins() == null && struct.thruster() == null) return;
         if (preview == null) {

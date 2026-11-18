@@ -32,7 +32,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
@@ -40,7 +40,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.monster.zombie.Zombie;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -78,9 +78,9 @@ public class LogicBlockActions {
 
     /** A stack of an item by registry id, or empty if the port does not register it. */
     public static ItemStack stack(String id, int count) {
-        Identifier key = Ids.parse(id);
+        ResourceLocation key = Ids.parse(id);
         if (!BuiltInRegistries.ITEM.containsKey(key)) return ItemStack.EMPTY;
-        return new ItemStack(BuiltInRegistries.ITEM.getValue(key), count);
+        return new ItemStack(BuiltInRegistries.ITEM.get(key), count);
     }
 
     static ItemStack clayTablet(int variant) {
@@ -110,7 +110,7 @@ public class LogicBlockActions {
 
                     EntityUndeadSoldier mob = Entities.createTriggered(ModNtmEntities.UNDEAD_SOLDIER.get(), world);
                     for (int j = 0; j < 7 && mob != null; j++) {
-                        mob.snapTo(x + 0.5 + vx, heightValue(world, (int) (x + 0.5 + vx), (int) (z + 0.5 + vz)),
+                        mob.moveTo(x + 0.5 + vx, heightValue(world, (int) (x + 0.5 + vx), (int) (z + 0.5 + vz)),
                                 z + 0.5 + vz, i * 36F, 0);
                         if (mob.canSpawnAtCurrentPosition()) {
                             Spawns.finalizeTriggered(mob, world);
@@ -177,7 +177,7 @@ public class LogicBlockActions {
             for (int i = 0; i < 10; i++) {
                 Zombie mob = Entities.createTriggered(EntityType.ZOMBIE, world);
                 if (mob != null) {
-                    mob.snapTo(x + 0.5 + vx, heightValue(world, x, z), z + 0.5 + vz, i * 36F, 0);
+                    mob.moveTo(x + 0.5 + vx, heightValue(world, x, z), z + 0.5 + vz, i * 36F, 0);
                     MobUtil.assignItemsToEntity(mob, MobUtil.slotPoolAdv, world.getRandom());
                     world.addFreshEntity(mob);
                 }
@@ -196,7 +196,7 @@ public class LogicBlockActions {
             for (int i = 0; i < 3; i++) {
                 Mob mob = Entities.createTriggered(type, world);
                 if (mob != null) {
-                    mob.snapTo(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+                    mob.moveTo(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
                     dress.accept(mob);
                     world.addFreshEntity(mob);
                 }
@@ -250,7 +250,7 @@ public class LogicBlockActions {
 
             LightningBolt blitz = Entities.createTriggered(EntityType.LIGHTNING_BOLT, world);
             if (blitz != null) {
-                blitz.snapTo(pos.getX(), heightValue(world, pos.getX(), pos.getZ()) + 2, pos.getZ(), 0, 0);
+                blitz.moveTo(pos.getX(), heightValue(world, pos.getX(), pos.getZ()) + 2, pos.getZ(), 0, 0);
                 world.addFreshEntity(blitz);
             }
 

@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -112,11 +112,11 @@ public class TileEntityRadioTorchLogic extends TileEntityLoadedBase
     }
     private static String limit(String value, int max) { return value.length() <= max ? value : value.substring(0, max); }
     @Override public boolean hasPermission(Player player) { return player.distanceToSqr(worldPosition.getCenter()) < 16D; }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) {
+    @Override public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer); buffer.writeBoolean(polling); buffer.writeUtf(channel); buffer.writeBoolean(descending);
         buffer.writeByte(lastState); for (String value : mapping) buffer.writeUtf(value); for (int value : conditions) buffer.writeInt(value);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) {
+    @Override public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer); polling = buffer.readBoolean(); channel = buffer.readUtf(RTTYSystem.MAX_CHAN_LENGTH); descending = buffer.readBoolean();
         lastState = buffer.readByte(); for (int i = 0; i < MAPPING_SIZE; i++) mapping[i] = buffer.readUtf(15);
         for (int i = 0; i < MAPPING_SIZE; i++) conditions[i] = buffer.readInt();

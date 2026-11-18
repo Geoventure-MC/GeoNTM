@@ -11,7 +11,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -39,7 +39,7 @@ public class ItemBoatRubber extends CompatItem {
         ItemStack stack = player.getItemInHand(hand);
         HitResult hit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.ANY);
 
-        if (hit.getType() == HitResult.Type.MISS) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getType() == HitResult.Type.MISS) return InteractionResult.PASS;
 
         Vec3 look = player.getViewVector(1F);
         List<Entity> blocking = level.getEntities(player,
@@ -50,13 +50,13 @@ public class ItemBoatRubber extends CompatItem {
 
             for (Entity entity : blocking) {
                 AABB box = entity.getBoundingBox().inflate(entity.getPickRadius());
-                if (box.contains(eye)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+                if (box.contains(eye)) return InteractionResult.PASS;
             }
         }
 
-        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (hit.getType() != HitResult.Type.BLOCK) return InteractionResult.PASS;
 
-        EntityBoatRubber boat = Entities.create(ModNtmEntities.BOAT_RUBBER.get(), level, EntitySpawnReason.SPAWN_ITEM_USE);
+        EntityBoatRubber boat = Entities.create(ModNtmEntities.BOAT_RUBBER.get(), level, MobSpawnType.SPAWN_EGG);
         if (boat == null) return InteractionResult.FAIL;
 
         Vec3 at = hit.getLocation();

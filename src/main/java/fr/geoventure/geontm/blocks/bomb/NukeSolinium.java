@@ -50,7 +50,7 @@ public class NukeSolinium extends NukeBomb2Block {
         EntityNukeExplosionMK3 ex = EntityNukeExplosionMK3.statFacFleija(level,
                 pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, radius).makeSol();
         if (!ex.isRemoved()) {
-            level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS,
+            level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS,
                     1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
             level.addFreshEntity(Owners.give(ex, owner));
             level.addFreshEntity(EntityCloudSolinium.statFac(level, radius, pos.getX(), pos.getY(), pos.getZ()));

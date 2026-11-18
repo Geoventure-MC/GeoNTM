@@ -53,7 +53,7 @@ public final class Fix1AGameTests {
     public static void init() {}
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     private static ItemStack craft(GameTestHelper helper, int w, int h, ItemStack... stacks) {

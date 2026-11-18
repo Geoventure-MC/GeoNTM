@@ -1,0 +1,27 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.malachite",
+  "frequency": 6,
+  "icon": "geontm:stone_resource_malachite",
+  "inputs": [
+    {
+      "material": "malachite",
+      "amount": 144
+    },
+    {
+      "material": "flux",
+      "amount": 16
+    }
+  ],
+  "outputs": [
+    {
+      "material": "copper",
+      "amount": 72
+    },
+    {
+      "material": "slag",
+      "amount": 24
+    }
+  ],
+  "order": 2
+}

@@ -1,0 +1,7 @@
+{
+  "type": "geontm:storage_drum",
+  "input": "geontm:nuclear_waste_short_plutonium241",
+  "output": "geontm:nuclear_waste_short_depleted_plutonium241",
+  "decay": "short",
+  "gas": 100
+}

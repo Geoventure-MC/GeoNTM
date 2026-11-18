@@ -1,0 +1,47 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.turretjeremy",
+  "input_items": [
+    {
+      "ingredient": "geontm:battery_lead"
+    },
+    {
+      "ingredient": "#c:ingots/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "geontm:motor_desh"
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:mechanisms/weaponsteel",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:crate_steel"
+    },
+    {
+      "ingredient": "geontm:crt_display"
+    }
+  ],
+  "output_items": [
+    "geontm:turret_jeremy"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 61952,
+  "blueprint_pools_528": [
+    "528.bmg"
+  ]
+}

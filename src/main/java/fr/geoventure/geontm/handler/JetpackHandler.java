@@ -184,7 +184,7 @@ public final class JetpackHandler {
             for (int i = 0; i < slots.length; i++) {
                 String name = armor + "_" + suffixes[i];
                 if ("bj".equals(armor) && i == 1) name = "bj_plate_jetpack";
-                player.setItemSlot(slots[i], new ItemStack(BuiltInRegistries.ITEM.getValue(
+                player.setItemSlot(slots[i], new ItemStack(BuiltInRegistries.ITEM.get(
                         Ids.of("geontm", name))));
             }
             if ("crouch".equals(gear)) {

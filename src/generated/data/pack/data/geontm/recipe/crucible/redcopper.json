@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.redcopper",
+  "frequency": 2,
+  "icon": "geontm:ingot_red_copper",
+  "inputs": [
+    {
+      "material": "copper",
+      "amount": 8
+    },
+    {
+      "material": "redstone",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "red_copper",
+      "amount": 16
+    }
+  ],
+  "order": 3
+}

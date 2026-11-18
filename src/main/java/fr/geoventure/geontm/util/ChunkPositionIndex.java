@@ -17,7 +17,7 @@ public final class ChunkPositionIndex {
     private final Long2ObjectOpenHashMap<LongOpenHashSet> byChunk = new Long2ObjectOpenHashMap<>();
 
     public static long chunkOf(long posKey) {
-        return ChunkPos.pack(SectionPos.blockToSectionCoord(BlockPos.getX(posKey)),
+        return ChunkPos.asLong(SectionPos.blockToSectionCoord(BlockPos.getX(posKey)),
                 SectionPos.blockToSectionCoord(BlockPos.getZ(posKey)));
     }
 

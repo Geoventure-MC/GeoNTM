@@ -1,0 +1,13 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_first_crystal"
+  },
+  "molten_outputs": [
+    {
+      "material": "redstone",
+      "amount": 360
+    }
+  ],
+  "order": 73
+}

@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:raw_aluminium",
+  "output": {
+    "id": "geontm:chunk_ore_cryolite",
+    "count": 2
+  }
+}

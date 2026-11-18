@@ -15,7 +15,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import java.util.List;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,7 +29,7 @@ import org.jspecify.annotations.Nullable;
  */
 public class TileEntityTurretHoward extends TileEntityTurretRadarCommandBase {
 
-    private static final Identifier GUI = turretGui("howard");
+    private static final ResourceLocation GUI = turretGui("howard");
     private static @Nullable List<BulletConfig> configs;
 
     public float spin;
@@ -57,7 +57,7 @@ public class TileEntityTurretHoward extends TileEntityTurretRadarCommandBase {
     }
 
     @Override
-    public Identifier guiTexture() {
+    public ResourceLocation guiTexture() {
         return GUI;
     }
 

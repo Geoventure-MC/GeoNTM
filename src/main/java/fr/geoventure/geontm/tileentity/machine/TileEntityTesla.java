@@ -7,7 +7,7 @@ import fr.geoventure.geontm.util.TeslaZap;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -69,7 +69,7 @@ public class TileEntityTesla extends TileEntityMachineBase implements IEnergyRec
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeShort((short) targets.size());
         for (Vec3 d : targets) {
@@ -80,7 +80,7 @@ public class TileEntityTesla extends TileEntityMachineBase implements IEnergyRec
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         int s = buf.readShort();
         targets.clear();

@@ -15,9 +15,9 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.harness.HarnessQueryRegistry;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -34,16 +34,16 @@ public final class ArmorSetBClient {
 
     private ArmorSetBClient() {}
 
-    private static final Identifier[] BLURS = new Identifier[6];
+    private static final ResourceLocation[] BLURS = new ResourceLocation[6];
     /** 1.7 {@code ArmorGasMask.maskBlur}: the plain gas mask's own six wear stages. */
-    private static final Identifier[] MASK_BLURS = new Identifier[6];
+    private static final ResourceLocation[] MASK_BLURS = new ResourceLocation[6];
 
     static {
         for (int i = 0; i < 6; i++) BLURS[i] = Ids.of("geontm", "textures/misc/overlay_goggles_" + i + ".png");
         for (int i = 0; i < 6; i++) MASK_BLURS[i] = Ids.of("geontm", "textures/misc/overlay_gasmask_" + i + ".png");
     }
 
-    private static final Identifier HAZMAT = Ids.of("geontm", "textures/misc/overlay_hazmat.png");
+    private static final ResourceLocation HAZMAT = Ids.of("geontm", "textures/misc/overlay_hazmat.png");
 
     public static void registerHud(GeoNtmClientRegistrations.HudSink sink) {
         HarnessQueryRegistry.register("geontm_armor_set_b", (mc, params) -> query(mc));
@@ -54,19 +54,19 @@ public final class ArmorSetBClient {
      * hoods and the plain gas mask pick one of six textures by wear, {@code (int) (damage / maxDamage * 6)}, 5 when out
      * of range; the mono and olde masks draw none, as in 1.7.
      */
-    public static void renderHelmetOverlay(GuiGraphicsExtractor graphics) {
+    public static void renderHelmetOverlay(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.options.hideGui || !mc.options.getCameraType().isFirstPerson()) return;
         ItemStack helmet = mc.player.getItemBySlot(EquipmentSlot.HEAD);
-        Identifier overlay = overlay(helmet);
+        ResourceLocation overlay = overlay(helmet);
         if (overlay != null) GuiDraw.blitUvFullscreen(graphics, overlay, 0F, 0F, 1F, 1F);
     }
 
-    private static Identifier overlay(ItemStack helmet) {
+    private static ResourceLocation overlay(ItemStack helmet) {
         Item item = helmet.getItem();
         if (item instanceof ArmorFSB fsb && fsb.overlay() != null) return fsb.overlay();
         if (item == ModGearItems.hazmat_helmet.get()) return HAZMAT;
-        Identifier[] blurs;
+        ResourceLocation[] blurs;
         if (item == ModArmorSetBItems.goggles.get() || item == ModGearItems.gas_mask_m65.get()
                 || item == ModGearItems.hazmat_helmet_red.get() || item == ModGearItems.hazmat_helmet_grey.get()) {
             blurs = BLURS;

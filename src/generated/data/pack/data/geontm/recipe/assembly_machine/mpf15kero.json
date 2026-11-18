@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpf15kero",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 12
+    }
+  ],
+  "output_items": [
+    "geontm:mp_fuselage_15_kerosene"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 78592
+}

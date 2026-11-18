@@ -1,0 +1,18 @@
+{
+  "type": "geontm:arc_welder",
+  "ingredients": [
+    {
+      "ingredient": "geontm:warhead_incendiary_small"
+    },
+    {
+      "ingredient": "geontm:fuel_tank_small"
+    },
+    {
+      "ingredient": "geontm:thruster_small"
+    }
+  ],
+  "output": "geontm:missile_incendiary",
+  "duration": 100,
+  "consumption": 5000,
+  "order": 26
+}

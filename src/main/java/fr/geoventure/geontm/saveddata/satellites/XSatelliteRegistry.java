@@ -49,7 +49,7 @@ public final class XSatelliteRegistry {
     public static ItemStack stackFor(SatelliteType type) {
         for (var entry : SatelliteDataMaps.SATELLITE.byId().entrySet()) {
             if (!entry.getValue().equals(type.name())) continue;
-            var item = BuiltInRegistries.ITEM.getValue(Ids.parse(entry.getKey()));
+            var item = BuiltInRegistries.ITEM.get(Ids.parse(entry.getKey()));
             if (item != null && item != Items.AIR) return new ItemStack(item);
         }
         return ItemStack.EMPTY;

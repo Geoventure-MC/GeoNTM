@@ -1,0 +1,36 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:nuclear_waste_long_depleted_schrabidium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "ir",
+  "outputs": [
+    {
+      "data": "geontm:nugget_solinium",
+      "weight": 20
+    },
+    {
+      "data": "geontm:nugget_euphemium",
+      "weight": 18
+    },
+    {
+      "data": "geontm:nugget_gh336",
+      "weight": 15
+    },
+    {
+      "data": "geontm:nugget_tantalium",
+      "weight": 8
+    },
+    {
+      "data": "geontm:powder_neodymium_tiny",
+      "weight": 8
+    },
+    {
+      "data": "geontm:nuclear_waste_tiny",
+      "weight": 31
+    }
+  ],
+  "order": 295
+}

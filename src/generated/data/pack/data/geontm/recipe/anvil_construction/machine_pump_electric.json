@@ -1,0 +1,33 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "minecraft:stone_bricks",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "material": "lead",
+      "shape": "pipe",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_vacuum_tube",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_pump_electric"
+    }
+  ],
+  "tier": 3,
+  "order": 60
+}

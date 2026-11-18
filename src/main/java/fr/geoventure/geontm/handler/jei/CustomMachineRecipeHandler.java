@@ -12,7 +12,7 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.viewer.ViewerType;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -83,7 +83,7 @@ public final class CustomMachineRecipeHandler extends GeoNtmRecipeCategory<Custo
 
     /** 1.7 {@code drawExtras}. */
     @Override
-    public void draw(CustomMachineRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(CustomMachineRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         var font = Minecraft.getInstance().font;
         int side = 83;

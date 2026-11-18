@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:deco_rusty_steel",
+      "count": 8
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_steel"
+    }
+  ],
+  "tier": 1,
+  "overlay": "recycling",
+  "order": 209
+}

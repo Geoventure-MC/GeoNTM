@@ -1,0 +1,14 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:ores/beryllium",
+  "materials": [
+    {
+      "material": "beryllium",
+      "amount": 144
+    },
+    {
+      "material": "stone",
+      "amount": 162
+    }
+  ]
+}

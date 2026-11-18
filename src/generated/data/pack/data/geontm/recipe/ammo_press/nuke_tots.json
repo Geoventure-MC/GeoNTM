@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_nuke_tots",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:nuggets/pu239",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:ball_tatb",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    },
+    ""
+  ],
+  "order": 85
+}

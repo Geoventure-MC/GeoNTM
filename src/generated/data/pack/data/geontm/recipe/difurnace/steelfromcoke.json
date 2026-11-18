@@ -1,0 +1,31 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.steelFromCoke",
+  "input_items": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/iron"
+        },
+        {
+          "ingredient": "#c:plates/iron"
+        },
+        {
+          "ingredient": "#c:gems/iron"
+        },
+        {
+          "ingredient": "#c:dusts/iron"
+        }
+      ]
+    },
+    {
+      "ingredient": "#c:cokes"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_steel"
+  ],
+  "duration": 400,
+  "order": 1
+}

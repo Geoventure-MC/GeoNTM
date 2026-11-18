@@ -1,25 +1,25 @@
 package fr.geoventure.geontm.client.render.turret;
 
 import fr.geoventure.geontm.tileentity.turret.TileEntityTurretSentry;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.joml.Matrix4f;
 
 public class RenderTurretSentry<T extends TileEntityTurretSentry> extends RenderTurretBase<T> {
 
-    private final Identifier texture;
+    private final ResourceLocation texture;
 
     public RenderTurretSentry() {
         this(TurretResources.SENTRY);
     }
 
-    protected RenderTurretSentry(Identifier texture) {
+    protected RenderTurretSentry(ResourceLocation texture) {
         this.texture = texture;
     }
 
     @Override
     protected TurretState.Emitter<T> emitter() {
-        Identifier skin = texture;
+        ResourceLocation skin = texture;
         return (turret, state, frame) -> {
             frame.push().obj(TurretResources.SENTRY_MODEL, "Base").texture(skin);
 

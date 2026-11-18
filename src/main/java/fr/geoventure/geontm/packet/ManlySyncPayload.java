@@ -5,7 +5,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
 import java.util.List;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C: the Astolfized players in the receiver's level, 1.7's {@code PermaSyncHandler.boykissers}, sent on change. */
 public record ManlySyncPayload(List<Integer> ids) implements GeoCorePayload {
@@ -23,7 +23,7 @@ public record ManlySyncPayload(List<Integer> ids) implements GeoCorePayload {
             });
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

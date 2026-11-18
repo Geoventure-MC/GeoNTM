@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:debris_graphite",
+  "output": "geontm:powder_coal"
+}

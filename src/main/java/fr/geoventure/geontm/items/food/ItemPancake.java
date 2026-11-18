@@ -39,7 +39,7 @@ public class ItemPancake extends ItemModFood {
             player.sendSystemMessage(Component.literal("Your teeth are too soft to eat this.")
                     .withStyle(ChatFormatting.YELLOW));
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     @Override

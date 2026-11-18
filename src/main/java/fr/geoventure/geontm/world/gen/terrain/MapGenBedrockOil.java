@@ -67,7 +67,7 @@ public class MapGenBedrockOil extends MapGenFeature<MapGenBedrockOil.Config> {
 
         int xCoord = (chunkX - originX) * 16 + rand.nextInt(16);
         int zCoord = (chunkZ - originZ) * 16 + rand.nextInt(16);
-        int floor = level.getMinY();
+        int floor = level.getMinBuildHeight();
         RandomSource hostRand = RandomSource.create(originSeed);
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         boolean placed = false;
@@ -94,7 +94,7 @@ public class MapGenBedrockOil extends MapGenFeature<MapGenBedrockOil.Config> {
             int rz = (int) (rand.nextGaussian() * c.spotWidth()) - zCoord;
             if (rx < 0 || rx >= 16 || rz < 0 || rz >= 16) continue;
             int ax = (chunkX << 4) + rx, az = (chunkZ << 4) + rz;
-            for (int y = top(level, ax, az); y >= level.getMinY(); y--) {
+            for (int y = top(level, ax, az); y >= level.getMinBuildHeight(); y--) {
                 pos.set(ax, y, az);
                 if (!opaque(level, pos, level.getBlockState(pos))) continue;
                 for (int oy = 1; oy > -3; oy--) {

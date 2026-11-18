@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.biofuel.0",
+  "input_fluids": [
+    {
+      "type": "geontm:fishoil",
+      "amount": 500
+    },
+    {
+      "type": "geontm:woodoil",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:biofuel",
+      "amount": 250
+    }
+  ],
+  "duration": 20,
+  "order": 27
+}

@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.exheavyframe",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    },
+    {
+      "material": "copper",
+      "shape": "weldedplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/desh"
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 32
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_heavy_frame"
+  ],
+  "duration": 600,
+  "power": 800,
+  "order": 4608
+}

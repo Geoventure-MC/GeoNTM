@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_norad_light"
+  },
+  "acid": {
+    "type": "geontm:hydrogen",
+    "amount": 250
+  },
+  "output": "geontm:bedrock_ore_primary_first_light",
+  "duration": 200,
+  "order": 121
+}

@@ -5,13 +5,13 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT;
 import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT.WeaponQuality;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 /** Scope stat hook; the client renderer supplies the actual overlay texture when one is available. */
 public class WeaponModScope extends WeaponModBase {
-    private final Identifier overrideTexture;
+    private final ResourceLocation overrideTexture;
     public WeaponModScope(int id) { this(id, null); }
-    public WeaponModScope(int id, Identifier texture) { super(id, "SCOPE"); overrideTexture = texture; }
+    public WeaponModScope(int id, ResourceLocation texture) { super(id, "SCOPE"); overrideTexture = texture; }
     @Override public <T> T eval(T base, ItemStack gun, String key, Object parent) {
         if (GunConfig.O_SCOPETEXTURE.equals(key)) {
             if (overrideTexture != null) return cast(overrideTexture, base);

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "geontm:chunk_ore_cryolite"
+  },
+  "item_output": "geontm:powder_aluminium",
+  "fluid_output": {
+    "type": "geontm:lye",
+    "amount": 150
+  },
+  "order": 11
+}

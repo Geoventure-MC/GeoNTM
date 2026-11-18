@@ -1,0 +1,1704 @@
+{
+  "priority": 0,
+  "entries": [
+    {
+      "tag": "minecraft:logs",
+      "primary": [
+        {
+          "state": "geontm:waste_log[axis=y]"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "block": "minecraft:mushroom_stem",
+      "primary": [
+        {
+          "state": "geontm:waste_log[axis=y]"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "block": "minecraft:red_mushroom_block",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "block": "minecraft:brown_mushroom_block",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "block": "minecraft:snow",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "tag": "minecraft:planks",
+      "primary": [
+        {
+          "state": "geontm:waste_planks"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "preset": "geontm:ignited_by_lava",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "tag": "minecraft:leaves",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "preset": "geontm:vegetation",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "block": "geontm:waste_leaves",
+      "primary": [
+        {
+          "state": "minecraft:air"
+        }
+      ],
+      "max": 65.0
+    },
+    {
+      "tag": "minecraft:leaves",
+      "primary": [
+        {
+          "state": "geontm:waste_leaves"
+        }
+      ],
+      "min": 60.0
+    },
+    {
+      "block": "geontm:glyphid_base",
+      "primary": [
+        {
+          "state": "geontm:glyphid_base[type=rad]"
+        }
+      ]
+    },
+    {
+      "block": "geontm:glyphid_spawner",
+      "primary": [
+        {
+          "state": "geontm:glyphid_spawner[type=rad]"
+        }
+      ]
+    },
+    {
+      "block": "minecraft:mossy_cobblestone",
+      "primary": [
+        {
+          "state": "minecraft:coal_ore"
+        }
+      ]
+    },
+    {
+      "block": "geontm:ore_nether_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_nether_schrabidium"
+        },
+        {
+          "state": "geontm:ore_nether_uranium_scorched",
+          "weight": 99
+        }
+      ]
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=9]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=9]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=9]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=9]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=9]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=9]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=9]",
+          "weight": 9
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_gneiss_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=9]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=9]",
+          "weight": 9
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium_deepslate",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=9]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=9]",
+          "weight": 9
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=9]"
+        }
+      ],
+      "max": 5.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=8]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=8]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=8]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=8]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=8]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=8]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=8]",
+          "weight": 9
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_gneiss_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=8]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=8]",
+          "weight": 9
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium_deepslate",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=8]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=8]",
+          "weight": 9
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=8]"
+        }
+      ],
+      "max": 10.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=7]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=7]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=7]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=7]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=7]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=7]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=7]",
+          "weight": 9
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_gneiss_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=7]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=7]",
+          "weight": 9
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium_deepslate",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=7]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=7]",
+          "weight": 9
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=7]"
+        }
+      ],
+      "max": 15.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=6]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=6]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=6]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=6]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=6]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=6]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=6]",
+          "weight": 9
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_gneiss_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=6]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=6]",
+          "weight": 9
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium_deepslate",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=6]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=6]",
+          "weight": 9
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=6]"
+        }
+      ],
+      "max": 20.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=5]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=5]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=5]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=5]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=5]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=5]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=5]",
+          "weight": 9
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_gneiss_uranium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=5]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=5]",
+          "weight": 9
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_uranium_deepslate",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_schrabidium[shade=5]"
+        },
+        {
+          "state": "geontm:ore_sellafield_uranium_scorched[shade=5]",
+          "weight": 9
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=5]"
+        }
+      ],
+      "max": 25.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=4]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=4]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=4]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=4]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=4]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=4]"
+        }
+      ],
+      "max": 30.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=3]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=3]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=3]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=3]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=3]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=3]"
+        }
+      ],
+      "max": 35.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=2]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=2]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=2]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=2]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=2]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=2]"
+        }
+      ],
+      "max": 40.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=1]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=1]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=1]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=1]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=1]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:grass_like",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=1]"
+        }
+      ],
+      "max": 45.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=0]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=0]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_coal_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=0]",
+          "weight": 3
+        },
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=0]",
+          "weight": 2
+        }
+      ],
+      "primary_chance": 0.5,
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_lignite",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_diamond[shade=0]"
+        }
+      ],
+      "primary_chance": 0.2,
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_beryllium",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_emerald[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:deepslate_diamond_ore",
+      "primary": [
+        {
+          "state": "geontm:ore_sellafield_radgem[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_block",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:ore_bedrock_oil",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "geontm:sellafield_bedrock",
+      "primary": [
+        {
+          "state": "geontm:sellafield_bedrock[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "preset": "geontm:solid_terrain",
+      "primary": [
+        {
+          "state": "geontm:sellafield_slaked[shade=0]"
+        }
+      ],
+      "max": 50.0,
+      "solid": true
+    },
+    {
+      "block": "minecraft:mycelium",
+      "primary": [
+        {
+          "state": "geontm:waste_mycelium"
+        }
+      ]
+    },
+    {
+      "state": "minecraft:sand",
+      "primary": [
+        {
+          "state": "geontm:waste_trinitite"
+        }
+      ],
+      "primary_chance": 0.05
+    },
+    {
+      "state": "minecraft:red_sand",
+      "primary": [
+        {
+          "state": "geontm:waste_trinitite_red"
+        }
+      ],
+      "primary_chance": 0.05
+    },
+    {
+      "block": "minecraft:clay",
+      "primary": [
+        {
+          "state": "minecraft:terracotta"
+        }
+      ]
+    }
+  ]
+}

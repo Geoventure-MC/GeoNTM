@@ -17,7 +17,7 @@ import fr.geoventure.geocore.world.ArmorSlot;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -32,7 +32,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class WornModelRenderLayer extends CompatHumanoidLayer {
 
-    private static final Identifier GOGGLES = Ids.of("geontm", "textures/models/goggles.png");
+    private static final ResourceLocation GOGGLES = Ids.of("geontm", "textures/models/goggles.png");
 
     @SuppressWarnings("rawtypes")
     public WornModelRenderLayer(RenderLayerParent parent) {

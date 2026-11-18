@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:lightoil_ds",
+  "left": {
+    "type": "geontm:diesel_reform",
+    "amount": 60
+  },
+  "right": {
+    "type": "geontm:kerosene_reform",
+    "amount": 40
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "#c:sands"
+  },
+  "acid": {
+    "type": "geontm:peroxide",
+    "amount": 500
+  },
+  "output": "geontm:ingot_fiberglass",
+  "duration": 100,
+  "productivity": 0.15,
+  "order": 43
+}

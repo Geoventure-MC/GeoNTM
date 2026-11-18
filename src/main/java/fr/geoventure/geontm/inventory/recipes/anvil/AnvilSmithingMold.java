@@ -6,7 +6,7 @@ import fr.geoventure.geontm.inventory.material.MaterialShapes;
 import fr.geoventure.geontm.items.machine.ModMoldItems;
 import fr.geoventure.geontm.items.special.ItemAutogen;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -62,7 +62,7 @@ public class AnvilSmithingMold extends AnvilSmithingRecipe {
     private static boolean itemHasShape(ItemStack stack, MaterialShapes shape) {
         if (stack.getItem() instanceof ItemAutogen autogen) return autogen.shape == shape;
         return stack.getItem().builtInRegistryHolder().tags().anyMatch(tag -> {
-            Identifier id = tag.location();
+            ResourceLocation id = tag.location();
             if (!"c".equals(id.getNamespace())) return false;
             String path = id.getPath();
             int slash = path.indexOf('/');

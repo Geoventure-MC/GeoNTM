@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.soliniumcharge",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:neutron_reflector",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 6
+    },
+    {
+      "material": "tungsten",
+      "shape": "wire",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:biomass_compressed",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:solinium_propellant"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 61184
+}

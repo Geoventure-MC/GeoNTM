@@ -9,7 +9,7 @@ import fr.geoventure.geocore.render.gem.Surface;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix4f;
 import org.jspecify.annotations.Nullable;
 
@@ -40,8 +40,8 @@ public final class JetpackWornModels {
     // 1.7 drew these two inside the living renderer's disabled face culling and never re-enabled it
     private static final Surface AXEPACK = Surface.cutoutNoCull("geontm:textures/armor/axepack.png");
     private static final Surface TAIL = Surface.cutoutNoCull("geontm:textures/armor/tail_peep.png");
-    static final Identifier AXEPACK_MODEL = Ids.of("geontm", "models/armor/wings_pheo.obj");
-    static final Identifier TAIL_MODEL = Ids.of("geontm", "models/armor/tail_peep.obj");
+    static final ResourceLocation AXEPACK_MODEL = Ids.of("geontm", "models/armor/wings_pheo.obj");
+    static final ResourceLocation TAIL_MODEL = Ids.of("geontm", "models/armor/tail_peep.obj");
 
     private static final Map<String, Surface> PACKS = new ConcurrentHashMap<>();
 
@@ -163,7 +163,7 @@ public final class JetpackWornModels {
     }
 
     /** {@code body.copyTo(part); part.render(scale)}: the whole mesh riding the torso bone. */
-    private static Gem.Model<Pose> declareRooted(Identifier model, Surface surface) {
+    private static Gem.Model<Pose> declareRooted(ResourceLocation model, Surface surface) {
         WavefrontObj obj = WavefrontObj.load(model);
         Gem.Model<Pose> declaration = Gem.model();
         declaration.part(obj.all(), surface)

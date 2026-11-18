@@ -1,7 +1,7 @@
 package fr.geoventure.geontm.tileentity.machine.storage;
 
 import fr.geoventure.geocore.Ids;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
@@ -34,7 +34,7 @@ public enum CrateType {
     public final int inventoryLabelX;
     public final int titleColor;
     public final int inventoryLabelColor;
-    public final Identifier texture;
+    public final ResourceLocation texture;
     /** The crate's BlockEntityType, wired lazily by {@code ModBlockEntities} (avoids a registration cycle). */
     private Supplier<BlockEntityType<TileEntityCrate>> typeSupplier;
 

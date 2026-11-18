@@ -141,7 +141,7 @@ public class ItemGrenadeUniversal extends CompatItem implements IAnimatedItem {
         // 1.7 ItemGrenadeUniversal:98-109 runs on both sides. The client's counter is ticked by
         // fr.geoventure.geontm.client.GrenadeUniversalClient (inventoryTick is server-only here), so this gate passes on the
         // client too and the SUCCESS swings the arm, as 1.7's did.
-        if (deployment(player) < getData(stack).shell().getDrawDuration()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (deployment(player) < getData(stack).shell().getDrawDuration()) return InteractionResult.PASS;
         if (!level.isClientSide()) {
             level.addFreshEntity(new EntityGrenadeUniversal(level, player, stack));
             ItemStacks.consume(stack, 1, player);

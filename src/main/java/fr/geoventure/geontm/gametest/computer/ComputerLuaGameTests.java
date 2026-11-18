@@ -97,8 +97,8 @@ public final class ComputerLuaGameTests {
      * from a disk drive sees its label and its program (ComputerCraftRecipes, data/computercraft/lua/treasure/geontm).
      */
     private static void pwranglerDisk(GameTestHelper helper) {
-        ItemStack blank = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of("computercraft", "disk")));
-        ItemStack casing = new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "pwr_casing")));
+        ItemStack blank = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of("computercraft", "disk")));
+        ItemStack casing = new ItemStack(BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "pwr_casing")));
         ItemStack crafted = Recipes.craftingResult(helper.getLevel(), 2, 1, List.of(blank, casing)).orElse(ItemStack.EMPTY);
         helper.assertTrue(ItemStacks.matchesItemId(crafted, "computercraft:treasure_disk"),
                 "disk + pwr_casing crafted " + crafted + ", expected computercraft:treasure_disk");

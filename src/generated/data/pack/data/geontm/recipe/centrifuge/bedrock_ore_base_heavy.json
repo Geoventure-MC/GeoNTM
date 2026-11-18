@@ -1,0 +1,11 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_base_heavy"
+  },
+  "outputs": [
+    "geontm:bedrock_ore_primary_heavy",
+    "minecraft:gravel"
+  ],
+  "order": 71
+}

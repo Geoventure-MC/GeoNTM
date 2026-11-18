@@ -1,0 +1,13 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 3,
+  "output": "geontm:cobalt_decorated_axe",
+  "left": {
+    "ingredient": "geontm:cobalt_axe"
+  },
+  "right": {
+    "ingredient": "geontm:ingot_meteorite"
+  },
+  "hot": true,
+  "order": 33
+}

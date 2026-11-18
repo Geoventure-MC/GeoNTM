@@ -1,0 +1,47 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.chip",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_silicon"
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 3
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_chip",
+        "weight": 90
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_chip"
+          }
+        },
+        "weight": 10
+      }
+    ]
+  ],
+  "duration": 100,
+  "power": 200,
+  "blueprint_pools": [
+    "528.chip"
+  ],
+  "order": 2,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

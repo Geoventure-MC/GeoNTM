@@ -1,0 +1,64 @@
+{
+  "entries": [
+    {
+      "item": "geontm:gun_light_revolver",
+      "min": 1,
+      "max": 1,
+      "weight": 100
+    },
+    {
+      "item": "geontm:gun_henry",
+      "min": 1,
+      "max": 1,
+      "weight": 100
+    },
+    {
+      "item": "geontm:gun_maresleg",
+      "min": 1,
+      "max": 1,
+      "weight": 100
+    },
+    {
+      "item": "geontm:gun_greasegun",
+      "min": 1,
+      "max": 1,
+      "weight": 100
+    },
+    {
+      "item": "geontm:gun_carbine",
+      "min": 1,
+      "max": 1,
+      "weight": 50
+    },
+    {
+      "item": "geontm:gun_heavy_revolver",
+      "min": 1,
+      "max": 1,
+      "weight": 50
+    },
+    {
+      "item": "geontm:gun_panzerschreck",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    },
+    {
+      "item": "geontm:gun_fliegerfaust",
+      "min": 1,
+      "max": 1,
+      "weight": 20
+    },
+    {
+      "item": "geontm:gun_double_barrel",
+      "min": 1,
+      "max": 1,
+      "weight": 10
+    },
+    {
+      "item": "geontm:gun_n_i_4_n_i",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

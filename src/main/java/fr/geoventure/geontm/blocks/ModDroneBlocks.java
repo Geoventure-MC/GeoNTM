@@ -49,7 +49,7 @@ public final class ModDroneBlocks {
 
     public static final RegistryObject<DroneWaypoint> DRONE_WAYPOINT = REG.block(
             "drone_waypoint", DroneWaypoint::new,
-            p -> p.strength(0.1F, 6.0F).sound(SoundType.WOOD).noCollision().noOcclusion())
+            p -> p.strength(0.1F, 6.0F).sound(SoundType.WOOD).noCollission().noOcclusion())
             .transform(WAYPOINT);
     public static final RegistryObject<DroneCrate> DRONE_CRATE = REG.block(
             "drone_crate", DroneCrate::new,
@@ -57,7 +57,7 @@ public final class ModDroneBlocks {
             .transform(CRATE); // 1.7 Material.iron
     public static final RegistryObject<DroneWaypointRequest> DRONE_WAYPOINT_REQUEST = REG.block(
             "drone_waypoint_request", DroneWaypointRequest::new,
-            p -> p.strength(0.1F, 6.0F).sound(SoundType.WOOD).noCollision().noOcclusion())
+            p -> p.strength(0.1F, 6.0F).sound(SoundType.WOOD).noCollission().noOcclusion())
             .transform(WAYPOINT);
     public static final RegistryObject<DroneDock> DRONE_DOCK = REG.block(
             "drone_dock", p -> new DroneDock(p, DroneDock.Type.DOCK),

@@ -1,0 +1,20 @@
+{
+  "type": "geontm:gas_centrifuge",
+  "input": {
+    "type": "geontm:uf6",
+    "amount": 1200
+  },
+  "outputs": [
+    {
+      "id": "geontm:nugget_u238",
+      "count": 11
+    },
+    "geontm:nugget_u235",
+    {
+      "id": "geontm:fluorite",
+      "count": 4
+    }
+  ],
+  "high_speed": true,
+  "centrifuges": 4
+}

@@ -14,7 +14,7 @@ import fr.geoventure.geocore.render.CompatEntityRenderer;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
@@ -63,11 +63,11 @@ public class RenderUFO extends CompatEntityRenderer<EntityUFO, RenderUFO.State> 
         int x = Mth.floor(entity.getX());
         int z = Mth.floor(entity.getZ());
 
-        for (int y = (int) Math.ceil(entity.getY()); y >= entity.level().getMinY(); y--) {
+        for (int y = (int) Math.ceil(entity.getY()); y >= entity.level().getMinBuildHeight(); y--) {
             if (!entity.level().getBlockState(pos.set(x, y, z)).isAir()) return y;
         }
 
-        return entity.level().getMinY();
+        return entity.level().getMinBuildHeight();
     }
 
     @Override

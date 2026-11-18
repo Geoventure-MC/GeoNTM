@@ -1,0 +1,22 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/coal"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_coal",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_coal",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_coal",
+      "count": 2
+    },
+    "minecraft:gravel"
+  ],
+  "order": 1
+}

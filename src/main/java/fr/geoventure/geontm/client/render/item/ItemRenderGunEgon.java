@@ -11,7 +11,7 @@ import fr.geoventure.geocore.render.Vertexes;
 import fr.geoventure.geocore.world.TimeOfDay;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -30,8 +30,8 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 final class ItemRenderGunEgon implements CustomItemRenderer {
 
-    static final Identifier HOSE = tex("textures/models/weapons/egon_hose.png");
-    static final Identifier DISPLAY = tex("textures/models/weapons/egon_display.png");
+    static final ResourceLocation HOSE = tex("textures/models/weapons/egon_hose.png");
+    static final ResourceLocation DISPLAY = tex("textures/models/weapons/egon_display.png");
 
     private final WavefrontObj hose = obj("models/weapons/egon_hose.obj");
 
@@ -105,7 +105,7 @@ final class ItemRenderGunEgon implements CustomItemRenderer {
     private static void muzzle(PoseStack pose, SubmitSink sink) {
         if (GluonGunClient.MUZZLE.isEmpty()) return;
         float partial = Frames.partialTick();
-        for (var texture : new Identifier[] {GluonGunClient.MUZZLE_SMOKE, GluonGunClient.MUZZLE_GLOW}) {
+        for (var texture : new ResourceLocation[] {GluonGunClient.MUZZLE_SMOKE, GluonGunClient.MUZZLE_GLOW}) {
             sink.submitCustomGeometry(pose, CompatRenderTypes.plasmaGlow(texture), (p, buffer) -> {
                 for (GluonGunClient.MuzzleSmoke smoke : GluonGunClient.MUZZLE) {
                     if (smoke.texture != texture) continue;

@@ -61,7 +61,7 @@ public final class Hazard17GameTests {
     static void init() {}
 
     private static Item item(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, id));
+        return BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, id));
     }
 
     private static double level(ItemStack stack, IHazardType type) {
@@ -239,7 +239,7 @@ public final class Hazard17GameTests {
             int healed = GeoNtmLivingProps.getBlackLung(healing);
             int stayed = GeoNtmLivingProps.getBlackLung(sick);
             var weakness = Effects.get(sick, MobEffects.WEAKNESS);
-            boolean nausea = Effects.has(sick, MobEffects.NAUSEA);
+            boolean nausea = Effects.has(sick, MobEffects.CONFUSION);
             healing.discard();
             sick.discard();
             helper.assertTrue(healed < below && healed >= below - 12,

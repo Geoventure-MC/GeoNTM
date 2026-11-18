@@ -1,0 +1,51 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.shuttlemissile",
+  "input_items": [
+    {
+      "ingredient": "geontm:missile_generic"
+    },
+    {
+      "ingredient": "geontm:missile_strong"
+    },
+    {
+      "ingredient": "#c:dyes/orange",
+      "count": 5
+    },
+    {
+      "ingredient": "geontm:canister_full",
+      "count": 24,
+      "exact": true,
+      "item_data": {
+        "fluid": "geontm:gasoline_leaded",
+        "fluid_amount": 1000
+      }
+    },
+    {
+      "ingredient": "#c:ingots/fiberglass",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/any_plasticexplosive",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:glass_panes",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:missile_shuttle"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 70656
+}

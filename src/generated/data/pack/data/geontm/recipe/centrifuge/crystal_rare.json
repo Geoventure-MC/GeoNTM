@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_rare"
+  },
+  "outputs": [
+    "geontm:powder_desh_mix",
+    "geontm:powder_desh_mix",
+    {
+      "id": "geontm:nugget_zirconium",
+      "count": 2
+    },
+    {
+      "id": "geontm:nugget_zirconium",
+      "count": 2
+    }
+  ],
+  "order": 174
+}

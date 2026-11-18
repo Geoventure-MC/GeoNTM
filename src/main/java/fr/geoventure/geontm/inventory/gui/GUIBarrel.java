@@ -7,10 +7,10 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -23,7 +23,7 @@ import java.util.Optional;
  */
 public class GUIBarrel extends CompatContainerScreen<ContainerBarrel> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_barrel.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_barrel.png");
 
     private static final int BAR_X = 71, BAR_TOP = 17, BAR_W = 34, BAR_H = 52, BAR_BOTTOM = 69;
     private static final int BTN_X = 151, BTN_Y = 34, BTN_W = 18, BTN_H = 18;
@@ -33,7 +33,7 @@ public class GUIBarrel extends CompatContainerScreen<ContainerBarrel> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
         TileEntityBarrel barrel = this.menu.getBarrel();
         if (barrel == null) return;
@@ -46,14 +46,14 @@ public class GUIBarrel extends CompatContainerScreen<ContainerBarrel> {
 
     /** 1.7 {@code GUIBarrel.drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, this.imageWidth / 2 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     /** 1.7 draws only the tank tooltip ({@code renderTankInfo}); the mode button has none. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityBarrel barrel = this.menu.getBarrel();
         if (barrel == null) return;
         if (in17(BAR_X, BAR_TOP, BAR_W, BAR_H, mouseX, mouseY)) {

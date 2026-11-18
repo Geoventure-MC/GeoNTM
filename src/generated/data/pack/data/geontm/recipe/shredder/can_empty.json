@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:can_empty",
+  "output": {
+    "id": "geontm:powder_aluminium",
+    "count": 2
+  }
+}

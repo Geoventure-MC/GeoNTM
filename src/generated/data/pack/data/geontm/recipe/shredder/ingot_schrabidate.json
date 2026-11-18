@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ingot_schrabidate",
+  "output": "geontm:powder_schrabidate"
+}

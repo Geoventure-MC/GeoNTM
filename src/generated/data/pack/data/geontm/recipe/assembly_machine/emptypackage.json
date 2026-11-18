@@ -1,0 +1,20 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.emptypackage",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:fluid_pack_empty"
+  ],
+  "duration": 40,
+  "power": 100,
+  "order": 90368
+}

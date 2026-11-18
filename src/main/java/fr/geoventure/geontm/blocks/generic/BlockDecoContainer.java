@@ -98,14 +98,14 @@ public class BlockDecoContainer extends CompatBlock implements TickingBlock {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof TileEntityLockableBase) { // annoying accommodations for the filing cabinet
-            if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (TileEntityLockableBase.LOCK_TOOLS.test(player.getMainHandItem())) return InteractionResult.PASS;
             if (!player.isShiftKeyDown() && ((TileEntityLockableBase) entity).canAccess(player)
                     && entity instanceof TileEntityCrateBase crate && player instanceof ServerPlayer serverPlayer) {
                 Menus.openWithPos(serverPlayer, crate, pos);
                 return InteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     private ItemStack stackFor(BlockState state) {

@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.himarssmallwp",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:rocket_fuel",
+      "count": 48
+    },
+    {
+      "ingredient": "#c:ingots/phosphorus",
+      "count": 18
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    "geontm:ammo_himars_standard_wp"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 64512
+}

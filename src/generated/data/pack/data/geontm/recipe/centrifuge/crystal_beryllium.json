@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:crystal_beryllium"
+  },
+  "outputs": [
+    {
+      "id": "geontm:powder_beryllium",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_beryllium",
+      "count": 2
+    },
+    "geontm:powder_quartz",
+    "geontm:powder_lithium_tiny"
+  ],
+  "order": 170
+}

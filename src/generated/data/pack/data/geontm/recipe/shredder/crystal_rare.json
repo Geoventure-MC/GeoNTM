@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_rare",
+  "output": {
+    "id": "geontm:powder_desh_mix",
+    "count": 2
+  }
+}

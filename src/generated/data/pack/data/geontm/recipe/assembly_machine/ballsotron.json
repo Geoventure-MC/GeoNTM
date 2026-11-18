@@ -1,0 +1,37 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.ballsotron",
+  "input_items": [
+    {
+      "material": "titanium",
+      "shape": "weldedplate",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 64
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:storage_blocks/u238",
+      "count": 10
+    },
+    {
+      "ingredient": "geontm:mech_key"
+    }
+  ],
+  "output_items": [
+    "geontm:spawn_worm"
+  ],
+  "duration": 1200,
+  "power": 100,
+  "order": 51712
+}

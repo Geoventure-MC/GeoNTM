@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.atomicClock",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_chip",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:dusts/strontium"
+    }
+  ],
+  "output_items": [
+    "geontm:circuit_atomic_clock"
+  ],
+  "duration": 300,
+  "power": 1000,
+  "order": 8192,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.wax_tar",
+  "input_items": [
+    {
+      "ingredient": "geontm:oil_tar_wax"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:radiosolvent",
+      "amount": 100
+    }
+  ],
+  "duration": 10000,
+  "order": 18
+}

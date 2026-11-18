@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.secureaccess",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:plate_polymer",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 4
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:dyes/red",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:secure_access_door"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 18688
+}

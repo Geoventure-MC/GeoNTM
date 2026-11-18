@@ -1,0 +1,22 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpt10xenon",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_10"
+    },
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:arc_electrode"
+    }
+  ],
+  "output_items": [
+    "geontm:mp_thruster_10_xenon"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 71936
+}

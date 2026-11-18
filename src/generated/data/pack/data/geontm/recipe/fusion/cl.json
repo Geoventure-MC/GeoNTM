@@ -1,0 +1,25 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.cl",
+  "input_fluids": [
+    {
+      "type": "geontm:chlorine",
+      "amount": 20
+    }
+  ],
+  "output_items": [
+    "geontm:powder_chlorophyte"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:powder_chlorophyte"
+  },
+  "custom_localization": true,
+  "order": 6,
+  "ignition_temp": 3750000,
+  "output_temp": 10000000,
+  "neutron_flux": 1000.0,
+  "green": 0.6,
+  "blue": 0.2
+}

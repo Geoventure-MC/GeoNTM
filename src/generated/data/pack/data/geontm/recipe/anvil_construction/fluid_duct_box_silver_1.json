@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/iron"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:fluid_duct_box_silver_1"
+    }
+  ],
+  "tier": 2,
+  "overlay": "construction",
+  "order": 110
+}

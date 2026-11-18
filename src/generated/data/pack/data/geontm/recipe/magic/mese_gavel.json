@@ -1,0 +1,11 @@
+{
+  "type": "geontm:magic",
+  "ingredients": [
+    "geontm:shimmer_handle",
+    "geontm:powder_dineutronium",
+    "geontm:blades_desh",
+    "geontm:diamond_gavel"
+  ],
+  "result": "geontm:mese_gavel",
+  "order": 6
+}

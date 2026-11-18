@@ -19,7 +19,7 @@ import fr.geoventure.geontm.tileentity.IUpgradeInfoProvider;
 import fr.geoventure.geontm.tileentity.TileEntityMachineBase;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -231,7 +231,7 @@ public abstract class TileEntityMachineCompressorBase extends TileEntityMachineB
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(progress);
         buf.writeInt(processTime);
@@ -243,7 +243,7 @@ public abstract class TileEntityMachineCompressorBase extends TileEntityMachineB
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         progress = buf.readInt();
         processTime = buf.readInt();

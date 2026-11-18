@@ -93,7 +93,7 @@ public final class ReactorDataMaps {
 
     /** An item id resolved at use time ({@code minecraft:air} when unknown). */
     public static Item itemOf(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id));
     }
 
     /**

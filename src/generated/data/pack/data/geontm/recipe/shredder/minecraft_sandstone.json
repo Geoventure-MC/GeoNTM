@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:sandstone",
+  "output": {
+    "id": "minecraft:sand",
+    "count": 4
+  }
+}

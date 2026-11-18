@@ -20,7 +20,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -43,9 +43,9 @@ public final class RenderDecoBlock<T extends BlockEntity> extends GemBER<T, Rend
         public boolean on;
     }
 
-    private static final Identifier BROADCASTER_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelbroadcaster.png");
-    private static final Identifier RECEIVER_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelradioreceiver.png");
-    private static final Identifier RADIO_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelradio.png");
+    private static final ResourceLocation BROADCASTER_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelbroadcaster.png");
+    private static final ResourceLocation RECEIVER_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelradioreceiver.png");
+    private static final ResourceLocation RADIO_TEX = Ids.of(Constants.MOD_ID, "textures/models/modelradio.png");
 
     private static final ModelPart BROADCASTER = broadcaster();
     private static final ModelPart RADIO_BODY = radioBody();

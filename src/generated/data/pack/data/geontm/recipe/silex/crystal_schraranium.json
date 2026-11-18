@@ -1,0 +1,24 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:crystal_schraranium"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "uv",
+  "outputs": [
+    {
+      "data": "geontm:nugget_schrabidium",
+      "weight": 5
+    },
+    {
+      "data": "geontm:nugget_uranium",
+      "weight": 2
+    },
+    {
+      "data": "geontm:nugget_neptunium",
+      "weight": 2
+    }
+  ],
+  "order": 11
+}

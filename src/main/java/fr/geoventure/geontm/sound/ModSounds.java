@@ -6,12 +6,12 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.registry.DeferredRegister;
 import fr.geoventure.geocore.registry.RegistryObject;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
 /**
  * GEONTM sound events. The registry path is dotted + <b>all-lowercase</b> (e.g. {@code geontm:block.motor}).
- * 26.1 Identifier paths reject the 1.12.2 camelCase names (only {@code [a-z0-9/._-]} allowed), so the
+ * 26.1 ResourceLocation paths reject the 1.12.2 camelCase names (only {@code [a-z0-9/._-]} allowed), so the
  * old {@code block.assemblerStrike} becomes {@code block.assembler_strike}. The {@code sounds.json} keys
  * must match these ids; the actual {@code .ogg} mapping lives in {@code assets/geontm/sounds.json}.
  */

@@ -1,0 +1,29 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.boyigniter",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "shell",
+      "count": 3
+    },
+    {
+      "material": "dura_steel",
+      "shape": "castplate"
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "material": "red_copper",
+      "shape": "wire",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:boy_igniter"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 58368
+}

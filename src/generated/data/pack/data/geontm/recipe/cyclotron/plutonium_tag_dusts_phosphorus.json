@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_plutonium",
+  "input": {
+    "ingredient": "#c:dusts/phosphorus"
+  },
+  "output": "geontm:powder_tennessine",
+  "antimatter": 100,
+  "order": 38
+}

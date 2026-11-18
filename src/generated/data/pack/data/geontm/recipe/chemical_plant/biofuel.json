@@ -1,0 +1,31 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.biofuel",
+  "input_fluids": [
+    {
+      "type": "geontm:biogas",
+      "amount": 1500
+    },
+    {
+      "type": "geontm:ethanol",
+      "amount": 250
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:biofuel",
+      "amount": 1000
+    }
+  ],
+  "duration": 60,
+  "power": 100,
+  "icon": {
+    "id": "geontm:canister_full",
+    "item_data": {
+      "fluid": "geontm:biofuel",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 12
+}

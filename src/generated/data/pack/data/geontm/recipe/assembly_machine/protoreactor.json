@@ -1,0 +1,30 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.protoreactor",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:rod_quad_empty",
+      "count": 10
+    },
+    {
+      "ingredient": "#c:dyes/brown",
+      "count": 3
+    }
+  ],
+  "output_items": [
+    "geontm:dysfunctional_reactor"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 11776
+}

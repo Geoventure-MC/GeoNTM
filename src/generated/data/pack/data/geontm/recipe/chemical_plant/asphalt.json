@@ -1,0 +1,29 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.asphalt",
+  "input_items": [
+    {
+      "ingredient": "minecraft:gravel",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:sands",
+      "count": 6
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:bitumen",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:asphalt",
+      "count": 16
+    }
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 29
+}

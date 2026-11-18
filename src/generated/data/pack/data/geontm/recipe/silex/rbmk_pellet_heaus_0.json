@@ -1,0 +1,29 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "rbmk_pellet": "geontm:rbmk_pellet_heaus",
+    "stage": 0
+  },
+  "fluid_produced": 600,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_australium_greater",
+      "weight": 90
+    },
+    {
+      "data": "geontm:nugget_au198",
+      "weight": 5
+    },
+    {
+      "data": "minecraft:gold_nugget",
+      "weight": 3
+    },
+    {
+      "data": "geontm:nugget_pb209",
+      "weight": 2
+    }
+  ],
+  "order": 47
+}

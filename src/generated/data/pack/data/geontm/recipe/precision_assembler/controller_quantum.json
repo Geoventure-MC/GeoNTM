@@ -1,0 +1,62 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.controller_quantum",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_chip_quantum",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_chip_bismoid",
+      "count": 48
+    },
+    {
+      "ingredient": "geontm:circuit_atomic_clock",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:upgrade_overdrive_1"
+    },
+    {
+      "material": "lead",
+      "shape": "wire",
+      "count": 32
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 6000
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:circuit_controller_quantum",
+        "weight": 75
+      },
+      {
+        "data": {
+          "id": "geontm:broken_item",
+          "item_data": {
+            "broken_item": "geontm:circuit_controller_quantum"
+          }
+        },
+        "weight": 25
+      }
+    ]
+  ],
+  "duration": 600,
+  "power": 250000,
+  "order": 14,
+  "requires": [
+    "enable_528"
+  ],
+  "geocore:requires": [
+    "enable_528"
+  ]
+}

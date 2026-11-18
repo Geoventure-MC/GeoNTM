@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.lye.0",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_ash_wood"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 100
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:lye",
+      "amount": 100
+    }
+  ],
+  "duration": 100,
+  "order": 45
+}

@@ -1,0 +1,25 @@
+{
+  "type": "geontm:electrolyser_metal",
+  "input": "geontm:crystal_copper",
+  "molten": [
+    {
+      "material": "copper",
+      "amount": 432
+    },
+    {
+      "material": "lead",
+      "amount": 32
+    }
+  ],
+  "byproducts": [
+    {
+      "id": "geontm:powder_lithium_tiny",
+      "count": 3
+    },
+    {
+      "id": "geontm:sulfur",
+      "count": 2
+    }
+  ],
+  "order": 6
+}

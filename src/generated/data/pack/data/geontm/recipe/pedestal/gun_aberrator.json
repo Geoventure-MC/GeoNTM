@@ -1,0 +1,20 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_aberrator",
+  "grid": [
+    "",
+    "geontm:item_secret_aberrator",
+    "",
+    "geontm:item_secret_aberrator",
+    {
+      "id": "#c:mechanisms/saturnite",
+      "count": 4
+    },
+    "geontm:item_secret_aberrator",
+    "",
+    "geontm:item_secret_aberrator",
+    ""
+  ],
+  "set": 1,
+  "order": 11
+}

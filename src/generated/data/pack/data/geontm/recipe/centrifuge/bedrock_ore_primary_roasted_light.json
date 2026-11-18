@@ -1,0 +1,17 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_primary_roasted_light"
+  },
+  "outputs": [
+    {
+      "id": "geontm:bedrock_ore_fragment_iron",
+      "count": 9
+    },
+    {
+      "id": "geontm:bedrock_ore_fragment_copper",
+      "count": 9
+    }
+  ],
+  "order": 62
+}

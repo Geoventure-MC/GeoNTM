@@ -1,0 +1,30 @@
+{
+  "type": "liquid",
+  "color": "#445772",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 2,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "traits": {
+    "flammable": {
+      "energy": 9520000
+    },
+    "combustible": {
+      "grade": "MEDIUM",
+      "energy": 14200000
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5,
+        "HEAVYMETAL": 5.0000002E-5
+      },
+      "burn": {
+        "SOOT": 0.001,
+        "HEAVYMETAL": 5.0E-4
+      }
+    }
+  }
+}

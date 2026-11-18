@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:dusts/emerald"
+  },
+  "output": "minecraft:emerald",
+  "order": 3
+}

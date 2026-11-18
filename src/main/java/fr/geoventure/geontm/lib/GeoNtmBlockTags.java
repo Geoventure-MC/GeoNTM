@@ -112,7 +112,7 @@ public final class GeoNtmBlockTags {
 
     /**
      * What 1.7 {@code ModEventHandlerImpact.populateChunkPost} clears beyond {@code BlockBush}, which is the
-     * consumer's {@code VegetationBlock} test: {@code BlockLog}, {@code BlockLeaves}, {@code Material.leaves},
+     * consumer's {@code BushBlock} test: {@code BlockLog}, {@code BlockLeaves}, {@code Material.leaves},
      * the rest of {@code Material.plants}.
      */
     public static final TagKey<Block> IMPACT_CLEARED = TagKey.create(

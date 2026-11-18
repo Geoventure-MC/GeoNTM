@@ -4,11 +4,11 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.CompatParticle;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** The source's oriented 20-tick shockwave quad. */
 public final class ParticlePlasmaBlast extends CompatParticle {
-    private static final Identifier SHOCKWAVE = Ids.of("geontm", "shockwave");
+    private static final ResourceLocation SHOCKWAVE = Ids.of("geontm", "shockwave");
     private final float red;
     private final float green;
     private final float blue;

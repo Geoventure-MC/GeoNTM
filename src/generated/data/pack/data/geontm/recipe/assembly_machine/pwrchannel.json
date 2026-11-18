@@ -1,0 +1,35 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrchannel",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:pwr_channel",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 44800,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 2
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 4
+    }
+  ]
+}

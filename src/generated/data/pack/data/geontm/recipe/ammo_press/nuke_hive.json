@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": "geontm:ammo_standard_nuke_hive",
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 8
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large_steel",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 4
+    },
+    ""
+  ],
+  "order": 86
+}

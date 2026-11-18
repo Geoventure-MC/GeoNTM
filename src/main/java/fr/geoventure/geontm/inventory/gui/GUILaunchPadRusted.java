@@ -14,10 +14,10 @@ import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import org.joml.Quaternionf;
@@ -38,7 +38,7 @@ import java.util.Random;
  */
 public class GUILaunchPadRusted extends CompatContainerScreen<ContainerLaunchPadRusted> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/gui_launch_pad_rusted.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/gui_launch_pad_rusted.png");
 
     private EntityMissileTier4.@Nullable EntityMissileDoomsdayRusted preview;
 
@@ -47,7 +47,7 @@ public class GUILaunchPadRusted extends CompatContainerScreen<ContainerLaunchPad
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 4, 0xFF404040, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 0xFF404040, false);
     }
@@ -67,7 +67,7 @@ public class GUILaunchPadRusted extends CompatContainerScreen<ContainerLaunchPad
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityLaunchPadRusted pad = menu.getPad();
         if (pad == null) return;
@@ -98,7 +98,7 @@ public class GUILaunchPadRusted extends CompatContainerScreen<ContainerLaunchPad
         long value() { return x * 131_071 + z; }
     }
 
-    private void drawMissile(GuiGraphicsExtractor graphics) {
+    private void drawMissile(GuiGraphics graphics) {
         if (this.minecraft == null || this.minecraft.level == null) return;
         if (preview == null) {
             preview = new EntityMissileTier4.EntityMissileDoomsdayRusted(this.minecraft.level, 0F, 0F, 0F, 1, 0);
@@ -117,7 +117,7 @@ public class GUILaunchPadRusted extends CompatContainerScreen<ContainerLaunchPad
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         if (isHovering(26, 36, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, List.of(
                     Component.literal("Release Missile").withStyle(ChatFormatting.YELLOW),

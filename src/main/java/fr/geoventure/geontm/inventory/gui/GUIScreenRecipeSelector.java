@@ -11,13 +11,13 @@ import fr.geoventure.geontm.packet.ControlEventPayload;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ import java.util.Optional;
  */
 public class GUIScreenRecipeSelector extends CompatScreen {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_recipe_selector.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_recipe_selector.png");
     public static final String NULL_SELECTION = "null";
 
     private final int xSize = 176;
@@ -111,7 +111,7 @@ public class GUIScreenRecipeSelector extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0.0F, 0.0F, xSize, ySize, 256, 256);
 
         if (this.search.isFocused()) {
@@ -144,14 +144,14 @@ public class GUIScreenRecipeSelector extends CompatScreen {
         if (selected != null) GuiDraw.item(graphics, selected.getIcon(), guiLeft + 152, guiTop + 72);
     }
 
-    private void hoverBlit(GuiGraphicsExtractor graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
+    private void hoverBlit(GuiGraphics graphics, int mouseX, int mouseY, int x, int y, int u, int v) {
         if (isOver(mouseX, mouseY, x, y, 16, 16)) {
             GuiDraw.blit(graphics, TEXTURE, guiLeft + x, guiTop + y, (float) u, (float) v, 16, 16, 256, 256);
         }
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
 
         // Recipe tooltips over the grid.
         if (isOver(mouseX, mouseY, 7, 17, 144, 90)) {

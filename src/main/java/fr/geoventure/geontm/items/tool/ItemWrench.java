@@ -43,7 +43,7 @@ public class ItemWrench extends CompatSwordItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
-        if (player == null || player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null || player.isShiftKeyDown()) return InteractionResult.PASS;
 
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
@@ -53,7 +53,7 @@ public class ItemWrench extends CompatSwordItem {
         if (core != null) pos = core;
 
         BlockEntity te = level.getBlockEntity(pos);
-        if (!(te instanceof TileEntityPipelineBase second)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(te instanceof TileEntityPipelineBase second)) return InteractionResult.PASS;
 
         BlockPos start = ModEnergyNetContent.WIRE_START.get(stack).orElse(null);
         if (start == null) {

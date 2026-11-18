@@ -1,0 +1,329 @@
+{
+  "values": {
+    "geontm:rbmk_fuel_ueu": {
+      "yield": 1.0E8,
+      "reactivity": 15.0,
+      "depletion": "RAISING_SLOPE",
+      "heat": 0.65,
+      "melting_point": 2865.0,
+      "tint": "#868D82",
+      "pellet": "geontm:rbmk_pellet_ueu"
+    },
+    "geontm:rbmk_fuel_meu": {
+      "yield": 1.0E8,
+      "reactivity": 20.0,
+      "depletion": "RAISING_SLOPE",
+      "heat": 0.65,
+      "melting_point": 2865.0,
+      "tint": "#868D82",
+      "pellet": "geontm:rbmk_pellet_meu"
+    },
+    "geontm:rbmk_fuel_heu233": {
+      "yield": 1.0E8,
+      "reactivity": 27.5,
+      "function": "LINEAR",
+      "heat": 1.25,
+      "melting_point": 2865.0,
+      "tint": "#868D82",
+      "pellet": "geontm:rbmk_pellet_heu233"
+    },
+    "geontm:rbmk_fuel_heu235": {
+      "yield": 1.0E8,
+      "reactivity": 50.0,
+      "function": "SQUARE_ROOT",
+      "melting_point": 2865.0,
+      "tint": "#868D82",
+      "pellet": "geontm:rbmk_pellet_heu235"
+    },
+    "geontm:rbmk_fuel_uzh": {
+      "yield": 5.0E7,
+      "reactivity": 30.0,
+      "heat": 0.75,
+      "diffusion": 0.1,
+      "melting_point": 1845.0,
+      "heat_coeff_start": 1000.0,
+      "heat_coeff_length": 500.0,
+      "tint": "#7077AF",
+      "pellet": "geontm:rbmk_pellet_uzh"
+    },
+    "geontm:rbmk_fuel_thmeu": {
+      "yield": 1.0E8,
+      "reactivity": 20.0,
+      "function": "PLATEU",
+      "depletion": "BOOSTED_SLOPE",
+      "heat": 0.65,
+      "melting_point": 3350.0,
+      "tint": "#665448",
+      "pellet": "geontm:rbmk_pellet_thmeu"
+    },
+    "geontm:rbmk_fuel_lep": {
+      "yield": 1.0E8,
+      "reactivity": 35.0,
+      "depletion": "RAISING_SLOPE",
+      "heat": 0.75,
+      "melting_point": 2744.0,
+      "tint": "#656E6B",
+      "pellet": "geontm:rbmk_pellet_lep"
+    },
+    "geontm:rbmk_fuel_mep": {
+      "yield": 1.0E8,
+      "reactivity": 35.0,
+      "function": "SQUARE_ROOT",
+      "melting_point": 2744.0,
+      "tint": "#656E6B",
+      "pellet": "geontm:rbmk_pellet_mep"
+    },
+    "geontm:rbmk_fuel_hep": {
+      "yield": 1.0E8,
+      "reactivity": 30.0,
+      "function": "LINEAR",
+      "heat": 1.25,
+      "melting_point": 2744.0,
+      "tint": "#656E6B",
+      "pellet": "geontm:rbmk_pellet_hep"
+    },
+    "geontm:rbmk_fuel_hep241": {
+      "yield": 1.0E8,
+      "reactivity": 40.0,
+      "function": "LINEAR",
+      "heat": 1.75,
+      "melting_point": 2744.0,
+      "tint": "#656E6B",
+      "pellet": "geontm:rbmk_pellet_hep241"
+    },
+    "geontm:rbmk_fuel_lea": {
+      "yield": 1.0E8,
+      "reactivity": 60.0,
+      "self_rate": 10.0,
+      "function": "SQUARE_ROOT",
+      "depletion": "RAISING_SLOPE",
+      "heat": 1.5,
+      "melting_point": 2386.0,
+      "tint": "#A88A8F",
+      "pellet": "geontm:rbmk_pellet_lea"
+    },
+    "geontm:rbmk_fuel_mea": {
+      "yield": 1.0E8,
+      "reactivity": 35.0,
+      "self_rate": 20.0,
+      "function": "ARCH",
+      "heat": 1.75,
+      "melting_point": 2386.0,
+      "tint": "#A88A8F",
+      "pellet": "geontm:rbmk_pellet_mea"
+    },
+    "geontm:rbmk_fuel_hea241": {
+      "yield": 1.0E8,
+      "reactivity": 65.0,
+      "self_rate": 15.0,
+      "function": "SQUARE_ROOT",
+      "heat": 1.85,
+      "melting_point": 2386.0,
+      "neutron_in": "FAST",
+      "tint": "#A88A8F",
+      "pellet": "geontm:rbmk_pellet_hea241"
+    },
+    "geontm:rbmk_fuel_hea242": {
+      "yield": 1.0E8,
+      "reactivity": 45.0,
+      "function": "LINEAR",
+      "heat": 2.0,
+      "melting_point": 2386.0,
+      "tint": "#A88A8F",
+      "pellet": "geontm:rbmk_pellet_hea242"
+    },
+    "geontm:rbmk_fuel_men": {
+      "yield": 1.0E8,
+      "reactivity": 30.0,
+      "function": "SQUARE_ROOT",
+      "depletion": "RAISING_SLOPE",
+      "heat": 0.75,
+      "melting_point": 2800.0,
+      "neutron_in": "ANY",
+      "tint": "#757E73",
+      "pellet": "geontm:rbmk_pellet_men"
+    },
+    "geontm:rbmk_fuel_hen": {
+      "yield": 1.0E8,
+      "reactivity": 40.0,
+      "function": "SQUARE_ROOT",
+      "melting_point": 2800.0,
+      "neutron_in": "FAST",
+      "tint": "#757E73",
+      "pellet": "geontm:rbmk_pellet_hen"
+    },
+    "geontm:rbmk_fuel_mox": {
+      "yield": 1.0E8,
+      "reactivity": 40.0,
+      "depletion": "RAISING_SLOPE",
+      "melting_point": 2815.0,
+      "tint": "#868D82",
+      "pellet": "geontm:rbmk_pellet_mox"
+    },
+    "geontm:rbmk_fuel_les": {
+      "yield": 1.0E8,
+      "reactivity": 50.0,
+      "function": "SQUARE_ROOT",
+      "heat": 1.25,
+      "melting_point": 2500.0,
+      "neutron_out": "SLOW",
+      "tint": "#2D9A94",
+      "pellet": "geontm:rbmk_pellet_les"
+    },
+    "geontm:rbmk_fuel_mes": {
+      "yield": 1.0E8,
+      "reactivity": 75.0,
+      "function": "ARCH",
+      "heat": 1.5,
+      "melting_point": 2750.0,
+      "tint": "#2D9A94",
+      "pellet": "geontm:rbmk_pellet_mes"
+    },
+    "geontm:rbmk_fuel_hes": {
+      "yield": 1.0E8,
+      "reactivity": 90.0,
+      "function": "LINEAR",
+      "depletion": "LINEAR",
+      "heat": 1.75,
+      "melting_point": 3000.0,
+      "tint": "#2D9A94",
+      "pellet": "geontm:rbmk_pellet_hes"
+    },
+    "geontm:rbmk_fuel_leaus": {
+      "yield": 1.0E8,
+      "reactivity": 30.0,
+      "function": "SIGMOID",
+      "depletion": "LINEAR",
+      "xenon_gen": 0.05,
+      "heat": 1.5,
+      "melting_point": 7029.0,
+      "tint": "#FFEE00",
+      "pellet": "geontm:rbmk_pellet_leaus"
+    },
+    "geontm:rbmk_fuel_heaus": {
+      "yield": 1.0E8,
+      "reactivity": 35.0,
+      "function": "LINEAR",
+      "xenon_gen": 0.05,
+      "heat": 1.5,
+      "melting_point": 5211.0,
+      "tint": "#FFEE00",
+      "pellet": "geontm:rbmk_pellet_heaus"
+    },
+    "geontm:rbmk_fuel_po210be": {
+      "yield": 2.5E7,
+      "reactivity": 0.0,
+      "self_rate": 50.0,
+      "function": "PASSIVE",
+      "depletion": "LINEAR",
+      "xenon_gen": 0.0,
+      "heat": 0.1,
+      "diffusion": 0.05,
+      "melting_point": 1287.0,
+      "neutron_out": "SLOW",
+      "tint": "#563A26",
+      "pellet": "geontm:rbmk_pellet_po210be"
+    },
+    "geontm:rbmk_fuel_ra226be": {
+      "yield": 1.0E8,
+      "reactivity": 0.0,
+      "self_rate": 20.0,
+      "function": "PASSIVE",
+      "depletion": "LINEAR",
+      "xenon_gen": 0.0,
+      "heat": 0.035,
+      "diffusion": 0.5,
+      "melting_point": 700.0,
+      "neutron_out": "SLOW",
+      "tint": "#B3B6AD",
+      "pellet": "geontm:rbmk_pellet_ra226be"
+    },
+    "geontm:rbmk_fuel_pu238be": {
+      "yield": 5.0E7,
+      "reactivity": 40.0,
+      "self_rate": 40.0,
+      "function": "SQUARE_ROOT",
+      "heat": 0.1,
+      "diffusion": 0.05,
+      "melting_point": 1287.0,
+      "neutron_out": "SLOW",
+      "tint": "#656E6B",
+      "pellet": "geontm:rbmk_pellet_pu238be"
+    },
+    "geontm:rbmk_fuel_balefire_gold": {
+      "yield": 1.0E8,
+      "reactivity": 50.0,
+      "self_rate": 10.0,
+      "function": "ARCH",
+      "depletion": "LINEAR",
+      "xenon_gen": 0.0,
+      "melting_point": 2000.0,
+      "tint": "#DC9613",
+      "pellet": "geontm:rbmk_pellet_balefire_gold"
+    },
+    "geontm:rbmk_fuel_flashlead": {
+      "yield": 2.5E8,
+      "reactivity": 40.0,
+      "self_rate": 50.0,
+      "function": "ARCH",
+      "depletion": "LINEAR",
+      "xenon_gen": 0.0,
+      "melting_point": 2050.0,
+      "tint": "#7B7B87",
+      "pellet": "geontm:rbmk_pellet_flashlead"
+    },
+    "geontm:rbmk_fuel_balefire": {
+      "yield": 1.0E8,
+      "reactivity": 100.0,
+      "self_rate": 35.0,
+      "function": "LINEAR",
+      "xenon_gen": 0.0,
+      "heat": 3.0,
+      "melting_point": 3652.0,
+      "tint": "#B2FF1B",
+      "pellet": "geontm:rbmk_pellet_balefire"
+    },
+    "geontm:rbmk_fuel_zfb_bismuth": {
+      "yield": 5.0E7,
+      "reactivity": 20.0,
+      "function": "SQUARE_ROOT",
+      "heat": 1.75,
+      "melting_point": 2744.0,
+      "tint": "#AAA36A",
+      "pellet": "geontm:rbmk_pellet_zfb_bismuth"
+    },
+    "geontm:rbmk_fuel_zfb_pu241": {
+      "yield": 5.0E7,
+      "reactivity": 20.0,
+      "function": "SQUARE_ROOT",
+      "melting_point": 2865.0,
+      "tint": "#AAA36A",
+      "pellet": "geontm:rbmk_pellet_zfb_pu241"
+    },
+    "geontm:rbmk_fuel_zfb_am_mix": {
+      "yield": 5.0E7,
+      "reactivity": 20.0,
+      "function": "LINEAR",
+      "heat": 1.75,
+      "melting_point": 2744.0,
+      "tint": "#AAA36A",
+      "pellet": "geontm:rbmk_pellet_zfb_am_mix"
+    },
+    "geontm:rbmk_fuel_drx": {
+      "yield": 1.0E7,
+      "reactivity": 1000.0,
+      "self_rate": 10.0,
+      "function": "QUADRATIC",
+      "heat": 0.1,
+      "melting_point": 100000.0,
+      "tint": "#D77276",
+      "pellet": "geontm:rbmk_pellet_drx"
+    },
+    "geontm:rbmk_fuel_test": {
+      "yield": 1000000.0,
+      "reactivity": 100.0,
+      "function": "EXPERIMENTAL",
+      "melting_point": 100000.0
+    }
+  }
+}

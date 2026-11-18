@@ -1,0 +1,47 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.chip.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:circuit_chip"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_silicon",
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:plate_polymer",
+      "count": 3,
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:wire_fine_gold",
+      "count": 4,
+      "chance": 0.5
+    }
+  ],
+  "duration": 100,
+  "power": 200,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:circuit_chip"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 3,
+  "requires": [
+    "enable_528",
+    "expensive_mode"
+  ],
+  "geocore:requires": [
+    "enable_528",
+    "expensive_mode"
+  ]
+}

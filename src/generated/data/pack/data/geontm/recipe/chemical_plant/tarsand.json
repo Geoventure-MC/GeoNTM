@@ -1,0 +1,32 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.tarsand",
+  "input_items": [
+    {
+      "ingredient": "geontm:ore_oil_sand",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:tars"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "minecraft:sand",
+      "count": 16
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:bitumen",
+      "amount": 1000
+    }
+  ],
+  "duration": 200,
+  "power": 100,
+  "icon": {
+    "id": "geontm:ore_oil_sand"
+  },
+  "custom_localization": true,
+  "order": 17
+}

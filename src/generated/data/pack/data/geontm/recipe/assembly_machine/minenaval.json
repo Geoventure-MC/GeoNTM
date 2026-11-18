@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.minenaval",
+  "input_items": [
+    {
+      "ingredient": "geontm:sphere_steel"
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_advanced"
+    },
+    {
+      "ingredient": "#c:ingots/any_plasticexplosive",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:mine_naval"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 52480
+}

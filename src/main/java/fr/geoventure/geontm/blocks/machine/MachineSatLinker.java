@@ -34,7 +34,7 @@ public class MachineSatLinker extends CompatBlock implements TickingBlock {
     protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                  BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
         if (player instanceof ServerPlayer serverPlayer
                 && level.getBlockEntity(pos) instanceof TileEntityMachineSatLinker linker) {
             Menus.openWithPos(serverPlayer, linker, pos);

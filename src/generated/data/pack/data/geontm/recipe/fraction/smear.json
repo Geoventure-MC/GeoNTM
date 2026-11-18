@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:smear",
+  "left": {
+    "type": "geontm:heatingoil",
+    "amount": 60
+  },
+  "right": {
+    "type": "geontm:lubricant",
+    "amount": 40
+  }
+}

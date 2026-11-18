@@ -43,7 +43,7 @@ public class MachineIGenerator extends BlockMultiblockMachine implements ILookOv
     @Override
     protected InteractionResult useAtCore(BlockState state, Level level, BlockPos core, Player player, BlockHitResult hit) {
         if (level.isClientSide()) return InteractionResult.SUCCESS;
-        return player.isShiftKeyDown() ? InteractionResult.TRY_WITH_EMPTY_HAND : InteractionResult.SUCCESS;
+        return player.isShiftKeyDown() ? InteractionResult.PASS : InteractionResult.SUCCESS;
     }
 
     @Override

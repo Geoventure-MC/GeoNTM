@@ -133,7 +133,7 @@ public class ItemGlitch extends CompatItem implements IBatteryItem {
                 say(player, "More devastating than a falling boxcar!");
             }
             case 26 -> {
-                Effects.add(player, MobEffects.SLOWNESS, 60 * 20, 9);
+                Effects.add(player, MobEffects.MOVEMENT_SLOWDOWN, 60 * 20, 9);
                 say(player, "Ha!");
             }
             case 27 -> {

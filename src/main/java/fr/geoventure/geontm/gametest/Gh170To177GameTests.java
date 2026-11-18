@@ -252,7 +252,7 @@ public final class Gh170To177GameTests {
         TileEntityPneumoTube endpoint = GameTestHelpers.blockEntity(helper, new BlockPos(3, 3, 8), TileEntityPneumoTube.class);
         endpoint.ejectionDir = Direction.EAST;
         endpoint.setChanged();
-        Item fuel = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "pwr_fuel_meu"));
+        Item fuel = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "pwr_fuel_meu"));
         ((Container) helper.getLevel().getBlockEntity(helper.absolutePos(chest))).setItem(0, new ItemStack(fuel, 4));
         helper.runAfterDelay(100, () -> {
             helper.assertTrue(!controller.getItem(0).is(fuel),

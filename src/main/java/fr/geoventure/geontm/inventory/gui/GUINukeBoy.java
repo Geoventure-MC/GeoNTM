@@ -4,10 +4,10 @@ import fr.geoventure.geontm.inventory.container.ContainerNukeBoy;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -17,20 +17,20 @@ import java.util.Optional;
 /** Little Boy schematic screen, ported from 1.7 {@code GUINukeBoy}: the five installed-part overlays and the info panel. */
 public class GUINukeBoy extends CompatContainerScreen<ContainerNukeBoy> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/weapon/lilboyschematic.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/weapon/lilboyschematic.png");
 
     public GUINukeBoy(ContainerNukeBoy menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 222);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         if (menu.isReady()) GuiDraw.blit(graphics, TEXTURE, leftPos + 142, topPos + 90, 176F, 0F, 16, 16, 256, 256);
         if (menu.hasPart(0)) GuiDraw.blit(graphics, TEXTURE, leftPos + 27, topPos + 87, 176F, 16F, 21, 22, 256, 256);
@@ -42,7 +42,7 @@ public class GUINukeBoy extends CompatContainerScreen<ContainerNukeBoy> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 drawCustomInfoStat: the text is anchored at (guiLeft - 8, guiTop + 32), not at the mouse.
         if (isHovering(-16, 16, 16, 16, mouseX, mouseY)) {
             GuiDraw.tooltip(graphics, font, lines("desc.gui.nukeBoy.desc"), Optional.empty(), leftPos - 8, topPos + 16 + 16);

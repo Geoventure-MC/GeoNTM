@@ -12,9 +12,9 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -25,16 +25,16 @@ import org.lwjgl.glfw.GLFW;
 public final class GUIMachineElectrolyser extends CompatContainerScreen<ContainerMachineElectrolyser>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier FLUID_TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electrolyser_fluid.png");
-    private static final Identifier METAL_TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electrolyser_metal.png");
+    private static final ResourceLocation FLUID_TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electrolyser_fluid.png");
+    private static final ResourceLocation METAL_TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_electrolyser_metal.png");
 
     public GUIMachineElectrolyser(ContainerMachineElectrolyser menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 210, 204);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
-        Identifier texture = menu.isMetal() ? METAL_TEXTURE : FLUID_TEXTURE;
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+        ResourceLocation texture = menu.isMetal() ? METAL_TEXTURE : FLUID_TEXTURE;
         GuiDraw.blit(graphics, texture, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineElectrolyser te = menu.getElectrolyser();
         if (te == null) return;
@@ -65,7 +65,7 @@ public final class GUIMachineElectrolyser extends CompatContainerScreen<Containe
         }
     }
 
-    private void drawMaterial(GuiGraphicsExtractor graphics, Mats.@org.jspecify.annotations.Nullable MaterialStack material, int x) {
+    private void drawMaterial(GuiGraphics graphics, Mats.@org.jspecify.annotations.Nullable MaterialStack material, int x) {
         if (material == null) return;
         int height = material.amount * 42 / TileEntityMachineElectrolyser.MAX_MATERIAL;
         if (height <= 0) return;
@@ -75,18 +75,18 @@ public final class GUIMachineElectrolyser extends CompatContainerScreen<Containe
     }
 
     /** 1.7 {@code renderTank(guiLeft + x, guiTop + 70, z, 16, 52)}: the 1.7 call passes the bottom edge. */
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM tank, int x, int y) {
+    private void drawTank(GuiGraphics graphics, FluidTankNTM tank, int x, int y) {
         GuiUtil.tank(graphics, tank, leftPos + x, topPos + y + 52, 16, 52);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, 89 - font.width(title) / 2, 7, 0xFFFFFF, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94, 0x404040, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineElectrolyser te = menu.getElectrolyser();
         if (te == null) return;
         if (GuiUtil.hover(mouseX, mouseY, leftPos + 186, topPos + 18, 16, 89)) {
@@ -126,7 +126,7 @@ public final class GUIMachineElectrolyser extends CompatContainerScreen<Containe
         return false;
     }
 
-    private void materialTooltip(GuiGraphicsExtractor graphics, Mats.@org.jspecify.annotations.Nullable MaterialStack stack, int x, int y) {
+    private void materialTooltip(GuiGraphics graphics, Mats.@org.jspecify.annotations.Nullable MaterialStack stack, int x, int y) {
         GuiDraw.tooltip(graphics, font, stack == null ? List.of(Component.literal("Empty").withStyle(ChatFormatting.RED))
                 : List.of(stack.material.getLocalizedName().copy().append(": "
                         // 1.7: Keyboard.isKeyDown(KEY_LSHIFT): the physical left shift key, not the sneak state.

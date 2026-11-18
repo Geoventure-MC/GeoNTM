@@ -189,7 +189,7 @@ public final class StandardInfoGameTests {
     }
 
     private static List<Component> lines(String id, boolean shift) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, id));
         if (!(item instanceof CompatBlockItem blockItem)) return null;
         StandardInfo.setShiftHeldPoll(() -> shift);
         try {

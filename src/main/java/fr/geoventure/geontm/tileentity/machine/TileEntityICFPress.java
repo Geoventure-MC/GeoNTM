@@ -18,7 +18,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.Compat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -154,7 +154,7 @@ public class TileEntityICFPress extends TileEntityMachineBase
     // --- sync ---
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeByte((byte) muon);
         tanks[0].serialize(buf);
@@ -162,7 +162,7 @@ public class TileEntityICFPress extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         this.muon = buf.readByte();
         tanks[0].deserialize(buf);

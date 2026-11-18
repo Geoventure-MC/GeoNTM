@@ -1,0 +1,21 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.exgold",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/gold",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:dusts/gold",
+      "count": 64
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_gold_dust"
+  ],
+  "duration": 120,
+  "power": 100000,
+  "order": 11,
+  "ignition_temp": 1000000
+}

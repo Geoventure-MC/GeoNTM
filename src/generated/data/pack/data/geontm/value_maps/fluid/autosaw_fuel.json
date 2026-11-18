@@ -1,0 +1,9 @@
+{
+  "values": {
+    "geontm:woodoil": true,
+    "geontm:ethanol": true,
+    "geontm:fishoil": true,
+    "geontm:heavyoil": true,
+    "geontm:coalcreosote": true
+  }
+}

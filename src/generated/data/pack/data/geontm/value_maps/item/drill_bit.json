@@ -1,0 +1,68 @@
+{
+  "values": {
+    "geontm:drillbit_steel": {
+      "speed": 1.0,
+      "tier": 1
+    },
+    "geontm:drillbit_steel_diamond": {
+      "speed": 1.0,
+      "tier": 1,
+      "fortune": 2,
+      "silk_touch": true
+    },
+    "geontm:drillbit_hss": {
+      "speed": 1.2,
+      "tier": 2,
+      "vein_miner": true
+    },
+    "geontm:drillbit_hss_diamond": {
+      "speed": 1.2,
+      "tier": 2,
+      "fortune": 3,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_desh": {
+      "speed": 1.5,
+      "tier": 3,
+      "fortune": 1,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_desh_diamond": {
+      "speed": 1.5,
+      "tier": 3,
+      "fortune": 4,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_tcalloy": {
+      "speed": 2.0,
+      "tier": 4,
+      "fortune": 1,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_tcalloy_diamond": {
+      "speed": 2.0,
+      "tier": 4,
+      "fortune": 4,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_ferro": {
+      "speed": 2.5,
+      "tier": 5,
+      "fortune": 1,
+      "vein_miner": true,
+      "silk_touch": true
+    },
+    "geontm:drillbit_ferro_diamond": {
+      "speed": 2.5,
+      "tier": 5,
+      "fortune": 4,
+      "vein_miner": true,
+      "silk_touch": true
+    }
+  }
+}

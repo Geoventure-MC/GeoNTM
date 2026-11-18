@@ -37,7 +37,7 @@ public abstract class ItemCoordinateBase extends CompatItem {
         Level level = context.getLevel();
         BlockPos clicked = context.getClickedPos();
 
-        if (!this.canGrabCoordinateHere(level, clicked)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!this.canGrabCoordinateHere(level, clicked)) return InteractionResult.PASS;
 
         if (!level.isClientSide()) {
             BlockPos pos = this.getCoordinates(level, clicked);

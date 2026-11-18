@@ -1,0 +1,102 @@
+{
+  "values": {
+    "minecraft:water_bucket": {
+      "fluid": "minecraft:water",
+      "amount": 1000,
+      "empty": "minecraft:bucket"
+    },
+    "minecraft:lava_bucket": {
+      "fluid": "minecraft:lava",
+      "amount": 1000,
+      "empty": "minecraft:bucket"
+    },
+    "geontm:bucket_mud": {
+      "fluid": "geontm:watz",
+      "amount": 1000,
+      "empty": "minecraft:bucket"
+    },
+    "geontm:bucket_schrabidic_acid": {
+      "fluid": "geontm:schrabidic",
+      "amount": 1000,
+      "empty": "minecraft:bucket"
+    },
+    "geontm:bucket_sulfuric_acid": {
+      "fluid": "geontm:sulfuric_acid",
+      "amount": 1000,
+      "empty": "minecraft:bucket"
+    },
+    "geontm:red_barrel": {
+      "fluid": "geontm:diesel",
+      "amount": 10000,
+      "empty": "geontm:tank_steel"
+    },
+    "geontm:pink_barrel": {
+      "fluid": "geontm:kerosene",
+      "amount": 10000,
+      "empty": "geontm:tank_steel"
+    },
+    "geontm:lox_barrel": {
+      "fluid": "geontm:oxygen",
+      "amount": 10000,
+      "empty": "geontm:tank_steel"
+    },
+    "geontm:ore_oil": {
+      "fluid": "geontm:oil",
+      "amount": 250
+    },
+    "geontm:ore_gneiss_gas": {
+      "fluid": "geontm:petroleum",
+      "amount": 250,
+      "amount_528": 50
+    },
+    "geontm:bottle_mercury": {
+      "fluid": "geontm:mercury",
+      "amount": 1000,
+      "empty": "minecraft:glass_bottle"
+    },
+    "geontm:nugget_mercury": {
+      "fluid": "geontm:mercury",
+      "amount": 125
+    },
+    "geontm:rod_zirnox_tritium": {
+      "fluid": "geontm:tritium",
+      "amount": 2000,
+      "empty": "geontm:rod_zirnox_empty"
+    },
+    "geontm:particle_hydrogen": {
+      "fluid": "geontm:hydrogen",
+      "amount": 1000,
+      "empty": "geontm:particle_empty"
+    },
+    "geontm:particle_amat": {
+      "fluid": "geontm:amat",
+      "amount": 1000,
+      "empty": "geontm:particle_empty"
+    },
+    "geontm:particle_aschrab": {
+      "fluid": "geontm:aschrab",
+      "amount": 1000,
+      "empty": "geontm:particle_empty"
+    },
+    "geontm:iv_blood": {
+      "fluid": "geontm:blood",
+      "amount": 100,
+      "empty": "geontm:iv_empty"
+    },
+    "geontm:iv_xp": {
+      "fluid": "geontm:xpjuice",
+      "amount": 100,
+      "empty": "geontm:iv_xp_empty"
+    },
+    "minecraft:experience_bottle": {
+      "fluid": "geontm:xpjuice",
+      "amount": 100,
+      "empty": "minecraft:glass_bottle"
+    },
+    "geontm:can_mug": {
+      "fluid": "geontm:mug",
+      "amount": 100,
+      "empty": "geontm:can_empty"
+    }
+  }
+}

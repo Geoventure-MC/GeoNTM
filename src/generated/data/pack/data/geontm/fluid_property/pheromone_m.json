@@ -1,0 +1,10 @@
+{
+  "type": "liquid",
+  "color": "#48C9B0",
+  "temperature": 20,
+  "traits": {
+    "pheromone": {
+      "type": 2
+    }
+  }
+}

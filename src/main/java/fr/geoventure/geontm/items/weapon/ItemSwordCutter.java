@@ -138,7 +138,7 @@ public class ItemSwordCutter extends ItemSwordAbility implements IEquipReceiver,
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
         if (level.isClientSide() && client != null) client.rightClick(player);
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /** {@code onEntitySwing}: on the client, send a drawn cut. Never cancels by itself. */

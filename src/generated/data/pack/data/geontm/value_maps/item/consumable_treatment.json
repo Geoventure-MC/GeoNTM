@@ -1,0 +1,2063 @@
+{
+  "values": {
+    "geontm:radx": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "effect": "geontm:radx",
+          "duration": 3600,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:siox": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "counter": "asbestos",
+          "operation": "set",
+          "type": "counter"
+        },
+        {
+          "counter": "black_lung",
+          "operation": "min",
+          "limit_divisor": 5,
+          "type": "counter"
+        }
+      ]
+    },
+    "geontm:pill_herbal": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "counter": "asbestos",
+          "operation": "set",
+          "type": "counter"
+        },
+        {
+          "counter": "black_lung",
+          "operation": "min",
+          "limit_divisor": 5,
+          "type": "counter"
+        },
+        {
+          "counter": "radiation",
+          "amount": -100.0,
+          "type": "counter"
+        },
+        {
+          "effect": "minecraft:nausea",
+          "duration": 200,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 12000,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:mining_fatigue",
+          "duration": 12000,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:poison",
+          "duration": 100,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "geontm:potionsickness",
+          "duration": 12000,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:xanax": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "counter": "digamma",
+          "amount": -0.5,
+          "type": "counter"
+        }
+      ]
+    },
+    "geontm:fmn": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "counter": "digamma",
+          "operation": "min",
+          "amount": 2.0,
+          "type": "counter"
+        },
+        {
+          "effect": "minecraft:blindness",
+          "duration": 60,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:five_htp": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "counter": "digamma",
+          "operation": "set",
+          "type": "counter"
+        },
+        {
+          "effect": "geontm:stability",
+          "duration": 12000,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:pill_iodine": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "effects": [
+            "minecraft:blindness",
+            "minecraft:nausea",
+            "minecraft:mining_fatigue",
+            "minecraft:hunger",
+            "minecraft:slowness",
+            "minecraft:poison",
+            "minecraft:weakness",
+            "minecraft:wither",
+            "geontm:radiation"
+          ],
+          "type": "remove_effects"
+        }
+      ]
+    },
+    "geontm:plan_c": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "sources": [
+            "geontm:euthanized_self",
+            "geontm:euthanized_self2"
+          ],
+          "amount": 1000.0,
+          "repeat": 10,
+          "type": "damage"
+        }
+      ]
+    },
+    "geontm:pill_red": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "effect": "geontm:death",
+          "duration": 72000,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:chocolate": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "chance": 0.04,
+          "sources": [
+            "geontm:overdose"
+          ],
+          "amount": 1000.0,
+          "type": "damage"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 1200,
+          "amplifier": 3,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 1200,
+          "amplifier": 3,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 1200,
+          "amplifier": 3,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:canteen_vodka": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:nausea",
+          "duration": 200,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        }
+      ]
+    },
+    "geontm:syringe_antidote": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "type": "clear_effects"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_empty",
+          "type": "consume_item"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        }
+      ]
+    },
+    "geontm:syringe_awesome": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 1000,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 1000,
+          "amplifier": 24,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 1000,
+          "amplifier": 6,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:health_boost",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:absorption",
+          "duration": 1000,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:nausea",
+          "duration": 100,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "geontm:radx",
+          "duration": 1000,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_empty",
+          "type": "consume_item"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        }
+      ]
+    },
+    "geontm:syringe_poison": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "actions": [
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_empty",
+          "type": "consume_item"
+        },
+        {
+          "sources": [
+            "geontm:euthanized_self",
+            "geontm:euthanized_self2"
+          ],
+          "amount": 30.0,
+          "other_sources": [
+            "geontm:euthanized"
+          ],
+          "type": "damage"
+        }
+      ]
+    },
+    "geontm:syringe_metal_stimpak": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 5.0,
+          "type": "heal"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_metal_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:syringe_metal_medx": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:resistance",
+          "duration": 4800,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_metal_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:syringe_metal_psycho": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:resistance",
+          "duration": 2400,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 2400,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_metal_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:syringe_metal_super": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 25.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 200,
+          "type": "effect"
+        },
+        {
+          "seconds": 15,
+          "type": "potion_sickness"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_metal_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:med_bag": {
+      "triggers": [
+        "use"
+      ],
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "type": "restore_health"
+        },
+        {
+          "effects": [
+            "minecraft:blindness",
+            "minecraft:nausea",
+            "minecraft:mining_fatigue",
+            "minecraft:hunger",
+            "minecraft:slowness",
+            "minecraft:poison",
+            "minecraft:weakness",
+            "minecraft:wither",
+            "geontm:radiation"
+          ],
+          "type": "remove_effects"
+        },
+        {
+          "seconds": 15,
+          "type": "potion_sickness"
+        },
+        {
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:syringe_taint": {
+      "triggers": [
+        "use",
+        "hit"
+      ],
+      "actions": [
+        {
+          "effect": "geontm:taint",
+          "duration": 1200,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:nausea",
+          "duration": 100,
+          "type": "effect"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:syringe_metal_empty",
+          "type": "consume_item"
+        },
+        {
+          "item": "geontm:bottle2_empty",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:cbt_device": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "effect": "geontm:bang",
+          "duration": 30,
+          "type": "effect"
+        },
+        {
+          "type": "consume_item"
+        },
+        {
+          "sound": "geontm:item.vice",
+          "type": "sound"
+        }
+      ]
+    },
+    "geontm:syringe_mkunicorn": {
+      "triggers": [
+        "hit"
+      ],
+      "actions": [
+        {
+          "counter": "contagion",
+          "operation": "set",
+          "amount": 216000.0,
+          "type": "counter"
+        },
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:euphemium_stopper": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "effect": "minecraft:weakness",
+          "duration": 600,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 600,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:mining_fatigue",
+          "duration": 600,
+          "amplifier": 9,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:radaway": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "effect": "geontm:radaway",
+          "duration": 140,
+          "extend": true,
+          "type": "effect"
+        },
+        {
+          "sound": "geontm:item.radaway",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:radaway_strong": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "effect": "geontm:radaway",
+          "duration": 350,
+          "extend": true,
+          "type": "effect"
+        },
+        {
+          "sound": "geontm:item.radaway",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:radaway_flush": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "effect": "geontm:radaway",
+          "duration": 500,
+          "extend": true,
+          "type": "effect"
+        },
+        {
+          "sound": "geontm:item.radaway",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_empty",
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:iv_empty": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_blood",
+          "type": "consume_item"
+        },
+        {
+          "amount": 5.0,
+          "type": "drain_health"
+        }
+      ]
+    },
+    "geontm:iv_blood": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "sound": "geontm:item.radaway",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_empty",
+          "type": "consume_item"
+        },
+        {
+          "amount": 5.0,
+          "type": "heal"
+        }
+      ]
+    },
+    "geontm:iv_xp_empty": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "sound": "geontm:item.syringe",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_xp",
+          "type": "consume_item"
+        },
+        {
+          "amount": -100,
+          "type": "experience"
+        }
+      ]
+    },
+    "geontm:iv_xp": {
+      "triggers": [
+        "use"
+      ],
+      "actions": [
+        {
+          "sound": "minecraft:entity.experience_orb.pickup",
+          "type": "sound"
+        },
+        {
+          "remainder": "geontm:iv_xp_empty",
+          "type": "consume_item"
+        },
+        {
+          "amount": 100,
+          "type": "experience"
+        }
+      ]
+    },
+    "geontm:can_smart": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_creature": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_redbomb": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_mrsugar": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_overcharge": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_luna": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_bepis": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 3,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 3,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_breen": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:nausea",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:can_mug": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "effect": "minecraft:resistance",
+          "duration": 3600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 1200,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:can_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:ring_pull",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle_nuka": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 4.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 5.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_nuka",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle_cherry": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 6.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 5.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_nuka",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle_quantum": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 15.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_quantum",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle2_korl": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 6.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_korl",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle2_fritz": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 6.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 600,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 600,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_fritz",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle_sparkle": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 2400,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 2400,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 2400,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 2400,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 5.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_sparkle",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:bottle_rad": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 2400,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 2400,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 2400,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 2400,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 2400,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 15.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "remainder": "geontm:bottle_empty",
+          "type": "consume_item"
+        },
+        {
+          "survival_only": true,
+          "item": "geontm:cap_rad",
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:chocolate_milk": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:coffee": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 1200,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:coffee_radium": {
+      "block_when_potion_sick": true,
+      "actions": [
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 1200,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "counter": "radiation",
+          "amount": 500.0,
+          "type": "counter"
+        },
+        {
+          "seconds": 5,
+          "type": "potion_sickness"
+        },
+        {
+          "survival_only": true,
+          "type": "consume_item"
+        }
+      ]
+    },
+    "geontm:apple_lead": {
+      "actions": [
+        {
+          "effect": "geontm:lead",
+          "duration": 300,
+          "amplifier": 2,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:apple_lead_ingot": {
+      "actions": [
+        {
+          "effect": "geontm:lead",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:apple_lead_block": {
+      "actions": [
+        {
+          "sources": [
+            "geontm:lead"
+          ],
+          "amount": 500.0,
+          "type": "damage"
+        }
+      ]
+    },
+    "geontm:apple_schrabidium": {
+      "actions": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 600,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 6000,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 6000,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:apple_schrabidium_ingot": {
+      "actions": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 1200,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 1200,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 1200,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:health_boost",
+          "duration": 1200,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:absorption",
+          "duration": 1200,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:saturation",
+          "duration": 1200,
+          "amplifier": 9,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:apple_schrabidium_block": {
+      "actions": [
+        {
+          "effect": "minecraft:regeneration",
+          "duration": 2147483647,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 2147483647,
+          "amplifier": 1,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 2147483647,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:strength",
+          "duration": 2147483647,
+          "amplifier": 9,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 2147483647,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 2147483647,
+          "amplifier": 3,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:jump_boost",
+          "duration": 2147483647,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:health_boost",
+          "duration": 2147483647,
+          "amplifier": 24,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:absorption",
+          "duration": 2147483647,
+          "amplifier": 14,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:saturation",
+          "duration": 2147483647,
+          "amplifier": 99,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:apple_euphemium": {
+      "actions": [
+        {
+          "effect": "minecraft:resistance",
+          "duration": 2147483647,
+          "amplifier": 120,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:fire_resistance",
+          "duration": 2147483647,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:saturation",
+          "duration": 2147483647,
+          "amplifier": 120,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:cotton_candy": {
+      "actions": [
+        {
+          "effect": "minecraft:poison",
+          "duration": 300,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:wither",
+          "duration": 100,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 500,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:speed",
+          "duration": 500,
+          "amplifier": 2,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:resistance",
+          "duration": 600,
+          "amplifier": 4,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:mucho_mango": {
+      "actions": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 200,
+          "type": "effect"
+        }
+      ]
+    },
+    "geontm:schnitzel_vegan": {
+      "actions": [
+        {
+          "effect": "minecraft:blindness",
+          "duration": 200,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:nausea",
+          "duration": 600,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:hunger",
+          "duration": 3600,
+          "amplifier": 4,
+          "type": "effect"
+        },
+        {
+          "effect": "minecraft:wither",
+          "duration": 60,
+          "type": "effect"
+        },
+        {
+          "seconds": 100,
+          "type": "ignite"
+        },
+        {
+          "y": 2.0,
+          "type": "motion"
+        }
+      ]
+    },
+    "geontm:tem_flakes": {
+      "actions": [
+        {
+          "amount": 2.0,
+          "type": "heal"
+        }
+      ]
+    },
+    "geontm:tem_flakes_normal": {
+      "actions": [
+        {
+          "amount": 2.0,
+          "type": "heal"
+        }
+      ]
+    },
+    "geontm:tem_flakes_expensive": {
+      "actions": [
+        {
+          "amount": 2.0,
+          "type": "heal"
+        }
+      ]
+    },
+    "geontm:canned_conserve_beef": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_tuna": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_mystery": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_pashtet": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_cheese": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_slime": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_milk": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_ass": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_pizza": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_tube": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_tomato": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_asbestos": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_bhole": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_hotdogs": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_leftovers": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_yogurt": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_stew": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_chinese": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_oil": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_fist": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        },
+        {
+          "sources": [
+            "minecraft:magic"
+          ],
+          "amount": 2.0,
+          "type": "damage"
+        }
+      ]
+    },
+    "geontm:canned_conserve_spam": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_fried": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_napalm": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_diesel": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_kerosene": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_recursion": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        },
+        {
+          "chance": 0.9,
+          "item": "geontm:canned_conserve_recursion",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:canned_conserve_bark": {
+      "actions": [
+        {
+          "item": "geontm:can_key",
+          "drop_if_full": false,
+          "type": "give_item"
+        }
+      ]
+    },
+    "geontm:cigarette": {
+      "actions": [
+        {
+          "counter": "black_lung",
+          "amount": 2000.0,
+          "type": "counter"
+        },
+        {
+          "counter": "asbestos",
+          "amount": 2000.0,
+          "type": "counter"
+        },
+        {
+          "counter": "radiation",
+          "amount": 100.0,
+          "type": "counter"
+        },
+        {
+          "sound": "geontm:player.cough",
+          "type": "sound"
+        }
+      ]
+    },
+    "geontm:crackpipe": {
+      "actions": [
+        {
+          "counter": "black_lung",
+          "amount": 500.0,
+          "type": "counter"
+        },
+        {
+          "effect": "minecraft:nausea",
+          "duration": 200,
+          "type": "effect"
+        },
+        {
+          "amount": 10.0,
+          "type": "heal"
+        },
+        {
+          "sound": "geontm:player.cough",
+          "type": "sound"
+        }
+      ]
+    },
+    "geontm:bdcl": {
+      "actions": [
+        {
+          "sound": "geontm:player.groan",
+          "type": "sound"
+        }
+      ]
+    }
+  }
+}

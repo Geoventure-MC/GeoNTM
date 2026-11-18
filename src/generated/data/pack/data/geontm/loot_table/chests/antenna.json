@@ -1,0 +1,226 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:twinkie",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ingot_steel",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ingot_red_copper",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ingot_titanium",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:wire_fine_red_copper",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:circuit_vacuum_tube",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:circuit_capacitor",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:battery_redstone",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_iodine",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:powder_bromine",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:steel_poles",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:steel_scaffold",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pole_top",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:pole_satellite_receiver",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:scrap",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:dust",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bottle_opener",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bottle_nuka",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bottle_cherry",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:stealth_boy",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:cap_nuka",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 15
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:bomb_caller_carpet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_filter",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

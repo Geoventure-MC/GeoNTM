@@ -1,0 +1,31 @@
+{
+  "type": "gaseous",
+  "color": "#C9BE0D",
+  "temperature": 20,
+  "hazard": {
+    "poison": 4,
+    "flammability": 4,
+    "reactivity": 0,
+    "symbol": "acid"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 10
+    },
+    "flammable": {
+      "energy": 250000
+    },
+    "poison": {
+      "withering": false,
+      "level": 1
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-4
+      },
+      "burn": {
+        "SOOT": 2.0E-4
+      }
+    }
+  }
+}

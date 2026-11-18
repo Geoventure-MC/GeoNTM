@@ -183,7 +183,7 @@ public abstract class TileEntityCrateBase extends TileEntityLockableBase impleme
             var spider = Entities.createTriggered(EntityType.CAVE_SPIDER, server);
             if (spider == null) continue;
             BlockPos p = crate.getBlockPos();
-            spider.snapTo(p.getX() + random.nextGaussian() * 2, p.getY() + 1, p.getZ() + random.nextGaussian() * 2,
+            spider.moveTo(p.getX() + random.nextGaussian() * 2, p.getY() + 1, p.getZ() + random.nextGaussian() * 2,
                     random.nextFloat(), 0);
             spider.setTarget(player);
             level.addFreshEntity(spider);

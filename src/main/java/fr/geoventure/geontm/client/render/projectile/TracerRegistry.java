@@ -26,21 +26,21 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 
 /** Client-owned source {@code GunFactoryClient} tracer and beam lookup tables. */
 public final class TracerRegistry {
-    private static final Identifier WHITE = Ids.of("geontm", "textures/models/misc/white.png");
-    private static final Identifier FLARE = Ids.of("geontm", "textures/particle/flare.png");
-    private static final Identifier FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
-    private static final Map<Identifier, BulletTracer> BULLETS = new HashMap<>();
-    private static final Map<Identifier, BeamTracer> BEAMS = new HashMap<>();
-    private static final Map<Identifier, WavefrontObj> MODELS = new HashMap<>();
-    private static final Set<Identifier> MISSING_REPORTED = new HashSet<>();
+    private static final ResourceLocation WHITE = Ids.of("geontm", "textures/models/misc/white.png");
+    private static final ResourceLocation FLARE = Ids.of("geontm", "textures/particle/flare.png");
+    private static final ResourceLocation FRESNEL = Ids.of("geontm", "textures/models/bfg/fresnel_ms.png");
+    private static final Map<ResourceLocation, BulletTracer> BULLETS = new HashMap<>();
+    private static final Map<ResourceLocation, BeamTracer> BEAMS = new HashMap<>();
+    private static final Map<ResourceLocation, WavefrontObj> MODELS = new HashMap<>();
+    private static final Set<ResourceLocation> MISSING_REPORTED = new HashSet<>();
     /** Explicit source omissions and styles whose source assets are not present in this port. */
-    private static final Set<Identifier> SOURCE_UNRENDERED = Set.of(
+    private static final Set<ResourceLocation> SOURCE_UNRENDERED = Set.of(
             id("ammo_debug_shot"), id("dgk_normal"), id("fext_water"), id("fext_foam"), id("fext_sand"),
             id("flame_nograv"), id("flame_nograv_bf"), id("r556_inc_sp"), id("r556_inc_fmj"),
             id("r556_inc_jhp"), id("r556_inc_ap"),
@@ -54,7 +54,7 @@ public final class TracerRegistry {
 
     private TracerRegistry() {}
 
-    private static Identifier id(String path) { return Ids.of("geontm", path); }
+    private static ResourceLocation id(String path) { return Ids.of("geontm", path); }
 
     public interface BulletTracer {
         void draw(BulletProjectileRenderer.State state, PoseStack pose, SubmitSink sink);
@@ -65,20 +65,20 @@ public final class TracerRegistry {
         void draw(BeamProjectileRenderer.State state, PoseStack pose, SubmitSink sink);
     }
 
-    public static BulletTracer bullet(Identifier id) {
+    public static BulletTracer bullet(ResourceLocation id) {
         if (id == null) return null;
         BulletTracer tracer = BULLETS.get(id);
         if (tracer == null) reportMissing("bullet", id);
         return tracer;
     }
-    public static BeamTracer beam(Identifier id) {
+    public static BeamTracer beam(ResourceLocation id) {
         if (id == null) return null;
         BeamTracer tracer = BEAMS.get(id);
         if (tracer == null) reportMissing("beam", id);
         return tracer;
     }
 
-    private static void reportMissing(String kind, Identifier id) {
+    private static void reportMissing(String kind, ResourceLocation id) {
         if (MISSING_REPORTED.add(id)) {
             if (SOURCE_UNRENDERED.contains(id)) {
                 Constants.LOG.warn("No usable {} tracer is available for {} (explicitly unavailable source style)", kind, id);
@@ -89,8 +89,8 @@ public final class TracerRegistry {
     }
 
     /** Public seam for factories that are initialized after client setup. */
-    public static void setBulletRenderer(Identifier id, BulletTracer renderer) { if (id != null) BULLETS.put(id, renderer); }
-    public static void setBeamRenderer(Identifier id, BeamTracer renderer) { if (id != null) BEAMS.put(id, renderer); }
+    public static void setBulletRenderer(ResourceLocation id, BulletTracer renderer) { if (id != null) BULLETS.put(id, renderer); }
+    public static void setBeamRenderer(ResourceLocation id, BeamTracer renderer) { if (id != null) BEAMS.put(id, renderer); }
 
     public static void init() {
         if (initialized) return;
@@ -194,10 +194,10 @@ public final class TracerRegistry {
         int rendered = 0;
         int intentional = 0;
         int foreign = 0;
-        List<Identifier> missing = new ArrayList<>();
+        List<ResourceLocation> missing = new ArrayList<>();
         for (BulletConfig config :
                 BulletConfigs.all()) {
-            Identifier id = config.id;
+            ResourceLocation id = config.id;
             if (id == null) {
                 Constants.LOG.error("Bullet config has no registry id and cannot have a tracer: {}", config);
                 continue;
@@ -233,14 +233,14 @@ public final class TracerRegistry {
         for (String id : ids) setBeamRenderer(Ids.of("geontm", id), tracer);
     }
 
-    /** One tracer for several rounds, any namespace (an addon's {@code BulletConfigs.register(Identifier, …)} ids). */
-    public static void register(BulletTracer tracer, Identifier... ids) {
-        for (Identifier id : ids) setBulletRenderer(id, tracer);
+    /** One tracer for several rounds, any namespace (an addon's {@code BulletConfigs.register(ResourceLocation, …)} ids). */
+    public static void register(BulletTracer tracer, ResourceLocation... ids) {
+        for (ResourceLocation id : ids) setBulletRenderer(id, tracer);
     }
 
     /** One beam for several rounds, any namespace. */
-    public static void registerBeam(BeamTracer tracer, Identifier... ids) {
-        for (Identifier id : ids) setBeamRenderer(id, tracer);
+    public static void registerBeam(BeamTracer tracer, ResourceLocation... ids) {
+        for (ResourceLocation id : ids) setBeamRenderer(id, tracer);
     }
 
     private static BulletTracer model(String modelId, String textureId, String part, float scale,
@@ -253,7 +253,7 @@ public final class TracerRegistry {
      * after {@code transform}, textured cutout, lit by the projectile. Public with full ids so an addon's rounds can
      * use their own models.
      */
-    public static BulletTracer model(Identifier model, Identifier texture, String part, float scale,
+    public static BulletTracer model(ResourceLocation model, ResourceLocation texture, String part, float scale,
             Consumer<PoseStack> transform) {
         return (state, pose, sink) -> {
             pose.pushPose();
@@ -270,8 +270,8 @@ public final class TracerRegistry {
      * drawn over the same triangles ({@link fr.geoventure.geontm.client.render.BalefireGlint}).
      */
     private static BulletTracer balefireNuke() {
-        Identifier modelId = Ids.of("geontm", "models/weapons/fatman.obj");
-        Identifier texture = Ids.of("geontm", "textures/models/weapons/fatman_balefire.png");
+        ResourceLocation modelId = Ids.of("geontm", "models/weapons/fatman.obj");
+        ResourceLocation texture = Ids.of("geontm", "textures/models/weapons/fatman_balefire.png");
         return (state, pose, sink) -> {
             Geometry nuke = model(modelId).part("MiniNuke");
             pose.pushPose();
@@ -321,7 +321,7 @@ public final class TracerRegistry {
         };
     }
 
-    private static WavefrontObj model(Identifier id) {
+    private static WavefrontObj model(ResourceLocation id) {
         return MODELS.computeIfAbsent(id, WavefrontObj::load);
     }
 

@@ -19,7 +19,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
@@ -33,7 +33,7 @@ public class RenderRADBeast extends CompatMobRenderer<EntityRADBeast, RenderRADB
 
     private static final int COLOR = 0x004000;
     private static final double ORIGIN = 1.25D;
-    private static final Identifier MASK = Ids.of("geontm", "textures/models/armor/m65_blaze.png");
+    private static final ResourceLocation MASK = Ids.of("geontm", "textures/models/armor/m65_blaze.png");
     /** {@code ModelM65Blaze.render}: {@code 1/16 * 18}, then {@code 1.01} against z-fighting with the head. */
     private static final float MASK_SCALE = 18F / 16F * 1.01F;
 
@@ -104,7 +104,7 @@ public class RenderRADBeast extends CompatMobRenderer<EntityRADBeast, RenderRADB
     }
 
     @Override
-    protected Identifier texture(State state) {
+    protected ResourceLocation texture(State state) {
         return ResourceManager.radbeast_tex;
     }
 

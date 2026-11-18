@@ -162,7 +162,7 @@ public class FoundryTank extends CompatBlock implements TickingBlock, ICrucibleA
     /** A shovel scoops the pool out as scraps (into the inventory, else dropped on the rim). */
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, ItemStack stack, BlockHitResult hit) {
-        if (!(stack.getItem() instanceof ShovelItem)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!(stack.getItem() instanceof ShovelItem)) return InteractionResult.PASS;
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof TileEntityFoundryTank cast && cast.amount > 0 && cast.type != null) {
             ItemStack scrap = ItemScraps.create(new MaterialStack(cast.type, cast.amount));
             if (!player.getInventory().add(scrap)) {

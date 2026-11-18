@@ -6,7 +6,7 @@ import fr.geoventure.geocore.render.living.CompatLivingRenderState;
 import fr.geoventure.geocore.render.living.CompatMobRenderer;
 import fr.geoventure.geocore.render.living.LivingModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -32,7 +32,7 @@ public class RenderPigeon extends CompatMobRenderer<EntityPigeon, RenderPigeon.S
     }
 
     @Override
-    protected Identifier texture(State state) {
+    protected ResourceLocation texture(State state) {
         return ResourceManager.pigeon_tex;
     }
 

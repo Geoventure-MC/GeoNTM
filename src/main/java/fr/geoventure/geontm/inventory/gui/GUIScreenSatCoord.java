@@ -8,12 +8,12 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +26,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIScreenSatCoord extends CompatScreen {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/satellites/gui_sat_coord.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/satellites/gui_sat_coord.png");
     protected int xSize = 176;
     protected int ySize = 126;
     protected int guiLeft;
@@ -89,7 +89,7 @@ public class GUIScreenSatCoord extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, guiLeft, guiTop, 0F, 0F, xSize, ySize, 256, 256);
 
         if (xField.isFocused()) GuiDraw.blit(graphics, TEXTURE, guiLeft + 61, guiTop + 16, 0F, 126F, 54, 18, 256, 256);

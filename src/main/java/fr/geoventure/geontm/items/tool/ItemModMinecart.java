@@ -71,7 +71,7 @@ public class ItemModMinecart extends Item {
         Level level = context.getLevel();
         BlockPos pos = context.getClickedPos();
 
-        if (!level.getBlockState(pos).is(BlockTags.RAILS)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!level.getBlockState(pos).is(BlockTags.RAILS)) return InteractionResult.PASS;
 
         if (!level.isClientSide()) {
             ItemStack stack = context.getItemInHand();

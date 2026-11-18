@@ -1,0 +1,28 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.schrabidic",
+  "input_items": [
+    {
+      "ingredient": "geontm:pellet_charged"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sas3",
+      "amount": 2000
+    },
+    {
+      "type": "geontm:peroxide",
+      "amount": 2000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:schrabidic",
+      "amount": 2000
+    }
+  ],
+  "duration": 60,
+  "power": 5000,
+  "order": 65
+}

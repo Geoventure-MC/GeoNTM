@@ -9,7 +9,7 @@ import fr.geoventure.geontm.lib.ForgeDirection;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
 import net.minecraft.world.WorldlyContainer;
@@ -133,7 +133,7 @@ public abstract class TileEntityFoundryCastingBase extends TileEntityFoundryBase
     // implements WorldlyContainer), and the FoundryBase override adds the molten content as scraps.
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeInt(cooloff);
         ItemStacks.writeOptional(buf, inventory.getStackInSlot(0));
@@ -141,7 +141,7 @@ public abstract class TileEntityFoundryCastingBase extends TileEntityFoundryBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         cooloff = buf.readInt();
         syncMold = ItemStacks.readOptional(buf);

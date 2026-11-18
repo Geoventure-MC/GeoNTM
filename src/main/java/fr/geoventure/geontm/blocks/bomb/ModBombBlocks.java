@@ -55,7 +55,7 @@ public final class ModBombBlocks {
 
     /** Balefire: light 15, hardness 0, spreads violently and irradiates anything standing in it. */
     public static final RegistryObject<BlockBalefire> balefire = REG.block("balefire",
-                    BlockBalefire::new, p -> p.strength(0.0F).lightLevel(s -> 15).noCollision()
+                    BlockBalefire::new, p -> p.strength(0.0F).lightLevel(s -> 15).noCollission()
                             .noLootTable().replaceable().instabreak())
             .model(d -> d.models(Models.group()
                             .and("_floor", Models.renderType("minecraft:cutout", Models.parented(
@@ -70,13 +70,13 @@ public final class ModBombBlocks {
 
     /** Digamma flame: light 15, blast resistance 150, eternal, and it never spreads. */
     public static final RegistryObject<BlockDigammaFlame> fire_digamma = REG.block("fire_digamma",
-                    BlockDigammaFlame::new, p -> p.lightLevel(s -> 15).noCollision()
+                    BlockDigammaFlame::new, p -> p.lightLevel(s -> 15).noCollission()
                             .noLootTable().replaceable().instabreak().explosionResistance(90.0F))
             .transform(Presets.statesOnly("geontm:block/fire_digamma_floor", Variants.simple()));
 
     /** Digamma matter: unbreakable, blast resistance 18,000,000, spreads seven generations then dies. */
     public static final RegistryObject<BlockDigammaMatter> digamma_matter = REG.block("digamma_matter",
-                    BlockDigammaMatter::new, p -> p.strength(-1.0F, 10800000.0F).noCollision()
+                    BlockDigammaMatter::new, p -> p.strength(-1.0F, 10800000.0F).noCollission()
                             .noOcclusion().noLootTable())
             .transform(Presets.shape(Models.renderType("minecraft:translucent",
                             Models.cubeAll("geontm:blocks/digamma_matter")))

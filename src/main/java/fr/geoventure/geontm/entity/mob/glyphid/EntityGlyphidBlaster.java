@@ -7,7 +7,7 @@ import fr.geoventure.geocore.registry.RegistryObject;
 import fr.geoventure.geocore.registry.Entities;
 import fr.geoventure.geontm.entity.mob.glyphid.GlyphidStats.StatBundle;
 import fr.geoventure.geontm.main.ResourceManager;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -38,7 +38,7 @@ public class EntityGlyphidBlaster extends EntityGlyphidBombardier {
     }
 
     @Override
-    public Identifier getSkin() {
+    public ResourceLocation getSkin() {
         return ResourceManager.glyphid_blaster_tex;
     }
 

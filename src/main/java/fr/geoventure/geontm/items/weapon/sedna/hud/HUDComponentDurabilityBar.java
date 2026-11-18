@@ -4,15 +4,15 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
 /** The source durability rail, including its optional mirrored placement. */
 public class HUDComponentDurabilityBar implements IHUDComponent {
 
-    private static final Identifier MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
+    private static final ResourceLocation MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
 
     protected boolean mirrored;
 
@@ -30,7 +30,7 @@ public class HUDComponentDurabilityBar implements IHUDComponent {
     }
 
     @Override
-    public void renderHUDComponent(GuiGraphicsExtractor graphics, Player player, ItemStack stack, int bottomOffset,
+    public void renderHUDComponent(GuiGraphics graphics, Player player, ItemStack stack, int bottomOffset,
                                    int configIndex) {
         // Hud.addLast is the modern equivalent of the source HOTBAR pass.
         boolean offhandOccupied = !player.getOffhandItem().isEmpty();

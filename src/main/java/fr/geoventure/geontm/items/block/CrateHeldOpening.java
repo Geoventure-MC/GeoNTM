@@ -106,17 +106,17 @@ public final class CrateHeldOpening {
     public static @Nullable InteractionResult beforePlace(UseOnContext context) {
         Player player = context.getPlayer();
         if (ServerConfig.CRATE_OPEN_HELD.get() && player != null && !player.isShiftKeyDown()) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         return null;
     }
 
     /** 1.7 {@code onItemRightClick}. */
     public static InteractionResult use(Level level, Player player, InteractionHand hand) {
-        if (!ServerConfig.CRATE_OPEN_HELD.get()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!ServerConfig.CRATE_OPEN_HELD.get()) return InteractionResult.PASS;
         ItemStack stack = player.getItemInHand(hand);
         Kind kind = kindOf(stack);
-        if (kind == null || hand != InteractionHand.MAIN_HAND) return InteractionResult.TRY_WITH_EMPTY_HAND; // 1.7 used getHeldItem
+        if (kind == null || hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS; // 1.7 used getHeldItem
         if (!level.isClientSide() && stack.getCount() == 1 && player instanceof ServerPlayer serverPlayer) {
             int lock = ItemStacks.carriedInt(stack, "lock");
             if (lock != 0) {
@@ -156,7 +156,7 @@ public final class CrateHeldOpening {
         for (int i = 0; i < 3; i++) {
             var spider = Entities.createTriggered(EntityType.CAVE_SPIDER, server);
             if (spider == null) continue;
-            spider.snapTo(player.getX() + random.nextGaussian() * 2, player.getY() + 1, player.getZ() + random.nextGaussian() * 2,
+            spider.moveTo(player.getX() + random.nextGaussian() * 2, player.getY() + 1, player.getZ() + random.nextGaussian() * 2,
                     random.nextFloat(), 0);
             spider.setTarget(player);
             level.addFreshEntity(spider);

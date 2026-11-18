@@ -1,0 +1,42 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpw15bf",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "ingredient": "#c:plates/weaponsteel",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:neutron_reflector",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:powder_magic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:egg_balefire_shard",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:mp_warhead_15_balefire"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 82688,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

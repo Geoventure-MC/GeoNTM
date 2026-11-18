@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_beryllium",
+  "input": {
+    "ingredient": "geontm:powder_strontium"
+  },
+  "output": "geontm:powder_niobium",
+  "antimatter": 25,
+  "order": 17
+}

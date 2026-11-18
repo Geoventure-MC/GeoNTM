@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.gem.Quads;
 import fr.geoventure.geocore.render.gem.Surface;
 import java.util.Set;
 import java.util.function.Consumer;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Vector3fc;
 
 /**
@@ -34,8 +34,8 @@ public final class RBMKBlockColumnItemModel {
     private final float scale, yaw, lift;
     private final ItemGem body;
 
-    public RBMKBlockColumnItemModel(Identifier side, Identifier top, Identifier bottom,
-                                    Identifier pipeSide, Identifier pipeTop, Identifier lidTexture,
+    public RBMKBlockColumnItemModel(ResourceLocation side, ResourceLocation top, ResourceLocation bottom,
+                                    ResourceLocation pipeSide, ResourceLocation pipeTop, ResourceLocation lidTexture,
                                     float scale, float yaw, float lift) {
         this.scale = scale;
         this.yaw = yaw;

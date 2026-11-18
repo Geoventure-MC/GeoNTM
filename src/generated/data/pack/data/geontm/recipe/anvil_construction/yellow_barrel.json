@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:tank_steel"
+    },
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:nuclear_waste",
+      "count": 10
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:yellow_barrel"
+    }
+  ],
+  "tier": 3,
+  "order": 90
+}

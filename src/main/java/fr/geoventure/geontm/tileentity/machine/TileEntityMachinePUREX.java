@@ -31,7 +31,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.WorldlyContainer;
@@ -272,14 +272,14 @@ public class TileEntityMachinePUREX extends TileEntityMachineBase
 
     // --- sync + persistence ---
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.serialize(buf);
         outputTanks[0].serialize(buf);
         buf.writeLong(power); buf.writeLong(maxPower); buf.writeBoolean(didProcess); buf.writeBoolean(frame);
         purexModule.serialize(buf);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (FluidTankNTM tank : inputTanks) tank.deserialize(buf);
         outputTanks[0].deserialize(buf);

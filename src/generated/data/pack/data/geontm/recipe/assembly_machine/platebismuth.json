@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platebismuth",
+  "input_items": [
+    {
+      "ingredient": "geontm:nugget_bismuth",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:billets/u238",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:dusts/niobium"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_bismuth"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 4096
+}

@@ -1,0 +1,28 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_rocket_heat",
+    "count": 2
+  },
+  "grid": [
+    {
+      "ingredient": "#c:plates/copper"
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 3
+    },
+    ""
+  ],
+  "order": 63
+}

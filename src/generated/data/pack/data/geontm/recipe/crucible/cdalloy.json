@@ -1,0 +1,23 @@
+{
+  "type": "geontm:crucible",
+  "name": "crucible.cdalloy",
+  "frequency": 9,
+  "icon": "geontm:ingot_cdalloy",
+  "inputs": [
+    {
+      "material": "steel",
+      "amount": 64
+    },
+    {
+      "material": "cadmium",
+      "amount": 8
+    }
+  ],
+  "outputs": [
+    {
+      "material": "cdalloy",
+      "amount": 72
+    }
+  ],
+  "order": 7
+}

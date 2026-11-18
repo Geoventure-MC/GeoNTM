@@ -17,9 +17,9 @@ import fr.geoventure.geocore.render.EntityShaderRenderType;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
@@ -38,9 +38,9 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 public final class ItemRenderJShotgun implements CustomItemRenderer {
 
-    static final Identifier TEXTURE = tex("textures/models/jade_shotgun.png");
-    static final Identifier GLOW_MAP = tex("textures/models/jade_shotgun_lmap.png");
-    static final Identifier MUZZLE_FLASH = tex("textures/misc/mflash_4.png");
+    static final ResourceLocation TEXTURE = tex("textures/models/jade_shotgun.png");
+    static final ResourceLocation GLOW_MAP = tex("textures/models/jade_shotgun_lmap.png");
+    static final ResourceLocation MUZZLE_FLASH = tex("textures/misc/mflash_4.png");
     static final String FLASH_SHADER = "geontm:flash_lmap";
 
     /** 1.12's {@code timeMax}: how long, in seconds after a shot, the flash shows. */
@@ -169,7 +169,7 @@ public final class ItemRenderJShotgun implements CustomItemRenderer {
             prevFrame = 0;
         }
 
-        Identifier skin = owner instanceof AbstractClientPlayer player ? PlayerSkins.texture(player) : TEXTURE;
+        ResourceLocation skin = owner instanceof AbstractClientPlayer player ? PlayerSkins.texture(player) : TEXTURE;
         RenderType gun = flash ? EntityShaderRenderType.cutoutCull(FLASH_SHADER, TEXTURE, GLOW_MAP)
                 : CompatRenderTypes.entityCutoutCull(TEXTURE);
         RenderType arms = flash ? EntityShaderRenderType.cutoutCull(FLASH_SHADER, skin, GLOW_MAP)

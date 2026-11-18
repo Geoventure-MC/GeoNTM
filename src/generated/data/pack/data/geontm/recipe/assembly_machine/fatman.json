@@ -1,0 +1,34 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fatman",
+  "input_items": [
+    {
+      "ingredient": "geontm:sphere_steel"
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:fins_big_steel"
+    },
+    {
+      "ingredient": "geontm:circuit_controller",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:dyes/yellow",
+      "count": 6
+    }
+  ],
+  "output_items": [
+    "geontm:nuke_man"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 53248,
+  "blueprint_pools_528": [
+    "528.controller"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.au198_ingot",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/gold"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_au198"
+  ],
+  "duration": 10000,
+  "order": 4
+}

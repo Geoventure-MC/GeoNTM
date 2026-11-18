@@ -1,0 +1,31 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.magnetizedTungsten",
+  "input_items": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/tungsten"
+        },
+        {
+          "ingredient": "#c:plates/tungsten"
+        },
+        {
+          "ingredient": "#c:gems/tungsten"
+        },
+        {
+          "ingredient": "#c:dusts/tungsten"
+        }
+      ]
+    },
+    {
+      "ingredient": "#c:nuggets/schrabidium"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_magnetized_tungsten"
+  ],
+  "duration": 400,
+  "order": 7
+}

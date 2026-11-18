@@ -184,7 +184,7 @@ public abstract class BlockMultiblockMachine extends BlockMultiblockCore {
     @Override protected InteractionResult onUseWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
                                                            BlockHitResult hit) {
         BlockPos core = coreOf(level, pos, state);
-        if (core == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (core == null) return InteractionResult.PASS;
         return useAtCore(level.getBlockState(core), level, core, player, hit);
     }
 

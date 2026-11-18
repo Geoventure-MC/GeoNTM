@@ -1,0 +1,20 @@
+{
+  "values": {
+    "geontm:jackt": {
+      "category": {
+        "PHYS": {
+          "threshold": 1.0,
+          "resistance": 0.2
+        }
+      }
+    },
+    "geontm:jackt2": {
+      "category": {
+        "PHYS": {
+          "threshold": 2.0,
+          "resistance": 0.25
+        }
+      }
+    }
+  }
+}

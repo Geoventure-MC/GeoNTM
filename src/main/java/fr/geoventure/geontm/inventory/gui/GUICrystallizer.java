@@ -6,9 +6,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerCrystallizer;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineCrystallizer;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class GUICrystallizer extends CompatContainerScreen<ContainerCrystallizer> implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_crystallizer_alt.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_crystallizer_alt.png");
 
     public GUICrystallizer(ContainerCrystallizer menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
@@ -28,13 +28,13 @@ public class GUICrystallizer extends CompatContainerScreen<ContainerCrystallizer
 
     /** 1.7: title centred on x=70 (not the panel centre), inventory at (8, ySize-96+2), both 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineCrystallizer te = this.menu.getCrystallizer();
@@ -52,7 +52,7 @@ public class GUICrystallizer extends CompatContainerScreen<ContainerCrystallizer
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineCrystallizer te = this.menu.getCrystallizer();
         if (te == null) return;
         int gl = this.leftPos, gt = this.topPos;

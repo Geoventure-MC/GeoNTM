@@ -13,10 +13,10 @@ import fr.geoventure.geocore.gui.MouseInput;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 
@@ -28,8 +28,8 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIScreenGuide extends CompatScreen {
 
-    private static final Identifier texture = Ids.of("geontm", "textures/gui/book/book.png");
-    private static final Identifier texture_cover = Ids.of("geontm", "textures/gui/book/book_cover.png");
+    private static final ResourceLocation texture = Ids.of("geontm", "textures/gui/book/book.png");
+    private static final ResourceLocation texture_cover = Ids.of("geontm", "textures/gui/book/book_cover.png");
 
     protected int xSize;
     protected int ySize;
@@ -58,7 +58,7 @@ public class GUIScreenGuide extends CompatScreen {
     }
 
     @Override
-    protected void extractBackgroundCompat(GuiGraphicsExtractor g, int i, int j, float partialTick) {
+    protected void extractBackgroundCompat(GuiGraphics g, int i, int j, float partialTick) {
         if (page < 0) {
             GuiDraw.blit(g, texture_cover, guiLeft, guiTop, 0F, 0F, xSize, ySize, 512, 512);
             return;
@@ -82,7 +82,7 @@ public class GUIScreenGuide extends CompatScreen {
     }
 
     @Override
-    protected void extractForegroundCompat(GuiGraphicsExtractor g, int x, int y, float partialTick) {
+    protected void extractForegroundCompat(GuiGraphics g, int x, int y, float partialTick) {
         if (this.page < 0) {
             float scale = this.type.titleScale;
             String[] coverLines = resolve(this.type.title).split("\\$");

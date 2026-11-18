@@ -40,7 +40,7 @@ public class EntityFireworks extends CompatEntity {
 
     public EntityFireworks(Level level, double x, double y, double z, int color, int character) {
         this(ModNtmEntities.FIREWORK_BALL.get(), level);
-        this.snapTo(x, y, z, 0.0F, 0.0F);
+        this.moveTo(x, y, z, 0.0F, 0.0F);
         this.color = color;
         this.character = character;
     }

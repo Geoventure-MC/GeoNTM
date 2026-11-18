@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_carbon",
+  "input": {
+    "ingredient": "geontm:powder_caesium"
+  },
+  "output": "geontm:powder_lanthanium",
+  "antimatter": 10,
+  "order": 23
+}

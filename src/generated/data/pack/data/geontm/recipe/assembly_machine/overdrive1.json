@@ -1,0 +1,36 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.overdrive1",
+  "input_items": [
+    {
+      "ingredient": "geontm:upgrade_speed_3"
+    },
+    {
+      "ingredient": "geontm:upgrade_effect_3"
+    },
+    {
+      "ingredient": "#c:ingots/saturnite",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:upgrade_overdrive_1"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 50688,
+  "requires": [
+    "!enable_528"
+  ],
+  "geocore:requires": [
+    "!enable_528"
+  ]
+}

@@ -22,7 +22,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -66,8 +66,8 @@ public class BlockEntityRBMKBoiler extends BlockEntityRBMKBase implements IFluid
     @Override public long transferFluid(FluidType t,int p,long a) { if (Fluids.kindOf(t) != Fluids.WATER || !feed.accepts(t) || p != feed.getPressure()) return a; int n=feed.fill(t,(int)Math.min(a,Integer.MAX_VALUE),true); if(n>0)setChanged(); return a-n; }
     @Override protected void saveData(DataOut o) { super.saveData(o); feed.writeToNBT(o,"feed"); steam.writeToNBT(o,"steam"); }
     @Override protected void loadData(DataIn i) { super.loadData(i); feed.readFromNBT(i,"feed"); steam.readFromNBT(i,"steam"); }
-    @Override public void serialize(RegistryFriendlyByteBuf buffer) { super.serialize(buffer); steam.serialize(buffer); feed.serialize(buffer); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buffer) { super.deserialize(buffer); steam.deserialize(buffer); feed.deserialize(buffer); }
+    @Override public void serialize(FriendlyByteBuf buffer) { super.serialize(buffer); steam.serialize(buffer); feed.serialize(buffer); }
+    @Override public void deserialize(FriendlyByteBuf buffer) { super.deserialize(buffer); steam.deserialize(buffer); feed.deserialize(buffer); }
     @Override public Component getDisplayName() { return Component.translatable("container.rbmkBoiler"); }
     @Override public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) { return new MenuRBMKBoiler(id, inventory, this); }
      @Override public String[] getFunctionInfo() { return new String[]{PREFIX_VALUE + "feed", PREFIX_VALUE + "steam", PREFIX_VALUE + "consumption"}; }

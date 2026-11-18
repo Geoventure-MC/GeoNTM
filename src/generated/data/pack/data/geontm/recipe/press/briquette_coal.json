@@ -1,0 +1,9 @@
+{
+  "type": "geontm:press",
+  "stamp": "flat",
+  "input": {
+    "ingredient": "#c:dusts/coal"
+  },
+  "output": "geontm:briquette_coal",
+  "order": 8
+}

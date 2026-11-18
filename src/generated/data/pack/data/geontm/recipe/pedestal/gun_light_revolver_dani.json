@@ -1,0 +1,16 @@
+{
+  "type": "geontm:pedestal",
+  "output": "geontm:gun_light_revolver_dani",
+  "grid": [
+    "",
+    "#c:plates/lead",
+    "",
+    "#c:plates/gold",
+    "geontm:gun_light_revolver",
+    "#c:plates/gold",
+    "",
+    "#c:plates/lead",
+    ""
+  ],
+  "order": 0
+}

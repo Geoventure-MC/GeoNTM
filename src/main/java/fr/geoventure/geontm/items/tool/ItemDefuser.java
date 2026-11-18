@@ -29,7 +29,7 @@ public final class ItemDefuser extends ItemTooling {
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target,
                                                   InteractionHand hand) {
         if (target instanceof Creeper creeper) {
-            return ItemModDefuser.castrateCreeper(creeper, player, true) ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+            return ItemModDefuser.castrateCreeper(creeper, player, true) ? InteractionResult.SUCCESS : InteractionResult.PASS;
         }
 
         if (target instanceof EntityGlyphidNuclear john) {
@@ -48,6 +48,6 @@ public final class ItemDefuser extends ItemTooling {
             return InteractionResult.SUCCESS;
         }
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

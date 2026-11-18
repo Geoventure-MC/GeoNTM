@@ -1,0 +1,26 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platedesh",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:dusts/any_plastic",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/dura_steel"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:plate_desh",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 3840
+}

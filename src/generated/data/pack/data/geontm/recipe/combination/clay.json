@@ -1,0 +1,8 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "minecraft:clay"
+  },
+  "item_output": "minecraft:bricks",
+  "order": 22
+}

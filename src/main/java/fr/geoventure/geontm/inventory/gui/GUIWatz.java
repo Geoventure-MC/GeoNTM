@@ -9,10 +9,10 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -26,7 +26,7 @@ import java.util.Optional;
  */
 public class GUIWatz extends CompatContainerScreen<ContainerWatz> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/reactors/gui_watz.png");
 
     public GUIWatz(ContainerWatz menu, Inventory playerInventory, Component title) {
@@ -34,7 +34,7 @@ public class GUIWatz extends CompatContainerScreen<ContainerWatz> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = this.leftPos;
         int y = this.topPos;
         TileEntityWatz watz = this.menu.getWatz();
@@ -66,7 +66,7 @@ public class GUIWatz extends CompatContainerScreen<ContainerWatz> {
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 93, 0x404040, false);
 
         TileEntityWatz watz = this.menu.getWatz();
@@ -81,7 +81,7 @@ public class GUIWatz extends CompatContainerScreen<ContainerWatz> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityWatz watz = this.menu.getWatz();
         if (watz == null) return;
         int x = this.leftPos;
@@ -117,7 +117,7 @@ public class GUIWatz extends CompatContainerScreen<ContainerWatz> {
         return true;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> lines, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> lines, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, this.font, lines, Optional.empty(), mouseX, mouseY);
     }
 }

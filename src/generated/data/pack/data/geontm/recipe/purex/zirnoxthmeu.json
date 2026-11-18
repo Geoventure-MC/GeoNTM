@@ -1,0 +1,40 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.zirnoxthmeu",
+  "input_items": [
+    {
+      "type": "geontm:cold",
+      "item": "geontm:waste_thorium"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    "geontm:nugget_u238",
+    "geontm:nugget_th232",
+    {
+      "id": "geontm:nugget_u233",
+      "count": 2
+    },
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 2
+    }
+  ],
+  "duration": 100,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:waste_thorium"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.zirnox",
+  "order": 9
+}

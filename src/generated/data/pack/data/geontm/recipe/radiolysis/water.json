@@ -1,0 +1,12 @@
+{
+  "type": "geontm:radiolysis",
+  "input": "minecraft:water",
+  "left": {
+    "type": "geontm:peroxide",
+    "amount": 80
+  },
+  "right": {
+    "type": "geontm:hydrogen",
+    "amount": 20
+  }
+}

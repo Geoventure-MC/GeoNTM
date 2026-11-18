@@ -1,0 +1,31 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.coltanpain",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_coltan"
+    },
+    {
+      "ingredient": "#c:dusts/fluorite"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:gas",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:oxygen",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:pain",
+      "amount": 1000
+    }
+  ],
+  "duration": 120,
+  "power": 100,
+  "order": 68
+}

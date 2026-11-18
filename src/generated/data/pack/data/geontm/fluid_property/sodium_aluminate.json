@@ -1,0 +1,16 @@
+{
+  "type": "liquid",
+  "color": "#FFD191",
+  "temperature": 20,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 1,
+    "symbol": "acid"
+  },
+  "traits": {
+    "corrosive": {
+      "rating": 30
+    }
+  }
+}

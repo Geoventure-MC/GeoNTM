@@ -1,0 +1,20 @@
+{
+  "type": "geontm:silex",
+  "input": {
+    "ingredient": "geontm:ingot_am_mix"
+  },
+  "fluid_produced": 900,
+  "fluid_consumed": 100,
+  "laser_strength": "visible",
+  "outputs": [
+    {
+      "data": "geontm:nugget_am241",
+      "weight": 3
+    },
+    {
+      "data": "geontm:nugget_am242",
+      "weight": 6
+    }
+  ],
+  "order": 4
+}

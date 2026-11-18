@@ -208,7 +208,7 @@ public final class ConveyorPreviewRenderer {
         }
 
         @Override
-        public int getMinY() {
+        public int getMinBuildHeight() {
             return 0;
         }
     }

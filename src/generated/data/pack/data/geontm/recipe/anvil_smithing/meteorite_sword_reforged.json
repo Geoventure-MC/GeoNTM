@@ -1,0 +1,13 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 3,
+  "output": "geontm:meteorite_sword_reforged",
+  "left": {
+    "ingredient": "geontm:meteorite_sword_seared"
+  },
+  "right": {
+    "ingredient": "geontm:ingot_meteorite_forged"
+  },
+  "hot": true,
+  "order": 30
+}

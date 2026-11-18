@@ -1,0 +1,22 @@
+{
+  "values": {
+    "minecraft:creeper": {
+      "threshold": 200.0,
+      "chance": 3,
+      "result": "geontm:entity_mob_nuclear_creeper",
+      "fallback_damage": 100.0
+    },
+    "minecraft:cow": {
+      "threshold": 50.0,
+      "result": "minecraft:mooshroom"
+    },
+    "minecraft:villager": {
+      "threshold": 500.0,
+      "result": "minecraft:zombie"
+    },
+    "geontm:entity_fucc_a_ducc": {
+      "threshold": 200.0,
+      "result": "geontm:entity_elder_one"
+    }
+  }
+}

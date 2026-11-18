@@ -1,0 +1,43 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pwrhea242",
+  "input_items": [
+    {
+      "ingredient": "geontm:pwr_fuel_depleted_hea242",
+      "exact": true
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:kerosene",
+      "amount": 500
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:nugget_lead",
+      "count": 3
+    },
+    {
+      "id": "geontm:nugget_zirconium",
+      "count": 2
+    },
+    "geontm:nugget_technetium",
+    {
+      "id": "geontm:nuclear_waste_tiny",
+      "count": 6
+    }
+  ],
+  "duration": 100,
+  "power": 2500,
+  "icon": {
+    "id": "geontm:pwr_fuel_depleted_hea242"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pwr",
+  "order": 33
+}

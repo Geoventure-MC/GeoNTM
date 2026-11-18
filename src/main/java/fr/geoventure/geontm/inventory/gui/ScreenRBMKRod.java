@@ -4,20 +4,20 @@ import fr.geoventure.geontm.inventory.container.MenuRBMKRod;
 import fr.geoventure.geontm.items.machine.ItemRBMKRod;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
 
 public final class ScreenRBMKRod extends RBMKContainerScreen<MenuRBMKRod> {
-    private static final Identifier TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_element.png");
+    private static final ResourceLocation TEX = Ids.of("geontm", "textures/gui/rbmk/gui_rbmk_element.png");
 
     public ScreenRBMKRod(MenuRBMKRod menu, Inventory inventory, Component title) { super(menu, inventory, title, 176, 186); }
 
-    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    @Override public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         texture(graphics, TEX);
         ItemStack fuel = menu.getSlot(0).getItem();
         if (!(fuel.getItem() instanceof ItemRBMKRod)) return;
@@ -31,7 +31,7 @@ public final class ScreenRBMKRod extends RBMKContainerScreen<MenuRBMKRod> {
         if (hullHeat > 200D) GuiUtil.drawWarningPanel(graphics, leftPos - 16, topPos + 36);
     }
 
-    @Override protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    @Override protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         ItemStack fuel = menu.getSlot(0).getItem();
         if (!(fuel.getItem() instanceof ItemRBMKRod)) return;
         if (region(34, 21, 18, 67, mouseX, mouseY)) {

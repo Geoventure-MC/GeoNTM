@@ -14,15 +14,15 @@ import fr.geoventure.geontm.util.EntityDamageUtil;
 import fr.geoventure.geocore.world.EnergyCompat;
 import fr.geoventure.geocore.world.EnergyView;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.feline.Ocelot;
+import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StainedGlassBlock;
-import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.phys.AABB;
@@ -402,13 +402,13 @@ public final class ExplosionNukeGeneric {
             return;
         }
         // 26.1: 1.7 Material.{cactus,coral,leaves,plants,sponge,vine,gourd,wood}; no 1.7 vanilla block is
-        // Material.coral. plants -> VegetationBlock plus the two 1.7 non-BlockBush plants; wood -> the note-block
+        // Material.coral. plants -> BushBlock plus the two 1.7 non-BlockBush plants; wood -> the note-block
         // instrument, as in wasteDest (HBM's 1.7 wood blocks declare it).
         if (state.is(Blocks.CACTUS) || state.is(Blocks.VINE) || state.is(Blocks.SPONGE) || state.is(Blocks.WET_SPONGE)
                 || state.is(Blocks.PUMPKIN) || state.is(Blocks.CARVED_PUMPKIN) || state.is(Blocks.JACK_O_LANTERN)
                 || state.is(Blocks.MELON) || state.is(BlockTags.LEAVES) || state.is(BlockTags.FLOWERS)
                 || state.is(BlockTags.SAPLINGS) || state.is(Blocks.SUGAR_CANE) || state.is(Blocks.COCOA)
-                || block instanceof VegetationBlock || state.instrument() == NoteBlockInstrument.BASS) {
+                || block instanceof BushBlock || state.instrument() == NoteBlockInstrument.BASS) {
             world.removeBlock(pos, false);
         }
     }

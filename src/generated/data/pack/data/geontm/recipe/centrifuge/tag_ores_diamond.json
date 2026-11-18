@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/diamond"
+  },
+  "outputs": [
+    "geontm:powder_diamond",
+    "geontm:powder_diamond",
+    "geontm:powder_diamond",
+    "minecraft:gravel"
+  ],
+  "order": 9
+}

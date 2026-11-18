@@ -1,0 +1,28 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_r556_ap",
+    "count": 16
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/weaponsteel",
+      "count": 2
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 4
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small_steel",
+      "count": 2
+    },
+    ""
+  ],
+  "order": 28
+}

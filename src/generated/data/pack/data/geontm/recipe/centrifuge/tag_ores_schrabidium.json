@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/schrabidium"
+  },
+  "outputs": [
+    "geontm:powder_schrabidium",
+    "geontm:powder_schrabidium",
+    "geontm:nugget_solinium",
+    "minecraft:gravel"
+  ],
+  "order": 30
+}

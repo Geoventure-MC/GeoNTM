@@ -1,0 +1,9 @@
+{
+  "values": {
+    "geontm:cladding_paint": 0.025,
+    "geontm:cladding_rubber": 0.005,
+    "geontm:cladding_lead": 0.1,
+    "geontm:cladding_desh": 0.2,
+    "geontm:cladding_ghiorsium": 0.5
+  }
+}

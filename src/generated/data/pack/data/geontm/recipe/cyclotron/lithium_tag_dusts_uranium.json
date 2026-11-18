@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_lithium",
+  "input": {
+    "ingredient": "#c:dusts/uranium"
+  },
+  "output": "geontm:powder_neptunium",
+  "antimatter": 50,
+  "order": 11
+}

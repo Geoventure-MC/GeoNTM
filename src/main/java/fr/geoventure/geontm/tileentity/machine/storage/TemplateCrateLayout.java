@@ -2,7 +2,7 @@ package fr.geoventure.geontm.tileentity.machine.storage;
 
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geontm.inventory.container.ContainerCrateTemplate;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
@@ -23,7 +23,7 @@ public final class TemplateCrateLayout {
     public static final int GUI_HEIGHT = 168;
     public static final int LABEL_X = 8;
     public static final int LABEL_COLOR = 0x404040;
-    public static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_crate_template.png");
+    public static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/storage/gui_crate_template.png");
     private static Supplier<BlockEntityType<TileEntityCrateTemplate>> blockEntityType;
     private static Supplier<MenuType<ContainerCrateTemplate>> menuType;
 

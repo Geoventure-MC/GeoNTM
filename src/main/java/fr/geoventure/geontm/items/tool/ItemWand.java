@@ -83,7 +83,7 @@ public class ItemWand extends CompatItem {
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
         Level level = context.getLevel();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         ItemStack stack = context.getItemInHand();
@@ -145,6 +145,6 @@ public class ItemWand extends CompatItem {
         // 1.7 created an empty tag on any right-click, which makes the "Block saved" tooltip line appear.
         if (!level.isClientSide()) ModDataComponents.PERSISTENT_DATA.set(stack, tag);
 
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 }

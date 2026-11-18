@@ -172,8 +172,8 @@ public class ExplosionNukeRayBatched implements IExplosionRay {
         this.posZ = z;
         this.strength = strength;
         this.radius = radius;
-        this.minY = world.getMinY();
-        this.maxY = world.getMaxY();
+        this.minY = world.getMinBuildHeight();
+        this.maxY = world.getMaxBuildHeight();
 
         // Total number of points on the spiral sphere.
         this.gspNumMax = (int) (2.5 * Math.PI * Math.pow(this.strength, 2));
@@ -266,8 +266,8 @@ public class ExplosionNukeRayBatched implements IExplosionRay {
                 if (deferAlternateResidentChunksForTest && (((cx - chunkMinX) + (cz - chunkMinZ)) & 1) == 0) {
                     continue;
                 }
-                claimChunk(server, ChunkPos.pack(cx, cz));
-                cacheChunk(ChunkPos.pack(cx, cz), chunk);
+                claimChunk(server, ChunkPos.asLong(cx, cz));
+                cacheChunk(ChunkPos.asLong(cx, cz), chunk);
                 residentChunksSeeded++;
             }
         }
@@ -565,7 +565,7 @@ public class ExplosionNukeRayBatched implements IExplosionRay {
         for (Long2ObjectMap.Entry<BitSet> entry : perChunk.long2ObjectEntrySet()) {
             int relativeX = ChunkPos.getX(entry.getLongKey()) - thisX;
             int relativeZ = ChunkPos.getZ(entry.getLongKey()) - thisZ;
-            BitSet otherBits = other.perChunk.get(ChunkPos.pack(otherX + relativeX, otherZ + relativeZ));
+            BitSet otherBits = other.perChunk.get(ChunkPos.asLong(otherX + relativeX, otherZ + relativeZ));
             if (!entry.getValue().equals(otherBits)) return false;
         }
         return true;
@@ -691,7 +691,7 @@ public class ExplosionNukeRayBatched implements IExplosionRay {
                 int iX = (int) Math.floor(posX + (vx * r));
                 int iZ = (int) Math.floor(posZ + (vz * r));
 
-                long chunkKey = ChunkPos.pack(iX >> 4, iZ >> 4);
+                long chunkKey = ChunkPos.asLong(iX >> 4, iZ >> 4);
                 LevelChunk chunk;
                 if (chunkKey == lastKey) {
                     chunk = lastChunk;
@@ -764,7 +764,7 @@ public class ExplosionNukeRayBatched implements IExplosionRay {
     }
 
     private void setBit(Long2ObjectOpenHashMap<BitSet> map, int x, int y, int z) {
-        long key = ChunkPos.pack(x >> 4, z >> 4);
+        long key = ChunkPos.asLong(x >> 4, z >> 4);
         BitSet hitPositions = map.get(key);
         if (hitPositions == null) {
             hitPositions = new BitSet((maxY - minY + 1) << 8);

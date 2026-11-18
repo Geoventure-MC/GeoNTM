@@ -119,7 +119,7 @@ public class TileEntityGlyphidSpawner extends TileEntityLoadedBase {
         double offsetZ = glyphid.getRandom().nextGaussian() * 3;
 
         for (int i = 0; i < 7; i++) {
-            glyphid.snapTo(worldPosition.getX() + 0.5 + offsetX, worldPosition.getY() - 2 + i,
+            glyphid.moveTo(worldPosition.getX() + 0.5 + offsetX, worldPosition.getY() - 2 + i,
                     worldPosition.getZ() + 0.5 + offsetZ, level.getRandom().nextFloat() * 360.0F, 0.0F);
             if (canSpawnHere(level, glyphid)) {
                 level.addFreshEntity(glyphid);

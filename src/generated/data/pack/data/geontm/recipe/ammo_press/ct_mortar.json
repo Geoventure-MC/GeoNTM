@@ -1,0 +1,27 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_ct_mortar",
+    "count": 4
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 4
+    },
+    "",
+    "",
+    {
+      "material": "steel",
+      "shape": "pipe"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    ""
+  ],
+  "order": 89
+}

@@ -5,9 +5,9 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineBlastFurnace;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 
@@ -17,7 +17,7 @@ import java.util.Optional;
 /** Blast furnace screen preserving the legacy 176x222 layout and two fluid gauges. */
 public class GUIBlastFurnace extends CompatContainerScreen<ContainerBlastFurnace> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_blast_furnace.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_blast_furnace.png");
 
     public GUIBlastFurnace(ContainerBlastFurnace menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 222);
@@ -25,13 +25,13 @@ public class GUIBlastFurnace extends CompatContainerScreen<ContainerBlastFurnace
 
     /** 1.7 {@code GUIBlastFurnace.drawGuiContainerForegroundLayer}: centred title at y 6, "Inventory" at (8, ySize - 94). */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineBlastFurnace furnace = menu.getFurnace();
         if (furnace == null) return;
@@ -56,7 +56,7 @@ public class GUIBlastFurnace extends CompatContainerScreen<ContainerBlastFurnace
                 (double) furnace.tanks[1].getFill() / furnace.tanks[1].getMaxFill(), 0x800000);
     }
 
-    private static void drawGauge(GuiGraphicsExtractor graphics, int x, int y, double progress, int color) {
+    private static void drawGauge(GuiGraphics graphics, int x, int y, double progress, int color) {
         progress = Math.max(0D, Math.min(1D, progress));
         float angle = (float) Math.toRadians(progress * 270D + 45D);
         GuiDraw.pushMatrix(graphics);
@@ -68,7 +68,7 @@ public class GUIBlastFurnace extends CompatContainerScreen<ContainerBlastFurnace
         GuiDraw.popMatrix(graphics);
     }
 
-    private static void fillNeedle(GuiGraphicsExtractor graphics, double multiplier, int color) {
+    private static void fillNeedle(GuiGraphics graphics, double multiplier, int color) {
         double tipLength = 5D * multiplier * 8D;
         double backLength = 2D * multiplier * 8D;
         double backSide = multiplier * 8D;
@@ -86,7 +86,7 @@ public class GUIBlastFurnace extends CompatContainerScreen<ContainerBlastFurnace
      * carried, the speed stat over (79, 62, 18, 18), and the two tank readouts ({@code renderTankInfo}).
      */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineBlastFurnace furnace = menu.getFurnace();
         if (furnace == null) return;
         if (menu.getCarried().isEmpty()) {

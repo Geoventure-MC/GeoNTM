@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drillsteeldiamond",
+  "input_items": [
+    {
+      "ingredient": "geontm:drillbit_steel"
+    },
+    {
+      "ingredient": "#c:dusts/diamond",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_steel_diamond"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 30208
+}

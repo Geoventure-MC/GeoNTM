@@ -7,9 +7,9 @@ import fr.geoventure.geontm.inventory.container.ContainerCompressor;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineCompressorBase;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 /**
@@ -20,7 +20,7 @@ import net.minecraft.world.entity.player.Inventory;
  */
 public class GUICompressor extends CompatContainerScreen<ContainerCompressor> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_compressor.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_compressor.png");
 
     public GUICompressor(ContainerCompressor menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 204);
@@ -28,13 +28,13 @@ public class GUICompressor extends CompatContainerScreen<ContainerCompressor> {
 
     /** 1.7 {@code drawGuiContainerForegroundLayer}. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 70 - this.font.width(this.title) / 2, 6, 0xC7C1A3, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 8, this.imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         TileEntityMachineCompressorBase te = this.menu.getTile();
@@ -58,7 +58,7 @@ public class GUICompressor extends CompatContainerScreen<ContainerCompressor> {
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineCompressorBase te = this.menu.getTile();
         if (te == null) return;
         int gl = this.leftPos, gt = this.topPos;

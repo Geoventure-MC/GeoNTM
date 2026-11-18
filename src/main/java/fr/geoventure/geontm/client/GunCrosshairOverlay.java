@@ -12,20 +12,20 @@ import fr.geoventure.geontm.items.weapon.sedna.impl.ItemGunStinger;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 /** The Sedna crosshair replacement from the source gun HUD path. */
 public final class GunCrosshairOverlay {
 
-    private static final Identifier MISC =
+    private static final ResourceLocation MISC =
             Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
 
     private GunCrosshairOverlay() {}
 
     /** Returns true when the main-hand gun owns the layer, even when it draws nothing. */
-    public static boolean render(GuiGraphicsExtractor graphics) {
+    public static boolean render(GuiGraphics graphics) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.level == null || minecraft.player == null
                 || (minecraft.options.hideGui && minecraft.screen == null)) return false;
@@ -54,7 +54,7 @@ public final class GunCrosshairOverlay {
         return true;
     }
 
-    private static void renderCrosshair(GuiGraphicsExtractor graphics, Crosshair crosshair) {
+    private static void renderCrosshair(GuiGraphics graphics, Crosshair crosshair) {
         if (crosshair == null || crosshair == Crosshair.NONE) return;
         int x = graphics.guiWidth() / 2 - crosshair.size / 2;
         int y = graphics.guiHeight() / 2 - crosshair.size / 2;
@@ -62,7 +62,7 @@ public final class GunCrosshairOverlay {
                 crosshair.size, crosshair.size, 256, 256);
     }
 
-    private static void renderStingerLockon(GuiGraphicsExtractor graphics, ItemStack stack) {
+    private static void renderStingerLockon(GuiGraphics graphics, ItemStack stack) {
         int progress = Math.max(0, Math.min(28,
                 Math.round(ItemGunStinger.getLockonProgress(stack) * 28F / 60F)));
         int x = graphics.guiWidth() / 2 - 15;

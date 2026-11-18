@@ -18,9 +18,9 @@ import fr.geoventure.geocore.render.living.LivingLooks;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.phys.Vec3;
@@ -40,7 +40,7 @@ public class RenderTeslaCrab<T extends Mob> extends CompatEntityRenderer<T, Rend
     private final float baseYaw;
     private final double arcHeight;
 
-    protected RenderTeslaCrab(EntityRendererProvider.Context context, WavefrontObj model, Identifier texture,
+    protected RenderTeslaCrab(EntityRendererProvider.Context context, WavefrontObj model, ResourceLocation texture,
                               String left, String right, float baseYaw, double arcHeight) {
         super(context);
         this.model = model;

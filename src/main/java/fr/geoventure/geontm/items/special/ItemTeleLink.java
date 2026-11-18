@@ -40,7 +40,7 @@ public class ItemTeleLink extends CompatItem {
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
         Level level = context.getLevel();
-        if (player == null || player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null || player.isShiftKeyDown()) return InteractionResult.PASS;
         // 1.7 returns false on the client and swings the arm from the server
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 

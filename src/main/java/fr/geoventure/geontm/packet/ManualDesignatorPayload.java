@@ -7,7 +7,7 @@ import fr.geoventure.geontm.items.tool.ItemDesignatorManual;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +23,7 @@ public record ManualDesignatorPayload(int operator, int value, int reference) im
             }, buffer -> new ManualDesignatorPayload(buffer.readVarInt(), buffer.readVarInt(), buffer.readVarInt()));
 
     @Override
-    public Identifier id() { return CODEC.id(); }
+    public ResourceLocation id() { return CODEC.id(); }
 
     public static void handle(ServerPlayer player, ManualDesignatorPayload payload) {
         if (player == null || payload.operator < 0 || payload.operator > 2

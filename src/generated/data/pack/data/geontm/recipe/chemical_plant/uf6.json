@@ -1,0 +1,40 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.uf6",
+  "input_items": [
+    {
+      "ingredient": "geontm:powder_yellowcake"
+    },
+    {
+      "ingredient": "#c:dusts/fluorite",
+      "count": 4
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:sulfur",
+      "count": 2
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:uf6",
+      "amount": 1200
+    }
+  ],
+  "duration": 100,
+  "power": 500,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:uf6"
+    }
+  },
+  "order": 84
+}

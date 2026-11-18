@@ -137,7 +137,7 @@ public final class MachineAutomationGameTests {
         BlockPos core = GameTests.paddedCentre(4, 1);
         FoldedTestSupport.assemble(helper, ModBatteryBlocks.machine_battery_socket.get(), core);
         TileEntityBatterySocket socket = GameTestHelpers.blockEntity(helper, core, TileEntityBatterySocket.class);
-        ItemBatteryPack capacitor = (ItemBatteryPack) BuiltInRegistries.ITEM.getValue(Ids.of(Constants.MOD_ID, "capacitor_copper"));
+        ItemBatteryPack capacitor = (ItemBatteryPack) BuiltInRegistries.ITEM.get(Ids.of(Constants.MOD_ID, "capacitor_copper"));
         ItemStack full = new ItemStack(capacitor);
         capacitor.setCharge(full, capacitor.getMaxCharge(full));
         socket.inventory.setStackInSlot(0, full);

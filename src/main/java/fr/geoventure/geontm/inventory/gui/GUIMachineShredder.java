@@ -5,9 +5,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geontm.inventory.container.ContainerMachineShredder;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMachineShredder;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -20,14 +20,14 @@ import java.util.Optional;
  */
 public class GUIMachineShredder extends CompatContainerScreen<ContainerMachineShredder> {
 
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_shredder.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/processing/gui_shredder.png");
 
     public GUIMachineShredder(ContainerMachineShredder menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title, 176, 233);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, this.leftPos, this.topPos, 0.0F, 0.0F,
                 this.imageWidth, this.imageHeight, 256, 256);
 
@@ -56,14 +56,14 @@ public class GUIMachineShredder extends CompatContainerScreen<ContainerMachineSh
     }
 
     /** Wear icon: state 1/2/3 the fine / worn / broken sprite row. State 0 (no blade) draws nothing. */
-    private void drawGear(GuiGraphicsExtractor graphics, int state, int x, float u) {
+    private void drawGear(GuiGraphics graphics, int state, int x, float u) {
         if (state < 1 || state > 3) return;
         float v = (state - 1) * 18.0F;
         GuiDraw.blit(graphics, TEXTURE, x, this.topPos + 71, u, v, 18, 18, 256, 256);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineShredder shredder = this.menu.getShredder();
         if (shredder == null) return;
 
@@ -80,7 +80,7 @@ public class GUIMachineShredder extends CompatContainerScreen<ContainerMachineSh
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         // 1.7 centres the title on x=106, not xSize/2.
         GuiDraw.text(graphics, this.font, this.title, 106 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, Component.translatable("container.inventory"), 8, this.imageHeight - 96 + 2, 4210752, false);

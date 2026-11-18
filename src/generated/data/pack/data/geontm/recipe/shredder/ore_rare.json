@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:ore_rare",
+  "output": "geontm:powder_desh_mix"
+}

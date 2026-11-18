@@ -15,15 +15,15 @@ import fr.geoventure.geocore.render.Vertexes;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Surface;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /** Steel furnace renderer, including the animated additive heat sheet from the old TESR. */
 public final class FurnaceSteelRenderer extends GemBER<TileEntityFurnaceSteel, FurnaceRenderState> {
-    private static final Identifier OBJ = Ids.of(Constants.MOD_ID, "models/machines/furnace_steel.obj");
-    private static final Identifier TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/furnace_steel.png");
+    private static final ResourceLocation OBJ = Ids.of(Constants.MOD_ID, "models/machines/furnace_steel.obj");
+    private static final ResourceLocation TEXTURE = Ids.of(Constants.MOD_ID, "textures/models/machines/furnace_steel.png");
     private final WavefrontObj model = WavefrontObj.load(OBJ);
     private final Surface surface = Surface.cutout(TEXTURE.toString());
     private final RenderType heatType = CompatRenderTypes.lightning();

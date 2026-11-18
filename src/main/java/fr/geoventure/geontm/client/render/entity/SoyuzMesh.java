@@ -8,7 +8,7 @@ import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -44,7 +44,7 @@ public final class SoyuzMesh {
     }
 
     public static void submit(PoseStack poseStack, SubmitSink sink, int light, int skinIndex) {
-        Identifier[] skin = ResourceManager.soyuz_skin_tex[skinIndex];
+        ResourceLocation[] skin = ResourceManager.soyuz_skin_tex[skinIndex];
 
         for (int i = 0; i < SINGLE.length; i++) part(poseStack, sink, light, skin[i], SINGLE[i]);
         part(poseStack, sink, light, ResourceManager.soyuz_memento_tex, MEMENTO);
@@ -77,7 +77,7 @@ public final class SoyuzMesh {
     }
 
     private static Surface[][] surfaces() {
-        Identifier[][] textures = ResourceManager.soyuz_skin_tex;
+        ResourceLocation[][] textures = ResourceManager.soyuz_skin_tex;
         Surface[][] skins = new Surface[textures.length][];
         for (int i = 0; i < textures.length; i++) {
             skins[i] = new Surface[textures[i].length];
@@ -88,7 +88,7 @@ public final class SoyuzMesh {
         return skins;
     }
 
-    private static void part(PoseStack poseStack, SubmitSink sink, int light, Identifier texture, String part) {
+    private static void part(PoseStack poseStack, SubmitSink sink, int light, ResourceLocation texture, String part) {
         sink.submitCustomGeometry(poseStack, CompatRenderTypes.entityCutout(texture), (pose, buffer) ->
                 NtmEntityModels.SOYUZ.renderPart(part, pose, buffer, light, OverlayTexture.NO_OVERLAY));
     }

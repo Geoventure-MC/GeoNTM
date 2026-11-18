@@ -73,7 +73,7 @@ public class BlockCrate extends CompatBlock {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() > level.getMinY()) {
+        if (FallingBlock.isFree(level.getBlockState(pos.below())) && pos.getY() > level.getMinBuildHeight()) {
             FallingBlockEntity.fall(level, pos, state);
         }
     }
@@ -81,7 +81,7 @@ public class BlockCrate extends CompatBlock {
     @Override
     protected InteractionResult onUseItem(BlockState state, Level level, BlockPos pos, Player player,
                                           InteractionHand hand, ItemStack held, BlockHitResult hit) {
-        if (!held.is(BlockCrateSupply.CROWBAR)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!held.is(BlockCrateSupply.CROWBAR)) return InteractionResult.PASS;
         if (!level.isClientSide()) {
             dropItems(level, pos);
             level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
@@ -189,7 +189,7 @@ public class BlockCrate extends CompatBlock {
 
     /** The item with this geontm id, or an empty stack (an unported entry keeps its weight). */
     private static ItemStack stackOf(String id) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.of("geontm", id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.of("geontm", id));
         return item == null || item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item);
     }
 

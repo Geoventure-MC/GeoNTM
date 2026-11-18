@@ -283,7 +283,7 @@ public final class RadiationSystemNT {
 
         WorldRadiationData(ServerLevel level) {
             this.level = level;
-            this.minSectionY = level.getMinSectionY();
+            this.minSectionY = level.getMinSection();
             this.sidecar = ChunkSidecar.open(level, SIDECAR_NAME);
             migrateSavedData();
         }
@@ -313,7 +313,7 @@ public final class RadiationSystemNT {
 
         // Coordinate helpers
         private ChunkRad chunkAt(int cx, int cz, boolean create) {
-            long key = ChunkPos.pack(cx, cz);
+            long key = ChunkPos.asLong(cx, cz);
             ChunkRad cr = chunks.get(key);
             if (cr == null && create) {
                 cr = new ChunkRad(this, cx, cz);
@@ -393,11 +393,11 @@ public final class RadiationSystemNT {
             int cx = Compat.chunkX(pos), cz = Compat.chunkZ(pos);
             ChunkRad cr = chunkAt(cx, cz, true);
             if (cr.hasRadiation()) return;
-            pendingReads.put(ChunkPos.pack(cx, cz), sidecar.read(pos));
+            pendingReads.put(ChunkPos.asLong(cx, cz), sidecar.read(pos));
         }
 
         void onChunkUnloaded(ChunkPos pos) {
-            long key = ChunkPos.pack(Compat.chunkX(pos), Compat.chunkZ(pos));
+            long key = ChunkPos.asLong(Compat.chunkX(pos), Compat.chunkZ(pos));
             ChunkRad cr = chunks.remove(key);
             if (pendingReads.remove(key) != null) return;
             if (cr != null) persist(pos, cr);
@@ -471,7 +471,7 @@ public final class RadiationSystemNT {
 
         private void ensureBuilt(int cx, int cz, int sectionIndex) {
             if (sectionIndex < 0 || sectionIndex >= level.getSectionsCount()) return;
-            ChunkRad known = chunks.get(ChunkPos.pack(cx, cz));
+            ChunkRad known = chunks.get(ChunkPos.asLong(cx, cz));
             if (known != null) {
                 SectionRad built = known.sections[sectionIndex];
                 if (built != null && built.built && !built.dirty) return;
@@ -547,8 +547,8 @@ public final class RadiationSystemNT {
                     int coord = (axis == Axis.X) ? a.cx : a.cz;
                     if ((coord & 1) != p) return;
                     ChunkRad b = (axis == Axis.X)
-                            ? chunks.get(ChunkPos.pack(a.cx + 1, a.cz))
-                            : chunks.get(ChunkPos.pack(a.cx, a.cz + 1));
+                            ? chunks.get(ChunkPos.asLong(a.cx + 1, a.cz))
+                            : chunks.get(ChunkPos.asLong(a.cx, a.cz + 1));
                     if (b == null) return;
                     for (int i = 0; i < a.sections.length; i++) {
                         exchangeFace(a.sections[i], b.sections[i], axis);

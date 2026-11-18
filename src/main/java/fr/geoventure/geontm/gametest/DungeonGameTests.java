@@ -106,7 +106,7 @@ public final class DungeonGameTests {
         helper.setBlock(center.offset(0, 0, 1), Blocks.REDSTONE_BLOCK.defaultBlockState());
         helper.runAfterDelay(2, () -> {
             ItemStack out = GameTestHelpers.blockEntity(helper, center, BlockPedestal.TileEntityPedestal.class).getItem();
-            helper.assertTrue(out.is(BuiltInRegistries.ITEM.getValue(Ids.parse("geontm:gun_light_revolver_dani"))),
+            helper.assertTrue(out.is(BuiltInRegistries.ITEM.get(Ids.parse("geontm:gun_light_revolver_dani"))),
                     "the ritual made " + out);
             helper.assertTrue(GameTestHelpers.blockEntity(helper, center.offset(3, 0, 0), BlockPedestal.TileEntityPedestal.class)
                     .getItem().isEmpty(), "the east gold plate was not consumed");

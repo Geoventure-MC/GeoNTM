@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/pu239",
+  "output": "geontm:ingot_pu240",
+  "order": 19
+}

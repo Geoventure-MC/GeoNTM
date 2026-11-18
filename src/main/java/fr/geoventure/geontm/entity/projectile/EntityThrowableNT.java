@@ -115,7 +115,7 @@ public abstract class EntityThrowableNT extends CompatEntity implements Owners.C
      */
     public void initThrower(LivingEntity thrower) {
         setThrower(thrower);
-        snapTo(thrower.getX(), thrower.getY() + thrower.getEyeHeight(), thrower.getZ(), thrower.getYRot(),
+        moveTo(thrower.getX(), thrower.getY() + thrower.getEyeHeight(), thrower.getZ(), thrower.getYRot(),
                 thrower.getXRot());
         double px = getX() - Math.cos(getYRot() / 180.0F * Math.PI) * 0.16F;
         double py = getY() - 0.1D;

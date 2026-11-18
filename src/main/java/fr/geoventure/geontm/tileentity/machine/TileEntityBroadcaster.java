@@ -43,9 +43,9 @@ public class TileEntityBroadcaster extends TileEntityLoadedBase {
             double d = Math.sqrt(Math.pow(e.getX() - cx, 2) + Math.pow(e.getY() - cy, 2) + Math.pow(e.getZ() - cz, 2));
 
             if (d <= 25) {
-                MobEffectInstance confusion = e.getEffect(MobEffects.NAUSEA);
+                MobEffectInstance confusion = e.getEffect(MobEffects.CONFUSION);
                 if (confusion == null || confusion.getDuration() < 100)
-                    e.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 300, 0));
+                    e.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 300, 0));
             }
 
             if (d <= 15) {

@@ -33,7 +33,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
@@ -268,7 +268,7 @@ public final class RBMKGameTests {
     }
 
     private static void checkId(GameTestHelper helper, Object entry, String path) {
-        Identifier expected = Ids.of("geontm", path);
+        ResourceLocation expected = Ids.of("geontm", path);
         if (entry instanceof Block block) {
             helper.assertTrue(expected.equals(BuiltInRegistries.BLOCK.getKey(block)), "Wrong block id for " + path);
         } else if (entry instanceof Item item) {

@@ -53,7 +53,7 @@ public final class OilSpot {
             if (rX < minX || rX > maxX || rZ < minZ || rZ > maxZ) continue;
             int rY = level.getHeight(Heightmap.Types.WORLD_SURFACE, rX, rZ);
 
-            for (int y = rY; y > rY - 4 && y > level.getMinY(); y--) {
+            for (int y = rY; y > rY - 4 && y > level.getMinBuildHeight(); y--) {
 
                 pos.set(rX, y, rZ);
                 BlockState groundState = level.getBlockState(pos);

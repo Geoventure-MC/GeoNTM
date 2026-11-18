@@ -5,7 +5,7 @@ import fr.geoventure.geontm.wiaj.WorldInAJar;
 import com.mojang.blaze3d.vertex.PoseStack;
 import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 
 public class ActorTileEntity extends ActorBase {
@@ -22,7 +22,7 @@ public class ActorTileEntity extends ActorBase {
     }
 
     @Override
-    public void drawForegroundComponent(GuiGraphicsExtractor graphics, int w, int h, int ticks, float interp) { }
+    public void drawForegroundComponent(GuiGraphics graphics, int w, int h, int ticks, float interp) { }
 
     @Override
     public void drawBackgroundComponent(WorldInAJar world, PoseStack pose, SubmitSink sink, CameraInfo camera, int ticks, float interp) {

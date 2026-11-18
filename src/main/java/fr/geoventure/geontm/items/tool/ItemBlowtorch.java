@@ -49,18 +49,18 @@ public class ItemBlowtorch extends CompatItem implements IFillableItem {
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         BlockPos pos = IToolable.targetPos(level, context.getClickedPos());
-        if (pos == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (pos == null) return InteractionResult.PASS;
         var toolable = NtmContracts.TOOLABLE.at(level, pos);
-        if (toolable == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (toolable == null) return InteractionResult.PASS;
 
         Player player = context.getPlayer();
-        if (player == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player == null) return InteractionResult.PASS;
         ItemStack stack = context.getItemInHand();
-        if (getFill(stack) < COST) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (getFill(stack) < COST) return InteractionResult.PASS;
         if (level.isClientSide()) {
             if (level.getBlockEntity(pos) instanceof IRepairable) {
                 return IRepairable.tryRepairMultiblock(level, pos, player)
-                        ? InteractionResult.SUCCESS : InteractionResult.TRY_WITH_EMPTY_HAND;
+                        ? InteractionResult.SUCCESS : InteractionResult.PASS;
             }
             return InteractionResult.SUCCESS;
         }
@@ -71,7 +71,7 @@ public class ItemBlowtorch extends CompatItem implements IFillableItem {
             level.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 0.7F, 1.6F);
             return InteractionResult.SUCCESS;
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     /**

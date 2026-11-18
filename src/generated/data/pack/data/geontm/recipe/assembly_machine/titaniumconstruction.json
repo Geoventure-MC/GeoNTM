@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.titaniumconstruction",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    }
+  ],
+  "output_items": [
+    "geontm:part_generic_alclad"
+  ],
+  "duration": 600,
+  "power": 1000,
+  "custom_localization": true,
+  "order": 85248
+}

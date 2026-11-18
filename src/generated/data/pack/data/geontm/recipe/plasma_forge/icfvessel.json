@@ -1,0 +1,41 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.icfvessel",
+  "input_items": [
+    {
+      "ingredient": "geontm:ingot_cft"
+    },
+    {
+      "material": "combine_steel",
+      "shape": "castplate"
+    },
+    {
+      "material": "tungsten",
+      "shape": "weldedplate",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:icf_component_vessel"
+  ],
+  "duration": 800,
+  "power": 10000000,
+  "order": 33,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_cmb_tubes"
+    },
+    {
+      "ingredient": "geontm:ingot_cft"
+    },
+    {
+      "material": "tungsten",
+      "shape": "weldedplate",
+      "count": 2
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chlorophyte"
+  ],
+  "ignition_temp": 1000000
+}

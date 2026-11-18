@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:blades_steel",
+  "materials": [
+    {
+      "material": "steel",
+      "amount": 288
+    }
+  ]
+}

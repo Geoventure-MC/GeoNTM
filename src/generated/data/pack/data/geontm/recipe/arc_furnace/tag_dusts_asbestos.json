@@ -1,0 +1,17 @@
+{
+  "type": "geontm:arc_furnace",
+  "input": {
+    "ingredient": "#c:dusts/asbestos"
+  },
+  "solid_output": {
+    "id": "geontm:nugget_silicon",
+    "count": 4
+  },
+  "molten_outputs": [
+    {
+      "material": "silicon",
+      "amount": 36
+    }
+  ],
+  "order": 8
+}

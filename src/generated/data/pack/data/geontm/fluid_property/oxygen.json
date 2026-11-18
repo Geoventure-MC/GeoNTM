@@ -1,0 +1,17 @@
+{
+  "type": "liquid",
+  "color": "#98BDF9",
+  "temperature": -100,
+  "hazard": {
+    "poison": 3,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "cryogenic"
+  },
+  "shares": [
+    "#c:oxygen"
+  ],
+  "flags": [
+    "gaseous_art"
+  ]
+}

@@ -9,7 +9,7 @@ import fr.geoventure.geocore.data.GeoCoreComponent;
 import fr.geoventure.geocore.data.ItemContents;
 import fr.geoventure.geocore.gui.CompatContainerMenu;
 import fr.geoventure.geocore.world.ItemStacks;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,7 +23,7 @@ public final class MenuItemBox extends CompatContainerMenu {
 
     public record Layout(int rows, int columns, int slotX, int slotY, int inventoryX, int inventoryY,
                          int hotbarY, int width, int height, int titleY, int titleColor,
-                         int inventoryLabelY, Identifier texture) {
+                         int inventoryLabelY, ResourceLocation texture) {
         public int slots() { return rows * columns; }
     }
 

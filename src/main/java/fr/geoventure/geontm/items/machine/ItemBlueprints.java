@@ -71,10 +71,10 @@ public class ItemBlueprints extends CompatItem implements ModelState {
         String poolName = grabPool(stack);
         if (level.isClientSide() || poolName == null
                 || poolName.startsWith(GenericRecipes.POOL_PREFIX_SECRET)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
 
-        if (!player.isCreative() && !consumePaper(player)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!player.isCreative() && !consumePaper(player)) return InteractionResult.PASS;
 
         player.swing(hand);
         ItemStack copy = stack.copy();

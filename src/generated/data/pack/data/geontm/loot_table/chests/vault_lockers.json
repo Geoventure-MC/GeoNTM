@@ -1,0 +1,231 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:robes_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:robes_plate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:robes_legs",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:robes_boots",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:jackt",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:jackt2",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_m65",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_mono",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:goggles",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gas_mask_filter",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:flame_opinion",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:flame_conspiracy",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:flame_politics",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:definitelyfood",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 7
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:cigarette",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:armor_polish",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:gun_kit_1",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:rag",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:clock",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:blueprint_folder",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:blueprint_folder_discover",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:ammo_container",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:coin_token",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

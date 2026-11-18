@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_titanium",
+  "output": {
+    "id": "geontm:powder_titanium",
+    "count": 3
+  }
+}

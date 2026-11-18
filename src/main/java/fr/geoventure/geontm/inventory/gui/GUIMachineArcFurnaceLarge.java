@@ -12,10 +12,10 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import org.lwjgl.glfw.GLFW;
 public class GUIMachineArcFurnaceLarge extends CompatContainerScreen<ContainerMachineArcFurnaceLarge>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_arc_furnace.png");
 
     public GUIMachineArcFurnaceLarge(ContainerMachineArcFurnaceLarge menu, Inventory inventory, Component title) {
@@ -38,7 +38,7 @@ public class GUIMachineArcFurnaceLarge extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineArcFurnaceLarge furnace = menu.getFurnace();
         if (furnace == null) return;
@@ -57,7 +57,7 @@ public class GUIMachineArcFurnaceLarge extends CompatContainerScreen<ContainerMa
         drawStack(graphics, furnace.liquids, TileEntityMachineArcFurnaceLarge.MAX_LIQUID, 152, 106);
     }
 
-    private void drawStack(GuiGraphicsExtractor graphics, List<Mats.MaterialStack> stack, int capacity,
+    private void drawStack(GuiGraphics graphics, List<Mats.MaterialStack> stack, int capacity,
                            int x, int y) {
         int lastHeight = 0;
         int lastAmount = 0;
@@ -74,7 +74,7 @@ public class GUIMachineArcFurnaceLarge extends CompatContainerScreen<ContainerMa
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineArcFurnaceLarge furnace = menu.getFurnace();
         Component label = furnace == null || furnace.hasCustomName() ? title : furnace.getDisplayName();
         GuiDraw.text(graphics, font, label, imageWidth / 2 - font.width(label) / 2, 6, 0xFFFFFF, false);
@@ -83,7 +83,7 @@ public class GUIMachineArcFurnaceLarge extends CompatContainerScreen<ContainerMa
 
     /** 1.7 {@code drawScreen}: liquid stack info over (152,36) 16x70, then the energy info over (8,36) 7x70. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineArcFurnaceLarge furnace = menu.getFurnace();
         if (furnace == null) return;
         if (GuiUtil.hover(mouseX, mouseY, leftPos + 152, topPos + 36, 16, 70)) {

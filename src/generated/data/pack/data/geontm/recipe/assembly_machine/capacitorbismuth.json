@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.capacitorbismuth",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 24
+    },
+    {
+      "ingredient": "#c:ingots/bismuth",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:circuit_chip_quantum"
+    }
+  ],
+  "output_items": [
+    "geontm:capacitor_bismuth"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "order": 38912
+}

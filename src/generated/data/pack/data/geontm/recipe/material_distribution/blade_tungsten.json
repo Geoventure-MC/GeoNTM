@@ -1,0 +1,10 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "geontm:blade_tungsten",
+  "materials": [
+    {
+      "material": "tungsten",
+      "amount": 216
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.dhc",
+  "input_fluids": [
+    {
+      "type": "geontm:dhc",
+      "amount": 20
+    }
+  ],
+  "output_items": [
+    "geontm:powder_chlorophyte"
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:fluid_icon",
+    "item_data": {
+      "fluid": "geontm:dhc"
+    }
+  },
+  "custom_localization": true,
+  "order": 7,
+  "ignition_temp": 10000000,
+  "output_temp": 25000000,
+  "neutron_flux": 2000.0,
+  "red": 0.2,
+  "green": 0.8,
+  "blue": 0.8
+}

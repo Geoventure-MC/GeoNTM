@@ -1,0 +1,12 @@
+{
+  "type": "geontm:fraction",
+  "input": "geontm:naphtha_ds",
+  "left": {
+    "type": "geontm:xylene",
+    "amount": 60
+  },
+  "right": {
+    "type": "geontm:diesel_reform",
+    "amount": 40
+  }
+}

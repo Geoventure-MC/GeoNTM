@@ -9,7 +9,7 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.CameraInfo;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.phys.Vec3;
 
 /** The electrolyser body and the molten streams from its two outlets, 1.7's {@code "foundry"} particles. */

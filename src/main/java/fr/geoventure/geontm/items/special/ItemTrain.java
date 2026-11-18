@@ -9,7 +9,7 @@ import fr.geoventure.geocore.registry.Entities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import fr.geoventure.geocore.world.CompatItem;
@@ -67,14 +67,14 @@ public class ItemTrain extends CompatItem {
         BlockPos pos = context.getClickedPos();
         BlockRailNTM.Owner owner = new BlockRailNTM.Owner();
 
-        if (!BlockRailNTM.railAt(level, pos, owner)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!BlockRailNTM.railAt(level, pos, owner)) return InteractionResult.PASS;
 
         ItemStack stack = context.getItemInHand();
-        EntityRailCarBase train = Entities.create(type.train.get(), level, EntitySpawnReason.SPAWN_ITEM_USE);
-        if (train == null) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        EntityRailCarBase train = Entities.create(type.train.get(), level, MobSpawnType.SPAWN_EGG);
+        if (train == null) return InteractionResult.PASS;
 
         if (train.getGauge() != owner.rail.getGauge(level, pos.getX(), pos.getY(), pos.getZ())) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
 
         train.setPos(context.getClickLocation());
@@ -82,19 +82,19 @@ public class ItemTrain extends CompatItem {
 
         BlockPos anchor = train.getCurrentAnchorPos();
         if (!train.walkRail(anchor.getX(), anchor.getY(), anchor.getZ(), 0, RailCheckType.CORE, 0)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         train.setPos(train.railResult().x, train.railResult().y, train.railResult().z);
 
         if (!train.walkRail(anchor.getX(), anchor.getY(), anchor.getZ(), train.getLengthSpan(),
                 RailCheckType.FRONT, train.getCollisionSpan() - train.getLengthSpan())) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         double frontX = train.railResult().x, frontZ = train.railResult().z;
 
         if (!train.walkRail(anchor.getX(), anchor.getY(), anchor.getZ(), -train.getLengthSpan(),
                 RailCheckType.BACK, train.getCollisionSpan() - train.getLengthSpan())) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
 
         if (!level.isClientSide()) {

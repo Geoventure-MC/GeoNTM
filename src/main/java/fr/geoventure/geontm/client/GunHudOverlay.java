@@ -3,7 +3,7 @@ package fr.geoventure.geontm.client;
 import fr.geoventure.geontm.items.weapon.sedna.ItemGunBaseNT;
 import fr.geoventure.geontm.items.weapon.sedna.hud.IHUDComponent;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -12,7 +12,7 @@ public final class GunHudOverlay {
 
     private GunHudOverlay() {}
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.level == null || minecraft.player == null
                 || (minecraft.options.hideGui && minecraft.screen == null)) return;

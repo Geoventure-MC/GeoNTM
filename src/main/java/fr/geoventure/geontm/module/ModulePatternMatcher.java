@@ -7,8 +7,8 @@ import fr.geoventure.geontm.items.special.ItemBedrockOreGraded;
 import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.world.ItemStacks;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.resources.Identifier;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
@@ -139,11 +139,11 @@ public final class ModulePatternMatcher {
         for (int i = 0; i < modes.length; i++) modes[i] = input.getStringOr("mode" + i, null);
     }
 
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         for (String mode : modes) buffer.writeUtf(mode == null ? "" : mode, 64);
     }
 
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         for (int i = 0; i < modes.length; i++) {
             String mode = buffer.readUtf(64);
             modes[i] = mode.isEmpty() ? null : mode;
@@ -175,7 +175,7 @@ public final class ModulePatternMatcher {
         if (stack == null || stack.isEmpty()) return Collections.emptyList();
         List<String> names = new ArrayList<>();
         for (var tag : stack.getItem().builtInRegistryHolder().tags().toList()) {
-            Identifier id = tag.location();
+            ResourceLocation id = tag.location();
             if (!"c".equals(id.getNamespace())) continue;
             String[] parts = id.getPath().split("/", 2);
             if (parts.length != 2) continue;

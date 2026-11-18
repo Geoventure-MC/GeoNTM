@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.cccentrifuge",
+  "input_fluids": [
+    {
+      "type": "geontm:chlorocalcite_cleaned",
+      "amount": 500
+    },
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 8000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:potassium_chloride",
+      "amount": 250
+    },
+    {
+      "type": "geontm:calcium_chloride",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 8
+}

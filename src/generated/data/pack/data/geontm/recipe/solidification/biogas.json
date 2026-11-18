@@ -1,0 +1,9 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:biogas",
+  "amount": 250,
+  "output": {
+    "id": "geontm:biomass_compressed",
+    "count": 4
+  }
+}

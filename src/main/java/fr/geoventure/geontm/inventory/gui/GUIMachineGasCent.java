@@ -9,10 +9,10 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.Optional;
 public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGasCent>
         implements IUpgradeInfoProviderSource {
 
-    private static final Identifier TEXTURE = Ids.of("geontm",
+    private static final ResourceLocation TEXTURE = Ids.of("geontm",
             "textures/gui/processing/gui_centrifuge_gas.png");
     private static final int SHEET = 256;
 
@@ -31,7 +31,7 @@ public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGas
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, SHEET, SHEET);
         GuiUtil.drawInfoPanel(graphics, leftPos - 12, topPos + 16, 3);
         GuiUtil.drawInfoPanel(graphics, leftPos - 12, topPos + 32, 2);
@@ -58,7 +58,7 @@ public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGas
         drawTank(graphics, gasCent.tank, gasCent.outputTank.getFill(), gasCent.outputTank.getMaxFill(), 154, 16);
     }
 
-    private void drawTank(GuiGraphicsExtractor graphics, FluidTankNTM textureTank,
+    private void drawTank(GuiGraphics graphics, FluidTankNTM textureTank,
                           int fill, int maxFill, int x, int y) {
         int height = maxFill <= 0 ? 0 : fill * 52 / maxFill;
         if (height <= 0) return;
@@ -66,7 +66,7 @@ public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGas
         int x0 = leftPos + x;
         int bottom = topPos + y + 52;
         int top = bottom - height;
-        Identifier texture = textureTank.getTankType().clientMetadata().getTexture();
+        ResourceLocation texture = textureTank.getTankType().clientMetadata().getTexture();
         if (Minecraft.getInstance().getResourceManager().getResource(texture).isPresent()) {
             graphics.enableScissor(x0, top, x0 + 6, bottom);
             for (int tileY = bottom - 16; tileY > top - 16; tileY -= 16) {
@@ -80,12 +80,12 @@ public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGas
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, Component.translatable("container.inventory"), 8, imageHeight - 96 + 2, 4210752, false);
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineGasCent gasCent = menu.getGasCent();
         if (gasCent == null) return;
 
@@ -107,7 +107,7 @@ public class GUIMachineGasCent extends CompatContainerScreen<ContainerMachineGas
         }
     }
 
-    private void tankTooltip(GuiGraphicsExtractor graphics, PseudoFluidType type,
+    private void tankTooltip(GuiGraphics graphics, PseudoFluidType type,
                              int fill, int maxFill, boolean input, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, font, List.of(pseudoFluidName(type, input),
                 Component.literal(fill + " / " + maxFill + " mB")),

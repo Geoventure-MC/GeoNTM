@@ -97,8 +97,8 @@ public class ItemAcetyleneTorch extends CompatItem implements IFillableItem {
         ItemStack stack = context.getItemInHand();
 
         if (b instanceof IToolable toolable && player != null) {
-            if (getFill(stack, Fluids.UNSATURATEDS) < 20) return InteractionResult.TRY_WITH_EMPTY_HAND;
-            if (getFill(stack, Fluids.OXYGEN) < 10) return InteractionResult.TRY_WITH_EMPTY_HAND;
+            if (getFill(stack, Fluids.UNSATURATEDS) < 20) return InteractionResult.PASS;
+            if (getFill(stack, Fluids.OXYGEN) < 10) return InteractionResult.PASS;
 
             if (toolable.onScrew(world, player, pos, context.getClickedFace(), context.getClickLocation(),
                     context.getHand(), IToolable.ToolType.TORCH)) {
@@ -109,7 +109,7 @@ public class ItemAcetyleneTorch extends CompatItem implements IFillableItem {
                 return InteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.TRY_WITH_EMPTY_HAND;
+        return InteractionResult.PASS;
     }
 
     private double frac(ItemStack stack) {

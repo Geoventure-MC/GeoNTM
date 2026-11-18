@@ -27,7 +27,7 @@ import fr.geoventure.geocore.registry.TickingBlock;
 import fr.geoventure.geocore.world.CompatBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -201,13 +201,13 @@ public class BlockRebar extends CompatBlock implements TickingBlock, SimpleWater
         }
 
         @Override
-        public void serialize(RegistryFriendlyByteBuf buf) {
+        public void serialize(FriendlyByteBuf buf) {
             super.serialize(buf);
             buf.writeInt(progress);
         }
 
         @Override
-        public void deserialize(RegistryFriendlyByteBuf buf) {
+        public void deserialize(FriendlyByteBuf buf) {
             super.deserialize(buf);
             this.progress = buf.readInt();
         }

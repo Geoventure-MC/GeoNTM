@@ -158,7 +158,7 @@ public final class MissileGameTests {
         try {
             ticket.force(cx, cz);
             LongOpenHashSet next = new LongOpenHashSet();
-            next.add(ChunkPos.pack(cx + 1, cz));
+            next.add(ChunkPos.asLong(cx + 1, cz));
             ticket.setChunks(next);
 
             helper.assertFalse(ChunkLoadingManager.isForced(level, cx, cz),
@@ -985,7 +985,7 @@ public final class MissileGameTests {
     /** Runs one network pack from {@code from} into {@code to}, as the real sync does. */
     private static void roundTrip(GameTestHelper helper, TileEntityLaunchPad from, TileEntityLaunchPad to) {
         // GeoCoreBuffers.wrap, not a direct constructor: the registry-aware buffer type only exists from
-        // 1.20.5, and below that the plain RegistryFriendlyByteBuf takes no registry argument.
+        // 1.20.5, and below that the plain FriendlyByteBuf takes no registry argument.
         var buf = GeoCoreBuffers.wrap(Unpooled.buffer(), helper.getLevel());
         from.serialize(buf);
         to.deserialize(buf);

@@ -1,0 +1,37 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.batteryquantum",
+  "input_items": [
+    {
+      "material": "bscco",
+      "shape": "densewire",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:pellet_charged",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:ingot_cft",
+      "count": 16
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:perfluoromethyl_cold",
+      "amount": 8000
+    }
+  ],
+  "output_items": [
+    "geontm:battery_quantum"
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 8000
+    }
+  ],
+  "duration": 100,
+  "power": 100000,
+  "order": 34
+}

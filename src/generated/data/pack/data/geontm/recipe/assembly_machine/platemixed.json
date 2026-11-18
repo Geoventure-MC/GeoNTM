@@ -1,0 +1,25 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.platemixed",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:neutron_reflector"
+    },
+    {
+      "ingredient": "#c:plates/saturnite"
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:plate_mixed",
+      "count": 4
+    }
+  ],
+  "duration": 50,
+  "power": 100,
+  "order": 3328
+}

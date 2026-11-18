@@ -1,0 +1,24 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.drilldesh",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/niobium",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:drillbit_desh"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 30976
+}

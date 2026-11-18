@@ -1,0 +1,45 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.lightsculkgrass",
+  "input_items": [
+    {
+      "ingredient": "minecraft:sculk_vein"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "minecraft:dirt",
+        "weight": 50
+      },
+      {
+        "data": "geontm:scrap_nuclear",
+        "weight": 25
+      },
+      {
+        "data": "geontm:scrap_oil",
+        "weight": 25
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:slop",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:sculk_vein"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 10
+}

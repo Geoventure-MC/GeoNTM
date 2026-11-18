@@ -110,7 +110,7 @@ public class TrappedBrick extends CompatBlock {
             }
             case RAD_CONVERSION -> convert(level, pos, ModDungeonBlocks.brick_jungle_ooze.get());
             case MAGIC_CONVERSTION -> convert(level, pos, ModDungeonBlocks.brick_jungle_mystic.get());
-            case SLOWNESS -> Effects.add(player, MobEffects.SLOWNESS, 300, 2);
+            case SLOWNESS -> Effects.add(player, MobEffects.MOVEMENT_SLOWDOWN, 300, 2);
             case WEAKNESS -> Effects.add(player, MobEffects.WEAKNESS, 300, 2);
             default -> { }
         }

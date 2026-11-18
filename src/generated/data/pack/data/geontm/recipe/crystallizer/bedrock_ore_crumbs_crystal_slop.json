@@ -1,0 +1,14 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:bedrock_ore_crumbs_crystal",
+    "count": 64
+  },
+  "acid": {
+    "type": "geontm:slop",
+    "amount": 1000
+  },
+  "output": "geontm:bedrock_ore_base_crystal",
+  "duration": 200,
+  "order": 315
+}

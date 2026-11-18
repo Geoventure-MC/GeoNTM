@@ -1,0 +1,13 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:powder_impure_osmiridium"
+  },
+  "acid": {
+    "type": "geontm:schrabidic",
+    "amount": 1000
+  },
+  "output": "geontm:crystal_osmiridium",
+  "duration": 600,
+  "order": 70
+}

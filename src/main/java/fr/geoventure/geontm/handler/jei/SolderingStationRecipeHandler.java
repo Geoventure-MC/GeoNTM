@@ -4,7 +4,7 @@ import fr.geoventure.geontm.inventory.RecipesCommon.AStack;
 import fr.geoventure.geontm.inventory.recipes.SolderingRecipes;
 import fr.geoventure.geontm.items.machine.ItemFluidIcon;
 import fr.geoventure.geocore.viewer.ViewerType;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -51,7 +51,7 @@ public class SolderingStationRecipeHandler extends JEIUniversalHandler<Soldering
     }
 
     @Override
-    public void draw(SolderingRecipes.SolderingRecipe recipe, GuiGraphicsExtractor g, double mouseX, double mouseY) {
+    public void draw(SolderingRecipes.SolderingRecipe recipe, GuiGraphics g, double mouseX, double mouseY) {
         super.draw(recipe, g, mouseX, mouseY);
         String duration = String.format(Locale.US, "%,d", recipe.duration) + " ticks";
         String consumption = String.format(Locale.US, "%,d", recipe.consumption) + " HE/t";

@@ -3,7 +3,7 @@ package fr.geoventure.geontm.inventory.gui;
 import fr.geoventure.geontm.inventory.container.MenuItemBox;
 import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -15,14 +15,14 @@ public final class ScreenItemBox extends CompatContainerScreen<MenuItemBox> {
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         MenuItemBox.Layout layout = menu.layout();
         GuiDraw.blit(graphics, layout.texture(), leftPos, topPos, 0F, 0F,
                 layout.width(), layout.height(), 256, 256);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         MenuItemBox.Layout layout = menu.layout();
         if (layout.titleY() >= 0) {
             GuiDraw.text(graphics, font, title, (layout.width() - font.width(title)) / 2,

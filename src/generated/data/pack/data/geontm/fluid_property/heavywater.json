@@ -1,0 +1,32 @@
+{
+  "type": "liquid",
+  "color": "#00A0B0",
+  "temperature": 20,
+  "hazard": {
+    "poison": 1,
+    "flammability": 0,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "shares": [
+    "#c:heavy_water"
+  ],
+  "traits": {
+    "pwrmoderator": {
+      "multiplier": 1.25
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 300,
+          "produces": "geontm:heavywater_hot",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "PWR": 1.0
+      }
+    }
+  }
+}

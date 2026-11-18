@@ -1,0 +1,25 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_m357_sp",
+    "count": 8
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "#c:ingots/lead"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_small"
+    },
+    ""
+  ],
+  "order": 1
+}

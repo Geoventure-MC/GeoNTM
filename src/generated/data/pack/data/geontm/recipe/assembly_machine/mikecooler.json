@@ -1,0 +1,28 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mikecooler",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 5
+    },
+    {
+      "ingredient": "geontm:coil_tungsten",
+      "count": 5
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:mike_cooling_unit"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 59648
+}

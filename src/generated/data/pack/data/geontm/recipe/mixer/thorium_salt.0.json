@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.thorium_salt.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/thorium"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:chlorine",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:thorium_salt",
+      "amount": 1000
+    }
+  ],
+  "duration": 30,
+  "order": 31
+}

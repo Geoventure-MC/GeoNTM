@@ -1,0 +1,59 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.chip_bismoid.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:circuit_chip_bismoid"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_silicon",
+      "count": 4,
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:plate_polymer",
+      "count": 8,
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:nugget_bismuth",
+      "count": 2,
+      "chance": 0.5
+    },
+    {
+      "id": "geontm:wire_fine_gold",
+      "count": 4,
+      "chance": 0.5
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 250
+    }
+  ],
+  "duration": 200,
+  "power": 1000,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:circuit_chip_bismoid"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 5,
+  "requires": [
+    "enable_528",
+    "expensive_mode"
+  ],
+  "geocore:requires": [
+    "enable_528",
+    "expensive_mode"
+  ]
+}

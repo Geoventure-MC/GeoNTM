@@ -1,0 +1,30 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.hde",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_cast/any_bismoid_bronze",
+      "count": 2
+    },
+    {
+      "material": "combine_steel",
+      "shape": "weldedplate"
+    },
+    {
+      "ingredient": "geontm:ingot_cft"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:stellar_flux",
+      "amount": 4000
+    }
+  ],
+  "output_items": [
+    "geontm:part_generic_hde"
+  ],
+  "duration": 600,
+  "power": 25000000,
+  "order": 2,
+  "ignition_temp": 10000000
+}

@@ -1,0 +1,6 @@
+{
+  "type": "geontm:solidification",
+  "input": "geontm:woodoil",
+  "amount": 1000,
+  "output": "geontm:oil_tar_wood"
+}

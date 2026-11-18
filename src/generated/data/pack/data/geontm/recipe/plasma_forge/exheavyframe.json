@@ -1,0 +1,34 @@
+{
+  "type": "geontm:plasma_forge",
+  "name": "plsm.exheavyframe",
+  "input_items": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 3
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    },
+    {
+      "material": "copper",
+      "shape": "weldedplate",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/desh"
+    },
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 32
+    }
+  ],
+  "output_items": [
+    "geontm:item_expensive_heavy_frame"
+  ],
+  "duration": 120,
+  "power": 100000,
+  "order": 4,
+  "ignition_temp": 1000000
+}

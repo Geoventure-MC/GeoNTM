@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** Loads the upstream Blender-exported LAG bus animations at resource-load time. */
 public final class LagAnimationLoader {
@@ -31,7 +31,7 @@ public final class LagAnimationLoader {
     public static Map<String, BusAnimation> load(String name) {
         Map<String, BusAnimation> cached = CACHE.get(name);
         if (cached != null) return cached;
-        Identifier file = Ids.of("geontm", "models/weapons/animations/" + name + ".json");
+        ResourceLocation file = Ids.of("geontm", "models/weapons/animations/" + name + ".json");
         try (BufferedReader reader = Minecraft.getInstance().getResourceManager()
                 .getResourceOrThrow(file).openAsReader()) {
             JsonObject root = JsonParser.parseReader(reader).getAsJsonObject();

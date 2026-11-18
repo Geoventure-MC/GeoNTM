@@ -460,7 +460,7 @@ public class ItemToolAbility extends CompatToolItem implements IDepthRockTool, H
      */
     @Override
     protected InteractionResult compatUse(Level level, Player player, InteractionHand hand) {
-        if (CYCLE_REBOUND.contains(player.getUUID())) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (CYCLE_REBOUND.contains(player.getUUID())) return InteractionResult.PASS;
         return cycle(level, player, player.getItemInHand(hand));
     }
 
@@ -468,7 +468,7 @@ public class ItemToolAbility extends CompatToolItem implements IDepthRockTool, H
     public InteractionResult useOn(UseOnContext context) {
         Player player = context.getPlayer();
         if (player == null || CYCLE_REBOUND.contains(player.getUUID())) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         return cycle(context.getLevel(), player, context.getItemInHand());
     }
@@ -485,10 +485,10 @@ public class ItemToolAbility extends CompatToolItem implements IDepthRockTool, H
     }
 
     protected InteractionResult cycle(Level world, Player player, ItemStack stack) {
-        if (!canOperate(stack)) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (!canOperate(stack)) return InteractionResult.PASS;
 
         Configuration config = getConfiguration(stack);
-        if (config.presets.size() < 2) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (config.presets.size() < 2) return InteractionResult.PASS;
         if (!(player instanceof ServerPlayer playerMP)) return InteractionResult.SUCCESS;
 
         if (player.isShiftKeyDown()) {

@@ -1,0 +1,23 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.enderjuice.0",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/diamond"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:xpjuice",
+      "amount": 500
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:enderjuice",
+      "amount": 100
+    }
+  ],
+  "duration": 100,
+  "order": 5
+}

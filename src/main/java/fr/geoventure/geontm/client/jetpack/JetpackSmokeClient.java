@@ -12,7 +12,7 @@ import fr.geoventure.geocore.platform.Platform;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
@@ -132,7 +132,7 @@ public final class JetpackSmokeClient {
         }
     }
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         if (System.getenv("GEONTM_JETPACK_SCREENSHOTS") == null) return;
         String[] items = {"t51_helmet", "t51_plate", "bj_helmet", "bj_plate_jetpack", "dns_helmet",
                 "dns_plate", "dns_legs", "dns_boots", "jetpack_glider", "jetpack_fly"};
@@ -140,7 +140,7 @@ public final class JetpackSmokeClient {
             int x = 8 + i * 20;
             GuiDraw.fill(graphics, x - 1, 7, x + 17, 25, 0xFF303030);
             GuiDraw.item(graphics, new ItemStack(
-                    BuiltInRegistries.ITEM.getValue(
+                    BuiltInRegistries.ITEM.get(
                             Ids.of("geontm", items[i]))), x, 8);
         }
     }

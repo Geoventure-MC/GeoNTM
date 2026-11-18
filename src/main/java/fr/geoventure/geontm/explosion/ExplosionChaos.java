@@ -24,7 +24,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.animal.sheep.Sheep;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.phys.AABB;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
@@ -217,8 +217,8 @@ public final class ExplosionChaos {
             entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 5 * 20, 0));
             entity.addEffect(new MobEffectInstance(MobEffects.POISON, 20 * 20, 2));
             entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 20, 1));
-            entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 30 * 20, 1));
-            entity.addEffect(new MobEffectInstance(MobEffects.MINING_FATIGUE, 30 * 20, 2));
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30 * 20, 1));
+            entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 30 * 20, 2));
         }
     }
 

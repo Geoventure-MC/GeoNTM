@@ -9,7 +9,7 @@ import com.mojang.math.Axis;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -32,22 +32,22 @@ import static fr.geoventure.geontm.client.render.item.CustomItemRenderers.*;
  */
 public final class ItemRenderGrenade implements CustomItemRenderer {
 
-    private static final Identifier FRAG = tex("textures/models/grenades/frag.png");
-    private static final Identifier FRAG_BODY = tex("textures/models/grenades/frag_body.png");
-    private static final Identifier FRAG_LABEL = tex("textures/models/grenades/frag_label.png");
-    private static final Identifier FRAG_FUZE = tex("textures/models/grenades/frag_fuze.png");
-    private static final Identifier STICK = tex("textures/models/grenades/stick.png");
-    private static final Identifier STICK_BODY = tex("textures/models/grenades/stick_body.png");
-    private static final Identifier STICK_LABEL = tex("textures/models/grenades/stick_label.png");
-    private static final Identifier STICK_FUZE = tex("textures/models/grenades/stick_fuze.png");
-    private static final Identifier TECH = tex("textures/models/grenades/tech.png");
-    private static final Identifier TECH_BODY = tex("textures/models/grenades/tech_body.png");
-    private static final Identifier TECH_LIGHTS = tex("textures/models/grenades/tech_lights.png");
-    private static final Identifier TECH_FUZE = tex("textures/models/grenades/tech_fuze.png");
-    private static final Identifier NUKA = tex("textures/models/grenades/nuka.png");
-    private static final Identifier NUKA_BODY = tex("textures/models/grenades/nuka_body.png");
-    private static final Identifier NUKA_LABEL = tex("textures/models/grenades/nuka_label.png");
-    private static final Identifier NUKA_FUZE = tex("textures/models/grenades/nuka_fuze.png");
+    private static final ResourceLocation FRAG = tex("textures/models/grenades/frag.png");
+    private static final ResourceLocation FRAG_BODY = tex("textures/models/grenades/frag_body.png");
+    private static final ResourceLocation FRAG_LABEL = tex("textures/models/grenades/frag_label.png");
+    private static final ResourceLocation FRAG_FUZE = tex("textures/models/grenades/frag_fuze.png");
+    private static final ResourceLocation STICK = tex("textures/models/grenades/stick.png");
+    private static final ResourceLocation STICK_BODY = tex("textures/models/grenades/stick_body.png");
+    private static final ResourceLocation STICK_LABEL = tex("textures/models/grenades/stick_label.png");
+    private static final ResourceLocation STICK_FUZE = tex("textures/models/grenades/stick_fuze.png");
+    private static final ResourceLocation TECH = tex("textures/models/grenades/tech.png");
+    private static final ResourceLocation TECH_BODY = tex("textures/models/grenades/tech_body.png");
+    private static final ResourceLocation TECH_LIGHTS = tex("textures/models/grenades/tech_lights.png");
+    private static final ResourceLocation TECH_FUZE = tex("textures/models/grenades/tech_fuze.png");
+    private static final ResourceLocation NUKA = tex("textures/models/grenades/nuka.png");
+    private static final ResourceLocation NUKA_BODY = tex("textures/models/grenades/nuka_body.png");
+    private static final ResourceLocation NUKA_LABEL = tex("textures/models/grenades/nuka_label.png");
+    private static final ResourceLocation NUKA_FUZE = tex("textures/models/grenades/nuka_fuze.png");
 
     /** 1.7 {@code ResourceManager.grenades}; loaded on the first draw, on the render thread. */
     private static @Nullable WavefrontObj grenades;
@@ -229,8 +229,8 @@ public final class ItemRenderGrenade implements CustomItemRenderer {
     }
 
     /** 1.7 {@code renderBodyStandard}: skin, then blended body, label and fuze colours, in that order. */
-    private static void renderBodyStandard(GrenadeData data, String part, Identifier base, Identifier body,
-                                           Identifier label, Identifier fuze, PoseStack pose, SubmitSink sink,
+    private static void renderBodyStandard(GrenadeData data, String part, ResourceLocation base, ResourceLocation body,
+                                           ResourceLocation label, ResourceLocation fuze, PoseStack pose, SubmitSink sink,
                                            int light) {
         part(pose, sink, model(), culled(base), part, light, NO_OVERLAY);
         tinted(pose, sink.order(1), body, part, light, data.filling().bodyColor());
@@ -252,7 +252,7 @@ public final class ItemRenderGrenade implements CustomItemRenderer {
     }
 
     /** A {@code glColor3f(rgb)} pass with {@code SRC_ALPHA / ONE_MINUS_SRC_ALPHA} blending, lit. */
-    private static void tinted(PoseStack pose, SubmitSink sink, Identifier texture, String part, int light, int rgb) {
+    private static void tinted(PoseStack pose, SubmitSink sink, ResourceLocation texture, String part, int light, int rgb) {
         WavefrontObj model = model();
         int color = 0xFF000000 | rgb;
         sink.submitCustomGeometry(pose, CompatRenderTypes.entityTranslucent(texture),

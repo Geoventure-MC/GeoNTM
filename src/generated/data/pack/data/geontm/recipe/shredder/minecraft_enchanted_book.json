@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:enchanted_book",
+  "output": "geontm:powder_magic"
+}

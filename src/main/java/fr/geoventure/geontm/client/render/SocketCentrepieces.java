@@ -6,7 +6,7 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.Nullable;
@@ -28,7 +28,7 @@ public final class SocketCentrepieces {
         return PIECES.get(stack.getItem());
     }
 
-    public record Centrepiece(Supplier<WavefrontObj> model, String part, Identifier texture,
+    public record Centrepiece(Supplier<WavefrontObj> model, String part, ResourceLocation texture,
                               float scale, float degreesPerTick) {
     }
 }

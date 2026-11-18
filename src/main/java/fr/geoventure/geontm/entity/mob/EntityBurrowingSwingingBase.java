@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -110,9 +110,9 @@ public abstract class EntityBurrowingSwingingBase extends EntityBurrowingBase {
 
         // port: 1.7's floor guards sat under y = 0 and 3, the bottom of its world
         Vec3 motion = getDeltaMovement();
-        if (getY() < level.getMinY() - 10.0D) {
+        if (getY() < level.getMinBuildHeight() - 10.0D) {
             setDeltaMovement(motion.x, 1D, motion.z);
-        } else if (getY() < level.getMinY() + 3.0D) {
+        } else if (getY() < level.getMinBuildHeight() + 3.0D) {
             setDeltaMovement(motion.x, 0.3D, motion.z);
         }
 
@@ -254,7 +254,7 @@ public abstract class EntityBurrowingSwingingBase extends EntityBurrowingBase {
 
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                                                  EntitySpawnReason reason, @Nullable SpawnGroupData data) {
+                                                  MobSpawnType reason, @Nullable SpawnGroupData data) {
         this.spawnPoint = blockPosition();
         return super.finalizeSpawn(level, difficulty, reason, data);
     }

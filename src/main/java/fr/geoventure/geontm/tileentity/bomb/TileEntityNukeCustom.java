@@ -12,7 +12,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -196,7 +196,7 @@ public class TileEntityNukeCustom extends TileEntityNukeBomb {
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeFloat(tnt);
         buffer.writeFloat(nuke);
@@ -208,7 +208,7 @@ public class TileEntityNukeCustom extends TileEntityNukeBomb {
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         tnt = buffer.readFloat();
         nuke = buffer.readFloat();

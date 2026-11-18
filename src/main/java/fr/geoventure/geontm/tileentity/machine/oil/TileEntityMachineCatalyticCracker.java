@@ -10,7 +10,7 @@ import fr.geoventure.geontm.tileentity.ModBlockEntities;
 import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import fr.geoventure.geontm.util.TickPhase;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import fr.geoventure.geocore.data.DataIn;
@@ -116,13 +116,13 @@ public class TileEntityMachineCatalyticCracker extends TileEntityLoadedBase impl
     @Override public FluidTankNTM[] getAllTanks() { return tanks; }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (int i = 0; i < 5; i++) tanks[i].serialize(buf);
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (int i = 0; i < 5; i++) tanks[i].deserialize(buf);
     }

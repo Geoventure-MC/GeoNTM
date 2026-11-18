@@ -1,0 +1,41 @@
+{
+  "type": "liquid",
+  "color": "#2A1C11",
+  "temperature": 20,
+  "hazard": {
+    "poison": 2,
+    "flammability": 1,
+    "reactivity": 0,
+    "symbol": "none"
+  },
+  "flags": [
+    "viscous"
+  ],
+  "traits": {
+    "flammable": {
+      "energy": 62500
+    },
+    "heatable": {
+      "steps": [
+        {
+          "amount_req": 1,
+          "heat_req": 10,
+          "produces": "geontm:hotcrackoil_ds",
+          "amount_produced": 1
+        }
+      ],
+      "efficiency": {
+        "BOILER": 1.0,
+        "HEATEXCHANGER": 1.0
+      }
+    },
+    "polluting": {
+      "release": {
+        "POISON": 5.0E-5
+      },
+      "burn": {
+        "SOOT": 0.004
+      }
+    }
+  }
+}

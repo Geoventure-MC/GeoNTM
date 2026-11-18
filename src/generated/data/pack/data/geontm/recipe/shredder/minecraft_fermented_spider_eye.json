@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:fermented_spider_eye",
+  "output": {
+    "id": "geontm:powder_poison",
+    "count": 3
+  }
+}

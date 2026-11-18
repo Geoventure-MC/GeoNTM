@@ -1,0 +1,15 @@
+{
+  "type": "geontm:crystallizer",
+  "input": {
+    "ingredient": "geontm:powder_ash_fullerene",
+    "count": 4
+  },
+  "acid": {
+    "type": "geontm:xylene",
+    "amount": 1000
+  },
+  "output": "geontm:ingot_cft",
+  "duration": 600,
+  "productivity": 0.1,
+  "order": 58
+}

@@ -1,0 +1,11 @@
+{
+  "type": "geontm:compressor",
+  "input": "geontm:petroleum",
+  "amount": 2000,
+  "output": {
+    "type": "geontm:petroleum",
+    "amount": 2000,
+    "pressure": 1
+  },
+  "duration": 20
+}

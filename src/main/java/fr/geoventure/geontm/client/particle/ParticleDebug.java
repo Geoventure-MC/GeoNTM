@@ -5,13 +5,13 @@ import fr.geoventure.geocore.render.CompatParticle;
 import fr.geoventure.geocore.render.ParticleLayer;
 import fr.geoventure.geocore.render.Particles;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** 1.7 {@code ParticleDebug}: the {@code DEBUG_PORT_VIEW} marker, a fullbright 0.1-block quad drifting along a port. */
 public final class ParticleDebug extends CompatParticle {
 
-    private static final Identifier POWER = Ids.of("geontm", "debug_power");
-    private static final Identifier FLUID = Ids.of("geontm", "debug_fluid");
+    private static final ResourceLocation POWER = Ids.of("geontm", "debug_power");
+    private static final ResourceLocation FLUID = Ids.of("geontm", "debug_fluid");
 
     /** A power marker; a fluid one when {@code color} is not negative. */
     public ParticleDebug(ClientLevel level, double x, double y, double z, double mX, double mY, double mZ, int color) {

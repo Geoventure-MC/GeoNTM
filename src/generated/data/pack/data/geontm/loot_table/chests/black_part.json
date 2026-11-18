@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:item_secret_selenium_steel",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:item_secret_controller",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:item_secret_canister",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "geontm:blueprint_folder_secret",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

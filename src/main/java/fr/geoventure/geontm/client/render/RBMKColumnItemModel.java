@@ -10,7 +10,7 @@ import fr.geoventure.geocore.render.gem.Quads;
 import fr.geoventure.geocore.render.gem.Surface;
 import java.util.Set;
 import java.util.function.Consumer;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.joml.Vector3fc;
 
 /** The four-section, non-piped fuel-channel inventory model from {@code RBMKColumnModel.Kind.FUEL}. */
@@ -26,7 +26,7 @@ public final class RBMKColumnItemModel {
     private final float scale, yaw, lift;
     private final ItemGem body;
 
-    public RBMKColumnItemModel(Identifier side, Identifier top, Identifier inner, Identifier fuel, float scale, float yaw, float lift) {
+    public RBMKColumnItemModel(ResourceLocation side, ResourceLocation top, ResourceLocation inner, ResourceLocation fuel, float scale, float yaw, float lift) {
         this.scale = scale;
         this.yaw = yaw;
         this.lift = lift;
@@ -38,14 +38,14 @@ public final class RBMKColumnItemModel {
      * how every other model JSON spells textures, but these ids are bound directly against the resource
      * pack, which needs the full {@code textures/….png} path. Accept both spellings.
      */
-    public static Identifier normalize(Identifier id) {
+    public static ResourceLocation normalize(ResourceLocation id) {
         if (id == null) return null;
         String path = id.getPath();
         return path.startsWith("textures/") && path.endsWith(".png") ? id
                 : Ids.of(id.getNamespace(), "textures/" + path + ".png");
     }
 
-    static Surface skin(Identifier texture) {
+    static Surface skin(ResourceLocation texture) {
         return Surface.cutout(normalize(texture).toString());
     }
 

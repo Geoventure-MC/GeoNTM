@@ -11,7 +11,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.TreeSet;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,7 +59,7 @@ public final class WavefrontObj implements Geometry.Groups {
     private final float[][] groupCorners;
     private final int[][] groupSizes;
     private final Map<String, int[]> groupsByName;
-    private Identifier source = Ids.of("minecraft", "unknown");
+    private ResourceLocation source = Ids.of("minecraft", "unknown");
     /** Distinguishes a {@link #stripFrame} copy's mesh names from the source's. */
     private String variant = "";
 
@@ -237,12 +237,12 @@ public final class WavefrontObj implements Geometry.Groups {
     }
 
     /** Loads and parses an OBJ from the client resource pack at {@code location}. */
-    public static WavefrontObj load(Identifier location, boolean vertexNormals) {
+    public static WavefrontObj load(ResourceLocation location, boolean vertexNormals) {
         var model = load(location);
         return vertexNormals ? model : model.withFaceNormals();
     }
 
-    public static WavefrontObj load(Identifier location) {
+    public static WavefrontObj load(ResourceLocation location) {
         List<float[]> pos = new ArrayList<>();
         List<float[]> uv = new ArrayList<>();
         List<float[]> norm = new ArrayList<>();
@@ -325,8 +325,8 @@ public final class WavefrontObj implements Geometry.Groups {
      * Parses a Wavefront .mtl next to the OBJ and maps material name to texture id (each {@code map_Kd}
      * like {@code geontm:blocks/foo} resolved to {@code geontm:textures/blocks/foo.png}).
      */
-    public static Map<String, Identifier> loadMtl(Identifier mtlLocation) {
-        Map<String, Identifier> map = new LinkedHashMap<>();
+    public static Map<String, ResourceLocation> loadMtl(ResourceLocation mtlLocation) {
+        Map<String, ResourceLocation> map = new LinkedHashMap<>();
         try (InputStream in = Minecraft.getInstance().getResourceManager().getResourceOrThrow(mtlLocation).open();
              BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))) {
             String line;
@@ -338,7 +338,7 @@ public final class WavefrontObj implements Geometry.Groups {
                 if (t[0].equals("newmtl") && t.length > 1) {
                     current = t[1];
                 } else if (t[0].equals("map_Kd") && t.length > 1 && current != null) {
-                    Identifier tex = Ids.parse(t[1]);
+                    ResourceLocation tex = Ids.parse(t[1]);
                     map.put(current, Ids.of(tex.getNamespace(), "textures/" + tex.getPath() + ".png"));
                 }
             }

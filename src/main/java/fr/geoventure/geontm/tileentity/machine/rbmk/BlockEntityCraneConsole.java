@@ -15,7 +15,7 @@ import fr.geoventure.geocore.data.DataIn;
 import fr.geoventure.geocore.data.DataOut;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -305,7 +305,7 @@ public class BlockEntityCraneConsole extends TileEntityMachineBase implements IR
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         buffer.writeBoolean(setUpCrane);
         if (!setUpCrane) return;
@@ -327,7 +327,7 @@ public class BlockEntityCraneConsole extends TileEntityMachineBase implements IR
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         setUpCrane = buffer.readBoolean();
         if (!setUpCrane) return;

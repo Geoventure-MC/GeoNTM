@@ -1,0 +1,34 @@
+{
+  "type": "geontm:fusion",
+  "name": "fus.dt",
+  "input_fluids": [
+    {
+      "type": "geontm:deuterium",
+      "amount": 10
+    },
+    {
+      "type": "geontm:tritium",
+      "amount": 10
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 1000
+    }
+  ],
+  "duration": 100,
+  "power": 25000,
+  "icon": {
+    "id": "geontm:gas_full",
+    "item_data": {
+      "fluid": "geontm:helium4",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 2,
+  "ignition_temp": 750000,
+  "output_temp": 3750000,
+  "neutron_flux": 100.0
+}

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:press",
+  "stamp": "wire",
+  "input": {
+    "ingredient": "#c:ingots/tungsten"
+  },
+  "output": {
+    "id": "geontm:wire_fine_tungsten",
+    "count": 8
+  },
+  "order": 32
+}

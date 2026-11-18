@@ -1,0 +1,82 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:coil_copper",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": {
+                  "type": "minecraft:constant",
+                  "value": 0
+                },
+                "max": {
+                  "type": "minecraft:constant",
+                  "value": 2
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": {
+                  "type": "minecraft:constant",
+                  "value": 0
+                },
+                "max": {
+                  "type": "geocore:looting",
+                  "player_only": true
+                }
+              },
+              "add": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "geontm:coil_magnetized_tungsten"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "condition": "minecraft:value_check",
+          "value": {
+            "type": "minecraft:uniform",
+            "min": {
+              "type": "minecraft:constant",
+              "value": 0
+            },
+            "max": {
+              "type": "minecraft:constant",
+              "value": 199
+            }
+          },
+          "range": {
+            "max": {
+              "type": "geocore:looting",
+              "add": 4,
+              "player_only": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

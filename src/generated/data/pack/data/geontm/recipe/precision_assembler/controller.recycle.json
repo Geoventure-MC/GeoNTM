@@ -1,0 +1,67 @@
+{
+  "type": "geontm:precision_assembler",
+  "name": "precass.controller.recycle",
+  "input_items": [
+    {
+      "ingredient": "geontm:broken_item",
+      "exact": true,
+      "item_data": {
+        "broken_item": "geontm:circuit_controller"
+      }
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:circuit_chip",
+      "count": 32,
+      "chance": 0.9
+    },
+    {
+      "id": "geontm:circuit_capacitor",
+      "count": 32,
+      "chance": 0.9
+    },
+    {
+      "id": "geontm:circuit_capacitor_tantalium",
+      "count": 16,
+      "chance": 0.9
+    },
+    {
+      "id": "geontm:circuit_controller_chassis",
+      "chance": 0.9
+    },
+    {
+      "id": "geontm:upgrade_speed_1",
+      "chance": 0.9
+    },
+    {
+      "id": "geontm:wire_fine_lead",
+      "count": 16,
+      "chance": 0.9
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:perfluoromethyl",
+      "amount": 900
+    }
+  ],
+  "duration": 400,
+  "power": 15000,
+  "icon": {
+    "id": "geontm:broken_item",
+    "item_data": {
+      "broken_item": "geontm:circuit_controller"
+    }
+  },
+  "name_wrapper": "precass.recycle",
+  "order": 11,
+  "requires": [
+    "enable_528",
+    "!expensive_mode"
+  ],
+  "geocore:requires": [
+    "enable_528",
+    "!expensive_mode"
+  ]
+}

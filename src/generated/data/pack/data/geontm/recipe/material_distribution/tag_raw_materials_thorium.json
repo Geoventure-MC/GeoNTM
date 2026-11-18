@@ -1,0 +1,18 @@
+{
+  "type": "geontm:material_distribution",
+  "input": "#c:raw_materials/thorium",
+  "materials": [
+    {
+      "material": "thorium",
+      "amount": 96
+    },
+    {
+      "material": "uranium",
+      "amount": 16
+    },
+    {
+      "material": "stone",
+      "amount": 108
+    }
+  ]
+}

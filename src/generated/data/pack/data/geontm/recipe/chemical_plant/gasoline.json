@@ -1,0 +1,27 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.gasoline",
+  "input_fluids": [
+    {
+      "type": "geontm:naphtha",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:gasoline",
+      "amount": 800
+    }
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:canister_full",
+    "item_data": {
+      "fluid": "geontm:gasoline",
+      "fluid_amount": 1000
+    }
+  },
+  "custom_localization": true,
+  "order": 14
+}

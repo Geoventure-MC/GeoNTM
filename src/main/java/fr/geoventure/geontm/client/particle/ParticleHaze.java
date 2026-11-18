@@ -7,7 +7,7 @@ import fr.geoventure.geocore.render.Particles;
 import java.util.Random;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.Heightmap;
 
 /**
@@ -29,7 +29,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 public class ParticleHaze extends CompatParticle {
 
     /** {@code assets/geontm/textures/particle/haze.png} on the particles atlas (no {@code particle/} prefix). */
-    public static final Identifier HAZE = Ids.of("geontm", "haze");
+    public static final ResourceLocation HAZE = Ids.of("geontm", "haze");
 
     private static final int QUADS = 25;
     private static final float SCALE = 10F;

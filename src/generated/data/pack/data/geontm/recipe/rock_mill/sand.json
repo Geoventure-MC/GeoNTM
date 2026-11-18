@@ -1,0 +1,45 @@
+{
+  "type": "geontm:rock_mill",
+  "name": "rock.sand",
+  "input_items": [
+    {
+      "ingredient": "#c:sands"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "output_items": [
+    [
+      {
+        "data": "geontm:dust",
+        "weight": 90
+      },
+      {
+        "data": "geontm:powder_calcium",
+        "weight": 5
+      },
+      {
+        "data": "geontm:fluorite",
+        "weight": 5
+      }
+    ]
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:colloid",
+      "amount": 250
+    }
+  ],
+  "duration": 100,
+  "power": 25,
+  "icon": {
+    "id": "minecraft:sand"
+  },
+  "name_wrapper": "rock.crushing",
+  "auto_switch_group": "autoswitch.crushing",
+  "order": 2
+}

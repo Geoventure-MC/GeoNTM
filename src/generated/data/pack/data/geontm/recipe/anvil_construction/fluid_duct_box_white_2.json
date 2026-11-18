@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/aluminium"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:fluid_duct_box_white_2"
+    }
+  ],
+  "tier": 2,
+  "overlay": "construction",
+  "order": 120
+}

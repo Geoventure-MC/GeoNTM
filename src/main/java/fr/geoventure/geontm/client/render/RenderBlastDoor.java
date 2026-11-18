@@ -12,10 +12,10 @@ import fr.geoventure.geocore.render.CompatBER;
 import fr.geoventure.geocore.render.CompatRenderState;
 import fr.geoventure.geocore.render.CompatRenderTypes;
 import fr.geoventure.geocore.render.SubmitSink;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -29,8 +29,8 @@ public class RenderBlastDoor implements CompatBER<TileEntityBlastDoor, RenderBla
         public double timer;
     }
 
-    private static Identifier obj(String name) { return Ids.of(Constants.MOD_ID, "models/doors/" + name + ".obj"); }
-    private static Identifier tex(String name) { return Ids.of(Constants.MOD_ID, "textures/models/doors/" + name + ".png"); }
+    private static ResourceLocation obj(String name) { return Ids.of(Constants.MOD_ID, "models/doors/" + name + ".obj"); }
+    private static ResourceLocation tex(String name) { return Ids.of(Constants.MOD_ID, "textures/models/doors/" + name + ".png"); }
 
     private WavefrontObj base, tooth, slider, block;
     private final RenderType baseType = CompatRenderTypes.entityCutoutNoCull(tex("blast_door_base"));

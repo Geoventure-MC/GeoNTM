@@ -1,0 +1,12 @@
+{
+  "type": "geontm:combination",
+  "input": {
+    "ingredient": "#c:gems/sodalite"
+  },
+  "item_output": "geontm:powder_sodium",
+  "fluid_output": {
+    "type": "geontm:chlorine",
+    "amount": 100
+  },
+  "order": 10
+}

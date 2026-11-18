@@ -1,0 +1,30 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.tnt",
+  "input_items": [
+    {
+      "ingredient": "#c:dusts/niter"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:aromatics",
+      "amount": 500
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:ball_tnt",
+      "count": 4
+    }
+  ],
+  "duration": 100,
+  "power": 1000,
+  "order": 75,
+  "requires": [
+    "!enable_528_pressurized"
+  ],
+  "geocore:requires": [
+    "!enable_528_pressurized"
+  ]
+}

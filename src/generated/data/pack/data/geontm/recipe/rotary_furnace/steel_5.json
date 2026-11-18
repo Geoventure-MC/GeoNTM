@@ -1,0 +1,22 @@
+{
+  "type": "geontm:rotary_furnace",
+  "inputs": [
+    {
+      "ingredient": "#c:fragments/iron",
+      "count": 9
+    },
+    {
+      "ingredient": "#c:cokes"
+    },
+    {
+      "ingredient": "geontm:powder_flux"
+    }
+  ],
+  "output": {
+    "material": "steel",
+    "amount": 288
+  },
+  "duration": 400,
+  "steam": 25,
+  "order": 4
+}

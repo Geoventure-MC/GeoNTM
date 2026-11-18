@@ -1,0 +1,26 @@
+{
+  "type": "geontm:ammo_press",
+  "output": {
+    "id": "geontm:ammo_standard_rocket_he",
+    "count": 2
+  },
+  "grid": [
+    "",
+    {
+      "ingredient": "geontm:ball_dynamite"
+    },
+    "",
+    "",
+    {
+      "ingredient": "geontm:casing_large"
+    },
+    "",
+    "",
+    {
+      "ingredient": "#c:dusts/any_smokeless",
+      "count": 3
+    },
+    ""
+  ],
+  "order": 61
+}

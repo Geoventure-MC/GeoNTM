@@ -1,0 +1,21 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.manigniter",
+  "input_items": [
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 3
+    },
+    {
+      "material": "gold",
+      "shape": "wire",
+      "count": 24
+    }
+  ],
+  "output_items": [
+    "geontm:man_igniter"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 58624
+}

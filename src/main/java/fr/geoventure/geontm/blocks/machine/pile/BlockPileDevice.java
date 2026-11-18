@@ -157,12 +157,12 @@ public class BlockPileDevice extends CompatBlock implements TickingBlock,
 
     /** The loader takes a rod straight from the hand, or fires a stroke when it is empty-handed. */
     private InteractionResult interact(BlockState state, Level level, BlockPos pos, Player player, ItemStack held) {
-        if (player.isShiftKeyDown()) return InteractionResult.TRY_WITH_EMPTY_HAND;
-        if (deviceOf(state) != BLOCK_META_LOADER) return InteractionResult.TRY_WITH_EMPTY_HAND;
+        if (player.isShiftKeyDown()) return InteractionResult.PASS;
+        if (deviceOf(state) != BLOCK_META_LOADER) return InteractionResult.PASS;
         if (level.isClientSide()) return InteractionResult.SUCCESS;
 
         if (!(level.getBlockEntity(pos) instanceof TileEntityPileLoader loader)) {
-            return InteractionResult.TRY_WITH_EMPTY_HAND;
+            return InteractionResult.PASS;
         }
         if (loader.travel > 0D || loader.loading) return InteractionResult.SUCCESS;
 

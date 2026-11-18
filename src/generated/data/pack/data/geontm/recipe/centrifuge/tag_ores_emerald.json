@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:ores/emerald"
+  },
+  "outputs": [
+    "geontm:powder_emerald",
+    "geontm:powder_emerald",
+    "geontm:powder_emerald",
+    "minecraft:gravel"
+  ],
+  "order": 10
+}

@@ -10,7 +10,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -27,8 +27,8 @@ public class BlockEntityRBMKNumitron extends TileEntityLoadedBase implements ICo
 
     @Override public void tickServer() { for (DisplayUnit display : displays) display.update(); networkPackNT(); }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) { super.serialize(buf); for (DisplayUnit d : displays) d.serialize(buf); }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) { super.deserialize(buf); for (DisplayUnit d : displays) d.deserialize(buf); }
+    @Override public void serialize(FriendlyByteBuf buf) { super.serialize(buf); for (DisplayUnit d : displays) d.serialize(buf); }
+    @Override public void deserialize(FriendlyByteBuf buf) { super.deserialize(buf); for (DisplayUnit d : displays) d.deserialize(buf); }
     @Override protected void saveData(DataOut output) { super.saveData(output); for (int i = 0; i < DISPLAYS; i++) displays[i].save(output, i); }
     @Override protected void loadData(DataIn input) { super.loadData(input); for (int i = 0; i < DISPLAYS; i++) displays[i].load(input, i); }
 
@@ -86,11 +86,11 @@ public class BlockEntityRBMKNumitron extends TileEntityLoadedBase implements ICo
             }
         }
 
-        void serialize(RegistryFriendlyByteBuf buf) {
+        void serialize(FriendlyByteBuf buf) {
             buf.writeBoolean(shorten_number); buf.writeLong(active_digits); buf.writeBoolean(leading_zeroes);
             buf.writeBoolean(active); buf.writeBoolean(polling); buf.writeUtf(label); buf.writeUtf(rtty); buf.writeLong(value);
         }
-        void deserialize(RegistryFriendlyByteBuf buf) {
+        void deserialize(FriendlyByteBuf buf) {
             shorten_number = buf.readBoolean(); active_digits = buf.readLong(); leading_zeroes = buf.readBoolean();
             active = buf.readBoolean(); polling = buf.readBoolean(); label = buf.readUtf(); rtty = buf.readUtf(); value = buf.readLong();
         }

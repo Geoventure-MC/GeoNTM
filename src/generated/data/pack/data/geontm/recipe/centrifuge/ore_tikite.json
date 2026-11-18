@@ -1,0 +1,19 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "geontm:ore_tikite"
+  },
+  "outputs": [
+    "geontm:powder_plutonium",
+    {
+      "id": "geontm:powder_cobalt",
+      "count": 2
+    },
+    {
+      "id": "geontm:powder_niobium",
+      "count": 2
+    },
+    "minecraft:end_stone"
+  ],
+  "order": 46
+}

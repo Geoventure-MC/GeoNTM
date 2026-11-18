@@ -1,0 +1,37 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "#c:raw_materials/uranium"
+  },
+  "outputs": [
+    {
+      "item": {
+        "id": "geontm:powder_uranium",
+        "count": 2
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": {
+        "id": "geontm:nugget_technetium",
+        "count": 2
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": {
+        "id": "geontm:nugget_ra226",
+        "count": 2
+      },
+      "chance": 0.6666667
+    },
+    {
+      "item": "minecraft:gravel",
+      "chance": 0.6666667
+    }
+  ],
+  "requires": [
+    "lbsm_simple_centrifuge"
+  ],
+  "order": 38
+}

@@ -8,7 +8,7 @@ import fr.geoventure.geocore.data.DataOut;
 import fr.geoventure.geocore.data.Tags;
 import fr.geoventure.geocore.world.ItemStacks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
@@ -136,7 +136,7 @@ public class TileEntityRadioTelex extends TileEntityLoadedBase implements IContr
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buffer) {
+    public void serialize(FriendlyByteBuf buffer) {
         super.serialize(buffer);
         for (int i = 0; i < LINE_COUNT; i++) {
             buffer.writeUtf(value(txBuffer[i]));
@@ -148,7 +148,7 @@ public class TileEntityRadioTelex extends TileEntityLoadedBase implements IContr
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buffer) {
+    public void deserialize(FriendlyByteBuf buffer) {
         super.deserialize(buffer);
         for (int i = 0; i < LINE_COUNT; i++) {
             txBuffer[i] = buffer.readUtf(LINE_WIDTH);

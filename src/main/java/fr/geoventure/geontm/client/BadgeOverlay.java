@@ -7,17 +7,17 @@ import fr.geoventure.geontm.config.MobConfig;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.resources.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
 
 /** 1.7's mode badges ({@code RenderScreenOverlay.renderBadges}): 528, expensive, rampant and all three (328), top left. */
 public final class BadgeOverlay {
 
     private BadgeOverlay() {}
 
-    private static final Identifier MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
+    private static final ResourceLocation MISC = Ids.of(Constants.MOD_ID, "textures/misc/overlay_misc.png");
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (!ClientConfig.BADGES_HUD || mc.player == null || mc.options.hideGui) return;
 
@@ -33,7 +33,7 @@ public final class BadgeOverlay {
         if (true328) badge(graphics, offsetX, 242);
     }
 
-    private static int badge(GuiGraphicsExtractor graphics, int x, int v) {
+    private static int badge(GuiGraphics graphics, int x, int v) {
         GuiDraw.blit(graphics, MISC, x, 2, 0, v, 24, 8, 256, 256);
         return x + 26;
     }

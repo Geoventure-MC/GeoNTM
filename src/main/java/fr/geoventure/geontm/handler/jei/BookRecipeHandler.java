@@ -42,6 +42,6 @@ public class BookRecipeHandler extends GeoNtmRecipeCategory<MagicRecipes.MagicRe
 
     private static List<ItemStack> stacks(MagicRecipes.Input input) {
         if (input.isTag()) return CrucibleSmeltingHandler.tagged(TagKey.create(Registries.ITEM, Ids.parse(input.id())));
-        return List.of(new ItemStack(BuiltInRegistries.ITEM.getValue(Ids.parse(input.id()))));
+        return List.of(new ItemStack(BuiltInRegistries.ITEM.get(Ids.parse(input.id()))));
     }
 }

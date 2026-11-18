@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render;
 
 import fr.geoventure.geocore.gui.GuiDraw;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import org.jspecify.annotations.Nullable;
 
@@ -42,7 +42,7 @@ public final class RenderInfoSystem {
         messages.values().removeIf(entry -> entry.start + entry.millis < now);
     }
 
-    public static void render(GuiGraphicsExtractor graphics) {
+    public static void render(GuiGraphics graphics) {
         if (messages.isEmpty()) return;
 
         Minecraft mc = Minecraft.getInstance();

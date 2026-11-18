@@ -1,0 +1,26 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpf1520solid",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_15"
+    },
+    {
+      "ingredient": "geontm:seg_20"
+    },
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 48
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:mp_fuselage_15_20_solid"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 79616
+}

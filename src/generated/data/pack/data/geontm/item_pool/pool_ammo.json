@@ -1,0 +1,64 @@
+{
+  "entries": [
+    {
+      "item": "geontm:ammo_standard_m357_sp",
+      "min": 12,
+      "max": 12,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_m357_fmj",
+      "min": 6,
+      "max": 6,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_m44_sp",
+      "min": 12,
+      "max": 12,
+      "weight": 5
+    },
+    {
+      "item": "geontm:ammo_standard_m44_fmj",
+      "min": 6,
+      "max": 6,
+      "weight": 5
+    },
+    {
+      "item": "geontm:ammo_standard_p9_sp",
+      "min": 12,
+      "max": 12,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_p9_fmj",
+      "min": 6,
+      "max": 6,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_r762_sp",
+      "min": 6,
+      "max": 6,
+      "weight": 5
+    },
+    {
+      "item": "geontm:ammo_standard_g12_bp",
+      "min": 6,
+      "max": 6,
+      "weight": 10
+    },
+    {
+      "item": "geontm:ammo_standard_rocket_he",
+      "min": 1,
+      "max": 1,
+      "weight": 3
+    },
+    {
+      "item": "geontm:ammo_container",
+      "min": 1,
+      "max": 1,
+      "weight": 1
+    }
+  ]
+}

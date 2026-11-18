@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:crystal_thorium",
+  "output": {
+    "id": "geontm:powder_thorium",
+    "count": 3
+  }
+}

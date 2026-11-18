@@ -59,7 +59,7 @@ public final class BedrockOreFeature {
         double density = field.average();
         int tier = tierForDensity(density);
         FluidStack acid = field.boreFluid() != null ? field.boreFluid() : boreFluidForTier(tier);
-        placeDeposit(level, random, new BlockPos(x, level.getMinY(), z),
+        placeDeposit(level, random, new BlockPos(x, level.getMinBuildHeight(), z),
                 new Deposit(() -> new ItemStack(ModOreBlocks.bedrock_ore_base.get()), acid, color, tier, depthRock), host);
     }
 
@@ -73,7 +73,7 @@ public final class BedrockOreFeature {
         int x = chunkMinX + random.nextInt(2) + 8;
         int z = chunkMinZ + random.nextInt(2) + 8;
         Deposit deposit = weightedNetherDeposit(level.getSeed(), chunkMinX >> 4, chunkMinZ >> 4, entries, depthRock);
-        placeDeposit(level, random, new BlockPos(x, level.getMinY(), z), deposit, host);
+        placeDeposit(level, random, new BlockPos(x, level.getMinBuildHeight(), z), deposit, host);
     }
 
     /** The default (1.7) nether deposit of a chunk. */

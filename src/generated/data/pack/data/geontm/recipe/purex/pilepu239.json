@@ -1,0 +1,30 @@
+{
+  "type": "geontm:purex",
+  "name": "purex.pilepu239",
+  "input_items": [
+    {
+      "ingredient": "geontm:pile_rod_mk2_pu239"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sulfuric_acid",
+      "amount": 100
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:billet_pu239",
+      "count": 2
+    },
+    "geontm:billet_uranium"
+  ],
+  "duration": 40,
+  "power": 100,
+  "icon": {
+    "id": "geontm:pile_rod_mk2_pu239"
+  },
+  "name_wrapper": "purex.recycle",
+  "auto_switch_group": "autoswitch.pile",
+  "order": 3
+}

@@ -20,7 +20,7 @@ import io.netty.buffer.Unpooled;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -156,7 +156,7 @@ public final class SmokeChainGameTests {
 
         ashpit.playersUsing = 2;
         ashpit.isFull = true;
-        RegistryFriendlyByteBuf buffer = GeoCoreBuffers.wrap(
+        FriendlyByteBuf buffer = GeoCoreBuffers.wrap(
                 Unpooled.buffer(), helper.getLevel());
         ashpit.serialize(buffer);
         TileEntityAshpit copy = new TileEntityAshpit(BlockPos.ZERO,

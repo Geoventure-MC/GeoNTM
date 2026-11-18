@@ -53,7 +53,7 @@ import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
@@ -87,13 +87,13 @@ import java.util.List;
  */
 public final class CrucibleClient implements ItemSwordCutter.Client {
 
-    private static final Identifier HILT = Ids.of("geontm", "textures/models/weapons/crucible_hilt.png");
-    private static final Identifier GUARD = Ids.of("geontm", "textures/models/weapons/crucible_guard.png");
-    private static final Identifier BLADE = Ids.of("geontm", "textures/models/weapons/crucible_blade.png");
-    private static final Identifier BLADE_BLOOM = Ids.of("geontm", "textures/models/weapons/crucible_blade_bloom.png");
-    private static final Identifier NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
+    private static final ResourceLocation HILT = Ids.of("geontm", "textures/models/weapons/crucible_hilt.png");
+    private static final ResourceLocation GUARD = Ids.of("geontm", "textures/models/weapons/crucible_guard.png");
+    private static final ResourceLocation BLADE = Ids.of("geontm", "textures/models/weapons/crucible_blade.png");
+    private static final ResourceLocation BLADE_BLOOM = Ids.of("geontm", "textures/models/weapons/crucible_blade_bloom.png");
+    private static final ResourceLocation NOISE = Ids.of("geontm", "textures/misc/noise_2.png");
     /** Only the harness's CPU reference draws with it: a flat noise, so the shader adds no displacement of its own. */
-    private static final Identifier NOISE_FLAT = Ids.of("geontm", "textures/misc/noise_flat.png");
+    private static final ResourceLocation NOISE_FLAT = Ids.of("geontm", "textures/misc/noise_flat.png");
     private static final String LIGHTNING_SHADER = "geontm:crucible_lightning";
 
     // ItemSwordCutter statics
@@ -686,7 +686,7 @@ public final class CrucibleClient implements ItemSwordCutter.Client {
         CrucibleEquipModel.Playhead head = model.playhead(deployElapsed(anim, stack, model));
         Matrix4f swing = swingInScene(model, head);
         if (swing != null) Poses.mulPose(pose, swing);
-        Identifier skin = PlayerSkins.texture((AbstractClientPlayer) player);
+        ResourceLocation skin = PlayerSkins.texture((AbstractClientPlayer) player);
         float partial = Frames.partialTick();
         model.walk(head, pose, (name, nodePose) -> {
             if (name.startsWith("Guard")) {
@@ -1021,7 +1021,7 @@ public final class CrucibleClient implements ItemSwordCutter.Client {
                     CrucibleLightning.render(bolt.thirdPersonNode, eyePos, 0.0015F, bolt.shaderTime(), p, buffer, cpu);
                 }
             };
-            Identifier noise = cpu ? NOISE_FLAT : NOISE;
+            ResourceLocation noise = cpu ? NOISE_FLAT : NOISE;
             sink.submitCustomGeometry(pose, NoiseDisplacedRenderType.of(LIGHTNING_SHADER, noise, false, slot), draw);
             if (!isolate) sink.submitCustomGeometry(pose, NoiseDisplacedRenderType.of(LIGHTNING_SHADER, noise, true, slot), draw);
             thirdPersonBoltDraws += bolts.size();

@@ -12,9 +12,9 @@ import fr.geoventure.geocore.gui.CompatContainerScreen;
 import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ import net.minecraft.world.item.ItemStack;
  */
 public class GUIFusionTorus extends CompatContainerScreen<ContainerFusionTorus> {
 
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of("geontm", "textures/gui/reactors/gui_fusion_torus.png");
 
     private static final int RECIPE_X = 43;
@@ -44,7 +44,7 @@ public class GUIFusionTorus extends CompatContainerScreen<ContainerFusionTorus> 
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         int x = this.leftPos;
         int y = this.topPos;
         GuiDraw.blit(graphics, TEXTURE, x, y, 0F, 0F, this.imageWidth, this.imageHeight, 256, 256);
@@ -104,12 +104,12 @@ public class GUIFusionTorus extends CompatContainerScreen<ContainerFusionTorus> 
         NuclearMiscGuiUtil.drawTank(graphics, torus.coolantTanks[1], x + 206, y + 46, 16, 52);
     }
 
-    private void led(GuiGraphicsExtractor graphics, int x, int y) {
+    private void led(GuiGraphics graphics, int x, int y) {
         GuiDraw.blit(graphics, TEXTURE, x, y, 246F, 14F, 8, 8, 256, 256);
     }
 
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, this.font, this.title, 106 - this.font.width(this.title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, this.font, this.playerInventoryTitle, 35, this.imageHeight - 93, 4210752, false);
 
@@ -124,7 +124,7 @@ public class GUIFusionTorus extends CompatContainerScreen<ContainerFusionTorus> 
     }
 
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityFusionTorus torus = this.menu.getTorus();
         if (torus == null) return;
         FusionRecipe recipe = recipe(torus);
@@ -196,7 +196,7 @@ public class GUIFusionTorus extends CompatContainerScreen<ContainerFusionTorus> 
         return torus.fusionModule.getRecipe() instanceof FusionRecipe fusion ? fusion : null;
     }
 
-    private void tooltip(GuiGraphicsExtractor graphics, List<Component> text, int mouseX, int mouseY) {
+    private void tooltip(GuiGraphics graphics, List<Component> text, int mouseX, int mouseY) {
         GuiDraw.tooltip(graphics, this.font, text, Optional.empty(), mouseX, mouseY);
     }
 }

@@ -12,10 +12,10 @@ import fr.geoventure.geocore.gui.GuiDraw;
 import fr.geoventure.geocore.gui.MouseInput;
 import fr.geoventure.geocore.net.GeoCoreNetwork;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.List;
  * the GUI.
  */
 public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachineTurbineGas> {
-    private static final Identifier TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_turbinegas.png");
+    private static final ResourceLocation TEXTURE = Ids.of("geontm", "textures/gui/generators/gui_turbinegas.png");
     private boolean sliderLocked;
     private int numberToDisplay;
     private int digitNumber;
@@ -41,13 +41,13 @@ public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachine
 
     /** 1.7: centred title at y=6, inventory at (8, ySize-94), both 4210752. */
     @Override
-    protected void extractLabels(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void renderLabels(GuiGraphics graphics, int mouseX, int mouseY) {
         GuiDraw.text(graphics, font, title, imageWidth / 2 - font.width(title) / 2, 6, 4210752, false);
         GuiDraw.text(graphics, font, playerInventoryTitle, 8, imageHeight - 94, 4210752, false);
     }
 
     @Override
-    public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
+    public void extractBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         GuiDraw.blit(graphics, TEXTURE, leftPos, topPos, 0F, 0F, imageWidth, imageHeight, 256, 256);
         TileEntityMachineTurbineGas turbine = menu.getTurbine();
         if (turbine == null) return;
@@ -88,7 +88,7 @@ public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachine
     }
 
     /** 1.7 {@code displayStartup}: the counting-up 8888888 lamp test (advances once per frame, as in 1.7). */
-    private void displayStartup(GuiGraphicsExtractor graphics, int counter) {
+    private void displayStartup(GuiGraphics graphics, int counter) {
         if (numberToDisplay < 8_888_888 && counter < 60) {
             digitNumber++;
             if (digitNumber == 9) {
@@ -101,7 +101,7 @@ public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachine
         drawPowerMeterDisplay(graphics, numberToDisplay);
     }
 
-    private void drawPowerMeterDisplay(GuiGraphicsExtractor graphics, int number) {
+    private void drawPowerMeterDisplay(GuiGraphics graphics, int number) {
         int[] digits = new int[7];
         for (int i = 6; i >= 0; i--) {
             digits[i] = number % 10;
@@ -116,7 +116,7 @@ public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachine
     }
 
     /** 1.7 {@code drawThermometer}: a 2×(64·temp/800) column at (136, 28+64−h) sampled from (176, 64−h). */
-    private void drawThermometer(GuiGraphicsExtractor graphics, int temp) {
+    private void drawThermometer(GuiGraphics graphics, int temp) {
         int h = 64 * temp / 800;
         if (h <= 0) return;
         GuiDraw.blit(graphics, TEXTURE, leftPos + 136, topPos + 28 + 64 - h, 176F, 64F - h, 2, h, 256, 256);
@@ -124,7 +124,7 @@ public class GUIMachineTurbineGas extends CompatContainerScreen<ContainerMachine
 
     /** 1.7 {@code drawScreen} tooltips, in the same order and with the same strings. */
     @Override
-    protected void extractOwnTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+    protected void extractOwnTooltip(GuiGraphics graphics, int mouseX, int mouseY) {
         TileEntityMachineTurbineGas turbine = menu.getTurbine();
         if (turbine == null) return;
         int gl = leftPos, gt = topPos;

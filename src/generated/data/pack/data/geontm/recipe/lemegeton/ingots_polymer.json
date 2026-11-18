@@ -1,0 +1,6 @@
+{
+  "type": "geontm:lemegeton",
+  "input": "#c:ingots/polymer",
+  "output": "geontm:ingot_pc",
+  "order": 25
+}

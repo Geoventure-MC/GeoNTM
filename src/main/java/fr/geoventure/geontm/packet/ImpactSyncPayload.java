@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /**
  * S2C: the player's level's Tom impact state (fire, dust, impact), 1.7's "TOM IMPACT DATA" block of
@@ -24,7 +24,7 @@ public record ImpactSyncPayload(float fire, float dust, boolean impact) implemen
             buffer -> new ImpactSyncPayload(buffer.readFloat(), buffer.readFloat(), buffer.readBoolean()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

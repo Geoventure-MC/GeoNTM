@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.nitroglycerin.0",
+  "input_fluids": [
+    {
+      "type": "geontm:petroleum",
+      "amount": 1000
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 1000
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:nitroglycerin",
+      "amount": 1000
+    }
+  ],
+  "duration": 20,
+  "order": 29
+}

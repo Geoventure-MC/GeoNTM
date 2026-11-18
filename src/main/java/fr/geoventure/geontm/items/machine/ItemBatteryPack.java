@@ -10,7 +10,7 @@ import fr.geoventure.geocore.world.CompatTooltipContext;
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
@@ -153,7 +153,7 @@ public class ItemBatteryPack extends CompatItem implements IBatteryItem {
         /** Registry id and texture base name. */
         public final String name;
         /** Model texture {@code textures/models/machines/<name>.png}. */
-        public final Identifier texture;
+        public final ResourceLocation texture;
         public final long capacity;
         public final long chargeRate;
         public final long dischargeRate;

@@ -2,7 +2,7 @@ package fr.geoventure.geontm.client.render.weapon;
 
 //? if >=26.1 {
 
-import com.mojang.blaze3d.vertex.PoseStack;
+/*import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -13,7 +13,7 @@ import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.renderer.item.ModelRenderProperties;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.client.resources.model.ResolvableModel;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.ItemOwner;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -24,7 +24,7 @@ import org.jspecify.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-/**
+/^*
  * A Sedna gun's item model.
  *
  * <p>This is an {@link ItemModel}, not a {@code minecraft:special} entry, because {@link #update} is
@@ -35,7 +35,7 @@ import java.util.function.Consumer;
  * <p>The context is resolved here and travels to the renderer inside the argument: first-person hands
  * carry a live, animated body; every other context gets the same geometry at rest, framed by the
  * weapon's own {@code setupStatic}.
- */
+ ^/
 public class GunItemModel implements ItemModel {
 
     private final WeaponRenderer renderer;
@@ -79,11 +79,11 @@ public class GunItemModel implements ItemModel {
         properties.applyToLayer(layer, displayContext);
     }
 
-    /** What the renderer needs, resolved once per frame from the stack and its display context. */
+    /^* What the renderer needs, resolved once per frame from the stack and its display context. ^/
     public record Argument(ItemStack stack, WeaponRenderer renderer, boolean firstPerson, boolean otherArm,
             ItemDisplayContext context, @Nullable ItemOwner owner) {}
 
-    /** The draw itself. Stateless: everything it needs arrives in the argument. */
+    /^* The draw itself. Stateless: everything it needs arrives in the argument. ^/
     private static class Body implements SpecialModelRenderer<Argument> {
 
         @Override
@@ -114,11 +114,11 @@ public class GunItemModel implements ItemModel {
         }
     }
 
-    /** {@code {"model": {"type": "geontm:gun", "base": ..., "weapon": ...}}} in the item definition. */
-    public record Unbaked(Identifier base, String weapon) implements ItemModel.Unbaked {
+    /^* {@code {"model": {"type": "geontm:gun", "base": ..., "weapon": ...}}} in the item definition. ^/
+    public record Unbaked(ResourceLocation base, String weapon) implements ItemModel.Unbaked {
 
         public static final MapCodec<Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
-                Identifier.CODEC.fieldOf("base").forGetter(Unbaked::base),
+                ResourceLocation.CODEC.fieldOf("base").forGetter(Unbaked::base),
                 com.mojang.serialization.Codec.STRING.fieldOf("weapon").forGetter(Unbaked::weapon)
         ).apply(i, Unbaked::new));
 
@@ -142,4 +142,4 @@ public class GunItemModel implements ItemModel {
         }
     }
 }
-//?}
+*///?}

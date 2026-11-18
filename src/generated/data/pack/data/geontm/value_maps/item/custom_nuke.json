@@ -1,0 +1,220 @@
+{
+  "values": {
+    "geontm:block_schrabidium": {
+      "type": "schrab",
+      "value": 50.0
+    },
+    "geontm:block_waste": {
+      "type": "dirty",
+      "value": 1.25,
+      "op": "mult"
+    },
+    "geontm:custom_amat": {
+      "type": "amat",
+      "value": 15.0
+    },
+    "geontm:custom_dirty": {
+      "type": "dirty",
+      "value": 10.0
+    },
+    "geontm:custom_hydro": {
+      "type": "hydro",
+      "value": 30.0
+    },
+    "geontm:custom_nuke": {
+      "type": "nuke",
+      "value": 30.0
+    },
+    "geontm:custom_schrab": {
+      "type": "schrab",
+      "value": 15.0
+    },
+    "geontm:custom_tnt": {
+      "type": "tnt",
+      "value": 10.0
+    },
+    "geontm:det_charge": {
+      "type": "tnt",
+      "value": 15.0
+    },
+    "geontm:det_cord": {
+      "type": "tnt",
+      "value": 1.5
+    },
+    "geontm:egg_balefire": {
+      "type": "amat",
+      "value": 150.0
+    },
+    "geontm:egg_balefire_shard": {
+      "type": "amat",
+      "value": 15.0
+    },
+    "geontm:ingot_euphemium": {
+      "type": "euph",
+      "value": 1.0
+    },
+    "geontm:ingot_neptunium": {
+      "type": "nuke",
+      "value": 30.0
+    },
+    "geontm:ingot_plutonium": {
+      "type": "nuke",
+      "value": 1.15,
+      "op": "mult"
+    },
+    "geontm:ingot_pu238": {
+      "type": "nuke",
+      "value": 1.15,
+      "op": "mult"
+    },
+    "geontm:ingot_pu239": {
+      "type": "nuke",
+      "value": 25.0
+    },
+    "geontm:ingot_pu240": {
+      "type": "dirty",
+      "value": 1.05,
+      "op": "mult"
+    },
+    "geontm:ingot_pu241": {
+      "type": "nuke",
+      "value": 25.0
+    },
+    "geontm:ingot_schrabidium": {
+      "type": "schrab",
+      "value": 5.0
+    },
+    "geontm:ingot_semtex": {
+      "type": "tnt",
+      "value": 8.0
+    },
+    "geontm:ingot_tungsten": {
+      "type": "dirty",
+      "value": 1.0
+    },
+    "geontm:ingot_u233": {
+      "type": "nuke",
+      "value": 15.0
+    },
+    "geontm:ingot_u235": {
+      "type": "nuke",
+      "value": 15.0
+    },
+    "geontm:ingot_u238": {
+      "type": "nuke",
+      "value": 1.1,
+      "op": "mult"
+    },
+    "geontm:ingot_uranium": {
+      "type": "nuke",
+      "value": 1.05,
+      "op": "mult"
+    },
+    "geontm:lithium": {
+      "type": "hydro",
+      "value": 20.0
+    },
+    "geontm:nuclear_waste": {
+      "type": "dirty",
+      "value": 1.025,
+      "op": "mult"
+    },
+    "geontm:nugget_euphemium": {
+      "type": "euph",
+      "value": 1.0
+    },
+    "geontm:nugget_neptunium": {
+      "type": "nuke",
+      "value": 3.0
+    },
+    "geontm:nugget_plutonium": {
+      "type": "nuke",
+      "value": 1.15,
+      "op": "mult"
+    },
+    "geontm:nugget_pu238": {
+      "type": "nuke",
+      "value": 1.015,
+      "op": "mult"
+    },
+    "geontm:nugget_pu239": {
+      "type": "nuke",
+      "value": 2.5
+    },
+    "geontm:nugget_pu241": {
+      "type": "nuke",
+      "value": 2.5
+    },
+    "geontm:nugget_schrabidium": {
+      "type": "schrab",
+      "value": 0.5
+    },
+    "geontm:nugget_u233": {
+      "type": "nuke",
+      "value": 1.5
+    },
+    "geontm:nugget_u235": {
+      "type": "nuke",
+      "value": 1.5
+    },
+    "geontm:nugget_u238": {
+      "type": "nuke",
+      "value": 1.01,
+      "op": "mult"
+    },
+    "geontm:nugget_uranium": {
+      "type": "nuke",
+      "value": 1.005,
+      "op": "mult"
+    },
+    "geontm:pink_barrel": {
+      "type": "tnt",
+      "value": 4.0
+    },
+    "geontm:powder_neptunium": {
+      "type": "nuke",
+      "value": 30.0
+    },
+    "geontm:powder_plutonium": {
+      "type": "nuke",
+      "value": 1.15,
+      "op": "mult"
+    },
+    "geontm:powder_schrabidium": {
+      "type": "schrab",
+      "value": 5.0
+    },
+    "geontm:powder_uranium": {
+      "type": "nuke",
+      "value": 1.05,
+      "op": "mult"
+    },
+    "geontm:red_barrel": {
+      "type": "tnt",
+      "value": 2.5
+    },
+    "geontm:yellow_barrel": {
+      "type": "dirty",
+      "value": 1.2,
+      "op": "mult"
+    },
+    "minecraft:gunpowder": {
+      "type": "tnt",
+      "value": 0.8
+    },
+    "minecraft:redstone": {
+      "type": "tnt",
+      "value": 1.05,
+      "op": "mult"
+    },
+    "minecraft:redstone_block": {
+      "type": "tnt",
+      "value": 1.5,
+      "op": "mult"
+    },
+    "minecraft:tnt": {
+      "type": "tnt",
+      "value": 4.0
+    }
+  }
+}

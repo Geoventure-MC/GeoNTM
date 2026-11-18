@@ -1,0 +1,31 @@
+{
+  "type": "geontm:difurnace",
+  "name": "difurnace.meteorite",
+  "input_items": [
+    {
+      "type": "geontm:any_of",
+      "of": [
+        {
+          "ingredient": "#c:ingots/cobalt"
+        },
+        {
+          "ingredient": "#c:plates/cobalt"
+        },
+        {
+          "ingredient": "#c:gems/cobalt"
+        },
+        {
+          "ingredient": "#c:dusts/cobalt"
+        }
+      ]
+    },
+    {
+      "ingredient": "geontm:powder_meteorite"
+    }
+  ],
+  "output_items": [
+    "geontm:ingot_meteorite"
+  ],
+  "duration": 400,
+  "order": 11
+}

@@ -1,0 +1,22 @@
+{
+  "type": "geontm:mixer",
+  "name": "mixer.petroil.0",
+  "input_fluids": [
+    {
+      "type": "geontm:reclaimed",
+      "amount": 800
+    },
+    {
+      "type": "geontm:lubricant",
+      "amount": 200
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:petroil",
+      "amount": 1000
+    }
+  ],
+  "duration": 30,
+  "order": 23
+}

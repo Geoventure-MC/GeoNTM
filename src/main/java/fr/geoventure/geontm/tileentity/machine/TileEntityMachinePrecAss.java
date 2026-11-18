@@ -25,7 +25,7 @@ import fr.geoventure.geontm.util.TickPhase;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.MenuProvider;
@@ -291,7 +291,7 @@ public class TileEntityMachinePrecAss extends TileEntityMachineBase implements M
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         inputTank.serialize(buf);
         outputTank.serialize(buf);
@@ -302,7 +302,7 @@ public class TileEntityMachinePrecAss extends TileEntityMachineBase implements M
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         inputTank.deserialize(buf);
         outputTank.deserialize(buf);

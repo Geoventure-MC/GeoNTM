@@ -14,7 +14,7 @@ import fr.geoventure.geocore.render.gem.GemBER;
 import fr.geoventure.geocore.render.gem.Geometry;
 import fr.geoventure.geocore.render.gem.Surface;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 /**
@@ -36,7 +36,7 @@ public final class CargoElevatorRenderer
             WavefrontObj.load(Ids.of(Constants.MOD_ID, "models/machines/elevator.obj"));
     private static final Surface SURFACE =
             Surface.solid(Constants.MOD_ID + ":textures/models/machines/elevator.png");
-    private static final Identifier TEXTURE =
+    private static final ResourceLocation TEXTURE =
             Ids.of(Constants.MOD_ID, "textures/models/machines/elevator.png");
 
     @Override

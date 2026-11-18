@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:fragment_cobalt",
+  "output": "geontm:powder_cobalt_tiny"
+}

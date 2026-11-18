@@ -1,0 +1,8 @@
+{
+  "type": "geontm:shredder",
+  "input": "minecraft:chiseled_quartz_block",
+  "output": {
+    "id": "geontm:powder_quartz",
+    "count": 4
+  }
+}

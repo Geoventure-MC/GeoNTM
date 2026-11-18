@@ -1,0 +1,13 @@
+{
+  "type": "geontm:centrifuge",
+  "input": {
+    "ingredient": "minecraft:blaze_rod"
+  },
+  "outputs": [
+    "minecraft:blaze_powder",
+    "minecraft:blaze_powder",
+    "geontm:powder_fire",
+    "geontm:powder_fire"
+  ],
+  "order": 153
+}

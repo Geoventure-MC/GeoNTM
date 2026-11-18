@@ -1,0 +1,16 @@
+{
+  "values": {
+    "minecraft:clay_ball": 4,
+    "geontm:ball_fireclay": 4,
+    "minecraft:netherrack": 4,
+    "minecraft:cobblestone": 2,
+    "minecraft:sand": 2,
+    "minecraft:red_sand": 2,
+    "minecraft:oak_log": 2,
+    "minecraft:spruce_log": 2,
+    "minecraft:birch_log": 2,
+    "minecraft:jungle_log": 2,
+    "minecraft:acacia_log": 2,
+    "minecraft:dark_oak_log": 2
+  }
+}

@@ -52,7 +52,7 @@ public class Jars {
     }
 
     private static void put(String id, CanneryBase cannery) {
-        Item item = BuiltInRegistries.ITEM.getValue(Ids.parse(id));
+        Item item = BuiltInRegistries.ITEM.get(Ids.parse(id));
         if (item != null && item != Items.AIR) canneries.put(item, cannery);
     }
 

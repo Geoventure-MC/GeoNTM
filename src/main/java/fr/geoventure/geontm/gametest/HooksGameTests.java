@@ -53,7 +53,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -406,7 +406,7 @@ public final class HooksGameTests {
 
     private static void duck(GameTestHelper helper) {
         EntityDuck duck = Entities.create(ModNtmEntities.DUCK.get(), helper.getLevel(),
-                EntitySpawnReason.TRIGGERED);
+                MobSpawnType.TRIGGERED);
         duck.setPos(helper.absoluteVec(new Vec3(1.5, 2, 1.5)));
         Spawns.finalizeTriggered(duck, helper.getLevel());
         helper.assertTrue(duck.compatLaysPlainEgg(), "a duck is the temperate chicken: it lays 1.7's plain egg");

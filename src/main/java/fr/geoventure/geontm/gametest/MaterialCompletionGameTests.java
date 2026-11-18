@@ -608,7 +608,7 @@ public final class MaterialCompletionGameTests {
     }
 
     private static Item outputItem(String id) {
-        return BuiltInRegistries.ITEM.getValue(Ids.parse(id.contains(":") ? id : "geontm:" + id));
+        return BuiltInRegistries.ITEM.get(Ids.parse(id.contains(":") ? id : "geontm:" + id));
     }
 
     private static void assertExactMaterial(GameTestHelper helper, ItemStack input, NTMMaterial material,

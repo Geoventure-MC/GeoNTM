@@ -53,7 +53,7 @@ public class EntityCloudSolinium extends CompatEntity {
         if (level() instanceof ServerLevel server) {
             LightningBolt bolt = Entities.createTriggered(net.minecraft.world.entity.EntityType.LIGHTNING_BOLT, server);
             if (bolt != null) {
-                bolt.snapTo(getX(), getY() + 200, getZ());
+                bolt.moveTo(getX(), getY() + 200, getZ());
                 server.addFreshEntity(bolt);
             }
         }

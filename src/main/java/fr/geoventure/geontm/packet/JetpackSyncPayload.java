@@ -4,7 +4,7 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.net.GeoCoreCodec;
 import fr.geoventure.geocore.net.GeoCorePayload;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** S2C authoritative advanced-jetpack state, replacing 1.12's {@code JetpackSyncPacket}. */
 public record JetpackSyncPayload(int playerId, boolean opening, boolean hover, float thrust,
@@ -31,7 +31,7 @@ public record JetpackSyncPayload(int playerId, boolean opening, boolean hover, f
                     buffer.readBoolean(), buffer.readBoolean(), buffer.readBoolean()));
 
     @Override
-    public Identifier id() {
+    public ResourceLocation id() {
         return CODEC.id();
     }
 }

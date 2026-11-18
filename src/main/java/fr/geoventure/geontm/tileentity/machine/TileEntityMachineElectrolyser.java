@@ -36,7 +36,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
@@ -395,7 +395,7 @@ public class TileEntityMachineElectrolyser extends TileEntityMachineBase
         if (data.contains("sgf")) lastSelectedGUI = 0;
     }
 
-    @Override public void serialize(RegistryFriendlyByteBuf buf) {
+    @Override public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         for (FluidTankNTM tank : tanks) tank.serialize(buf);
         buf.writeLong(power); buf.writeInt(progressFluid); buf.writeInt(progressMetal);
@@ -405,7 +405,7 @@ public class TileEntityMachineElectrolyser extends TileEntityMachineBase
         buf.writeInt(leftPourColor); buf.writeFloat(leftPourLen);
         buf.writeInt(rightPourColor); buf.writeFloat(rightPourLen);
     }
-    @Override public void deserialize(RegistryFriendlyByteBuf buf) {
+    @Override public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         for (FluidTankNTM tank : tanks) tank.deserialize(buf);
         power = buf.readLong(); progressFluid = buf.readInt(); progressMetal = buf.readInt();
@@ -415,10 +415,10 @@ public class TileEntityMachineElectrolyser extends TileEntityMachineBase
         leftPourColor = buf.readInt(); leftPourLen = buf.readFloat();
         rightPourColor = buf.readInt(); rightPourLen = buf.readFloat();
     }
-    private static void writeMaterial(RegistryFriendlyByteBuf buf, Mats.@Nullable MaterialStack stack) {
+    private static void writeMaterial(FriendlyByteBuf buf, Mats.@Nullable MaterialStack stack) {
         buf.writeBoolean(stack != null); if (stack != null) { buf.writeInt(stack.material.id); buf.writeInt(stack.amount); }
     }
-    private static Mats.@Nullable MaterialStack readMaterial(RegistryFriendlyByteBuf buf) {
+    private static Mats.@Nullable MaterialStack readMaterial(FriendlyByteBuf buf) {
         return buf.readBoolean() ? new Mats.MaterialStack(Mats.matById.get(buf.readInt()), buf.readInt()) : null;
     }
     @Override protected void saveData(DataOut output) {

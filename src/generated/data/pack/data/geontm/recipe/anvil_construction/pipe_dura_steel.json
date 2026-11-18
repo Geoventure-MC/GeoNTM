@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/dura_steel",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pipe_dura_steel"
+    }
+  ],
+  "tier": 1,
+  "order": 50
+}

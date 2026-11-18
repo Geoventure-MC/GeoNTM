@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:fragment_lanthanium",
+  "output": "geontm:powder_lanthanium_tiny"
+}

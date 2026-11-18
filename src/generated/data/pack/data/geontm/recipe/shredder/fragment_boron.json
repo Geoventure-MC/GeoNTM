@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:fragment_boron",
+  "output": "geontm:powder_boron_tiny"
+}

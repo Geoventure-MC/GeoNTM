@@ -1,0 +1,33 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.launchpad",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:concretes",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:steel_scaffold",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:circuit_advanced",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:launch_pad_large"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 70912
+}

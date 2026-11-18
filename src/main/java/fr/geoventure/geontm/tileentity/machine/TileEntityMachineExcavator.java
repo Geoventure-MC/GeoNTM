@@ -43,7 +43,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
@@ -161,7 +161,7 @@ public class TileEntityMachineExcavator extends TileEntityMachineBase
             te.speed *= (1 + speedLevel / 2D);
 
             // 1.7: yCoord - 4 with the world floor at 0; the floor is the level's minimum here.
-            int maxDepth = pos.getY() - 4 - level.getMinY();
+            int maxDepth = pos.getY() - 4 - level.getMinBuildHeight();
 
             if ((te.bedrockDrilling || te.targetDepth <= maxDepth) && te.tryDrill(1 + radiusLevel * 2)) {
                 te.targetDepth++;
@@ -238,7 +238,7 @@ public class TileEntityMachineExcavator extends TileEntityMachineBase
     }
 
     @Override
-    public void serialize(RegistryFriendlyByteBuf buf) {
+    public void serialize(FriendlyByteBuf buf) {
         super.serialize(buf);
         buf.writeBoolean(enableDrill);
         buf.writeBoolean(enableCrusher);
@@ -253,7 +253,7 @@ public class TileEntityMachineExcavator extends TileEntityMachineBase
     }
 
     @Override
-    public void deserialize(RegistryFriendlyByteBuf buf) {
+    public void deserialize(FriendlyByteBuf buf) {
         super.deserialize(buf);
         enableDrill = buf.readBoolean();
         enableCrusher = buf.readBoolean();
@@ -276,7 +276,7 @@ public class TileEntityMachineExcavator extends TileEntityMachineBase
         int y = getY();
         int xCoord = worldPosition.getX(), zCoord = worldPosition.getZ();
 
-        if (targetDepth == 0 || y == level.getMinY()) {
+        if (targetDepth == 0 || y == level.getMinBuildHeight()) {
             radius = 1;
         }
 

@@ -5,12 +5,12 @@ import fr.geoventure.geocore.Ids;
 import fr.geoventure.geocore.render.gem.Gem;
 import fr.geoventure.geocore.render.gem.Surface;
 import fr.geoventure.geocore.world.ArmorSlot;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 /** 1.7 {@code ModelArmorBismuth}: one texture over every part, boots on the leg bones. */
 public final class BismuthArmorRenderer extends ArmorRenderer {
 
-    private static final Identifier OBJ = Ids.of("geontm", "models/armor/bismuth.obj");
+    private static final ResourceLocation OBJ = Ids.of("geontm", "models/armor/bismuth.obj");
     private static final Surface SKIN = Surface.cutout("geontm:textures/armor/bismuth.png");
 
     @Override
