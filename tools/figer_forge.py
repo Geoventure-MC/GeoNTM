@@ -23,4 +23,22 @@ for d in (root / 'versions').iterdir():
         shutil.rmtree(d)
 for name in ('build.fabric.gradle.kts', 'build.neoforge.gradle.kts', 'Jenkinsfile'):
     (root / name).unlink(missing_ok=True)
+generated = root / 'build/generated/data'
+if generated.is_dir():
+    target = root / 'src/generated/data'
+    shutil.rmtree(target, ignore_errors=True)
+    shutil.copytree(generated, target)
+    props = root / 'gradle.properties'
+    text = props.read_text(encoding='utf-8').replace('
+', '
+')
+    text += ('
+# Tables de recettes figées : générées une fois depuis src/recipes, puis conservées ici.
+'
+             'geocore.build.generatedData.generator=:1.20.1-forge:compileJava
+'
+             'geocore.build.generatedData.root=src/generated/data
+')
+    props.write_text(text, encoding='utf-8', newline='
+')
 print('cible unique :', NODE)

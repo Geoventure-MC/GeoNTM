@@ -34,6 +34,11 @@ jobs:
           CI: "false"
         working-directory: GeoCore
         run: bash ./gradlew chiseledBuild -x test --no-daemon --stacktrace
+      - name: Générer les tables de recettes
+        env:
+          CI: "false"
+        working-directory: GeoNTM
+        run: bash ./gradlew :26.1-neoforge:runGenerateData --no-daemon --stacktrace
       - name: Activer Forge 1.20.1
         env:
           CI: "false"
