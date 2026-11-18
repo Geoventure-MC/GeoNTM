@@ -46,7 +46,7 @@ final class Components {
     private Components() {}
 
     static void convert(String deItem, String cItem, CompoundTag c, StackContext ctx, String where) {
-        String dePath = deItem.substring(4);
+        String dePath = deItem.substring(deItem.indexOf(':') + 1);
         if (CELL_FLUIDS.containsKey(dePath)) {
             c.putString("geontm:fluid", CELL_FLUIDS.get(dePath));
             c.putInt("geontm:fluid_amount", 1000);
