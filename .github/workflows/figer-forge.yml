@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Geoventure-MC/GeoCore
-          ref: forge-1.20.1
+          ref: main
           path: GeoCore
       - uses: actions/setup-java@v4
         with:
@@ -28,11 +28,12 @@ jobs:
             21
             25
       - uses: gradle/actions/setup-gradle@v4
-      - name: Construire GeoCore
+      # GeoNTM déclare encore toutes les cibles : GeoCore doit les avoir pendant l'activation.
+      - name: Construire GeoCore complet
         env:
           CI: "false"
         working-directory: GeoCore
-        run: bash ./gradlew :1.20.1-forge:build --no-daemon --stacktrace
+        run: bash ./gradlew chiseledBuild -x test --no-daemon --stacktrace
       - name: Activer Forge 1.20.1
         env:
           CI: "false"
@@ -41,6 +42,15 @@ jobs:
       - name: Retirer les autres cibles
         working-directory: GeoNTM
         run: python3 tools/figer_forge.py
+      - name: Passer à GeoCore Forge 1.20.1
+        env:
+          CI: "false"
+        working-directory: GeoCore
+        run: |
+          git fetch --depth 1 origin forge-1.20.1
+          git checkout --force FETCH_HEAD
+          git clean -fdx
+          bash ./gradlew :1.20.1-forge:build --no-daemon --stacktrace
       - name: Compiler et tester
         env:
           CI: "false"
