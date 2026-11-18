@@ -1,0 +1,64 @@
+# Opération unique : fige le code sur Forge 1.20.1 et publie le résultat sur la branche forge-1.20.1.
+name: Figer sur Forge 1.20.1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  figer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: GeoNTM
+      - uses: actions/checkout@v4
+        with:
+          repository: Geoventure-MC/GeoCore
+          ref: forge-1.20.1
+          path: GeoCore
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            17
+            21
+            25
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Construire GeoCore
+        env:
+          CI: "false"
+        working-directory: GeoCore
+        run: bash ./gradlew :1.20.1-forge:build --no-daemon --stacktrace
+      - name: Activer Forge 1.20.1
+        env:
+          CI: "false"
+        working-directory: GeoNTM
+        run: bash ./gradlew "Set active project to 1.20.1-forge" --no-daemon --stacktrace
+      - name: Retirer les autres cibles
+        working-directory: GeoNTM
+        run: python3 tools/figer_forge.py
+      - name: Compiler et tester
+        env:
+          CI: "false"
+        working-directory: GeoNTM
+        run: bash ./gradlew :1.20.1-forge:build --no-daemon --stacktrace
+      - uses: actions/upload-artifact@v4
+        with:
+          name: geontm-forge-1.20.1
+          path: |
+            GeoNTM/versions/1.20.1-forge/build/libs/*.jar
+            GeoCore/versions/1.20.1-forge/build/libs/*.jar
+          if-no-files-found: error
+      - name: Publier la branche
+        working-directory: GeoNTM
+        run: |
+          git rm -f --quiet tools/figer_forge.py
+          git config user.name "Geoventure"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Maintenance : code figé sur Forge 1.20.1"
+          git push --force origin HEAD:refs/heads/forge-1.20.1
