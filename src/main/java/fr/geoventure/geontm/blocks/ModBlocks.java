@@ -269,6 +269,11 @@ public final class ModBlocks {
     // --- ores (Wave 2b); XP ores drop materials, plain ores drop themselves ---
     public static final RegistryObject<Block> ore_schrabidium = block("ore_schrabidium", GeoNtmTab.RESOURCES, p -> p.requiresCorrectToolForDrops().strength(15.0F, 360.0F))
             .transform(Presets.cubeAll()).loot(RawOres.drop("geontm:raw_schrabidium", Loot.self())).tag(BlockTag.PICKAXE);
+    /** Minerais rares de Geoventure : on ne les trouve que sur Mars et sur Glacio. */
+    public static final RegistryObject<Block> ore_mars_saturnite = block("ore_mars_saturnite", GeoNtmTab.RESOURCES, p -> p.requiresCorrectToolForDrops().strength(8.0F, 30.0F))
+            .transform(Presets.cubeAll()).loot(Loot.self()).tag(BlockTag.PICKAXE);
+    public static final RegistryObject<Block> ore_glacio_starmetal = block("ore_glacio_starmetal", GeoNtmTab.RESOURCES, p -> p.requiresCorrectToolForDrops().strength(8.0F, 30.0F))
+            .transform(Presets.cubeAll()).loot(Loot.self()).tag(BlockTag.PICKAXE);
     public static final RegistryObject<Block> ore_thorium = block("ore_thorium", GeoNtmTab.RESOURCES, p -> p.requiresCorrectToolForDrops().strength(5.0F, 6.0F))
             .transform(Presets.cubeAll()).loot(RawOres.drop("geontm:raw_thorium", Loot.self())).tag(BlockTag.PICKAXE);
     public static final RegistryObject<Block> ore_titanium = block("ore_titanium", GeoNtmTab.RESOURCES, p -> p.requiresCorrectToolForDrops().strength(5.0F, 6.0F))

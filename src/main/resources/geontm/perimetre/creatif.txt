@@ -55,7 +55,6 @@ billet_zfb_pu241
 billet_zirconium
 block_beryllium
 block_boron
-block_desh
 block_graphite
 block_mox_fuel
 block_plutonium
@@ -238,7 +237,6 @@ icf_pellet_depleted
 icf_pellet_empty
 ingot_beryllium
 ingot_boron
-ingot_desh
 ingot_graphite
 ingot_mox_fuel
 ingot_plutonium
@@ -547,7 +545,6 @@ nuclear_waste_tiny
 nuclear_waste_vitrified
 nuclear_waste_vitrified_tiny
 nugget_beryllium
-nugget_desh
 nugget_mox_fuel
 nugget_plutonium
 nugget_plutonium_fuel
@@ -567,7 +564,9 @@ nugget_zirconium
 ore_beryllium
 ore_beryllium_deepslate
 ore_depth_zirconium
+ore_glacio_starmetal
 ore_gneiss_schrabidium
+ore_mars_saturnite
 ore_nether_plutonium
 ore_nether_schrabidium
 ore_schrabidium
@@ -710,7 +709,6 @@ pile_rod_pu239
 pile_rod_source
 pile_rod_uranium
 pile_vent
-plate_desh
 plate_saturnite
 plate_schrabidium
 pole_satellite_receiver

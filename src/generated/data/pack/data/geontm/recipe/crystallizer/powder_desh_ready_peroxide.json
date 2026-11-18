@@ -7,7 +7,7 @@
     "type": "geontm:peroxide",
     "amount": 500
   },
-  "output": "geontm:ingot_desh",
+  "output": "ad_astra:desh_ingot",
   "duration": 600,
   "order": 63
 }

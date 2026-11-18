@@ -106,7 +106,8 @@ public final class ModBiomeModifiers {
 
     private static boolean gardee(String feature) {
         String nom = feature.substring(feature.indexOf(':') + 1);
-        return FEATURES_GARDEES.contains(nom) || nom.startsWith("ore_beryllium") || nom.startsWith("ore_thorium");
+        return FEATURES_GARDEES.contains(nom) || nom.startsWith("ore_beryllium") || nom.startsWith("ore_thorium")
+                || nom.startsWith("espace_");
     }
 
     private static void addFeatures(String ns, String name, String biomes, List<String> features, String step) {
@@ -155,6 +156,24 @@ public final class ModBiomeModifiers {
         addFeatures(NS, "bedrock_deposits_ore", deposits, "#minecraft:is_overworld", List.of(NS + ":bedrock_ore"), UNDERGROUND_ORES);
 
         surface();
+        espace();
+    }
+
+    /** Matières rares : le desh vient de la Lune d'Ad Astra, les autres sont ajoutées ici. */
+    private static void espace() {
+        espace("espace_saturnite", "geontm:ore_mars_saturnite", "ad_astra:mars_stone_replaceables", 4, 5,
+                "ad_astra:martian_wastelands", "ad_astra:martian_canyon_creek", "ad_astra:martian_polar_caps");
+        espace("espace_starmetal", "geontm:ore_glacio_starmetal", "ad_astra:glacio_stone_replaceables", 3, 5,
+                "ad_astra:glacio_snowy_barrens", "ad_astra:glacio_ice_peaks");
+        espace("espace_schrabidium", "geontm:ore_schrabidium", "ad_astra:mercury_stone_replaceables", 2, 4,
+                "ad_astra:mercury_deltas");
+    }
+
+    private static void espace(String nom, String minerai, String roche, int filons, int taille, String... biomes) {
+        String feature = vein(nom, minerai, List.of(), count(filons), taille, 0, 64, Features.tagMatch(roche));
+        for (String biome : biomes) {
+            addFeatures(NS, nom + "_" + biome.substring(biome.indexOf(':') + 1), biome, List.of(feature), UNDERGROUND_ORES);
+        }
     }
 
     // Ores

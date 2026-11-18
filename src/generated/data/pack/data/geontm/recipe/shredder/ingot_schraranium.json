@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:ingot_schraranium",
-  "output": {
-    "id": "geontm:nugget_schrabidium",
-    "count": 2
-  }
-}

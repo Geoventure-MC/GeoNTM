@@ -9,6 +9,7 @@ docs/perimetre/dependances.txt ; les autres recettes d'objets retirés vont dans
 import collections
 import csv
 import json
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -54,8 +55,9 @@ for n in z.namelist():
         continue
     objet = resultat[7:]
     entree = j.get('key') or j.get('ingredients') or j.get('ingredient') or {}
+    bruts = ' '.join(sorted(set(ingredients(entree))))
     besoins = sorted({i[7:] for i in ingredients(entree) if i.startswith('geontm:') and i[7:] in decision})
-    r = {'id': 'geontm:' + n[len(PREFIXE):-5], 'objet': objet, 'besoins': besoins}
+    r = {'id': 'geontm:' + n[len(PREFIXE):-5], 'objet': objet, 'besoins': besoins, 'bruts': bruts}
     recettes.append(r)
     par_sortie[objet].append(r)
 
@@ -74,7 +76,16 @@ while file:
             vus.add(b)
             file.append(b)
 
-retires = sorted(r['id'] for r in recettes if decision.get(r['objet']) == 'RETIRER' and r['objet'] not in dependances)
+ESPACE = re.compile(r'(ingot|nugget|powder|plate|billet|crystal|block|wire)_(desh|saturnite|starmetal|schrabidium)$')
+
+
+def fabrique_espace(r):
+    m = ESPACE.fullmatch(r['objet'])
+    return bool(m) and m[2] not in r['bruts']
+
+
+retires = sorted(r['id'] for r in recettes
+                 if fabrique_espace(r) or (decision.get(r['objet']) == 'RETIRER' and r['objet'] not in dependances))
 SORTIE.parent.mkdir(parents=True, exist_ok=True)
 SORTIE.write_text(json.dumps({'recipes': retires}, indent=1) + '\n', encoding='utf-8', newline='\n')
 DEPENDANCES.write_text('\n'.join(sorted(dependances)) + '\n', encoding='utf-8', newline='\n')

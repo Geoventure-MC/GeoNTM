@@ -63,7 +63,7 @@ bloc,block_coltan,Bloc de Coltan,SI_BESOIN,ressources : intermédiaires,,gardé 
 bloc,block_combine_steel,Bloc d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_corium,corium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_corium_cobble,Pavé de corium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-bloc,block_desh,Bloc renforcé de Desh,GARDER,ressources : espace,,uniquement sur Lune
+bloc,block_desh,Bloc renforcé de Desh,FUSIONNER,ressources,ad_astra:desh_block,ressource déjà présente
 bloc,block_dineutronium,Bloc de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_dura_steel,Bloc renforcé d'acier rapide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_electrical_scrap,Bloc de féraille électrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
@@ -2657,7 +2657,7 @@ objet,ingot_co60,Lingot de cobalt 60,SI_BESOIN,ressources : intermédiaires,,gar
 objet,ingot_cobalt,Lingot de cobalt,FUSIONNER,ressources,geomods:cobalt_ingot,ressource déjà présente
 objet,ingot_combine_steel,Lingot d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_daffergon,Lingot de daffergon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-objet,ingot_desh,Lingot de desh,GARDER,ressources : espace,,uniquement sur Lune
+objet,ingot_desh,Lingot de desh,FUSIONNER,ressources,ad_astra:desh_ingot,ressource déjà présente
 objet,ingot_dineutronium,Lingot de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_dura_steel,Lingot d'acier haute vitesse,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_electronium,Lingot d'électronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
@@ -3175,7 +3175,7 @@ objet,nugget_cadmium,Pépite de Cadmium,SI_BESOIN,ressources : intermédiaires,,
 objet,nugget_co60,Pépite de cobalt-60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_cobalt,Pépite de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_daffergon,Pépite de Daffergon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-objet,nugget_desh,Pépite de Desh,GARDER,ressources : espace,,uniquement sur Lune
+objet,nugget_desh,Pépite de Desh,FUSIONNER,ressources,ad_astra:desh_nugget,ressource déjà présente
 objet,nugget_dineutronium,Pépite de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_euphemium,Pépite d'Euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_gh336,Pépite de Ghiorsium-336,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
@@ -3479,7 +3479,7 @@ objet,plate_cast_zirconium,,SI_BESOIN,ressources : intermédiaires,,gardé seule
 objet,plate_combine_steel,Plaque d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_copper,Plaque de cuivre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_dalekanium,Plaque de dalekanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-objet,plate_desh,Plaque de desh,GARDER,ressources : espace,,uniquement sur Lune
+objet,plate_desh,Plaque de desh,FUSIONNER,ressources,ad_astra:desh_plate,ressource déjà présente
 objet,plate_dineutronium,Plaque de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_dura_steel,Plaque d'acier rapide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_euphemium,Plaque d'euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend

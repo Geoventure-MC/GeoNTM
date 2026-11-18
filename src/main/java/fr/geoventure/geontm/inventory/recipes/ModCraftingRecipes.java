@@ -402,6 +402,8 @@ public final class ModCraftingRecipes {
         smelt(NS, "ingot_ra226", ItemIds.powder_ra226, ItemIds.ingot_ra226, 1.0);
         smelt(NS, "ingot_red_copper_1", ItemIds.powder_red_copper, ItemIds.ingot_red_copper, 1.0);
         smelt(NS, "ingot_schrabidate", ItemIds.powder_schrabidate, ItemIds.ingot_schrabidate, 5.0);
+        smelt(NS, "ingot_saturnite_espace", "geontm:ore_mars_saturnite", ItemIds.ingot_saturnite, 4.0);
+        smelt(NS, "ingot_starmetal_espace", "geontm:ore_glacio_starmetal", ItemIds.ingot_starmetal, 4.0);
         smelt(NS, "ingot_schrabidium_1", ItemIds.ore_schrabidium, ItemIds.ingot_schrabidium, 128.0);
         smelt(NS, "ingot_schrabidium_2", ItemIds.ore_nether_schrabidium, ItemIds.ingot_schrabidium, 256.0);
         smelt(NS, "ingot_schrabidium_3", ItemIds.ore_gneiss_schrabidium, ItemIds.ingot_schrabidium, 256.0);

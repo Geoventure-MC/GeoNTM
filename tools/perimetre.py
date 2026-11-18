@@ -29,6 +29,9 @@ NUCLEAIRE = {'u233', 'u235', 'u238', 'pu238', 'pu239', 'pu240', 'pu241', 'pu_mix
 FORMES = {'ingot': '{}_ingot', 'nugget': '{}_nugget', 'plate': '{}_plate', 'powder': '{}_dust', 'wire': '{}_wire',
           'block': '{}_block', 'ore': '{}_ore', 'rod': '{}_rod'}
 
+DESH = {'ingot': 'desh_ingot', 'nugget': 'desh_nugget', 'plate': 'desh_plate', 'block': 'desh_block'}
+BLOCS_ESPACE = ['ore_mars_saturnite', 'ore_glacio_starmetal']
+
 # --- Machines ------------------------------------------------------------------------------------------------
 MACHINES_GARDER = {
     'satellites': 'satlink satlinker radar radar_large missile_assembly',
@@ -82,6 +85,8 @@ THEMES = [
 
 
 def geomods_item(mat, forme, registre):
+    if mat == 'desh' and forme in DESH:
+        return 'ad_astra:' + DESH[forme]
     mat = SYNONYMES.get(mat, mat)
     nom = FORMES[forme].format(mat)
     if nom in registre:
@@ -158,7 +163,7 @@ def main():
 
     ressources = ROOT / 'src/main/resources/geontm/perimetre'
     ressources.mkdir(parents=True, exist_ok=True)
-    visibles = sorted(x['id'] for x in out if x['decision'] in ('GARDER', 'SIMPLIFIER'))
+    visibles = sorted({x['id'] for x in out if x['decision'] in ('GARDER', 'SIMPLIFIER')} | set(BLOCS_ESPACE))
     retires = sorted(x['id'] for x in out if x['decision'] == 'RETIRER')
     (ressources / 'creatif.txt').write_text('\n'.join(visibles) + '\n', encoding='utf-8', newline='\n')
     (ressources / 'retire.txt').write_text('\n'.join(retires) + '\n', encoding='utf-8', newline='\n')

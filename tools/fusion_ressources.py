@@ -46,6 +46,8 @@ def table_geomods():
         m = re.fullmatch(r'([a-z0-9]+)_(ingot|dust|plate|wire|block|ore|rod)', nom)
         if m:
             table[f'{FORMES[m[2]]}/{SYNONYMES.get(m[1], m[1])}'] = 'geomods:' + nom
+    table.update({'ingots/desh': 'ad_astra:desh_ingot', 'nuggets/desh': 'ad_astra:desh_nugget',
+                  'plates/desh': 'ad_astra:desh_plate', 'storage_blocks/desh': 'ad_astra:desh_block'})
     return table
 
 
@@ -122,6 +124,20 @@ def objets_de(entree, geomods):
     return [nom] if nom in decision else []
 
 
+ESPACE = ('desh', 'saturnite', 'starmetal', 'schrabidium')
+FORMES_ESPACE = re.compile(r'(ingot|nugget|powder|plate|plate_cast|plate_welded|billet|crystal|block|wire|shell|pipe)_(' + '|'.join(ESPACE) + ')$')
+
+
+def fabrique_matiere_espace(r):
+    """La recette crée une matière rare sans partir de cette matière : elle doit venir de l'espace."""
+    entrees = json.dumps(sorted(map(str, r['ent'])))
+    for s in r['sor']:
+        m = FORMES_ESPACE.fullmatch(s)
+        if m and m[2] not in entrees:
+            return True
+    return False
+
+
 def main():
     geomods = table_geomods()
     ecrire_java(geomods)
@@ -170,6 +186,7 @@ def main():
     for r in recettes:
         items = {o for e in r['ent'] for o in objets_de(e, geomods)} | r['sor']
         garder = id(r) in choisies or (r['table'] not in TABLES_RETIREES and not r['variante'] and not (items & retire))
+        garder = garder and not fabrique_matiere_espace(r)
         if not garder:
             r['p'].unlink()
             retirees[r['table']] += 1
