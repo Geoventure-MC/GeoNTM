@@ -23,7 +23,7 @@ public final class DungeonConfig {
      */
     public static int enableDungeons = 2;
     /** 1.7 {@code 1.05_enableLandmineSpawn}. */
-    public static boolean enableMines = true;
+    public static boolean enableMines = false;
     /** 1.7 {@code 1.15_enableVaultSpawn}. */
     public static boolean enableVaults = true;
     /**

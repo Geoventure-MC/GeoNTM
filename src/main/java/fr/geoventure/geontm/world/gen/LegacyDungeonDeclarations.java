@@ -338,6 +338,8 @@ public final class LegacyDungeonDeclarations {
         Features.configured(NS, "blueprint_chest", NS + ":blueprint_chest", null);
         Features.placed(NS, "blueprint_chest", NS + ":blueprint_chest", unstructured, biome());
         overworld.add(NS + ":blueprint_chest");
+        // Geoventure : pas de mines naturelles, elles feraient des dégâts sur les territoires des pays.
+        overworld.removeIf(feature -> feature.contains("landmine"));
         addFeatures(NS, "legacy_dungeon_blocks", "#minecraft:is_overworld", overworld, VEGETAL_DECORATION);
 
         // 1.7: biome == BiomeGenBase.beach (not the cold or stone beach)
