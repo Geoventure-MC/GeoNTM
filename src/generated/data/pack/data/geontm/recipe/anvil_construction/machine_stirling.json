@@ -1,0 +1,32 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#minecraft:planks",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:gear_large",
+      "exact": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_stirling"
+    }
+  ],
+  "tier": 2,
+  "order": 70
+}

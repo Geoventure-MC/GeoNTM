@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:fluid_duct_box_silver_1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:iron_plate"
+    }
+  ],
+  "tier": 2,
+  "overlay": "recycling",
+  "order": 113
+}

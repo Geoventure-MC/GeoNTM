@@ -1,0 +1,23 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.warheadhe1",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/titanium",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:ball_dynamite",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_chip"
+    }
+  ],
+  "output_items": [
+    "geontm:warhead_generic_small"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 66304
+}

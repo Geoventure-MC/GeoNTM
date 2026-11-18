@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:rbmk_control"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:rbmk_absorber"
+    },
+    {
+      "id": "geontm:ingot_graphite",
+      "count": 2
+    },
+    {
+      "id": "geontm:motor",
+      "count": 2
+    }
+  ],
+  "tier": 4,
+  "order": 240
+}

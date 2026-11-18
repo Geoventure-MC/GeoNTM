@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/lead"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_lead"
+    }
+  ],
+  "tier": 3,
+  "order": 5
+}

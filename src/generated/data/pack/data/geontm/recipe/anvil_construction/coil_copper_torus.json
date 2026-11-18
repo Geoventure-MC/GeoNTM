@@ -1,0 +1,17 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:coil_copper_torus"
+    }
+  ],
+  "tier": 1,
+  "overlay": "construction",
+  "order": 52
+}

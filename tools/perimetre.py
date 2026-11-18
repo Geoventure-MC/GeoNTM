@@ -145,9 +145,13 @@ def main():
     blocs = sorted(n[23:-5] for n in noms if n.startswith('assets/hbm/blockstates/') and n.endswith('.json'))
     objets = sorted(n[17:-5] for n in noms if n.startswith('assets/hbm/items/') and n.endswith('.json') and n.count('/') == 3)
     lignes = [('bloc', b) for b in blocs] + [('objet', o) for o in objets if o not in set(blocs)]
+    fichier_dependances = ROOT / 'docs/perimetre/dependances.txt'
+    dependances = set(fichier_dependances.read_text(encoding='utf-8').split()) if fichier_dependances.exists() else set()
     out = []
     for genre, ident in lignes:
         d, t, c, r = classer(ident, genre, registre)
+        if ident in dependances:
+            d, t, c, r = 'SI_BESOIN', 'dépendances', '', 'nécessaire à une recette gardée'
         nom = fr.get(('block.hbm.' if genre == 'bloc' else 'item.hbm.') + ident, '')
         out.append({'type': genre, 'id': ident, 'nom': nom, 'decision': d, 'theme': t, 'cible': c, 'raison': r})
 

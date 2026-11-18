@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "minecraft:furnace"
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 8
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:heater_firebox"
+    }
+  ],
+  "tier": 2,
+  "order": 61
+}

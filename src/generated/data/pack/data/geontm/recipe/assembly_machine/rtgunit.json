@@ -1,0 +1,25 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.rtgunit",
+  "input_items": [
+    {
+      "material": "lead",
+      "shape": "castplate",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:thermo_element",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:rtg_unit"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 10752
+}

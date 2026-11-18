@@ -1,0 +1,32 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.pwrcasing",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/lead",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:concretes",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:pwr_casing",
+      "count": 4
+    }
+  ],
+  "duration": 200,
+  "power": 500,
+  "order": 46080,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_lead_plating"
+    },
+    {
+      "ingredient": "#c:concretes",
+      "count": 4
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "minecraft:stone_bricks",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/iron",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/copper",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:steel_grate",
+      "count": 16
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:furnace_steel"
+    }
+  ],
+  "tier": 2,
+  "order": 67
+}

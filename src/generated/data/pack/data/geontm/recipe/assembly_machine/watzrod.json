@@ -1,0 +1,55 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.watzrod",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/zirconium",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/saturnite",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    {
+      "id": "geontm:watz_element",
+      "count": 3
+    }
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 49920,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:item_expensive_plastic",
+      "count": 8
+    },
+    {
+      "material": "saturnite",
+      "shape": "castplate",
+      "count": 3
+    },
+    {
+      "material": "zirconium",
+      "shape": "castplate",
+      "count": 3
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.tcalloy"
+  ]
+}

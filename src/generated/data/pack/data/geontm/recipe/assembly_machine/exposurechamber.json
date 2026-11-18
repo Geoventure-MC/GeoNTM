@@ -1,0 +1,71 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.exposurechamber",
+  "input_items": [
+    {
+      "material": "aluminium",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 12
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:motor_desh",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:capacitor_tantalum"
+    },
+    {
+      "ingredient": "geontm:glass_quartz",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:machine_exposure_chamber"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 43008,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_lead_plating",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 24
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_bismoid",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_computer",
+      "count": 2
+    }
+  ],
+  "blueprint_pools_528": [
+    "528.chip_quantum"
+  ]
+}

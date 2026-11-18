@@ -1,0 +1,56 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.arcfurnace",
+  "input_items": [
+    {
+      "ingredient": "#c:concretes",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:ingot_firebrick",
+      "count": 16
+    },
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:machine_transformer"
+    },
+    {
+      "ingredient": "geontm:circuit_analog"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_arc_furnace"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 23808,
+  "input_items_expensive": [
+    {
+      "ingredient": "#c:concretes",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:ingot_firebrick",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:machine_transformer"
+    },
+    {
+      "ingredient": "geontm:circuit_analog",
+      "count": 3
+    }
+  ]
+}

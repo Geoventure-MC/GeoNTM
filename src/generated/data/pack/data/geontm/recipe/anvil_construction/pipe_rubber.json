@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/rubber",
+      "count": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pipe_rubber"
+    }
+  ],
+  "tier": 1,
+  "order": 51
+}

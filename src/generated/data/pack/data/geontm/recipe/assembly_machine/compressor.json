@@ -1,0 +1,52 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.compressor",
+  "input_items": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:plates/copper",
+      "count": 4
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_analog"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_compressor"
+  ],
+  "duration": 200,
+  "power": 100,
+  "order": 28416,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_steel_plating",
+      "count": 3
+    },
+    {
+      "material": "steel",
+      "shape": "shell",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:circuit_analog",
+      "count": 3
+    }
+  ]
+}

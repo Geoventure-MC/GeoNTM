@@ -1,0 +1,44 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fusionboiler",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_cast/any_resistant_alloy",
+      "count": 16
+    },
+    {
+      "material": "copper",
+      "shape": "shell",
+      "count": 16
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:fusion_boiler"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 48896,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:item_expensive_plastic",
+      "count": 16
+    }
+  ]
+}

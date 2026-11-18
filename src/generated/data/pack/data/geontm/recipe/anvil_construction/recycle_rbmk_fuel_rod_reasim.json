@@ -1,0 +1,23 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:rbmk_fuel_rod_reasim"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:rbmk_blank"
+    },
+    {
+      "id": "geontm:ingot_zirconium",
+      "count": 4
+    },
+    {
+      "id": "geontm:shell_steel",
+      "count": 2
+    }
+  ],
+  "tier": 4,
+  "order": 243
+}

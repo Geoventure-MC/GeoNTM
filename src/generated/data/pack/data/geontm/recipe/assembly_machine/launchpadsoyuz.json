@@ -1,0 +1,57 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.launchpadsoyuz",
+  "input_items": [
+    {
+      "ingredient": "geontm:concrete_rebar",
+      "count": 64
+    },
+    {
+      "material": "steel",
+      "shape": "weldedplate",
+      "count": 48
+    },
+    {
+      "ingredient": "#c:plates_welded/any_resistant_alloy",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 24
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced"
+    }
+  ],
+  "output_items": [
+    "geontm:launchpad_soyuz"
+  ],
+  "duration": 1200,
+  "power": 5000,
+  "order": 84224,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:concrete_rebar",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 32
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 32
+    },
+    {
+      "ingredient": "geontm:circuit_controller_advanced"
+    }
+  ]
+}

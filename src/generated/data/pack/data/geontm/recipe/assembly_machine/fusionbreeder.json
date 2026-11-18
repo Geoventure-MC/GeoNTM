@@ -1,0 +1,43 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fusionbreeder",
+  "input_items": [
+    {
+      "ingredient": "#c:plates_cast/any_resistant_alloy",
+      "count": 4
+    },
+    {
+      "material": "steel",
+      "shape": "pipe",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/boron",
+      "count": 16
+    },
+    {
+      "ingredient": "#c:ingots/any_hardplastic",
+      "count": 16
+    }
+  ],
+  "output_items": [
+    "geontm:fusion_breeder"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 48640,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:ingots/boron",
+      "count": 64
+    },
+    {
+      "ingredient": "geontm:item_expensive_plastic",
+      "count": 4
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.radar",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_rubber",
+      "count": 12
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 5
+    },
+    {
+      "ingredient": "geontm:motor"
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 8
+    },
+    {
+      "ingredient": "geontm:crt_display",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_radar"
+  ],
+  "duration": 300,
+  "power": 100,
+  "order": 33280,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:magnetron",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:motor",
+      "count": 3
+    },
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:crt_display",
+      "count": 4
+    }
+  ]
+}

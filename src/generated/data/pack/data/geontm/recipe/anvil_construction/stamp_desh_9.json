@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:stamp_desh_flat"
+    },
+    {
+      "ingredient": "#c:ingots/weaponsteel",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:stamp_desh_9"
+    }
+  ],
+  "tier": 4,
+  "order": 172
+}

@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/tungsten"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:wire_fine_tungsten",
+      "count": 8
+    }
+  ],
+  "tier": 4,
+  "order": 17
+}

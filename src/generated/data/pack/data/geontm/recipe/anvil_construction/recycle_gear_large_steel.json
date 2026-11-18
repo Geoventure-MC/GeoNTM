@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:gear_large_steel"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:steel_plate",
+      "count": 8
+    },
+    {
+      "id": "geomods:titanium_ingot"
+    }
+  ],
+  "tier": 2,
+  "order": 219
+}

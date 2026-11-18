@@ -1,0 +1,40 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.epress",
+  "input_items": [
+    {
+      "ingredient": "#c:plates/steel",
+      "count": 8
+    },
+    {
+      "ingredient": "#c:ingots/any_rubber",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:part_generic_piston_hydraulic",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:circuit_basic"
+    }
+  ],
+  "output_items": [
+    "geontm:machine_epress"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 28928,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_heavy_frame"
+    },
+    {
+      "ingredient": "geontm:part_generic_piston_hydraulic",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 4
+    }
+  ]
+}

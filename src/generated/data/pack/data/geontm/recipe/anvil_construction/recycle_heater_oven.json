@@ -1,0 +1,20 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:heater_oven"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:ingot_firebrick",
+      "count": 16
+    },
+    {
+      "id": "minecraft:copper_ingot",
+      "count": 8
+    }
+  ],
+  "tier": 2,
+  "order": 215
+}

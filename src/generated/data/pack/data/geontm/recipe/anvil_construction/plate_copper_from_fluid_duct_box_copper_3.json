@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:fluid_duct_box_copper_3"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_copper"
+    }
+  ],
+  "tier": 2,
+  "overlay": "recycling",
+  "order": 130
+}

@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/iron"
+    },
+    {
+      "ingredient": "geontm:plate_polymer"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:fluid_duct_exhaust_1",
+      "count": 8
+    }
+  ],
+  "tier": 2,
+  "order": 116
+}

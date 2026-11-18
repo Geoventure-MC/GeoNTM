@@ -1,29 +1,34 @@
 # Recettes conservées
 
-- Recettes gardées : **1684**
-- Recettes retirées lors de ce passage : **1431**
-- Recettes adaptées aux objets Geoventure lors de ce passage : **56**
+- Recettes gardées : **1992**
+- Recettes retirées : **1123**
+- Recettes adaptées à nos objets : **82**
+- Objets ajoutés car indispensables : **35**
 - Tags de matières reliés à GeoMods : **88**
+- Machines gardées sans recette dans les tables : **13**
 
 | Table | Recettes gardées |
 |---|---:|
-| `arc_furnace` | 12 |
-| `arc_welder` | 41 |
-| `assembly_machine` | 159 |
+| `anvil_construction` | 190 |
+| `anvil_smithing` | 21 |
+| `arc_furnace` | 13 |
+| `arc_welder` | 42 |
+| `assembly_machine` | 257 |
 | `blast_furnace` | 17 |
 | `breeder` | 30 |
 | `centrifuge` | 84 |
-| `chemical_plant` | 77 |
+| `chemical_plant` | 73 |
 | `coker` | 33 |
 | `combination` | 23 |
 | `compressor` | 5 |
 | `cracking` | 12 |
 | `crucible` | 11 |
-| `crystallizer` | 116 |
+| `crystallizer` | 120 |
 | `cyclotron` | 42 |
 | `difurnace` | 13 |
 | `electrolyser_fluid` | 8 |
 | `electrolyser_metal` | 18 |
+| `exposure_chamber` | 2 |
 | `fluid_breeder` | 3 |
 | `fraction` | 19 |
 | `fusion` | 9 |
@@ -33,8 +38,8 @@
 | `material_distribution` | 49 |
 | `mixer` | 49 |
 | `outgasser` | 17 |
-| `precision_assembler` | 56 |
-| `press` | 32 |
+| `precision_assembler` | 46 |
+| `press` | 34 |
 | `pseudo_fluid` | 7 |
 | `purex` | 56 |
 | `pyrolysis` | 40 |
@@ -44,7 +49,7 @@
 | `rock_mill` | 9 |
 | `rotary_furnace` | 13 |
 | `sawmill` | 5 |
-| `shredder` | 121 |
+| `shredder` | 124 |
 | `silex` | 301 |
 | `soldering` | 43 |
 | `solidification` | 46 |

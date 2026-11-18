@@ -1,0 +1,19 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.plateweaponsteel",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/weaponsteel"
+    }
+  ],
+  "output_items": [
+    "geontm:plate_weaponsteel"
+  ],
+  "duration": 60,
+  "power": 100,
+  "blueprint_pools": [
+    "alt.plates"
+  ],
+  "auto_switch_group": "autoswitch.plates",
+  "order": 2560
+}

@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:stamp_iron_flat"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:stamp_iron_wire"
+    }
+  ],
+  "tier": 1,
+  "order": 156
+}

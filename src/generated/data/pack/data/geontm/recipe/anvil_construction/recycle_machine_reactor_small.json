@@ -1,0 +1,46 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:machine_reactor_small"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:steel_ingot",
+      "count": 8
+    },
+    {
+      "id": "geontm:ingot_tcalloy",
+      "count": 4
+    },
+    {
+      "id": "geontm:motor_desh",
+      "count": 2
+    },
+    {
+      "id": "geontm:ingot_boron",
+      "count": 5
+    },
+    {
+      "id": "geontm:plate_lead",
+      "count": 8
+    },
+    {
+      "id": "geontm:crt_display",
+      "count": 3
+    },
+    {
+      "id": "geontm:circuit_basic"
+    },
+    {
+      "id": "geontm:circuit_basic",
+      "chance": 0.5
+    }
+  ],
+  "tier": 4,
+  "requires": [
+    "!enable_528"
+  ],
+  "order": 251
+}

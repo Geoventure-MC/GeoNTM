@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/titanium"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:titanium_plate"
+    }
+  ],
+  "tier": 3,
+  "order": 2
+}

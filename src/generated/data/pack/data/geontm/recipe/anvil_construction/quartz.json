@@ -1,0 +1,15 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:dusts/quartz"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:quartz"
+    }
+  ],
+  "tier": 3,
+  "order": 25
+}

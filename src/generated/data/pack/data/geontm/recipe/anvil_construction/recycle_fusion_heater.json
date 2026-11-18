@@ -1,0 +1,24 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:fusion_heater"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:pipe_steel",
+      "count": 4
+    },
+    {
+      "id": "geontm:pipe_copper",
+      "count": 2
+    },
+    {
+      "id": "geontm:circuit_analog",
+      "chance": 0.5
+    }
+  ],
+  "tier": 1,
+  "order": 255
+}

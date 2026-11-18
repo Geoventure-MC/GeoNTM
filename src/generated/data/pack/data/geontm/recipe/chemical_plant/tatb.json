@@ -1,0 +1,26 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.tatb",
+  "input_items": [
+    {
+      "ingredient": "geontm:ball_tnt"
+    }
+  ],
+  "input_fluids": [
+    {
+      "type": "geontm:sourgas",
+      "amount": 200,
+      "pressure": 1
+    },
+    {
+      "type": "geontm:nitric_acid",
+      "amount": 10
+    }
+  ],
+  "output_items": [
+    "geontm:ball_tatb"
+  ],
+  "duration": 50,
+  "power": 5000,
+  "order": 77
+}

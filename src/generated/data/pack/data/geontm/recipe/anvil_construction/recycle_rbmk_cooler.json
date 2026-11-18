@@ -1,0 +1,26 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:rbmk_cooler"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:rbmk_blank"
+    },
+    {
+      "id": "geontm:steel_grate",
+      "count": 4
+    },
+    {
+      "id": "geontm:plate_polymer",
+      "count": 4
+    }
+  ],
+  "tier": 4,
+  "requires": [
+    "!enable_528"
+  ],
+  "order": 250
+}

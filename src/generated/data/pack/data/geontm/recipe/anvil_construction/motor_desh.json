@@ -1,0 +1,27 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:motor"
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 2
+    },
+    {
+      "material": "gold",
+      "shape": "densewire"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:motor_desh"
+    }
+  ],
+  "tier": 3,
+  "order": 55
+}

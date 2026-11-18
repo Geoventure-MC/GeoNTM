@@ -1,0 +1,27 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.mpw10bus",
+  "input_items": [
+    {
+      "ingredient": "geontm:seg_10"
+    },
+    {
+      "ingredient": "#c:plates/weaponsteel",
+      "count": 6
+    },
+    {
+      "ingredient": "#c:ingots/any_highexplosive",
+      "count": 6
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:mp_warhead_10_buster"
+  ],
+  "duration": 100,
+  "power": 100,
+  "order": 80384
+}

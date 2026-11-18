@@ -1,0 +1,26 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "item": "geontm:machine_stirling",
+      "has_cog": false,
+      "type": "geontm:stirling"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:steel_plate",
+      "count": 6
+    },
+    {
+      "id": "minecraft:copper_ingot",
+      "count": 8
+    },
+    {
+      "id": "geontm:coil_copper",
+      "count": 4
+    }
+  ],
+  "tier": 2,
+  "order": 217
+}

@@ -1,0 +1,12 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 1,
+  "output": "geontm:ingot_gunmetal",
+  "left": {
+    "ingredient": "#c:ingots/copper"
+  },
+  "right": {
+    "ingredient": "#c:ingots/aluminium"
+  },
+  "order": 38
+}

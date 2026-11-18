@@ -1,0 +1,13 @@
+{
+  "type": "geontm:anvil_smithing",
+  "tier": 1,
+  "output": "geontm:anvil_schrabidate",
+  "left": {
+    "ingredient": "geontm:anvil_lead"
+  },
+  "right": {
+    "ingredient": "#c:ingots/schrabidate",
+    "count": 10
+  },
+  "order": 15
+}

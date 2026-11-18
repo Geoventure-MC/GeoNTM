@@ -1,0 +1,24 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:ingots/desh",
+      "count": 4
+    },
+    {
+      "ingredient": "#c:dusts/any_plastic",
+      "count": 2
+    },
+    {
+      "ingredient": "#c:ingots/dura_steel"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:plate_desh",
+      "count": 4
+    }
+  ],
+  "tier": 3,
+  "order": 93
+}

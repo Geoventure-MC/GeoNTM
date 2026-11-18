@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "geontm:bobblehead",
+  "output": "geontm:scrap_plastic_board_blank"
+}

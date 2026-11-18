@@ -1,0 +1,64 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.fel",
+  "input_items": [
+    {
+      "ingredient": "geontm:battery_lithium"
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 64
+    },
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 12
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:part_generic_glass_polarized",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_capacitor",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:circuit_basic",
+      "count": 4
+    }
+  ],
+  "output_items": [
+    "geontm:machine_fel"
+  ],
+  "duration": 400,
+  "power": 100,
+  "order": 29184,
+  "input_items_expensive": [
+    {
+      "ingredient": "geontm:item_expensive_ferro_plating",
+      "count": 3
+    },
+    {
+      "material": "gold",
+      "shape": "densewire",
+      "count": 64
+    },
+    {
+      "ingredient": "#c:ingots/any_plastic",
+      "count": 16
+    },
+    {
+      "ingredient": "geontm:part_generic_glass_polarized",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:item_expensive_circuit",
+      "count": 3
+    }
+  ]
+}

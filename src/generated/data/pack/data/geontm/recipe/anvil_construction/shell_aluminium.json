@@ -1,0 +1,16 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "#c:plates/aluminium",
+      "count": 4
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:shell_aluminium"
+    }
+  ],
+  "tier": 1,
+  "order": 41
+}

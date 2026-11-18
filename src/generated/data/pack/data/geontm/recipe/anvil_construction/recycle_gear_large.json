@@ -1,0 +1,19 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "ingredient": "geontm:gear_large"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geomods:iron_plate",
+      "count": 8
+    },
+    {
+      "id": "minecraft:copper_ingot"
+    }
+  ],
+  "tier": 2,
+  "order": 220
+}

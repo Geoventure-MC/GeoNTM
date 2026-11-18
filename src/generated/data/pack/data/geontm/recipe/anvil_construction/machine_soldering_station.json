@@ -1,0 +1,30 @@
+{
+  "type": "geontm:anvil_construction",
+  "inputs": [
+    {
+      "material": "steel",
+      "shape": "castplate",
+      "count": 2
+    },
+    {
+      "ingredient": "geontm:coil_copper",
+      "count": 4
+    },
+    {
+      "material": "tungsten",
+      "shape": "bolt",
+      "count": 4
+    },
+    {
+      "ingredient": "geontm:circuit_vacuum_tube",
+      "count": 2
+    }
+  ],
+  "outputs": [
+    {
+      "id": "geontm:machine_soldering_station"
+    }
+  ],
+  "tier": 2,
+  "order": 76
+}
