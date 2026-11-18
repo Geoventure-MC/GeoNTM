@@ -447,7 +447,7 @@ public final class NTMStructureDeclarations {
         JsonObject set = new JsonObject();
         set.add("structures", setEntries);
         set.add("placement", placement);
-        Data.declare("data/" + NS + "/worldgen/structure_set/ntm_structures.json", set);
+        // Geoventure : aucune structure GeoNTM ne se place dans le monde, le set n'est pas publié.
 
         JsonObject structureTag = new JsonObject();
         structureTag.addProperty("replace", false);

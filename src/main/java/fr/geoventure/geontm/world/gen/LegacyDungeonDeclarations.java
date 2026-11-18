@@ -259,7 +259,7 @@ public final class LegacyDungeonDeclarations {
             JsonObject set = new JsonObject();
             set.add("structures", members);
             set.add("placement", placement);
-            Data.declare("data/" + NS + "/worldgen/structure_set/" + id + ".json", set);
+            // Geoventure : aucune structure GeoNTM ne se place dans le monde, le set n'est pas publié.
 
             all.add(NS + ":" + id);
         }
@@ -310,7 +310,7 @@ public final class LegacyDungeonDeclarations {
             JsonObject set = new JsonObject();
             set.add("structures", members);
             set.add("placement", placement);
-            Data.declare("data/" + NS + "/worldgen/structure_set/" + id + ".json", set);
+            // Geoventure : aucune structure GeoNTM ne se place dans le monde, le set n'est pas publié.
 
             all.add(NS + ":" + id);
         }
@@ -340,11 +340,9 @@ public final class LegacyDungeonDeclarations {
         overworld.add(NS + ":blueprint_chest");
         // Geoventure : pas de mines naturelles, elles feraient des dégâts sur les territoires des pays.
         overworld.removeIf(feature -> feature.contains("landmine"));
-        addFeatures(NS, "legacy_dungeon_blocks", "#minecraft:is_overworld", overworld, VEGETAL_DECORATION);
 
         // 1.7: biome == BiomeGenBase.beach (not the cold or stone beach)
         String capsule = gated("landed_capsule", onSurface, unstructured, ModBiomeModifiers.cfgChance(WorldgenKeys.CAPSULE));
-        addFeatures(NS, "landed_capsule", "minecraft:beach", List.of(capsule), VEGETAL_DECORATION);
     }
 
     private static String gated(String name, JsonObject[] onSurface, JsonObject... gates) {
