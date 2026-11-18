@@ -495,7 +495,6 @@ bottle2_korl
 bottle_cherry
 bottle_empty
 bottle_mercury
-bottle_nuka
 bottle_opener
 bottle_quantum
 bottle_rad
@@ -723,7 +722,6 @@ coin_token
 coin_ufo
 coin_worm
 concrete
-concrete_asbestos
 concrete_asbestos_slab
 concrete_asbestos_stairs
 concrete_black
@@ -830,7 +828,6 @@ crate_jungle
 crate_lead
 crate_metal
 crate_red
-crate_steel
 crate_supply
 crate_template
 crate_tungsten
@@ -899,7 +896,6 @@ deco_pipe_rim_marked
 deco_pipe_rim_red
 deco_pipe_rim_rusted
 deco_pipe_rusted
-deco_rbmk
 deco_rbmk_smooth
 deco_red_copper
 deco_rusty_steel
@@ -1044,8 +1040,6 @@ gadget_wireing
 geysir_chlorine
 geysir_nether
 glass_ash
-glass_boron
-glass_lead
 glass_polarized
 glass_polonium
 glass_trinitite
@@ -1370,7 +1364,6 @@ mine_fat
 mine_he
 mine_naval
 mine_shrap
-mush
 mush_block
 mush_block_stem
 n2_charge
@@ -1424,7 +1417,6 @@ particle_aproton
 particle_aschrab
 particle_copper
 particle_dark
-particle_digamma
 particle_empty
 particle_hydrogen
 particle_lead
@@ -1435,7 +1427,6 @@ particle_strange
 particle_tachyon
 peas
 pedestal
-pedestal_steel
 pink_barrel
 pink_log
 pink_planks
@@ -1499,8 +1490,6 @@ radio_torch_controller
 radio_torch_counter
 radio_torch_logic
 radio_torch_reader
-radio_torch_receiver
-radio_torch_sender
 rail_booster
 rail_highspeed
 rail_large_buffer
@@ -1572,12 +1561,10 @@ rune_hagalaz
 rune_isa
 rune_jera
 rune_thurisaz
-sand_boron
 sand_boron_layer
 sand_dirty
 sand_dirty_red
 sand_gold
-sand_lead
 sand_polonium
 sand_uranium
 sandbags

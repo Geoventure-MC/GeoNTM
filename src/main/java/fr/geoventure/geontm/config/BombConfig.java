@@ -76,7 +76,7 @@ public final class BombConfig {
     public static int falloutClaimWindow = 16;
 
     /** Disables the nuclear (crater + fallout) portion of nukes, leaving only the blast damage. */
-    public static boolean disableNuclear = false;
+    public static boolean disableNuclear = true;
 
     /**
      * Clears the crater by writing whole chunk sections and repairing heightmaps/lighting once per

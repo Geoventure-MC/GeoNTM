@@ -38,7 +38,7 @@ GeoCore n'est pas réécrit : 3 818 classes compilées de NTM en dépendent. Il 
 
 ## Bugs connus
 
-- `hbm:machine_lithium_battery` ne se décharge pas vers les câbles lors du test d'énergie.
+- `geontm:machine_lithium_battery` ne se décharge pas vers les câbles lors du test d'énergie.
 
 ## Licences des autres mods
 

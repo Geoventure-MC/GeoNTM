@@ -288,7 +288,7 @@ bloc,cmb_brick_reinforced_slab,Dalle de brique CMB renforcée,RETIRER,hors péri
 bloc,cmb_brick_reinforced_stairs,Escaliers en brique CMB renforcés,RETIRER,hors périmètre,,armure ou référence à un autre univers
 bloc,compact_launcher,Rampe de lancement compacte,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,concrete,Tuile de béton,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,concrete_asbestos,Béton d'amiante,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,concrete_asbestos,Béton d'amiante,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,concrete_asbestos_slab,Dalle de béton à l'amiante,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,concrete_asbestos_stairs,Escaliers en béton d'amiante,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,concrete_black_slab,Dalle de béton noir,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -370,7 +370,7 @@ bloc,crate_jungle,Caisse d'énargite,RETIRER,hors périmètre,,hors périmètre
 bloc,crate_lead,Caisse de matières dangereuses,RETIRER,hors périmètre,,hors périmètre
 bloc,crate_metal,Caisse de machines,RETIRER,hors périmètre,,hors périmètre
 bloc,crate_red,Caisse rouge,RETIRER,hors périmètre,,hors périmètre
-bloc,crate_steel,Caisse en acier,RETIRER,hors périmètre,,hors périmètre
+bloc,crate_steel,Caisse en acier,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,crate_supply,Caisse de ravitaillement,RETIRER,hors périmètre,,hors périmètre
 bloc,crate_template,Caisse de modèles,RETIRER,hors périmètre,,hors périmètre
 bloc,crate_tungsten,Caisse de tungstène,RETIRER,hors périmètre,,hors périmètre
@@ -417,7 +417,7 @@ bloc,deco_pipe_rim_marked,Tuyau de gaz (cerclé),RETIRER,hors périmètre,,"doub
 bloc,deco_pipe_rim_red,Tuyau en acier rouge (cerclé),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,deco_pipe_rim_rusted,Tuyau en acier rouillé (cerclé),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,deco_pipe_rusted,Tuyau en acier rouillé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,deco_rbmk,Déco RBMK,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,deco_rbmk,Déco RBMK,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,deco_rbmk_smooth,RBMK Déco Lisse,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,deco_red_copper,Bloc Déco Cuivre Rouge,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,deco_rusty_steel,Bloc décoratif en acier rouillé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -563,8 +563,8 @@ bloc,geiger,Compteur Geiger,GARDER,radioactivité,,
 bloc,geysir_chlorine,Geyser de chlore,RETIRER,hors périmètre,,hors périmètre
 bloc,geysir_nether,Geyser du Néant,RETIRER,hors périmètre,,hors périmètre
 bloc,glass_ash,Verre de cendre,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,glass_boron,Verre de bore,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,glass_lead,Verre au plomb,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,glass_boron,Verre de bore,SI_BESOIN,dépendances,,nécessaire à une recette gardée
+bloc,glass_lead,Verre au plomb,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,glass_polarized,Verre polarisé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,glass_polonium,Verre de polonium,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,glass_quartz,Verre Quartz,SI_BESOIN,dépendances,,nécessaire à une recette gardée
@@ -800,7 +800,7 @@ bloc,mine_shrap,Mine d'éclats d'obus,RETIRER,hors périmètre,,hors périmètre
 bloc,moon_turf,Gazon lunaire,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,mud_block,Boue vénéneuse,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,muffler,Silencieux,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-bloc,mush,Champignon fluorescent,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,mush,Champignon fluorescent,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,mush_block,Bloc de champignon luminescent,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,mush_block_stem,Tige de champignon luminescent,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,network_separator,Séparateur de réseau,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -989,8 +989,8 @@ bloc,radio_torch_controller,Contrôleur Redstone-over-Radio,RETIRER,hors périm�
 bloc,radio_torch_counter,Compteur d'objets Redstone-over-Radio,RETIRER,hors périmètre,,hors périmètre
 bloc,radio_torch_logic,Récepteur logique Redstone-over-Radio,RETIRER,hors périmètre,,hors périmètre
 bloc,radio_torch_reader,Lecteur Redstone-over-Radio,RETIRER,hors périmètre,,hors périmètre
-bloc,radio_torch_receiver,Récepteur Redstone sur radio,RETIRER,hors périmètre,,hors périmètre
-bloc,radio_torch_sender,Émetteur Redstone-over-Radio,RETIRER,hors périmètre,,hors périmètre
+bloc,radio_torch_receiver,Récepteur Redstone sur radio,SI_BESOIN,dépendances,,nécessaire à une recette gardée
+bloc,radio_torch_sender,Émetteur Redstone-over-Radio,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,radiobox,Boîte antiparasitaire Rosenberg,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,radiorec,Radio FM cassée,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,radsensor,Capteur de rayonnement,GARDER,radioactivité,,
@@ -1088,12 +1088,12 @@ bloc,reinforced_stone_stairs,Escaliers en pierre renforcée,RETIRER,hors périm�
 bloc,round_airlock_door,Porte de sas ronde,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,rtg_polonium,Cellule isotopique PT,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,safe,Sûr,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-bloc,sand_boron,Sable de bore,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,sand_boron,Sable de bore,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,sand_boron_layer,Couche de sable de bore,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,sand_dirty,Sable huileux,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,sand_dirty_red,Sable huileux rouge,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,sand_gold,Sable doré,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,sand_lead,Sable de plomb,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,sand_lead,Sable de plomb,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,sand_polonium,Sable de polonium,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,sand_quartz,Le sable de quartz,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 bloc,sand_uranium,Sable d'uranium,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -1888,7 +1888,7 @@ objet,bottle2_korl,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bo
 objet,bottle_cherry,Bouteille de Nuka Cherry,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,bottle_empty,Bouteille en forme de bombe vide,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,bottle_mercury,Bouteille de mercure,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,bottle_nuka,Bouteille de Nuka Cola,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
+objet,bottle_nuka,Bouteille de Nuka Cola,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 objet,bottle_opener,Ouvre-bouteille artisanal de Hbm,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,bottle_quantum,Bouteille de Nuka Cola Quantum,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,bottle_rad,Bouteille de S~Cola RAD,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
@@ -3354,7 +3354,7 @@ objet,particle_aproton,Capsule antiproton,RETIRER,hors périmètre,,"objet déco
 objet,particle_aschrab,Gélule anti-schrabidium,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,particle_copper,Capsule d'ions de cuivre,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,particle_dark,Capsule de matière noire,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,particle_digamma,§cLa particule Digamma§r,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
+objet,particle_digamma,§cLa particule Digamma§r,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 objet,particle_empty,Capsule de particules vide,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,particle_higgs,Capsule de boson de Higgs,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 objet,particle_hydrogen,Capsule d'ions hydrogène,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
@@ -3368,7 +3368,7 @@ objet,parts_legendary_tier1,Pièces légendaires,SIMPLIFIER,électronique,,
 objet,parts_legendary_tier2,Pièces légendaires,SIMPLIFIER,électronique,,
 objet,parts_legendary_tier3,Pièces légendaires,SIMPLIFIER,électronique,,
 objet,peas,Petits pois,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,pedestal_steel,Piédestal en acier,RETIRER,hors périmètre,,hors périmètre
+objet,pedestal_steel,Piédestal en acier,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 objet,pellet_antimatter,Granule antimatiere,SIMPLIFIER,réacteurs,,
 objet,pellet_buckshot,Amas de plomb,SIMPLIFIER,réacteurs,,
 objet,pellet_canister,Coup de bidon,SIMPLIFIER,réacteurs,,

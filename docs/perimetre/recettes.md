@@ -1,7 +1,9 @@
 # Recettes conservées
 
 - Recettes gardées : **1991**
-- Objets ajoutés car indispensables : **35**
+- Recettes retirées : **0**
+- Recettes adaptées à nos objets : **0**
+- Objets ajoutés car indispensables : **48**
 - Tags de matières reliés à GeoMods : **88**
 - Machines gardées sans recette dans les tables : **6**
 
