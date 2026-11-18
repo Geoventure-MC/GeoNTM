@@ -25,9 +25,9 @@ GeoCore n'est pas réécrit : 3 818 classes compilées de NTM en dépendent. Il 
 
 | Étape | But | Terminé quand |
 |---|---|---|
-| 0. Fondations | Dépôts, compilation, périmètre proposé | Le jar se construit sur GitHub |
-| 1. Identité | Passer au nom GeoNTM, 1.20.1 Forge uniquement | Le mod démarre sur le serveur de test |
-| 2. Réduction | Retirer le contenu hors périmètre | Aucune recette ni référence cassée |
+| 0. Fondations ✅ | Dépôts, compilation, périmètre proposé | Le jar se construit sur GitHub |
+| 1. Identité (code fait, test en jeu à faire) | Passer au nom GeoNTM, 1.20.1 Forge uniquement | Le mod démarre sur le serveur de test |
+| 2. Réduction (en cours) | Masquer puis retirer le contenu hors périmètre | Aucune recette ni référence cassée |
 | 3. Ressources | Remplacer les doublons, placer les matières rares dans l'espace | Chaque recette gardée est réalisable |
 | 4. Sécurité | Protection des pays, règles de guerre, bombes coupées | Testé sur un territoire protégé |
 | 5. Progression | Âges, R&D, schémas | Aucun contournement par recette |
