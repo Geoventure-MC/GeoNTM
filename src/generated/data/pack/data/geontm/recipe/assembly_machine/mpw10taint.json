@@ -28,5 +28,8 @@
   ],
   "duration": 100,
   "power": 100,
+  "blueprint_pools": [
+    "secret.ogives_speciales"
+  ],
   "order": 81152
 }

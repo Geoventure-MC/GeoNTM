@@ -26,6 +26,9 @@
   ],
   "duration": 300,
   "power": 100,
+  "blueprint_pools": [
+    "discover.fusion"
+  ],
   "order": 48896,
   "input_items_expensive": [
     {

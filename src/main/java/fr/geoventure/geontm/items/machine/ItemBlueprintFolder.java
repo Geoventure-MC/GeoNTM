@@ -4,6 +4,7 @@ import fr.geoventure.geontm.inventory.recipes.loader.GenericRecipes;
 import fr.geoventure.geontm.inventory.recipes.AssemblyMachineRecipes;
 import fr.geoventure.geontm.items.LegacyMeta;
 import fr.geoventure.geontm.items.ModDataComponents;
+import fr.geoventure.geontm.pont.PontProgression;
 import fr.geoventure.geontm.items.ModMachineItems;
 import fr.geoventure.geocore.world.CompatItem;
 import net.minecraft.network.chat.Component;
@@ -49,9 +50,17 @@ public final class ItemBlueprintFolder extends CompatItem implements LegacyMeta 
                 : variant == 2 ? GenericRecipes.POOL_PREFIX_SECRET : GenericRecipes.POOL_PREFIX_ALT;
         List<String> pools = new ArrayList<>();
         for (String pool : GenericRecipes.blueprintPools.keySet()) {
-            if (pool.startsWith(prefix)) pools.add(pool);
+            if (pool.startsWith(prefix) && PontProgression.rechercheAcquise(player, pool)) pools.add(pool);
         }
-        if (pools.isEmpty()) return InteractionResult.PASS;
+        if (pools.isEmpty()) {
+            player.displayClientMessage(Component.literal("Votre pays n'a encore débloqué aucun schéma de ce type."), true);
+            return InteractionResult.FAIL;
+        }
+
+        // Geoventure : un schéma déjà en poche n'est pas redonné tant qu'il en reste d'autres.
+        List<String> nouveaux = new ArrayList<>(pools);
+        for (ItemStack stack : player.getInventory().items) nouveaux.remove(ItemBlueprints.grabPool(stack));
+        if (!nouveaux.isEmpty()) pools = nouveaux;
 
         String selected = pools.get(player.getRandom().nextInt(pools.size()));
         ItemStack blueprint = ItemBlueprints.make(selected);

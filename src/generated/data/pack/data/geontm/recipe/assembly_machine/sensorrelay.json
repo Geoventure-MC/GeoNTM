@@ -22,6 +22,9 @@
   ],
   "duration": 600,
   "power": 25000,
+  "blueprint_pools": [
+    "discover.spatial"
+  ],
   "order": 86528,
   "input_items_expensive": [
     {

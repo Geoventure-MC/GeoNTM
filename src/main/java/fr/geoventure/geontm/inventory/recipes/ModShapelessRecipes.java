@@ -34,6 +34,7 @@ public final class ModShapelessRecipes {
         }
         declared = true;
 
+        schemasGeoventure();
         shapeless0();
         shapeless1();
         shapeless2();
@@ -80,6 +81,14 @@ public final class ModShapelessRecipes {
             shapeless(NS, "billet_" + material + "_to_ingots", ingot, 2, billet, billet, billet);
             shaped(NS, "billet_" + material + "_from_ingots", billet, 3, rows("##"), "#", ingot);
         }
+    }
+
+    /** Les machines qui fabriquaient ces dossiers sont retirées : ils se fabriquent à la main. */
+    private static void schemasGeoventure() {
+        shapeless(NS, "blueprint_folder", ItemIds.blueprint_folder,
+                VanillaIds.paper, VanillaIds.paper, VanillaIds.paper, ItemIds.circuit_basic);
+        shapeless(NS, "blueprint_folder_discover", ItemIds.blueprint_folder_discover,
+                ItemIds.blueprint_folder, ItemIds.circuit_basic, ItemIds.circuit_basic);
     }
 
     private static void shapeless0() {

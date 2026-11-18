@@ -19,5 +19,8 @@
   ],
   "duration": 100,
   "power": 100,
+  "blueprint_pools": [
+    "discover.ogives"
+  ],
   "order": 66304
 }

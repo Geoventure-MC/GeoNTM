@@ -23,5 +23,8 @@
   ],
   "duration": 100,
   "power": 100,
+  "blueprint_pools": [
+    "discover.missiles_modulaires"
+  ],
   "order": 71680
 }

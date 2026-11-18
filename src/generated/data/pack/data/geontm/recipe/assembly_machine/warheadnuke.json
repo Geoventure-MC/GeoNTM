@@ -29,6 +29,9 @@
   ],
   "duration": 400,
   "power": 100,
+  "blueprint_pools": [
+    "secret.ogives_speciales"
+  ],
   "order": 69376,
   "blueprint_pools_528": [
     "528.controller"

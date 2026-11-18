@@ -74,6 +74,10 @@ public class ItemBlueprints extends CompatItem implements ModelState {
             return InteractionResult.PASS;
         }
 
+        if (!fr.geoventure.geontm.pont.PontProgression.rechercheAcquise(player, poolName)) {
+            player.displayClientMessage(Component.literal("Votre pays n'a pas la recherche pour copier ce schéma."), true);
+            return InteractionResult.FAIL;
+        }
         if (!player.isCreative() && !consumePaper(player)) return InteractionResult.PASS;
 
         player.swing(hand);

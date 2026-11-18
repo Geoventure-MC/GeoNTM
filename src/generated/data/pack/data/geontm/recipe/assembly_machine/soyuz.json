@@ -41,6 +41,9 @@
   ],
   "duration": 6000,
   "power": 25000,
+  "blueprint_pools": [
+    "discover.spatial"
+  ],
   "order": 85504,
   "blueprint_pools_528": [
     "528.soyuz"

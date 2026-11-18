@@ -27,6 +27,9 @@
   ],
   "duration": 1200,
   "power": 5000,
+  "blueprint_pools": [
+    "discover.espace_lointain"
+  ],
   "order": 84480,
   "input_items_expensive": [
     {

@@ -13,5 +13,8 @@
   "duration": 40,
   "power": 200,
   "auto_switch_group": "autoswitch.pilerod",
+  "blueprint_pools": [
+    "discover.reacteurs"
+  ],
   "order": 12032
 }

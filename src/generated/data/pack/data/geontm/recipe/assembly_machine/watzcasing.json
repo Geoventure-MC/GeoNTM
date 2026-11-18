@@ -23,6 +23,9 @@
   ],
   "duration": 100,
   "power": 100,
+  "blueprint_pools": [
+    "discover.reacteurs"
+  ],
   "order": 50432,
   "input_items_expensive": [
     {

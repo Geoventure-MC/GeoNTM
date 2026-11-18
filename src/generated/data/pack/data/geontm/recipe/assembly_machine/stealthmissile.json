@@ -37,5 +37,8 @@
   ],
   "duration": 1200,
   "power": 100,
+  "blueprint_pools": [
+    "discover.ogives_lourdes"
+  ],
   "order": 70400
 }

@@ -25,5 +25,8 @@
   ],
   "duration": 600,
   "power": 100,
+  "blueprint_pools": [
+    "discover.espace_lointain"
+  ],
   "order": 70144
 }

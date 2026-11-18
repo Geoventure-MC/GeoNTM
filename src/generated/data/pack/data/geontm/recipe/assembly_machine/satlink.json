@@ -23,5 +23,8 @@
   ],
   "duration": 100,
   "power": 1000,
+  "blueprint_pools": [
+    "discover.spatial"
+  ],
   "order": 89856
 }
