@@ -55,8 +55,8 @@ public class TileEntityMachineBattery extends TileEntityMachineBase implements M
 
     /** I/O modes. */
     public static final int MODE_INPUT = 0, MODE_BUFFER = 1, MODE_OUTPUT = 2, MODE_NONE = 3;
-    /** Mode while NOT receiving a redstone signal (default: input). */
-    public short redLow = MODE_INPUT;
+    /** Mode sans signal de redstone. Geoventure : tampon, une batterie posée charge et se décharge sans réglage. */
+    public short redLow = MODE_BUFFER;
     /** Mode while receiving a redstone signal (default: output). */
     public short redHigh = MODE_OUTPUT;
     /** Network connection priority (LOW / NORMAL / HIGH). */

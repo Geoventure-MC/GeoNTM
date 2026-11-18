@@ -38,7 +38,7 @@ GeoCore n'est pas réécrit : 3 818 classes compilées de NTM en dépendent. Il 
 
 ## Bugs connus
 
-- `geontm:machine_lithium_battery` ne se décharge pas vers les câbles lors du test d'énergie.
+- `geontm:machine_lithium_battery` ne se déchargeait pas sans signal de redstone : le mode par défaut était « entrée ». Les batteries neuves sont désormais en mode tampon. Reste à vérifier en jeu.
 
 ## Licences des autres mods
 
