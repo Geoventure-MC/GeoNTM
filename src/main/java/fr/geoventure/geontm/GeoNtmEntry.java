@@ -52,6 +52,7 @@ public class GeoNtmEntry implements ModEntry {
     public void registered() {
         fr.geoventure.geontm.pont.PontGeoventure.installer();
         fr.geoventure.geontm.pont.PontRadiation.installer();
+        fr.geoventure.geontm.pont.PontEspace.installer();
         EntityTicks.AFTER.register(ExplosivesEntityHooks::tick);
         // after every mod's declare(), so an addon's MachineDynConfig.register is in the file too
         MachineDynConfig.initialize();

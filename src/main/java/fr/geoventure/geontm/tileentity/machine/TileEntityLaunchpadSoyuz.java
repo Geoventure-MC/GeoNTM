@@ -538,6 +538,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
             soyuz.targetZ = this.targetZ;
             this.targetX = this.targetZ = null;
         } else {
+            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(2), placer());
             soyuz.setSat(inventory.getStackInSlot(2));
             if (this.orbital() == 2) inventory.setStackInSlot(3, ItemStack.EMPTY);
             inventory.setStackInSlot(2, ItemStack.EMPTY);

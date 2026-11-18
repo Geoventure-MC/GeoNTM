@@ -201,6 +201,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
         power -= pow;
 
         if (mode == 0) {
+            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(SLOT_SATELLITE), placer());
             soyuz.setSat(inventory.getStackInSlot(SLOT_SATELLITE));
 
             if (this.orbital() == 2) inventory.setStackInSlot(SLOT_ORBITAL, ItemStack.EMPTY);

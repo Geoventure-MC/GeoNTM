@@ -355,6 +355,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
         tanks[0].setFill(tanks[0].getFill() - 24_000);
         tanks[1].setFill(tanks[1].getFill() - 24_000);
 
+        fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(1), placer());
         rocket.setSat(inventory.getStackInSlot(1));
 
         inventory.setStackInSlot(0, ItemStack.EMPTY);
