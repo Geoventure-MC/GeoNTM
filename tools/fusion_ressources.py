@@ -158,7 +158,8 @@ def main():
                     necessaires.add(x)
                     file.append(x)
 
-    dependances = sorted(o for o in necessaires if decision.get(o) == 'RETIRER')
+    connues = set(DEPENDANCES.read_text(encoding='utf-8').split()) if DEPENDANCES.exists() else set()
+    dependances = sorted(connues | {o for o in necessaires if decision.get(o) == 'RETIRER'})
     if any(r['table'].startswith('anvil_') and id(r) in choisies for r in recettes):
         dependances = sorted(set(dependances) | {o for o, d in decision.items() if o.startswith('anvil_') and d == 'RETIRER'})
     for o in dependances:
