@@ -92,7 +92,7 @@ public final class DeAddons {
 
     /** How the tables key a DE id: DE's own by path, an addon's whole. */
     public static String key(String id) {
-        return id.startsWith("geontm:") ? id.substring(4) : id;
+        return id.startsWith("geontm:") ? id.substring("geontm:".length()) : id;
     }
 
     /** An addon id in its Continuum namespace, path kept; any other id unchanged. */

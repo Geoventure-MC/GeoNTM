@@ -178,7 +178,7 @@ public final class TreatmentGameTests {
         for (var entry : map.byId().entrySet()) {
             if (!entry.getKey().startsWith("geontm:")) continue;
             named++;
-            String id = entry.getKey().substring(4);
+            String id = entry.getKey().substring("geontm:".length());
             helper.assertTrue(entry.getValue().blockWhenPotionSick() == BLOCKED.contains(id),
                     id + ": block_when_potion_sick differs from the item's Java");
         }

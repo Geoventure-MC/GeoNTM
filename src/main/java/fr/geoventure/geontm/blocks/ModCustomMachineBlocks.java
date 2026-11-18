@@ -68,7 +68,7 @@ public final class ModCustomMachineBlocks {
     private static final Preset CUBE = Presets.cubeAll().and(PART);
     /** 1.7 BlockCMGlass: see-through, with the faces between neighbouring tanks skipped. */
     private static final Preset GLASS = ((Preset) handle -> handle.model(d -> d
-            .models(Models.renderType("cutout", Models.cubeAll("geontm:blocks/" + d.blockId().substring(4))))
+            .models(Models.renderType("cutout", Models.cubeAll("geontm:blocks/" + d.blockId().substring(d.blockId().indexOf(':') + 1))))
             .states(Variants.simple()).blockItemDirect())).and(PART);
 
     private static UnaryOperator<BlockBehaviour.Properties> iron() {

@@ -83,7 +83,7 @@ public final class Fix1BGameTests {
 
     /** 1.7 {@code (id, metadata)}: the split family's item. */
     private static ItemStack variant(String id, int variant) {
-        return of(LegacyMetaIds.lookup(id.substring(4), variant));
+        return of(LegacyMetaIds.lookup(id.substring(id.indexOf(':') + 1), variant));
     }
 
     private static List<ItemStack> grid(int size, ItemStack... stacks) {
