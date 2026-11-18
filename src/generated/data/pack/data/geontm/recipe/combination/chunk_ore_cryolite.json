@@ -3,7 +3,7 @@
   "input": {
     "ingredient": "geontm:chunk_ore_cryolite"
   },
-  "item_output": "geontm:powder_aluminium",
+  "item_output": "geomods:aluminum_dust",
   "fluid_output": {
     "type": "geontm:lye",
     "amount": 150

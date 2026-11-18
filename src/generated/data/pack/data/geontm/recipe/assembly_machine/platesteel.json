@@ -7,7 +7,7 @@
     }
   ],
   "output_items": [
-    "geontm:plate_steel"
+    "geomods:steel_plate"
   ],
   "duration": 60,
   "power": 100,

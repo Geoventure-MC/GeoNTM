@@ -1,9 +1,0 @@
-{
-  "type": "geontm:press",
-  "stamp": "flat",
-  "input": {
-    "ingredient": "minecraft:jungle_log"
-  },
-  "output": "geontm:ball_resin",
-  "order": 7
-}

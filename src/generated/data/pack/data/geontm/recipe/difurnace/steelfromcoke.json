@@ -24,7 +24,7 @@
     }
   ],
   "output_items": [
-    "geontm:ingot_steel"
+    "geomods:steel_ingot"
   ],
   "duration": 400,
   "order": 1

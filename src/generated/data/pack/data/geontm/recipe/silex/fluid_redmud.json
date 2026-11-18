@@ -8,7 +8,7 @@
   "laser_strength": "visible",
   "outputs": [
     {
-      "data": "geontm:powder_aluminium",
+      "data": "geomods:aluminum_dust",
       "weight": 10
     },
     {
@@ -34,7 +34,7 @@
       "weight": 20
     },
     {
-      "data": "geontm:powder_titanium",
+      "data": "geomods:titanium_dust",
       "weight": 15
     },
     {

@@ -1,8 +1,0 @@
-{
-  "type": "geontm:liquefaction",
-  "input": "geontm:glyphid_gland_empty",
-  "output": {
-    "type": "geontm:biogas",
-    "amount": 2000
-  }
-}

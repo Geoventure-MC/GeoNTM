@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:brick_light",
-  "output": {
-    "id": "minecraft:clay_ball",
-    "count": 4
-  }
-}

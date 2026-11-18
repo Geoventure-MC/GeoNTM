@@ -9,7 +9,7 @@
     "amount": 125
   },
   "output_item": {
-    "id": "geontm:ingot_titanium",
+    "id": "geomods:titanium_ingot",
     "count": 5
   },
   "duration": 60,

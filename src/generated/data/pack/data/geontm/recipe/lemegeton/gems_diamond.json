@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:gems/diamond",
-  "output": "geontm:ingot_cft",
-  "order": 30
-}

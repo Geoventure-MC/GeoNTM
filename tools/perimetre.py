@@ -65,7 +65,7 @@ RETIRER = [
     (r'^(bobblehead|plushie|crayon|canned|snowglobe|record|coin|holotape|achievement|particle|entity|rune|mese|glyphid|chopper|peas|apple|heart|bottle2?|can|loot|journal|book|page|spawn|egg|ball|fatduck|pink|taint|volcano|digamma|balefire|fleija|solinium|boy|man|mike|tsar|gadget|nuke|thermo|prototype|n2|c4|semtex|dynamite|charge|det|detonator|crashed|bomb)(_|$)', 'objet décoratif, parodique ou bombe extrême'),
     (r'^[a-z]+_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|plate_armor|legs|leggings|boots|hammer|multitool|drill|chainsaw)(_|$)', 'outil ou armure de matière'),
     (r'^(siren|item|crate|custom|lightstone|radio|teisr|shimmer|singularity|dungeon|structure|test|vending|vinyl|creative|bathwater|filing|geysir|volcanic|rebar|pedestal|floodlight|lamp|chimney|jetpack|armor|attachment|flame|mine)(_|$)', 'hors périmètre'),
-    (r'^(bedrock|cm|hadron|dfc|ams|crane|pneumatic|conveyor|rail|boxcar|cart|boat|struct|stalactite|stalagmite|platemetal|ducrete|brick|concrete|deco|tile|reinforced|red|ladder|spotlight|lantern|anvil|mold|stamp|blueprint|blueprints|padlock|security|key|wand|pipe|fluid|gas|plant|mush|sand|stone|gravel|dirt|wood|glass|door|sliding|fence|vent|seal|cluster|gneiss|basalt|depth|meteor|meteorite|frozen|fire|foam|asphalt)(_|$)', 'doublon de GeoMods, GeoDecor ou trop de variantes'),
+    (r'^(bedrock|cm|hadron|dfc|ams|crane|pneumatic|conveyor|rail|boxcar|cart|boat|struct|stalactite|stalagmite|platemetal|ducrete|brick|concrete|deco|tile|reinforced|red|ladder|spotlight|lantern|anvil|padlock|security|wand|plant|mush|sand|stone|gravel|dirt|wood|glass|door|sliding|fence|vent|seal|cluster|gneiss|basalt|depth|meteor|meteorite|frozen|fire|foam|asphalt)(_|$)', 'doublon de GeoMods, GeoDecor ou trop de variantes'),
 ]
 THEMES = [
     ('satellites', 'GARDER', r'^(sat|satellite|soyuz|launchpad|launch_pad|deco_sat|pole_satellite|rocket_fuel|missile_soyuz)(_|$)'),
@@ -75,6 +75,7 @@ THEMES = [
     ('radioactivité', 'GARDER', r'^(geiger|hazmat|rad|radaway|radx|radsensor|rad_absorber|cap_rad|decon|sellafield|waste|fallout|falloutitem|gas_radon|corium|gem_rad|iv|syringe|med)(_|$)'),
     ('réacteurs', 'SIMPLIFIER', r'^(rbmk|pwr|fusion|watz|icf|pile|nuclear|billet|pellet|cladding)(_|$)'),
     ('drones', 'A_DECIDER', r'^drone(_|$)'),
+    ('schémas', 'GARDER', r'^(blueprint|blueprints)(_|$)'),
     ('électronique', 'SIMPLIFIER', r'^(circuit|upgrade|capacitor|coil|motor|mechanism|part|parts)(_|$)'),
 ]
 

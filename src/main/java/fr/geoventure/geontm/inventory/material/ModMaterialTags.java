@@ -52,7 +52,7 @@ public final class ModMaterialTags {
     }
 
     private static void tag(String path, String... values) {
-        Tags.item(NS, path, values);
+        GeoventureMatieres.declarer(path, values);
     }
 
     private static void blockTag(String path, String... values) {

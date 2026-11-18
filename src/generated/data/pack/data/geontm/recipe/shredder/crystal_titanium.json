@@ -2,7 +2,7 @@
   "type": "geontm:shredder",
   "input": "geontm:crystal_titanium",
   "output": {
-    "id": "geontm:powder_titanium",
+    "id": "geomods:titanium_dust",
     "count": 3
   }
 }

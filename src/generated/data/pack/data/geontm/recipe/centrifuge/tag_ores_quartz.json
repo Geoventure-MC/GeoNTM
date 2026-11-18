@@ -4,8 +4,8 @@
     "ingredient": "#c:ores/quartz"
   },
   "outputs": [
-    "geontm:powder_quartz",
-    "geontm:powder_quartz",
+    "geomods:quartz_dust",
+    "geomods:quartz_dust",
     "geontm:powder_lithium_tiny",
     "minecraft:netherrack"
   ],

@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/polonium",
-  "output": "geontm:ingot_technetium",
-  "order": 24
-}

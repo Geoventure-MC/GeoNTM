@@ -4,6 +4,6 @@
   "input": {
     "ingredient": "#c:ingots/steel"
   },
-  "output": "geontm:plate_steel",
+  "output": "geomods:steel_plate",
   "order": 15
 }

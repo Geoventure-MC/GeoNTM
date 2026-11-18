@@ -1,9 +1,0 @@
-{
-  "type": "geontm:press",
-  "stamp": "printing5",
-  "input": {
-    "ingredient": "minecraft:paper"
-  },
-  "output": "geontm:page_of_page5",
-  "order": 44
-}

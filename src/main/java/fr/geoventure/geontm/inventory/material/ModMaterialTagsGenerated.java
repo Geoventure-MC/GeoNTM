@@ -420,11 +420,11 @@ final class ModMaterialTagsGenerated {
     /** This material comes in these shapes, under the item names the shapes imply. */
     private static void shapes(String material, MaterialShapes... shapes) {
         for (MaterialShapes shape : shapes) {
-            Tags.item("c", shape.tagPlural + "/" + material, "geontm:" + shape.itemPrefix + "_" + material);
+            GeoventureMatieres.declarer(shape.tagPlural + "/" + material, "geontm:" + shape.itemPrefix + "_" + material);
         }
     }
 
     private static void tag(String path, String... values) {
-        Tags.item("c", path, values);
+        GeoventureMatieres.declarer(path, values);
     }
 }

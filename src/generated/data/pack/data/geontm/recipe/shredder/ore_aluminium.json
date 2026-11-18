@@ -1,6 +1,6 @@
 {
   "type": "geontm:shredder",
-  "input": "geontm:ore_aluminium",
+  "input": "geomods:aluminum_ore",
   "output": {
     "id": "geontm:chunk_ore_cryolite",
     "count": 2

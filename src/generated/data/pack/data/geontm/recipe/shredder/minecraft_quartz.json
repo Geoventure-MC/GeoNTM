@@ -1,5 +1,5 @@
 {
   "type": "geontm:shredder",
   "input": "minecraft:quartz",
-  "output": "geontm:powder_quartz"
+  "output": "geomods:quartz_dust"
 }

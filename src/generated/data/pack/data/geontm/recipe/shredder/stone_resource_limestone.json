@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:stone_resource_limestone",
-  "output": {
-    "id": "geontm:powder_limestone",
-    "count": 4
-  }
-}

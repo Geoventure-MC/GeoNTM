@@ -8,11 +8,11 @@ NTM-Continuum 1.0.6 contient **1266 blocs** et **3463 objets**. Le détail ligne
 
 | Décision | Nombre | Sens |
 |---|---:|---|
-| GARDER | 348 | repris dans GeoNTM |
+| GARDER | 356 | repris dans GeoNTM |
 | SIMPLIFIER | 1035 | repris, mais regroupé ou réduit |
 | FUSIONNER | 72 | remplacé par un objet Geoventure |
-| SI_BESOIN | 1170 | gardé seulement si une recette retenue en dépend |
-| RETIRER | 2062 | supprimé |
+| SI_BESOIN | 1314 | gardé seulement si une recette retenue en dépend |
+| RETIRER | 1910 | supprimé |
 | A_DECIDER | 42 | arbitrage du propriétaire |
 
 ## Ce qui reste, par thème
@@ -20,7 +20,7 @@ NTM-Continuum 1.0.6 contient **1266 blocs** et **3463 objets**. Le détail ligne
 | Thème | Décision | Nombre |
 |---|---|---:|
 | drones | A_DECIDER | 12 |
-| dépendances | SI_BESOIN | 620 |
+| dépendances | SI_BESOIN | 764 |
 | machines | A_DECIDER | 7 |
 | machines | FUSIONNER | 23 |
 | machines : combustible | GARDER | 10 |
@@ -39,6 +39,7 @@ NTM-Continuum 1.0.6 contient **1266 blocs** et **3463 objets**. Le détail ligne
 | ressources : nucléaire | GARDER | 47 |
 | réacteurs | SIMPLIFIER | 717 |
 | satellites | GARDER | 53 |
+| schémas | GARDER | 8 |
 | électronique | SIMPLIFIER | 196 |
 
 ## Ressources proposées

@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:crate_iron",
-  "output": {
-    "id": "geontm:powder_iron",
-    "count": 8
-  }
-}

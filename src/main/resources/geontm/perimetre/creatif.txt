@@ -74,6 +74,14 @@ block_u235
 block_u238
 block_uranium_fuel
 block_zirconium
+blueprint_folder
+blueprint_folder_discover
+blueprint_folder_secret
+blueprint_plate
+blueprints
+blueprints_528
+blueprints_discover
+blueprints_secret
 cap_rad
 capacitor_bismuth
 capacitor_bus

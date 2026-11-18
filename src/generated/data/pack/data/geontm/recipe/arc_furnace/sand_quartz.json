@@ -1,8 +1,0 @@
-{
-  "type": "geontm:arc_furnace",
-  "input": {
-    "ingredient": "geontm:sand_quartz"
-  },
-  "solid_output": "geontm:glass_quartz",
-  "order": 11
-}

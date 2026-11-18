@@ -2,5 +2,5 @@
   "type": "geontm:solidification",
   "input": "geontm:lead",
   "amount": 100,
-  "output": "geontm:ingot_lead"
+  "output": "geomods:lead_ingot"
 }

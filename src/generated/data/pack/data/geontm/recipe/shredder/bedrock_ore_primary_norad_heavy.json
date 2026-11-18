@@ -1,5 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:bedrock_ore_primary_norad_heavy",
-  "output": "minecraft:gravel"
-}

@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:gems/volcanic",
-  "output": "geontm:gem_rad",
-  "order": 33
-}

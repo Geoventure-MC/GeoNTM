@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:boxcar",
-  "output": {
-    "id": "geontm:powder_steel",
-    "count": 32
-  }
-}

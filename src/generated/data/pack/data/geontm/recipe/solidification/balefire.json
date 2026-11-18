@@ -1,6 +1,0 @@
-{
-  "type": "geontm:solidification",
-  "input": "geontm:balefire",
-  "solid_fuel_energy": 24000000,
-  "output": "geontm:solid_fuel_bf"
-}

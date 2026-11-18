@@ -490,36 +490,36 @@ bloc,float_bomb,Bombe à lévitation,SI_BESOIN,dépendances,,gardé seulement si
 bloc,floodlight,Projecteur alimenté,RETIRER,hors périmètre,,hors périmètre
 bloc,floodlight_beam,Faisceau de projecteur,RETIRER,hors périmètre,,hors périmètre
 bloc,flow_control_pump,Pompe de contrôle de débit,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-bloc,fluid_counter_valve,Vanne de fluide avec compteur,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_copper_0,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_copper_1,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_copper_2,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_copper_3,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_copper_4,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_silver_0,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_silver_1,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_silver_2,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_silver_3,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_silver_4,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_white_0,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_white_1,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_white_2,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_white_3,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_box_white_4,Conduit de fluide universel (Boxduct),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_exhaust_0,Tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_exhaust_1,Tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_exhaust_2,Tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_exhaust_3,Tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_exhaust_4,Tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_gauge,Conduit à jauge de débit,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_neo,Conduit de fluide universel,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_neo_colored,Conduit de fluide universel,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_neo_silver,Conduit de fluide universel,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_paintable,Conduit de fluide universel enrobé peignable,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_duct_paintable_block_exhaust,Tuyau d'échappement enrobé peignable,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_pump,Pompe de contrôle de débit,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_switch,Vanne de fluide à redstone,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,fluid_valve,Vanne à fluide,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,fluid_counter_valve,Vanne de fluide avec compteur,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_copper_0,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_copper_1,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_copper_2,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_copper_3,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_copper_4,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_silver_0,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_silver_1,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_silver_2,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_silver_3,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_silver_4,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_white_0,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_white_1,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_white_2,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_white_3,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_box_white_4,Conduit de fluide universel (Boxduct),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_exhaust_0,Tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_exhaust_1,Tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_exhaust_2,Tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_exhaust_3,Tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_exhaust_4,Tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_gauge,Conduit à jauge de débit,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_neo,Conduit de fluide universel,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_neo_colored,Conduit de fluide universel,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_neo_silver,Conduit de fluide universel,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_paintable,Conduit de fluide universel enrobé peignable,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_duct_paintable_block_exhaust,Tuyau d'échappement enrobé peignable,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_pump,Pompe de contrôle de débit,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_switch,Vanne de fluide à redstone,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,fluid_valve,Vanne à fluide,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,foam_layer,Couche de mousse,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,foundry_basin,Bassin de fonderie,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,foundry_channel,Canal de fonderie,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -550,12 +550,12 @@ bloc,fusion_klystron_creative,Klystron créatif,SIMPLIFIER,réacteurs,,
 bloc,fusion_mhdt,Turbine MHD,SIMPLIFIER,réacteurs,,
 bloc,fusion_plasma_forge,Forge à plasma,SIMPLIFIER,réacteurs,,
 bloc,fusion_torus,Cuve du réacteur à fusion,SIMPLIFIER,réacteurs,,
-bloc,gas_asbestos,Particules d'amiante en suspension dans l'air,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,gas_coal,Poussière de charbon en suspension dans l'air,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,gas_explosive,Gaz explosif,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,gas_flammable,Gaz inflammable,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,gas_meltdown,Gaz de fusion du cœur,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,gas_monoxide,Monoxyde de carbone,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,gas_asbestos,Particules d'amiante en suspension dans l'air,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,gas_coal,Poussière de charbon en suspension dans l'air,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,gas_explosive,Gaz explosif,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,gas_flammable,Gaz inflammable,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,gas_meltdown,Gaz de fusion du cœur,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,gas_monoxide,Monoxyde de carbone,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,gas_radon,Gaz radon,GARDER,radioactivité,,
 bloc,gas_radon_dense,Gaz radon dense,GARDER,radioactivité,,
 bloc,gas_radon_tomb,Gaz funéraire,GARDER,radioactivité,,
@@ -918,9 +918,9 @@ bloc,pink_log,Bûche rose,RETIRER,hors périmètre,,"objet décoratif, parodique
 bloc,pink_planks,Planches de bois roses,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 bloc,pink_slab,Dalle de bois rose,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 bloc,pink_stairs,Escaliers en bois rose,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-bloc,pipe_anchor,Ancrage de conduite,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,pipe_anchor_exhaust,Ancrage de tuyau d'échappement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,pipe_anchor_pneumatic,Ancrage de tube pneumatique,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,pipe_anchor,Ancrage de conduite,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,pipe_anchor_exhaust,Ancrage de tuyau d'échappement,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+bloc,pipe_anchor_pneumatic,Ancrage de tube pneumatique,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,piston_inserter,Introducteur,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,plant_dead_bigflower,Plante morte,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,plant_dead_fern,Plante morte,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -1813,14 +1813,14 @@ objet,blades_titanium,Lames de broyeur en titane,SI_BESOIN,dépendances,,gardé 
 objet,block_obj_context_base,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,block_obj_context_legacy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,blowtorch,Chalumeau,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,blueprint_folder,Cahier de plans,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprint_folder_discover,Cahier de plans,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprint_folder_secret,Cahier de plans,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprint_plate,Gabarit de plaque,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprints,Plan,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprints_528,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprints_discover,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,blueprints_secret,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,blueprint_folder,Cahier de plans,GARDER,schémas,,
+objet,blueprint_folder_discover,Cahier de plans,GARDER,schémas,,
+objet,blueprint_folder_secret,Cahier de plans,GARDER,schémas,,
+objet,blueprint_plate,Gabarit de plaque,GARDER,schémas,,
+objet,blueprints,Plan,GARDER,schémas,,
+objet,blueprints_528,,GARDER,schémas,,
+objet,blueprints_discover,,GARDER,schémas,,
+objet,blueprints_secret,,GARDER,schémas,,
 objet,board_copper,Panneau de cuivre,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,boat_rubber,Bateau en caoutchouc,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 objet,bobblehead_abel,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
@@ -2383,18 +2383,18 @@ objet,fleija_core,F.L.E.I.J.A Uranium 235 Charge,RETIRER,hors périmètre,,"obje
 objet,fleija_igniter,Allumeur à impulsions,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,fleija_kit,Kit F.L.E.I.J.A,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,fleija_propellant,Agent propulseur de Schrabidium,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,fluid_barrel,Fût de fluide,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_barrel_infinite,Baril de fluide infini,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_bucket,Seau de %s,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_duct,Conduit à fluide : %s,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_icon,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_identifier,Identifiant de fluide %s,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_identifier_multi,Identificateur de fluide multiple,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_pack_empty,Grand conteneur à fluide,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_pack_full,Fluide conditionné,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_tank,Réservoir de fluide universel,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_tank_lead_empty,Réservoir vide de matières dangereuses,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,fluid_tank_lead_full,Réservoir de matières dangereuses,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,fluid_barrel,Fût de fluide,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_barrel_infinite,Baril de fluide infini,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_bucket,Seau de %s,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_duct,Conduit à fluide : %s,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_icon,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_identifier,Identifiant de fluide %s,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_identifier_multi,Identificateur de fluide multiple,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_pack_empty,Grand conteneur à fluide,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_pack_full,Fluide conditionné,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_tank,Réservoir de fluide universel,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_tank_lead_empty,Réservoir vide de matières dangereuses,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,fluid_tank_lead_full,Réservoir de matières dangereuses,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,fluorite,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,flywheel_beryllium,Volant d'inertie en béryllium,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,fmn,Comprimé de flunitrazépam,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -2422,18 +2422,18 @@ objet,gadget_explosive,Agent propulseur,RETIRER,hors périmètre,,"objet décora
 objet,gadget_explosive8,Paquet d'agent propulseur,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,gadget_kit,Kit du gadget,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,gadget_wireing,Câblage,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,gas_empty,Bonbonne de gaz vide,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_full,Bonbonne de gaz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask,Masque à gaz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_filter,Filtre de masque à gaz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_filter_combo,Filtre combiné pour masque à gaz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_filter_mono,Filtre de masque catalytique,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_filter_piss,Filtre de masque à gaz de fortune avancé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_filter_rag,Filtre de masque à gaz de fortune,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_m65,Masque à gaz M65-Z,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_mono,Demi-masque,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_mask_olde,Masque à gaz en cuir,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,gas_tester,Capteur de gaz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,gas_empty,Bonbonne de gaz vide,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_full,Bonbonne de gaz,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask,Masque à gaz,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_filter,Filtre de masque à gaz,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_filter_combo,Filtre combiné pour masque à gaz,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_filter_mono,Filtre de masque catalytique,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_filter_piss,Filtre de masque à gaz de fortune avancé,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_filter_rag,Filtre de masque à gaz de fortune,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_m65,Masque à gaz M65-Z,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_mono,Demi-masque,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_mask_olde,Masque à gaz en cuir,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,gas_tester,Capteur de gaz,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,gear_large,Grand engrenage,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,gear_large_steel,Grand engrenage en acier,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,geiger_counter,Compteur Geiger,GARDER,radioactivité,,
@@ -2794,11 +2794,11 @@ objet,jetpack_vector,Jetpack vectoriel,RETIRER,hors périmètre,,hors périmètr
 objet,journal_bj,Carnet imbibé de whisky,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,journal_pip,Journal du survivaliste,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,journal_silver,Notes du contractuel,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
-objet,key,Clé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,key_fake,Clé contrefaite,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,key_kit,Kit d'imitation de clé,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,key_red,Clé rouge,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,key_red_cracked,Clé fissurée,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,key,Clé,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,key_fake,Clé contrefaite,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,key_kit,Kit d'imitation de clé,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,key_red,Clé rouge,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,key_red_cracked,Clé fissurée,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,kit_custom,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,laser_crystal_bale,Balle Laser Cristal,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,laser_crystal_bismuth,Cristal Laser BismUTh,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -2931,34 +2931,34 @@ objet,missile_strong,Missile explosif Tier2,A_DECIDER,missiles,,
 objet,missile_taint,Missile's contaminer,A_DECIDER,missiles,,
 objet,missile_test,Missile de test,GARDER,missiles,,
 objet,missile_volcano,Missile tectonique,A_DECIDER,missiles,,
-objet,mold_barrel_heavy,Moule de fonderie (Canon lourd),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_barrel_light,Moule de fonderie (Canon léger),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_base,Moule de fonderie vierge,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_billet,Moule de fonderie (Billette),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_blade,Moule de fonderie (Lame),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_blades,Moule de fonderie (Lames de déchiqueteuse),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_block,Moule de fonderie (Bloc),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_c50,Moule de fonderie (Grande enveloppe),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_c9,Moule de fonderie (Petite enveloppe),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_grip,Moule de fonderie (Poignée d'arme),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_ingot,Moule de fonderie (Lingot),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_ingots,Moule de fonderie (Lingots),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_mechanism,Moule de fonderie (Mécanisme d'arme),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_nugget,Moule de fonderie (Pépite),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_pipe,Moule de fonderie (Tuyau),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_pipes,Moule de fonderie (Tuyaux d'acier),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_plate,Moule de fonderie (Plaque),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_plate_cast,Moule de fonderie (Plaque coulée),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_plates,Moule de fonderie (Plaques),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_plates_cast,Moule de fonderie (Plaques coulées),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_receiver_heavy,Moule de fonderie (Boîtier lourd),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_receiver_light,Moule de fonderie (Boîtier léger),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_shell,Moule de fonderie (Obus),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_stamp,Moule de fonderie (Estampe),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_stock,Moule de fonderie (Crosse d'arme),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_wire,Moule de fonderie (Fil),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_wire_dense,Moule de fonderie (Fil dense),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,mold_wires_dense,Moule de fonderie (Fils denses),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,mold_barrel_heavy,Moule de fonderie (Canon lourd),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_barrel_light,Moule de fonderie (Canon léger),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_base,Moule de fonderie vierge,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_billet,Moule de fonderie (Billette),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_blade,Moule de fonderie (Lame),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_blades,Moule de fonderie (Lames de déchiqueteuse),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_block,Moule de fonderie (Bloc),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_c50,Moule de fonderie (Grande enveloppe),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_c9,Moule de fonderie (Petite enveloppe),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_grip,Moule de fonderie (Poignée d'arme),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_ingot,Moule de fonderie (Lingot),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_ingots,Moule de fonderie (Lingots),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_mechanism,Moule de fonderie (Mécanisme d'arme),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_nugget,Moule de fonderie (Pépite),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_pipe,Moule de fonderie (Tuyau),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_pipes,Moule de fonderie (Tuyaux d'acier),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_plate,Moule de fonderie (Plaque),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_plate_cast,Moule de fonderie (Plaque coulée),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_plates,Moule de fonderie (Plaques),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_plates_cast,Moule de fonderie (Plaques coulées),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_receiver_heavy,Moule de fonderie (Boîtier lourd),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_receiver_light,Moule de fonderie (Boîtier léger),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_shell,Moule de fonderie (Obus),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_stamp,Moule de fonderie (Estampe),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_stock,Moule de fonderie (Crosse d'arme),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_wire,Moule de fonderie (Fil),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_wire_dense,Moule de fonderie (Fil dense),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,mold_wires_dense,Moule de fonderie (Fils denses),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,morning_glory,Gloire du matin,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,motor,Moteur,SIMPLIFIER,électronique,,
 objet,motor_bismuth,Moteur de bismuth,SIMPLIFIER,électronique,,
@@ -3422,14 +3422,14 @@ objet,pill_herbal,Pâte à base de plantes,SI_BESOIN,dépendances,,gardé seulem
 objet,pill_iodine,Pilule d'iode,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pill_red,Pilule rouge,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pin,Pince à cheveux,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,pipe,Tuyau en %s,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_aluminium,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_copper,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_dura_steel,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_iron,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_lead,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_rubber,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,pipe_steel,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,pipe,Tuyau en %s,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_aluminium,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_copper,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_dura_steel,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_iron,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_lead,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_rubber,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,pipe_steel,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pipes_steel,Pipes en acier,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pipette,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pipette_boron,Pipette au bore,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -4370,46 +4370,46 @@ objet,spawn_worm,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bomb
 objet,sphere_steel,Sphère d'acier,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,spider_milk,Bouteille de lait d'araignée,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,spongebob_macaroni,Macaronis Bob l'éponge,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,stamp_357,Timbre Magnum .357,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_44,Timbre Magnum .44,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_50,Timbre gros calibre,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_9,Timbre de petit calibre,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing1,Tampon de presse à imprimer (partie 1),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing2,Tampon de presse à imprimer (partie 2),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing3,Tampon de presse à imprimer (partie 3),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing4,Tampon de presse à imprimer (partie 4),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing5,Tampon de presse à imprimer (partie 5),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing6,Tampon de presse à imprimer (partie 6),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing7,Tampon de presse à imprimer (partie 7),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_book_printing8,Tampon de presse à imprimer (partie 8),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_357,.357 Timbre Magnum (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_44,.44 Timbre Magnum (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_50,Timbre de gros calibre (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_9,Timbre de petit calibre (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_circuit,Timbre de circuit (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_flat,Timbre plat (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_plate,Timbre de plaque (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_desh_wire,Tampon métallique (Desh),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_iron_circuit,Moule de circuit (fer),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_iron_flat,Moule plat (fer),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_iron_plate,Moule de plaque (fer),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_iron_wire,Moule de fer (fer),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_obsidian_circuit,Moule de circuit (obsidienne),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_obsidian_flat,Moule plat (obsidienne),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_obsidian_plate,Moule de plaque (obsidienne),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_obsidian_wire,Moule de fil (obsidienne),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_steel_circuit,Moule de circuit (acier),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_steel_flat,Moule plat (acier),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_steel_plate,Moule de plaque (acier),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_steel_wire,Moule de fil (acier),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_stone_circuit,Moule de circuit (Pierre),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_stone_flat,Moule plat (Pierre),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_stone_plate,Moule de plaque (Pierre),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_stone_wire,Moule de fil (pierre),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_titanium_circuit,Moule de circuit (titane),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_titanium_flat,Moule plat (titane),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_titanium_plate,Moule de plaque (titane),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-objet,stamp_titanium_wire,Moule de fil (titane),RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+objet,stamp_357,Timbre Magnum .357,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_44,Timbre Magnum .44,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_50,Timbre gros calibre,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_9,Timbre de petit calibre,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing1,Tampon de presse à imprimer (partie 1),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing2,Tampon de presse à imprimer (partie 2),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing3,Tampon de presse à imprimer (partie 3),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing4,Tampon de presse à imprimer (partie 4),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing5,Tampon de presse à imprimer (partie 5),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing6,Tampon de presse à imprimer (partie 6),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing7,Tampon de presse à imprimer (partie 7),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_book_printing8,Tampon de presse à imprimer (partie 8),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_357,.357 Timbre Magnum (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_44,.44 Timbre Magnum (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_50,Timbre de gros calibre (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_9,Timbre de petit calibre (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_circuit,Timbre de circuit (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_flat,Timbre plat (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_plate,Timbre de plaque (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_desh_wire,Tampon métallique (Desh),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_iron_circuit,Moule de circuit (fer),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_iron_flat,Moule plat (fer),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_iron_plate,Moule de plaque (fer),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_iron_wire,Moule de fer (fer),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_obsidian_circuit,Moule de circuit (obsidienne),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_obsidian_flat,Moule plat (obsidienne),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_obsidian_plate,Moule de plaque (obsidienne),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_obsidian_wire,Moule de fil (obsidienne),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_steel_circuit,Moule de circuit (acier),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_steel_flat,Moule plat (acier),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_steel_plate,Moule de plaque (acier),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_steel_wire,Moule de fil (acier),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_stone_circuit,Moule de circuit (Pierre),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_stone_flat,Moule plat (Pierre),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_stone_plate,Moule de plaque (Pierre),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_stone_wire,Moule de fil (pierre),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_titanium_circuit,Moule de circuit (titane),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_titanium_flat,Moule plat (titane),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_titanium_plate,Moule de plaque (titane),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
+objet,stamp_titanium_wire,Moule de fil (titane),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,starmetal_axe,Hache en métal stellaire,RETIRER,hors périmètre,,outil ou armure de matière
 objet,starmetal_boots,Bottes en métal stellaire,RETIRER,hors périmètre,,outil ou armure de matière
 objet,starmetal_helmet,Casque Starmetal,RETIRER,hors périmètre,,outil ou armure de matière

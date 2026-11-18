@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/gold",
-  "output": "geontm:ingot_bismuth",
-  "order": 11
-}

@@ -1,9 +1,0 @@
-{
-  "type": "geontm:magic",
-  "ingredients": [
-    "#c:ingots/steel",
-    "geontm:egg_balefire_shard"
-  ],
-  "result": "geontm:balefire_and_steel",
-  "order": 2
-}

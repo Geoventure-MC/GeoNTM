@@ -2,7 +2,7 @@
   "type": "geontm:shredder",
   "input": "minecraft:chiseled_quartz_block",
   "output": {
-    "id": "geontm:powder_quartz",
+    "id": "geomods:quartz_dust",
     "count": 4
   }
 }

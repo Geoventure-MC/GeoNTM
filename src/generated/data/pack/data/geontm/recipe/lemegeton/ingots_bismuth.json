@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/bismuth",
-  "output": "geontm:ingot_osmiridium",
-  "order": 12
-}

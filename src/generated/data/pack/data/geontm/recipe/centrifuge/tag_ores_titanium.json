@@ -4,7 +4,7 @@
     "ingredient": "#c:ores/titanium"
   },
   "outputs": [
-    "geontm:powder_titanium",
+    "geomods:titanium_dust",
     {
       "id": "geontm:chunk_ore_ilmenite",
       "count": 2

@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/graphite",
-  "output": "minecraft:diamond",
-  "order": 29
-}

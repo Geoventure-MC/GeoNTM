@@ -12,7 +12,7 @@
   },
   "byproducts": [
     {
-      "id": "geontm:powder_titanium",
+      "id": "geomods:titanium_dust",
       "count": 3
     },
     {
@@ -20,7 +20,7 @@
       "count": 3
     },
     {
-      "id": "geontm:powder_aluminium",
+      "id": "geomods:aluminum_dust",
       "count": 2
     }
   ]

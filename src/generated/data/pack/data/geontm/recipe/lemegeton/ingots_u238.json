@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/u238",
-  "output": "geontm:ingot_u235",
-  "order": 15
-}

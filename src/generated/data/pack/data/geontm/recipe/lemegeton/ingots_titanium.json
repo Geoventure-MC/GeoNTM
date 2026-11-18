@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/titanium",
-  "output": "geontm:ingot_saturnite",
-  "order": 5
-}

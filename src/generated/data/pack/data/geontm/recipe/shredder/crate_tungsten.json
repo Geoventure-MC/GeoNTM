@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "geontm:crate_tungsten",
-  "output": {
-    "id": "geontm:powder_tungsten",
-    "count": 36
-  }
-}

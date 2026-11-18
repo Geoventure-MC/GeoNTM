@@ -4,7 +4,7 @@
   "input": {
     "ingredient": "#c:dusts/beryllium"
   },
-  "output": "geontm:powder_quartz",
+  "output": "geomods:quartz_dust",
   "antimatter": 15,
   "order": 28
 }

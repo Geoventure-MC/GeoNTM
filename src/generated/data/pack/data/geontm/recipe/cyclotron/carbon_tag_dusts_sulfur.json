@@ -4,7 +4,7 @@
   "input": {
     "ingredient": "#c:dusts/sulfur"
   },
-  "output": "geontm:powder_titanium",
+  "output": "geomods:titanium_dust",
   "antimatter": 10,
   "order": 21
 }

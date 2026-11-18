@@ -2,7 +2,7 @@
   "type": "geontm:shredder",
   "input": "geontm:crystal_aluminium",
   "output": {
-    "id": "geontm:powder_aluminium",
+    "id": "geomods:aluminum_dust",
     "count": 3
   }
 }

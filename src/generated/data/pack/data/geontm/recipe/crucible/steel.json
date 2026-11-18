@@ -2,7 +2,7 @@
   "type": "geontm:crucible",
   "name": "crucible.steel",
   "frequency": 20,
-  "icon": "geontm:ingot_steel",
+  "icon": "geomods:steel_ingot",
   "inputs": [
     {
       "material": "iron",

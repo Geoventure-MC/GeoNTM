@@ -2,7 +2,7 @@
   "type": "geontm:shredder",
   "input": "minecraft:nether_quartz_ore",
   "output": {
-    "id": "geontm:powder_quartz",
+    "id": "geomods:quartz_dust",
     "count": 2
   }
 }

@@ -4,6 +4,6 @@
   "input": {
     "ingredient": "#c:ingots/titanium"
   },
-  "output": "geontm:plate_titanium",
+  "output": "geomods:titanium_plate",
   "order": 13
 }

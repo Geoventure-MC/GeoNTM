@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/fiberglass",
-  "output": "geontm:ingot_asbestos",
-  "order": 36
-}

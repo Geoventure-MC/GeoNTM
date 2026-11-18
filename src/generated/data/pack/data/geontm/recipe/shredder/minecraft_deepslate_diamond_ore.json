@@ -1,8 +1,0 @@
-{
-  "type": "geontm:shredder",
-  "input": "minecraft:deepslate_diamond_ore",
-  "output": {
-    "id": "geontm:gravel_diamond",
-    "count": 2
-  }
-}

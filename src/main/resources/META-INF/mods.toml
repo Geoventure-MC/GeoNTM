@@ -22,6 +22,13 @@ side = "BOTH"
 # AFTER, not BEFORE — see the note in neoforge.mods.toml. `ordering` is this mod's position relative
 # to the dependency, so BEFORE would construct geontm ahead of geocore and leave its mod bus unset.
 [[dependencies.${mod_id}]]
+modId = "geomods"
+mandatory = true
+versionRange = "[3.50,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
 modId = "geocore"
 mandatory = true
 versionRange = "[1.0.6,)"

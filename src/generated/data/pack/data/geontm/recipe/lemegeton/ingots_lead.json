@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/lead",
-  "output": "minecraft:gold_ingot",
-  "order": 10
-}

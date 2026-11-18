@@ -4,7 +4,7 @@
   "input": {
     "ingredient": "#c:dusts/boron"
   },
-  "output": "geontm:powder_aluminium",
+  "output": "geomods:aluminum_dust",
   "antimatter": 10,
   "order": 20
 }

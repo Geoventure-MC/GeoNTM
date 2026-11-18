@@ -1,9 +1,0 @@
-{
-  "type": "geontm:press",
-  "stamp": "flat",
-  "input": {
-    "ingredient": "geontm:meteorite_sword_reforged"
-  },
-  "output": "geontm:meteorite_sword_hardened",
-  "order": 6
-}

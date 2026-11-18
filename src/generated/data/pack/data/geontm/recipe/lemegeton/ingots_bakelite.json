@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/bakelite",
-  "output": "geontm:ingot_pvc",
-  "order": 26
-}

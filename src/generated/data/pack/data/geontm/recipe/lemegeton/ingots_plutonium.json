@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/plutonium",
-  "output": "geontm:ingot_pu238",
-  "order": 17
-}

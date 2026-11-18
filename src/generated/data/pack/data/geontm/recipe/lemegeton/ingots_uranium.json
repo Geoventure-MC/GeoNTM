@@ -1,6 +1,0 @@
-{
-  "type": "geontm:lemegeton",
-  "input": "#c:ingots/uranium",
-  "output": "geontm:ingot_u238",
-  "order": 14
-}
