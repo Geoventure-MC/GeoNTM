@@ -13,7 +13,6 @@ import static fr.geoventure.geocore.dejson.BiomeModifiers.RAW_GENERATION;
 import static fr.geoventure.geocore.dejson.BiomeModifiers.TOP_LAYER_MODIFICATION;
 import static fr.geoventure.geocore.dejson.BiomeModifiers.UNDERGROUND_ORES;
 import static fr.geoventure.geocore.dejson.BiomeModifiers.VEGETAL_DECORATION;
-import static fr.geoventure.geocore.dejson.BiomeModifiers.addFeatures;
 import static fr.geoventure.geocore.dejson.Features.aboveBottom;
 import static fr.geoventure.geocore.dejson.Features.absolute;
 import static fr.geoventure.geocore.dejson.Features.biome;
@@ -95,7 +94,32 @@ public final class ModBiomeModifiers {
 
     private static boolean declared;
 
+    /**
+     * Génération retenue pour Geoventure : les minerais courants viennent de GeoMods. Seuls restent les trois ajouts
+     * naturels et les cratères radioactifs ; les matières rares seront placées dans l'espace.
+     */
+    private static final java.util.Set<String> FEATURES_GARDEES = java.util.Set.of(
+            "ore_beryllium", "ore_beryllium_deepslate", "ore_thorium", "ore_thorium_deepslate",
+            "ore_depth_zirconium", "sellafield_crater");
+
     private ModBiomeModifiers() {}
+
+    private static boolean gardee(String feature) {
+        String nom = feature.substring(feature.indexOf(':') + 1);
+        return FEATURES_GARDEES.contains(nom) || nom.startsWith("ore_beryllium") || nom.startsWith("ore_thorium");
+    }
+
+    private static void addFeatures(String ns, String name, String biomes, List<String> features, String step) {
+        addFeatures(ns, name, biomes, null, features, step);
+    }
+
+    private static void addFeatures(String ns, String name, String biomes, String excluded, List<String> features,
+                                    String step) {
+        List<String> gardees = features.stream().filter(ModBiomeModifiers::gardee).toList();
+        if (!gardees.isEmpty()) {
+            fr.geoventure.geocore.dejson.BiomeModifiers.addFeatures(ns, name, biomes, excluded, gardees, step);
+        }
+    }
 
     public static void declare() {
         if (declared) {

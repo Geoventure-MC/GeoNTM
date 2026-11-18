@@ -37,109 +37,109 @@ bloc,basalt_polished,Basalte poli,RETIRER,hors périmètre,,"doublon de GeoMods,
 bloc,basalt_smooth,Basalte lisse,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,basalt_tiles,Carreaux de basalte,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,blast_door,Porte anti-souffle coulissante,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-bloc,block_actinium,Bloc d'actinium,RETIRER,ressources,,trop de matières
+bloc,block_actinium,Bloc d'actinium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_aluminium,Bloc d'aluminium,FUSIONNER,ressources,geomods:aluminum_block,ressource déjà présente
-bloc,block_asbestos,Bloc d'amiante,RETIRER,ressources,,trop de matières
-bloc,block_au198,Bloc d'Or-198,RETIRER,ressources,,trop de matières
-bloc,block_australium,Bloc d'Australium,RETIRER,ressources,,trop de matières
-bloc,block_bakelite,Bloc de Bakélite,RETIRER,ressources,,trop de matières
+bloc,block_asbestos,Bloc d'amiante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_au198,Bloc d'Or-198,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_australium,Bloc d'Australium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_bakelite,Bloc de Bakélite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_beryllium,Bloc de beryllium,GARDER,ressources : ajouts,,réflecteur à neutrons
-bloc,block_bismuth,Bloc de bismuth,RETIRER,ressources,,trop de matières
+bloc,block_bismuth,Bloc de bismuth,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_boron,Bloc de bore,GARDER,ressources : ajouts,,barres de contrôle
-bloc,block_c4,Bloc de C-4,RETIRER,ressources,,trop de matières
-bloc,block_cadmium,Bloc de Cadmium,RETIRER,ressources,,trop de matières
-bloc,block_cap_fritz,Bloc de capsules de bouteilles de Fritz Cola,RETIRER,ressources,,trop de matières
-bloc,block_cap_korl,Bloc de capsules de bouteilles Korl,RETIRER,ressources,,trop de matières
-bloc,block_cap_nuka,Bloc de capsules de bouteilles de Nuka Cola,RETIRER,ressources,,trop de matières
-bloc,block_cap_quantum,Bloc de capsules de bouteilles Nuka Cola Quantum,RETIRER,ressources,,trop de matières
-bloc,block_cap_rad,Bloc de capsules de bouteilles S~Cola RAD,RETIRER,ressources,,trop de matières
-bloc,block_cap_sparkle,Bloc de capsules de bouteilles S~Cola,RETIRER,ressources,,trop de matières
-bloc,block_cdalloy,Bloc d'acier au cadmium,RETIRER,ressources,,trop de matières
+bloc,block_c4,Bloc de C-4,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cadmium,Bloc de Cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_fritz,Bloc de capsules de bouteilles de Fritz Cola,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_korl,Bloc de capsules de bouteilles Korl,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_nuka,Bloc de capsules de bouteilles de Nuka Cola,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_quantum,Bloc de capsules de bouteilles Nuka Cola Quantum,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_rad,Bloc de capsules de bouteilles S~Cola RAD,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cap_sparkle,Bloc de capsules de bouteilles S~Cola,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_cdalloy,Bloc d'acier au cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_cobalt,Bloc de cobalt,FUSIONNER,ressources,geomods:cobalt_block,ressource déjà présente
-bloc,block_coke_coal,Bloc de coke de charbon,RETIRER,ressources,,trop de matières
-bloc,block_coke_lignite,Bloc de coke de lignite,RETIRER,ressources,,trop de matières
-bloc,block_coke_petroleum,Bloc de coke de pétrole,RETIRER,ressources,,trop de matières
-bloc,block_coltan,Bloc de Coltan,RETIRER,ressources,,trop de matières
-bloc,block_combine_steel,Bloc d'acier CMB,RETIRER,ressources,,trop de matières
-bloc,block_corium,corium,RETIRER,ressources,,trop de matières
-bloc,block_corium_cobble,Pavé de corium,RETIRER,ressources,,trop de matières
+bloc,block_coke_coal,Bloc de coke de charbon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_coke_lignite,Bloc de coke de lignite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_coke_petroleum,Bloc de coke de pétrole,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_coltan,Bloc de Coltan,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_combine_steel,Bloc d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_corium,corium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_corium_cobble,Pavé de corium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_desh,Bloc renforcé de Desh,GARDER,ressources : espace,,uniquement sur Lune
-bloc,block_dineutronium,Bloc de dineutronium,RETIRER,ressources,,trop de matières
-bloc,block_dura_steel,Bloc renforcé d'acier rapide,RETIRER,ressources,,trop de matières
-bloc,block_electrical_scrap,Bloc de féraille électrique,RETIRER,ressources,,trop de matières
-bloc,block_euphemium,Bloc d'Euphemium,RETIRER,ressources,,trop de matières
-bloc,block_euphemium_cluster,Amas de Schrabidium gravé à l'euphemium,RETIRER,ressources,,trop de matières
-bloc,block_fallout,Bloc de Fallout,RETIRER,ressources,,trop de matières
-bloc,block_fiberglass,Rouleau de fibre de verre,RETIRER,ressources,,trop de matières
-bloc,block_fluorite,Bloc de fluorite,RETIRER,ressources,,trop de matières
-bloc,block_foam,Mousse,RETIRER,ressources,,trop de matières
+bloc,block_dineutronium,Bloc de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_dura_steel,Bloc renforcé d'acier rapide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_electrical_scrap,Bloc de féraille électrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_euphemium,Bloc d'Euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_euphemium_cluster,Amas de Schrabidium gravé à l'euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_fallout,Bloc de Fallout,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_fiberglass,Rouleau de fibre de verre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_fluorite,Bloc de fluorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_foam,Mousse,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_graphite,Bloc de graphite,GARDER,ressources : ajouts,,modérateur des réacteurs
-bloc,block_graphite_detector,Détecteur de neutrons de pile (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_drilled,Graphite percé (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_fuel,Combustible de pile (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_lithium,Combustible lithium de pile (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_plutonium,Combustible de pile (surgénéré) (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_rod,Barre de contrôle de pile (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_source,Source de neutrons de pile (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_graphite_tritium,Combustible lithium de pile (surgénéré) (LEGACY),RETIRER,ressources,,trop de matières
-bloc,block_insulator,Rouleau d'isolant,RETIRER,ressources,,trop de matières
-bloc,block_lanthanium,Bloc de lanthane,RETIRER,ressources,,trop de matières
+bloc,block_graphite_detector,Détecteur de neutrons de pile (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_drilled,Graphite percé (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_fuel,Combustible de pile (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_lithium,Combustible lithium de pile (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_plutonium,Combustible de pile (surgénéré) (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_rod,Barre de contrôle de pile (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_source,Source de neutrons de pile (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_graphite_tritium,Combustible lithium de pile (surgénéré) (LEGACY),SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_insulator,Rouleau d'isolant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_lanthanium,Bloc de lanthane,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_lead,Bloc de plomb,FUSIONNER,ressources,geomods:lead_block,ressource déjà présente
 bloc,block_lithium,Bloc de lithium,FUSIONNER,ressources,geomods:lithium_block,ressource déjà présente
-bloc,block_magnetized_tungsten,Bloc de tungstène magnétisé,RETIRER,ressources,,trop de matières
-bloc,block_meteor,Bloc de météorites,RETIRER,ressources,,trop de matières
-bloc,block_meteor_broken,Bloc de météorite cassé,RETIRER,ressources,,trop de matières
-bloc,block_meteor_cobble,Pierre de météorites,RETIRER,ressources,,trop de matières
-bloc,block_meteor_molten,Pierre météorite chaude,RETIRER,ressources,,trop de matières
-bloc,block_meteor_treasure,Bloc au trésors de météorites,RETIRER,ressources,,trop de matières
+bloc,block_magnetized_tungsten,Bloc de tungstène magnétisé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_meteor,Bloc de météorites,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_meteor_broken,Bloc de météorite cassé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_meteor_cobble,Pierre de météorites,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_meteor_molten,Pierre météorite chaude,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_meteor_treasure,Bloc au trésors de météorites,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_mox_fuel,Bloc de Combustible MOX,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-bloc,block_neptunium,Bloc de Neptunium-237,RETIRER,ressources,,trop de matières
-bloc,block_niobium,Bloc de niobium,RETIRER,ressources,,trop de matières
-bloc,block_niter,Bloc de Nitre,RETIRER,ressources,,trop de matières
+bloc,block_neptunium,Bloc de Neptunium-237,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_niobium,Bloc de niobium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_niter,Bloc de Nitre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_plutonium,Bloc de Plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_plutonium_fuel,Bloc de combustible au plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-bloc,block_polonium,Bloc de polonium-210,RETIRER,ressources,,trop de matières
-bloc,block_polymer,Bloc de polymère,RETIRER,ressources,,trop de matières
+bloc,block_polonium,Bloc de polonium-210,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_polymer,Bloc de polymère,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_pu238,Bloc de Plutonium-238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_pu239,Bloc de Plutonium-239,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_pu240,Bloc de Plutonium-240,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_pu_mix,Bloc de plutonium de qualité réacteur,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-bloc,block_ra226,Bloc de Radium-226,RETIRER,ressources,,trop de matières
-bloc,block_red_copper,Bloc de cuivre rouge,RETIRER,ressources,,trop de matières
-bloc,block_red_phosphorus,Bloc de phosphore rouge,RETIRER,ressources,,trop de matières
-bloc,block_rubber,Bloc de caoutchouc,RETIRER,ressources,,trop de matières
+bloc,block_ra226,Bloc de Radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_red_copper,Bloc de cuivre rouge,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_red_phosphorus,Bloc de phosphore rouge,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_rubber,Bloc de caoutchouc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_saturnite,Bloc de Saturnite,GARDER,ressources : espace,,uniquement sur Mars
-bloc,block_schrabidate,Bloc de Schrabidate ferrique,RETIRER,ressources,,trop de matières
+bloc,block_schrabidate,Bloc de Schrabidate ferrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_schrabidium,Bloc de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-bloc,block_schrabidium_cluster,Amas de Schrabidium,RETIRER,ressources,,trop de matières
-bloc,block_schrabidium_fuel,Bloc de Combustible Schrabidium,RETIRER,ressources,,trop de matières
-bloc,block_schraranium,Bloc de Schraranium,RETIRER,ressources,,trop de matières
-bloc,block_scrap,Bloc de féraille,RETIRER,ressources,,trop de matières
-bloc,block_semtex,Bloc de Semtex,RETIRER,ressources,,trop de matières
-bloc,block_slag,Bloc de scories,RETIRER,ressources,,trop de matières
-bloc,block_smore,Bloc de S'more,RETIRER,ressources,,trop de matières
-bloc,block_solinium,Bloc de Solinium-327,RETIRER,ressources,,trop de matières
+bloc,block_schrabidium_cluster,Amas de Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_schrabidium_fuel,Bloc de Combustible Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_schraranium,Bloc de Schraranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_scrap,Bloc de féraille,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_semtex,Bloc de Semtex,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_slag,Bloc de scories,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_smore,Bloc de S'more,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_solinium,Bloc de Solinium-327,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_starmetal,§9Bloc de Starmetal§r,GARDER,ressources : espace,,uniquement sur Glacio
 bloc,block_steel,Bloc d'acier,FUSIONNER,ressources,geomods:steel_block,ressource déjà présente
-bloc,block_sulfur,Bloc de soufre,RETIRER,ressources,,trop de matières
-bloc,block_tantalium,Bloc de tantale,RETIRER,ressources,,trop de matières
-bloc,block_tcalloy,Bloc d'acier au technétium,RETIRER,ressources,,trop de matières
+bloc,block_sulfur,Bloc de soufre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_tantalium,Bloc de tantale,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_tcalloy,Bloc d'acier au technétium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_thorium,Bloc de Thorium,GARDER,ressources : ajouts,,combustible alternatif
 bloc,block_thorium_fuel,Bloc de combustible au thorium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_titanium,Bloc de titane,FUSIONNER,ressources,geomods:titanium_block,ressource déjà présente
-bloc,block_trinitite,Bloc de Trinitite,RETIRER,ressources,,trop de matières
-bloc,block_tritium,Bloc de cellules au tritium,RETIRER,ressources,,trop de matières
+bloc,block_trinitite,Bloc de Trinitite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_tritium,Bloc de cellules au tritium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_tungsten,Bloc de tungstène,FUSIONNER,ressources,geomods:tungsten_block,ressource déjà présente
 bloc,block_u233,Bloc d'Uranium-233,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_u235,Bloc d'Uranium-235,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_u238,Bloc d'Uranium-238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,block_uranium,Bloc d'uranium,FUSIONNER,ressources,geomods:uranium_block,ressource déjà présente
 bloc,block_uranium_fuel,Bloc de combustible d'uranium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-bloc,block_waste,Bloc de dechets nucleaires,RETIRER,ressources,,trop de matières
-bloc,block_waste_painted,Bloc peint de déchets nucléaires,RETIRER,ressources,,trop de matières
-bloc,block_waste_vitrified,Bloc vitrifié de déchets nucléaires,RETIRER,ressources,,trop de matières
-bloc,block_white_phosphorus,Bloc de Phosphore Blanc,RETIRER,ressources,,trop de matières
-bloc,block_yellowcake,Bloc de Yellowcake,RETIRER,ressources,,trop de matières
+bloc,block_waste,Bloc de dechets nucleaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_waste_painted,Bloc peint de déchets nucléaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_waste_vitrified,Bloc vitrifié de déchets nucléaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_white_phosphorus,Bloc de Phosphore Blanc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,block_yellowcake,Bloc de Yellowcake,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_zirconium,Bloc de zirconium,GARDER,ressources : ajouts,,gaines de combustible
 bloc,boat,Bateau,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,bobblehead,Figurine branlante,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
@@ -818,82 +818,82 @@ bloc,nuke_solinium,Le rinçage bleu,RETIRER,hors périmètre,,"objet décoratif,
 bloc,nuke_tsar,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 bloc,oil_pipe,Tuyau d'extraction de pétrole brut,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,oil_spill,Nappe de pétrole,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-bloc,ore_alexandrite,Minerai d'alexandrite,RETIRER,ressources,,trop de matières
+bloc,ore_alexandrite,Minerai d'alexandrite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_aluminium,Minerai d'aluminium,FUSIONNER,ressources,geomods:aluminum_ore,ressource déjà présente
 bloc,ore_aluminium_deepslate,Minerai d'aluminium en ardoise,FUSIONNER,ressources,geomods:aluminum_ore,ressource déjà présente
-bloc,ore_asbestos,Minerai d'amiante,RETIRER,ressources,,trop de matières
-bloc,ore_asbestos_deepslate,Minerai d'amiante en ardoise,RETIRER,ressources,,trop de matières
-bloc,ore_australium,Minerais d'Australium,RETIRER,ressources,,trop de matières
-bloc,ore_basalt_asbestos,Basalte riche en amiante,RETIRER,ressources,,trop de matières
-bloc,ore_basalt_fluorite,Basalte riche en fluorite,RETIRER,ressources,,trop de matières
-bloc,ore_basalt_gem,Basalte riche en gemmes,RETIRER,ressources,,trop de matières
-bloc,ore_basalt_molysite,Basalte riche en molysite,RETIRER,ressources,,trop de matières
-bloc,ore_basalt_sulfur,Basalte riche en soufre,RETIRER,ressources,,trop de matières
-bloc,ore_bedrock_block,Minerai de substrat rocheux,RETIRER,ressources,,trop de matières
-bloc,ore_bedrock_oil,Gisement de pétrole du substrat rocheux,RETIRER,ressources,,trop de matières
+bloc,ore_asbestos,Minerai d'amiante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_asbestos_deepslate,Minerai d'amiante en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_australium,Minerais d'Australium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_basalt_asbestos,Basalte riche en amiante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_basalt_fluorite,Basalte riche en fluorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_basalt_gem,Basalte riche en gemmes,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_basalt_molysite,Basalte riche en molysite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_basalt_sulfur,Basalte riche en soufre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_bedrock_block,Minerai de substrat rocheux,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_bedrock_oil,Gisement de pétrole du substrat rocheux,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_beryllium,Minerai de beryllium,GARDER,ressources : ajouts,,réflecteur à neutrons
 bloc,ore_beryllium_deepslate,Minerai de béryllium en ardoise,GARDER,ressources : ajouts,,réflecteur à neutrons
-bloc,ore_cinnabar,Minerai de cinabre,RETIRER,ressources,,trop de matières
-bloc,ore_cinnabar_deepslate,Minerai de cinabre en ardoise,RETIRER,ressources,,trop de matières
+bloc,ore_cinnabar,Minerai de cinabre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_cinnabar_deepslate,Minerai de cinabre en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_cobalt,Minerai de cobalt,FUSIONNER,ressources,geomods:cobalt_ore,ressource déjà présente
 bloc,ore_cobalt_deepslate,Minerai de cobalt en ardoise,FUSIONNER,ressources,geomods:cobalt_ore,ressource déjà présente
-bloc,ore_coltan,Minerai de coltan,RETIRER,ressources,,trop de matières
-bloc,ore_coltan_deepslate,Minerai de coltan en ardoise,RETIRER,ressources,,trop de matières
-bloc,ore_depth_borax,Minerai de borax en profondeur,RETIRER,ressources,,trop de matières
-bloc,ore_depth_cinnabar,Minerai de cinabre de profondeur,RETIRER,ressources,,trop de matières
-bloc,ore_depth_nether_neodymium,Minerai de néodyme des profondeurs du Nether,RETIRER,ressources,,trop de matières
-bloc,ore_depth_nether_nitan,Minerai de Nitanium des Profondeurs du Néant,RETIRER,ressources,,trop de matières
+bloc,ore_coltan,Minerai de coltan,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_coltan_deepslate,Minerai de coltan en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_depth_borax,Minerai de borax en profondeur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_depth_cinnabar,Minerai de cinabre de profondeur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_depth_nether_neodymium,Minerai de néodyme des profondeurs du Nether,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_depth_nether_nitan,Minerai de Nitanium des Profondeurs du Néant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_depth_zirconium,Minerai de zirconium de profondeur,GARDER,ressources : ajouts,,gaines de combustible
-bloc,ore_fluorite,Minerai de fluorite,RETIRER,ressources,,trop de matières
-bloc,ore_fluorite_deepslate,Minerai de fluorite en ardoise,RETIRER,ressources,,trop de matières
-bloc,ore_gneiss_asbestos,Minerai d'amiante de schiste,RETIRER,ressources,,trop de matières
+bloc,ore_fluorite,Minerai de fluorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_fluorite_deepslate,Minerai de fluorite en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_gneiss_asbestos,Minerai d'amiante de schiste,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_gneiss_copper,Minerai de cuivre de schiste,FUSIONNER,ressources,minecraft:copper_ore,ressource déjà présente
-bloc,ore_gneiss_gas,Gaz de schiste,RETIRER,ressources,,trop de matières
+bloc,ore_gneiss_gas,Gaz de schiste,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_gneiss_gold,Minerai d'or de schiste,FUSIONNER,ressources,minecraft:gold_ore,ressource déjà présente
 bloc,ore_gneiss_iron,Minerai de fer de schiste,FUSIONNER,ressources,minecraft:iron_ore,ressource déjà présente
 bloc,ore_gneiss_lithium,Minerai de lithium de schiste,FUSIONNER,ressources,geomods:lithium_ore,ressource déjà présente
-bloc,ore_gneiss_rare,Minerai de terre rare de schiste,RETIRER,ressources,,trop de matières
+bloc,ore_gneiss_rare,Minerai de terre rare de schiste,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_gneiss_schrabidium,Schiste Schrabidium Minerai,GARDER,ressources : espace,,uniquement sur Mercure
 bloc,ore_gneiss_uranium,Minerai d'uranium de schiste,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
 bloc,ore_gneiss_uranium_scorched,Minerai d'uranium de schiste brûlé,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
 bloc,ore_lead,Minerai de plomb,FUSIONNER,ressources,geomods:lead_ore,ressource déjà présente
 bloc,ore_lead_deepslate,Minerai de plomb en ardoise,FUSIONNER,ressources,geomods:lead_ore,ressource déjà présente
-bloc,ore_lignite,Minerai de lignite,RETIRER,ressources,,trop de matières
-bloc,ore_lignite_deepslate,Minerai de lignite en ardoise,RETIRER,ressources,,trop de matières
+bloc,ore_lignite,Minerai de lignite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_lignite_deepslate,Minerai de lignite en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_meteor_aluminium,Météore Minerai d'Aluminium,FUSIONNER,ressources,geomods:aluminum_ore,ressource déjà présente
 bloc,ore_meteor_cobalt,Minerai de cobalt météorique,FUSIONNER,ressources,geomods:cobalt_ore,ressource déjà présente
 bloc,ore_meteor_copper,Minerai de cuivre de météore,FUSIONNER,ressources,minecraft:copper_ore,ressource déjà présente
 bloc,ore_meteor_iron,Minerai de fer météorique,FUSIONNER,ressources,minecraft:iron_ore,ressource déjà présente
-bloc,ore_meteor_rareearth,Minerai de terres rares météorique,RETIRER,ressources,,trop de matières
+bloc,ore_meteor_rareearth,Minerai de terres rares météorique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_nether_coal,Brûler du minerai de charbon du Nether,FUSIONNER,ressources,minecraft:coal_ore,ressource déjà présente
 bloc,ore_nether_cobalt,Minerai de cobalt du Néant,FUSIONNER,ressources,geomods:cobalt_ore,ressource déjà présente
-bloc,ore_nether_fire,Minerai de feu,RETIRER,ressources,,trop de matières
+bloc,ore_nether_fire,Minerai de feu,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_nether_plutonium,Minerai de plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 bloc,ore_nether_schrabidium,Minerais de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-bloc,ore_nether_smoldering,Netherrack fumant,RETIRER,ressources,,trop de matières
-bloc,ore_nether_sulfur,Minerai de soufre du Néant,RETIRER,ressources,,trop de matières
+bloc,ore_nether_smoldering,Netherrack fumant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_nether_sulfur,Minerai de soufre du Néant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_nether_tungsten,Minerai de tungstène du Néant,FUSIONNER,ressources,geomods:tungsten_ore,ressource déjà présente
 bloc,ore_nether_uranium,Minerai d'uranium,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
 bloc,ore_nether_uranium_scorched,Minerai d'uranium du Nether brûlé,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
-bloc,ore_niter,Minerai de nitre,RETIRER,ressources,,trop de matières
-bloc,ore_niter_deepslate,Minerai de nitre en ardoise,RETIRER,ressources,,trop de matières
-bloc,ore_oil,Dépôt pétrolier,RETIRER,ressources,,trop de matières
-bloc,ore_oil_empty,Dépôt pétrolier vide,RETIRER,ressources,,trop de matières
-bloc,ore_oil_sand,Sable de goudron,RETIRER,ressources,,trop de matières
-bloc,ore_rare,Minerai rare,RETIRER,ressources,,trop de matières
-bloc,ore_rare_deepslate,Minerai de terre rare en ardoise,RETIRER,ressources,,trop de matières
+bloc,ore_niter,Minerai de nitre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_niter_deepslate,Minerai de nitre en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_oil,Dépôt pétrolier,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_oil_empty,Dépôt pétrolier vide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_oil_sand,Sable de goudron,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_rare,Minerai rare,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_rare_deepslate,Minerai de terre rare en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_schrabidium,Minerais de schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-bloc,ore_sellafield_diamond,Minerai de diamant en sellafite,RETIRER,ressources,,trop de matières
-bloc,ore_sellafield_emerald,Minerai d'émeraude en sellafite,RETIRER,ressources,,trop de matières
-bloc,ore_sellafield_radgem,Minerai de gemme radioactive en sellafite,RETIRER,ressources,,trop de matières
-bloc,ore_sellafield_schrabidium,Minerai de schrabidium en sellafite,RETIRER,ressources,,trop de matières
-bloc,ore_sellafield_uranium_scorched,Minerai d'uranium en sellafite carbonisée,RETIRER,ressources,,trop de matières
-bloc,ore_sulfur,Minerai de soufre,RETIRER,ressources,,trop de matières
-bloc,ore_sulfur_deepslate,Minerai de soufre en ardoise,RETIRER,ressources,,trop de matières
-bloc,ore_tektite_osmiridium,Tektite infusée d'osmiridium,RETIRER,ressources,,trop de matières
+bloc,ore_sellafield_diamond,Minerai de diamant en sellafite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sellafield_emerald,Minerai d'émeraude en sellafite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sellafield_radgem,Minerai de gemme radioactive en sellafite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sellafield_schrabidium,Minerai de schrabidium en sellafite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sellafield_uranium_scorched,Minerai d'uranium en sellafite carbonisée,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sulfur,Minerai de soufre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_sulfur_deepslate,Minerai de soufre en ardoise,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+bloc,ore_tektite_osmiridium,Tektite infusée d'osmiridium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_thorium,Minerai de thorium,GARDER,ressources : ajouts,,combustible alternatif
 bloc,ore_thorium_deepslate,Minerai de thorium en ardoise,GARDER,ressources : ajouts,,combustible alternatif
-bloc,ore_tikite,,RETIRER,ressources,,trop de matières
+bloc,ore_tikite,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,ore_titanium,Minerai de titane,FUSIONNER,ressources,geomods:titanium_ore,ressource déjà présente
 bloc,ore_titanium_deepslate,Minerai de titane en ardoise,FUSIONNER,ressources,geomods:titanium_ore,ressource déjà présente
 bloc,ore_tungsten,Minerai de tungstène,FUSIONNER,ressources,geomods:tungsten_ore,ressource déjà présente
@@ -901,7 +901,7 @@ bloc,ore_tungsten_deepslate,Minerai de tungstène en ardoise,FUSIONNER,ressource
 bloc,ore_uranium,Minerai d'uranium,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
 bloc,ore_uranium_deepslate,Minerai d'uranium en ardoise des profondeurs,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
 bloc,ore_uranium_scorched,Minerai d'uranium brûlé,FUSIONNER,ressources,geomods:uranium_ore,ressource déjà présente
-bloc,ore_volcano,Évent géothermique,RETIRER,ressources,,trop de matières
+bloc,ore_volcano,Évent géothermique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,pa_beamline,Ligne de faisceau,RETIRER,hors périmètre,,armure ou référence à un autre univers
 bloc,pa_detector,Détecteur de particules,RETIRER,hors périmètre,,armure ou référence à un autre univers
 bloc,pa_dipole,Aimants dipolaires,RETIRER,hors périmètre,,armure ou référence à un autre univers
@@ -1810,8 +1810,8 @@ objet,blade_tungsten,Lame renforcée de tungstène,SI_BESOIN,dépendances,,gard�
 objet,blades_desh,Lames de déchiqueteuse Desh,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,blades_steel,Lames de broyeur en acier,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,blades_titanium,Lames de broyeur en titane,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,block_obj_context_base,,RETIRER,ressources,,trop de matières
-objet,block_obj_context_legacy,,RETIRER,ressources,,trop de matières
+objet,block_obj_context_base,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,block_obj_context_legacy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,blowtorch,Chalumeau,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,blueprint_folder,Cahier de plans,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 objet,blueprint_folder_discover,Cahier de plans,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -2625,128 +2625,128 @@ objet,igniter,Allumeur,SI_BESOIN,dépendances,,gardé seulement si une recette r
 objet,industrial_magnet,Aimant industriel,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,inf_water,Réservoir d'eau infini,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,inf_water_mk2,Réservoir d'eau lourd infini,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,ingot_actinium,Lingot d'actinium semi-stable,RETIRER,ressources,,trop de matières
+objet,ingot_actinium,Lingot d'actinium semi-stable,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_aluminium,Lingot d'aluminium,FUSIONNER,ressources,geomods:aluminum_ingot,ressource déjà présente
-objet,ingot_am241,Lingot d'américium-241,RETIRER,ressources,,trop de matières
-objet,ingot_am242,Lingot d'américium-242,RETIRER,ressources,,trop de matières
-objet,ingot_am_mix,Lingot d'américium de qualité réacteur,RETIRER,ressources,,trop de matières
-objet,ingot_americium_fuel,Lingot de carburant à l'américium,RETIRER,ressources,,trop de matières
-objet,ingot_arsenic,Lingot d'arsenic,RETIRER,ressources,,trop de matières
-objet,ingot_arsenic_bronze,Lingot de bronze à l'arsenic,RETIRER,ressources,,trop de matières
-objet,ingot_asbestos,Feuille d'amiante,RETIRER,ressources,,trop de matières
-objet,ingot_astatine,Lingot d'astatine,RETIRER,ressources,,trop de matières
-objet,ingot_au198,Lingot d'or-198,RETIRER,ressources,,trop de matières
-objet,ingot_australium,Lingot d'australium,RETIRER,ressources,,trop de matières
-objet,ingot_bakelite,Barre de bakélite,RETIRER,ressources,,trop de matières
+objet,ingot_am241,Lingot d'américium-241,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_am242,Lingot d'américium-242,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_am_mix,Lingot d'américium de qualité réacteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_americium_fuel,Lingot de carburant à l'américium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_arsenic,Lingot d'arsenic,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_arsenic_bronze,Lingot de bronze à l'arsenic,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_asbestos,Feuille d'amiante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_astatine,Lingot d'astatine,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_au198,Lingot d'or-198,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_australium,Lingot d'australium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_bakelite,Barre de bakélite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_beryllium,Lingot de beryllium,GARDER,ressources : ajouts,,réflecteur à neutrons
-objet,ingot_biorubber,Barre de latex,RETIRER,ressources,,trop de matières
-objet,ingot_bismuth,Lingot de bismuth,RETIRER,ressources,,trop de matières
-objet,ingot_bismuth_bronze,Lingot de bronze au bismuth,RETIRER,ressources,,trop de matières
+objet,ingot_biorubber,Barre de latex,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_bismuth,Lingot de bismuth,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_bismuth_bronze,Lingot de bronze au bismuth,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_boron,Lingot de bore,GARDER,ressources : ajouts,,barres de contrôle
-objet,ingot_bromine,Lingot de brome,RETIRER,ressources,,trop de matières
-objet,ingot_bscco,Lingot de BSCCO,RETIRER,ressources,,trop de matières
-objet,ingot_c4,Barre de C-4,RETIRER,ressources,,trop de matières
-objet,ingot_cadmium,Lingot de cadmium,RETIRER,ressources,,trop de matières
-objet,ingot_caesium,Lingot de césium,RETIRER,ressources,,trop de matières
-objet,ingot_calcium,Lingot de calcium,RETIRER,ressources,,trop de matières
-objet,ingot_cdalloy,Lingot d'acier au cadmium,RETIRER,ressources,,trop de matières
-objet,ingot_cerium,Lingot de cérium,RETIRER,ressources,,trop de matières
-objet,ingot_cft,Fullerite cristalline,RETIRER,ressources,,trop de matières
-objet,ingot_chainsteel,Acier à chaîne lourd,RETIRER,ressources,,trop de matières
-objet,ingot_co60,Lingot de cobalt 60,RETIRER,ressources,,trop de matières
+objet,ingot_bromine,Lingot de brome,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_bscco,Lingot de BSCCO,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_c4,Barre de C-4,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_cadmium,Lingot de cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_caesium,Lingot de césium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_calcium,Lingot de calcium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_cdalloy,Lingot d'acier au cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_cerium,Lingot de cérium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_cft,Fullerite cristalline,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_chainsteel,Acier à chaîne lourd,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_co60,Lingot de cobalt 60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_cobalt,Lingot de cobalt,FUSIONNER,ressources,geomods:cobalt_ingot,ressource déjà présente
-objet,ingot_combine_steel,Lingot d'acier CMB,RETIRER,ressources,,trop de matières
-objet,ingot_daffergon,Lingot de daffergon,RETIRER,ressources,,trop de matières
+objet,ingot_combine_steel,Lingot d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_daffergon,Lingot de daffergon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_desh,Lingot de desh,GARDER,ressources : espace,,uniquement sur Lune
-objet,ingot_dineutronium,Lingot de dineutronium,RETIRER,ressources,,trop de matières
-objet,ingot_dura_steel,Lingot d'acier haute vitesse,RETIRER,ressources,,trop de matières
-objet,ingot_electronium,Lingot d'électronium,RETIRER,ressources,,trop de matières
-objet,ingot_euphemium,Lingot d'euphemium,RETIRER,ressources,,trop de matières
-objet,ingot_ferrouranium,Lingot de ferrouranium,RETIRER,ressources,,trop de matières
-objet,ingot_fiberglass,Barre en fibre de verre,RETIRER,ressources,,trop de matières
-objet,ingot_firebrick,Brique réfractaire,RETIRER,ressources,,trop de matières
-objet,ingot_gh336,Lingot de Ghiorsium-336,RETIRER,ressources,,trop de matières
+objet,ingot_dineutronium,Lingot de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_dura_steel,Lingot d'acier haute vitesse,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_electronium,Lingot d'électronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_euphemium,Lingot d'euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_ferrouranium,Lingot de ferrouranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_fiberglass,Barre en fibre de verre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_firebrick,Brique réfractaire,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_gh336,Lingot de Ghiorsium-336,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_graphite,Lingot de graphite,GARDER,ressources : ajouts,,modérateur des réacteurs
-objet,ingot_gunmetal,Lingot de métal à canon,RETIRER,ressources,,trop de matières
-objet,ingot_hes,Lingot de carburant au Schrabidium hautement enrichi,RETIRER,ressources,,trop de matières
-objet,ingot_i131,Lingot d'iode-131,RETIRER,ressources,,trop de matières
-objet,ingot_iodine,Lingot d'iode,RETIRER,ressources,,trop de matières
-objet,ingot_lanthanium,Lingot de lanthanium semi-stable,RETIRER,ressources,,trop de matières
+objet,ingot_gunmetal,Lingot de métal à canon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_hes,Lingot de carburant au Schrabidium hautement enrichi,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_i131,Lingot d'iode-131,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_iodine,Lingot d'iode,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_lanthanium,Lingot de lanthanium semi-stable,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_lead,Lingot de plomb,FUSIONNER,ressources,geomods:lead_ingot,ressource déjà présente
-objet,ingot_les,Lingot de carburant au Schrabidium faiblement enrichi,RETIRER,ressources,,trop de matières
-objet,ingot_magnetized_tungsten,Lingot de tungstène magnétisé,RETIRER,ressources,,trop de matières
-objet,ingot_metal_bar,Barre de métal,RETIRER,ressources,,trop de matières
-objet,ingot_metal_beacon,Balise radio de guidage,RETIRER,ressources,,trop de matières
-objet,ingot_metal_casing,Carcasse en métal,RETIRER,ressources,,trop de matières
-objet,ingot_metal_clockwork,Mécanisme d'horlogerie,RETIRER,ressources,,trop de matières
-objet,ingot_metal_counter,Compteur,RETIRER,ressources,,trop de matières
-objet,ingot_metal_detector,Détecteur,RETIRER,ressources,,trop de matières
-objet,ingot_metal_ingot,Lingot de métal,RETIRER,ressources,,trop de matières
-objet,ingot_metal_key,Clé en métal,RETIRER,ressources,,trop de matières
-objet,ingot_metal_scrap,Ferraille,RETIRER,ressources,,trop de matières
-objet,ingot_meteorite,Lingot de météorite,RETIRER,ressources,,trop de matières
-objet,ingot_meteorite_forged,Lingot de météorite forgé,RETIRER,ressources,,trop de matières
+objet,ingot_les,Lingot de carburant au Schrabidium faiblement enrichi,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_magnetized_tungsten,Lingot de tungstène magnétisé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_bar,Barre de métal,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_beacon,Balise radio de guidage,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_casing,Carcasse en métal,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_clockwork,Mécanisme d'horlogerie,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_counter,Compteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_detector,Détecteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_ingot,Lingot de métal,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_key,Clé en métal,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_metal_scrap,Ferraille,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_meteorite,Lingot de météorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_meteorite_forged,Lingot de météorite forgé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_mox_fuel,Lingot de combustible MOX,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,ingot_mud,Brique de boue solide,RETIRER,ressources,,trop de matières
-objet,ingot_neptunium,Lingot de neptunium,RETIRER,ressources,,trop de matières
-objet,ingot_neptunium_fuel,Lingot de carburant de neptunium,RETIRER,ressources,,trop de matières
-objet,ingot_niobium,Lingot de niobium,RETIRER,ressources,,trop de matières
-objet,ingot_osmiridium,Lingot d'osmiridium,RETIRER,ressources,,trop de matières
-objet,ingot_pb209,Lingot de plomb 209,RETIRER,ressources,,trop de matières
-objet,ingot_pc,Barre de plastique dur,RETIRER,ressources,,trop de matières
-objet,ingot_phosphorus,Barre de phosphore blanc,RETIRER,ressources,,trop de matières
+objet,ingot_mud,Brique de boue solide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_neptunium,Lingot de neptunium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_neptunium_fuel,Lingot de carburant de neptunium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_niobium,Lingot de niobium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_osmiridium,Lingot d'osmiridium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_pb209,Lingot de plomb 209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_pc,Barre de plastique dur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_phosphorus,Barre de phosphore blanc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_plutonium,Lingot de plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_plutonium_fuel,Lingot de carburant du plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,ingot_polonium,Lingot de polonium-210,RETIRER,ressources,,trop de matières
-objet,ingot_polymer,Lingot de polymère,RETIRER,ressources,,trop de matières
+objet,ingot_polonium,Lingot de polonium-210,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_polymer,Lingot de polymère,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_pu238,Pu238 Lingot,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_pu239,Pu239 lingot,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_pu240,Pu240 Lingot,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_pu241,Lingot de plutonium-241,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_pu_mix,Lingot de plutonium de qualité réacteur,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,ingot_pvc,Barre de PVC,RETIRER,ressources,,trop de matières
-objet,ingot_ra226,Lingot de radium-226,RETIRER,ressources,,trop de matières
-objet,ingot_raw_borax,,RETIRER,ressources,,trop de matières
-objet,ingot_raw_neodymium,,RETIRER,ressources,,trop de matières
-objet,ingot_raw_redstone,,RETIRER,ressources,,trop de matières
-objet,ingot_raw_slag,,RETIRER,ressources,,trop de matières
-objet,ingot_raw_sodium,,RETIRER,ressources,,trop de matières
-objet,ingot_raw_strontium,,RETIRER,ressources,,trop de matières
-objet,ingot_red_copper,Minecraft Grade Cuivre,RETIRER,ressources,,trop de matières
-objet,ingot_reiium,Lingot de reiium,RETIRER,ressources,,trop de matières
-objet,ingot_rubber,Barre en caoutchouc,RETIRER,ressources,,trop de matières
+objet,ingot_pvc,Barre de PVC,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_ra226,Lingot de radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_borax,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_neodymium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_redstone,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_slag,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_sodium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_raw_strontium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_red_copper,Minecraft Grade Cuivre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_reiium,Lingot de reiium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_rubber,Barre en caoutchouc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_saturnite,Lingot de saturnite,GARDER,ressources : espace,,uniquement sur Mars
-objet,ingot_schrabidate,Lingot de Schrabidate ferrique,RETIRER,ressources,,trop de matières
+objet,ingot_schrabidate,Lingot de Schrabidate ferrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_schrabidium,Lingot de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-objet,ingot_schrabidium_fuel,Lingot de Schrabidium,RETIRER,ressources,,trop de matières
-objet,ingot_schraranium,Lingot de Schraranium,RETIRER,ressources,,trop de matières
-objet,ingot_semtex,Barre de Semtex,RETIRER,ressources,,trop de matières
-objet,ingot_silicon,Boule de silicium,RETIRER,ressources,,trop de matières
-objet,ingot_smore,Lingot de S'more,RETIRER,ressources,,trop de matières
-objet,ingot_solinium,Lingot de solinium-327,RETIRER,ressources,,trop de matières
-objet,ingot_sr90,Lingot de Strontium-90,RETIRER,ressources,,trop de matières
+objet,ingot_schrabidium_fuel,Lingot de Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_schraranium,Lingot de Schraranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_semtex,Barre de Semtex,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_silicon,Boule de silicium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_smore,Lingot de S'more,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_solinium,Lingot de solinium-327,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_sr90,Lingot de Strontium-90,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_starmetal,Lingot starmetal,GARDER,ressources : espace,,uniquement sur Glacio
 objet,ingot_steel,Lingot d'acier,FUSIONNER,ressources,geomods:steel_ingot,ressource déjà présente
-objet,ingot_steel_dusted,Lingot d'acier saupoudré,RETIRER,ressources,,trop de matières
-objet,ingot_tantalium,Lingot de tantale,RETIRER,ressources,,trop de matières
-objet,ingot_tcalloy,Lingot d'acier au technétium,RETIRER,ressources,,trop de matières
-objet,ingot_technetium,Lingot de technétium-99,RETIRER,ressources,,trop de matières
-objet,ingot_tennessine,Lingot Tennessine-294,RETIRER,ressources,,trop de matières
+objet,ingot_steel_dusted,Lingot d'acier saupoudré,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_tantalium,Lingot de tantale,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_tcalloy,Lingot d'acier au technétium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_technetium,Lingot de technétium-99,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_tennessine,Lingot Tennessine-294,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_th232,Lingot de thorium-232,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_thorium_fuel,Lingot de thorium combustible,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_titanium,Lingot de titane,FUSIONNER,ressources,geomods:titanium_ingot,ressource déjà présente
 objet,ingot_tungsten,Lingot de tungstène,FUSIONNER,ressources,geomods:tungsten_ingot,ressource déjà présente
-objet,ingot_tungsten_carbide,Lingot de carbure de tungstène,RETIRER,ressources,,trop de matières
+objet,ingot_tungsten_carbide,Lingot de carbure de tungstène,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_u233,Lingot d'uranium-233,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_u235,Lingot d'd'U235,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,ingot_u238,d'U238 Lingot,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,ingot_u238m2,Lingot Metastable d'U238-2,RETIRER,ressources,,trop de matières
-objet,ingot_unobtainium,Lingot d'unobtainium,RETIRER,ressources,,trop de matières
+objet,ingot_u238m2,Lingot Metastable d'U238-2,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_unobtainium,Lingot d'unobtainium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_uranium,Lingot d'uranium,FUSIONNER,ressources,geomods:uranium_ingot,ressource déjà présente
 objet,ingot_uranium_fuel,Lingot d'uranium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,ingot_verticium,Lingot de Verticium,RETIRER,ressources,,trop de matières
-objet,ingot_weaponsteel,Lingot d'acier d'armement,RETIRER,ressources,,trop de matières
-objet,ingot_weidanium,Lingot de Weidanium,RETIRER,ressources,,trop de matières
+objet,ingot_verticium,Lingot de Verticium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_weaponsteel,Lingot d'acier d'armement,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,ingot_weidanium,Lingot de Weidanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_zirconium,Cube de zirconium,GARDER,ressources : ajouts,,gaines de combustible
 objet,injector_5htp,Auto-injecteur 5-HTP,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,injector_knife,Auto-injecteur à lame de 8 pouces,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -3159,75 +3159,75 @@ objet,nuclear_waste_tiny,Petit tas de déchets nucléaires,SIMPLIFIER,réacteurs
 objet,nuclear_waste_vitrified,Déchets nucléaires vitrifiés,SIMPLIFIER,réacteurs,,
 objet,nuclear_waste_vitrified_tiny,Petit tas de déchets nucléaires vitrifiés,SIMPLIFIER,réacteurs,,
 objet,nugget,Nugget de poulet,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,nugget_actinium,Pépite d'actinium,RETIRER,ressources,,trop de matières
-objet,nugget_am241,Pépite d'américium-241,RETIRER,ressources,,trop de matières
-objet,nugget_am242,Pépite d'américium-242,RETIRER,ressources,,trop de matières
-objet,nugget_am_mix,Pépite d'américium de qualité réacteur,RETIRER,ressources,,trop de matières
-objet,nugget_americium_fuel,Pépite de carburant à l'américium,RETIRER,ressources,,trop de matières
-objet,nugget_arsenic,Pépite d'arsenic,RETIRER,ressources,,trop de matières
-objet,nugget_au198,Pépite d'or-198,RETIRER,ressources,,trop de matières
-objet,nugget_australium,Pépite d'australium,RETIRER,ressources,,trop de matières
-objet,nugget_australium_greater,Pépite d'australium-406,RETIRER,ressources,,trop de matières
-objet,nugget_australium_lesser,Pépite d'australium-405,RETIRER,ressources,,trop de matières
+objet,nugget_actinium,Pépite d'actinium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_am241,Pépite d'américium-241,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_am242,Pépite d'américium-242,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_am_mix,Pépite d'américium de qualité réacteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_americium_fuel,Pépite de carburant à l'américium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_arsenic,Pépite d'arsenic,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_au198,Pépite d'or-198,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_australium,Pépite d'australium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_australium_greater,Pépite d'australium-406,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_australium_lesser,Pépite d'australium-405,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_beryllium,Pépite de béryllium,GARDER,ressources : ajouts,,réflecteur à neutrons
-objet,nugget_bismuth,Pépite de bismuth,RETIRER,ressources,,trop de matières
-objet,nugget_cadmium,Pépite de Cadmium,RETIRER,ressources,,trop de matières
-objet,nugget_co60,Pépite de cobalt-60,RETIRER,ressources,,trop de matières
-objet,nugget_cobalt,Pépite de cobalt,RETIRER,ressources,,trop de matières
-objet,nugget_daffergon,Pépite de Daffergon,RETIRER,ressources,,trop de matières
+objet,nugget_bismuth,Pépite de bismuth,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_cadmium,Pépite de Cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_co60,Pépite de cobalt-60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_cobalt,Pépite de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_daffergon,Pépite de Daffergon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_desh,Pépite de Desh,GARDER,ressources : espace,,uniquement sur Lune
-objet,nugget_dineutronium,Pépite de dineutronium,RETIRER,ressources,,trop de matières
-objet,nugget_euphemium,Pépite d'Euphemium,RETIRER,ressources,,trop de matières
-objet,nugget_gh336,Pépite de Ghiorsium-336,RETIRER,ressources,,trop de matières
-objet,nugget_hes,Pépite de carburant au Schrabidium hautement enrichi,RETIRER,ressources,,trop de matières
-objet,nugget_lead,Pépite de plomb,RETIRER,ressources,,trop de matières
-objet,nugget_les,Pépite de carburant au Schrabidium enrichi faible,RETIRER,ressources,,trop de matières
-objet,nugget_mercury,Petite goutte de mercure,RETIRER,ressources,,trop de matières
-objet,nugget_mercury_tiny,Minuscule goutte de mercure,RETIRER,ressources,,trop de matières
+objet,nugget_dineutronium,Pépite de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_euphemium,Pépite d'Euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_gh336,Pépite de Ghiorsium-336,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_hes,Pépite de carburant au Schrabidium hautement enrichi,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_lead,Pépite de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_les,Pépite de carburant au Schrabidium enrichi faible,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_mercury,Petite goutte de mercure,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_mercury_tiny,Minuscule goutte de mercure,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_mox_fuel,Pépite de combustible MOX,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,nugget_neptunium,Pépite de neptunium,RETIRER,ressources,,trop de matières
-objet,nugget_neptunium_fuel,Pépite de carburant Neptunium,RETIRER,ressources,,trop de matières
-objet,nugget_niobium,Pépite de niobium,RETIRER,ressources,,trop de matières
-objet,nugget_osmiridium,Pépite d'Osmiridium,RETIRER,ressources,,trop de matières
-objet,nugget_pb209,Pépite de plomb 209,RETIRER,ressources,,trop de matières
+objet,nugget_neptunium,Pépite de neptunium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_neptunium_fuel,Pépite de carburant Neptunium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_niobium,Pépite de niobium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_osmiridium,Pépite d'Osmiridium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_pb209,Pépite de plomb 209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_plutonium,Pépite de plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_plutonium_fuel,Pépite de combustible du plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,nugget_polonium,Pépite de polonium-210,RETIRER,ressources,,trop de matières
+objet,nugget_polonium,Pépite de polonium-210,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_pu238,Pépite de Pu238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_pu239,Pépite de Pu239,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_pu240,Pépite de Pu240,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_pu241,Pépite de plutonium-241,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_pu_mix,Pépite de plutonium de qualité réacteur,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,nugget_ra226,Pépite de radium-226,RETIRER,ressources,,trop de matières
-objet,nugget_raw_aluminium,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_boron,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_copper,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_lithium,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_sodium,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_strontium,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_titanium,,RETIRER,ressources,,trop de matières
-objet,nugget_raw_tungsten,,RETIRER,ressources,,trop de matières
-objet,nugget_reiium,Pépite de reiium,RETIRER,ressources,,trop de matières
+objet,nugget_ra226,Pépite de radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_aluminium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_boron,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_lithium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_sodium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_strontium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_titanium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_raw_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_reiium,Pépite de reiium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_schrabidium,Pépite de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-objet,nugget_schrabidium_fuel,Pépite de combustible de Schrabidium,RETIRER,ressources,,trop de matières
-objet,nugget_silicon,Pépite de silicium,RETIRER,ressources,,trop de matières
-objet,nugget_solinium,Pépite de Solinium-327,RETIRER,ressources,,trop de matières
-objet,nugget_sr90,Pépite de Strontium-90,RETIRER,ressources,,trop de matières
-objet,nugget_strontium,Pépite de strontium,RETIRER,ressources,,trop de matières
-objet,nugget_tantalium,Pépite de tantale,RETIRER,ressources,,trop de matières
-objet,nugget_technetium,Pépite de technétium-99,RETIRER,ressources,,trop de matières
+objet,nugget_schrabidium_fuel,Pépite de combustible de Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_silicon,Pépite de silicium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_solinium,Pépite de Solinium-327,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_sr90,Pépite de Strontium-90,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_strontium,Pépite de strontium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_tantalium,Pépite de tantale,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_technetium,Pépite de technétium-99,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_th232,Pépite de thorium-232,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_thorium_fuel,Pépite de carburant au thorium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_u233,Pépite d'uranium-233,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_u235,Pépite de d'U235,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,nugget_u238,Pépite de d'U238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,nugget_unobtainium,P \ u00e9node d'unobtainium,RETIRER,ressources,,trop de matières
-objet,nugget_unobtainium_greater,Pépite d'Unobtainium-440,RETIRER,ressources,,trop de matières
-objet,nugget_unobtainium_lesser,Pépite d'Unobtainium-439,RETIRER,ressources,,trop de matières
-objet,nugget_uranium,Pépite d'uranium,RETIRER,ressources,,trop de matières
+objet,nugget_unobtainium,P \ u00e9node d'unobtainium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_unobtainium_greater,Pépite d'Unobtainium-440,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_unobtainium_lesser,Pépite d'Unobtainium-439,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_uranium,Pépite d'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_uranium_fuel,Pépite de combustible d'uranium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,nugget_verticium,Pépite de Verticium,RETIRER,ressources,,trop de matières
-objet,nugget_weidanium,Pépite de Weidanium,RETIRER,ressources,,trop de matières
+objet,nugget_verticium,Pépite de Verticium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,nugget_weidanium,Pépite de Weidanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,nugget_zirconium,Éclat de zirconium,GARDER,ressources : ajouts,,gaines de combustible
 objet,nuke_advanced_kit,Kit avancée de science atomique,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,nuke_commercially_kit,Kit de science atomique pour usage commercial,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
@@ -3241,7 +3241,7 @@ objet,oil_tar_paraffin,Cire de paraffine,SI_BESOIN,dépendances,,gardé seulemen
 objet,oil_tar_wax,Cire de pétrole chlorée,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,oil_tar_wood,Goudron de bois,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,orbital_assembly_crystal_circuit,Assemblage orbital : carte de circuit en cristal,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,ore_density_scanner,Scanner de densité de minerai du substrat rocheux,RETIRER,ressources,,trop de matières
+objet,ore_density_scanner,Scanner de densité de minerai du substrat rocheux,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,overfuse,Overfuse,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pa_coil_bscco,Grande bobine BSCCO,RETIRER,hors périmètre,,armure ou référence à un autre univers
 objet,pa_coil_chlorophyte,Grande bobine de chlorophyte,RETIRER,hors périmètre,,armure ou référence à un autre univers
@@ -3444,208 +3444,208 @@ objet,plant_item_mustardwillow,Feuille de saule moutarde,RETIRER,hors périmètr
 objet,plant_item_rope,Corde,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 objet,plant_item_tobacco,Tabac,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 objet,plastic_bag,Sac plastique,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,plate_aluminium,Plaque d'aluminium,RETIRER,ressources,,trop de matières
-objet,plate_armor_ajr,Plaque d'armure ferrée,RETIRER,ressources,,trop de matières
-objet,plate_armor_dnt,Blindage DNT,RETIRER,ressources,,trop de matières
-objet,plate_armor_fau,Placage d'armure Fau,RETIRER,ressources,,trop de matières
-objet,plate_armor_hev,Blindage réactif,RETIRER,ressources,,trop de matières
-objet,plate_armor_lunar,Plaquage lunaire,RETIRER,ressources,,trop de matières
-objet,plate_armor_titanium,Plaque de blindage en titane,RETIRER,ressources,,trop de matières
-objet,plate_bismuth,Plaque de composé de bismuth,RETIRER,ressources,,trop de matières
-objet,plate_cast,Plaque moulée en %s,RETIRER,ressources,,trop de matières
-objet,plate_cast_aluminium,,RETIRER,ressources,,trop de matières
-objet,plate_cast_arsenic_bronze,,RETIRER,ressources,,trop de matières
-objet,plate_cast_bismuth_bronze,,RETIRER,ressources,,trop de matières
-objet,plate_cast_cdalloy,,RETIRER,ressources,,trop de matières
-objet,plate_cast_combine_steel,,RETIRER,ressources,,trop de matières
-objet,plate_cast_copper,,RETIRER,ressources,,trop de matières
-objet,plate_cast_desh,,RETIRER,ressources,,trop de matières
-objet,plate_cast_dura_steel,,RETIRER,ressources,,trop de matières
-objet,plate_cast_ferrouranium,,RETIRER,ressources,,trop de matières
-objet,plate_cast_gold,,RETIRER,ressources,,trop de matières
-objet,plate_cast_iron,,RETIRER,ressources,,trop de matières
-objet,plate_cast_lead,,RETIRER,ressources,,trop de matières
-objet,plate_cast_osmiridium,,RETIRER,ressources,,trop de matières
-objet,plate_cast_saturnite,,RETIRER,ressources,,trop de matières
-objet,plate_cast_schrabidate,,RETIRER,ressources,,trop de matières
-objet,plate_cast_schrabidium,,RETIRER,ressources,,trop de matières
-objet,plate_cast_starmetal,,RETIRER,ressources,,trop de matières
-objet,plate_cast_steel,,RETIRER,ressources,,trop de matières
-objet,plate_cast_tcalloy,,RETIRER,ressources,,trop de matières
-objet,plate_cast_titanium,,RETIRER,ressources,,trop de matières
-objet,plate_cast_tungsten,,RETIRER,ressources,,trop de matières
-objet,plate_cast_weaponsteel,,RETIRER,ressources,,trop de matières
-objet,plate_cast_zirconium,,RETIRER,ressources,,trop de matières
-objet,plate_combine_steel,Plaque d'acier CMB,RETIRER,ressources,,trop de matières
-objet,plate_copper,Plaque de cuivre,RETIRER,ressources,,trop de matières
-objet,plate_dalekanium,Plaque de dalekanium,RETIRER,ressources,,trop de matières
+objet,plate_aluminium,Plaque d'aluminium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_ajr,Plaque d'armure ferrée,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_dnt,Blindage DNT,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_fau,Placage d'armure Fau,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_hev,Blindage réactif,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_lunar,Plaquage lunaire,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_armor_titanium,Plaque de blindage en titane,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_bismuth,Plaque de composé de bismuth,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast,Plaque moulée en %s,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_aluminium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_arsenic_bronze,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_bismuth_bronze,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_cdalloy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_combine_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_desh,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_dura_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_ferrouranium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_gold,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_iron,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_lead,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_osmiridium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_saturnite,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_schrabidate,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_schrabidium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_starmetal,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_tcalloy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_titanium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_weaponsteel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_cast_zirconium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_combine_steel,Plaque d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_copper,Plaque de cuivre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_dalekanium,Plaque de dalekanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_desh,Plaque de desh,GARDER,ressources : espace,,uniquement sur Lune
-objet,plate_dineutronium,Plaque de dineutronium,RETIRER,ressources,,trop de matières
-objet,plate_dura_steel,Plaque d'acier rapide,RETIRER,ressources,,trop de matières
-objet,plate_euphemium,Plaque d'euphemium,RETIRER,ressources,,trop de matières
-objet,plate_fuel_mox,Plaque de combustible MOX,RETIRER,ressources,,trop de matières
-objet,plate_fuel_pu238be,Plaque de combustible Pu238Be,RETIRER,ressources,,trop de matières
-objet,plate_fuel_pu239,Plaque de combustible HEP-239,RETIRER,ressources,,trop de matières
-objet,plate_fuel_ra226be,Plaque de combustible Ra226Be,RETIRER,ressources,,trop de matières
-objet,plate_fuel_sa326,Plaque de combustible HES-326,RETIRER,ressources,,trop de matières
-objet,plate_fuel_u233,Plaque de combustible HEU-233,RETIRER,ressources,,trop de matières
-objet,plate_fuel_u235,Plaque de combustible HEU-235,RETIRER,ressources,,trop de matières
-objet,plate_gold,Plaque d'or,RETIRER,ressources,,trop de matières
-objet,plate_gunmetal,Plaque de gunmetal,RETIRER,ressources,,trop de matières
+objet,plate_dineutronium,Plaque de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_dura_steel,Plaque d'acier rapide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_euphemium,Plaque d'euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_mox,Plaque de combustible MOX,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_pu238be,Plaque de combustible Pu238Be,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_pu239,Plaque de combustible HEP-239,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_ra226be,Plaque de combustible Ra226Be,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_sa326,Plaque de combustible HES-326,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_u233,Plaque de combustible HEU-233,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_fuel_u235,Plaque de combustible HEU-235,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_gold,Plaque d'or,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_gunmetal,Plaque de gunmetal,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_iron,Plaque de fer,FUSIONNER,ressources,geomods:iron_plate,ressource déjà présente
-objet,plate_kevlar,Composé Kevlar-Céramique,RETIRER,ressources,,trop de matières
-objet,plate_lead,Plaque de plomb,RETIRER,ressources,,trop de matières
-objet,plate_mixed,Plaque mixte,RETIRER,ressources,,trop de matières
-objet,plate_paa,Plaque d'alliage PaA,RETIRER,ressources,,trop de matières
-objet,plate_polymer,Isolateur,RETIRER,ressources,,trop de matières
+objet,plate_kevlar,Composé Kevlar-Céramique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_lead,Plaque de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_mixed,Plaque mixte,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_paa,Plaque d'alliage PaA,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_polymer,Isolateur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_saturnite,Plaque de Saturnite,GARDER,ressources : espace,,uniquement sur Mars
 objet,plate_schrabidium,Plaque de schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
 objet,plate_steel,Plaque d'acier,FUSIONNER,ressources,geomods:steel_plate,ressource déjà présente
 objet,plate_titanium,Plaque en titane,FUSIONNER,ressources,geomods:titanium_plate,ressource déjà présente
-objet,plate_weaponsteel,Plaque d'acier d'arme,RETIRER,ressources,,trop de matières
-objet,plate_welded,Plaque soudée en %s,RETIRER,ressources,,trop de matières
-objet,plate_welded_aluminium,,RETIRER,ressources,,trop de matières
-objet,plate_welded_cdalloy,,RETIRER,ressources,,trop de matières
-objet,plate_welded_combine_steel,,RETIRER,ressources,,trop de matières
-objet,plate_welded_copper,,RETIRER,ressources,,trop de matières
-objet,plate_welded_iron,,RETIRER,ressources,,trop de matières
-objet,plate_welded_osmiridium,,RETIRER,ressources,,trop de matières
-objet,plate_welded_steel,,RETIRER,ressources,,trop de matières
-objet,plate_welded_tcalloy,,RETIRER,ressources,,trop de matières
-objet,plate_welded_titanium,,RETIRER,ressources,,trop de matières
-objet,plate_welded_tungsten,,RETIRER,ressources,,trop de matières
-objet,plate_welded_zirconium,,RETIRER,ressources,,trop de matières
+objet,plate_weaponsteel,Plaque d'acier d'arme,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded,Plaque soudée en %s,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_aluminium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_cdalloy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_combine_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_iron,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_osmiridium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_tcalloy,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_titanium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,plate_welded_zirconium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plushie_derg,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,plushie_hundun,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,plushie_numbernine,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,plushie_yomi,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,polaroid,Le Polaroid,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,pollution_detector,Détecteur de pollution,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,powder_actinium,Poudre d'actinium,RETIRER,ressources,,trop de matières
-objet,powder_actinium_tiny,Minuscule tas de poudre d'actinium,RETIRER,ressources,,trop de matières
+objet,powder_actinium,Poudre d'actinium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_actinium_tiny,Minuscule tas de poudre d'actinium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_aluminium,Poudre d'aluminium,FUSIONNER,ressources,geomods:aluminum_dust,ressource déjà présente
-objet,powder_asbestos,Poudre d'amiante,RETIRER,ressources,,trop de matières
-objet,powder_ash_coal,Cendres de charbon,RETIRER,ressources,,trop de matières
-objet,powder_ash_fly,Cendres volantes,RETIRER,ressources,,trop de matières
-objet,powder_ash_fullerene,Fullerène,RETIRER,ressources,,trop de matières
-objet,powder_ash_misc,Cendres,RETIRER,ressources,,trop de matières
-objet,powder_ash_soot,Suie fine,RETIRER,ressources,,trop de matières
-objet,powder_ash_wood,Cendres de bois,RETIRER,ressources,,trop de matières
-objet,powder_astatine,Poudre d'Astatine,RETIRER,ressources,,trop de matières
-objet,powder_at209,Poudre d'astatine-209,RETIRER,ressources,,trop de matières
-objet,powder_at209_tiny,Petit tas de poudre d’astatine-209,RETIRER,ressources,,trop de matières
-objet,powder_au198,Poudre d'or-198,RETIRER,ressources,,trop de matières
-objet,powder_au198_tiny,Petit tas de poudre d'or-198,RETIRER,ressources,,trop de matières
-objet,powder_australium,Poudre d'Australium,RETIRER,ressources,,trop de matières
-objet,powder_bakelite,Poudre de bakélite,RETIRER,ressources,,trop de matières
-objet,powder_balefire,Cendres thermonucléaires,RETIRER,ressources,,trop de matières
+objet,powder_asbestos,Poudre d'amiante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_coal,Cendres de charbon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_fly,Cendres volantes,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_fullerene,Fullerène,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_misc,Cendres,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_soot,Suie fine,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ash_wood,Cendres de bois,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_astatine,Poudre d'Astatine,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_at209,Poudre d'astatine-209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_at209_tiny,Petit tas de poudre d’astatine-209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_au198,Poudre d'or-198,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_au198_tiny,Petit tas de poudre d'or-198,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_australium,Poudre d'Australium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_bakelite,Poudre de bakélite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_balefire,Cendres thermonucléaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_beryllium,Poudre de beryllium,GARDER,ressources : ajouts,,réflecteur à neutrons
-objet,powder_bismuth,Poudre de bismuth-209,RETIRER,ressources,,trop de matières
-objet,powder_borax,Poudre de borax,RETIRER,ressources,,trop de matières
+objet,powder_bismuth,Poudre de bismuth-209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_borax,Poudre de borax,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_boron,Poudre de bore,GARDER,ressources : ajouts,,barres de contrôle
-objet,powder_boron_tiny,Petit tas de poudre de bore,RETIRER,ressources,,trop de matières
-objet,powder_bromine,Poudre de brome,RETIRER,ressources,,trop de matières
-objet,powder_cadmium,Poudre de cadmium,RETIRER,ressources,,trop de matières
-objet,powder_caesium,Poudre de césium,RETIRER,ressources,,trop de matières
-objet,powder_calcium,Poudre de calcium,RETIRER,ressources,,trop de matières
-objet,powder_cdalloy,Poudre d'acier au cadmium,RETIRER,ressources,,trop de matières
-objet,powder_cement,Ciment,RETIRER,ressources,,trop de matières
-objet,powder_cerium,Poudre de cérium,RETIRER,ressources,,trop de matières
-objet,powder_cerium_tiny,Minuscule tas de poudre de cérium,RETIRER,ressources,,trop de matières
-objet,powder_chlorocalcite,,RETIRER,ressources,,trop de matières
-objet,powder_chlorophyte,Poudre de chlorophyte,RETIRER,ressources,,trop de matières
-objet,powder_cloud,Nuage de résidus,RETIRER,ressources,,trop de matières
-objet,powder_co60,Cobalt-60 Poudre,RETIRER,ressources,,trop de matières
-objet,powder_co60_tiny,Petit tas de poudre de cobalt-60,RETIRER,ressources,,trop de matières
-objet,powder_coal,Poudre de charbon,RETIRER,ressources,,trop de matières
-objet,powder_coal_tiny,Petit tas de poudre de charbon,RETIRER,ressources,,trop de matières
-objet,powder_cobalt,Poudre de cobalt,RETIRER,ressources,,trop de matières
-objet,powder_cobalt_tiny,Minuscule tas de poudre de cobalt,RETIRER,ressources,,trop de matières
-objet,powder_coltan,Tantalite purifiée,RETIRER,ressources,,trop de matières
-objet,powder_coltan_ore,Coltan broyé,RETIRER,ressources,,trop de matières
-objet,powder_combine_steel,Poudre d'acier CMB,RETIRER,ressources,,trop de matières
-objet,powder_copper,Poudre de cuivre,RETIRER,ressources,,trop de matières
-objet,powder_cs137,Poudre de césium-137,RETIRER,ressources,,trop de matières
-objet,powder_cs137_tiny,Petit tas de poudre de césium-137,RETIRER,ressources,,trop de matières
-objet,powder_daffergon,Poudre de daffergon,RETIRER,ressources,,trop de matières
+objet,powder_boron_tiny,Petit tas de poudre de bore,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_bromine,Poudre de brome,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cadmium,Poudre de cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_caesium,Poudre de césium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_calcium,Poudre de calcium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cdalloy,Poudre d'acier au cadmium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cement,Ciment,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cerium,Poudre de cérium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cerium_tiny,Minuscule tas de poudre de cérium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_chlorocalcite,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_chlorophyte,Poudre de chlorophyte,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cloud,Nuage de résidus,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_co60,Cobalt-60 Poudre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_co60_tiny,Petit tas de poudre de cobalt-60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_coal,Poudre de charbon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_coal_tiny,Petit tas de poudre de charbon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cobalt,Poudre de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cobalt_tiny,Minuscule tas de poudre de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_coltan,Tantalite purifiée,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_coltan_ore,Coltan broyé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_combine_steel,Poudre d'acier CMB,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_copper,Poudre de cuivre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cs137,Poudre de césium-137,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_cs137_tiny,Petit tas de poudre de césium-137,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_daffergon,Poudre de daffergon,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_desh,Poudre de Desh,GARDER,ressources : espace,,uniquement sur Lune
-objet,powder_desh_mix,Mélange de Desh,RETIRER,ressources,,trop de matières
-objet,powder_desh_ready,Mélange DeshReady™,RETIRER,ressources,,trop de matières
-objet,powder_diamond,Poudre de diamant,RETIRER,ressources,,trop de matières
-objet,powder_dineutronium,Poudre de dineutronium,RETIRER,ressources,,trop de matières
-objet,powder_dura_steel,Poudre d'acier haute vitesse,RETIRER,ressources,,trop de matières
-objet,powder_emerald,Poudre d'Emeraude,RETIRER,ressources,,trop de matières
-objet,powder_euphemium,Poudre d'Euphemium,RETIRER,ressources,,trop de matières
-objet,powder_fertilizer,Engrais industriel,RETIRER,ressources,,trop de matières
-objet,powder_fire,Poudre de flamme,RETIRER,ressources,,trop de matières
-objet,powder_flux,Fondant,RETIRER,ressources,,trop de matières
-objet,powder_gold,Poudre d'or,RETIRER,ressources,,trop de matières
-objet,powder_i131,Poudre d'iode-131,RETIRER,ressources,,trop de matières
-objet,powder_i131_tiny,Petit tas de poudre d'iode-131,RETIRER,ressources,,trop de matières
-objet,powder_ice,Poudre cryogénique,RETIRER,ressources,,trop de matières
-objet,powder_impure_osmiridium,Poudre d'osmiridium impure,RETIRER,ressources,,trop de matières
-objet,powder_iodine,Poudre d'iode,RETIRER,ressources,,trop de matières
-objet,powder_iodine_tiny,Petit tas de poudre d'iode,RETIRER,ressources,,trop de matières
-objet,powder_iron,Poudre de fer,RETIRER,ressources,,trop de matières
-objet,powder_lanthanium,Poudre de lanthanium,RETIRER,ressources,,trop de matières
-objet,powder_lanthanium_tiny,Minuscule tas de poudre de lanthanium,RETIRER,ressources,,trop de matières
-objet,powder_lapis,Poudre de lapis-lazuli,RETIRER,ressources,,trop de matières
-objet,powder_lead,Poudre de plomb,RETIRER,ressources,,trop de matières
-objet,powder_lignite,Poudre de lignite,RETIRER,ressources,,trop de matières
-objet,powder_limestone,Poudre de calcaire,RETIRER,ressources,,trop de matières
-objet,powder_lithium,Poudre de lithium,RETIRER,ressources,,trop de matières
-objet,powder_lithium_tiny,Minuscule tas de poudre de lithium,RETIRER,ressources,,trop de matières
-objet,powder_magic,Enchantement pulvérisé,RETIRER,ressources,,trop de matières
-objet,powder_magnetized_tungsten,Poudre de tungstene aimante,RETIRER,ressources,,trop de matières
-objet,powder_meteorite,Poudre de météorite,RETIRER,ressources,,trop de matières
-objet,powder_meteorite_tiny,Minuscule tas de poudre de météorite,RETIRER,ressources,,trop de matières
-objet,powder_molysite,,RETIRER,ressources,,trop de matières
-objet,powder_neodymium,Poudre de neodymium,RETIRER,ressources,,trop de matières
-objet,powder_neodymium_tiny,Minuscule tas de poudre de neodymium,RETIRER,ressources,,trop de matières
-objet,powder_neptunium,Poudre de neptunium,RETIRER,ressources,,trop de matières
-objet,powder_niobium,Poudre de niobium,RETIRER,ressources,,trop de matières
-objet,powder_niobium_tiny,Minuscule tas de poudre de niobium,RETIRER,ressources,,trop de matières
-objet,powder_nitan_mix,Mélange de nitanium,RETIRER,ressources,,trop de matières
-objet,powder_osmiridium,Poudre d'osmiridium,RETIRER,ressources,,trop de matières
-objet,powder_paleogenite,Poudre de paléogénite,RETIRER,ressources,,trop de matières
-objet,powder_paleogenite_tiny,Petit tas de poudre de paléogénite,RETIRER,ressources,,trop de matières
-objet,powder_pb209,Poudre de plomb 209,RETIRER,ressources,,trop de matières
-objet,powder_pb209_tiny,Petit tas de poudre de plomb 209,RETIRER,ressources,,trop de matières
+objet,powder_desh_mix,Mélange de Desh,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_desh_ready,Mélange DeshReady™,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_diamond,Poudre de diamant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_dineutronium,Poudre de dineutronium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_dura_steel,Poudre d'acier haute vitesse,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_emerald,Poudre d'Emeraude,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_euphemium,Poudre d'Euphemium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_fertilizer,Engrais industriel,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_fire,Poudre de flamme,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_flux,Fondant,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_gold,Poudre d'or,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_i131,Poudre d'iode-131,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_i131_tiny,Petit tas de poudre d'iode-131,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_ice,Poudre cryogénique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_impure_osmiridium,Poudre d'osmiridium impure,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_iodine,Poudre d'iode,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_iodine_tiny,Petit tas de poudre d'iode,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_iron,Poudre de fer,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lanthanium,Poudre de lanthanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lanthanium_tiny,Minuscule tas de poudre de lanthanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lapis,Poudre de lapis-lazuli,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lead,Poudre de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lignite,Poudre de lignite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_limestone,Poudre de calcaire,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lithium,Poudre de lithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_lithium_tiny,Minuscule tas de poudre de lithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_magic,Enchantement pulvérisé,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_magnetized_tungsten,Poudre de tungstene aimante,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_meteorite,Poudre de météorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_meteorite_tiny,Minuscule tas de poudre de météorite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_molysite,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_neodymium,Poudre de neodymium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_neodymium_tiny,Minuscule tas de poudre de neodymium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_neptunium,Poudre de neptunium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_niobium,Poudre de niobium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_niobium_tiny,Minuscule tas de poudre de niobium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_nitan_mix,Mélange de nitanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_osmiridium,Poudre d'osmiridium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_paleogenite,Poudre de paléogénite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_paleogenite_tiny,Petit tas de poudre de paléogénite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_pb209,Poudre de plomb 209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_pb209_tiny,Petit tas de poudre de plomb 209,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_plutonium,Poudre de plutonium,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,powder_poison,Poison en poudre,RETIRER,ressources,,trop de matières
-objet,powder_polonium,Poudre de polonium-210,RETIRER,ressources,,trop de matières
-objet,powder_polymer,Poudre de polymère,RETIRER,ressources,,trop de matières
-objet,powder_power,Poudre d'énergie,RETIRER,ressources,,trop de matières
+objet,powder_poison,Poison en poudre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_polonium,Poudre de polonium-210,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_polymer,Poudre de polymère,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_power,Poudre d'énergie,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_quartz,Poudre de quartz,FUSIONNER,ressources,geomods:quartz_dust,ressource déjà présente
-objet,powder_ra226,Poudre de radium-226,RETIRER,ressources,,trop de matières
-objet,powder_red_copper,Poudre de cuivre rouge,RETIRER,ressources,,trop de matières
-objet,powder_reiium,Poudre de reiium,RETIRER,ressources,,trop de matières
-objet,powder_sawdust,Sciure de bois,RETIRER,ressources,,trop de matières
-objet,powder_schrabidate,Poudre de schrabidate ferrique,RETIRER,ressources,,trop de matières
+objet,powder_ra226,Poudre de radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_red_copper,Poudre de cuivre rouge,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_reiium,Poudre de reiium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_sawdust,Sciure de bois,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_schrabidate,Poudre de schrabidate ferrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_schrabidium,Poudre de schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
-objet,powder_semtex_mix,Mélange Semtex,RETIRER,ressources,,trop de matières
-objet,powder_sodium,Poudre de sodium,RETIRER,ressources,,trop de matières
-objet,powder_spark_mix,Mélange d'étincelles,RETIRER,ressources,,trop de matières
-objet,powder_sr90,Poudre de strontium-90,RETIRER,ressources,,trop de matières
-objet,powder_sr90_tiny,Petit tas de poudre de strontium-90,RETIRER,ressources,,trop de matières
-objet,powder_steel,Poudre d'acier,RETIRER,ressources,,trop de matières
-objet,powder_steel_tiny,Petit tas de poudre d'acier,RETIRER,ressources,,trop de matières
-objet,powder_strontium,Poudre de strontium,RETIRER,ressources,,trop de matières
-objet,powder_tantalium,Poudre de tantale,RETIRER,ressources,,trop de matières
-objet,powder_tcalloy,Poudre d'acier au technétium,RETIRER,ressources,,trop de matières
-objet,powder_tektite,Poudre de Tectite,RETIRER,ressources,,trop de matières
-objet,powder_tennessine,Poudre de Tennessine,RETIRER,ressources,,trop de matières
-objet,powder_thermite,,RETIRER,ressources,,trop de matières
+objet,powder_semtex_mix,Mélange Semtex,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_sodium,Poudre de sodium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_spark_mix,Mélange d'étincelles,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_sr90,Poudre de strontium-90,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_sr90_tiny,Petit tas de poudre de strontium-90,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_steel,Poudre d'acier,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_steel_tiny,Petit tas de poudre d'acier,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_strontium,Poudre de strontium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_tantalium,Poudre de tantale,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_tcalloy,Poudre d'acier au technétium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_tektite,Poudre de Tectite,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_tennessine,Poudre de Tennessine,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_thermite,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_thorium,Poudre de thorium,GARDER,ressources : ajouts,,combustible alternatif
 objet,powder_titanium,Poudre de titane,FUSIONNER,ressources,geomods:titanium_dust,ressource déjà présente
-objet,powder_tungsten,Poudre de tungstène,RETIRER,ressources,,trop de matières
-objet,powder_unobtainium,Poudre d'Unobtainium,RETIRER,ressources,,trop de matières
-objet,powder_uranium,Poudre d'uranium,RETIRER,ressources,,trop de matières
-objet,powder_verticium,Poudre de verticium,RETIRER,ressources,,trop de matières
-objet,powder_weidanium,Poudre de Weidanium,RETIRER,ressources,,trop de matières
-objet,powder_xe135,Xénon-135 Poudre,RETIRER,ressources,,trop de matières
-objet,powder_xe135_tiny,Petit tas de poudre de xénon-135,RETIRER,ressources,,trop de matières
-objet,powder_yellowcake,,RETIRER,ressources,,trop de matières
+objet,powder_tungsten,Poudre de tungstène,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_unobtainium,Poudre d'Unobtainium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_uranium,Poudre d'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_verticium,Poudre de verticium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_weidanium,Poudre de Weidanium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_xe135,Xénon-135 Poudre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_xe135_tiny,Petit tas de poudre de xénon-135,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,powder_yellowcake,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,powder_zirconium,Poudre de zirconium,GARDER,ressources : ajouts,,gaines de combustible
 objet,power_net_tool,Outil d'analyse du réseau de câbles,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,primer_357,Apprêt Magnum .357 (x24),RETIRER,hors périmètre,,armes : SBW et GeoWarfare couvrent ce rôle
@@ -4130,83 +4130,83 @@ objet,robes_helmet,Sweat à capuche décontracté,RETIRER,hors périmètre,,armu
 objet,robes_legs,Jambières de sweat à capuche décontracté,RETIRER,hors périmètre,,armure ou référence à un autre univers
 objet,robes_plate,Pansière de sweat à capuche décontracté,RETIRER,hors périmètre,,armure ou référence à un autre univers
 objet,rocket_fuel,Combustible solide (propulseur de fusée),GARDER,satellites,,
-objet,rod_ac227,Tige d'actinium-227,RETIRER,ressources,,trop de matières
-objet,rod_co,Bâton de cobalt,RETIRER,ressources,,trop de matières
-objet,rod_co60,Tige de cobalt-60,RETIRER,ressources,,trop de matières
-objet,rod_dual_ac227,Actinium-227 double tige,RETIRER,ressources,,trop de matières
-objet,rod_dual_co,Double tige de cobalt,RETIRER,ressources,,trop de matières
-objet,rod_dual_co60,Cobalt-60 double tige,RETIRER,ressources,,trop de matières
-objet,rod_dual_empty,Double tige vide,RETIRER,ressources,,trop de matières
-objet,rod_dual_lead,Double tige de plomb,RETIRER,ressources,,trop de matières
-objet,rod_dual_lithium,Double tige de lithium,RETIRER,ressources,,trop de matières
-objet,rod_dual_np237,Double tige de neptunium-237,RETIRER,ressources,,trop de matières
-objet,rod_dual_pu238,Dougle tige de Pu238,RETIRER,ressources,,trop de matières
-objet,rod_dual_pu239,Double tige de Pu239,RETIRER,ressources,,trop de matières
-objet,rod_dual_ra226,Radium-226 double tige,RETIRER,ressources,,trop de matières
-objet,rod_dual_rgp,Tige double en plutonium de qualité réacteur,RETIRER,ressources,,trop de matières
-objet,rod_dual_th232,Thorium-232 double tige,RETIRER,ressources,,trop de matières
-objet,rod_dual_thf,Double tige de combustible au thorium,RETIRER,ressources,,trop de matières
-objet,rod_dual_tritium,Double tige de tritium,RETIRER,ressources,,trop de matières
-objet,rod_dual_u235,Double tige d'U235,RETIRER,ressources,,trop de matières
-objet,rod_dual_u238,Double tige d'U238,RETIRER,ressources,,trop de matières
-objet,rod_dual_uranium,Double tige d'uranium,RETIRER,ressources,,trop de matières
-objet,rod_dual_waste,Double tige de dechets nucleaires,RETIRER,ressources,,trop de matières
-objet,rod_empty,Tige vide,RETIRER,ressources,,trop de matières
-objet,rod_lead,Tige de plomb,RETIRER,ressources,,trop de matières
-objet,rod_lithium,Tige de lithium,RETIRER,ressources,,trop de matières
-objet,rod_np237,Tige de neptunium-237,RETIRER,ressources,,trop de matières
-objet,rod_of_discord,Bâton de discorde,RETIRER,ressources,,trop de matières
+objet,rod_ac227,Tige d'actinium-227,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_co,Bâton de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_co60,Tige de cobalt-60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_ac227,Actinium-227 double tige,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_co,Double tige de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_co60,Cobalt-60 double tige,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_empty,Double tige vide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_lead,Double tige de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_lithium,Double tige de lithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_np237,Double tige de neptunium-237,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_pu238,Dougle tige de Pu238,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_pu239,Double tige de Pu239,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_ra226,Radium-226 double tige,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_rgp,Tige double en plutonium de qualité réacteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_th232,Thorium-232 double tige,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_thf,Double tige de combustible au thorium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_tritium,Double tige de tritium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_u235,Double tige d'U235,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_u238,Double tige d'U238,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_uranium,Double tige d'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_dual_waste,Double tige de dechets nucleaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_empty,Tige vide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_lead,Tige de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_lithium,Tige de lithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_np237,Tige de neptunium-237,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_of_discord,Bâton de discorde,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,rod_pu238,Tige de Pu238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,rod_pu239,Tige de Pu239,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,rod_quad_ac227,Tige quadruple Actinium-227,RETIRER,ressources,,trop de matières
-objet,rod_quad_co,Quadruple tige de cobalt,RETIRER,ressources,,trop de matières
-objet,rod_quad_co60,Quad Rod Cobalt-60,RETIRER,ressources,,trop de matières
-objet,rod_quad_empty,Quatruple tige vide,RETIRER,ressources,,trop de matières
-objet,rod_quad_lead,Quadruple tige de plomb,RETIRER,ressources,,trop de matières
-objet,rod_quad_lithium,Quadruple tige de tithium,RETIRER,ressources,,trop de matières
-objet,rod_quad_np237,Quadruple tige de neptunium-237,RETIRER,ressources,,trop de matières
-objet,rod_quad_pu238,Quadruple tige de Pu238,RETIRER,ressources,,trop de matières
-objet,rod_quad_pu239,Quadruple tige de Pu239,RETIRER,ressources,,trop de matières
-objet,rod_quad_ra226,Quadruple tige de radium-226,RETIRER,ressources,,trop de matières
-objet,rod_quad_rgp,Quatre tiges de plutonium de qualité réacteur,RETIRER,ressources,,trop de matières
-objet,rod_quad_th232,Tige quadruple thorium-232,RETIRER,ressources,,trop de matières
-objet,rod_quad_thf,Quadruple tige de combustible au thorium,RETIRER,ressources,,trop de matières
-objet,rod_quad_tritium,Quadruple tige de tritium,RETIRER,ressources,,trop de matières
-objet,rod_quad_u235,Quadruple tige d'U235,RETIRER,ressources,,trop de matières
-objet,rod_quad_u238,Quadruple tige d'U238,RETIRER,ressources,,trop de matières
-objet,rod_quad_uranium,Quatruple tige d'uranium,RETIRER,ressources,,trop de matières
-objet,rod_quad_waste,Quadruple tige de dechets nucleaires,RETIRER,ressources,,trop de matières
-objet,rod_ra226,Tige de radium-226,RETIRER,ressources,,trop de matières
-objet,rod_rgp,Tige de plutonium de qualité réacteur,RETIRER,ressources,,trop de matières
+objet,rod_quad_ac227,Tige quadruple Actinium-227,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_co,Quadruple tige de cobalt,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_co60,Quad Rod Cobalt-60,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_empty,Quatruple tige vide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_lead,Quadruple tige de plomb,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_lithium,Quadruple tige de tithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_np237,Quadruple tige de neptunium-237,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_pu238,Quadruple tige de Pu238,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_pu239,Quadruple tige de Pu239,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_ra226,Quadruple tige de radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_rgp,Quatre tiges de plutonium de qualité réacteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_th232,Tige quadruple thorium-232,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_thf,Quadruple tige de combustible au thorium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_tritium,Quadruple tige de tritium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_u235,Quadruple tige d'U235,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_u238,Quadruple tige d'U238,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_uranium,Quatruple tige d'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_quad_waste,Quadruple tige de dechets nucleaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_ra226,Tige de radium-226,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_rgp,Tige de plutonium de qualité réacteur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,rod_th232,Tige de thorium-232,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,rod_thf,Tige de combustible au thorium,RETIRER,ressources,,trop de matières
-objet,rod_tritium,Tige de tritium,RETIRER,ressources,,trop de matières
+objet,rod_thf,Tige de combustible au thorium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_tritium,Tige de tritium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,rod_u235,Tige d'U235,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
 objet,rod_u238,Tige d'U238,GARDER,ressources : nucléaire,,"produit en machine, pas de minerai"
-objet,rod_uranium,Tige d'uranium,RETIRER,ressources,,trop de matières
-objet,rod_waste,Tige de dechets nucleaires,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_les_fuel,Barre de combustible ZIRNOX LES appauvrie,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_mox_fuel,Barre de combustible ZIRNOX MOX appauvrie,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_natural_uranium_fuel,Barre de combustible ZIRNOX à l'uranium naturel appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_plutonium_fuel,Barre de combustible ZIRNOX au plutonium appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_thorium_fuel,Barre de combustible ZIRNOX au thorium appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_u233_fuel,Barre de combustible ZIRNOX à l'uranium-233 appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_u235_fuel,Barre de combustible ZIRNOX à l'uranium-235 appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_uranium_fuel,Barre de combustible ZIRNOX à l'uranium appauvri,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_depleted_zfb_mox_fuel,Barre de combustible ZIRNOX ZFB MOX appauvrie,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_empty,Barre ZIRNOX vide,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_les_fuel,Barre de combustible ZIRNOX LES,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_lithium_fuel,Barre ZIRNOX au lithium,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_mox_fuel,Barre de combustible ZIRNOX MOX,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_natural_uranium_fuel,Barre de combustible ZIRNOX à l'uranium naturel,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_plutonium_fuel,Barre de combustible ZIRNOX au plutonium,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_th232_fuel,Barre ZIRNOX au thorium-232,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_thorium_fuel,Barre de combustible ZIRNOX au thorium,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_tritium,Barre de tritium ZIRNOX,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_u233_fuel,Barre de combustible ZIRNOX à l'uranium-233,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_u235_fuel,Barre de combustible ZIRNOX à l'uranium-235,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_uranium_fuel,Barre de combustible ZIRNOX à l'uranium,RETIRER,ressources,,trop de matières
-objet,rod_zirnox_zfb_mox_fuel,Barre de combustible ZIRNOX ZFB MOX,RETIRER,ressources,,trop de matières
+objet,rod_uranium,Tige d'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_waste,Tige de dechets nucleaires,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_les_fuel,Barre de combustible ZIRNOX LES appauvrie,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_mox_fuel,Barre de combustible ZIRNOX MOX appauvrie,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_natural_uranium_fuel,Barre de combustible ZIRNOX à l'uranium naturel appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_plutonium_fuel,Barre de combustible ZIRNOX au plutonium appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_thorium_fuel,Barre de combustible ZIRNOX au thorium appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_u233_fuel,Barre de combustible ZIRNOX à l'uranium-233 appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_u235_fuel,Barre de combustible ZIRNOX à l'uranium-235 appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_uranium_fuel,Barre de combustible ZIRNOX à l'uranium appauvri,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_depleted_zfb_mox_fuel,Barre de combustible ZIRNOX ZFB MOX appauvrie,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_empty,Barre ZIRNOX vide,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_les_fuel,Barre de combustible ZIRNOX LES,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_lithium_fuel,Barre ZIRNOX au lithium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_mox_fuel,Barre de combustible ZIRNOX MOX,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_natural_uranium_fuel,Barre de combustible ZIRNOX à l'uranium naturel,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_plutonium_fuel,Barre de combustible ZIRNOX au plutonium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_th232_fuel,Barre ZIRNOX au thorium-232,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_thorium_fuel,Barre de combustible ZIRNOX au thorium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_tritium,Barre de tritium ZIRNOX,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_u233_fuel,Barre de combustible ZIRNOX à l'uranium-233,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_u235_fuel,Barre de combustible ZIRNOX à l'uranium-235,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_uranium_fuel,Barre de combustible ZIRNOX à l'uranium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,rod_zirnox_zfb_mox_fuel,Barre de combustible ZIRNOX ZFB MOX,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,rotor_steel,Grand rotor en acier,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,rpa_boots,Bottes d'armure assistée des Vestiges,RETIRER,hors périmètre,,armure ou référence à un autre univers
 objet,rpa_helmet,Casque d'armure assistée des Vestiges,RETIRER,hors périmètre,,armure ou référence à un autre univers
@@ -4692,32 +4692,32 @@ objet,weaponized_starblaster_cell,§cCellule d'énergie Star Blaster truquée§r
 objet,wild_p,Wild Pegasus Dry Whisky,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,wings_limp,Ailes molles,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,wings_murk,Ailes sombres,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,wire_dense,Fil dense en %s,RETIRER,ressources,,trop de matières
-objet,wire_dense_bscco,,RETIRER,ressources,,trop de matières
-objet,wire_dense_copper,,RETIRER,ressources,,trop de matières
-objet,wire_dense_dineutronium,,RETIRER,ressources,,trop de matières
-objet,wire_dense_gold,,RETIRER,ressources,,trop de matières
-objet,wire_dense_magnetized_tungsten,,RETIRER,ressources,,trop de matières
-objet,wire_dense_neodymium,,RETIRER,ressources,,trop de matières
-objet,wire_dense_niobium,,RETIRER,ressources,,trop de matières
-objet,wire_dense_red_copper,,RETIRER,ressources,,trop de matières
-objet,wire_dense_schrabidate,,RETIRER,ressources,,trop de matières
-objet,wire_dense_schrabidium,,RETIRER,ressources,,trop de matières
-objet,wire_dense_starmetal,,RETIRER,ressources,,trop de matières
-objet,wire_dense_titanium,,RETIRER,ressources,,trop de matières
-objet,wire_dense_tungsten,,RETIRER,ressources,,trop de matières
-objet,wire_fine,Fil fin en %s,RETIRER,ressources,,trop de matières
-objet,wire_fine_aluminium,,RETIRER,ressources,,trop de matières
-objet,wire_fine_carbon,,RETIRER,ressources,,trop de matières
-objet,wire_fine_copper,,RETIRER,ressources,,trop de matières
-objet,wire_fine_gold,,RETIRER,ressources,,trop de matières
-objet,wire_fine_lead,,RETIRER,ressources,,trop de matières
-objet,wire_fine_magnetized_tungsten,,RETIRER,ressources,,trop de matières
-objet,wire_fine_red_copper,,RETIRER,ressources,,trop de matières
-objet,wire_fine_schrabidium,,RETIRER,ressources,,trop de matières
-objet,wire_fine_steel,,RETIRER,ressources,,trop de matières
-objet,wire_fine_tungsten,,RETIRER,ressources,,trop de matières
-objet,wire_fine_zirconium,,RETIRER,ressources,,trop de matières
+objet,wire_dense,Fil dense en %s,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_bscco,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_dineutronium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_gold,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_magnetized_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_neodymium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_niobium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_red_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_schrabidate,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_schrabidium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_starmetal,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_titanium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_dense_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine,Fil fin en %s,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_aluminium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_carbon,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_gold,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_lead,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_magnetized_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_red_copper,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_schrabidium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_steel,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_tungsten,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
+objet,wire_fine_zirconium,,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,wiring_red_copper,Tambour de câble,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,wood_gavel,Marteau en bois,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 objet,wrench,Clé à pipe,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend

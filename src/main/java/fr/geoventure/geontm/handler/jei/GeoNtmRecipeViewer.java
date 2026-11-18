@@ -204,7 +204,8 @@ public final class GeoNtmRecipeViewer implements ViewerPlugin {
             String path = id.getPath();
             // 1.7 hid brick_forgotten and brick_forgotten_lock at every meta; each meta is its own id here.
             // port: the universal bucket exists only for old stacks
-            boolean hide = HIDDEN.contains(path) || path.equals("fluid_bucket") || path.startsWith("brick_forgotten")
+            boolean hide = fr.geoventure.geontm.perimetre.Perimetre.retire(path)
+                    || HIDDEN.contains(path) || path.equals("fluid_bucket") || path.startsWith("brick_forgotten")
                     || MainRegistry.polaroidID != 11 && HIDDEN_UNLESS_POLAROID_11.contains(path)
                     || secrets && (ItemGunBaseNT.secrets.contains(item)
                             || path.startsWith("ammo_secret_") || path.startsWith("item_secret_"));

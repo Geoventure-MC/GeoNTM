@@ -46,6 +46,7 @@ jobs:
           distribution: temurin
           java-version: |
             17
+            21
 
       - uses: gradle/actions/setup-gradle@v4
 

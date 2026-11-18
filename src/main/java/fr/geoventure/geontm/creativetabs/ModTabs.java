@@ -163,6 +163,8 @@ public final class ModTabs {
             else result.addAll(replacement.get());
         }
         for (var supplier : STACK_CONTENTS.get(tab)) result.addAll(supplier.get());
+        result.removeIf(stack -> !fr.geoventure.geontm.perimetre.Perimetre.visibleEnCreatif(
+                BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath()));
         var order = ORDER.get(group);
         return order == null ? result : order.apply(result, stack -> BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
     }

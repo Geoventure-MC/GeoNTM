@@ -124,7 +124,7 @@ def classer(ident, genre, registre):
             return 'GARDER', 'ressources : ajouts', '', TERRE[m]
         if m in NUCLEAIRE:
             return 'GARDER', 'ressources : nucléaire', '', 'produit en machine, pas de minerai'
-        return 'RETIRER', 'ressources', '', 'trop de matières'
+        return 'SI_BESOIN', 'ressources : intermédiaires', '', 'gardé seulement si une recette retenue en dépend'
     for theme, decision, motif in THEMES:
         if re.match(motif, ident):
             return decision, theme, '', ''
@@ -149,6 +149,13 @@ def main():
         d, t, c, r = classer(ident, genre, registre)
         nom = fr.get(('block.hbm.' if genre == 'bloc' else 'item.hbm.') + ident, '')
         out.append({'type': genre, 'id': ident, 'nom': nom, 'decision': d, 'theme': t, 'cible': c, 'raison': r})
+
+    ressources = ROOT / 'src/main/resources/geontm/perimetre'
+    ressources.mkdir(parents=True, exist_ok=True)
+    visibles = sorted(x['id'] for x in out if x['decision'] in ('GARDER', 'SIMPLIFIER'))
+    retires = sorted(x['id'] for x in out if x['decision'] == 'RETIRER')
+    (ressources / 'creatif.txt').write_text('\n'.join(visibles) + '\n', encoding='utf-8', newline='\n')
+    (ressources / 'retire.txt').write_text('\n'.join(retires) + '\n', encoding='utf-8', newline='\n')
 
     dossier = ROOT / 'docs/perimetre'
     dossier.mkdir(parents=True, exist_ok=True)
