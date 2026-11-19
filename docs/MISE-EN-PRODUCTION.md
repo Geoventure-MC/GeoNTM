@@ -29,6 +29,14 @@ Rien de cette liste n'est lancé sans l'accord du propriétaire. GeoNTM n'est au
 - [ ] TPS et MSPT avec des joueurs, des réseaux d'énergie et un réacteur en marche.
 - [ ] Mémoire utilisée et taille du téléchargement : le jar GeoNTM pèse environ 74 Mo.
 
+## Lancement de la nouvelle saison
+
+1. Fusionner [geoMods#103](https://github.com/Geoventure-MC/geoMods/pull/103) et [Pluginmc#82](https://github.com/Geoventure-MC/Pluginmc/pull/82) après relecture : âges et recherche de GeoNTM y sont déjà, 4 923 identifiants tous verrouillés.
+2. Publier GeoCore et GeoNTM en version stable, puis les mettre dans le pack de production avec Ad Astra.
+3. Retirer Ballistix et Voltaic du serveur et du pack. Essai du 19/11 sur le serveur de test : le serveur démarre sans eux ; seule GeoMods les cite, en dépendance facultative. Un monde existant perd ses 346 entrées Ballistix, sans gravité sur un monde neuf. Retirer ensuite les ids `ballistix:*` de `ages.yml` et `research-tree.yml`.
+4. Créer le monde de la saison, puis sauvegarde complète avant ouverture.
+5. Vérifier les journaux (« Protection reliée à GeoMods », « Radioactivité reliée à GeoMods », « Satellites reliés »), puis jouer une vraie guerre à deux joueurs : tir, impact, interception, butin.
+
 ## Avant le déploiement
 
 - [ ] Fusionner les branches `geontm-api` de geoMods et Pluginmc. Sur ces dépôts, tout commit sur `main` part en ligne : relire d'abord.
