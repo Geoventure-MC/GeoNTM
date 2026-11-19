@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "geomods:kerosene_bucket",
+  "output": {
+    "type": "geontm:kerosene",
+    "amount": 1000
+  }
+}

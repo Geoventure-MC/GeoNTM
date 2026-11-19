@@ -1,3 +1,6 @@
+barrel_steel
+canister_empty
+canister_full
 drone_crate
 drone_crate_provider
 drone_crate_requester
@@ -8,6 +11,13 @@ drone_patrol_express
 drone_request
 drone_waypoint
 drone_waypoint_request
+fluid_duct_gauge
+fluid_duct_neo
+fluid_duct_paintable
+fluid_identifier
+fluid_identifier_multi
+gas_empty
+gas_full
 machine_deuterium_extractor
 machine_deuterium_tower
 machine_excavator
