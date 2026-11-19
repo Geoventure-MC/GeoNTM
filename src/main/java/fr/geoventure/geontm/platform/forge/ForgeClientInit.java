@@ -25,6 +25,9 @@ final class ForgeClientInit {
     private ForgeClientInit() {}
 
     static void init(IEventBus modBus) {
+        net.minecraftforge.common.MinecraftForge.EVENT_BUS.addListener(net.minecraftforge.eventbus.api.EventPriority.NORMAL, false,
+                net.minecraftforge.client.event.ContainerScreenEvent.Render.Background.class,
+                fr.geoventure.geontm.pont.BandeauInterfaces::dessiner);
         GeoNtmPackets.registerClientHandlers();
         net.minecraftforge.common.MinecraftForge.EVENT_BUS.addListener(
                 (net.minecraftforge.client.event.ClientPlayerNetworkEvent.LoggingOut event) ->
