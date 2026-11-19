@@ -25,8 +25,13 @@ import java.util.Map;
 public final class PontRadiation {
 
     private static final String API = "fr.geoventure.geomods.api.GeoRadiationApi";
-    /** 10 unités GeoMods valent 1 RAD/s de GeoNTM : le seuil d'effet 400 correspond à 40 RAD/s. */
-    private static final int ECHELLE = 10;
+    /**
+     * 100 unités GeoMods valent 1 RAD/s de GeoNTM : le seuil 400 donne 4 RAD/s et le pic 9 000 donne 90 RAD/s.
+     * GeoNTM tue à 1 000 RAD, donc une échelle plus forte rendrait toute retombée mortelle en un instant.
+     */
+    private static final int ECHELLE = 100;
+    /** En dessous, GeoMods n'appliquait aucun effet au joueur. */
+    private static final int SEUIL_GEOMODS = 400;
     private static final int MAXIMUM_GEOMODS = 10_000;
     private static final int PERIODE = 100;
     private static final Map<String, Double> COMBINAISON =
@@ -71,8 +76,9 @@ public final class PontRadiation {
                 relever.invoke(null, level, chunk, (int) Math.min(MAXIMUM_GEOMODS, geontm * ECHELLE));
             }
             // Seul l'excédent compte : GeoNTM a déjà appliqué sa propre valeur de chunk à chaque tick.
-            double retombees = (int) niveau.invoke(null, level, chunk) / (double) ECHELLE;
-            if (retombees > geontm) {
+            int valeur = (int) niveau.invoke(null, level, chunk);
+            double retombees = valeur / (double) ECHELLE;
+            if (valeur >= SEUIL_GEOMODS && retombees > geontm) {
                 ContaminationUtil.contaminate(joueur, ContaminationUtil.HazardType.RADIATION,
                         ContaminationUtil.ContaminationType.CREATIVE, (retombees - geontm) * PERIODE / 20D);
             }
