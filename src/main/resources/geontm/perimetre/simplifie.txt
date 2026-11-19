@@ -1,3 +1,7 @@
+drone_patrol_chunkloading
+drone_patrol_express_chunkloading
+machine_forcefield
+machine_icf_press
 missile_bhole
 missile_doomsday
 missile_doomsday_rusted

@@ -1,0 +1,7 @@
+{
+ "recipes": [
+  "geontm:assembly_machine/forcefield",
+  "geontm:drone_patrol_chunkloading",
+  "geontm:drone_patrol_express_chunkloading"
+ ]
+}

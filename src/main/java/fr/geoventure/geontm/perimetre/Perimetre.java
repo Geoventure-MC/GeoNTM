@@ -15,11 +15,13 @@ public final class Perimetre {
     private static final Set<String> CREATIF = lire("creatif.txt");
     private static final Set<String> RETIRE = lire("retire.txt");
     private static final Set<String> SIMPLIFIE = lire("simplifie.txt");
+    /** Objets tranchés plus tard par le propriétaire et ajoutés au créatif (drones, machines). */
+    private static final Set<String> AJOUTE = lire("ajoute.txt");
 
     private Perimetre() {}
 
     /** Objet proposé aux joueurs dans les onglets créatifs. */
-    public static boolean visibleEnCreatif(String id) { return CREATIF.contains(id) && !SIMPLIFIE.contains(id); }
+    public static boolean visibleEnCreatif(String id) { return (CREATIF.contains(id) || AJOUTE.contains(id)) && !SIMPLIFIE.contains(id); }
 
     /** Objet hors périmètre : masqué partout, mais conservé dans le code pour suivre NTM-Continuum. */
     public static boolean retire(String id) { return RETIRE.contains(id); }

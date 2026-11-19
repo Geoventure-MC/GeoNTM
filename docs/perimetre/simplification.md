@@ -8,3 +8,4 @@ Fichier généré par `tools/simplifier.py`. Les objets masqués restent dans le
 | combustibles usés | 0 | 27 |
 | déchets dérivés | 0 | 40 |
 | armes extrêmes, sans recette | 17 | 0 |
+| objets écartés, sans recette | 4 | 0 |

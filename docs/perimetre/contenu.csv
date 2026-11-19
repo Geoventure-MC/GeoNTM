@@ -455,12 +455,12 @@ bloc,door_bunker,Porte de bunker,RETIRER,hors périmètre,,"doublon de GeoMods, 
 bloc,door_metal,Porte en métal,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,door_office,Porte de bureau,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,door_red,Porte rouge,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,drone_crate,Caisse de drone de transport,A_DECIDER,drones,,
-bloc,drone_crate_provider,Caisse fournisseur logistique,A_DECIDER,drones,,
-bloc,drone_crate_requester,Caisse demandeuse logistique,A_DECIDER,drones,,
-bloc,drone_dock,Station d'accueil de drones logistiques,A_DECIDER,drones,,
-bloc,drone_waypoint,Point de passage de drone de transport,A_DECIDER,drones,,
-bloc,drone_waypoint_request,Point de passage de drone logistique,A_DECIDER,drones,,
+bloc,drone_crate,Caisse de drone de transport,GARDER,drones,,
+bloc,drone_crate_provider,Caisse fournisseur logistique,GARDER,drones,,
+bloc,drone_crate_requester,Caisse demandeuse logistique,GARDER,drones,,
+bloc,drone_dock,Station d'accueil de drones logistiques,GARDER,drones,,
+bloc,drone_waypoint,Point de passage de drone de transport,GARDER,drones,,
+bloc,drone_waypoint_request,Point de passage de drone logistique,GARDER,drones,,
 bloc,ducrete,Ducrete,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,ducrete_brick_slab,Dalle de brique Ducrete,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,ducrete_reinforced_slab,Dalle Ducrete Renforcée,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
@@ -684,8 +684,8 @@ bloc,machine_crucible,Creuset,GARDER,machines : production,,
 bloc,machine_crystallizer,Acidifiant de minerai,GARDER,machines : production,,
 bloc,machine_cyclotron,,GARDER,machines : combustible,,
 bloc,machine_detector,Détecteur de puissance,RETIRER,machines,,hors sujet ou trop puissant
-bloc,machine_deuterium_extractor,Extracteur de deutérium,A_DECIDER,machines,,
-bloc,machine_deuterium_tower,Tour d'extraction de deutérium,A_DECIDER,machines,,
+bloc,machine_deuterium_extractor,Extracteur de deutérium,GARDER,machines,,
+bloc,machine_deuterium_tower,Tour d'extraction de deutérium,GARDER,machines,,
 bloc,machine_diesel,Générateur diesel,FUSIONNER,machines,geomods:generator,machine Geoventure équivalente
 bloc,machine_difurnace_ext,Extension du haut fourneau,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_difurnace_off,Four d'alliage,RETIRER,machines,,hors sujet ou trop puissant
@@ -695,12 +695,12 @@ bloc,machine_drain,Tuyau de drainage,RETIRER,machines,,hors sujet ou trop puissa
 bloc,machine_electric_furnace_off,Four electrique,FUSIONNER,machines,geomods:electric_furnace,machine Geoventure équivalente
 bloc,machine_electrolyser,Électrolyseur,GARDER,machines : production,,
 bloc,machine_epress,Presse électrique,FUSIONNER,machines,geomods:metal_press,machine Geoventure équivalente
-bloc,machine_excavator,Excavatrice,A_DECIDER,machines,,
+bloc,machine_excavator,Excavatrice,GARDER,machines,,
 bloc,machine_exposure_chamber,Chambre d'exposition,GARDER,machines : combustible,,
 bloc,machine_fel,,GARDER,machines : combustible,,
 bloc,machine_flare,Bruleur à gaz,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_fluidtank,Réservoir,FUSIONNER,machines,geomods:fluid_tank,machine Geoventure équivalente
-bloc,machine_forcefield,Émetteur de champ de force,A_DECIDER,machines,,
+bloc,machine_forcefield,Émetteur de champ de force,RETIRER,machines,,
 bloc,machine_fracking_tower,Tour de fracturation hydraulique,FUSIONNER,machines,geomods:oil_derrick,machine Geoventure équivalente
 bloc,machine_fraction_tower,Tour de fractionnement,FUSIONNER,machines,geomods:modular_refinery,machine Geoventure équivalente
 bloc,machine_funnel,Entonnoir combinateur,RETIRER,machines,,hors sujet ou trop puissant
@@ -709,7 +709,7 @@ bloc,machine_furnace_combination,Four combiné,RETIRER,machines,,hors sujet ou t
 bloc,machine_gascent,Centrifugeuse à gaz,GARDER,machines : combustible,,
 bloc,machine_hephaestus,Échangeur de chaleur géothermique,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_hydrotreater,Hydrotraiteur,GARDER,machines : production,,
-bloc,machine_icf_press,Presse à granules FCI,A_DECIDER,machines,,
+bloc,machine_icf_press,Presse à granules FCI,RETIRER,machines,,
 bloc,machine_industrial_boiler,Chaudière industrielle,GARDER,machines : vapeur et énergie,,
 bloc,machine_industrial_generator,Générateur industriel,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_industrial_turbine,Turbine à vapeur industrielle,GARDER,machines : vapeur et énergie,,
@@ -720,7 +720,7 @@ bloc,machine_liquefactor,Machine de liquéfaction industrielle,GARDER,machines :
 bloc,machine_lithium_battery,Bloc de stockage d'énergie Li-Ion (LEGACY),FUSIONNER,machines,geomods:battery_t2,machine Geoventure équivalente
 bloc,machine_lpw2,,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_microwave,Four micro onde,RETIRER,machines,,hors sujet ou trop puissant
-bloc,machine_mining_laser,Laser minier,A_DECIDER,machines,,
+bloc,machine_mining_laser,Laser minier,GARDER,machines,,
 bloc,machine_minirtg,Cellule de radio-isotopes,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_missile_assembly,Station d'assemblage de missiles,GARDER,machines : satellites,,
 bloc,machine_mixer,Mélangeur industriel,FUSIONNER,machines,geomods:industrial_mixer,machine Geoventure équivalente
@@ -737,7 +737,7 @@ bloc,machine_pyrooven,Four de pyrolyse,RETIRER,machines,,hors sujet ou trop puis
 bloc,machine_radar,,GARDER,machines : satellites,,
 bloc,machine_radar_large,Grand radar,GARDER,machines : satellites,,
 bloc,machine_radgen,Générateur de radiation,GARDER,machines : réacteurs,,
-bloc,machine_radiolysis,Générateur thermoélectrique à radio-isotopes et chambre de radiolyse,A_DECIDER,machines,,
+bloc,machine_radiolysis,Générateur thermoélectrique à radio-isotopes et chambre de radiolyse,GARDER,machines,,
 bloc,machine_reactor,Reacteur de fusion,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_reactor_small,Réacteur de recherche (LEGACY),RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_refinery,Raffinerie de pétrole,FUSIONNER,machines,geomods:refinery,machine Geoventure équivalente
@@ -2300,12 +2300,12 @@ objet,drive_flash_empty,Clé USB (vide),SI_BESOIN,dépendances,,gardé seulement
 objet,drive_flash_flightsim,Clé USB (données de simulation de vol),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,drive_flash_particlesim,Clé USB (données de simulation de particules),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,drive_klaus,,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
-objet,drone_linker,Lieur de drones de transport,A_DECIDER,drones,,
-objet,drone_patrol,Drone de transport,A_DECIDER,drones,,
-objet,drone_patrol_chunkloading,Drone de transport à chargement de chunks,A_DECIDER,drones,,
-objet,drone_patrol_express,Drone de transport express,A_DECIDER,drones,,
-objet,drone_patrol_express_chunkloading,Drone de transport express à chargement de chunks,A_DECIDER,drones,,
-objet,drone_request,Drone logistique,A_DECIDER,drones,,
+objet,drone_linker,Lieur de drones de transport,GARDER,drones,,
+objet,drone_patrol,Drone de transport,GARDER,drones,,
+objet,drone_patrol_chunkloading,Drone de transport à chargement de chunks,RETIRER,drones,,
+objet,drone_patrol_express,Drone de transport express,GARDER,drones,,
+objet,drone_patrol_express_chunkloading,Drone de transport express à chargement de chunks,RETIRER,drones,,
+objet,drone_request,Drone logistique,GARDER,drones,,
 objet,ducc,duc,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,ducttape,Ruban adhésif,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,dust,Poussière,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -2885,33 +2885,33 @@ objet,mike_kit,Kit Ivy Mike,RETIRER,hors périmètre,,"objet décoratif, parodiq
 objet,mirror_tool,Outil de réglage du miroir,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,missile_anti_ballistic,Missile anti-balistique (WIP),GARDER,missiles,,
 objet,missile_assembly,Petit assemblage de missile,GARDER,missiles,,
-objet,missile_bhole,Missile trou noir,A_DECIDER,missiles,,
-objet,missile_burst,Missile du pardon,A_DECIDER,missiles,,
+objet,missile_bhole,Missile trou noir,RETIRER,missiles,,
+objet,missile_burst,Missile du pardon,GARDER,missiles,,
 objet,missile_buster,Bunker buster Tier1,GARDER,missiles,,
-objet,missile_buster_strong,Bunker buster Tier2,A_DECIDER,missiles,,
+objet,missile_buster_strong,Bunker buster Tier2,GARDER,missiles,,
 objet,missile_cluster,Missile à sous munitions Tier1,GARDER,missiles,,
-objet,missile_cluster_strong,Missile à sous munitions Tier2,A_DECIDER,missiles,,
+objet,missile_cluster_strong,Missile à sous munitions Tier2,GARDER,missiles,,
 objet,missile_custom,Missile personnalisé,GARDER,missiles,,
 objet,missile_decoy,Missile leurre,GARDER,missiles,,
-objet,missile_doomsday,Missile du jugement dernier,A_DECIDER,missiles,,
-objet,missile_doomsday_rusted,Missile du jugement dernier endommagé,A_DECIDER,missiles,,
+objet,missile_doomsday,Missile du jugement dernier,RETIRER,missiles,,
+objet,missile_doomsday_rusted,Missile du jugement dernier endommagé,RETIRER,missiles,,
 objet,missile_drill,Le craqueleur de béton,GARDER,missiles,,
 objet,missile_emp,Missile IEM,GARDER,missiles,,
-objet,missile_emp_strong,Missile EMP puissant,A_DECIDER,missiles,,
+objet,missile_emp_strong,Missile EMP puissant,GARDER,missiles,,
 objet,missile_generic,Missile explosif Tier1,GARDER,missiles,,
 objet,missile_incendiary,Missile incendiaire Tier1,GARDER,missiles,,
-objet,missile_incendiary_strong,Missile incendiaire Tier2,A_DECIDER,missiles,,
+objet,missile_incendiary_strong,Missile incendiaire Tier2,GARDER,missiles,,
 objet,missile_inferno,Missile Inferno GRN Mk.II,GARDER,missiles,,
 objet,missile_kit,Kit de missiles,GARDER,missiles,,
 objet,missile_lambda,,GARDER,missiles,,
-objet,missile_micro,Missile micro-nucleaire,A_DECIDER,missiles,,
-objet,missile_n2,Missile N²,A_DECIDER,missiles,,
-objet,missile_nuclear,Missile nucléaire,A_DECIDER,missiles,,
-objet,missile_nuclear_cluster,Missile nucléaire MIRV,A_DECIDER,missiles,,
+objet,missile_micro,Missile micro-nucleaire,GARDER,missiles,,
+objet,missile_n2,Missile N²,RETIRER,missiles,,
+objet,missile_nuclear,Missile nucléaire,GARDER,missiles,,
+objet,missile_nuclear_cluster,Missile nucléaire MIRV,RETIRER,missiles,,
 objet,missile_obj_context_base,,GARDER,missiles,,
 objet,missile_obj_context_legacy,,GARDER,missiles,,
 objet,missile_rain,Pluie de sous-munitions,GARDER,missiles,,
-objet,missile_schrabidium,Missile Schrabidium,A_DECIDER,missiles,,
+objet,missile_schrabidium,Missile Schrabidium,RETIRER,missiles,,
 objet,missile_shuttle,Navette spatiale Reliant Robin,GARDER,missiles,,
 objet,missile_skin_camo,Apparence de missile : camouflage,GARDER,missiles,,
 objet,missile_skin_desert,Apparence de missile : camouflage du désert,GARDER,missiles,,
@@ -2927,10 +2927,10 @@ objet,missile_soyuz_1,Soyuz-FG (Lunaire),GARDER,satellites,,
 objet,missile_soyuz_2,Soyuz-FG (Après-guerre),GARDER,satellites,,
 objet,missile_soyuz_lander,Module orbital,GARDER,satellites,,
 objet,missile_stealth,Missile furtif,GARDER,missiles,,
-objet,missile_strong,Missile explosif Tier2,A_DECIDER,missiles,,
-objet,missile_taint,Missile's contaminer,A_DECIDER,missiles,,
+objet,missile_strong,Missile explosif Tier2,GARDER,missiles,,
+objet,missile_taint,Missile's contaminer,RETIRER,missiles,,
 objet,missile_test,Missile de test,GARDER,missiles,,
-objet,missile_volcano,Missile tectonique,A_DECIDER,missiles,,
+objet,missile_volcano,Missile tectonique,RETIRER,missiles,,
 objet,mold_barrel_heavy,Moule de fonderie (Canon lourd),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,mold_barrel_light,Moule de fonderie (Canon léger),SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 objet,mold_base,Moule de fonderie vierge,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
@@ -4567,13 +4567,13 @@ objet,warhead_generic_small,Petite ogive,GARDER,missiles,,
 objet,warhead_incendiary_large,Grande ogive incendiaire,GARDER,missiles,,
 objet,warhead_incendiary_medium,Ogive incendiere moyenne,GARDER,missiles,,
 objet,warhead_incendiary_small,Petite ogive incendiaire,GARDER,missiles,,
-objet,warhead_mirv,Ogive de MIRV,A_DECIDER,missiles,,
-objet,warhead_mirvlet,,A_DECIDER,missiles,,
-objet,warhead_n2,Ogive N²,A_DECIDER,missiles,,
-objet,warhead_nuclear,Ogive nucléaire,A_DECIDER,missiles,,
-objet,warhead_thermo_endo,Ogive endothermique,A_DECIDER,missiles,,
-objet,warhead_thermo_exo,Ogive exothermique,A_DECIDER,missiles,,
-objet,warhead_volcano,Ogive tectonique,A_DECIDER,missiles,,
+objet,warhead_mirv,Ogive de MIRV,RETIRER,missiles,,
+objet,warhead_mirvlet,,RETIRER,missiles,,
+objet,warhead_n2,Ogive N²,RETIRER,missiles,,
+objet,warhead_nuclear,Ogive nucléaire,GARDER,missiles,,
+objet,warhead_thermo_endo,Ogive endothermique,RETIRER,missiles,,
+objet,warhead_thermo_exo,Ogive exothermique,RETIRER,missiles,,
+objet,warhead_volcano,Ogive tectonique,RETIRER,missiles,,
 objet,waste_mox,Combustible MOX épuisé,GARDER,radioactivité,,
 objet,waste_natural_uranium,Combustible d'uranium naturel appauvri,GARDER,radioactivité,,
 objet,waste_plate_mox,Plaque de combustible MOX épuisé,GARDER,radioactivité,,

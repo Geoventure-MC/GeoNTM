@@ -1,0 +1,15 @@
+drone_crate
+drone_crate_provider
+drone_crate_requester
+drone_dock
+drone_linker
+drone_patrol
+drone_patrol_express
+drone_request
+drone_waypoint
+drone_waypoint_request
+machine_deuterium_extractor
+machine_deuterium_tower
+machine_excavator
+machine_mining_laser
+machine_radiolysis
