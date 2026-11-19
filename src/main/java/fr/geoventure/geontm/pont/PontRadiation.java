@@ -1,7 +1,6 @@
 package fr.geoventure.geontm.pont;
 
 import fr.geoventure.geocore.Ids;
-import fr.geoventure.geocore.world.EntityTicks;
 import fr.geoventure.geontm.Constants;
 import fr.geoventure.geontm.handler.HazmatRegistry;
 import fr.geoventure.geontm.handler.radiation.ChunkRadiationManager;
@@ -10,8 +9,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -32,7 +33,7 @@ public final class PontRadiation {
             Map.of("hazmat_helmet", 0.6D, "hazmat_chestplate", 0.8D, "hazmat_leggings", 0.4D, "hazmat_boots", 0.2D);
 
     private static Method niveau, relever;
-    private static boolean actif, armuresPretes;
+    private static boolean actif, armuresPretes, premierPassage;
 
     private PontRadiation() {}
 
@@ -43,7 +44,9 @@ public final class PontRadiation {
             relever = api.getMethod("raiseChunkTo", ServerLevel.class, ChunkPos.class, int.class);
             api.getMethod("setExternalPlayerDose", boolean.class).invoke(null, true);
             actif = true;
-            EntityTicks.AFTER.register(PontRadiation::tick);
+            // Pas EntityTicks : sous Mohist, ce crochet n'a pas été appelé pour les joueurs lors des essais.
+            MinecraftForge.EVENT_BUS.addListener(EventPriority.NORMAL, false, TickEvent.PlayerTickEvent.class,
+                    PontRadiation::tick);
             ContaminationUtil.GEIGER_LINES.register(PontRadiation::ligneGeiger);
             Constants.LOG.info("[GeoNTM] Radioactivité reliée à GeoMods");
         } catch (ReflectiveOperationException | LinkageError | RuntimeException e) {
@@ -52,11 +55,16 @@ public final class PontRadiation {
         }
     }
 
-    private static void tick(Entity entite) {
-        if (!actif || !(entite instanceof ServerPlayer joueur) || joueur.tickCount % PERIODE != 0) return;
+    private static void tick(TickEvent.PlayerTickEvent event) {
+        if (!actif || event.phase != TickEvent.Phase.END || !(event.player instanceof ServerPlayer joueur)) return;
+        ServerLevel level = joueur.serverLevel();
+        if ((level.getGameTime() + joueur.getId()) % PERIODE != 0) return;
         try {
             preparerArmures();
-            ServerLevel level = joueur.serverLevel();
+            if (!premierPassage) {
+                premierPassage = true;
+                Constants.LOG.info("[GeoNTM] Pont de radioactivité actif sur les joueurs");
+            }
             ChunkPos chunk = joueur.chunkPosition();
             double geontm = ChunkRadiationManager.proxy.getRadiation(level, joueur.blockPosition());
             if (geontm >= 1D) {
