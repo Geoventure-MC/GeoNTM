@@ -34,7 +34,7 @@ Rien de cette liste n'est lancé sans l'accord du propriétaire. GeoNTM n'est au
 1. Fusionner [geoMods#103](https://github.com/Geoventure-MC/geoMods/pull/103) et [Pluginmc#82](https://github.com/Geoventure-MC/Pluginmc/pull/82) après relecture : âges et recherche de GeoNTM y sont déjà, 4 923 identifiants tous verrouillés.
 2. Publier GeoCore et GeoNTM en version stable, puis les mettre dans le pack de production avec Ad Astra.
 3. Retirer Ballistix et Voltaic du serveur et du pack. Essai du 19/11 sur le serveur de test : le serveur démarre sans eux ; seule GeoMods les cite, en dépendance facultative. Un monde existant perd ses 346 entrées Ballistix, sans gravité sur un monde neuf. Retirer ensuite les ids `ballistix:*` de `ages.yml` et `research-tree.yml`.
-4. Créer le monde de la saison, puis sauvegarde complète avant ouverture.
+4. Créer le monde de la saison avec `explosion_destroy = false` et `extra_explosion_effect = false` dans `serverconfig/superbwarfare-server.toml` : SuperbWarfare casse les blocs avant d'annoncer son explosion, donc aucune protection ne l'arrête (prouvé le 19/11 ; réglage coupé ce jour-là sur le monde actuel). Sauvegarde complète avant ouverture.
 5. Vérifier les journaux (« Protection reliée à GeoMods », « Radioactivité reliée à GeoMods », « Satellites reliés »), puis jouer une vraie guerre à deux joueurs : tir, impact, interception, butin.
 
 ## Avant le déploiement
