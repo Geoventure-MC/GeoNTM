@@ -1,0 +1,21 @@
+{
+	"name": "Electric Arc Furnace",
+	"icon": [
+		"geontm:machine_arc_furnace",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_arc_furnace"
+		]
+	],
+	"title": {
+		"en_us": "Electric Arc Furnace",
+		"fr_fr": "Four à arc électrique"
+	},
+	"content": {
+		"en_us": "Smelts items using electricity. The items to process go in the furnace slots; the recipes (for example quartz sand into quartz glass) turn an input item into a solid output, or into molten material when the liquid mode is used. A power source is required, and upgrades can be installed.",
+		"fr_fr": "Fond des objets grâce à l'électricité. Les objets à traiter se placent dans les emplacements du four ; les recettes (par exemple le sable de quartz qui devient du verre de quartz) transforment un objet en un produit solide, ou en matière fondue lorsque le mode liquide est utilisé. Il faut une source d'énergie, et des améliorations peuvent être installées."
+	}
+}

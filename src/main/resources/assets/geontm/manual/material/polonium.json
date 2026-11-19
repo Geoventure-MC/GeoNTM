@@ -4,10 +4,12 @@
     "trigger": [["geontm:ingot_polonium"], ["geontm:billet_polonium"], ["geontm:nugget_polonium"]],
     "title": {
         "en_us": "Polonium-210",
+        "fr_fr": "Polonium 210",
 		"ru_ru": "Полоний-210"
     },
 	"content": {
 		"en_us": "Radioisotope derived from reprocessing [[radium-226|Radium-226]] neutron sources. Usable for [[RTGs|RTG]], or with [[beryllium|Beryllium]] in Po210Be neutron sources for [[RBMKs|RBMK]].<br><br>Highly radioactive, very hot.",
+		"fr_fr": "Radioisotope issu du retraitement des sources de neutrons au [[radium 226|Radium-226]]. Utilisable pour les [[RTG|RTG]], ou avec du [[béryllium|Beryllium]] dans des sources de neutrons Po210Be pour les [[RBMK|RBMK]].<br><br>Fortement radioactif, très chaud.",
 		"ru_ru": "Радиоизотоп, получаемый при переработке нейтронных источников из [[радия-226|Radium-226]]. Используется в [[РИТЭГах|RTG]] или с [[бериллием|Beryllium]] в нейтронных источниках Po210Be для [[РБМК|RBMK]].<br><br>Сильно радиоактивен, очень горячий."
 	}
 }

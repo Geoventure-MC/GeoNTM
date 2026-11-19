@@ -1,0 +1,21 @@
+{
+	"name": "PUREX",
+	"icon": [
+		"geontm:machine_purex",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_purex"
+		]
+	],
+	"title": {
+		"en_us": "PUREX",
+		"fr_fr": "PUREX"
+	},
+	"content": {
+		"en_us": "Reprocessing plant that recycles spent items. A recipe is selected with a blueprint; it uses up to three reagent tanks, item inputs and electricity, and produces items and a fluid (for example recycling a depleted ICF pellet into helium-4, powder and new pellets). Reagents arrive only through the fluid network, and upgrades can be installed.",
+		"fr_fr": "Usine de retraitement qui recycle des objets usagés. On choisit une recette avec un plan ; elle utilise jusqu'à trois réservoirs de réactifs, des objets en entrée et de l'électricité, et produit des objets et un fluide (par exemple recycler une pastille ICF épuisée en hélium-4, en poudre et en nouvelles pastilles). Les réactifs n'arrivent que par le réseau de fluides, et des améliorations peuvent être installées."
+	}
+}

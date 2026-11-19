@@ -12,10 +12,12 @@
 	],
 	"title": {
 		"en_us": "Redstone-over-Radio Graph",
+		"fr_fr": "Graphique Redstone sur radio",
 		"ru_ru": "Редстоун-по-радио график"
 	},
 	"content": {
 		"en_us": "Aesthetic [[redstone over radio|Redstone over Radio]] receiving device, needs to be configured with a scredriver first. Can represent numeric RoR values over time using a line graph. Values are updated every half second, and the graph can log up to 15 seconds of input. Up to two graphs can be enabled using the red buttons, each graphs can receive one value over its own RoR channel. Useful for displaying values where the change over time is important, such as temperature curves.<br><br>{{Template:RoRPanels}}",
+		"fr_fr": "Dispositif récepteur [[Redstone sur radio|Redstone over Radio]] esthétique, à configurer d'abord avec un scredriver. Il peut représenter des valeurs RoR numériques dans le temps sous forme de courbe. Les valeurs sont mises à jour toutes les demi-secondes, et le graphique peut enregistrer jusqu'à 15 secondes d'entrée. Jusqu'à deux graphiques peuvent être activés avec les boutons rouges ; chaque graphique peut recevoir une valeur sur son propre canal RoR. Utile pour afficher des valeurs dont l'évolution dans le temps est importante, comme les courbes de température.<br><br>{{Template:RoRPanels}}",
 		"ru_ru": "Информационное устройство приёма [[редстоун-по-радио|Redstone over Radio]], которое необходимо сначала настроить с помощью отвёртки. Может отображать числовые значения РпР во времени с помощью линейного графика. Значения обновляются каждые полсекунды, а график может записывать до 15 секунд входных данных. С помощью красных кнопок можно активировать до двух графиков, каждый из которых может принимать одно значение по своему собственному каналу РпР. Полезно для отображения величин, где важно изменение во времени, например, кривых температуры.<br><br>{{Template:RoRPanels}}"
 	}
 }

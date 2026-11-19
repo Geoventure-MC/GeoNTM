@@ -1,0 +1,21 @@
+{
+	"name": "Crucible",
+	"icon": [
+		"geontm:machine_crucible",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_crucible"
+		]
+	],
+	"title": {
+		"en_us": "Crucible",
+		"fr_fr": "Creuset"
+	},
+	"content": {
+		"en_us": "Melts items into molten materials and mixes them into alloys (for example arsenic bronze from copper, arsenic and flux, which also leaves slag). It does not use electricity: it draws heat from a heat source placed directly beneath it, such as a [[firebox|Firebox]], and only works once enough heat is stored. The molten material is typically sent to a [[strand caster|Strand Caster]] or other casting equipment.",
+		"fr_fr": "Fait fondre des objets en matières en fusion et les mélange en alliages (par exemple le bronze d'arsenic, à partir de cuivre, d'arsenic et de fondant, qui laisse aussi des scories). Il ne consomme pas d'électricité : il puise la chaleur d'une source de chaleur placée juste en dessous, comme un [[foyer|Firebox]], et ne fonctionne que lorsqu'il a accumulé assez de chaleur. La matière fondue est généralement envoyée vers une [[machine de coulée en continu|Strand Caster]] ou un autre équipement de moulage."
+	}
+}

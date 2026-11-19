@@ -17,10 +17,12 @@
 	],
 	"title": {
 		"en_us": "Asteroid Mining Ship",
+		"fr_fr": "Vaisseau minier d'astéroïdes",
 		"ru_ru": "Астероидный астродобытчик"
 	},
 	"content": {
 		"en_us": "The asteroid mining ship will, if connected to a satellite ID chip which is inserted into a cargo landing pad, land in regular intervals to deliver items mined in space. Do note that one mining ship can only supply a single cargo landing pad. Also keep the landing pad free of obstructions, as the drop ship may explode when impacting other blocks.<br><br>{{Template:SatOverview}}",
+		"fr_fr": "Le vaisseau minier d'astéroïdes, s'il est relié à une puce d'identifiant de satellite insérée dans une aire d'atterrissage de cargaison, atterrit à intervalles réguliers pour livrer les objets extraits dans l'espace. Notez qu'un vaisseau minier ne peut approvisionner qu'une seule aire d'atterrissage de cargaison. Gardez aussi l'aire d'atterrissage dégagée de tout obstacle, car le vaisseau de livraison peut exploser en heurtant d'autres blocs.<br><br>{{Template:SatOverview}}",
 		"ru_ru": "Астероидный астродобытчик, если он связан с ID-чипом спутника, вставленным в грузовую посадочную площадку, будет регулярно приземляться для доставки ресурсов, добытых в космосе. Обратите внимание, что один астродобытчик может снабжать только одну посадочную площадку. Также держите посадочную площадку свободной от препятствий, так как астродобытчик может взорваться при столкновении с другими блоками.<br><br>{{Template:SatOverview}}"
 	}
 }

@@ -1,0 +1,21 @@
+{
+	"name": "Soldering Station",
+	"icon": [
+		"geontm:machine_soldering_station",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_soldering_station"
+		]
+	],
+	"title": {
+		"en_us": "Soldering Station",
+		"fr_fr": "Station de soudure"
+	},
+	"content": {
+		"en_us": "Solders higher-tier circuits from lower circuits. Three slots take toppings (chips, capacitors), two take the circuit board materials and one takes the solder (such as lead wire); the recipe is recognized automatically. Some recipes also need a fluid (for example sulfuric acid). It needs electricity, and upgrades can be installed.",
+		"fr_fr": "Soude des circuits de rang supérieur à partir de circuits de rang inférieur. Trois emplacements reçoivent les composants (puces, condensateurs), deux reçoivent les matériaux de la carte et un reçoit la soudure (par exemple du fil de plomb) ; la recette est reconnue automatiquement. Certaines recettes demandent aussi un fluide (par exemple de l'acide sulfurique). Elle demande de l'électricité, et des améliorations peuvent être installées."
+	}
+}

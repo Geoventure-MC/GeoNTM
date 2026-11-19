@@ -15,11 +15,13 @@
 	],
 	"title": {
 		"en_us": "Stirling Engine",
+		"fr_fr": "Moteur Stirling",
 		"zh_cn": "斯特林发电机",
 		"ru_ru": "Генератор Стирлинга"
 	},
 	"content": {
 		"en_us": "Early machine for turning [[TU|External Heat Source]] directly into energy. Has low efficiency, and can only accept limited amounts of heat. Too much heat will cause the machine to violently disassemble. Detached parts can be collected and slotted back into the machine.<br><br>A step up from the [[wood burner|Wood-Burning Generator]], but not by much.",
+		"fr_fr": "Machine des débuts qui transforme directement les [[TU|External Heat Source]] en énergie. Son rendement est faible et elle n'accepte qu'une quantité limitée de chaleur. Trop de chaleur provoque un démontage violent de la machine. Les pièces détachées peuvent être récupérées et remises dans la machine.<br><br>Un cran au-dessus du [[générateur à bois|Wood-Burning Generator]], mais pas de beaucoup.",
 		"zh_cn": "前期机器，用于将[[TU|External Heat Source]]直接转化为电能。效率较低，而且只能接受有限量的热能。过多的热能会导致机 器剧烈地损毁，而脱落的部件可被捡回并重新安装到机器上。<br><br>与[[火力发电机|Wood-Burning Generator]]相比是一种进步，但进步不大。",
 		"ru_ru": "Механизм ранних этапов игры для прямого преобразования [[тепла|External Heat Source]] в электроэнергию. Низкая эффективность работы, буфер тепла строго ограничен, перегрев приведёт к поломке. Отлетевшие детали можно будет подобрать и вставить обратно. Этот двигатель - небольшой шаг вперёд по сравнению с [[генератором на дровах|Wood-Burning Generator]]."
 	}

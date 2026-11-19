@@ -1,0 +1,21 @@
+{
+	"name": "RTG",
+	"icon": [
+		"geontm:machine_rtg_grey",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_rtg_grey"
+		]
+	],
+	"title": {
+		"en_us": "RTG",
+		"fr_fr": "Générateur RT"
+	},
+	"content": {
+		"en_us": "Radioisotope thermoelectric generator with 15 fuel cell slots. It produces electricity passively from the heat of radioactive pellets, with no fluid to supply. Its output depends on the pellets loaded, which decay over time.",
+		"fr_fr": "Générateur thermoélectrique à radio-isotopes à 15 emplacements de pastilles. Il produit passivement de l'électricité grâce à la chaleur des pastilles radioactives, sans fluide à apporter. Sa production dépend des pastilles chargées, qui se désintègrent avec le temps."
+	}
+}

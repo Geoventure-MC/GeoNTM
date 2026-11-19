@@ -1,0 +1,21 @@
+{
+	"name": "Assembly Factory",
+	"icon": [
+		"geontm:machine_assembly_factory",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_assembly_factory"
+		]
+	],
+	"title": {
+		"en_us": "Assembly Factory",
+		"fr_fr": "Usine d'assemblage"
+	},
+	"content": {
+		"en_us": "Large multi-module version of the [[assembly machine|Assembly Machine]]: each module runs its own selected recipe at the same time. It consumes electricity, and water as a coolant that comes out as low-pressure steam (see [[Condenser]]). Items and fluids are fed through its ports.",
+		"fr_fr": "Grande version à plusieurs modules de la [[machine d'assemblage|Assembly Machine]] : chaque module exécute en parallèle sa propre recette sélectionnée. Elle consomme de l'électricité, ainsi que de l'eau comme liquide de refroidissement, qui ressort sous forme de vapeur basse pression (voir [[condenseur|Condenser]]). Les objets et les fluides arrivent par ses ports."
+	}
+}

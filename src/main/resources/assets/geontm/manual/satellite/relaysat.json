@@ -17,10 +17,12 @@
 	],
 	"title": {
 		"en_us": "RoR Relay Satellite",
+		"fr_fr": "Satellite relais RoR",
 		"ru_ru": "Спутник-ретранслятор РпР"
 	},
 	"content": {
 		"en_us": "The relay satellite allows [[redstone-over-radio|Redstone over Radio]] signals to be sent to different dimensions. It only acts as a transmitter, it cannot receive signals from other dimensions.<br><br>* '§erelay §e<dimension> §e<channel> §e<signal>§r' will create a signal in the selected dimension using the supplied channel and signal contents. The dimension ID is numeric, the overworld uses ID 0, the nether -1 and the end 1.<br><br>{{Template:SatOverview}}",
+		"fr_fr": "Le satellite relais permet d'envoyer des signaux [[Redstone sur radio|Redstone over Radio]] vers d'autres dimensions. Il ne fait office que d'émetteur et ne peut pas recevoir de signaux provenant d'autres dimensions.<br><br>* '§erelay §e<dimension> §e<channel> §e<signal>§r' crée un signal dans la dimension choisie, avec le canal et le contenu de signal fournis. L'identifiant de dimension est numérique : l'Overworld utilise l'ID 0, le Nether -1 et l'End 1.<br><br>{{Template:SatOverview}}",
 		"ru_ru": "Ретрансляционный спутник позволяет передавать сигналы [[РпР|Redstone over Radio]] в другие измерения. Он действует только как передатчик и не может принимать сигналы из других измерений.<br><br>* «§erelay §e<dimension> §e<channel> §e<signal>§r» создаст сигнал в выбранном измерении, используя предоставленный канал и содержимое сигнала. Идентификатор измерения — числовой, в обычном мире (0), в Нижнем мире (-1), а в Краю (1).<br><br>{{Template:SatOverview}}"
 	}
 }

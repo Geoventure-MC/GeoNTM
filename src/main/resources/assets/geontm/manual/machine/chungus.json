@@ -1,0 +1,21 @@
+{
+	"name": "Leviathan Steam Turbine",
+	"icon": [
+		"geontm:machine_chungus",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_chungus"
+		]
+	],
+	"title": {
+		"en_us": "Leviathan Steam Turbine",
+		"fr_fr": "Turbine à vapeur Léviathan"
+	},
+	"content": {
+		"en_us": "Very large steam turbine that generates electricity. It consumes all the steam it holds on every tick and releases it one pressure level lower (for example high-pressure steam becomes standard steam, and standard steam becomes low-pressure steam). Low-pressure steam can then be recycled with a [[Condenser]].",
+		"fr_fr": "Très grande turbine à vapeur qui produit de l'électricité. Elle consomme toute la vapeur qu'elle contient à chaque tick et la rejette à un niveau de pression inférieur (par exemple la vapeur haute pression devient de la vapeur normale, et la vapeur normale devient de la vapeur basse pression). La vapeur basse pression peut ensuite être recyclée avec un [[condenseur|Condenser]]."
+	}
+}

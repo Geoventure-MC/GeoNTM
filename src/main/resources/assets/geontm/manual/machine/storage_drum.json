@@ -1,0 +1,21 @@
+{
+	"name": "Nuclear Waste Disposal Drum",
+	"icon": [
+		"geontm:machine_storage_drum",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_storage_drum"
+		]
+	],
+	"title": {
+		"en_us": "Nuclear Waste Disposal Drum",
+		"fr_fr": "Tambour d'élimination des déchets nucléaires"
+	},
+	"content": {
+		"en_us": "Stores nuclear waste in 24 slots, and lets it decay into other items over time (for example gold-198 ingots decay into mercury nuggets). It also has separate tanks for liquid and gaseous waste.",
+		"fr_fr": "Stocke des déchets nucléaires dans 24 emplacements et les laisse se désintégrer en d'autres objets avec le temps (par exemple les lingots d'or 198 deviennent des pépites de mercure). Il possède aussi des réservoirs distincts pour les déchets liquides et gazeux."
+	}
+}

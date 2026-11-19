@@ -1,0 +1,21 @@
+{
+	"name": "Satellite ID Manager",
+	"icon": [
+		"geontm:machine_satlinker",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_satlinker"
+		]
+	],
+	"title": {
+		"en_us": "Satellite ID Manager",
+		"fr_fr": "Gestionnaire d'identification satellite"
+	},
+	"content": {
+		"en_us": "Manages satellite frequencies on chips. A chip in the second slot receives the frequency of the chip in the first slot (to copy an identifier), and a chip in the third slot is given a random frequency not used by any existing satellite. See [[Satellite]].",
+		"fr_fr": "Gère les fréquences de satellite sur des puces. Une puce placée dans le deuxième emplacement reçoit la fréquence de la puce du premier emplacement (pour copier un identifiant), et une puce placée dans le troisième emplacement reçoit une fréquence aléatoire qu'aucun satellite n'utilise. Voir [[Satellite]]."
+	}
+}

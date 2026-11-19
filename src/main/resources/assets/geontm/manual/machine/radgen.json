@@ -1,0 +1,21 @@
+{
+	"name": "Radiation Generator",
+	"icon": [
+		"geontm:machine_radgen",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_radgen"
+		]
+	],
+	"title": {
+		"en_us": "Radiation Generator",
+		"fr_fr": "Générateur de radiation"
+	},
+	"content": {
+		"en_us": "Generates electricity from radioactive waste. It has twelve independent channels, each burning a waste item (such as short-lived or long-lived nuclear waste, scrap or radioactive gems) and leaving a depleted item behind. It needs no input energy.",
+		"fr_fr": "Produit de l'électricité à partir de déchets radioactifs. Il possède douze canaux indépendants, chacun consommant un déchet (comme des déchets nucléaires à vie courte ou longue, de la ferraille ou des gemmes radioactives) et laissant un objet épuisé. Il n'a besoin d'aucune énergie en entrée."
+	}
+}

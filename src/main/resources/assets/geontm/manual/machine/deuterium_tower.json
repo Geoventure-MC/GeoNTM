@@ -1,0 +1,21 @@
+{
+	"name": "Deuterium Extraction Tower",
+	"icon": [
+		"geontm:machine_deuterium_tower",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_deuterium_tower"
+		]
+	],
+	"title": {
+		"en_us": "Deuterium Extraction Tower",
+		"fr_fr": "Tour d'extraction de deutérium"
+	},
+	"content": {
+		"en_us": "Larger version of the deuterium extractor: it turns water into heavy water using electricity. Heavy water is the intermediate step toward [[Deuterium]], needed for fusion fuel.",
+		"fr_fr": "Version plus grande de l'extracteur de deutérium : elle transforme l'eau en eau lourde grâce à l'électricité. L'eau lourde est l'étape intermédiaire vers le [[deutérium|Deuterium]], nécessaire au combustible de fusion."
+	}
+}

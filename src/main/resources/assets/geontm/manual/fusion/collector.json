@@ -12,11 +12,13 @@
 	],
 	"title": {
 		"en_us": "Fusion Reactor Collector Chamber",
+		"fr_fr": "Chambre collectrice du réacteur à fusion",
 		"ru_ru": "Улавливающая камера",
 		"zh_cn": "聚变反应堆收集室"
 	},
 	"content": {
 		"en_us": "Can be attached to a fusion reactor's [[torus|Fusion Reactor Vessel]] in order to increase the byproduct production rate by 50%. The byproducts are extracted from the torus itself, the collector does not have a GUI, nor ports. The collector also does not use the plasma's flux or energy level, so other components affected by energy sharing are unaffected.<br><br>{{Template:Fusion}}",
+		"fr_fr": "Peut être fixée à la [[cuve|Fusion Reactor Vessel]] d'un réacteur à fusion pour augmenter de 50 % le rendement en sous-produits. Les sous-produits sont extraits de la cuve elle-même : le collecteur n'a ni interface ni ports. Il n'utilise pas non plus le flux ni le niveau d'énergie du plasma, de sorte que les autres composants soumis au partage d'énergie ne sont pas affectés.<br><br>{{Template:Fusion}}",
 		"ru_ru": "Опциональный компонент реактора, который подключается к [[тору|Fusion Reactor Vessel]] для увеличения выхода побочных продуктов на 50%. Извлекать продукты придётся самостоятельно прямо из тора, так как коллектор не имеет ни интерфейса, ни портов. Он не нуждается в энергии или плазме, а потому не подвержен действию правила распределения энергии.<br><br>{{Template:Fusion}}",
 		"zh_cn": "可与聚变反应堆的[[环形容器|Fusion Reactor Vessel]]相连，连接后可以将反应堆副产物的 生产速率提高50%。副产物仍然需要从反应堆本体中提取，收集室本身没有 GUI和端口。收集室也不使用反应堆的中子通量或者能量，因此不会影响 其他遵循能量分配规则的部件。<br><br>{{Template:Fusion}}"
 	}

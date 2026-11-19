@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:Bullet"
+		"en_us": "Template:Bullet",
+		"fr_fr": "Template:Bullet"
 	},
 	"content": {
 		"en_us": "§2[ §2Bullets §2]<br>[[Black Powder Ammunition]]<br>[[Soft Point Bullet]]<br>[[Full Metal Jacket Bullet]]<br>[[Jacketed Hollow Point Bullet]]<br>[[FMJ Express Bullet]]<br>[[Armor Piercing Bullet]]<br>[[Depleted Uranium Bullet]]<br>[[Starmetal Bullet]]<br>[[High-Explosive Ammunition]]",
+		"fr_fr": "§2[ §2Balles §2]<br>[[Munitions à poudre noire|Black Powder Ammunition]]<br>[[Balle à pointe molle|Soft Point Bullet]]<br>[[Balle à chemise métallique complète|Full Metal Jacket Bullet]]<br>[[Balle à pointe creuse chemisée|Jacketed Hollow Point Bullet]]<br>[[Balle FMJ Express|FMJ Express Bullet]]<br>[[Balle perforante|Armor Piercing Bullet]]<br>[[Balle à l'uranium appauvri|Depleted Uranium Bullet]]<br>[[Balle en métal stellaire|Starmetal Bullet]]<br>[[Munitions hautement explosives|High-Explosive Ammunition]]",
 		"ru_ru": "§2[ §2Пули §2]<br>[[Патроны с дымным порохом|Black Powder Ammunition]]<br>[[Полуоболочечная пуля|Soft Point Bullet]]<br>[[Оболочечная пуля|Full Metal Jacket Bullet]]<br>[[Полуоболочечная экспансивная пуля|Jacketed Hollow Point Bullet]]<br>[[Высокоскоростная оболочечная пуля|FMJ Express Bullet]]<br>[[Бронебойные патроны|Armor Piercing Bullet]]<br>[[Пуля с обеднённым ураном|Depleted Uranium Bullet]]<br>[[Пуля из звёздного металла|Starmetal Bullet]]<br>[[Разрывные боеприпасы|High-Explosive Ammunition]]"
 	}
 }

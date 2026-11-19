@@ -4,10 +4,12 @@
     "trigger": [["geontm:ingot_silicon"], ["geontm:billet_silicon"], ["geontm:nugget_silicon"]],
     "title": {
         "en_us": "Silicon",
+        "fr_fr": "Silicium",
 		"ru_ru": "Резина"
     },
 	"content": {
 		"en_us": "Important material for producing integrated circuits, and any electronics more sophisticated than an analog circuit. Created in an [[electric arc furnace|Electric Arc Furnace]] using things that contain silicon dioxide, like regular sand, nether quartz, fiberglass, flint or [[asbestos|Asbestos]]. Used primarily as wafers (i.e. billets) which are [[pressed|Burner Press]] using a circuit stamp, and then crafted into different types of microchips. Due to requiring an arc furnace, silicon is available after obtaining [[polymer|Polymer]], requiring [[oil|Crude Oil]] processing.",
+		"fr_fr": "Matériau important pour produire des circuits intégrés et toute électronique plus sophistiquée qu'un circuit analogique. Créé dans un [[four à arc électrique|Electric Arc Furnace]] à partir de choses contenant du dioxyde de silicium, comme le sable ordinaire, le quartz du Nether, la fibre de verre, le silex ou l'[[amiante|Asbestos]]. Utilisé principalement sous forme de plaquettes (c'est-à-dire de lingots) qui sont [[pressées|Burner Press]] avec un poinçon de circuit, puis transformées en différents types de micropuces. Comme il faut un four à arc, le silicium n'est disponible qu'après l'obtention du [[polymère|Polymer]], qui exige le traitement du [[pétrole|Crude Oil]].",
 		"ru_ru": "Важный материал для производства интегральных схем и любой электроники сложнее аналоговой. Создаётся в [[электродуговой печи|Electric Arc Furnace]] из материалов, содержащих диоксид кремния, например обычного песка, адского кварца, стекловолокна, кремня или [[асбеста|Asbestos]]. В основном используется в виде пластин (то есть заготовок), которые [[прессуются|Burner Press]] с использованием штампа для схем, а затем из них изготавливаются разные типы микросхем. Поскольку требуется дуговая печь, кремний становится доступен после получения [[полимера|Polymer]], требующего переработки [[сырой нефти|Crude Oil]]."
 	}
 }

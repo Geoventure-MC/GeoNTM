@@ -1,0 +1,21 @@
+{
+	"name": "ZIRNOX Nuclear Reactor",
+	"icon": [
+		"geontm:machine_zirnox",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_zirnox"
+		]
+	],
+	"title": {
+		"en_us": "ZIRNOX Nuclear Reactor",
+		"fr_fr": "Réacteur nucléaire ZIRNOX"
+	},
+	"content": {
+		"en_us": "Nuclear reactor with 24 fuel channels, moderated by carbon dioxide. It takes in water and carbon dioxide and produces super-hot steam. The core is switched on from its menu, which also lets you vent some of the moderator. Keep its cooling supplied at all times.",
+		"fr_fr": "Réacteur nucléaire à 24 canaux de combustible, modéré par du dioxyde de carbone. Il utilise de l'eau et du dioxyde de carbone, et produit de la vapeur surchauffée. Le cœur se met en marche depuis son menu, qui permet aussi d'évacuer une partie du modérateur. Il faut maintenir son refroidissement alimenté en permanence."
+	}
+}

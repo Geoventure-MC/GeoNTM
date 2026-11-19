@@ -1,0 +1,21 @@
+{
+	"name": "Radar",
+	"icon": [
+		"geontm:machine_radar",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_radar"
+		]
+	],
+	"title": {
+		"en_us": "Radar",
+		"fr_fr": "Radar"
+	},
+	"content": {
+		"en_us": "Detects entities and displays them as blips, and can emit a redstone signal depending on what it detects. It consumes electricity. Linker items can be used to connect it to a screen or to launch systems. For more range, use the large radar.",
+		"fr_fr": "Détecte les entités et les affiche sous forme de points, et peut émettre un signal de redstone selon ce qu'il détecte. Il consomme de l'électricité. Des objets de liaison permettent de le relier à un écran ou à des systèmes de lancement. Pour plus de portée, utiliser le grand radar."
+	}
+}

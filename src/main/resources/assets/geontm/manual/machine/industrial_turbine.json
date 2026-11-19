@@ -1,0 +1,21 @@
+{
+	"name": "Industrial Steam Turbine",
+	"icon": [
+		"geontm:machine_industrial_turbine",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_industrial_turbine"
+		]
+	],
+	"title": {
+		"en_us": "Industrial Steam Turbine",
+		"fr_fr": "Turbine à vapeur industrielle"
+	},
+	"content": {
+		"en_us": "Steam turbine that generates electricity. It consumes 20% of the available input steam each tick and turns the released heat into energy, then outputs the steam one pressure level lower. Low-pressure steam can be recycled with a [[Condenser]].",
+		"fr_fr": "Turbine à vapeur qui produit de l'électricité. Elle consomme 20 % de la vapeur d'entrée disponible à chaque tick et transforme la chaleur libérée en énergie, puis rejette la vapeur à un niveau de pression inférieur. La vapeur basse pression peut être recyclée avec un [[condenseur|Condenser]]."
+	}
+}

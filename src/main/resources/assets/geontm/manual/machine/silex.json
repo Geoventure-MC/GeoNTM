@@ -1,0 +1,21 @@
+{
+	"name": "SILEX",
+	"icon": [
+		"geontm:machine_silex",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_silex"
+		]
+	],
+	"title": {
+		"en_us": "SILEX",
+		"fr_fr": "Séparateur d'isotopes laser (SILEX)"
+	},
+	"content": {
+		"en_us": "Separation of Isotopes by Laser Excitation. The chamber dissolves an isotope-bearing item using hydrogen peroxide, then a free electron laser (the FEL machine) fired through it sorts the isotopes into several possible outputs. The SILEX itself uses no electricity: the energy comes from the laser.",
+		"fr_fr": "Séparation d'isotopes par excitation laser. La chambre dissout un objet porteur d'isotopes à l'aide de peroxyde d'hydrogène, puis un laser à électrons libres (la machine FEL) tiré à travers elle trie les isotopes en plusieurs sorties possibles. Le SILEX lui-même ne consomme pas d'électricité : l'énergie vient du laser."
+	}
+}

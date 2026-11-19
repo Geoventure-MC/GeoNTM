@@ -18,10 +18,12 @@
 	],
 	"title": {
 		"en_us": "Reactor-Grade Plutonium",
+		"fr_fr": "Plutonium de qualité réacteur",
 		"ru_ru": "Плутоний реакторного качества"
 	},
 	"content": {
 		"en_us": "Mixture of [[plutonium-239|Plutonium-239]] and [[plutonium-240|Plutonium-240]]. Common result of reprocessing many [[uranium|Uranium]]-based fuels, as well as by breeding uranium in the [[Chicago Pile]]. Usable in many reactors as medium enriched plutonium fuel.<br><br>Moderately radioactive.",
+		"fr_fr": "Mélange de [[plutonium 239|Plutonium-239]] et de [[plutonium 240|Plutonium-240]]. Résultat courant du retraitement de nombreux combustibles à base d'[[uranium|Uranium]], ainsi que de la surgénération d'uranium dans la [[pile de Chicago|Chicago Pile]]. Utilisable dans de nombreux réacteurs comme combustible au plutonium moyennement enrichi.<br><br>Modérément radioactif.",
 		"ru_ru": "Смесь [[плутония-239|Plutonium-239]] и [[плутония-240|Plutonium-240]]. Обычный результат переработки многих топлив на основе [[урана|Uranium]], а также при размножении урана в [[Чикагской полленице|Chicago Pile]]. Используется во многих реакторах как среднеобогащённое плутониевое топливо.<br><br>Умеренно радиоактивен."
 	}
 }

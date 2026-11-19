@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:SatOverview"
+		"en_us": "Template:SatOverview",
+		"fr_fr": "Template:SatOverview"
 	},
 	"content": {
 		"en_us": "See also:<br>[[Satellite]]<br>[[Satellite Ground Station]]",
+		"fr_fr": "Voir aussi :<br>[[Satellite]]<br>[[Station au sol de satellite|Satellite Ground Station]]",
 		"ru_ru": "См. также:<br>[[Спутник|Satellite]]<br>[[Спутниковая наземная станция|Satellite Ground Station]]"
 	}
 }

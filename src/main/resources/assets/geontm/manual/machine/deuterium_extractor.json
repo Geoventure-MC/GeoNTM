@@ -1,0 +1,21 @@
+{
+	"name": "Deuterium Extractor",
+	"icon": [
+		"geontm:machine_deuterium_extractor",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_deuterium_extractor"
+		]
+	],
+	"title": {
+		"en_us": "Deuterium Extractor",
+		"fr_fr": "Extracteur de deutérium"
+	},
+	"content": {
+		"en_us": "Extracts heavy water from ordinary water. It consumes electricity and water, and produces heavy water, which is used to obtain deuterium (see [[Deuterium]]). A conversion only runs once the machine has stored enough energy.",
+		"fr_fr": "Extrait de l'eau lourde à partir d'eau ordinaire. Il consomme de l'électricité et de l'eau, et produit de l'eau lourde, qui sert à obtenir du deutérium (voir [[Deuterium]]). Une conversion ne démarre que lorsque la machine a stocké assez d'énergie."
+	}
+}

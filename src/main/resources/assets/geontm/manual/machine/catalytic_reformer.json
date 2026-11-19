@@ -1,0 +1,21 @@
+{
+	"name": "Catalytic Reformer",
+	"icon": [
+		"geontm:machine_catalytic_reformer",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_catalytic_reformer"
+		]
+	],
+	"title": {
+		"en_us": "Catalytic Reformer",
+		"fr_fr": "Reformeur catalytique"
+	},
+	"content": {
+		"en_us": "Turns naphtha into reformate and petroleum gas, and also yields hydrogen. It needs electricity and a catalytic converter placed in its dedicated slot. It is a later stage of [[oil processing|Advanced Oil Processing]], used to obtain aromatic fuels and hydrogen.",
+		"fr_fr": "Transforme le naphta en reformat et en gaz de pétrole, et fournit aussi de l'hydrogène. Il demande de l'électricité et un convertisseur catalytique placé dans son emplacement dédié. C'est une étape avancée du [[raffinage du pétrole|Advanced Oil Processing]], utile pour obtenir des carburants aromatiques et de l'hydrogène."
+	}
+}

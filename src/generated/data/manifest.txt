@@ -43,7 +43,7 @@ geontm/recipe/fraction 19
 geontm/recipe/fusion 9
 geontm/recipe/gas_centrifuge 4
 geontm/recipe/hydrotreating 6
-geontm/recipe/liquefaction 32
+geontm/recipe/liquefaction 33
 geontm/recipe/material_distribution 49
 geontm/recipe/mixer 49
 geontm/recipe/outgasser 17

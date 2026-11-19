@@ -1,0 +1,21 @@
+{
+	"name": "Electrolyser",
+	"icon": [
+		"geontm:machine_electrolyser",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_electrolyser"
+		]
+	],
+	"title": {
+		"en_us": "Electrolyser",
+		"fr_fr": "Électrolyseur"
+	},
+	"content": {
+		"en_us": "Dual-purpose machine. In fluid mode it splits fluids with electricity (for example heavy water into deuterium and oxygen). In metal mode it breaks crystals down into molten metals and byproduct powders. It has tanks for water, hydrogen, oxygen and nitric acid.",
+		"fr_fr": "Machine à double usage. En mode fluide, elle sépare des fluides grâce à l'électricité (par exemple l'eau lourde en deutérium et en oxygène). En mode métal, elle décompose des cristaux en métaux fondus et en poudres annexes. Elle possède des réservoirs d'eau, d'hydrogène, d'oxygène et d'acide nitrique."
+	}
+}

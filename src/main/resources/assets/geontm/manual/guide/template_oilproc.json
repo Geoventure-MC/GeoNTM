@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:Oil"
+		"en_us": "Template:Oil",
+		"fr_fr": "Modèle : Pétrole"
 	},
 	"content": {
 		"en_us": "§2[ §2Oil §2]<br>[[Oil Collection]]<br>[[Basic Oil Processing]]<br>[[Advanced Oil Processing]]<br>[[Vacuum Oil Processing]]",
+		"fr_fr": "§2[ §2Pétrole §2]<br>[[Collecte du pétrole|Oil Collection]]<br>[[Traitement de base du pétrole|Basic Oil Processing]]<br>[[Traitement avancé du pétrole|Advanced Oil Processing]]<br>[[Traitement du pétrole sous vide|Vacuum Oil Processing]]",
 		"ru_ru": "§2[ §2Нефть §2]<br>[[Добыча нефти|Oil Collection]]<br>[[Базовая нефтепереработка|Basic Oil Processing]]<br>[[Продвинутая нефтепереработка|Advanced Oil Processing]]<br>[[Вакуумная нефтепереработка|Vacuum Oil Processing]]"
 	}
 }

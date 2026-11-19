@@ -1,0 +1,21 @@
+{
+	"name": "RTG and Radiolysis Chamber",
+	"icon": [
+		"geontm:machine_radiolysis",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_radiolysis"
+		]
+	],
+	"title": {
+		"en_us": "RTG and Radiolysis Chamber",
+		"fr_fr": "Générateur thermoélectrique à radio-isotopes et chambre de radiolyse"
+	},
+	"content": {
+		"en_us": "Radioisotope generator that also cracks fluids and sterilizes items. It holds ten pellet slots; the heat of the radioactive pellets produces electricity, and the same heat drives fluid cracking. The item sterilization function exists but is not yet active in this version.",
+		"fr_fr": "Générateur à radio-isotopes qui craque aussi des fluides et stérilise des objets. Il possède dix emplacements de pastilles ; la chaleur des pastilles radioactives produit de l'électricité et la même chaleur sert au craquage des fluides. La fonction de stérilisation des objets existe mais n'est pas encore active dans cette version."
+	}
+}

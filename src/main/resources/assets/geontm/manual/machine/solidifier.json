@@ -1,0 +1,21 @@
+{
+	"name": "Solidifier",
+	"icon": [
+		"geontm:machine_solidifier",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_solidifier"
+		]
+	],
+	"title": {
+		"en_us": "Solidifier",
+		"fr_fr": "Machine de solidification industrielle"
+	},
+	"content": {
+		"en_us": "Turns fluids into solid items using electricity (for example biofuel into solid fuel). The fluid type is set with a fluid identifier in its dedicated slot. It is the opposite of the liquefactor, and upgrades speed it up.",
+		"fr_fr": "Transforme des fluides en objets solides grâce à l'électricité (par exemple le biocarburant en combustible solide). Le type de fluide se règle avec un identifiant de fluide placé dans son emplacement dédié. C'est l'inverse de la machine de liquéfaction, et des améliorations l'accélèrent."
+	}
+}

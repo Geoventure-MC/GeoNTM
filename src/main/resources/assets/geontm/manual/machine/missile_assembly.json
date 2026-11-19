@@ -1,0 +1,21 @@
+{
+	"name": "Missile Assembly Station",
+	"icon": [
+		"geontm:machine_missile_assembly",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_missile_assembly"
+		]
+	],
+	"title": {
+		"en_us": "Missile Assembly Station",
+		"fr_fr": "Station d'assemblage de missiles"
+	},
+	"content": {
+		"en_us": "Assembles a missile from five parts: guidance chip, warhead, fuselage, fins and thruster. The parts must be compatible (matching sizes, a thruster strong enough for the warhead's weight and compatible with the fuel). If any rule is not met, the construction button does nothing.",
+		"fr_fr": "Assemble un missile à partir de cinq pièces : puce de guidage, ogive, fuselage, ailerons et propulseur. Les pièces doivent être compatibles (tailles correspondantes, propulseur assez puissant pour le poids de l'ogive et adapté au carburant). Si une règle n'est pas respectée, le bouton de construction ne fait rien."
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "Spent Fuel Pool Drum",
+	"icon": [
+		"geontm:machine_waste_drum",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_waste_drum"
+		]
+	],
+	"title": {
+		"en_us": "Spent Fuel Pool Drum",
+		"fr_fr": "Tambour de piscine de combustible usé"
+	},
+	"content": {
+		"en_us": "Cools hot spent fuel. It has 12 one-item slots, and cooling is faster the more of its faces touch water. Hot waste from ZIRNOX or other reactors is turned into its cooled version over time.",
+		"fr_fr": "Refroidit le combustible usé encore chaud. Il possède 12 emplacements d'un objet, et le refroidissement est d'autant plus rapide que ses faces sont en contact avec de l'eau. Les déchets chauds du ZIRNOX ou d'autres réacteurs sont transformés en leur version refroidie avec le temps."
+	}
+}

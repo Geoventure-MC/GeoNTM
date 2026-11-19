@@ -4,10 +4,12 @@
     "trigger": [["geontm:ingot_pu238"], ["geontm:billet_pu238"], ["geontm:nugget_pu238"]],
     "title": {
         "en_us": "Plutonium-238",
+        "fr_fr": "Plutonium 238",
 		"ru_ru": "Плутоний-238"
     },
 	"content": {
 		"en_us": "Radioisotope, used mainly in [[RTGs|RTG]]. Derived from [[plutonium|Plutonium]] hexafluoride, or from various nuclear fuels, mainly ones using [[uranium-235|Uranium-235]]. Usable with [[beryllium|Beryllium]] as Pu238Be neutron sources in [[RBMKs|RBMK]].<br><br>Moderately radioactive, very hot.",
+		"fr_fr": "Radioisotope, utilisé principalement dans les [[RTG|RTG]]. Dérivé de l'hexafluorure de [[plutonium|Plutonium]], ou de divers combustibles nucléaires, principalement ceux à base d'[[uranium 235|Uranium-235]]. Utilisable avec du [[béryllium|Beryllium]] comme sources de neutrons Pu238Be dans les [[RBMK|RBMK]].<br><br>Modérément radioactif, très chaud.",
 		"ru_ru": "Радиоизотоп, используется главным образом в [[РИТЭГах|RTG]]. Получается из гексафторида [[плутония|Plutonium]] или из различных ядерных топлив, главным образом на основе [[урана-235|Uranium-235]]. Может использоваться с [[бериллием|Beryllium]] как нейтронные источники Pu238Be в [[РБМК|RBMK]].<br><br>Умеренно радиоактивен, очень горячий."
 	}
 }

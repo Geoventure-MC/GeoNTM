@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:Shotshells"
+		"en_us": "Template:Shotshells",
+		"fr_fr": "Template:Shotshells"
 	},
 	"content": {
 		"en_us": "§2[ §2Shotgun §2Shells §2]<br>[[Black Powder Ammunition]]<br>[[Buckshot]]<br>[[Magnum Buckshot]]<br>[[Shrapnel Buckshot]]<br>[[Flechettes]]<br>[[White Phosphorus Munitions]]<br>[[Slug]]<br>[[Depleted Uranium Bullet]]<br>[[High-Explosive Ammunition]]",
+		"fr_fr": "§2[ §2Cartouches §2de §2fusil §2à §2pompe §2]<br>[[Munitions à poudre noire|Black Powder Ammunition]]<br>[[Chevrotine|Buckshot]]<br>[[Chevrotine Magnum|Magnum Buckshot]]<br>[[Chevrotine à éclats|Shrapnel Buckshot]]<br>[[Fléchettes|Flechettes]]<br>[[Munitions au phosphore blanc|White Phosphorus Munitions]]<br>[[Balle unique|Slug]]<br>[[Balle à l'uranium appauvri|Depleted Uranium Bullet]]<br>[[Munitions hautement explosives|High-Explosive Ammunition]]",
 		"ru_ru": "§2[ §2Ружейные §2патроны §2]<br>[[Патроны с дымным порохом|Black Powder Ammunition]]<br>[[Картечь|Buckshot]]<br>[[Магнум-картечь|Magnum Buckshot]]<br>[[Шрапнель|Shrapnel Buckshot]]<br>[[Флешетты|Flechettes]]<br>[[Боеприпасы с белым фосфором|White Phosphorus Munitions]]<br>[[Пулевой снаряд|Slug]]<br>[[Пуля с обеднённым ураном|Depleted Uranium Bullet]]<br>[[Разрывные боеприпасы|High-Explosive Ammunition]]"
 	}
 }

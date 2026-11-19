@@ -1,0 +1,21 @@
+{
+	"name": "Gas Centrifuge",
+	"icon": [
+		"geontm:machine_gascent",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_gascent"
+		]
+	],
+	"title": {
+		"en_us": "Gas Centrifuge",
+		"fr_fr": "Centrifugeuse à gaz"
+	},
+	"content": {
+		"en_us": "Separates uranium hexafluoride into its isotopes. It consumes electricity and UF6 gas, and produces items such as U-238 nuggets, nuclear fuel nuggets and fluorite. Several centrifuges can be aligned to work as a cascade. It is a key step in enriching uranium.",
+		"fr_fr": "Sépare l'hexafluorure d'uranium en ses isotopes. Elle consomme de l'électricité et du gaz UF6, et produit des objets comme des pépites d'U-238, des pépites de combustible nucléaire et de la fluorite. Plusieurs centrifugeuses peuvent être alignées pour fonctionner en cascade. C'est une étape clé de l'enrichissement de l'uranium."
+	}
+}

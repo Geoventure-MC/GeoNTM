@@ -18,10 +18,12 @@
 	],
 	"title": {
 		"en_us": "Plutonium-241",
+		"fr_fr": "Plutonium 241",
 		"ru_ru": "Плутоний-241"
 	},
 	"content": {
 		"en_us": "Secondary fissile isotope of [[plutonium|Plutonium]]. Can be recovered from [[plutonium-240|Plutonium-240]]-rich spent [[RBMK]] fuels, as well as certain types of [[zirconium|Zirconium]] fast breefer fuels. Only used in specialized breeding fuels and as high enriched fuel, which is more powerful than its [[plutonium-239|Plutonium-239]] counterpart. Plutonium-241 in RBMKs yields [[americium-241|Americium-241]] and [[americium-242|Americium-242]] when reprocessed.<br><br>Highly radioactive.",
+		"fr_fr": "Isotope fissile secondaire du [[plutonium|Plutonium]]. Peut être récupéré à partir de combustibles usés riches en [[plutonium 240|Plutonium-240]] issus du [[RBMK]], ainsi que de certains types de combustibles de surgénération rapide au [[zirconium|Zirconium]]. Utilisé seulement dans des combustibles de surgénération spécialisés et comme combustible hautement enrichi, plus puissant que son équivalent au [[plutonium 239|Plutonium-239]]. Le plutonium 241 dans les RBMK donne de l'[[américium 241|Americium-241]] et de l'[[américium 242|Americium-242]] une fois retraité.<br><br>Fortement radioactif.",
 		"ru_ru": "Вторичный делящийся изотоп [[плутония|Plutonium]]. Может быть извлечен из отработанного топлива [[РБМК|RBMK]], богатого [[плутонием-240|Plutonium-240]], а также из определённых видов [[циркониевого|Zirconium]] топлива быстрого размножения. Используется только в специализированных топливных стержнях для размножения и как высокообогащённое топливо, которое мощнее, чем его аналог [[плутоний-239|Plutonium-239]]. Плутоний-241 в РБМК при переработке дает [[америций-241|Americium-241]] и [[америций-242|Americium-242]].<br><br>Сильно радиоактивен."
 	}
 }

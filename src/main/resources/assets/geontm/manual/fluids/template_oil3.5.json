@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:Oil3.5"
+		"en_us": "Template:Oil3.5",
+		"fr_fr": "Modèle : Pétrole 3.5"
 	},
 	"content": {
 		"en_us": "§2[ §2Desulfurized §2Oil §2Processing §2]<br>[[Desulfurized Oil Processing]]<br>[[Desulfurized Crude Oil]]<br>[[Desulfurized Hot Crude Oil]]<br>[[Desulfurized Cracked Oil]]<br>[[Desulfurized Light Oil]]<br>[[Desulfurized Naphtha]]",
+		"fr_fr": "§2[ §2Traitement §2du §2pétrole §2désulfuré §2]<br>[[Traitement du pétrole désulfuré|Desulfurized Oil Processing]]<br>[[Pétrole brut désulfuré|Desulfurized Crude Oil]]<br>[[Pétrole brut chaud désulfuré|Desulfurized Hot Crude Oil]]<br>[[Pétrole craqué désulfuré|Desulfurized Cracked Oil]]<br>[[Pétrole léger désulfuré|Desulfurized Light Oil]]<br>[[Naphta désulfuré|Desulfurized Naphtha]]",
 		"ru_ru": "§2[ §2Переработка §2обессеренной §2нефти §2]<br>[[Переработка обессеренной нефти|Desulfurized Oil Processing]]<br>[[Обессеренная сырая нефть|Desulfurized Crude Oil]]<br>[[Обессеренная горячая нефть|Desulfurized Hot Crude Oil]]<br>[[Обессеренная крекированная нефть|Desulfurized Cracked Oil]]<br>[[Обессеренная лёгкая нефть|Desulfurized Light Oil]]<br>[[Обессеренная нафта|Desulfurized Naphtha]]"
 	}
 }

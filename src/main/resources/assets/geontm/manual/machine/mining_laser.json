@@ -1,0 +1,21 @@
+{
+	"name": "Mining Laser",
+	"icon": [
+		"geontm:machine_mining_laser",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_mining_laser"
+		]
+	],
+	"title": {
+		"en_us": "Mining Laser",
+		"fr_fr": "Laser minier"
+	},
+	"content": {
+		"en_us": "Ceiling-mounted quarry. While powered, it scans a square on the current layer, locks its beam onto blocks, breaks them and collects the drops in an internal buffer. It descends one layer once the current one is cleared. It consumes electricity; upgrades widen the area. Mined oil ore is converted into crude oil.",
+		"fr_fr": "Carrière fixée au plafond. Tant qu'elle est alimentée, elle balaie un carré de la couche courante, verrouille son faisceau sur les blocs, les casse et collecte les butins dans un tampon interne. Elle descend d'une couche quand la précédente est dégagée. Elle consomme de l'électricité ; des améliorations élargissent la zone. Le minerai de pétrole miné est converti en pétrole brut."
+	}
+}

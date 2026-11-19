@@ -1,0 +1,21 @@
+{
+	"name": "Free Electron Laser",
+	"icon": [
+		"geontm:machine_fel",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_fel"
+		]
+	],
+	"title": {
+		"en_us": "Free Electron Laser",
+		"fr_fr": "Laser à électrons libres (FEL)"
+	},
+	"content": {
+		"en_us": "Laser that powers the SILEX isotope separator. Once switched on and loaded with a crystal, it fires a beam in a straight line of up to 24 blocks in front of it. The beam passes through non-opaque blocks and excites a SILEX placed on the same axis, at least 5 blocks away. It needs electricity.",
+		"fr_fr": "Laser qui alimente le séparateur d'isotopes SILEX. Une fois allumé et chargé d'un cristal, il émet un faisceau en ligne droite sur 24 blocs au maximum devant lui. Le faisceau traverse les blocs non opaques et excite un SILEX placé sur le même axe, à au moins 5 blocs de distance. Il demande de l'électricité."
+	}
+}

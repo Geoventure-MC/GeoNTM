@@ -1,0 +1,21 @@
+{
+	"name": "Strand Caster",
+	"icon": [
+		"geontm:machine_strand_caster",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_strand_caster"
+		]
+	],
+	"title": {
+		"en_us": "Strand Caster",
+		"fr_fr": "Machine de coulée en continu"
+	},
+	"content": {
+		"en_us": "Casts molten metal into items using a mold in its dedicated slot, and delivers the cast items into its six output slots. It uses water, which comes out as low-pressure steam. The molten material usually comes from a [[crucible|Crucible]] or other melting equipment.",
+		"fr_fr": "Coule du métal en fusion en objets à l'aide d'un moule placé dans son emplacement dédié, et dépose les objets moulés dans ses six emplacements de sortie. Elle utilise de l'eau, qui ressort en vapeur basse pression. La matière en fusion provient généralement d'un [[creuset|Crucible]] ou d'un autre équipement de fusion."
+	}
+}

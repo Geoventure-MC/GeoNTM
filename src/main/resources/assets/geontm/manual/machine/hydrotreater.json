@@ -1,0 +1,21 @@
+{
+	"name": "Hydrotreater",
+	"icon": [
+		"geontm:machine_hydrotreater",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_hydrotreater"
+		]
+	],
+	"title": {
+		"en_us": "Hydrotreater",
+		"fr_fr": "Hydrotraiteur"
+	},
+	"content": {
+		"en_us": "Removes sulfur from oil fractions using hydrogen. It consumes electricity, hydrogen and an oil fraction (such as cracked oil), and produces the desulfurized version plus sour gas. It needs a catalytic converter in its dedicated slot. It is part of [[advanced oil processing|Advanced Oil Processing]].",
+		"fr_fr": "Retire le soufre des fractions de pétrole grâce à l'hydrogène. Il consomme de l'électricité, de l'hydrogène et une fraction de pétrole (comme le pétrole craqué), et produit la version désulfurée ainsi que du gaz acide. Il demande un convertisseur catalytique dans son emplacement dédié. Il fait partie du [[raffinage avancé|Advanced Oil Processing]]."
+	}
+}

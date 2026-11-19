@@ -1,0 +1,21 @@
+{
+	"name": "Cyclotron",
+	"icon": [
+		"geontm:machine_cyclotron",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_cyclotron"
+		]
+	],
+	"title": {
+		"en_us": "Cyclotron",
+		"fr_fr": "Cyclotron"
+	},
+	"content": {
+		"en_us": "Particle accelerator that bombards an item with a particle item to transmute it into another (for example cerium powder with a beryllium particle gives neodymium powder). Each recipe has an antimatter cost. It needs electricity and has tanks for water, low-pressure steam and [[antimatter|Antimatter]].",
+		"fr_fr": "Accélérateur de particules qui bombarde un objet avec un objet-particule pour le transmuter en un autre (par exemple de la poudre de cérium avec une particule de béryllium donne de la poudre de néodyme). Chaque recette a un coût en antimatière. Il demande de l'électricité et possède des réservoirs d'eau, de vapeur basse pression et d'[[antimatière|Antimatter]]."
+	}
+}

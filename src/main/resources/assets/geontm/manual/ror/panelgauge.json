@@ -12,10 +12,12 @@
 	],
 	"title": {
 		"en_us": "Redstone-over-Radio Gauge",
+		"fr_fr": "Jauge Redstone sur radio",
 		"ru_ru": "Редстоун-по-радио измеритель"
 	},
 	"content": {
 		"en_us": "Aesthetic [[redstone over radio|Redstone over Radio]] receiving device, needs to be configured with a scredriver first. Can represent numeric RoR values using a gauge needle. Up to four gauges can be enabled using the red buttons, each gauge can receive one value over its own RoR channel. Minimum and maximum values need to be configured before the gauge can be used, if the minimum is set to a higher value than the maximum, then the needle will run in reverse. The needle can exceed the maximum value by up to 50%, entering the red section of the gauge.<br><br>{{Template:RoRPanels}}",
+		"fr_fr": "Dispositif récepteur [[Redstone sur radio|Redstone over Radio]] esthétique, à configurer d'abord avec un scredriver. Il peut représenter des valeurs RoR numériques avec une aiguille de jauge. Jusqu'à quatre jauges peuvent être activées avec les boutons rouges ; chaque jauge peut recevoir une valeur sur son propre canal RoR. Les valeurs minimale et maximale doivent être configurées avant de pouvoir utiliser la jauge ; si le minimum est supérieur au maximum, l'aiguille tourne en sens inverse. L'aiguille peut dépasser la valeur maximale jusqu'à 50 %, en entrant dans la zone rouge de la jauge.<br><br>{{Template:RoRPanels}}",
 		"ru_ru": "Информационное устройство приёма [[редстоун-по-радио|Redstone over Radio]], которое необходимо сначала настроить с помощью отвёртки. Может отображать числовые значения РпР с помощью стрелки прибора. С помощью красных кнопок можно активировать до четырех индикаторов, каждый из которых может принимать одно значение по своему собственному каналу РпР. Перед использованием необходимо настроить минимальное и максимальное значения, если минимум установлен выше максимума, то стрелка будет двигаться в обратном направлении. Стрелка может превышать максимальное значение на величину до 50%, заходя в красную секцию прибора.<br><br>{{Template:RoRPanels}}"
 	}
 }

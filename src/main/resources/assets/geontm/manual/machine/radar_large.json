@@ -1,0 +1,21 @@
+{
+	"name": "Large Radar",
+	"icon": [
+		"geontm:machine_radar_large",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_radar_large"
+		]
+	],
+	"title": {
+		"en_us": "Large Radar",
+		"fr_fr": "Grand radar"
+	},
+	"content": {
+		"en_us": "Radar with three times the range of the standard radar. It occupies 3x3 blocks, and its power and redstone connections are at the edge centers of its footprint. It consumes electricity and detects entities like the standard radar.",
+		"fr_fr": "Radar offrant trois fois la portée du radar standard. Il occupe 3x3 blocs, et ses connexions d'énergie et de redstone se trouvent au centre des bords de son emprise. Il consomme de l'électricité et détecte les entités comme le radar standard."
+	}
+}

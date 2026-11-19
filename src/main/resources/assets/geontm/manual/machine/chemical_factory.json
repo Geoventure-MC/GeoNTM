@@ -1,0 +1,21 @@
+{
+	"name": "Chemical Factory",
+	"icon": [
+		"geontm:machine_chemical_factory",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_chemical_factory"
+		]
+	],
+	"title": {
+		"en_us": "Chemical Factory",
+		"fr_fr": "Usine chimique"
+	},
+	"content": {
+		"en_us": "Large multi-module version of the [[chemical plant|Chemical Plant]]: each module runs its own recipe in parallel. It consumes electricity and uses water as a coolant that comes out as low-pressure steam. Fluids and items are fed through its ports.",
+		"fr_fr": "Grande version à plusieurs modules de l'[[usine chimique|Chemical Plant]] : chaque module exécute sa propre recette en parallèle. Elle consomme de l'électricité et utilise de l'eau comme liquide de refroidissement, qui ressort en vapeur basse pression. Les fluides et les objets arrivent par ses ports."
+	}
+}

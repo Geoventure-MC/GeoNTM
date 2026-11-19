@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:RoRPanels"
+		"en_us": "Template:RoRPanels",
+		"fr_fr": "Template:RoRPanels"
 	},
 	"content": {
 		"en_us": "See also:<br>[[Redstone-over-Radio Keypad]]<br>[[Redstone-over-Radio Gauge]]<br>[[Redstone-over-Radio Indicator Lights]]<br>[[Redstone-over-Radio Numeric Display]]<br>[[Redstone-over-Radio Graph]]<br>[[Redstone-over-Radio Lever]]<br>[[Redstone-over-Radio Terminal]]",
+		"fr_fr": "Voir aussi :<br>[[Clavier Redstone sur radio|Redstone-over-Radio Keypad]]<br>[[Jauge Redstone sur radio|Redstone-over-Radio Gauge]]<br>[[Voyants Redstone sur radio|Redstone-over-Radio Indicator Lights]]<br>[[Afficheur numérique Redstone sur radio|Redstone-over-Radio Numeric Display]]<br>[[Graphique Redstone sur radio|Redstone-over-Radio Graph]]<br>[[Levier Redstone sur radio|Redstone-over-Radio Lever]]<br>[[Terminal Redstone sur radio|Redstone-over-Radio Terminal]]",
 		"ru_ru": "См. также:<br>[[Редстоун-по-радио клавиатура|Redstone-over-Radio Keypad]]<br>[[Редстоун-по-радио измеритель|Redstone-over-Radio Gauge]]<br>[[Редстоун-по-радио индикаторные лампы|Redstone-over-Radio Indicator Lights]]<br>[[Редстоун-по-радио цифровой дисплей|Redstone-over-Radio Numeric Display]]<br>[[Редстоун-по-радио график|Redstone-over-Radio Graph]]<br>[[Редстоун-по-радио рычаг|Redstone-over-Radio Lever]]<br>[[Redstone-over-Radio Terminal]]"
 	}
 }

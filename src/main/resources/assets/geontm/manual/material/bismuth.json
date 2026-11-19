@@ -4,10 +4,12 @@
     "trigger": [["geontm:ingot_bismuth"], ["geontm:billet_bismuth"], ["geontm:nugget_bismuth"], ["geontm:powder_bismuth"]],
     "title": {
         "en_us": "Bismuth",
+        "fr_fr": "Bismuth",
 		"ru_ru": "Висмут"
     },
 	"content": {
 		"en_us": "Heavy metal, intially derived from reprocessing spent [[RBMK]] fuel in the [[SILEX]], can also be made from later stage bedrock ore processing using [[high-performance solvent|High-Performance Solvent]]. Primarily used as [[bismuth bronze|Bismuth Bronze]].",
+		"fr_fr": "Métal lourd, obtenu au départ par retraitement du combustible [[RBMK]] usé dans le [[SILEX]] ; peut aussi être produit lors des dernières étapes du traitement du minerai de socle à l'aide de [[solvant haute performance|High-Performance Solvent]]. Utilisé principalement sous forme de [[bronze au bismuth|Bismuth Bronze]].",
 		"ru_ru": "Тяжёлый металл, изначально получаемый при переработке отработавшего топлива [[РБМК|RBMK]] в [[SILEX]], также может быть получен на поздних стадиях переработки руды из коренной породы с использованием [[высокоэффективного растворителя|High-Performance Solvent]]. В основном используется как [[висмутовая бронза|Bismuth Bronze]]."
 	}
 }

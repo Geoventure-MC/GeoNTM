@@ -1,0 +1,21 @@
+{
+	"name": "Vacuum Refinery",
+	"icon": [
+		"geontm:machine_vacuum_distill",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_vacuum_distill"
+		]
+	],
+	"title": {
+		"en_us": "Vacuum Refinery",
+		"fr_fr": "Raffinerie sous vide"
+	},
+	"content": {
+		"en_us": "Splits crude oil into four vacuum fractions: vacuum heavy oil, reformate, vacuum light oil and sour gas. It consumes electricity and oil, which must be supplied under pressure. It is the heart of [[vacuum oil processing|Vacuum Oil Processing]].",
+		"fr_fr": "Sépare le pétrole brut en quatre fractions sous vide : huile lourde sous vide, reformat, huile légère sous vide et gaz acide. Elle consomme de l'électricité et du pétrole, qui doit être fourni sous pression. C'est le cœur du [[raffinage sous vide|Vacuum Oil Processing]]."
+	}
+}

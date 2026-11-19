@@ -14,10 +14,12 @@
 	],
 	"title": {
 		"en_us": "Chicago Pile Control Rod",
+		"fr_fr": "Barre de contrôle de la Pile de Chicago",
 		"ru_ru": "Регулирующие стержни Чикагской поленницы"
 	},
 	"content": {
 		"en_us": "Control rods can be placed on top of the vertically drilled channels of the [[Chicago Pile]]. Control rods, when inserted, will reduce the reactivity between fuel channels. The control rods can be controlled with a redstone signal, causing it to fully withdraw when a signal is supplied, or via [[RoR controller|Redstone-over-Radio Controller]], which allows more precise settings.<br><br>See also:<br>* [[Chicago Pile Fuel Loader]]<br>* [[Chicago Pile Vent]]",
+		"fr_fr": "Les barres de contrôle se placent au-dessus des canaux percés verticalement de la [[Pile de Chicago|Chicago Pile]]. Une fois insérées, elles réduisent la réactivité entre les canaux de combustible. Elles peuvent être commandées par un signal de redstone, qui les retire entièrement tant qu'il est appliqué, ou par un [[contrôleur RoR|Redstone-over-Radio Controller]], qui permet des réglages plus précis.<br><br>Voir aussi :<br>* [[Chargeur de combustible de la Pile de Chicago|Chicago Pile Fuel Loader]]<br>* [[Ventilation de la Pile de Chicago|Chicago Pile Vent]]",
 		"ru_ru": "Регулирующие стержни устанавливаются поверх вертикально просверленных каналов [[Чикагской поленницы|Chicago Pile]]. При погружении регулирующих стержней снижается реактивность между топливными каналами. Стержнями можно управлять с помощью редстоун-сигнала (при подаче сигнала стержень полностью извлекается) или через [[РпР контроллер|Redstone-over-Radio Controller]], что позволяет настраивать их более точно.<br><br>См. также:<br>* [[Загрузчик топлива Чикагской поленницы|Chicago Pile Fuel Loader]]<br>* [[Вентиль Чикагской поленницы|Chicago Pile Vent]]"
 	}
 }

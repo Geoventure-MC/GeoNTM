@@ -1,0 +1,8 @@
+{
+  "type": "geontm:liquefaction",
+  "input": "geomods:crude_oil_bucket",
+  "output": {
+    "type": "geontm:oil",
+    "amount": 1000
+  }
+}

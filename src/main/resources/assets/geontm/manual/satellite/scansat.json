@@ -17,10 +17,12 @@
 	],
 	"title": {
 		"en_us": "Depth Scanning Satellite",
+		"fr_fr": "Satellite de balayage en profondeur",
 		"ru_ru": "Спутник глубинного сканирования"
 	},
 	"content": {
 		"en_us": "The depth scanning satellite is required for the neutrino lens to work. It does not yet have any special interactions with the ground station.<br><br>{{Template:SatOverview}}",
+		"fr_fr": "Le satellite de balayage en profondeur est nécessaire au fonctionnement de la lentille à neutrinos. Il n'a pas encore d'interactions particulières avec la station au sol.<br><br>{{Template:SatOverview}}",
 		"ru_ru": "Спутник глубинного сканирования необходим для работы нейтринной линзы. На данный момент он не имеет никаких особых взаимодействий с наземной станцией.<br><br>{{Template:SatOverview}}"
 	}
 }

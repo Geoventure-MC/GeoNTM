@@ -1,0 +1,21 @@
+{
+	"name": "Excavator",
+	"icon": [
+		"geontm:machine_excavator",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_excavator"
+		]
+	],
+	"title": {
+		"en_us": "Excavator",
+		"fr_fr": "Excavatrice"
+	},
+	"content": {
+		"en_us": "Large mining drill driven by a drill bit. It descends one level at a time, breaking a ring of blocks around the shaft, and stores the collected items in an internal buffer (or a connected container). It needs electricity, and upgrades can widen the ring, wall the hole, vein-mine ores, use silk touch or crush the drops. It can also extract bedrock ore, using the matching drilling fluid.",
+		"fr_fr": "Grande foreuse minière entraînée par une mèche. Elle descend d'un niveau à la fois en brisant un anneau de blocs autour du puits, et stocke les objets récoltés dans un tampon interne (ou un conteneur relié). Elle demande de l'électricité, et des améliorations permettent d'élargir l'anneau, de murer le trou, de miner les filons, d'utiliser le toucher de soie ou de broyer les butins. Elle peut aussi extraire du minerai de roche mère, avec le fluide de forage adapté."
+	}
+}

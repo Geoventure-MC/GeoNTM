@@ -1,0 +1,21 @@
+{
+	"name": "Liquefactor",
+	"icon": [
+		"geontm:machine_liquefactor",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_liquefactor"
+		]
+	],
+	"title": {
+		"en_us": "Liquefactor",
+		"fr_fr": "Machine de liquéfaction industrielle"
+	},
+	"content": {
+		"en_us": "Melts items into fluids using electricity. For example, cobblestone becomes lava. Insert the item and the machine fills its output tank; upgrades speed it up. It is the opposite of the solidifier.",
+		"fr_fr": "Fait fondre des objets en fluides grâce à l'électricité. Par exemple, la pierre taillée devient de la lave. On insère l'objet et la machine remplit son réservoir de sortie ; des améliorations l'accélèrent. C'est l'inverse de la machine de solidification."
+	}
+}

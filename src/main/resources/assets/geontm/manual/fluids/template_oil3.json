@@ -6,10 +6,12 @@
 	"trigger": [],
 	"noindex": true,
 	"title": {
-		"en_us": "Template:Oil3"
+		"en_us": "Template:Oil3",
+		"fr_fr": "Modèle : Pétrole 3"
 	},
 	"content": {
 		"en_us": "§2[ §2Vacuum §2Oil §2Processing §2]<br>[[Vacuum Oil Processing]]<br>[[Vacuum Heavy Oil]]<br>[[Reformate]]<br>[[Vacuum Light Oil]]<br>[[Sour Gas]]<br>[[Heavy Heating Oil]]<br>[[BTX]]<br>[[Reformate Gas]]<br>[[High-Cetane Diesel]]<br>[[High-Cetane Cracked Diesel]]<br>[[Jet Fuel]]<br>[[Hard Plastic]]<br>[[PVC]]",
+		"fr_fr": "§2[ §2Traitement §2du §2pétrole §2sous §2vide §2]<br>[[Traitement du pétrole sous vide|Vacuum Oil Processing]]<br>[[Pétrole lourd sous vide|Vacuum Heavy Oil]]<br>[[Réformat|Reformate]]<br>[[Pétrole léger sous vide|Vacuum Light Oil]]<br>[[Gaz acide|Sour Gas]]<br>[[Fioul lourd|Heavy Heating Oil]]<br>[[BTX]]<br>[[Gaz de réformat|Reformate Gas]]<br>[[Diesel à indice de cétane élevé|High-Cetane Diesel]]<br>[[Diesel craqué à indice de cétane élevé|High-Cetane Cracked Diesel]]<br>[[Carburéacteur|Jet Fuel]]<br>[[Plastique dur|Hard Plastic]]<br>[[PVC]]",
 		"ru_ru": "§2[ §2Вакуумная §2нефтяная §2обработка §2]<br>[[Вакуумная нефтепереработка|Vacuum Oil Processing]]<br>[[Вакуумная тяжёлая нефть|Vacuum Heavy Oil]]<br>[[Реформированное топливо|Reformate]]<br>[[Вакуумная лёгкая нефть|Vacuum Light Oil]]<br>[[Кислый газ|Sour Gas]]<br>[[Тяжёлый мазут|Heavy Heating Oil]]<br>[[БТК|BTX]]<br>[[Реформированный газ|Reformate Gas]]<br>[[Высокоцетановый дизель|High-Cetane Diesel]]<br>[[Высокоцетановый крекированный дизель|High-Cetane Cracked Diesel]]<br>[[Авиационное топливо|Jet Fuel]]<br>[[Твёрдый пластик|Hard Plastic]]<br>[[ПВХ|PVC]]"
 	}
 }

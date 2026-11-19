@@ -1,0 +1,21 @@
+{
+	"name": "Exposure Chamber",
+	"icon": [
+		"geontm:machine_exposure_chamber",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_exposure_chamber"
+		]
+	],
+	"title": {
+		"en_us": "Exposure Chamber",
+		"fr_fr": "Chambre d'exposition"
+	},
+	"content": {
+		"en_us": "Exposes items to particles to transform them. For example, a Higgs particle with a uranium ingot gives a schraranium ingot. Each recipe has a duration and an electricity cost, and the machine needs power to run.",
+		"fr_fr": "Expose des objets à des particules pour les transformer. Par exemple, une particule de Higgs avec un lingot d'uranium donne un lingot de schraranium. Chaque recette a une durée et un coût en électricité, et la machine doit être alimentée pour fonctionner."
+	}
+}

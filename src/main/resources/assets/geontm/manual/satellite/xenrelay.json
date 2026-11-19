@@ -17,10 +17,12 @@
 	],
 	"title": {
 		"en_us": "Xenium Resonator Satellite",
+		"fr_fr": "Satellite à résonateur Xénium",
 		"ru_ru": "Спутник с Зен-резонатором"
 	},
 	"content": {
 		"en_us": "The xenium resonator allows teleportation within the same dimension. It can be controlled either with a satellite designator or the satellite laser designator. When using the satellite designator, the Y value can be omitted, which will default it to surface level.<br><br>{{Template:SatOverview}}",
+		"fr_fr": "Le résonateur Xénium permet la téléportation au sein d'une même dimension. Il peut être commandé soit avec un désignateur de satellite, soit avec le désignateur laser de satellite. Avec le désignateur de satellite, la valeur Y peut être omise, auquel cas elle prend par défaut le niveau de la surface.<br><br>{{Template:SatOverview}}",
 		"ru_ru": "Спутник с Зен-резонатором позволяет телепортироваться в пределах одного и того же измерения. Им можно управлять как с помощью спутникового целеуказателя, так и с помощью спутникового лазерного целеуказателя. При использовании спутникового целеуказателя значение Y можно опустить, по умолчанию оно будет установлено на уровень поверхности.<br><br>{{Template:SatOverview}}"
 	}
 }

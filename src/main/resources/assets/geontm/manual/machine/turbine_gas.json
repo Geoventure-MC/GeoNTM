@@ -1,0 +1,21 @@
+{
+	"name": "Gas Turbine",
+	"icon": [
+		"geontm:machine_turbine_gas",
+		1,
+		0
+	],
+	"trigger": [
+		[
+			"geontm:machine_turbine_gas"
+		]
+	],
+	"title": {
+		"en_us": "Gas Turbine",
+		"fr_fr": "Turbine à gaz"
+	},
+	"content": {
+		"en_us": "Slow-starting generator that burns a gaseous fuel to produce electricity. It uses a lubricant tank, and a heat exchanger turns water into dense steam. Ignition is done from its menu, and an automatic mode can follow the load.",
+		"fr_fr": "Générateur à démarrage lent qui brûle un carburant gazeux pour produire de l'électricité. Il utilise un réservoir de lubrifiant, et un échangeur de chaleur transforme l'eau en vapeur dense. L'allumage se fait depuis son menu, et un mode automatique peut suivre la charge."
+	}
+}
