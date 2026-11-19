@@ -1,0 +1,14 @@
+{
+ "recipes": [
+  "geontm:anvil_construction/missile_doomsday",
+  "geontm:arc_welder/missile_nuclear_cluster",
+  "geontm:arc_welder/missile_volcano",
+  "geontm:assembly_machine/mpw10taint",
+  "geontm:assembly_machine/mpw15bf",
+  "geontm:assembly_machine/mpw15n2",
+  "geontm:assembly_machine/warheadthermonuke",
+  "geontm:missile_bhole",
+  "geontm:missile_schrabidium",
+  "geontm:missile_taint"
+ ]
+}

@@ -1,3 +1,14 @@
+missile_bhole
+missile_doomsday
+missile_doomsday_rusted
+missile_n2
+missile_nuclear_cluster
+missile_schrabidium
+missile_taint
+missile_volcano
+mp_warhead_10_taint
+mp_warhead_15_balefire
+mp_warhead_15_n2
 rbmk_pellet_balefire_e0
 rbmk_pellet_balefire_e0_xe
 rbmk_pellet_balefire_e1
@@ -318,3 +329,9 @@ rbmk_pellet_zfb_pu241_e3
 rbmk_pellet_zfb_pu241_e3_xe
 rbmk_pellet_zfb_pu241_e4
 rbmk_pellet_zfb_pu241_e4_xe
+warhead_mirv
+warhead_mirvlet
+warhead_n2
+warhead_thermo_endo
+warhead_thermo_exo
+warhead_volcano

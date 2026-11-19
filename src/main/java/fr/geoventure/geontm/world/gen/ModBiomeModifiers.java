@@ -96,11 +96,11 @@ public final class ModBiomeModifiers {
 
     /**
      * Génération retenue pour Geoventure : les minerais courants viennent de GeoMods. Seuls restent les trois ajouts
-     * naturels et les cratères radioactifs ; les matières rares seront placées dans l'espace.
+     * naturels ; aucun cratère radioactif naturel, seules les frappes en créent. Les matières rares sont dans l'espace.
      */
     private static final java.util.Set<String> FEATURES_GARDEES = java.util.Set.of(
             "ore_beryllium", "ore_beryllium_deepslate", "ore_thorium", "ore_thorium_deepslate",
-            "ore_depth_zirconium", "sellafield_crater");
+            "ore_depth_zirconium");
 
     private ModBiomeModifiers() {}
 

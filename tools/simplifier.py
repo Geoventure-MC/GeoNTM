@@ -16,6 +16,10 @@ SORTIE = RACINE / 'src/main/resources/geontm/perimetre/simplifie.txt'
 DOC = RACINE / 'docs/perimetre/simplification.md'
 SOURCES = [(RACINE / 'src/generated/data/pack/data/geontm/recipe', '*.json'),
            (RACINE / 'src/main/java/fr/geoventure/geontm/inventory/recipes', '*.java')]
+# Décision du propriétaire : ces objets restent dans le mod, sans recette ni présence dans les listes.
+EXTREMES = '''missile_doomsday missile_doomsday_rusted missile_schrabidium missile_n2 missile_bhole missile_taint
+missile_volcano missile_nuclear_cluster warhead_mirv warhead_mirvlet warhead_n2 warhead_thermo_endo warhead_thermo_exo
+warhead_volcano mp_warhead_15_n2 mp_warhead_10_taint mp_warhead_15_balefire'''.split()
 REGLES = {
     'pastilles RBMK par usure': re.compile(r'^rbmk_pellet_.+(_e[0-9](_xe)?|_xe)$'),
     'combustibles usés': re.compile(r'^(pwr_fuel|rbmk_fuel|watz_pellet)_depleted(_|$)|^pwr_fuel_.*_depleted$'),
@@ -41,12 +45,13 @@ def main():
         trouves = {i for i in a_simplifier & visibles if regle.search(i)}
         masques[nom] = sorted(trouves - cites)
         gardes[nom] = len(trouves & cites)
-    tous = sorted({i for v in masques.values() for i in v})
+    tous = sorted({i for v in masques.values() for i in v} | set(EXTREMES))
     SORTIE.write_text('\n'.join(tous) + '\n', encoding='utf-8', newline='\n')
     lignes = ['# Simplification du créatif et de JEI', '', 'Fichier généré par `tools/simplifier.py`. '
               'Les objets masqués restent dans le jeu.', '', '| Règle | Masqués | Gardés car cités par une recette |',
               '|---|---|---|']
     lignes += [f'| {n} | {len(masques[n])} | {gardes[n]} |' for n in REGLES]
+    lignes.append(f'| armes extrêmes, sans recette | {len(EXTREMES)} | 0 |')
     DOC.write_text('\n'.join(lignes) + '\n', encoding='utf-8', newline='\n')
     print(len(tous), 'objets masqués sur', len(visibles), {n: (len(masques[n]), gardes[n]) for n in REGLES})
 

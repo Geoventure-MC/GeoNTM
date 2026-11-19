@@ -4,12 +4,13 @@ Rien de cette liste n'est lancé sans l'accord du propriétaire. GeoNTM n'est au
 
 ## Décisions du propriétaire
 
-- [ ] Les 42 objets `A_DECIDER` de `docs/perimetre/contenu.csv`, dont `missile_micro` et `missile_nuclear`.
-- [ ] Les cratères radioactifs : les garder dans le monde ou non.
-- [ ] Les ogives N2, Taint et Balefire, aujourd'hui classées en butin de guerre.
-- [ ] Le remplacement de Ballistix : GeoNTM ne doit pas arriver à côté de lui sans choix clair.
-- [ ] Le style des interfaces, après avoir vu les écrans en jeu.
-- [ ] Le monde visé : nouvelle saison ou monde existant.
+- [x] Missiles : tous gardés ; les plus extrêmes n'ont ni recette ni présence dans les listes (`tools/simplifier.py`).
+- [ ] Les autres objets `A_DECIDER` de `docs/perimetre/contenu.csv` : drones et machines.
+- [x] Cratères radioactifs : aucun cratère naturel, seulement ceux créés par une frappe.
+- [x] Ogives N2, Taint et Balefire : gardées sans recette.
+- [x] Ballistix : à remplacer par GeoNTM une fois la guerre validée.
+- [x] Interfaces : images NTM gardées, couche Geoventure sur une dizaine d'écrans principaux, à valider à l'œil.
+- [x] Monde : sortie avec une nouvelle saison.
 
 ## Preuves à obtenir sur le serveur de test
 
