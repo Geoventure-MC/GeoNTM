@@ -221,6 +221,7 @@ public final class MainRegistry {
         WeaponConfig.loadFromConfig(config);
         MobConfig.loadFromConfig(config);
         StructureConfig.loadFromConfig(config);
+        fr.geoventure.geontm.pont.ReglagesGeoventure.appliquer();
 
         config.save();
     }
