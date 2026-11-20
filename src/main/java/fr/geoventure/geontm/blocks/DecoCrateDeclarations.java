@@ -137,7 +137,7 @@ public final class DecoCrateDeclarations {
         shaped(NS, "rad_absorber_green", "geontm:rad_absorber_green", rows("ICI", "CPC", "ICI"),
                 "I", TagIds.ingots_any_plastic, "C", ItemIds.powder_desh_mix, "P", "geontm:rad_absorber_red");
         shaped(NS, "rad_absorber_pink", "geontm:rad_absorber_pink", rows("ICI", "CPC", "ICI"),
-                "I", TagIds.ingots_saturnite, "C", ItemIds.powder_nitan_mix, "P", "geontm:rad_absorber_green");
+                "I", TagIds.ingots_ostrum, "C", ItemIds.powder_nitan_mix, "P", "geontm:rad_absorber_green");
         shaped(NS, "decon", ItemIds.decon, rows("BGB", "SAS", "BSB"),
                 "B", "#c:ingots/beryllium", "G", VanillaIds.iron_bars, "S", "#c:ingots/steel", "A", "geontm:rad_absorber");
         shaped(NS, "deco_emitter", "geontm:deco_emitter", rows("IDI", "DRD", "IDI"),

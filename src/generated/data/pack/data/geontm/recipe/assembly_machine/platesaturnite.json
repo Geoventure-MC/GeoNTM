@@ -3,11 +3,11 @@
   "name": "ass.platesaturnite",
   "input_items": [
     {
-      "ingredient": "#c:ingots/saturnite"
+      "ingredient": "#c:ingots/ostrum"
     }
   ],
   "output_items": [
-    "geontm:plate_saturnite"
+    "ad_astra:ostrum_plate"
   ],
   "duration": 60,
   "power": 100,

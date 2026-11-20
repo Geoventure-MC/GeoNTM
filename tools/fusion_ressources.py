@@ -47,7 +47,9 @@ def table_geomods():
         if m:
             table[f'{FORMES[m[2]]}/{SYNONYMES.get(m[1], m[1])}'] = 'geomods:' + nom
     table.update({'ingots/desh': 'ad_astra:desh_ingot', 'nuggets/desh': 'ad_astra:desh_nugget',
-                  'plates/desh': 'ad_astra:desh_plate', 'storage_blocks/desh': 'ad_astra:desh_block'})
+                  'plates/desh': 'ad_astra:desh_plate', 'storage_blocks/desh': 'ad_astra:desh_block',
+                  'ingots/ostrum': 'ad_astra:ostrum_ingot', 'plates/ostrum': 'ad_astra:ostrum_plate',
+                  'storage_blocks/ostrum': 'ad_astra:ostrum_block'})
     return table
 
 

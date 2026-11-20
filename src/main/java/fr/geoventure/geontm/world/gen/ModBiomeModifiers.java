@@ -159,10 +159,12 @@ public final class ModBiomeModifiers {
         espace();
     }
 
-    /** Matières rares : le desh vient de la Lune d'Ad Astra, les autres sont ajoutées ici. */
+    /**
+     * Matières rares, une par planète : desh (Lune), ostrum (Mars) et calorite (Vénus) viennent d'Ad Astra, qui les
+     * génère lui-même ; seuls le starmetal (Glacio) et le schrabidium (Mercure) sont ajoutés ici. La saturnite est
+     * fusionnée dans l'ostrum : le minerai {@code ore_mars_saturnite} reste enregistré mais ne se génère plus.
+     */
     private static void espace() {
-        espace("espace_saturnite", "geontm:ore_mars_saturnite", "ad_astra:mars_stone_replaceables", 4, 5,
-                "ad_astra:martian_wastelands", "ad_astra:martian_canyon_creek", "ad_astra:martian_polar_caps");
         espace("espace_starmetal", "geontm:ore_glacio_starmetal", "ad_astra:glacio_stone_replaceables", 3, 5,
                 "ad_astra:glacio_snowy_barrens", "ad_astra:glacio_ice_peaks");
         espace("espace_schrabidium", "geontm:ore_schrabidium", "ad_astra:mercury_stone_replaceables", 2, 4,

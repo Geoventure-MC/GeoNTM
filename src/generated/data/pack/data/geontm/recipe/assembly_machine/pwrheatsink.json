@@ -3,8 +3,7 @@
   "name": "ass.pwrheatsink",
   "input_items": [
     {
-      "material": "saturnite",
-      "shape": "castplate",
+      "ingredient": "#c:plates/ostrum",
       "count": 4
     },
     {
@@ -27,8 +26,7 @@
   "order": 45312,
   "input_items_expensive": [
     {
-      "material": "saturnite",
-      "shape": "castplate",
+      "ingredient": "#c:plates/ostrum",
       "count": 4
     },
     {

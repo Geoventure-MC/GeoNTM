@@ -633,6 +633,7 @@ public final class TagIds {
     public static final String ingots_netherite = "#c:ingots/netherite";
     public static final String ingots_niobium = "#c:ingots/niobium";
     public static final String ingots_osmiridium = "#c:ingots/osmiridium";
+    public static final String ingots_ostrum = "#c:ingots/ostrum";
     public static final String ingots_pb209 = "#c:ingots/pb209";
     public static final String ingots_pc = "#c:ingots/pc";
     public static final String ingots_phosphorus = "#c:ingots/phosphorus";
@@ -1090,6 +1091,7 @@ public final class TagIds {
     public static final String plates_kevlar = "#c:plates/kevlar";
     public static final String plates_lead = "#c:plates/lead";
     public static final String plates_mixed = "#c:plates/mixed";
+    public static final String plates_ostrum = "#c:plates/ostrum";
     public static final String plates_paa = "#c:plates/paa";
     public static final String plates_polymer = "#c:plates/polymer";
     public static final String plates_saturnite = "#c:plates/saturnite";
@@ -1239,6 +1241,7 @@ public final class TagIds {
     public static final String storage_blocks_netherite = "#c:storage_blocks/netherite";
     public static final String storage_blocks_niobium = "#c:storage_blocks/niobium";
     public static final String storage_blocks_niter = "#c:storage_blocks/niter";
+    public static final String storage_blocks_ostrum = "#c:storage_blocks/ostrum";
     public static final String storage_blocks_phosphorus = "#c:storage_blocks/phosphorus";
     public static final String storage_blocks_plutonium = "#c:storage_blocks/plutonium";
     public static final String storage_blocks_polonium = "#c:storage_blocks/polonium";

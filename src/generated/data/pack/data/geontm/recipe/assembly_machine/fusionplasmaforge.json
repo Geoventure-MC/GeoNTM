@@ -18,6 +18,10 @@
     {
       "ingredient": "geontm:circuit_bismoid",
       "count": 4
+    },
+    {
+      "ingredient": "ad_astra:calorite_ingot",
+      "count": 16
     }
   ],
   "output_items": [
@@ -46,6 +50,10 @@
     {
       "ingredient": "geontm:item_expensive_computer",
       "count": 4
+    },
+    {
+      "ingredient": "ad_astra:calorite_ingot",
+      "count": 16
     }
   ],
   "blueprint_pools_528": [

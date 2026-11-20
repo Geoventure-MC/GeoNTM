@@ -12,7 +12,7 @@
       "count": 2
     },
     {
-      "ingredient": "#c:ingots/saturnite",
+      "ingredient": "#c:ingots/ostrum",
       "count": 2
     },
     {
@@ -42,8 +42,7 @@
       "count": 8
     },
     {
-      "material": "saturnite",
-      "shape": "castplate",
+      "ingredient": "#c:plates/ostrum",
       "count": 3
     },
     {

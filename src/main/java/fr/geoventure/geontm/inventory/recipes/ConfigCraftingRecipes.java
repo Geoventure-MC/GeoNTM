@@ -99,7 +99,7 @@ public final class ConfigCraftingRecipes {
         plate("plate_lead", ItemIds.plate_lead, TagIds.ingots_lead);
         plate("plate_steel", ItemIds.plate_steel, TagIds.ingots_steel);
         plate("plate_schrabidium", ItemIds.plate_schrabidium, TagIds.ingots_schrabidium);
-        plate("plate_saturnite", ItemIds.plate_saturnite, TagIds.ingots_saturnite);
+        plate("plate_saturnite", ItemIds.plate_saturnite, TagIds.ingots_ostrum);
         plate("plate_combine_steel", ItemIds.plate_combine_steel, TagIds.ingots_combine_steel);
         plate("neutron_reflector", ItemIds.neutron_reflector, TagIds.ingots_tungsten);
 

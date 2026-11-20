@@ -2,8 +2,8 @@
   "type": "geontm:press",
   "stamp": "plate",
   "input": {
-    "ingredient": "#c:ingots/saturnite"
+    "ingredient": "#c:ingots/ostrum"
   },
-  "output": "geontm:plate_saturnite",
+  "output": "ad_astra:ostrum_plate",
   "order": 22
 }

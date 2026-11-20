@@ -1292,7 +1292,6 @@ machine_drain
 machine_flare
 machine_funnel
 machine_furnace_brick_off
-machine_furnace_combination
 machine_hephaestus
 machine_industrial_generator
 machine_intake
@@ -1305,9 +1304,7 @@ machine_obj_context_base
 machine_obj_context_legacy
 machine_orbus
 machine_ore_slopper
-machine_precass
 machine_puf6_tank
-machine_pyrooven
 machine_reactor
 machine_reactor_small
 machine_rtg_furnace_off
@@ -1315,7 +1312,6 @@ machine_sawmill
 machine_schrabidium_battery
 machine_siren
 machine_stirling_creative
-machine_supercomputer
 machine_tape_drive
 machine_teleporter
 machine_thresher

@@ -257,14 +257,12 @@ public final class ExplosionNukeGeneric {
             // 1.7 Material.wood and isOpaqueCube; the bass instrument is the modern wood marker (as in solinium)
             set(gate, world, pos, ModBlocks.waste_planks.get());
         } else if (b == ModNuclearBlocks.ore_uranium.get()) {
-            set(gate, world, pos, random.nextInt(getSchrabOreChance()) == 1
-                    ? ModBlocks.ore_schrabidium.get() : ModNuclearBlocks.ore_uranium_scorched.get());
+            // le schrabidium est réservé à Mercure : les retombées ne le créent plus (voir getSchrabOreChance)
+            set(gate, world, pos, ModNuclearBlocks.ore_uranium_scorched.get());
         } else if (b == ModNuclearBlocks.ore_nether_uranium.get()) {
-            set(gate, world, pos, random.nextInt(getSchrabOreChance()) == 1
-                    ? ModBlocks.ore_nether_schrabidium.get() : ModNuclearBlocks.ore_nether_uranium_scorched.get());
+            set(gate, world, pos, ModNuclearBlocks.ore_nether_uranium_scorched.get());
         } else if (b == ModNuclearBlocks.ore_gneiss_uranium.get()) {
-            set(gate, world, pos, random.nextInt(getSchrabOreChance()) == 1
-                    ? ModBlocks.ore_gneiss_schrabidium.get() : ModNuclearBlocks.ore_gneiss_uranium_scorched.get());
+            set(gate, world, pos, ModNuclearBlocks.ore_gneiss_uranium_scorched.get());
         }
     }
 

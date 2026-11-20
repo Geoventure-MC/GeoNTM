@@ -6,7 +6,7 @@
     "ingredient": "geontm:anvil_lead"
   },
   "right": {
-    "ingredient": "#c:ingots/saturnite",
+    "ingredient": "#c:ingots/ostrum",
     "count": 10
   },
   "order": 11

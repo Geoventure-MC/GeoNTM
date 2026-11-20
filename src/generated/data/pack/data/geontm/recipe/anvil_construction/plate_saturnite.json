@@ -2,12 +2,12 @@
   "type": "geontm:anvil_construction",
   "inputs": [
     {
-      "ingredient": "#c:ingots/saturnite"
+      "ingredient": "#c:ingots/ostrum"
     }
   ],
   "outputs": [
     {
-      "id": "geontm:plate_saturnite"
+      "id": "ad_astra:ostrum_plate"
     }
   ],
   "tier": 3,

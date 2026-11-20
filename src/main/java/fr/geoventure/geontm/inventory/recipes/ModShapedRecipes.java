@@ -112,7 +112,7 @@ public final class ModShapedRecipes {
         shaped(NS, "arc_electrode_lanthanium", ItemIds.arc_electrode_lanthanium, rows("C", "T", "C"),
                 "C", TagIds.ingots_lanthanium, "T", VanillaIds.brick);
         shaped(NS, "arc_electrode_saturnite", ItemIds.arc_electrode_saturnite, rows("C", "T", "C"),
-                "C", TagIds.ingots_saturnite, "T", TagIds.ingots_niobium);
+                "C", TagIds.ingots_ostrum, "T", TagIds.ingots_niobium);
         shaped(NS, "armor_battery", ItemIds.armor_battery, rows("PWP", "PCP", "PWP"),
                 "P", TagIds.plates_steel, "C", ItemIds.capacitor_gold, "W", TagIds.wires_dense_red_copper);
         shaped(NS, "armor_battery_mk2", ItemIds.armor_battery_mk2, rows("PWP", "PCP", "PWP"),
@@ -140,7 +140,7 @@ public final class ModShapedRecipes {
         shaped(NS, "barbed_wire_wither", ItemIds.barbed_wire_wither, 8, rows("BBB", "BIB", "BBB"),
                 "B", ItemIds.barbed_wire, "I", VanillaIds.wither_skeleton_skull);
         shaped(NS, "barrel_antimatter", ItemIds.barrel_antimatter, rows("IPI", "I I", "IPI"),
-                "I", TagIds.plates_saturnite, "P", TagIds.wires_dense_bscco);
+                "I", TagIds.plates_ostrum, "P", TagIds.wires_dense_bscco);
         shaped(NS, "barrel_plastic", ItemIds.barrel_plastic, rows("IPI", "I I", "IPI"),
                 "I", ItemIds.plate_polymer, "P", TagIds.plates_aluminium);
         shaped(NS, "barrel_steel", ItemIds.barrel_steel, rows("IPI", "I I", "IPI"),
@@ -156,10 +156,10 @@ public final class ModShapedRecipes {
                 "W", TagIds.wires_dense_magnetized_tungsten, "D", ItemIds.plate_dineutronium,
                 "S", ItemIds.powder_spark_mix);
         shaped(NS, "battery_trixite", ItemIds.battery_trixite, rows(" W ", "DSD", "DTD"),
-                "W", TagIds.wires_dense_magnetized_tungsten, "D", TagIds.plates_cast_saturnite,
+                "W", TagIds.wires_dense_magnetized_tungsten, "D", TagIds.plates_ostrum,
                 "S", ItemIds.powder_power, "T", ItemIds.crystal_trixite);
         shaped(NS, "battery_trixite_1", ItemIds.battery_trixite, rows(" W ", "DTD", "DSD"),
-                "W", TagIds.wires_dense_magnetized_tungsten, "D", TagIds.plates_cast_saturnite,
+                "W", TagIds.wires_dense_magnetized_tungsten, "D", TagIds.plates_ostrum,
                 "S", ItemIds.powder_power, "T", ItemIds.crystal_trixite);
         shaped(NS, "billet_actinium", ItemIds.billet_actinium, rows("###", "###"), "#", ItemIds.nugget_actinium);
         shaped(NS, "billet_am241", ItemIds.billet_am241, rows("###", "###"), "#", ItemIds.nugget_am241);
@@ -559,7 +559,7 @@ public final class ModShapedRecipes {
         shaped(NS, "custom_euph", ItemIds.custom_euph, rows(" C ", "LUL", "LUL"),
                 "C", TagIds.plates_copper, "L", TagIds.plates_lead, "U", TagIds.ingots_euphemium);
         shaped(NS, "custom_fall", ItemIds.custom_fall, rows("IIP", "CHW", "IIP"),
-                "I", TagIds.ingots_any_rubber, "P", TagIds.plates_saturnite, "C", ItemIds.circuit_advanced,
+                "I", TagIds.ingots_any_rubber, "P", TagIds.plates_ostrum, "C", ItemIds.circuit_advanced,
                 "H", TagIds.shells_steel, "W", ItemIds.coil_copper);
         shaped(NS, "custom_nuke", ItemIds.custom_nuke, rows(" C ", "LUL", "LUL"),
                 "C", TagIds.plates_copper, "L", TagIds.plates_lead, "U", TagIds.ingots_u235);
@@ -924,13 +924,13 @@ public final class ModShapedRecipes {
                 "D", ItemIds.ducttape, "P", TagIds.plates_iron, "S", TagIds.storage_blocks_steel);
         shaped(NS, "insert_xsapi", ItemIds.insert_xsapi, rows("PKP", "DSD", "PKP"),
                 "P", TagIds.ingots_asbestos, "K", ItemIds.insert_esapi, "D", ItemIds.ducttape,
-                "S", TagIds.plates_saturnite);
+                "S", TagIds.plates_ostrum);
         shaped(NS, "insert_yharonite", ItemIds.insert_yharonite, rows("YIY", "IYI", "YIY"),
                 "Y", ItemIds.billet_yharonite, "I", ItemIds.insert_du);
         shaped(NS, "iv_empty", ItemIds.iv_empty, 4, rows("S", "I", "S"),
                 "S", TagIds.ingots_any_rubber, "I", TagIds.plates_iron);
         shaped(NS, "jetpack_boost", ItemIds.jetpack_boost, rows("PCP", "DJD", "PAP"),
-                "C", ItemIds.circuit_advanced, "P", TagIds.plates_saturnite, "D", TagIds.ingots_desh,
+                "C", ItemIds.circuit_advanced, "P", TagIds.plates_ostrum, "D", TagIds.ingots_desh,
                 "J", ItemIds.jetpack_vector, "A", TagIds.plates_cast_copper);
         shaped(NS, "jetpack_break", ItemIds.jetpack_break, rows("ICI", "TJT", "I I"),
                 "C", ItemIds.circuit_basic, "T", ItemIds.ingot_dura_steel, "J", ItemIds.jetpack_fly,
@@ -1131,7 +1131,7 @@ public final class ModShapedRecipes {
         shaped(NS, "padlock_rusty", ItemIds.padlock_rusty, rows("I", "B", "I"),
                 "I", TagIds.ingots_iron, "B", TagIds.bolts_steel);
         shaped(NS, "padlock_unbreakable", ItemIds.padlock_unbreakable, rows(" P ", "PBP", "PDP"),
-                "P", TagIds.plates_saturnite, "D", TagIds.gems_diamond, "B", TagIds.bolts_dura_steel);
+                "P", TagIds.plates_ostrum, "D", TagIds.gems_diamond, "B", TagIds.bolts_dura_steel);
         shaped(NS, "paper", VanillaIds.paper, 3, rows("SSS"), "S", ItemIds.powder_sawdust);
         shaped(NS, "part_generic_piston_electric", ItemIds.part_generic_piston_electric, 4, rows(" I ", "CPC", " I "),
                 "I", TagIds.ingots_any_resistant_alloy, "C", TagIds.ingots_any_plastic, "P", ItemIds.motor);
@@ -1450,7 +1450,7 @@ public final class ModShapedRecipes {
                 "X", ItemIds.plate_dineutronium, "A", ItemIds.singularity_counter_resonant,
                 "B", ItemIds.singularity_super_heated, "C", ItemIds.black_hole);
         shaped(NS, "singularity_super_heated", ItemIds.singularity_super_heated, rows("CTC", "TST", "CTC"),
-                "C", TagIds.plates_saturnite, "T", ItemIds.powder_power, "S", ItemIds.singularity);
+                "C", TagIds.plates_ostrum, "T", ItemIds.powder_power, "S", ItemIds.singularity);
         shaped(NS, "siphon", ItemIds.siphon, rows(" GR", " GR", " G "),
                 "G", VanillaIds.glass, "R", TagIds.ingots_any_rubber);
         shaped(NS, "solar_mirror", ItemIds.solar_mirror, 3, rows("AAA", " B ", "SSS"),
@@ -1615,7 +1615,7 @@ public final class ModShapedRecipes {
         shaped(NS, "upgrade_ejector_2", ItemIds.upgrade_ejector_2, rows(" C ", "PUP", " C "),
                 "C", ItemIds.plate_gold, "P", ItemIds.motor, "U", ItemIds.upgrade_ejector_1);
         shaped(NS, "upgrade_ejector_3", ItemIds.upgrade_ejector_3, rows(" C ", "PUP", " C "),
-                "C", ItemIds.plate_saturnite, "P", ItemIds.motor, "U", ItemIds.upgrade_ejector_2);
+                "C", TagIds.plates_ostrum, "P", ItemIds.motor, "U", ItemIds.upgrade_ejector_2);
         shaped(NS, "upgrade_gc_speed", ItemIds.upgrade_gc_speed, rows("GNG", "RUR", "GMG"),
                 "R", TagIds.ingots_rubber, "M", ItemIds.motor, "G", ItemIds.coil_gold, "N", TagIds.ingots_niobium,
                 "U", ItemIds.upgrade_template);

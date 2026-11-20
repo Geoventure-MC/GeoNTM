@@ -18,6 +18,10 @@
       "material": "steel",
       "shape": "pipe",
       "count": 4
+    },
+    {
+      "ingredient": "ad_astra:calorite_ingot",
+      "count": 12
     }
   ],
   "output_items": [

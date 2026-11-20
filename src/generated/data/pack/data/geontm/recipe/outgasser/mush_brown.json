@@ -1,0 +1,14 @@
+{
+  "type": "geontm:outgasser",
+  "name": "outgasser.mush_brown",
+  "input_items": [
+    {
+      "ingredient": "minecraft:brown_mushroom"
+    }
+  ],
+  "output_items": [
+    "geontm:mush"
+  ],
+  "duration": 10000,
+  "order": 10
+}

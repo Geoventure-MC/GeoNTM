@@ -84,7 +84,7 @@ public final class CraftingRecipesGenerated {
         shaped(NS, "vent_chlorine", ItemIds.vent_chlorine, rows("IGI", "ICI", "IDI"),
                 "C", ItemIds.pellet_gas, "D", VanillaIds.dispenser, "G", VanillaIds.iron_bars, "I", TagIds.plates_iron);
         shaped(NS, "vent_chlorine_seal", ItemIds.vent_chlorine_seal, rows("ISI", "SCS", "ISI"),
-                "C", ItemIds.chlorine_pinwheel, "I", TagIds.ingots_saturnite, "S", TagIds.ingots_starmetal);
+                "C", ItemIds.chlorine_pinwheel, "I", TagIds.ingots_ostrum, "S", TagIds.ingots_starmetal);
         shaped(NS, "casing_bag", ItemIds.casing_bag, rows(" L ", "LGL", " L "),
                 "G", TagIds.plates_gunmetal, "L", VanillaIds.leather);
         shaped(NS, "casing_bag_1", ItemIds.casing_bag, rows(" L ", "LGL", " L "),
@@ -196,7 +196,7 @@ public final class CraftingRecipesGenerated {
         shaped(NS, "gun_laser_pistol_pew_pew", ItemIds.gun_laser_pistol_pew_pew, rows(" M ", "MPM", " M "),
                 "M", TagIds.mechanisms_saturnite, "P", ItemIds.gun_laser_pistol);
         shaped(NS, "gun_fatman", ItemIds.gun_fatman, rows("PPP", "BSR", "G M"),
-                "B", TagIds.barrels_heavy_saturnite, "G", TagIds.grips_any_hardplastic, "M", TagIds.mechanisms_saturnite, "P", TagIds.plates_saturnite, "R", TagIds.receivers_heavy_saturnite, "S", TagIds.shells_saturnite);
+                "B", TagIds.barrels_heavy_saturnite, "G", TagIds.grips_any_hardplastic, "M", TagIds.mechanisms_saturnite, "P", TagIds.plates_ostrum, "R", TagIds.receivers_heavy_saturnite, "S", TagIds.shells_saturnite);
         shaped(NS, "gun_tau", ItemIds.gun_tau, rows(" RD", "CTT", "GMS"),
                 "C", TagIds.pipes_copper, "D", ItemIds.circuit_bismoid, "G", TagIds.grips_any_hardplastic, "M", TagIds.mechanisms_saturnite, "R", TagIds.receivers_light_saturnite, "S", TagIds.stocks_any_hardplastic, "T", ItemIds.coil_copper_torus);
         shaped(NS, "gun_charge_thrower", ItemIds.gun_charge_thrower, rows("MMM", "BBL", "GG "),

@@ -33,7 +33,7 @@ MACHINES = {
     'assembly_machine': ['machine_assembly_machine', 'machine_assembly_factory'],
     'blast_furnace': ['machine_difurnace_off', 'machine_difurnace_rtg_off'], 'breeder': ['machine_reactor_breeding'],
     'centrifuge': ['machine_centrifuge'], 'chemical_plant': ['machine_chemical_plant', 'machine_chemical_factory'],
-    'coker': ['machine_coker'], 'combination': ['furnace_combination'], 'compressor': ['machine_compressor',
+    'coker': ['machine_coker'], 'combination': ['machine_furnace_combination'], 'compressor': ['machine_compressor',
                                                                                    'machine_compressor_compact'],
     'cracking': ['machine_catalytic_cracker'], 'crucible': ['machine_crucible'], 'crystallizer': ['machine_crystallizer'],
     'cyclotron': ['machine_cyclotron'], 'difurnace': ['machine_difurnace_off'],

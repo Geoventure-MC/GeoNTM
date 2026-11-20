@@ -223,11 +223,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "geontm:crystal_starmetal",
-          "weight": 1
-        },
-        {
-          "type": "minecraft:item",
           "name": "geontm:crystal_lithium",
           "weight": 4,
           "functions": [

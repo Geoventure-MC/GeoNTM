@@ -9,6 +9,7 @@ import static fr.geoventure.geocore.dejson.Crafting.rows;
 import static fr.geoventure.geocore.dejson.Crafting.shaped;
 import static fr.geoventure.geocore.dejson.Crafting.shapeless;
 import static fr.geoventure.geocore.dejson.Crafting.stack;
+import static fr.geoventure.geocore.dejson.Crafting.whenModLoaded;
 
 /**
  * Every shapeless geontm recipe, declared through GeoCore's {@code dejson} vocabulary.
@@ -41,6 +42,7 @@ public final class ModShapelessRecipes {
         shapeless3();
         shapeless4();
         billets();
+        ostrum();
     }
 
     /**
@@ -81,6 +83,16 @@ public final class ModShapelessRecipes {
             shapeless(NS, "billet_" + material + "_to_ingots", ingot, 2, billet, billet, billet);
             shaped(NS, "billet_" + material + "_from_ingots", billet, 3, rows("##"), "#", ingot);
         }
+    }
+
+    /**
+     * La saturnite est fusionnée dans l'ostrum d'Ad Astra : les stocks existants (lingots, plaques, blocs) se convertissent
+     * en objets d'Ad Astra, qui servent à ses fusées. Les recettes GeoNTM acceptent déjà la saturnite via les tags ostrum.
+     */
+    private static void ostrum() {
+        whenModLoaded(shapeless(NS, "ingot_saturnite_to_ostrum", "ad_astra:ostrum_ingot", ItemIds.ingot_saturnite), "ad_astra");
+        whenModLoaded(shapeless(NS, "plate_saturnite_to_ostrum", "ad_astra:ostrum_plate", ItemIds.plate_saturnite), "ad_astra");
+        whenModLoaded(shapeless(NS, "block_saturnite_to_ostrum", "ad_astra:ostrum_block", ItemIds.block_saturnite), "ad_astra");
     }
 
     /** Les machines qui fabriquaient ces dossiers sont retirées : ils se fabriquent à la main. */

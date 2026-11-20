@@ -16,7 +16,7 @@ Fichier généré par `tools/verifier_chaines.py`.
 | centrifuge | machine_centrifuge |
 | chemical_plant | machine_chemical_plant, machine_chemical_factory |
 | coker | machine_coker |
-| combination | **aucune** |
+| combination | machine_furnace_combination |
 | compressor | machine_compressor, machine_compressor_compact |
 | cracking | machine_catalytic_cracker |
 | crucible | machine_crucible |
@@ -60,7 +60,6 @@ Dossiers sans correspondance connue : material_distribution, pseudo_fluid
 - `geontm:amat` : demandé par purex/flashgold, purex/flashlead
 - `geontm:bauxite_solution` : demandé par fraction/bauxite_solution
 - `geontm:blood` : demandé par mixer/pheromone_m.0, mixer/salient.0
-- `geontm:coalcreosote` : demandé par chemical_plant/coallube, coker/coalcreosote, fraction/coalcreosote, solidification/coalcreosote
 - `geontm:gas` : demandé par chemical_plant/co2, chemical_plant/coltanpain, chemical_plant/cordite, chemical_plant/deicer
 - `geontm:pheromone` : demandé par mixer/pheromone_m.0
 - `geontm:stellar_flux` : demandé par fusion/stellar

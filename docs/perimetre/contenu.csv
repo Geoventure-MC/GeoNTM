@@ -108,7 +108,7 @@ bloc,block_ra226,Bloc de Radium-226,SI_BESOIN,ressources : intermédiaires,,gard
 bloc,block_red_copper,Bloc de cuivre rouge,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_red_phosphorus,Bloc de phosphore rouge,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_rubber,Bloc de caoutchouc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-bloc,block_saturnite,Bloc de Saturnite,GARDER,ressources : espace,,uniquement sur Mars
+bloc,block_saturnite,Bloc de Saturnite,FUSIONNER,ressources,ad_astra:ostrum_block,ressource déjà présente
 bloc,block_schrabidate,Bloc de Schrabidate ferrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 bloc,block_schrabidium,Bloc de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
 bloc,block_schrabidium_cluster,Amas de Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
@@ -705,7 +705,7 @@ bloc,machine_fracking_tower,Tour de fracturation hydraulique,FUSIONNER,machines,
 bloc,machine_fraction_tower,Tour de fractionnement,FUSIONNER,machines,geomods:modular_refinery,machine Geoventure équivalente
 bloc,machine_funnel,Entonnoir combinateur,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_furnace_brick_off,Four en brique,RETIRER,machines,,hors sujet ou trop puissant
-bloc,machine_furnace_combination,Four combiné,RETIRER,machines,,hors sujet ou trop puissant
+bloc,machine_furnace_combination,Four combiné,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_gascent,Centrifugeuse à gaz,GARDER,machines : combustible,,
 bloc,machine_hephaestus,Échangeur de chaleur géothermique,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_hydrotreater,Hydrotraiteur,GARDER,machines : production,,
@@ -726,14 +726,14 @@ bloc,machine_missile_assembly,Station d'assemblage de missiles,GARDER,machines :
 bloc,machine_mixer,Mélangeur industriel,FUSIONNER,machines,geomods:industrial_mixer,machine Geoventure équivalente
 bloc,machine_orbus,Réservoir de stockage magnétique lourd,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_ore_slopper,Processeur de minerai de substrat rocheux,RETIRER,machines,,hors sujet ou trop puissant
-bloc,machine_precass,Machine d'assemblage de précision,RETIRER,machines,,hors sujet ou trop puissant
+bloc,machine_precass,Machine d'assemblage de précision,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_press,Presse à vapeur,FUSIONNER,machines,geomods:metal_press,machine Geoventure équivalente
 bloc,machine_puf6_tank,Réservoir d'hexafluorure de plutonium,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_pump_electric,Pompe électrique à eau souterraine,FUSIONNER,machines,geomods:water_pump,machine Geoventure équivalente
 bloc,machine_pump_steam,Pompe à eau souterraine à vapeur,FUSIONNER,machines,geomods:water_pump,machine Geoventure équivalente
 bloc,machine_pumpjack,Pompe à balancier,FUSIONNER,machines,geomods:oil_pump,machine Geoventure équivalente
 bloc,machine_purex,,GARDER,machines : combustible,,
-bloc,machine_pyrooven,Four de pyrolyse,RETIRER,machines,,hors sujet ou trop puissant
+bloc,machine_pyrooven,Four de pyrolyse,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_radar,,GARDER,machines : satellites,,
 bloc,machine_radar_large,Grand radar,GARDER,machines : satellites,,
 bloc,machine_radgen,Générateur de radiation,GARDER,machines : réacteurs,,
@@ -761,7 +761,7 @@ bloc,machine_stirling_creative,Moteur Stirling créatif,RETIRER,machines,,hors s
 bloc,machine_stirling_steel,Moteur Stirling lourd,GARDER,machines : vapeur et énergie,,
 bloc,machine_storage_drum,Tambour d'élimination des déchets nucléaires,GARDER,machines : combustible,,
 bloc,machine_strand_caster,Machine de coulée en continu,GARDER,machines : production,,
-bloc,machine_supercomputer,Superordinateur,RETIRER,machines,,hors sujet ou trop puissant
+bloc,machine_supercomputer,Superordinateur,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_tape_drive,Enceinte de lecteur,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_teleporter,Téléporteur,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_thresher,Batteuse automatique,RETIRER,machines,,hors sujet ou trop puissant
@@ -2715,7 +2715,7 @@ objet,ingot_raw_strontium,,SI_BESOIN,ressources : intermédiaires,,gardé seulem
 objet,ingot_red_copper,Minecraft Grade Cuivre,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_reiium,Lingot de reiium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_rubber,Barre en caoutchouc,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-objet,ingot_saturnite,Lingot de saturnite,GARDER,ressources : espace,,uniquement sur Mars
+objet,ingot_saturnite,Lingot de saturnite,FUSIONNER,ressources,ad_astra:ostrum_ingot,ressource déjà présente
 objet,ingot_schrabidate,Lingot de Schrabidate ferrique,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,ingot_schrabidium,Lingot de Schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
 objet,ingot_schrabidium_fuel,Lingot de Schrabidium,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
@@ -3498,7 +3498,7 @@ objet,plate_lead,Plaque de plomb,SI_BESOIN,ressources : intermédiaires,,gardé 
 objet,plate_mixed,Plaque mixte,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_paa,Plaque d'alliage PaA,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
 objet,plate_polymer,Isolateur,SI_BESOIN,ressources : intermédiaires,,gardé seulement si une recette retenue en dépend
-objet,plate_saturnite,Plaque de Saturnite,GARDER,ressources : espace,,uniquement sur Mars
+objet,plate_saturnite,Plaque de Saturnite,FUSIONNER,ressources,ad_astra:ostrum_plate,ressource déjà présente
 objet,plate_schrabidium,Plaque de schrabidium,GARDER,ressources : espace,,uniquement sur Mercure
 objet,plate_steel,Plaque d'acier,FUSIONNER,ressources,geomods:steel_plate,ressource déjà présente
 objet,plate_titanium,Plaque en titane,FUSIONNER,ressources,geomods:titanium_plate,ressource déjà présente

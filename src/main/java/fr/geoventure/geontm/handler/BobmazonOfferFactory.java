@@ -152,13 +152,11 @@ public final class BobmazonOfferFactory {
         add(spc, geontm("ingot_titanium", 64), Requirement.STEEL, 1);
         add(spc, geontm("ingot_tungsten", 64), Requirement.STEEL, 1);
         add(spc, geontm("ingot_cobalt", 64), Requirement.STEEL, 1);
-        add(spc, geontm("ingot_desh", 64), Requirement.STEEL, 1);
+        // desh, schrabidium et starmetal : une ressource par planète, absente de la Terre, donc pas en vente ici
         add(spc, geontm("ingot_tantalium", 64), Requirement.STEEL, 5);
         add(spc, geontm("ingot_bismuth", 16), Requirement.STEEL, 5);
-        add(spc, geontm("ingot_schrabidium", 16), Requirement.STEEL, 5);
         add(spc, geontm("ingot_euphemium", 8), Requirement.STEEL, 16);
         add(spc, geontm("ingot_dineutronium", 1), Requirement.STEEL, 16);
-        add(spc, geontm("ingot_starmetal", 16), Requirement.STEEL, 8);
         add(spc, geontm("ingot_semtex", 16), Requirement.STEEL, 1);
         add(spc, geontm("ingot_u235", 16), Requirement.STEEL, 1);
         add(spc, geontm("ingot_pu239", 16), Requirement.STEEL, 1);

@@ -63,7 +63,6 @@ block_pu238
 block_pu239
 block_pu240
 block_pu_mix
-block_saturnite
 block_schrabidium
 block_starmetal
 block_thorium
@@ -246,7 +245,6 @@ ingot_pu239
 ingot_pu240
 ingot_pu241
 ingot_pu_mix
-ingot_saturnite
 ingot_schrabidium
 ingot_starmetal
 ingot_th232
@@ -290,13 +288,16 @@ machine_cyclotron
 machine_electrolyser
 machine_exposure_chamber
 machine_fel
+machine_furnace_combination
 machine_gascent
 machine_hydrotreater
 machine_industrial_boiler
 machine_industrial_turbine
 machine_liquefactor
 machine_missile_assembly
+machine_precass
 machine_purex
+machine_pyrooven
 machine_radar
 machine_radar_large
 machine_radgen
@@ -313,6 +314,7 @@ machine_stirling
 machine_stirling_steel
 machine_storage_drum
 machine_strand_caster
+machine_supercomputer
 machine_tower_large
 machine_tower_small
 machine_turbine_gas
@@ -566,7 +568,6 @@ ore_beryllium_deepslate
 ore_depth_zirconium
 ore_glacio_starmetal
 ore_gneiss_schrabidium
-ore_mars_saturnite
 ore_nether_plutonium
 ore_nether_schrabidium
 ore_schrabidium
@@ -709,7 +710,6 @@ pile_rod_pu239
 pile_rod_source
 pile_rod_uranium
 pile_vent
-plate_saturnite
 plate_schrabidium
 pole_satellite_receiver
 powder_beryllium

@@ -82,7 +82,7 @@ public final class ArmorModDeclarations {
         shaped(NS, "medal_liquidator", "geontm:medal_liquidator", rows("GBG", "BFB", "GBG"),
                 "G", TagIds.nuggets_au198, "B", TagIds.ingots_boron, "F", ItemIds.debris_fuel);
         shapeless(NS, "injector_5htp", "geontm:injector_5htp",
-                ItemIds.five_htp, ItemIds.circuit_basic, TagIds.plates_saturnite);
+                ItemIds.five_htp, ItemIds.circuit_basic, TagIds.plates_ostrum);
         shapeless(NS, "injector_knife", "geontm:injector_knife", "geontm:injector_5htp", VanillaIds.iron_sword);
         shaped(NS, "shackles", "geontm:shackles", rows("CIC", "C C", "I I"),
                 "I", ItemIds.ingot_chainsteel, "C", "geontm:dungeon_chain");

@@ -88,6 +88,11 @@ public final class ModMaterialTags {
         tag("dusts/wood", "geontm:powder_sawdust");
         // 1.7 P_WHITE.ingot() "ingotWhitePhosphorus": only ingot_phosphorus (OreDictManager P_WHITE.ingot(ingot_phosphorus))
         tag("ingots/white_phosphorus", "geontm:ingot_phosphorus");
+        // La saturnite est fusionnée dans l'ostrum de Mars (Ad Astra) : les stocks de saturnite restent acceptés partout
+        // où une recette demande de l'ostrum ; GeoventureMatieres ajoute les objets ad_astra:ostrum_* à ces tags.
+        tag("ingots/ostrum", "geontm:ingot_saturnite");
+        tag("plates/ostrum", "geontm:plate_saturnite", "geontm:plate_cast_saturnite");
+        tag("storage_blocks/ostrum", "geontm:block_saturnite");
         // 1.7 KEY_SAND, Forge's "sand" ore name: sand and red sand (Blocks.sand at any meta), and other mods' sands. The
         // convention tag on 26.1/1.21; declared here so it has these members on every node (vanilla's minecraft:sand also
         // holds suspicious sand since 1.20, which 1.7's "sand" did not)

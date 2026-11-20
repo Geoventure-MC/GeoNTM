@@ -3,8 +3,7 @@
   "name": "ass.lunarminer",
   "input_items": [
     {
-      "material": "saturnite",
-      "shape": "castplate",
+      "ingredient": "#c:plates/ostrum",
       "count": 16
     },
     {

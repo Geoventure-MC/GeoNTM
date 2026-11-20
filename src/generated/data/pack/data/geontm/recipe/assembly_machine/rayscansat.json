@@ -3,8 +3,7 @@
   "name": "ass.rayscansat",
   "input_items": [
     {
-      "material": "saturnite",
-      "shape": "shell",
+      "ingredient": "#c:plates/ostrum",
       "count": 16
     },
     {

@@ -23,14 +23,18 @@ SYNONYMES = {'aluminium': 'aluminum'}
 VANILLE = {'iron', 'gold', 'copper', 'coal', 'redstone', 'diamond', 'emerald', 'lapis', 'quartz', 'netherite'}
 TERRE = {'graphite': 'modérateur des réacteurs', 'beryllium': 'réflecteur à neutrons', 'boron': 'barres de contrôle',
          'zirconium': 'gaines de combustible', 'thorium': 'combustible alternatif'}
-ESPACE = {'desh': 'Lune', 'saturnite': 'Mars', 'starmetal': 'Glacio', 'schrabidium': 'Mercure'}
+# Une ressource unique par planète, absente de la Terre (décision du propriétaire, 20/11). Desh, ostrum et calorite sont
+# ceux d'Ad Astra ; la saturnite de NTM est fusionnée dans l'ostrum (ses identifiants restent enregistrés, sans génération).
+ESPACE = {'desh': 'Lune (Ad Astra)', 'ostrum': 'Mars (Ad Astra, la saturnite y est fusionnée)', 'calorite': 'Vénus (Ad Astra)',
+          'schrabidium': 'Mercure', 'starmetal': 'Glacio'}
 NUCLEAIRE = {'u233', 'u235', 'u238', 'pu238', 'pu239', 'pu240', 'pu241', 'pu_mix', 'plutonium', 'th232',
              'uranium_fuel', 'plutonium_fuel', 'thorium_fuel', 'mox_fuel'}
 FORMES = {'ingot': '{}_ingot', 'nugget': '{}_nugget', 'plate': '{}_plate', 'powder': '{}_dust', 'wire': '{}_wire',
           'block': '{}_block', 'ore': '{}_ore', 'rod': '{}_rod'}
 
-DESH = {'ingot': 'desh_ingot', 'nugget': 'desh_nugget', 'plate': 'desh_plate', 'block': 'desh_block'}
-BLOCS_ESPACE = ['ore_mars_saturnite', 'ore_glacio_starmetal']
+AD_ASTRA = {'desh': {'ingot': 'desh_ingot', 'nugget': 'desh_nugget', 'plate': 'desh_plate', 'block': 'desh_block'},
+            'saturnite': {'ingot': 'ostrum_ingot', 'plate': 'ostrum_plate', 'block': 'ostrum_block'}}
+BLOCS_ESPACE = ['ore_glacio_starmetal']
 
 # --- Machines ------------------------------------------------------------------------------------------------
 MACHINES_GARDER = {
@@ -85,8 +89,8 @@ THEMES = [
 
 
 def geomods_item(mat, forme, registre):
-    if mat == 'desh' and forme in DESH:
-        return 'ad_astra:' + DESH[forme]
+    if forme in AD_ASTRA.get(mat, {}):
+        return 'ad_astra:' + AD_ASTRA[mat][forme]
     mat = SYNONYMES.get(mat, mat)
     nom = FORMES[forme].format(mat)
     if nom in registre:
@@ -111,8 +115,17 @@ STRUCTURES_DE_LANCEMENT = {'struct_launcher': 'missiles', 'struct_scaffold': 'sa
                            'struct_launcher_core_large': 'missiles', 'struct_soyuz_core': 'satellites'}
 
 
+# Machines que la règle « MACHINES_RETIRER » écartait à tort : sans elles, des chaînes gardées ne sont plus faisables en
+# survie (assembleur de précision : circuits de contrôle des missiles et satellites ; four de pyrolyse : carbure de tungstène
+# et chlore ; superordinateur : calcul de vol ; four combiné : chlore, peroxyde, créosote, donc plastique dur).
+# Contrôle : tools/verifier_obtention.py. Leurs recettes sont dans src/generated/data/pack/data/geontm/recipe.
+MACHINES_DE_CHAINE = {'machine_furnace_combination', 'machine_precass', 'machine_pyrooven', 'machine_supercomputer'}
+
+
 def classer(ident, genre, registre):
     """Renvoie (décision, thème, cible, raison)."""
+    if ident in MACHINES_DE_CHAINE:
+        return 'GARDER', 'machines : production', '', 'nécessaire à une chaîne de production gardée'
     if ident in STRUCTURES_DE_LANCEMENT:
         return 'GARDER', STRUCTURES_DE_LANCEMENT[ident], '', 'forme un lanceur gardé'
     if ident.startswith('machine_obj_'):
