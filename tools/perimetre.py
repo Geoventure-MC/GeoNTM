@@ -105,8 +105,16 @@ def materiau(ident):
     return forme, reste
 
 
+# Blocs de structure qui forment les rampes de missiles et le lanceur Soyouz : la règle « struct » les retirait à tort,
+# ce qui rendait ces lanceurs impossibles à construire en survie (décision du propriétaire, 20/11).
+STRUCTURES_DE_LANCEMENT = {'struct_launcher': 'missiles', 'struct_scaffold': 'satellites', 'struct_launcher_core': 'missiles',
+                           'struct_launcher_core_large': 'missiles', 'struct_soyuz_core': 'satellites'}
+
+
 def classer(ident, genre, registre):
     """Renvoie (décision, thème, cible, raison)."""
+    if ident in STRUCTURES_DE_LANCEMENT:
+        return 'GARDER', STRUCTURES_DE_LANCEMENT[ident], '', 'forme un lanceur gardé'
     if ident.startswith('machine_obj_'):
         return 'RETIRER', 'hors périmètre', '', 'modèle technique'
     if ident.startswith('machine_'):

@@ -278,7 +278,7 @@ public final class ModComponentRecipes {
                 key("E", tag(TagIds.nuggets_euphemium)),
                 key("S", item(ItemIds.cell).with(ComponentIds.fluid, "geontm:aschrab").with(ComponentIds.fluid_amount, 1000).remainder(ItemIds.cell)),
                 key("B", tag(TagIds.storage_blocks_schrabidium)));
-        // no struct_soyuz_core crafting: 1.7 has no crafting recipe
+        // struct_soyuz_core crafting: 1.7 has none, declared in CustomMissileDeclarations for GeoNTM
         componentShaped(NS, "syringe_empty", stack(ItemIds.syringe_empty, 6), rows("P", "C", "B"),
                 key("B", item(VanillaIds.iron_bars)),
                 key("C", item(ItemIds.cell).without(ComponentIds.fluid, ComponentIds.fluid_amount)),

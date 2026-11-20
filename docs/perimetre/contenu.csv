@@ -1170,11 +1170,11 @@ bloc,stone_resource_limestone,Calcaire,RETIRER,hors périmètre,,"doublon de Geo
 bloc,stone_resource_malachite,,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,stone_resource_sulfur,Pierre sulfureuse,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,struct_icf_core,Composant cœur du réacteur à fusion par confinement inertiel,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_launcher,Bloc de composants de rampe de lancement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_launcher_core,Composant central du lanceur compact,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_launcher_core_large,Lancer le composant de base de la table,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_scaffold,Bloc d'échafaudage de rampe de lancement,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_soyuz_core,Composant principal du lanceur Soyouz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,struct_launcher,Bloc de composants de rampe de lancement,GARDER,missiles,,composant de la rampe compacte et du lanceur Soyouz
+bloc,struct_launcher_core,Composant central du lanceur compact,GARDER,missiles,,coeur de la rampe compacte
+bloc,struct_launcher_core_large,Lancer le composant de base de la table,GARDER,missiles,,coeur de la grande table de lancement
+bloc,struct_scaffold,Bloc d'échafaudage de rampe de lancement,GARDER,missiles,,échafaudage du lanceur Soyouz
+bloc,struct_soyuz_core,Composant principal du lanceur Soyouz,GARDER,satellites,,coeur du lanceur Soyouz
 bloc,struct_torus_core,Composant central de la cuve du réacteur à fusion,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,struct_watz_core,Composant central de la centrale Watz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
 bloc,structure_anchor,Ancre de structure,RETIRER,hors périmètre,,hors périmètre

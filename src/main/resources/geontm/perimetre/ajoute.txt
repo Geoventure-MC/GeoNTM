@@ -51,3 +51,10 @@ machine_refinery
 machine_rotary_furnace
 machine_shredder
 machine_supercomputer
+struct_launcher
+struct_launcher_core
+struct_launcher_core_large
+struct_scaffold
+struct_soyuz_core
+battery_lead
+steel_scaffold

@@ -1578,6 +1578,8 @@ public final class GeoNtmGameTestFunctions {
             TESTS.function("radar_map_never_saved", 60, () -> RadarUtilityGameTests::radarMapNeverSavedChunks);
     public static final GameTests.Function CUSTOM_MISSILE_ASSEMBLE_LAUNCH =
             TESTS.function("custom_missile_assemble_launch", 40, () -> CustomMissileGameTests::assembleAndLaunch);
+    public static final GameTests.Function CUSTOM_MISSILE_LAUNCHER_RECIPES =
+            TESTS.function("custom_missile_launcher_recipes", 20, () -> CustomMissileGameTests::launcherStructureRecipes);
     public static final GameTests.Function ICF_PRESS_FILLS =
             TESTS.function("icf_press_fills", 20, () -> IcfGameTests::pressFillsPellets);
     public static final GameTests.Function ICF_REACTOR_TICK =

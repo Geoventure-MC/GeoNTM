@@ -185,6 +185,10 @@ public final class CustomMissileDeclarations {
         shaped(NS, "struct_launcher_core_large", "geontm:struct_launcher_core_large", rows("SIS", "ICI", "BEB"),
                 "S", ItemIds.circuit_advanced, "I", VanillaIds.iron_bars, "C", ItemIds.circuit_advanced,
                 "B", ItemIds.struct_launcher, "E", ItemIds.battery_lead);
+        // 1.7 has no struct_soyuz_core recipe: added for GeoNTM so the Soyuz launcher can be built in survival
+        shaped(NS, "struct_soyuz_core", "geontm:struct_soyuz_core", rows("SCS", "IBI", "SES"),
+                "S", "#geontm:steel_scaffolds", "C", ItemIds.circuit_advanced, "I", TagIds.plates_steel,
+                "B", ItemIds.struct_launcher_core_large, "E", ItemIds.battery_lead);
         // machine_missile_assembly ("PWP", "SSS", "CCC") needs the wrench: declared with it in MeleeKitDeclarations.
     }
 

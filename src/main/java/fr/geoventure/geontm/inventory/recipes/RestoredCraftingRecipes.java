@@ -231,7 +231,8 @@ public final class RestoredCraftingRecipes {
         componentShaped(NS, "struct_scaffold", stack(ItemIds.struct_scaffold, 8), rows("SSS", "DCD", "SSS"),
                 k("S", "#geontm:steel_scaffolds"),
                 key("D", anyOf(ItemIds.fluid_duct_neo, ItemIds.fluid_duct_neo_silver, ItemIds.fluid_duct_neo_colored)),
-                k("C", ItemIds.red_cable));
+                // upstream uses red_cable, which is out of scope and has no visible GeoNTM cable: copper ingots instead
+                k("C", TagIds.ingots_copper));
         // :697, :707-708 AMS catalysts
         shaped(NS, "ams_catalyst_blank", ItemIds.ams_catalyst_blank, rows("TET", "ETE", "TET"),
                 "T", TagIds.dusts_tennessine, "E", TagIds.ingots_euphemium);

@@ -1689,11 +1689,6 @@ stone_resource_limestone
 stone_resource_malachite
 stone_resource_sulfur
 struct_icf_core
-struct_launcher
-struct_launcher_core
-struct_launcher_core_large
-struct_scaffold
-struct_soyuz_core
 struct_torus_core
 struct_watz_core
 structure_anchor

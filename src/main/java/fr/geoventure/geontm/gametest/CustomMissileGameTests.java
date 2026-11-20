@@ -16,12 +16,16 @@ import fr.geoventure.geontm.tileentity.machine.TileEntityMachineMissileAssembly;
 import fr.geoventure.geontm.tileentity.machine.TileEntityMultiblock;
 import fr.geoventure.geocore.gametest.GameTestHelpers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.phys.AABB;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The custom missile system end to end, without a client: 1.7's assembly rules and output, the struct core
@@ -30,6 +34,19 @@ import java.util.List;
 public final class CustomMissileGameTests {
 
     private CustomMissileGameTests() {}
+
+    /** The launch pad structure blocks stay craftable in survival: the server's recipe manager must hold a recipe for each. */
+    public static void launcherStructureRecipes(GameTestHelper helper) {
+        Set<String> crafted = new HashSet<>();
+        for (Recipe<?> recipe : helper.getLevel().getServer().getRecipeManager().getRecipes()) {
+            crafted.add(BuiltInRegistries.ITEM.getKey(recipe.getResultItem(helper.getLevel().registryAccess()).getItem()).toString());
+        }
+        for (String id : List.of("struct_launcher", "struct_scaffold", "struct_launcher_core", "struct_launcher_core_large",
+                "struct_soyuz_core")) {
+            helper.assertTrue(crafted.contains("geontm:" + id), "no recipe produces geontm:" + id);
+        }
+        helper.succeed();
+    }
 
     public static void assembleAndLaunch(GameTestHelper helper) {
         // --- the upstream stats of two representative parts ---
