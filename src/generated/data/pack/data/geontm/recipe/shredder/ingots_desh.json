@@ -1,0 +1,5 @@
+{
+  "type": "geontm:shredder",
+  "input": "#c:ingots/desh",
+  "output": "geontm:powder_desh"
+}

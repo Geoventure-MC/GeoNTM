@@ -60,7 +60,6 @@ Dossiers sans correspondance connue : material_distribution, pseudo_fluid
 - `geontm:amat` : demandé par purex/flashgold, purex/flashlead
 - `geontm:bauxite_solution` : demandé par fraction/bauxite_solution
 - `geontm:blood` : demandé par mixer/pheromone_m.0, mixer/salient.0
-- `geontm:gas` : demandé par chemical_plant/co2, chemical_plant/coltanpain, chemical_plant/cordite, chemical_plant/deicer
 - `geontm:pheromone` : demandé par mixer/pheromone_m.0
 - `geontm:stellar_flux` : demandé par fusion/stellar
 - `geontm:thorium_salt_depleted` : demandé par purex/thoriumsalt

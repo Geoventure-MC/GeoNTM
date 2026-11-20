@@ -2,77 +2,19 @@
 
 Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : point fixe sur les recettes actives (conditions évaluées avec les réglages par défaut : 528, mode coûteux et LBSM désactivés), en exigeant que la machine de chaque recette soit elle-même obtenable. Les objets, tags et fluides de GeoMods comptent comme fournis.
 
-- Objets et fluides obtenables : **2267** (recettes : 1748, butin : 157, blocs de monde : 110, drops : 21)
-- Objets visibles : **1115** ; visibles non obtenables : **343**
+- Objets et fluides obtenables : **2325** (recettes : 1801, butin : 155, blocs de monde : 110, drops : 21)
+- Objets visibles : **1115** ; visibles non obtenables : **324**
 - Hypothèse : 121 recettes actives (missiles modulaires, espace, ogives, réacteurs...) ne se débloquent qu'avec un schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes.
 
 | Catégorie | Nombre |
 |---|---:|
-| à décider | 52 |
 | volontaire | 8 |
-| cosmétique | 64 |
+| cosmétique | 92 |
 | butin | 18 |
-| non touché | 48 |
-| produit en jeu | 59 |
-| hérité | 23 |
+| non touché | 47 |
+| produit en jeu | 58 |
+| hérité | 30 |
 | armes retirées | 79 |
-
-## à décider
-
-| Objet | Justification |
-|---|---|
-| `anvil_dnt` | enclume de fin de jeu : lingot (dineutronium, osmiridium, schrabidate) sans source, ou recette en Java |
-| `anvil_murky` | enclume de fin de jeu : lingot (dineutronium, osmiridium, schrabidate) sans source, ou recette en Java |
-| `anvil_osmiridium` | enclume de fin de jeu : lingot (dineutronium, osmiridium, schrabidate) sans source, ou recette en Java |
-| `anvil_schrabidate` | enclume de fin de jeu : lingot (dineutronium, osmiridium, schrabidate) sans source, ou recette en Java |
-| `capacitor_bismuth` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `capacitor_spark` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `circuit_chip_quantum` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `circuit_controller_quantum` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `circuit_quantum` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `circuit_star` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_component_card` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_component_chipset` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_component_cpu` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_component_ram` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_board_blank` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_board_converter` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_board_transistor` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_bios` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_bus` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_chipset` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_cmos` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_io` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_north` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_bridge_south` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_card_board` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_card_processor` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_cache` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_clock` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_ext` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_logic` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_register` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_cpu_socket` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_mem_16k_a` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_mem_16k_b` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_mem_16k_c` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_mem_16k_d` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `circuit_star_piece_mem_socket` | assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu |
-| `pile_rod_boron` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_detector` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_lithium` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_mk2_pu239` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_mk2_rgp` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_mk2_thorium_fuel` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_plutonium` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_pu239` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_source` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `pile_rod_uranium` | barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt |
-| `powder_desh` | le desh vient d'Ad Astra (lingot) ; la poudre n'a plus de source |
-| `satellite_death_ray` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `satellite_ray_scan` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `satellite_science_assembler` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
-| `satellite_science_sensor` | dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée) |
 
 ## volontaire
 
@@ -91,6 +33,34 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 
 | Objet | Justification |
 |---|---|
+| `circuit_star` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_component_card` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_component_chipset` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_component_cpu` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_component_ram` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_board_blank` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_board_converter` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_board_transistor` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_bios` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_bus` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_chipset` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_cmos` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_io` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_north` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_bridge_south` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_card_board` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_card_processor` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_cache` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_clock` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_ext` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_logic` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_register` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_cpu_socket` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_mem_16k_a` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_mem_16k_b` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_mem_16k_c` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_mem_16k_d` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
+| `circuit_star_piece_mem_socket` | objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces viennent des scrap_plastic_* des bobbleheads, décor sans recette |
 | `missile_obj_context_base` | objet technique ou de test |
 | `missile_obj_context_legacy` | objet technique ou de test |
 | `missile_skin_camo` | peinture de missile, sans recette dans NTM |
@@ -183,6 +153,7 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 
 | Objet | Justification |
 |---|---|
+| `anvil_murky` | enclume secrète (œuf de Pâques) : exige `undefined`, issu des pastilles DRX (balefire + digamma), combustibles extrêmes laissés tels quels |
 | `billet_balefire_gold` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `billet_flashlead` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `billet_unobtainium` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
@@ -193,7 +164,6 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 | `fusion_hatch` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `fusion_heater` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `fusion_klystron_creative` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
-| `fusion_mhdt` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `fusion_torus` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `icf` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `icf_block` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
@@ -213,7 +183,6 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 | `icf_pellet_depleted` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `mp_fuselage_10_xenon_bhole` | fuselage d'arme extrême (trou noir, balefire) |
 | `mp_fuselage_15_balefire` | fuselage d'arme extrême (trou noir, balefire) |
-| `pellet_charged` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `pellet_rtg_balefire` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `rbmk_control_reasim` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
 | `rbmk_control_reasim_auto` | fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire) |
@@ -237,7 +206,6 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 | Objet | Justification |
 |---|---|
 | `capacitor_bus` | bloc formé par une structure, un réacteur ou le monde (pas de recette d'objet) |
-| `circuit_crystal` | fabriqué en orbite (space_assembler / assemblage orbital) |
 | `corium_block` | bloc formé par une structure, un réacteur ou le monde (pas de recette d'objet) |
 | `fluid_identifier` | identifiant typé réglé à partir de fluid_identifier_multi (craftable) : à vérifier en jeu |
 | `gas_full` | réservoir de gaz rempli à la machine (fluid_item) |
@@ -308,6 +276,13 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 | `deco_sat_radar` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
 | `deco_sat_resonator` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
 | `deco_sat_scanner` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
+| `pile_rod_boron` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_detector` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_lithium` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_plutonium` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_pu239` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_source` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
+| `pile_rod_uranium` | barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_* |
 | `sat_base` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
 | `sat_foeq` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
 | `sat_gerald` | ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM) |
@@ -410,7 +385,7 @@ Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : 
 
 ## Fluides demandés par une recette active sans producteur obtenable
 
-Un fluide sans producteur rend inutilisables les recettes qui le demandent (les autres voies restent possibles). Le gaz naturel `gas` ne vient que des gisements de pétrole de NTM ; les pompes GeoMods ne donnent que le brut.
+Un fluide sans producteur rend inutilisables les recettes qui le demandent (les autres voies restent possibles). Le gaz `gas` vient de la gazéification du charbon ou du coke au four de pyrolyse ; les pompes GeoMods ne donnent que le brut.
 
 | Fluide | Recettes qui le demandent |
 |---|---|
@@ -423,17 +398,12 @@ Un fluide sans producteur rend inutilisables les recettes qui le demandent (les 
 | `chlorocalcite_cleaned` | 1 : chemical_plant/cccentrifuge |
 | `chlorocalcite_mix` | 1 : fraction/chlorocalcite_mix |
 | `chlorocalcite_solution` | 1 : mixer/chlorocalcite_mix.0 |
-| `death` | 1 : silex/fluid_death |
-| `gas` | 8 : chemical_plant/co2, chemical_plant/coltanpain, chemical_plant/cordite, chemical_plant/deicer … |
-| `helium4` | 7 : chemical_plant/batteryschrabidium, fusion/th4, soldering/circuit_quantum, supercomputer/flightcalc_helium … |
-| `iongel` | 1 : crystallizer/oil_tar_wax_iongel |
 | `naphtha_coker` | 3 : fraction/naphtha_coker, mixer/solvent.3, reforming/naphtha_coker |
 | `pain` | 1 : chemical_plant/coltancrystal |
 | `pheromone` | 1 : mixer/pheromone_m.0 |
 | `potassium_chloride` | 1 : electrolyser_fluid/potassium_chloride |
 | `redmud` | 4 : coker/redmud, crystallizer/powder_calcium_redmud, electrolyser_fluid/redmud, silex/fluid_redmud |
 | `salient` | 1 : solidification/salient |
-| `schrabidic` | 2 : chemical_plant/schrabidate, crystallizer/powder_impure_osmiridium_schrabidic |
 | `sodium_aluminate` | 4 : mixer/alumina.0, mixer/alumina.1, rotary_furnace/aluminium, rotary_furnace/aluminium_2 |
 | `stellar_flux` | 1 : fusion/stellar |
 | `thorium_salt_depleted` | 1 : purex/thoriumsalt |
@@ -444,11 +414,11 @@ Un fluide sans producteur rend inutilisables les recettes qui le demandent (les 
 
 Ces objets visibles n'ont pas de recette praticable : on ne les a qu'en ouvrant des coffres ou en tuant des mobs.
 
-`blueprint_folder_secret`, `fallout`, `falloutitem`, `fusion_core`, `hazmat_kit`, `iv_blood`, `launch_code`, `launch_code_piece`, `launch_key`, `pile_rod_mk2_waste`, `radaway`, `radaway_flush`, `radaway_strong`, `syringe_metal_super`, `upgrade_5g`
+`blueprint_folder_secret`, `fallout`, `falloutitem`, `fusion_core`, `hazmat_kit`, `iv_blood`, `launch_code`, `launch_code_piece`, `launch_key`, `radaway`, `radaway_flush`, `radaway_strong`, `syringe_metal_super`, `upgrade_5g`
 
 ## Ressources planétaires sur Terre
 
 Une ressource unique par planète, absente de la Terre : desh (Lune), ostrum et saturnite (Mars), calorite (Vénus), schrabidium (Mercure), starmetal (Glacio). Calcul `TERRE=1 python tools/verifier_obtention.py <jar>` : les minerais de ces matières ne comptent plus comme du monde et les objets `ad_astra:` de desh, ostrum et calorite ne sont plus fournis ; ce qui reste obtenable est une fuite.
 
-`starmetal_sword`
+aucune fuite
 

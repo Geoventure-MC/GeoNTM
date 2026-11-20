@@ -347,6 +347,13 @@ for c in sorted(CONNUS):
         if neuf in CONNUS and neuf != c:
             recettes.append((f'reacteur/{c}', 'reacteur', [], {c}, [frozenset({'geontm:' + neuf})]))
 
+# Pile de Chicago : une barre brûlée devient la suivante (ItemPileRodMK2.EnumPileRod.turnsInto, comportement Java sans recette) :
+# nu -> pu239 -> rgp -> waste, thorium -> thorium_fuel -> waste. Le combustible neuf (nu, thorium) se fabrique à l'assembleur.
+for ancien_, nouveau_ in (('nu', 'pu239'), ('pu239', 'rgp'), ('rgp', 'waste'), ('thorium', 'thorium_fuel'), ('thorium_fuel', 'waste')):
+    if f'pile_rod_mk2_{ancien_}' in CONNUS and f'pile_rod_mk2_{nouveau_}' in CONNUS:
+        recettes.append((f'reacteur/pile_rod_mk2_{nouveau_}', 'reacteur', [], {f'pile_rod_mk2_{nouveau_}'},
+                         [frozenset({f'geontm:pile_rod_mk2_{ancien_}'})]))
+
 # garde-fou : une machine citée mais inexistante rendrait tout son dossier de recettes introuvable à tort
 for dossier_, machines_ in MACHINES.items():
     for m_ in machines_:
@@ -659,13 +666,13 @@ JUSTIF = [
      "fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire)"),
     (r'^pellet_rtg_depleted_.*$', 'produit en jeu', "pastille RTG usée, produite par le générateur"),
     (r'^(waste_.*|nuclear_waste_.*)$', 'produit en jeu', "déchet produit par les réacteurs ou les retombées"),
-    (r'^pile_rod_.*$', 'à décider', "barreaux de la pile de Chicago : aucune recette, ni dans NTM ni dans l'historique du dépôt"),
-    (r'^(capacitor_(bismuth|spark)|circuit_(chip_quantum|quantum|controller_quantum)|satellite_(death_ray|ray_scan|science_assembler|'
-     r'science_sensor))$', 'à décider', "dépend de pellet_charged, que seule la fusion ou l'ICF produit (presse ICF écartée)"),
-    (r'^circuit_star.*$', 'à décider', "assemblé à partir de débris de plastique (scrap_plastic_*) sans source dans le jeu"),
-    (r'^anvil_(dnt|osmiridium|schrabidate|murky)$', 'à décider',
-     "enclume de fin de jeu : lingot (dineutronium, osmiridium, schrabidate) sans source, ou recette en Java"),
-    (r'^powder_desh$', 'à décider', "le desh vient d'Ad Astra (lingot) ; la poudre n'a plus de source"),
+    (r'^pile_rod_(uranium|pu239|plutonium|source|boron|lithium|detector)$', 'hérité',
+     "barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_*"),
+    (r'^circuit_star.*$', 'cosmétique',
+     "objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces "
+     "viennent des scrap_plastic_* des bobbleheads, décor sans recette"),
+    (r'^anvil_murky$', 'non touché',
+     "enclume secrète (œuf de Pâques) : exige `undefined`, issu des pastilles DRX (balefire + digamma), combustibles extrêmes laissés tels quels"),
 ]
 MANUEL = {}
 
@@ -779,7 +786,7 @@ if MD:
         L.append('')
     L += ['## Fluides demandés par une recette active sans producteur obtenable', '',
           'Un fluide sans producteur rend inutilisables les recettes qui le demandent (les autres voies restent possibles). '
-          'Le gaz naturel `gas` ne vient que des gisements de pétrole de NTM ; les pompes GeoMods ne donnent que le brut.', '',
+          'Le gaz `gas` vient de la gazéification du charbon ou du coke au four de pyrolyse ; les pompes GeoMods ne donnent que le brut.', '',
           '| Fluide | Recettes qui le demandent |', '|---|---|']
     for f, users in sans_producteur.items():
         L.append(f'| `{f}` | {len(users)} : ' + ', '.join(users[:4]) + (' …' if len(users) > 4 else '') + ' |')

@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_plutonium",
+  "input": {
+    "ingredient": "geontm:powder_australium"
+  },
+  "output": "geontm:powder_dineutronium",
+  "antimatter": 100,
+  "order": 44
+}

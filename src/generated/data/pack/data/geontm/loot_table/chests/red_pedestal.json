@@ -77,11 +77,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "geontm:starmetal_sword",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
           "name": "geontm:gem_alexandrite",
           "weight": 5
         },

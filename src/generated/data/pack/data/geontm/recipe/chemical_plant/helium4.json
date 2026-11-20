@@ -1,0 +1,18 @@
+{
+  "type": "geontm:chemical_plant",
+  "name": "chem.helium4",
+  "input_items": [
+    {
+      "ingredient": "geontm:pellet_charged"
+    }
+  ],
+  "output_fluids": [
+    {
+      "type": "geontm:helium4",
+      "amount": 1250
+    }
+  ],
+  "duration": 100,
+  "power": 5000,
+  "order": 90
+}

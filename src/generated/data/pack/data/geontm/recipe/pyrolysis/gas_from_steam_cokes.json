@@ -1,0 +1,16 @@
+{
+  "type": "geontm:pyrolysis",
+  "input_fluid": {
+    "type": "geontm:steam",
+    "amount": 500
+  },
+  "input_item": {
+    "ingredient": "#c:cokes"
+  },
+  "output_fluid": {
+    "type": "geontm:gas",
+    "amount": 1000
+  },
+  "duration": 120,
+  "order": 41
+}

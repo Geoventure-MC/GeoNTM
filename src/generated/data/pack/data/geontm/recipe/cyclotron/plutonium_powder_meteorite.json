@@ -1,0 +1,10 @@
+{
+  "type": "geontm:cyclotron",
+  "particle": "geontm:part_plutonium",
+  "input": {
+    "ingredient": "geontm:powder_meteorite"
+  },
+  "output": "geontm:powder_paleogenite",
+  "antimatter": 100,
+  "order": 43
+}
