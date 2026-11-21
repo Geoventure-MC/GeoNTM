@@ -17,7 +17,7 @@ geontm/fallout_transform 1
 geontm/fluid_property 154
 geontm/item_pool 50
 geontm/loot_table/chests 1600
-geontm/loot_table/entities 19
+geontm/loot_table/entities 25
 geontm/recipe/anvil_construction 191
 geontm/recipe/anvil_smithing 21
 geontm/recipe/arc_furnace 13

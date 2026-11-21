@@ -4603,5 +4603,32 @@
         "stream": false
       }
     ]
+  },
+  "entity.beep": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "geontm:footsteps/deepbeep",
+        "stream": false
+      }
+    ]
+  },
+  "entity.bfatalk": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "geontm:entity/bfa_talk",
+        "stream": false
+      }
+    ]
+  },
+  "entity.bfashoot": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "geontm:entity/bfa_shoot",
+        "stream": false
+      }
+    ]
   }
 }

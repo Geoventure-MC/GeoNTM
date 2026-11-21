@@ -244,6 +244,7 @@ public final class MainRegistry {
         ModBiomeModifiers.declare();
         LegacyDungeonDeclarations.declare(); // WG-D: legacy dungeon structures + scattered-block features (before BiomeFeatures.install)
         ModMobSpawns.init(); // 1.7 EntityMappings natural spawns + placements (before BiomeFeatures.install)
+        fr.geoventure.geontm.space.mob.SpaceMobs.init(); // NTM: Space : créatures des planètes Ad Astra (avant BiomeFeatures.install)
         BiomeFeatures.install(); // Fabric: the same biome modifiers through BiomeModifications (no-op elsewhere)
         ModCraftingRecipes.declare();
         ModArmorTableBlocks.init();

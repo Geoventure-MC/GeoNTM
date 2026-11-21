@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": {
+          "type": "minecraft:constant",
+          "value": 1
+        },
+        "max": {
+          "type": "geocore:looting",
+          "factor": 1,
+          "add": 3
+        }
+      },
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "geontm:chests/machine_parts"
+        }
+      ]
+    }
+  ]
+}

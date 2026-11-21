@@ -515,6 +515,7 @@ public final class GeoNtmClientRegistrations {
      */
     public static void installArmorLayers() {
         ArmorRenderers.init();
+        fr.geoventure.geontm.space.client.SpaceMobRenderers.init(); // NTM: Space : rendus des créatures
         // 1.7 draws helmet overlays at HELMET and the scope at HOTBAR's pre event: both under the crosshair and hotbar.
         Hud.addCameraOverlay("geontm", "camera_overlays", graphics -> {
             ArmorSetBClient.renderHelmetOverlay(graphics);
