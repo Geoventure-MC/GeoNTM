@@ -244,7 +244,6 @@ public final class MainRegistry {
         ModBiomeModifiers.declare();
         LegacyDungeonDeclarations.declare(); // WG-D: legacy dungeon structures + scattered-block features (before BiomeFeatures.install)
         ModMobSpawns.init(); // 1.7 EntityMappings natural spawns + placements (before BiomeFeatures.install)
-        fr.geoventure.geontm.space.mob.SpaceMobs.init(); // NTM: Space : créatures des planètes Ad Astra (avant BiomeFeatures.install)
         BiomeFeatures.install(); // Fabric: the same biome modifiers through BiomeModifications (no-op elsewhere)
         ModCraftingRecipes.declare();
         ModArmorTableBlocks.init();
@@ -347,6 +346,7 @@ public final class MainRegistry {
         ModExplosivesContent.init(); // landmines, timed charges, det blocks, plastic explosive blocks, duds, multi purpose bomb, detonators
         // Ammo, factories, and gun suppliers must all be declared before any loader flushes ITEMs.
         GunCatalogue.init();
+        fr.geoventure.geontm.space.mob.SpaceMobs.init(); // NTM: Space : créatures (après GunCatalogue : leurs munitions copient celles de GunFactory)
         TileEntityPileCore.initDebris();
         ModMissileItems.init(); // launchable missiles + the designators that aim them
         ModWandItems.init(); // creative wand_k / wand_s / wand_d
