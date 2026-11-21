@@ -2,9 +2,9 @@
 
 Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : point fixe sur les recettes actives (conditions évaluées avec les réglages par défaut : 528, mode coûteux et LBSM désactivés), en exigeant que la machine de chaque recette soit elle-même obtenable. Les objets, tags et fluides de GeoMods comptent comme fournis.
 
-- Objets et fluides obtenables : **2325** (recettes : 1801, butin : 155, blocs de monde : 110, drops : 21)
+- Objets et fluides obtenables : **2347** (recettes : 1821, butin : 154, blocs de monde : 110, drops : 21)
 - Objets visibles : **1115** ; visibles non obtenables : **324**
-- Hypothèse : 121 recettes actives (missiles modulaires, espace, ogives, réacteurs...) ne se débloquent qu'avec un schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes.
+- Hypothèse : 121 recettes actives (missiles modulaires, espace, ogives, réacteurs...) ne se débloquent qu'avec un schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes. Les règles de broyage construites en Java (`ShredderRecipes` : bûches et planches en sciure, minerais, lingots et blocs en poudre) sont modélisées : la sciure du cordite et le coltan broyé de `coltanpain` en viennent.
 
 | Catégorie | Nombre |
 |---|---:|
@@ -399,7 +399,6 @@ Un fluide sans producteur rend inutilisables les recettes qui le demandent (les 
 | `chlorocalcite_mix` | 1 : fraction/chlorocalcite_mix |
 | `chlorocalcite_solution` | 1 : mixer/chlorocalcite_mix.0 |
 | `naphtha_coker` | 3 : fraction/naphtha_coker, mixer/solvent.3, reforming/naphtha_coker |
-| `pain` | 1 : chemical_plant/coltancrystal |
 | `pheromone` | 1 : mixer/pheromone_m.0 |
 | `potassium_chloride` | 1 : electrolyser_fluid/potassium_chloride |
 | `redmud` | 4 : coker/redmud, crystallizer/powder_calcium_redmud, electrolyser_fluid/redmud, silex/fluid_redmud |

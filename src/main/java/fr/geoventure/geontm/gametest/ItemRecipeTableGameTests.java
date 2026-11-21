@@ -1,6 +1,7 @@
 package fr.geoventure.geontm.gametest;
 
 import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.blocks.ModBlocks;
 import fr.geoventure.geontm.api.data.MachineDataMaps;
 import fr.geoventure.geontm.config.GeneralConfig;
 import fr.geoventure.geontm.inventory.FluidContainerStack;
@@ -21,6 +22,7 @@ import fr.geoventure.geontm.inventory.recipes.ParticleAcceleratorRecipes;
 import fr.geoventure.geontm.inventory.recipes.PedestalRecipes;
 import fr.geoventure.geontm.inventory.recipes.PressRecipes;
 import fr.geoventure.geontm.inventory.recipes.SawmillRecipes;
+import fr.geoventure.geontm.inventory.recipes.ShredderRecipes;
 import fr.geoventure.geontm.inventory.recipes.SolderingRecipes;
 import fr.geoventure.geontm.inventory.recipes.anvil.AnvilRecipes;
 import fr.geoventure.geontm.inventory.recipes.loader.DataRecipeTable;
@@ -78,6 +80,9 @@ public final class ItemRecipeTableGameTests {
             TESTS.function("data_map_machine_values_equal_17", 20, () -> ItemRecipeTableGameTests::machineValues);
     public static final GameTests.Function SAWMILL =
             TESTS.function("recipe_table_sawmill_rows", 20, () -> ItemRecipeTableGameTests::sawmill);
+    public static final GameTests.Function SHREDDER_SWEEPS =
+            TESTS.function("recipe_table_shredder_sweeps_feed_cordite_and_coltanpain", 20,
+                    () -> ItemRecipeTableGameTests::shredderSweeps);
 
     public static void init() {}
 
@@ -264,6 +269,23 @@ public final class ItemRecipeTableGameTests {
                         && SawmillRecipes.getOutput(level, new ItemStack(Items.DIRT)).isEmpty()
                         && SawmillRecipes.getRecipes().size() == 4,
                 "sawmill outputs differ from 1.7");
+        helper.succeed();
+    }
+
+    /**
+     * The shredder's code-built sweeps (no recipe file) are the survival source of two chemical plant inputs:
+     * coltan ore and its fragment grind to {@code powder_coltan_ore} (chem.coltancleaning, then chem.coltanpain), and
+     * logs and planks to {@code powder_sawdust} (chem.cordite). tools/verifier_obtention.py relies on exactly this.
+     */
+    public static void shredderSweeps(GameTestHelper helper) {
+        ItemStack ore = ShredderRecipes.getShredderResult(new ItemStack(ModBlocks.ore_coltan.get()));
+        helper.assertTrue(ore.is(ModItems.powder_coltan_ore.get()) && ore.getCount() == 2, "coltan ore: " + ore);
+        ItemStack fragment = ShredderRecipes.getShredderResult(new ItemStack(ModItems.fragment_coltan.get()));
+        helper.assertTrue(fragment.is(ModItems.powder_coltan_ore.get()) && fragment.getCount() == 1, "coltan fragment: " + fragment);
+        ItemStack log = ShredderRecipes.getShredderResult(new ItemStack(Items.OAK_LOG));
+        helper.assertTrue(log.is(ModItems.powder_sawdust.get()) && log.getCount() == 4, "oak log: " + log);
+        ItemStack planks = ShredderRecipes.getShredderResult(new ItemStack(Items.OAK_PLANKS));
+        helper.assertTrue(planks.is(ModItems.powder_sawdust.get()) && planks.getCount() == 1, "oak planks: " + planks);
         helper.succeed();
     }
 

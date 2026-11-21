@@ -326,6 +326,23 @@ for c in sorted(CONNUS):
 # Autres comportements Java : un satellite scientifique en orbite (SatelliteScience) écrit les données de vol sur un disque vide.
 recettes.append(('java/flightdata', 'java', [], {'drive_disk_flightdata'},
                  [frozenset({'geontm:satellite_science'}), frozenset({'geontm:drive_disk_empty'})]))
+# Broyeur : en plus des lignes de ShredderTable (fichiers JSON), ShredderRecipes.registerVanillaSweeps / registerTagSweep
+# construisent des règles en Java, sans fichier : bûches -> 4 sciure, planches -> 1 sciure, et pour chaque matière c:<forme>/<matière>
+# lingots, plaques, gemmes -> 1 poudre ; minerais, matières brutes -> 2 ; blocs -> 4 ou 9 (la quantité n'importe pas ici).
+# La poudre est c:dusts/<matière> quand ce tag n'a qu'un seul membre (sinon la sortie dépend de l'ordre des mods préférés : ignorée) ;
+# `coltan` vise powder_coltan_ore (DUST_OVERRIDES), la poudre brute que la plante chimique épure ensuite en powder_coltan.
+BROYAGE_BOIS = (('minecraft:logs', 'powder_sawdust'), ('minecraft:planks', 'powder_sawdust'))
+BROYAGE_SURCHARGE = {'coltan': 'powder_coltan_ore'}
+for tag_, sortie_ in BROYAGE_BOIS:
+    recettes.append((f'java/broyeur/{tag_}', 'java', ['machine_shredder'], {sortie_}, [frozenset({'#' + tag_})]))
+for tag_ in sorted(TAGS):
+    m_ = re.match(r'c:(ingots|plates|gems|ores|raw_materials|storage_blocks)/([a-z0-9_]+)$', tag_)
+    if not m_:
+        continue
+    poudres_ = TAGS.get('c:dusts/' + m_.group(2), set())
+    poudre_ = BROYAGE_SURCHARGE.get(m_.group(2)) or (next(iter(poudres_))[7:] if len(poudres_) == 1 and next(iter(poudres_)).startswith('geontm:') else None)
+    if poudre_:
+        recettes.append((f'java/broyeur/{tag_}', 'java', ['machine_shredder'], {poudre_}, [frozenset({'#' + tag_})]))
 # Déchets nucléaires : les réacteurs les produisent ; la table ne contient que les conversions entre formes.
 for c in sorted(CONNUS):
     if c.startswith('nuclear_waste_') and '_tiny' not in c and c.rsplit('_', 1)[0] in ('nuclear_waste_long', 'nuclear_waste_short',
@@ -773,7 +790,9 @@ if MD:
          f'- Objets visibles : **{len(VISIBLE)}** ; visibles non obtenables : **{len(manquants)}**',
          f"- Hypothèse : {n_schemas} recettes actives (missiles modulaires, espace, ogives, réacteurs...) ne se débloquent qu'avec un "
          "schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. "
-         'Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes.', '']
+         'Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes. '
+         "Les règles de broyage construites en Java (`ShredderRecipes` : bûches et planches en sciure, minerais, lingots et blocs "
+         "en poudre) sont modélisées : la sciure du cordite et le coltan broyé de `coltanpain` en viennent.", '']
     ordre = ['à décider', 'volontaire', 'cosmétique', 'butin', 'bloc formé', 'monde', 'autre mod', 'dérivé']
     L += ['| Catégorie | Nombre |', '|---|---:|']
     for c in sorted(par_cat, key=lambda c: ordre.index(c) if c in ordre else 99):
