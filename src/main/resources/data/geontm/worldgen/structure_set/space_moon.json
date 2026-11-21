@@ -1,0 +1,21 @@
+{
+  "structures": [
+    {
+      "structure": "geontm:space_meteor_dungeon_moon",
+      "weight": 1
+    },
+    {
+      "structure": "geontm:space_mun_base",
+      "weight": 6
+    },
+    {
+      "structure": "geontm:space_minmus_base",
+      "weight": 6
+    }
+  ],
+  "placement": {
+    "type": "geontm:config_spread",
+    "salt": 996583981,
+    "key": "ntm"
+  }
+}

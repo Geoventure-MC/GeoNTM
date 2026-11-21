@@ -1822,6 +1822,13 @@ public final class GeoNtmGameTestFunctions {
             TESTS.function("ntm_structure_region_pick", 20, () -> NTMStructureGameTests::regionPick);
     public static final GameTests.Function NTM_STRUCTURE_SPAWNS =
             TESTS.function("ntm_structure_spawns", 20, () -> NTMStructureGameTests::spawnsRegistered);
+    // --- NTM: Space sur les astres d'Ad Astra (SpaceStructureGameTests) ---
+    public static final GameTests.Function SPACE_STRUCTURE_SPAWNS =
+            TESTS.function("space_structure_spawns", 40, () -> SpaceStructureGameTests::spawnsRegistered);
+    public static final GameTests.Function SPACE_STRUCTURE_PIECES =
+            TESTS.function("space_structure_pieces", 200, () -> SpaceStructureGameTests::singlePiecesResolve);
+    public static final GameTests.Function SPACE_STRUCTURE_BODIES =
+            TESTS.function("space_structure_bodies", 40, () -> SpaceStructureGameTests::everyBodyPicksSomething);
     public static final GameTests.Function NTM_STRUCTURE_PALETTES =
             TESTS.function("ntm_structure_palettes", 200, () -> NTMStructureGameTests::palettesResolve);
     public static final GameTests.Function NTM_STRUCTURE_COMPONENT_BUILD =

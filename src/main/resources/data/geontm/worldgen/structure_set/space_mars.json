@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "geontm:space_meteor_dungeon_mars",
+      "weight": 1
+    },
+    {
+      "structure": "geontm:space_duna_comms",
+      "weight": 6
+    }
+  ],
+  "placement": {
+    "type": "geontm:config_spread",
+    "salt": 996583980,
+    "key": "ntm"
+  }
+}

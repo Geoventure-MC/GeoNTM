@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "geontm:space_meteor_dungeon_moon",
+    "geontm:space_mun_base",
+    "geontm:space_minmus_base",
+    "geontm:space_meteor_dungeon_mars",
+    "geontm:space_duna_comms",
+    "geontm:space_meteor_dungeon_glacio",
+    "geontm:space_ike_artifact",
+    "geontm:space_laythe_vertibird",
+    "geontm:space_laythe_crashed_vertibird",
+    "geontm:space_meteor_dungeon_venus",
+    "geontm:space_dres_rbmk",
+    "geontm:space_meteor_dungeon_mercury",
+    "geontm:space_moho_base"
+  ]
+}

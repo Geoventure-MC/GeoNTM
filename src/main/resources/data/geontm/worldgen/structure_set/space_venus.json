@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "geontm:space_meteor_dungeon_venus",
+      "weight": 1
+    },
+    {
+      "structure": "geontm:space_dres_rbmk",
+      "weight": 8
+    }
+  ],
+  "placement": {
+    "type": "geontm:config_spread",
+    "salt": 996583977,
+    "key": "ntm"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "structures": [
+    {
+      "structure": "geontm:space_meteor_dungeon_glacio",
+      "weight": 1
+    },
+    {
+      "structure": "geontm:space_ike_artifact",
+      "weight": 4
+    },
+    {
+      "structure": "geontm:space_laythe_vertibird",
+      "weight": 6
+    },
+    {
+      "structure": "geontm:space_laythe_crashed_vertibird",
+      "weight": 6
+    }
+  ],
+  "placement": {
+    "type": "geontm:config_spread",
+    "salt": 996583979,
+    "key": "ntm"
+  }
+}

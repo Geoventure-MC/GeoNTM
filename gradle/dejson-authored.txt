@@ -277,3 +277,29 @@ assets/geontm/models/item/machine_obj_legacy.json
 assets/geontm/models/item/machine_weapon_table.json
 assets/geontm/models/item/pneumatic_tube.json
 # Machine recipe tables are not here: they are generated from src/recipes at build time (gradle/recipe-tables.gradle.kts).
+
+# NTM: Space sur les astres d'Ad Astra (space/structure) : placement par astre, tags de biomes Ad Astra facultatifs
+data/geontm/tags/worldgen/biome/space/glacio.json
+data/geontm/tags/worldgen/biome/space/mars.json
+data/geontm/tags/worldgen/biome/space/mercury.json
+data/geontm/tags/worldgen/biome/space/moon.json
+data/geontm/tags/worldgen/biome/space/venus.json
+data/geontm/tags/worldgen/structure/space_structures.json
+data/geontm/worldgen/structure/space_dres_rbmk.json
+data/geontm/worldgen/structure/space_duna_comms.json
+data/geontm/worldgen/structure/space_ike_artifact.json
+data/geontm/worldgen/structure/space_laythe_crashed_vertibird.json
+data/geontm/worldgen/structure/space_laythe_vertibird.json
+data/geontm/worldgen/structure/space_meteor_dungeon_glacio.json
+data/geontm/worldgen/structure/space_meteor_dungeon_mars.json
+data/geontm/worldgen/structure/space_meteor_dungeon_mercury.json
+data/geontm/worldgen/structure/space_meteor_dungeon_moon.json
+data/geontm/worldgen/structure/space_meteor_dungeon_venus.json
+data/geontm/worldgen/structure/space_minmus_base.json
+data/geontm/worldgen/structure/space_moho_base.json
+data/geontm/worldgen/structure/space_mun_base.json
+data/geontm/worldgen/structure_set/space_glacio.json
+data/geontm/worldgen/structure_set/space_mars.json
+data/geontm/worldgen/structure_set/space_mercury.json
+data/geontm/worldgen/structure_set/space_moon.json
+data/geontm/worldgen/structure_set/space_venus.json

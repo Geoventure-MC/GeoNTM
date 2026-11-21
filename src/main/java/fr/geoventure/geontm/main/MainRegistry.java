@@ -357,6 +357,7 @@ public final class MainRegistry {
         GeoNtmPlayerProps.init(); // 1.7 onPlayerClone: reputation, shield, fbi/rad marks survive respawn
         NTMWorldGenerator.init(); // NBT structures: geontm:nbt structure type, piece type, 1.7 spawn registrations
         NTMComponentStructures.init(); // features/bunker/meteor_dungeon spawns + hardcoded piece types (WG-C)
+        fr.geoventure.geontm.space.structure.SpaceStructureTypes.init(); // NTM: Space : structures des astres Ad Astra
         LegacyDungeonStructure.init(); // WG-D: 1.7 GeoNtmWorldGen legacy dungeons (geontm:legacy_dungeon) + scattered-block feature types
         ModBiomes.init(); // crater biome keys, backed by worldgen biome JSON
         ModBlockEntities.init();

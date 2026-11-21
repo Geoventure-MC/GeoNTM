@@ -1,0 +1,9 @@
+{
+  "type": "geontm:body_nbt",
+  "biomes": "#geontm:space/mercury",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn": "moho_base",
+  "body": "mercury"
+}

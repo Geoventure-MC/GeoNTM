@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "geontm:space_meteor_dungeon_mercury",
+      "weight": 1
+    },
+    {
+      "structure": "geontm:space_moho_base",
+      "weight": 4
+    }
+  ],
+  "placement": {
+    "type": "geontm:config_spread",
+    "salt": 996583976,
+    "key": "ntm"
+  }
+}
