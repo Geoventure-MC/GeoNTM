@@ -1490,7 +1490,7 @@ objet,balefire_and_ham,Jambon et Oeufs Balefire,RETIRER,hors périmètre,,"objet
 objet,balefire_and_steel,Balefire et acier,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,balefire_scrambled,Oeuf de Balefire brouillé,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,ball_dynamite,Dynamiter,SI_BESOIN,dépendances,,nécessaire à une recette gardée
-objet,ball_fireclay,Argile réfractaire,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
+objet,ball_fireclay,Argile réfractaire,GARDER,ressources : intermédiaires,,"cuite en brique réfractaire (fonderie, moules)"
 objet,ball_resin,,RETIRER,hors périmètre,,"objet décoratif, parodique ou bombe extrême"
 objet,ball_tatb,,SI_BESOIN,dépendances,,nécessaire à une recette gardée
 objet,ball_tnt,,SI_BESOIN,dépendances,,nécessaire à une recette gardée

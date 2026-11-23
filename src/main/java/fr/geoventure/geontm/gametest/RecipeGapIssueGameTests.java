@@ -24,6 +24,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeType;
+import fr.geoventure.geontm.perimetre.Perimetre;
 
 /**
  * Crafting recipes 1.7 has that recipe viewers did not list: latex in 1.7's {@code ANY_RUBBER}, the weapon mods and
@@ -43,6 +45,8 @@ public final class RecipeGapIssueGameTests {
             TESTS.function("recipe_gap_combination_tab", 20, () -> RecipeGapIssueGameTests::combinationTab);
     public static final GameTests.Function FIRECLAY =
             TESTS.function("recipe_gap_raw_aluminium_fireclay", 20, () -> RecipeGapIssueGameTests::rawFireclay);
+    public static final GameTests.Function FIREBRICK_CHAIN =
+            TESTS.function("recipe_gap_fireclay_firebrick_in_survival", 20, () -> RecipeGapIssueGameTests::firebrickChain);
 
     /** The weapon mods, guns and tank the reports named; all component recipes in the port. */
     private static final String[] COMPONENT_RECIPES = {
@@ -139,6 +143,24 @@ public final class RecipeGapIssueGameTests {
         match(helper, fireclay, "geontm:ball_fireclay_raw");
         ItemStack out = Recipes.craftingResult(helper.getLevel(), 3, 3, fireclay).orElse(ItemStack.EMPTY);
         helper.assertTrue(out.is(item("geontm:ball_fireclay")) && out.getCount() == 4, "raw aluminium makes 4 fireclay, got " + out);
+        helper.succeed();
+    }
+
+    /**
+     * Fireclay is the only source of firebrick (foundry, molds): the perimeter must keep it and its recipes (player
+     * report 23/11: fireclay had no recipe, so firebrick and everything built from it were out of reach in survival).
+     */
+    private static void firebrickChain(GameTestHelper helper) {
+        helper.assertFalse(Perimetre.retire("ball_fireclay"), "ball_fireclay is retired from the perimeter");
+        boolean clayCrafted = false;
+        boolean brickSmelted = false;
+        for (Recipe<?> recipe : helper.getLevel().getRecipeManager().getRecipes()) {
+            Item result = recipe.getResultItem(helper.getLevel().registryAccess()).getItem();
+            if (result == item("geontm:ball_fireclay") && recipe.getType() == RecipeType.CRAFTING) clayCrafted = true;
+            if (result == item("geontm:ingot_firebrick") && recipe.getType() == RecipeType.SMELTING) brickSmelted = true;
+        }
+        helper.assertTrue(clayCrafted, "no crafting recipe makes geontm:ball_fireclay");
+        helper.assertTrue(brickSmelted, "no furnace recipe makes geontm:ingot_firebrick");
         helper.succeed();
     }
 }

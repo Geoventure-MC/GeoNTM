@@ -122,8 +122,15 @@ STRUCTURES_DE_LANCEMENT = {'struct_launcher': 'missiles', 'struct_scaffold': 'sa
 MACHINES_DE_CHAINE = {'machine_furnace_combination', 'machine_precass', 'machine_pyrooven', 'machine_supercomputer'}
 
 
+# Intermédiaires que la règle « décoratif » écartait à tort : l'argile réfractaire est la seule source de la brique
+# réfractaire (fonderie, moules) ; sans elle, ces blocs étaient impossibles à construire en survie (retour joueur, 23/11).
+INTERMEDIAIRES_DE_CHAINE = {'ball_fireclay': 'cuite en brique réfractaire (fonderie, moules)'}
+
+
 def classer(ident, genre, registre):
     """Renvoie (décision, thème, cible, raison)."""
+    if ident in INTERMEDIAIRES_DE_CHAINE:
+        return 'GARDER', 'ressources : intermédiaires', '', INTERMEDIAIRES_DE_CHAINE[ident]
     if ident in MACHINES_DE_CHAINE:
         return 'GARDER', 'machines : production', '', 'nécessaire à une chaîne de production gardée'
     if ident in STRUCTURES_DE_LANCEMENT:

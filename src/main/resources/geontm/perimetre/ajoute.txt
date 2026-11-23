@@ -58,3 +58,5 @@ struct_scaffold
 struct_soyuz_core
 battery_lead
 steel_scaffold
+ball_fireclay
+ingot_firebrick

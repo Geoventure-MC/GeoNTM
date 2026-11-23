@@ -208,7 +208,6 @@ balefire
 balefire_and_ham
 balefire_and_steel
 balefire_scrambled
-ball_fireclay
 ball_resin
 barbed_wire
 barbed_wire_acid
