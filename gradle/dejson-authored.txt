@@ -287,6 +287,7 @@ data/geontm/tags/worldgen/biome/space/venus.json
 data/geontm/tags/worldgen/structure/space_structures.json
 data/geontm/worldgen/structure/space_dres_rbmk.json
 data/geontm/worldgen/structure/space_duna_comms.json
+data/geontm/worldgen/structure/space_martian_base.json
 data/geontm/worldgen/structure/space_ike_artifact.json
 data/geontm/worldgen/structure/space_laythe_crashed_vertibird.json
 data/geontm/worldgen/structure/space_laythe_vertibird.json
