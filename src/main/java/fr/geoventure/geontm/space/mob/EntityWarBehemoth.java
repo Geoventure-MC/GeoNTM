@@ -70,8 +70,7 @@ public class EntityWarBehemoth extends CompatMonster {
     protected void registerGoals() {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 0, true, false, null));
         // 1.7: EntityLiving, nearby only, anything but another behemoth - Mob is its counterpart
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 0, true, true,
-                fr.geoventure.geocore.world.Targeting.selector(target -> !(target instanceof EntityWarBehemoth))));
+        // Plus de cible « toute créature » (Mob.class) : tankbots et béhémoths s'entretuaient sur Mars (lag, 23/11).
         this.goalSelector.addGoal(3, new EntityAIStepTowardsTarget(this, 50, 0.3D, 50, 10, 0.6));
         this.goalSelector.addGoal(4, new EntityAIBehemothGun(this, true, true, 3, 35, 30));
         this.targetSelector.addGoal(5, new HurtByTargetGoal(this));

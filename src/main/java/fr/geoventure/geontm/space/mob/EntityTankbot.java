@@ -74,8 +74,7 @@ public class EntityTankbot extends CompatMonster implements IRadiationImmune {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 0, true, false, null));
         this.goalSelector.addGoal(5, new RandomStrollGoal(this, 0.2D));
         // 1.7: EntityLiving, nearby only, anything but another tankbot - Mob is its counterpart
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 0, true, true,
-                fr.geoventure.geocore.world.Targeting.selector(target -> !(target instanceof EntityTankbot))));
+        // Plus de cible « toute créature » (Mob.class) : tankbots et béhémoths s'entretuaient sur Mars (lag, 23/11).
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(3, new EntityAIStepTowardsTarget(this, 50, 0.2D, 200, 20, 0.6));
         this.goalSelector.addGoal(4, new EntityAITankshell(this, true, true, 2, 10, 30));

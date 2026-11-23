@@ -116,9 +116,9 @@ public final class SpaceMobs {
         // sur Terre. Vache lunaire : Lune ; machines de guerre : Mars ; faune de Laythe : eaux de Glacio. Poids de
         // hbm-space (biomes mun, thatmo, laythe_ocean/coast).
         String ns = Constants.MOD_ID;
+        // Tankbot et béhémoth de guerre : plus d'apparition naturelle sur Mars (23/11, ils se battaient entre eux : lag et
+        // « zoo »). Le propriétaire veut des aliens à la place ; ils restent disponibles en œuf.
         BiomeModifiers.addSpawns(ns, "space_moon_cow", "#geontm:space/moon", null, "geontm:entity_moon_cow", 10, 4, 4);
-        BiomeModifiers.addSpawns(ns, "space_tankbot", "#geontm:space/mars", null, "geontm:entity_tankbot", 6, 1, 1);
-        BiomeModifiers.addSpawns(ns, "space_war_behemoth", "#geontm:space/mars", null, "geontm:entity_war_behemoth", 2, 1, 1);
         BiomeModifiers.addSpawns(ns, "space_scutterfish", "#geontm:space/glacio", null, "geontm:entity_scutterfish", 10, 4, 4);
         BiomeModifiers.addSpawns(ns, "space_siftereel", "#geontm:space/glacio", null, "geontm:entity_siftereel", 10, 1, 3);
         BiomeModifiers.addSpawns(ns, "space_scuttlecrab", "#geontm:space/glacio", null, "geontm:entity_scuttlecrab", 4, 1, 3);
