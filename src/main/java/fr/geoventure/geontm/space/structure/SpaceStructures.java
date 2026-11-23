@@ -108,6 +108,7 @@ public final class SpaceStructures {
     public static final String MOHO_BASE = "moho_base";
     public static final String DRES_RBMK = "dres_rbmk";
     public static final String DUNA_COMMS = "duna_comms";
+    public static final String MARTIAN_BASE = "martian_base";
     public static final String IKE_ARTIFACT = "ike_artifact";
     public static final String LAYTHE_NUKE_SUB = "laythe_nuke_sub";
     public static final String LAYTHE_VERTIBIRD = "laythe_vertibird";
@@ -240,6 +241,7 @@ public final class SpaceStructures {
     /** {@code WorldGeneratorDuna}. */
     private static void duna() {
         single(DUNA_COMMS, new JigsawPiece("duna_comms", Files.DUNA_COMMS, -1));
+        single(MARTIAN_BASE, new JigsawPiece("martian_base", Files.MARTIAN_BASE, -1));
     }
 
     /** {@code WorldGeneratorIke}: the artifact, its pedestal re-stocked by Ike's populate ({@code PlanetFeatures17}). */

@@ -7,6 +7,10 @@
     {
       "structure": "geontm:space_duna_comms",
       "weight": 6
+    },
+    {
+      "structure": "geontm:space_martian_base",
+      "weight": 4
     }
   ],
   "placement": {

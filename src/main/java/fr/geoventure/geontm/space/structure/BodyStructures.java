@@ -122,7 +122,9 @@ public final class BodyStructures {
             // WorldGeneratorCelestial : le donjon de météorite sur chaque astre (poids 1, rootHeight >= 0)
             for (Body body : values()) body.add(SpaceStructures.METEOR_DUNGEON, 1, ROOT_ABOVE_ZERO);
             MOON.add(SpaceStructures.MUN_BASE, 6, null).add(SpaceStructures.MINMUS_BASE, 6, null).add(null, 18, null);
-            MARS.add(SpaceStructures.DUNA_COMMS, 6, FLAT).add(null, 18, null);
+            MARS.add(SpaceStructures.DUNA_COMMS, 6, FLAT)
+                    .add(SpaceStructures.MARTIAN_BASE, 4, FLAT)
+                    .add(null, 14, null);
             GLACIO.add(SpaceStructures.IKE_ARTIFACT, 4, null)
                     .add(SpaceStructures.LAYTHE_VERTIBIRD, 6, ROOT_ABOVE_ZERO)
                     .add(SpaceStructures.LAYTHE_CRASHED_VERTIBIRD, 6, ROOT_ABOVE_ZERO)
