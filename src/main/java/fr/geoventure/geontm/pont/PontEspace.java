@@ -16,6 +16,7 @@ public final class PontEspace {
     private static final String API = "fr.geoventure.geomods.api.GeoSpaceApi";
     private static final String CLE_LANCEUR = "geoventure_lanceur";
     private static @Nullable Method inscrire;
+    private static @Nullable Method retirer;
 
     private PontEspace() {}
 
@@ -24,6 +25,12 @@ public final class PontEspace {
             inscrire = Class.forName(API).getMethod("registerSatellite",
                     UUID.class, String.class, String.class, String.class, String.class);
             XSatelliteRegistry.ORBITED.register(PontEspace::enOrbite);
+            try {
+                retirer = Class.forName(API).getMethod("unregisterSatellite", int.class, String.class);
+                XSatelliteRegistry.DESCENDED.register(PontEspace::redescendu);
+            } catch (NoSuchMethodException ancien) {
+                // geoMods antérieur au 23/11 : la descente n'est pas transmise
+            }
             Constants.LOG.info("[GeoNTM] Satellites reliés à la course à l'espace");
         } catch (ReflectiveOperationException | LinkageError e) {
             Constants.LOG.info("[GeoNTM] Course à l'espace non reliée : {}", e.toString());
@@ -33,6 +40,15 @@ public final class PontEspace {
     /** Appelé par les pas de tir juste avant de confier le satellite à la fusée. */
     public static void marquerLanceur(ItemStack satellite, @Nullable UUID lanceur) {
         if (lanceur != null && !satellite.isEmpty()) satellite.getOrCreateTag().putUUID(CLE_LANCEUR, lanceur);
+    }
+
+    /** Satellite redescendu : retiré de la liste du plugin (il ne compte plus pour le renseignement). */
+    private static void redescendu(int frequence, Satellite satellite) {
+        try {
+            retirer.invoke(null, frequence, null);
+        } catch (ReflectiveOperationException | RuntimeException e) {
+            Constants.LOG.warn("[GeoNTM] Retrait du satellite {} non transmis : {}", frequence, e.toString());
+        }
     }
 
     private static void enOrbite(ServerLevel level, ItemStack stack, int frequence, Satellite satellite) {

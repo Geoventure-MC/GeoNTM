@@ -68,6 +68,13 @@ public final class XSatelliteRegistry {
      */
     public static final Hook<Orbited> ORBITED = Hook.notifying();
 
+    /** Geoventure (23/11) : un satellite quitte l'orbite ({@code /satellite descend}) ; le renseignement ne le compte plus. */
+    public interface Descended {
+        void descended(int freq, Satellite sat);
+    }
+
+    public static final Hook<Descended> DESCENDED = Hook.notifying();
+
     /** 1.7 {@code createFromItem}. */
     public static @Nullable Satellite createFromItem(ItemStack stack) {
         SatelliteType type = typeFor(stack);

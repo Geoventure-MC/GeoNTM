@@ -159,6 +159,9 @@ public class SatelliteSavedData extends CompatSavedData<SatelliteSavedData> {
         if (satellite == null) return false;
         satellite.attachOwner(null);
         setDirty();
+        for (var listener : fr.geoventure.geontm.saveddata.satellites.XSatelliteRegistry.DESCENDED) {
+            listener.descended(freq, satellite);
+        }
         return true;
     }
 
