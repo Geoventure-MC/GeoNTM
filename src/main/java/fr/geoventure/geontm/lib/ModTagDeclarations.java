@@ -160,6 +160,20 @@ public final class ModTagDeclarations {
                 "geontm:entity_parasite_maggot");
         Tags.entityType("minecraft", "undead",
                 "geontm:entity_undead_soldier");
+        // Créatures de NTM: Space : faites pour les astres d'Ad Astra, qui étouffe et gèle toute entité hors de ces tags
+        // (retour joueur 23/11 : la vache lunaire mourait sur la Lune).
+        Tags.entityType("ad_astra", "lives_without_oxygen",
+                "geontm:entity_moon_cow", "geontm:entity_tankbot", "geontm:entity_war_behemoth",
+                "geontm:entity_scutterfish", "geontm:entity_siftereel", "geontm:entity_scuttlecrab", "geontm:entity_scrapfish",
+                "geontm:entity_depthsquid", "geontm:entity_bfa", "geontm:entity_meme_ufo");
+        Tags.entityType("ad_astra", "can_survive_extreme_cold",
+                "geontm:entity_moon_cow", "geontm:entity_tankbot", "geontm:entity_war_behemoth",
+                "geontm:entity_scutterfish", "geontm:entity_siftereel", "geontm:entity_scuttlecrab", "geontm:entity_scrapfish",
+                "geontm:entity_depthsquid", "geontm:entity_bfa", "geontm:entity_meme_ufo");
+        Tags.entityType("ad_astra", "can_survive_extreme_heat",
+                "geontm:entity_moon_cow", "geontm:entity_tankbot", "geontm:entity_war_behemoth",
+                "geontm:entity_scutterfish", "geontm:entity_siftereel", "geontm:entity_scuttlecrab", "geontm:entity_scrapfish",
+                "geontm:entity_depthsquid", "geontm:entity_bfa", "geontm:entity_meme_ufo");
         Tags.item("minecraft", "dyes",
                 "geontm:chemical_dye_black", "geontm:chemical_dye_blue", "geontm:chemical_dye_brown", "geontm:chemical_dye_cyan",
                 "geontm:chemical_dye_gray", "geontm:chemical_dye_green", "geontm:chemical_dye_lightblue",

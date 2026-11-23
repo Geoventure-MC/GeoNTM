@@ -13,6 +13,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.level.block.Blocks;
+import fr.geoventure.geontm.space.mob.SpaceMobs;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import java.util.List;
 
 /**
  * The creepers, ducks, pigeon, plastic bag, maggot, ghost, block spider, undead soldier, FBI, FBI drone,
@@ -35,7 +40,27 @@ public final class Fix7MobGameTests {
     public static final GameTests.Function NUCLEAR_CREEPER_BLAST =
             TESTS.function("pt1012_nuclear_creeper_blast", 400, 48, () -> Fix7MobGameTests::nuclearCreeperBlast);
 
+    /**
+     * Retour joueur (23/11) : la vache lunaire mourait sur la Lune. Ad Astra étouffe et gèle toute entité hors de ses
+     * tags d'immunité ; les créatures de NTM: Space, faites pour les astres, y sont ajoutées.
+     */
+    public static final GameTests.Function SPACE_MOBS_SURVIVE =
+            TESTS.function("space_mobs_survive_ad_astra", 20, () -> Fix7MobGameTests::spaceMobsSurviveAdAstra);
+
     public static void init() {}
+
+    public static void spaceMobsSurviveAdAstra(GameTestHelper helper) {
+        List<EntityType<?>> mobs = List.of(SpaceMobs.MOON_COW.get(), SpaceMobs.TANKBOT.get(), SpaceMobs.WAR_BEHEMOTH.get(),
+                SpaceMobs.SCUTTERFISH.get(), SpaceMobs.SIFTER_EEL.get(), SpaceMobs.SCUTTLECRAB.get(), SpaceMobs.SCRAPFISH.get(),
+                SpaceMobs.DEPTH_SQUID.get(), SpaceMobs.BF_ANGEL.get(), SpaceMobs.SIEGE_UFO.get());
+        for (String tag : List.of("lives_without_oxygen", "can_survive_extreme_cold", "can_survive_extreme_heat")) {
+            TagKey<EntityType<?>> key = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("ad_astra", tag));
+            for (EntityType<?> type : mobs) {
+                helper.assertTrue(type.is(key), EntityType.getKey(type) + " absent de ad_astra:" + tag);
+            }
+        }
+        helper.succeed();
+    }
 
     public static void nuclearCreeperBlast(GameTestHelper helper) {
         BlockPos floorCorner = helper.absolutePos(new BlockPos(0, 0, 0));
