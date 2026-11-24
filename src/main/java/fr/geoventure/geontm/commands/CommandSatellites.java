@@ -63,6 +63,9 @@ public final class CommandSatellites {
         // 1.7: any ISatChip but the blank ID chip. A chip whose item launches nothing is still consumed and still
         // reported as launched, because XSatelliteRegistry.orbit quietly does nothing for it.
         if (held.getItem() instanceof ISatChip && held.getItem() != ModSatelliteItems.sat_chip.get()) {
+            if (held.getTag() == null || !held.getTag().hasUUID("geoventure_lanceur")) {
+                fr.geoventure.geontm.pont.PontEspace.marquerLanceur(held, player.getUUID());
+            }
             Satellite.orbit(player.level() instanceof ServerLevel level ? level : source.getLevel(), held,
                     ISatChip.getFreqS(held), player.getX(), player.getY(), player.getZ());
             held.shrink(1);
