@@ -1263,6 +1263,7 @@ public final class ItemIds {
     public static final String conveyor_wand_regular = "geontm:conveyor_wand_regular";
     public static final String conveyor_wand_triple = "geontm:conveyor_wand_triple";
     public static final String cordite = "geontm:cordite";
+    public static final String core_angel = "geontm:core_angel";
     public static final String cotton_candy = "geontm:cotton_candy";
     public static final String coupling_tool = "geontm:coupling_tool";
     public static final String crackpipe = "geontm:crackpipe";
@@ -1540,7 +1541,9 @@ public final class ItemIds {
     public static final String elec_sword = "geontm:elec_sword";
     public static final String emp_bomb = "geontm:emp_bomb";
     public static final String entanglement_kit = "geontm:entanglement_kit";
+    public static final String entity_bfa_spawn_egg = "geontm:entity_bfa_spawn_egg";
     public static final String entity_cyber_crab_spawn_egg = "geontm:entity_cyber_crab_spawn_egg";
+    public static final String entity_depthsquid_spawn_egg = "geontm:entity_depthsquid_spawn_egg";
     public static final String entity_elder_one_spawn_egg = "geontm:entity_elder_one_spawn_egg";
     public static final String entity_fbi_drone_spawn_egg = "geontm:entity_fbi_drone_spawn_egg";
     public static final String entity_fbi_spawn_egg = "geontm:entity_fbi_spawn_egg";
@@ -1554,6 +1557,7 @@ public final class ItemIds {
     public static final String entity_glyphid_nuclear_spawn_egg = "geontm:entity_glyphid_nuclear_spawn_egg";
     public static final String entity_glyphid_scout_spawn_egg = "geontm:entity_glyphid_scout_spawn_egg";
     public static final String entity_glyphid_spawn_egg = "geontm:entity_glyphid_spawn_egg";
+    public static final String entity_meme_ufo_spawn_egg = "geontm:entity_meme_ufo_spawn_egg";
     public static final String entity_mob_gold_creeper_spawn_egg = "geontm:entity_mob_gold_creeper_spawn_egg";
     public static final String entity_mob_hunter_chopper_spawn_egg = "geontm:entity_mob_hunter_chopper_spawn_egg";
     public static final String entity_mob_mask_man_spawn_egg = "geontm:entity_mob_mask_man_spawn_egg";
@@ -1561,14 +1565,21 @@ public final class ItemIds {
     public static final String entity_mob_phosgene_creeper_spawn_egg = "geontm:entity_mob_phosgene_creeper_spawn_egg";
     public static final String entity_mob_tainted_creeper_spawn_egg = "geontm:entity_mob_tainted_creeper_spawn_egg";
     public static final String entity_mob_volatile_creeper_spawn_egg = "geontm:entity_mob_volatile_creeper_spawn_egg";
+    public static final String entity_moon_cow_spawn_egg = "geontm:entity_moon_cow_spawn_egg";
     public static final String entity_parasite_maggot_spawn_egg = "geontm:entity_parasite_maggot_spawn_egg";
     public static final String entity_pigeon_spawn_egg = "geontm:entity_pigeon_spawn_egg";
     public static final String entity_plastic_bag_spawn_egg = "geontm:entity_plastic_bag_spawn_egg";
     public static final String entity_radiation_blaze_spawn_egg = "geontm:entity_radiation_blaze_spawn_egg";
+    public static final String entity_scrapfish_spawn_egg = "geontm:entity_scrapfish_spawn_egg";
+    public static final String entity_scutterfish_spawn_egg = "geontm:entity_scutterfish_spawn_egg";
+    public static final String entity_scuttlecrab_spawn_egg = "geontm:entity_scuttlecrab_spawn_egg";
+    public static final String entity_siftereel_spawn_egg = "geontm:entity_siftereel_spawn_egg";
     public static final String entity_taint_crab_spawn_egg = "geontm:entity_taint_crab_spawn_egg";
+    public static final String entity_tankbot_spawn_egg = "geontm:entity_tankbot_spawn_egg";
     public static final String entity_tesla_crab_spawn_egg = "geontm:entity_tesla_crab_spawn_egg";
     public static final String entity_test_dummy_spawn_egg = "geontm:entity_test_dummy_spawn_egg";
     public static final String entity_undead_soldier_spawn_egg = "geontm:entity_undead_soldier_spawn_egg";
+    public static final String entity_war_behemoth_spawn_egg = "geontm:entity_war_behemoth_spawn_egg";
     public static final String envsuit_boots = "geontm:envsuit_boots";
     public static final String envsuit_helmet = "geontm:envsuit_helmet";
     public static final String envsuit_legs = "geontm:envsuit_legs";
@@ -2819,6 +2830,7 @@ public final class ItemIds {
     public static final String ore_depth_zirconium = "geontm:ore_depth_zirconium";
     public static final String ore_fluorite = "geontm:ore_fluorite";
     public static final String ore_fluorite_deepslate = "geontm:ore_fluorite_deepslate";
+    public static final String ore_glacio_starmetal = "geontm:ore_glacio_starmetal";
     public static final String ore_gneiss_asbestos = "geontm:ore_gneiss_asbestos";
     public static final String ore_gneiss_copper = "geontm:ore_gneiss_copper";
     public static final String ore_gneiss_gas = "geontm:ore_gneiss_gas";
@@ -2833,6 +2845,7 @@ public final class ItemIds {
     public static final String ore_lead_deepslate = "geontm:ore_lead_deepslate";
     public static final String ore_lignite = "geontm:ore_lignite";
     public static final String ore_lignite_deepslate = "geontm:ore_lignite_deepslate";
+    public static final String ore_mars_saturnite = "geontm:ore_mars_saturnite";
     public static final String ore_meteor_aluminium = "geontm:ore_meteor_aluminium";
     public static final String ore_meteor_cobalt = "geontm:ore_meteor_cobalt";
     public static final String ore_meteor_copper = "geontm:ore_meteor_copper";
@@ -3794,6 +3807,7 @@ public final class ItemIds {
     public static final String screwdriver = "geontm:screwdriver";
     public static final String screwdriver_desh = "geontm:screwdriver_desh";
     public static final String scrumpy = "geontm:scrumpy";
+    public static final String scuttertail = "geontm:scuttertail";
     public static final String seal_controller = "geontm:seal_controller";
     public static final String seal_frame = "geontm:seal_frame";
     public static final String seal_hatch = "geontm:seal_hatch";
@@ -3882,6 +3896,7 @@ public final class ItemIds {
     public static final String sopsign = "geontm:sopsign";
     public static final String soyuz_capsule = "geontm:soyuz_capsule";
     public static final String soyuz_launcher = "geontm:soyuz_launcher";
+    public static final String spawn_angel = "geontm:spawn_angel";
     public static final String spawn_duck = "geontm:spawn_duck";
     public static final String spawn_ufo = "geontm:spawn_ufo";
     public static final String spawn_worm = "geontm:spawn_worm";

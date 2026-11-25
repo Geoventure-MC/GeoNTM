@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_stock_pc",
+ "icon": [
+  "geontm:part_stock_pc"
+ ],
+ "trigger": [
+  [
+   "geontm:part_stock_pc"
+  ]
+ ],
+ "title": {
+  "en_us": "Hard Plastic Stock",
+  "fr_fr": "Crosse en Plastique dur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Hard Plastic Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Barre de plastique dur."
+ }
+}

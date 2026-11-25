@@ -124,8 +124,11 @@ public final class AddonSeamGameTests {
         List<BulletConfig> all = BulletConfigs.all();
         helper.assertTrue(!all.isEmpty(), "no bullet configs are registered");
         for (BulletConfig config : all) {
-            helper.assertTrue(config.id != null && config.id.getNamespace().equals(Constants.MOD_ID),
-                    "HBM's string register must put every round in geontm, found " + config.id);
+            // Geoventure : les munitions des créatures de NTM: Space (MobWeaponsSpace) restent sous ntmspace, hors de
+            // l'audit des traceurs qui ne regarde que geontm.
+            helper.assertTrue(config.id != null && (config.id.getNamespace().equals(Constants.MOD_ID)
+                            || config.id.getNamespace().equals("ntmspace")),
+                    "HBM's string register must put every round in geontm (or ntmspace for the space creatures), found " + config.id);
         }
         ResourceLocation taken = all.get(0).id;
         int before = all.size();

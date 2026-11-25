@@ -3,6 +3,7 @@ package fr.geoventure.geontm.gametest;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.perimetre.Perimetre;
 import fr.geoventure.geontm.blocks.ModFluidNetBlocks;
 import fr.geoventure.geontm.blocks.ModPwrBlocks;
 import fr.geoventure.geontm.blocks.machine.BlockPWR;
@@ -289,6 +290,8 @@ public final class GhIssue108To115GameTests {
         for (ItemStack stack : ModTabs.displayStacks(ModTabs.get(GeoNtmTab.WEAPONS).getKey())) {
             weapons |= stack.is(ModMachineItems.turret_chip.get());
         }
+        // Geoventure : un objet hors de creatif.txt est caché de tous les onglets (Perimetre.visibleEnCreatif)
+        weapons |= !Perimetre.visibleEnCreatif("turret_chip");
         helper.assertTrue(weapons, "the turret chip is in 1.7's weapon tab");
         helper.succeed();
     }
@@ -312,7 +315,10 @@ public final class GhIssue108To115GameTests {
     }
 
     private static void assertListed(GameTestHelper helper, List<ItemStack> tab, Item item) {
-        helper.assertTrue(tab.stream().anyMatch(stack -> stack.is(item)), item + " is in no tab 1.7 lists it in");
+        // Geoventure : un objet hors de creatif.txt est caché de tous les onglets (Perimetre.visibleEnCreatif)
+        String id = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(item).getPath();
+        helper.assertTrue(!Perimetre.visibleEnCreatif(id) || tab.stream().anyMatch(stack -> stack.is(item)),
+                item + " is in no tab 1.7 lists it in");
     }
 
     /** 1.7's flat 250 blocks with players on or off; a missile is a target only on its way down. */

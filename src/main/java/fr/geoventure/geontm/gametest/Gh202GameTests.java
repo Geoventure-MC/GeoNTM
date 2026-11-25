@@ -36,7 +36,8 @@ public final class Gh202GameTests {
             MainRegistry.loadConfig(new Configuration(file));
             helper.assertTrue(GeneralConfig.true528(), "528 mode with its default switches is not true528");
             helper.assertTrue(GeneralConfig.trueExp(), "expensive mode is not trueExp");
-            helper.assertTrue(MobConfig.trueRam(), "rampant mode is not trueRam");
+            // Geoventure : ReglagesGeoventure coupe le mode rampant après la lecture du fichier, il n'allume donc jamais son badge
+            helper.assertTrue(!MobConfig.trueRam(), "rampant mode is forced off by ReglagesGeoventure");
 
             // 1.7 drops the 528 badge once any switch is relaxed
             Files.writeString(file, Files.readString(file)

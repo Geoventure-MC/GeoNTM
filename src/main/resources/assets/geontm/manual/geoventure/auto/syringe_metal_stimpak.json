@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_metal_stimpak",
+ "icon": [
+  "geontm:syringe_metal_stimpak"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_metal_stimpak"
+  ]
+ ],
+ "title": {
+  "en_us": "Stimpak",
+  "fr_fr": "Stimpak"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Nether Wart, [[gv:syringe_metal_empty|Metal Syringe]].<br>- Crafting table : 3 x Small Pile of Nitra, [[gv:syringe_metal_empty|Metal Syringe]].<br>- Crafting table : [[gv:syringe_metal_empty|Metal Syringe]], Carrot, Foxglove.<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]], [[gv:syringe_metal_super|Super Stimpak]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Verrues du Nether, [[gv:syringe_metal_empty|Seringue en métal]].<br>- Établi : 3 x Petit tas de nitra, [[gv:syringe_metal_empty|Seringue en métal]].<br>- Établi : [[gv:syringe_metal_empty|Seringue en métal]], Carotte, Digitale.<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]], [[gv:syringe_metal_super|Super Stimpack]]."
+ }
+}

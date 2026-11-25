@@ -13,7 +13,7 @@
   "fr_fr": "Billette d'hydrure d'uranium-zirconium"
  },
  "content": {
-  "en_us": "How to get it :<br>- [[PUREX|PUREX]] (x4) : [[gv:billet_uranium_fuel|Uranium Fuel Billet]], 3 x Zirconium Billet, 1000 mB nitric acid, 4000 mB hydrogen.<br><br>Used to make :<br>[[gv:rbmk_fuel_uzh|UZrH RBMK Fuel Rod]].",
-  "fr_fr": "Obtention :<br>- machine_purex (x4) : [[gv:billet_uranium_fuel|Billet de carburant d'uranium]], 3 x Billet de zirconium, 1000 mB nitric acid, 4000 mB hydrogen.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_uzh|Barre de combustible RBMK UZrH]]."
+  "en_us": "How to get it :<br>- [[PUREX|PUREX]] (x4) : [[gv:billet_uranium_fuel|Uranium Fuel Billet]], 3 x Zirconium Billet, 1000 mB Nitric Acid, 4000 mB Liquid Hydrogen.<br><br>Used to make :<br>[[gv:rbmk_fuel_uzh|UZrH RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- [[PUREX|PUREX]] (x4) : [[gv:billet_uranium_fuel|Billet de carburant d'uranium]], 3 x Billet de zirconium, 1000 mB Acide nitrique, 4000 mB Hydrogène liquide.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_uzh|Barre de combustible RBMK UZrH]]."
  }
 }

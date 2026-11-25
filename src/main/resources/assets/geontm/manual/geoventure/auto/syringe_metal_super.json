@@ -13,7 +13,7 @@
   "fr_fr": "Super Stimpack"
  },
  "content": {
-  "en_us": "How to get it :<br>- Crafting table : 2 x Leather, Bottle of Nuka Cola, 2 x Steel Plate, Stimpak.<br>- Crafting table : 2 x ingot (rubber), Bottle of Nuka Cola, 2 x Steel Plate, Stimpak.<br>- Crafting table : 2 x Leather, Bottle of Nuka Cherry, 2 x Steel Plate, Stimpak.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]].",
-  "fr_fr": "Obtention :<br>- Établi : 2 x Cuir, Bouteille de Nuka Cola, 2 x Plaque d'acier, syringe metal stimpak.<br>- Établi : 2 x lingot (caoutchouc), Bouteille de Nuka Cola, 2 x Plaque d'acier, syringe metal stimpak.<br>- Établi : 2 x Cuir, Bouteille de Nuka Cherry, 2 x Plaque d'acier, syringe metal stimpak.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]]."
+  "en_us": "How to get it :<br>- Crafting table : 2 x Leather, Bottle of Nuka Cola, 2 x Steel Plate, [[gv:syringe_metal_stimpak|Stimpak]].<br>- Crafting table : 2 x ingot (rubber), Bottle of Nuka Cola, 2 x Steel Plate, [[gv:syringe_metal_stimpak|Stimpak]].<br>- Crafting table : 2 x Leather, Bottle of Nuka Cherry, 2 x Steel Plate, [[gv:syringe_metal_stimpak|Stimpak]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Cuir, Bouteille de Nuka Cola, 2 x Plaque d'acier, [[gv:syringe_metal_stimpak|Stimpak]].<br>- Établi : 2 x lingot (caoutchouc), Bouteille de Nuka Cola, 2 x Plaque d'acier, [[gv:syringe_metal_stimpak|Stimpak]].<br>- Établi : 2 x Cuir, Bouteille de Nuka Cherry, 2 x Plaque d'acier, [[gv:syringe_metal_stimpak|Stimpak]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]]."
  }
 }

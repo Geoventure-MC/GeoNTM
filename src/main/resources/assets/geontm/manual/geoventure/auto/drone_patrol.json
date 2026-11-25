@@ -13,7 +13,7 @@
   "fr_fr": "Drone de transport"
  },
  "content": {
-  "en_us": "How to get it :<br>- Crafting table : Chunkloading Transport Drone.<br>- Crafting table (x2) : shell (Steel), [[gv:circuit_vacuum_tube|Vacuum Tube]], 2 x pipe (Steel), ingot (plastic).<br><br>Used to make :<br>[[gv:drone_patrol_express|Express Transport Drone]], [[gv:drone_request|Logistics Drone]].",
-  "fr_fr": "Obtention :<br>- Établi : Drone de transport à chargement de chunks.<br>- Établi (x2) : coque (acier), [[gv:circuit_vacuum_tube|Tube à vide]], 2 x tuyau (acier), lingot (plastique).<br><br>Sert à fabriquer :<br>[[gv:drone_patrol_express|Drone de transport express]], [[gv:drone_request|Drone logistique]]."
+  "en_us": "How to get it :<br>- Crafting table (x2) : shell (Steel), [[gv:circuit_vacuum_tube|Vacuum Tube]], 2 x pipe (Steel), ingot (plastic).<br>- Crafting table : Chunkloading Transport Drone.<br><br>Used to make :<br>[[gv:drone_patrol_express|Express Transport Drone]], [[gv:drone_request|Logistics Drone]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : coque (acier), [[gv:circuit_vacuum_tube|Tube à vide]], 2 x tuyau (acier), lingot (plastique).<br>- Établi : Drone de transport à chargement de chunks.<br><br>Sert à fabriquer :<br>[[gv:drone_patrol_express|Drone de transport express]], [[gv:drone_request|Drone logistique]]."
  }
 }

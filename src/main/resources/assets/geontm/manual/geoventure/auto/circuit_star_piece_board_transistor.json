@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_piece_board_transistor",
+ "icon": [
+  "geontm:circuit_star_piece_board_transistor"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_piece_board_transistor"
+  ]
+ ],
+ "title": {
+  "en_us": "SC - Transistors",
+  "fr_fr": "SC - Transistors"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:scrap_plastic_board_transistor|Plastic Scraps]], 500 mB Hydrogen Peroxide.<br><br>Used to make :<br>[[gv:circuit_star|StarControl Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:scrap_plastic_board_transistor|Débris de plastique]], 500 mB Peroxyde d'hydrogène.<br><br>Sert à fabriquer :<br>[[gv:circuit_star|Carte de circuit StarControl]]."
+ }
+}

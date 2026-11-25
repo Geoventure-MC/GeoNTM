@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_loader",
+ "icon": [
+  "geontm:pile_loader"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_loader"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Fuel Loader",
+  "fr_fr": "Chargeur de combustible de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Aluminium Plate, cast plate (Steel), Boron Ingot, shell (Steel).",
+  "fr_fr": "Obtention :<br>- Établi : Plaque d'aluminium, plaque coulée (acier), Lingot de bore, coque (acier)."
+ }
+}

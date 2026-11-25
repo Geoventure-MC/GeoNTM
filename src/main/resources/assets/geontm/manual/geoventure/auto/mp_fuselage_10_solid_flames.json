@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_solid_flames",
+ "icon": [
+  "geontm:mp_fuselage_10_solid_flames"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_solid_flames"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Solid Fuel Fuselage",
+  "fr_fr": "Fuselage à combustible solide de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:mp_fuselage_10_solid|Size 10 Solid Fuel Fuselage]], Orange Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:mp_fuselage_10_solid|Fuselage à combustible solide de taille 10]], Teinture orange."
+ }
+}

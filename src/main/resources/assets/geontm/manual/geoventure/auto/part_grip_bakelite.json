@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_bakelite",
+ "icon": [
+  "geontm:part_grip_bakelite"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_bakelite"
+  ]
+ ],
+ "title": {
+  "en_us": "Bakelite Grip",
+  "fr_fr": "Poignée en Bakélite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Bakelite Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Barre de bakélite."
+ }
+}

@@ -1,6 +1,7 @@
 package fr.geoventure.geontm.gametest;
 
 import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.perimetre.Perimetre;
 import fr.geoventure.geontm.creativetabs.GeoNtmTab;
 import fr.geoventure.geontm.util.TagCategories;
 import fr.geoventure.geocore.Ids;
@@ -62,9 +63,13 @@ public final class Gh132GameTests {
                 check(wrong, stack, "minecraft:leg_armor", slot == ArmorSlot.LEGGINGS);
                 check(wrong, stack, "minecraft:foot_armor", slot == ArmorSlot.BOOTS);
             }
-            check(wrong, stack, "geontm:bombs", bombs.contains(item));
-            check(wrong, stack, "geontm:missiles", missiles.contains(item));
-            check(wrong, stack, "geontm:machines", machines.contains(item));
+            // Geoventure : les étiquettes de catégorie viennent des onglets complets, que le périmètre filtre ensuite
+            // (Perimetre.visibleEnCreatif) ; un objet caché n'est plus dans l'onglet mais reste dans l'étiquette.
+            if (Perimetre.visibleEnCreatif(BuiltInRegistries.ITEM.getKey(item).getPath())) {
+                check(wrong, stack, "geontm:bombs", bombs.contains(item));
+                check(wrong, stack, "geontm:missiles", missiles.contains(item));
+                check(wrong, stack, "geontm:machines", machines.contains(item));
+            }
             Set<String> hazards = TagCategories.hazards(item, TagCategories.HAZARDS);
             for (String hazard : TagCategories.HAZARDS.keySet()) {
                 check(wrong, stack, "geontm:hazardous/" + hazard, hazards.contains(hazard));
@@ -95,7 +100,8 @@ public final class Gh132GameTests {
                 }
             }
             if (block.defaultBlockState().is(block("geontm:blast_resistant")) != !tiers.isEmpty()) wrong.add(name(block) + " geontm:blast_resistant");
-            if (block.defaultBlockState().is(block("geontm:machines")) != machines.contains(block)) wrong.add(name(block) + " geontm:machines");
+            if (Perimetre.visibleEnCreatif(BuiltInRegistries.BLOCK.getKey(block).getPath())
+                    && block.defaultBlockState().is(block("geontm:machines")) != machines.contains(block)) wrong.add(name(block) + " geontm:machines");
             if (block.defaultBlockState().is(block("geontm:radiation_shielding")) != TagCategories.shieldsRadiation(block)) {
                 wrong.add(name(block) + " geontm:radiation_shielding");
             }

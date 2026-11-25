@@ -13,7 +13,7 @@
   "fr_fr": "Barre de combustible RBMK (ReaSim)"
  },
  "content": {
-  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:rbmk_fuel_rod_reasim_moderated|RBMK Moderated Fuel Channel (ReaSim)]].<br>- Crafting table : 2 x shell (Steel), [[RBMK Structural Column|RBMK Structural Column]], 6 x Zirconium Cube.<br><br>Used to make :<br>[[RBMK Structural Column|RBMK Structural Column]], [[gv:ingot_zirconium|Zirconium Cube]], [[gv:rbmk_fuel_rod_reasim_moderated|RBMK Moderated Fuel Channel (ReaSim)]].",
-  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:rbmk_fuel_rod_reasim_moderated|Barre de combustible modérée RBMK (ReaSim)]].<br>- Établi : 2 x coque (acier), [[RBMK Structural Column|Colonne structurelle RBMK]], 6 x Cube de zirconium.<br><br>Sert à fabriquer :<br>[[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:ingot_zirconium|Cube de zirconium]], [[gv:rbmk_fuel_rod_reasim_moderated|Barre de combustible modérée RBMK (ReaSim)]]."
+  "en_us": "How to get it :<br>- Crafting table : 2 x shell (Steel), [[RBMK Structural Column|RBMK Structural Column]], 6 x Zirconium Cube.<br>- Industrial anvil (construction) : [[gv:rbmk_fuel_rod_reasim_moderated|RBMK Moderated Fuel Channel (ReaSim)]].<br><br>Used to make :<br>[[RBMK Structural Column|RBMK Structural Column]], [[gv:ingot_zirconium|Zirconium Cube]], [[gv:rbmk_fuel_rod_reasim_moderated|RBMK Moderated Fuel Channel (ReaSim)]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x coque (acier), [[RBMK Structural Column|Colonne structurelle RBMK]], 6 x Cube de zirconium.<br>- Enclume industrielle (construction) : [[gv:rbmk_fuel_rod_reasim_moderated|Barre de combustible modérée RBMK (ReaSim)]].<br><br>Sert à fabriquer :<br>[[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:ingot_zirconium|Cube de zirconium]], [[gv:rbmk_fuel_rod_reasim_moderated|Barre de combustible modérée RBMK (ReaSim)]]."
  }
 }

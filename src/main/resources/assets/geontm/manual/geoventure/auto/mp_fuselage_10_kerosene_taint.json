@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_kerosene_taint",
+ "icon": [
+  "geontm:mp_fuselage_10_kerosene_taint"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_kerosene_taint"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Kerosene Fuselage",
+  "fr_fr": "Fuselage au kérosène de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:mp_fuselage_10_kerosene|Size 10 Kerosene Fuselage]], Purple Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:mp_fuselage_10_kerosene|Fuselage au kérosène de taille 10]], Teinture violette."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_stock_polymer",
+ "icon": [
+  "geontm:part_stock_polymer"
+ ],
+ "trigger": [
+  [
+   "geontm:part_stock_polymer"
+  ]
+ ],
+ "title": {
+  "en_us": "Polymer Stock",
+  "fr_fr": "Crosse en Polymère"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Polymer Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de polymère."
+ }
+}

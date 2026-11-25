@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_kerosene_lambda",
+ "icon": [
+  "geontm:mp_fuselage_15_kerosene_lambda"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_kerosene_lambda"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Kerosene Fuselage",
+  "fr_fr": "Fuselage kérosène taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:mp_fuselage_15_kerosene|Size 15 Kerosene Fuselage]], Orange Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:mp_fuselage_15_kerosene|Fuselage kérosène taille 15]], Teinture orange."
+ }
+}

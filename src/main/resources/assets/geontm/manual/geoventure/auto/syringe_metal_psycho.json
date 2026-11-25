@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_metal_psycho",
+ "icon": [
+  "geontm:syringe_metal_psycho"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_metal_psycho"
+  ]
+ ],
+ "title": {
+  "en_us": "Psycho",
+  "fr_fr": "Psycho"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Glowstone Dust, [[gv:syringe_metal_empty|Metal Syringe]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Poudre lumineuse, [[gv:syringe_metal_empty|Seringue en métal]]."
+ }
+}

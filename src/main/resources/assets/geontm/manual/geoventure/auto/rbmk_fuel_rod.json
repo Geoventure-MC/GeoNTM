@@ -13,7 +13,7 @@
   "fr_fr": "Barre de combustible RBMK"
  },
  "content": {
-  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:rbmk_fuel_rod_moderated|RBMK Moderated Fuel Channel]].<br>- Crafting table : 2 x shell (Steel), [[RBMK Structural Column|RBMK Structural Column]].<br><br>Used to make :<br>[[RBMK Structural Column|RBMK Structural Column]], [[gv:rbmk_fuel_rod_moderated|RBMK Moderated Fuel Channel]].",
-  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:rbmk_fuel_rod_moderated|Barre de combustible modérée RBMK]].<br>- Établi : 2 x coque (acier), [[RBMK Structural Column|Colonne structurelle RBMK]].<br><br>Sert à fabriquer :<br>[[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:rbmk_fuel_rod_moderated|Barre de combustible modérée RBMK]]."
+  "en_us": "How to get it :<br>- Crafting table : 2 x shell (Steel), [[RBMK Structural Column|RBMK Structural Column]].<br>- Industrial anvil (construction) : [[gv:rbmk_fuel_rod_moderated|RBMK Moderated Fuel Channel]].<br><br>Used to make :<br>[[RBMK Structural Column|RBMK Structural Column]], [[gv:rbmk_fuel_rod_moderated|RBMK Moderated Fuel Channel]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x coque (acier), [[RBMK Structural Column|Colonne structurelle RBMK]].<br>- Enclume industrielle (construction) : [[gv:rbmk_fuel_rod_moderated|Barre de combustible modérée RBMK]].<br><br>Sert à fabriquer :<br>[[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:rbmk_fuel_rod_moderated|Barre de combustible modérée RBMK]]."
  }
 }

@@ -14,6 +14,6 @@
  },
  "content": {
   "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], 32 x Weapon Steel Plate, 12 x Plutonium-239 Billet, 12 x [[gv:neutron_reflector|Neutron Reflector]], 24 x TATB, 3 x [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Special warheads.",
-  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 32 x Plaque d'acier d'arme, 12 x Billet de plutonium-239, 12 x [[gv:neutron_reflector|Reflecteur neutronique]], 24 x ball tatb, 3 x [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Ogives spéciales."
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 32 x Plaque d'acier d'arme, 12 x Billet de plutonium-239, 12 x [[gv:neutron_reflector|Reflecteur neutronique]], 24 x TATB, 3 x [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Ogives spéciales."
  }
 }

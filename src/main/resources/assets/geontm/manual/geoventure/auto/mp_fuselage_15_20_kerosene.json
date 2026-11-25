@@ -13,7 +13,7 @@
   "fr_fr": "Fuselage kérosène taille 15/20"
  },
  "content": {
-  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], [[gv:seg_20|Size 20 Connector]], 48 x Aluminium Plate, 16 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
-  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], [[gv:seg_20|Connecteur taille 20]], 48 x Plaque d'aluminium, 16 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], [[gv:seg_20|Size 20 Connector]], 48 x Aluminium Plate, 16 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.<br>- Crafting table : [[gv:mp_fuselage_15_20_kerosene_magnusson|Size 15/20 Kerosene Fuselage]], Water Bucket.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], [[gv:seg_20|Connecteur taille 20]], 48 x Plaque d'aluminium, 16 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires.<br>- Établi : [[gv:mp_fuselage_15_20_kerosene_magnusson|Fuselage kérosène taille 15/20]], Seau d'eau."
  }
 }

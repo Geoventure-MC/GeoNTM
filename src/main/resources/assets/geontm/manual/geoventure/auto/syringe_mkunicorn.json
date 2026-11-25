@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_mkunicorn",
+ "icon": [
+  "geontm:syringe_mkunicorn"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_mkunicorn"
+  ]
+ ],
+ "title": {
+  "en_us": "MKUNICORN",
+  "fr_fr": "MKUNICORN"
+ },
+ "content": {
+  "en_us": "How to get it :<br>Secret crafting table recipe (3x3 grid): [[gv:powder_iodine|Iodine Powder]], [[gv:powder_fire|Red Phosphorus]], [[gv:dust|Dust]], [[gv:nugget_mercury|Drop of Mercury]], Morning Glory, [[gv:syringe_metal_empty|Metal Syringe]]. The layout is drawn from the world seed, so it differs from world to world. Meteorite dungeon loot piles give one of these ingredients and the book naming its slot in the grid (1 to 9).",
+  "fr_fr": "Obtention :<br>Recette secrète à l'établi (grille 3x3) : [[gv:powder_iodine|Poudre d'iode]], [[gv:powder_fire|Poudre de flamme]], [[gv:dust|Poussière]], [[gv:nugget_mercury|Petite goutte de mercure]], Gloire du matin, [[gv:syringe_metal_empty|Seringue en métal]]. La disposition est tirée de la graine du monde, donc différente d'un monde à l'autre. Les piles de butin des donjons de météorite donnent un de ces ingrédients et le livre qui indique son emplacement dans la grille (de 1 à 9)."
+ }
+}

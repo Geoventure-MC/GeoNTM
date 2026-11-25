@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_antidote",
+ "icon": [
+  "geontm:syringe_antidote"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_antidote"
+  ]
+ ],
+ "title": {
+  "en_us": "Antidote",
+  "fr_fr": "Antidote"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : 6 x [[gv:syringe_empty|Empty Syringe]], 2 x Pumpkin Seeds, Milk Bucket.<br>- Crafting table (x6) : 6 x [[gv:syringe_empty|Empty Syringe]], 2 x Pumpkin Seeds, Milk Bucket.<br>- Crafting table (x6) : 6 x [[gv:syringe_empty|Empty Syringe]], 2 x Pumpkin Seeds, Sugar Cane.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : 6 x [[gv:syringe_empty|Seringue vide]], 2 x Graines de citrouille, Seau de lait.<br>- Établi (x6) : 6 x [[gv:syringe_empty|Seringue vide]], 2 x Graines de citrouille, Seau de lait.<br>- Établi (x6) : 6 x [[gv:syringe_empty|Seringue vide]], 2 x Graines de citrouille, Canne à sucre.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]]."
+ }
+}

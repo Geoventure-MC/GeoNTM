@@ -22,6 +22,14 @@ sourceSets["main"].java {
     exclude("fr/geoventure/geontm/platform/fabric/**", "fr/geoventure/geontm/platform/neoforge/**")
 }
 
+// Banc de GameTests (`-Pgeontm.bench=true`, voir tools/run_gametests.sh) : sans filtre explicite, il écarte les tests listés
+// avec leur raison dans docs/perimetre/gametests-ecartes.tsv. Hors banc, aucun filtre : rien ne change pour le jar livré.
+val benchFilter: String = if (propOrNull("geontm.bench") == "true") {
+    val ecartes = rootProject.file("docs/perimetre/gametests-ecartes.tsv").readLines()
+        .filter { it.isNotBlank() && !it.startsWith("#") }.map { it.substringBefore('\t') }
+    if (ecartes.isEmpty()) "" else "geontm:(?!(?:" + ecartes.joinToString("|") + ")$).*"
+} else ""
+
 legacyForge {
     version = prop("deps.forge")
     runs {
@@ -58,7 +66,7 @@ legacyForge {
             type = "gameTestServer"
             gameDirectory = file("runs/gametest")
             // -Pgametest.filter=<regex> runs only the matching test ids (see GeoCore's GameTests.addLegacy).
-            jvmArgument("-Dgeocore.gametest.filter=${providers.gradleProperty("gametest.filter").orElse("").get()}")
+            jvmArgument("-Dgeocore.gametest.filter=${providers.gradleProperty("gametest.filter").orElse(benchFilter).get()}")
         }
     }
     mods {
@@ -348,5 +356,31 @@ if (propOrNull("kubejs.run") == "true" && propOrNull("deps.kubejs") != null) {
             into(layout.projectDirectory.dir("runs/$run/kubejs"))
         }
         tasks.matching { it.name in tasksOfRun }.configureEach { dependsOn(copy) }
+    }
+}
+
+// Banc de test seulement (`-Pgeontm.bench=true`) : le serveur de GameTests n'a ni GeoMods ni Ad Astra, que mods.toml
+// déclare obligatoires ; on les passe en facultatifs dans les ressources traitées, et src/bench/resources fournit les
+// trois biomes d'Ad Astra que les ajouts de minerais d'espace (ModBiomeModifiers.espace) nomment directement. Sans la
+// propriété, rien ne change : le jar livré garde ses dépendances obligatoires et ne contient pas src/bench.
+if (propOrNull("geontm.bench") == "true") {
+    sourceSets["main"].resources.srcDir("src/bench/resources")
+    tasks.withType<ProcessResources>().configureEach {
+        inputs.property("geontmBench", "true")
+        doLast {
+            val toml = destinationDir.resolve("META-INF/mods.toml")
+            if (toml.isFile) {
+                toml.writeText(Regex("""(modId = "(?:ad_astra|geomods)"\s*\r?\n\s*mandatory = )true""").replace(toml.readText()) { it.groupValues[1] + "false" })
+            }
+        }
+    }
+}
+
+// Diagnostic du banc (`-Pgeontm.bench.sansretraits=true`) : retire les listes de recettes cachées par le périmètre Geoventure
+// (data/geontm/recipe_removals) pour séparer les GameTests rouges à cause du périmètre de ceux qui le sont sans lui.
+if (propOrNull("geontm.bench.sansretraits") == "true") {
+    tasks.withType<ProcessResources>().configureEach {
+        inputs.property("geontmBenchSansRetraits", "true")
+        exclude("data/geontm/recipe_removals/**")
     }
 }

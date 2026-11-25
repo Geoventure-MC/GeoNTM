@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_control",
+ "icon": [
+  "geontm:pile_control"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_control"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Control Rod",
+  "fr_fr": "Barre de contrôle de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Boron Ingot, 4 x Steel Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Lingot de bore, 4 x Plaque d'acier."
+ }
+}

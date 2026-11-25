@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_lambda",
+ "icon": [
+  "geontm:missile_lambda"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_lambda"
+  ]
+ ],
+ "title": {
+  "en_us": "Lambda-98",
+  "fr_fr": "Lambda-98"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 32 x [[gv:part_generic_alclad|Aviation Grade Sheeting]], 12 x [[gv:ingot_tungsten_carbide|Tungsten Carbide Ingot]], 64 x [[gv:rocket_fuel|Solid Fuel (Rocket Propellant)]], 24 x [[gv:circuit_basic|Integrated Circuit Board]], [[gv:drive_disk_flightdata_processed|Disk Drive (Processed Flight Data)]] - [[gv:schemas|blueprint required]]: Deep space.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 32 x [[gv:part_generic_alclad|Tôle de qualité aéronautique]], 12 x [[gv:ingot_tungsten_carbide|Lingot de carbure de tungstène]], 64 x [[gv:rocket_fuel|Combustible solide (propulseur de fusée)]], 24 x [[gv:circuit_basic|Carte de circuit intégré]], [[gv:drive_disk_flightdata_processed|Lecteur de disque (données de vol traitées)]] - [[gv:schemas|schéma exigé]] : Espace lointain."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_stock_wood",
+ "icon": [
+  "geontm:part_stock_wood"
+ ],
+ "trigger": [
+  [
+   "geontm:part_stock_wood"
+  ]
+ ],
+ "title": {
+  "en_us": "Wood Stock",
+  "fr_fr": "Crosse en Bois"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x planks.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x planches."
+ }
+}

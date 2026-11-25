@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_pc",
+ "icon": [
+  "geontm:part_grip_pc"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_pc"
+  ]
+ ],
+ "title": {
+  "en_us": "Hard Plastic Grip",
+  "fr_fr": "Poignée en Plastique dur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Hard Plastic Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Barre de plastique dur."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_rubber",
+ "icon": [
+  "geontm:part_grip_rubber"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_rubber"
+  ]
+ ],
+ "title": {
+  "en_us": "Rubber Grip",
+  "fr_fr": "Poignée en Caoutchouc"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Rubber Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Barre en caoutchouc."
+ }
+}

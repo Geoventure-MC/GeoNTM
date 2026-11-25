@@ -349,6 +349,9 @@ public final class DejsonGameTests {
             //?}
             JsonElement expected = unwrapped(folded.getOrDefault(path, declared.getValue()));
             if (path.contains("/tags/") && tagMatches(copies, expected)) continue;
+            // Geoventure : SpaceMobs ajoute ses membres à ces étiquettes à l'exécution (EntityTag.of, Tags.member) sans
+            // passer par ModTagDeclarations ; la déclaration vue ici est un sous-ensemble du fichier livré, qui est complet.
+            if (path.contains("/tags/entity_type/") && tagCovers(copies, expected)) continue;
             if (copies.stream().noneMatch(copy -> unwrapped(withoutAddedOptionalBiomeTags(path, copy, expected)).equals(expected))) {
                 problems.add(path + " is on the classpath saying something other than "
                         + "what it was declared to say");
@@ -482,7 +485,8 @@ public final class DejsonGameTests {
                 .replace("/structure/", "/structures/")
                 .replace("/tags/item/", "/tags/items/")
                 .replace("/tags/block/", "/tags/blocks/")
-                .replace("/tags/fluid/", "/tags/fluids/");
+                .replace("/tags/fluid/", "/tags/fluids/")
+                .replace("/tags/entity_type/", "/tags/entity_types/");
     }
 
     /**
@@ -625,6 +629,16 @@ public final class DejsonGameTests {
             if (wanted.containsAll(values)) ownCopy = true;
         }
         return ownCopy && union.containsAll(wanted);
+    }
+
+    /** Every declared member is in the shipped file (which may hold more). */
+    private static boolean tagCovers(List<JsonObject> copies, JsonElement expected) {
+        if (!(expected instanceof JsonObject declared) || !declared.has("values")) return false;
+        java.util.Set<String> union = new java.util.HashSet<>();
+        for (JsonObject copy : copies) {
+            if (unwrapped(copy) instanceof JsonObject object && object.has("values")) union.addAll(tagValues(object));
+        }
+        return union.containsAll(tagValues(declared));
     }
 
     private static java.util.Set<String> tagValues(JsonObject tag) {

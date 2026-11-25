@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_stock_bakelite",
+ "icon": [
+  "geontm:part_stock_bakelite"
+ ],
+ "trigger": [
+  [
+   "geontm:part_stock_bakelite"
+  ]
+ ],
+ "title": {
+  "en_us": "Bakelite Stock",
+  "fr_fr": "Crosse en Bakélite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Bakelite Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Barre de bakélite."
+ }
+}

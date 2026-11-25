@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_hydrogen_cathedral",
+ "icon": [
+  "geontm:mp_fuselage_15_hydrogen_cathedral"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_hydrogen_cathedral"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Hydrogen Fuselage",
+  "fr_fr": "Fuselage hydrogène taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:mp_fuselage_15_hydrogen|Size 15 Hydrogen Fuselage]], Cyan Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:mp_fuselage_15_hydrogen|Fuselage hydrogène taille 15]], Teinture cyan."
+ }
+}

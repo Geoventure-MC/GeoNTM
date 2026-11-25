@@ -13,7 +13,7 @@
   "fr_fr": "Poudre d'actinium"
  },
  "content": {
-  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:powder_actinium_tiny|Tiny Pile of Actinium Powder]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_carbon|Box of Carbon Dust]], [[gv:powder_astatine|Astatine Powder]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Box of Copper Dust]], [[gv:powder_caesium|Caesium Powder]].<br><br>Used to make :<br>[[gv:ingot_actinium|Actinium-227 Ingot]], [[gv:powder_actinium_tiny|Tiny Pile of Actinium Powder]].",
-  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:powder_actinium_tiny|Minuscule tas de poudre d'actinium]].<br>- machine_cyclotron : [[gv:part_carbon|Boîte de poussière de carbone]], [[gv:powder_astatine|Poudre d'Astatine]].<br>- machine_cyclotron : [[gv:part_copper|Boîte de poussière de cuivre]], [[gv:powder_caesium|Poudre de césium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_actinium|Lingot d'actinium semi-stable]], [[gv:powder_actinium_tiny|Minuscule tas de poudre d'actinium]]."
+  "en_us": "How to get it :<br>- [[Cyclotron|Cyclotron]] : [[gv:part_carbon|Box of Carbon Dust]], [[gv:powder_astatine|Astatine Powder]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Box of Copper Dust]], [[gv:powder_caesium|Caesium Powder]].<br>- Crafting table : 9 x [[gv:powder_actinium_tiny|Tiny Pile of Actinium Powder]].<br><br>Used to make :<br>[[gv:ingot_actinium|Actinium-227 Ingot]], [[gv:powder_actinium_tiny|Tiny Pile of Actinium Powder]].",
+  "fr_fr": "Obtention :<br>- [[Cyclotron|Cyclotron]] : [[gv:part_carbon|Boîte de poussière de carbone]], [[gv:powder_astatine|Poudre d'Astatine]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Boîte de poussière de cuivre]], [[gv:powder_caesium|Poudre de césium]].<br>- Établi : 9 x [[gv:powder_actinium_tiny|Minuscule tas de poudre d'actinium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_actinium|Lingot d'actinium semi-stable]], [[gv:powder_actinium_tiny|Minuscule tas de poudre d'actinium]]."
  }
 }

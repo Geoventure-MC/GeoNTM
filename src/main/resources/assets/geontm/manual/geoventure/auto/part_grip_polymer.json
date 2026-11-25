@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_polymer",
+ "icon": [
+  "geontm:part_grip_polymer"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_polymer"
+  ]
+ ],
+ "title": {
+  "en_us": "Polymer Grip",
+  "fr_fr": "Poignée en Polymère"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Polymer Bar.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Lingot de polymère."
+ }
+}

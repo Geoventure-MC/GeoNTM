@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_piece_bridge_bus",
+ "icon": [
+  "geontm:circuit_star_piece_bridge_bus"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_piece_bridge_bus"
+  ]
+ ],
+ "title": {
+  "en_us": "SC - BUS",
+  "fr_fr": "SC - BUS"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:scrap_plastic_bridge_bus|Plastic Scraps]], 500 mB Hydrogen Peroxide.<br><br>Used to make :<br>[[gv:circuit_star_component_chipset|StarControl Chipset]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:scrap_plastic_bridge_bus|Débris de plastique]], 500 mB Peroxyde d'hydrogène.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_component_chipset|Jeu de puces StarControl]]."
+ }
+}

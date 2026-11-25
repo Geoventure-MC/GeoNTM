@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_vent",
+ "icon": [
+  "geontm:pile_vent"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_vent"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Vent",
+  "fr_fr": "Évent de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:motor|Motor]], 2 x Aluminium Plate, shell (Copper), cast plate (Steel).",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:motor|Moteur]], 2 x Plaque d'aluminium, coque (cuivre), plaque coulée (acier)."
+ }
+}

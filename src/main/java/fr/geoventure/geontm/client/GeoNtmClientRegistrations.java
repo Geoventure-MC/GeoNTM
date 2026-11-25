@@ -457,6 +457,7 @@ public final class GeoNtmClientRegistrations {
         StructureWandClientRegistrations.registerRenderers(blockEntities);
         BombClientRegistrations.registerEntityRenderers(entities);
         SatelliteClientRegistrations.registerEntityRenderers(entities);
+        fr.geoventure.geontm.space.client.SpaceMobRenderers.registerEntities(entities);
         RtgClientRegistrations.registerRenderer(blockEntities);
         GeoNtmEntityRenderers.verifyCoverage(bound);
 

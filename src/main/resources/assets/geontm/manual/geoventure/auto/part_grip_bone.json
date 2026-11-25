@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_bone",
+ "icon": [
+  "geontm:part_grip_bone"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_bone"
+  ]
+ ],
+ "title": {
+  "en_us": "Ivory Grip",
+  "fr_fr": "Poignée en Ivoire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Bone.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Os."
+ }
+}

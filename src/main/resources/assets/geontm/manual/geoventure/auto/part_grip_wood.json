@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_grip_wood",
+ "icon": [
+  "geontm:part_grip_wood"
+ ],
+ "trigger": [
+  [
+   "geontm:part_grip_wood"
+  ]
+ ],
+ "title": {
+  "en_us": "Wood Grip",
+  "fr_fr": "Poignée en Bois"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x planks.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x planches."
+ }
+}

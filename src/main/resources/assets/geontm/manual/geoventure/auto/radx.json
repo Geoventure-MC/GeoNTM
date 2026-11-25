@@ -1,0 +1,19 @@
+{
+ "name": "gv:radx",
+ "icon": [
+  "geontm:radx"
+ ],
+ "trigger": [
+  [
+   "geontm:radx"
+  ]
+ ],
+ "title": {
+  "en_us": "Rad-X",
+  "fr_fr": "Rad-X"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Coal Powder, dust (fluorite).",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Poudre de charbon, poudre (fluorite)."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:radaway",
+ "icon": [
+  "geontm:radaway"
+ ],
+ "trigger": [
+  [
+   "geontm:radaway"
+  ]
+ ],
+ "title": {
+  "en_us": "RadAway",
+  "fr_fr": "RadAway"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:iv_blood|Blood Bag]], Coal Powder, Pumpkin Seeds.<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]], [[gv:radaway_strong|Strong RadAway]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:iv_blood|Une poche de sang]], Poudre de charbon, Graines de citrouille.<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]], [[gv:radaway_strong|Fort RadAway]]."
+ }
+}

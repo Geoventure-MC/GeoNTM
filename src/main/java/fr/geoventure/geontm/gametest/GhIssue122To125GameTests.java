@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import fr.geoventure.geontm.Constants;
+import fr.geoventure.geontm.perimetre.Perimetre;
 import fr.geoventure.geontm.blocks.ModHazardBlocks;
 import fr.geoventure.geontm.blocks.machine.MachineFan;
 import fr.geoventure.geontm.blocks.machine.MachineFan.TileEntityFan;
@@ -154,7 +155,8 @@ public final class GhIssue122To125GameTests {
         }
         List<String> shown = NO_TAB.stream().filter(listed::contains).toList();
         helper.assertTrue(shown.isEmpty(), "1.7 keeps these out of its tabs: " + shown);
-        List<String> gone = STILL_TABBED.stream().filter(id -> !listed.contains(id)).toList();
+        // Geoventure : un objet hors de creatif.txt est caché de tous les onglets (Perimetre.visibleEnCreatif)
+        List<String> gone = STILL_TABBED.stream().filter(id -> Perimetre.visibleEnCreatif(id) && !listed.contains(id)).toList();
         helper.assertTrue(gone.isEmpty(), "1.7 shows these in a tab: " + gone);
         List<String> unregistered = NO_TAB.stream().filter(id -> !BuiltInRegistries.ITEM.containsKey(Ids.of(Constants.MOD_ID, id))).toList();
         helper.assertTrue(unregistered.isEmpty(), "out of the tabs is not out of the game: " + unregistered);

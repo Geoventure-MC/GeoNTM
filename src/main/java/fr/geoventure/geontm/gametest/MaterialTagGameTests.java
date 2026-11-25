@@ -92,13 +92,15 @@ public final class MaterialTagGameTests {
             TagKey<Item> tag = TagKey.create(Registries.ITEM, Ids.of("c", tagPath));
             tags++;
             for (JsonElement value : file.getValue().getAsJsonArray("values")) {
-                String id = value.getAsString();
+                // Geoventure déclare des membres facultatifs ({"id": "geomods:...", "required": false}) : absents, ils sont permis.
+                boolean optional = value.isJsonObject();
+                String id = optional ? value.getAsJsonObject().get("id").getAsString() : value.getAsString();
                 if (id.startsWith("#")) {
                     continue;
                 }
                 Item item = BuiltInRegistries.ITEM.getOptional(Ids.parse(id)).orElse(null);
                 if (item == null) {
-                    problems.add("c:" + tagPath + " names " + id + ", which is not registered");
+                    if (!optional) problems.add("c:" + tagPath + " names " + id + ", which is not registered");
                     continue;
                 }
                 members++;

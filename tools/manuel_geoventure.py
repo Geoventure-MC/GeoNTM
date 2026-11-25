@@ -84,13 +84,30 @@ MOTS = {'dusts': ('poudre', 'dust'), 'plates': ('plaque', 'plate'), 'ingots': ('
         'ores': ('minerai', 'ore'), 'raw_materials': ('minerai brut', 'raw ore'), 'dyes': ('colorant', 'dye'), 'fragments': ('fragment', 'fragment')}
 
 
-def nom(rl, l):
+# Objets dont le nom en jeu est celui d'une autre clé (ItemAutogen : modèle « Poignée en %s » + matière ; PileDeviceItem : bloc pile_device_N)
+NOMS_LIES = {'pile_loader': 'block.geontm.pile_device_0', 'pile_vent': 'block.geontm.pile_device_1', 'pile_control': 'block.geontm.pile_device_2'}
+GABARITS = sorted((k[len('item.geontm.'):] for k, v in LANG['en'].items() if k.startswith('item.geontm.') and v.count('%s') == 1), key=len, reverse=True)
+
+
+def nom(rl, l, repli=True):
     ns, _, p = rl.partition(':') if ':' in rl else ('geontm', ':', rl)
     for k in ('item.%s.%s', 'block.%s.%s', 'fluid_type.%s.%s', 'hbmfluid.%s.%s', 'fluid.%s.%s'):
         v = LANG[l].get(k % (ns, p))
         if v and '%' not in v:
             return v.replace('§', '').strip()
-    return None
+    if ns == 'geontm':
+        v = LANG[l].get(NOMS_LIES.get(p, ''))
+        if v:
+            return v.replace('§', '').strip()
+        # objet de matière générée : item.geontm.<forme> (« Poignée en %s ») avec geontmmat.<matière>, comme ItemAutogen.getName
+        for b in GABARITS:
+            if p.startswith(b + '_'):
+                g = LANG[l].get('item.geontm.' + b) or LANG['en'].get('item.geontm.' + b)
+                m = LANG[l].get('geontmmat.' + p[len(b) + 1:]) or LANG['en'].get('geontmmat.' + p[len(b) + 1:])
+                if g and m and g.count('%s') == 1:
+                    return g.replace('%s', m).replace('§', '').strip()
+    # comme le jeu : une clé absente du français retombe sur l'anglais (les noms propres identiques n'y sont pas répétés)
+    return nom(rl, 'en', False) if l == 'fr' and repli else None
 
 
 MATIERES = {'any_rubber': ('caoutchouc', 'rubber'), 'any_plastic': ('plastique', 'plastic'), 'any_hardplastic': ('plastique dur', 'hard plastic'),
@@ -131,6 +148,8 @@ def tag(t, l):
                         return nom(ns + f % m, l)
         if cat in MOTS:
             return '%s (%s)' % (MOTS[cat][0 if l == 'fr' else 1], matiere(m, l).lower())
+    if t in ('minecraft:planks', 'forge:planks', 'c:planks'):
+        return 'planches' if l == 'fr' else 'planks'
     for ns in ('minecraft:', 'geontm:'):
         if nom(ns + p, l) or nom(ns + p.rstrip('s'), l):
             return nom(ns + p, l) or nom(ns + p.rstrip('s'), l)
@@ -282,7 +301,8 @@ def libelle(e, c, l):
     if isinstance(e, tuple) and e[0] == 'forme':
         n = forme(e[1], e[2], l)
     elif isinstance(e, tuple):
-        n = nom(e[1], l) or e[1].split(':')[-1].replace('_', ' ')
+        cle = 'geontmfluid.' + e[1].split(':')[-1]  # noms des fluides : clé sans espace de noms
+        n = nom(e[1], l) or LANG[l].get(cle) or LANG['en'].get(cle) or e[1].split(':')[-1].replace('_', ' ')
         return '%s mB %s' % (e[2], n)
     elif e.startswith('#'):
         n = tag(e[1:], l)
@@ -297,10 +317,25 @@ def machine(t, l):
     return lien('geontm:' + MACHINES[t], l) or MACHINES[t]
 
 
+def mku(l):
+    """Recette de MKUCraftingRecipe : six ingrédients en grille 3x3, disposition tirée de la graine du monde ; indices : LootGenerator.lootBookMeteor."""
+    ing = ', '.join(lien('geontm:' + i, l) or i for i in ('powder_iodine', 'powder_fire', 'dust', 'nugget_mercury', 'morning_glory', 'syringe_metal_empty'))
+    if l == 'fr':
+        return ("Recette secrète à l'établi (grille 3x3) : %s. La disposition est tirée de la graine du monde, donc différente d'un monde à l'autre. "
+                "Les piles de butin des donjons de météorite donnent un de ces ingrédients et le livre qui indique son emplacement dans la grille (de 1 à 9)." % ing)
+    return ('Secret crafting table recipe (3x3 grid): %s. The layout is drawn from the world seed, so it differs from world to world. '
+            'Meteorite dungeon loot piles give one of these ingredients and the book naming its slot in the grid (1 to 9).' % ing)
+
+
+SECRETES = {'syringe_mkunicorn': mku}  # objets sans recette JSON mais fabricables par une recette codée (docs/perimetre/obtention.md)
+
+
 def page(x, l):
     fr = l == 'fr'
     L = []
-    rec = sorted(OBT.get(x, []), key=lambda r: (r[1] in ('storage_drum', 'silex', 'shredder', 'centrifuge'), len(r[3])))[:3]
+    # le lavage d'une variante peinte (ingrédient geontm nommé <x>_<variante>, qui se fabrique avec x) passe après la vraie fabrication
+    lavage = lambda r: any(isinstance(e, str) and e.startswith('geontm:' + x + '_') for e, _ in r[3])
+    rec = sorted(OBT.get(x, []), key=lambda r: (lavage(r), r[1] in ('storage_drum', 'silex', 'shredder', 'centrifuge'), len(r[3])))[:3]
     if rec:
         L.append('%s :' % ('Obtention' if fr else 'How to get it'))
         for rid, t, d, ent, c in rec:
@@ -314,6 +349,9 @@ def page(x, l):
         plus = len(OBT[x]) - len(rec)
         if plus > 0:
             L.append(('(%d autres recettes : voir JEI.)' if fr else '(%d more recipes: see JEI.)') % plus)
+    elif x in SECRETES:
+        L.append('%s :' % ('Obtention' if fr else 'How to get it'))
+        L.append(SECRETES[x](l))
     else:
         L.append('%s :' % ('Obtention' if fr else 'How to get it'))
         L.append('Pas de recette directe : minerai, butin, structure assemblée ou produit d\'une autre machine. JEI (touche R) donne le détail.'
@@ -339,4 +377,7 @@ for x in SANS:
          'content': {'en_us': page(x, 'en'), 'fr_fr': page(x, 'fr')}}
     with open(os.path.join(OUT, x + '.json'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(json.dumps(o, ensure_ascii=False, indent=1) + '\n')
-print(len(SANS), 'pages ;', sum(1 for x in SANS if OBT.get(x)), 'avec recette ;', 'sans nom :', sorted(x for x in VISIBLES - set(PAGE))[:20])
+MANQUE = sorted(VISIBLES - set(PAGE))
+print(len(SANS), 'pages ;', sum(1 for x in SANS if OBT.get(x)), 'avec recette ;', 'objets visibles sans page :', MANQUE)
+if MANQUE:  # un objet visible sans nom exploitable ne doit plus passer en silence
+    raise SystemExit(1)

@@ -13,7 +13,7 @@
   "fr_fr": "Poudre de niobium"
  },
  "content": {
-  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (niobium).<br>- [[Electrolyser|Electrolyser]] (x4) : [[gv:crystal_trixite|Trixite Crystals]].<br>- Crafting table : 9 x [[gv:powder_niobium_tiny|Tiny Pile of Niobium Powder]].<br>(7 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:powder_caesium|Caesium Powder]], [[gv:powder_niobium_tiny|Tiny Pile of Niobium Powder]].",
-  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (niobium).<br>- [[Electrolyser|Électrolyseur]] (x4) : [[gv:crystal_trixite|Cristaux de trixite]].<br>- Établi : 9 x [[gv:powder_niobium_tiny|Minuscule tas de poudre de niobium]].<br>(7 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:powder_caesium|Poudre de césium]], [[gv:powder_niobium_tiny|Minuscule tas de poudre de niobium]]."
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (niobium).<br>- [[Electrolyser|Electrolyser]] (x4) : [[gv:crystal_trixite|Trixite Crystals]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_beryllium|Box of Beryllium Dust]], [[gv:powder_strontium|Strontium Powder]].<br>(7 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:powder_caesium|Caesium Powder]], [[gv:powder_niobium_tiny|Tiny Pile of Niobium Powder]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (niobium).<br>- [[Electrolyser|Électrolyseur]] (x4) : [[gv:crystal_trixite|Cristaux de trixite]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_beryllium|Boîte de poussière de béryllium]], [[gv:powder_strontium|Poudre de strontium]].<br>(7 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:powder_caesium|Poudre de césium]], [[gv:powder_niobium_tiny|Minuscule tas de poudre de niobium]]."
  }
 }

@@ -13,7 +13,7 @@
   "fr_fr": "Cristaux de Redstone"
  },
  "content": {
-  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (redstone), 500 mB peroxide.<br><br>Used to make :<br>[[Mining Laser|Mining Laser]], [[gv:satellite_precision_laser|Orbital Precision Laser]], [[gv:nugget_mercury|Drop of Mercury]].",
-  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (redstone), 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[Mining Laser|Laser minier]], [[gv:satellite_precision_laser|Laser de précision orbital]], [[gv:nugget_mercury|Petite goutte de mercure]]."
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (redstone), 500 mB Hydrogen Peroxide.<br><br>Used to make :<br>[[Mining Laser|Mining Laser]], [[gv:satellite_precision_laser|Orbital Precision Laser]], [[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (redstone), 500 mB Peroxyde d'hydrogène.<br><br>Sert à fabriquer :<br>[[Mining Laser|Laser minier]], [[gv:satellite_precision_laser|Laser de précision orbital]], [[gv:nugget_mercury|Petite goutte de mercure]]."
  }
 }

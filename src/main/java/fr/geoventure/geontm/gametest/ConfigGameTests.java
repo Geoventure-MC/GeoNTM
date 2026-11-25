@@ -65,8 +65,6 @@ public final class ConfigGameTests {
             {"01_general", "1.91_sableHardnessMass", "false"},
             {"01_general", "1.92_sableBlockMasses", ""},
             {"01_general", "1.93_deImportBackup", "true"},
-            {"09_machines", "9.50_energyRatioHE", "5"},
-            {"09_machines", "9.51_energyRatioFE", "1"},
             {"09_machines", "9.52_foreignExportReserve", "0.0"},
             {"04_dungeons", "4.25_lanternSpawn", "2000"},
             {"04_dungeons", "4.26_blueprintChestGrid", "5000"},
@@ -197,30 +195,31 @@ public final class ConfigGameTests {
                     .replace("B:enableLessBullshitMode=false", "B:enableLessBullshitMode=true")
                     .replace("I:LBSM_schrabOreRate=20", "I:LBSM_schrabOreRate=33")
                     .replace("B:9.00_scaleRTGPower=false", "B:9.00_scaleRTGPower=true")
-                    .replace("I:9.50_energyRatioHE=5", "I:9.50_energyRatioHE=4")
-                    .replace("I:9.51_energyRatioFE=1", "I:9.51_energyRatioFE=3")
                     .replace("D:9.52_foreignExportReserve=0.0", "D:9.52_foreignExportReserve=7.0");
             Files.writeString(file, text);
             MainRegistry.loadConfig(new Configuration(file));
 
             // 1.7 rampant mode switches on every rampant feature and raises the soot multiplier
-            helper.assertTrue(MobConfig.rampantMode && MobConfig.rampantDig && MobConfig.rampantExtendedTargetting
-                    && MobConfig.rampantGlyphidGuidance && MobConfig.rampantNaturalScoutSpawn, "rampant mode enables its features");
+            // Geoventure : ReglagesGeoventure coupe ensuite le mode rampant et l'apparition naturelle d'éclaireurs ; le reste passe
+            helper.assertTrue(!MobConfig.rampantMode && !MobConfig.rampantNaturalScoutSpawn && MobConfig.rampantDig
+                    && MobConfig.rampantExtendedTargetting && MobConfig.rampantGlyphidGuidance,
+                    "rampant mode enables its features, except the two ReglagesGeoventure forces off");
             helper.assertTrue(MobConfig.pollutionMult == 3D && MobConfig.scoutThreshold == 0.1D && MobConfig.scoutSwarmSpawnChance == 1
                     && MobConfig.bombardierChance[2] == 0 && RadiationConfig.sootFogThreshold == 105D, "rampant overrides (pollutionMult 3, smog 35*3)");
-            helper.assertTrue(MobConfig.trueRam(), "trueRam() with rampant mode");
-            // the chimney reads the rampant override
+            helper.assertTrue(!MobConfig.trueRam(), "trueRam() is false: rampant mode is forced off");
+            // the chimney reads the rampant override, which stays unread while ReglagesGeoventure keeps the mode off
             helper.assertTrue(new TileEntityChimneyBrick(BlockPos.ZERO,
-                    ModMachineBlocks.chimney_brick.get().defaultBlockState()).getPollutionMod() == 0.4D,
-                    "brick chimney under rampant mode = 12.R06_rampantSmokeStackOverride 0.4");
+                    ModMachineBlocks.chimney_brick.get().defaultBlockState()).getPollutionMod() == 0.25D,
+                    "brick chimney keeps its normal 0.25 with rampant mode forced off");
 
             helper.assertTrue(PotionConfig.potionSickness == 2, "8.S0_potionSickness TERRARIA = 2");
             helper.assertTrue(ExplosionNukeGeneric.getSchrabOreChance() == 33, "LBSM schrab ore rate 33");
             helper.assertTrue(StorageDrumRecipes.longDecayChance() == 15 * 60 * 20,
                     "LBSM_shortDecay: long decay 15 minutes");
             helper.assertTrue(MachineConfig.scaleRTGPowerActive(), "9.00_scaleRTGPower read");
-            helper.assertTrue(EnergyConversion.feFromHe(40) == 30 && EnergyConversion.heFromFe(30) == 40,
-                    "9.50/9.51: 4 HE = 3 FE at the cable boundary");
+            // Geoventure : le taux est imposé (5 HE = 1 FE, comme GeoEnergyApi) ; les clés 9.50/9.51 n'existent plus
+            helper.assertTrue(EnergyConversion.feFromHe(40) == 8 && EnergyConversion.heFromFe(8) == 40,
+                    "5 HE = 1 FE at the cable boundary, whatever the file says");
             helper.assertTrue(GeneralConfig.foreignExportReserve == 1D, "9.52_foreignExportReserve clamped to 1");
             // 528 is off: its sub-switches stay forced off whatever the file says (1.7 loadFromConfig)
             helper.assertTrue(!GeneralConfig.enable528NetherBurn && !GeneralConfig.enable528ReasimBoilers

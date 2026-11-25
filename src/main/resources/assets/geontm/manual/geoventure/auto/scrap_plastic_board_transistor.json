@@ -13,7 +13,7 @@
   "fr_fr": "Débris de plastique"
  },
  "content": {
-  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>SC - Transistors.",
-  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère."
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>[[gv:circuit_star_piece_board_transistor|SC - Transistors]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_piece_board_transistor|SC - Transistors]]."
  }
 }

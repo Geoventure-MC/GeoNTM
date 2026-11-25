@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_metal_medx",
+ "icon": [
+  "geontm:syringe_metal_medx"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_metal_medx"
+  ]
+ ],
+ "title": {
+  "en_us": "Med-X",
+  "fr_fr": "Med-X"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Nether Quartz, [[gv:syringe_metal_empty|Metal Syringe]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Quartz du Nether, [[gv:syringe_metal_empty|Seringue en métal]]."
+ }
+}

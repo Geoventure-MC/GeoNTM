@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_solid_mimi",
+ "icon": [
+  "geontm:mp_fuselage_15_solid_mimi"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_solid_mimi"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Solid Fuel Mimi-chan's Body",
+  "fr_fr": "Corps de Mimi-chan taille 15 (carburant solide)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:mp_fuselage_15_solid|Size 15 Solid Fuel Fuselage]], Pink Dye.<br><br>Used to make :<br>[[gv:mp_fuselage_15_solid|Size 15 Solid Fuel Fuselage]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:mp_fuselage_15_solid|Fuselage à combustible solide de taille 15]], Teinture rose.<br><br>Sert à fabriquer :<br>[[gv:mp_fuselage_15_solid|Fuselage à combustible solide de taille 15]]."
+ }
+}

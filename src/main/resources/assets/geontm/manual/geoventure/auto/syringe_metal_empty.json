@@ -13,7 +13,7 @@
   "fr_fr": "Seringue en métal"
  },
  "content": {
-  "en_us": "How to get it :<br>- Crafting table (x6) : Iron Bars, [[gv:rod_empty|Empty Rod]], Iron Plate.<br><br>Used to make :<br>Med-X, Psycho, Stimpak.",
-  "fr_fr": "Obtention :<br>- Établi (x6) : Barreaux de fer, [[gv:rod_empty|Tige vide]], Plaque de fer."
+  "en_us": "How to get it :<br>- Crafting table (x6) : Iron Bars, [[gv:rod_empty|Empty Rod]], Iron Plate.<br><br>Used to make :<br>[[gv:syringe_metal_medx|Med-X]], [[gv:syringe_metal_psycho|Psycho]], [[gv:syringe_metal_stimpak|Stimpak]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : Barreaux de fer, [[gv:rod_empty|Tige vide]], Plaque de fer.<br><br>Sert à fabriquer :<br>[[gv:syringe_metal_medx|Med-X]], [[gv:syringe_metal_psycho|Psycho]], [[gv:syringe_metal_stimpak|Stimpak]]."
  }
 }
