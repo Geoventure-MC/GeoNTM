@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_australium",
+ "icon": [
+  "geontm:nugget_australium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_australium"
+  ]
+ ],
+ "title": {
+  "en_us": "Australium Nugget",
+  "fr_fr": "Pépite d'australium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_australium|Australium Billet]].<br>- Furnace : Australian Ore.<br>- Crafting table (x9) : [[gv:ingot_australium|Australium Ingot]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_australium|Australium Billet]], [[gv:ingot_australium|Australium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_australium|billet d'australium]].<br>- Four : Minerais d'Australium.<br>- Établi (x9) : [[gv:ingot_australium|Lingot d'australium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_australium|billet d'australium]], [[gv:ingot_australium|Lingot d'australium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_rgp",
+ "icon": [
+  "geontm:rod_rgp"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_rgp"
+  ]
+ ],
+ "title": {
+  "en_us": "Reactor-Grade Plutonium Rod",
+  "fr_fr": "Tige de plutonium de qualité réacteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_u238|Uranium-238 Rod]].<br>- Breeding Reactor (LEGACY) : [[gv:rod_uranium|Uranium Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].<br><br>Used to make :<br>[[gv:rod_waste|Nuclear Waste Rod]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_u238|Tige d'U238]].<br>- Reacteur de fusion : [[gv:rod_uranium|Tige d'uranium]].<br>- Établi : [[gv:rod_empty|Tige vide]], [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]].<br><br>Sert à fabriquer :<br>[[gv:rod_waste|Tige de dechets nucleaires]], [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]]."
+ }
+}

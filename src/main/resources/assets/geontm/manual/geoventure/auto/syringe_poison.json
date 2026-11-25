@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_poison",
+ "icon": [
+  "geontm:syringe_poison"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_poison"
+  ]
+ ],
+ "title": {
+  "en_us": "Poisonous Injection",
+  "fr_fr": "Injection toxique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:syringe_empty|Empty Syringe]], 4 x Spider Eye, 4 x Lead Powder.<br>- Crafting table : [[gv:syringe_empty|Empty Syringe]], 4 x Spider Eye, 4 x [[gv:powder_poison|Poison Powder]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:syringe_empty|Seringue vide]], 4 x Oeil d'araignée, 4 x Poudre de plomb.<br>- Établi : [[gv:syringe_empty|Seringue vide]], 4 x Oeil d'araignée, 4 x [[gv:powder_poison|Poison en poudre]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_wood",
+ "icon": [
+  "geontm:oil_tar_wood"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_wood"
+  ]
+ ],
+ "title": {
+  "en_us": "Wood Tar",
+  "fr_fr": "Goudron de bois"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Solidifier|Industrial Solidification Machine]] : woodoil.<br><br>Used to make :<br>[[gv:coke_coal|Coal Coke]].",
+  "fr_fr": "Obtention :<br>- [[Solidifier|Machine de solidification industrielle]] : woodoil.<br><br>Sert à fabriquer :<br>[[gv:coke_coal|Coke de charbon]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_crude",
+ "icon": [
+  "geontm:oil_tar_crude"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_crude"
+  ]
+ ],
+ "title": {
+  "en_us": "Oil Tar",
+  "fr_fr": "Goudron de pétrole"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Solidifier|Industrial Solidification Machine]] : bitumen.<br>- [[Solidifier|Industrial Solidification Machine]] : heavyoil.<br>- [[Solidifier|Industrial Solidification Machine]] : heavyoil vacuum.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:coke_petroleum|Petroleum Coke]], [[gv:oil_tar_wax|Chlorinated Petroleum Wax]].",
+  "fr_fr": "Obtention :<br>- [[Solidifier|Machine de solidification industrielle]] : bitumen.<br>- [[Solidifier|Machine de solidification industrielle]] : heavyoil.<br>- [[Solidifier|Machine de solidification industrielle]] : heavyoil vacuum.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:coke_petroleum|Coke de pétrole]], [[gv:oil_tar_wax|Cire de pétrole chlorée]]."
+ }
+}

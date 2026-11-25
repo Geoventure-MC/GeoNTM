@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_bromine",
+ "icon": [
+  "geontm:powder_bromine"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_bromine"
+  ]
+ ],
+ "title": {
+  "en_us": "Bromine Powder",
+  "fr_fr": "Poudre de brome"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Box of Copper Dust]], Coal Powder.<br><br>Used to make :<br>[[gv:powder_iodine|Iodine Powder]].",
+  "fr_fr": "Obtention :<br>- machine_cyclotron : [[gv:part_copper|Boîte de poussière de cuivre]], Poudre de charbon.<br><br>Sert à fabriquer :<br>[[gv:powder_iodine|Poudre d'iode]]."
+ }
+}

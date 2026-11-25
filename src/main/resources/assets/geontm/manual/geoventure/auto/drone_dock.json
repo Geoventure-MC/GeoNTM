@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_dock",
+ "icon": [
+  "geontm:drone_dock"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_dock"
+  ]
+ ],
+ "title": {
+  "en_us": "Logistics Drone Dock",
+  "fr_fr": "Station d'accueil de drones logistiques"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_waypoint_request|Logistics Drone Waypoint]], [[gv:crate_steel|Steel Crate]], [[gv:circuit_advanced|Military Grade Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_waypoint_request|Point de passage de drone logistique]], [[gv:crate_steel|Caisse en acier]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]]."
+ }
+}

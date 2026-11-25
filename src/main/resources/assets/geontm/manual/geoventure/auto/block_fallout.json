@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_fallout",
+ "icon": [
+  "geontm:block_fallout"
+ ],
+ "trigger": [
+  [
+   "geontm:block_fallout"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Fallout",
+  "fr_fr": "Bloc de Fallout"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:falloutitem|Pile of Fallout]].<br><br>Used to make :<br>[[gv:falloutitem|Pile of Fallout]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:falloutitem|Tas de retombées radioactives]].<br><br>Sert à fabriquer :<br>[[gv:falloutitem|Tas de retombées radioactives]]."
+ }
+}

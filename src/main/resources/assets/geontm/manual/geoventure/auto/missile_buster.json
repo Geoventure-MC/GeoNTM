@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_buster",
+ "icon": [
+  "geontm:missile_buster"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_buster"
+  ]
+ ],
+ "title": {
+  "en_us": "Bunker Buster",
+  "fr_fr": "Bunker buster Tier1"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_buster_small|Small Bunker Buster Warhead]], [[gv:fuel_tank_small|Small Fuel Tank]], [[gv:thruster_small|Small Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_buster_small|Petite ogive de buse de bunker]], [[gv:fuel_tank_small|Petit réservoir de carburant]], [[gv:thruster_small|Petit propulseur]]."
+ }
+}

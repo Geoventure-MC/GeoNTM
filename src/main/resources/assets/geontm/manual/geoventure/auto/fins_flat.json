@@ -1,0 +1,19 @@
+{
+ "name": "gv:fins_flat",
+ "icon": [
+  "geontm:fins_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:fins_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Steel Casing",
+  "fr_fr": "Ailettes en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 2 x Steel Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 2 x Lingot d'acier."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_ejector_1",
+ "icon": [
+  "geontm:upgrade_ejector_1"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_ejector_1"
+  ]
+ ],
+ "title": {
+  "en_us": "Ejection Speed Upgrade Mk.I",
+  "fr_fr": "Amélioration de la vitesse d'éjection Mk.I"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[Copper|Copper Plate]], 2 x [[gv:motor|Motor]], [[gv:upgrade_template|Machine Upgrade Template]].<br><br>Used to make :<br>[[gv:upgrade_ejector_2|Ejection Speed Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[Copper|Plaque de cuivre]], 2 x [[gv:motor|Moteur]], [[gv:upgrade_template|Amélioration de machine]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_ejector_2|Amélioration de la vitesse d'éjection Mk.II]]."
+ }
+}

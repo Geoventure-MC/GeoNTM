@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_muffler",
+ "icon": [
+  "geontm:upgrade_muffler"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_muffler"
+  ]
+ ],
+ "title": {
+  "en_us": "Muffler",
+  "fr_fr": "Silencieux"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x16) : 8 x ingot (rubber), wool.",
+  "fr_fr": "Obtention :<br>- Établi (x16) : 8 x lingot (caoutchouc), wool."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_co",
+ "icon": [
+  "geontm:rod_co"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_co"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt Rod",
+  "fr_fr": "Bâton de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Cobalt Billet.<br><br>Used to make :<br>[[gv:rod_co60|Cobalt-60 Rod]], [[Cobalt|Cobalt Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_empty|Tige vide]], Billette de cobalt.<br><br>Sert à fabriquer :<br>[[gv:rod_co60|Tige de cobalt-60]], [[Cobalt|Billette de cobalt]]."
+ }
+}

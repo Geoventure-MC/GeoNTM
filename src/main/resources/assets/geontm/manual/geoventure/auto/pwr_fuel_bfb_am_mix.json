@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_bfb_am_mix",
+ "icon": [
+  "geontm:pwr_fuel_bfb_am_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_bfb_am_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Fuel Grade Americium PWR BFB Rod",
+  "fr_fr": "Barre PWR BFB à l'américium de qualité combustible"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:billet_am_mix|Reactor Grade Americium Billet]], [[gv:plate_polymer|Insulator]], Bismuth Billet, 6 x [[gv:nugget_plutonium_fuel|Nugget of Plutonium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:billet_am_mix|Billet d'américium de qualité réacteur]], [[gv:plate_polymer|Isolateur]], Billet de bismuth, 6 x [[gv:nugget_plutonium_fuel|Pépite de combustible du plutonium]]."
+ }
+}

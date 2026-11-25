@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_solid",
+ "icon": [
+  "geontm:mp_fuselage_10_solid"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_solid"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Solid Fuel Fuselage",
+  "fr_fr": "Fuselage à combustible solide de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x [[gv:seg_10|Size 10 Connector]], 12 x Titanium Plate, 3 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x [[gv:seg_10|Connecteur taille 10]], 12 x Plaque en titane, 3 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

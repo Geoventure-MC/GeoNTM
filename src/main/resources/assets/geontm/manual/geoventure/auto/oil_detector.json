@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_detector",
+ "icon": [
+  "geontm:oil_detector"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_detector"
+  ]
+ ],
+ "title": {
+  "en_us": "Oil Reservoir Detector",
+  "fr_fr": "Détecteur de réserve de pétrole"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_analog|Analog Circuit Board]], 2 x Copper Ingot, 3 x Steel Plate, 2 x wire (gold).",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_analog|Carte de circuit analogique]], 2 x Lingot de cuivre, 3 x Plaque d'acier, 2 x fil (or)."
+ }
+}

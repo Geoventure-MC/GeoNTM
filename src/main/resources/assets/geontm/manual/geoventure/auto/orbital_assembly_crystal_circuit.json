@@ -1,0 +1,19 @@
+{
+ "name": "gv:orbital_assembly_crystal_circuit",
+ "icon": [
+  "geontm:orbital_assembly_crystal_circuit"
+ ],
+ "trigger": [
+  [
+   "geontm:orbital_assembly_crystal_circuit"
+  ]
+ ],
+ "title": {
+  "en_us": "Orbital Assembly: Crystal Circuit Board",
+  "fr_fr": "Assemblage orbital : carte de circuit en cristal"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_precass|Precision Assembly Machine]] : 4 x [[gv:circuit_chip_quantum|Solid State Quantum Processor]], 4 x [[Fullerite|Crystalline Fullerite]], 16 x [[gv:circuit_pcb|Printed Circuit Board]], 32 x wire (Gold).<br><br>Used to make :<br>[[gv:circuit_crystal|Crystal Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 4 x [[gv:circuit_chip_quantum|Processeur quantique à semi-conducteurs]], 4 x [[Fullerite|Fullerite cristalline]], 16 x [[gv:circuit_pcb|Carte de circuit imprimé]], 32 x fil (or).<br><br>Sert à fabriquer :<br>[[gv:circuit_crystal|Carte de circuit en cristal]]."
+ }
+}

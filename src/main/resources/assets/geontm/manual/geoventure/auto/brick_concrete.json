@@ -1,0 +1,19 @@
+{
+ "name": "gv:brick_concrete",
+ "icon": [
+  "geontm:brick_concrete"
+ ],
+ "trigger": [
+  [
+   "geontm:brick_concrete"
+  ]
+ ],
+ "title": {
+  "en_us": "Concrete Bricks",
+  "fr_fr": "Briques en béton"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 4 x [[gv:concrete_smooth|Concrete]], Clay Ball.<br>- Crafting table (x4) : 4 x Concrete Tile, Clay Ball.<br><br>Used to make :<br>[[Condenser|Auxiliary Cooling Tower]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 4 x [[gv:concrete_smooth|Béton]], Motte d'argile.<br>- Établi (x4) : 4 x Tuile de béton, Motte d'argile.<br><br>Sert à fabriquer :<br>[[Condenser|Tour de refroidissement auxiliaire]]."
+ }
+}

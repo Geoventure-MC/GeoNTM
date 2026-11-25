@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_pu_mix",
+ "icon": [
+  "geontm:block_pu_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:block_pu_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Reactor Grade Plutonium",
+  "fr_fr": "Bloc de plutonium de qualité réacteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Reactor-Grade Plutonium|Reactor Grade Plutonium Ingot]].<br><br>Used to make :<br>[[Reactor-Grade Plutonium|Reactor Grade Plutonium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Reactor-Grade Plutonium|Lingot de plutonium de qualité réacteur]].<br><br>Sert à fabriquer :<br>[[Reactor-Grade Plutonium|Lingot de plutonium de qualité réacteur]]."
+ }
+}

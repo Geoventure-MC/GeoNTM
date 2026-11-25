@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_polonium",
+ "icon": [
+  "geontm:block_polonium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_polonium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Polonium-210",
+  "fr_fr": "Bloc de polonium-210"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Polonium-210|Polonium-210 Ingot]].<br><br>Used to make :<br>[[Polonium-210|Polonium-210 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Polonium-210|Lingot de polonium-210]].<br><br>Sert à fabriquer :<br>[[Polonium-210|Lingot de polonium-210]]."
+ }
+}

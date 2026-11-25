@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_mox_fuel",
+ "icon": [
+  "geontm:ingot_mox_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_mox_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Ingot of MOX Fuel",
+  "fr_fr": "Lingot de combustible MOX"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_mox_fuel|MOX Fuel Billet]].<br>- Crafting table (x9) : [[gv:block_mox_fuel|Block of MOX Fuel]].<br>- Crafting table : 9 x [[gv:nugget_mox_fuel|Nugget of MOX Fuel]].<br><br>Used to make :<br>[[gv:billet_mox_fuel|MOX Fuel Billet]], [[gv:block_mox_fuel|Block of MOX Fuel]], [[gv:nugget_mox_fuel|Nugget of MOX Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_mox_fuel|Billet de combustible MOX]].<br>- Établi (x9) : [[gv:block_mox_fuel|Bloc de Combustible MOX]].<br>- Établi : 9 x [[gv:nugget_mox_fuel|Pépite de combustible MOX]].<br><br>Sert à fabriquer :<br>[[gv:billet_mox_fuel|Billet de combustible MOX]], [[gv:block_mox_fuel|Bloc de Combustible MOX]], [[gv:nugget_mox_fuel|Pépite de combustible MOX]]."
+ }
+}

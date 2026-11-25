@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_long_kerosene_metal",
+ "icon": [
+  "geontm:mp_fuselage_10_long_kerosene_metal"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_long_kerosene_metal"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Long Kerosene Fuselage",
+  "fr_fr": "Fuselage kérosène long taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 4 x Iron Plate, [[gv:mp_fuselage_10_long_kerosene|Size 10 Long Kerosene Fuselage]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 4 x Plaque de fer, [[gv:mp_fuselage_10_long_kerosene|Fuselage kérosène long taille 10]]."
+ }
+}

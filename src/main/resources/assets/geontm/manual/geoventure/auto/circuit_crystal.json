@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_crystal",
+ "icon": [
+  "geontm:circuit_crystal"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_crystal"
+  ]
+ ],
+ "title": {
+  "en_us": "Crystal Circuit Board",
+  "fr_fr": "Carte de circuit en cristal"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:satellite_science_assembler|Space Laboratory - 0G Assembler]] : [[gv:orbital_assembly_crystal_circuit|Orbital Assembly: Crystal Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[gv:satellite_science_assembler|Laboratoire spatial - Assembleur 0G]] : [[gv:orbital_assembly_crystal_circuit|Assemblage orbital : carte de circuit en cristal]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pump",
+ "icon": [
+  "geontm:watz_pump"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pump"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Pressure Pump",
+  "fr_fr": "Pompe à pression Watz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_bismoid|Versatile Circuit Board]], 2 x [[gv:motor_desh|Desh Motor]], 5 x cast plate (resistant alloy), pipe (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_bismoid|Carte de circuit polyvalente]], 2 x [[gv:motor_desh|Moteur de desh]], 5 x plaque coulée (alliage résistant), tuyau (acier haute vitesse)."
+ }
+}

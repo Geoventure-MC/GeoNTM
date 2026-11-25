@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_short_tiny_plutonium240",
+ "icon": [
+  "geontm:nuclear_waste_short_tiny_plutonium240"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_short_tiny_plutonium240"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Short-Lived Nuclear Waste",
+  "fr_fr": "Minuscule tas de déchets nucléaires à vie courte"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:nuclear_waste_short_plutonium240|Short-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_short_plutonium240|Short-Lived Nuclear Waste]], [[gv:nuclear_waste_short_depleted_tiny_plutonium240|Tiny Pile of Decayed Short-Lived Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:nuclear_waste_short_plutonium240|Déchets nucléaires à vie courte]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_short_plutonium240|Déchets nucléaires à vie courte]], [[gv:nuclear_waste_short_depleted_tiny_plutonium240|Minuscule tas de déchets nucléaires à vie courte décomposés]]."
+ }
+}

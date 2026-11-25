@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_incendiary",
+ "icon": [
+  "geontm:missile_incendiary"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_incendiary"
+  ]
+ ],
+ "title": {
+  "en_us": "Incendiary Missile",
+  "fr_fr": "Missile incendiaire Tier1"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_incendiary_small|Small Incendiary Warhead]], [[gv:fuel_tank_small|Small Fuel Tank]], [[gv:thruster_small|Small Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_incendiary_small|Petite ogive incendiaire]], [[gv:fuel_tank_small|Petit réservoir de carburant]], [[gv:thruster_small|Petit propulseur]]."
+ }
+}

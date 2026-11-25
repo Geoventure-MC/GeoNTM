@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_copper_torus",
+ "icon": [
+  "geontm:coil_copper_torus"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_copper_torus"
+  ]
+ ],
+ "title": {
+  "en_us": "Ring Coil",
+  "fr_fr": "Bobine de cuivre annulaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 2 x [[gv:coil_copper|Copper Coil]].<br>- Crafting table (x2) : Iron Plate, 4 x [[gv:coil_copper|Copper Coil]].<br>- Crafting table (x2) : Steel Plate, 4 x [[gv:coil_copper|Copper Coil]].<br><br>Used to make :<br>[[gv:motor|Motor]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 2 x [[gv:coil_copper|Bobine de cuivre]].<br>- Établi (x2) : Plaque de fer, 4 x [[gv:coil_copper|Bobine de cuivre]].<br>- Établi (x2) : Plaque d'acier, 4 x [[gv:coil_copper|Bobine de cuivre]].<br><br>Sert à fabriquer :<br>[[gv:motor|Moteur]]."
+ }
+}

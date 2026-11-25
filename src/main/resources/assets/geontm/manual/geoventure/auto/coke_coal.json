@@ -1,0 +1,19 @@
+{
+ "name": "gv:coke_coal",
+ "icon": [
+  "geontm:coke_coal"
+ ],
+ "trigger": [
+  [
+   "geontm:coke_coal"
+  ]
+ ],
+ "title": {
+  "en_us": "Coal Coke",
+  "fr_fr": "Coke de charbon"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : [[gv:briquette_coal|Coal Briquette]].<br>- [[gv:machine_furnace_combination|Combination Furnace]] : [[gv:briquette_coal|Coal Briquette]].<br>- [[gv:machine_furnace_combination|Combination Furnace]] : Coal Powder.<br>(4 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Four : [[gv:briquette_coal|Briquette de charbon]].<br>- [[gv:machine_furnace_combination|Four combiné]] : [[gv:briquette_coal|Briquette de charbon]].<br>- [[gv:machine_furnace_combination|Four combiné]] : Poudre de charbon.<br>(4 autres recettes : voir JEI.)"
+ }
+}

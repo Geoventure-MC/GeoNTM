@@ -1,0 +1,19 @@
+{
+ "name": "gv:sand_boron",
+ "icon": [
+  "geontm:sand_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:sand_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Boron Sand",
+  "fr_fr": "Sable de bore"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 8 x Sand, Boron Powder.<br><br>Used to make :<br>[[gv:glass_boron|Boron Glass]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 8 x Sable, Poudre de bore.<br><br>Sert à fabriquer :<br>[[gv:glass_boron|Verre de bore]]."
+ }
+}

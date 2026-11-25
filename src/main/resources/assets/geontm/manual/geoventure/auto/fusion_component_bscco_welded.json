@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_component_bscco_welded",
+ "icon": [
+  "geontm:fusion_component_bscco_welded"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_component_bscco_welded"
+  ]
+ ],
+ "title": {
+  "en_us": "Welded BSCCO Coils",
+  "fr_fr": "Bobines BSCCO soudées"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Tool conversion, placed block : [[gv:fusion_component|Superconducting BSCCO Coils]], cast plate (Steel).",
+  "fr_fr": "Obtention :<br>- Conversion à l'outil, bloc posé : [[gv:fusion_component|Bobines BSCCO supraconductrices]], plaque coulée (acier)."
+ }
+}

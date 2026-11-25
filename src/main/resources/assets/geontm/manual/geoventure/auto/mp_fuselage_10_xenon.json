@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_xenon",
+ "icon": [
+  "geontm:mp_fuselage_10_xenon"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_xenon"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Xenon Fuselage",
+  "fr_fr": "Fuselage Xénon taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x [[gv:seg_10|Size 10 Connector]], 12 x Copper Plate, 3 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x [[gv:seg_10|Connecteur taille 10]], 12 x Plaque de cuivre, 3 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

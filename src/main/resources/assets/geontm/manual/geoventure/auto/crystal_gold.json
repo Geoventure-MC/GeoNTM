@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_gold",
+ "icon": [
+  "geontm:crystal_gold"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_gold"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold Crystals",
+  "fr_fr": "Cristaux d'or"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (gold), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (gold), 333 mB peroxide.<br><br>Used to make :<br>[[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (or), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (or), 333 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:nugget_mercury|Petite goutte de mercure]]."
+ }
+}

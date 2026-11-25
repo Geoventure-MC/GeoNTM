@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_thf",
+ "icon": [
+  "geontm:rod_quad_thf"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_thf"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium Fuel Quad Rod",
+  "fr_fr": "Quadruple tige de combustible au thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_th232|Thorium-232 Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x [[gv:billet_thorium_fuel|Thorium Fuel Billet]].<br><br>Used to make :<br>[[gv:billet_thorium_fuel|Thorium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_th232|Tige quadruple thorium-232]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x [[gv:billet_thorium_fuel|Billette de carburant au thorium]].<br><br>Sert à fabriquer :<br>[[gv:billet_thorium_fuel|Billette de carburant au thorium]]."
+ }
+}

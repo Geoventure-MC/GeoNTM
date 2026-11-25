@@ -1,0 +1,19 @@
+{
+ "name": "gv:canister_full",
+ "icon": [
+  "geontm:canister_full"
+ ],
+ "trigger": [
+  [
+   "geontm:canister_full"
+  ]
+ ],
+ "title": {
+  "en_us": "Canister",
+  "fr_fr": "Bidon"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 2 x [[gv:canister_empty|Empty Canister]], [[gv:chemistry_set|Laboratory Glassware]].<br><br>Used to make :<br>[[gv:missile_shuttle|Reliant Robin Space Shuttle]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 2 x [[gv:canister_empty|Jerrican vide]], [[gv:chemistry_set|Verrerie de laboratoire]].<br><br>Sert à fabriquer :<br>[[gv:missile_shuttle|Navette spatiale Reliant Robin]]."
+ }
+}

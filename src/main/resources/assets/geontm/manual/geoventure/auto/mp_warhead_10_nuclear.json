@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_10_nuclear",
+ "icon": [
+  "geontm:mp_warhead_10_nuclear"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_10_nuclear"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Micro Nuclear Warhead",
+  "fr_fr": "Micro-ogive nucléaire de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_10|Size 10 Connector]], 16 x Weapon Steel Plate, 2 x Plutonium-239 Billet, 4 x [[gv:neutron_reflector|Neutron Reflector]], 4 x ingot (high explosive), [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Special warheads.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_10|Connecteur taille 10]], 16 x Plaque d'acier d'arme, 2 x Billet de plutonium-239, 4 x [[gv:neutron_reflector|Reflecteur neutronique]], 4 x lingot (explosif puissant), [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Ogives spéciales."
+ }
+}

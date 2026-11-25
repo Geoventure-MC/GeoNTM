@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_short_depleted_plutonium240",
+ "icon": [
+  "geontm:nuclear_waste_short_depleted_plutonium240"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_short_depleted_plutonium240"
+  ]
+ ],
+ "title": {
+  "en_us": "Decayed Short-Lived Nuclear Waste",
+  "fr_fr": "Déchets nucléaires dégradés à vie courte"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste_short_depleted_tiny_plutonium240|Tiny Pile of Decayed Short-Lived Nuclear Waste]].<br>- [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]] : [[gv:nuclear_waste_short_plutonium240|Short-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_short_depleted_tiny_plutonium240|Tiny Pile of Decayed Short-Lived Nuclear Waste]], [[gv:nugget_zirconium|Zirconium Splinter]], [[gv:dust_tiny|Tiny Pile of Dust]], [[Bismuth|Bismuth Nugget]], [[Uranium-238|Uranium-238 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste_short_depleted_tiny_plutonium240|Minuscule tas de déchets nucléaires à vie courte décomposés]].<br>- [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]] : [[gv:nuclear_waste_short_plutonium240|Déchets nucléaires à vie courte]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_short_depleted_tiny_plutonium240|Minuscule tas de déchets nucléaires à vie courte décomposés]], [[gv:nugget_zirconium|Éclat de zirconium]], [[gv:dust_tiny|Petit tas de poussière]], [[Bismuth|Pépite de bismuth]], [[Uranium-238|Pépite de d'U238]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

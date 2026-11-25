@@ -1,0 +1,19 @@
+{
+ "name": "gv:screwdriver_desh",
+ "icon": [
+  "geontm:screwdriver_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:screwdriver_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Screwdriver",
+  "fr_fr": "Tournevis Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : ingot (plastic), 2 x Desh Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : lingot (plastique), 2 x Lingot de desh."
+ }
+}

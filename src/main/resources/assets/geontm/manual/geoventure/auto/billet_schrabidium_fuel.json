@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_schrabidium_fuel",
+ "icon": [
+  "geontm:billet_schrabidium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_schrabidium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Fuel Billet",
+  "fr_fr": "Billette de carburant Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_schrabidium_fuel|Nugget of Schrabidium Fuel]].<br>- Crafting table (x3) : 2 x [[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]].<br>- Crafting table (x3) : [[gv:billet_schrabidium|Schrabidium Billet]], [[Neptunium|Neptunium Billet]], [[gv:billet_beryllium|Beryllium Billet]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]], [[gv:nugget_schrabidium_fuel|Nugget of Schrabidium Fuel]], [[gv:rbmk_fuel_mes|MES RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_schrabidium_fuel|Pépite de combustible de Schrabidium]].<br>- Établi (x3) : 2 x [[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]].<br>- Établi (x3) : [[gv:billet_schrabidium|Billette de Schrabidium-326]], [[Neptunium|Billet de Neptunium-237]], [[gv:billet_beryllium|Billet de béryllium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]], [[gv:nugget_schrabidium_fuel|Pépite de combustible de Schrabidium]], [[gv:rbmk_fuel_mes|Barre de combustible MES RBMK]]."
+ }
+}

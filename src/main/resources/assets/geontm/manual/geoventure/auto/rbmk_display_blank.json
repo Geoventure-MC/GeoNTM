@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_display_blank",
+ "icon": [
+  "geontm:rbmk_display_blank"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_display_blank"
+  ]
+ ],
+ "title": {
+  "en_us": "Blank Redstone-over-Radio Panel",
+  "fr_fr": "Panneau Redstone-over-Radio vierge"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : Boron Ingot, [[gv:concrete_asbestos|Asbestos Concrete]].<br><br>Used to make :<br>[[gv:rbmk_display|RBMK Display Panel]], [[Redstone-over-Radio Gauge|Redstone-over-Radio Gauge]], [[Redstone-over-Radio Graph|Redstone-over-Radio Graph]], [[Redstone-over-Radio Indicator Lights|Redstone-over-Radio Indicator Lights]], [[Redstone-over-Radio Keypad|Redstone-over-Radio Keypad]], [[Redstone-over-Radio Lever|Redstone-over-Radio Lever]], [[Redstone-over-Radio Numeric Display|Redstone-over-Radio Numeric Display]], [[Redstone-over-Radio Terminal|Redstone-over-Radio Terminal]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : Lingot de bore, [[gv:concrete_asbestos|Béton d'amiante]].<br><br>Sert à fabriquer :<br>[[gv:rbmk_display|Panneau d'affichage RBMK]], [[Redstone-over-Radio Gauge|Jauge Redstone-over-Radio]], [[Redstone-over-Radio Graph|Graphique Redstone-over-Radio]], [[Redstone-over-Radio Indicator Lights|Voyants Redstone-over-Radio]], [[Redstone-over-Radio Keypad|Clavier Redstone-over-Radio]], [[Redstone-over-Radio Lever|Levier Redstone-over-Radio]], [[Redstone-over-Radio Numeric Display|Afficheur numérique Redstone-over-Radio]], [[Redstone-over-Radio Terminal|Terminal Redstone-over-Radio]]."
+ }
+}

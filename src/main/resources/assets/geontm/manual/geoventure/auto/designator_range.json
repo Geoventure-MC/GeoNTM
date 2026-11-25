@@ -1,0 +1,19 @@
+{
+ "name": "gv:designator_range",
+ "icon": [
+  "geontm:designator_range"
+ ],
+ "trigger": [
+  [
+   "geontm:designator_range"
+  ]
+ ],
+ "title": {
+  "en_us": "Long Range Target Designator",
+  "fr_fr": "Désignateur à longue portée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rangefinder|Rangefinder]], [[gv:designator|Short Range Target Designator]], ingot (plastic).",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rangefinder|Télémètre]], [[gv:designator|Désignateur à courte portée]], lingot (plastique)."
+ }
+}

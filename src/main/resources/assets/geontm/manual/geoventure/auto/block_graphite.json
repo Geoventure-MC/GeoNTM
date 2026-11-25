@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_graphite",
+ "icon": [
+  "geontm:block_graphite"
+ ],
+ "trigger": [
+  [
+   "geontm:block_graphite"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Graphite",
+  "fr_fr": "Bloc de graphite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x4) : [[RBMK Control Rods|RBMK Moderated Control Rods]].<br>- Industrial anvil (construction) (x4) : [[gv:rbmk_fuel_rod_moderated|RBMK Moderated Fuel Channel]].<br>- Industrial anvil (construction) (x4) : [[gv:rbmk_fuel_rod_reasim_moderated|RBMK Moderated Fuel Channel (ReaSim)]].<br>(3 more recipes: see JEI.)<br><br>Used to make :<br>[[Graphite|Graphite Ingot]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x4) : [[RBMK Control Rods|Barres de contrôle modérées RBMK]].<br>- Enclume industrielle (construction) (x4) : [[gv:rbmk_fuel_rod_moderated|Barre de combustible modérée RBMK]].<br>- Enclume industrielle (construction) (x4) : [[gv:rbmk_fuel_rod_reasim_moderated|Barre de combustible modérée RBMK (ReaSim)]].<br>(3 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Graphite|Lingot de graphite]]."
+ }
+}

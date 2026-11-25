@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg",
+ "icon": [
+  "geontm:pellet_rtg"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium-238 RTG Pellet",
+  "fr_fr": "Granule de plutonium 238"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[Plutonium-238|Plutonium-238 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[Plutonium-238|Billet de plutonium-238]], Plaque de fer."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:fins_big_steel",
+ "icon": [
+  "geontm:fins_big_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:fins_big_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Big Steel Grid Fins",
+  "fr_fr": "Grandes ailettes en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Steel Plate, 5 x Steel Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque d'acier, 5 x Lingot d'acier."
+ }
+}

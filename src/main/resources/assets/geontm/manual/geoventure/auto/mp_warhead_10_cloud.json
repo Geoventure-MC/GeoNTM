@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_10_cloud",
+ "icon": [
+  "geontm:mp_warhead_10_cloud"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_10_cloud"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Pink Cloud Warhead",
+  "fr_fr": "Ogive nuage rose taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_10|Size 10 Connector]], 12 x Steel Plate, 2 x [[gv:det_cord|Det Cord]], 16 x [[gv:powder_magic|Pulverized Enchantment]] - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_10|Connecteur taille 10]], 12 x Plaque d'acier, 2 x [[gv:det_cord|Det cord]], 16 x [[gv:powder_magic|Enchantement pulvérisé]] - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

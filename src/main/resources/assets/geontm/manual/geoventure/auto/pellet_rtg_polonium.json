@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_polonium",
+ "icon": [
+  "geontm:pellet_rtg_polonium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_polonium"
+  ]
+ ],
+ "title": {
+  "en_us": "Polonium-210 RTG Pellet",
+  "fr_fr": "Pellet de polonium-210 RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[Polonium-210|Polonium-210 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[Polonium-210|Billet de polonium-210]], Plaque de fer."
+ }
+}

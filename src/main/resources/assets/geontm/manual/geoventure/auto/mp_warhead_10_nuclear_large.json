@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_10_nuclear_large",
+ "icon": [
+  "geontm:mp_warhead_10_nuclear_large"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_10_nuclear_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Nuclear Warhead",
+  "fr_fr": "Ogive nucléaire de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_10|Size 10 Connector]], 16 x Weapon Steel Plate, 6 x Plutonium-239 Billet, 8 x [[gv:neutron_reflector|Neutron Reflector]], 12 x ingot (high explosive), [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Special warheads.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_10|Connecteur taille 10]], 16 x Plaque d'acier d'arme, 6 x Billet de plutonium-239, 8 x [[gv:neutron_reflector|Reflecteur neutronique]], 12 x lingot (explosif puissant), [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Ogives spéciales."
+ }
+}

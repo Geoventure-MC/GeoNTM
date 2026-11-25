@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_schrabidium_fuel",
+ "icon": [
+  "geontm:block_schrabidium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:block_schrabidium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Schrabidium Fuel",
+  "fr_fr": "Bloc de Combustible Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]].<br><br>Used to make :<br>[[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_cloth_red",
+ "icon": [
+  "geontm:hazmat_cloth_red"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_cloth_red"
+  ]
+ ],
+ "title": {
+  "en_us": "Advanced Hazmat Cloth",
+  "fr_fr": "Tissu Hazmat avancé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:hazmat_cloth|Hazmat Cloth]], dust (redstone).<br><br>Used to make :<br>[[gv:hazmat_boots_red|Advanced Hazmat Boots]], [[gv:hazmat_cloth_grey|Lead-Reinforced Hazmat Cloth]], [[gv:hazmat_helmet_red|Advanced Hazmat Helmet]], [[gv:hazmat_legs_red|Advanced Hazmat Leggings]], [[gv:hazmat_plate_red|Advanced Hazmat Chestplate]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:hazmat_cloth|Toile d'Hazmat]], poudre (redstone).<br><br>Sert à fabriquer :<br>[[gv:hazmat_boots_red|Bottes Hazmat avancées]], [[gv:hazmat_cloth_grey|Chiffon Hazmat renforcé au plomb]], [[gv:hazmat_helmet_red|Casque Hazmat avancé]], [[gv:hazmat_legs_red|Jambières Hazmat avancées]], [[gv:hazmat_plate_red|Plastron Hazmat avancé]]."
+ }
+}

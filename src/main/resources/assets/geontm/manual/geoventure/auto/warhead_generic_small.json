@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_generic_small",
+ "icon": [
+  "geontm:warhead_generic_small"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_generic_small"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Warhead",
+  "fr_fr": "Petite ogive"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x Titanium Plate, 2 x [[gv:ball_dynamite|Dynamite]], [[gv:circuit_chip|Microchip]] - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_generic|High Explosive Missile]], [[gv:warhead_buster_small|Small Bunker Buster Warhead]], [[gv:warhead_cluster_small|Small Cluster Warhead]], [[gv:warhead_incendiary_small|Small Incendiary Warhead]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Plaque en titane, 2 x [[gv:ball_dynamite|Dynamiter]], [[gv:circuit_chip|Micropuce]] - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_generic|Missile explosif Tier1]], [[gv:warhead_buster_small|Petite ogive de buse de bunker]], [[gv:warhead_cluster_small|Petite ogive à sous munitions]], [[gv:warhead_incendiary_small|Petite ogive incendiaire]]."
+ }
+}

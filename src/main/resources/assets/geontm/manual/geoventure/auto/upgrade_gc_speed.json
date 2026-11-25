@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_gc_speed",
+ "icon": [
+  "geontm:upgrade_gc_speed"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_gc_speed"
+  ]
+ ],
+ "title": {
+  "en_us": "Gas Centrifuge Overclocking Upgrade",
+  "fr_fr": "Amélioration de surrégime de centrifugeuse à gaz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Rubber Bar, [[gv:motor|Motor]], 4 x [[gv:coil_gold|Gold Coil]], Niobium Ingot, [[gv:upgrade_template|Machine Upgrade Template]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Barre en caoutchouc, [[gv:motor|Moteur]], 4 x [[gv:coil_gold|Bobine d'or]], Lingot de niobium, [[gv:upgrade_template|Amélioration de machine]]."
+ }
+}

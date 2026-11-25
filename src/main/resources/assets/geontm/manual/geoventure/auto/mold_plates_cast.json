@@ -1,0 +1,19 @@
+{
+ "name": "gv:mold_plates_cast",
+ "icon": [
+  "geontm:mold_plates_cast"
+ ],
+ "trigger": [
+  [
+   "geontm:mold_plates_cast"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Mold (Cast Plates)",
+  "fr_fr": "Moule de fonderie (Plaques coulées)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

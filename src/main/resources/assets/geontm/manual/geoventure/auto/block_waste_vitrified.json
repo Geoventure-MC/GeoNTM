@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_waste_vitrified",
+ "icon": [
+  "geontm:block_waste_vitrified"
+ ],
+ "trigger": [
+  [
+   "geontm:block_waste_vitrified"
+  ]
+ ],
+ "title": {
+  "en_us": "Vitrified Block of Nuclear Waste",
+  "fr_fr": "Bloc vitrifié de déchets nucléaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]]."
+ }
+}

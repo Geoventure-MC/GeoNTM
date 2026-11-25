@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_waypoint_request",
+ "icon": [
+  "geontm:drone_waypoint_request"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_waypoint_request"
+  ]
+ ],
+ "title": {
+  "en_us": "Logistics Drone Waypoint",
+  "fr_fr": "Point de passage de drone logistique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : Blue Dye, Redstone Torch, [[gv:circuit_basic|Integrated Circuit Board]].<br><br>Used to make :<br>[[gv:drone_crate_provider|Logistics Provider Crate]], [[gv:drone_crate_requester|Logistics Requester Crate]], [[gv:drone_dock|Logistics Drone Dock]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : Teinture bleue, Torche de redstone, [[gv:circuit_basic|Carte de circuit intégré]].<br><br>Sert à fabriquer :<br>[[gv:drone_crate_provider|Caisse fournisseur logistique]], [[gv:drone_crate_requester|Caisse demandeuse logistique]], [[gv:drone_dock|Station d'accueil de drones logistiques]]."
+ }
+}

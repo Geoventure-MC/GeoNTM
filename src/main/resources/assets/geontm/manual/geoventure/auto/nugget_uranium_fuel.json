@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_uranium_fuel",
+ "icon": [
+  "geontm:nugget_uranium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_uranium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Nugget of Uranium Fuel",
+  "fr_fr": "Pépite de combustible d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_uranium_fuel|Uranium Fuel Billet]].<br>- [[Gas Centrifuge|Gas Centrifuge]] (x6) : 1200 mB uf6.<br>- Crafting table (x9) : [[gv:ingot_uranium_fuel|Ingot of Uranium Fuel]].<br><br>Used to make :<br>[[gv:billet_mox_fuel|MOX Fuel Billet]], [[gv:billet_uranium_fuel|Uranium Fuel Billet]], [[gv:ingot_uranium_fuel|Ingot of Uranium Fuel]], [[gv:pwr_fuel_bfb_pu241|Plutonium-241 PWR BFB Rod]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_uranium_fuel|Billet de carburant d'uranium]].<br>- [[Gas Centrifuge|Centrifugeuse à gaz]] (x6) : 1200 mB uf6.<br>- Établi (x9) : [[gv:ingot_uranium_fuel|Lingot d'uranium]].<br><br>Sert à fabriquer :<br>[[gv:billet_mox_fuel|Billet de combustible MOX]], [[gv:billet_uranium_fuel|Billet de carburant d'uranium]], [[gv:ingot_uranium_fuel|Lingot d'uranium]], [[gv:pwr_fuel_bfb_pu241|Barre PWR BFB au plutonium-241]]."
+ }
+}

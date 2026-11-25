@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_iron_wire",
+ "icon": [
+  "geontm:stamp_iron_wire"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_iron_wire"
+  ]
+ ],
+ "title": {
+  "en_us": "Wire Stamp (Iron)",
+  "fr_fr": "Moule de fer (fer)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_iron_flat|Flat Stamp (Iron)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_iron_flat|Moule plat (fer)]]."
+ }
+}

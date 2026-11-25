@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_titanium_wire",
+ "icon": [
+  "geontm:stamp_titanium_wire"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_titanium_wire"
+  ]
+ ],
+ "title": {
+  "en_us": "Wire Stamp (Titanium)",
+  "fr_fr": "Moule de fil (titane)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_titanium_flat|Flat Stamp (Titanium)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_titanium_flat|Moule plat (titane)]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_analog",
+ "icon": [
+  "geontm:circuit_analog"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_analog"
+  ]
+ ],
+ "title": {
+  "en_us": "Analog Circuit Board",
+  "fr_fr": "Carte de circuit analogique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x [[gv:circuit_pcb|Printed Circuit Board]], 4 x ingot (plastic), 8 x wire (Tungsten), Niobium Ingot.<br>- [[Soldering Station|Soldering Station]] : 3 x [[gv:circuit_vacuum_tube|Vacuum Tube]], 2 x [[gv:circuit_capacitor|Capacitor]], 4 x [[gv:circuit_pcb|Printed Circuit Board]], 4 x wire (Lead).<br><br>Used to make :<br>[[Electric Arc Furnace|Electric Arc Furnace]], [[Centrifuge|Centrifuge]], [[Chemical Plant|Chemical Plant]], [[Compressor|Compressor]], [[Excavator|Large Mining Drill]], [[Oil Refinery|Oil Refinery]], [[gv:mp_c_2|Tier 2 Missile Targeting Circuit]], [[gv:oil_detector|Oil Reservoir Detector]], [[RBMK Console|RBMK Console]], [[RBMK Crane Console|RBMK Crane Console]] and 3 more.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x [[gv:circuit_pcb|Carte de circuit imprimé]], 4 x lingot (plastique), 8 x fil (tungstène), Lingot de niobium.<br>- [[Soldering Station|Station de soudure]] : 3 x [[gv:circuit_vacuum_tube|Tube à vide]], 2 x [[gv:circuit_capacitor|Condensateur]], 4 x [[gv:circuit_pcb|Carte de circuit imprimé]], 4 x fil (plomb).<br><br>Sert à fabriquer :<br>[[Electric Arc Furnace|Four à arc électrique]], [[Centrifuge|Centrifugeuse]], [[Chemical Plant|Usine chimique]], [[Compressor|Compresseur]], [[Excavator|Excavatrice]], [[Oil Refinery|Raffinerie de pétrole]], [[gv:mp_c_2|Circuit de ciblage de missiles de niveau 2]], [[gv:oil_detector|Détecteur de réserve de pétrole]], [[RBMK Console|Console RBMK]], [[RBMK Crane Console|Console de grue RBMK]] et 3 autres."
+ }
+}

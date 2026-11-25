@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_redstone",
+ "icon": [
+  "geontm:battery_redstone"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_redstone"
+  ]
+ ],
+ "title": {
+  "en_us": "Redstone Battery",
+  "fr_fr": "Batterie de redstone"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Iron Plate, 3 x block (redstone), 2 x [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque de fer, 3 x bloc (redstone), 2 x [[gv:plate_polymer|Isolateur]]."
+ }
+}

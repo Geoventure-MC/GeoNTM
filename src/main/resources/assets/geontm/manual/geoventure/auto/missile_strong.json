@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_strong",
+ "icon": [
+  "geontm:missile_strong"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_strong"
+  ]
+ ],
+ "title": {
+  "en_us": "Strong HE Missile",
+  "fr_fr": "Missile explosif Tier2"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_generic_medium|Medium Warhead]], [[gv:fuel_tank_medium|Medium Fuel Tank]], [[gv:thruster_medium|Medium Thruster]].<br><br>Used to make :<br>[[gv:missile_shuttle|Reliant Robin Space Shuttle]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_generic_medium|Ogive moyen]], [[gv:fuel_tank_medium|Réservoir de carburant moyen]], [[gv:thruster_medium|Propulseur moyen]].<br><br>Sert à fabriquer :<br>[[gv:missile_shuttle|Navette spatiale Reliant Robin]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_australium",
+ "icon": [
+  "geontm:ingot_australium"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_australium"
+  ]
+ ],
+ "title": {
+  "en_us": "Australium Ingot",
+  "fr_fr": "Lingot d'australium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_australium|Australium Billet]].<br>- Furnace : [[gv:powder_australium|Australium Powder]].<br>- Crafting table : 9 x [[gv:nugget_australium|Australium Nugget]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_australium|Australium Billet]], [[gv:nugget_australium|Australium Nugget]], [[gv:nugget_australium_lesser|Lesser Australium Nugget]], [[gv:nugget_australium_greater|Greater Australium Nugget]], [[gv:block_australium|Block of Australium]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_australium|billet d'australium]].<br>- Four : [[gv:powder_australium|Poudre d'Australium]].<br>- Établi : 9 x [[gv:nugget_australium|Pépite d'australium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_australium|billet d'australium]], [[gv:nugget_australium|Pépite d'australium]], [[gv:nugget_australium_lesser|Pépite d'australium-405]], [[gv:nugget_australium_greater|Pépite d'australium-406]], [[gv:block_australium|Bloc d'Australium]]."
+ }
+}

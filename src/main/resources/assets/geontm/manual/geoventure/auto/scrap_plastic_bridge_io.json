@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_plastic_bridge_io",
+ "icon": [
+  "geontm:scrap_plastic_bridge_io"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_plastic_bridge_io"
+  ]
+ ],
+ "title": {
+  "en_us": "Plastic Scraps",
+  "fr_fr": "Débris de plastique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>[[gv:circuit_star_piece_bridge_io|SC - IO Chip]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_piece_bridge_io|SC - Puce E/S]]."
+ }
+}

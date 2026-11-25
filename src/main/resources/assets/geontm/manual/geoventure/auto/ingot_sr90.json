@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_sr90",
+ "icon": [
+  "geontm:ingot_sr90"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_sr90"
+  ]
+ ],
+ "title": {
+  "en_us": "Strontium-90 Ingot",
+  "fr_fr": "Lingot de Strontium-90"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_sr90|Strontium-90 Billet]].<br>- Furnace : [[gv:powder_sr90|Strontium-90 Powder]].<br>- Crafting table : 9 x [[gv:nugget_sr90|Strontium-90 Nugget]].<br><br>Used to make :<br>[[gv:billet_sr90|Strontium-90 Billet]], [[gv:nugget_sr90|Strontium-90 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_sr90|Billet de strontium-90]].<br>- Four : [[gv:powder_sr90|Poudre de strontium-90]].<br>- Établi : 9 x [[gv:nugget_sr90|Pépite de Strontium-90]].<br><br>Sert à fabriquer :<br>[[gv:billet_sr90|Billet de strontium-90]], [[gv:nugget_sr90|Pépite de Strontium-90]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:iv_empty",
+ "icon": [
+  "geontm:iv_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:iv_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "IV Bag",
+  "fr_fr": "Sac IV"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x ingot (rubber), Iron Plate.<br><br>Used to make :<br>[[gv:iv_xp_empty|Empty Experience Bag]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x lingot (caoutchouc), Plaque de fer.<br><br>Sert à fabriquer :<br>[[gv:iv_xp_empty|Sac d'expérience vide]]."
+ }
+}

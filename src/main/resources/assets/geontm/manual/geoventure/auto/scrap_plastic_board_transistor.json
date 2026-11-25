@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_plastic_board_transistor",
+ "icon": [
+  "geontm:scrap_plastic_board_transistor"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_plastic_board_transistor"
+  ]
+ ],
+ "title": {
+  "en_us": "Plastic Scraps",
+  "fr_fr": "Débris de plastique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>SC - Transistors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère."
+ }
+}

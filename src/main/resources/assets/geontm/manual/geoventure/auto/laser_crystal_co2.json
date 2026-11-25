@@ -1,0 +1,19 @@
+{
+ "name": "gv:laser_crystal_co2",
+ "icon": [
+  "geontm:laser_crystal_co2"
+ ],
+ "trigger": [
+  [
+   "geontm:laser_crystal_co2"
+  ]
+ ],
+ "title": {
+  "en_us": "CO2-Desh Laser Crystal",
+  "fr_fr": "Cristal laser CO2-Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:glass_quartz|Quartz Glass]], 2 x Desh Ingot, 2 x Niobium Ingot, [[gv:fluid_tank|Universal Fluid Tank]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:glass_quartz|Verre Quartz]], 2 x Lingot de desh, 2 x Lingot de niobium, [[gv:fluid_tank|Réservoir de fluide universel]]."
+ }
+}

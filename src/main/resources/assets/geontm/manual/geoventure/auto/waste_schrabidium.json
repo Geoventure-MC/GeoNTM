@@ -1,0 +1,19 @@
+{
+ "name": "gv:waste_schrabidium",
+ "icon": [
+  "geontm:waste_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:waste_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted Schrabidium Fuel",
+  "fr_fr": "Carburant schrabidium appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:nugget_beryllium|Beryllium Nugget]], [[Plutonium-239|Plutonium-239 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:nugget_beryllium|Pépite de béryllium]], [[Plutonium-239|Pépite de Pu239]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:plate_schrabidium",
+ "icon": [
+  "geontm:plate_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:plate_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Plate",
+  "fr_fr": "Plaque de schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Schrabidium Ingot.<br>- [[Assembly Machine|Assembly Machine]] : Schrabidium Ingot.<br>- [[Press|Burner Press]] : Schrabidium Ingot.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Lingot de Schrabidium.<br>- [[Assembly Machine|Machine d'assemblage]] : Lingot de Schrabidium.<br>- [[Press|Presse à vapeur]] : Lingot de Schrabidium."
+ }
+}

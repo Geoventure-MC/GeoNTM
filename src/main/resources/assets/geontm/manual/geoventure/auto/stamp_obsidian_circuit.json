@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_obsidian_circuit",
+ "icon": [
+  "geontm:stamp_obsidian_circuit"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_obsidian_circuit"
+  ]
+ ],
+ "title": {
+  "en_us": "Circuit Stamp (Obsidian)",
+  "fr_fr": "Moule de circuit (obsidienne)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_obsidian_flat|Flat Stamp (Obsidian)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_obsidian_flat|Moule plat (obsidienne)]]."
+ }
+}

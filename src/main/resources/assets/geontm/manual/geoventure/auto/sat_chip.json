@@ -1,0 +1,19 @@
+{
+ "name": "gv:sat_chip",
+ "icon": [
+  "geontm:sat_chip"
+ ],
+ "trigger": [
+  [
+   "geontm:sat_chip"
+  ]
+ ],
+ "title": {
+  "en_us": "Satellite ID-Chip",
+  "fr_fr": "Puce d'identification satellite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Soldering Station|Soldering Station]] : 8 x [[gv:circuit_chip|Microchip]], 2 x [[gv:circuit_capacitor|Capacitor]], 2 x [[gv:circuit_pcb|Printed Circuit Board]], 4 x wire (Lead).<br><br>Used to make :<br>[[Satellite ID Manager|Satellite ID Manager]], [[gv:sat_coord|Satellite Designator]], [[gv:sat_designator|Satellite Laser Designator]], [[gv:sat_relay|Satellite Radar Relay]].",
+  "fr_fr": "Obtention :<br>- [[Soldering Station|Station de soudure]] : 8 x [[gv:circuit_chip|Micropuce]], 2 x [[gv:circuit_capacitor|Condensateur]], 2 x [[gv:circuit_pcb|Carte de circuit imprimé]], 4 x fil (plomb).<br><br>Sert à fabriquer :<br>[[Satellite ID Manager|Gestionnaire d'identification satellite]], [[gv:sat_coord|Désignateur satellite]], [[gv:sat_designator|Désignateur laser satellite]], [[gv:sat_relay|Relais radar satellite]]."
+ }
+}

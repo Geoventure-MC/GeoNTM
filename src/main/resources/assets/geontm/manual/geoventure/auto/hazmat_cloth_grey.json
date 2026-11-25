@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_cloth_grey",
+ "icon": [
+  "geontm:hazmat_cloth_grey"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_cloth_grey"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-Reinforced Hazmat Cloth",
+  "fr_fr": "Chiffon Hazmat renforcé au plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:hazmat_cloth_red|Advanced Hazmat Cloth]], Iron Plate, Lead Plate, 2 x ingot (rubber).<br><br>Used to make :<br>[[gv:hazmat_boots_grey|High-Performance Hazmat Boots]], [[gv:hazmat_helmet_grey|High-Performance Hazmat Helmet]], [[gv:hazmat_legs_grey|High-Performance Hazmat Leggings]], [[gv:hazmat_plate_grey|High-Performance Hazmat Chestplate]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:hazmat_cloth_red|Tissu Hazmat avancé]], Plaque de fer, Plaque de plomb, 2 x lingot (caoutchouc).<br><br>Sert à fabriquer :<br>[[gv:hazmat_boots_grey|Bottes Hazmat hautes performances]], [[gv:hazmat_helmet_grey|Casque Hazmat haute performance]], [[gv:hazmat_legs_grey|Legging Hazmat haute performance]], [[gv:hazmat_plate_grey|Plastron Hazmat haute performance]]."
+ }
+}

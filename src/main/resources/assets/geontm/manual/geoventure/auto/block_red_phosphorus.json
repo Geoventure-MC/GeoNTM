@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_red_phosphorus",
+ "icon": [
+  "geontm:block_red_phosphorus"
+ ],
+ "trigger": [
+  [
+   "geontm:block_red_phosphorus"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Red Phosphorus",
+  "fr_fr": "Bloc de phosphore rouge"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:powder_fire|Red Phosphorus]].<br><br>Used to make :<br>[[gv:powder_fire|Red Phosphorus]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:powder_fire|Poudre de flamme]].<br><br>Sert à fabriquer :<br>[[gv:powder_fire|Poudre de flamme]]."
+ }
+}

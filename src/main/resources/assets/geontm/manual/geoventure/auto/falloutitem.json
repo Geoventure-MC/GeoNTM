@@ -1,0 +1,19 @@
+{
+ "name": "gv:falloutitem",
+ "icon": [
+  "geontm:falloutitem"
+ ],
+ "trigger": [
+  [
+   "geontm:falloutitem"
+  ]
+ ],
+ "title": {
+  "en_us": "Pile of Fallout",
+  "fr_fr": "Tas de retombées radioactives"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:block_fallout|Block of Fallout]].<br><br>Used to make :<br>[[gv:fallout|Fallout]], [[gv:dust_tiny|Tiny Pile of Dust]], [[gv:nugget_co60|Cobalt-60 Nugget]], [[gv:powder_sr90_tiny|Tiny Pile of Strontium-90 Powder]], [[gv:nugget_au198|Gold-198 Nugget]], [[gv:block_fallout|Block of Fallout]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:block_fallout|Bloc de Fallout]].<br><br>Sert à fabriquer :<br>[[gv:fallout|Tomber]], [[gv:dust_tiny|Petit tas de poussière]], [[gv:nugget_co60|Pépite de cobalt-60]], [[gv:powder_sr90_tiny|Petit tas de poudre de strontium-90]], [[gv:nugget_au198|Pépite d'or-198]], [[gv:block_fallout|Bloc de Fallout]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_empty",
+ "icon": [
+  "geontm:syringe_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Syringe",
+  "fr_fr": "Seringue vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : Iron Bars, [[gv:cell|Empty Cell]], Iron Plate.<br><br>Used to make :<br>Antidote, [[gv:syringe_awesome|AWESOME]], [[gv:syringe_poison|Poisonous Injection]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : Barreaux de fer, [[gv:cell|Cellule vide]], Plaque de fer.<br><br>Sert à fabriquer :<br>[[gv:syringe_awesome|AWESOME!]], [[gv:syringe_poison|Injection toxique]]."
+ }
+}

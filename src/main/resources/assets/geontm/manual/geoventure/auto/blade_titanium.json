@@ -1,0 +1,19 @@
+{
+ "name": "gv:blade_titanium",
+ "icon": [
+  "geontm:blade_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:blade_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Titanium Blade",
+  "fr_fr": "Lame en titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 2 x Titanium Plate, 4 x Titanium Ingot.<br><br>Used to make :<br>[[gv:turbine_titanium|Titanium Steam Turbine]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 2 x Plaque en titane, 4 x Lingot de titane.<br><br>Sert à fabriquer :<br>[[gv:turbine_titanium|Turbine à vapeur en titane]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_plastic_mem_16k_a",
+ "icon": [
+  "geontm:scrap_plastic_mem_16k_a"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_plastic_mem_16k_a"
+  ]
+ ],
+ "title": {
+  "en_us": "Plastic Scraps",
+  "fr_fr": "Débris de plastique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>[[gv:circuit_star_piece_mem_16k_a|SC - 16k Memory Stick Slot A]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_piece_mem_16k_a|SC - Emplacement barrette mémoire 16k A]]."
+ }
+}

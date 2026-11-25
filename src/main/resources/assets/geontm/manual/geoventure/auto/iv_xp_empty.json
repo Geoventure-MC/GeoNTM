@@ -1,0 +1,19 @@
+{
+ "name": "gv:iv_xp_empty",
+ "icon": [
+  "geontm:iv_xp_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:iv_xp_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Experience Bag",
+  "fr_fr": "Sac d'expérience vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:iv_empty|IV Bag]], [[gv:powder_magic|Pulverized Enchantment]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:iv_empty|Sac IV]], [[gv:powder_magic|Enchantement pulvérisé]]."
+ }
+}

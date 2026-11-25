@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_starmetal",
+ "icon": [
+  "geontm:ingot_starmetal"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_starmetal"
+  ]
+ ],
+ "title": {
+  "en_us": "9Starmetal Ingotr",
+  "fr_fr": "Lingot starmetal"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace (x2) : Starmetal Crystals.<br>- Crafting table (x9) : [[gv:block_starmetal|9Block of Starmetalr]].<br>- Furnace : [[gv:ore_glacio_starmetal|Starmetal Ore]].<br><br>Used to make :<br>[[gv:block_starmetal|9Block of Starmetalr]], [[gv:pellet_charged|Ionized Particles]].",
+  "fr_fr": "Obtention :<br>- Four (x2) : Cristaux de métal étoilé.<br>- Établi (x9) : [[gv:block_starmetal|9Bloc de Starmetalr]].<br>- Four : [[gv:ore_glacio_starmetal|Minerai d'étoilium]].<br><br>Sert à fabriquer :<br>[[gv:block_starmetal|9Bloc de Starmetalr]], [[gv:pellet_charged|Particules ionisées]]."
+ }
+}

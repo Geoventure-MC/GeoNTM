@@ -1,0 +1,19 @@
+{
+ "name": "gv:drive_disk_flightdata_processed",
+ "icon": [
+  "geontm:drive_disk_flightdata_processed"
+ ],
+ "trigger": [
+  [
+   "geontm:drive_disk_flightdata_processed"
+  ]
+ ],
+ "title": {
+  "en_us": "Disk Drive (Processed Flight Data)",
+  "fr_fr": "Lecteur de disque (données de vol traitées)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_supercomputer|Supercomputer]] (x2) : [[gv:drive_disk_flightdata_processed|Disk Drive (Processed Flight Data)]], [[gv:drive_disk_empty|Disk Drive (Empty)]].<br>- [[gv:machine_supercomputer|Supercomputer]] : [[gv:drive_disk_flightdata|Disk Drive (Flight Data)]], 16000 mB helium4.<br>- [[gv:machine_supercomputer|Supercomputer]] : [[gv:drive_disk_flightdata|Disk Drive (Flight Data)]], 16000 mB perfluoromethyl cold.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>Lambda-98, [[gv:launchpad_lambda|Lambda Launch Pad]].",
+  "fr_fr": "Obtention :<br>- [[gv:machine_supercomputer|Superordinateur]] (x2) : [[gv:drive_disk_flightdata_processed|Lecteur de disque (données de vol traitées)]], [[gv:drive_disk_empty|Lecteur de disque (vide)]].<br>- [[gv:machine_supercomputer|Superordinateur]] : [[gv:drive_disk_flightdata|Lecteur de disque (données de vol)]], 16000 mB helium4.<br>- [[gv:machine_supercomputer|Superordinateur]] : [[gv:drive_disk_flightdata|Lecteur de disque (données de vol)]], 16000 mB perfluoromethyl cold.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:launchpad_lambda|Rampe de lancement Lambda]]."
+ }
+}

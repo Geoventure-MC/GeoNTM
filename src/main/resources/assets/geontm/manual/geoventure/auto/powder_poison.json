@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_poison",
+ "icon": [
+  "geontm:powder_poison"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_poison"
+  ]
+ ],
+ "title": {
+  "en_us": "Poison Powder",
+  "fr_fr": "Poison en poudre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Deadly Nightshade.<br>- Crafting table (x4) : Spider Eye, dust (redstone), gem (quartz).<br>- [[Shredder|Shredder]] (x3) : Fermented Spider Eye.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:syringe_poison|Poisonous Injection]].",
+  "fr_fr": "Obtention :<br>- Établi : Belladone.<br>- Établi (x4) : Oeil d'araignée, poudre (redstone), gemme (quartz).<br>- [[Shredder|Broyeur]] (x3) : Oeil d'araignée fermenté.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:syringe_poison|Injection toxique]]."
+ }
+}

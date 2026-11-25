@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_titanium_plate",
+ "icon": [
+  "geontm:stamp_titanium_plate"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_titanium_plate"
+  ]
+ ],
+ "title": {
+  "en_us": "Plate Stamp (Titanium)",
+  "fr_fr": "Moule de plaque (titane)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_titanium_flat|Flat Stamp (Titanium)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_titanium_flat|Moule plat (titane)]]."
+ }
+}

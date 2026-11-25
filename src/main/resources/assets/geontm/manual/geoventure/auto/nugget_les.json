@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_les",
+ "icon": [
+  "geontm:nugget_les"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_les"
+  ]
+ ],
+ "title": {
+  "en_us": "Low Enriched Schrabidium Fuel Nugget",
+  "fr_fr": "Pépite de carburant au Schrabidium enrichi faible"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_les|Low Enriched Schrabidium Fuel Billet]].<br>- Crafting table (x9) : [[gv:ingot_les|Low Enriched Schrabidium Fuel Ingot]].<br><br>Used to make :<br>[[gv:billet_les|Low Enriched Schrabidium Fuel Billet]], [[gv:ingot_les|Low Enriched Schrabidium Fuel Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_les|Billet de carburant Schrabidium faiblement enrichi]].<br>- Établi (x9) : [[gv:ingot_les|Lingot de carburant au Schrabidium faiblement enrichi]].<br><br>Sert à fabriquer :<br>[[gv:billet_les|Billet de carburant Schrabidium faiblement enrichi]], [[gv:ingot_les|Lingot de carburant au Schrabidium faiblement enrichi]]."
+ }
+}

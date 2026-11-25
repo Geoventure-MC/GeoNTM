@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_basin",
+ "icon": [
+  "geontm:foundry_basin"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_basin"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Basin",
+  "fr_fr": "Bassin de fonderie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:ingot_firebrick|Firebrick]], Stone Slab.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:ingot_firebrick|Brique réfractaire]], Dalle de roche."
+ }
+}

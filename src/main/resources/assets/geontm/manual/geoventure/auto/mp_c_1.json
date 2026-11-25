@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_c_1",
+ "icon": [
+  "geontm:mp_c_1"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_c_1"
+  ]
+ ],
+ "title": {
+  "en_us": "Tier 1 Missile Targeting Circuit",
+  "fr_fr": "Circuit de ciblage de missiles de niveau 1"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : ingot (rubber), [[gv:circuit_vacuum_tube|Vacuum Tube]], Steel Scaffold.",
+  "fr_fr": "Obtention :<br>- Établi : lingot (caoutchouc), [[gv:circuit_vacuum_tube|Tube à vide]], Échafaudage en acier."
+ }
+}

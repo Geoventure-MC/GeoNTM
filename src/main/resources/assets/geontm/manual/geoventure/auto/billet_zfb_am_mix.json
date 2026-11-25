@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_zfb_am_mix",
+ "icon": [
+  "geontm:billet_zfb_am_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_zfb_am_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Reactor Grade Americium ZFB Billet",
+  "fr_fr": "Billet d'américium ZFB"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Zirconium Splinter, 2 x Plutonium-241 Nugget, Reactor Grade Americium Nugget.<br>- Crafting table (x6) : 3 x Zirconium Billet, 2 x Plutonium-241 Billet, Reactor Grade Americium Billet.<br><br>Used to make :<br>[[gv:rbmk_fuel_zfb_am_mix|Fuel Grade Americium RBMK ZFB Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Éclat de zirconium, 2 x Pépite de plutonium-241, Pépite d'américium de qualité réacteur.<br>- Établi (x6) : 3 x Billet de zirconium, 2 x Billet de plutonium-241, Billet d'américium de qualité réacteur.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_zfb_am_mix|Tige d'américium RBMK ZFB de qualité carburant]]."
+ }
+}

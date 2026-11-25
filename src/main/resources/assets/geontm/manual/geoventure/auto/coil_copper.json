@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_copper",
+ "icon": [
+  "geontm:coil_copper"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_copper"
+  ]
+ ],
+ "title": {
+  "en_us": "Copper Coil",
+  "fr_fr": "Bobine de cuivre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x4) : [[Stirling Engine|Stirling Engine]].<br>- Industrial anvil (construction) (x4) : [[Stirling Engine|Stirling Engine]].<br>- Crafting table : 8 x wire (minecraft grade copper), Iron Ingot.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:coil_copper_torus|Ring Coil]], [[Soldering Station|Soldering Station]], [[Steam Engine|Steam Engine]], [[Stirling Engine|Stirling Engine]], [[gv:motor|Motor]], [[gv:substation|Substation]], [[Electrolyser|Electrolyser]], [[Solidifier|Industrial Solidification Machine]], [[gv:network_separator|Network Separator]], [[gv:upgrade_smelter|Smelter Upgrade]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x4) : [[Stirling Engine|Moteur Stirling]].<br>- Enclume industrielle (construction) (x4) : [[Stirling Engine|Moteur Stirling]].<br>- Établi : 8 x fil (minecraft grade cuivre), Lingot de fer.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:coil_copper_torus|Bobine de cuivre annulaire]], [[Soldering Station|Station de soudure]], [[Steam Engine|Machine à vapeur]], [[Stirling Engine|Moteur Stirling]], [[gv:motor|Moteur]], [[gv:substation|Sous-station]], [[Electrolyser|Électrolyseur]], [[Solidifier|Machine de solidification industrielle]], [[gv:network_separator|Séparateur de réseau]], [[gv:upgrade_smelter|Mise à niveau de la fonderie]]."
+ }
+}

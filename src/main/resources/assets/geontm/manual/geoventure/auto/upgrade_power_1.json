@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_power_1",
+ "icon": [
+  "geontm:upgrade_power_1"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_power_1"
+  ]
+ ],
+ "title": {
+  "en_us": "Power Saving Upgrade Mk.I",
+  "fr_fr": "Amélioration bleue Mk.I"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Soldering Station|Soldering Station]] : 4 x [[gv:circuit_vacuum_tube|Vacuum Tube]], [[gv:circuit_capacitor|Capacitor]], [[gv:upgrade_template|Machine Upgrade Template]], 4 x Gold Powder.<br><br>Used to make :<br>[[gv:upgrade_power_2|Power Saving Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- [[Soldering Station|Station de soudure]] : 4 x [[gv:circuit_vacuum_tube|Tube à vide]], [[gv:circuit_capacitor|Condensateur]], [[gv:upgrade_template|Amélioration de machine]], 4 x Poudre d'or.<br><br>Sert à fabriquer :<br>[[gv:upgrade_power_2|Amélioration bleue Mk.II]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_kerosene",
+ "icon": [
+  "geontm:mp_fuselage_15_kerosene"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_kerosene"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Kerosene Fuselage",
+  "fr_fr": "Fuselage kérosène taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x [[gv:seg_15|Size 15 Connector]], 32 x Aluminium Plate, 12 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x [[gv:seg_15|Connecteur taille 15]], 32 x Plaque d'aluminium, 12 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

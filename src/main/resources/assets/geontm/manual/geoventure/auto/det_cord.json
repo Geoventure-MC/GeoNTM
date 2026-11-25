@@ -1,0 +1,19 @@
+{
+ "name": "gv:det_cord",
+ "icon": [
+  "geontm:det_cord"
+ ],
+ "trigger": [
+  [
+   "geontm:det_cord"
+  ]
+ ],
+ "title": {
+  "en_us": "Det Cord",
+  "fr_fr": "Det cord"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 4 x Paper, Gunpowder.<br><br>Used to make :<br>[[gv:mp_warhead_10_cloud|Size 10 Pink Cloud Warhead]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 4 x Papier, Poudre à canon.<br><br>Sert à fabriquer :<br>[[gv:mp_warhead_10_cloud|Ogive nuage rose taille 10]]."
+ }
+}

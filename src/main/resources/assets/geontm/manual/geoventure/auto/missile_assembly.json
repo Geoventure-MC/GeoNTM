@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_assembly",
+ "icon": [
+  "geontm:missile_assembly"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_assembly"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Missile Assembly",
+  "fr_fr": "Petit assemblage de missile"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x shell (Aluminium), 4 x shell (Titanium), 8 x ingot (plastic), 8 x [[gv:rocket_fuel|Solid Fuel (Rocket Propellant)]], [[gv:circuit_basic|Integrated Circuit Board]] - [[gv:schemas|blueprint required]]: Modular missiles.<br><br>Used to make :<br>[[gv:missile_anti_ballistic|Anti-Ballistic Missile]], [[gv:missile_emp|EMP Missile]], [[gv:missile_micro|Micro-Nuclear Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x coque (aluminium), 4 x coque (titane), 8 x lingot (plastique), 8 x [[gv:rocket_fuel|Combustible solide (propulseur de fusée)]], [[gv:circuit_basic|Carte de circuit intégré]] - [[gv:schemas|schéma exigé]] : Missiles modulaires.<br><br>Sert à fabriquer :<br>[[gv:missile_anti_ballistic|Missile anti-balistique (WIP)]], [[gv:missile_emp|Missile IEM]], [[gv:missile_micro|Missile micro-nucleaire]]."
+ }
+}

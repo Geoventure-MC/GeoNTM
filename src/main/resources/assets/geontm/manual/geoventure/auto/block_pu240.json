@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_pu240",
+ "icon": [
+  "geontm:block_pu240"
+ ],
+ "trigger": [
+  [
+   "geontm:block_pu240"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Plutonium-240",
+  "fr_fr": "Bloc de Plutonium-240"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Plutonium-240|Plutonium-240 Ingot]].<br><br>Used to make :<br>[[Plutonium-240|Plutonium-240 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Plutonium-240|Pu240 Lingot]].<br><br>Sert à fabriquer :<br>[[Plutonium-240|Pu240 Lingot]]."
+ }
+}

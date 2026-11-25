@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_les",
+ "icon": [
+  "geontm:billet_les"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_les"
+  ]
+ ],
+ "title": {
+  "en_us": "Low Enriched Schrabidium Fuel Billet",
+  "fr_fr": "Billet de carburant Schrabidium faiblement enrichi"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_les|Low Enriched Schrabidium Fuel Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_les|Low Enriched Schrabidium Fuel Ingot]].<br><br>Used to make :<br>[[gv:ingot_les|Low Enriched Schrabidium Fuel Ingot]], [[gv:nugget_les|Low Enriched Schrabidium Fuel Nugget]], [[gv:rbmk_fuel_les|LES RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_les|Pépite de carburant au Schrabidium enrichi faible]].<br>- Établi (x3) : 2 x [[gv:ingot_les|Lingot de carburant au Schrabidium faiblement enrichi]].<br><br>Sert à fabriquer :<br>[[gv:ingot_les|Lingot de carburant au Schrabidium faiblement enrichi]], [[gv:nugget_les|Pépite de carburant au Schrabidium enrichi faible]], [[gv:rbmk_fuel_les|Barre de carburant LES RBMK]]."
+ }
+}

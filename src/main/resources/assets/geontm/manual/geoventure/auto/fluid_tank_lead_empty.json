@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_tank_lead_empty",
+ "icon": [
+  "geontm:fluid_tank_lead_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_tank_lead_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Hazardous Material Tank",
+  "fr_fr": "Réservoir vide de matières dangereuses"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 6 x Lead Plate, 2 x Uranium-238 Billet, [[gv:fluid_tank|Universal Fluid Tank]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 6 x Plaque de plomb, 2 x Billet d'uranium-238, [[gv:fluid_tank|Réservoir de fluide universel]]."
+ }
+}

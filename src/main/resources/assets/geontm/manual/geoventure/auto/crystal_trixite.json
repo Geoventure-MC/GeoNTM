@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_trixite",
+ "icon": [
+  "geontm:crystal_trixite"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_trixite"
+  ]
+ ],
+ "title": {
+  "en_us": "Trixite Crystals",
+  "fr_fr": "Cristaux de trixite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : Trixite, 500 mB sulfuric acid.<br><br>Used to make :<br>[[Plutonium|Plutonium Powder]], [[gv:powder_cobalt|Cobalt Powder]], [[gv:powder_niobium|Niobium Powder]], [[gv:powder_nitan_mix|Nitanium Blend]], [[Plutonium|Plutonium Ingot]], [[gv:powder_spark_mix|Spark Blend]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : ore tikite, 500 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[Plutonium|Poudre de plutonium]], [[gv:powder_cobalt|Poudre de cobalt]], [[gv:powder_niobium|Poudre de niobium]], [[gv:powder_nitan_mix|Mélange de nitanium]], [[Plutonium|Lingot de plutonium]], [[gv:powder_spark_mix|Mélange d'étincelles]]."
+ }
+}

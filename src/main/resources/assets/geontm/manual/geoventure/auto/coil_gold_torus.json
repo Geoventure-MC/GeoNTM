@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_gold_torus",
+ "icon": [
+  "geontm:coil_gold_torus"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_gold_torus"
+  ]
+ ],
+ "title": {
+  "en_us": "Golden Ring Coil",
+  "fr_fr": "Bobine d'anneau d'or"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 2 x [[gv:coil_gold|Gold Coil]].<br>- Crafting table (x2) : Iron Plate, 4 x [[gv:coil_gold|Gold Coil]].<br>- Crafting table (x2) : Steel Plate, 4 x [[gv:coil_gold|Gold Coil]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 2 x [[gv:coil_gold|Bobine d'or]].<br>- Établi (x2) : Plaque de fer, 4 x [[gv:coil_gold|Bobine d'or]].<br>- Établi (x2) : Plaque d'acier, 4 x [[gv:coil_gold|Bobine d'or]]."
+ }
+}

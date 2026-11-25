@@ -1,0 +1,19 @@
+{
+ "name": "gv:gas_empty",
+ "icon": [
+  "geontm:gas_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:gas_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Gas Tank",
+  "fr_fr": "Bonbonne de gaz vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 4 x Steel Plate, Copper Plate.",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 4 x Plaque d'acier, Plaque de cuivre."
+ }
+}

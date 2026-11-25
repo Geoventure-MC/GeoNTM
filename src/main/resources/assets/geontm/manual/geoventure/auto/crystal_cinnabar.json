@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_cinnabar",
+ "icon": [
+  "geontm:crystal_cinnabar"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_cinnabar"
+  ]
+ ],
+ "title": {
+  "en_us": "Cinnabar Crystals",
+  "fr_fr": "Cristaux de cinabre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (cinnabar), 500 mB peroxide.<br><br>Used to make :<br>[[Cinnabar|Cinnabar]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (cinnabar), 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[Cinnabar|Cinabre]]."
+ }
+}

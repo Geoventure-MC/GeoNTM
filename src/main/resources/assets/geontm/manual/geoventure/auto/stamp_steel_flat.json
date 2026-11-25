@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_steel_flat",
+ "icon": [
+  "geontm:stamp_steel_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_steel_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Stamp (Steel)",
+  "fr_fr": "Moule plat (acier)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Brick, 3 x Steel Ingot.<br>- Crafting table : 3 x Nether Brick, 3 x Steel Ingot.<br><br>Used to make :<br>[[gv:stamp_steel_circuit|Circuit Stamp (Steel)]], [[gv:stamp_steel_plate|Plate Stamp (Steel)]], [[gv:stamp_steel_wire|Wire Stamp (Steel)]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Brique, 3 x Lingot d'acier.<br>- Établi : 3 x Brique du Nether, 3 x Lingot d'acier.<br><br>Sert à fabriquer :<br>[[gv:stamp_steel_circuit|Moule de circuit (acier)]], [[gv:stamp_steel_plate|Moule de plaque (acier)]], [[gv:stamp_steel_wire|Moule de fil (acier)]]."
+ }
+}

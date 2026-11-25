@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_cobalt",
+ "icon": [
+  "geontm:crystal_cobalt"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_cobalt"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt Crystals",
+  "fr_fr": "Cristaux de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (cobalt), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (cobalt), 333 mB sulfuric acid.<br><br>Used to make :<br>[[gv:powder_cobalt|Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (cobalt), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (cobalt), 333 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[gv:powder_cobalt|Poudre de cobalt]]."
+ }
+}

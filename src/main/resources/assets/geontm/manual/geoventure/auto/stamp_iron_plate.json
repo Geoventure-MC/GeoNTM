@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_iron_plate",
+ "icon": [
+  "geontm:stamp_iron_plate"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_iron_plate"
+  ]
+ ],
+ "title": {
+  "en_us": "Plate Stamp (Iron)",
+  "fr_fr": "Moule de plaque (fer)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_iron_flat|Flat Stamp (Iron)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_iron_flat|Moule plat (fer)]]."
+ }
+}

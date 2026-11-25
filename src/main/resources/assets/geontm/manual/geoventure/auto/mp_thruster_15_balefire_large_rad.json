@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_thruster_15_balefire_large_rad",
+ "icon": [
+  "geontm:mp_thruster_15_balefire_large_rad"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_thruster_15_balefire_large_rad"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 BF Thruster with Nuclear Preheater (Heavy Duty Nozzle)",
+  "fr_fr": "Propulseur BF de taille 15 avec préchauffeur nucléaire (buse à usage intensif)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x cast plate (Copper), [[gv:mp_thruster_15_balefire_large|Size 15 BF Thruster with Nuclear Preheater (Heavy Duty Nozzle)]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x plaque coulée (cuivre), [[gv:mp_thruster_15_balefire_large|Propulseur BF de taille 15 avec préchauffeur nucléaire (buse à usage intensif)]]."
+ }
+}

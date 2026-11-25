@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_au198",
+ "icon": [
+  "geontm:powder_au198"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_au198"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold-198 Powder",
+  "fr_fr": "Poudre d'or-198"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : Gold Powder.<br><br>Used to make :<br>[[gv:ingot_au198|Gold-198 Ingot]].",
+  "fr_fr": "Obtention :<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : Poudre d'or.<br><br>Sert à fabriquer :<br>[[gv:ingot_au198|Lingot d'or-198]]."
+ }
+}

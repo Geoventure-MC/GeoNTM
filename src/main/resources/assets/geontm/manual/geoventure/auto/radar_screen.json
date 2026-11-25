@@ -1,0 +1,19 @@
+{
+ "name": "gv:radar_screen",
+ "icon": [
+  "geontm:radar_screen"
+ ],
+ "trigger": [
+  [
+   "geontm:radar_screen"
+  ]
+ ],
+ "title": {
+  "en_us": "Radar Screen",
+  "fr_fr": "Écran radar"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (plastic), 2 x [[gv:circuit_basic|Integrated Circuit Board]], 2 x Steel Plate, [[gv:crt_display|Cathode Ray Tube]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (plastique), 2 x [[gv:circuit_basic|Carte de circuit intégré]], 2 x Plaque d'acier, [[gv:crt_display|Tube cathodique]]."
+ }
+}

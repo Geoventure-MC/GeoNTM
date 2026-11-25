@@ -1,0 +1,19 @@
+{
+ "name": "gv:press_preheater",
+ "icon": [
+  "geontm:press_preheater"
+ ],
+ "trigger": [
+  [
+   "geontm:press_preheater"
+  ]
+ ],
+ "title": {
+  "en_us": "Burner Press Preheater",
+  "fr_fr": "Préchauffeur de presse à brûleur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Copper Plate, 3 x Stone, 2 x Tungsten Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Plaque de cuivre, 3 x Roche, 2 x Lingot de tungstène."
+ }
+}

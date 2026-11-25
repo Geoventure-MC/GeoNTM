@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_iron_circuit",
+ "icon": [
+  "geontm:stamp_iron_circuit"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_iron_circuit"
+  ]
+ ],
+ "title": {
+  "en_us": "Circuit Stamp (Iron)",
+  "fr_fr": "Moule de circuit (fer)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_iron_flat|Flat Stamp (Iron)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_iron_flat|Moule plat (fer)]]."
+ }
+}

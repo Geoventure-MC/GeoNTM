@@ -1,0 +1,19 @@
+{
+ "name": "gv:icf_pellet_empty",
+ "icon": [
+  "geontm:icf_pellet_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:icf_pellet_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty ICF Fuel Pellet",
+  "fr_fr": "Granule de combustible FCI vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x wire (zirconium cube), 4 x wire (lead).",
+  "fr_fr": "Obtention :<br>- Établi : 4 x fil (cube de zirconium), 4 x fil (plomb)."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_capacitor",
+ "icon": [
+  "geontm:circuit_capacitor"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_capacitor"
+  ]
+ ],
+ "title": {
+  "en_us": "Capacitor",
+  "fr_fr": "Condensateur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:plate_polymer|Insulator]], Niobium Nugget, wire (aluminium).<br>- Crafting table : [[gv:plate_polymer|Insulator]], Niobium Nugget, wire (copper).<br>- Crafting table (x2) : 2 x [[gv:plate_polymer|Insulator]], Aluminium Powder, 2 x wire (aluminium).<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[Free Electron Laser|FEL]], [[Liquefactor|Industrial Liquefaction Machine]], [[Solidifier|Industrial Solidification Machine]], [[gv:circuit_controller|Control Unit]], [[gv:circuit_advanced|Military Grade Circuit Board]], [[gv:circuit_analog|Analog Circuit Board]], [[gv:circuit_bismoid|Versatile Circuit Board]], [[gv:sat_chip|Satellite ID-Chip]], [[gv:upgrade_afterburn_1|Afterburner Upgrade Mk.I]], [[gv:upgrade_afterburn_2|Afterburner Upgrade Mk.II]] and 16 more.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:plate_polymer|Isolateur]], Pépite de niobium, fil (aluminium).<br>- Établi : [[gv:plate_polymer|Isolateur]], Pépite de niobium, fil (cuivre).<br>- Établi (x2) : 2 x [[gv:plate_polymer|Isolateur]], Poudre d'aluminium, 2 x fil (aluminium).<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Liquefactor|Machine de liquéfaction industrielle]], [[Solidifier|Machine de solidification industrielle]], [[gv:circuit_controller|Unité de contrôle]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]], [[gv:circuit_analog|Carte de circuit analogique]], [[gv:circuit_bismoid|Carte de circuit polyvalente]], [[gv:sat_chip|Puce d'identification satellite]], [[gv:upgrade_afterburn_1|Amélioration rose Mk.I]], [[gv:upgrade_afterburn_2|Amélioration rose Mk.II]], [[gv:upgrade_afterburn_3|Amélioration rose Mk.III]] et 15 autres."
+ }
+}

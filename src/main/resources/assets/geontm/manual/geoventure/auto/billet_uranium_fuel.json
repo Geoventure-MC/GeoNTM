@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_uranium_fuel",
+ "icon": [
+  "geontm:billet_uranium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_uranium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium Fuel Billet",
+  "fr_fr": "Billet de carburant d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_uranium_fuel|Nugget of Uranium Fuel]].<br>- Crafting table (x3) : 2 x [[gv:ingot_uranium_fuel|Ingot of Uranium Fuel]].<br>- Crafting table (x6) : 5 x [[Uranium-238|Uranium-238 Billet]], [[Uranium-235|Uranium-235 Billet]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_mox_fuel|MOX Fuel Billet]], [[Uranium|Uranium Billet]], [[gv:ingot_uranium_fuel|Ingot of Uranium Fuel]], [[gv:nugget_uranium_fuel|Nugget of Uranium Fuel]], [[gv:billet_uzh|Uranium Zirconium Hydride Billet]], [[gv:pwr_fuel_meu|MEU PWR Fuel Rod]], [[gv:rbmk_fuel_meu|MEU RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_uranium_fuel|Pépite de combustible d'uranium]].<br>- Établi (x3) : 2 x [[gv:ingot_uranium_fuel|Lingot d'uranium]].<br>- Établi (x6) : 5 x [[Uranium-238|Billet d'uranium-238]], [[Uranium-235|Billet d'uranium-235]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_mox_fuel|Billet de combustible MOX]], [[Uranium|Billet d'uranium]], [[gv:ingot_uranium_fuel|Lingot d'uranium]], [[gv:nugget_uranium_fuel|Pépite de combustible d'uranium]], [[gv:billet_uzh|Billette d'hydrure d'uranium-zirconium]], [[gv:pwr_fuel_meu|Barre de combustible REP MEU]], [[gv:rbmk_fuel_meu|Barre de combustible MEU RBMK]]."
+ }
+}

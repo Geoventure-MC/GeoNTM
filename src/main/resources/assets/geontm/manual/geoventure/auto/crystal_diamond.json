@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_diamond",
+ "icon": [
+  "geontm:crystal_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "Diamond Crystals",
+  "fr_fr": "Cristaux de diamant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (diamond), 500 mB peroxide.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (diamond), 500 mB peroxide."
+ }
+}

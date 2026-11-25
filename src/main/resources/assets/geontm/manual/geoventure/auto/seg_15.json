@@ -1,0 +1,19 @@
+{
+ "name": "gv:seg_15",
+ "icon": [
+  "geontm:seg_15"
+ ],
+ "trigger": [
+  [
+   "geontm:seg_15"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Connector",
+  "fr_fr": "Connecteur taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Titanium Plate, 2 x Steel Scaffold, 2 x [[gv:steel_beam|Steel Beam]].<br><br>Used to make :<br>[[gv:mp_fuselage_10_15_balefire|Size 10/15 BF Fuselage]], [[gv:mp_fuselage_10_15_hydrogen|Size 10/15 Hydrogen Fuselage]], [[gv:mp_fuselage_10_15_kerosene|Size 10/15 Kerosene Fuselage]], [[gv:mp_fuselage_10_15_solid|Size 10/15 Solid Fuel Fuselage]], [[gv:mp_fuselage_15_20_kerosene|Size 15/20 Kerosene Fuselage]], [[gv:mp_fuselage_15_20_solid|Size 15/20 Solid Fuel Fuselage]], [[gv:mp_fuselage_15_hydrogen|Size 15 Hydrogen Fuselage]], [[gv:mp_fuselage_15_kerosene|Size 15 Kerosene Fuselage]], [[gv:mp_fuselage_15_solid|Size 15 Solid Fuel Fuselage]], [[gv:mp_thruster_15_balefire|Size 15 BF Thruster with Nuclear Preheater]] and 12 more.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque en titane, 2 x Échafaudage en acier, 2 x [[gv:steel_beam|Barre d'acier]].<br><br>Sert à fabriquer :<br>[[gv:mp_fuselage_10_15_balefire|Fuselage BF taille 10/15]], [[gv:mp_fuselage_10_15_hydrogen|Fuselage hydrogène taille 10/15]], [[gv:mp_fuselage_10_15_kerosene|Fuselage kérosène taille 10/15]], [[gv:mp_fuselage_10_15_solid|Taille 10/15 Fuselage à combustible solide]], [[gv:mp_fuselage_15_20_kerosene|Fuselage kérosène taille 15/20]], [[gv:mp_fuselage_15_20_solid|Fuselage à combustible solide de taille 15/20]], [[gv:mp_fuselage_15_hydrogen|Fuselage hydrogène taille 15]], [[gv:mp_fuselage_15_kerosene|Fuselage kérosène taille 15]], [[gv:mp_fuselage_15_solid|Fuselage à combustible solide de taille 15]], [[gv:mp_thruster_15_balefire|Propulseur BF taille 15 avec préchauffeur nucléaire]] et 12 autres."
+ }
+}

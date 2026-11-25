@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_piece_mem_socket",
+ "icon": [
+  "geontm:circuit_star_piece_mem_socket"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_piece_mem_socket"
+  ]
+ ],
+ "title": {
+  "en_us": "SC - Memory Socket",
+  "fr_fr": "SC - Support mémoire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:scrap_plastic_mem_socket|Plastic Scraps]], 500 mB peroxide.<br><br>Used to make :<br>[[gv:circuit_star_component_ram|StarControl RAM]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:scrap_plastic_mem_socket|Débris de plastique]], 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_component_ram|RAM StarControl]]."
+ }
+}

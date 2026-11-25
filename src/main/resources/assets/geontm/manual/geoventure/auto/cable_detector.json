@@ -1,0 +1,19 @@
+{
+ "name": "gv:cable_detector",
+ "icon": [
+  "geontm:cable_detector"
+ ],
+ "trigger": [
+  [
+   "geontm:cable_detector"
+  ]
+ ],
+ "title": {
+  "en_us": "Redstone Power Switch",
+  "fr_fr": "Interrupteur d'alimentation Redstone"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : dust (redstone), Coated Red Copper Cable.",
+  "fr_fr": "Obtention :<br>- Établi : poudre (redstone), Câble en cuivre rouge isolé."
+ }
+}

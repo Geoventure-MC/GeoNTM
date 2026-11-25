@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_u238",
+ "icon": [
+  "geontm:rod_u238"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_u238"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium-238 Rod",
+  "fr_fr": "Tige d'U238"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Uranium-238 Billet.<br><br>Used to make :<br>[[gv:rod_rgp|Reactor-Grade Plutonium Rod]], [[Uranium-238|Uranium-238 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_empty|Tige vide]], Billet d'uranium-238.<br><br>Sert à fabriquer :<br>[[gv:rod_rgp|Tige de plutonium de qualité réacteur]], [[Uranium-238|Billet d'uranium-238]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_empty",
+ "icon": [
+  "geontm:rod_quad_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Quad Rod",
+  "fr_fr": "Quatruple tige vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:rod_empty|Empty Rod]].<br>- Crafting table : 2 x [[gv:rod_dual_empty|Empty Dual Rod]].<br><br>Used to make :<br>[[Spent Fuel Pool Drum|Spent Fuel Pool Drum]], [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], [[gv:rod_empty|Empty Rod]], [[gv:rod_quad_ac227|Actinium-227 Quad Rod]], [[gv:rod_quad_co|Cobalt Quad Rod]], [[gv:rod_quad_co60|Cobalt-60 Quad Rod]], [[gv:rod_quad_lithium|Lithium Quad Rod]], [[gv:rod_quad_np237|Neptunium-237 Quad Rod]], [[gv:rod_quad_pu238|Plutonium-238 Quad Rod]], [[gv:rod_quad_pu239|Plutonium-239 Quad Rod]] and 8 more.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:rod_empty|Tige vide]].<br>- Établi : 2 x [[gv:rod_dual_empty|Double tige vide]].<br><br>Sert à fabriquer :<br>[[Spent Fuel Pool Drum|Tambour de piscine de combustible usé]], [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], [[gv:rod_empty|Tige vide]], [[gv:rod_quad_ac227|Tige quadruple Actinium-227]], [[gv:rod_quad_co|Quadruple tige de cobalt]], [[gv:rod_quad_co60|Quad Rod Cobalt-60]], [[gv:rod_quad_lithium|Quadruple tige de tithium]], [[gv:rod_quad_np237|Quadruple tige de neptunium-237]], [[gv:rod_quad_pu238|Quadruple tige de Pu238]], [[gv:rod_quad_pu239|Quadruple tige de Pu239]] et 8 autres."
+ }
+}

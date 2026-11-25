@@ -1,0 +1,19 @@
+{
+ "name": "gv:reactor_sensor",
+ "icon": [
+  "geontm:reactor_sensor"
+ ],
+ "trigger": [
+  [
+   "geontm:reactor_sensor"
+  ]
+ ],
+ "title": {
+  "en_us": "Reactor Remote Sensor",
+  "fr_fr": "Capteur à distance du réacteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x wire (tungsten), 4 x Lead Plate, 2 x [[gv:circuit_basic|Integrated Circuit Board]], [[gv:magnetron|Magnetron]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x fil (tungstène), 4 x Plaque de plomb, 2 x [[gv:circuit_basic|Carte de circuit intégré]], [[gv:magnetron|Magnétron]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_lithium",
+ "icon": [
+  "geontm:rod_dual_lithium"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_lithium"
+  ]
+ ],
+ "title": {
+  "en_us": "Lithium Dual Rod",
+  "fr_fr": "Double tige de lithium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x Lithium Ingot.<br><br>Used to make :<br>[[gv:lithium|Lithium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x Lingot de lithium.<br><br>Sert à fabriquer :<br>[[gv:lithium|Cube de lithium]]."
+ }
+}

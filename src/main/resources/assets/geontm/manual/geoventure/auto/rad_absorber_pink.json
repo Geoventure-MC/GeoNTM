@@ -1,0 +1,19 @@
+{
+ "name": "gv:rad_absorber_pink",
+ "icon": [
+  "geontm:rad_absorber_pink"
+ ],
+ "trigger": [
+  [
+   "geontm:rad_absorber_pink"
+  ]
+ ],
+ "title": {
+  "en_us": "Elite Radiation Absorber",
+  "fr_fr": "Absorbeur de radiations d'élite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (ostrum), 4 x [[gv:powder_nitan_mix|Nitanium Blend]], [[gv:rad_absorber_green|Advanced Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (ostrum), 4 x [[gv:powder_nitan_mix|Mélange de nitanium]], [[gv:rad_absorber_green|Absorbeur de radiations avancé]]."
+ }
+}

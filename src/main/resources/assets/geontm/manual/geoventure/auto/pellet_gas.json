@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_gas",
+ "icon": [
+  "geontm:pellet_gas"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_gas"
+  ]
+ ],
+ "title": {
+  "en_us": "Poison Gas Cartridge",
+  "fr_fr": "Cartouche de gaz toxiques"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : Water Bucket, Glowstone Dust, Steel Plate.",
+  "fr_fr": "Obtention :<br>- Établi (x2) : Seau d'eau, Poudre lumineuse, Plaque d'acier."
+ }
+}

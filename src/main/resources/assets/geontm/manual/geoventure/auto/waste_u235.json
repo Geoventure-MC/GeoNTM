@@ -1,0 +1,19 @@
+{
+ "name": "gv:waste_u235",
+ "icon": [
+  "geontm:waste_u235"
+ ],
+ "trigger": [
+  [
+   "geontm:waste_u235"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted Uranium-235 Fuel",
+  "fr_fr": "Combustible d'uranium-235 appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Plutonium-238|Plutonium-238 Nugget]], [[Neptunium|Neptunium Nugget]], [[Technetium|Technetium-99 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Plutonium-238|Pépite de Pu238]], [[Neptunium|Pépite de neptunium]], [[Technetium|Pépite de technétium-99]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_australium",
+ "icon": [
+  "geontm:billet_australium"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_australium"
+  ]
+ ],
+ "title": {
+  "en_us": "Australium Billet",
+  "fr_fr": "billet d'australium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_australium|Australium Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_australium|Australium Ingot]].<br><br>Used to make :<br>[[gv:ingot_australium|Australium Ingot]], [[gv:nugget_australium|Australium Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_australium|Pépite d'australium]].<br>- Établi (x3) : 2 x [[gv:ingot_australium|Lingot d'australium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_australium|Lingot d'australium]], [[gv:nugget_australium|Pépite d'australium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_desh",
+ "icon": [
+  "geontm:cladding_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Cladding",
+  "fr_fr": "Revêtement de Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:cladding_lead|Lead Cladding]], 4 x Desh Compound Plate, 4 x [[gv:ducttape|Duct Tape]].<br><br>Used to make :<br>[[gv:cladding_ghiorsium|Ghiorsium Cladding]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:cladding_lead|Revêtement en plomb]], 4 x Plaque de desh, 4 x [[gv:ducttape|Ruban adhésif]].<br><br>Sert à fabriquer :<br>[[gv:cladding_ghiorsium|Bardage Ghiorsium]]."
+ }
+}

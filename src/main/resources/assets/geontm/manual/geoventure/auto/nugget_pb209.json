@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_pb209",
+ "icon": [
+  "geontm:nugget_pb209"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_pb209"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-209 Nugget",
+  "fr_fr": "Pépite de plomb 209"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_pb209|Lead-209 Billet]].<br>- Crafting table (x9) : [[gv:ingot_pb209|Lead-209 Ingot]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:nuclear_waste_short_schrabidium|Short-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:billet_pb209|Lead-209 Billet]], [[gv:ingot_pb209|Lead-209 Ingot]], [[Bismuth|Bismuth Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_pb209|Billet de plomb-209]].<br>- Établi (x9) : [[gv:ingot_pb209|Lingot de plomb 209]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:nuclear_waste_short_schrabidium|Déchets nucléaires à vie courte]].<br><br>Sert à fabriquer :<br>[[gv:billet_pb209|Billet de plomb-209]], [[gv:ingot_pb209|Lingot de plomb 209]], [[Bismuth|Pépite de bismuth]]."
+ }
+}

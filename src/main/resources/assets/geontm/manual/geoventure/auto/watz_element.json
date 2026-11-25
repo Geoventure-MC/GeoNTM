@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_element",
+ "icon": [
+  "geontm:watz_element"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_element"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Reaction Chamber",
+  "fr_fr": "Chambre à réaction Watz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x3) : 2 x cast plate (Steel), 2 x Zirconium Cube, 2 x ingot (ostrum), 4 x ingot (hard plastic), 3 x Reinforced Ferrouranium Panels, 8 x Plastic Panels, 3 x plate (ostrum), 3 x cast plate (Zirconium Cube) - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x3) : 2 x plaque coulée (acier), 2 x Cube de zirconium, 2 x lingot (ostrum), 4 x lingot (plastique dur), 3 x Panneaux de ferrouranium renforcé, 8 x Panneaux en plastique, 3 x plaque (ostrum), 3 x plaque coulée (cube de zirconium) - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

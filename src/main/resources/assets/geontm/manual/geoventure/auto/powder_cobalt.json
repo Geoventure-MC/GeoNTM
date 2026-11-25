@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_cobalt",
+ "icon": [
+  "geontm:powder_cobalt"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_cobalt"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt Powder",
+  "fr_fr": "Poudre de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (cobalt).<br>- Crafting table : 9 x [[gv:powder_cobalt_tiny|Tiny Pile of Cobalt Powder]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_carbon|Box of Carbon Dust]], Titanium Powder.<br>(13 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:powder_cobalt_tiny|Tiny Pile of Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (cobalt).<br>- Établi : 9 x [[gv:powder_cobalt_tiny|Minuscule tas de poudre de cobalt]].<br>- machine_cyclotron : [[gv:part_carbon|Boîte de poussière de carbone]], Poudre de titane.<br>(13 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:powder_cobalt_tiny|Minuscule tas de poudre de cobalt]]."
+ }
+}

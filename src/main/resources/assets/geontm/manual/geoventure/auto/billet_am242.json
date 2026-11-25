@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_am242",
+ "icon": [
+  "geontm:billet_am242"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_am242"
+  ]
+ ],
+ "title": {
+  "en_us": "Americium-242 Billet",
+  "fr_fr": "Billet d'américium-242"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_am242|Americium-242 Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_am242|Americium-242 Ingot]].<br><br>Used to make :<br>[[gv:ingot_am242|Americium-242 Ingot]], [[gv:nugget_am242|Americium-242 Nugget]], [[gv:billet_am_mix|Reactor Grade Americium Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_am242|Pépite d'américium-242]].<br>- Établi (x3) : 2 x [[gv:ingot_am242|Lingot d'américium-242]].<br><br>Sert à fabriquer :<br>[[gv:ingot_am242|Lingot d'américium-242]], [[gv:nugget_am242|Pépite d'américium-242]], [[gv:billet_am_mix|Billet d'américium de qualité réacteur]]."
+ }
+}

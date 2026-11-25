@@ -1,0 +1,19 @@
+{
+ "name": "gv:fragment_meteorite",
+ "icon": [
+  "geontm:fragment_meteorite"
+ ],
+ "trigger": [
+  [
+   "geontm:fragment_meteorite"
+  ]
+ ],
+ "title": {
+  "en_us": "Meteorite Fragment",
+  "fr_fr": "Fragment de metite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : Meteorite Powder, 500 mB peroxide.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : Poudre de météorite, 500 mB peroxide."
+ }
+}

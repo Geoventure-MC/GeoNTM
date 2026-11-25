@@ -1,0 +1,19 @@
+{
+ "name": "gv:cable_switch",
+ "icon": [
+  "geontm:cable_switch"
+ ],
+ "trigger": [
+  [
+   "geontm:cable_switch"
+  ]
+ ],
+ "title": {
+  "en_us": "Power Switch",
+  "fr_fr": "Interrupteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Lever, Coated Red Copper Cable.",
+  "fr_fr": "Obtention :<br>- Établi : Levier, Câble en cuivre rouge isolé."
+ }
+}

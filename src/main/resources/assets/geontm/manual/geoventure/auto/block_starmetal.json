@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_starmetal",
+ "icon": [
+  "geontm:block_starmetal"
+ ],
+ "trigger": [
+  [
+   "geontm:block_starmetal"
+  ]
+ ],
+ "title": {
+  "en_us": "9Block of Starmetalr",
+  "fr_fr": "9Bloc de Starmetalr"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_starmetal|9Starmetal Ingotr]].<br><br>Used to make :<br>[[gv:ingot_starmetal|9Starmetal Ingotr]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_starmetal|Lingot starmetal]].<br><br>Sert à fabriquer :<br>[[gv:ingot_starmetal|Lingot starmetal]]."
+ }
+}

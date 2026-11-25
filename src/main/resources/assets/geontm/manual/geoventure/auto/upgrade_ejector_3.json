@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_ejector_3",
+ "icon": [
+  "geontm:upgrade_ejector_3"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_ejector_3"
+  ]
+ ],
+ "title": {
+  "en_us": "Ejection Speed Upgrade Mk.III",
+  "fr_fr": "Amélioration de la vitesse d'éjection Mk.III"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x plate (ostrum), 2 x [[gv:motor|Motor]], [[gv:upgrade_ejector_2|Ejection Speed Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x plaque (ostrum), 2 x [[gv:motor|Moteur]], [[gv:upgrade_ejector_2|Amélioration de la vitesse d'éjection Mk.II]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_plutonium_fuel",
+ "icon": [
+  "geontm:ingot_plutonium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_plutonium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Ingot of Plutonium Fuel",
+  "fr_fr": "Lingot de carburant du plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_plutonium_fuel|Plutonium Fuel Billet]].<br>- Crafting table (x9) : [[gv:block_plutonium_fuel|Block of Plutonium Fuel]].<br>- Crafting table : 9 x [[gv:nugget_plutonium_fuel|Nugget of Plutonium Fuel]].<br><br>Used to make :<br>[[gv:billet_plutonium_fuel|Plutonium Fuel Billet]], [[gv:block_plutonium_fuel|Block of Plutonium Fuel]], [[gv:nugget_plutonium_fuel|Nugget of Plutonium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_plutonium_fuel|Billette de carburant au plutonium]].<br>- Établi (x9) : [[gv:block_plutonium_fuel|Bloc de combustible au plutonium]].<br>- Établi : 9 x [[gv:nugget_plutonium_fuel|Pépite de combustible du plutonium]].<br><br>Sert à fabriquer :<br>[[gv:billet_plutonium_fuel|Billette de carburant au plutonium]], [[gv:block_plutonium_fuel|Bloc de combustible au plutonium]], [[gv:nugget_plutonium_fuel|Pépite de combustible du plutonium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_screm",
+ "icon": [
+  "geontm:upgrade_screm"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_screm"
+  ]
+ ],
+ "title": {
+  "en_us": "Screaming Scientist Upgrade",
+  "fr_fr": "Amélioration du scientifique hurlant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Steel Plate, 2 x [[gv:upgrade_template|Machine Upgrade Template]], [[gv:crystal_xen|Artificial Xen Crystal]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Plaque d'acier, 2 x [[gv:upgrade_template|Amélioration de machine]], [[gv:crystal_xen|Cristal Xen artificiel]]."
+ }
+}

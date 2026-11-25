@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_au198",
+ "icon": [
+  "geontm:nugget_au198"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_au198"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold-198 Nugget",
+  "fr_fr": "Pépite d'or-198"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_au198|Gold-198 Billet]].<br>- Crafting table (x9) : [[gv:ingot_au198|Gold-198 Ingot]].<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : Gold Nugget.<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_au198|Gold-198 Billet]], [[gv:ingot_au198|Gold-198 Ingot]], [[gv:nugget_mercury_tiny|Tiny Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_au198|Billet d'or-198]].<br>- Établi (x9) : [[gv:ingot_au198|Lingot d'or-198]].<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : Pépite d'or.<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_au198|Billet d'or-198]], [[gv:ingot_au198|Lingot d'or-198]], [[gv:nugget_mercury_tiny|Minuscule goutte de mercure]]."
+ }
+}

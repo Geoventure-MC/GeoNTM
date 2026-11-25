@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_linker",
+ "icon": [
+  "geontm:drone_linker"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_linker"
+  ]
+ ],
+ "title": {
+  "en_us": "Transport Drone Linker",
+  "fr_fr": "Lieur de drones de transport"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_waypoint|Transport Drone Waypoint]], [[gv:circuit_basic|Integrated Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_waypoint|Point de passage de drone de transport]], [[gv:circuit_basic|Carte de circuit intégré]]."
+ }
+}

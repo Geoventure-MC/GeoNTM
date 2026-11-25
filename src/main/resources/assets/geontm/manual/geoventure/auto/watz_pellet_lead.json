@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_lead",
+ "icon": [
+  "geontm:watz_pellet_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Absorber Pellet",
+  "fr_fr": "Pastille absorbante de plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Lead Ingot, Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de plomb, Lingot de graphite."
+ }
+}

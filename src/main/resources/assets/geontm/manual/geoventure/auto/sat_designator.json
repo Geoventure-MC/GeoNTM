@@ -1,0 +1,19 @@
+{
+ "name": "gv:sat_designator",
+ "icon": [
+  "geontm:sat_designator"
+ ],
+ "trigger": [
+  [
+   "geontm:sat_designator"
+  ]
+ ],
+ "title": {
+  "en_us": "Satellite Laser Designator",
+  "fr_fr": "Désignateur laser satellite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Gold Plate, 2 x Redstone Dust, [[gv:circuit_advanced|Military Grade Circuit Board]], [[gv:sat_chip|Satellite ID-Chip]], Gold Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque d'or, 2 x Poudre de redstone, [[gv:circuit_advanced|Carte de circuit de qualité militaire]], [[gv:sat_chip|Puce d'identification satellite]], Lingot d'or."
+ }
+}

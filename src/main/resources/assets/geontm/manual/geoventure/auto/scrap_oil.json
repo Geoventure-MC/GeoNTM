@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_oil",
+ "icon": [
+  "geontm:scrap_oil"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_oil"
+  ]
+ ],
+ "title": {
+  "en_us": "Oily Scraps",
+  "fr_fr": "Restes huileux"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_rockmill|Rock Mill]] : Sculk Vein, 250 mB Water.",
+  "fr_fr": "Obtention :<br>- [[gv:machine_rockmill|Broyeur à roche]] : Veine de sculk, 250 mB Eau."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rtg_unit",
+ "icon": [
+  "geontm:rtg_unit"
+ ],
+ "trigger": [
+  [
+   "geontm:rtg_unit"
+  ]
+ ],
+ "title": {
+  "en_us": "RTG Unit",
+  "fr_fr": "Unité RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x cast plate (Lead), 4 x Copper Plate, 2 x [[gv:thermo_element|Thermoelectric Element]].<br><br>Used to make :<br>[[RTG|RT Generator]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x plaque coulée (plomb), 4 x Plaque de cuivre, 2 x [[gv:thermo_element|Elément thermoélectrique]].<br><br>Sert à fabriquer :<br>[[RTG|Générateur RT]]."
+ }
+}

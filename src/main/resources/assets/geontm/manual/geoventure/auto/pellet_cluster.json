@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_cluster",
+ "icon": [
+  "geontm:pellet_cluster"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_cluster"
+  ]
+ ],
+ "title": {
+  "en_us": "Explosive Pellets",
+  "fr_fr": "Amas d'explosifs"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x Steel Plate, ingot (high explosive).<br><br>Used to make :<br>[[gv:warhead_cluster_small|Small Cluster Warhead]], [[gv:warhead_cluster_medium|Medium Cluster Warhead]], [[gv:warhead_cluster_large|Large Cluster Warhead]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Plaque d'acier, lingot (explosif puissant).<br><br>Sert à fabriquer :<br>[[gv:warhead_cluster_small|Petite ogive à sous munitions]], [[gv:warhead_cluster_medium|Ogive à sous munitions moyenne]], [[gv:warhead_cluster_large|Grande ogive à sous munitions]]."
+ }
+}

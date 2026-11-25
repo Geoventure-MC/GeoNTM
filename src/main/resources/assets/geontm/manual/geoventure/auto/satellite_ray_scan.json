@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_ray_scan",
+ "icon": [
+  "geontm:satellite_ray_scan"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_ray_scan"
+  ]
+ ],
+ "title": {
+  "en_us": "Narrowband Emission Scanning Satellite",
+  "fr_fr": "Satellite de balayage d'émissions à bande étroite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x plate (ostrum), 32 x [[gv:photo_panel|Photovoltaic Panel]], 16 x dense wire (Ferric Schrabidate), 16 x [[gv:circuit_quantum|Quantum Processing Unit]], 16 x [[gv:part_generic_lde|Low-Density Element]], 3 x [[gv:circuit_controller_advanced|Advanced Control Unit]] - [[gv:schemas|blueprint required]]: Orbital weapons and intelligence.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x plaque (ostrum), 32 x [[gv:photo_panel|Panneau photovoltaïque]], 16 x fil dense (schrabidate ferrique), 16 x [[gv:circuit_quantum|Unité de traitement quantique]], 16 x [[gv:part_generic_lde|Élément à faible densité]], 3 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]] - [[gv:schemas|schéma exigé]] : Armes et renseignement orbitaux."
+ }
+}

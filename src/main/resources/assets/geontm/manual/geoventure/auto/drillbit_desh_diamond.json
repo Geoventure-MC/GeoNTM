@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_desh_diamond",
+ "icon": [
+  "geontm:drillbit_desh_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_desh_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Drill bit (Diamond-Tipped)",
+  "fr_fr": "Foret en Desh (pointe diamant)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:drillbit_desh|Desh Drill bit]], 32 x Diamond Powder.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:drillbit_desh|Foret en Desh]], 32 x Poudre de diamant."
+ }
+}

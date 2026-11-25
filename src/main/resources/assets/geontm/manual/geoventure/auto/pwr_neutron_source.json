@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_neutron_source",
+ "icon": [
+  "geontm:pwr_neutron_source"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_neutron_source"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Neutron Source",
+  "fr_fr": "Source de neutrons PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x welded plate (Zirconium Cube), 6 x [[gv:billet_ra226be|Ra226Be Billet]], Radiation Resistant Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x plaque soudée (cube de zirconium), 6 x [[gv:billet_ra226be|Billette Ra226Be]], Plaques résistantes aux radiations - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

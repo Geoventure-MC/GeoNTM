@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_nuclear",
+ "icon": [
+  "geontm:warhead_nuclear"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_nuclear"
+  ]
+ ],
+ "title": {
+  "en_us": "Nuclear Warhead",
+  "fr_fr": "Ogive nucléaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 12 x cast plate (Titanium), 6 x cast plate (Lead), 6 x Uranium-235 Billet, 12 x Cordite, [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Special warheads.<br><br>Used to make :<br>[[gv:missile_nuclear|Nuclear Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 12 x plaque coulée (titane), 6 x plaque coulée (plomb), 6 x Billet d'uranium-235, 12 x cordite, [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Ogives spéciales.<br><br>Sert à fabriquer :<br>[[gv:missile_nuclear|Missile nucléaire]]."
+ }
+}

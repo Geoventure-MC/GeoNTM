@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_rod_moderated",
+ "icon": [
+  "geontm:rbmk_fuel_rod_moderated"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_rod_moderated"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Moderated Fuel Channel",
+  "fr_fr": "Barre de combustible modérée RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Block of Graphite, [[gv:rbmk_fuel_rod|RBMK Fuel Channel]], 4 x [[Bismuth|Bismuth Nugget]].<br><br>Used to make :<br>[[gv:rbmk_fuel_rod|RBMK Fuel Channel]], [[gv:block_graphite|Block of Graphite]], [[Bismuth|Bismuth Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Bloc de graphite, [[gv:rbmk_fuel_rod|Barre de combustible RBMK]], 4 x [[Bismuth|Pépite de bismuth]].<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_rod|Barre de combustible RBMK]], [[gv:block_graphite|Bloc de graphite]], [[Bismuth|Pépite de bismuth]]."
+ }
+}

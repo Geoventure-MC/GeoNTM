@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_tcalloy_diamond",
+ "icon": [
+  "geontm:drillbit_tcalloy_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_tcalloy_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "Technetium Steel Drill bit (Diamond-Tipped)",
+  "fr_fr": "Foret en acier au technétium (pointe diamant)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:drillbit_tcalloy|Technetium Steel Drill bit]], 48 x Diamond Powder.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:drillbit_tcalloy|Foret en acier au technétium]], 48 x Poudre de diamant."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_ra226be",
+ "icon": [
+  "geontm:pile_rod_mk2_ra226be"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_ra226be"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Ra226Be Neutron source",
+  "fr_fr": "Source de neutrons Ra226Be de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 3 x [[gv:billet_ra226be|Ra226Be Billet]].<br>- [[Assembly Machine|Assembly Machine]] : 3 x [[gv:billet_ra226be|Ra226Be Billet]] - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 3 x [[gv:billet_ra226be|Billette Ra226Be]].<br>- [[Assembly Machine|Machine d'assemblage]] : 3 x [[gv:billet_ra226be|Billette Ra226Be]] - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

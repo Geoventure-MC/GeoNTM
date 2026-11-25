@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_desh_mix",
+ "icon": [
+  "geontm:powder_desh_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_desh_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Blend",
+  "fr_fr": "Mélange de Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Electrolyser|Electrolyser]] (x3) : [[gv:crystal_rare|Rare Earth Crystals]].<br>- Furnace : [[gv:crystal_rare|Rare Earth Crystals]].<br>- Crafting table (x9) : 2 x Boron Powder, 2 x Lanthanium Powder, Cerium Powder, Cobalt Powder, Lithium Powder, Neodymium Powder, Niobium Powder.<br>(6 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:rad_absorber_green|Advanced Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- [[Electrolyser|Électrolyseur]] (x3) : [[gv:crystal_rare|Cristaux de terres rares]].<br>- Four : [[gv:crystal_rare|Cristaux de terres rares]].<br>- Établi (x9) : 2 x Poudre de bore, 2 x Poudre de lanthanium, Poudre de cérium, Poudre de cobalt, Poudre de lithium, Poudre de neodymium, Poudre de niobium.<br>(6 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:rad_absorber_green|Absorbeur de radiations avancé]]."
+ }
+}

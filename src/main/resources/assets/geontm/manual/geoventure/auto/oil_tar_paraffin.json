@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_paraffin",
+ "icon": [
+  "geontm:oil_tar_paraffin"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_paraffin"
+  ]
+ ],
+ "title": {
+  "en_us": "Paraffin Wax",
+  "fr_fr": "Cire de paraffine"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Solidifier|Industrial Solidification Machine]] : lubricant.<br><br>Used to make :<br>[[gv:oil_tar_wax|Chlorinated Petroleum Wax]].",
+  "fr_fr": "Obtention :<br>- [[Solidifier|Machine de solidification industrielle]] : lubricant.<br><br>Sert à fabriquer :<br>[[gv:oil_tar_wax|Cire de pétrole chlorée]]."
+ }
+}

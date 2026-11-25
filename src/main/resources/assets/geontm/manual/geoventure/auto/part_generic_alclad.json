@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_generic_alclad",
+ "icon": [
+  "geontm:part_generic_alclad"
+ ],
+ "trigger": [
+  [
+   "geontm:part_generic_alclad"
+  ]
+ ],
+ "title": {
+  "en_us": "Aviation Grade Sheeting",
+  "fr_fr": "Tôle de qualité aéronautique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x Aluminium Powder, 2 x Copper Plate.<br>- [[Assembly Machine|Assembly Machine]] : 4 x Titanium Plate, 8 x ingot (plastic).<br>- [[Chemical Plant|Chemical Plant]] : 8 x cokes, Titanium Plate, 1000 mB heavyoil vacuum, 8000 mB syngas.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>Lambda-98.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x Poudre d'aluminium, 2 x Plaque de cuivre.<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Plaque en titane, 8 x lingot (plastique).<br>- [[Chemical Plant|Usine chimique]] : 8 x cokes, Plaque en titane, 1000 mB heavyoil vacuum, 8000 mB syngas.<br>(1 autres recettes : voir JEI.)"
+ }
+}

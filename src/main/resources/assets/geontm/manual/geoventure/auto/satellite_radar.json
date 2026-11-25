@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_radar",
+ "icon": [
+  "geontm:satellite_radar"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_radar"
+  ]
+ ],
+ "title": {
+  "en_us": "Radar Satellite",
+  "fr_fr": "Satellite radar"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x cast plate (Gold), 32 x [[gv:photo_panel|Photovoltaic Panel]], 32 x [[gv:magnetron|Magnetron]], 16 x [[gv:circuit_bismoid|Versatile Circuit Board]], 4 x [[gv:part_generic_lde|Low-Density Element]], 3 x [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x plaque coulée (or), 32 x [[gv:photo_panel|Panneau photovoltaïque]], 32 x [[gv:magnetron|Magnétron]], 16 x [[gv:circuit_bismoid|Carte de circuit polyvalente]], 4 x [[gv:part_generic_lde|Élément à faible densité]], 3 x [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

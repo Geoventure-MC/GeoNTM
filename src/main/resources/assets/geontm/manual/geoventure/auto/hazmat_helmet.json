@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_helmet",
+ "icon": [
+  "geontm:hazmat_helmet"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_helmet"
+  ]
+ ],
+ "title": {
+  "en_us": "Hazmat Helmet",
+  "fr_fr": "Casque de combinaison Hazmat"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x [[gv:hazmat_cloth|Hazmat Cloth]], Glass Pane, Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 5 x [[gv:hazmat_cloth|Toile d'Hazmat]], Vitre, Plaque de fer."
+ }
+}

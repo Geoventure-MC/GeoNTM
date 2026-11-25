@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_insulator",
+ "icon": [
+  "geontm:block_insulator"
+ ],
+ "trigger": [
+  [
+   "geontm:block_insulator"
+  ]
+ ],
+ "title": {
+  "en_us": "Roll of Insulation",
+  "fr_fr": "Rouleau d'isolant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:plate_polymer|Insulator]].<br><br>Used to make :<br>[[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:plate_polymer|Isolateur]].<br><br>Sert à fabriquer :<br>[[gv:plate_polymer|Isolateur]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_th232",
+ "icon": [
+  "geontm:rod_dual_th232"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_th232"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium-232 Dual Rod",
+  "fr_fr": "Thorium-232 double tige"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x billet (thorium).<br><br>Used to make :<br>[[gv:rod_dual_thf|Thorium Fuel Dual Rod]], [[Thorium-232|Thorium-232 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x billette (thorium).<br><br>Sert à fabriquer :<br>[[gv:rod_dual_thf|Double tige de combustible au thorium]], [[Thorium-232|Billet de thorium-232]]."
+ }
+}

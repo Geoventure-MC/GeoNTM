@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_plutonium_fuel",
+ "icon": [
+  "geontm:billet_plutonium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_plutonium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium Fuel Billet",
+  "fr_fr": "Billette de carburant au plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_plutonium_fuel|Nugget of Plutonium Fuel]].<br>- Crafting table (x3) : 2 x [[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]].<br>- Crafting table (x3) : 2 x [[Uranium-238|Uranium-238 Billet]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]], [[gv:nugget_plutonium_fuel|Nugget of Plutonium Fuel]], [[gv:rbmk_fuel_lep|LEP-239 RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_plutonium_fuel|Pépite de combustible du plutonium]].<br>- Établi (x3) : 2 x [[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]].<br>- Établi (x3) : 2 x [[Uranium-238|Billet d'uranium-238]], [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]], [[gv:nugget_plutonium_fuel|Pépite de combustible du plutonium]], [[gv:rbmk_fuel_lep|Barre de combustible LEP-239 RBMK]]."
+ }
+}

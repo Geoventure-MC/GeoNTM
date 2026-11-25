@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_men",
+ "icon": [
+  "geontm:rbmk_fuel_men"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_men"
+  ]
+ ],
+ "title": {
+  "en_us": "MEN RBMK Fuel Rod",
+  "fr_fr": "MEN RBMK Carburant Rod"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_neptunium_fuel|Neptunium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_neptunium_fuel|Billette de carburant Neptunium]]."
+ }
+}

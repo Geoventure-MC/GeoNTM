@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_component_card",
+ "icon": [
+  "geontm:circuit_star_component_card"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_component_card"
+  ]
+ ],
+ "title": {
+  "en_us": "StarControl Extension Card",
+  "fr_fr": "Carte d'extension StarControl"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_star_piece_card_board|SC - Extension Card Board]], [[gv:circuit_star_piece_card_processor|SC - Extension Card Processor]].<br><br>Used to make :<br>[[gv:circuit_star|StarControl Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_star_piece_card_board|SC - Carte d'extension]], [[gv:circuit_star_piece_card_processor|SC - Processeur de carte d'extension]].<br><br>Sert à fabriquer :<br>[[gv:circuit_star|Carte de circuit StarControl]]."
+ }
+}

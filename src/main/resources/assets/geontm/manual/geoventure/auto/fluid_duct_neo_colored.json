@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_duct_neo_colored",
+ "icon": [
+  "geontm:fluid_duct_neo_colored"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_duct_neo_colored"
+  ]
+ ],
+ "title": {
+  "en_us": "Universal Fluid Duct",
+  "fr_fr": "Conduit de fluide universel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 2 x Steel Plate, 4 x Aluminium Plate.",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 2 x Plaque d'acier, 4 x Plaque d'aluminium."
+ }
+}

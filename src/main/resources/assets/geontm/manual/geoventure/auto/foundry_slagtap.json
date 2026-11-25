@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_slagtap",
+ "icon": [
+  "geontm:foundry_slagtap"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_slagtap"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Spill Outlet",
+  "fr_fr": "Sortie de coulée des scories"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:foundry_channel|Foundry Channel]], Stone Bricks.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:foundry_channel|Canal de fonderie]], Pierre taillée."
+ }
+}

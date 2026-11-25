@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_thorium_fuel",
+ "icon": [
+  "geontm:nugget_thorium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_thorium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Nugget of Thorium Fuel",
+  "fr_fr": "Pépite de carburant au thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_thorium_fuel|Thorium Fuel Billet]].<br>- Crafting table (x9) : [[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]].<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : nugget (thorium).<br><br>Used to make :<br>[[gv:billet_thorium_fuel|Thorium Fuel Billet]], [[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_thorium_fuel|Billette de carburant au thorium]].<br>- Établi (x9) : [[gv:ingot_thorium_fuel|Lingot de thorium combustible]].<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : pépite (thorium).<br><br>Sert à fabriquer :<br>[[gv:billet_thorium_fuel|Billette de carburant au thorium]], [[gv:ingot_thorium_fuel|Lingot de thorium combustible]]."
+ }
+}

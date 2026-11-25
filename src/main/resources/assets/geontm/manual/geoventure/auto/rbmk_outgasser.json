@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_outgasser",
+ "icon": [
+  "geontm:rbmk_outgasser"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_outgasser"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Irradiation Channel",
+  "fr_fr": "Canal d'irradiation RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:steel_grate|Steel Grate]], Hopper, [[gv:tank_steel|Steel Tank]], [[RBMK Structural Column|RBMK Structural Column]].<br><br>Used to make :<br>[[RBMK Structural Column|RBMK Structural Column]], [[gv:steel_grate|Steel Grate]], [[gv:tank_steel|Steel Tank]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:steel_grate|Grille en acier]], Entonnoir, [[gv:tank_steel|Réservoir en acier]], [[RBMK Structural Column|Colonne structurelle RBMK]].<br><br>Sert à fabriquer :<br>[[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:steel_grate|Grille en acier]], [[gv:tank_steel|Réservoir en acier]]."
+ }
+}

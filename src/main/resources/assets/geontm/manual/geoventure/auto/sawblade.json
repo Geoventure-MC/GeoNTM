@@ -1,0 +1,19 @@
+{
+ "name": "gv:sawblade",
+ "icon": [
+  "geontm:sawblade"
+ ],
+ "trigger": [
+  [
+   "geontm:sawblade"
+  ]
+ ],
+ "title": {
+  "en_us": "Sawblade",
+  "fr_fr": "Lame de scie circulaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x Steel Plate, Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 8 x Plaque d'acier, Lingot de fer."
+ }
+}

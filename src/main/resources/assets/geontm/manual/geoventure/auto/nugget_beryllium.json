@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_beryllium",
+ "icon": [
+  "geontm:nugget_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Beryllium Nugget",
+  "fr_fr": "Pépite de béryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_beryllium|Beryllium Billet]].<br>- Crafting table (x9) : [[gv:ingot_beryllium|Beryllium Ingot]].<br>- [[PUREX|PUREX]] (x2) : [[gv:waste_schrabidium|Depleted Schrabidium Fuel]], 500 mB kerosene, 250 mB nitric acid.<br><br>Used to make :<br>[[gv:billet_po210be|Po210Be Billet]], [[gv:billet_pu238be|Pu238Be Billet]], [[gv:billet_ra226be|Ra226Be Billet]], [[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]], [[gv:ingot_beryllium|Beryllium Ingot]], [[gv:ingot_hes|Highly Enriched Schrabidium Fuel Ingot]], [[gv:ingot_les|Low Enriched Schrabidium Fuel Ingot]], [[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_beryllium|Billet de béryllium]].<br>- Établi (x9) : [[gv:ingot_beryllium|Lingot de beryllium]].<br>- machine_purex (x2) : [[gv:waste_schrabidium|Carburant schrabidium appauvri]], 500 mB kerosene, 250 mB nitric acid.<br><br>Sert à fabriquer :<br>[[gv:billet_po210be|Billet Po210Be]], [[gv:billet_pu238be|Billet Pu238Be]], [[gv:billet_ra226be|Billette Ra226Be]], [[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]], [[gv:ingot_beryllium|Lingot de beryllium]], [[gv:ingot_hes|Lingot de carburant au Schrabidium hautement enrichi]], [[gv:ingot_les|Lingot de carburant au Schrabidium faiblement enrichi]], [[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_steam_outlet",
+ "icon": [
+  "geontm:rbmk_steam_outlet"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_steam_outlet"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK ReaSim Steam Outlet",
+  "fr_fr": "Sortie de vapeur RBMK ReaSim"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Ingot, 4 x Copper Plate, [[gv:tank_steel|Steel Tank]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot d'acier, 4 x Plaque de cuivre, [[gv:tank_steel|Réservoir en acier]]."
+ }
+}

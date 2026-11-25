@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_thorium",
+ "icon": [
+  "geontm:crystal_thorium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_thorium"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium Crystals",
+  "fr_fr": "Cristaux de thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (thorium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (thorium), 333 mB sulfuric acid.<br><br>Used to make :<br>[[Thorium-232|Thorium Powder]], [[Uranium|Uranium Powder]], [[Radium-226|Radium-226 Nugget]], [[Thorium-232|Thorium-232 Ingot]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (thorium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (thorium), 333 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[Thorium-232|Poudre de thorium]], [[Uranium|Poudre d'uranium]], [[Radium-226|Pépite de radium-226]], [[Thorium-232|Lingot de thorium-232]]."
+ }
+}

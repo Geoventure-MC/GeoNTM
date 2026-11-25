@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_hen",
+ "icon": [
+  "geontm:watz_pellet_hen"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_hen"
+  ]
+ ],
+ "title": {
+  "en_us": "HEN Watz Pellet",
+  "fr_fr": "Pastille Watz HEN"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Neptunium Ingot, Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de neptunium, Lingot de graphite."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_australium_greater",
+ "icon": [
+  "geontm:billet_australium_greater"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_australium_greater"
+  ]
+ ],
+ "title": {
+  "en_us": "Greater Australium Billet",
+  "fr_fr": "Billet Australium-406"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_australium_greater|Greater Australium Nugget]].<br><br>Used to make :<br>[[gv:nugget_australium_greater|Greater Australium Nugget]], [[gv:rbmk_fuel_heaus|HEAus RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_australium_greater|Pépite d'australium-406]].<br><br>Sert à fabriquer :<br>[[gv:nugget_australium_greater|Pépite d'australium-406]], [[gv:rbmk_fuel_heaus|Barre de combustible HEAus RBMK]]."
+ }
+}

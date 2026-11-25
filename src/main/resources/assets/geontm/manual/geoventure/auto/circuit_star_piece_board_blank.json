@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_piece_board_blank",
+ "icon": [
+  "geontm:circuit_star_piece_board_blank"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_piece_board_blank"
+  ]
+ ],
+ "title": {
+  "en_us": "SC - Printed Circuit Board",
+  "fr_fr": "SC - Carte de circuit imprimé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:scrap_plastic_board_blank|Plastic Scraps]], 500 mB peroxide.<br><br>Used to make :<br>[[gv:circuit_star|StarControl Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:scrap_plastic_board_blank|Débris de plastique]], 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:circuit_star|Carte de circuit StarControl]]."
+ }
+}

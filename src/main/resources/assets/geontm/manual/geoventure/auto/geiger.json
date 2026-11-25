@@ -1,0 +1,19 @@
+{
+ "name": "gv:geiger",
+ "icon": [
+  "geontm:geiger"
+ ],
+ "trigger": [
+  [
+   "geontm:geiger"
+  ]
+ ],
+ "title": {
+  "en_us": "Geiger Counter",
+  "fr_fr": "Compteur Geiger"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:geiger_counter|Handheld Geiger Counter]].<br><br>Used to make :<br>[[gv:geiger_counter|Handheld Geiger Counter]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:geiger_counter|Compteur Geiger]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_stone_plate",
+ "icon": [
+  "geontm:stamp_stone_plate"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_stone_plate"
+  ]
+ ],
+ "title": {
+  "en_us": "Plate Stamp (Stone)",
+  "fr_fr": "Moule de plaque (Pierre)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_stone_flat|Flat Stamp (Stone)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_stone_flat|Moule plat (Pierre)]]."
+ }
+}

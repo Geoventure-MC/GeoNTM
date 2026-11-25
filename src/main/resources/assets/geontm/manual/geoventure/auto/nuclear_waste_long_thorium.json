@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_long_thorium",
+ "icon": [
+  "geontm:nuclear_waste_long_thorium"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_long_thorium"
+  ]
+ ],
+ "title": {
+  "en_us": "Long-Lived Nuclear Waste",
+  "fr_fr": "Déchets nucléaires à vie longue"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste_long_tiny_thorium|Tiny Pile of Long-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_long_tiny_thorium|Tiny Pile of Long-Lived Nuclear Waste]], [[Uranium-233|Uranium-233 Nugget]], [[Uranium-235|Uranium-235 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]], [[gv:nuclear_waste_long_depleted_thorium|Decayed Long-Lived Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste_long_tiny_thorium|Minuscule tas de déchets nucléaires à longue durée de vie]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_long_tiny_thorium|Minuscule tas de déchets nucléaires à longue durée de vie]], [[Uranium-233|Pépite d'uranium-233]], [[Uranium-235|Pépite de d'U235]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]], [[gv:nuclear_waste_long_depleted_thorium|Déchets nucléaires à vie longue décomposés]]."
+ }
+}

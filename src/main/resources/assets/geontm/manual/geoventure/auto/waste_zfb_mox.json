@@ -1,0 +1,19 @@
+{
+ "name": "gv:waste_zfb_mox",
+ "icon": [
+  "geontm:waste_zfb_mox"
+ ],
+ "trigger": [
+  [
+   "geontm:waste_zfb_mox"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted ZFB MOX Fuel",
+  "fr_fr": "Combustible ZFB MOX appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:nugget_zirconium|Zirconium Splinter]], [[Technetium|Technetium-99 Nugget]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:nugget_zirconium|Éclat de zirconium]], [[Technetium|Pépite de technétium-99]], [[Reactor-Grade Plutonium|Pépite de plutonium de qualité réacteur]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

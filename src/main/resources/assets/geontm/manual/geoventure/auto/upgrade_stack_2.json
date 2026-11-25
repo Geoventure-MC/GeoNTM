@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_stack_2",
+ "icon": [
+  "geontm:upgrade_stack_2"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_stack_2"
+  ]
+ ],
+ "title": {
+  "en_us": "Stack Ejection Upgrade Mk.II",
+  "fr_fr": "Mise à niveau d'éjection de pile Mk.II"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:circuit_capacitor|Capacitor]], 2 x [[gv:part_generic_piston_hydraulic|Hydraulic Piston]], [[gv:upgrade_stack_1|Stack Ejection Upgrade Mk.I]].<br><br>Used to make :<br>[[gv:upgrade_stack_3|Stack Ejection Upgrade Mk.III]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:circuit_capacitor|Condensateur]], 2 x [[gv:part_generic_piston_hydraulic|Piston hydraulique]], [[gv:upgrade_stack_1|Mise à niveau d'éjection de pile Mk.I]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_stack_3|Mise à niveau d'éjection de pile Mk.III]]."
+ }
+}

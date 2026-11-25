@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_nu",
+ "icon": [
+  "geontm:pile_rod_mk2_nu"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_nu"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Natural Uranium Rod",
+  "fr_fr": "Barre d'uranium naturel de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 3 x Uranium Billet.<br>- [[Assembly Machine|Assembly Machine]] : 3 x Uranium Billet - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 3 x Billet d'uranium.<br>- [[Assembly Machine|Machine d'assemblage]] : 3 x Billet d'uranium - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_scaffold",
+ "icon": [
+  "geontm:struct_scaffold"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_scaffold"
+  ]
+ ],
+ "title": {
+  "en_us": "Launch Pad Scaffold Block",
+  "fr_fr": "Bloc d'échafaudage de rampe de lancement"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 6 x Steel Scaffold, 2 x [[gv:fluid_duct_neo|Universal Fluid Duct]], Copper Ingot.",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 6 x Échafaudage en acier, 2 x [[gv:fluid_duct_neo|Conduit de fluide universel]], Lingot de cuivre."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:machine_precass",
+ "icon": [
+  "geontm:machine_precass"
+ ],
+ "trigger": [
+  [
+   "geontm:machine_precass"
+  ]
+ ],
+ "title": {
+  "en_us": "Precision Assembly Machine",
+  "fr_fr": "Machine d'assemblage de précision"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x cast plate (Steel), 16 x Zirconium Cube, 8 x [[gv:motor|Motor]], 12 x [[gv:circuit_capacitor_board|Capacitor Board]], 4 x Bolted Steel Plating.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x plaque coulée (acier), 16 x Cube de zirconium, 8 x [[gv:motor|Moteur]], 12 x [[gv:circuit_capacitor_board|Carte de condensateurs]], 4 x Plaques d'acier boulonnées."
+ }
+}

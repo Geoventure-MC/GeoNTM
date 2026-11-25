@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_boots",
+ "icon": [
+  "geontm:hazmat_boots"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_boots"
+  ]
+ ],
+ "title": {
+  "en_us": "Hazmat Boots",
+  "fr_fr": "Bottes de combinaison Hazmat"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:hazmat_cloth|Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:hazmat_cloth|Toile d'Hazmat]]."
+ }
+}

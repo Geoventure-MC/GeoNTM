@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_crate_requester",
+ "icon": [
+  "geontm:drone_crate_requester"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_crate_requester"
+  ]
+ ],
+ "title": {
+  "en_us": "Logistics Requester Crate",
+  "fr_fr": "Caisse demandeuse logistique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_waypoint_request|Logistics Drone Waypoint]], [[gv:crate_steel|Steel Crate]], Yellow Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_waypoint_request|Point de passage de drone logistique]], [[gv:crate_steel|Caisse en acier]], Teinture jaune."
+ }
+}

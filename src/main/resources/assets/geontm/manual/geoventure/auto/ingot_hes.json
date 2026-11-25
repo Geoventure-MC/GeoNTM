@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_hes",
+ "icon": [
+  "geontm:ingot_hes"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_hes"
+  ]
+ ],
+ "title": {
+  "en_us": "Highly Enriched Schrabidium Fuel Ingot",
+  "fr_fr": "Lingot de carburant au Schrabidium hautement enrichi"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_hes|Highly Enriched Schrabidium Fuel Billet]].<br>- Crafting table : 9 x [[gv:nugget_hes|Highly Enriched Schrabidium Fuel Nugget]].<br>- Crafting table : 5 x Schrabidium Nugget, 2 x Neptunium Nugget, 2 x [[gv:nugget_beryllium|Beryllium Nugget]].<br><br>Used to make :<br>[[gv:billet_hes|Highly Enriched Schrabidium Fuel Billet]], [[gv:nugget_hes|Highly Enriched Schrabidium Fuel Nugget]], [[gv:watz_pellet_hes|HES Watz Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_hes|Billet de carburant Schrabidium hautement enrichi]].<br>- Établi : 9 x [[gv:nugget_hes|Pépite de carburant au Schrabidium hautement enrichi]].<br>- Établi : 5 x Pépite de Schrabidium, 2 x Pépite de neptunium, 2 x [[gv:nugget_beryllium|Pépite de béryllium]].<br><br>Sert à fabriquer :<br>[[gv:billet_hes|Billet de carburant Schrabidium hautement enrichi]], [[gv:nugget_hes|Pépite de carburant au Schrabidium hautement enrichi]], [[gv:watz_pellet_hes|Pastille Watz HES]]."
+ }
+}

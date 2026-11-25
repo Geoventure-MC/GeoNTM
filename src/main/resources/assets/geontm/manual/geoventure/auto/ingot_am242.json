@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_am242",
+ "icon": [
+  "geontm:ingot_am242"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_am242"
+  ]
+ ],
+ "title": {
+  "en_us": "Americium-242 Ingot",
+  "fr_fr": "Lingot d'américium-242"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_am242|Americium-242 Billet]].<br>- Crafting table : 9 x [[gv:nugget_am242|Americium-242 Nugget]].<br><br>Used to make :<br>[[gv:billet_am242|Americium-242 Billet]], [[gv:nugget_am242|Americium-242 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_am242|Billet d'américium-242]].<br>- Établi : 9 x [[gv:nugget_am242|Pépite d'américium-242]].<br><br>Sert à fabriquer :<br>[[gv:billet_am242|Billet d'américium-242]], [[gv:nugget_am242|Pépite d'américium-242]]."
+ }
+}

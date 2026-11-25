@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_thorium",
+ "icon": [
+  "geontm:pile_rod_mk2_thorium"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_thorium"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Natural Thorium Rod",
+  "fr_fr": "Barre de thorium naturel de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 3 x billet (thorium) - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 3 x billette (thorium) - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:concrete_rebar",
+ "icon": [
+  "geontm:concrete_rebar"
+ ],
+ "trigger": [
+  [
+   "geontm:concrete_rebar"
+  ]
+ ],
+ "title": {
+  "en_us": "Reinforced Concrete",
+  "fr_fr": "Béton armé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:rebar|Rebar]], 1000 mB Concrete Tile.<br><br>Used to make :<br>[[gv:launchpad_lambda|Lambda Launch Pad]], [[gv:launchpad_soyuz|Soyuz Launch Pad]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:rebar|Barre d'armature]], 1000 mB Tuile de béton.<br><br>Sert à fabriquer :<br>[[gv:launchpad_lambda|Rampe de lancement Lambda]], [[gv:launchpad_soyuz|Rampe de lancement Soyouz]]."
+ }
+}

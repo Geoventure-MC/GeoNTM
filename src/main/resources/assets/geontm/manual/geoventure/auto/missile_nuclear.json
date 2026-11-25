@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_nuclear",
+ "icon": [
+  "geontm:missile_nuclear"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_nuclear"
+  ]
+ ],
+ "title": {
+  "en_us": "Nuclear Missile",
+  "fr_fr": "Missile nucléaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_nuclear|Nuclear Warhead]], [[gv:fuel_tank_large|Large Fuel Tank]], 3 x [[gv:thruster_large|Large Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_nuclear|Ogive nucléaire]], [[gv:fuel_tank_large|Grand réservoir de carburant]], 3 x [[gv:thruster_large|Grand propulseur]]."
+ }
+}

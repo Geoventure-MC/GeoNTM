@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_meu",
+ "icon": [
+  "geontm:rbmk_fuel_meu"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_meu"
+  ]
+ ],
+ "title": {
+  "en_us": "MEU RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible MEU RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_uranium_fuel|Uranium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_uranium_fuel|Billet de carburant d'uranium]]."
+ }
+}

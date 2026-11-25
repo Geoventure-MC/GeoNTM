@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_cobalt",
+ "icon": [
+  "geontm:pellet_rtg_cobalt"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_cobalt"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt-60 RTG Pellet",
+  "fr_fr": "Pastille Cobalt-90 RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_co60|Cobalt-60 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_co60|Billet de cobalt-60]], Plaque de fer."
+ }
+}

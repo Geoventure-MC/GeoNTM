@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_tank",
+ "icon": [
+  "geontm:fluid_tank"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_tank"
+  ]
+ ],
+ "title": {
+  "en_us": "Universal Fluid Tank",
+  "fr_fr": "Réservoir de fluide universel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 6 x Aluminium Plate, 2 x Iron Plate, Glass Pane.<br><br>Used to make :<br>[[gv:drone_patrol_express|Express Transport Drone]], [[gv:fluid_tank_lead_empty|Empty Hazardous Material Tank]], [[gv:laser_crystal_co2|CO2-Desh Laser Crystal]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 6 x Plaque d'aluminium, 2 x Plaque de fer, Vitre.<br><br>Sert à fabriquer :<br>[[gv:drone_patrol_express|Drone de transport express]], [[gv:fluid_tank_lead_empty|Réservoir vide de matières dangereuses]], [[gv:laser_crystal_co2|Cristal laser CO2-Desh]]."
+ }
+}

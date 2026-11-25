@@ -1,0 +1,19 @@
+{
+ "name": "gv:steel_grate",
+ "icon": [
+  "geontm:steel_grate"
+ ],
+ "trigger": [
+  [
+   "geontm:steel_grate"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Grate",
+  "fr_fr": "Grille en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x4) : [[RBMK Cooler|RBMK Cooler]].<br>- Industrial anvil (construction) (x6) : [[gv:rbmk_outgasser|RBMK Irradiation Channel]].<br>- Crafting table (x4) : 4 x [[gv:steel_beam|Steel Beam]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[Steel Furnace|Steel Furnace]], [[Fractioning Tower|Fractioning Tower]], [[RBMK Cooler|RBMK Cooler]], [[gv:rbmk_outgasser|RBMK Irradiation Channel]], [[gv:steel_grate_wide|Item Grate]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x4) : [[RBMK Cooler|Congélateur d'urgence RBMK]].<br>- Enclume industrielle (construction) (x6) : [[gv:rbmk_outgasser|Canal d'irradiation RBMK]].<br>- Établi (x4) : 4 x [[gv:steel_beam|Barre d'acier]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Steel Furnace|Four en acier]], [[Fractioning Tower|Tour de fractionnement]], [[RBMK Cooler|Congélateur d'urgence RBMK]], [[gv:rbmk_outgasser|Canal d'irradiation RBMK]], [[gv:steel_grate_wide|Grille à objets]]."
+ }
+}

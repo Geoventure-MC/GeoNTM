@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_ra226",
+ "icon": [
+  "geontm:block_ra226"
+ ],
+ "trigger": [
+  [
+   "geontm:block_ra226"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Radium-226",
+  "fr_fr": "Bloc de Radium-226"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Radium-226|Radium-226 Ingot]].<br><br>Used to make :<br>[[Radium-226|Radium-226 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Radium-226|Lingot de radium-226]].<br><br>Sert à fabriquer :<br>[[Radium-226|Lingot de radium-226]]."
+ }
+}

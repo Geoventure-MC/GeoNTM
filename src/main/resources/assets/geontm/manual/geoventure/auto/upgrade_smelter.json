@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_smelter",
+ "icon": [
+  "geontm:upgrade_smelter"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_smelter"
+  ]
+ ],
+ "title": {
+  "en_us": "Smelter Upgrade",
+  "fr_fr": "Mise à niveau de la fonderie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Copper Plate, Hopper, 2 x [[gv:coil_tungsten|Heating Coil]], [[gv:upgrade_template|Machine Upgrade Template]], 2 x [[gv:coil_copper|Copper Coil]], 10k-20Hz Transformer.<br><br>Used to make :<br>[[gv:upgrade_shredder|Shredder Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque de cuivre, Entonnoir, 2 x [[gv:coil_tungsten|Bobine de tungstène]], [[gv:upgrade_template|Amélioration de machine]], 2 x [[gv:coil_copper|Bobine de cuivre]], Transformateur.<br><br>Sert à fabriquer :<br>[[gv:upgrade_shredder|Mise à niveau de la déchiqueteuse]]."
+ }
+}

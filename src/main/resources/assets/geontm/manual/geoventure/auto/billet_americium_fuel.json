@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_americium_fuel",
+ "icon": [
+  "geontm:billet_americium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_americium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Americium Fuel Billet",
+  "fr_fr": "Billette de carburant à l'américium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x3) : 2 x [[Uranium-238|Uranium-238 Billet]], [[gv:billet_am_mix|Reactor Grade Americium Billet]].<br>- Crafting table : 2 x [[gv:nugget_am_mix|Reactor Grade Americium Nugget]], 4 x Uranium-238 Nugget.<br><br>Used to make :<br>[[gv:rbmk_fuel_lea|LEA RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi (x3) : 2 x [[Uranium-238|Billet d'uranium-238]], [[gv:billet_am_mix|Billet d'américium de qualité réacteur]].<br>- Établi : 2 x [[gv:nugget_am_mix|Pépite d'américium de qualité réacteur]], 4 x Pépite de d'U238.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_lea|Barre de combustible LEA RBMK]]."
+ }
+}

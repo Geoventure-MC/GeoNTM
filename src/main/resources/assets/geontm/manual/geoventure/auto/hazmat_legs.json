@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_legs",
+ "icon": [
+  "geontm:hazmat_legs"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_legs"
+  ]
+ ],
+ "title": {
+  "en_us": "Hazmat Leggings",
+  "fr_fr": "Jambières de combinaison Hazmat"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 7 x [[gv:hazmat_cloth|Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 7 x [[gv:hazmat_cloth|Toile d'Hazmat]]."
+ }
+}

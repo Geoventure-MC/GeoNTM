@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_casing_tooled",
+ "icon": [
+  "geontm:watz_casing_tooled"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_casing_tooled"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Stability Element (Riveted)",
+  "fr_fr": "Élément de stabilité Watz (riveté)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Tool conversion, placed block : [[gv:watz_casing|Watz Stability Element]], 4 x bolt (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- Conversion à l'outil, bloc posé : [[gv:watz_casing|Element de stabilite du reacteur Watz]], 4 x boulon (acier haute vitesse)."
+ }
+}

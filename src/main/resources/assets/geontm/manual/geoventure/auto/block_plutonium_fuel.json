@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_plutonium_fuel",
+ "icon": [
+  "geontm:block_plutonium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:block_plutonium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Plutonium Fuel",
+  "fr_fr": "Bloc de combustible au plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]].<br><br>Used to make :<br>[[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]]."
+ }
+}

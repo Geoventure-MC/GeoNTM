@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_thf",
+ "icon": [
+  "geontm:rod_thf"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_thf"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium Fuel Rod",
+  "fr_fr": "Tige de combustible au thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_th232|Thorium-232 Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], [[gv:billet_thorium_fuel|Thorium Fuel Billet]].<br><br>Used to make :<br>[[gv:billet_thorium_fuel|Thorium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_th232|Tige de thorium-232]].<br>- Établi : [[gv:rod_empty|Tige vide]], [[gv:billet_thorium_fuel|Billette de carburant au thorium]].<br><br>Sert à fabriquer :<br>[[gv:billet_thorium_fuel|Billette de carburant au thorium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:turbine_tungsten",
+ "icon": [
+  "geontm:turbine_tungsten"
+ ],
+ "trigger": [
+  [
+   "geontm:turbine_tungsten"
+  ]
+ ],
+ "title": {
+  "en_us": "Reinforced Turbofan Blades",
+  "fr_fr": "Lames de Turbofan renforcée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x [[gv:blade_tungsten|Tungsten Reinforced Blade]], High-Speed Steel Ingot.<br><br>Used to make :<br>[[Gas Turbine|Gas Turbine]], [[Leviathan Steam Turbine|Leviathan Steam Turbine]], [[Turbofan|Turbofan]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x [[gv:blade_tungsten|Lame renforcée de tungstène]], Lingot d'acier haute vitesse.<br><br>Sert à fabriquer :<br>[[Gas Turbine|Turbine à gaz]], [[Leviathan Steam Turbine|Turbine à vapeur Léviathan]], [[Turbofan|Turboréacteur]]."
+ }
+}

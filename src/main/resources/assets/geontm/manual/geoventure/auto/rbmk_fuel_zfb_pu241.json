@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_zfb_pu241",
+ "icon": [
+  "geontm:rbmk_fuel_zfb_pu241"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_zfb_pu241"
+  ]
+ ],
+ "title": {
+  "en_us": "Pu-241 RBMK ZFB Rod",
+  "fr_fr": "Tige Pu-241 RBMK ZFB"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_zfb_pu241|Pu-241 ZFB Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_zfb_pu241|Billet Pu-241 ZFB]]."
+ }
+}

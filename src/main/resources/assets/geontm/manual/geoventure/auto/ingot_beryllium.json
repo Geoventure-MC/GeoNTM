@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_beryllium",
+ "icon": [
+  "geontm:ingot_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Beryllium Ingot",
+  "fr_fr": "Lingot de beryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x6) : [[Stirling Engine|Heavy Stirling Engine]].<br>- Industrial anvil (construction) (x6) : [[Stirling Engine|Heavy Stirling Engine]].<br>- Industrial anvil (construction) (x2) : [[gv:pole_top|Antenna Top]].<br>(9 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_beryllium|Beryllium Billet]], [[gv:block_beryllium|Block of Beryllium]], [[gv:nugget_beryllium|Beryllium Nugget]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x6) : [[Stirling Engine|Moteur Stirling lourd]].<br>- Enclume industrielle (construction) (x6) : [[Stirling Engine|Moteur Stirling lourd]].<br>- Enclume industrielle (construction) (x2) : [[gv:pole_top|Antenne Haut]].<br>(9 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_beryllium|Billet de béryllium]], [[gv:block_beryllium|Bloc de beryllium]], [[gv:nugget_beryllium|Pépite de béryllium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_miner_astro",
+ "icon": [
+  "geontm:satellite_miner_astro"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_miner_astro"
+  ]
+ ],
+ "title": {
+  "en_us": "Asteroid Mining Ship",
+  "fr_fr": "Vaisseau minier d'astéroïdes"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x plate (ostrum), 8 x [[gv:photo_panel|Photovoltaic Panel]], [[gv:thruster_medium|Medium Thruster]], 4 x [[gv:motor_bismuth|Bismuth Motor]], 16 x [[gv:part_generic_lde|Low-Density Element]], 2 x [[gv:circuit_controller_advanced|Advanced Control Unit]] - [[gv:schemas|blueprint required]]: Deep space.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x plaque (ostrum), 8 x [[gv:photo_panel|Panneau photovoltaïque]], [[gv:thruster_medium|Propulseur moyen]], 4 x [[gv:motor_bismuth|Moteur de bismuth]], 16 x [[gv:part_generic_lde|Élément à faible densité]], 2 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]] - [[gv:schemas|schéma exigé]] : Espace lointain."
+ }
+}

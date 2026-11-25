@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_generic_piston_hydraulic",
+ "icon": [
+  "geontm:part_generic_piston_hydraulic"
+ ],
+ "trigger": [
+  [
+   "geontm:part_generic_piston_hydraulic"
+  ]
+ ],
+ "title": {
+  "en_us": "Hydraulic Piston",
+  "fr_fr": "Piston hydraulique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x Steel Ingot, 2 x Titanium Ingot.<br><br>Used to make :<br>[[Press|Electric Press]], [[gv:upgrade_stack_2|Stack Ejection Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x Lingot d'acier, 2 x Lingot de titane.<br><br>Sert à fabriquer :<br>[[Press|Presse électrique]], [[gv:upgrade_stack_2|Mise à niveau d'éjection de pile Mk.II]]."
+ }
+}

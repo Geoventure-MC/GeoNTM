@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_rubber",
+ "icon": [
+  "geontm:cladding_rubber"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_rubber"
+  ]
+ ],
+ "title": {
+  "en_us": "Rubber Cladding",
+  "fr_fr": "Revêtement en caoutchouc"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (rubber), 4 x Coal Powder, [[gv:ducttape|Duct Tape]].<br><br>Used to make :<br>[[gv:cladding_lead|Lead Cladding]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (caoutchouc), 4 x Poudre de charbon, [[gv:ducttape|Ruban adhésif]].<br><br>Sert à fabriquer :<br>[[gv:cladding_lead|Revêtement en plomb]]."
+ }
+}

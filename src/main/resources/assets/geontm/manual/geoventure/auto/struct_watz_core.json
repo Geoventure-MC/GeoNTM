@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_watz_core",
+ "icon": [
+  "geontm:struct_watz_core"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_watz_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Powerplant Core Component",
+  "fr_fr": "Composant central de la centrale Watz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x cast plate (resistant alloy), 4 x [[gv:circuit_advanced|Military Grade Circuit Board]], [[gv:watz_cooler|Watz Reactor Supercooler]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x plaque coulée (alliage résistant), 4 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]], [[gv:watz_cooler|Super-refroidisseur de réacteur Watz]]."
+ }
+}

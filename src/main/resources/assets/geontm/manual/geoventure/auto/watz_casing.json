@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_casing",
+ "icon": [
+  "geontm:watz_casing"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_casing"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Stability Element",
+  "fr_fr": "Element de stabilite du reacteur Watz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x3) : 2 x welded plate (resistant alloy), 3 x Boron Ingot, 4 x welded plate (Steel), 6 x Reinforced Ferrouranium Panels - [[gv:schemas|blueprint required]]: Fission reactors.<br><br>Used to make :<br>[[gv:watz_casing_tooled|Watz Stability Element (Riveted)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x3) : 2 x plaque soudée (alliage résistant), 3 x Lingot de bore, 4 x plaque soudée (acier), 6 x Panneaux de ferrouranium renforcé - [[gv:schemas|schéma exigé]] : Réacteurs à fission.<br><br>Sert à fabriquer :<br>[[gv:watz_casing_tooled|Élément de stabilité Watz (riveté)]]."
+ }
+}

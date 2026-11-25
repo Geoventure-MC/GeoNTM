@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_schrabidium",
+ "icon": [
+  "geontm:block_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Schrabidium",
+  "fr_fr": "Bloc de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_schrabidium|Schrabidium Ingot]].<br><br>Used to make :<br>[[gv:ingot_schrabidium|Schrabidium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_schrabidium|Lingot de Schrabidium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_schrabidium|Lingot de Schrabidium]]."
+ }
+}

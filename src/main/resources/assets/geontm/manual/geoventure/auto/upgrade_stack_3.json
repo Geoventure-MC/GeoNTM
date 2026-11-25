@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_stack_3",
+ "icon": [
+  "geontm:upgrade_stack_3"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_stack_3"
+  ]
+ ],
+ "title": {
+  "en_us": "Stack Ejection Upgrade Mk.III",
+  "fr_fr": "Mise à niveau d'éjection de pile Mk.III"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:circuit_chip|Microchip]], 2 x [[gv:part_generic_piston_electric|Electric Piston]], [[gv:upgrade_stack_2|Stack Ejection Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:circuit_chip|Micropuce]], 2 x [[gv:part_generic_piston_electric|Piston électrique]], [[gv:upgrade_stack_2|Mise à niveau d'éjection de pile Mk.II]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_plutonium",
+ "icon": [
+  "geontm:part_plutonium"
+ ],
+ "trigger": [
+  [
+   "geontm:part_plutonium"
+  ]
+ ],
+ "title": {
+  "en_us": "Box of Plutonium Dust",
+  "fr_fr": "Boîte de poussière de plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x8) : Plutonium Powder.<br><br>Used to make :<br>[[gv:pellet_charged|Ionized Particles]], [[gv:powder_australium|Australium Powder]], [[gv:powder_tennessine|Tennessine Powder]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x8) : Poudre de plutonium.<br><br>Sert à fabriquer :<br>[[gv:pellet_charged|Particules ionisées]], [[gv:powder_australium|Poudre d'Australium]], [[gv:powder_tennessine|Poudre de Tennessine]]."
+ }
+}

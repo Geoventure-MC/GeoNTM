@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_lithium",
+ "icon": [
+  "geontm:rod_quad_lithium"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_lithium"
+  ]
+ ],
+ "title": {
+  "en_us": "Lithium Quad Rod",
+  "fr_fr": "Quadruple tige de tithium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Lithium Ingot.<br><br>Used to make :<br>[[gv:lithium|Lithium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Lingot de lithium.<br><br>Sert à fabriquer :<br>[[gv:lithium|Cube de lithium]]."
+ }
+}

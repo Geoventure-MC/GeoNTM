@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_long_kerosene",
+ "icon": [
+  "geontm:mp_fuselage_10_long_kerosene"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_long_kerosene"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Long Kerosene Fuselage",
+  "fr_fr": "Fuselage kérosène long taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x [[gv:seg_10|Size 10 Connector]], 16 x Aluminium Plate, 6 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x [[gv:seg_10|Connecteur taille 10]], 16 x Plaque d'aluminium, 6 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

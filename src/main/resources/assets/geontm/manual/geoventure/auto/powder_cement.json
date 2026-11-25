@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_cement",
+ "icon": [
+  "geontm:powder_cement"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_cement"
+  ]
+ ],
+ "title": {
+  "en_us": "Cement",
+  "fr_fr": "Ciment"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : Limestone Powder, 3 x Clay Ball.<br>- [[Shredder|Shredder]] (x4) : Block of Slag.<br><br>Used to make :<br>[[gv:concrete_smooth|Concrete]], [[gv:concrete_asbestos|Asbestos Concrete]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : Poudre de calcaire, 3 x Motte d'argile.<br>- [[Shredder|Broyeur]] (x4) : Bloc de scories.<br><br>Sert à fabriquer :<br>[[gv:concrete_smooth|Béton]], [[gv:concrete_asbestos|Béton d'amiante]]."
+ }
+}

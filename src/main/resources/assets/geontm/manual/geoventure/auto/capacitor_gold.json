@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_gold",
+ "icon": [
+  "geontm:capacitor_gold"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_gold"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold Capacitor",
+  "fr_fr": "Condensateur en or"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x Steel Plate, 16 x dense wire (Gold).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x Plaque d'acier, 16 x fil dense (or)."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_thruster_20_solid_multi",
+ "icon": [
+  "geontm:mp_thruster_20_solid_multi"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_thruster_20_solid_multi"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 20 Solid Fuel 30-Fold Thrusters",
+  "fr_fr": "Propulseurs 30 fois à combustible solide de taille 20"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_20|Size 20 Connector]], 6 x pipe (High-Speed Steel), 16 x Tungsten Ingot, 16 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_20|Connecteur taille 20]], 6 x tuyau (acier haute vitesse), 16 x Lingot de tungstène, 16 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

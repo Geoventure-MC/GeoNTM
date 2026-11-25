@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_co",
+ "icon": [
+  "geontm:rod_quad_co"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_co"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt Quad Rod",
+  "fr_fr": "Quadruple tige de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Cobalt Billet.<br><br>Used to make :<br>[[gv:rod_quad_co60|Cobalt-60 Quad Rod]], [[Cobalt|Cobalt Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billette de cobalt.<br><br>Sert à fabriquer :<br>[[gv:rod_quad_co60|Quad Rod Cobalt-60]], [[Cobalt|Billette de cobalt]]."
+ }
+}

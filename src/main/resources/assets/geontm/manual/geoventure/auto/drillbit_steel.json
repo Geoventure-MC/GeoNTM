@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_steel",
+ "icon": [
+  "geontm:drillbit_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Drill bit",
+  "fr_fr": "Foret en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 12 x Steel Ingot, 4 x Tungsten Ingot.<br><br>Used to make :<br>[[gv:drillbit_steel_diamond|Steel Drill bit (Diamond-Tipped)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 12 x Lingot d'acier, 4 x Lingot de tungstène.<br><br>Sert à fabriquer :<br>[[gv:drillbit_steel_diamond|Foret en acier (pointe diamant)]]."
+ }
+}

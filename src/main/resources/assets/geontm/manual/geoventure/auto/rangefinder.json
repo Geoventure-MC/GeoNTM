@@ -1,0 +1,19 @@
+{
+ "name": "gv:rangefinder",
+ "icon": [
+  "geontm:rangefinder"
+ ],
+ "trigger": [
+  [
+   "geontm:rangefinder"
+  ]
+ ],
+ "title": {
+  "en_us": "Rangefinder",
+  "fr_fr": "Télémètre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Glass Pane, dust (redstone), [[gv:circuit_basic|Integrated Circuit Board]], Steel Plate.<br><br>Used to make :<br>[[gv:designator_arty_range|Long Range Artillery Remote]], [[gv:designator_range|Long Range Target Designator]].",
+  "fr_fr": "Obtention :<br>- Établi : Vitre, poudre (redstone), [[gv:circuit_basic|Carte de circuit intégré]], Plaque d'acier.<br><br>Sert à fabriquer :<br>[[gv:designator_arty_range|Télécommande d'artillerie longue portée]], [[gv:designator_range|Désignateur à longue portée]]."
+ }
+}

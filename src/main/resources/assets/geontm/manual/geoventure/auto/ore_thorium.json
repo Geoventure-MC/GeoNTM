@@ -1,0 +1,19 @@
+{
+ "name": "gv:ore_thorium",
+ "icon": [
+  "geontm:ore_thorium"
+ ],
+ "trigger": [
+  [
+   "geontm:ore_thorium"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium Ore",
+  "fr_fr": "Minerai de thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Thorium-232|Thorium-232 Ingot]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Thorium-232|Lingot de thorium-232]]."
+ }
+}

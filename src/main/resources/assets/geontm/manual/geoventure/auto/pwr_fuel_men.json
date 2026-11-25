@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_men",
+ "icon": [
+  "geontm:pwr_fuel_men"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_men"
+  ]
+ ],
+ "title": {
+  "en_us": "MEN PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR MEN"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:billet_neptunium_fuel|Neptunium Fuel Billet]], [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:billet_neptunium_fuel|Billette de carburant Neptunium]], [[gv:plate_polymer|Isolateur]]."
+ }
+}

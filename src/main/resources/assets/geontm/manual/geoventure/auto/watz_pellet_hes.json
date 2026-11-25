@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_hes",
+ "icon": [
+  "geontm:watz_pellet_hes"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_hes"
+  ]
+ ],
+ "title": {
+  "en_us": "HES Watz Pellet",
+  "fr_fr": "Pastille Watz HES"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_hes|Highly Enriched Schrabidium Fuel Ingot]], Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_hes|Lingot de carburant au Schrabidium hautement enrichi]], Lingot de graphite."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_americium",
+ "icon": [
+  "geontm:pellet_rtg_americium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_americium"
+  ]
+ ],
+ "title": {
+  "en_us": "Americium-241 RTG Pellet",
+  "fr_fr": "Pastille Américium-241 RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_am241|Americium-241 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_am241|Billet d'américium-241]], Plaque de fer."
+ }
+}

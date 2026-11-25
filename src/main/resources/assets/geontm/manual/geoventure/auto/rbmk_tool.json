@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_tool",
+ "icon": [
+  "geontm:rbmk_tool"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_tool"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Console Linking Device",
+  "fr_fr": "Dispositif de liaison de console RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Lead Ingot, 2 x Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Lingot de plomb, 2 x Lingot de fer."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_tungsten",
+ "icon": [
+  "geontm:crystal_tungsten"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_tungsten"
+  ]
+ ],
+ "title": {
+  "en_us": "Tungsten Crystals",
+  "fr_fr": "Cristaux de tungstène"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (tungsten), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (tungsten), 333 mB sulfuric acid.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (tungstène), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (tungstène), 333 mB sulfuric acid."
+ }
+}

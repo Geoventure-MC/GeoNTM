@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_beryllium",
+ "icon": [
+  "geontm:billet_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Beryllium Billet",
+  "fr_fr": "Billet de béryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Beryllium Nugget.<br>- Crafting table (x3) : 2 x [[gv:ingot_beryllium|Beryllium Ingot]].<br><br>Used to make :<br>[[gv:ingot_beryllium|Beryllium Ingot]], [[gv:nugget_beryllium|Beryllium Nugget]], [[gv:billet_po210be|Po210Be Billet]], [[gv:billet_pu238be|Pu238Be Billet]], [[gv:billet_ra226be|Ra226Be Billet]], [[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Pépite de béryllium.<br>- Établi (x3) : 2 x [[gv:ingot_beryllium|Lingot de beryllium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_beryllium|Lingot de beryllium]], [[gv:nugget_beryllium|Pépite de béryllium]], [[gv:billet_po210be|Billet Po210Be]], [[gv:billet_pu238be|Billet Pu238Be]], [[gv:billet_ra226be|Billette Ra226Be]], [[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]]."
+ }
+}

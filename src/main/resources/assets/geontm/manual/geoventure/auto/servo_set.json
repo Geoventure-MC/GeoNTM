@@ -1,0 +1,19 @@
+{
+ "name": "gv:servo_set",
+ "icon": [
+  "geontm:servo_set"
+ ],
+ "trigger": [
+  [
+   "geontm:servo_set"
+  ]
+ ],
+ "title": {
+  "en_us": "Servo Set",
+  "fr_fr": "Ensemble d'asservissements"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:motor|Motor]], 3 x bolt (Steel), 2 x Iron Plate.<br><br>Used to make :<br>[[gv:servo_set_desh|Desh Servo Set]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:motor|Moteur]], 3 x boulon (acier), 2 x Plaque de fer.<br><br>Sert à fabriquer :<br>[[gv:servo_set_desh|Desh Servo Ensemble]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_buster_strong",
+ "icon": [
+  "geontm:missile_buster_strong"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_buster_strong"
+  ]
+ ],
+ "title": {
+  "en_us": "Enhanced Bunker Buster",
+  "fr_fr": "Bunker buster Tier2"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_buster_medium|Medium Bunker Buster Warhead]], [[gv:fuel_tank_medium|Medium Fuel Tank]], [[gv:thruster_medium|Medium Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_buster_medium|Ogive moyenne de Buster Buster]], [[gv:fuel_tank_medium|Réservoir de carburant moyen]], [[gv:thruster_medium|Propulseur moyen]]."
+ }
+}

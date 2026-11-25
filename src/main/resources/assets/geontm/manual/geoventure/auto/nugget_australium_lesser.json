@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_australium_lesser",
+ "icon": [
+  "geontm:nugget_australium_lesser"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_australium_lesser"
+  ]
+ ],
+ "title": {
+  "en_us": "Lesser Australium Nugget",
+  "fr_fr": "Pépite d'australium-405"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_australium_lesser|Lesser Australium Billet]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:ingot_australium|Australium Ingot]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:powder_australium|Australium Powder]].<br><br>Used to make :<br>[[gv:billet_australium_lesser|Lesser Australium Billet]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_australium_lesser|Billet Australium-405]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:ingot_australium|Lingot d'australium]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:powder_australium|Poudre d'Australium]].<br><br>Sert à fabriquer :<br>[[gv:billet_australium_lesser|Billet Australium-405]]."
+ }
+}

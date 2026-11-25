@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_waste_painted",
+ "icon": [
+  "geontm:block_waste_painted"
+ ],
+ "trigger": [
+  [
+   "geontm:block_waste_painted"
+  ]
+ ],
+ "title": {
+  "en_us": "Painted Block of Nuclear Waste",
+  "fr_fr": "Bloc peint de déchets nucléaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : dye (yellow), [[gv:block_waste|Block of Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste|Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : colorant (yellow), [[gv:block_waste|Bloc de dechets nucleaires]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste|Déchets nucléaires]]."
+ }
+}

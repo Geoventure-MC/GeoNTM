@@ -1,0 +1,19 @@
+{
+ "name": "gv:magnetron",
+ "icon": [
+  "geontm:magnetron"
+ ],
+ "trigger": [
+  [
+   "geontm:magnetron"
+  ]
+ ],
+ "title": {
+  "en_us": "Magnetron",
+  "fr_fr": "Magnétron"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 3 x Copper Plate, 4 x wire (Tungsten).<br><br>Used to make :<br>[[Radar|Radar]], [[Large Radar|Large Radar]], [[gv:satellite_radar|Radar Satellite]], [[Satellite Ground Station|Satellite Ground Station]], [[gv:emp_bomb|EMP Device]], [[gv:reactor_sensor|Reactor Remote Sensor]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 3 x Plaque de cuivre, 4 x fil (tungstène).<br><br>Sert à fabriquer :<br>[[Large Radar|Grand radar]], [[gv:satellite_radar|Satellite radar]], [[Satellite Ground Station|Station au sol de satellite]], [[gv:emp_bomb|Bombe IEM]], [[gv:reactor_sensor|Capteur à distance du réacteur]]."
+ }
+}

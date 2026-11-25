@@ -1,0 +1,19 @@
+{
+ "name": "gv:piston_set_steel",
+ "icon": [
+  "geontm:piston_set_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:piston_set_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Piston Set",
+  "fr_fr": "Jeu de pistons en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x Steel Plate, 4 x Copper Plate, 8 x Tungsten Ingot, 16 x bolt (Tungsten).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x Plaque d'acier, 4 x Plaque de cuivre, 8 x Lingot de tungstène, 16 x boulon (tungstène)."
+ }
+}

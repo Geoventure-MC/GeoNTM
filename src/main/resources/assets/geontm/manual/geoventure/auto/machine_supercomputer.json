@@ -1,0 +1,19 @@
+{
+ "name": "gv:machine_supercomputer",
+ "icon": [
+  "geontm:machine_supercomputer"
+ ],
+ "trigger": [
+  [
+   "geontm:machine_supercomputer"
+  ]
+ ],
+ "title": {
+  "en_us": "Supercomputer",
+  "fr_fr": "Superordinateur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 32 x ingot (resistant alloy), 64 x ingot (plastic), 96 x dense wire (Gold), 8 x pipe (Copper), 32 x [[gv:circuit_basic|Integrated Circuit Board]], 9 x [[gv:circuit_bismoid|Versatile Circuit Board]], 8 x Plastic Panels, 8 x Mainframe.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 32 x lingot (alliage résistant), 64 x lingot (plastique), 96 x fil dense (or), 8 x tuyau (cuivre), 32 x [[gv:circuit_basic|Carte de circuit intégré]], 9 x [[gv:circuit_bismoid|Carte de circuit polyvalente]], 8 x Panneaux en plastique, 8 x Ordinateur central."
+ }
+}

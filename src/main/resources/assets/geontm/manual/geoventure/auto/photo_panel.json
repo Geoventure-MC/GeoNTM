@@ -1,0 +1,19 @@
+{
+ "name": "gv:photo_panel",
+ "icon": [
+  "geontm:photo_panel"
+ ],
+ "trigger": [
+  [
+   "geontm:photo_panel"
+  ]
+ ],
+ "title": {
+  "en_us": "Photovoltaic Panel",
+  "fr_fr": "Panneau photovoltaïque"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Glass Pane, 2 x [[gv:plate_polymer|Insulator]], Silicon Wafer, [[gv:circuit_pcb|Printed Circuit Board]].<br><br>Used to make :<br>[[gv:satellite_miner_astro|Asteroid Mining Ship]], [[gv:satellite_detector|Wideband Radio Emission Detector Satellite]], [[gv:satellite_miner_lunar|Lunar Mining Ship]], [[gv:satellite_precision_laser|Orbital Precision Laser]], [[gv:satellite_radar|Radar Satellite]], [[gv:satellite_ray_scan|Narrowband Emission Scanning Satellite]], [[gv:satellite_relay|RoR Relay Satellite]], [[gv:satellite_scanner|Depth Scanning Satellite]], [[gv:satellite_science|Space Laboratory]], [[gv:satellite_spy|Spy Satellite]] and 1 more.",
+  "fr_fr": "Obtention :<br>- Établi : Vitre, 2 x [[gv:plate_polymer|Isolateur]], Tranche de silicium, [[gv:circuit_pcb|Carte de circuit imprimé]].<br><br>Sert à fabriquer :<br>[[gv:satellite_miner_astro|Vaisseau minier d'astéroïdes]], [[gv:satellite_detector|Satellite détecteur d'émissions radio à large bande]], [[gv:satellite_miner_lunar|Vaisseau minier lunaire]], [[gv:satellite_precision_laser|Laser de précision orbital]], [[gv:satellite_radar|Satellite radar]], [[gv:satellite_ray_scan|Satellite de balayage d'émissions à bande étroite]], [[gv:satellite_relay|Satellite relais RoR]], [[gv:satellite_scanner|Satellite de balayage de profondeur]], [[gv:satellite_science|Laboratoire spatial]], [[gv:satellite_spy|Satellite espion]] et 1 autres."
+ }
+}

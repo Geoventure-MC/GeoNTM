@@ -1,0 +1,19 @@
+{
+ "name": "gv:fragment_niobium",
+ "icon": [
+  "geontm:fragment_niobium"
+ ],
+ "trigger": [
+  [
+   "geontm:fragment_niobium"
+  ]
+ ],
+ "title": {
+  "en_us": "Niobium Fragment",
+  "fr_fr": "Fragment de niobium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].<br><br>Used to make :<br>[[gv:powder_niobium_tiny|Tiny Pile of Niobium Powder]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]].<br><br>Sert à fabriquer :<br>[[gv:powder_niobium_tiny|Minuscule tas de poudre de niobium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_empty",
+ "icon": [
+  "geontm:rbmk_fuel_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible RBMK vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Zirconium Cube, 2 x [[gv:rod_quad_empty|Empty Quad Rod]].<br><br>Used to make :<br>[[gv:rbmk_fuel_hea241|HEA-241 RBMK Fuel Rod]], [[gv:rbmk_fuel_hea242|HEA-242 RBMK Fuel Rod]], [[gv:rbmk_fuel_heaus|HEAus RBMK Fuel Rod]], [[gv:rbmk_fuel_hen|HEN RBMK Fuel Rod]], [[gv:rbmk_fuel_hep|HEP-239 RBMK Fuel Rod]], [[gv:rbmk_fuel_hep241|HEP-241 RBMK Fuel Rod]], [[gv:rbmk_fuel_hes|HES RBMK Fuel Rod]], [[gv:rbmk_fuel_heu233|HEU-233 RBMK Fuel Rod]], [[gv:rbmk_fuel_heu235|HEU-235 RBMK Fuel Rod]], [[gv:rbmk_fuel_lea|LEA RBMK Fuel Rod]] and 18 more.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Cube de zirconium, 2 x [[gv:rod_quad_empty|Quatruple tige vide]].<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_hea241|Barre de combustible HEA-241 RBMK]], [[gv:rbmk_fuel_hea242|Barre de combustible HEA-242 RBMK]], [[gv:rbmk_fuel_heaus|Barre de combustible HEAus RBMK]], [[gv:rbmk_fuel_hen|Barre de combustible HEN RBMK]], [[gv:rbmk_fuel_hep|Barre de combustible HEP-239 RBMK]], [[gv:rbmk_fuel_hep241|Barre de carburant HEP-241 RBMK]], [[gv:rbmk_fuel_hes|Barre de combustible HES RBMK]], [[gv:rbmk_fuel_heu233|Barre de combustible HEU-233 RBMK]], [[gv:rbmk_fuel_heu235|Barre de combustible HEU-235 RBMK]], [[gv:rbmk_fuel_lea|Barre de combustible LEA RBMK]] et 18 autres."
+ }
+}

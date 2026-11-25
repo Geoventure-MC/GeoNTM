@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_weak",
+ "icon": [
+  "geontm:pellet_rtg_weak"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_weak"
+  ]
+ ],
+ "title": {
+  "en_us": "Weak Uranium RTG Pellet",
+  "fr_fr": "Granule d'uranium RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[Uranium-238|Uranium-238 Billet]], [[Plutonium-238|Plutonium-238 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[Uranium-238|Billet d'uranium-238]], [[Plutonium-238|Billet de plutonium-238]], Plaque de fer."
+ }
+}

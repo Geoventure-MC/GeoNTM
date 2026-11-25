@@ -1,0 +1,19 @@
+{
+ "name": "gv:rad_absorber",
+ "icon": [
+  "geontm:rad_absorber"
+ ],
+ "trigger": [
+  [
+   "geontm:rad_absorber"
+  ]
+ ],
+ "title": {
+  "en_us": "Radiation Absorber",
+  "fr_fr": "Absorbeur de radiations"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Copper Ingot, 4 x Coal Powder, Lead Powder.<br><br>Used to make :<br>[[gv:decon|Player Decontaminator]], [[gv:rad_absorber_red|Enhanced Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de cuivre, 4 x Poudre de charbon, Poudre de plomb.<br><br>Sert à fabriquer :<br>[[gv:decon|Décontaminateur de rayonnement]], [[gv:rad_absorber_red|Absorbeur de radiations amélioré]]."
+ }
+}

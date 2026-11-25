@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_plutonium_fuel",
+ "icon": [
+  "geontm:nugget_plutonium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_plutonium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Nugget of Plutonium Fuel",
+  "fr_fr": "Pépite de combustible du plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_plutonium_fuel|Plutonium Fuel Billet]].<br>- Crafting table (x9) : [[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]].<br><br>Used to make :<br>[[gv:billet_plutonium_fuel|Plutonium Fuel Billet]], [[gv:ingot_plutonium_fuel|Ingot of Plutonium Fuel]], [[gv:pwr_fuel_bfb_am_mix|Fuel Grade Americium PWR BFB Rod]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_plutonium_fuel|Billette de carburant au plutonium]].<br>- Établi (x9) : [[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]].<br><br>Sert à fabriquer :<br>[[gv:billet_plutonium_fuel|Billette de carburant au plutonium]], [[gv:ingot_plutonium_fuel|Lingot de carburant du plutonium]], [[gv:pwr_fuel_bfb_am_mix|Barre PWR BFB à l'américium de qualité combustible]]."
+ }
+}

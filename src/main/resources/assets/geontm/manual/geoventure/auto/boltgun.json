@@ -1,0 +1,19 @@
+{
+ "name": "gv:boltgun",
+ "icon": [
+  "geontm:boltgun"
+ ],
+ "trigger": [
+  [
+   "geontm:boltgun"
+  ]
+ ],
+ "title": {
+  "en_us": "Pneumatic Rivet Gun",
+  "fr_fr": "Pistolet à rivets pneumatique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x High-Speed Steel Ingot, [[gv:part_generic_piston_pneumatic|Pneumatic Piston]], Rubber Bar, shell (Steel).",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Lingot d'acier haute vitesse, [[gv:part_generic_piston_pneumatic|Piston pneumatique]], Barre en caoutchouc, coque (acier)."
+ }
+}

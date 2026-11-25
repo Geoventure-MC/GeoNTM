@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_australium_lesser",
+ "icon": [
+  "geontm:billet_australium_lesser"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_australium_lesser"
+  ]
+ ],
+ "title": {
+  "en_us": "Lesser Australium Billet",
+  "fr_fr": "Billet Australium-405"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_australium_lesser|Lesser Australium Nugget]].<br><br>Used to make :<br>[[gv:nugget_australium_lesser|Lesser Australium Nugget]], [[gv:rbmk_fuel_leaus|LEAus RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_australium_lesser|Pépite d'australium-405]].<br><br>Sert à fabriquer :<br>[[gv:nugget_australium_lesser|Pépite d'australium-405]], [[gv:rbmk_fuel_leaus|Barre de combustible LEAus RBMK]]."
+ }
+}

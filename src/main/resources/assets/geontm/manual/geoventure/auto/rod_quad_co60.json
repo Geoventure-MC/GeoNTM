@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_co60",
+ "icon": [
+  "geontm:rod_quad_co60"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_co60"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt-60 Quad Rod",
+  "fr_fr": "Quad Rod Cobalt-60"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_co|Cobalt Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Cobalt-60 Billet.<br><br>Used to make :<br>[[gv:billet_co60|Cobalt-60 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_co|Quadruple tige de cobalt]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billet de cobalt-60.<br><br>Sert à fabriquer :<br>[[gv:billet_co60|Billet de cobalt-60]]."
+ }
+}

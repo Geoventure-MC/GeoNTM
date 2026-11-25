@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_am_mix",
+ "icon": [
+  "geontm:ingot_am_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_am_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Reactor Grade Americium Ingot",
+  "fr_fr": "Lingot d'américium de qualité réacteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_am_mix|Reactor Grade Americium Billet]].<br>- Crafting table : 9 x [[gv:nugget_am_mix|Reactor Grade Americium Nugget]].<br>- Crafting table : 3 x Americium-241 Nugget, 6 x Americium-242 Nugget.<br><br>Used to make :<br>[[gv:billet_am_mix|Reactor Grade Americium Billet]], [[gv:nugget_am_mix|Reactor Grade Americium Nugget]], [[gv:nugget_am241|Americium-241 Nugget]], [[gv:nugget_am242|Americium-242 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_am_mix|Billet d'américium de qualité réacteur]].<br>- Établi : 9 x [[gv:nugget_am_mix|Pépite d'américium de qualité réacteur]].<br>- Établi : 3 x Pépite d'américium-241, 6 x Pépite d'américium-242.<br><br>Sert à fabriquer :<br>[[gv:billet_am_mix|Billet d'américium de qualité réacteur]], [[gv:nugget_am_mix|Pépite d'américium de qualité réacteur]], [[gv:nugget_am241|Pépite d'américium-241]], [[gv:nugget_am242|Pépite d'américium-242]]."
+ }
+}

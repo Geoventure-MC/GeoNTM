@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_awesome",
+ "icon": [
+  "geontm:syringe_awesome"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_awesome"
+  ]
+ ],
+ "title": {
+  "en_us": "AWESOME",
+  "fr_fr": "AWESOME!"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:syringe_empty|Empty Syringe]], 4 x dust (sulfur), 2 x Plutonium-239 Nugget, 2 x Plutonium-238 Nugget.<br>- Crafting table : [[gv:syringe_empty|Empty Syringe]], 4 x dust (sulfur), 2 x Plutonium-239 Nugget, 2 x Plutonium-238 Nugget.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:syringe_empty|Seringue vide]], 4 x poudre (sulfur), 2 x Pépite de Pu239, 2 x Pépite de Pu238.<br>- Établi : [[gv:syringe_empty|Seringue vide]], 4 x poudre (sulfur), 2 x Pépite de Pu239, 2 x Pépite de Pu238."
+ }
+}

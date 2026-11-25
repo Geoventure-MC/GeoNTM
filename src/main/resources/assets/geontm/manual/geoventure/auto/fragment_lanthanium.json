@@ -1,0 +1,19 @@
+{
+ "name": "gv:fragment_lanthanium",
+ "icon": [
+  "geontm:fragment_lanthanium"
+ ],
+ "trigger": [
+  [
+   "geontm:fragment_lanthanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Lanthanium Fragment",
+  "fr_fr": "Fragment de lanthane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]]."
+ }
+}

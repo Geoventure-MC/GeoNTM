@@ -1,0 +1,19 @@
+{
+ "name": "gv:mold_pipe",
+ "icon": [
+  "geontm:mold_pipe"
+ ],
+ "trigger": [
+  [
+   "geontm:mold_pipe"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Mold (Pipe)",
+  "fr_fr": "Moule de fonderie (Tuyau)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

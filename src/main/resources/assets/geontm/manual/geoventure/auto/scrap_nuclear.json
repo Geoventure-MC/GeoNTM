@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_nuclear",
+ "icon": [
+  "geontm:scrap_nuclear"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_nuclear"
+  ]
+ ],
+ "title": {
+  "en_us": "Radioactive Scraps",
+  "fr_fr": "Débris radioactifs"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_rockmill|Rock Mill]] : Sculk Vein, 250 mB Water.<br>- [[Shredder|Shredder]] (x2) : Broken Concrete.<br>- [[Shredder|Shredder]] (x4) : Broken ZIRNOX Fuel Element.<br>(6 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- [[gv:machine_rockmill|Broyeur à roche]] : Veine de sculk, 250 mB Eau.<br>- [[Shredder|Broyeur]] (x2) : Béton brisé.<br>- [[Shredder|Broyeur]] (x4) : Élément de combustible ZIRNOX brisé.<br>(6 autres recettes : voir JEI.)"
+ }
+}

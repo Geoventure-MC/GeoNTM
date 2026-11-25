@@ -1,0 +1,19 @@
+{
+ "name": "gv:thruster_nuclear",
+ "icon": [
+  "geontm:thruster_nuclear"
+ ],
+ "trigger": [
+  [
+   "geontm:thruster_nuclear"
+  ]
+ ],
+ "title": {
+  "en_us": "LV-N Nuclear Rocket Engine",
+  "fr_fr": "Moteur de fusée nucléaire LV-N"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 32 x High-Speed Steel Ingot, 8 x Boron Ingot, 16 x Lead Plate, 4 x pipe (Steel), 12 x calorite ingot - [[gv:schemas|blueprint required]]: Deep space.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 32 x Lingot d'acier haute vitesse, 8 x Lingot de bore, 16 x Plaque de plomb, 4 x tuyau (acier), 12 x calorite ingot - [[gv:schemas|schéma exigé]] : Espace lointain."
+ }
+}

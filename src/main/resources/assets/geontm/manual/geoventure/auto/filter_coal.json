@@ -1,0 +1,19 @@
+{
+ "name": "gv:filter_coal",
+ "icon": [
+  "geontm:filter_coal"
+ ],
+ "trigger": [
+  [
+   "geontm:filter_coal"
+  ]
+ ],
+ "title": {
+  "en_us": "Activated Carbon Filter",
+  "fr_fr": "Filtre au charbon actif"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x Coal Powder, 2 x String, Paper.<br><br>Used to make :<br>[[gv:pollution_detector|Pollution Detector]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Poudre de charbon, 2 x Ficelle, Papier.<br><br>Sert à fabriquer :<br>[[gv:pollution_detector|Détecteur de pollution]]."
+ }
+}

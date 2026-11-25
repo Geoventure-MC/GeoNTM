@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_sulfur",
+ "icon": [
+  "geontm:crystal_sulfur"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_sulfur"
+  ]
+ ],
+ "title": {
+  "en_us": "Sulfur Crystals",
+  "fr_fr": "Cristaux de soufre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (sulfur), 500 mB peroxide.<br><br>Used to make :<br>[[Sulfur|Sulfur]], [[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (sulfur), 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[Sulfur|Soufre]], [[gv:nugget_mercury|Petite goutte de mercure]]."
+ }
+}

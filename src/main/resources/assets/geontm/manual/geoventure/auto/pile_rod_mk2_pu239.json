@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_pu239",
+ "icon": [
+  "geontm:pile_rod_mk2_pu239"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_pu239"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Plutonium-239 Rod",
+  "fr_fr": "Barre de plutonium-239 de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Plutonium-239|Plutonium-239 Billet]], [[Uranium|Uranium Billet]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Plutonium-239|Billet de plutonium-239]], [[Uranium|Billet d'uranium]]."
+ }
+}

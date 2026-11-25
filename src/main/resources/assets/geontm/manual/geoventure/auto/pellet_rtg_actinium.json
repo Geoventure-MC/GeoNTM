@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_actinium",
+ "icon": [
+  "geontm:pellet_rtg_actinium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_actinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 RTG Pellet",
+  "fr_fr": "Pastille RTG Actinium-227"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_actinium|Actinium-227 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_actinium|Billette d'actinium-227]], Plaque de fer."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:briquette_wood",
+ "icon": [
+  "geontm:briquette_wood"
+ ],
+ "trigger": [
+  [
+   "geontm:briquette_wood"
+  ]
+ ],
+ "title": {
+  "en_us": "Sawdust Briquette",
+  "fr_fr": "Briquette de sciure"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Press|Burner Press]] : [[gv:powder_sawdust|Sawdust]].",
+  "fr_fr": "Obtention :<br>- [[Press|Presse à vapeur]] : [[gv:powder_sawdust|Sciure de bois]]."
+ }
+}

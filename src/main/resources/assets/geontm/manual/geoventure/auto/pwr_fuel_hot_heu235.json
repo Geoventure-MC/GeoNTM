@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hot_heu235",
+ "icon": [
+  "geontm:pwr_fuel_hot_heu235"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hot_heu235"
+  ]
+ ],
+ "title": {
+  "en_us": "Hot HEU-235 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEU-235 chaude"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

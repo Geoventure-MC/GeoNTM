@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_mox_fuel",
+ "icon": [
+  "geontm:nugget_mox_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_mox_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Nugget of MOX Fuel",
+  "fr_fr": "Pépite de combustible MOX"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_mox_fuel|MOX Fuel Billet]].<br>- Crafting table (x9) : [[gv:ingot_mox_fuel|Ingot of MOX Fuel]].<br><br>Used to make :<br>[[gv:billet_mox_fuel|MOX Fuel Billet]], [[gv:ingot_mox_fuel|Ingot of MOX Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_mox_fuel|Billet de combustible MOX]].<br>- Établi (x9) : [[gv:ingot_mox_fuel|Lingot de combustible MOX]].<br><br>Sert à fabriquer :<br>[[gv:billet_mox_fuel|Billet de combustible MOX]], [[gv:ingot_mox_fuel|Lingot de combustible MOX]]."
+ }
+}

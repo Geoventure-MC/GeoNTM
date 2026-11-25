@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_actinium_tiny",
+ "icon": [
+  "geontm:powder_actinium_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_actinium_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Actinium Powder",
+  "fr_fr": "Minuscule tas de poudre d'actinium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:powder_actinium|Actinium Powder]].<br>- [[Shredder|Shredder]] : Actinium-227 Fragment.<br><br>Used to make :<br>[[gv:powder_actinium|Actinium Powder]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:powder_actinium|Poudre d'actinium]].<br>- [[Shredder|Broyeur]] : Fragment d'actinium.<br><br>Sert à fabriquer :<br>[[gv:powder_actinium|Poudre d'actinium]]."
+ }
+}

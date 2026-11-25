@@ -1,0 +1,19 @@
+{
+ "name": "gv:sand_quartz",
+ "icon": [
+  "geontm:sand_quartz"
+ ],
+ "trigger": [
+  [
+   "geontm:sand_quartz"
+  ]
+ ],
+ "title": {
+  "en_us": "Quartz Sand",
+  "fr_fr": "Le sable de quartz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Sand, 2 x Quartz Powder.<br><br>Used to make :<br>[[gv:glass_quartz|Quartz Glass]], [[gv:ball_dynamite|Dynamite]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Sable, 2 x Poudre de quartz.<br><br>Sert à fabriquer :<br>[[gv:glass_quartz|Verre Quartz]], [[gv:ball_dynamite|Dynamiter]]."
+ }
+}

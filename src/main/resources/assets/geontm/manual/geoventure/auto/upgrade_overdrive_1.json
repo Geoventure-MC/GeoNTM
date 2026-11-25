@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_overdrive_1",
+ "icon": [
+  "geontm:upgrade_overdrive_1"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_overdrive_1"
+  ]
+ ],
+ "title": {
+  "en_us": "Overdrive Upgrade Mk.I",
+  "fr_fr": "Mise à niveau de la machine Overdrive Mk.I"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (ostrum), 16 x ingot (hard plastic), 16 x [[gv:circuit_advanced|Military Grade Circuit Board]].<br>- [[gv:machine_precass|Precision Assembly Machine]] : [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (ostrum), 16 x ingot (hard plastic), 16 x [[gv:circuit_advanced|Military Grade Circuit Board]].<br><br>Used to make :<br>[[gv:upgrade_overdrive_2|Overdrive Upgrade Mk.II]], [[gv:circuit_controller_quantum|Quantum Computer]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (ostrum), 16 x lingot (plastique dur), 16 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]].<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (ostrum), 16 x lingot (plastique dur), 16 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_overdrive_2|Mise à niveau de la machine Overdrive Mk.II]], [[gv:circuit_controller_quantum|Ordinateur quantique]]."
+ }
+}

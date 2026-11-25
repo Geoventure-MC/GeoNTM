@@ -1,0 +1,19 @@
+{
+ "name": "gv:pollution_detector",
+ "icon": [
+  "geontm:pollution_detector"
+ ],
+ "trigger": [
+  [
+   "geontm:pollution_detector"
+  ]
+ ],
+ "title": {
+  "en_us": "Pollution Detector",
+  "fr_fr": "Détecteur de pollution"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Steel Plate, [[gv:filter_coal|Activated Carbon Filter]], [[gv:circuit_vacuum_tube|Vacuum Tube]].",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Plaque d'acier, [[gv:filter_coal|Filtre au charbon actif]], [[gv:circuit_vacuum_tube|Tube à vide]]."
+ }
+}

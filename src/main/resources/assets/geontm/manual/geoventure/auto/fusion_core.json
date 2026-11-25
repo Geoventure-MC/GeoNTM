@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_core",
+ "icon": [
+  "geontm:fusion_core"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Fusion Core",
+  "fr_fr": "Noyau de fusion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Broken Toaster.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Grille-pain cassé."
+ }
+}

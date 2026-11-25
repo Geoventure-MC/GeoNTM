@@ -1,0 +1,19 @@
+{
+ "name": "gv:chunk_ore_cryolite",
+ "icon": [
+  "geontm:chunk_ore_cryolite"
+ ],
+ "trigger": [
+  [
+   "geontm:chunk_ore_cryolite"
+  ]
+ ],
+ "title": {
+  "en_us": "Cryolite Chunk",
+  "fr_fr": "Fragment de cryolithe"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (cryolite).<br>- Blast furnace : Raw Aluminium.<br>- Furnace : Aluminium-Bearing Ore.<br>(9 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (cryolite).<br>- Haut fourneau vanilla : Aluminium brut.<br>- Four : Minerai d'aluminium.<br>(9 autres recettes : voir JEI.)"
+ }
+}

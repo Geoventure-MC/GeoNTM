@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_paa_boots",
+ "icon": [
+  "geontm:hazmat_paa_boots"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_paa_boots"
+  ]
+ ],
+ "title": {
+  "en_us": "PaA Battle Hazmat Suit Boots",
+  "fr_fr": "Bottes de combinaison de combat hazmat"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:plate_paa|PaA Alloy Plate]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:plate_paa|Plaque d'alliage PaA]]."
+ }
+}

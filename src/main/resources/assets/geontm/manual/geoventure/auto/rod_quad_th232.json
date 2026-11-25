@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_th232",
+ "icon": [
+  "geontm:rod_quad_th232"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_th232"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium-232 Quad Rod",
+  "fr_fr": "Tige quadruple thorium-232"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x billet (thorium).<br><br>Used to make :<br>[[gv:rod_quad_thf|Thorium Fuel Quad Rod]], [[Thorium-232|Thorium-232 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x billette (thorium).<br><br>Sert à fabriquer :<br>[[gv:rod_quad_thf|Quadruple tige de combustible au thorium]], [[Thorium-232|Billet de thorium-232]]."
+ }
+}

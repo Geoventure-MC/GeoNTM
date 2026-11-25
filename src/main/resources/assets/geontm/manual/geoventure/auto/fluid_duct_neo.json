@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_duct_neo",
+ "icon": [
+  "geontm:fluid_duct_neo"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_duct_neo"
+  ]
+ ],
+ "title": {
+  "en_us": "Universal Fluid Duct",
+  "fr_fr": "Conduit de fluide universel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : fluid duct.<br>- Crafting table (x8) : 2 x Aluminium Plate, 4 x Steel Plate.<br><br>Used to make :<br>[[gv:struct_scaffold|Launch Pad Scaffold Block]].",
+  "fr_fr": "Obtention :<br>- Établi : fluid duct.<br>- Établi (x8) : 2 x Plaque d'aluminium, 4 x Plaque d'acier.<br><br>Sert à fabriquer :<br>[[gv:struct_scaffold|Bloc d'échafaudage de rampe de lancement]]."
+ }
+}

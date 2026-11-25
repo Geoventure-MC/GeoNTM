@@ -1,0 +1,19 @@
+{
+ "name": "gv:chemistry_set_boron",
+ "icon": [
+  "geontm:chemistry_set_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:chemistry_set_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Laboratory Glassware (Boron Glass)",
+  "fr_fr": "Verrerie de laboratoire (verre au bore)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:glass_boron|Boron Glass]], Steel Ingot, Cobalt Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:glass_boron|Verre de bore]], Lingot d'acier, Lingot de cobalt."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_vitrified_tiny",
+ "icon": [
+  "geontm:nuclear_waste_vitrified_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_vitrified_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Vitrified Nuclear Waste",
+  "fr_fr": "Petit tas de déchets nucléaires vitrifiés"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_depleted_mercury",
+ "icon": [
+  "geontm:pellet_rtg_depleted_mercury"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_depleted_mercury"
+  ]
+ ],
+ "title": {
+  "en_us": "Decayed Mercury RTG Pellet",
+  "fr_fr": "Pastille RTG de mercure appauvrie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:nugget_mercury|Petite goutte de mercure]]."
+ }
+}

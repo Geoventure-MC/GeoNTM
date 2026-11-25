@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_component",
+ "icon": [
+  "geontm:fusion_component"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_component"
+  ]
+ ],
+ "title": {
+  "en_us": "Superconducting BSCCO Coils",
+  "fr_fr": "Bobines BSCCO supraconductrices"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x2) : 5 x dense wire (BSCCO), pipe (Copper), ingot (resistant alloy), 4 x ingot (plastic), Reinforced Ferrouranium Panels, Plastic Panels - [[gv:schemas|blueprint required]]: Fusion.<br><br>Used to make :<br>[[gv:fusion_component_bscco_welded|Welded BSCCO Coils]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x2) : 5 x fil dense (bscco), tuyau (cuivre), lingot (alliage résistant), 4 x lingot (plastique), Panneaux de ferrouranium renforcé, Panneaux en plastique - [[gv:schemas|schéma exigé]] : Fusion.<br><br>Sert à fabriquer :<br>[[gv:fusion_component_bscco_welded|Bobines BSCCO soudées]]."
+ }
+}

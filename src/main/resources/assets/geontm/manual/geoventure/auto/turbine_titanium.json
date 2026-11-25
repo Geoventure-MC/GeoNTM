@@ -1,0 +1,19 @@
+{
+ "name": "gv:turbine_titanium",
+ "icon": [
+  "geontm:turbine_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:turbine_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Titanium Steam Turbine",
+  "fr_fr": "Turbine à vapeur en titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x [[gv:blade_titanium|Titanium Blade]], Steel Ingot.<br><br>Used to make :<br>[[Industrial Steam Turbine|Industrial Steam Turbine]], [[Leviathan Steam Turbine|Leviathan Steam Turbine]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x [[gv:blade_titanium|Lame en titane]], Lingot d'acier.<br><br>Sert à fabriquer :<br>[[Industrial Steam Turbine|Turbine à vapeur industrielle]], [[Leviathan Steam Turbine|Turbine à vapeur Léviathan]]."
+ }
+}

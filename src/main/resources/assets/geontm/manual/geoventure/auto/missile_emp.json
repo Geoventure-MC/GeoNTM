@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_emp",
+ "icon": [
+  "geontm:missile_emp"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_emp"
+  ]
+ ],
+ "title": {
+  "en_us": "EMP Missile",
+  "fr_fr": "Missile IEM"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:missile_assembly|Small Missile Assembly]], [[gv:ducttape|Duct Tape]], [[gv:emp_bomb|EMP Device]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:missile_assembly|Petit assemblage de missile]], [[gv:ducttape|Ruban adhésif]], [[gv:emp_bomb|Bombe IEM]]."
+ }
+}

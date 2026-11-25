@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_tank",
+ "icon": [
+  "geontm:foundry_tank"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_tank"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Storage Basin",
+  "fr_fr": "Bassin de stockage de fonderie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_firebrick|Firebrick]], 2 x Steel Ingot, Stone Slab.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_firebrick|Brique réfractaire]], 2 x Lingot d'acier, Dalle de roche."
+ }
+}

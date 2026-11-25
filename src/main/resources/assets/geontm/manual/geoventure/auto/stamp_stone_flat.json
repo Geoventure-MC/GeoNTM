@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_stone_flat",
+ "icon": [
+  "geontm:stamp_stone_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_stone_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Stamp (Stone)",
+  "fr_fr": "Moule plat (Pierre)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Brick, 3 x Stone.<br>- Crafting table : 3 x Nether Brick, 3 x Stone.<br><br>Used to make :<br>[[gv:stamp_stone_circuit|Circuit Stamp (Stone)]], [[gv:stamp_stone_plate|Plate Stamp (Stone)]], [[gv:stamp_stone_wire|Wire Stamp (Stone)]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Brique, 3 x Roche.<br>- Établi : 3 x Brique du Nether, 3 x Roche.<br><br>Sert à fabriquer :<br>[[gv:stamp_stone_circuit|Moule de circuit (Pierre)]], [[gv:stamp_stone_plate|Moule de plaque (Pierre)]], [[gv:stamp_stone_wire|Moule de fil (pierre)]]."
+ }
+}

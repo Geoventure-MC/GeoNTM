@@ -1,0 +1,19 @@
+{
+ "name": "gv:ducttape",
+ "icon": [
+  "geontm:ducttape"
+ ],
+ "trigger": [
+  [
+   "geontm:ducttape"
+  ]
+ ],
+ "title": {
+  "en_us": "Duct Tape",
+  "fr_fr": "Ruban adhésif"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : String, Slimeball, Paper.<br><br>Used to make :<br>[[gv:cladding_desh|Desh Cladding]], [[gv:cladding_ghiorsium|Ghiorsium Cladding]], [[gv:cladding_iron|Iron Cladding]], [[gv:cladding_lead|Lead Cladding]], [[gv:cladding_obsidian|Obsidian Skin]], [[gv:cladding_rubber|Rubber Cladding]], [[gv:missile_emp|EMP Missile]], [[gv:missile_micro|Micro-Nuclear Missile]], [[gv:sat_relay|Satellite Radar Relay]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : Ficelle, Boule de slime, Papier.<br><br>Sert à fabriquer :<br>[[gv:cladding_desh|Revêtement de Desh]], [[gv:cladding_ghiorsium|Bardage Ghiorsium]], [[gv:cladding_iron|Bardage en fer]], [[gv:cladding_lead|Revêtement en plomb]], [[gv:cladding_obsidian|Peau d'obsidienne]], [[gv:cladding_rubber|Revêtement en caoutchouc]], [[gv:missile_emp|Missile IEM]], [[gv:missile_micro|Missile micro-nucleaire]], [[gv:sat_relay|Relais radar satellite]]."
+ }
+}

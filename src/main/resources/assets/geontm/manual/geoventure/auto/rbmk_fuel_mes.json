@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_mes",
+ "icon": [
+  "geontm:rbmk_fuel_mes"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_mes"
+  ]
+ ],
+ "title": {
+  "en_us": "MES RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible MES RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]]."
+ }
+}

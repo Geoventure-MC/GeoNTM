@@ -1,0 +1,19 @@
+{
+ "name": "gv:iv_xp",
+ "icon": [
+  "geontm:iv_xp"
+ ],
+ "trigger": [
+  [
+   "geontm:iv_xp"
+  ]
+ ],
+ "title": {
+  "en_us": "Experience Bag",
+  "fr_fr": "Sac d'expérience"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

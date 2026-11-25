@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_depleted_heu233",
+ "icon": [
+  "geontm:pwr_fuel_depleted_heu233"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_depleted_heu233"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted HEU-233 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEU-233 appauvrie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Uranium-235|Uranium-235 Nugget]], [[Plutonium-238|Plutonium-238 Nugget]], [[Technetium|Technetium-99 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Uranium-235|Pépite de d'U235]], [[Plutonium-238|Pépite de Pu238]], [[Technetium|Pépite de technétium-99]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

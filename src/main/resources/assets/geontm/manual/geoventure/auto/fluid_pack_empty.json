@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_pack_empty",
+ "icon": [
+  "geontm:fluid_pack_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_pack_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Fluid Container",
+  "fr_fr": "Grand conteneur à fluide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x Titanium Plate, 2 x ingot (plastic).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Plaque en titane, 2 x lingot (plastique)."
+ }
+}

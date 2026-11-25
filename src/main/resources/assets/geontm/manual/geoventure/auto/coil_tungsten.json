@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_tungsten",
+ "icon": [
+  "geontm:coil_tungsten"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_tungsten"
+  ]
+ ],
+ "title": {
+  "en_us": "Heating Coil",
+  "fr_fr": "Bobine de tungstène"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Broken Toaster.<br>- Crafting table : 8 x wire (tungsten), Iron Ingot.<br>- Crafting table : 8 x wire (tungsten), Steel Ingot.<br><br>Used to make :<br>[[Electric Heater|Electric Heater]], [[Chemical Factory|Chemical Factory]], [[Chemical Plant|Chemical Plant]], [[Liquefactor|Industrial Liquefaction Machine]], [[gv:circuit_numitron|Incandescent Seven Segment Display]], [[Redstone-over-Radio Indicator Lights|Redstone-over-Radio Indicator Lights]], [[gv:upgrade_smelter|Smelter Upgrade]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Grille-pain cassé.<br>- Établi : 8 x fil (tungstène), Lingot de fer.<br>- Établi : 8 x fil (tungstène), Lingot d'acier.<br><br>Sert à fabriquer :<br>[[Electric Heater|Chauffage électrique]], [[Chemical Factory|Usine chimique]], [[Liquefactor|Machine de liquéfaction industrielle]], [[gv:circuit_numitron|Afficheur à sept segments à incandescence]], [[Redstone-over-Radio Indicator Lights|Voyants Redstone-over-Radio]], [[gv:upgrade_smelter|Mise à niveau de la fonderie]]."
+ }
+}

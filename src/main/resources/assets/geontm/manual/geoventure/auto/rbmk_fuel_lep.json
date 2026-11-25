@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_lep",
+ "icon": [
+  "geontm:rbmk_fuel_lep"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_lep"
+  ]
+ ],
+ "title": {
+  "en_us": "LEP-239 RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible LEP-239 RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_plutonium_fuel|Plutonium Fuel Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_plutonium_fuel|Billette de carburant au plutonium]]."
+ }
+}

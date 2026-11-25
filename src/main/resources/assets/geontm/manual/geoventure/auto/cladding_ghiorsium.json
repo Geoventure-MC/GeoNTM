@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_ghiorsium",
+ "icon": [
+  "geontm:cladding_ghiorsium"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_ghiorsium"
+  ]
+ ],
+ "title": {
+  "en_us": "Ghiorsium Cladding",
+  "fr_fr": "Bardage Ghiorsium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:cladding_desh|Desh Cladding]], 4 x [[gv:ingot_gh336|Ghiorsium-336 Ingot]], 4 x [[gv:ducttape|Duct Tape]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:cladding_desh|Revêtement de Desh]], 4 x [[gv:ingot_gh336|Lingot de Ghiorsium-336]], 4 x [[gv:ducttape|Ruban adhésif]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_strontium",
+ "icon": [
+  "geontm:pellet_rtg_strontium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_strontium"
+  ]
+ ],
+ "title": {
+  "en_us": "Strontium-90 RTG Pellet",
+  "fr_fr": "Pastille Strontium-90 RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_sr90|Strontium-90 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_sr90|Billet de strontium-90]], Plaque de fer."
+ }
+}

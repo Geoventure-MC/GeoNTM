@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_zr",
+ "icon": [
+  "geontm:pile_rod_mk2_zr"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_zr"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Zirconium Rod",
+  "fr_fr": "Barre de zirconium de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 3 x Zirconium Billet.<br>- [[Assembly Machine|Assembly Machine]] (x3) : Zirconium Billet - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 3 x Billet de zirconium.<br>- [[Assembly Machine|Machine d'assemblage]] (x3) : Billet de zirconium - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

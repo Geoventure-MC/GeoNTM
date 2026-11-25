@@ -1,0 +1,19 @@
+{
+ "name": "gv:plate_polymer",
+ "icon": [
+  "geontm:plate_polymer"
+ ],
+ "trigger": [
+  [
+   "geontm:plate_polymer"
+  ]
+ ],
+ "title": {
+  "en_us": "Insulator",
+  "fr_fr": "Isolateur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 8 x [[gv:fluid_duct_exhaust_0|Exhaust Pipe]].<br>- Industrial anvil (construction) : 8 x [[gv:fluid_duct_exhaust_1|Exhaust Pipe]].<br>- Industrial anvil (construction) : 8 x [[gv:fluid_duct_exhaust_2|Exhaust Pipe]].<br>(10 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:fluid_duct_exhaust_0|Exhaust Pipe]], [[Boiler|Heat Boiler]], [[gv:substation|Substation]], [[Chemical Plant|Chemical Plant]], [[gv:circuit_chip|Microchip]], [[gv:circuit_chip_bismoid|Versatile Integrated Circuit]], [[Oil Refinery|Oil Refinery]], [[gv:battery_redstone|Redstone Battery]], [[gv:block_insulator|Roll of Insulation]], [[gv:capacitor_copper|Copper Capacitor]] and 26 more.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 8 x [[gv:fluid_duct_exhaust_0|Tuyau d'échappement]].<br>- Enclume industrielle (construction) : 8 x [[gv:fluid_duct_exhaust_1|Tuyau d'échappement]].<br>- Enclume industrielle (construction) : 8 x [[gv:fluid_duct_exhaust_2|Tuyau d'échappement]].<br>(10 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:fluid_duct_exhaust_0|Tuyau d'échappement]], [[Boiler|Grande chaudière]], [[gv:substation|Sous-station]], [[Chemical Plant|Usine chimique]], [[gv:circuit_chip|Micropuce]], [[gv:circuit_chip_bismoid|Circuit intégré polyvalent]], [[Oil Refinery|Raffinerie de pétrole]], [[gv:battery_redstone|Batterie de redstone]], [[gv:block_insulator|Rouleau d'isolant]], [[gv:capacitor_copper|Condensateur en cuivre]] et 26 autres."
+ }
+}

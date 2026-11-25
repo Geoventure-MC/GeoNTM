@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_cooler",
+ "icon": [
+  "geontm:watz_cooler"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_cooler"
+  ]
+ ],
+ "title": {
+  "en_us": "Watz Reactor Supercooler",
+  "fr_fr": "Super-refroidisseur de réacteur Watz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x3) : 2 x cast plate (Steel), 4 x cast plate (Copper), 2 x Rubber Bar, 3 x Reinforced Ferrouranium Panels, 4 x Plastic Panels - [[gv:schemas|blueprint required]]: Fission reactors.<br><br>Used to make :<br>[[gv:struct_watz_core|Watz Powerplant Core Component]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x3) : 2 x plaque coulée (acier), 4 x plaque coulée (cuivre), 2 x Barre en caoutchouc, 3 x Panneaux de ferrouranium renforcé, 4 x Panneaux en plastique - [[gv:schemas|schéma exigé]] : Réacteurs à fission.<br><br>Sert à fabriquer :<br>[[gv:struct_watz_core|Composant central de la centrale Watz]]."
+ }
+}

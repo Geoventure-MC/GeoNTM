@@ -1,0 +1,19 @@
+{
+ "name": "gv:drive_flash_particlesim",
+ "icon": [
+  "geontm:drive_flash_particlesim"
+ ],
+ "trigger": [
+  [
+   "geontm:drive_flash_particlesim"
+  ]
+ ],
+ "title": {
+  "en_us": "Flash Drive (Particle Simulation Data)",
+  "fr_fr": "Clé USB (données de simulation de particules)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_supercomputer|Supercomputer]] (x2) : [[gv:drive_flash_particlesim|Flash Drive (Particle Simulation Data)]], [[gv:drive_flash_empty|Flash Drive (Empty)]].<br>- [[gv:machine_supercomputer|Supercomputer]] : [[gv:drive_flash_empty|Flash Drive (Empty)]], 16000 mB helium4.<br>- [[gv:machine_supercomputer|Supercomputer]] : [[gv:drive_flash_empty|Flash Drive (Empty)]], 16000 mB perfluoromethyl cold.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:struct_torus_core|Fusion Reactor Vessel Core Component]].",
+  "fr_fr": "Obtention :<br>- [[gv:machine_supercomputer|Superordinateur]] (x2) : [[gv:drive_flash_particlesim|Clé USB (données de simulation de particules)]], [[gv:drive_flash_empty|Clé USB (vide)]].<br>- [[gv:machine_supercomputer|Superordinateur]] : [[gv:drive_flash_empty|Clé USB (vide)]], 16000 mB helium4.<br>- [[gv:machine_supercomputer|Superordinateur]] : [[gv:drive_flash_empty|Clé USB (vide)]], 16000 mB perfluoromethyl cold.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:struct_torus_core|Composant central de la cuve du réacteur à fusion]]."
+ }
+}

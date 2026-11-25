@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_schrabidium_fuel",
+ "icon": [
+  "geontm:ingot_schrabidium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_schrabidium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Ingot of Schrabidium Fuel",
+  "fr_fr": "Lingot de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]].<br>- Crafting table (x9) : [[gv:block_schrabidium_fuel|Block of Schrabidium Fuel]].<br>- Crafting table : 9 x [[gv:nugget_schrabidium_fuel|Nugget of Schrabidium Fuel]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]], [[gv:block_schrabidium_fuel|Block of Schrabidium Fuel]], [[gv:nugget_schrabidium_fuel|Nugget of Schrabidium Fuel]], [[gv:watz_pellet_mes|MES Watz Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]].<br>- Établi (x9) : [[gv:block_schrabidium_fuel|Bloc de Combustible Schrabidium]].<br>- Établi : 9 x [[gv:nugget_schrabidium_fuel|Pépite de combustible de Schrabidium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]], [[gv:block_schrabidium_fuel|Bloc de Combustible Schrabidium]], [[gv:nugget_schrabidium_fuel|Pépite de combustible de Schrabidium]], [[gv:watz_pellet_mes|Pastille Watz MES]]."
+ }
+}

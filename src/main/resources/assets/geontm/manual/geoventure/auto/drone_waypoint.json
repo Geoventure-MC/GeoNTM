@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_waypoint",
+ "icon": [
+  "geontm:drone_waypoint"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_waypoint"
+  ]
+ ],
+ "title": {
+  "en_us": "Transport Drone Waypoint",
+  "fr_fr": "Point de passage de drone de transport"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : Green Dye, Redstone Torch, [[gv:circuit_basic|Integrated Circuit Board]].<br><br>Used to make :<br>[[gv:drone_crate|Transport Drone Crate]], [[gv:drone_linker|Transport Drone Linker]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : Teinture verte, Torche de redstone, [[gv:circuit_basic|Carte de circuit intégré]].<br><br>Sert à fabriquer :<br>[[gv:drone_crate|Caisse de drone de transport]], [[gv:drone_linker|Lieur de drones de transport]]."
+ }
+}

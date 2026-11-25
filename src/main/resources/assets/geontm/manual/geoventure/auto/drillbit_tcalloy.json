@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_tcalloy",
+ "icon": [
+  "geontm:drillbit_tcalloy"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_tcalloy"
+  ]
+ ],
+ "title": {
+  "en_us": "Technetium Steel Drill bit",
+  "fr_fr": "Foret en acier au technétium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 20 x ingot (resistant alloy), 12 x Desh Ingot, 8 x Rubber Bar.<br><br>Used to make :<br>[[gv:drillbit_tcalloy_diamond|Technetium Steel Drill bit (Diamond-Tipped)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 20 x lingot (alliage résistant), 12 x Lingot de desh, 8 x Barre en caoutchouc.<br><br>Sert à fabriquer :<br>[[gv:drillbit_tcalloy_diamond|Foret en acier au technétium (pointe diamant)]]."
+ }
+}

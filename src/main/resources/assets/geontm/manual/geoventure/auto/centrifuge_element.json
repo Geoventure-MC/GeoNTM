@@ -1,0 +1,19 @@
+{
+ "name": "gv:centrifuge_element",
+ "icon": [
+  "geontm:centrifuge_element"
+ ],
+ "trigger": [
+  [
+   "geontm:centrifuge_element"
+  ]
+ ],
+ "title": {
+  "en_us": "Centrifuge Element",
+  "fr_fr": "Élément de centrifugeuse"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x High-Speed Steel Plate, 4 x Titanium Plate, [[gv:motor|Motor]].<br><br>Used to make :<br>[[Centrifuge|Centrifuge]], [[Gas Centrifuge|Gas Centrifuge]], [[gv:upgrade_centrifuge|Centrifuge Upgrade]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x Plaque d'acier rapide, 4 x Plaque en titane, [[gv:motor|Moteur]].<br><br>Sert à fabriquer :<br>[[Centrifuge|Centrifugeuse]], [[Gas Centrifuge|Centrifugeuse à gaz]], [[gv:upgrade_centrifuge|Mise à niveau de la centrifugeuse]]."
+ }
+}

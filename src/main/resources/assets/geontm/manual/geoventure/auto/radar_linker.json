@@ -1,0 +1,19 @@
+{
+ "name": "gv:radar_linker",
+ "icon": [
+  "geontm:radar_linker"
+ ],
+ "trigger": [
+  [
+   "geontm:radar_linker"
+  ]
+ ],
+ "title": {
+  "en_us": "Radar Linker",
+  "fr_fr": "Liaison radar"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:crt_display|Cathode Ray Tube]], [[gv:circuit_basic|Integrated Circuit Board]], Steel Plate.<br><br>Used to make :<br>[[gv:sat_relay|Satellite Radar Relay]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:crt_display|Tube cathodique]], [[gv:circuit_basic|Carte de circuit intégré]], Plaque d'acier.<br><br>Sert à fabriquer :<br>[[gv:sat_relay|Relais radar satellite]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:disperser_canister_empty",
+ "icon": [
+  "geontm:disperser_canister_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:disperser_canister_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Disperser Canister",
+  "fr_fr": "Jerrican disperseur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 4 x ingot (hard plastic), [[gv:glass_boron|Boron Glass]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 4 x lingot (plastique dur), [[gv:glass_boron|Verre de bore]]."
+ }
+}

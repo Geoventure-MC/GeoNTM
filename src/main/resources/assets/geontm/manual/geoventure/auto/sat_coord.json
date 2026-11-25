@@ -1,0 +1,19 @@
+{
+ "name": "gv:sat_coord",
+ "icon": [
+  "geontm:sat_coord"
+ ],
+ "trigger": [
+  [
+   "geontm:sat_coord"
+  ]
+ ],
+ "title": {
+  "en_us": "Satellite Designator",
+  "fr_fr": "Désignateur satellite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Steel Ingot, 3 x 9Starmetal Ingotr, 2 x [[gv:plate_polymer|Insulator]], [[gv:sat_chip|Satellite ID-Chip]], [[gv:circuit_advanced|Military Grade Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Lingot d'acier, 3 x Lingot starmetal, 2 x [[gv:plate_polymer|Isolateur]], [[gv:sat_chip|Puce d'identification satellite]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]]."
+ }
+}

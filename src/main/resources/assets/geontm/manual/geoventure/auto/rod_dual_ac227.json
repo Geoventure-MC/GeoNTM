@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_ac227",
+ "icon": [
+  "geontm:rod_dual_ac227"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_ac227"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Dual Rod",
+  "fr_fr": "Actinium-227 double tige"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_dual_ra226|Radium-226 Dual Rod]].<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x Actinium-227 Billet.<br><br>Used to make :<br>[[gv:billet_actinium|Actinium-227 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_dual_ra226|Radium-226 double tige]].<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x Billette d'actinium-227.<br><br>Sert à fabriquer :<br>[[gv:billet_actinium|Billette d'actinium-227]]."
+ }
+}

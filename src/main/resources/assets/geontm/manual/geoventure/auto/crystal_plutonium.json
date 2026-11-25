@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_plutonium",
+ "icon": [
+  "geontm:crystal_plutonium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_plutonium"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium Crystals",
+  "fr_fr": "Cristaux de plutonium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (plutonium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (plutonium), 333 mB sulfuric acid.<br><br>Used to make :<br>[[Plutonium|Plutonium Powder]], [[gv:powder_polonium|Polonium-210 Powder]], [[Plutonium|Plutonium Ingot]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (plutonium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (plutonium), 333 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[Plutonium|Poudre de plutonium]], [[gv:powder_polonium|Poudre de polonium-210]], [[Plutonium|Lingot de plutonium]]."
+ }
+}

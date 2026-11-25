@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_component_motor",
+ "icon": [
+  "geontm:fusion_component_motor"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_component_motor"
+  ]
+ ],
+ "title": {
+  "en_us": "Fusion Reactor Piping",
+  "fr_fr": "Tuyauterie du réacteur à fusion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x ingot (hard plastic), 6 x pipe (Copper), 2 x [[gv:motor|Motor]], [[gv:circuit_basic|Integrated Circuit Board]], Plastic Panels, Extensive Circuit Board - [[gv:schemas|blueprint required]]: Fusion.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x lingot (plastique dur), 6 x tuyau (cuivre), 2 x [[gv:motor|Moteur]], [[gv:circuit_basic|Carte de circuit intégré]], Panneaux en plastique, Carte de circuits étendue - [[gv:schemas|schéma exigé]] : Fusion."
+ }
+}

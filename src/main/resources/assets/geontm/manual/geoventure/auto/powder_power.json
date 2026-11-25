@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_power",
+ "icon": [
+  "geontm:powder_power"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_power"
+  ]
+ ],
+ "title": {
+  "en_us": "Energy Powder",
+  "fr_fr": "Poudre d'énergie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x3) : Glowstone Dust, Diamond Powder, Magnetized Tungsten Powder.<br><br>Used to make :<br>[[gv:crystal_xen|Artificial Xen Crystal]], [[gv:powder_spark_mix|Spark Blend]].",
+  "fr_fr": "Obtention :<br>- Établi (x3) : Poudre lumineuse, Poudre de diamant, Poudre de tungstene aimante.<br><br>Sert à fabriquer :<br>[[gv:crystal_xen|Cristal Xen artificiel]], [[gv:powder_spark_mix|Mélange d'étincelles]]."
+ }
+}

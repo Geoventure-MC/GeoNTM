@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_uranium_fuel",
+ "icon": [
+  "geontm:ingot_uranium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_uranium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Ingot of Uranium Fuel",
+  "fr_fr": "Lingot d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_uranium_fuel|Uranium Fuel Billet]].<br>- Crafting table (x9) : [[gv:block_uranium_fuel|Block of Uranium Fuel]].<br>- Crafting table : 9 x [[gv:nugget_uranium_fuel|Nugget of Uranium Fuel]].<br><br>Used to make :<br>[[gv:billet_uranium_fuel|Uranium Fuel Billet]], [[gv:block_uranium_fuel|Block of Uranium Fuel]], [[gv:nugget_uranium_fuel|Nugget of Uranium Fuel]], [[gv:watz_pellet_meu|MEU Watz Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_uranium_fuel|Billet de carburant d'uranium]].<br>- Établi (x9) : [[gv:block_uranium_fuel|Bloc de combustible d'uranium]].<br>- Établi : 9 x [[gv:nugget_uranium_fuel|Pépite de combustible d'uranium]].<br><br>Sert à fabriquer :<br>[[gv:billet_uranium_fuel|Billet de carburant d'uranium]], [[gv:block_uranium_fuel|Bloc de combustible d'uranium]], [[gv:nugget_uranium_fuel|Pépite de combustible d'uranium]], [[gv:watz_pellet_meu|Pastille Watz MEU]]."
+ }
+}

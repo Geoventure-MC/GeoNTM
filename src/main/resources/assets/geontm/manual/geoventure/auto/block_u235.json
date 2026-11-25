@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_u235",
+ "icon": [
+  "geontm:block_u235"
+ ],
+ "trigger": [
+  [
+   "geontm:block_u235"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Uranium-235",
+  "fr_fr": "Bloc d'Uranium-235"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Uranium-235|Uranium-235 Ingot]].<br><br>Used to make :<br>[[Uranium-235|Uranium-235 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Uranium-235|Lingot d'd'U235]].<br><br>Sert à fabriquer :<br>[[Uranium-235|Lingot d'd'U235]]."
+ }
+}

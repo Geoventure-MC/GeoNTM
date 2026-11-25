@@ -1,0 +1,19 @@
+{
+ "name": "gv:fragment_cobalt",
+ "icon": [
+  "geontm:fragment_cobalt"
+ ],
+ "trigger": [
+  [
+   "geontm:fragment_cobalt"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt Fragment",
+  "fr_fr": "Fragment de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].<br><br>Used to make :<br>[[gv:powder_cobalt_tiny|Tiny Pile of Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]].<br><br>Sert à fabriquer :<br>[[gv:powder_cobalt_tiny|Minuscule tas de poudre de cobalt]]."
+ }
+}

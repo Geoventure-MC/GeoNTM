@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_lead",
+ "icon": [
+  "geontm:pellet_rtg_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-209 RTG Pellet",
+  "fr_fr": "Plomb-209 RTG Pellet"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_pb209|Lead-209 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_pb209|Billet de plomb-209]], Plaque de fer."
+ }
+}

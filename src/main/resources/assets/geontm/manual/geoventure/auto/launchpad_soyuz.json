@@ -1,0 +1,19 @@
+{
+ "name": "gv:launchpad_soyuz",
+ "icon": [
+  "geontm:launchpad_soyuz"
+ ],
+ "trigger": [
+  [
+   "geontm:launchpad_soyuz"
+  ]
+ ],
+ "title": {
+  "en_us": "Soyuz Launch Pad",
+  "fr_fr": "Rampe de lancement Soyouz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 128 x [[gv:concrete_rebar|Reinforced Concrete]], 48 x welded plate (Steel), 12 x welded plate (resistant alloy), 88 x ingot (hard plastic), 56 x [[gv:motor|Motor]], 2 x [[gv:circuit_controller_advanced|Advanced Control Unit]], 32 x Reinforced Ferrouranium Panels - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 128 x [[gv:concrete_rebar|Béton armé]], 48 x plaque soudée (acier), 12 x plaque soudée (alliage résistant), 88 x lingot (plastique dur), 56 x [[gv:motor|Moteur]], 2 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]], 32 x Panneaux de ferrouranium renforcé - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

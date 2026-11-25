@@ -1,0 +1,19 @@
+{
+ "name": "gv:ore_nether_schrabidium",
+ "icon": [
+  "geontm:ore_nether_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:ore_nether_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Nether Schrabidium Ore",
+  "fr_fr": "Minerais de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:ingot_schrabidium|Schrabidium Ingot]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:ingot_schrabidium|Lingot de Schrabidium]]."
+ }
+}

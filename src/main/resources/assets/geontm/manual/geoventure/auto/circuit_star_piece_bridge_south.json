@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_piece_bridge_south",
+ "icon": [
+  "geontm:circuit_star_piece_bridge_south"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_piece_bridge_south"
+  ]
+ ],
+ "title": {
+  "en_us": "SC - South Bridge",
+  "fr_fr": "SC - Pont sud"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:scrap_plastic_bridge_south|Plastic Scraps]], 500 mB peroxide.<br><br>Used to make :<br>[[gv:circuit_star_component_chipset|StarControl Chipset]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:scrap_plastic_bridge_south|Débris de plastique]], 500 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_component_chipset|Jeu de puces StarControl]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_request",
+ "icon": [
+  "geontm:drone_request"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_request"
+  ]
+ ],
+ "title": {
+  "en_us": "Logistics Drone",
+  "fr_fr": "Drone logistique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_patrol|Transport Drone]], [[gv:circuit_chip|Microchip]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_patrol|Drone de transport]], [[gv:circuit_chip|Micropuce]]."
+ }
+}

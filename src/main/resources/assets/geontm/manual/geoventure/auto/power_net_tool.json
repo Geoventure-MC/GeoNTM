@@ -1,0 +1,19 @@
+{
+ "name": "gv:power_net_tool",
+ "icon": [
+  "geontm:power_net_tool"
+ ],
+ "trigger": [
+  [
+   "geontm:power_net_tool"
+  ]
+ ],
+ "title": {
+  "en_us": "Cable Network Analysis Tool",
+  "fr_fr": "Outil d'analyse du réseau de câbles"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x wire (minecraft grade copper), dust (redstone), Iron Ingot, [[gv:battery_lead|Lead-Acid Battery]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x fil (minecraft grade cuivre), poudre (redstone), Lingot de fer, [[gv:battery_lead|Batterie plomb-acide]]."
+ }
+}

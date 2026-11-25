@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hen237",
+ "icon": [
+  "geontm:pwr_fuel_hen237"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hen237"
+  ]
+ ],
+ "title": {
+  "en_us": "HEN-237 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEN-237"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Neptunium Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billet de Neptunium-237, [[gv:plate_polymer|Isolateur]]."
+ }
+}

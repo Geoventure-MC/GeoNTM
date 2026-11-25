@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_heatsink",
+ "icon": [
+  "geontm:pwr_heatsink"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_heatsink"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Heatsink",
+  "fr_fr": "Dissipateur thermique PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 8 x plate (ostrum), 4 x cast plate (Copper), Reinforced Ferrouranium Panels - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 8 x plaque (ostrum), 4 x plaque coulée (cuivre), Panneaux de ferrouranium renforcé - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

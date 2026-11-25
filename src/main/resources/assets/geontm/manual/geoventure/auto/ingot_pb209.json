@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_pb209",
+ "icon": [
+  "geontm:ingot_pb209"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_pb209"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-209 Ingot",
+  "fr_fr": "Lingot de plomb 209"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_pb209|Lead-209 Billet]].<br>- Crafting table : 9 x [[gv:nugget_pb209|Lead-209 Nugget]].<br><br>Used to make :<br>[[gv:billet_pb209|Lead-209 Billet]], [[gv:nugget_pb209|Lead-209 Nugget]], [[Bismuth|Bismuth Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_pb209|Billet de plomb-209]].<br>- Établi : 9 x [[gv:nugget_pb209|Pépite de plomb 209]].<br><br>Sert à fabriquer :<br>[[gv:billet_pb209|Billet de plomb-209]], [[gv:nugget_pb209|Pépite de plomb 209]], [[Bismuth|Lingot de bismuth]]."
+ }
+}

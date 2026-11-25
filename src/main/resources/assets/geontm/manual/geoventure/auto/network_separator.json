@@ -1,0 +1,19 @@
+{
+ "name": "gv:network_separator",
+ "icon": [
+  "geontm:network_separator"
+ ],
+ "trigger": [
+  [
+   "geontm:network_separator"
+  ]
+ ],
+ "title": {
+  "en_us": "Network Separator",
+  "fr_fr": "Séparateur de réseau"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 2 x [[gv:coil_copper|Copper Coil]], 2 x [[gv:circuit_basic|Integrated Circuit Board]], 10k-20Hz Transformer.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 2 x [[gv:coil_copper|Bobine de cuivre]], 2 x [[gv:circuit_basic|Carte de circuit intégré]], Transformateur."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_mea",
+ "icon": [
+  "geontm:pwr_fuel_mea"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_mea"
+  ]
+ ],
+ "title": {
+  "en_us": "MEA PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR MEA"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:billet_am_mix|Reactor Grade Americium Billet]], [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:billet_am_mix|Billet d'américium de qualité réacteur]], [[gv:plate_polymer|Isolateur]]."
+ }
+}

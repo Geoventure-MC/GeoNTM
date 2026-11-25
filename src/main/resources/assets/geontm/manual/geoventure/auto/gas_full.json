@@ -1,0 +1,19 @@
+{
+ "name": "gv:gas_full",
+ "icon": [
+  "geontm:gas_full"
+ ],
+ "trigger": [
+  [
+   "geontm:gas_full"
+  ]
+ ],
+ "title": {
+  "en_us": "Gas Tank",
+  "fr_fr": "Bonbonne de gaz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

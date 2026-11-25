@@ -1,0 +1,19 @@
+{
+ "name": "gv:catalytic_converter",
+ "icon": [
+  "geontm:catalytic_converter"
+ ],
+ "trigger": [
+  [
+   "geontm:catalytic_converter"
+  ]
+ ],
+ "title": {
+  "en_us": "Catalytic Converter",
+  "fr_fr": "Pot catalytique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x ingot (hard plastic), 2 x Cobalt Powder, ingot (bismoid).",
+  "fr_fr": "Obtention :<br>- Établi : 6 x lingot (plastique dur), 2 x Poudre de cobalt, lingot (bismoïde)."
+ }
+}

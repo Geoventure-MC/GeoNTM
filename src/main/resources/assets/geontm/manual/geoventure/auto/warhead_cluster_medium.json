@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_cluster_medium",
+ "icon": [
+  "geontm:warhead_cluster_medium"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_cluster_medium"
+  ]
+ ],
+ "title": {
+  "en_us": "Medium Cluster Warhead",
+  "fr_fr": "Ogive à sous munitions moyenne"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_medium|Medium Warhead]], 4 x [[gv:pellet_cluster|Explosive Pellets]] - [[gv:schemas|blueprint required]]: Heavy warheads.<br><br>Used to make :<br>[[gv:missile_cluster_strong|Strong Cluster Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_medium|Ogive moyen]], 4 x [[gv:pellet_cluster|Amas d'explosifs]] - [[gv:schemas|schéma exigé]] : Ogives lourdes.<br><br>Sert à fabriquer :<br>[[gv:missile_cluster_strong|Missile à sous munitions Tier2]]."
+ }
+}

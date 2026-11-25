@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_long_uranium233",
+ "icon": [
+  "geontm:nuclear_waste_long_uranium233"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_long_uranium233"
+  ]
+ ],
+ "title": {
+  "en_us": "Long-Lived Nuclear Waste",
+  "fr_fr": "Déchets nucléaires à vie longue"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste_long_tiny_uranium233|Tiny Pile of Long-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_long_tiny_uranium233|Tiny Pile of Long-Lived Nuclear Waste]], [[Uranium-235|Uranium-235 Nugget]], [[Neptunium|Neptunium Nugget]], [[Plutonium-239|Plutonium-239 Nugget]], [[Technetium|Technetium-99 Nugget]], [[gv:nuclear_waste_long_depleted_uranium233|Decayed Long-Lived Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste_long_tiny_uranium233|Minuscule tas de déchets nucléaires à longue durée de vie]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_long_tiny_uranium233|Minuscule tas de déchets nucléaires à longue durée de vie]], [[Uranium-235|Pépite de d'U235]], [[Neptunium|Pépite de neptunium]], [[Plutonium-239|Pépite de Pu239]], [[Technetium|Pépite de technétium-99]], [[gv:nuclear_waste_long_depleted_uranium233|Déchets nucléaires à vie longue décomposés]]."
+ }
+}

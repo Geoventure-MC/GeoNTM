@@ -1,0 +1,19 @@
+{
+ "name": "gv:sat_dock",
+ "icon": [
+  "geontm:sat_dock"
+ ],
+ "trigger": [
+  [
+   "geontm:sat_dock"
+  ]
+ ],
+ "title": {
+  "en_us": "Cargo Landing Pad",
+  "fr_fr": "Aire d'atterrissage de fret"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x ingot (resistant alloy), 8 x ingot (hard plastic), [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x lingot (alliage résistant), 8 x lingot (plastique dur), [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_australium",
+ "icon": [
+  "geontm:powder_australium"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_australium"
+  ]
+ ],
+ "title": {
+  "en_us": "Australium Powder",
+  "fr_fr": "Poudre d'Australium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Cyclotron|Cyclotron]] : [[gv:part_plutonium|Box of Plutonium Dust]], [[gv:powder_tennessine|Tennessine Powder]].<br><br>Used to make :<br>[[gv:ingot_australium|Australium Ingot]], [[gv:nugget_australium_lesser|Lesser Australium Nugget]], [[gv:nugget_australium_greater|Greater Australium Nugget]].",
+  "fr_fr": "Obtention :<br>- machine_cyclotron : [[gv:part_plutonium|Boîte de poussière de plutonium]], [[gv:powder_tennessine|Poudre de Tennessine]].<br><br>Sert à fabriquer :<br>[[gv:ingot_australium|Lingot d'australium]], [[gv:nugget_australium_lesser|Pépite d'australium-405]], [[gv:nugget_australium_greater|Pépite d'australium-406]]."
+ }
+}

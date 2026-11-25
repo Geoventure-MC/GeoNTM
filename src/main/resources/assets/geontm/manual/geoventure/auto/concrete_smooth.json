@@ -1,0 +1,19 @@
+{
+ "name": "gv:concrete_smooth",
+ "icon": [
+  "geontm:concrete_smooth"
+ ],
+ "trigger": [
+  [
+   "geontm:concrete_smooth"
+  ]
+ ],
+ "title": {
+  "en_us": "Concrete",
+  "fr_fr": "Béton"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : concrete white.<br>- Crafting table : concrete ext machine.<br>- [[Chemical Plant|Chemical Plant]] (x16) : [[gv:powder_cement|Cement]], 8 x Gravel, 8 x Sand, 2000 mB Water.<br><br>Used to make :<br>[[Condenser|Cooling Tower]], [[gv:brick_concrete|Concrete Bricks]].",
+  "fr_fr": "Obtention :<br>- Établi : concrete white.<br>- Établi : concrete ext machine.<br>- [[Chemical Plant|Usine chimique]] (x16) : [[gv:powder_cement|Ciment]], 8 x Gravier, 8 x Sable, 2000 mB Eau.<br><br>Sert à fabriquer :<br>[[Condenser|Tour de refroidissement]], [[gv:brick_concrete|Briques en béton]]."
+ }
+}

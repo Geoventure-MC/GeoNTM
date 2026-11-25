@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_rare",
+ "icon": [
+  "geontm:crystal_rare"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_rare"
+  ]
+ ],
+ "title": {
+  "en_us": "Rare Earth Crystals",
+  "fr_fr": "Cristaux de terres rares"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (rare), 500 mB sulfuric acid.<br><br>Used to make :<br>[[gv:powder_desh_mix|Desh Blend]], [[gv:nugget_zirconium|Zirconium Splinter]], [[gv:laser_crystal_bismuth|BiSmUTh Laser Crystal]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (rare), 500 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[gv:powder_desh_mix|Mélange de Desh]], [[gv:nugget_zirconium|Éclat de zirconium]], [[gv:laser_crystal_bismuth|Cristal Laser BismUTh]]."
+ }
+}

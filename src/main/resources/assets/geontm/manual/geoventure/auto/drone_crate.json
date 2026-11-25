@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_crate",
+ "icon": [
+  "geontm:drone_crate"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_crate"
+  ]
+ ],
+ "title": {
+  "en_us": "Transport Drone Crate",
+  "fr_fr": "Caisse de drone de transport"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_waypoint|Transport Drone Waypoint]], [[gv:crate_steel|Steel Crate]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_waypoint|Point de passage de drone de transport]], [[gv:crate_steel|Caisse en acier]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_uranium",
+ "icon": [
+  "geontm:rod_uranium"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_uranium"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium Rod",
+  "fr_fr": "Tige d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Uranium Billet.<br><br>Used to make :<br>[[gv:rod_rgp|Reactor-Grade Plutonium Rod]], [[Uranium|Uranium Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_empty|Tige vide]], Billet d'uranium.<br><br>Sert à fabriquer :<br>[[gv:rod_rgp|Tige de plutonium de qualité réacteur]], [[Uranium|Billet d'uranium]]."
+ }
+}

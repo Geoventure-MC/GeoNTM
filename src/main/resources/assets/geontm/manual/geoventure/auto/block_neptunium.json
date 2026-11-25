@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_neptunium",
+ "icon": [
+  "geontm:block_neptunium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_neptunium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Neptunium",
+  "fr_fr": "Bloc de Neptunium-237"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Neptunium|Neptunium Ingot]].<br><br>Used to make :<br>[[Neptunium|Neptunium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Neptunium|Lingot de neptunium]].<br><br>Sert à fabriquer :<br>[[Neptunium|Lingot de neptunium]]."
+ }
+}

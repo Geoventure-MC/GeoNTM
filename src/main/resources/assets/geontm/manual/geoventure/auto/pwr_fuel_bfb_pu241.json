@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_bfb_pu241",
+ "icon": [
+  "geontm:pwr_fuel_bfb_pu241"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_bfb_pu241"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium-241 PWR BFB Rod",
+  "fr_fr": "Barre PWR BFB au plutonium-241"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Plutonium-241 Billet, [[gv:plate_polymer|Insulator]], Bismuth Billet, 6 x [[gv:nugget_uranium_fuel|Nugget of Uranium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : Billet de plutonium-241, [[gv:plate_polymer|Isolateur]], Billet de bismuth, 6 x [[gv:nugget_uranium_fuel|Pépite de combustible d'uranium]]."
+ }
+}

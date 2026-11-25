@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_ferro",
+ "icon": [
+  "geontm:drillbit_ferro"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_ferro"
+  ]
+ ],
+ "title": {
+  "en_us": "Ferrouranium Drill bit",
+  "fr_fr": "Foret en ferrouranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 24 x Ferrouranium Ingot, 12 x ingot (resistant alloy), 4 x Bismuth Ingot.<br><br>Used to make :<br>[[gv:drillbit_ferro_diamond|Ferrouranium Drill bit (Diamond-Tipped)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 24 x Lingot de ferrouranium, 12 x lingot (alliage résistant), 4 x Lingot de bismuth.<br><br>Sert à fabriquer :<br>[[gv:drillbit_ferro_diamond|Foret en ferrouranium (pointe diamant)]]."
+ }
+}

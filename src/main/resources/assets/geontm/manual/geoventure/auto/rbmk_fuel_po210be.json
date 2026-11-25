@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_po210be",
+ "icon": [
+  "geontm:rbmk_fuel_po210be"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_po210be"
+  ]
+ ],
+ "title": {
+  "en_us": "Po210Be RBMK Neutron Source",
+  "fr_fr": "Source de neutrons Po210Be RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_po210be|Po210Be Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_po210be|Billet Po210Be]]."
+ }
+}

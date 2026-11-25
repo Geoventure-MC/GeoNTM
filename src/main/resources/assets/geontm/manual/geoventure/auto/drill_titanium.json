@@ -1,0 +1,19 @@
+{
+ "name": "gv:drill_titanium",
+ "icon": [
+  "geontm:drill_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:drill_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Titanium Drill",
+  "fr_fr": "Foret en titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : cast plate (High-Speed Steel), 8 x Titanium Plate.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : plaque coulée (acier haute vitesse), 8 x Plaque en titane."
+ }
+}

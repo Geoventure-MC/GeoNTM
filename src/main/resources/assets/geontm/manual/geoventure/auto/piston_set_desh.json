@@ -1,0 +1,19 @@
+{
+ "name": "gv:piston_set_desh",
+ "icon": [
+  "geontm:piston_set_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:piston_set_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Piston Set",
+  "fr_fr": "Jeu de pistons en Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 24 x Desh Ingot, 12 x ingot (plastic), 24 x Copper Plate, 16 x Tungsten Ingot, 4 x pipe (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 24 x Lingot de desh, 12 x lingot (plastique), 24 x Plaque de cuivre, 16 x Lingot de tungstène, 4 x tuyau (acier haute vitesse)."
+ }
+}

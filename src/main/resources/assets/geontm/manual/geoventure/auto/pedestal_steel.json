@@ -1,0 +1,19 @@
+{
+ "name": "gv:pedestal_steel",
+ "icon": [
+  "geontm:pedestal_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:pedestal_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Pedestal",
+  "fr_fr": "Piédestal en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 3 x Steel Ingot.<br><br>Used to make :<br>[[Missile Assembly Station|Missile Assembly Station]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 3 x Lingot d'acier.<br><br>Sert à fabriquer :<br>[[Missile Assembly Station|Station d'assemblage de missiles]]."
+ }
+}

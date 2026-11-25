@@ -1,0 +1,19 @@
+{
+ "name": "gv:vitrified_barrel",
+ "icon": [
+  "geontm:vitrified_barrel"
+ ],
+ "trigger": [
+  [
+   "geontm:vitrified_barrel"
+  ]
+ ],
+ "title": {
+  "en_us": "Vitrified Nuclear Waste Drum",
+  "fr_fr": "Fût de déchets nucléaires vitrifiés"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:tank_steel|Steel Tank]], 2 x Lead Plate, 10 x [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].<br>- [[Assembly Machine|Assembly Machine]] : [[gv:tank_steel|Steel Tank]], 2 x Lead Plate, 10 x [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].<br><br>Used to make :<br>[[gv:tank_steel|Steel Tank]], [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:tank_steel|Réservoir en acier]], 2 x Plaque de plomb, 10 x [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]].<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:tank_steel|Réservoir en acier]], 2 x Plaque de plomb, 10 x [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]].<br><br>Sert à fabriquer :<br>[[gv:tank_steel|Réservoir en acier]], [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]]."
+ }
+}

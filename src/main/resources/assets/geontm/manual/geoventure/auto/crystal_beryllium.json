@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_beryllium",
+ "icon": [
+  "geontm:crystal_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Beryllium Crystals",
+  "fr_fr": "Cristaux de béryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (beryllium), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (beryllium), 333 mB peroxide.<br><br>Used to make :<br>[[gv:powder_beryllium|Beryllium Powder]], [[gv:ingot_beryllium|Beryllium Ingot]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (beryllium), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (beryllium), 333 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:powder_beryllium|Poudre de beryllium]], [[gv:ingot_beryllium|Lingot de beryllium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_ferro_diamond",
+ "icon": [
+  "geontm:drillbit_ferro_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_ferro_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "Ferrouranium Drill bit (Diamond-Tipped)",
+  "fr_fr": "Foret en ferrouranium (pointe diamant)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:drillbit_ferro|Ferrouranium Drill bit]], 56 x Diamond Powder.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:drillbit_ferro|Foret en ferrouranium]], 56 x Poudre de diamant."
+ }
+}

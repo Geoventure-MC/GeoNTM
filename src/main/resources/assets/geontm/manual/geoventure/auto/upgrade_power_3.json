@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_power_3",
+ "icon": [
+  "geontm:upgrade_power_3"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_power_3"
+  ]
+ ],
+ "title": {
+  "en_us": "Power Saving Upgrade Mk.III",
+  "fr_fr": "Amélioration bleue Mk.III"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_precass|Precision Assembly Machine]] : 16 x [[gv:circuit_chip|Microchip]], 16 x [[gv:circuit_capacitor_tantalium|Tantalum Capacitor]], [[gv:upgrade_power_2|Power Saving Upgrade Mk.II]], 4 x Rubber Bar, 500 mB solvent.<br>- [[Soldering Station|Soldering Station]] : 500 mB solvent, 16 x [[gv:circuit_chip|Microchip]], 16 x [[gv:circuit_capacitor|Capacitor]], [[gv:upgrade_power_2|Power Saving Upgrade Mk.II]], 4 x Rubber Bar.",
+  "fr_fr": "Obtention :<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 16 x [[gv:circuit_chip|Micropuce]], 16 x [[gv:circuit_capacitor_tantalium|Condensateur au tantale]], [[gv:upgrade_power_2|Amélioration bleue Mk.II]], 4 x Barre en caoutchouc, 500 mB solvent.<br>- [[Soldering Station|Station de soudure]] : 500 mB solvent, 16 x [[gv:circuit_chip|Micropuce]], 16 x [[gv:circuit_capacitor|Condensateur]], [[gv:upgrade_power_2|Amélioration bleue Mk.II]], 4 x Barre en caoutchouc."
+ }
+}

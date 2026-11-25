@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_c_5",
+ "icon": [
+  "geontm:mp_c_5"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_c_5"
+  ]
+ ],
+ "title": {
+  "en_us": "Tier 5 Missile Targeting Circuit",
+  "fr_fr": "Circuit de ciblage de missiles de niveau 5"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : ingot (rubber), [[gv:circuit_bismoid|Versatile Circuit Board]], Steel Scaffold.",
+  "fr_fr": "Obtention :<br>- Établi : lingot (caoutchouc), [[gv:circuit_bismoid|Carte de circuit polyvalente]], Échafaudage en acier."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_depleted_bfb_pu241",
+ "icon": [
+  "geontm:pwr_fuel_depleted_bfb_pu241"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_depleted_bfb_pu241"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted Plutonium-241 PWR BFB Rod",
+  "fr_fr": "Barre PWR BFB au plutonium-241 appauvrie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Plutonium-241|Plutonium-241 Nugget]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Nugget]], [[Bismuth|Bismuth Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Plutonium-241|Pépite de plutonium-241]], [[Reactor-Grade Plutonium|Pépite de plutonium de qualité réacteur]], [[Bismuth|Pépite de bismuth]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

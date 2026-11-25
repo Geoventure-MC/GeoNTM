@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_pu238",
+ "icon": [
+  "geontm:rod_pu238"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_pu238"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium-238 Rod",
+  "fr_fr": "Tige de Pu238"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_np237|Neptunium-237 Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Plutonium-238 Billet.<br><br>Used to make :<br>[[gv:rod_pu239|Plutonium-239 Rod]], [[Plutonium-238|Plutonium-238 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_np237|Tige de neptunium-237]].<br>- Établi : [[gv:rod_empty|Tige vide]], Billet de plutonium-238.<br><br>Sert à fabriquer :<br>[[gv:rod_pu239|Tige de Pu239]], [[Plutonium-238|Billet de plutonium-238]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_cobalt_tiny",
+ "icon": [
+  "geontm:powder_cobalt_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_cobalt_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Cobalt Powder",
+  "fr_fr": "Minuscule tas de poudre de cobalt"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:powder_cobalt|Cobalt Powder]].<br>- [[Centrifuge|Centrifuge]] (x2) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].<br>- [[Centrifuge|Centrifuge]] : [[gv:crystal_copper|Copper Crystals]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:powder_cobalt|Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:powder_cobalt|Poudre de cobalt]].<br>- [[Centrifuge|Centrifugeuse]] (x2) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]].<br>- [[Centrifuge|Centrifugeuse]] : [[gv:crystal_copper|Cristaux de cuivre]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:powder_cobalt|Poudre de cobalt]]."
+ }
+}

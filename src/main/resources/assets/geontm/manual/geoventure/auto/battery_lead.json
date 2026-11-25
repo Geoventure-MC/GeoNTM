@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_lead",
+ "icon": [
+  "geontm:battery_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-Acid Battery",
+  "fr_fr": "Batterie plomb-acide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 4 x Steel Plate, 4 x Lead Ingot, 8000 mB sulfuric acid.<br><br>Used to make :<br>[[gv:power_net_tool|Cable Network Analysis Tool]], [[gv:struct_launcher_core|Compact Launcher Core Component]], [[gv:struct_launcher_core_large|Launch Table Core Component]], [[gv:struct_soyuz_core|Soyuz Launcher Core Component]].",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 4 x Plaque d'acier, 4 x Lingot de plomb, 8000 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[gv:power_net_tool|Outil d'analyse du réseau de câbles]], [[gv:struct_launcher_core|Composant central du lanceur compact]], [[gv:struct_launcher_core_large|Lancer le composant de base de la table]], [[gv:struct_soyuz_core|Composant principal du lanceur Soyouz]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_casing",
+ "icon": [
+  "geontm:pwr_casing"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_casing"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Pressure Vessel",
+  "fr_fr": "Cuve sous pression PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x Lead Plate, 8 x Concrete Tile, Radiation Resistant Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x Plaque de plomb, 8 x Tuile de béton, Plaques résistantes aux radiations - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

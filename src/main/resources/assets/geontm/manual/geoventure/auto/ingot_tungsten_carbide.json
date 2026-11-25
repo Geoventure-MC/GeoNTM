@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_tungsten_carbide",
+ "icon": [
+  "geontm:ingot_tungsten_carbide"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_tungsten_carbide"
+  ]
+ ],
+ "title": {
+  "en_us": "Tungsten Carbide Ingot",
+  "fr_fr": "Lingot de carbure de tungstène"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Pyrolysis Oven|Pyrolysis Oven]] : 2000 mB syngas, Tungsten Powder.<br><br>Used to make :<br>Lambda-98.",
+  "fr_fr": "Obtention :<br>- [[Pyrolysis Oven|Four de pyrolyse]] : 2000 mB syngas, Poudre de tungstène."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_lid_glass",
+ "icon": [
+  "geontm:rbmk_lid_glass"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_lid_glass"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Glass Cover Panel",
+  "fr_fr": "Panneau de couverture en verre RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x Steel Plate, 3 x [[gv:glass_lead|Lead Glass]], 3 x [[gv:glass_boron|Boron Glass]].<br>- Crafting table (x4) : 2 x Steel Plate, 3 x [[gv:glass_lead|Lead Glass]], 3 x [[gv:glass_boron|Boron Glass]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x Plaque d'acier, 3 x [[gv:glass_lead|Verre au plomb]], 3 x [[gv:glass_boron|Verre de bore]].<br>- Établi (x4) : 2 x Plaque d'acier, 3 x [[gv:glass_lead|Verre au plomb]], 3 x [[gv:glass_boron|Verre de bore]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_component_ram",
+ "icon": [
+  "geontm:circuit_star_component_ram"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_component_ram"
+  ]
+ ],
+ "title": {
+  "en_us": "StarControl RAM",
+  "fr_fr": "RAM StarControl"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_star_piece_mem_socket|SC - Memory Socket]], [[gv:circuit_star_piece_mem_16k_a|SC - 16k Memory Stick Slot A]], [[gv:circuit_star_piece_mem_16k_b|SC - 16k Memory Stick Slot B]], [[gv:circuit_star_piece_mem_16k_c|SC - 16k Memory Stick Slot C]], [[gv:circuit_star_piece_mem_16k_d|SC - 16k Memory Stick Slot D]].<br><br>Used to make :<br>[[gv:circuit_star|StarControl Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_star_piece_mem_socket|SC - Support mémoire]], [[gv:circuit_star_piece_mem_16k_a|SC - Emplacement barrette mémoire 16k A]], [[gv:circuit_star_piece_mem_16k_b|SC - Emplacement barrette mémoire 16k B]], [[gv:circuit_star_piece_mem_16k_c|SC - Emplacement barrette mémoire 16k C]], [[gv:circuit_star_piece_mem_16k_d|SC - Emplacement barrette mémoire 16k D]].<br><br>Sert à fabriquer :<br>[[gv:circuit_star|Carte de circuit StarControl]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:thruster_medium",
+ "icon": [
+  "geontm:thruster_medium"
+ ],
+ "trigger": [
+  [
+   "geontm:thruster_medium"
+  ]
+ ],
+ "title": {
+  "en_us": "Medium Thruster",
+  "fr_fr": "Propulseur moyen"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 8 x Steel Plate, [[gv:motor|Motor]], 8 x Graphite Ingot.<br><br>Used to make :<br>[[gv:missile_burst|Spare Missile]], [[gv:missile_buster_strong|Enhanced Bunker Buster]], [[gv:missile_cluster_strong|Strong Cluster Missile]], [[gv:missile_drill|The Concrete Cracker]], [[gv:missile_emp_strong|Strong EMP Missile]], [[gv:missile_incendiary_strong|Strong Incendiary Missile]], [[gv:missile_inferno|Inferno Missile G.R.N. Mk.II]], [[gv:missile_rain|Bomblet Rain]], [[gv:missile_strong|Strong HE Missile]], [[gv:satellite_miner_astro|Asteroid Mining Ship]] and 2 more.",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 8 x Plaque d'acier, [[gv:motor|Moteur]], 8 x Lingot de graphite.<br><br>Sert à fabriquer :<br>[[gv:missile_burst|Missile du pardon]], [[gv:missile_buster_strong|Bunker buster Tier2]], [[gv:missile_cluster_strong|Missile à sous munitions Tier2]], [[gv:missile_drill|Le craqueleur de béton]], [[gv:missile_emp_strong|Missile EMP puissant]], [[gv:missile_incendiary_strong|Missile incendiaire Tier2]], [[gv:missile_inferno|Missile Inferno GRN Mk.II]], [[gv:missile_rain|Pluie de sous-munitions]], [[gv:missile_strong|Missile explosif Tier2]], [[gv:satellite_miner_astro|Vaisseau minier d'astéroïdes]] et 2 autres."
+ }
+}

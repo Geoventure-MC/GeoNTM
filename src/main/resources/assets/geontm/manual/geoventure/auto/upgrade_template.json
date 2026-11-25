@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_template",
+ "icon": [
+  "geontm:upgrade_template"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_template"
+  ]
+ ],
+ "title": {
+  "en_us": "Machine Upgrade Template",
+  "fr_fr": "Amélioration de machine"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x wire (copper), 2 x Iron Plate, [[gv:circuit_analog|Analog Circuit Board]], 2 x [[gv:plate_polymer|Insulator]].<br>- Crafting table : 4 x wire (copper), 2 x ingot (plastic), [[gv:circuit_basic|Integrated Circuit Board]], 2 x [[gv:plate_polymer|Insulator]].<br><br>Used to make :<br>[[gv:upgrade_afterburn_1|Afterburner Upgrade Mk.I]], [[gv:upgrade_effect_1|Effectiveness Upgrade Mk.I]], [[gv:upgrade_fortune_1|Fortune Upgrade Mk.I]], [[gv:upgrade_health|Emitter Health Upgrade]], [[gv:upgrade_power_1|Power Saving Upgrade Mk.I]], [[gv:upgrade_radius|Emitter Radius Upgrade]], [[gv:upgrade_speed_1|Speed Upgrade Mk.I]], [[gv:upgrade_5g|5G Radiation Emitter Upgrade]], [[gv:upgrade_ejector_1|Ejection Speed Upgrade Mk.I]], [[gv:upgrade_gc_speed|Gas Centrifuge Overclocking Upgrade]] and 4 more.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x fil (cuivre), 2 x Plaque de fer, [[gv:circuit_analog|Carte de circuit analogique]], 2 x [[gv:plate_polymer|Isolateur]].<br>- Établi : 4 x fil (cuivre), 2 x lingot (plastique), [[gv:circuit_basic|Carte de circuit intégré]], 2 x [[gv:plate_polymer|Isolateur]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_afterburn_1|Amélioration rose Mk.I]], [[gv:upgrade_effect_1|Amélioration verte Mk.I]], [[gv:upgrade_fortune_1|Amélioration pourpre mk.I]], [[gv:upgrade_health|Mise à niveau de la santé de l'émetteur]], [[gv:upgrade_power_1|Amélioration bleue Mk.I]], [[gv:upgrade_radius|Mise à niveau du rayon de l'émetteur]], [[gv:upgrade_speed_1|Amélioration rouge Mk.I]], [[gv:upgrade_5g|Amélioration émetteur de radiations 5G]], [[gv:upgrade_ejector_1|Amélioration de la vitesse d'éjection Mk.I]], [[gv:upgrade_gc_speed|Amélioration de surrégime de centrifugeuse à gaz]] et 4 autres."
+ }
+}

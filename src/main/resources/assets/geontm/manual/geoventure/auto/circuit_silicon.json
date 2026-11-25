@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_silicon",
+ "icon": [
+  "geontm:circuit_silicon"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_silicon"
+  ]
+ ],
+ "title": {
+  "en_us": "Printed Silicon Wafer",
+  "fr_fr": "Tranche de silicium imprimée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Press|Burner Press]] : Silicon Wafer.<br><br>Used to make :<br>[[gv:circuit_chip|Microchip]], [[gv:circuit_chip_bismoid|Versatile Integrated Circuit]], [[gv:circuit_chip_quantum|Solid State Quantum Processor]].",
+  "fr_fr": "Obtention :<br>- [[Press|Presse à vapeur]] : Tranche de silicium.<br><br>Sert à fabriquer :<br>[[gv:circuit_chip|Micropuce]], [[gv:circuit_chip_bismoid|Circuit intégré polyvalent]], [[gv:circuit_chip_quantum|Processeur quantique à semi-conducteurs]]."
+ }
+}

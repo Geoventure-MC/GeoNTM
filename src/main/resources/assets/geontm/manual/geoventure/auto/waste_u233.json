@@ -1,0 +1,19 @@
+{
+ "name": "gv:waste_u233",
+ "icon": [
+  "geontm:waste_u233"
+ ],
+ "trigger": [
+  [
+   "geontm:waste_u233"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted Uranium-233 Fuel",
+  "fr_fr": "Combustible d'uranium-233 appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Uranium-235|Uranium-235 Nugget]], [[Neptunium|Neptunium Nugget]], [[Technetium|Technetium-99 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Uranium-235|Pépite de d'U235]], [[Neptunium|Pépite de neptunium]], [[Technetium|Pépite de technétium-99]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

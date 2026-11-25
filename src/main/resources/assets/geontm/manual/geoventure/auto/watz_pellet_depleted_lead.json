@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_depleted_lead",
+ "icon": [
+  "geontm:watz_pellet_depleted_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_depleted_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Absorber Pellet (Depleted)",
+  "fr_fr": "Pastille absorbante de plomb (épuisée)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[Bismuth|Bismuth Nugget]], [[gv:nuclear_waste|Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[Bismuth|Pépite de bismuth]], [[gv:nuclear_waste|Déchets nucléaires]]."
+ }
+}

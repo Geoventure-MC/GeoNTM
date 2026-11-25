@@ -1,0 +1,19 @@
+{
+ "name": "gv:steel_grate_wide",
+ "icon": [
+  "geontm:steel_grate_wide"
+ ],
+ "trigger": [
+  [
+   "geontm:steel_grate_wide"
+  ]
+ ],
+ "title": {
+  "en_us": "Item Grate",
+  "fr_fr": "Grille à objets"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x [[gv:steel_grate|Steel Grate]].<br><br>Used to make :<br>[[gv:steel_grate|Steel Grate]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x [[gv:steel_grate|Grille en acier]].<br><br>Sert à fabriquer :<br>[[gv:steel_grate|Grille en acier]]."
+ }
+}

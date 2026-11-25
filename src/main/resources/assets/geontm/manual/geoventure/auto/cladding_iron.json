@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_iron",
+ "icon": [
+  "geontm:cladding_iron"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_iron"
+  ]
+ ],
+ "title": {
+  "en_us": "Iron Cladding",
+  "fr_fr": "Bardage en fer"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Iron Plate, 2 x [[gv:plate_polymer|Insulator]], [[gv:ducttape|Duct Tape]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Plaque de fer, 2 x [[gv:plate_polymer|Isolateur]], [[gv:ducttape|Ruban adhésif]]."
+ }
+}

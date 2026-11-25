@@ -1,0 +1,19 @@
+{
+ "name": "gv:biomass",
+ "icon": [
+  "geontm:biomass"
+ ],
+ "trigger": [
+  [
+   "geontm:biomass"
+  ]
+ ],
+ "title": {
+  "en_us": "Biomass",
+  "fr_fr": "Biomasse"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 6 x Hemp.<br>- Crafting table (x4) : Sugar, 5 x [[gv:powder_sawdust|Sawdust]].<br>- Crafting table (x4) : Sugar, 2 x [[gv:powder_sawdust|Sawdust]], 3 x Apple.<br>(15 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:biomass_compressed|Compressed Biomass]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 6 x Chanvre.<br>- Établi (x4) : Sucre, 5 x [[gv:powder_sawdust|Sciure de bois]].<br>- Établi (x4) : Sucre, 2 x [[gv:powder_sawdust|Sciure de bois]], 3 x Pomme.<br>(15 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:biomass_compressed|Biomasse comprimée]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_neptunium_fuel",
+ "icon": [
+  "geontm:ingot_neptunium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_neptunium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Neptunium Fuel Ingot",
+  "fr_fr": "Lingot de carburant de neptunium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_neptunium_fuel|Neptunium Fuel Billet]].<br>- Crafting table : 9 x [[gv:nugget_neptunium_fuel|Neptunium Fuel Nugget]].<br><br>Used to make :<br>[[gv:billet_neptunium_fuel|Neptunium Fuel Billet]], [[gv:nugget_neptunium_fuel|Neptunium Fuel Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_neptunium_fuel|Billette de carburant Neptunium]].<br>- Établi : 9 x [[gv:nugget_neptunium_fuel|Pépite de carburant Neptunium]].<br><br>Sert à fabriquer :<br>[[gv:billet_neptunium_fuel|Billette de carburant Neptunium]], [[gv:nugget_neptunium_fuel|Pépite de carburant Neptunium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:wiring_red_copper",
+ "icon": [
+  "geontm:wiring_red_copper"
+ ],
+ "trigger": [
+  [
+   "geontm:wiring_red_copper"
+  ]
+ ],
+ "title": {
+  "en_us": "Cable Drum",
+  "fr_fr": "Tambour de câble"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x Steel Plate, Steel Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 8 x Plaque d'acier, Lingot d'acier."
+ }
+}

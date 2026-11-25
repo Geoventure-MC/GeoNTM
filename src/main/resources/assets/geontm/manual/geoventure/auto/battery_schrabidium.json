@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_schrabidium",
+ "icon": [
+  "geontm:battery_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Battery",
+  "fr_fr": "Batterie de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 24 x Schrabidium Powder, 8 x cast plate (bismoid bronze), 8000 mB helium4.",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 24 x Poudre de schrabidium, 8 x plaque coulée (bronze bismoïde), 8000 mB helium4."
+ }
+}

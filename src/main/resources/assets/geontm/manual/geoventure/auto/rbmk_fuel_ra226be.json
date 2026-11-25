@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_ra226be",
+ "icon": [
+  "geontm:rbmk_fuel_ra226be"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_ra226be"
+  ]
+ ],
+ "title": {
+  "en_us": "Ra226Be RBMK Neutron Source",
+  "fr_fr": "Source de neutrons Ra226Be RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_ra226be|Ra226Be Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_ra226be|Billette Ra226Be]]."
+ }
+}

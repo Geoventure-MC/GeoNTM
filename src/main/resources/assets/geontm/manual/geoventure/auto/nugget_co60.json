@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_co60",
+ "icon": [
+  "geontm:nugget_co60"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_co60"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt-60 Nugget",
+  "fr_fr": "Pépite de cobalt-60"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_co60|Cobalt-60 Billet]].<br>- Crafting table (x9) : [[gv:ingot_co60|Cobalt-60 Ingot]].<br>- [[PUREX|PUREX]] (x6) : [[gv:watz_pellet_depleted_boron|Boron Absorber Pellet (Depleted)]], 500 mB kerosene, 250 mB nitric acid.<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_co60|Cobalt-60 Billet]], [[gv:ingot_co60|Cobalt-60 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_co60|Billet de cobalt-60]].<br>- Établi (x9) : [[gv:ingot_co60|Lingot de cobalt 60]].<br>- machine_purex (x6) : [[gv:watz_pellet_depleted_boron|Pastille absorbante de bore (épuisée)]], 500 mB kerosene, 250 mB nitric acid.<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_co60|Billet de cobalt-60]], [[gv:ingot_co60|Lingot de cobalt 60]]."
+ }
+}

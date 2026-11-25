@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel",
+ "icon": [
+  "geontm:pwr_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x cast plate (Lead), 4 x welded plate (Zirconium Cube), Radiation Resistant Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x plaque coulée (plomb), 4 x plaque soudée (cube de zirconium), Plaques résistantes aux radiations - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

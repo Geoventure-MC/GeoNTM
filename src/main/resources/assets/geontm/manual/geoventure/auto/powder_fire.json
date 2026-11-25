@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_fire",
+ "icon": [
+  "geontm:powder_fire"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_fire"
+  ]
+ ],
+ "title": {
+  "en_us": "Red Phosphorus",
+  "fr_fr": "Poudre de flamme"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (red phosphorus).<br>- Furnace (x6) : [[gv:crystal_phosphorus|Phosphorus Crystals]].<br>- Crafting table (x9) : [[gv:block_red_phosphorus|Block of Red Phosphorus]].<br>(8 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:block_red_phosphorus|Block of Red Phosphorus]], [[gv:upgrade_nullifier|Scrap Destroyer Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (red phosphorus).<br>- Four (x6) : [[gv:crystal_phosphorus|Cristaux de phosphore]].<br>- Établi (x9) : [[gv:block_red_phosphorus|Bloc de phosphore rouge]].<br>(8 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:block_red_phosphorus|Bloc de phosphore rouge]], [[gv:upgrade_nullifier|Mise à niveau du destructeur de ferraille]]."
+ }
+}

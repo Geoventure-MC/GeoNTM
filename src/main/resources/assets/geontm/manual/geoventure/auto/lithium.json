@@ -1,0 +1,19 @@
+{
+ "name": "gv:lithium",
+ "icon": [
+  "geontm:lithium"
+ ],
+ "trigger": [
+  [
+   "geontm:lithium"
+  ]
+ ],
+ "title": {
+  "en_us": "Lithium Cube",
+  "fr_fr": "Cube de lithium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Blast furnace : Raw Lithium.<br>- Furnace : Schist Lithium Ore.<br>- Furnace : Lithium Powder.<br>(7 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Haut fourneau vanilla : Lithium brut.<br>- Four : Minerai de lithium de schiste.<br>- Four : Poudre de lithium.<br>(7 autres recettes : voir JEI.)"
+ }
+}

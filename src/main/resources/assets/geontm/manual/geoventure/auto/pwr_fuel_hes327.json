@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hes327",
+ "icon": [
+  "geontm:pwr_fuel_hes327"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hes327"
+  ]
+ ],
+ "title": {
+  "en_us": "HES-327 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HES-327"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Solinium Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billet de Solinium-327, [[gv:plate_polymer|Isolateur]]."
+ }
+}

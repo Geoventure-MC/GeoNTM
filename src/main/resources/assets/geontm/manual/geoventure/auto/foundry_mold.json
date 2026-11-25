@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_mold",
+ "icon": [
+  "geontm:foundry_mold"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_mold"
+  ]
+ ],
+ "title": {
+  "en_us": "Shallow Foundry Basin",
+  "fr_fr": "Bassin de fonderie peu profond"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_firebrick|Firebrick]], Stone Slab.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_firebrick|Brique réfractaire]], Dalle de roche."
+ }
+}

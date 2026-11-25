@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_waste",
+ "icon": [
+  "geontm:block_waste"
+ ],
+ "trigger": [
+  [
+   "geontm:block_waste"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Nuclear Waste",
+  "fr_fr": "Bloc de dechets nucleaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste|Nuclear Waste]].<br><br>Used to make :<br>[[gv:block_waste_painted|Painted Block of Nuclear Waste]], [[gv:nuclear_waste|Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste|Déchets nucléaires]].<br><br>Sert à fabriquer :<br>[[gv:block_waste_painted|Bloc peint de déchets nucléaires]], [[gv:nuclear_waste|Déchets nucléaires]]."
+ }
+}

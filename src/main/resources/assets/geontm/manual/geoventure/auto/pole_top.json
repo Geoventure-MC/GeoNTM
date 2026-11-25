@@ -1,0 +1,19 @@
+{
+ "name": "gv:pole_top",
+ "icon": [
+  "geontm:pole_top"
+ ],
+ "trigger": [
+  [
+   "geontm:pole_top"
+  ]
+ ],
+ "title": {
+  "en_us": "Antenna Top",
+  "fr_fr": "Antenne Haut"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Tungsten Ingot, 3 x Beryllium Ingot, Minecraft Grade Copper Ingot.<br><br>Used to make :<br>[[gv:ingot_beryllium|Beryllium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de tungstène, 3 x Lingot de beryllium, Minecraft Grade Cuivre.<br><br>Sert à fabriquer :<br>[[gv:ingot_beryllium|Lingot de beryllium]]."
+ }
+}

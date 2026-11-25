@@ -1,0 +1,19 @@
+{
+ "name": "gv:sat_relay",
+ "icon": [
+  "geontm:sat_relay"
+ ],
+ "trigger": [
+  [
+   "geontm:sat_relay"
+  ]
+ ],
+ "title": {
+  "en_us": "Satellite Radar Relay",
+  "fr_fr": "Relais radar satellite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:sat_chip|Satellite ID-Chip]], [[gv:ducttape|Duct Tape]], [[gv:radar_linker|Radar Linker]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:sat_chip|Puce d'identification satellite]], [[gv:ducttape|Ruban adhésif]], [[gv:radar_linker|Liaison radar]]."
+ }
+}

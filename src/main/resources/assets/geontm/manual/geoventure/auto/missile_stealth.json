@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_stealth",
+ "icon": [
+  "geontm:missile_stealth"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_stealth"
+  ]
+ ],
+ "title": {
+  "en_us": "Stealth Missile",
+  "fr_fr": "Missile furtif"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 20 x Titanium Plate, 20 x Aluminium Plate, 16 x dye (black), 16 x ingot (hard plastic), 4 x ingot (high explosive), 4 x [[gv:circuit_advanced|Military Grade Circuit Board]], 32 x bolt (Steel) - [[gv:schemas|blueprint required]]: Heavy warheads.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 20 x Plaque en titane, 20 x Plaque d'aluminium, 16 x colorant (black), 16 x lingot (plastique dur), 4 x lingot (explosif puissant), 4 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 32 x boulon (acier) - [[gv:schemas|schéma exigé]] : Ogives lourdes."
+ }
+}

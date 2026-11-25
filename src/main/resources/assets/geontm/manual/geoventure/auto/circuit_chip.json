@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_chip",
+ "icon": [
+  "geontm:circuit_chip"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_chip"
+  ]
+ ],
+ "title": {
+  "en_us": "Microchip",
+  "fr_fr": "Micropuce"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:plate_polymer|Insulator]], [[gv:circuit_silicon|Printed Silicon Wafer]], wire (Gold).<br>- [[gv:machine_precass|Precision Assembly Machine]] : [[gv:circuit_silicon|Printed Silicon Wafer]], 3 x [[gv:plate_polymer|Insulator]], 4 x wire (Gold).<br><br>Used to make :<br>[[gv:circuit_atomic_clock|Atomic Clock]], [[gv:drive_flash_empty|Flash Drive (Empty)]], [[gv:warhead_generic_small|Small Warhead]], [[gv:drone_request|Logistics Drone]], [[gv:fluid_counter_valve|Fluid Valve with Counter]], [[gv:pipette_laboratory|Laboratory Grade Pipette]], [[gv:circuit_controller|Control Unit]], [[gv:upgrade_afterburn_2|Afterburner Upgrade Mk.II]], [[gv:upgrade_afterburn_3|Afterburner Upgrade Mk.III]], [[gv:upgrade_effect_2|Effectiveness Upgrade Mk.II]] and 14 more.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:plate_polymer|Isolateur]], [[gv:circuit_silicon|Tranche de silicium imprimée]], fil (or).<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : [[gv:circuit_silicon|Tranche de silicium imprimée]], 3 x [[gv:plate_polymer|Isolateur]], 4 x fil (or).<br><br>Sert à fabriquer :<br>[[gv:circuit_atomic_clock|Horloge atomique]], [[gv:drive_flash_empty|Clé USB (vide)]], [[gv:warhead_generic_small|Petite ogive]], [[gv:drone_request|Drone logistique]], [[gv:fluid_counter_valve|Vanne de fluide avec compteur]], [[gv:pipette_laboratory|Pipette de qualité laboratoire]], [[gv:circuit_controller|Unité de contrôle]], [[gv:upgrade_afterburn_2|Amélioration rose Mk.II]], [[gv:upgrade_afterburn_3|Amélioration rose Mk.III]], [[gv:upgrade_effect_2|Amélioration verte Mk.II]] et 14 autres."
+ }
+}

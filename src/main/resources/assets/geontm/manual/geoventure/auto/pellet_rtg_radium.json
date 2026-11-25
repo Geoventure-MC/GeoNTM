@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_radium",
+ "icon": [
+  "geontm:pellet_rtg_radium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_radium"
+  ]
+ ],
+ "title": {
+  "en_us": "Radium-226 RTG Pellet",
+  "fr_fr": "Pastille Radium-226 RTG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[Radium-226|Radium-226 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[Radium-226|Billet de radium-226]], Plaque de fer."
+ }
+}

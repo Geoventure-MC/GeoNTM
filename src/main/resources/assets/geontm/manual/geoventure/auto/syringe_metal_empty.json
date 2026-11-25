@@ -1,0 +1,19 @@
+{
+ "name": "gv:syringe_metal_empty",
+ "icon": [
+  "geontm:syringe_metal_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:syringe_metal_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Metal Syringe",
+  "fr_fr": "Seringue en métal"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : Iron Bars, [[gv:rod_empty|Empty Rod]], Iron Plate.<br><br>Used to make :<br>Med-X, Psycho, Stimpak.",
+  "fr_fr": "Obtention :<br>- Établi (x6) : Barreaux de fer, [[gv:rod_empty|Tige vide]], Plaque de fer."
+ }
+}

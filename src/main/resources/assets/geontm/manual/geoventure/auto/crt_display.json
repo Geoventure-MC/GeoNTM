@@ -1,0 +1,19 @@
+{
+ "name": "gv:crt_display",
+ "icon": [
+  "geontm:crt_display"
+ ],
+ "trigger": [
+  [
+   "geontm:crt_display"
+  ]
+ ],
+ "title": {
+  "en_us": "Cathode Ray Tube",
+  "fr_fr": "Tube cathodique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[RBMK Automatic Control Rods|RBMK Automatic Control Rods]].<br>- Crafting table (x4) : Aluminium Powder, 2 x Steel Plate, Glass Pane, [[gv:circuit_vacuum_tube|Vacuum Tube]].<br><br>Used to make :<br>[[Radar|Radar]], [[Large Radar|Large Radar]], [[gv:circuit_controller_chassis|Control Unit Casing]], [[gv:radar_linker|Radar Linker]], [[gv:radar_screen|Radar Screen]], [[RBMK Automatic Control Rods|RBMK Automatic Control Rods]], [[gv:rbmk_display|RBMK Display Panel]], [[Redstone-over-Radio Graph|Redstone-over-Radio Graph]], [[Redstone-over-Radio Terminal|Redstone-over-Radio Terminal]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[RBMK Automatic Control Rods|Barres de contrôle automatique RBMK]].<br>- Établi (x4) : Poudre d'aluminium, 2 x Plaque d'acier, Vitre, [[gv:circuit_vacuum_tube|Tube à vide]].<br><br>Sert à fabriquer :<br>[[Large Radar|Grand radar]], [[gv:circuit_controller_chassis|Boîtier de l'unité de contrôle]], [[gv:radar_linker|Liaison radar]], [[gv:radar_screen|Écran radar]], [[RBMK Automatic Control Rods|Barres de contrôle automatique RBMK]], [[gv:rbmk_display|Panneau d'affichage RBMK]], [[Redstone-over-Radio Graph|Graphique Redstone-over-Radio]], [[Redstone-over-Radio Terminal|Terminal Redstone-over-Radio]]."
+ }
+}

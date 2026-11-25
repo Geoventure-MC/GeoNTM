@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_channel",
+ "icon": [
+  "geontm:pwr_channel"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_channel"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Coolant Channel",
+  "fr_fr": "Canal de refroidissement PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 8 x pipe (Steel), 4 x Copper Plate, 2 x Bolted Steel Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 8 x tuyau (acier), 4 x Plaque de cuivre, 2 x Plaques d'acier boulonnées - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

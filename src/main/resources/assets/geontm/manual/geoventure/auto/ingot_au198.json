@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_au198",
+ "icon": [
+  "geontm:ingot_au198"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_au198"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold-198 Ingot",
+  "fr_fr": "Lingot d'or-198"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_au198|Gold-198 Billet]].<br>- Furnace : [[gv:powder_au198|Gold-198 Powder]].<br>- Crafting table : 9 x [[gv:nugget_au198|Gold-198 Nugget]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_au198|Gold-198 Billet]], [[gv:nugget_au198|Gold-198 Nugget]], [[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_au198|Billet d'or-198]].<br>- Four : [[gv:powder_au198|Poudre d'or-198]].<br>- Établi : 9 x [[gv:nugget_au198|Pépite d'or-198]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_au198|Billet d'or-198]], [[gv:nugget_au198|Pépite d'or-198]], [[gv:nugget_mercury|Petite goutte de mercure]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:template_folder",
+ "icon": [
+  "geontm:template_folder"
+ ],
+ "trigger": [
+  [
+   "geontm:template_folder"
+  ]
+ ],
+ "title": {
+  "en_us": "Machine Template Folder",
+  "fr_fr": "Dossier de patrons"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Paper, 6 x dyes.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Papier, 6 x dyes."
+ }
+}

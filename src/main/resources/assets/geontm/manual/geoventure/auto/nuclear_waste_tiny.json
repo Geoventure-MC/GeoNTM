@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_tiny",
+ "icon": [
+  "geontm:nuclear_waste_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Nuclear Waste",
+  "fr_fr": "Petit tas de déchets nucléaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_nuclear_waste|Nuclear Waste Billet]].<br>- [[Gas Centrifuge|Gas Centrifuge]] : 1000 mB Watz Powerplant.<br>- Crafting table (x9) : [[gv:nuclear_waste|Nuclear Waste]].<br>(45 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_nuclear_waste|Nuclear Waste Billet]], [[gv:nuclear_waste|Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_nuclear_waste|Billet de déchets nucléaires]].<br>- [[Gas Centrifuge|Centrifugeuse à gaz]] : 1000 mB Centrale Watz.<br>- Établi (x9) : [[gv:nuclear_waste|Déchets nucléaires]].<br>(45 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_nuclear_waste|Billet de déchets nucléaires]], [[gv:nuclear_waste|Déchets nucléaires]]."
+ }
+}

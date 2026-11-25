@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_hss_diamond",
+ "icon": [
+  "geontm:drillbit_hss_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_hss_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Speed Steel Drill bit (Diamond-Tipped)",
+  "fr_fr": "Foret en acier rapide (pointe diamant)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:drillbit_hss|High-Speed Steel Drill bit]], 24 x Diamond Powder.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:drillbit_hss|Foret en acier rapide]], 24 x Poudre de diamant."
+ }
+}

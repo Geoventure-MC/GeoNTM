@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_ac227",
+ "icon": [
+  "geontm:rod_ac227"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_ac227"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Rod",
+  "fr_fr": "Tige d'actinium-227"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_ra226|Radium-226 Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Actinium-227 Billet.<br><br>Used to make :<br>[[gv:billet_actinium|Actinium-227 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_ra226|Tige de radium-226]].<br>- Établi : [[gv:rod_empty|Tige vide]], Billette d'actinium-227.<br><br>Sert à fabriquer :<br>[[gv:billet_actinium|Billette d'actinium-227]]."
+ }
+}

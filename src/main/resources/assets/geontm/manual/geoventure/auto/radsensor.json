@@ -1,0 +1,19 @@
+{
+ "name": "gv:radsensor",
+ "icon": [
+  "geontm:radsensor"
+ ],
+ "trigger": [
+  [
+   "geontm:radsensor"
+  ]
+ ],
+ "title": {
+  "en_us": "Radiation Sensor",
+  "fr_fr": "Capteur de rayonnement"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:geiger_counter|Handheld Geiger Counter]], [[gv:circuit_basic|Integrated Circuit Board]], 5 x Steel Plate.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:geiger_counter|Compteur Geiger]], [[gv:circuit_basic|Carte de circuit intégré]], 5 x Plaque d'acier."
+ }
+}

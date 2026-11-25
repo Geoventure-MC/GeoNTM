@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuel_additive_antiknock",
+ "icon": [
+  "geontm:fuel_additive_antiknock"
+ ],
+ "trigger": [
+  [
+   "geontm:fuel_additive_antiknock"
+  ]
+ ],
+ "title": {
+  "en_us": "Tetraethyllead Antiknock Agent",
+  "fr_fr": "Agent antidétonant au tétraéthylplomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : tars, Lead Powder, 100 mB petroleum, 1000 mB steam.",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : tars, Poudre de plomb, 100 mB petroleum, 1000 mB steam."
+ }
+}

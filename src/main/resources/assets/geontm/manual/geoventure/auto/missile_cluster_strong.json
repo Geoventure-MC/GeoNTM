@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_cluster_strong",
+ "icon": [
+  "geontm:missile_cluster_strong"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_cluster_strong"
+  ]
+ ],
+ "title": {
+  "en_us": "Strong Cluster Missile",
+  "fr_fr": "Missile à sous munitions Tier2"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_cluster_medium|Medium Cluster Warhead]], [[gv:fuel_tank_medium|Medium Fuel Tank]], [[gv:thruster_medium|Medium Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_cluster_medium|Ogive à sous munitions moyenne]], [[gv:fuel_tank_medium|Réservoir de carburant moyen]], [[gv:thruster_medium|Propulseur moyen]]."
+ }
+}

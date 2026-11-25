@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_helmet_grey",
+ "icon": [
+  "geontm:hazmat_helmet_grey"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_helmet_grey"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Performance Hazmat Helmet",
+  "fr_fr": "Casque Hazmat haute performance"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:hazmat_cloth_grey|Lead-Reinforced Hazmat Cloth]], 2 x Glass Pane, Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:hazmat_cloth_grey|Chiffon Hazmat renforcé au plomb]], 2 x Vitre, Plaque de fer."
+ }
+}

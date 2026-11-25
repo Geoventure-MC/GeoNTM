@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_sr90",
+ "icon": [
+  "geontm:billet_sr90"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_sr90"
+  ]
+ ],
+ "title": {
+  "en_us": "Strontium-90 Billet",
+  "fr_fr": "Billet de strontium-90"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_sr90|Strontium-90 Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_sr90|Strontium-90 Ingot]].<br><br>Used to make :<br>[[gv:ingot_sr90|Strontium-90 Ingot]], [[gv:nugget_sr90|Strontium-90 Nugget]], [[gv:pellet_rtg_strontium|Strontium-90 RTG Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_sr90|Pépite de Strontium-90]].<br>- Établi (x3) : 2 x [[gv:ingot_sr90|Lingot de Strontium-90]].<br><br>Sert à fabriquer :<br>[[gv:ingot_sr90|Lingot de Strontium-90]], [[gv:nugget_sr90|Pépite de Strontium-90]], [[gv:pellet_rtg_strontium|Pastille Strontium-90 RTG]]."
+ }
+}

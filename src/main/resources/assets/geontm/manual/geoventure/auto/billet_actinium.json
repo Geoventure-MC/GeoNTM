@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_actinium",
+ "icon": [
+  "geontm:billet_actinium"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_actinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Billet",
+  "fr_fr": "Billette d'actinium-227"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_actinium|Actinium-227 Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_actinium|Actinium-227 Ingot]].<br>- Crafting table : [[gv:rod_ac227|Actinium-227 Rod]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_actinium|Actinium-227 Ingot]], [[gv:nugget_actinium|Actinium-227 Nugget]], [[gv:pellet_rtg_actinium|Actinium-227 RTG Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_actinium|Pépite d'actinium]].<br>- Établi (x3) : 2 x [[gv:ingot_actinium|Lingot d'actinium semi-stable]].<br>- Établi : [[gv:rod_ac227|Tige d'actinium-227]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_actinium|Lingot d'actinium semi-stable]], [[gv:nugget_actinium|Pépite d'actinium]], [[gv:pellet_rtg_actinium|Pastille RTG Actinium-227]]."
+ }
+}

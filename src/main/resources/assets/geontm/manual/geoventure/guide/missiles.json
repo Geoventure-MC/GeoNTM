@@ -1,0 +1,15 @@
+{
+ "name": "gv:missiles",
+ "icon": [
+  "geontm:missile_generic"
+ ],
+ "trigger": [],
+ "title": {
+  "en_us": "Guide: building a missile",
+  "fr_fr": "Guide : fabriquer un missile"
+ },
+ "content": {
+  "en_us": "The simplest one, the tier 1 HE missile:<br><br>1. Microchip: press a [[Silicon|silicon wafer]] with a [[gv:stamp_iron_circuit|circuit stamp]] in the [[Press|press]] to get a [[gv:circuit_silicon|printed wafer]]. In the [[Assembly Machine|assembly machine]]: printed wafer, [[gv:plate_polymer|insulator]] and gold wire make the [[gv:circuit_chip|microchip]].<br>2. Warhead: 4 titanium plates, 2 [[gv:ball_dynamite|dynamite]] and 1 microchip. Requires a [[gv:schemas|blueprint]].<br>3. Tank, [[Arc Welder|arc welder]]: 6 aluminium plates, 4 copper plates, 4 steel scaffolds.<br>4. Thruster, arc welder: 4 steel plates, 4 aluminium wires, 4 copper plates.<br>5. Missile, arc welder: warhead, tank and thruster.<br>6. Launch: [[gv:launch_pad|launch pad]] and [[gv:designator|designator]].<br><br>Custom missiles are assembled in the [[Missile Assembly Station|assembly station]] with a [[gv:mp_c_1|targeting circuit]].",
+  "fr_fr": "Le plus simple, le missile explosif de palier 1 :<br><br>1. La micropuce. Faire un [[gv:stamp_iron_circuit|moule de circuit]], presser une [[Silicon|tranche de silicium]] dans la [[Press|presse]] : elle donne une [[gv:circuit_silicon|tranche imprimée]]. Puis à la [[Assembly Machine|machine d'assemblage]] : tranche imprimée, [[gv:plate_polymer|isolateur]] et fil d'or donnent la [[gv:circuit_chip|micropuce]].<br>2. L'ogive. Machine d'assemblage : 4 plaques de titane, 2 [[gv:ball_dynamite|dynamites]] et 1 micropuce. Un [[gv:schemas|plan]] « Ogives conventionnelles » est exigé (recherche Balistique I).<br>3. Le réservoir. [[Arc Welder|Soudeuse à arc]] : 6 plaques d'aluminium, 4 plaques de cuivre, 4 échafaudages en acier.<br>4. Le propulseur. Soudeuse à arc : 4 plaques d'acier, 4 fils d'aluminium, 4 plaques de cuivre.<br>5. Le missile. Soudeuse à arc : ogive, réservoir et propulseur.<br>6. Le tir. [[gv:launch_pad|Base de lancement]] et [[gv:designator|désignateur]].<br><br>Les fils, tuyaux, coques et plaques coulées se coulent : [[Crucible|creuset]], canal et bassin de [[gv:foundry_mold|fonderie]], avec un [[gv:mold_base|moule vierge]] transformé à l'enclume.<br><br>Le missile modulaire s'assemble à la [[Missile Assembly Station|station d'assemblage]] : ogive, fuselage, ailerons, propulseur et un [[gv:mp_c_1|circuit de ciblage]] (niveaux 1 à 5, plus précis à chaque niveau). Les pièces exigent le plan « Missiles modulaires » (recherche Dissuasion Stratégique)."
+ }
+}

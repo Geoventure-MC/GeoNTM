@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_decoy",
+ "icon": [
+  "geontm:missile_decoy"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_decoy"
+  ]
+ ],
+ "title": {
+  "en_us": "Decoy Missile",
+  "fr_fr": "Missile leurre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : Steel Ingot, [[gv:fuel_tank_small|Small Fuel Tank]], [[gv:thruster_small|Small Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : Lingot d'acier, [[gv:fuel_tank_small|Petit réservoir de carburant]], [[gv:thruster_small|Petit propulseur]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_ra226",
+ "icon": [
+  "geontm:rod_dual_ra226"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_ra226"
+  ]
+ ],
+ "title": {
+  "en_us": "Radium-226 Dual Rod",
+  "fr_fr": "Radium-226 double tige"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x Radium-226 Billet.<br><br>Used to make :<br>[[gv:rod_dual_ac227|Actinium-227 Dual Rod]], [[Radium-226|Radium-226 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x Billet de radium-226.<br><br>Sert à fabriquer :<br>[[gv:rod_dual_ac227|Actinium-227 double tige]], [[Radium-226|Billet de radium-226]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_depleted_zirconium",
+ "icon": [
+  "geontm:pellet_rtg_depleted_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_depleted_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Decayed Zirconium RTG Pellet",
+  "fr_fr": "Pastille RTG en zirconium appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:billet_zirconium|Zirconium Billet]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:billet_zirconium|Billet de zirconium]]."
+ }
+}

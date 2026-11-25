@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_u238",
+ "icon": [
+  "geontm:rod_dual_u238"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_u238"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium-238 Dual Rod",
+  "fr_fr": "Double tige d'U238"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x Uranium-238 Billet.<br><br>Used to make :<br>[[gv:rod_dual_rgp|Reactor-Grade Plutonium Dual Rod]], [[Uranium-238|Uranium-238 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x Billet d'uranium-238.<br><br>Sert à fabriquer :<br>[[gv:rod_dual_rgp|Tige double en plutonium de qualité réacteur]], [[Uranium-238|Billet d'uranium-238]]."
+ }
+}

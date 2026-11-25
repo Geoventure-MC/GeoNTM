@@ -1,0 +1,19 @@
+{
+ "name": "gv:rad_absorber_green",
+ "icon": [
+  "geontm:rad_absorber_green"
+ ],
+ "trigger": [
+  [
+   "geontm:rad_absorber_green"
+  ]
+ ],
+ "title": {
+  "en_us": "Advanced Radiation Absorber",
+  "fr_fr": "Absorbeur de radiations avancé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (plastic), 4 x [[gv:powder_desh_mix|Desh Blend]], [[gv:rad_absorber_red|Enhanced Radiation Absorber]].<br><br>Used to make :<br>[[gv:rad_absorber_pink|Elite Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (plastique), 4 x [[gv:powder_desh_mix|Mélange de Desh]], [[gv:rad_absorber_red|Absorbeur de radiations amélioré]].<br><br>Sert à fabriquer :<br>[[gv:rad_absorber_pink|Absorbeur de radiations d'élite]]."
+ }
+}

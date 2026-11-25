@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_rod_reasim_moderated",
+ "icon": [
+  "geontm:rbmk_fuel_rod_reasim_moderated"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_rod_reasim_moderated"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Moderated Fuel Channel (ReaSim)",
+  "fr_fr": "Barre de combustible modérée RBMK (ReaSim)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Block of Graphite, [[gv:rbmk_fuel_rod_reasim|RBMK Fuel Channel (ReaSim)]], 4 x ingot (resistant alloy).<br><br>Used to make :<br>[[gv:rbmk_fuel_rod_reasim|RBMK Fuel Channel (ReaSim)]], [[gv:block_graphite|Block of Graphite]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Bloc de graphite, [[gv:rbmk_fuel_rod_reasim|Barre de combustible RBMK (ReaSim)]], 4 x lingot (alliage résistant).<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_rod_reasim|Barre de combustible RBMK (ReaSim)]], [[gv:block_graphite|Bloc de graphite]]."
+ }
+}

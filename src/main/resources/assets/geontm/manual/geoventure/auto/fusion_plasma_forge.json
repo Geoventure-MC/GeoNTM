@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_plasma_forge",
+ "icon": [
+  "geontm:fusion_plasma_forge"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_plasma_forge"
+  ]
+ ],
+ "title": {
+  "en_us": "Plasma Forge",
+  "fr_fr": "Forge à plasma"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x welded plate (resistant alloy), 64 x dense wire (BSCCO), 16 x cast plate (bismoid bronze), 4 x [[gv:circuit_bismoid|Versatile Circuit Board]], 32 x calorite ingot, 16 x Reinforced Ferrouranium Panels, 16 x Plastic Panels, 4 x Mainframe - [[gv:schemas|blueprint required]]: Fusion.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x plaque soudée (alliage résistant), 64 x fil dense (bscco), 16 x plaque coulée (bronze bismoïde), 4 x [[gv:circuit_bismoid|Carte de circuit polyvalente]], 32 x calorite ingot, 16 x Panneaux de ferrouranium renforcé, 16 x Panneaux en plastique, 4 x Ordinateur central - [[gv:schemas|schéma exigé]] : Fusion."
+ }
+}

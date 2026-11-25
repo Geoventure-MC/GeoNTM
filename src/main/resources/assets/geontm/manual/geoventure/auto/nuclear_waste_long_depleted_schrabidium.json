@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_long_depleted_schrabidium",
+ "icon": [
+  "geontm:nuclear_waste_long_depleted_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_long_depleted_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Decayed Long-Lived Nuclear Waste",
+  "fr_fr": "Déchets nucléaires à vie longue décomposés"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:nuclear_waste_long_depleted_tiny_schrabidium|Tiny Pile of Decayed Long-Lived Nuclear Waste]].<br>- [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]] : [[gv:nuclear_waste_long_schrabidium|Long-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_long_depleted_tiny_schrabidium|Tiny Pile of Decayed Long-Lived Nuclear Waste]], [[gv:nugget_solinium|Solinium Nugget]], [[gv:nugget_gh336|Ghiorsium-336 Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:nuclear_waste_long_depleted_tiny_schrabidium|Minuscule tas de déchets nucléaires à vie longue décomposés]].<br>- [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]] : [[gv:nuclear_waste_long_schrabidium|Déchets nucléaires à vie longue]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_long_depleted_tiny_schrabidium|Minuscule tas de déchets nucléaires à vie longue décomposés]], [[gv:nugget_solinium|Pépite de Solinium-327]], [[gv:nugget_gh336|Pépite de Ghiorsium-336]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

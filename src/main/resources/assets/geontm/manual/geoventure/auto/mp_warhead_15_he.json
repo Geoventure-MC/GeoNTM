@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_15_he",
+ "icon": [
+  "geontm:mp_warhead_15_he"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_15_he"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 HE Warhead",
+  "fr_fr": "Ogive HE de taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], 12 x Steel Plate, 12 x ingot (high explosive), 3 x [[gv:circuit_basic|Integrated Circuit Board]] - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 12 x Plaque d'acier, 12 x lingot (explosif puissant), 3 x [[gv:circuit_basic|Carte de circuit intégré]] - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:blades_steel",
+ "icon": [
+  "geontm:blades_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:blades_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Shredder Blades",
+  "fr_fr": "Lames de broyeur en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, Steel Ingot.<br>- Crafting table : 2 x Steel Plate, [[gv:blades_steel|Steel Shredder Blades]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, Lingot d'acier.<br>- Établi : 2 x Plaque d'acier, [[gv:blades_steel|Lames de broyeur en acier]]."
+ }
+}

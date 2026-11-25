@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_firebrick",
+ "icon": [
+  "geontm:ingot_firebrick"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_firebrick"
+  ]
+ ],
+ "title": {
+  "en_us": "Firebrick",
+  "fr_fr": "Brique réfractaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x16) : [[Heating Oven|Heating Oven]].<br>- Crafting table (x4) : Firebricks.<br>- Furnace : [[gv:ball_fireclay|Fireclay]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[Heating Oven|Heating Oven]], [[Blast Furnace|Blast Furnace]], [[Crucible|Crucible]], [[Rotary Furnace|Rotary Furnace]], [[Electric Arc Furnace|Electric Arc Furnace]], [[Electrolyser|Electrolyser]], [[Strand Caster|Strand Caster]], [[gv:foundry_basin|Foundry Basin]], [[gv:foundry_channel|Foundry Channel]], [[gv:foundry_mold|Shallow Foundry Basin]] and 2 more.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x16) : [[Heating Oven|Four de chauffage]].<br>- Établi (x4) : Briques réfractaires.<br>- Four : [[gv:ball_fireclay|Argile réfractaire]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Heating Oven|Four de chauffage]], [[Blast Furnace|Haut fourneau]], [[Crucible|Creuset]], [[Rotary Furnace|Four rotatif]], [[Electric Arc Furnace|Four à arc électrique]], [[Electrolyser|Électrolyseur]], [[Strand Caster|Machine de coulée en continu]], [[gv:foundry_basin|Bassin de fonderie]], [[gv:foundry_channel|Canal de fonderie]], [[gv:foundry_mold|Bassin de fonderie peu profond]] et 2 autres."
+ }
+}

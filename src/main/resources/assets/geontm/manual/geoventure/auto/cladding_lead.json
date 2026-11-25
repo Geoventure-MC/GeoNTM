@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_lead",
+ "icon": [
+  "geontm:cladding_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Cladding",
+  "fr_fr": "Revêtement en plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:cladding_rubber|Rubber Cladding]], 4 x Lead Plate, 4 x [[gv:ducttape|Duct Tape]].<br><br>Used to make :<br>[[gv:cladding_desh|Desh Cladding]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:cladding_rubber|Revêtement en caoutchouc]], 4 x Plaque de plomb, 4 x [[gv:ducttape|Ruban adhésif]].<br><br>Sert à fabriquer :<br>[[gv:cladding_desh|Revêtement de Desh]]."
+ }
+}

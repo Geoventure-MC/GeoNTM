@@ -1,0 +1,19 @@
+{
+ "name": "gv:med_ipecac",
+ "icon": [
+  "geontm:med_ipecac"
+ ],
+ "trigger": [
+  [
+   "geontm:med_ipecac"
+  ]
+ ],
+ "title": {
+  "en_us": "Ipecac Syrup",
+  "fr_fr": "Sirop Ipecac"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Glass Bottle, Nether Wart.<br><br>Used to make :<br>[[gv:med_ptsd|PTSD Medication]].",
+  "fr_fr": "Obtention :<br>- Établi : Fiole, Verrues du Nether.<br><br>Sert à fabriquer :<br>[[gv:med_ptsd|Médicament PTSD]]."
+ }
+}

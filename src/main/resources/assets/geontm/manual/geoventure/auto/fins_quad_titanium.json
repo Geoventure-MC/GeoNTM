@@ -1,0 +1,19 @@
+{
+ "name": "gv:fins_quad_titanium",
+ "icon": [
+  "geontm:fins_quad_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:fins_quad_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Titanium Fins",
+  "fr_fr": "Petites ailettes en titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Titanium Plate, 3 x Titanium Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque en titane, 3 x Lingot de titane."
+ }
+}

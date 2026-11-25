@@ -1,0 +1,19 @@
+{
+ "name": "gv:pipette_boron",
+ "icon": [
+  "geontm:pipette_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:pipette_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Boron Pipette",
+  "fr_fr": "Pipette au bore"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Rubber Bar, 2 x [[gv:glass_boron|Boron Glass]].<br><br>Used to make :<br>[[gv:pipette_laboratory|Laboratory Grade Pipette]].",
+  "fr_fr": "Obtention :<br>- Établi : Barre en caoutchouc, 2 x [[gv:glass_boron|Verre de bore]].<br><br>Sert à fabriquer :<br>[[gv:pipette_laboratory|Pipette de qualité laboratoire]]."
+ }
+}

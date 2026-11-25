@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_nuclear_waste",
+ "icon": [
+  "geontm:billet_nuclear_waste"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_nuclear_waste"
+  ]
+ ],
+ "title": {
+  "en_us": "Nuclear Waste Billet",
+  "fr_fr": "Billet de déchets nucléaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].<br>- Crafting table (x3) : 2 x [[gv:nuclear_waste|Nuclear Waste]].<br>- Crafting table (x2) : [[gv:rod_dual_waste|Nuclear Waste Dual Rod]].<br>(5 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:nuclear_waste|Nuclear Waste]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]], [[gv:rod_dual_waste|Nuclear Waste Dual Rod]], [[gv:rod_quad_waste|Nuclear Waste Quad Rod]], [[gv:rod_waste|Nuclear Waste Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]].<br>- Établi (x3) : 2 x [[gv:nuclear_waste|Déchets nucléaires]].<br>- Établi (x2) : [[gv:rod_dual_waste|Double tige de dechets nucleaires]].<br>(5 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste|Déchets nucléaires]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]], [[gv:rod_dual_waste|Double tige de dechets nucleaires]], [[gv:rod_quad_waste|Quadruple tige de dechets nucleaires]], [[gv:rod_waste|Tige de dechets nucleaires]]."
+ }
+}

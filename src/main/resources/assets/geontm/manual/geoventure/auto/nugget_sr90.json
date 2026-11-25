@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_sr90",
+ "icon": [
+  "geontm:nugget_sr90"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_sr90"
+  ]
+ ],
+ "title": {
+  "en_us": "Strontium-90 Nugget",
+  "fr_fr": "Pépite de Strontium-90"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_sr90|Strontium-90 Billet]].<br>- Crafting table (x9) : [[gv:ingot_sr90|Strontium-90 Ingot]].<br><br>Used to make :<br>[[gv:billet_sr90|Strontium-90 Billet]], [[gv:ingot_sr90|Strontium-90 Ingot]], [[gv:nugget_zirconium|Zirconium Splinter]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_sr90|Billet de strontium-90]].<br>- Établi (x9) : [[gv:ingot_sr90|Lingot de Strontium-90]].<br><br>Sert à fabriquer :<br>[[gv:billet_sr90|Billet de strontium-90]], [[gv:ingot_sr90|Lingot de Strontium-90]], [[gv:nugget_zirconium|Éclat de zirconium]]."
+ }
+}

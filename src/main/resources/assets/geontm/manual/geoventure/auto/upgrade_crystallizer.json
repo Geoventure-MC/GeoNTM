@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_crystallizer",
+ "icon": [
+  "geontm:upgrade_crystallizer"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_crystallizer"
+  ]
+ ],
+ "title": {
+  "en_us": "Crystallizer Upgrade",
+  "fr_fr": "Mise à niveau du cristallisoir"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:barrel_steel|Steel Barrel]], 2 x [[gv:motor|Motor]], [[gv:circuit_advanced|Military Grade Circuit Board]], 2 x [[gv:fluid_barrel|Fluid Barrel]], 10k-20Hz Transformer, [[gv:upgrade_centrifuge|Centrifuge Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:barrel_steel|Baril en acier]], 2 x [[gv:motor|Moteur]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 2 x [[gv:fluid_barrel|Fût de fluide]], Transformateur, [[gv:upgrade_centrifuge|Mise à niveau de la centrifugeuse]]."
+ }
+}

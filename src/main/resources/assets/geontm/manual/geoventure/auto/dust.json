@@ -1,0 +1,19 @@
+{
+ "name": "gv:dust",
+ "icon": [
+  "geontm:dust"
+ ],
+ "trigger": [
+  [
+   "geontm:dust"
+  ]
+ ],
+ "title": {
+  "en_us": "Dust",
+  "fr_fr": "Poussière"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:dust_tiny|Tiny Pile of Dust]].<br>- [[Gas Centrifuge|Gas Centrifuge]] (x2) : 1000 mB Watz Powerplant.<br>- [[Chemical Plant|Chemical Plant]] (x3) : 1000 mB pain, 500 mB peroxide.<br>(8 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:dust_tiny|Tiny Pile of Dust]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:dust_tiny|Petit tas de poussière]].<br>- [[Gas Centrifuge|Centrifugeuse à gaz]] (x2) : 1000 mB Centrale Watz.<br>- [[Chemical Plant|Usine chimique]] (x3) : 1000 mB pain, 500 mB peroxide.<br>(8 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:dust_tiny|Petit tas de poussière]]."
+ }
+}

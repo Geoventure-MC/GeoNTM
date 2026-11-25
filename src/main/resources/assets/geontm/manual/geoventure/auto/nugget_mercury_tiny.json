@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_mercury_tiny",
+ "icon": [
+  "geontm:nugget_mercury_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_mercury_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Drop of Mercury",
+  "fr_fr": "Minuscule goutte de mercure"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:nugget_mercury|Drop of Mercury]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:nuclear_waste_short_depleted_schrabidium|Decayed Short-Lived Nuclear Waste]].<br>- [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]] : [[gv:nugget_au198|Gold-198 Nugget]].<br><br>Used to make :<br>[[gv:nugget_mercury|Drop of Mercury]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:nugget_mercury|Petite goutte de mercure]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:nuclear_waste_short_depleted_schrabidium|Déchets nucléaires dégradés à vie courte]].<br>- [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]] : [[gv:nugget_au198|Pépite d'or-198]].<br><br>Sert à fabriquer :<br>[[gv:nugget_mercury|Petite goutte de mercure]]."
+ }
+}

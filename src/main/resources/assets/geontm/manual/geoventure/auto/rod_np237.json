@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_np237",
+ "icon": [
+  "geontm:rod_np237"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_np237"
+  ]
+ ],
+ "title": {
+  "en_us": "Neptunium-237 Rod",
+  "fr_fr": "Tige de neptunium-237"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_u235|Uranium-235 Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Neptunium Billet.<br><br>Used to make :<br>[[gv:rod_pu238|Plutonium-238 Rod]], [[Neptunium|Neptunium Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_u235|Tige d'U235]].<br>- Établi : [[gv:rod_empty|Tige vide]], Billet de Neptunium-237.<br><br>Sert à fabriquer :<br>[[gv:rod_pu238|Tige de Pu238]], [[Neptunium|Billet de Neptunium-237]]."
+ }
+}

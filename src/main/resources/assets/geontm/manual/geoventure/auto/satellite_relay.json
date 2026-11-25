@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_relay",
+ "icon": [
+  "geontm:satellite_relay"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_relay"
+  ]
+ ],
+ "title": {
+  "en_us": "RoR Relay Satellite",
+  "fr_fr": "Satellite relais RoR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x shell (Aluminium), 16 x [[gv:photo_panel|Photovoltaic Panel]], 24 x [[gv:circuit_basic|Integrated Circuit Board]], 16 x [[gv:part_generic_lde|Low-Density Element]], [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x coque (aluminium), 16 x [[gv:photo_panel|Panneau photovoltaïque]], 24 x [[gv:circuit_basic|Carte de circuit intégré]], 16 x [[gv:part_generic_lde|Élément à faible densité]], [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

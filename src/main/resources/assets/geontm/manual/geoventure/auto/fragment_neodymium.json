@@ -1,0 +1,19 @@
+{
+ "name": "gv:fragment_neodymium",
+ "icon": [
+  "geontm:fragment_neodymium"
+ ],
+ "trigger": [
+  [
+   "geontm:fragment_neodymium"
+  ]
+ ],
+ "title": {
+  "en_us": "Neodymium Fragment",
+  "fr_fr": "Fragment de neodymium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_niobium",
+ "icon": [
+  "geontm:capacitor_niobium"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_niobium"
+  ]
+ ],
+ "title": {
+  "en_us": "Niobium Capacitor",
+  "fr_fr": "Condensateur au niobium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 12 x ingot (plastic), 24 x dense wire (Niobium).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 12 x lingot (plastique), 24 x fil dense (niobium)."
+ }
+}

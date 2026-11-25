@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_zirconium",
+ "icon": [
+  "geontm:powder_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Zirconium Powder",
+  "fr_fr": "Poudre de zirconium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (zirconium cube).<br>- [[Cyclotron|Cyclotron]] : [[gv:part_lithium|Box of Lithium Dust]], [[gv:powder_strontium|Strontium Powder]].<br>- [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]] : [[gv:powder_sr90|Strontium-90 Powder]].<br><br>Used to make :<br>[[gv:ingot_zirconium|Zirconium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (cube de zirconium).<br>- machine_cyclotron : [[gv:part_lithium|Boîte de poussière de lithium]], [[gv:powder_strontium|Poudre de strontium]].<br>- [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]] : [[gv:powder_sr90|Poudre de strontium-90]].<br><br>Sert à fabriquer :<br>[[gv:ingot_zirconium|Cube de zirconium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_iron",
+ "icon": [
+  "geontm:crystal_iron"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_iron"
+  ]
+ ],
+ "title": {
+  "en_us": "Iron Crystals",
+  "fr_fr": "Cristaux de fer"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : Lodestone.<br>- [[Ore Acidizer|Ore Acidizer]] : ore (iron), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (iron), 333 mB peroxide.",
+  "fr_fr": "Obtention :<br>- Four : Magnétite.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (fer), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (fer), 333 mB peroxide."
+ }
+}

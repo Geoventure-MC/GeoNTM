@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_obsidian",
+ "icon": [
+  "geontm:cladding_obsidian"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_obsidian"
+  ]
+ ],
+ "title": {
+  "en_us": "Obsidian Skin",
+  "fr_fr": "Peau d'obsidienne"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Obsidian, 2 x Steel Plate, [[gv:ducttape|Duct Tape]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Obsidienne, 2 x Plaque d'acier, [[gv:ducttape|Ruban adhésif]]."
+ }
+}

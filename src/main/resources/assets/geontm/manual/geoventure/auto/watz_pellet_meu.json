@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_meu",
+ "icon": [
+  "geontm:watz_pellet_meu"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_meu"
+  ]
+ ],
+ "title": {
+  "en_us": "MEU Watz Pellet",
+  "fr_fr": "Pastille Watz MEU"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_uranium_fuel|Ingot of Uranium Fuel]], Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_uranium_fuel|Lingot d'uranium]], Lingot de graphite."
+ }
+}

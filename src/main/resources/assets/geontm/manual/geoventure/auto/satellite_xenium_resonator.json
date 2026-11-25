@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_xenium_resonator",
+ "icon": [
+  "geontm:satellite_xenium_resonator"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_xenium_resonator"
+  ]
+ ],
+ "title": {
+  "en_us": "Xenium Resonator Satellite",
+  "fr_fr": "Satellite résonateur Xénium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x cast plate (Gold), 32 x [[gv:photo_panel|Photovoltaic Panel]], [[gv:crystal_xen|Artificial Xen Crystal]], 24 x [[gv:circuit_bismoid|Versatile Circuit Board]], 4 x [[gv:part_generic_lde|Low-Density Element]], [[gv:circuit_controller_advanced|Advanced Control Unit]] - [[gv:schemas|blueprint required]]: Deep space.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x plaque coulée (or), 32 x [[gv:photo_panel|Panneau photovoltaïque]], [[gv:crystal_xen|Cristal Xen artificiel]], 24 x [[gv:circuit_bismoid|Carte de circuit polyvalente]], 4 x [[gv:part_generic_lde|Élément à faible densité]], [[gv:circuit_controller_advanced|Unité de contrôle avancée]] - [[gv:schemas|schéma exigé]] : Espace lointain."
+ }
+}

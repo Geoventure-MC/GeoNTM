@@ -1,0 +1,19 @@
+{
+ "name": "gv:acetylene_torch",
+ "icon": [
+  "geontm:acetylene_torch"
+ ],
+ "trigger": [
+  [
+   "geontm:acetylene_torch"
+  ]
+ ],
+ "title": {
+  "en_us": "Acetylene Welding Torch",
+  "fr_fr": "Chalumeau à acétylène"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Steel Plate, ingot (plastic), [[gv:tank_steel|Steel Tank]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Plaque d'acier, lingot (plastique), [[gv:tank_steel|Réservoir en acier]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_c_4",
+ "icon": [
+  "geontm:mp_c_4"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_c_4"
+  ]
+ ],
+ "title": {
+  "en_us": "Tier 4 Missile Targeting Circuit",
+  "fr_fr": "Circuit de ciblage de missiles de niveau 4"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : ingot (rubber), [[gv:circuit_advanced|Military Grade Circuit Board]], Steel Scaffold.",
+  "fr_fr": "Obtention :<br>- Établi : lingot (caoutchouc), [[gv:circuit_advanced|Carte de circuit de qualité militaire]], Échafaudage en acier."
+ }
+}

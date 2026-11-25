@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_display",
+ "icon": [
+  "geontm:rbmk_display"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_display"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Display Panel",
+  "fr_fr": "Panneau d'affichage RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:crt_display|Cathode Ray Tube]], [[gv:rbmk_display_blank|Blank Redstone-over-Radio Panel]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:crt_display|Tube cathodique]], [[gv:rbmk_display_blank|Panneau Redstone-over-Radio vierge]]."
+ }
+}

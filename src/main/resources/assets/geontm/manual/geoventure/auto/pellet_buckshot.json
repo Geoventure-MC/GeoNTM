@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_buckshot",
+ "icon": [
+  "geontm:pellet_buckshot"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_buckshot"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Pellets",
+  "fr_fr": "Amas de plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 6 x Lead Nugget.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 6 x Pépite de plomb."
+ }
+}

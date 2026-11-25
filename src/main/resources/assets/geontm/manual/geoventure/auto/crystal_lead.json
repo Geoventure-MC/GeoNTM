@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_lead",
+ "icon": [
+  "geontm:crystal_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Crystals",
+  "fr_fr": "Cristaux de plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (lead), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (lead), 333 mB peroxide.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (plomb), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (plomb), 333 mB peroxide."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_copper",
+ "icon": [
+  "geontm:crystal_copper"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_copper"
+  ]
+ ],
+ "title": {
+  "en_us": "Copper Crystals",
+  "fr_fr": "Cristaux de cuivre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (copper), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (copper), 333 mB peroxide.<br><br>Used to make :<br>[[Sulfur|Sulfur]], [[gv:powder_cobalt_tiny|Tiny Pile of Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (cuivre), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (cuivre), 333 mB peroxide.<br><br>Sert à fabriquer :<br>[[Sulfur|Soufre]], [[gv:powder_cobalt_tiny|Minuscule tas de poudre de cobalt]]."
+ }
+}

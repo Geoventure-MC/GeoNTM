@@ -1,0 +1,19 @@
+{
+ "name": "gv:niter",
+ "icon": [
+  "geontm:niter"
+ ],
+ "trigger": [
+  [
+   "geontm:niter"
+  ]
+ ],
+ "title": {
+  "en_us": "Niter",
+  "fr_fr": "Nitre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (niter).<br>- [[Electrolyser|Electrolyser]] (x2) : slop.<br>- Furnace (x6) : [[gv:crystal_niter|Niter Crystals]].<br>(3 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (niter).<br>- [[Electrolyser|Électrolyseur]] (x2) : slop.<br>- Four (x6) : [[gv:crystal_niter|Cristaux de nitre]].<br>(3 autres recettes : voir JEI.)"
+ }
+}

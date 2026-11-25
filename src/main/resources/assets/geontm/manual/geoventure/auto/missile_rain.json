@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_rain",
+ "icon": [
+  "geontm:missile_rain"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_rain"
+  ]
+ ],
+ "title": {
+  "en_us": "Bomblet Rain",
+  "fr_fr": "Pluie de sous-munitions"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_cluster_large|Large Cluster Warhead]], 2 x [[gv:fuel_tank_medium|Medium Fuel Tank]], 4 x [[gv:thruster_medium|Medium Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_cluster_large|Grande ogive à sous munitions]], 2 x [[gv:fuel_tank_medium|Réservoir de carburant moyen]], 4 x [[gv:thruster_medium|Propulseur moyen]]."
+ }
+}

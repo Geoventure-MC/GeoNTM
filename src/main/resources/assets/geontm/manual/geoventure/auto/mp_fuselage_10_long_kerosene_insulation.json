@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_10_long_kerosene_insulation",
+ "icon": [
+  "geontm:mp_fuselage_10_long_kerosene_insulation"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_10_long_kerosene_insulation"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Long Kerosene Fuselage",
+  "fr_fr": "Fuselage kérosène long taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x ingot (rubber), [[gv:mp_fuselage_10_long_kerosene|Size 10 Long Kerosene Fuselage]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x lingot (caoutchouc), [[gv:mp_fuselage_10_long_kerosene|Fuselage kérosène long taille 10]]."
+ }
+}

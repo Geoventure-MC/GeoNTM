@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_desh_flat",
+ "icon": [
+  "geontm:stamp_desh_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_desh_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Stamp (Desh)",
+  "fr_fr": "Timbre plat (Desh)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Brick, 4 x Desh Ingot, Ferrouranium Ingot.<br>- Crafting table : 4 x Nether Brick, 4 x Desh Ingot, Ferrouranium Ingot.<br><br>Used to make :<br>[[gv:stamp_desh_circuit|Circuit Stamp (Desh)]], [[gv:stamp_desh_plate|Plate Stamp (Desh)]], [[gv:stamp_desh_wire|Wire Stamp (Desh)]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Brique, 4 x Lingot de desh, Lingot de ferrouranium.<br>- Établi : 4 x Brique du Nether, 4 x Lingot de desh, Lingot de ferrouranium.<br><br>Sert à fabriquer :<br>[[gv:stamp_desh_circuit|Timbre de circuit (Desh)]], [[gv:stamp_desh_plate|Timbre de plaque (Desh)]], [[gv:stamp_desh_wire|Tampon métallique (Desh)]]."
+ }
+}

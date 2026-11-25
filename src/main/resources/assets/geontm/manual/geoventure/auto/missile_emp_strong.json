@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_emp_strong",
+ "icon": [
+  "geontm:missile_emp_strong"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_emp_strong"
+  ]
+ ],
+ "title": {
+  "en_us": "Strong EMP Missile",
+  "fr_fr": "Missile EMP puissant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 3 x [[gv:emp_bomb|EMP Device]], [[gv:fuel_tank_medium|Medium Fuel Tank]], [[gv:thruster_medium|Medium Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 3 x [[gv:emp_bomb|Bombe IEM]], [[gv:fuel_tank_medium|Réservoir de carburant moyen]], [[gv:thruster_medium|Propulseur moyen]]."
+ }
+}

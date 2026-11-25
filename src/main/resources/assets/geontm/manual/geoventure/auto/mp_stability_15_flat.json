@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_stability_15_flat",
+ "icon": [
+  "geontm:mp_stability_15_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_stability_15_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Flat Fins",
+  "fr_fr": "Palmes plates taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Aluminium Plate, 2 x Steel Plate, 2 x Steel Scaffold.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque d'aluminium, 2 x Plaque d'acier, 2 x Échafaudage en acier."
+ }
+}

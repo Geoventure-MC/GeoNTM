@@ -1,0 +1,19 @@
+{
+ "name": "gv:crate_steel",
+ "icon": [
+  "geontm:crate_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:crate_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Crate",
+  "fr_fr": "Caisse en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Steel Plate, 5 x Steel Ingot.<br><br>Used to make :<br>[[gv:drone_crate|Transport Drone Crate]], [[gv:drone_crate_provider|Logistics Provider Crate]], [[gv:drone_crate_requester|Logistics Requester Crate]], [[gv:drone_dock|Logistics Drone Dock]], [[RBMK Storage Column|RBMK Storage Column]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Plaque d'acier, 5 x Lingot d'acier.<br><br>Sert à fabriquer :<br>[[gv:drone_crate|Caisse de drone de transport]], [[gv:drone_crate_provider|Caisse fournisseur logistique]], [[gv:drone_crate_requester|Caisse demandeuse logistique]], [[gv:drone_dock|Station d'accueil de drones logistiques]], [[RBMK Storage Column|Colonne de stockage RBMK]]."
+ }
+}

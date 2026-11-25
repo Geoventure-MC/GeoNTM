@@ -1,0 +1,19 @@
+{
+ "name": "gv:wrench",
+ "icon": [
+  "geontm:wrench"
+ ],
+ "trigger": [
+  [
+   "geontm:wrench"
+  ]
+ ],
+ "title": {
+  "en_us": "Pipe Wrench",
+  "fr_fr": "Clé à pipe"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Steel Ingot, 2 x Iron Ingot.<br><br>Used to make :<br>[[Missile Assembly Station|Missile Assembly Station]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Lingot d'acier, 2 x Lingot de fer.<br><br>Sert à fabriquer :<br>[[Missile Assembly Station|Station d'assemblage de missiles]]."
+ }
+}

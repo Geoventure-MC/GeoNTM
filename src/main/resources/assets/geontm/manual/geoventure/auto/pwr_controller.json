@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_controller",
+ "icon": [
+  "geontm:pwr_controller"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_controller"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Controller",
+  "fr_fr": "Contrôleur PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x cast plate (Lead), 4 x Rubber Bar, 4 x [[gv:circuit_basic|Integrated Circuit Board]], Radiation Resistant Plating, 3 x Extensive Circuit Board - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x plaque coulée (plomb), 4 x Barre en caoutchouc, 4 x [[gv:circuit_basic|Carte de circuit intégré]], Plaques résistantes aux radiations, 3 x Carte de circuits étendue - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

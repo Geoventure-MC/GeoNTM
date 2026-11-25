@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_5g",
+ "icon": [
+  "geontm:upgrade_5g"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_5g"
+  ]
+ ],
+ "title": {
+  "en_us": "5G Radiation Emitter Upgrade",
+  "fr_fr": "Amélioration émetteur de radiations 5G"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:upgrade_template|Machine Upgrade Template]], Alexandrite.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:upgrade_template|Amélioration de machine]], gem alexandrite."
+ }
+}

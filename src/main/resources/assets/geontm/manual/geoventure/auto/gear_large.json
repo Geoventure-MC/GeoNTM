@@ -1,0 +1,19 @@
+{
+ "name": "gv:gear_large",
+ "icon": [
+  "geontm:gear_large"
+ ],
+ "trigger": [
+  [
+   "geontm:gear_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Gear",
+  "fr_fr": "Grand engrenage"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[Stirling Engine|Stirling Engine]].<br>- Crafting table : 8 x Iron Plate, Copper Ingot.<br><br>Used to make :<br>[[Steam Engine|Steam Engine]], [[Stirling Engine|Stirling Engine]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[Stirling Engine|Moteur Stirling]].<br>- Établi : 8 x Plaque de fer, Lingot de cuivre.<br><br>Sert à fabriquer :<br>[[Steam Engine|Machine à vapeur]], [[Stirling Engine|Moteur Stirling]]."
+ }
+}

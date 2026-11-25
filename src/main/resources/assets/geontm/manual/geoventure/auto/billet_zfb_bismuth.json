@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_zfb_bismuth",
+ "icon": [
+  "geontm:billet_zfb_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_zfb_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "Bismuth ZFB Billet",
+  "fr_fr": "Billet de bismuth ZFB"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Zirconium Splinter, Uranium Nugget, Plutonium-241 Nugget, Bismuth Nugget.<br>- Crafting table (x6) : 3 x Zirconium Billet, Uranium Billet, Plutonium-241 Billet, Bismuth Billet.<br><br>Used to make :<br>[[gv:rbmk_fuel_zfb_bismuth|Bismuth RBMK ZFB Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Éclat de zirconium, Pépite d'uranium, Pépite de plutonium-241, Pépite de bismuth.<br>- Établi (x6) : 3 x Billet de zirconium, Billet d'uranium, Billet de plutonium-241, Billet de bismuth.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_zfb_bismuth|Tige de bismuth RBMK ZFB]]."
+ }
+}

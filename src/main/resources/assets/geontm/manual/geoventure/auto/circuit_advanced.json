@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_advanced",
+ "icon": [
+  "geontm:circuit_advanced"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_advanced"
+  ]
+ ],
+ "title": {
+  "en_us": "Military Grade Circuit Board",
+  "fr_fr": "Carte de circuit de qualité militaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[RBMK Automatic Control Rods|RBMK Automatic Control Rods]].<br>- [[Soldering Station|Soldering Station]] : 1000 mB sulfuric acid, 16 x [[gv:circuit_chip|Microchip]], 4 x [[gv:circuit_capacitor|Capacitor]], 8 x [[gv:circuit_pcb|Printed Circuit Board]], 2 x Rubber Bar, 8 x wire (Lead).<br><br>Used to make :<br>[[Gas Centrifuge|Gas Centrifuge]], [[gv:launch_pad_large|Launch Pad]], [[gv:launch_pad|Silo Launch Pad]], [[gv:upgrade_overdrive_1|Overdrive Upgrade Mk.I]], [[Large Radar|Large Radar]], [[gv:missile_stealth|Stealth Missile]], [[gv:warhead_generic_large|Large Warhead]], [[gv:designator_arty_range|Long Range Artillery Remote]], [[gv:designator_manual|Manual Target Designator]], [[gv:drone_dock|Logistics Drone Dock]] and 13 more.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[RBMK Automatic Control Rods|Barres de contrôle automatique RBMK]].<br>- [[Soldering Station|Station de soudure]] : 1000 mB sulfuric acid, 16 x [[gv:circuit_chip|Micropuce]], 4 x [[gv:circuit_capacitor|Condensateur]], 8 x [[gv:circuit_pcb|Carte de circuit imprimé]], 2 x Barre en caoutchouc, 8 x fil (plomb).<br><br>Sert à fabriquer :<br>[[Gas Centrifuge|Centrifugeuse à gaz]], [[gv:launch_pad_large|Base de lancement]], [[gv:launch_pad|Base de lancement des missiles]], [[gv:upgrade_overdrive_1|Mise à niveau de la machine Overdrive Mk.I]], [[Large Radar|Grand radar]], [[gv:missile_stealth|Missile furtif]], [[gv:warhead_generic_large|Grande ogive]], [[gv:designator_arty_range|Télécommande d'artillerie longue portée]], [[gv:designator_manual|Désignateur manuel]], [[gv:drone_dock|Station d'accueil de drones logistiques]] et 13 autres."
+ }
+}

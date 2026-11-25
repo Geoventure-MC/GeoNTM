@@ -1,0 +1,19 @@
+{
+ "name": "gv:reactor_core",
+ "icon": [
+  "geontm:reactor_core"
+ ],
+ "trigger": [
+  [
+   "geontm:reactor_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Breeding Reactor Core",
+  "fr_fr": "Noyau du réacteur de fusion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x cast plate (Lead), 8 x Beryllium Ingot, 8 x High-Speed Steel Plate, 4 x Asbestos Sheet.<br><br>Used to make :<br>[[Radiation Generator|Radiation Generator]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x plaque coulée (plomb), 8 x Lingot de beryllium, 8 x Plaque d'acier rapide, 4 x Feuille d'amiante.<br><br>Sert à fabriquer :<br>[[Radiation Generator|Générateur de radiation]]."
+ }
+}

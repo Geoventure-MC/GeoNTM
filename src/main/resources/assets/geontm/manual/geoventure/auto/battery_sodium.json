@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_sodium",
+ "icon": [
+  "geontm:battery_sodium"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_sodium"
+  ]
+ ],
+ "title": {
+  "en_us": "Sodium-Iron Battery",
+  "fr_fr": "Batterie sodium-fer"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 24 x Sodium, 24 x Iron Powder, 12 x ingot (hard plastic).",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 24 x Poudre de sodium, 24 x Poudre de fer, 12 x lingot (plastique dur)."
+ }
+}

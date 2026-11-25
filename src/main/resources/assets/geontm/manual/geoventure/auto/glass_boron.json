@@ -1,0 +1,19 @@
+{
+ "name": "gv:glass_boron",
+ "icon": [
+  "geontm:glass_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:glass_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Boron Glass",
+  "fr_fr": "Verre de bore"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : [[gv:sand_boron|Boron Sand]].<br><br>Used to make :<br>[[gv:chemistry_set_boron|Laboratory Glassware (Boron Glass)]], [[gv:disperser_canister_empty|Disperser Canister]], [[gv:pipette_boron|Boron Pipette]], [[gv:rbmk_lid_glass|RBMK Glass Cover Panel]].",
+  "fr_fr": "Obtention :<br>- Four : [[gv:sand_boron|Sable de bore]].<br><br>Sert à fabriquer :<br>[[gv:chemistry_set_boron|Verrerie de laboratoire (verre au bore)]], [[gv:disperser_canister_empty|Jerrican disperseur]], [[gv:pipette_boron|Pipette au bore]], [[gv:rbmk_lid_glass|Panneau de couverture en verre RBMK]]."
+ }
+}

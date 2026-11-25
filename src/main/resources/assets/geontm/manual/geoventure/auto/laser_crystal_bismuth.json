@@ -1,0 +1,19 @@
+{
+ "name": "gv:laser_crystal_bismuth",
+ "icon": [
+  "geontm:laser_crystal_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:laser_crystal_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "BiSmUTh Laser Crystal",
+  "fr_fr": "Cristal Laser BismUTh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:glass_quartz|Quartz Glass]], Uranium Ingot, ingot (thorium), 2 x [[Bismuth|Bismuth Nugget]], [[gv:crystal_rare|Rare Earth Crystals]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:glass_quartz|Verre Quartz]], Lingot d'uranium, lingot (thorium), 2 x [[Bismuth|Pépite de bismuth]], [[gv:crystal_rare|Cristaux de terres rares]]."
+ }
+}

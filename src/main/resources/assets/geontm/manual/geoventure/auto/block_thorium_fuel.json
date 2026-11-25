@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_thorium_fuel",
+ "icon": [
+  "geontm:block_thorium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:block_thorium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Thorium Fuel",
+  "fr_fr": "Bloc de combustible au thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]].<br><br>Used to make :<br>[[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_thorium_fuel|Lingot de thorium combustible]].<br><br>Sert à fabriquer :<br>[[gv:ingot_thorium_fuel|Lingot de thorium combustible]]."
+ }
+}

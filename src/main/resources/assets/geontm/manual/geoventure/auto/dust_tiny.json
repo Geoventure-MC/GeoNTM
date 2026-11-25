@@ -1,0 +1,19 @@
+{
+ "name": "gv:dust_tiny",
+ "icon": [
+  "geontm:dust_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:dust_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Dust",
+  "fr_fr": "Petit tas de poussière"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:dust|Dust]].<br>- [[Centrifuge|Centrifuge]] (x6) : Coal Ash.<br>- [[Shredder|Shredder]] : [[gv:dust_tiny|Tiny Pile of Dust]].<br>(12 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:dust|Dust]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:dust|Poussière]].<br>- [[Centrifuge|Centrifugeuse]] (x6) : Cendres de charbon.<br>- [[Shredder|Broyeur]] : [[gv:dust_tiny|Petit tas de poussière]].<br>(12 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:dust|Poussière]]."
+ }
+}

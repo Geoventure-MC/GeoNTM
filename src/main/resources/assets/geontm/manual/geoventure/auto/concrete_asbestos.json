@@ -1,0 +1,19 @@
+{
+ "name": "gv:concrete_asbestos",
+ "icon": [
+  "geontm:concrete_asbestos"
+ ],
+ "trigger": [
+  [
+   "geontm:concrete_asbestos"
+  ]
+ ],
+ "title": {
+  "en_us": "Asbestos Concrete",
+  "fr_fr": "Béton d'amiante"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] (x16) : 4 x [[gv:powder_cement|Cement]], 4 x Asbestos Sheet, 8 x Sand, 2000 mB Water.<br><br>Used to make :<br>[[Deuterium Extraction Tower|Heavy Water Extraction Tower]], [[RBMK Structural Column|RBMK Structural Column]], [[gv:rbmk_display_blank|Blank Redstone-over-Radio Panel]], [[gv:rbmk_lid|RBMK Cover Panel]].",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] (x16) : 4 x [[gv:powder_cement|Ciment]], 4 x Feuille d'amiante, 8 x Sable, 2000 mB Eau.<br><br>Sert à fabriquer :<br>[[Deuterium Extraction Tower|Tour d'extraction de deutérium]], [[RBMK Structural Column|Colonne structurelle RBMK]], [[gv:rbmk_display_blank|Panneau Redstone-over-Radio vierge]], [[gv:rbmk_lid|Panneau de couverture RBMK]]."
+ }
+}

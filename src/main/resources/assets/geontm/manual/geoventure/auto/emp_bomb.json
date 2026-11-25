@@ -1,0 +1,19 @@
+{
+ "name": "gv:emp_bomb",
+ "icon": [
+  "geontm:emp_bomb"
+ ],
+ "trigger": [
+  [
+   "geontm:emp_bomb"
+  ]
+ ],
+ "title": {
+  "en_us": "EMP Device",
+  "fr_fr": "Bombe IEM"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Lead Plate, 2 x [[gv:magnetron|Magnetron]], [[gv:circuit_advanced|Military Grade Circuit Board]].<br><br>Used to make :<br>[[gv:missile_emp_strong|Strong EMP Missile]], [[gv:missile_emp|EMP Missile]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Plaque de plomb, 2 x [[gv:magnetron|Magnétron]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]].<br><br>Sert à fabriquer :<br>[[gv:missile_emp_strong|Missile EMP puissant]], [[gv:missile_emp|Missile IEM]]."
+ }
+}

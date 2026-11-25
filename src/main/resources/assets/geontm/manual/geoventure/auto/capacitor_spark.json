@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_spark",
+ "icon": [
+  "geontm:capacitor_spark"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_spark"
+  ]
+ ],
+ "title": {
+  "en_us": "Spark Capacitor",
+  "fr_fr": "Condensateur Spark"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 12 x cast plate (CMB Steel), 32 x [[gv:powder_spark_mix|Spark Blend]], 32 x [[gv:pellet_charged|Ionized Particles]], 16 x [[gv:circuit_chip_quantum|Solid State Quantum Processor]], 8000 mB perfluoromethyl cold.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 12 x plaque coulée (acier cmb), 32 x [[gv:powder_spark_mix|Mélange d'étincelles]], 32 x [[gv:pellet_charged|Particules ionisées]], 16 x [[gv:circuit_chip_quantum|Processeur quantique à semi-conducteurs]], 8000 mB perfluoromethyl cold."
+ }
+}

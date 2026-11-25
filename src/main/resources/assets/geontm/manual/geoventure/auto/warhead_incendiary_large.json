@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_incendiary_large",
+ "icon": [
+  "geontm:warhead_incendiary_large"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_incendiary_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Incendiary Warhead",
+  "fr_fr": "Grande ogive incendiaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_large|Large Warhead]], 8 x dust (red phosphorus) - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_inferno|Inferno Missile G.R.N. Mk.II]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_large|Grande ogive]], 8 x poudre (red phosphorus) - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_inferno|Missile Inferno GRN Mk.II]]."
+ }
+}

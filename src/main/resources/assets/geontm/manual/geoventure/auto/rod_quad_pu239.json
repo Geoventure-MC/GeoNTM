@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_pu239",
+ "icon": [
+  "geontm:rod_quad_pu239"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_pu239"
+  ]
+ ],
+ "title": {
+  "en_us": "Plutonium-239 Quad Rod",
+  "fr_fr": "Quadruple tige de Pu239"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_pu238|Plutonium-238 Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Plutonium-239 Billet.<br><br>Used to make :<br>[[Plutonium-239|Plutonium-239 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_pu238|Quadruple tige de Pu238]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billet de plutonium-239.<br><br>Sert à fabriquer :<br>[[Plutonium-239|Billet de plutonium-239]]."
+ }
+}

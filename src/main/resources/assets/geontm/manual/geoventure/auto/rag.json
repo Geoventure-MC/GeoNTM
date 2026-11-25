@@ -1,0 +1,19 @@
+{
+ "name": "gv:rag",
+ "icon": [
+  "geontm:rag"
+ ],
+ "trigger": [
+  [
+   "geontm:rag"
+  ]
+ ],
+ "title": {
+  "en_us": "Cloth",
+  "fr_fr": "Tissu"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : Damp Cloth.<br>- Furnace : Piss-Soaked Rag.<br>- Crafting table (x4) : 2 x String, 2 x wool.",
+  "fr_fr": "Obtention :<br>- Four : Chiffon humide.<br>- Four : Chiffon imbibé de pisse.<br>- Établi (x4) : 2 x Ficelle, 2 x wool."
+ }
+}

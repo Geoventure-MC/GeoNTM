@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_empty",
+ "icon": [
+  "geontm:rod_dual_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Dual Rod",
+  "fr_fr": "Double tige vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:rod_empty|Empty Rod]].<br><br>Used to make :<br>[[gv:rod_dual_ac227|Actinium-227 Dual Rod]], [[gv:rod_dual_co|Cobalt Dual Rod]], [[gv:rod_dual_co60|Cobalt-60 Dual Rod]], [[gv:rod_dual_lithium|Lithium Dual Rod]], [[gv:rod_dual_np237|Neptunium-237 Dual Rod]], [[gv:rod_dual_pu238|Plutonium-238 Dual Rod]], [[gv:rod_dual_pu239|Plutonium-239 Dual Rod]], [[gv:rod_dual_ra226|Radium-226 Dual Rod]], [[gv:rod_dual_rgp|Reactor-Grade Plutonium Dual Rod]], [[gv:rod_dual_th232|Thorium-232 Dual Rod]] and 7 more.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:rod_empty|Tige vide]].<br><br>Sert à fabriquer :<br>[[gv:rod_dual_ac227|Actinium-227 double tige]], [[gv:rod_dual_co|Double tige de cobalt]], [[gv:rod_dual_co60|Cobalt-60 double tige]], [[gv:rod_dual_lithium|Double tige de lithium]], [[gv:rod_dual_np237|Double tige de neptunium-237]], [[gv:rod_dual_pu238|Dougle tige de Pu238]], [[gv:rod_dual_pu239|Double tige de Pu239]], [[gv:rod_dual_ra226|Radium-226 double tige]], [[gv:rod_dual_rgp|Tige double en plutonium de qualité réacteur]], [[gv:rod_dual_th232|Thorium-232 double tige]] et 7 autres."
+ }
+}

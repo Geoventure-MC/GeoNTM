@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_health",
+ "icon": [
+  "geontm:upgrade_health"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_health"
+  ]
+ ],
+ "title": {
+  "en_us": "Emitter Health Upgrade",
+  "fr_fr": "Mise à niveau de la santé de l'émetteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Soldering Station|Soldering Station]] : 4 x [[gv:circuit_chip|Microchip]], 4 x [[gv:circuit_capacitor|Capacitor]], [[gv:upgrade_template|Machine Upgrade Template]], 4 x Lithium Powder.",
+  "fr_fr": "Obtention :<br>- [[Soldering Station|Station de soudure]] : 4 x [[gv:circuit_chip|Micropuce]], 4 x [[gv:circuit_capacitor|Condensateur]], [[gv:upgrade_template|Amélioration de machine]], 4 x Poudre de lithium."
+ }
+}

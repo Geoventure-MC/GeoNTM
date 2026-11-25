@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_thruster_15_balefire_large",
+ "icon": [
+  "geontm:mp_thruster_15_balefire_large"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_thruster_15_balefire_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 BF Thruster with Nuclear Preheater (Heavy Duty Nozzle)",
+  "fr_fr": "Propulseur BF de taille 15 avec préchauffeur nucléaire (buse à usage intensif)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], 10 x pipe (High-Speed Steel), 16 x cast plate (Tungsten), 24 x plate (ostrum) - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 10 x tuyau (acier haute vitesse), 16 x plaque coulée (tungstène), 24 x plaque (ostrum) - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

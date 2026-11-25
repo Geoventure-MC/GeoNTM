@@ -1,0 +1,19 @@
+{
+ "name": "gv:pipette_laboratory",
+ "icon": [
+  "geontm:pipette_laboratory"
+ ],
+ "trigger": [
+  [
+   "geontm:pipette_laboratory"
+  ]
+ ],
+ "title": {
+  "en_us": "Laboratory Grade Pipette",
+  "fr_fr": "Pipette de qualité laboratoire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_chip|Microchip]], Rubber Bar, [[gv:pipette_boron|Boron Pipette]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_chip|Micropuce]], Barre en caoutchouc, [[gv:pipette_boron|Pipette au bore]]."
+ }
+}

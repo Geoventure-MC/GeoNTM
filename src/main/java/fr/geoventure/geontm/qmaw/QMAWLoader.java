@@ -155,6 +155,7 @@ public final class QMAWLoader {
 
         Map<String, String> titles = strings(json.get("title"));
         Map<String, String> contents = strings(json.get("content"));
+        GeoventureManuel.completer(name, titles, contents);
         if (contents.isEmpty()) {
             Constants.LOG.warn("[QMAW] Skipping manual {} ('{}'): no content", file, name);
             return null;

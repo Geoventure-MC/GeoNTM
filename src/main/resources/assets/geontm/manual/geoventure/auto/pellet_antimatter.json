@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_antimatter",
+ "icon": [
+  "geontm:pellet_antimatter"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_antimatter"
+  ]
+ ],
+ "title": {
+  "en_us": "Antimatter Cluster",
+  "fr_fr": "Granule antimatiere"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:cell|Empty Cell]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:cell|Cellule vide]]."
+ }
+}

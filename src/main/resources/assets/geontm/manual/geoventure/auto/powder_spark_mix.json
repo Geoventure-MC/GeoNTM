@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_spark_mix",
+ "icon": [
+  "geontm:powder_spark_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_spark_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Spark Blend",
+  "fr_fr": "Mélange d'étincelles"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x3) : Desh Powder, Euphemium Powder, [[gv:powder_power|Energy Powder]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:crystal_trixite|Trixite Crystals]].<br><br>Used to make :<br>[[gv:capacitor_spark|Spark Capacitor]], [[gv:battery_spark|Spark Battery]].",
+  "fr_fr": "Obtention :<br>- Établi (x3) : Poudre de Desh, Poudre d'Euphemium, [[gv:powder_power|Poudre d'énergie]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:crystal_trixite|Cristaux de trixite]].<br><br>Sert à fabriquer :<br>[[gv:capacitor_spark|Condensateur Spark]], [[gv:battery_spark|Batterie spark]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_magnetized_tungsten",
+ "icon": [
+  "geontm:coil_magnetized_tungsten"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_magnetized_tungsten"
+  ]
+ ],
+ "title": {
+  "en_us": "4000K High Temperature Super Conducting Coil",
+  "fr_fr": "Bobine supraconductrice haute température 4000K"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x wire (magnetized tungsten), Iron Ingot.<br>- Crafting table : 8 x wire (magnetized tungsten), Steel Ingot.<br><br>Used to make :<br>[[Radiation Generator|Radiation Generator]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x fil (tungstène magnétisé), Lingot de fer.<br>- Établi : 8 x fil (tungstène magnétisé), Lingot d'acier.<br><br>Sert à fabriquer :<br>[[Radiation Generator|Générateur de radiation]]."
+ }
+}

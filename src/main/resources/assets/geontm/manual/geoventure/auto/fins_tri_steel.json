@@ -1,0 +1,19 @@
+{
+ "name": "gv:fins_tri_steel",
+ "icon": [
+  "geontm:fins_tri_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:fins_tri_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Steel Fins",
+  "fr_fr": "Grandes ailettes en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Steel Plate, 4 x Steel Ingot, Block of Steel.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque d'acier, 4 x Lingot d'acier, Bloc d'acier."
+ }
+}

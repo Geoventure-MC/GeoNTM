@@ -1,0 +1,19 @@
+{
+ "name": "gv:catalyst_clay",
+ "icon": [
+  "geontm:catalyst_clay"
+ ],
+ "trigger": [
+  [
+   "geontm:catalyst_clay"
+  ]
+ ],
+ "title": {
+  "en_us": "Clay Catalyst",
+  "fr_fr": "Catalyseur d'argile"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Iron Powder, Clay Ball.<br><br>Used to make :<br>[[gv:deuterium_filter|Deuterium Filter]].",
+  "fr_fr": "Obtention :<br>- Établi : Poudre de fer, Motte d'argile.<br><br>Sert à fabriquer :<br>[[gv:deuterium_filter|Filtre au deutérium]]."
+ }
+}

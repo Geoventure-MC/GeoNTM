@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_soyuz_core",
+ "icon": [
+  "geontm:struct_soyuz_core"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_soyuz_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Soyuz Launcher Core Component",
+  "fr_fr": "Composant principal du lanceur Soyouz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Scaffold, [[gv:circuit_advanced|Military Grade Circuit Board]], 2 x Steel Plate, [[gv:struct_launcher_core_large|Launch Table Core Component]], [[gv:battery_lead|Lead-Acid Battery]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Échafaudage en acier, [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 2 x Plaque d'acier, [[gv:struct_launcher_core_large|Lancer le composant de base de la table]], [[gv:battery_lead|Batterie plomb-acide]]."
+ }
+}

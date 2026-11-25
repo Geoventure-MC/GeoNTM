@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_quantum",
+ "icon": [
+  "geontm:battery_quantum"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_quantum"
+  ]
+ ],
+ "title": {
+  "en_us": "Quantum Battery",
+  "fr_fr": "Batterie quantique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 24 x dense wire (BSCCO), 32 x [[gv:pellet_charged|Ionized Particles]], 16 x [[Fullerite|Crystalline Fullerite]], 8000 mB perfluoromethyl cold.",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 24 x fil dense (bscco), 32 x [[gv:pellet_charged|Particules ionisées]], 16 x [[Fullerite|Fullerite cristalline]], 8000 mB perfluoromethyl cold."
+ }
+}

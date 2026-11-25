@@ -1,0 +1,19 @@
+{
+ "name": "gv:launchpad_lambda",
+ "icon": [
+  "geontm:launchpad_lambda"
+ ],
+ "trigger": [
+  [
+   "geontm:launchpad_lambda"
+  ]
+ ],
+ "title": {
+  "en_us": "Lambda Launch Pad",
+  "fr_fr": "Rampe de lancement Lambda"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 128 x [[gv:concrete_rebar|Reinforced Concrete]], 24 x welded plate (Steel), 4 x [[gv:motor_bismuth|Bismuth Motor]], 4 x [[gv:circuit_controller_advanced|Advanced Control Unit]], 17 x [[gv:drive_disk_flightdata_processed|Disk Drive (Processed Flight Data)]], 8 x Bronze Structural Elements - [[gv:schemas|blueprint required]]: Deep space.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 128 x [[gv:concrete_rebar|Béton armé]], 24 x plaque soudée (acier), 4 x [[gv:motor_bismuth|Moteur de bismuth]], 4 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]], 17 x [[gv:drive_disk_flightdata_processed|Lecteur de disque (données de vol traitées)]], 8 x Éléments structurels en bronze - [[gv:schemas|schéma exigé]] : Espace lointain."
+ }
+}

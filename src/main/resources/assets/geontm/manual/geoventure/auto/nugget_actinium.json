@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_actinium",
+ "icon": [
+  "geontm:nugget_actinium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_actinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Nugget",
+  "fr_fr": "Pépite d'actinium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_actinium|Actinium-227 Billet]].<br>- Crafting table (x9) : [[gv:ingot_actinium|Actinium-227 Ingot]].<br><br>Used to make :<br>[[gv:billet_actinium|Actinium-227 Billet]], [[gv:ingot_actinium|Actinium-227 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_actinium|Billette d'actinium-227]].<br>- Établi (x9) : [[gv:ingot_actinium|Lingot d'actinium semi-stable]].<br><br>Sert à fabriquer :<br>[[gv:billet_actinium|Billette d'actinium-227]], [[gv:ingot_actinium|Lingot d'actinium semi-stable]]."
+ }
+}

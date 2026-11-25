@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_plastic_board_blank",
+ "icon": [
+  "geontm:scrap_plastic_board_blank"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_plastic_board_blank"
+  ]
+ ],
+ "title": {
+  "en_us": "Plastic Scraps",
+  "fr_fr": "Débris de plastique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br>- [[Shredder|Shredder]] : Bobblehead.<br><br>Used to make :<br>[[gv:circuit_star_piece_board_blank|SC - Printed Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère.<br>- [[Shredder|Broyeur]] : Figurine branlante.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_piece_board_blank|SC - Carte de circuit imprimé]]."
+ }
+}

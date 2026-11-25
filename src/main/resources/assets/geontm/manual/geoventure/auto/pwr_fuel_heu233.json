@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_heu233",
+ "icon": [
+  "geontm:pwr_fuel_heu233"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_heu233"
+  ]
+ ],
+ "title": {
+  "en_us": "HEU-233 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEU-233"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Uranium-233 Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billet d'uranium-233, [[gv:plate_polymer|Isolateur]]."
+ }
+}

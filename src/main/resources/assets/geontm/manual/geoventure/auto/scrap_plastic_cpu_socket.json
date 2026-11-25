@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap_plastic_cpu_socket",
+ "icon": [
+  "geontm:scrap_plastic_cpu_socket"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap_plastic_cpu_socket"
+  ]
+ ],
+ "title": {
+  "en_us": "Plastic Scraps",
+  "fr_fr": "Débris de plastique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x Polymer Bar.<br><br>Used to make :<br>[[gv:circuit_star_piece_cpu_socket|SC - CPU Socket]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x Lingot de polymère.<br><br>Sert à fabriquer :<br>[[gv:circuit_star_piece_cpu_socket|SC - Support du CPU]]."
+ }
+}

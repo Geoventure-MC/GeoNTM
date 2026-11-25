@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_boots_grey",
+ "icon": [
+  "geontm:hazmat_boots_grey"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_boots_grey"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Performance Hazmat Boots",
+  "fr_fr": "Bottes Hazmat hautes performances"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:hazmat_cloth_grey|Lead-Reinforced Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:hazmat_cloth_grey|Chiffon Hazmat renforcé au plomb]]."
+ }
+}

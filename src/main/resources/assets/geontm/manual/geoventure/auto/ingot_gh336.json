@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_gh336",
+ "icon": [
+  "geontm:ingot_gh336"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_gh336"
+  ]
+ ],
+ "title": {
+  "en_us": "Ghiorsium-336 Ingot",
+  "fr_fr": "Lingot de Ghiorsium-336"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_gh336|Ghiorsium-336 Billet]].<br>- Crafting table : 9 x [[gv:nugget_gh336|Ghiorsium-336 Nugget]].<br><br>Used to make :<br>[[gv:billet_gh336|Ghiorsium-336 Billet]], [[gv:cladding_ghiorsium|Ghiorsium Cladding]], [[gv:nugget_gh336|Ghiorsium-336 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_gh336|Billette de Ghiorsium-336]].<br>- Établi : 9 x [[gv:nugget_gh336|Pépite de Ghiorsium-336]].<br><br>Sert à fabriquer :<br>[[gv:billet_gh336|Billette de Ghiorsium-336]], [[gv:cladding_ghiorsium|Bardage Ghiorsium]], [[gv:nugget_gh336|Pépite de Ghiorsium-336]]."
+ }
+}

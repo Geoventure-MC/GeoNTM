@@ -1,0 +1,19 @@
+{
+ "name": "gv:geiger_counter",
+ "icon": [
+  "geontm:geiger_counter"
+ ],
+ "trigger": [
+  [
+   "geontm:geiger_counter"
+  ]
+ ],
+ "title": {
+  "en_us": "Handheld Geiger Counter",
+  "fr_fr": "Compteur Geiger"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:geiger|Geiger Counter]].<br>- Crafting table : 2 x Beryllium Ingot, [[gv:circuit_basic|Integrated Circuit Board]], Gold Ingot, 2 x ingot (rubber), Steel Plate, 2 x wire (gold).<br><br>Used to make :<br>[[gv:geiger|Geiger Counter]], [[gv:radsensor|Radiation Sensor]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:geiger|Compteur Geiger]].<br>- Établi : 2 x Lingot de beryllium, [[gv:circuit_basic|Carte de circuit intégré]], Lingot d'or, 2 x lingot (caoutchouc), Plaque d'acier, 2 x fil (or).<br><br>Sert à fabriquer :<br>[[gv:radsensor|Capteur de rayonnement]]."
+ }
+}

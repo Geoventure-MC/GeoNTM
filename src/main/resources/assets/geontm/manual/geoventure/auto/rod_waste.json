@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_waste",
+ "icon": [
+  "geontm:rod_waste"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_waste"
+  ]
+ ],
+ "title": {
+  "en_us": "Nuclear Waste Rod",
+  "fr_fr": "Tige de dechets nucleaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_rgp|Reactor-Grade Plutonium Rod]].<br>- Crafting table : [[gv:rod_empty|Empty Rod]], [[gv:billet_nuclear_waste|Nuclear Waste Billet]].<br><br>Used to make :<br>[[gv:billet_nuclear_waste|Nuclear Waste Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_rgp|Tige de plutonium de qualité réacteur]].<br>- Établi : [[gv:rod_empty|Tige vide]], [[gv:billet_nuclear_waste|Billet de déchets nucléaires]].<br><br>Sert à fabriquer :<br>[[gv:billet_nuclear_waste|Billet de déchets nucléaires]]."
+ }
+}

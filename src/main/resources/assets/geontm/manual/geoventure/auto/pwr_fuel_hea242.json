@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hea242",
+ "icon": [
+  "geontm:pwr_fuel_hea242"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hea242"
+  ]
+ ],
+ "title": {
+  "en_us": "HEA-242 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEA-242"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Americium-242 Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billet d'américium-242, [[gv:plate_polymer|Isolateur]]."
+ }
+}

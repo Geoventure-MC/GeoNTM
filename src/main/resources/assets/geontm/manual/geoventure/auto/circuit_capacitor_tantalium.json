@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_capacitor_tantalium",
+ "icon": [
+  "geontm:circuit_capacitor_tantalium"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_capacitor_tantalium"
+  ]
+ ],
+ "title": {
+  "en_us": "Tantalum Capacitor",
+  "fr_fr": "Condensateur au tantale"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:plate_polymer|Insulator]], Tantalium Nugget, wire (aluminium).<br>- Crafting table : [[gv:plate_polymer|Insulator]], Tantalium Nugget, wire (copper).<br><br>Used to make :<br>[[gv:circuit_controller|Control Unit]], [[gv:circuit_controller_advanced|Advanced Control Unit]], [[gv:upgrade_afterburn_2|Afterburner Upgrade Mk.II]], [[gv:upgrade_afterburn_3|Afterburner Upgrade Mk.III]], [[gv:upgrade_effect_2|Effectiveness Upgrade Mk.II]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], [[gv:upgrade_fortune_2|Fortune Upgrade Mk.II]], [[gv:upgrade_fortune_3|Fortune Upgrade Mk.III]], [[gv:upgrade_power_2|Power Saving Upgrade Mk.II]], [[gv:upgrade_power_3|Power Saving Upgrade Mk.III]] and 3 more.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:plate_polymer|Isolateur]], Pépite de tantale, fil (aluminium).<br>- Établi : [[gv:plate_polymer|Isolateur]], Pépite de tantale, fil (cuivre).<br><br>Sert à fabriquer :<br>[[gv:circuit_controller|Unité de contrôle]], [[gv:circuit_controller_advanced|Unité de contrôle avancée]], [[gv:upgrade_afterburn_2|Amélioration rose Mk.II]], [[gv:upgrade_afterburn_3|Amélioration rose Mk.III]], [[gv:upgrade_effect_2|Amélioration verte Mk.II]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], [[gv:upgrade_fortune_2|Amélioration pourpre Mk.II]], [[gv:upgrade_fortune_3|Amélioration pourpre Mk.III]], [[gv:upgrade_power_2|Amélioration bleue Mk.II]], [[gv:upgrade_power_3|Amélioration bleue Mk.III]] et 3 autres."
+ }
+}

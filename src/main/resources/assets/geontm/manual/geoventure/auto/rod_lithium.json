@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_lithium",
+ "icon": [
+  "geontm:rod_lithium"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_lithium"
+  ]
+ ],
+ "title": {
+  "en_us": "Lithium Rod",
+  "fr_fr": "Tige de lithium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Lithium Ingot.<br><br>Used to make :<br>[[gv:lithium|Lithium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_empty|Tige vide]], Lingot de lithium.<br><br>Sert à fabriquer :<br>[[gv:lithium|Cube de lithium]]."
+ }
+}

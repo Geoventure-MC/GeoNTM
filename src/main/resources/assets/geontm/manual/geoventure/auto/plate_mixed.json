@@ -1,0 +1,19 @@
+{
+ "name": "gv:plate_mixed",
+ "icon": [
+  "geontm:plate_mixed"
+ ],
+ "trigger": [
+  [
+   "geontm:plate_mixed"
+  ]
+ ],
+ "title": {
+  "en_us": "Mixed Plate",
+  "fr_fr": "Plaque mixte"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 2 x Copper Plate, [[gv:neutron_reflector|Neutron Reflector]], plate (ostrum).<br><br>Used to make :<br>[[gv:plate_paa|PaA Alloy Plate]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 2 x Plaque de cuivre, [[gv:neutron_reflector|Reflecteur neutronique]], plaque (ostrum).<br><br>Sert à fabriquer :<br>[[gv:plate_paa|Plaque d'alliage PaA]]."
+ }
+}

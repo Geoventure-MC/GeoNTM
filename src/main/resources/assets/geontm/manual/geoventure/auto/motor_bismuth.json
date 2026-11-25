@@ -1,0 +1,19 @@
+{
+ "name": "gv:motor_bismuth",
+ "icon": [
+  "geontm:motor_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:motor_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "Bismuth Motor",
+  "fr_fr": "Moteur de bismuth"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Bismuth Nugget, 2 x dense wire (neodymium), 2 x cast plate (Steel), High-Speed Steel Ingot.<br><br>Used to make :<br>[[gv:satellite_science_assembler|Space Laboratory - 0G Assembler]], [[gv:satellite_miner_astro|Asteroid Mining Ship]], [[Hydrotreater|Hydrotreater]], [[gv:launchpad_lambda|Lambda Launch Pad]], [[gv:satellite_miner_lunar|Lunar Mining Ship]], [[Pyrolysis Oven|Pyrolysis Oven]], [[Catalytic Reformer|Catalytic Reformer]], [[Vacuum Refinery|Vacuum Refinery]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Pépite de bismuth, 2 x fil dense (neodymium), 2 x plaque coulée (acier), Lingot d'acier haute vitesse.<br><br>Sert à fabriquer :<br>[[gv:satellite_science_assembler|Laboratoire spatial - Assembleur 0G]], [[gv:satellite_miner_astro|Vaisseau minier d'astéroïdes]], [[Hydrotreater|Hydrotraiteur]], [[gv:launchpad_lambda|Rampe de lancement Lambda]], [[gv:satellite_miner_lunar|Vaisseau minier lunaire]], [[Pyrolysis Oven|Four de pyrolyse]], [[Catalytic Reformer|Reformeur catalytique]], [[Vacuum Refinery|Raffinerie sous vide]]."
+ }
+}

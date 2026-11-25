@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_coal",
+ "icon": [
+  "geontm:oil_tar_coal"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_coal"
+  ]
+ ],
+ "title": {
+  "en_us": "Coal Tar",
+  "fr_fr": "Goudron de houille"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] (x9) : block (coal).<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : Coal Powder.<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : gem (coal).<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:coke_coal|Coal Coke]].",
+  "fr_fr": "Obtention :<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] (x9) : bloc (coal).<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : Poudre de charbon.<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : gemme (coal).<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:coke_coal|Coke de charbon]]."
+ }
+}

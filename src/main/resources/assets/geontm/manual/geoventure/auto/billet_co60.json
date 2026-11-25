@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_co60",
+ "icon": [
+  "geontm:billet_co60"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_co60"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt-60 Billet",
+  "fr_fr": "Billet de cobalt-60"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_co60|Cobalt-60 Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_co60|Cobalt-60 Ingot]].<br>- Crafting table : [[gv:rod_co60|Cobalt-60 Rod]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_co60|Cobalt-60 Ingot]], [[gv:nugget_co60|Cobalt-60 Nugget]], [[gv:pellet_rtg_cobalt|Cobalt-60 RTG Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_co60|Pépite de cobalt-60]].<br>- Établi (x3) : 2 x [[gv:ingot_co60|Lingot de cobalt 60]].<br>- Établi : [[gv:rod_co60|Tige de cobalt-60]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_co60|Lingot de cobalt 60]], [[gv:nugget_co60|Pépite de cobalt-60]], [[gv:pellet_rtg_cobalt|Pastille Cobalt-90 RTG]]."
+ }
+}

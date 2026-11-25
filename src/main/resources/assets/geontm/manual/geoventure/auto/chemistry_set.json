@@ -1,0 +1,19 @@
+{
+ "name": "gv:chemistry_set",
+ "icon": [
+  "geontm:chemistry_set"
+ ],
+ "trigger": [
+  [
+   "geontm:chemistry_set"
+  ]
+ ],
+ "title": {
+  "en_us": "Laboratory Glassware",
+  "fr_fr": "Verrerie de laboratoire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x glass blocks, Iron Ingot, Copper Ingot.<br><br>Used to make :<br>[[gv:ball_dynamite|Dynamite]], [[gv:canister_full|Canister]], [[Solid Fuel|Solid Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x glass blocks, Lingot de fer, Lingot de cuivre.<br><br>Sert à fabriquer :<br>[[gv:ball_dynamite|Dynamiter]], [[gv:canister_full|Bidon]], [[Solid Fuel|Combustible solide]]."
+ }
+}

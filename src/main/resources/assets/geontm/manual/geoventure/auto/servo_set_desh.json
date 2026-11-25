@@ -1,0 +1,19 @@
+{
+ "name": "gv:servo_set_desh",
+ "icon": [
+  "geontm:servo_set_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:servo_set_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Servo Set",
+  "fr_fr": "Desh Servo Ensemble"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:motor_desh|Desh Motor]], 2 x bolt (High-Speed Steel), 2 x Desh Compound Plate, [[gv:servo_set|Servo Set]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:motor_desh|Moteur de desh]], 2 x boulon (acier haute vitesse), 2 x Plaque de desh, [[gv:servo_set|Ensemble d'asservissements]]."
+ }
+}

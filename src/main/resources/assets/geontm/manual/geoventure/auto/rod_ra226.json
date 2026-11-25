@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_ra226",
+ "icon": [
+  "geontm:rod_ra226"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_ra226"
+  ]
+ ],
+ "title": {
+  "en_us": "Radium-226 Rod",
+  "fr_fr": "Tige de radium-226"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_empty|Empty Rod]], Radium-226 Billet.<br><br>Used to make :<br>[[gv:rod_ac227|Actinium-227 Rod]], [[Radium-226|Radium-226 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_empty|Tige vide]], Billet de radium-226.<br><br>Sert à fabriquer :<br>[[gv:rod_ac227|Tige d'actinium-227]], [[Radium-226|Billet de radium-226]]."
+ }
+}

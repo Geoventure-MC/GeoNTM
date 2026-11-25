@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_niobium_tiny",
+ "icon": [
+  "geontm:powder_niobium_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_niobium_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Niobium Powder",
+  "fr_fr": "Minuscule tas de poudre de niobium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:powder_niobium|Niobium Powder]].<br>- [[Centrifuge|Centrifuge]] (x2) : [[gv:chunk_ore_rare|Rare Earth Ore Chunk]].<br>- [[Shredder|Shredder]] : [[gv:fragment_niobium|Niobium Fragment]].<br><br>Used to make :<br>[[gv:powder_niobium|Niobium Powder]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:powder_niobium|Poudre de niobium]].<br>- [[Centrifuge|Centrifugeuse]] (x2) : [[gv:chunk_ore_rare|Fragment de minerai de terres rares]].<br>- [[Shredder|Broyeur]] : [[gv:fragment_niobium|Fragment de niobium]].<br><br>Sert à fabriquer :<br>[[gv:powder_niobium|Poudre de niobium]]."
+ }
+}

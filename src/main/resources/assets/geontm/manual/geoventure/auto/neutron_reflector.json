@@ -1,0 +1,19 @@
+{
+ "name": "gv:neutron_reflector",
+ "icon": [
+  "geontm:neutron_reflector"
+ ],
+ "trigger": [
+  [
+   "geontm:neutron_reflector"
+  ]
+ ],
+ "title": {
+  "en_us": "Neutron Reflector",
+  "fr_fr": "Reflecteur neutronique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x8) : [[RBMK Tungsten Carbide Neutron Reflector|RBMK Tungsten Carbide Neutron Reflector]].<br>- [[Arc Welder|Arc Welder]] (x2) : 2 x Tungsten Carbide Ingot, High-Speed Steel Plate.<br><br>Used to make :<br>[[gv:mp_warhead_10_nuclear_large|Size 10 Nuclear Warhead]], [[gv:mp_warhead_10_nuclear|Size 10 Micro Nuclear Warhead]], [[gv:mp_warhead_15_nuclear|Size 15 Nuclear Warhead]], [[gv:plate_mixed|Mixed Plate]], [[gv:pwr_reflector|PWR Neutron Reflector]], [[RBMK Tungsten Carbide Neutron Reflector|RBMK Tungsten Carbide Neutron Reflector]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x8) : [[RBMK Tungsten Carbide Neutron Reflector|Réflecteur de neutrons en carbure de tungstène RBMK]].<br>- [[Arc Welder|Soudeuse à arc]] (x2) : 2 x Lingot de carbure de tungstène, Plaque d'acier rapide.<br><br>Sert à fabriquer :<br>[[gv:mp_warhead_10_nuclear_large|Ogive nucléaire de taille 10]], [[gv:mp_warhead_10_nuclear|Micro-ogive nucléaire de taille 10]], [[gv:mp_warhead_15_nuclear|Ogive nucléaire de taille 15]], [[gv:plate_mixed|Plaque mixte]], [[gv:pwr_reflector|Réflecteur à neutrons PWR]], [[RBMK Tungsten Carbide Neutron Reflector|Réflecteur de neutrons en carbure de tungstène RBMK]]."
+ }
+}

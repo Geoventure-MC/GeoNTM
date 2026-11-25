@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuse",
+ "icon": [
+  "geontm:fuse"
+ ],
+ "trigger": [
+  [
+   "geontm:fuse"
+  ]
+ ],
+ "title": {
+  "en_us": "Fuse",
+  "fr_fr": "Fusible"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Steel Plate, [[gv:plate_polymer|Insulator]], wire (tungsten).",
+  "fr_fr": "Obtention :<br>- Établi : Plaque d'acier, [[gv:plate_polymer|Isolateur]], fil (tungstène)."
+ }
+}

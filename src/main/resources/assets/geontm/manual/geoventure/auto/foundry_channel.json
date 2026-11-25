@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_channel",
+ "icon": [
+  "geontm:foundry_channel"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_channel"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Channel",
+  "fr_fr": "Canal de fonderie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x [[gv:ingot_firebrick|Firebrick]], Stone Slab.<br><br>Used to make :<br>[[gv:foundry_outlet|Foundry Outlet]], [[gv:foundry_slagtap|Foundry Spill Outlet]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x [[gv:ingot_firebrick|Brique réfractaire]], Dalle de roche.<br><br>Sert à fabriquer :<br>[[gv:foundry_outlet|Sortie de fonderie]], [[gv:foundry_slagtap|Sortie de coulée des scories]]."
+ }
+}

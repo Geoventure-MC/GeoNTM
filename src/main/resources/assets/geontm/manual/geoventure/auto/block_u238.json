@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_u238",
+ "icon": [
+  "geontm:block_u238"
+ ],
+ "trigger": [
+  [
+   "geontm:block_u238"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Uranium-238",
+  "fr_fr": "Bloc d'Uranium-238"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Uranium-238|Uranium-238 Ingot]].<br><br>Used to make :<br>[[Uranium-238|Uranium-238 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Uranium-238|d'U238 Lingot]].<br><br>Sert à fabriquer :<br>[[Uranium-238|d'U238 Lingot]]."
+ }
+}

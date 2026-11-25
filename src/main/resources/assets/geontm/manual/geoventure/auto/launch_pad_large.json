@@ -1,0 +1,19 @@
+{
+ "name": "gv:launch_pad_large",
+ "icon": [
+  "geontm:launch_pad_large"
+ ],
+ "trigger": [
+  [
+   "geontm:launch_pad_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Launch Pad",
+  "fr_fr": "Base de lancement"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 6 x cast plate (Steel), 64 x Concrete Tile, 16 x ingot (plastic), 24 x [[gv:steel_scaffold|Steel Scaffold]], 2 x [[gv:circuit_advanced|Military Grade Circuit Board]] - [[gv:schemas|blueprint required]]: Heavy warheads.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 6 x plaque coulée (acier), 64 x Tuile de béton, 16 x lingot (plastique), 24 x [[gv:steel_scaffold|Échafaudage en acier]], 2 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]] - [[gv:schemas|schéma exigé]] : Ogives lourdes."
+ }
+}

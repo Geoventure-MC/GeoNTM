@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_cluster_small",
+ "icon": [
+  "geontm:warhead_cluster_small"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_cluster_small"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Cluster Warhead",
+  "fr_fr": "Petite ogive à sous munitions"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_small|Small Warhead]], 2 x [[gv:pellet_cluster|Explosive Pellets]] - [[gv:schemas|blueprint required]]: Heavy warheads.<br><br>Used to make :<br>[[gv:missile_cluster|Cluster Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_small|Petite ogive]], 2 x [[gv:pellet_cluster|Amas d'explosifs]] - [[gv:schemas|schéma exigé]] : Ogives lourdes.<br><br>Sert à fabriquer :<br>[[gv:missile_cluster|Missile à sous munitions Tier1]]."
+ }
+}

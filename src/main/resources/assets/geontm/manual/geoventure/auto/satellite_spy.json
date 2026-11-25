@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_spy",
+ "icon": [
+  "geontm:satellite_spy"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_spy"
+  ]
+ ],
+ "title": {
+  "en_us": "Spy Satellite",
+  "fr_fr": "Satellite espion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x shell (Aluminium), 32 x [[gv:photo_panel|Photovoltaic Panel]], 16 x [[gv:circuit_basic|Integrated Circuit Board]], 8 x [[gv:part_generic_glass_polarized|Polarized Lens]], 16 x [[gv:part_generic_lde|Low-Density Element]], 3 x [[gv:circuit_controller|Control Unit]] - [[gv:schemas|blueprint required]]: Orbital weapons and intelligence.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x coque (aluminium), 32 x [[gv:photo_panel|Panneau photovoltaïque]], 16 x [[gv:circuit_basic|Carte de circuit intégré]], 8 x [[gv:part_generic_glass_polarized|Lentille polarisée]], 16 x [[gv:part_generic_lde|Élément à faible densité]], 3 x [[gv:circuit_controller|Unité de contrôle]] - [[gv:schemas|schéma exigé]] : Armes et renseignement orbitaux."
+ }
+}

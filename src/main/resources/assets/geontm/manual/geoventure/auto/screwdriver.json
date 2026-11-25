@@ -1,0 +1,19 @@
+{
+ "name": "gv:screwdriver",
+ "icon": [
+  "geontm:screwdriver"
+ ],
+ "trigger": [
+  [
+   "geontm:screwdriver"
+  ]
+ ],
+ "title": {
+  "en_us": "Screwdriver",
+  "fr_fr": "Tournevis"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Steel Ingot, 2 x Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : Lingot d'acier, 2 x Lingot de fer."
+ }
+}

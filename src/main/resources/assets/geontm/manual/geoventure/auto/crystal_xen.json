@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_xen",
+ "icon": [
+  "geontm:crystal_xen"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_xen"
+  ]
+ ],
+ "title": {
+  "en_us": "Artificial Xen Crystal",
+  "fr_fr": "Cristal Xen artificiel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x [[gv:powder_power|Energy Powder]], Euphemium Ingot.<br><br>Used to make :<br>[[gv:satellite_xenium_resonator|Xenium Resonator Satellite]], [[gv:upgrade_screm|Screaming Scientist Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x [[gv:powder_power|Poudre d'énergie]], Lingot d'euphemium.<br><br>Sert à fabriquer :<br>[[gv:satellite_xenium_resonator|Satellite résonateur Xénium]], [[gv:upgrade_screm|Amélioration du scientifique hurlant]]."
+ }
+}

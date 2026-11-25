@@ -1,0 +1,19 @@
+{
+ "name": "gv:briquette_lignite",
+ "icon": [
+  "geontm:briquette_lignite"
+ ],
+ "trigger": [
+  [
+   "geontm:briquette_lignite"
+  ]
+ ],
+ "title": {
+  "en_us": "Lignite Briquette",
+  "fr_fr": "Briquette de lignite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Press|Burner Press]] : Lignite Powder.<br><br>Used to make :<br>[[gv:coke_lignite|Lignite Coke]].",
+  "fr_fr": "Obtention :<br>- [[Press|Presse à vapeur]] : Poudre de lignite.<br><br>Sert à fabriquer :<br>[[gv:coke_lignite|Coke de lignite]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_micro",
+ "icon": [
+  "geontm:missile_micro"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_micro"
+  ]
+ ],
+ "title": {
+  "en_us": "Micro-Nuclear Missile",
+  "fr_fr": "Missile micro-nucleaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:missile_assembly|Small Missile Assembly]], [[gv:ducttape|Duct Tape]], Mini Nuke, High Yield.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:missile_assembly|Petit assemblage de missile]], [[gv:ducttape|Ruban adhésif]], Mini-bombe nucléaire, haut rendement."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_zfb_pu241",
+ "icon": [
+  "geontm:billet_zfb_pu241"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_zfb_pu241"
+  ]
+ ],
+ "title": {
+  "en_us": "Pu-241 ZFB Billet",
+  "fr_fr": "Billet Pu-241 ZFB"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Zirconium Splinter, Uranium-235 Nugget, Plutonium-240 Nugget, Plutonium-241 Nugget.<br>- Crafting table (x6) : 3 x Zirconium Billet, Uranium-235 Billet, Plutonium-240 Billet, Plutonium-241 Billet.<br><br>Used to make :<br>[[gv:rbmk_fuel_zfb_pu241|Pu-241 RBMK ZFB Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Éclat de zirconium, Pépite de d'U235, Pépite de Pu240, Pépite de plutonium-241.<br>- Établi (x6) : 3 x Billet de zirconium, Billet d'uranium-235, Billet de plutonium-240, Billet de plutonium-241.<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_zfb_pu241|Tige Pu-241 RBMK ZFB]]."
+ }
+}

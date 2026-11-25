@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_schrabidium",
+ "icon": [
+  "geontm:ingot_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Ingot",
+  "fr_fr": "Lingot de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_schrabidium|Schrabidium Billet]].<br>- Blast furnace : Raw Schrabidium.<br>- Furnace : [[gv:ore_schrabidium|Schrabidium Ore]].<br>(7 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_schrabidium|Schrabidium Billet]], [[gv:block_schrabidium|Block of Schrabidium]], [[gv:pellet_charged|Ionized Particles]], [[gv:nugget_schrabidium|Schrabidium Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_schrabidium|Billette de Schrabidium-326]].<br>- Haut fourneau vanilla : Schrabidium brut.<br>- Four : [[gv:ore_schrabidium|Minerais de schrabidium]].<br>(7 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_schrabidium|Billette de Schrabidium-326]], [[gv:block_schrabidium|Bloc de Schrabidium]], [[gv:pellet_charged|Particules ionisées]], [[gv:nugget_schrabidium|Pépite de Schrabidium]]."
+ }
+}

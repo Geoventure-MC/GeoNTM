@@ -1,0 +1,19 @@
+{
+ "name": "gv:mirror_tool",
+ "icon": [
+  "geontm:mirror_tool"
+ ],
+ "trigger": [
+  [
+   "geontm:mirror_tool"
+  ]
+ ],
+ "title": {
+  "en_us": "Mirror Adjustment Tool",
+  "fr_fr": "Outil de réglage du miroir"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Aluminium Ingot, 2 x Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Lingot d'aluminium, 2 x Lingot de fer."
+ }
+}

@@ -1,0 +1,662 @@
+{
+ "Antimatter": {
+  "title": "Antimatière",
+  "content": "L'antimatière peut être produite à l'aide d'un [[Particle Detector|accélérateur à particules]] ou comme sous-produit du [[Cyclotron|cyclotron]]. Elle peut servir à produire certains combustibles RBMK, ou comme composant du plasma de Balefire utilisé dans une [[Fusion Reactor Vessel|cuve du réacteur à fusion]].<br><br>Voir aussi :<br>[[Particle Accelerator|Accélérateur de particules]]<br>[[Fusion Reactor|Réacteur à fusion]]"
+ },
+ "Aromatic Hydrocarbons": {
+  "title": "Hydrocarbures aromatiques",
+  "content": "Obtenus après [[Oil Refinery|raffinage]] de pétrole brut craqué [[Boiler|chauffé]]. Les hydrocarbures aromatiques servent principalement à produire de la [[Bakelite|bakélite]] et du [[Solvent|solvant]].<br><br>{{Template:Oil2}}"
+ },
+ "Biofuel": {
+  "title": "Biocarburant",
+  "content": "Le biocarburant peut être obtenu en combinant du [[Biogas|biogaz]] et de l'éthanol dans une [[Chemical Plant|usine chimique]]. Il sert principalement de [[Fuels|combustible]] pour produire de l'énergie en complément."
+ },
+ "Biogas": {
+  "title": "Biogaz",
+  "content": "Le biogaz peut être obtenu en [[Chemical Plant|combinant]] de la biomasse avec de l'air comprimé. En le [[Chemical Plant|mélangeant]] avec de l'éthanol, on peut produire du [[Biofuel|biocarburant]]. Il peut aussi servir à créer du [[Petroleum Gas|gaz de pétrole]] et des [[Aromatic Hydrocarbons|hydrocarbures aromatiques]] supplémentaires. Il peut également être produit en liquéfiant de la biomasse."
+ },
+ "Bitumen": {
+  "title": "Bitume",
+  "content": "Le bitume s'obtient principalement par [[Fractioning Tower|fractionnement]] de [[Heavy Oil|pétrole lourd]]. Il sert surtout à produire de l'asphalte, ou à reproduire du [[Crude Oil|pétrole brut]] par [[Catalytic Cracking Tower|craquage]].<br><br>{{Template:Oil1}}"
+ },
+ "Blood": {
+  "title": "Sang",
+  "content": "Le sang peut d'abord être obtenu à l'aide d'un sac IV vide, mais cette méthode inflige des dégâts. Il peut aussi être récupéré lorsqu'un mob entre en collision avec le [[Turbofan|turboréacteur]]. Il sert surtout de liquide de refroidissement pour le réacteur ICF, et se transforme en sang chaud une fois chauffé. Il peut aussi être converti en [[Heavy Oil|pétrole lourd]] par [[Compressor|compression]] en '4PU'."
+ },
+ "BTX": {
+  "title": "BTX",
+  "content": "Le BTX s'obtient par [[Fractioning Tower|fractionnement]] de [[Reformate|reformat]] ou de [[Desulfurized Naphtha|naphta désulfuré]]. Il sert surtout à produire du plastique dur lorsqu'il est combiné avec du phosgène. Ensuite, il sert à produire de la fullerite cristalline par [[Ore Acidizer|acidification]] de fullerine. Il peut être [[Catalytic Cracking Tower|craqué]] pour obtenir des [[Aromatic Hydrocarbons|hydrocarbures aromatiques]] et du [[Petroleum Gas|gaz de pétrole]] supplémentaires.<br><br>{{Template:Oil3}}"
+ },
+ "Chlorine Gas": {
+  "title": "Chlore gazeux",
+  "content": "Les premières méthodes pour obtenir du chlore gazeux consistent à utiliser de la glowstone ou de la sodalite obtenue à partir de minerai de lapis-lazuli dans le [[Combination Oven|four combiné]]. Sinon, il peut être fabriqué avec une machine d'électrolyse ou, petit à petit, avec le moulinet de chlore. Il a de nombreuses utilisations, notamment le traitement des minerais du substrat rocheux et la production de [[High-Performance Solvent|solvant haute performance]]. L'une de ses principales utilisations est la production de PVC, ou de plastique dur grâce au phosgène.<br><br>Voir aussi :<br>[[Vacuum Oil Processing|Traitement du pétrole sous vide]]"
+ },
+ "Chlorocalcite Solution": {
+  "title": "Solution de chlorocalcite",
+  "content": "La solution de chlorocalcite s'obtient en [[Chemical Plant|traitant]] de la chlorocalcite pour la rendre liquide. Elle sert dans un long procédé de production de [[Chlorine Gas|chlore gazeux]] et de poudre de calcium.<br><br>Ce procédé demande de [[Chemical Plant|mélanger]] la solution de chlorocalcite avec de l'[[Sulfuric Acid|acide sulfurique]] et du fondant, pour obtenir une solution de chlorocalcite mélangée. Elle peut ensuite être [[Fractioning Tower|fractionnée]] en colloïde et en solution de chlorocalcite nettoyée. En [[Chemical Plant|traitant]] la solution de chlorocalcite nettoyée avec de l'[[Sulfuric Acid|acide sulfurique]], on obtient une solution de chlorure de potassium et une solution de chlorure de calcium. La solution de chlorure de potassium peut être électrolysée en [[Chlorine Gas|chlore gazeux]]. Le chlorure de calcium est aussi électrolysé pour produire du [[Chlorine Gas|chlore gazeux]], ainsi qu'une solution de calcium. Enfin, la solution de calcium peut être [[Coker Unit|cokéfiée]] pour produire de la poudre de calcium et de la [[Steam|vapeur]] basse pression."
+ },
+ "Cholesterol Solution": {
+  "title": "Solution de cholestérol",
+  "content": "La solution de cholestérol s'obtient par [[Fractioning Tower|fractionnement]] d'[[Dissolved Egg|œuf dissous]]. Elle sert surtout à produire de la solution d'estradiol et du [[Reformate Gas|gaz de reformat]] supplémentaire par [[Catalytic Reformer|reformage]]."
+ },
+ "Coal Gasoline": {
+  "title": "Essence de charbon",
+  "content": "L'essence de charbon s'obtient d'abord par [[Fractioning Tower|fractionnement]] d'[[Coal Oil|huile de charbon]]. Elle sert surtout de [[Fuels|combustible]], mais elle peut être transformée en [[Leaded Coal Gasoline|essence de charbon plombée]] pour une production d'énergie supplémentaire. Elle peut aussi être obtenue par [[Pyrolysis Oven|pyrolyse]] de [[Heavy Oil|pétrole lourd]] et de charbon.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Coal Oil": {
+  "title": "Huile de charbon",
+  "content": "L'huile de charbon peut d'abord être obtenue par liquéfaction de charbon ou de lignite. Elle sert surtout à produire de l'[[Coal Gasoline|essence de charbon]] par [[Fractioning Tower|fractionnement]] ou par [[Hydrotreater|hydrotraitement]]. Elle sert aussi à produire du gaz de synthèse. Elle peut également être obtenue par [[Fractioning Tower|fractionnement]] de [[Coal Tar Creosote|créosote de goudron de houille]]."
+ },
+ "Coal Tar Creosote": {
+  "title": "Créosote de goudron de houille",
+  "content": "La créosote de goudron de houille peut être produite en [[Combination Oven|cokéfiant]] n'importe quelle forme de charbon ou de lignite dans un [[Combination Oven|four combiné]]. Elle est surtout [[Fractioning Tower|fractionnée]] pour obtenir de l'[[Coal Oil|huile de charbon]] et du [[Bitumen|bitume]]."
+ },
+ "Coker Gas": {
+  "title": "Gaz de cokéfaction",
+  "content": "Le gaz de cokéfaction s'obtient en [[Coker Unit|cokéfiant]] divers fluides. Il sert surtout à créer de l'[[Weapon Steel|acier d'arme]] dans le [[Rotary Furnace|four rotatif]]. Il peut aussi être [[Fractioning Tower|fractionné]] pour obtenir des [[Aromatic Hydrocarbons|hydrocarbures aromatiques]] et du dioxyde de carbone."
+ },
+ "Coker Naphtha": {
+  "title": "Naphta de cokéfaction",
+  "content": "Le naphta de cokéfaction s'obtient en [[Coker Unit|cokéfiant]] des variantes de [[Naphtha|naphta]], divers [[Diesel|diesels]] ou de l'[[Reclaimed Industrial Oil|huile industrielle recyclée]]. Il peut être [[Fractioning Tower|fractionné]] pour obtenir de l'[[Cracked Light Oil|huile légère craquée]] et du [[Cracked Naphtha|naphta craqué]]. Il peut aussi servir d'ingrédient dans un [[Solvent|solvant]] ou être [[Catalytic Reformer|reformé]] pour obtenir du [[Reformate|reformat]] et du [[Reformate Gas|gaz de reformat]]."
+ },
+ "Coker Oil": {
+  "title": "Huile de cokéfaction",
+  "content": "L'huile de cokéfaction s'obtient en [[Coker Unit|cokéfiant]] diverses huiles. Elle peut servir à produire davantage d'[[Cracked Oil|huile craquée]] et de l'[[Heating Oil|huile de chauffage]]."
+ },
+ "Cracked Diesel": {
+  "title": "Diesel craqué",
+  "content": "Le diesel craqué s'obtient par [[Fractioning Tower|fractionnement]] de [[Cracked Naphtha|naphta craqué]]. Il sert surtout à obtenir du [[Kerosene|kérosène]] et du [[Petroleum Gas|gaz de pétrole]] supplémentaires par [[Catalytic Cracking Tower|craquage]] ou par radiolyse. Il peut aussi être mélangé pour obtenir du [[High-Cetane Cracked Diesel|diesel craqué à haut indice de cétane]], un [[Fuels|combustible]] plus puissant.<br><br>{{Template:Oil2}}"
+ },
+ "Cracked Light Oil": {
+  "title": "Huile légère craquée",
+  "content": "Obtenue après [[Oil Refinery|raffinage]] de pétrole brut craqué [[Boiler|chauffé]]. L'huile légère craquée a plusieurs usages : elle peut être [[Catalytic Reformer|reformée]] ou [[Fusion Reactor Breeding Chamber|surgénérée]] pour obtenir du [[Reformate Gas|gaz de reformat]] et d'autres sous-produits. Elle peut aussi remplacer l'[[Light Oil|huile légère]] dans la production de [[Desh|desh]]. Elle peut également être [[Fractioning Tower|fractionnée]].<br><br>{{Template:Oil2}}"
+ },
+ "Cracked Naphtha": {
+  "title": "Naphta craqué",
+  "content": "Obtenu après [[Oil Refinery|raffinage]] de pétrole brut craqué [[Boiler|chauffé]]. C'est un ingrédient clé dans la production de [[Solvent|solvant]]. Par [[Fractioning Tower|fractionnement]], le naphta craqué peut aussi produire du [[Cracked Diesel|diesel craqué]], un combustible de haute qualité. Le naphta craqué peut également être [[Catalytic Reformer|reformé]] pour obtenir du [[Reformate|reformat]] et d'autres sous-produits.<br><br>{{Template:Oil2}}"
+ },
+ "Cracked Oil": {
+  "title": "Huile craquée",
+  "content": "L'huile craquée peut d'abord être obtenue par [[Catalytic Cracking Tower|craquage]] de pétrole brut [[Boiler|chauffé]]. Lorsqu'elle est [[Oil Refinery|raffinée]], elle produit des sous-produits tels que :<br>[[Cracked Naphtha|Naphta craqué]] <br>[[Cracked Light Oil|Huile légère craquée]] <br>[[Aromatic Hydrocarbons|Hydrocarbures aromatiques]] <br>[[Unsaturated Hydrocarbons|Hydrocarbures insaturés]]<br><br>Elle peut aussi être plus tard [[Hydrotreater|hydrotraitée]] pour obtenir de l'[[Desulfurized Cracked Oil|huile craquée désulfurée]], pour un traitement ultérieur.<br><br>{{Template:Oil2}}"
+ },
+ "Crude Oil": {
+  "title": "Pétrole brut",
+  "content": "Fluide obtenu après extraction des [[Oil Collection|gisements de pétrole]]. Matière de base de tous les produits pétroliers, il doit d'abord être [[Boiler|chauffé]] et [[Oil Refinery|traité]] pour obtenir des produits tels que :<br>[[Heavy Oil|Pétrole lourd]] <br>[[Naphtha|Naphta]] <br>[[Light Oil|Huile légère]] <br>[[Petroleum Gas|Gaz de pétrole]] <br><br>Il sert aussi à obtenir de l'[[Cracked Oil|huile craquée]] et des sous-produits associés par [[Catalytic Cracking Tower|craquage]]. Parmi les autres méthodes de traitement figurent le [[Vacuum Refinery|raffinage sous vide]], la radiolyse, l'[[Hydrotreater|hydrotraitement]] et la solidification.<br><br>{{Template:Oil1}}"
+ },
+ "Desulfurized Cracked Oil": {
+  "title": "Huile craquée désulfurée",
+  "content": "L'huile craquée désulfurée peut être produite par [[Hydrotreater|hydrotraitement]] d'[[Cracked Oil|huile craquée]] avec de l'hydrogène liquide [[Compressor|sous pression]]. Après [[Boiler|chauffage]], elle peut être [[Oil Refinery|raffinée]] pour produire des produits tels que :<br>[[Desulfurized Naphtha|Naphta désulfuré]] <br>[[Desulfurized Light Oil|Huile légère désulfurée]] <br>[[Aromatic Hydrocarbons|Hydrocarbures aromatiques]] <br>[[Unsaturated Hydrocarbons|Hydrocarbures insaturés]] <br>Cire de paraffine<br><br>{{Template:Oil3.5}}"
+ },
+ "Desulfurized Crude Oil": {
+  "title": "Pétrole brut désulfuré",
+  "content": "Le pétrole brut désulfuré peut être produit par [[Hydrotreater|hydrotraitement]] de [[Crude Oil|pétrole brut]] avec de l'hydrogène liquide [[Compressor|sous pression]]. Il peut être [[Vacuum Refinery|raffiné sous vide]] pour produire des produits tels que :<br>[[Vacuum Heavy Oil|Pétrole lourd sous vide]] <br>[[Vacuum Light Oil|Huile légère sous vide]] <br>[[Reformate|Reformat]] <br>[[Reformate Gas|Gaz de reformat]] <br><br>Il peut aussi être [[Boiler|chauffé]] pour obtenir du [[Desulfurized Hot Crude Oil|pétrole brut chaud désulfuré]].<br><br>{{Template:Oil3.5}}"
+ },
+ "Desulfurized Hot Crude Oil": {
+  "title": "Pétrole brut chaud désulfuré",
+  "content": "Le pétrole brut chaud désulfuré peut être produit en [[Boiler|chauffant]] du [[Desulfurized Crude Oil|pétrole brut désulfuré]]. Il peut être [[Oil Refinery|raffiné]] pour produire des produits tels que :<br>[[Heavy Oil|Pétrole lourd]] <br>[[Desulfurized Naphtha|Naphta désulfuré]] <br>[[Desulfurized Light Oil|Huile légère désulfurée]] <br>[[Unsaturated Hydrocarbons|Hydrocarbures insaturés]] <br>Cire de paraffine <br><br>{{Template:Oil3.5}}"
+ },
+ "Desulfurized Light Oil": {
+  "title": "Huile légère désulfurée",
+  "content": "L'huile légère désulfurée s'obtient par [[Oil Refinery|raffinage]] d'[[Desulfurized Cracked Oil|huile craquée désulfurée]] chaude ou de [[Desulfurized Hot Crude Oil|pétrole brut chaud désulfuré]]. Elle peut être [[Fractioning Tower|fractionnée]] pour produire du [[High-Cetane Diesel|diesel à haut indice de cétane]] et du [[Kerosene|kérosène]].<br><br>{{Template:Oil3.5}}"
+ },
+ "Desulfurized Naphtha": {
+  "title": "Naphta désulfuré",
+  "content": "Le naphta désulfuré s'obtient par [[Oil Refinery|raffinage]] d'[[Desulfurized Cracked Oil|huile craquée désulfurée]] chaude ou de [[Desulfurized Hot Crude Oil|pétrole brut chaud désulfuré]]. Il est surtout [[Fractioning Tower|fractionné]] pour produire du [[BTX|BTX]] et du [[High-Cetane Diesel|diesel à haut indice de cétane]]. Il peut aussi être mélangé avec des [[Aromatic Hydrocarbons|hydrocarbures aromatiques]] pour obtenir du [[Solvent|solvant]] supplémentaire.<br><br>{{Template:Oil3.5}}"
+ },
+ "Deuterium": {
+  "title": "Deutérium",
+  "content": "Le deutérium peut être produit par électrolyse d'eau lourde. Il sert surtout à produire divers plasmas à l'intérieur du [[Fusion Reactor|réacteur à fusion]]."
+ },
+ "Diesel": {
+  "title": "Diesel",
+  "content": "Le diesel s'obtient par [[Fractioning Tower|fractionnement]] d'[[Light Oil|huile légère]] ou de [[Naphtha|naphta]]. Il sert surtout de source de [[Fuels|combustible]], mais il peut aussi être [[Catalytic Cracking Tower|craqué]] pour obtenir du [[Kerosene|kérosène]] et du [[Petroleum Gas|gaz de pétrole]] supplémentaires.<br><br>{{Template:Oil1}}"
+ },
+ "Dissolved Egg": {
+  "title": "Œuf dissous",
+  "content": "L'œuf dissous s'obtient en mélangeant du [[High-Performance Solvent|solvant haute performance]] et un œuf. Il sert à produire de la [[Cholesterol Solution|solution de cholestérol]] par [[Fractioning Tower|fractionnement]]. Il restitue aussi une partie du [[High-Performance Solvent|solvant haute performance]] utilisé en entrée."
+ },
+ "Engine Lubricant": {
+  "title": "Lubrifiant moteur",
+  "content": "Le lubrifiant moteur s'obtient surtout par [[Fractioning Tower|fractionnement]] d'[[Industrial Oil|huile industrielle]]. Il peut servir à produire de la cire de paraffine, ce qui permet une production précoce de [[High-Performance Solvent|solvant haute performance]], ou la production de [[Petroil|petroil]]. Il est aussi nécessaire pour lubrifier la turbine à gaz à cycle combiné.<br><br>{{Template:Oil1}}"
+ },
+ "Fish Oil": {
+  "title": "Huile de poisson",
+  "content": "L'huile de poisson peut être produite en mélangeant ou en liquéfiant n'importe quel type de poisson. Elle sert surtout à produire divers fluides tels que la [[Nitroglycerin|nitroglycérine]], le [[Engine Lubricant|lubrifiant moteur]] ou le [[Biofuel|biocarburant]], par mélange."
+ },
+ "Gasoline": {
+  "title": "Essence",
+  "content": "L'essence s'obtient par [[Chemical Plant|traitement]] de [[Naphtha|naphta]]. Elle sert surtout de [[Fuels|combustible]]. Elle peut aussi être mélangée à de l'[[Leaded Gasoline|essence plombée]] pour produire davantage d'énergie.<br><br>{{Template:Oil1}}"
+ },
+ "Heating Oil": {
+  "title": "Huile de chauffage",
+  "content": "L'huile de chauffage peut d'abord être obtenue par [[Fractioning Tower|fractionnement]] de [[Naphtha|naphta]] ou d'[[Industrial Oil|huile industrielle]]. Elle sert surtout d'ingrédient dans le [[Engine Lubricant|lubrifiant moteur]] ou de source de [[Fuels|combustible]] en début de progression.<br><br>{{Template:Oil1}}"
+ },
+ "Heavy Heating Oil": {
+  "title": "Huile de chauffage lourde",
+  "content": "L'huile de chauffage lourde s'obtient par [[Fractioning Tower|fractionnement]] de [[Vacuum Heavy Oil|pétrole lourd sous vide]]. Elle sert à produire davantage d'[[Heating Oil|huile de chauffage]] et du [[Reformate Gas|gaz de reformat]] par [[Catalytic Cracking Tower|craquage]] ou par radiolyse. Elle est aussi souvent utilisée comme source de [[Fuels|combustible]] pour produire de l'énergie en complément.<br><br>{{Template:Oil3}}"
+ },
+ "Heavy Oil": {
+  "title": "Pétrole lourd",
+  "content": "Obtenu après [[Oil Refinery|raffinage]] de [[Crude Oil|pétrole brut]] [[Boiler|chauffé]]. Le pétrole lourd est un sous-produit généralement jeté tôt dans la progression, ou [[Fractioning Tower|fractionné]] et raffiné davantage pour créer de l'asphalte. Il peut aussi être transformé directement en [[Engine Lubricant|lubrifiant moteur]] ou en goudron de pétrole.<br><br>{{Template:Oil1}}"
+ },
+ "High-Cetane Cracked Diesel": {
+  "title": "Diesel craqué à haut indice de cétane",
+  "content": "Le diesel craqué à haut indice de cétane s'obtient en mélangeant du [[Reformate|reformat]] et du [[Cracked Diesel|diesel craqué]]. Il sert de source de [[Fuels|combustible]]. Il peut aussi être [[Hydrotreater|hydrotraité]] pour obtenir du [[High-Cetane Diesel|diesel à haut indice de cétane]].<br><br>{{Template:Oil3}}"
+ },
+ "High-Cetane Diesel": {
+  "title": "Diesel à haut indice de cétane",
+  "content": "Le diesel à haut indice de cétane peut d'abord être obtenu en mélangeant du [[Reformate|reformat]] et du [[Diesel|diesel]]. Il sert de source de [[Fuels|combustible]]. Il peut aussi être obtenu par [[Fractioning Tower|fractionnement]] de [[Desulfurized Naphtha|naphta désulfuré]] ou d'[[Desulfurized Light Oil|huile légère désulfurée]].<br><br>{{Template:Oil3}}"
+ },
+ "High-Performance Solvent": {
+  "title": "Solvant haute performance",
+  "content": "Il s'obtient soit en combinant du [[Reformate Gas|gaz de reformat]] avec du [[Chlorine Gas|chlore gazeux]], soit par surgénération de cire de pétrole chlorée. Les deux méthodes de production nécessitent un RBMK, en raison du [[Bismuth|bismuth]] nécessaire au gaz de reformat ou de l'utilisation du canal d'irradiation. Le solvant haute performance sert surtout au traitement avancé des minerais du substrat rocheux ou à la production de solution de fullerène pour la fullerite cristalline.<br><br>{{Template:Oil3}}"
+ },
+ "Hydrogen Peroxide": {
+  "title": "Peroxyde d'hydrogène",
+  "content": "Le peroxyde d'hydrogène peut être obtenu par [[Chemical Plant|traitement]] d'eau. C'est l'un des fluides les plus essentiels, car il est utilisé à chaque étape de la progression. Il sert d'abord à traiter les matériaux dans l'[[Ore Acidizer|acidifiant de minerai]]. Il est utilisé dans la production d'[[Sulfuric Acid|acide sulfurique]], pour le traitement du coltan et dans la production de schrabidate ferrique. Il peut aussi servir à produire des cartes de condensateurs."
+ },
+ "Industrial Oil": {
+  "title": "Huile industrielle",
+  "content": "L'huile industrielle peut être obtenue par [[Fractioning Tower|fractionnement]] de [[Heavy Oil|pétrole lourd]]. Elle sert surtout à obtenir du [[Engine Lubricant|lubrifiant moteur]] et de l'[[Heating Oil|huile de chauffage]] par [[Fractioning Tower|fractionnement]]. Elle peut aussi servir à produire davantage de [[Naphtha|naphta]] ou de l'[[Reclaimed Industrial Oil|huile industrielle recyclée]].<br><br>{{Template:Oil1}}"
+ },
+ "Jet Fuel": {
+  "title": "Carburéacteur",
+  "content": "Le carburéacteur s'obtient surtout en mélangeant du [[Reformate|reformat]] et du [[Kerosene|kérosène]]. Il sert principalement de [[Fuels|combustible]] pour produire davantage d'énergie. Il peut aussi être obtenu par [[Fractioning Tower|fractionnement]] d'[[Desulfurized Light Oil|huile légère désulfurée]].<br><br>{{Template:Oil3}}"
+ },
+ "Kerosene": {
+  "title": "Kérosène",
+  "content": "Le kérosène peut être produit par [[Fractioning Tower|fractionnement]] de [[Light Oil|variantes d'huile légère]], par [[Catalytic Cracking Tower|craquage]], ou en effectuant une radiolyse sur des [[Diesel|variantes de diesel]]. Le kérosène sert à de nombreuses fonctions, notamment au plasma de Balefire, comme solvant pour les combustibles usés et radioactifs dans le [[PUREX|Purex]], pour alimenter la plupart des jetpacks, ou comme [[Fuels|combustible]].<br><br>{{Template:Oil1}}"
+ },
+ "Leaded Coal Gasoline": {
+  "title": "Essence de charbon plombée",
+  "content": "L'essence de charbon plombée s'obtient en mélangeant de l'agent antidétonant au tétraéthylplomb avec de l'[[Coal Gasoline|essence de charbon]]. Elle peut servir de [[Fuels|combustible]].<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Leaded Gasoline": {
+  "title": "Essence plombée",
+  "content": "L'essence plombée s'obtient en mélangeant de l'agent antidétonant au tétraéthylplomb avec de l'[[Gasoline|essence]]. L'essence plombée peut servir de [[Fuels|combustible]].<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Leaded Petroil": {
+  "title": "Petroil plombé",
+  "content": "Le petroil plombé s'obtient en mélangeant du [[Petroil|petroil]] et de l'agent antidétonant au tétraéthylplomb. Il ne peut servir que de [[Fuels|combustible]] pour produire davantage d'énergie.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Light Oil": {
+  "title": "Huile légère",
+  "content": "Obtenue après [[Oil Refinery|raffinage]] de [[Crude Oil|pétrole brut]] [[Boiler|chauffé]]. L'huile légère sert surtout à fabriquer du [[Desh|desh]]. Elle peut aussi être [[Fractioning Tower|fractionnée]] pour obtenir des combustibles tels que le [[Diesel|diesel]] ou le [[Kerosene|kérosène]].<br><br>{{Template:Oil1}}"
+ },
+ "LPG": {
+  "title": "GPL",
+  "content": "Le GPL peut être produit en [[Compressor|comprimant]] du [[Petroleum Gas|gaz de pétrole]] à '1PU'. Il sert surtout de source de [[Fuels|combustible]].<br><br>Voir aussi :<br>[[Advanced Oil Processing|Traitement avancé du pétrole]]"
+ },
+ "Mercury": {
+  "title": "Mercure",
+  "content": "Le mercure peut d'abord être obtenu par [[Centrifuge|centrifugation]] de minerai de redstone. Il sert surtout à produire du [[Desh|desh]]. Il est aussi utilisé dans le [[NITAN© 100 Octane Super Fuel|supercarburant NITAN© 100 octane]]. De plus, il est couramment produit en insérant du cinabre dans un [[Combination Oven|four combiné]] ou par traitement de la boue rouge."
+ },
+ "Mustard Gas": {
+  "title": "Gaz moutarde",
+  "content": "Le gaz moutarde s'obtient en mélangeant du [[Chlorine Gas|chlore gazeux]] et du [[Reformate Gas|gaz de reformat]] avec du soufre. Il sert à fabriquer certains obus d'artillerie."
+ },
+ "Naphtha": {
+  "title": "Naphta",
+  "content": "Obtenu après [[Oil Refinery|raffinage]] de [[Crude Oil|pétrole brut]] [[Boiler|chauffé]]. Le naphta peut servir à fabriquer des premiers combustibles tels que l'[[Gasoline|essence]] ou le [[Diesel|diesel]]. Plus tard, il peut aussi servir à produire du [[Solvent|solvant]] pour le traitement des minerais du substrat rocheux.<br><br>{{Template:Oil1}}"
+ },
+ "NITAN© 100 Octane Super Fuel": {
+  "title": "Supercarburant NITAN© 100 octane",
+  "content": "Le supercarburant NITAN© 100 octane peut être produit en mélangeant du [[Mercury|mercure]], du [[Kerosene|kérosène]] et du mélange de nitanium. Il sert de source de [[Fuels|combustible]] pour produire de l'énergie."
+ },
+ "Nitroglycerin": {
+  "title": "Nitroglycérine",
+  "content": "La nitroglycérine peut être produite en mélangeant de l'acide nitrique avec de l'[[Fish Oil|huile de poisson]] ou du [[Petroleum Gas|gaz de pétrole]]. Par [[Ore Acidizer|acidification]], elle peut servir à produire du Dynamite lorsqu'elle est mélangée à de la poudre de quartz, ou de la cordite lorsqu'elle est mélangée à de la sciure de bois."
+ },
+ "Osmiridic Solution": {
+  "title": "Solution osmiridique",
+  "content": "La solution osmiridique est un fluide post-gerald qui peut être fabriqué à partir de poudre de paléogénite et d'autres matériaux dans une [[Chemical Plant|usine chimique]]. Elle peut être séparée par des ondes gamma dans un [[SILEX|SILEX]] pour obtenir de la poudre d'osmiridium impure."
+ },
+ "Oxyhydrogen": {
+  "title": "Oxyhydrogène",
+  "content": "L'oxyhydrogène peut être produit en mélangeant de l'hydrogène liquide avec de l'oxygène liquide ou de l'air comprimé. Il peut servir de source de [[Fuels|combustible]] pour une énergie supplémentaire, bien que minime."
+ },
+ "Petroil": {
+  "title": "Petroil",
+  "content": "Le petroil s'obtient en mélangeant du [[Engine Lubricant|lubrifiant moteur]] et de l'[[Reclaimed Industrial Oil|huile industrielle recyclée]]. Il sert surtout de source de [[Fuels|combustible]], ou d'ingrédient dans le [[Leaded Petroil|petroil plombé]].<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Petroleum Gas": {
+  "title": "Gaz de pétrole",
+  "content": "Obtenu après [[Oil Refinery|raffinage]] du [[Crude Oil|pétrole brut]] [[Boiler|chauffé]]. Le gaz de pétrole est l'ingrédient principal du [[Polymer|polymère]], de la [[Bakelite|bakélite]] et du perfluorométhyle, ce qui en fait un ingrédient clé pour progresser à toutes les étapes du jeu. C'est aussi le fluide principal utilisé dans la solution de fracturation.<br><br>{{Template:Oil1}}"
+ },
+ "Reclaimed Industrial Oil": {
+  "title": "Huile industrielle recyclée",
+  "content": "L'huile industrielle recyclée peut être obtenue par [[Chemical Plant|traitement]] d'[[Industrial Oil|huile industrielle]]. Elle peut servir d'ingrédient dans le [[Petroil|petroil]] ou de source de [[Fuels|combustible]] pour une énergie supplémentaire.<br><br>{{Template:Oil1}}"
+ },
+ "Reformate": {
+  "title": "Reformat",
+  "content": "Le reformat s'obtient par [[Vacuum Refinery|raffinage sous vide]] de [[Crude Oil|pétrole brut]] [[Compressor|sous pression]]. Il a un large éventail d'usages, dont la production de [[Reformate Gas|gaz de reformat]] par [[Catalytic Cracking Tower|craquage]] ou par radiolyse. Un autre usage notable est la production de [[BTX|BTX]] par [[Fractioning Tower|fractionnement]]. Il est aussi un ingrédient clé du [[High-Cetane Diesel|diesel à haut indice de cétane]] et du [[High-Cetane Cracked Diesel|diesel craqué à haut indice de cétane]].<br><br>{{Template:Oil3}}"
+ },
+ "Reformate Gas": {
+  "title": "Gaz de reformat",
+  "content": "Le gaz de reformat peut être obtenu par plusieurs méthodes, une fois le [[Vacuum Oil Processing|traitement du pétrole sous vide]] mis en place. Ses principales utilisations sont la production de [[High-Performance Solvent|solvant haute performance]] et le [[Arc Welder|soudage]] des plaques d'acier combiné moulées.<br><br>{{Template:Oil3}}"
+ },
+ "Solvent": {
+  "title": "Solvant",
+  "content": "Le solvant s'obtient en combinant n'importe quelle variante de [[Naphtha|naphta]] et des [[Aromatic Hydrocarbons|hydrocarbures aromatiques]]. Il a de multiples usages, dont le traitement des minerais du substrat rocheux et la production de circuits avancés.<br><br>{{Template:Oil2}}"
+ },
+ "Sour Gas": {
+  "title": "Gaz sulfureux",
+  "content": "Le gaz sulfureux s'obtient d'abord par [[Vacuum Refinery|raffinage sous vide]] de [[Crude Oil|pétrole]] [[Compressor|sous pression]]. Il sert dans de nombreuses applications, dont la production de TATB et la [[Ore Acidizer|conversion]] du [[Latex|latex]] en [[Rubber|caoutchouc]]. Il peut aussi être obtenu par [[Hydrotreater|hydrotraitement]] de diverses variantes de [[Crude Oil|pétrole]] et de [[Cracked Diesel|diesel craqué]].<br><br>{{Template:Oil3}}"
+ },
+ "Steam": {
+  "title": "Vapeur",
+  "content": "La vapeur peut être obtenue en [[Boiler|chauffant]] de l'eau. Cette méthode peut se faire par la [[RBMK Steam Channel|chaîne Steam RBMK]] ou par la [[Boiler|chaudière]]. La vapeur existe aussi en plusieurs variantes selon sa température. La vapeur ultra dense est la plus chaude, suivie de la vapeur super dense, puis de la vapeur dense, de la vapeur et enfin de la vapeur basse pression. Tout niveau supérieur à la basse pression peut être produit à partir d'eau dans la [[RBMK Steam Channel|chaîne Steam RBMK]].<br><br>Il est impossible d'augmenter la densité et le niveau de la vapeur : elle doit donc être produite au niveau souhaité. Il est possible de baisser le niveau de la vapeur grâce à une turbine à vapeur. Chaque turbine réduit le niveau d'un cran, ce qui signifie qu'il faut quatre turbines pour passer de la vapeur ultra dense à la vapeur basse pression.<br><br>La vapeur basse pression peut être reconvertie en eau par [[Condenser|condensation]], ce qui permet de créer une boucle de refroidissement complète. La vapeur basse pression est aussi produite par la [[Catalytic Cracking Tower|tour de craquage catalytique]] comme sous-produit de l'entrée de vapeur requise.<br><br>Certaines machines ne produisent que certains niveaux de vapeur, comme le ZIRNOX et la [[Fusion Reactor Boiler|chaudière du réacteur à fusion]], qui ne produisent que de la vapeur super dense."
+ },
+ "Sulfuric Acid": {
+  "title": "Acide sulfurique",
+  "content": "L'acide sulfurique s'obtient d'abord en mélangeant du [[Hydrogen Peroxide|peroxyde d'hydrogène]] avec de l'eau et du soufre. C'est l'un des fluides les plus essentiels, car il est utilisé à chaque étape de la progression. <br>Il sert d'abord à [[Ore Acidizer|acidifier]] les minerais pour en faire des cristaux. Il est aussi un élément clé du traitement du minerai du substrat rocheux. Il sert également à dissoudre certains combustibles radioactifs dans le [[PUREX|Purex]]. L'acide sulfurique est aussi utilisé pour produire des cartes de circuit de qualité militaire. Enfin, il peut être mélangé pour produire de la solution de fracturation ou de l'acide nitrique, pour le traitement du minerai de substrat rocheux et le traitement du pétrole du substrat rocheux. Il peut aussi être obtenu par [[Coker Unit|cokéfaction]] ou par électrolyse de vitriol."
+ },
+ "Sunflower Seed Oil": {
+  "title": "Huile de graines de tournesol",
+  "content": "L'huile de graines de tournesol peut être obtenue par liquéfaction ou en mélangeant des tournesols. Elle sert surtout à produire du [[Biofuel|biocarburant]] ou du [[Engine Lubricant|lubrifiant moteur]] par mélange."
+ },
+ "Unsaturated Hydrocarbons": {
+  "title": "Hydrocarbures insaturés",
+  "content": "Obtenus après [[Oil Refinery|raffinage]] de pétrole brut craqué [[Boiler|chauffé]]. Les hydrocarbures insaturés servent à la fois au [[Rubber|caoutchouc]] et au perfluorométhyle. Ils sont aussi utilisés directement pour le PVC, et pour le plastique dur grâce à la production de phosgène.<br><br>{{Template:Oil2}}"
+ },
+ "Vacuum Heavy Oil": {
+  "title": "Pétrole lourd sous vide",
+  "content": "Le pétrole lourd sous vide s'obtient par [[Vacuum Refinery|raffinage sous vide]] de [[Crude Oil|pétrole brut]] [[Compressor|sous pression]]. Il est surtout [[Fractioning Tower|fractionné]] pour obtenir de l'[[Heavy Heating Oil|huile de chauffage lourde]] et de l'[[Industrial Oil|huile industrielle]].<br><br>{{Template:Oil3}}"
+ },
+ "Vacuum Light Oil": {
+  "title": "Huile légère sous vide",
+  "content": "L'huile légère sous vide s'obtient par [[Vacuum Refinery|raffinage sous vide]] de [[Crude Oil|pétrole brut]] [[Compressor|sous pression]]. Elle est surtout [[Fractioning Tower|fractionnée]] en [[Kerosene|kérosène]] et en [[Reformate Gas|gaz de reformat]].<br><br>{{Template:Oil3}}"
+ },
+ "Wood Oil": {
+  "title": "Huile de bois",
+  "content": "L'huile de bois s'obtient comme sous-produit des bûches, des jeunes pousses ou des briquettes de sciure, dans un [[Combination Oven|four combiné]]. Elle peut servir à produire davantage d'[[Heating Oil|huile de chauffage]] et d'[[Aromatic Hydrocarbons|hydrocarbures aromatiques]] par [[Catalytic Cracking Tower|craquage]] ou par radiolyse. Elle peut aussi être mélangée à de l'[[Fish Oil|huile de poisson]] ou à de l'[[Sunflower Seed Oil|huile de graines de tournesol]] pour fabriquer du [[Biofuel|biocarburant]]."
+ },
+ "Xenon Gas": {
+  "title": "Gaz Xénon",
+  "content": "Le gaz Xénon peut être obtenu par [[Chemical Plant|traitement]] d'air comprimé. Il sert surtout d'ingrédient dans le kit dimensionnel utilisé dans les téléporteurs. Il est aussi utilisé comme ingrédient dans le ICF. Par ailleurs, il peut aussi être utilisé dans la variante ailée de l'armure cybernétique lunaire."
+ },
+ "Oil Collection": {
+  "title": "Récupération du pétrole",
+  "content": "Le pétrole peut se trouver sous deux formes : les gisements de pétrole et le pétrole du substrat rocheux.<br><br>Les gisements de pétrole apparaissent comme des minerais, mais il ne faut pas les extraire à la main. Il faut placer un [[Derrick|derrick]] ou une [[Pumpjack|pompe à balancier]] à la surface, qui creuse vers le bas pour extraire le pétrole. Les gisements peuvent être trouvés en minant, ou depuis la surface à l'aide d'un détecteur de gisements de pétrole. Ce détecteur analyse un petit rayon à la recherche de pétrole, et envoie une notification lorsqu'un gisement se trouve directement en dessous. Les gisements de pétrole durent un certain temps, mais ils sont finalement limités.<br><br>Le pétrole du substrat rocheux ne peut pas être localisé de cette façon. Il est en revanche signalé à la surface par des zones de saleté grasse ou de sable. Ce pétrole est inépuisable, mais il nécessite une [[Hydraulic Fracking Tower|tour de fracturation hydraulique]] spécialisée pour être extrait, qui a besoin de solution de fracturation pour fonctionner.<br><br>{{Template:Oil}}"
+ },
+ "Anvil": {
+  "title": "Enclume",
+  "content": "L'un des premiers outils utilisés dans la progression. L'interface de l'enclume comporte deux sections utiles :<br><br>Les emplacements du haut servent aux recettes de type forge, comme la fabrication de lingots de météorite ou la création de moules de fonderie.<br><br>La section du bas sert à la construction : une fois une recette sélectionnée, cliquer sur le bouton bleu exécute la recette. L'enclume utilise directement les objets de l'inventaire."
+ },
+ "Ashpit": {
+  "title": "Cendrier",
+  "content": "Un cendrier peut être placé sous certaines machines pour récupérer les cendres. Les [[Firebox|foyers]] et les [[Heating Oven|fours de chauffage]] produisent différents types de cendres selon le combustible utilisé. Les cheminées en brique créent des cendres volantes, et les cheminées industrielles produisent aussi de petites quantités de suie fine, la matière première utilisée pour fabriquer la [[Fullerite|fullerite]]."
+ },
+ "Automatic Buzzsaw": {
+  "title": "Scie circulaire automatique",
+  "content": "Machine automatique qui coupe les arbres et les plantes dans un rayon de 10 blocs. Lorsqu'elle est alimentée en combustible (comme de l'huile de bois), elle tourne en continu à faible vitesse, et ne s'étend que si des blocs de plante ou de bois sont détectés. Les arbres peuvent être abattus en entier et sont replantés si des feuilles étaient présentes. La scie est conçue pour être placée au même niveau que les arbres : la lame de scie circulaire doit toucher le deuxième bloc de bûche le plus bas de l'arbre, mais toucher le plus bas fonctionne aussi. La canne à sucre et les cactus peuvent aussi être récoltés, à condition que la scie soit placée à la même hauteur, pour que la lame ne casse pas le bloc le plus bas. Les saules moutarde ne sont coupés qu'à maturité. Les plantes récoltées tombent sur place, contrairement à la [[Automatic Thresher|batteuse automatique]] qui les éjecte de la machine. Il faut donc mettre en place un système de collecte, par exemple avec des ventilateurs.<br><br>À noter que toucher la lame en rotation n'est pas sans risque."
+ },
+ "Blast Furnace": {
+  "title": "Haut-fourneau",
+  "content": "Four simple qui peut combiner deux objets en un seul résultat, avec un sous-produit facultatif, généralement sous forme d'alliage. Indispensable au début comme première source d'[[Steel|acier]] et de [[Minecraft Grade Copper|cuivre rouge]]. Il n'accepte pas tous les combustibles de four, seulement ceux qui brûlent fort, comme le charbon, le coke ou le combustible solide. Il accepte un souffle d'air chaud, qui accélère le processus jusqu'à trois fois la vitesse prévue par la recette. Il produit des gaz de combustion, qui peuvent être brûlés pour produire de l'énergie ou simplement être évacués à la torche."
+ },
+ "Centrifuge": {
+  "title": "Centrifugeuse",
+  "content": "Sépare des objets, et peut servir de méthode plus efficace de traitement des minerais. Utilisée au début surtout pour extraire le [[Mercury|mercure]] du minerai de redstone, nécessaire à la fabrication du [[Desh|desh]]."
+ },
+ "Combination Oven": {
+  "title": "Four combiné",
+  "content": "Un type de four qui peut produire des résultats solides et liquides. Nécessite une [[External Heat Source|source de chaleur externe]] pour fonctionner."
+ },
+ "Derrick": {
+  "title": "Derrick",
+  "content": "Le moyen le moins cher d'extraire le [[Crude Oil|pétrole]]. Lorsqu'il est placé au-dessus d'un [[Oil Collection|gisement de pétrole]] et alimenté, il fore lentement vers le bas et pompe le pétrole ainsi que du gaz naturel. C'est une version moins puissante de la [[Pumpjack|pompe à balancier]].<br><br>Un voyant vert signifie que le derrick fore ou pompe actuellement du pétrole. Un voyant rouge signifie que le foret est bloqué, que les réservoirs sont pleins ou que le derrick n'a plus d'énergie. Une goutte barrée signifie que le foret du derrick a atteint la profondeur maximale, et qu'il n'y a plus de pétrole à récupérer.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Diesel Generator": {
+  "title": "Générateur diesel",
+  "content": "Une méthode simple et précoce de produire de l'énergie à partir de [[Fuels|combustibles]], comme le [[Diesel|diesel]] ou l'[[Gasoline|essence]]. Il peut être arrêté par un signal de redstone.<br><br>Voir aussi :<br>[[Industrial Combustion Engine|Moteur à combustion industriel]]<br>[[Turbofan|Turboréacteur]]<br>Turbine à gaz à cycle combiné"
+ },
+ "Electric Heater": {
+  "title": "Chauffage électrique",
+  "content": "Une [[External Heat Source|source de chaleur externe]] alimentée en électricité. Elle doit être configurée avec un tournevis.<br><br>En raison de la première loi de la thermodynamique, faire bouillir de l'eau avec un chauffage électrique produit moins d'énergie que celle utilisée pour le produire."
+ },
+ "Firebox": {
+  "title": "Foyer",
+  "content": "Le type le moins cher de [[External Heat Source|source de chaleur externe]]. Brûler des éléments comme du charbon, du [[Coke|coke]] ou du [[Solid Fuel|combustible solide]] augmente la production de TU ainsi que le rendement.<br><br>Placer un [[Ashpit|cendrier]] dessous permet de récupérer les cendres, qui peuvent être brûlées à nouveau ou recyclées."
+ },
+ "Hydraulic Fracking Tower": {
+  "title": "Tour de fracturation hydraulique",
+  "content": "La manière la plus rapide et la plus efficace de récupérer du [[Crude Oil|pétrole]] à partir d'un [[Oil Collection|gisement de pétrole]], par rapport à un [[Derrick|derrick]] ou à une [[Pumpjack|pompe à balancier]].<br><br>Il n'est toutefois pas conseillé de l'utiliser ainsi, car l'avantage principal de la tour de fracturation est de pouvoir accéder aux gisements de pétrole du substrat rocheux. Pomper le pétrole de ces gisements est plus lent, mais ces gisements ne s'épuisent jamais.<br><br>Elle nécessite de la solution de fracturation ainsi qu'une grande quantité d'énergie pour fonctionner, même lorsqu'elle est utilisée sur des gisements de pétrole classiques.<br><br>Attention : elle peut modifier un peu le paysage.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]<br>[[Advanced Oil Processing|Traitement avancé du pétrole]]<br>[[Vacuum Oil Processing|Traitement du pétrole sous vide]]"
+ },
+ "Fractioning Tower": {
+  "title": "Tour de fractionnement",
+  "content": "Utilisée dans de nombreux procédés de raffinage pour élargir la gamme de sorties de la [[Oil Refinery|raffinerie]]. Sépare un fluide en exactement deux fluides de sortie. Faire un clic droit avec un identifiant de fluide permet de définir le type d'entrée. Empiler plusieurs tours de fractionnement les combine : le type doit être défini sur la plus basse. Le pétrole d'entrée monte et le pétrole de sortie descend, il est donc conseillé de toujours relier les tuyaux à la partie basse de la tour. Les segments peuvent être séparés à l'aide d'entretoises de tour de fractionnement.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]<br>[[Advanced Oil Processing|Traitement avancé du pétrole]]<br>[[Vacuum Oil Processing|Traitement du pétrole sous vide]]"
+ },
+ "Heat Exchanging Heater": {
+  "title": "Chauffage à échange de chaleur",
+  "content": "Puissante [[External Heat Source|source de chaleur externe]], généralement utilisée par les réacteurs nucléaires qui emploient une forme de liquide de refroidissement au lieu de produire directement de la [[Steam|vapeur]]. Elle produit de la chaleur utilisable en se servant de fluides chauds, qu'elle refroidit au cours du processus.<br><br>Le champ du haut de l'interface sert à régler la quantité de fluide utilisée par cycle, et le champ du bas sert au délai en ticks entre les cycles, pour un réglage fin."
+ },
+ "Heating Oven": {
+  "title": "Four de chauffage",
+  "content": "Version avancée du [[Firebox|foyer]], qui est une [[External Heat Source|source de chaleur externe]]. Il chauffe 5 fois plus fort, mais consomme le combustible 8 fois plus vite, ce qui le rend moins efficace. Les fours de chauffage ont un contact en cuivre en bas, ce qui leur permet d'être empilés, mais ils ne reçoivent la chaleur venant du dessous qu'à moitié de leur efficacité.<br><br>Placer un [[Ashpit|cendrier]] dessous permet de récupérer les cendres, qui peuvent être brûlées à nouveau ou recyclées."
+ },
+ "Industrial Mixer": {
+  "title": "Mélangeur industriel",
+  "content": "Peut combiner deux fluides et un objet en un seul fluide. La recette se définit en réglant le fluide de sortie avec un identifiant de fluide. Si une sortie a plusieurs recettes possibles, la recette peut être modifiée à l'aide du bouton [C]."
+ },
+ "Fluid Burner": {
+  "title": "Brûleur de fluide",
+  "content": "Une [[External Heat Source|source de chaleur externe]] alimentée par des fluides inflammables, généralement des dérivés du [[Crude Oil|pétrole]]. Il faut l'activer dans l'interface pour qu'il fonctionne. Le débit peut être augmenté à l'aide d'un tournevis, de 1mB/t à 10mB/t."
+ },
+ "Press": {
+  "title": "Presse",
+  "content": "L'une des toutes premières machines, utilisée pour fabriquer des éléments comme des plaques et des fils. Une presse à vapeur nécessite un combustible solide, comme du charbon, pour fonctionner, ainsi qu'un poinçon de la forme souhaitée. Les poinçons se fabriquent d'abord en poinçons plats, qui ne servent que dans quelques recettes. La plupart des recettes nécessitent de transformer le poinçon en poinçon de plaque ou de fil à l'aide du dossier de modèles.<br><br>Les presses électriques sont beaucoup plus rapides et fonctionnent à l'électricité au lieu du combustible.<br><br>Les presses à convoyeur fonctionnent aussi à l'électricité, et peuvent presser un objet unique qui passe sur leur tapis roulant. La presse à convoyeur n'a pas d'interface : les poinçons peuvent être retirés avec un tournevis."
+ },
+ "Pumpjack": {
+  "title": "Pompe à balancier",
+  "content": "Une manière plus rapide et plus efficace d'extraire le [[Crude Oil|pétrole]]. Lorsqu'elle est placée au-dessus d'un [[Oil Collection|gisement de pétrole]] et alimentée, elle fore lentement vers le bas et pompe le pétrole ainsi que du gaz naturel. C'est une version plus puissante du [[Derrick|derrick]].<br><br>Un voyant vert signifie que le derrick fore ou pompe actuellement du pétrole. Un voyant rouge signifie que le foret est bloqué, que les réservoirs sont pleins ou que le derrick n'a plus d'énergie. Une goutte barrée signifie que le foret du derrick a atteint la profondeur maximale, et qu'il n'y a plus de pétrole à récupérer.<br><br>Voir aussi :<br>[[Basic Oil Processing|Traitement de base du pétrole]]"
+ },
+ "Pyrolysis Oven": {
+  "title": "Four de pyrolyse",
+  "content": "Une machine disponible après le [[Vacuum Oil Processing|traitement du pétrole sous vide]], qui joue un rôle similaire à celui de l'[[Coker Unit|unité de cokéfaction]]. Au lieu du [[Coke|coke de pétrole]], elle produit le [[Solid Fuel|combustible solide]], plus puissant. Elle dispose aussi de plusieurs recettes pour le minerai du substrat rocheux, partagées avec le [[Combination Oven|four combiné]], pour fabriquer du gaz de synthèse et pour fabriquer de la [[Ashpit|suie fine]]."
+ },
+ "Oil Refinery": {
+  "title": "Raffinerie de pétrole",
+  "content": "Utilisée pour le [[Basic Oil Processing|traitement]] du [[Crude Oil|pétrole brut]] ou de l'[[Cracked Oil|huile craquée]]. Le pétrole doit être [[Boiler|chauffé]] au préalable dans une [[Boiler|chaudière]]. Elle a quatre sorties de fluides et une sortie solide."
+ },
+ "Shredder": {
+  "title": "Broyeur",
+  "content": "Permet de broyer des minerais en poudre, ce qui double le rendement. Tout objet sans recette sera quand même broyé et transformé en ferraille. Nécessite deux lames de broyeur pour fonctionner ; les lames fabriquées en [[Desh|desh]] ne cassent jamais. Traite un objet de chaque emplacement en même temps, donc remplir tous les emplacements le fait fonctionner plus efficacement."
+ },
+ "Steel Furnace": {
+  "title": "Four en acier",
+  "content": "Un four alimenté par une [[External Heat Source|source de chaleur externe]]. Il peut exécuter trois recettes en même temps. Certaines recettes, comme la fonte de minerais ou de bûches, ont une sortie bonus, indiquée par la petite jauge sous la barre de progression. Pas particulièrement rapide en raison de la limite de transfert de chaleur, mais très polyvalent."
+ },
+ "Automatic Thresher": {
+  "title": "Batteuse automatique",
+  "content": "Machine automatique qui récolte les cultures et les plantes dans une zone de 7x7. Lorsqu'elle est alimentée en combustible (comme de l'huile de bois), elle s'étend par intervalles de 10 à 15 secondes, même si aucun bloc ne peut être récolté. Les cultures comme le blé et les carottes sont replantées automatiquement après récolte. La canne à sucre et les cactus peuvent aussi être récoltés : si le bloc le plus bas est touché par la batteuse, il est conservé et seuls les blocs supérieurs sont cassés. Elle fonctionne aussi sur les plantes doubles comme le chanvre et le saule moutarde, où seul le bloc supérieur est retiré, quel que soit l'endroit où la batteuse touche la plante. Les saules moutarde ne sont récoltés qu'à maturité. Les tournesols et les hautes herbes donnent aussi des objets, mais comme ce ne sont pas des cultures pouvant être cultivées, ils ne sont pas du tout cassés : ils ne donnent respectivement que des tournesols et des graines de blé, à faible taux. Contrairement à la [[Automatic Buzzsaw|scie circulaire automatique]], la batteuse récupère les objets récoltés et les éjecte à l'arrière de la machine.<br><br>Les mobs hostiles frappés par le rouleau de la batteuse donnent de petits tas de nitra à leur mort. Les parties en fonctionnement restent toutefois dangereuses pour les joueurs et les mobs passifs."
+ },
+ "Wood-Burning Generator": {
+  "title": "Générateur à bois",
+  "content": "La première façon disponible de produire de l'énergie. Peut brûler des combustibles solides ou liquides ; le mode de fonctionnement peut être changé en cliquant sur le bouton fléché. Brûle plus efficacement les bûches et les planches de bois. Les câbles et les tuyaux peuvent être connectés à l'arrière."
+ },
+ "Aluminium": {
+  "title": "Aluminium",
+  "content": "Métal courant et léger. Disponible tôt en faisant fondre de la cryolite (« minerai d'aluminium ») dans un [[Combination Oven|four combiné]]. Peut être fabriqué plus tard en traitant de la bauxite, puis en électrolysant la solution d'alumine obtenue.<br><br>Utilisé dans la tuyauterie et la manipulation générale des fluides, ainsi que dans le [[Gunmetal|gunmetal]] et les fuselages de missiles."
+ },
+ "Arsenic": {
+  "title": "Arsenic",
+  "content": "Obtenu en traitant des restes huileux avec du [[High-Performance Solvent|solvant haute performance]] dans un [[Ore Acidizer|acidifiant de minerai]]. Les restes huileux peuvent être créés en [[Shredder|broyant]] des blocs pollués produits par la [[Hydraulic Fracking Tower|tour de fracturation hydraulique]]. Il sert principalement à fabriquer du [[Arsenic Bronze|bronze à l'arsenic]]."
+ },
+ "Arsenic Bronze": {
+  "title": "Bronze à l'arsenic",
+  "content": "Dérivé de l'[[Arsenic|arsenic]] fabriqué dans le [[Crucible|creuset]]. Il n'est donc disponible qu'après la construction d'un RBMK, car il nécessite du [[High-Performance Solvent|solvant haute performance]].<br><br>Entièrement interchangeable avec le [[Bismuth Bronze|bronze au bismuth]]."
+ },
+ "Bakelite": {
+  "title": "Bakélite",
+  "content": "Alternative au [[Polymer|polymère]], fabriquée à partir d'[[Aromatic Hydrocarbons|hydrocarbures aromatiques]] dérivés de [[Catalytic Cracking Tower|produits pétroliers craqués]]. Totalement interchangeable dans toutes les recettes."
+ },
+ "Bismuth Bronze": {
+  "title": "Bronze au bismuth",
+  "content": "Dérivé du [[Bismuth|bismuth]] fabriqué dans le [[Crucible|creuset]]. Il n'est donc disponible qu'après la construction d'un RBMK.<br><br>Entièrement interchangeable avec le [[Arsenic Bronze|bronze à l'arsenic]]."
+ },
+ "Borax": {
+  "title": "Poudre de borax",
+  "content": "Trouvée sous forme de gisements en profondeur, près du substrat rocheux. Son extraction nécessite des explosifs. Source de [[Boron|bore]], et moyen efficace de fabriquer du fondant."
+ },
+ "BSCCO": {
+  "title": "BSCCO",
+  "content": "Supraconducteur puissant, utilisé dans les circuits de haut niveau et les bobines de l'[[Particle Accelerator|accélérateur de particules]]. Il nécessite du [[Bismuth|bismuth]], il n'est donc accessible qu'après la construction d'un RBMK."
+ },
+ "Cadmium": {
+  "title": "Cadmium",
+  "content": "Fabriqué en traitant des feuilles de saule moutarde avec du [[High-Performance Solvent|solvant haute performance]]. Utilisé dans le PVC, dans une recette alternative de fin de partie pour le [[Rubber|caoutchouc]], et pour l'[[Cadmium Steel|acier au cadmium]], qui sert de substitut à l'[[Technetium Steel|acier au technétium]]."
+ },
+ "Cadmium Steel": {
+  "title": "Acier au cadmium",
+  "content": "Alliage résistant à la corrosion, fabriqué à partir d'[[Steel|acier]] et de [[Cadmium|cadmium]]. Alternative à l'[[Technetium Steel|acier au technétium]] dans la plupart des recettes."
+ },
+ "Fullerite": {
+  "title": "Fullerite",
+  "content": "Matériau coûteux de fin de partie, dérivé de la suie fine captée par les cheminées industrielles et les cendriers, traitée de diverses façons, puis finalement [[Ore Acidizer|acidifiée]] à l'aide de [[BTX|BTX]], un dérivé de l'huile sous vide."
+ },
+ "Cinnabar": {
+  "title": "Cinabre",
+  "content": "Minerai rare. Peut être [[Ore Acidizer|acidifié]] en 375mB de gouttes de [[Mercury|mercure]], ou [[Combination Oven|fondu en four combiné]] en 100mB de mercure et un peu de soufre. Il existe surtout comme premier moyen d'obtenir du mercure pour la production de [[Desh|desh]]."
+ },
+ "Coke": {
+  "title": "Coke",
+  "content": "Carbone de haute pureté, qui a deux fois la valeur de combustion du charbon. Peut être pressé en [[Graphite|graphite]], utilisé dans diverses recettes d'[[Steel|acier]] ou comme source de carbone pour le [[Crucible|creuset]].<br><br>Le coke de charbon peut être fabriqué en fondant des briquettes de charbon, ou en fondant du charbon sous ses différentes formes dans un four combiné.<br><br>Le coke de lignite est fabriqué de la même manière à partir du lignite, bien moins cher et moins puissant ; malgré cela, il a les mêmes caractéristiques.<br><br>Le coke de pétrole est fabriqué soit à partir de goudrons non houillers dans un [[Combination Oven|four combiné]], soit en [[Coker Unit|cokéfiant]] différents types d'huile dans une [[Coker Unit|unité de cokéfaction]]."
+ },
+ "Copper": {
+  "title": "Cuivre",
+  "content": "Ressource courante. Sous sa forme brute, il sert surtout de matériau de structure, et dans les éléments qui supportent les hautes températures (comme conducteur de chaleur). Très utilisé sous diverses formes alliées.<br><br>Le [[Minecraft Grade Copper|cuivre de qualité Minecraft]] est un alliage fabriqué à partir de redstone, utilisé dans presque tous les appareils électriques.<br><br>Le [[Gunmetal|gunmetal]] est un composant vital de nombreuses armes, ainsi que des carcasses de munitions.<br><br>Le [[Bismuth Bronze|bronze au bismuth]] et le [[Arsenic Bronze|bronze à l'arsenic]] sont des matériaux post-RBMK utilisés dans de nombreuses machines de fin de partie.<br><br>Le [[BSCCO|BSCCO]] est un supraconducteur dérivé du [[Bismuth|bismuth]], nécessaire aux circuits quantiques de haut niveau et aux bobines de l'[[Particle Accelerator|accélérateur de particules]]."
+ },
+ "Dense Wire": {
+  "title": "Fil dense",
+  "content": "Fabriqué principalement en coulant de la matière dans le [[Crucible|creuset]]. Le moule de fonderie nécessite des fils denses pour être fabriqué ; il faut donc fabriquer au moins un fil de cuivre ou d'or à l'aide de la recette de la [[Arc Welder|soudeuse à arc]]."
+ },
+ "Eternal Coal": {
+  "title": "█ █ █ █ █ █",
+  "content": "████████████ ███ ███ ██ ████████ ████████ ██ ████ ████ ████████ ████ ███ ███████ █ ████ █████ ██████ ███████ █ ████ █████ ██ ██ ███ ██████"
+ },
+ "Ferrouranium": {
+  "title": "Ferrouranium",
+  "content": "Alliage d'[[Steel|acier]] et d'[[Uranium-238|uranium-238]] fabriqué dans le [[Crucible|creuset]]. Principalement utilisé dans le Ducrete lisse, les pièces d'armes et les munitions à haut explosif."
+ },
+ "Gunmetal": {
+  "title": "Gunmetal",
+  "content": "Alliage d'[[Aluminium|aluminium]] et de [[Copper|cuivre]]. Peut être fabriqué sur une enclume, ou plus efficacement dans un [[Rotary Furnace|four rotatif]]. Utilisé surtout pour les pièces d'armes, ainsi que pour les carcasses de la plupart des munitions."
+ },
+ "High-Speed Steel": {
+  "title": "Acier à grande vitesse",
+  "content": "Alliage fabriqué à partir d'[[Steel|acier]], de tungstène et de [[Cobalt|cobalt]] dans un [[Crucible|creuset]]. Obtenu sous forme de métal liquide, il doit être coulé en lingot ou en plaque avant d'être utilisable."
+ },
+ "Latex": {
+  "title": "Latex",
+  "content": "Forme naturelle du caoutchouc, qu'on peut obtenir à partir de pissenlits ou en pressant du bois de jungle. Il peut être remplacé dans toutes les recettes par le [[Rubber|caoutchouc]], mais l'inverse n'est pas vrai."
+ },
+ "Lead": {
+  "title": "Plomb",
+  "content": "Ressource courante. Principalement utilisé pour les éléments liés à la radiation, ainsi que pour les munitions, et comme soudure pour de nombreux circuits."
+ },
+ "Minecraft Grade Copper": {
+  "title": "Cuivre de qualité Minecraft (cuivre rouge)",
+  "content": "Alliage fabriqué à parts égales à partir de cuivre et de redstone, dans le [[Blast Furnace|haut-fourneau]]. Utilisé dans presque tous les appareils électriques, généralement sous forme de fil."
+ },
+ "Polymer": {
+  "title": "Polymère",
+  "content": "Le polymère ('Teflon') est le premier type de plastique disponible. Il nécessite du [[Petroleum Gas|gaz de pétrole]] et donc du [[Crude Oil|pétrole]] traité.<br><br>Totalement interchangeable avec la [[Bakelite|bakélite]], qui devient disponible après le [[Catalytic Cracking Tower|craquage du pétrole]]."
+ },
+ "Rare Earths": {
+  "title": "Terres rares",
+  "content": "Type de minerai, particulièrement fréquent dans les couches de schiste graphité. Peut être broyé en poudre pour fabriquer du [[Desh|desh]], ou martelé en fragments à l'aide d'une [[Anvil|enclume]] pour être broyé puis fondu.<br><br>Contient :<br>[[Boron|Bore]]<br>Lanthane<br>[[Cobalt|Cobalt]]<br>Cérium<br>Néodyme<br>Niobium<br><br>Produit aussi du zirconium lorsqu'il est [[Centrifuge|centrifugé]]."
+ },
+ "Rubber": {
+  "title": "Caoutchouc",
+  "content": "Produit pétrolier, dérivé d'[[Unsaturated Hydrocarbons|hydrocarbures insaturés]] et de [[Sulfur|soufre]]. Nécessite au minimum une [[Catalytic Cracking Tower|tour de craquage catalytique]] pour être fabriqué. Peut remplacer le [[Latex|latex]] dans toutes les recettes."
+ },
+ "Sodium": {
+  "title": "Poudre de sodium",
+  "content": "Principalement dérivée de la sodalite, une gemme que l'on trouve comme sous-produit de la [[Centrifuge|centrifugation]] de nombreux minerais. Utilisée sous forme liquide comme puissant liquide de refroidissement du PWR."
+ },
+ "Solid Fuel": {
+  "title": "Combustible solide",
+  "content": "Pétrole sous forme solide, de forme cubique pratique. Brûle deux fois plus longtemps que le charbon, et bien plus chaud. Fabriqué couramment dans un [[Solidifier|solidificateur]] ou un [[Pyrolysis Oven|four de pyrolyse]]. Utilisé dans l'agent propulseur solide des fusées."
+ },
+ "Steel": {
+  "title": "Acier",
+  "content": "Version améliorée du fer, matériau de base. Utilisé dans presque tout. Obtenu au départ en combinant du charbon et du fer dans un [[Blast Furnace|haut-fourneau]]. Des recettes améliorées sont disponibles plus tard via le [[Crucible|creuset]] et le [[Rotary Furnace|four rotatif]]."
+ },
+ "Sulfur": {
+  "title": "Soufre",
+  "content": "Minerai courant, que l'on trouve en quantité encore plus grande dans le Nether. Utilisé dans de nombreux usages, comme l'[[Sulfuric Acid|acide sulfurique]], le [[Rubber|caoutchouc]] et dans le yellowcake pour l'hexafluorure d'[[Uranium|uranium]]. Peut aussi servir à fabriquer de la poudre à canon ou des allumettes, ou faire office de colorant jaune."
+ },
+ "Tantalium": {
+  "title": "Tantalium",
+  "content": "Le tantalium ('Tantalum', « Tantale ») peut être extrait du coltan, qui ne se trouve que dans une zone précise du monde. Utilisé surtout pour les condensateurs au tantalium, essentiels pour les unités de contrôle de la plupart des bombes nucléaires."
+ },
+ "Technetium Steel": {
+  "title": "Acier au technétium",
+  "content": "Alliage fabriqué à partir d'[[Steel|acier]] et de [[Technetium|technétium]]. Résistant à la corrosion, il est utilisé dans des réservoirs plus solides et de nombreuses machines avancées. Accessible après un ZIRNOX ou un PWR, car le technétium est synthétique.<br><br>Totalement interchangeable avec l'[[Cadmium Steel|acier au cadmium]]."
+ },
+ "Weapon Steel": {
+  "title": "Acier d'arme",
+  "content": "Version de haute pureté de l'[[Steel|acier]], fabriquée dans un [[Rotary Furnace|four rotatif]]. Nécessite du [[Coker Gas|gaz de cokéfaction]], donc une [[Coker Unit|unité de cokéfaction]]. Utilisé dans de nombreuses armes de milieu de partie, modifications d'armes et ogives de missiles."
+ },
+ "Beamline": {
+  "title": "Ligne de faisceau",
+  "content": "Composant passif de l'[[Particle Accelerator|accélérateur de particules]]. Ne nécessite ni refroidissement ni électricité : il permet simplement à la particule de se déplacer. Principalement utilisé pour des raisons esthétiques, ou pour respecter la longueur de côté minimale des [[Large Coil|bobines de niveaux supérieurs]].<br><br>Ce composant ne fonctionne que dans un sens : veillez à ce que la particule suive les flèches rouges !"
+ },
+ "Large Coil": {
+  "title": "Grande bobine",
+  "content": "Élément de l'[[Particle Accelerator|accélérateur de particules]], nécessaire pour les [[Quadrupole Magnets|aimants quadripolaires]] et les [[Dipole Magnets|aimants dipolaires]]. Les bobines ont différents attributs et restrictions : elles déterminent la vitesse minimale qu'une particule doit avoir pour entrer dans un anneau, et la vitesse maximale qu'elle peut avoir en en sortant.<br><br>La plage de fonctionnement détermine la vitesse qu'une particule doit avoir lorsqu'elle passe un composant muni d'une bobine. Si la particule est plus lente que la limite basse, le composant subit une augmentation de 10x de sa consommation d'énergie. Si la particule dépasse la limite haute, elle s'écrase. Il est donc important de configurer les dipôles pour que les particules sortent avant de devenir trop rapides.<br><br>La longueur de côté minimale des dipôles est la distance minimale qu'une particule doit parcourir d'un dipôle au suivant. Deux dipôles reliés par une seule ligne de faisceau donnent par exemple une longueur de côté de 3. Si la longueur de côté minimale n'est pas atteinte, la consommation d'énergie est à nouveau multipliée par dix. Les dipôles qui ne changent pas la direction de la particule, c'est-à-dire qui la laissent passer tout droit, ne comptent pas dans cette limite : ils ajoutent 3 à la longueur de côté, comme le ferait une ligne de faisceau. En fait, un tel dipôle n'est soumis à aucune pénalité d'énergie (vitesse insuffisante ou longueur de côté).<br><br>Si les deux pénalités x10 s'appliquent, la consommation totale dépasse la réserve d'énergie du dipôle, ce qui fait s'écraser la particule. Il est donc important de construire soit des accélérateurs assez grands pour utiliser des bobines de haut niveau, soit des accélérateurs utilisant des bobines de niveau inférieur qui évitent la pénalité de vitesse insuffisante."
+ },
+ "Particle Detector": {
+  "title": "Détecteur de particules",
+  "content": "Composant final de l'[[Particle Accelerator|accélérateur de particules]]. Il termine la simulation et tente d'exécuter la recette. Nécessite des capsules vides pour capturer les particules résultantes ; les entrées sont simplement perdues si la particule ne peut pas être collectée. La détection requiert une défocalisation de 0 : assurez-vous que l'accélérateur dispose d'un nombre suffisant de [[Quadrupole Magnets|quadrupôles]].<br><br>Ce composant nécessite un refroidissement par du perfluorométhyle froid. Le fluide revenu à température ambiante peut être refroidi à nouveau à l'aide de [[Compressor|compresseurs]]."
+ },
+ "Dipole Magnets": {
+  "title": "Aimants dipolaires",
+  "content": "Composant actif de l'[[Particle Accelerator|accélérateur de particules]]. Sert à diriger les particules dans les virages, ce qui permet de créer des boucles et des embranchements.<br><br>Les dipôles doivent être configurés pour être utilisables. Le premier réglage de sortie détermine la direction de la particule lorsqu'elle n'atteint pas le seuil de vitesse, le deuxième détermine sa direction si elle l'atteint, et le troisième détermine sa direction si le seuil est atteint ET qu'un signal de redstone est appliqué à l'un des ports du dipôle. Sous les réglages de direction se trouve un champ de texte permettant de configurer la vitesse seuil.<br><br>Idéalement, le seuil doit être réglé en dessous de la limite haute des bobines utilisées dans le même anneau d'accélérateur. Cela fait sortir la particule de l'anneau avant qu'elle ne dépasse la vitesse maximale de la bobine et ne s'écrase.<br><br>Ce composant utilise de [[Large Coil|grandes bobines]] : gardez à l'esprit leurs restrictions lors de la construction de l'accélérateur !<br><br>Ce composant nécessite un refroidissement par du perfluorométhyle froid. Le fluide revenu à température ambiante peut être refroidi à nouveau à l'aide de [[Compressor|compresseurs]]."
+ },
+ "Particle Accelerator": {
+  "title": "Accélérateur de particules",
+  "content": "Un accélérateur de particules est une grande structure dynamique composée de plusieurs éléments. En bref, des particules sont tirées depuis des [[Particle Source|sources de particules]] le long de [[Beamline|lignes de faisceau]], accélérées par des [[RF Cavity|cavités RF]], refocalisées avec des [[Quadrupole Magnets|quadrupôles]], redirigées avec des [[Dipole Magnets|dipôles]] et enfin reçues par un [[Particle Detector|détecteur de particules]].<br><br>Pour qu'une recette soit terminée, une particule, avec les bons ingrédients, doit atteindre le détecteur avec au moins la vitesse requise. Les particules gagnent 100 points de quantité de mouvement en passant une cavité RF, mais cela crée aussi 100 points de défocalisation. La défocalisation peut être réduite avec des quadrupôles, 100 points à la fois. Si la défocalisation dépasse 1000, la particule s'écrase. La plupart des composants sont linéaires, mais les dipôles peuvent être utilisés pour modifier le trajet de la particule selon sa vitesse, ce qui permet de faire des virages, des embranchements et des boucles.<br><br>L'accélérateur le plus simple est une source de particules reliée à plusieurs RFC, puis des quadrupôles pour la refocalisation et enfin le détecteur, formant un accélérateur linéaire. Cela limite toutefois la quantité de mouvement finale au nombre de RFC x100. En utilisant des dipôles pour former un anneau, les particules peuvent suivre la boucle et utiliser plusieurs fois les mêmes RFC et quadrupôles. Cependant, les [[Large Coil|bobines]] utilisées par les quadrupôles et les dipôles ont des limites de vitesse, ce qui signifie qu'une fois la particule trop rapide, elle doit quitter l'anneau. Un anneau peut toutefois mener à un autre, avec de meilleures bobines, qui ont une limite de vitesse plus élevée. Commencer directement avec des bobines de haut niveau n'est pas conseillé, car les bobines ont aussi une vitesse minimale, même si cela ne fait pas immédiatement s'écraser la particule. Un accélérateur idéal, non soumis à aucune pénalité de bobine et capable d'exécuter n'importe quelle recette, est un accélérateur à plusieurs anneaux, chacun utilisant des bobines de niveau supérieur. Les dipôles peuvent être configurés avec du redstone pour que les anneaux qui apportent plus de vitesse que nécessaire soient contournés, ce qui met fin plus tôt au trajet de la particule.<br><br>En plus de l'énergie, la plupart des composants de l'accélérateur nécessitent un refroidissement. Le perfluorométhyle froid doit être pompé dans les composants, ce qui renvoie du PFM à température ambiante, qui peut être refroidi à nouveau. Créer du PFM froid nécessite deux séries de [[Compressor|compresseurs]] : l'une comprime le PFM à une pression de 1 PU, et l'autre le comprime davantage, ce qui donne du PFM froid.<br><br>La plupart des parties de l'accélérateur ont une direction fixe que la particule doit suivre. Faites attention aux flèches rouges sur les composants.<br><br>Un guide pas à pas expliquant comment construire un accélérateur très basique à un seul anneau se trouve [[PA Guide|ici]]"
+ },
+ "PA Guide": {
+  "title": "Guide de démarrage de l'accélérateur de particules",
+  "content": "Placez une [[Particle Source|source de particules]] et reliez l'avant de la source à une [[Beamline|ligne de faisceau]]. L'avant de la source est la partie qui ressemble aussi à une ligne de faisceau. Vérifiez que l'orientation de la ligne de faisceau, indiquée par les flèches rouges, pointe à l'opposé de la source, car c'est la direction que suit la particule. Placez un [[Dipole Magnets|dipôle]] équipé d'une [[Large Coil|grande bobine d'or]], et configurez les deux premières options (en dessous et au-dessus du seuil) pour qu'elles pointent à l'opposé de la source de particules. Dans cette direction, placez une autre ligne de faisceau reliée au dipôle, puis une [[RF Cavity|cavité RF]], une autre ligne de faisceau, un [[Quadrupole Magnets|quadrupôle]] équipé d'une autre grande bobine d'or, une autre ligne de faisceau, et enfin un autre dipôle, toujours avec des bobines d'or. Configurez le dipôle pour effectuer un virage de 90°. Sans compter la source initiale, vous devriez maintenant avoir un côté de l'anneau de l'accélérateur : dipôle -> RFC -> quadrupôle -> dipôle. Dans la direction où tourne le second dipôle, répétez ce motif trois fois, en effectuant à chaque fois un nouveau virage de 90°, jusqu'à ce que l'anneau soit complet. Enfin, sur le dipôle opposé à la source, celui situé à l'extrémité du premier côté que nous avons construit, changez la direction du second réglage (direction si la particule atteint le seuil) pour aller tout droit au lieu de tourner, puis réglez le seuil à 2000. La particule fera cinq tours complets, puis le premier côté encore une fois, accumulant au total 2100 de quantité de mouvement, ce qui est inférieur au maximum des bobines d'or, puis quittera l'accélérateur. Dans la direction de sortie de la particule, placez une dernière ligne de faisceau, puis le détecteur. Reliez toutes les pièces à l'électricité et à une source de perfluorométhyle froid, renvoyez le perfluorométhyle chaud obtenu dans un [[Compressor|compresseur]], puis dirigez-le vers un second compresseur : cela doit recréer du perfluorométhyle froid, refermant le cycle de refroidissement.<br><br>Ce montage devrait pouvoir exécuter certaines recettes plus basiques, et sert de base à tous les accélérateurs. Une fois le système compris, il devrait être simple de retirer le détecteur et de le remplacer par un second anneau plus grand, avec des bobines plus puissantes, ce qui permet aux particules d'aller encore plus vite. Les accélérateurs à un seul anneau restent possibles, car les particules plus lentes que le minimum de la bobine ne s'écrasent pas immédiatement. Cependant, l'accélérateur subit alors une pénalité importante, nécessitant 10x plus d'énergie, et la taille de l'anneau doit correspondre au minimum de la bobine, sinon les deux pénalités se cumulent et la particule s'écrase instantanément.<br><br>Retournez à la [[Particle Accelerator|page de présentation de l'accélérateur de particules]] et examinez chaque composant individuellement : comprendre les composants est essentiel pour comprendre l'accélérateur complet."
+ },
+ "Quadrupole Magnets": {
+  "title": "Aimants quadripolaires",
+  "content": "Composant actif de l'[[Particle Accelerator|accélérateur de particules]]. Retire 100 points de défocalisation à chaque passage, défocalisation accumulée en passant par des [[RF Cavity|cavités RF]].<br><br>Ce composant utilise de [[Large Coil|grandes bobines]] : gardez à l'esprit leurs restrictions lors de la construction de l'accélérateur !<br><br>Ce composant nécessite un refroidissement par du perfluorométhyle froid. Le fluide revenu à température ambiante peut être refroidi à nouveau à l'aide de [[Compressor|compresseurs]].<br><br>Ce composant ne fonctionne que dans un sens : veillez à ce que la particule suive les flèches rouges !"
+ },
+ "RF Cavity": {
+  "title": "Cavité RF",
+  "content": "Composant actif de l'[[Particle Accelerator|accélérateur de particules]]. Accélère les particules de 100 points de quantité de mouvement à chaque passage, mais ajoute aussi 100 points de défocalisation. Les particules dépassant 1000 points de défocalisation s'écrasent : il est donc nécessaire de les refocaliser à l'aide d'[[Quadrupole Magnets|aimants quadripolaires]].<br><br>Ce composant nécessite un refroidissement par du perfluorométhyle froid. Le fluide revenu à température ambiante peut être refroidi à nouveau à l'aide de [[Compressor|compresseurs]].<br><br>Ce composant ne fonctionne que dans un sens : veillez à ce que la particule suive les flèches rouges !"
+ },
+ "Particle Source": {
+  "title": "Source de particules",
+  "content": "Composant initial de l'[[Particle Accelerator|accélérateur de particules]], il lance les particules et exécute la simulation. Une recette démarre s'il y a au moins un objet dans chaque emplacement d'entrée.<br><br>Le bouton d'information bleu affiche les statistiques précédentes de l'accélérateur lorsque le curseur passe dessus. Il affiche aussi différents messages selon le résultat précédent ou l'erreur rencontrée. Le bouton rouge annule une opération, ce qui est utile si une particule est bloquée dans une boucle infinie à cause d'un anneau d'accélérateur mal construit.<br><br>Liste des messages :<br>* En pause : la particule a atteint un chunk non chargé. Les chunks doivent être chargés pour que les particules soient simulées.<br>* Défocalisation : la particule a dépassé 1000 points de défocalisation, ce qui indique qu'il n'y a pas assez de quadrupôles dans l'anneau actuel. Cela peut aussi se produire si une particule entre dans un [[Particle Detector|détecteur]] alors qu'elle a plus de 0 de défocalisation.<br>* Déraillement : la particule a quitté l'accélérateur, soit parce qu'une pièce n'est pas reliée, soit parce qu'elle est mal orientée.<br>* Refusée : la particule a tenté d'entrer dans une partie de l'accélérateur où elle ne peut pas aller ; cette partie est peut-être mal orientée.<br>* Pas de refroidissement : la particule a tenté d'entrer dans une partie de l'accélérateur qui ne reçoit pas le refroidissement nécessaire.<br>* Pas d'énergie : une partie de l'accélérateur n'est peut-être pas suffisamment alimentée, y compris à cause des différentes pénalités liées au non-respect des [[Large Coil|exigences des bobines]]. Cela se produit aussi lorsque plusieurs pénalités de bobines sont actives en même temps, la consommation dépassant alors la réserve de la pièce.<br>* Survitesse : la particule s'est écrasée parce qu'elle a dépassé la vitesse de fonctionnement maximale d'une bobine traversée.<br>* Pas de recette : la particule a terminé une opération, mais les ingrédients ne produisent aucun résultat.<br>* Sous-vitesse : la particule a terminé une opération avec des ingrédients valides, mais sa vitesse finale n'était pas suffisante pour achever la recette.<br><br>Ce composant nécessite un refroidissement par du perfluorométhyle froid. Le fluide revenu à température ambiante peut être refroidi à nouveau à l'aide de [[Compressor|compresseurs]].<br><br>Ce composant ne fonctionne que dans un sens : veillez à ce que la particule suive les flèches rouges !"
+ },
+ "RBMK Fuel Channel": {
+  "title": "Canal de combustible RBMK",
+  "content": "La barre de combustible RBMK est la pièce la plus importante du RBMK, car elle contient le combustible RBMK, ce qui permet à la réaction de se produire. Le flux de neutrons créé par le combustible est émis dans les quatre directions cardinales, sur une portée maximale de cinq blocs.<br><br>Les canaux de combustible modérés sont presque identiques à la version standard, à la différence que le flux rapide entrant est converti en flux lent, à la manière des [[RBMK Graphite Moderator|modérateurs RBMK Graphite]], bien que le flux sortant ne soit pas affecté.<br><br>Le barre de combustible RBMK (ReaSim) est une version alternative de la barre de combustible RBMK, avec une propagation des neutrons différente."
+ },
+ "Redstone-over-Radio Controller": {
+  "title": "Contrôleur Redstone-over-Radio",
+  "content": "Appareil de réception avancé [[Redstone over Radio|Redstone-over-Radio]] : il écoute une fréquence pour recevoir les commandes à exécuter pour le bloc connecté. Les commandes suivent le format §6<command_name>!<parameter1>:<parameter2>, où le nom de la commande est suivi d'un \"!\" qui sépare le nom de la commande des paramètres, lesquels sont séparés entre eux par \":\". Passer le curseur sur l'icône [V] affiche la liste des commandes disponibles pour le bloc connecté, ainsi que les paramètres acceptés.<br><br>Le contrôleur peut être utilisé par exemple pour des barils : la commande \"setmode\" peut prendre un nombre de 0 à 3 pour changer le mode d'E/S du baril. La deuxième variante de cette même commande a un paramètre supplémentaire, qui sert de solution de repli si le premier mode indiqué est déjà sélectionné. La commande peut ainsi « basculer » entre deux modes au lieu de simplement le définir."
+ },
+ "Redstone-over-Radio Item Counter": {
+  "title": "Émetteur Redstone-over-Radio",
+  "content": "Appareil d'émission avancé [[Redstone over Radio|Redstone-over-Radio]], qui peut diffuser sur jusqu'à trois fréquences à la fois. Lorsqu'il est connecté à un inventaire (par exemple un coffre), il compte les objets correspondant aux filtres définis et envoie les valeurs obtenues sous forme de signaux radio."
+ },
+ "Redstone-over-Radio Logic Receiver": {
+  "title": "Récepteur logique Redstone-over-Radio",
+  "content": "Appareil de réception avancé [[Redstone over Radio|Redstone-over-Radio]] : il lit un signal radio et tente de l'interpréter comme un signal de redstone selon les règles fournies. Il peut comparer des nombres ainsi que du texte (« chaînes de caractères »), et évalue le signal par ordre croissant ou décroissant selon sa configuration. La première condition remplie détermine la puissance du signal de redstone obtenu. Si aucune condition n'est remplie, la sortie de redstone est de 0.<br><br>Il est surtout utilisé avec le [[Redstone-over-Radio Item Counter|compteur d'objets Redstone-over-Radio]], car il peut comparer avec précision des quantités d'objets qui dépassent les limites des signaux de redstone classiques."
+ },
+ "Redstone-over-Radio Reader": {
+  "title": "Lecteur Redstone-over-Radio",
+  "content": "Appareil d'émission avancé [[Redstone over Radio|Redstone-over-Radio]], qui peut être connecté à certaines machines et configuré pour lire jusqu'à huit valeurs différentes et les transmettre sur des fréquences distinctes. Les valeurs prises en charge sont listées lorsque le curseur passe sur l'icône [V]. Les comparateurs, et donc les [[Redstone-over-Radio Transmitter|émetteurs RoR]], ne peuvent interpréter qu'une valeur unique, sous forme de nombres de 0 à 15, alors que le lecteur peut envoyer plusieurs valeurs avec une précision exacte. Par exemple, si l'on connecte le lecteur à un baril et qu'on lit la valeur \"fill\", il enverra la quantité exacte de millibuckets contenue dans ce baril."
+ },
+ "Redstone-over-Radio Receiver": {
+  "title": "Récepteur Redstone sur radio",
+  "content": "Appareil de réception de base [[Redstone over Radio|Redstone-over-Radio]] : il lit le signal radio configuré et produit en sortie un signal de redstone correspondant. Par défaut, il est réglé sur \"Redstone Passthrough\", ce qui signifie qu'il tente simplement d'interpréter le signal comme un nombre et produit un signal de redstone correspondant. Réglé sur \"Custom Mapping\", il traduit à la place la valeur reçue en niveau de signal de redstone. Les signaux reçus doivent correspondre exactement au mappage configuré pour être interprétés ; pour des comparaisons moins précises, un [[Redstone-over-Radio Logic Receiver|récepteur logique Redstone-over-Radio]] est nécessaire."
+ },
+ "Redstone-over-Radio Transmitter": {
+  "title": "Émetteur Redstone-over-Radio",
+  "content": "Appareil d'émission de base [[Redstone over Radio|Redstone-over-Radio]] : il lit la puissance du signal de redstone du bloc auquel il est connecté (relier le redstone à la torche elle-même ne fait rien) et envoie un signal radio en fonction de cette valeur. Si aucun signal de redstone n'est détecté, il agit comme un comparateur : il peut lire le niveau de remplissage des coffres ou des barils et l'interpréter par paliers de 0 à 15. Par défaut, il est réglé sur \"Redstone Passthrough\", ce qui signifie qu'il envoie simplement la valeur numérique du signal de redstone reçu. Réglé sur \"Custom Mapping\", il traduit à la place la valeur reçue en une ligne de texte spécifique, et envoie ce texte à la place. Un texte ne contenant que des chiffres peut être interprété comme des nombres par les récepteurs qui le supportent."
+ },
+ "Wideband Radio Emission Detector Satellite": {
+  "title": "Satellite de détection d'émissions radio à large bande",
+  "content": "Le détecteur d'émissions radio à large bande est un type de [[Satellite|satellite]] capable de détecter certains types d'événements à haute énergie sur toute la carte, avec toutefois une faible précision. Le détecteur ne peut donner qu'une idée très approximative de l'endroit où se produit un tel événement. Pour des résultats plus précis, la zone doit être scannée avec un [[Spy Satellite|satellite espion]] ou un [[Narrowband Emission Scanning Satellite|satellite de balayage d'émissions à bande étroite]].<br><br>Les types d'événements que ce satellite peut détecter sont les suivants :<br>* Explosions de mini-bombes nucléaires (faible intensité, précision <10,000m)<br>* Radar (intensité moyenne, précision <2,500m)<br>* Opérations d'accélérateurs de particules (intensité moyenne, précision <2,500m)<br>Explosions nucléaires (intensité élevée, précision <500m)<br><br>Les événements sont chronométrés : les événements d'intensité moyenne sont les plus courts, car ils n'apparaissent que pendant une demi-seconde, tandis que les autres peuvent apparaître pendant plusieurs secondes, voire jusqu'à une minute. Il est donc important de scanner plusieurs fois une zone donnée en succession rapide pour obtenir un résultat précis.<br><br>* '§esurvey§r' signale les événements récents qui n'ont pas encore expiré. Le champ de vision du détecteur couvre toute la carte, il n'y a donc aucune limite de portée. Tous les résultats détectés sont enregistrés dans une liste interne.<br>* '§ecount§r' écrit le nombre d'événements détectés dans RX.<br>* '§egettype §e<index>§r' écrit le type (LOW/MEDIUM/HIGH) de l'événement indiqué dans RX.<br>* '§egetposition §e<index>§r' écrit la position X/Z estimée de l'événement indiqué dans RX. Les coordonnées sont séparées par un point-virgule.<br><br>{{Template:SatOverview}}"
+ },
+ "Orbital Precision Laser": {
+  "title": "Laser de précision orbital",
+  "content": "Le laser de précision orbital est une arme de faible puissance qui capte la lumière du soleil pour charger un petit faisceau laser. Le faisceau ne met que cinq secondes à se charger et inflige légèrement plus de dégâts aux blocs que le TNT. Les dégâts de coup direct sur les entités touchées sont en revanche bien plus élevés. Combiné aux données de ciblage d'un [[Radar Satellite|satellite radar]], il peut aussi, potentiellement, abattre des missiles.<br><br>* '§efire§r' tire le laser sur la position cible actuelle, à condition que le laser ait fini de se charger. Si le satellite a reçu des données de ciblage d'entité, il utilise à la place la position de cette entité, à condition qu'elle se trouve à moins de 1,000 blocs de la position cible. Après un tir, les données de ciblage de l'entité sont consommées et le satellite utilise à nouveau la position cible.<br>* '§ecanfire§r' écrit 'TRUE' ou 'FALSE' dans RX selon que le temps de recharge est écoulé et que le laser est prêt à tirer.<br>* '§esetentitytarget §e<id>§r' fournit un identifiant d'entité pour un ciblage précis, consommé après un tir. L'identifiant peut être obtenu depuis un satellite radar.<br><br>{{Template:SatOverview}}"
+ },
+ "Narrowband Emission Scanning Satellite": {
+  "title": "Satellite de balayage d'émissions à bande étroite",
+  "content": "Le balayage à bande étroite peut détecter certains événements à haute énergie avec une grande précision dans une petite zone. Alors que le [[Wideband Radio Emission Detector Satellite|détecteur à large bande]] ne peut donner qu'une estimation approximative de l'endroit où se produisent quelques événements, le balayage à bande étroite peut détecter davantage de types d'émissions et en localiser la position précisément.<br><br>Les types d'émissions pouvant être détectés sont :<br>* '§6NEUTRON_EMISSION§r' provenant des réacteurs nucléaires<br>* '§6HIGH_ENERGY_PARTICLES§r' provenant des réacteurs à fusion et des accélérateurs de particules<br>* '§6RADAR_WAVES§r' provenant des radars terrestres<br>* '§6RADIO_WAVES§r' provenant des stations au sol de satellites avec un émetteur actif<br><br>Comme pour le détecteur à large bande, ces émissions sont chronométrées : certains événements ne se produisent qu'une seule fois ou à intervalles de temps. Pour de meilleurs résultats, il est donc recommandé de répéter les scans sur une période donnée.<br><br>* '§esurvey§r' effectue un scan dans un rayon de 250m autour de la position cible. Les résultats sont enregistrés dans une liste interne.<br>* '§ecount§r' écrit le nombre de résultats de scan dans RX.<br>* '§egetinfo §e<index>§r' écrit le type d'émission de l'entrée indiquée dans RX.<br>* '§egetposition §e<index>§r' écrit la position X/Z de l'événement indiqué dans RX. Les coordonnées sont séparées par un point-virgule.<br><br>{{Template:SatOverview}}"
+ },
+ "Space Laboratory": {
+  "title": "Laboratoire spatial",
+  "content": "Satellite scientifique qui produit des données. Les données peuvent être collectées en plaçant un boîtier de lecteur sur un port d'une [[Satellite Ground Station|station au sol]] et en le remplissant de lecteurs de disque vides. Le type et la vitesse des données produites dépendent de la configuration du satellite. Un satellite non modifié produit des données de vol brutes toutes les 15 minutes.<br><br>Le laboratoire spatial peut être modifié en lui attachant des modules, ce qui se fait simplement en lançant ces modules sur la même fréquence satellite que le laboratoire. Les modules installés sont listés dans le texte d'information de chaque station au sol connectée.<br><br>Des relais de capteurs peuvent être attachés au laboratoire spatial pour effectuer un scan orbital et produire des données orbitales. Avec un seul relais, un scan complet prend 100 heures. Heureusement, le laboratoire spatial est assez modulaire pour accepter de nombreux relais de capteurs, sans limite stricte sur leur nombre. Deux relais rendent le scan deux fois plus rapide, trois relais trois fois plus rapide, et ainsi de suite. Avec cent relais de capteurs installés, un scan complet ne prend qu'une heure.<br><br>L'assembleur 0G permet au satellite de produire des objets en orbite. Comme le relais de capteurs, l'assembleur peut être installé en étant lancé sur la même fréquence qu'un laboratoire spatial existant. Plus il y a d'assembleurs, plus la vitesse de production augmente de manière linéaire. Les objets peuvent être livrés par fusée, et le produit fini est livré à l'aide de l'aire d'atterrissage de fret. Si plusieurs objets d'entrée sont chargés, ils sont ajoutés à une file d'attente traitée du premier au dernier. L'assembleur s'arrête si l'emplacement de sortie est plein, et ne reprend qu'une fois le produit fini livré.<br><br>{{Template:SatOverview}}"
+ },
+ "Armor Piercing Bullet": {
+  "title": "Balle perforante (AP)",
+  "content": "Les munitions AP sont similaires aux munitions FMJ, mais elles utilisent des chemises en acier trempé et une charge de poudre nettement plus importante. Non seulement les AP infligent davantage de dégâts et perforent plus efficacement les armures, mais elles peuvent aussi pénétrer leur cible.<br><br>{{Template:Bullet}}"
+ },
+ "Buckshot": {
+  "title": "Chevrotine",
+  "content": "Tir standard, qui crée de nombreux petits plombs peu dommageables avec une dispersion importante. Il est parfois difficile de faire mieux que les classiques.<br><br>{{Template:Shotshells}}"
+ },
+ "Magnum Buckshot": {
+  "title": "Chevrotine magnum",
+  "content": "Chevrotine, mais avec moins de plombs plus gros qui infligent davantage de dégâts. Si les cartouches magnum à poudre noire ne font pas beaucoup mieux que la chevrotine, celles à poudre sans fumée sont nettement plus puissantes. De plus, les cartouches de chevrotine magnum ont environ moitié moins de dispersion que la chevrotine standard.<br><br>{{Template:Shotshells}}"
+ },
+ "Shrapnel Buckshot": {
+  "title": "Chevrotine à éclats",
+  "content": "Une version plus perfide de la chevrotine standard, identique à bien des égards, sauf que les plombs sont extrêmement rebondissants et ricochent plusieurs fois sur la plupart des surfaces. Peut être dangereux pour l'utilisateur lorsqu'il est utilisé dans des espaces clos.<br><br>{{Template:Shotshells}}"
+ },
+ "Demolition Explosives": {
+  "title": "Explosifs de démolition",
+  "content": "Les explosifs de démolition sont similaires aux explosifs à haute énergie classiques, mais ils ont un rayon d'effet plus grand, des dégâts légèrement plus faibles, et ils cassent les blocs. Déconseillés pour la défense du domicile.<br><br>{{Template:Explosives}}"
+ },
+ "Depleted Uranium Bullet": {
+  "title": "Balle à uranium appauvri",
+  "content": "Munition contenant de l'uranium appauvri dans son noyau. La densité accrue et la charge de poudre plus élevée donnent à ce type de munition des propriétés de perforation d'armure encore meilleures que les munitions AP. Le surplus de puissance permet aux projectiles de pénétrer.<br><br>Comme leur effet recherché repose sur l'énergie cinétique plutôt que sur le poison, les munitions à uranium appauvri ne sont pas soumises aux conventions de La Haye de 1899 concernant l'usage de projectiles toxiques à la guerre.<br><br>{{Template:Bullet}}<br>{{Template:Shotshells}}"
+ },
+ "FMJ Express Bullet": {
+  "title": "Balle Express FMJ",
+  "content": "FMJ Express est un type spécial de munition chemisée en métal intégral, pour les calibres de revolver. Les munitions Express ont les mêmes effets de perforation d'armure, avec en plus des dégâts accrus. Les projectiles Express peuvent pénétrer leurs cibles, mais, contrairement aux balles AP, ils perdent de la puissance à chaque pénétration. En raison de la charge de poudre plus élevée combinée à la carcasse en gunmetal de base, les munitions Express usent l'arme plus rapidement.<br><br>{{Template:Bullet}}"
+ },
+ "Flechettes": {
+  "title": "Fléchettes",
+  "content": "Les fléchettes sont de petits projectiles stabilisés par ailettes, contrairement aux plombs ronds de la chevrotine. Les cartouches à fléchettes ont moins de dispersion et une meilleure perforation d'armure que la chevrotine standard.<br><br>{{Template:Shotshells}}"
+ },
+ "Full Metal Jacket Bullet": {
+  "title": "Balle chemisée en métal intégral (FMJ)",
+  "content": "Les FMJ ne se déforment pas lorsqu'elles touchent une cible molle, ce qui signifie qu'elles infligent moins de dégâts. En revanche, elles peuvent perforer les armures plus efficacement. Toutes les FMJ ont des propriétés de perforation d'armure, ainsi qu'une neutralisation du seuil de dégâts ajoutée, selon la taille du calibre.<br><br>{{Template:Bullet}}"
+ },
+ "High-Explosives": {
+  "title": "Explosifs à haute énergie",
+  "content": "Munitions standard pour lance-grenades et lance-roquettes. Inflige des dégâts de zone dans une zone modérée.<br><br>{{Template:Explosives}}"
+ },
+ "High-Explosive Ammunition": {
+  "title": "Munitions à haute énergie",
+  "content": "Comme on pouvait s'y attendre, les munitions explosives infligent des dégâts explosifs à leur cible, ainsi qu'aux alentours dans un petit rayon. Les dégâts obtenus sont nettement plus élevés que les dégâts de base de l'arme, au prix d'une usure beaucoup plus rapide de l'arme.<br><br>L'usage de projectiles explosifs pesant moins de 400 grammes est interdit par la déclaration de Saint-Pétersbourg de 1868.<br><br>{{Template:Bullet}}<br>{{Template:Shotshells}}"
+ },
+ "Shaped Charges": {
+  "title": "Charges creuses",
+  "content": "Type spécial de munition explosive, dont les dégâts de zone sont plus faibles que ceux des explosifs à haute énergie, mais qui inflige d'importants dégâts supplémentaires en cas de coup direct.<br><br>{{Template:Explosives}}"
+ },
+ "Incendiary Munitions": {
+  "title": "Munitions incendiaires",
+  "content": "Les explosifs incendiaires laissent derrière eux un feu persistant, qui peut enflammer les cibles. La combustion résiduelle ne dure pas très longtemps et peut être éteinte avec de l'eau.<br><br>L'usage d'armes incendiaires contre des civils, ou à proximité de ceux-ci, est interdit par les conventions de Genève.<br><br>{{Template:Explosives}}"
+ },
+ "Jacketed Hollow Point Bullet": {
+  "title": "Balle à pointe creuse chemisée (JHP)",
+  "content": "Les JHP sont des balles déformables qui infligent davantage de dégâts aux cibles molles par rapport aux balles à pointe molle, au prix de moins bonnes performances contre les cibles blindées. Les JHP ont aussi un bonus plus élevé sur les tirs à la tête.<br><br>Étant des projectiles à expansion, les balles à pointe creuse chemisée sont interdites à la guerre par les conventions de La Haye de 1899.<br><br>{{Template:Bullet}}"
+ },
+ "High Yield Mini Nuke": {
+  "title": "Mini-bombe nucléaire à haut rendement",
+  "content": "bombe nucléaire<br>"
+ },
+ "Black Powder Ammunition": {
+  "title": "Munitions à poudre noire",
+  "content": "Le premier type de cartouche disponible. Les munitions à poudre noire existent pour les calibres de revolver et les cartouches calibre 12. Pour les calibres de revolver, les balles à poudre noire sont une variante des balles à pointe molle. Les cartouches à poudre noire existent en versions chevrotine, chevrotine magnum et balle unique. Les munitions à poudre noire sont très bon marché, mais infligent nettement moins de dégâts et produisent un gros nuage de fumée à chaque tir.<br><br>{{Template:Bullet}}<br>{{Template:Shotshells}}"
+ },
+ "Slug": {
+  "title": "Balle unique",
+  "content": "Type de cartouche qui ne contient qu'un seul gros projectile. Contrairement aux plombs, les balles uniques n'ont pas de dispersion inhérente, infligent la totalité des dégâts de l'arme à l'impact, et possèdent certaines propriétés de perforation d'armure.<br><br>{{Template:Shotshells}}"
+ },
+ "Soft Point Bullet": {
+  "title": "Balle à pointe molle",
+  "content": "Le type de munition « par défaut » pour la plupart des armes. Les balles à pointe molle ne modifient pas les dégâts de base de l'arme et n'ont aucune propriété de perforation d'armure.<br><br>Étant des projectiles à expansion, les pointes molles sont interdites à la guerre par les conventions de La Haye de 1899.<br><br>{{Template:Bullet}}"
+ },
+ "Starmetal Bullet": {
+  "title": "Balle en starmetal",
+  "content": "Cartouche à charge de poudre extra élevée, utilisant un projectile en starmetal. La densité et la stabilité du starmetal permettent à ce projectile de perforer la plupart des armures, au prix d'une usure de l'arme dix fois plus rapide. Ne peut être utilisée que dans les fusils anti-matériel, car la pression dans la chambre est si élevée qu'elle ferait exploser les armes automatiques.<br><br>{{Template:Bullet}}"
+ },
+ "White Phosphorus Munitions": {
+  "title": "Munitions au phosphore blanc",
+  "content": "Le phosphore blanc s'enflamme facilement et est très difficile à éteindre, ce qui cause d'importants dégâts de combustion résiduelle qui ne peuvent pas être éteints définitivement avec de l'eau. Le feu persistant causé par les explosions au WP dure plus longtemps que celui des explosifs incendiaires conventionnels.<br><br>L'usage d'armes incendiaires contre des civils, ou à proximité de ceux-ci, est interdit par les conventions de Genève.<br><br>{{Template:Shotshells}}<br>{{Template:Explosives}}"
+ }
+}

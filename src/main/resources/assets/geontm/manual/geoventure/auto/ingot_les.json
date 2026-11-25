@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_les",
+ "icon": [
+  "geontm:ingot_les"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_les"
+  ]
+ ],
+ "title": {
+  "en_us": "Low Enriched Schrabidium Fuel Ingot",
+  "fr_fr": "Lingot de carburant au Schrabidium faiblement enrichi"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_les|Low Enriched Schrabidium Fuel Billet]].<br>- Crafting table : 9 x [[gv:nugget_les|Low Enriched Schrabidium Fuel Nugget]].<br>- Crafting table : Schrabidium Nugget, 4 x Neptunium Nugget, 4 x [[gv:nugget_beryllium|Beryllium Nugget]].<br><br>Used to make :<br>[[gv:billet_les|Low Enriched Schrabidium Fuel Billet]], [[gv:nugget_les|Low Enriched Schrabidium Fuel Nugget]], [[gv:watz_pellet_les|LES Watz Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_les|Billet de carburant Schrabidium faiblement enrichi]].<br>- Établi : 9 x [[gv:nugget_les|Pépite de carburant au Schrabidium enrichi faible]].<br>- Établi : Pépite de Schrabidium, 4 x Pépite de neptunium, 4 x [[gv:nugget_beryllium|Pépite de béryllium]].<br><br>Sert à fabriquer :<br>[[gv:billet_les|Billet de carburant Schrabidium faiblement enrichi]], [[gv:nugget_les|Pépite de carburant au Schrabidium enrichi faible]], [[gv:watz_pellet_les|Pastille Watz LES]]."
+ }
+}

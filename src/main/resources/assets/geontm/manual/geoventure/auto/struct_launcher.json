@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_launcher",
+ "icon": [
+  "geontm:struct_launcher"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_launcher"
+  ]
+ ],
+ "title": {
+  "en_us": "Launch Pad Component Block",
+  "fr_fr": "Bloc de composants de rampe de lancement"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 3 x Steel Plate, 2 x Steel Scaffold, pipe (Steel), 3 x Concrete Tile.<br><br>Used to make :<br>[[gv:struct_launcher_core|Compact Launcher Core Component]], [[gv:struct_launcher_core_large|Launch Table Core Component]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 3 x Plaque d'acier, 2 x Échafaudage en acier, tuyau (acier), 3 x Tuile de béton.<br><br>Sert à fabriquer :<br>[[gv:struct_launcher_core|Composant central du lanceur compact]], [[gv:struct_launcher_core_large|Lancer le composant de base de la table]]."
+ }
+}

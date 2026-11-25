@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_generic_medium",
+ "icon": [
+  "geontm:warhead_generic_medium"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_generic_medium"
+  ]
+ ],
+ "title": {
+  "en_us": "Medium Warhead",
+  "fr_fr": "Ogive moyen"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x Titanium Plate, 4 x ingot (high explosive), [[gv:circuit_basic|Integrated Circuit Board]] - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_strong|Strong HE Missile]], [[gv:warhead_buster_medium|Medium Bunker Buster Warhead]], [[gv:warhead_cluster_medium|Medium Cluster Warhead]], [[gv:warhead_incendiary_medium|Medium Incendiary Warhead]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x Plaque en titane, 4 x lingot (explosif puissant), [[gv:circuit_basic|Carte de circuit intégré]] - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_strong|Missile explosif Tier2]], [[gv:warhead_buster_medium|Ogive moyenne de Buster Buster]], [[gv:warhead_cluster_medium|Ogive à sous munitions moyenne]], [[gv:warhead_incendiary_medium|Ogive incendiere moyenne]]."
+ }
+}

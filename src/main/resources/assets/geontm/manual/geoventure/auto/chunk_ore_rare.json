@@ -1,0 +1,19 @@
+{
+ "name": "gv:chunk_ore_rare",
+ "icon": [
+  "geontm:chunk_ore_rare"
+ ],
+ "trigger": [
+  [
+   "geontm:chunk_ore_rare"
+  ]
+ ],
+ "title": {
+  "en_us": "Rare Earth Ore Chunk",
+  "fr_fr": "Fragment de minerai de terres rares"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (rare).<br>- Furnace (x16) : Meteor Rare Earth Ore.<br><br>Used to make :<br>[[Boron|Boron Fragment]], [[gv:fragment_lanthanium|Lanthanium Fragment]], [[gv:fragment_cobalt|Cobalt Fragment]], [[gv:fragment_cerium|Cerium Fragment]], [[gv:fragment_neodymium|Neodymium Fragment]], [[gv:fragment_niobium|Niobium Fragment]], [[gv:powder_cobalt_tiny|Tiny Pile of Cobalt Powder]], [[gv:powder_boron_tiny|Tiny Pile of Boron Powder]], [[gv:powder_niobium_tiny|Tiny Pile of Niobium Powder]], [[gv:nugget_zirconium|Zirconium Splinter]] and 1 more.",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (rare).<br>- Four (x16) : Minerai de terres rares météorique.<br><br>Sert à fabriquer :<br>[[Boron|Fragment de bore]], [[gv:fragment_lanthanium|Fragment de lanthane]], [[gv:fragment_cobalt|Fragment de cobalt]], [[gv:fragment_cerium|Fragment de cerium]], [[gv:fragment_neodymium|Fragment de neodymium]], [[gv:fragment_niobium|Fragment de niobium]], [[gv:powder_cobalt_tiny|Minuscule tas de poudre de cobalt]], [[gv:powder_boron_tiny|Petit tas de poudre de bore]], [[gv:powder_niobium_tiny|Minuscule tas de poudre de niobium]], [[gv:nugget_zirconium|Éclat de zirconium]] et 1 autres."
+ }
+}

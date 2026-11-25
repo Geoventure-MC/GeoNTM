@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_carbon",
+ "icon": [
+  "geontm:part_carbon"
+ ],
+ "trigger": [
+  [
+   "geontm:part_carbon"
+  ]
+ ],
+ "title": {
+  "en_us": "Box of Carbon Dust",
+  "fr_fr": "Boîte de poussière de carbone"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x8) : Coal Powder.<br><br>Used to make :<br>[[gv:powder_polonium|Polonium-210 Powder]], [[gv:powder_actinium|Actinium Powder]], [[Radium-226|Radium-226 Powder]], [[gv:powder_cobalt|Cobalt Powder]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x8) : Poudre de charbon.<br><br>Sert à fabriquer :<br>[[gv:powder_polonium|Poudre de polonium-210]], [[gv:powder_actinium|Poudre d'actinium]], [[Radium-226|Poudre de radium-226]], [[gv:powder_cobalt|Poudre de cobalt]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:radaway_flush",
+ "icon": [
+  "geontm:radaway_flush"
+ ],
+ "trigger": [
+  [
+   "geontm:radaway_flush"
+  ]
+ ],
+ "title": {
+  "en_us": "Elite RadAway",
+  "fr_fr": "Élite RadAway"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:radaway_strong|Strong RadAway]], Iodine Powder.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:radaway_strong|Fort RadAway]], Poudre d'iode."
+ }
+}

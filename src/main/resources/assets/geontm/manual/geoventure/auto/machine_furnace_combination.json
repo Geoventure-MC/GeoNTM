@@ -1,0 +1,19 @@
+{
+ "name": "gv:machine_furnace_combination",
+ "icon": [
+  "geontm:machine_furnace_combination"
+ ],
+ "trigger": [
+  [
+   "geontm:machine_furnace_combination"
+  ]
+ ],
+ "title": {
+  "en_us": "Combination Furnace",
+  "fr_fr": "Four combiné"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 8 x Stone Bricks, 16 x logs, 2 x cast plate (Copper), 16 x ingot (brick).",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 8 x Pierre taillée, 16 x logs, 2 x plaque coulée (cuivre), 16 x lingot (brick)."
+ }
+}

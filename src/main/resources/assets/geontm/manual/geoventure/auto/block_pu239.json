@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_pu239",
+ "icon": [
+  "geontm:block_pu239"
+ ],
+ "trigger": [
+  [
+   "geontm:block_pu239"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Plutonium-239",
+  "fr_fr": "Bloc de Plutonium-239"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Plutonium-239|Plutonium-239 Ingot]].<br><br>Used to make :<br>[[Plutonium-239|Plutonium-239 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Plutonium-239|Pu239 lingot]].<br><br>Sert à fabriquer :<br>[[Plutonium-239|Pu239 lingot]]."
+ }
+}

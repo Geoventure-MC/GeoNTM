@@ -1,0 +1,19 @@
+{
+ "name": "gv:tank_steel",
+ "icon": [
+  "geontm:tank_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:tank_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Tank",
+  "fr_fr": "Réservoir en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:rbmk_outgasser|RBMK Irradiation Channel]].<br>- Industrial anvil (construction) : [[gv:vitrified_barrel|Vitrified Nuclear Waste Drum]].<br>- Industrial anvil (construction) : [[gv:yellow_barrel|Radioactive Barrel]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:acetylene_torch|Acetylene Welding Torch]], [[Fluid Burner|Fluid Burner]], [[gv:vitrified_barrel|Vitrified Nuclear Waste Drum]], [[gv:yellow_barrel|Radioactive Barrel]], [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]], [[RBMK Steam Connector|RBMK Steam Connector]], [[gv:rbmk_outgasser|RBMK Irradiation Channel]], [[gv:rbmk_steam_inlet|RBMK ReaSim Water Inlet]], [[gv:rbmk_steam_outlet|RBMK ReaSim Steam Outlet]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:rbmk_outgasser|Canal d'irradiation RBMK]].<br>- Enclume industrielle (construction) : [[gv:vitrified_barrel|Fût de déchets nucléaires vitrifiés]].<br>- Enclume industrielle (construction) : [[gv:yellow_barrel|Baril radioactif]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:acetylene_torch|Chalumeau à acétylène]], [[Fluid Burner|Brûleur de fluide]], [[gv:vitrified_barrel|Fût de déchets nucléaires vitrifiés]], [[gv:yellow_barrel|Baril radioactif]], [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]], [[RBMK Steam Connector|Connecteur vapeur RBMK]], [[gv:rbmk_outgasser|Canal d'irradiation RBMK]], [[gv:rbmk_steam_inlet|Entrée d'eau RBMK ReaSim]], [[gv:rbmk_steam_outlet|Sortie de vapeur RBMK ReaSim]]."
+ }
+}

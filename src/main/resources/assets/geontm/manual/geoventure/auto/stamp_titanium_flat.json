@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_titanium_flat",
+ "icon": [
+  "geontm:stamp_titanium_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_titanium_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Stamp (Titanium)",
+  "fr_fr": "Moule plat (titane)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Brick, 3 x Titanium Ingot.<br>- Crafting table : 3 x Nether Brick, 3 x Titanium Ingot.<br><br>Used to make :<br>[[gv:stamp_titanium_circuit|Circuit Stamp (Titanium)]], [[gv:stamp_titanium_plate|Plate Stamp (Titanium)]], [[gv:stamp_titanium_wire|Wire Stamp (Titanium)]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Brique, 3 x Lingot de titane.<br>- Établi : 3 x Brique du Nether, 3 x Lingot de titane.<br><br>Sert à fabriquer :<br>[[gv:stamp_titanium_circuit|Moule de circuit (titane)]], [[gv:stamp_titanium_plate|Moule de plaque (titane)]], [[gv:stamp_titanium_wire|Moule de fil (titane)]]."
+ }
+}

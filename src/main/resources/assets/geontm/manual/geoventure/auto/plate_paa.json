@@ -1,0 +1,19 @@
+{
+ "name": "gv:plate_paa",
+ "icon": [
+  "geontm:plate_paa"
+ ],
+ "trigger": [
+  [
+   "geontm:plate_paa"
+  ]
+ ],
+ "title": {
+  "en_us": "PaA Alloy Plate",
+  "fr_fr": "Plaque d'alliage PaA"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Blast Furnace|Blast Furnace]] : Gold Ingot, [[gv:plate_mixed|Mixed Plate]].<br>- Blast Furnace (LEGACY) (x2) : Gold Plate, [[gv:plate_mixed|Mixed Plate]].<br><br>Used to make :<br>[[gv:hazmat_paa_boots|PaA Battle Hazmat Suit Boots]], [[gv:hazmat_paa_helmet|PaA Battle Hazmat Suit Helmet]], [[gv:hazmat_paa_legs|PaA Battle Hazmat Suit Leggings]], [[gv:hazmat_paa_plate|PaA Battle Hazmat Suit Chestplate]].",
+  "fr_fr": "Obtention :<br>- [[Blast Furnace|Haut fourneau]] : Lingot d'or, [[gv:plate_mixed|Plaque mixte]].<br>- Four d'alliage (x2) : Plaque d'or, [[gv:plate_mixed|Plaque mixte]].<br><br>Sert à fabriquer :<br>[[gv:hazmat_paa_boots|Bottes de combinaison de combat hazmat]], [[gv:hazmat_paa_helmet|Casque de combinaison de combat hazmat]], [[gv:hazmat_paa_legs|Jambieres de combinaison de combat hazmat]], [[gv:hazmat_paa_plate|Plastron de combat Hazmat PaA]]."
+ }
+}

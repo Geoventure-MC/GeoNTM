@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuel_tank_large",
+ "icon": [
+  "geontm:fuel_tank_large"
+ ],
+ "trigger": [
+  [
+   "geontm:fuel_tank_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Fuel Tank",
+  "fr_fr": "Grand réservoir de carburant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 8 x welded plate (Aluminium), 12 x plate (ostrum), 16 x [[gv:steel_scaffold|Steel Scaffold]].<br><br>Used to make :<br>[[gv:missile_nuclear|Nuclear Missile]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 8 x plaque soudée (aluminium), 12 x plaque (ostrum), 16 x [[gv:steel_scaffold|Échafaudage en acier]].<br><br>Sert à fabriquer :<br>[[gv:missile_nuclear|Missile nucléaire]]."
+ }
+}

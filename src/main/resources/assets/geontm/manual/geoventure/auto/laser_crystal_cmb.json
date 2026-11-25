@@ -1,0 +1,19 @@
+{
+ "name": "gv:laser_crystal_cmb",
+ "icon": [
+  "geontm:laser_crystal_cmb"
+ ],
+ "trigger": [
+  [
+   "geontm:laser_crystal_cmb"
+  ]
+ ],
+ "title": {
+  "en_us": "CMB-Schrabidate Antimatter Laser Crystal",
+  "fr_fr": "Cristal Laser Xénon-Daffergon"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:glass_quartz|Quartz Glass]], 2 x CMB Steel Ingot, 2 x Ferric Schrabidate Ingot, [[gv:cell|Empty Cell]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:glass_quartz|Verre Quartz]], 2 x Lingot d'acier CMB, 2 x Lingot de Schrabidate ferrique, [[gv:cell|Cellule vide]]."
+ }
+}

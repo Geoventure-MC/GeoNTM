@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_incendiary_medium",
+ "icon": [
+  "geontm:warhead_incendiary_medium"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_incendiary_medium"
+  ]
+ ],
+ "title": {
+  "en_us": "Medium Incendiary Warhead",
+  "fr_fr": "Ogive incendiere moyenne"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_medium|Medium Warhead]], 4 x dust (red phosphorus) - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_incendiary_strong|Strong Incendiary Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_medium|Ogive moyen]], 4 x poudre (red phosphorus) - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_incendiary_strong|Missile incendiaire Tier2]]."
+ }
+}

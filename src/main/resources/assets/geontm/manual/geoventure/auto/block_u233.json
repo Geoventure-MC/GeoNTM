@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_u233",
+ "icon": [
+  "geontm:block_u233"
+ ],
+ "trigger": [
+  [
+   "geontm:block_u233"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Uranium-233",
+  "fr_fr": "Bloc d'Uranium-233"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Uranium-233|Uranium-233 Ingot]].<br><br>Used to make :<br>[[Uranium-233|Uranium-233 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Uranium-233|Lingot d'uranium-233]].<br><br>Sert à fabriquer :<br>[[Uranium-233|Lingot d'uranium-233]]."
+ }
+}

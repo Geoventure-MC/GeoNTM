@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_generic_glass_polarized",
+ "icon": [
+  "geontm:part_generic_glass_polarized"
+ ],
+ "trigger": [
+  [
+   "geontm:part_generic_glass_polarized"
+  ]
+ ],
+ "title": {
+  "en_us": "Polarized Lens",
+  "fr_fr": "Lentille polarisée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] (x16) : Glass Pane, 1000 mB petroleum.<br><br>Used to make :<br>[[Free Electron Laser|FEL]], [[gv:satellite_spy|Spy Satellite]].",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] (x16) : Vitre, 1000 mB petroleum.<br><br>Sert à fabriquer :<br>[[gv:satellite_spy|Satellite espion]]."
+ }
+}

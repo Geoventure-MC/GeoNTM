@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_death_ray",
+ "icon": [
+  "geontm:satellite_death_ray"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_death_ray"
+  ]
+ ],
+ "title": {
+  "en_us": "Orbital Death Ray",
+  "fr_fr": "Rayon de la mort orbital"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 32 x shell (weapon steel), 32 x Reactor Grade Plutonium Billet, [[gv:capacitor_bismuth|Bismuth Capacitor]], 32 x gem (emerald), 16 x [[gv:part_generic_lde|Low-Density Element]], 5 x [[gv:circuit_controller_advanced|Advanced Control Unit]] - [[gv:schemas|blueprint required]]: Orbital weapons and intelligence.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 32 x coque (acier à armes), 32 x Billet de plutonium de qualité réacteur, [[gv:capacitor_bismuth|Condensateur au bismuth]], 32 x gemme (emerald), 16 x [[gv:part_generic_lde|Élément à faible densité]], 5 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]] - [[gv:schemas|schéma exigé]] : Armes et renseignement orbitaux."
+ }
+}

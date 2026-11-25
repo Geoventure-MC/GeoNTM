@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_schrabidium",
+ "icon": [
+  "geontm:billet_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Billet",
+  "fr_fr": "Billette de Schrabidium-326"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x3) : 2 x [[gv:ingot_schrabidium|Schrabidium Ingot]].<br><br>Used to make :<br>[[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]], [[gv:ingot_schrabidium|Schrabidium Ingot]], [[gv:nugget_schrabidium|Schrabidium Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x3) : 2 x [[gv:ingot_schrabidium|Lingot de Schrabidium]].<br><br>Sert à fabriquer :<br>[[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]], [[gv:ingot_schrabidium|Lingot de Schrabidium]], [[gv:nugget_schrabidium|Pépite de Schrabidium]]."
+ }
+}

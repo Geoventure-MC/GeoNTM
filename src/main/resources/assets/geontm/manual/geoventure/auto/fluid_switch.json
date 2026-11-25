@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_switch",
+ "icon": [
+  "geontm:fluid_switch"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_switch"
+  ]
+ ],
+ "title": {
+  "en_us": "Redstone Fluid Valve",
+  "fr_fr": "Vanne de fluide à redstone"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : dust (redstone), [[gv:fluid_duct_paintable|Paintable Coated Universal Fluid Duct]].<br><br>Used to make :<br>[[gv:fluid_counter_valve|Fluid Valve with Counter]].",
+  "fr_fr": "Obtention :<br>- Établi : poudre (redstone), [[gv:fluid_duct_paintable|Conduit de fluide universel enrobé peignable]].<br><br>Sert à fabriquer :<br>[[gv:fluid_counter_valve|Vanne de fluide avec compteur]]."
+ }
+}

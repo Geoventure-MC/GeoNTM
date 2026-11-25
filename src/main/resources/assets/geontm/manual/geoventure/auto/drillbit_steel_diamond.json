@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_steel_diamond",
+ "icon": [
+  "geontm:drillbit_steel_diamond"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_steel_diamond"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Drill bit (Diamond-Tipped)",
+  "fr_fr": "Foret en acier (pointe diamant)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:drillbit_steel|Steel Drill bit]], 16 x Diamond Powder.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:drillbit_steel|Foret en acier]], 16 x Poudre de diamant."
+ }
+}

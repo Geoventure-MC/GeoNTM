@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_am242",
+ "icon": [
+  "geontm:nugget_am242"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_am242"
+  ]
+ ],
+ "title": {
+  "en_us": "Americium-242 Nugget",
+  "fr_fr": "Pépite d'américium-242"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_am242|Americium-242 Billet]].<br>- Crafting table (x9) : [[gv:ingot_am242|Americium-242 Ingot]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:ingot_am_mix|Reactor Grade Americium Ingot]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_am242|Americium-242 Billet]], [[gv:ingot_am242|Americium-242 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_am242|Billet d'américium-242]].<br>- Établi (x9) : [[gv:ingot_am242|Lingot d'américium-242]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:ingot_am_mix|Lingot d'américium de qualité réacteur]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_am242|Billet d'américium-242]], [[gv:ingot_am242|Lingot d'américium-242]]."
+ }
+}

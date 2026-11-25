@@ -1,0 +1,19 @@
+{
+ "name": "gv:coke_petroleum",
+ "icon": [
+  "geontm:coke_petroleum"
+ ],
+ "trigger": [
+  [
+   "geontm:coke_petroleum"
+  ]
+ ],
+ "title": {
+  "en_us": "Petroleum Coke",
+  "fr_fr": "Coke de pétrole"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Coker Unit|Coker Unit]] : aromatics.<br>- [[Coker Unit|Coker Unit]] : biofuel.<br>- [[Coker Unit|Coker Unit]] : coalcreosote.<br>(26 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- [[Coker Unit|Unité de cokéfaction]] : aromatics.<br>- [[Coker Unit|Unité de cokéfaction]] : biofuel.<br>- [[Coker Unit|Unité de cokéfaction]] : coalcreosote.<br>(26 autres recettes : voir JEI.)"
+ }
+}

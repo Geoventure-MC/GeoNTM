@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_pu238be",
+ "icon": [
+  "geontm:billet_pu238be"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_pu238be"
+  ]
+ ],
+ "title": {
+  "en_us": "Pu238Be Billet",
+  "fr_fr": "Billet Pu238Be"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Plutonium-238 Nugget, 3 x [[gv:nugget_beryllium|Beryllium Nugget]].<br>- Crafting table (x2) : [[Plutonium-238|Plutonium-238 Billet]], [[gv:billet_beryllium|Beryllium Billet]].<br>- Crafting table (x6) : 3 x [[Plutonium-238|Plutonium-238 Billet]], 3 x [[gv:billet_beryllium|Beryllium Billet]].<br><br>Used to make :<br>[[gv:rbmk_fuel_pu238be|Pu238Be RBMK Neutron Source]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Pépite de Pu238, 3 x [[gv:nugget_beryllium|Pépite de béryllium]].<br>- Établi (x2) : [[Plutonium-238|Billet de plutonium-238]], [[gv:billet_beryllium|Billet de béryllium]].<br>- Établi (x6) : 3 x [[Plutonium-238|Billet de plutonium-238]], 3 x [[gv:billet_beryllium|Billet de béryllium]].<br><br>Sert à fabriquer :<br>[[gv:rbmk_fuel_pu238be|Source de neutrons Pu238Be RBMK]]."
+ }
+}

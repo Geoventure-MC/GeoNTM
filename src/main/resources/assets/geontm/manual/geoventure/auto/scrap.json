@@ -1,0 +1,19 @@
+{
+ "name": "gv:scrap",
+ "icon": [
+  "geontm:scrap"
+ ],
+ "trigger": [
+  [
+   "geontm:scrap"
+  ]
+ ],
+ "title": {
+  "en_us": "Scrap",
+  "fr_fr": "Ferraille"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Broken Toaster.<br><br>Used to make :<br>[[gv:dust|Dust]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Grille-pain cassé.<br><br>Sert à fabriquer :<br>[[gv:dust|Poussière]]."
+ }
+}

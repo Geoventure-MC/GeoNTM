@@ -1,0 +1,25 @@
+{
+ "name": "gv:schemas",
+ "icon": [
+  "geontm:blueprint_folder_discover"
+ ],
+ "trigger": [
+  [
+   "geontm:blueprints"
+  ],
+  [
+   "geontm:blueprint_folder"
+  ],
+  [
+   "geontm:blueprint_folder_discover"
+  ]
+ ],
+ "title": {
+  "en_us": "Guide: blueprints",
+  "fr_fr": "Guide : plans et schémas"
+ },
+ "content": {
+  "en_us": "Some recipes require a blueprint placed in the machine. A blueprint unlocks a whole family of recipes.<br><br>1. Craft a blueprint folder: 3 paper and 1 [[gv:circuit_basic|basic circuit board]].<br>2. Upgrade it: the folder and 2 basic circuit boards.<br>3. Right-click the upgraded folder: it gives a random blueprint among the families unlocked by your country's research.<br><br>Families and required research (G key):<br>- Conventional warheads: Balistique I<br>- Heavy warheads: Balistique II<br>- Modular missiles: Dissuasion Stratégique<br>- Fission reactors: Physique Nucléaire<br>- Fusion: Matériaux Avancés<br>- Space launch and satellites: Aérospatiale<br>- Deep space: Espace Profond<br>- Special warheads, orbital weapons and intelligence: war loot only.",
+  "fr_fr": "Certaines recettes exigent un plan, à placer dans la machine. Un plan ouvre toute une famille de recettes.<br><br>1. Fabriquer un cahier de plans à l'établi : 3 papiers et 1 [[gv:circuit_basic|carte de circuit de base]].<br>2. Le transformer à l'établi en cahier de découverte : le cahier et 2 cartes de circuit de base.<br>3. Clic droit avec le cahier de découverte : il donne au hasard un plan parmi les familles débloquées par la recherche du pays. Un plan déjà en poche n'est pas redonné tant qu'il en reste d'autres.<br><br>Familles et recherche du pays nécessaire (touche G) :<br>- Ogives conventionnelles : Balistique I<br>- Ogives lourdes : Balistique II<br>- Missiles modulaires : Dissuasion Stratégique<br>- Réacteurs à fission : Physique Nucléaire<br>- Fusion : Matériaux Avancés<br>- Lancement spatial et satellites : Aérospatiale<br>- Espace lointain : Espace Profond<br>- Ogives spéciales, armes et renseignement orbitaux : butin de guerre seulement.<br><br>Message « aucun schéma de ce type » : la recherche correspondante manque."
+ }
+}

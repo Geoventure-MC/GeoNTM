@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_uranium",
+ "icon": [
+  "geontm:rod_quad_uranium"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_uranium"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium Quad Rod",
+  "fr_fr": "Quatruple tige d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Uranium Billet.<br><br>Used to make :<br>[[gv:rod_quad_rgp|Reactor-Grade Plutonium Quad Rod]], [[Uranium|Uranium Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billet d'uranium.<br><br>Sert à fabriquer :<br>[[gv:rod_quad_rgp|Quatre tiges de plutonium de qualité réacteur]], [[Uranium|Billet d'uranium]]."
+ }
+}

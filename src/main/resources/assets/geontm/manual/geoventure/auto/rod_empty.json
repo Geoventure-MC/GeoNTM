@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_empty",
+ "icon": [
+  "geontm:rod_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Rod",
+  "fr_fr": "Tige vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : [[gv:rod_dual_empty|Empty Dual Rod]].<br>- Crafting table (x4) : [[gv:rod_quad_empty|Empty Quad Rod]].<br>- Crafting table (x16) : 6 x Steel Plate, 2 x Lead Plate.<br><br>Used to make :<br>[[gv:rod_ac227|Actinium-227 Rod]], [[gv:rod_co|Cobalt Rod]], [[gv:rod_co60|Cobalt-60 Rod]], [[gv:rod_dual_empty|Empty Dual Rod]], [[gv:rod_lithium|Lithium Rod]], [[gv:rod_np237|Neptunium-237 Rod]], [[gv:rod_pu238|Plutonium-238 Rod]], [[gv:rod_pu239|Plutonium-239 Rod]], [[gv:rod_quad_empty|Empty Quad Rod]], [[gv:rod_ra226|Radium-226 Rod]] and 8 more.",
+  "fr_fr": "Obtention :<br>- Établi (x2) : [[gv:rod_dual_empty|Double tige vide]].<br>- Établi (x4) : [[gv:rod_quad_empty|Quatruple tige vide]].<br>- Établi (x16) : 6 x Plaque d'acier, 2 x Plaque de plomb.<br><br>Sert à fabriquer :<br>[[gv:rod_ac227|Tige d'actinium-227]], [[gv:rod_co|Bâton de cobalt]], [[gv:rod_co60|Tige de cobalt-60]], [[gv:rod_dual_empty|Double tige vide]], [[gv:rod_lithium|Tige de lithium]], [[gv:rod_np237|Tige de neptunium-237]], [[gv:rod_pu238|Tige de Pu238]], [[gv:rod_pu239|Tige de Pu239]], [[gv:rod_quad_empty|Quatruple tige vide]], [[gv:rod_ra226|Tige de radium-226]] et 8 autres."
+ }
+}

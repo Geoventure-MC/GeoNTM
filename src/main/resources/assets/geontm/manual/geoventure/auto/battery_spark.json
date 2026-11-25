@@ -1,0 +1,19 @@
+{
+ "name": "gv:battery_spark",
+ "icon": [
+  "geontm:battery_spark"
+ ],
+ "trigger": [
+  [
+   "geontm:battery_spark"
+  ]
+ ],
+ "title": {
+  "en_us": "Spark Battery",
+  "fr_fr": "Batterie spark"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : dense wire (Magnetized Tungsten), 4 x Dineutronium Compound Plate, 2 x [[gv:powder_spark_mix|Spark Blend]].",
+  "fr_fr": "Obtention :<br>- Établi : fil dense (tungstène magnétisé), 4 x Plaque de dineutronium, 2 x [[gv:powder_spark_mix|Mélange d'étincelles]]."
+ }
+}

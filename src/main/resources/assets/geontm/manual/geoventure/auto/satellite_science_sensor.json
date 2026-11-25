@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_science_sensor",
+ "icon": [
+  "geontm:satellite_science_sensor"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_science_sensor"
+  ]
+ ],
+ "title": {
+  "en_us": "Space Laboratory - Sensor Relay",
+  "fr_fr": "Laboratoire spatial - Relais de capteurs"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : shell (Aluminium), 4 x [[gv:coil_gold|Gold Coil]], 2 x [[gv:circuit_quantum|Quantum Processing Unit]], 2 x [[gv:part_generic_lde|Low-Density Element]], Bronze Structural Elements - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : coque (aluminium), 4 x [[gv:coil_gold|Bobine d'or]], 2 x [[gv:circuit_quantum|Unité de traitement quantique]], 2 x [[gv:part_generic_lde|Élément à faible densité]], Éléments structurels en bronze - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

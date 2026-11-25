@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_nullifier",
+ "icon": [
+  "geontm:upgrade_nullifier"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_nullifier"
+  ]
+ ],
+ "title": {
+  "en_us": "Scrap Destroyer Upgrade",
+  "fr_fr": "Mise à niveau du destructeur de ferraille"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 4 x [[gv:powder_fire|Red Phosphorus]], [[gv:upgrade_template|Machine Upgrade Template]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 4 x [[gv:powder_fire|Poudre de flamme]], [[gv:upgrade_template|Amélioration de machine]]."
+ }
+}

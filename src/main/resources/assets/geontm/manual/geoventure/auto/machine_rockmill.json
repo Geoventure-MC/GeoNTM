@@ -1,0 +1,19 @@
+{
+ "name": "gv:machine_rockmill",
+ "icon": [
+  "geontm:machine_rockmill"
+ ],
+ "trigger": [
+  [
+   "geontm:machine_rockmill"
+  ]
+ ],
+ "title": {
+  "en_us": "Rock Mill",
+  "fr_fr": "Broyeur à roche"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 16 x Stone, 4 x Steel Plate, pipe (Copper), [[gv:motor|Motor]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 16 x Roche, 4 x Plaque d'acier, tuyau (cuivre), [[gv:motor|Moteur]]."
+ }
+}

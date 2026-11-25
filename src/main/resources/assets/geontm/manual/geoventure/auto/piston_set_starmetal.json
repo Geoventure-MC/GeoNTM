@@ -1,0 +1,19 @@
+{
+ "name": "gv:piston_set_starmetal",
+ "icon": [
+  "geontm:piston_set_starmetal"
+ ],
+ "trigger": [
+  [
+   "geontm:piston_set_starmetal"
+  ]
+ ],
+ "title": {
+  "en_us": "Starmetal Piston Set",
+  "fr_fr": "Jeu de pistons en Starmetal"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 24 x 9Starmetal Ingotr, 16 x Rubber Bar, 24 x plate (ostrum), 16 x Niobium Ingot, 4 x pipe (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 24 x Lingot starmetal, 16 x Barre en caoutchouc, 24 x plaque (ostrum), 16 x Lingot de niobium, 4 x tuyau (acier haute vitesse)."
+ }
+}

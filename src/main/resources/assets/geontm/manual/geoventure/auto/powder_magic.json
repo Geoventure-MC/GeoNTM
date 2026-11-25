@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_magic",
+ "icon": [
+  "geontm:powder_magic"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_magic"
+  ]
+ ],
+ "title": {
+  "en_us": "Pulverized Enchantment",
+  "fr_fr": "Enchantement pulvérisé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Shredder|Shredder]] : Enchanted Book.<br><br>Used to make :<br>[[gv:mp_warhead_10_cloud|Size 10 Pink Cloud Warhead]], [[gv:iv_xp_empty|Empty Experience Bag]].",
+  "fr_fr": "Obtention :<br>- [[Shredder|Broyeur]] : Livre enchanté.<br><br>Sert à fabriquer :<br>[[gv:mp_warhead_10_cloud|Ogive nuage rose taille 10]], [[gv:iv_xp_empty|Sac d'expérience vide]]."
+ }
+}

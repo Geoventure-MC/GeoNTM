@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_identifier_multi",
+ "icon": [
+  "geontm:fluid_identifier_multi"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_identifier_multi"
+  ]
+ ],
+ "title": {
+  "en_us": "Multi Fluid Identifier",
+  "fr_fr": "Identificateur de fluide multiple"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : dyes, [[gv:circuit_vacuum_tube|Vacuum Tube]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : dyes, [[gv:circuit_vacuum_tube|Tube à vide]], Plaque de fer."
+ }
+}

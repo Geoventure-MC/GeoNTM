@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_gh336",
+ "icon": [
+  "geontm:nugget_gh336"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_gh336"
+  ]
+ ],
+ "title": {
+  "en_us": "Ghiorsium-336 Nugget",
+  "fr_fr": "Pépite de Ghiorsium-336"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_gh336|Ghiorsium-336 Billet]].<br>- Crafting table (x9) : [[gv:ingot_gh336|Ghiorsium-336 Ingot]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:nuclear_waste_long_depleted_schrabidium|Decayed Long-Lived Nuclear Waste]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_gh336|Ghiorsium-336 Billet]], [[gv:ingot_gh336|Ghiorsium-336 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_gh336|Billette de Ghiorsium-336]].<br>- Établi (x9) : [[gv:ingot_gh336|Lingot de Ghiorsium-336]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:nuclear_waste_long_depleted_schrabidium|Déchets nucléaires à vie longue décomposés]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_gh336|Billette de Ghiorsium-336]], [[gv:ingot_gh336|Lingot de Ghiorsium-336]]."
+ }
+}

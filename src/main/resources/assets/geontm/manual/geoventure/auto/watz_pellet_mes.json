@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_mes",
+ "icon": [
+  "geontm:watz_pellet_mes"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_mes"
+  ]
+ ],
+ "title": {
+  "en_us": "MES Watz Pellet",
+  "fr_fr": "Pastille Watz MES"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_schrabidium_fuel|Ingot of Schrabidium Fuel]], Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_schrabidium_fuel|Lingot de Schrabidium]], Lingot de graphite."
+ }
+}

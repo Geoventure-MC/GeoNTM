@@ -1,0 +1,19 @@
+{
+ "name": "gv:glass_quartz",
+ "icon": [
+  "geontm:glass_quartz"
+ ],
+ "trigger": [
+  [
+   "geontm:glass_quartz"
+  ]
+ ],
+ "title": {
+  "en_us": "Quartz Glass",
+  "fr_fr": "Verre Quartz"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Electric Arc Furnace|Electric Arc Furnace]] : [[gv:sand_quartz|Quartz Sand]].<br><br>Used to make :<br>[[Exposure Chamber|Exposure Chamber]], [[SILEX|Laser Isotope Separation Chamber (SILEX)]], [[gv:laser_crystal_bismuth|BiSmUTh Laser Crystal]], [[gv:laser_crystal_cmb|CMB-Schrabidate Antimatter Laser Crystal]], [[gv:laser_crystal_co2|CO2-Desh Laser Crystal]].",
+  "fr_fr": "Obtention :<br>- [[Electric Arc Furnace|Four à arc électrique]] : [[gv:sand_quartz|Le sable de quartz]].<br><br>Sert à fabriquer :<br>[[Exposure Chamber|Chambre d'exposition]], [[SILEX|Séparateur d'isotopes laser (SILEX)]], [[gv:laser_crystal_bismuth|Cristal Laser BismUTh]], [[gv:laser_crystal_cmb|Cristal Laser Xénon-Daffergon]], [[gv:laser_crystal_co2|Cristal laser CO2-Desh]]."
+ }
+}

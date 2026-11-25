@@ -1,0 +1,19 @@
+{
+ "name": "gv:coke_lignite",
+ "icon": [
+  "geontm:coke_lignite"
+ ],
+ "trigger": [
+  [
+   "geontm:coke_lignite"
+  ]
+ ],
+ "title": {
+  "en_us": "Lignite Coke",
+  "fr_fr": "Coke de lignite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : [[gv:briquette_lignite|Lignite Briquette]].<br>- [[gv:machine_furnace_combination|Combination Furnace]] : [[gv:briquette_lignite|Lignite Briquette]].<br>- [[gv:machine_furnace_combination|Combination Furnace]] : Lignite Powder.<br>(2 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Four : [[gv:briquette_lignite|Briquette de lignite]].<br>- [[gv:machine_furnace_combination|Four combiné]] : [[gv:briquette_lignite|Briquette de lignite]].<br>- [[gv:machine_furnace_combination|Four combiné]] : Poudre de lignite.<br>(2 autres recettes : voir JEI.)"
+ }
+}

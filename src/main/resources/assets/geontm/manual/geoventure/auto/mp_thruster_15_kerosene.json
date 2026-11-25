@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_thruster_15_kerosene",
+ "icon": [
+  "geontm:mp_thruster_15_kerosene"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_thruster_15_kerosene"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Liquid Fuel Thruster",
+  "fr_fr": "Propulseur à carburant liquide taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], 3 x pipe (Steel), 8 x Tungsten Ingot, 8 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 3 x tuyau (acier), 8 x Lingot de tungstène, 8 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

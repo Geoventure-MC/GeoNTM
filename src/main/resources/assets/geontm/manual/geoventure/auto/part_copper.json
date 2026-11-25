@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_copper",
+ "icon": [
+  "geontm:part_copper"
+ ],
+ "trigger": [
+  [
+   "geontm:part_copper"
+  ]
+ ],
+ "title": {
+  "en_us": "Box of Copper Dust",
+  "fr_fr": "Boîte de poussière de cuivre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x8) : Copper Powder.<br><br>Used to make :<br>[[gv:powder_iodine|Iodine Powder]], [[gv:powder_actinium|Actinium Powder]], [[gv:powder_polonium|Polonium-210 Powder]], [[gv:powder_caesium|Caesium Powder]], [[gv:powder_bromine|Bromine Powder]], [[Uranium|Uranium Powder]], [[gv:powder_niobium|Niobium Powder]], [[gv:powder_strontium|Strontium Powder]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x8) : Poudre de cuivre.<br><br>Sert à fabriquer :<br>[[gv:powder_iodine|Poudre d'iode]], [[gv:powder_actinium|Poudre d'actinium]], [[gv:powder_polonium|Poudre de polonium-210]], [[gv:powder_caesium|Poudre de césium]], [[gv:powder_bromine|Poudre de brome]], [[Uranium|Poudre d'uranium]], [[gv:powder_niobium|Poudre de niobium]], [[gv:powder_strontium|Poudre de strontium]]."
+ }
+}

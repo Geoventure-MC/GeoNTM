@@ -1,0 +1,19 @@
+{
+ "name": "gv:ore_depth_zirconium",
+ "icon": [
+  "geontm:ore_depth_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:ore_depth_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Depth Zirconium Ore",
+  "fr_fr": "Minerai de zirconium de profondeur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

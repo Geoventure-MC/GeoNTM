@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_pu238be",
+ "icon": [
+  "geontm:rbmk_fuel_pu238be"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_pu238be"
+  ]
+ ],
+ "title": {
+  "en_us": "Pu238Be RBMK Neutron Source",
+  "fr_fr": "Source de neutrons Pu238Be RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_pu238be|Pu238Be Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_pu238be|Billet Pu238Be]]."
+ }
+}

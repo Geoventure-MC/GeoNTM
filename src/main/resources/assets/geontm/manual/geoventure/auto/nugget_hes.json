@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_hes",
+ "icon": [
+  "geontm:nugget_hes"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_hes"
+  ]
+ ],
+ "title": {
+  "en_us": "Highly Enriched Schrabidium Fuel Nugget",
+  "fr_fr": "Pépite de carburant au Schrabidium hautement enrichi"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_hes|Highly Enriched Schrabidium Fuel Billet]].<br>- Crafting table (x9) : [[gv:ingot_hes|Highly Enriched Schrabidium Fuel Ingot]].<br><br>Used to make :<br>[[gv:billet_hes|Highly Enriched Schrabidium Fuel Billet]], [[gv:ingot_hes|Highly Enriched Schrabidium Fuel Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_hes|Billet de carburant Schrabidium hautement enrichi]].<br>- Établi (x9) : [[gv:ingot_hes|Lingot de carburant au Schrabidium hautement enrichi]].<br><br>Sert à fabriquer :<br>[[gv:billet_hes|Billet de carburant Schrabidium hautement enrichi]], [[gv:ingot_hes|Lingot de carburant au Schrabidium hautement enrichi]]."
+ }
+}

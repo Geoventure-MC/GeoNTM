@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_generic_piston_pneumatic",
+ "icon": [
+  "geontm:part_generic_piston_pneumatic"
+ ],
+ "trigger": [
+  [
+   "geontm:part_generic_piston_pneumatic"
+  ]
+ ],
+ "title": {
+  "en_us": "Pneumatic Piston",
+  "fr_fr": "Piston pneumatique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 2 x Iron Ingot, 2 x Copper Ingot, Iron Plate.<br><br>Used to make :<br>[[gv:boltgun|Pneumatic Rivet Gun]], [[gv:upgrade_stack_1|Stack Ejection Upgrade Mk.I]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 2 x Lingot de fer, 2 x Lingot de cuivre, Plaque de fer.<br><br>Sert à fabriquer :<br>[[gv:boltgun|Pistolet à rivets pneumatique]], [[gv:upgrade_stack_1|Mise à niveau d'éjection de pile Mk.I]]."
+ }
+}

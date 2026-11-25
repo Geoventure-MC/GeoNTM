@@ -1,0 +1,19 @@
+{
+ "name": "gv:launch_pad",
+ "icon": [
+  "geontm:launch_pad"
+ ],
+ "trigger": [
+  [
+   "geontm:launch_pad"
+  ]
+ ],
+ "title": {
+  "en_us": "Silo Launch Pad",
+  "fr_fr": "Base de lancement des missiles"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x welded plate (Steel), 8 x Concrete Tile, 16 x ingot (hard plastic), 4 x [[gv:circuit_advanced|Military Grade Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x plaque soudée (acier), 8 x Tuile de béton, 16 x lingot (plastique dur), 4 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]]."
+ }
+}

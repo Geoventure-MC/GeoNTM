@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_numitron",
+ "icon": [
+  "geontm:circuit_numitron"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_numitron"
+  ]
+ ],
+ "title": {
+  "en_us": "Incandescent Seven Segment Display",
+  "fr_fr": "Afficheur à sept segments à incandescence"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x3) : Glass Pane, [[gv:coil_tungsten|Heating Coil]], Copper Plate.<br><br>Used to make :<br>[[Redstone-over-Radio Numeric Display|Redstone-over-Radio Numeric Display]].",
+  "fr_fr": "Obtention :<br>- Établi (x3) : Vitre, [[gv:coil_tungsten|Bobine de tungstène]], Plaque de cuivre.<br><br>Sert à fabriquer :<br>[[Redstone-over-Radio Numeric Display|Afficheur numérique Redstone-over-Radio]]."
+ }
+}

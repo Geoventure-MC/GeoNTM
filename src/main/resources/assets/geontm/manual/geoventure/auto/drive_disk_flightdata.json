@@ -1,0 +1,19 @@
+{
+ "name": "gv:drive_disk_flightdata",
+ "icon": [
+  "geontm:drive_disk_flightdata"
+ ],
+ "trigger": [
+  [
+   "geontm:drive_disk_flightdata"
+  ]
+ ],
+ "title": {
+  "en_us": "Disk Drive (Flight Data)",
+  "fr_fr": "Lecteur de disque (données de vol)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:drive_disk_flightdata_processed|Disk Drive (Processed Flight Data)]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:drive_disk_flightdata_processed|Lecteur de disque (données de vol traitées)]]."
+ }
+}

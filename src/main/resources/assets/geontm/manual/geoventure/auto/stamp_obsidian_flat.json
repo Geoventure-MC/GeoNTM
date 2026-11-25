@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_obsidian_flat",
+ "icon": [
+  "geontm:stamp_obsidian_flat"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_obsidian_flat"
+  ]
+ ],
+ "title": {
+  "en_us": "Flat Stamp (Obsidian)",
+  "fr_fr": "Moule plat (obsidienne)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Brick, 3 x Obsidian.<br>- Crafting table : 3 x Nether Brick, 3 x Obsidian.<br><br>Used to make :<br>[[gv:stamp_obsidian_circuit|Circuit Stamp (Obsidian)]], [[gv:stamp_obsidian_plate|Plate Stamp (Obsidian)]], [[gv:stamp_obsidian_wire|Wire Stamp (Obsidian)]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Brique, 3 x Obsidienne.<br>- Établi : 3 x Brique du Nether, 3 x Obsidienne.<br><br>Sert à fabriquer :<br>[[gv:stamp_obsidian_circuit|Moule de circuit (obsidienne)]], [[gv:stamp_obsidian_plate|Moule de plaque (obsidienne)]], [[gv:stamp_obsidian_wire|Moule de fil (obsidienne)]]."
+ }
+}

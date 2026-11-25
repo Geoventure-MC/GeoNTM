@@ -1,0 +1,19 @@
+{
+ "name": "gv:steel_beam",
+ "icon": [
+  "geontm:steel_beam"
+ ],
+ "trigger": [
+  [
+   "geontm:steel_beam"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Beam",
+  "fr_fr": "Barre d'acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 3 x Steel Ingot.<br>- Crafting table (x8) : 3 x Steel Scaffold.<br><br>Used to make :<br>[[gv:seg_10|Size 10 Connector]], [[gv:seg_15|Size 15 Connector]], [[gv:seg_20|Size 20 Connector]], [[Solar Tower Boiler|Heliostat Mirror]], [[gv:steel_grate|Steel Grate]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 3 x Lingot d'acier.<br>- Établi (x8) : 3 x Échafaudage en acier.<br><br>Sert à fabriquer :<br>[[gv:seg_10|Connecteur taille 10]], [[gv:seg_15|Connecteur taille 15]], [[gv:seg_20|Connecteur taille 20]], [[Solar Tower Boiler|Miroir Héliostat]], [[gv:steel_grate|Grille en acier]]."
+ }
+}

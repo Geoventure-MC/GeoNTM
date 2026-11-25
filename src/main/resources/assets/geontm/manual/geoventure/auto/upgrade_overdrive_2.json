@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_overdrive_2",
+ "icon": [
+  "geontm:upgrade_overdrive_2"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_overdrive_2"
+  ]
+ ],
+ "title": {
+  "en_us": "Overdrive Upgrade Mk.II",
+  "fr_fr": "Mise à niveau de la machine Overdrive Mk.II"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:upgrade_overdrive_1|Overdrive Upgrade Mk.I]], [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (ostrum), 8 x [[Fullerite|Crystalline Fullerite]], 16 x [[gv:circuit_capacitor_board|Capacitor Board]].<br>- [[gv:machine_precass|Precision Assembly Machine]] : [[gv:upgrade_overdrive_1|Overdrive Upgrade Mk.I]], [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (ostrum), 8 x [[Fullerite|Crystalline Fullerite]], 16 x [[gv:circuit_capacitor_board|Capacitor Board]].<br><br>Used to make :<br>[[gv:upgrade_overdrive_3|Overdrive Upgrade Mk.III]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:upgrade_overdrive_1|Mise à niveau de la machine Overdrive Mk.I]], [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (ostrum), 8 x [[Fullerite|Fullerite cristalline]], 16 x [[gv:circuit_capacitor_board|Carte de condensateurs]].<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : [[gv:upgrade_overdrive_1|Mise à niveau de la machine Overdrive Mk.I]], [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (ostrum), 8 x [[Fullerite|Fullerite cristalline]], 16 x [[gv:circuit_capacitor_board|Carte de condensateurs]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_overdrive_3|Mise à niveau de la machine Overdrive Mk.III]]."
+ }
+}

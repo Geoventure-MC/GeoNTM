@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_steam_inlet",
+ "icon": [
+  "geontm:rbmk_steam_inlet"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_steam_inlet"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK ReaSim Water Inlet",
+  "fr_fr": "Entrée d'eau RBMK ReaSim"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Ingot, 4 x Iron Plate, [[gv:tank_steel|Steel Tank]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot d'acier, 4 x Plaque de fer, [[gv:tank_steel|Réservoir en acier]]."
+ }
+}

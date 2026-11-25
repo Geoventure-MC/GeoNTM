@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_depleted_nickel",
+ "icon": [
+  "geontm:pellet_rtg_depleted_nickel"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_depleted_nickel"
+  ]
+ ],
+ "title": {
+  "en_us": "Decayed Nickel RTG Pellet",
+  "fr_fr": "Pastille RTG au nickel appauvri"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_sr90_tiny",
+ "icon": [
+  "geontm:powder_sr90_tiny"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_sr90_tiny"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Strontium-90 Powder",
+  "fr_fr": "Petit tas de poudre de strontium-90"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:powder_sr90|Strontium-90 Powder]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:falloutitem|Pile of Fallout]].<br>- [[SILEX|Laser Isotope Separation Chamber (SILEX)]] : [[gv:nuclear_waste_short_neptunium|Short-Lived Nuclear Waste]].<br>(4 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:powder_sr90|Strontium-90 Powder]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:powder_sr90|Poudre de strontium-90]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:falloutitem|Tas de retombées radioactives]].<br>- [[SILEX|Séparateur d'isotopes laser (SILEX)]] : [[gv:nuclear_waste_short_neptunium|Déchets nucléaires à vie courte]].<br>(4 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:powder_sr90|Poudre de strontium-90]]."
+ }
+}

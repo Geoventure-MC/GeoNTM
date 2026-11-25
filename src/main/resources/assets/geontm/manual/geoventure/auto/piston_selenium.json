@@ -1,0 +1,19 @@
+{
+ "name": "gv:piston_selenium",
+ "icon": [
+  "geontm:piston_selenium"
+ ],
+ "trigger": [
+  [
+   "geontm:piston_selenium"
+  ]
+ ],
+ "title": {
+  "en_us": "Combustion Engine Piston",
+  "fr_fr": "Piston de moteur radial"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Steel Plate, Tungsten Ingot, bolt (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Plaque d'acier, Lingot de tungstène, boulon (acier haute vitesse)."
+ }
+}

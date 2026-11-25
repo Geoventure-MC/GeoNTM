@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hot_hes327",
+ "icon": [
+  "geontm:pwr_fuel_hot_hes327"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hot_hes327"
+  ]
+ ],
+ "title": {
+  "en_us": "Hot HES-327 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HES-327 chaude"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

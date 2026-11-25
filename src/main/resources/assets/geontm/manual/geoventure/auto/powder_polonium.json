@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_polonium",
+ "icon": [
+  "geontm:powder_polonium"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_polonium"
+  ]
+ ],
+ "title": {
+  "en_us": "Polonium-210 Powder",
+  "fr_fr": "Poudre de polonium-210"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x fragment (polonium-210).<br>- [[Cyclotron|Cyclotron]] : [[gv:part_carbon|Box of Carbon Dust]], [[gv:nugget_mercury|Drop of Mercury]].<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Box of Copper Dust]], [[gv:powder_iodine|Iodine Powder]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[Polonium-210|Polonium-210 Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x fragment (polonium-210).<br>- machine_cyclotron : [[gv:part_carbon|Boîte de poussière de carbone]], [[gv:nugget_mercury|Petite goutte de mercure]].<br>- machine_cyclotron : [[gv:part_copper|Boîte de poussière de cuivre]], [[gv:powder_iodine|Poudre d'iode]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Polonium-210|Lingot de polonium-210]]."
+ }
+}

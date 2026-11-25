@@ -1,0 +1,19 @@
+{
+ "name": "gv:igniter",
+ "icon": [
+  "geontm:igniter"
+ ],
+ "trigger": [
+  [
+   "geontm:igniter"
+  ]
+ ],
+ "title": {
+  "en_us": "Igniter",
+  "fr_fr": "Allumeur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Steel Plate, wire (schrabidium), 2 x [[gv:circuit_advanced|Military Grade Circuit Board]], Euphemium Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : Plaque d'acier, fil (schrabidium), 2 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]], Lingot d'euphemium."
+ }
+}

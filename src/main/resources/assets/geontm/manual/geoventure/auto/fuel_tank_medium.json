@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuel_tank_medium",
+ "icon": [
+  "geontm:fuel_tank_medium"
+ ],
+ "trigger": [
+  [
+   "geontm:fuel_tank_medium"
+  ]
+ ],
+ "title": {
+  "en_us": "Medium Fuel Tank",
+  "fr_fr": "Réservoir de carburant moyen"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 4 x cast plate (Aluminium), 8 x Titanium Plate, 12 x [[gv:steel_scaffold|Steel Scaffold]].<br><br>Used to make :<br>[[gv:missile_burst|Spare Missile]], [[gv:missile_buster_strong|Enhanced Bunker Buster]], [[gv:missile_cluster_strong|Strong Cluster Missile]], [[gv:missile_drill|The Concrete Cracker]], [[gv:missile_emp_strong|Strong EMP Missile]], [[gv:missile_incendiary_strong|Strong Incendiary Missile]], [[gv:missile_inferno|Inferno Missile G.R.N. Mk.II]], [[gv:missile_rain|Bomblet Rain]], [[gv:missile_strong|Strong HE Missile]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 4 x plaque coulée (aluminium), 8 x Plaque en titane, 12 x [[gv:steel_scaffold|Échafaudage en acier]].<br><br>Sert à fabriquer :<br>[[gv:missile_burst|Missile du pardon]], [[gv:missile_buster_strong|Bunker buster Tier2]], [[gv:missile_cluster_strong|Missile à sous munitions Tier2]], [[gv:missile_drill|Le craqueleur de béton]], [[gv:missile_emp_strong|Missile EMP puissant]], [[gv:missile_incendiary_strong|Missile incendiaire Tier2]], [[gv:missile_inferno|Missile Inferno GRN Mk.II]], [[gv:missile_rain|Pluie de sous-munitions]], [[gv:missile_strong|Missile explosif Tier2]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_ra226be",
+ "icon": [
+  "geontm:billet_ra226be"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_ra226be"
+  ]
+ ],
+ "title": {
+  "en_us": "Ra226Be Billet",
+  "fr_fr": "Billette Ra226Be"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Radium-226 Nugget, 3 x [[gv:nugget_beryllium|Beryllium Nugget]].<br>- Crafting table (x2) : [[Radium-226|Radium-226 Billet]], [[gv:billet_beryllium|Beryllium Billet]].<br>- Crafting table (x6) : 3 x [[Radium-226|Radium-226 Billet]], 3 x [[gv:billet_beryllium|Beryllium Billet]].<br><br>Used to make :<br>[[gv:pile_rod_mk2_ra226be|Chicago Pile Ra226Be Neutron source]], [[gv:pwr_neutron_source|PWR Neutron Source]], [[gv:rbmk_fuel_ra226be|Ra226Be RBMK Neutron Source]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Pépite de radium-226, 3 x [[gv:nugget_beryllium|Pépite de béryllium]].<br>- Établi (x2) : [[Radium-226|Billet de radium-226]], [[gv:billet_beryllium|Billet de béryllium]].<br>- Établi (x6) : 3 x [[Radium-226|Billet de radium-226]], 3 x [[gv:billet_beryllium|Billet de béryllium]].<br><br>Sert à fabriquer :<br>[[gv:pile_rod_mk2_ra226be|Source de neutrons Ra226Be de la pile de Chicago]], [[gv:pwr_neutron_source|Source de neutrons PWR]], [[gv:rbmk_fuel_ra226be|Source de neutrons Ra226Be RBMK]]."
+ }
+}

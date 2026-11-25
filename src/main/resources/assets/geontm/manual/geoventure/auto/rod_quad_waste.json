@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_waste",
+ "icon": [
+  "geontm:rod_quad_waste"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_waste"
+  ]
+ ],
+ "title": {
+  "en_us": "Nuclear Waste Quad Rod",
+  "fr_fr": "Quadruple tige de dechets nucleaires"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_rgp|Reactor-Grade Plutonium Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x [[gv:billet_nuclear_waste|Nuclear Waste Billet]].<br><br>Used to make :<br>[[gv:billet_nuclear_waste|Nuclear Waste Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_rgp|Quatre tiges de plutonium de qualité réacteur]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x [[gv:billet_nuclear_waste|Billet de déchets nucléaires]].<br><br>Sert à fabriquer :<br>[[gv:billet_nuclear_waste|Billet de déchets nucléaires]]."
+ }
+}

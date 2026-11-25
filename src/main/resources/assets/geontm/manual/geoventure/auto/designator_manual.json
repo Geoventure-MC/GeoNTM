@@ -1,0 +1,19 @@
+{
+ "name": "gv:designator_manual",
+ "icon": [
+  "geontm:designator_manual"
+ ],
+ "trigger": [
+  [
+   "geontm:designator_manual"
+  ]
+ ],
+ "title": {
+  "en_us": "Manual Target Designator",
+  "fr_fr": "Désignateur manuel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Lead Plate, [[gv:designator|Short Range Target Designator]], [[gv:circuit_advanced|Military Grade Circuit Board]], 4 x ingot (plastic).",
+  "fr_fr": "Obtention :<br>- Établi : Plaque de plomb, [[gv:designator|Désignateur à courte portée]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 4 x lingot (plastique)."
+ }
+}

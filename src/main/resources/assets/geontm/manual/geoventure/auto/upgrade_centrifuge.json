@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_centrifuge",
+ "icon": [
+  "geontm:upgrade_centrifuge"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_centrifuge"
+  ]
+ ],
+ "title": {
+  "en_us": "Centrifuge Upgrade",
+  "fr_fr": "Mise à niveau de la centrifugeuse"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:centrifuge_element|Centrifuge Element]], Hopper, [[gv:upgrade_shredder|Shredder Upgrade]], 2 x ingot (plastic), 10k-20Hz Transformer.<br><br>Used to make :<br>[[gv:upgrade_crystallizer|Crystallizer Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:centrifuge_element|Élément de centrifugeuse]], Entonnoir, [[gv:upgrade_shredder|Mise à niveau de la déchiqueteuse]], 2 x lingot (plastique), Transformateur.<br><br>Sert à fabriquer :<br>[[gv:upgrade_crystallizer|Mise à niveau du cristallisoir]]."
+ }
+}

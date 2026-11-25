@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_reflector",
+ "icon": [
+  "geontm:pwr_reflector"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_reflector"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Neutron Reflector",
+  "fr_fr": "Réflecteur à neutrons PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 2 x cast plate (Steel), 20 x [[gv:neutron_reflector|Neutron Reflector]], Bolted Steel Plating - [[gv:schemas|blueprint required]]: Fission reactors.<br>- [[Assembly Machine|Assembly Machine]] (x4) : 2 x cast plate (Steel), 48 x Weapon Steel Plate, Bolted Steel Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 2 x plaque coulée (acier), 20 x [[gv:neutron_reflector|Reflecteur neutronique]], Plaques d'acier boulonnées - [[gv:schemas|schéma exigé]] : Réacteurs à fission.<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 2 x plaque coulée (acier), 48 x Plaque d'acier d'arme, Plaques d'acier boulonnées - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

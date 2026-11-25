@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_duct_paintable",
+ "icon": [
+  "geontm:fluid_duct_paintable"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_duct_paintable"
+  ]
+ ],
+ "title": {
+  "en_us": "Paintable Coated Universal Fluid Duct",
+  "fr_fr": "Conduit de fluide universel enrobé peignable"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 4 x Steel Ingot, 4 x Aluminium Plate.<br><br>Used to make :<br>[[gv:fluid_duct_gauge|Flow Gauge Pipe]], [[gv:fluid_switch|Redstone Fluid Valve]], [[gv:fluid_valve|Fluid Valve]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 4 x Lingot d'acier, 4 x Plaque d'aluminium.<br><br>Sert à fabriquer :<br>[[gv:fluid_duct_gauge|Conduit à jauge de débit]], [[gv:fluid_switch|Vanne de fluide à redstone]], [[gv:fluid_valve|Vanne à fluide]]."
+ }
+}

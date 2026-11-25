@@ -1,0 +1,19 @@
+{
+ "name": "gv:settings_tool",
+ "icon": [
+  "geontm:settings_tool"
+ ],
+ "trigger": [
+  [
+   "geontm:settings_tool"
+  ]
+ ],
+ "title": {
+  "en_us": "Settings Tool",
+  "fr_fr": "Outil de réglages"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Iron Plate, [[gv:circuit_analog|Analog Circuit Board]], 3 x [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Plaque de fer, [[gv:circuit_analog|Carte de circuit analogique]], 3 x [[gv:plate_polymer|Isolateur]]."
+ }
+}

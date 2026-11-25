@@ -1,0 +1,19 @@
+{
+ "name": "gv:biomass_compressed",
+ "icon": [
+  "geontm:biomass_compressed"
+ ],
+ "trigger": [
+  [
+   "geontm:biomass_compressed"
+  ]
+ ],
+ "title": {
+  "en_us": "Compressed Biomass",
+  "fr_fr": "Biomasse comprimée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Press|Burner Press]] : [[gv:biomass|Biomass]].<br>- [[Solidifier|Industrial Solidification Machine]] (x4) : biogas.<br><br>Used to make :<br>[[Solid Fuel|Solid Fuel]].",
+  "fr_fr": "Obtention :<br>- [[Press|Presse à vapeur]] : [[gv:biomass|Biomasse]].<br>- [[Solidifier|Machine de solidification industrielle]] (x4) : biogas.<br><br>Sert à fabriquer :<br>[[Solid Fuel|Combustible solide]]."
+ }
+}

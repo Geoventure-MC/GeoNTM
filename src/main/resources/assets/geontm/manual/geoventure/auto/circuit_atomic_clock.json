@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_atomic_clock",
+ "icon": [
+  "geontm:circuit_atomic_clock"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_atomic_clock"
+  ]
+ ],
+ "title": {
+  "en_us": "Atomic Clock",
+  "fr_fr": "Horloge atomique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x ingot (plastic), 3 x [[gv:circuit_chip|Microchip]], Strontium Powder.<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x ingot (plastic), 3 x [[gv:circuit_chip|Microchip]], Caesium-137 Powder.<br>- [[gv:machine_precass|Precision Assembly Machine]] : 8 x [[gv:circuit_chip|Microchip]], 4 x ingot (plastic), 8 x wire (Zirconium Cube), Strontium Powder.<br><br>Used to make :<br>[[gv:satellite_science|Space Laboratory]], [[gv:circuit_controller_advanced|Advanced Control Unit]], [[gv:circuit_controller_quantum|Quantum Computer]], [[gv:circuit_quantum|Quantum Processing Unit]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x lingot (plastique), 3 x [[gv:circuit_chip|Micropuce]], Poudre de strontium.<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x lingot (plastique), 3 x [[gv:circuit_chip|Micropuce]], Poudre de césium-137.<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 8 x [[gv:circuit_chip|Micropuce]], 4 x lingot (plastique), 8 x fil (cube de zirconium), Poudre de strontium.<br><br>Sert à fabriquer :<br>[[gv:satellite_science|Laboratoire spatial]], [[gv:circuit_controller_advanced|Unité de contrôle avancée]], [[gv:circuit_controller_quantum|Ordinateur quantique]], [[gv:circuit_quantum|Unité de traitement quantique]]."
+ }
+}

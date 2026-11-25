@@ -1,0 +1,19 @@
+{
+ "name": "gv:fallout",
+ "icon": [
+  "geontm:fallout"
+ ],
+ "trigger": [
+  [
+   "geontm:fallout"
+  ]
+ ],
+ "title": {
+  "en_us": "Fallout",
+  "fr_fr": "Tomber"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 2 x [[gv:falloutitem|Pile of Fallout]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 2 x [[gv:falloutitem|Tas de retombées radioactives]]."
+ }
+}

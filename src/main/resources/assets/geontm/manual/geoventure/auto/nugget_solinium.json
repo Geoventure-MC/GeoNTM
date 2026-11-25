@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_solinium",
+ "icon": [
+  "geontm:nugget_solinium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_solinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Solinium Nugget",
+  "fr_fr": "Pépite de Solinium-327"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_solinium|Solinium Billet]].<br>- Crafting table (x9) : [[gv:ingot_solinium|Solinium Ingot]].<br>- [[PUREX|PUREX]] (x3) : [[gv:pwr_fuel_depleted_hes326|Depleted HES-326 PWR Fuel Rod]], 500 mB kerosene, 250 mB nitric acid.<br>(8 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_solinium|Solinium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_solinium|Billet de Solinium-327]].<br>- Établi (x9) : [[gv:ingot_solinium|Lingot de solinium-327]].<br>- machine_purex (x3) : [[gv:pwr_fuel_depleted_hes326|Barre de combustible PWR HES-326 appauvrie]], 500 mB kerosene, 250 mB nitric acid.<br>(8 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_solinium|Lingot de solinium-327]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_zirconium",
+ "icon": [
+  "geontm:block_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Zirconium",
+  "fr_fr": "Bloc de zirconium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_zirconium|Zirconium Cube]].<br><br>Used to make :<br>[[gv:ingot_zirconium|Zirconium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_zirconium|Cube de zirconium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_zirconium|Cube de zirconium]]."
+ }
+}

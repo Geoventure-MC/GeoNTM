@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuel_additive_deicer",
+ "icon": [
+  "geontm:fuel_additive_deicer"
+ ],
+ "trigger": [
+  [
+   "geontm:fuel_additive_deicer"
+  ]
+ ],
+ "title": {
+  "en_us": "Deicer",
+  "fr_fr": "Antigel"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 100 mB gas, 50 mB hydrogen.",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 100 mB gas, 50 mB hydrogen."
+ }
+}

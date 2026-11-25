@@ -1,0 +1,19 @@
+{
+ "name": "gv:yellow_barrel",
+ "icon": [
+  "geontm:yellow_barrel"
+ ],
+ "trigger": [
+  [
+   "geontm:yellow_barrel"
+  ]
+ ],
+ "title": {
+  "en_us": "Radioactive Barrel",
+  "fr_fr": "Baril radioactif"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:tank_steel|Steel Tank]], 2 x Lead Plate, 10 x [[gv:nuclear_waste|Nuclear Waste]].<br>- [[Assembly Machine|Assembly Machine]] : [[gv:tank_steel|Steel Tank]], 2 x Lead Plate, 10 x [[gv:nuclear_waste|Nuclear Waste]].<br><br>Used to make :<br>[[gv:tank_steel|Steel Tank]], [[gv:nuclear_waste|Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:tank_steel|Réservoir en acier]], 2 x Plaque de plomb, 10 x [[gv:nuclear_waste|Déchets nucléaires]].<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:tank_steel|Réservoir en acier]], 2 x Plaque de plomb, 10 x [[gv:nuclear_waste|Déchets nucléaires]].<br><br>Sert à fabriquer :<br>[[gv:tank_steel|Réservoir en acier]], [[gv:nuclear_waste|Déchets nucléaires]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_solid",
+ "icon": [
+  "geontm:mp_fuselage_15_solid"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_solid"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Solid Fuel Fuselage",
+  "fr_fr": "Fuselage à combustible solide de taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x [[gv:seg_15|Size 15 Connector]], 32 x Titanium Plate, 12 x Steel Plate - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x [[gv:seg_15|Connecteur taille 15]], 32 x Plaque en titane, 12 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

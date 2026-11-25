@@ -1,0 +1,19 @@
+{
+ "name": "gv:substation",
+ "icon": [
+  "geontm:substation"
+ ],
+ "trigger": [
+  [
+   "geontm:substation"
+  ]
+ ],
+ "title": {
+  "en_us": "Substation",
+  "fr_fr": "Sous-station"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x2) : 8 x Concrete Tile, 8 x Steel Ingot, 12 x [[gv:plate_polymer|Insulator]], 8 x [[gv:coil_copper|Copper Coil]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x2) : 8 x Tuile de béton, 8 x Lingot d'acier, 12 x [[gv:plate_polymer|Isolateur]], 8 x [[gv:coil_copper|Bobine de cuivre]]."
+ }
+}

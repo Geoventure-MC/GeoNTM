@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_crate_provider",
+ "icon": [
+  "geontm:drone_crate_provider"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_crate_provider"
+  ]
+ ],
+ "title": {
+  "en_us": "Logistics Provider Crate",
+  "fr_fr": "Caisse fournisseur logistique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:drone_waypoint_request|Logistics Drone Waypoint]], [[gv:crate_steel|Steel Crate]], Orange Dye.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:drone_waypoint_request|Point de passage de drone logistique]], [[gv:crate_steel|Caisse en acier]], Teinture orange."
+ }
+}

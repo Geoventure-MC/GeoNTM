@@ -1,0 +1,19 @@
+{
+ "name": "gv:safety_fuse",
+ "icon": [
+  "geontm:safety_fuse"
+ ],
+ "trigger": [
+  [
+   "geontm:safety_fuse"
+  ]
+ ],
+ "title": {
+  "en_us": "Safety Fuse",
+  "fr_fr": "Mèche de sécurité"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 8 x String, Gunpowder.",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 8 x Ficelle, Poudre à canon."
+ }
+}

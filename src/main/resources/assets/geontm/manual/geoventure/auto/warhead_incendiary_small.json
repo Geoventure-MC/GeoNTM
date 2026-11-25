@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_incendiary_small",
+ "icon": [
+  "geontm:warhead_incendiary_small"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_incendiary_small"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Incendiary Warhead",
+  "fr_fr": "Petite ogive incendiaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_small|Small Warhead]], 2 x dust (red phosphorus) - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_incendiary|Incendiary Missile]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_small|Petite ogive]], 2 x poudre (red phosphorus) - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_incendiary|Missile incendiaire Tier1]]."
+ }
+}

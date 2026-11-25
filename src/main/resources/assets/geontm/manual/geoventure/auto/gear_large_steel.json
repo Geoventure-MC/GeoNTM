@@ -1,0 +1,19 @@
+{
+ "name": "gv:gear_large_steel",
+ "icon": [
+  "geontm:gear_large_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:gear_large_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Steel Gear",
+  "fr_fr": "Grand engrenage en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[Stirling Engine|Heavy Stirling Engine]].<br>- Crafting table : 8 x Steel Plate, Titanium Ingot.<br><br>Used to make :<br>[[Stirling Engine|Heavy Stirling Engine]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[Stirling Engine|Moteur Stirling lourd]].<br>- Établi : 8 x Plaque d'acier, Lingot de titane.<br><br>Sert à fabriquer :<br>[[Stirling Engine|Moteur Stirling lourd]]."
+ }
+}

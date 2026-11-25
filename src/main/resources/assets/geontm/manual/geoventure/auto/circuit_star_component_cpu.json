@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_star_component_cpu",
+ "icon": [
+  "geontm:circuit_star_component_cpu"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_star_component_cpu"
+  ]
+ ],
+ "title": {
+  "en_us": "StarControl CPU",
+  "fr_fr": "Processeur StarControl"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_star_piece_cpu_cache|SC - CPU Cache]], [[gv:circuit_star_piece_cpu_clock|SC - CPU Clock]], [[gv:circuit_star_piece_cpu_ext|SC - Arsenic Semi Conductor Extension]], [[gv:circuit_star_piece_cpu_logic|SC - Arithmetic Logic Unit]], [[gv:circuit_star_piece_cpu_register|SC - CPU Register]], [[gv:circuit_star_piece_cpu_socket|SC - CPU Socket]].<br><br>Used to make :<br>[[gv:circuit_star|StarControl Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_star_piece_cpu_cache|SC - Cache du CPU]], [[gv:circuit_star_piece_cpu_clock|SC - Horloge du CPU]], [[gv:circuit_star_piece_cpu_ext|SC - Extension semi-conductrice à l'arsenic]], [[gv:circuit_star_piece_cpu_logic|SC - Unité arithmétique et logique]], [[gv:circuit_star_piece_cpu_register|SC - Registre du CPU]], [[gv:circuit_star_piece_cpu_socket|SC - Support du CPU]].<br><br>Sert à fabriquer :<br>[[gv:circuit_star|Carte de circuit StarControl]]."
+ }
+}

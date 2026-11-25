@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_duct_box_white_0",
+ "icon": [
+  "geontm:fluid_duct_box_white_0"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_duct_box_white_0"
+  ]
+ ],
+ "title": {
+  "en_us": "Universal Fluid Duct (Boxduct)",
+  "fr_fr": "Conduit de fluide universel (Boxduct)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Aluminium Plate.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Plaque d'aluminium."
+ }
+}

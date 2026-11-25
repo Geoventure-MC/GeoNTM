@@ -1,0 +1,19 @@
+{
+ "name": "gv:coil_gold",
+ "icon": [
+  "geontm:coil_gold"
+ ],
+ "trigger": [
+  [
+   "geontm:coil_gold"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold Coil",
+  "fr_fr": "Bobine d'or"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x8) : [[Stirling Engine|Heavy Stirling Engine]].<br>- Industrial anvil (construction) (x8) : [[Stirling Engine|Heavy Stirling Engine]].<br>- Crafting table : 8 x wire (gold), Iron Ingot.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:coil_gold_torus|Golden Ring Coil]], [[Stirling Engine|Heavy Stirling Engine]], [[gv:satellite_science_sensor|Space Laboratory - Sensor Relay]], [[gv:upgrade_gc_speed|Gas Centrifuge Overclocking Upgrade]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x8) : [[Stirling Engine|Moteur Stirling lourd]].<br>- Enclume industrielle (construction) (x8) : [[Stirling Engine|Moteur Stirling lourd]].<br>- Établi : 8 x fil (or), Lingot de fer.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:coil_gold_torus|Bobine d'anneau d'or]], [[Stirling Engine|Moteur Stirling lourd]], [[gv:satellite_science_sensor|Laboratoire spatial - Relais de capteurs]], [[gv:upgrade_gc_speed|Amélioration de surrégime de centrifugeuse à gaz]]."
+ }
+}

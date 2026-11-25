@@ -1,0 +1,19 @@
+{
+ "name": "gv:deuterium_filter",
+ "icon": [
+  "geontm:deuterium_filter"
+ ],
+ "trigger": [
+  [
+   "geontm:deuterium_filter"
+  ]
+ ],
+ "title": {
+  "en_us": "Deuterium Filter",
+  "fr_fr": "Filtre au deutérium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (resistant alloy), 4 x dust (sulfur), [[gv:catalyst_clay|Clay Catalyst]].<br><br>Used to make :<br>[[Deuterium Extraction Tower|Heavy Water Extraction Tower]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (alliage résistant), 4 x poudre (sulfur), [[gv:catalyst_clay|Catalyseur d'argile]].<br><br>Sert à fabriquer :<br>[[Deuterium Extraction Tower|Tour d'extraction de deutérium]]."
+ }
+}

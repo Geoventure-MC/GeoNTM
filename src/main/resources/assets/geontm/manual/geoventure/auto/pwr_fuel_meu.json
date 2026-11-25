@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_meu",
+ "icon": [
+  "geontm:pwr_fuel_meu"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_meu"
+  ]
+ ],
+ "title": {
+  "en_us": "MEU PWR Fuel Rod",
+  "fr_fr": "Barre de combustible REP MEU"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:billet_uranium_fuel|Uranium Fuel Billet]], [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:billet_uranium_fuel|Billet de carburant d'uranium]], [[gv:plate_polymer|Isolateur]]."
+ }
+}

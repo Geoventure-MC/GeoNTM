@@ -1,0 +1,19 @@
+{
+ "name": "gv:piston_set_dura",
+ "icon": [
+  "geontm:piston_set_dura"
+ ],
+ "trigger": [
+  [
+   "geontm:piston_set_dura"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Speed Steel Piston Set",
+  "fr_fr": "Jeu de pistons en acier rapide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 24 x High-Speed Steel Ingot, 8 x Titanium Plate, 8 x Tungsten Ingot, 16 x bolt (High-Speed Steel).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 24 x Lingot d'acier haute vitesse, 8 x Plaque en titane, 8 x Lingot de tungstène, 16 x boulon (acier haute vitesse)."
+ }
+}

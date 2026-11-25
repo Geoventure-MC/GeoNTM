@@ -1,0 +1,19 @@
+{
+ "name": "gv:seg_10",
+ "icon": [
+  "geontm:seg_10"
+ ],
+ "trigger": [
+  [
+   "geontm:seg_10"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Connector",
+  "fr_fr": "Connecteur taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Aluminium Plate, Steel Scaffold, [[gv:steel_beam|Steel Beam]].<br><br>Used to make :<br>[[gv:mp_fuselage_10_15_balefire|Size 10/15 BF Fuselage]], [[gv:mp_fuselage_10_15_hydrogen|Size 10/15 Hydrogen Fuselage]], [[gv:mp_fuselage_10_15_kerosene|Size 10/15 Kerosene Fuselage]], [[gv:mp_fuselage_10_15_solid|Size 10/15 Solid Fuel Fuselage]], [[gv:mp_fuselage_10_kerosene|Size 10 Kerosene Fuselage]], [[gv:mp_fuselage_10_long_kerosene|Size 10 Long Kerosene Fuselage]], [[gv:mp_fuselage_10_solid|Size 10 Solid Fuel Fuselage]], [[gv:mp_fuselage_10_long_solid|Size 10 Long Solid Fuel Fuselage]], [[gv:mp_fuselage_10_xenon|Size 10 Xenon Fuselage]], [[gv:mp_thruster_10_kerosene|Size 10 Liquid Fuel Thruster]] and 8 more.",
+  "fr_fr": "Obtention :<br>- Établi : Plaque d'aluminium, Échafaudage en acier, [[gv:steel_beam|Barre d'acier]].<br><br>Sert à fabriquer :<br>[[gv:mp_fuselage_10_15_balefire|Fuselage BF taille 10/15]], [[gv:mp_fuselage_10_15_hydrogen|Fuselage hydrogène taille 10/15]], [[gv:mp_fuselage_10_15_kerosene|Fuselage kérosène taille 10/15]], [[gv:mp_fuselage_10_15_solid|Taille 10/15 Fuselage à combustible solide]], [[gv:mp_fuselage_10_kerosene|Fuselage au kérosène de taille 10]], [[gv:mp_fuselage_10_long_kerosene|Fuselage kérosène long taille 10]], [[gv:mp_fuselage_10_solid|Fuselage à combustible solide de taille 10]], [[gv:mp_fuselage_10_long_solid|Fuselage long à combustible solide de taille 10]], [[gv:mp_fuselage_10_xenon|Fuselage Xénon taille 10]], [[gv:mp_thruster_10_kerosene|Propulseur à carburant liquide taille 10]] et 8 autres."
+ }
+}

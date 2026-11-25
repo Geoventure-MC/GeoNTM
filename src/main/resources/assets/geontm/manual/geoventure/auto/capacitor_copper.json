@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_copper",
+ "icon": [
+  "geontm:capacitor_copper"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_copper"
+  ]
+ ],
+ "title": {
+  "en_us": "Copper Capacitor",
+  "fr_fr": "Condensateur en cuivre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 3 x block (copper), 2 x [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 3 x bloc (cuivre), 2 x [[gv:plate_polymer|Isolateur]]."
+ }
+}

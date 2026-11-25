@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_cloth",
+ "icon": [
+  "geontm:hazmat_cloth"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_cloth"
+  ]
+ ],
+ "title": {
+  "en_us": "Hazmat Cloth",
+  "fr_fr": "Toile d'Hazmat"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x Lead Powder, 8 x String.<br><br>Used to make :<br>[[gv:hazmat_boots|Hazmat Boots]], [[gv:hazmat_cloth_red|Advanced Hazmat Cloth]], [[gv:hazmat_helmet|Hazmat Helmet]], [[gv:hazmat_legs|Hazmat Leggings]], [[gv:hazmat_plate|Hazmat Chestplate]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x Poudre de plomb, 8 x Ficelle.<br><br>Sert à fabriquer :<br>[[gv:hazmat_boots|Bottes de combinaison Hazmat]], [[gv:hazmat_cloth_red|Tissu Hazmat avancé]], [[gv:hazmat_helmet|Casque de combinaison Hazmat]], [[gv:hazmat_legs|Jambières de combinaison Hazmat]], [[gv:hazmat_plate|Plastron de combinaison Hazmat]]."
+ }
+}

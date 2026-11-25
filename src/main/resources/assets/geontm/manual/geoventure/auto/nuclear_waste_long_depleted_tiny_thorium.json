@@ -1,0 +1,19 @@
+{
+ "name": "gv:nuclear_waste_long_depleted_tiny_thorium",
+ "icon": [
+  "geontm:nuclear_waste_long_depleted_tiny_thorium"
+ ],
+ "trigger": [
+  [
+   "geontm:nuclear_waste_long_depleted_tiny_thorium"
+  ]
+ ],
+ "title": {
+  "en_us": "Tiny Pile of Decayed Long-Lived Nuclear Waste",
+  "fr_fr": "Minuscule tas de déchets nucléaires à vie longue décomposés"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x9) : [[gv:nuclear_waste_long_depleted_thorium|Decayed Long-Lived Nuclear Waste]].<br>- [[Nuclear Waste Disposal Drum|Nuclear Waste Disposal Drum]] : [[gv:nuclear_waste_long_tiny_thorium|Tiny Pile of Long-Lived Nuclear Waste]].<br><br>Used to make :<br>[[gv:nuclear_waste_long_depleted_thorium|Decayed Long-Lived Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi (x9) : [[gv:nuclear_waste_long_depleted_thorium|Déchets nucléaires à vie longue décomposés]].<br>- [[Nuclear Waste Disposal Drum|Tambour d'élimination des déchets nucléaires]] : [[gv:nuclear_waste_long_tiny_thorium|Minuscule tas de déchets nucléaires à longue durée de vie]].<br><br>Sert à fabriquer :<br>[[gv:nuclear_waste_long_depleted_thorium|Déchets nucléaires à vie longue décomposés]]."
+ }
+}

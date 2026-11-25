@@ -1,0 +1,19 @@
+{
+ "name": "gv:blowtorch",
+ "icon": [
+  "geontm:blowtorch"
+ ],
+ "trigger": [
+  [
+   "geontm:blowtorch"
+  ]
+ ],
+ "title": {
+  "en_us": "Blowtorch",
+  "fr_fr": "Chalumeau"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Copper Plate, Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Plaque de cuivre, Lingot de fer."
+ }
+}

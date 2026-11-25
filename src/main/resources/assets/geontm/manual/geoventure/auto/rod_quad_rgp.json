@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_rgp",
+ "icon": [
+  "geontm:rod_quad_rgp"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_rgp"
+  ]
+ ],
+ "title": {
+  "en_us": "Reactor-Grade Plutonium Quad Rod",
+  "fr_fr": "Quatre tiges de plutonium de qualité réacteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_u238|Uranium-238 Quad Rod]].<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_uranium|Uranium Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].<br><br>Used to make :<br>[[gv:rod_quad_waste|Nuclear Waste Quad Rod]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_u238|Quadruple tige d'U238]].<br>- Reacteur de fusion : [[gv:rod_quad_uranium|Quatruple tige d'uranium]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]].<br><br>Sert à fabriquer :<br>[[gv:rod_quad_waste|Quadruple tige de dechets nucleaires]], [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]]."
+ }
+}

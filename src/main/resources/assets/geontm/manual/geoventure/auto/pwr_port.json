@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_port",
+ "icon": [
+  "geontm:pwr_port"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_port"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Access Port",
+  "fr_fr": "Port d'accès PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 4 x Lead Plate, 8 x Concrete Tile, 8 x pipe (Steel), Radiation Resistant Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 4 x Plaque de plomb, 8 x Tuile de béton, 8 x tuyau (acier), Plaques résistantes aux radiations - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

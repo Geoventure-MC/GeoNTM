@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_legs_grey",
+ "icon": [
+  "geontm:hazmat_legs_grey"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_legs_grey"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Performance Hazmat Leggings",
+  "fr_fr": "Legging Hazmat haute performance"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 7 x [[gv:hazmat_cloth_grey|Lead-Reinforced Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 7 x [[gv:hazmat_cloth_grey|Chiffon Hazmat renforcé au plomb]]."
+ }
+}

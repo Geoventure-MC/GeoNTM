@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_generic_lde",
+ "icon": [
+  "geontm:part_generic_lde"
+ ],
+ "trigger": [
+  [
+   "geontm:part_generic_lde"
+  ]
+ ],
+ "title": {
+  "en_us": "Low-Density Element",
+  "fr_fr": "Élément à faible densité"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 4 x Aluminium Plate, 4 x Fiberglass Bar, ingot (hard plastic).<br>- [[Arc Welder|Arc Welder]] : 2 x Titanium Plate, 4 x Fiberglass Bar, ingot (hard plastic).<br><br>Used to make :<br>[[gv:satellite_science_assembler|Space Laboratory - 0G Assembler]], [[gv:satellite_miner_astro|Asteroid Mining Ship]], [[gv:satellite_death_ray|Orbital Death Ray]], [[gv:satellite_detector|Wideband Radio Emission Detector Satellite]], [[gv:missile_soyuz_lander|Orbital Module]], [[gv:satellite_miner_lunar|Lunar Mining Ship]], [[gv:satellite_precision_laser|Orbital Precision Laser]], [[gv:satellite_radar|Radar Satellite]], [[gv:satellite_ray_scan|Narrowband Emission Scanning Satellite]], [[gv:satellite_relay|RoR Relay Satellite]] and 6 more.",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 4 x Plaque d'aluminium, 4 x Barre en fibre de verre, lingot (plastique dur).<br>- [[Arc Welder|Soudeuse à arc]] : 2 x Plaque en titane, 4 x Barre en fibre de verre, lingot (plastique dur).<br><br>Sert à fabriquer :<br>[[gv:satellite_science_assembler|Laboratoire spatial - Assembleur 0G]], [[gv:satellite_miner_astro|Vaisseau minier d'astéroïdes]], [[gv:satellite_death_ray|Rayon de la mort orbital]], [[gv:satellite_detector|Satellite détecteur d'émissions radio à large bande]], [[gv:missile_soyuz_lander|Module orbital]], [[gv:satellite_miner_lunar|Vaisseau minier lunaire]], [[gv:satellite_precision_laser|Laser de précision orbital]], [[gv:satellite_radar|Satellite radar]], [[gv:satellite_ray_scan|Satellite de balayage d'émissions à bande étroite]], [[gv:satellite_relay|Satellite relais RoR]] et 6 autres."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pellet_rtg_gold",
+ "icon": [
+  "geontm:pellet_rtg_gold"
+ ],
+ "trigger": [
+  [
+   "geontm:pellet_rtg_gold"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold-198 RTG Pellet",
+  "fr_fr": "Or-198 RTG Pellet"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:billet_au198|Gold-198 Billet]], Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:billet_au198|Billet d'or-198]], Plaque de fer."
+ }
+}

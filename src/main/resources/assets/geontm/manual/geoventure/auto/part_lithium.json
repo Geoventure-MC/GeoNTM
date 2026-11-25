@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_lithium",
+ "icon": [
+  "geontm:part_lithium"
+ ],
+ "trigger": [
+  [
+   "geontm:part_lithium"
+  ]
+ ],
+ "title": {
+  "en_us": "Box of Lithium Dust",
+  "fr_fr": "Boîte de poussière de lithium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x8) : Lithium Powder.<br><br>Used to make :<br>[[gv:powder_zirconium|Zirconium Powder]], [[Thorium-232|Thorium Powder]], [[Boron|Boron Powder]], [[gv:nugget_mercury|Drop of Mercury]], [[gv:powder_cobalt|Cobalt Powder]], [[gv:powder_beryllium|Beryllium Powder]], [[Plutonium|Plutonium Powder]], [[Sulfur|Sulfur]], [[gv:powder_astatine|Astatine Powder]], [[gv:powder_fire|Red Phosphorus]] and 1 more.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x8) : Poudre de lithium.<br><br>Sert à fabriquer :<br>[[gv:powder_zirconium|Poudre de zirconium]], [[Thorium-232|Poudre de thorium]], [[Boron|Poudre de bore]], [[gv:nugget_mercury|Petite goutte de mercure]], [[gv:powder_cobalt|Poudre de cobalt]], [[gv:powder_beryllium|Poudre de beryllium]], [[Plutonium|Poudre de plutonium]], [[Sulfur|Soufre]], [[gv:powder_astatine|Poudre d'Astatine]], [[gv:powder_fire|Poudre de flamme]] et 1 autres."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_effect_2",
+ "icon": [
+  "geontm:upgrade_effect_2"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_effect_2"
+  ]
+ ],
+ "title": {
+  "en_us": "Effectiveness Upgrade Mk.II",
+  "fr_fr": "Amélioration verte Mk.II"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_precass|Precision Assembly Machine]] : 8 x [[gv:circuit_chip|Microchip]], 4 x [[gv:circuit_capacitor_tantalium|Tantalum Capacitor]], [[gv:upgrade_effect_1|Effectiveness Upgrade Mk.I]], 4 x ingot (plastic).<br>- [[Soldering Station|Soldering Station]] : 8 x [[gv:circuit_chip|Microchip]], 4 x [[gv:circuit_capacitor|Capacitor]], [[gv:upgrade_effect_1|Effectiveness Upgrade Mk.I]], 4 x ingot (plastic).<br><br>Used to make :<br>[[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]].",
+  "fr_fr": "Obtention :<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 8 x [[gv:circuit_chip|Micropuce]], 4 x [[gv:circuit_capacitor_tantalium|Condensateur au tantale]], [[gv:upgrade_effect_1|Amélioration verte Mk.I]], 4 x lingot (plastique).<br>- [[Soldering Station|Station de soudure]] : 8 x [[gv:circuit_chip|Micropuce]], 4 x [[gv:circuit_capacitor|Condensateur]], [[gv:upgrade_effect_1|Amélioration verte Mk.I]], 4 x lingot (plastique).<br><br>Sert à fabriquer :<br>[[gv:upgrade_effect_3|Amélioration verte Mk.III]]."
+ }
+}

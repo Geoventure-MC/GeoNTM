@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_stone_wire",
+ "icon": [
+  "geontm:stamp_stone_wire"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_stone_wire"
+  ]
+ ],
+ "title": {
+  "en_us": "Wire Stamp (Stone)",
+  "fr_fr": "Moule de fil (pierre)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_stone_flat|Flat Stamp (Stone)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_stone_flat|Moule plat (Pierre)]]."
+ }
+}

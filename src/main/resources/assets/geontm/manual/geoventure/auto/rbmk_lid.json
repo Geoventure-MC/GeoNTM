@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_lid",
+ "icon": [
+  "geontm:rbmk_lid"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_lid"
+  ]
+ ],
+ "title": {
+  "en_us": "RBMK Cover Panel",
+  "fr_fr": "Panneau de couverture RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 6 x Steel Plate, 3 x [[gv:concrete_asbestos|Asbestos Concrete]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 6 x Plaque d'acier, 3 x [[gv:concrete_asbestos|Béton d'amiante]]."
+ }
+}

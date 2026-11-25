@@ -1,0 +1,19 @@
+{
+ "name": "gv:seg_20",
+ "icon": [
+  "geontm:seg_20"
+ ],
+ "trigger": [
+  [
+   "geontm:seg_20"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 20 Connector",
+  "fr_fr": "Connecteur taille 20"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Steel Plate, Gold Plate, 3 x Steel Scaffold, 3 x [[gv:steel_beam|Steel Beam]].<br><br>Used to make :<br>[[gv:mp_fuselage_15_20_kerosene|Size 15/20 Kerosene Fuselage]], [[gv:mp_fuselage_15_20_solid|Size 15/20 Solid Fuel Fuselage]], [[gv:mp_thruster_20_kerosene|Size 20 Liquid Fuel Thruster]], [[gv:mp_thruster_20_kerosene_dual|Size 20 Liquid Fuel Twin Thrusters]], [[gv:mp_thruster_20_kerosene_triple|Size 20 Liquid Fuel Triple Thrusters]], [[gv:mp_thruster_20_solid|Size 20 Solid Fuel Thruster]], [[gv:mp_thruster_20_solid_multi|Size 20 Solid Fuel 30-Fold Thrusters]], [[gv:mp_thruster_20_solid_multier|Size 20 Solid Fuel 47-Fold Thrusters]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Plaque d'acier, Plaque d'or, 3 x Échafaudage en acier, 3 x [[gv:steel_beam|Barre d'acier]].<br><br>Sert à fabriquer :<br>[[gv:mp_fuselage_15_20_kerosene|Fuselage kérosène taille 15/20]], [[gv:mp_fuselage_15_20_solid|Fuselage à combustible solide de taille 15/20]], [[gv:mp_thruster_20_kerosene|Propulseur à carburant liquide taille 20]], [[gv:mp_thruster_20_kerosene_dual|Propulseurs jumelés à carburant liquide de taille 20]], [[gv:mp_thruster_20_kerosene_triple|Triple propulseurs à carburant liquide taille 20]], [[gv:mp_thruster_20_solid|Propulseur à combustible solide taille 20]], [[gv:mp_thruster_20_solid_multi|Propulseurs 30 fois à combustible solide de taille 20]], [[gv:mp_thruster_20_solid_multier|Propulseurs à combustible solide taille 20 47 fois]]."
+ }
+}

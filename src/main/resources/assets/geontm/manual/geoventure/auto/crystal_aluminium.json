@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_aluminium",
+ "icon": [
+  "geontm:crystal_aluminium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_aluminium"
+  ]
+ ],
+ "title": {
+  "en_us": "Aluminium Crystals",
+  "fr_fr": "Cristaux d'aluminium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (aluminium), 500 mB peroxide.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (aluminium), 333 mB peroxide.<br><br>Used to make :<br>[[gv:chunk_ore_cryolite|Cryolite Chunk]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (aluminium), 500 mB peroxide.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (aluminium), 333 mB peroxide.<br><br>Sert à fabriquer :<br>[[gv:chunk_ore_cryolite|Fragment de cryolithe]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_10_incendiary",
+ "icon": [
+  "geontm:mp_warhead_10_incendiary"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_10_incendiary"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Incendiary Warhead",
+  "fr_fr": "Ogive incendiaire de taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_10|Size 10 Connector]], 6 x Steel Plate, 2 x ingot (high explosive), 6 x dust (red phosphorus), [[gv:circuit_basic|Integrated Circuit Board]] - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_10|Connecteur taille 10]], 6 x Plaque d'acier, 2 x lingot (explosif puissant), 6 x poudre (red phosphorus), [[gv:circuit_basic|Carte de circuit intégré]] - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

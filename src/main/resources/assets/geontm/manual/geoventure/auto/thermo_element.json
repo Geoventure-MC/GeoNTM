@@ -1,0 +1,19 @@
+{
+ "name": "gv:thermo_element",
+ "icon": [
+  "geontm:thermo_element"
+ ],
+ "trigger": [
+  [
+   "geontm:thermo_element"
+  ]
+ ],
+ "title": {
+  "en_us": "Thermoelectric Element",
+  "fr_fr": "Elément thermoélectrique"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : Steel Plate, 2 x wire (Minecraft Grade Copper), 2 x Quartz Powder.<br>- [[Assembly Machine|Assembly Machine]] : Steel Plate, 2 x wire (Gold), Silicon Wafer.<br><br>Used to make :<br>[[RTG and Radiolysis Chamber|Radioisotope Thermoelectric Generator and Radiolysis Chamber]], [[gv:rtg_unit|RTG Unit]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : Plaque d'acier, 2 x fil (minecraft grade cuivre), 2 x Poudre de quartz.<br>- [[Assembly Machine|Machine d'assemblage]] : Plaque d'acier, 2 x fil (or), Tranche de silicium.<br><br>Sert à fabriquer :<br>[[RTG and Radiolysis Chamber|Générateur thermoélectrique à radio-isotopes et chambre de radiolyse]], [[gv:rtg_unit|Unité RTG]]."
+ }
+}

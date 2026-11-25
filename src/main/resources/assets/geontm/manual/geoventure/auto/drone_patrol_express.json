@@ -1,0 +1,19 @@
+{
+ "name": "gv:drone_patrol_express",
+ "icon": [
+  "geontm:drone_patrol_express"
+ ],
+ "trigger": [
+  [
+   "geontm:drone_patrol_express"
+  ]
+ ],
+ "title": {
+  "en_us": "Express Transport Drone",
+  "fr_fr": "Drone de transport express"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Chunkloading Express Transport Drone.<br>- Crafting table : [[gv:drone_patrol|Transport Drone]], 2 x [[gv:fluid_tank|Universal Fluid Tank]], 2 x plate welded titanium.",
+  "fr_fr": "Obtention :<br>- Établi : Drone de transport express à chargement de chunks.<br>- Établi : [[gv:drone_patrol|Drone de transport]], 2 x [[gv:fluid_tank|Réservoir de fluide universel]], 2 x plate welded titanium."
+ }
+}

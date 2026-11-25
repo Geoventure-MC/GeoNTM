@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_inferno",
+ "icon": [
+  "geontm:missile_inferno"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_inferno"
+  ]
+ ],
+ "title": {
+  "en_us": "Inferno Missile G.R.N. Mk.II",
+  "fr_fr": "Missile Inferno GRN Mk.II"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_incendiary_large|Large Incendiary Warhead]], 2 x [[gv:fuel_tank_medium|Medium Fuel Tank]], 4 x [[gv:thruster_medium|Medium Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_incendiary_large|Grande ogive incendiaire]], 2 x [[gv:fuel_tank_medium|Réservoir de carburant moyen]], 4 x [[gv:thruster_medium|Propulseur moyen]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_titanium_circuit",
+ "icon": [
+  "geontm:stamp_titanium_circuit"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_titanium_circuit"
+  ]
+ ],
+ "title": {
+  "en_us": "Circuit Stamp (Titanium)",
+  "fr_fr": "Moule de circuit (titane)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_titanium_flat|Flat Stamp (Titanium)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_titanium_flat|Moule plat (titane)]]."
+ }
+}

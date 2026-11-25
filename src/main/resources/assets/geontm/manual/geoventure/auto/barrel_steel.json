@@ -1,0 +1,19 @@
+{
+ "name": "gv:barrel_steel",
+ "icon": [
+  "geontm:barrel_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:barrel_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Barrel",
+  "fr_fr": "Baril en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Steel Plate, 2 x Steel Ingot.<br><br>Used to make :<br>[[gv:upgrade_crystallizer|Crystallizer Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Plaque d'acier, 2 x Lingot d'acier.<br><br>Sert à fabriquer :<br>[[gv:upgrade_crystallizer|Mise à niveau du cristallisoir]]."
+ }
+}

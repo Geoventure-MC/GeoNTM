@@ -1,0 +1,19 @@
+{
+ "name": "gv:pill_iodine",
+ "icon": [
+  "geontm:pill_iodine"
+ ],
+ "trigger": [
+  [
+   "geontm:pill_iodine"
+  ]
+ ],
+ "title": {
+  "en_us": "Iodine Pill",
+  "fr_fr": "Pilule d'iode"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : Iodine Powder, dust (fluorite).<br><br>Used to make :<br>[[gv:med_bag|First Aid Kit]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : Poudre d'iode, poudre (fluorite).<br><br>Sert à fabriquer :<br>[[gv:med_bag|Mallette de docteur]]."
+ }
+}

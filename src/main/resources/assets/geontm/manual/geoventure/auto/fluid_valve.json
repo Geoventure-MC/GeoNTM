@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_valve",
+ "icon": [
+  "geontm:fluid_valve"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_valve"
+  ]
+ ],
+ "title": {
+  "en_us": "Fluid Valve",
+  "fr_fr": "Vanne à fluide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : Lever, [[gv:fluid_duct_paintable|Paintable Coated Universal Fluid Duct]].",
+  "fr_fr": "Obtention :<br>- Établi : Levier, [[gv:fluid_duct_paintable|Conduit de fluide universel enrobé peignable]]."
+ }
+}

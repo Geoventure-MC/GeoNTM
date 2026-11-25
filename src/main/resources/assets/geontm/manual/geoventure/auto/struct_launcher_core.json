@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_launcher_core",
+ "icon": [
+  "geontm:struct_launcher_core"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_launcher_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Compact Launcher Core Component",
+  "fr_fr": "Composant central du lanceur compact"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Scaffold, Iron Bars, [[gv:circuit_basic|Integrated Circuit Board]], 2 x [[gv:struct_launcher|Launch Pad Component Block]], [[gv:battery_lead|Lead-Acid Battery]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Échafaudage en acier, Barreaux de fer, [[gv:circuit_basic|Carte de circuit intégré]], 2 x [[gv:struct_launcher|Bloc de composants de rampe de lancement]], [[gv:battery_lead|Batterie plomb-acide]]."
+ }
+}

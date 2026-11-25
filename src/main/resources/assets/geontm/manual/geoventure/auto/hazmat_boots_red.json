@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_boots_red",
+ "icon": [
+  "geontm:hazmat_boots_red"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_boots_red"
+  ]
+ ],
+ "title": {
+  "en_us": "Advanced Hazmat Boots",
+  "fr_fr": "Bottes Hazmat avancées"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:hazmat_cloth_red|Advanced Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:hazmat_cloth_red|Tissu Hazmat avancé]]."
+ }
+}

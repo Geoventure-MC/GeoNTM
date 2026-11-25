@@ -1,0 +1,19 @@
+{
+ "name": "gv:linker",
+ "icon": [
+  "geontm:linker"
+ ],
+ "trigger": [
+  [
+   "geontm:linker"
+  ]
+ ],
+ "title": {
+  "en_us": "Telelinker",
+  "fr_fr": "Télé-lieur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Iron Plate, 3 x Gold Plate, [[gv:circuit_advanced|Military Grade Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque de fer, 3 x Plaque d'or, [[gv:circuit_advanced|Carte de circuit de qualité militaire]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:thruster_large",
+ "icon": [
+  "geontm:thruster_large"
+ ],
+ "trigger": [
+  [
+   "geontm:thruster_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Thruster",
+  "fr_fr": "Grand propulseur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 10 x High-Speed Steel Ingot, [[gv:motor|Motor]], 12 x Tungsten Carbide Ingot.<br><br>Used to make :<br>[[gv:missile_nuclear|Nuclear Missile]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 10 x Lingot d'acier haute vitesse, [[gv:motor|Moteur]], 12 x Lingot de carbure de tungstène.<br><br>Sert à fabriquer :<br>[[gv:missile_nuclear|Missile nucléaire]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_launcher_core_large",
+ "icon": [
+  "geontm:struct_launcher_core_large"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_launcher_core_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Launch Table Core Component",
+  "fr_fr": "Lancer le composant de base de la table"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x [[gv:circuit_advanced|Military Grade Circuit Board]], 3 x Iron Bars, 2 x [[gv:struct_launcher|Launch Pad Component Block]], [[gv:battery_lead|Lead-Acid Battery]].<br><br>Used to make :<br>[[gv:struct_soyuz_core|Soyuz Launcher Core Component]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 3 x Barreaux de fer, 2 x [[gv:struct_launcher|Bloc de composants de rampe de lancement]], [[gv:battery_lead|Batterie plomb-acide]].<br><br>Sert à fabriquer :<br>[[gv:struct_soyuz_core|Composant principal du lanceur Soyouz]]."
+ }
+}

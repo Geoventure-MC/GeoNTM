@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_thorium_fuel",
+ "icon": [
+  "geontm:ingot_thorium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_thorium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Ingot of Thorium Fuel",
+  "fr_fr": "Lingot de thorium combustible"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_thorium_fuel|Thorium Fuel Billet]].<br>- Crafting table (x9) : [[gv:block_thorium_fuel|Block of Thorium Fuel]].<br>- Crafting table : 9 x [[gv:nugget_thorium_fuel|Nugget of Thorium Fuel]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_thorium_fuel|Thorium Fuel Billet]], [[gv:block_thorium_fuel|Block of Thorium Fuel]], [[gv:nugget_thorium_fuel|Nugget of Thorium Fuel]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_thorium_fuel|Billette de carburant au thorium]].<br>- Établi (x9) : [[gv:block_thorium_fuel|Bloc de combustible au thorium]].<br>- Établi : 9 x [[gv:nugget_thorium_fuel|Pépite de carburant au thorium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_thorium_fuel|Billette de carburant au thorium]], [[gv:block_thorium_fuel|Bloc de combustible au thorium]], [[gv:nugget_thorium_fuel|Pépite de carburant au thorium]]."
+ }
+}

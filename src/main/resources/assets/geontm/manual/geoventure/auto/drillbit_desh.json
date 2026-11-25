@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_desh",
+ "icon": [
+  "geontm:drillbit_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Drill bit",
+  "fr_fr": "Foret en Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x Desh Ingot, 12 x Rubber Bar, 4 x Niobium Ingot.<br><br>Used to make :<br>[[gv:drillbit_desh_diamond|Desh Drill bit (Diamond-Tipped)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x Lingot de desh, 12 x Barre en caoutchouc, 4 x Lingot de niobium.<br><br>Sert à fabriquer :<br>[[gv:drillbit_desh_diamond|Foret en Desh (pointe diamant)]]."
+ }
+}

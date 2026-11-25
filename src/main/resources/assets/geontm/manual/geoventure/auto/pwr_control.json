@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_control",
+ "icon": [
+  "geontm:pwr_control"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_control"
+  ]
+ ],
+ "title": {
+  "en_us": "PWR Control Rod",
+  "fr_fr": "Barre de contrôle PWR"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 2 x cast plate (Steel), 8 x Boron Ingot, 2 x [[gv:motor|Motor]], Bolted Steel Plating - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 2 x plaque coulée (acier), 8 x Lingot de bore, 2 x [[gv:motor|Moteur]], Plaques d'acier boulonnées - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

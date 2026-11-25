@@ -1,0 +1,19 @@
+{
+ "name": "gv:mold_base",
+ "icon": [
+  "geontm:mold_base"
+ ],
+ "trigger": [
+  [
+   "geontm:mold_base"
+  ]
+ ],
+ "title": {
+  "en_us": "Blank Foundry Mold",
+  "fr_fr": "Moule de fonderie vierge"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x [[gv:ingot_firebrick|Firebrick]], Iron Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x [[gv:ingot_firebrick|Brique réfractaire]], Lingot de fer."
+ }
+}

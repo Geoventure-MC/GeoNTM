@@ -1,0 +1,19 @@
+{
+ "name": "gv:designator",
+ "icon": [
+  "geontm:designator"
+ ],
+ "trigger": [
+  [
+   "geontm:designator"
+  ]
+ ],
+ "title": {
+  "en_us": "Short Range Target Designator",
+  "fr_fr": "Désignateur à courte portée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x ingot (plastic), Steel Plate, 2 x [[gv:circuit_basic|Integrated Circuit Board]].<br><br>Used to make :<br>[[gv:designator_manual|Manual Target Designator]], [[gv:designator_range|Long Range Target Designator]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x lingot (plastique), Plaque d'acier, 2 x [[gv:circuit_basic|Carte de circuit intégré]].<br><br>Sert à fabriquer :<br>[[gv:designator_manual|Désignateur manuel]], [[gv:designator_range|Désignateur à longue portée]]."
+ }
+}

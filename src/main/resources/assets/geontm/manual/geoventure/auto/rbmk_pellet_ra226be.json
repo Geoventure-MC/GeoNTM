@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_pellet_ra226be",
+ "icon": [
+  "geontm:rbmk_pellet_ra226be"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_pellet_ra226be"
+  ]
+ ],
+ "title": {
+  "en_us": "Ra226Be Neutron Source Pellet",
+  "fr_fr": "Pastille de source de neutrons Ra226Be"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

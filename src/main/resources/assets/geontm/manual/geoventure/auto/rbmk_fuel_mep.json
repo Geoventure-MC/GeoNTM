@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_mep",
+ "icon": [
+  "geontm:rbmk_fuel_mep"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_mep"
+  ]
+ ],
+ "title": {
+  "en_us": "MEP-239 RBMK Fuel Rod",
+  "fr_fr": "Barre de carburant MEP-239 RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[Reactor-Grade Plutonium|Reactor Grade Plutonium Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[Reactor-Grade Plutonium|Billet de plutonium de qualité réacteur]]."
+ }
+}

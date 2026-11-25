@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_wax",
+ "icon": [
+  "geontm:oil_tar_wax"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_wax"
+  ]
+ ],
+ "title": {
+  "en_us": "Chlorinated Petroleum Wax",
+  "fr_fr": "Cire de pétrole chlorée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:oil_tar_crack|Crack Oil Tar]], 100 mB chlorine.<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:oil_tar_crude|Oil Tar]], 250 mB chlorine.<br>- [[Ore Acidizer|Ore Acidizer]] : [[gv:oil_tar_paraffin|Paraffin Wax]], 100 mB chlorine.<br><br>Used to make :<br>[[gv:pellet_charged|Ionized Particles]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:oil_tar_crack|Goudron de pétrole craqué]], 100 mB chlorine.<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:oil_tar_crude|Goudron de pétrole]], 250 mB chlorine.<br>- [[Ore Acidizer|Acidifiant de minerai]] : [[gv:oil_tar_paraffin|Cire de paraffine]], 100 mB chlorine.<br><br>Sert à fabriquer :<br>[[gv:pellet_charged|Particules ionisées]]."
+ }
+}

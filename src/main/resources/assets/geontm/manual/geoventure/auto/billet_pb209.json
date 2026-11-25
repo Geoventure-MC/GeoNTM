@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_pb209",
+ "icon": [
+  "geontm:billet_pb209"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_pb209"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead-209 Billet",
+  "fr_fr": "Billet de plomb-209"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_pb209|Lead-209 Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_pb209|Lead-209 Ingot]].<br><br>Used to make :<br>[[gv:ingot_pb209|Lead-209 Ingot]], [[gv:nugget_pb209|Lead-209 Nugget]], [[gv:pellet_rtg_lead|Lead-209 RTG Pellet]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_pb209|Pépite de plomb 209]].<br>- Établi (x3) : 2 x [[gv:ingot_pb209|Lingot de plomb 209]].<br><br>Sert à fabriquer :<br>[[gv:ingot_pb209|Lingot de plomb 209]], [[gv:nugget_pb209|Pépite de plomb 209]], [[gv:pellet_rtg_lead|Plomb-209 RTG Pellet]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_nitan_mix",
+ "icon": [
+  "geontm:powder_nitan_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_nitan_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Nitanium Blend",
+  "fr_fr": "Mélange de nitanium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Electrolyser|Electrolyser]] (x2) : [[gv:crystal_trixite|Trixite Crystals]].<br>- Crafting table (x6) : Neptunium Powder, Iodine Powder, Thorium Powder, Astatine Powder, Neodymium Powder, Caesium Powder.<br>- Crafting table (x6) : Strontium Powder, Cobalt Powder, Bromine Powder, Tennessine Powder, Niobium Powder, Cerium Powder.<br>(3 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:rad_absorber_pink|Elite Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- [[Electrolyser|Électrolyseur]] (x2) : [[gv:crystal_trixite|Cristaux de trixite]].<br>- Établi (x6) : Poudre de neptunium, Poudre d'iode, Poudre de thorium, Poudre d'Astatine, Poudre de neodymium, Poudre de césium.<br>- Établi (x6) : Poudre de strontium, Poudre de cobalt, Poudre de brome, Poudre de Tennessine, Poudre de niobium, Poudre de cérium.<br>(3 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:rad_absorber_pink|Absorbeur de radiations d'élite]]."
+ }
+}

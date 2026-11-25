@@ -1,0 +1,19 @@
+{
+ "name": "gv:foundry_outlet",
+ "icon": [
+  "geontm:foundry_outlet"
+ ],
+ "trigger": [
+  [
+   "geontm:foundry_outlet"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Outlet",
+  "fr_fr": "Sortie de fonderie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:foundry_channel|Foundry Channel]], Steel Plate.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:foundry_channel|Canal de fonderie]], Plaque d'acier."
+ }
+}

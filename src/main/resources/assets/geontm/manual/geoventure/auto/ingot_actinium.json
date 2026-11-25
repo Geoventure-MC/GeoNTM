@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_actinium",
+ "icon": [
+  "geontm:ingot_actinium"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_actinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Ingot",
+  "fr_fr": "Lingot d'actinium semi-stable"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_actinium|Actinium-227 Billet]].<br>- Furnace : [[gv:powder_actinium|Actinium Powder]].<br>- Crafting table (x9) : [[gv:block_actinium|Block of Actinium]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_actinium|Actinium-227 Billet]], [[gv:block_actinium|Block of Actinium]], [[gv:nugget_actinium|Actinium-227 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_actinium|Billette d'actinium-227]].<br>- Four : [[gv:powder_actinium|Poudre d'actinium]].<br>- Établi (x9) : [[gv:block_actinium|Bloc d'actinium]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_actinium|Billette d'actinium-227]], [[gv:block_actinium|Bloc d'actinium]], [[gv:nugget_actinium|Pépite d'actinium]]."
+ }
+}

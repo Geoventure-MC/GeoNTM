@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_depleted_bfb_am_mix",
+ "icon": [
+  "geontm:pwr_fuel_depleted_bfb_am_mix"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_depleted_bfb_am_mix"
+  ]
+ ],
+ "title": {
+  "en_us": "Depleted Fuel Grade Americium PWR BFB Rod",
+  "fr_fr": "Barre PWR BFB à l'américium de qualité combustible appauvrie"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:nugget_am_mix|Reactor Grade Americium Nugget]], [[Reactor-Grade Plutonium|Reactor Grade Plutonium Nugget]], [[Bismuth|Bismuth Nugget]], [[gv:nuclear_waste_tiny|Tiny Pile of Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:nugget_am_mix|Pépite d'américium de qualité réacteur]], [[Reactor-Grade Plutonium|Pépite de plutonium de qualité réacteur]], [[Bismuth|Pépite de bismuth]], [[gv:nuclear_waste_tiny|Petit tas de déchets nucléaires]]."
+ }
+}

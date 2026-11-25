@@ -1,0 +1,19 @@
+{
+ "name": "gv:plate_gold",
+ "icon": [
+  "geontm:plate_gold"
+ ],
+ "trigger": [
+  [
+   "geontm:plate_gold"
+  ]
+ ],
+ "title": {
+  "en_us": "Gold Plate",
+  "fr_fr": "Plaque d'or"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : Gold Ingot.<br>- [[Assembly Machine|Assembly Machine]] : Gold Ingot.<br>- [[Press|Burner Press]] : Gold Ingot.<br><br>Used to make :<br>[[gv:upgrade_ejector_2|Ejection Speed Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : Lingot d'or.<br>- [[Assembly Machine|Machine d'assemblage]] : Lingot d'or.<br>- [[Press|Presse à vapeur]] : Lingot d'or.<br><br>Sert à fabriquer :<br>[[gv:upgrade_ejector_2|Amélioration de la vitesse d'éjection Mk.II]]."
+ }
+}

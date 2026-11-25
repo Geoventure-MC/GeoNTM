@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_co60",
+ "icon": [
+  "geontm:ingot_co60"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_co60"
+  ]
+ ],
+ "title": {
+  "en_us": "Cobalt-60 Ingot",
+  "fr_fr": "Lingot de cobalt 60"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 3 x [[gv:billet_co60|Cobalt-60 Billet]].<br>- Crafting table : 9 x [[gv:nugget_co60|Cobalt-60 Nugget]].<br><br>Used to make :<br>[[gv:billet_co60|Cobalt-60 Billet]], [[gv:nugget_co60|Cobalt-60 Nugget]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 3 x [[gv:billet_co60|Billet de cobalt-60]].<br>- Établi : 9 x [[gv:nugget_co60|Pépite de cobalt-60]].<br><br>Sert à fabriquer :<br>[[gv:billet_co60|Billet de cobalt-60]], [[gv:nugget_co60|Pépite de cobalt-60]]."
+ }
+}

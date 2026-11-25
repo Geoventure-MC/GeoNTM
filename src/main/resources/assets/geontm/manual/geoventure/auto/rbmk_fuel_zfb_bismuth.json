@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_zfb_bismuth",
+ "icon": [
+  "geontm:rbmk_fuel_zfb_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_zfb_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "Bismuth RBMK ZFB Rod",
+  "fr_fr": "Tige de bismuth RBMK ZFB"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x [[gv:billet_zfb_bismuth|Bismuth ZFB Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x [[gv:billet_zfb_bismuth|Billet de bismuth ZFB]]."
+ }
+}

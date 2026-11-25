@@ -1,0 +1,19 @@
+{
+ "name": "gv:decon",
+ "icon": [
+  "geontm:decon"
+ ],
+ "trigger": [
+  [
+   "geontm:decon"
+  ]
+ ],
+ "title": {
+  "en_us": "Player Decontaminator",
+  "fr_fr": "Décontaminateur de rayonnement"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Beryllium Ingot, Iron Bars, 3 x Steel Ingot, [[gv:rad_absorber|Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de beryllium, Barreaux de fer, 3 x Lingot d'acier, [[gv:rad_absorber|Absorbeur de radiations]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:canister_empty",
+ "icon": [
+  "geontm:canister_empty"
+ ],
+ "trigger": [
+  [
+   "geontm:canister_empty"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Canister",
+  "fr_fr": "Jerrican vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : Steel Plate, 4 x Aluminium Plate.<br><br>Used to make :<br>[[Industrial Combustion Engine|Industrial Combustion Engine]], [[gv:canister_full|Canister]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : Plaque d'acier, 4 x Plaque d'aluminium.<br><br>Sert à fabriquer :<br>[[Industrial Combustion Engine|Moteur à combustion industriel]], [[gv:canister_full|Bidon]]."
+ }
+}

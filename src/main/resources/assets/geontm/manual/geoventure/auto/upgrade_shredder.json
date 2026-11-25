@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_shredder",
+ "icon": [
+  "geontm:upgrade_shredder"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_shredder"
+  ]
+ ],
+ "title": {
+  "en_us": "Shredder Upgrade",
+  "fr_fr": "Mise à niveau de la déchiqueteuse"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:motor|Motor]], Hopper, 2 x [[gv:blades_titanium|Titanium Shredder Blades]], [[gv:upgrade_smelter|Smelter Upgrade]], 2 x Titanium Plate, 10k-20Hz Transformer.<br><br>Used to make :<br>[[gv:upgrade_centrifuge|Centrifuge Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:motor|Moteur]], Entonnoir, 2 x [[gv:blades_titanium|Lames de broyeur en titane]], [[gv:upgrade_smelter|Mise à niveau de la fonderie]], 2 x Plaque en titane, Transformateur.<br><br>Sert à fabriquer :<br>[[gv:upgrade_centrifuge|Mise à niveau de la centrifugeuse]]."
+ }
+}

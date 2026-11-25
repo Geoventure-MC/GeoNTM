@@ -1,0 +1,19 @@
+{
+ "name": "gv:med_bag",
+ "icon": [
+  "geontm:med_bag"
+ ],
+ "trigger": [
+  [
+   "geontm:med_bag"
+  ]
+ ],
+ "title": {
+  "en_us": "First Aid Kit",
+  "fr_fr": "Mallette de docteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Leather, 2 x Stimpak, [[gv:pill_iodine|Iodine Pill]].<br>- Crafting table : 4 x Leather, [[gv:syringe_metal_super|Super Stimpak]], RadAway.<br>- Crafting table : 6 x ingot (rubber), 2 x Stimpak, Antidote.<br>(3 more recipes: see JEI.)",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Cuir, 2 x syringe metal stimpak, [[gv:pill_iodine|Pilule d'iode]].<br>- Établi : 4 x Cuir, [[gv:syringe_metal_super|Super Stimpack]], radaway.<br>- Établi : 6 x lingot (caoutchouc), 2 x syringe metal stimpak, syringe antidote.<br>(3 autres recettes : voir JEI.)"
+ }
+}

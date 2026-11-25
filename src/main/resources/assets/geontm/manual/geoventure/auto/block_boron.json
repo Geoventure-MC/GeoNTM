@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_boron",
+ "icon": [
+  "geontm:block_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:block_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Boron",
+  "fr_fr": "Bloc de bore"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Boron|Boron Ingot]].<br><br>Used to make :<br>[[Boron|Boron Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Boron|Lingot de bore]].<br><br>Sert à fabriquer :<br>[[Boron|Lingot de bore]]."
+ }
+}

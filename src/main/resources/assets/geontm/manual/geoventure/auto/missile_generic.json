@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_generic",
+ "icon": [
+  "geontm:missile_generic"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_generic"
+  ]
+ ],
+ "title": {
+  "en_us": "High Explosive Missile",
+  "fr_fr": "Missile explosif Tier1"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : [[gv:warhead_generic_small|Small Warhead]], [[gv:fuel_tank_small|Small Fuel Tank]], [[gv:thruster_small|Small Thruster]].<br><br>Used to make :<br>[[gv:missile_shuttle|Reliant Robin Space Shuttle]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : [[gv:warhead_generic_small|Petite ogive]], [[gv:fuel_tank_small|Petit réservoir de carburant]], [[gv:thruster_small|Petit propulseur]].<br><br>Sert à fabriquer :<br>[[gv:missile_shuttle|Navette spatiale Reliant Robin]]."
+ }
+}

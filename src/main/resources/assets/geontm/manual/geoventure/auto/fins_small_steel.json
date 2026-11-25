@@ -1,0 +1,19 @@
+{
+ "name": "gv:fins_small_steel",
+ "icon": [
+  "geontm:fins_small_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:fins_small_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Steel Grid Fins",
+  "fr_fr": "Petites ailettes en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Steel Plate, 2 x Steel Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Plaque d'acier, 2 x Lingot d'acier."
+ }
+}

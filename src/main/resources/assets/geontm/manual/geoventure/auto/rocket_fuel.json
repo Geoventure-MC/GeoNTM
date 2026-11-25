@@ -1,0 +1,19 @@
+{
+ "name": "gv:rocket_fuel",
+ "icon": [
+  "geontm:rocket_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:rocket_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Solid Fuel (Rocket Propellant)",
+  "fr_fr": "Combustible solide (propulseur de fusée)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] (x4) : 2 x [[Solid Fuel|Solid Fuel]], 200 mB petroleum, 100 mB nitric acid.<br><br>Used to make :<br>Lambda-98, [[gv:missile_soyuz_lander|Orbital Module]], [[gv:missile_assembly|Small Missile Assembly]], [[gv:missile_soyuz_0|Soyuz-FG]].",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] (x4) : 2 x [[Solid Fuel|Combustible solide]], 200 mB petroleum, 100 mB nitric acid.<br><br>Sert à fabriquer :<br>[[gv:missile_soyuz_lander|Module orbital]], [[gv:missile_assembly|Petit assemblage de missile]], [[gv:missile_soyuz_0|Soyouz-FG]]."
+ }
+}

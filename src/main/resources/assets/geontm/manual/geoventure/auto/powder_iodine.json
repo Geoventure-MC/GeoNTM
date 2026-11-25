@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_iodine",
+ "icon": [
+  "geontm:powder_iodine"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_iodine"
+  ]
+ ],
+ "title": {
+  "en_us": "Iodine Powder",
+  "fr_fr": "Poudre d'iode"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Cyclotron|Cyclotron]] : [[gv:part_copper|Box of Copper Dust]], [[gv:powder_bromine|Bromine Powder]].<br><br>Used to make :<br>[[gv:powder_polonium|Polonium-210 Powder]].",
+  "fr_fr": "Obtention :<br>- machine_cyclotron : [[gv:part_copper|Boîte de poussière de cuivre]], [[gv:powder_bromine|Poudre de brome]].<br><br>Sert à fabriquer :<br>[[gv:powder_polonium|Poudre de polonium-210]]."
+ }
+}

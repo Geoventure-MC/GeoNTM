@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_ac227",
+ "icon": [
+  "geontm:rod_quad_ac227"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_ac227"
+  ]
+ ],
+ "title": {
+  "en_us": "Actinium-227 Quad Rod",
+  "fr_fr": "Tige quadruple Actinium-227"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_quad_ra226|Radium-226 Quad Rod]].<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Actinium-227 Billet.<br><br>Used to make :<br>[[gv:billet_actinium|Actinium-227 Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_quad_ra226|Quadruple tige de radium-226]].<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billette d'actinium-227.<br><br>Sert à fabriquer :<br>[[gv:billet_actinium|Billette d'actinium-227]]."
+ }
+}

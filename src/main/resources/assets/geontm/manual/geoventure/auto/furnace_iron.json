@@ -1,0 +1,19 @@
+{
+ "name": "gv:furnace_iron",
+ "icon": [
+  "geontm:furnace_iron"
+ ],
+ "trigger": [
+  [
+   "geontm:furnace_iron"
+  ]
+ ],
+ "title": {
+  "en_us": "Iron Furnace",
+  "fr_fr": "Four à fer"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Iron Ingot, Furnace, 3 x Stone Bricks.",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Lingot de fer, Fourneau, 3 x Pierre taillée."
+ }
+}

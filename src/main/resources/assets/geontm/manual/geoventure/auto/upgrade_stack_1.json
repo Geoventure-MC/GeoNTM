@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_stack_1",
+ "icon": [
+  "geontm:upgrade_stack_1"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_stack_1"
+  ]
+ ],
+ "title": {
+  "en_us": "Stack Ejection Upgrade Mk.I",
+  "fr_fr": "Mise à niveau d'éjection de pile Mk.I"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x [[gv:circuit_vacuum_tube|Vacuum Tube]], 2 x [[gv:part_generic_piston_pneumatic|Pneumatic Piston]], [[gv:upgrade_template|Machine Upgrade Template]].<br><br>Used to make :<br>[[gv:upgrade_stack_2|Stack Ejection Upgrade Mk.II]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x [[gv:circuit_vacuum_tube|Tube à vide]], 2 x [[gv:part_generic_piston_pneumatic|Piston pneumatique]], [[gv:upgrade_template|Amélioration de machine]].<br><br>Sert à fabriquer :<br>[[gv:upgrade_stack_2|Mise à niveau d'éjection de pile Mk.II]]."
+ }
+}

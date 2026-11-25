@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_titanium",
+ "icon": [
+  "geontm:crystal_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Titanium Crystals",
+  "fr_fr": "Cristaux de titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (titanium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (titanium), 333 mB sulfuric acid.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (titane), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (titane), 333 mB sulfuric acid."
+ }
+}

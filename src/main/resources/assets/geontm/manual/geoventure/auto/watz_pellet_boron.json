@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_boron",
+ "icon": [
+  "geontm:watz_pellet_boron"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_boron"
+  ]
+ ],
+ "title": {
+  "en_us": "Boron Absorber Pellet",
+  "fr_fr": "Pastille absorbante de bore"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Boron Ingot, Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de bore, Lingot de graphite."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_sawdust",
+ "icon": [
+  "geontm:powder_sawdust"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_sawdust"
+  ]
+ ],
+ "title": {
+  "en_us": "Sawdust",
+  "fr_fr": "Sciure de bois"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Sawmill : Stick.<br>- Sawmill : rods wooden.<br><br>Used to make :<br>[[gv:biomass|Biomass]], [[gv:briquette_wood|Sawdust Briquette]].",
+  "fr_fr": "Obtention :<br>- Scierie : Bâton.<br>- Scierie : rods wooden.<br><br>Sert à fabriquer :<br>[[gv:biomass|Biomasse]], [[gv:briquette_wood|Briquette de sciure]]."
+ }
+}

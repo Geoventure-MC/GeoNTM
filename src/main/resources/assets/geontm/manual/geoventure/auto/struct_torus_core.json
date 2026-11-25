@@ -1,0 +1,19 @@
+{
+ "name": "gv:struct_torus_core",
+ "icon": [
+  "geontm:struct_torus_core"
+ ],
+ "trigger": [
+  [
+   "geontm:struct_torus_core"
+  ]
+ ],
+ "title": {
+  "en_us": "Fusion Reactor Vessel Core Component",
+  "fr_fr": "Composant central de la cuve du réacteur à fusion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 8 x welded plate (resistant alloy), 32 x ingot (hard plastic), 8 x [[gv:circuit_bismoid|Versatile Circuit Board]], 4 x [[gv:drive_flash_particlesim|Flash Drive (Particle Simulation Data)]] - [[gv:schemas|blueprint required]]: Fusion.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 8 x plaque soudée (alliage résistant), 32 x lingot (plastique dur), 8 x [[gv:circuit_bismoid|Carte de circuit polyvalente]], 4 x [[gv:drive_flash_particlesim|Clé USB (données de simulation de particules)]] - [[gv:schemas|schéma exigé]] : Fusion."
+ }
+}

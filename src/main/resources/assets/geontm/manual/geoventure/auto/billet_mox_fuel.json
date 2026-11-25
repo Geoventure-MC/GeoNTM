@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_mox_fuel",
+ "icon": [
+  "geontm:billet_mox_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_mox_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "MOX Fuel Billet",
+  "fr_fr": "Billet de combustible MOX"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_mox_fuel|Nugget of MOX Fuel]].<br>- Crafting table (x3) : 2 x [[gv:ingot_mox_fuel|Ingot of MOX Fuel]].<br>- Crafting table (x3) : 2 x [[gv:billet_uranium_fuel|Uranium Fuel Billet]], Plutonium-239 Billet.<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_mox_fuel|Ingot of MOX Fuel]], [[gv:nugget_mox_fuel|Nugget of MOX Fuel]], [[gv:pwr_fuel_mox|MOX PWR Fuel Rod]], [[gv:rbmk_fuel_mox|MOX RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_mox_fuel|Pépite de combustible MOX]].<br>- Établi (x3) : 2 x [[gv:ingot_mox_fuel|Lingot de combustible MOX]].<br>- Établi (x3) : 2 x [[gv:billet_uranium_fuel|Billet de carburant d'uranium]], Billet de plutonium-239.<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_mox_fuel|Lingot de combustible MOX]], [[gv:nugget_mox_fuel|Pépite de combustible MOX]], [[gv:pwr_fuel_mox|Barre de combustible PWR MOX]], [[gv:rbmk_fuel_mox|Barre de combustible MOX RBMK]]."
+ }
+}

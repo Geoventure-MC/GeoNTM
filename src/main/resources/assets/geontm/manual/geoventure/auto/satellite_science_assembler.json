@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_science_assembler",
+ "icon": [
+  "geontm:satellite_science_assembler"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_science_assembler"
+  ]
+ ],
+ "title": {
+  "en_us": "Space Laboratory - 0G Assembler",
+  "fr_fr": "Laboratoire spatial - Assembleur 0G"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 4 x shell (Aluminium), 4 x cast plate (bismoid bronze), 16 x Reactor Grade Plutonium Billet, 4 x [[gv:motor_bismuth|Bismuth Motor]], 4 x [[gv:circuit_quantum|Quantum Processing Unit]], 4 x [[gv:part_generic_lde|Low-Density Element]] - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 4 x coque (aluminium), 4 x plaque coulée (bronze bismoïde), 16 x Billet de plutonium de qualité réacteur, 4 x [[gv:motor_bismuth|Moteur de bismuth]], 4 x [[gv:circuit_quantum|Unité de traitement quantique]], 4 x [[gv:part_generic_lde|Élément à faible densité]] - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

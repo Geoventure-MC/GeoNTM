@@ -1,0 +1,19 @@
+{
+ "name": "gv:fuel_tank_small",
+ "icon": [
+  "geontm:fuel_tank_small"
+ ],
+ "trigger": [
+  [
+   "geontm:fuel_tank_small"
+  ]
+ ],
+ "title": {
+  "en_us": "Small Fuel Tank",
+  "fr_fr": "Petit réservoir de carburant"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 6 x Aluminium Plate, 4 x Copper Plate, 4 x [[gv:steel_scaffold|Steel Scaffold]].<br><br>Used to make :<br>[[gv:missile_buster|Bunker Buster]], [[gv:missile_cluster|Cluster Missile]], [[gv:missile_decoy|Decoy Missile]], [[gv:missile_generic|High Explosive Missile]], [[gv:missile_incendiary|Incendiary Missile]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 6 x Plaque d'aluminium, 4 x Plaque de cuivre, 4 x [[gv:steel_scaffold|Échafaudage en acier]].<br><br>Sert à fabriquer :<br>[[gv:missile_buster|Bunker buster Tier1]], [[gv:missile_cluster|Missile à sous munitions Tier1]], [[gv:missile_decoy|Missile leurre]], [[gv:missile_generic|Missile explosif Tier1]], [[gv:missile_incendiary|Missile incendiaire Tier1]]."
+ }
+}

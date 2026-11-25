@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_bismuth",
+ "icon": [
+  "geontm:block_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:block_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Bismuth",
+  "fr_fr": "Bloc de bismuth"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[Bismuth|Bismuth Ingot]].<br><br>Used to make :<br>[[Bismuth|Bismuth Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[Bismuth|Lingot de bismuth]].<br><br>Sert à fabriquer :<br>[[Bismuth|Lingot de bismuth]]."
+ }
+}

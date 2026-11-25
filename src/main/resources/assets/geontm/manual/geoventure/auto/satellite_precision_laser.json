@@ -1,0 +1,19 @@
+{
+ "name": "gv:satellite_precision_laser",
+ "icon": [
+  "geontm:satellite_precision_laser"
+ ],
+ "trigger": [
+  [
+   "geontm:satellite_precision_laser"
+  ]
+ ],
+ "title": {
+  "en_us": "Orbital Precision Laser",
+  "fr_fr": "Laser de précision orbital"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x shell (weapon steel), 32 x [[gv:photo_panel|Photovoltaic Panel]], [[gv:capacitor_tantalum|Tantalum Capacitor]], 16 x [[gv:crystal_redstone|Redstone Crystals]], 16 x [[gv:part_generic_lde|Low-Density Element]], 3 x [[gv:circuit_controller_advanced|Advanced Control Unit]] - [[gv:schemas|blueprint required]]: Orbital weapons and intelligence.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x coque (acier à armes), 32 x [[gv:photo_panel|Panneau photovoltaïque]], [[gv:capacitor_tantalum|Condensateur au tantale]], 16 x [[gv:crystal_redstone|Cristaux de Redstone]], 16 x [[gv:part_generic_lde|Élément à faible densité]], 3 x [[gv:circuit_controller_advanced|Unité de contrôle avancée]] - [[gv:schemas|schéma exigé]] : Armes et renseignement orbitaux."
+ }
+}

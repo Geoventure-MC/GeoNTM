@@ -1,0 +1,19 @@
+{
+ "name": "gv:fusion_component_blanket",
+ "icon": [
+  "geontm:fusion_component_blanket"
+ ],
+ "trigger": [
+  [
+   "geontm:fusion_component_blanket"
+  ]
+ ],
+ "title": {
+  "en_us": "Fusion Reactor Blanket",
+  "fr_fr": "Couverture du réacteur à fusion"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x4) : 5 x welded plate (Tungsten), 2 x welded plate (Steel), 8 x Beryllium Ingot, 8 x calorite ingot, Heavy Framework - [[gv:schemas|blueprint required]]: Fusion.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x4) : 5 x plaque soudée (tungstène), 2 x plaque soudée (acier), 8 x Lingot de beryllium, 8 x calorite ingot, Ossature lourde - [[gv:schemas|schéma exigé]] : Fusion."
+ }
+}

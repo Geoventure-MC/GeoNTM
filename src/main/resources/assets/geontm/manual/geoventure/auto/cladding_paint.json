@@ -1,0 +1,19 @@
+{
+ "name": "gv:cladding_paint",
+ "icon": [
+  "geontm:cladding_paint"
+ ],
+ "trigger": [
+  [
+   "geontm:cladding_paint"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Paint",
+  "fr_fr": "La peinture au plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Lead Nugget, Clay Ball, Glass Bottle.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Pépite de plomb, Motte d'argile, Fiole."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_fuselage_15_solid_insulation",
+ "icon": [
+  "geontm:mp_fuselage_15_solid_insulation"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_fuselage_15_solid_insulation"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 Solid Fuel Fuselage",
+  "fr_fr": "Fuselage à combustible solide de taille 15"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x ingot (rubber), [[gv:mp_fuselage_15_solid|Size 15 Solid Fuel Fuselage]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x lingot (caoutchouc), [[gv:mp_fuselage_15_solid|Fuselage à combustible solide de taille 15]]."
+ }
+}

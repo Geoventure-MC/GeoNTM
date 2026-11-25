@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_shuttle",
+ "icon": [
+  "geontm:missile_shuttle"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_shuttle"
+  ]
+ ],
+ "title": {
+  "en_us": "Reliant Robin Space Shuttle",
+  "fr_fr": "Navette spatiale Reliant Robin"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:missile_generic|High Explosive Missile]], [[gv:missile_strong|Strong HE Missile]], 5 x dye (orange), 24 x [[gv:canister_full|Canister]], 12 x Fiberglass Bar, 3 x [[gv:circuit_basic|Integrated Circuit Board]], 8 x ingot (plastic explosive), 6 x Glass Pane, 4 x Steel Plate - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:missile_generic|Missile explosif Tier1]], [[gv:missile_strong|Missile explosif Tier2]], 5 x colorant (orange), 24 x [[gv:canister_full|Bidon]], 12 x Barre en fibre de verre, 3 x [[gv:circuit_basic|Carte de circuit intégré]], 8 x lingot (explosif plastique), 6 x Vitre, 4 x Plaque d'acier - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

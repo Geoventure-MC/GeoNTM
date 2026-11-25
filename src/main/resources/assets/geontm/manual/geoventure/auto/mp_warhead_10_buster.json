@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_warhead_10_buster",
+ "icon": [
+  "geontm:mp_warhead_10_buster"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_warhead_10_buster"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 10 Bunker Buster Warhead",
+  "fr_fr": "Ogive Bunker Buster taille 10"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_10|Size 10 Connector]], 6 x Weapon Steel Plate, 6 x ingot (high explosive), 2 x [[gv:circuit_basic|Integrated Circuit Board]] - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_10|Connecteur taille 10]], 6 x Plaque d'acier d'arme, 6 x lingot (explosif puissant), 2 x [[gv:circuit_basic|Carte de circuit intégré]] - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

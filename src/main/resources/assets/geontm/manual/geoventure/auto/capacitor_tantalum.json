@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_tantalum",
+ "icon": [
+  "geontm:capacitor_tantalum"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_tantalum"
+  ]
+ ],
+ "title": {
+  "en_us": "Tantalum Capacitor",
+  "fr_fr": "Condensateur au tantale"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x ingot (hard plastic), 24 x Tantalium Ingot.<br><br>Used to make :<br>[[Exposure Chamber|Exposure Chamber]], [[gv:satellite_precision_laser|Orbital Precision Laser]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x lingot (plastique dur), 24 x Lingot de tantale.<br><br>Sert à fabriquer :<br>[[Exposure Chamber|Chambre d'exposition]], [[gv:satellite_precision_laser|Laser de précision orbital]]."
+ }
+}

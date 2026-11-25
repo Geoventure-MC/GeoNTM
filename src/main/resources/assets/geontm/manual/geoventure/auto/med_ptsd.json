@@ -1,0 +1,19 @@
+{
+ "name": "gv:med_ptsd",
+ "icon": [
+  "geontm:med_ptsd"
+ ],
+ "trigger": [
+  [
+   "geontm:med_ptsd"
+  ]
+ ],
+ "title": {
+  "en_us": "PTSD Medication",
+  "fr_fr": "Médicament PTSD"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:med_ipecac|Ipecac Syrup]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:med_ipecac|Sirop Ipecac]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_schrabidium",
+ "icon": [
+  "geontm:nugget_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Nugget",
+  "fr_fr": "Pépite de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_schrabidium|Schrabidium Billet]].<br>- Crafting table (x9) : [[gv:ingot_schrabidium|Schrabidium Ingot]].<br><br>Used to make :<br>[[gv:billet_schrabidium_fuel|Schrabidium Fuel Billet]], [[gv:ingot_schrabidium|Schrabidium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_schrabidium|Billette de Schrabidium-326]].<br>- Établi (x9) : [[gv:ingot_schrabidium|Lingot de Schrabidium]].<br><br>Sert à fabriquer :<br>[[gv:billet_schrabidium_fuel|Billette de carburant Schrabidium]], [[gv:ingot_schrabidium|Lingot de Schrabidium]]."
+ }
+}

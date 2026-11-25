@@ -1,0 +1,19 @@
+{
+ "name": "gv:flywheel_beryllium",
+ "icon": [
+  "geontm:flywheel_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:flywheel_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Beryllium Flywheel",
+  "fr_fr": "Volant d'inertie en béryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Block of Beryllium, 4 x cast plate (Iron), pipe (High-Speed Steel).<br><br>Used to make :<br>[[Leviathan Steam Turbine|Leviathan Steam Turbine]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Bloc de beryllium, 4 x plaque coulée (fer), tuyau (acier haute vitesse).<br><br>Sert à fabriquer :<br>[[Leviathan Steam Turbine|Turbine à vapeur Léviathan]]."
+ }
+}

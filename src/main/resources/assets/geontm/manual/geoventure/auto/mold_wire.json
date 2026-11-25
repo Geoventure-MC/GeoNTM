@@ -1,0 +1,19 @@
+{
+ "name": "gv:mold_wire",
+ "icon": [
+  "geontm:mold_wire"
+ ],
+ "trigger": [
+  [
+   "geontm:mold_wire"
+  ]
+ ],
+ "title": {
+  "en_us": "Foundry Mold (Wire)",
+  "fr_fr": "Moule de fonderie (Fil)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

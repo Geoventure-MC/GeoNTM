@@ -1,0 +1,19 @@
+{
+ "name": "gv:sphere_steel",
+ "icon": [
+  "geontm:sphere_steel"
+ ],
+ "trigger": [
+  [
+   "geontm:sphere_steel"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Sphere",
+  "fr_fr": "Sphère d'acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Steel Plate, 4 x Steel Ingot.<br><br>Used to make :<br>[[Vacuum Refinery|Vacuum Refinery]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque d'acier, 4 x Lingot d'acier.<br><br>Sert à fabriquer :<br>[[Vacuum Refinery|Raffinerie sous vide]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hep241",
+ "icon": [
+  "geontm:pwr_fuel_hep241"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hep241"
+  ]
+ ],
+ "title": {
+  "en_us": "HEP-241 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HEP-241"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Plutonium-241 Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billet de plutonium-241, [[gv:plate_polymer|Isolateur]]."
+ }
+}

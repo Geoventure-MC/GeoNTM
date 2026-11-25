@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_plate_grey",
+ "icon": [
+  "geontm:hazmat_plate_grey"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_plate_grey"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Performance Hazmat Chestplate",
+  "fr_fr": "Plastron Hazmat haute performance"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x [[gv:hazmat_cloth_grey|Lead-Reinforced Hazmat Cloth]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x [[gv:hazmat_cloth_grey|Chiffon Hazmat renforcé au plomb]]."
+ }
+}

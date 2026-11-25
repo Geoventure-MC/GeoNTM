@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_thorium_fuel",
+ "icon": [
+  "geontm:pile_rod_mk2_thorium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_thorium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Thorium Fuel Rod",
+  "fr_fr": "Barre de combustible au thorium de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).<br><br>Used to make :<br>[[gv:billet_thorium_fuel|Thorium Fuel Billet]], [[gv:billet_nuclear_waste|Nuclear Waste Billet]].",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail.<br><br>Sert à fabriquer :<br>[[gv:billet_thorium_fuel|Billette de carburant au thorium]], [[gv:billet_nuclear_waste|Billet de déchets nucléaires]]."
+ }
+}

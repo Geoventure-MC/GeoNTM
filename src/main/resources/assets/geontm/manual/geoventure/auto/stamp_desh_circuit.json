@@ -1,0 +1,19 @@
+{
+ "name": "gv:stamp_desh_circuit",
+ "icon": [
+  "geontm:stamp_desh_circuit"
+ ],
+ "trigger": [
+  [
+   "geontm:stamp_desh_circuit"
+  ]
+ ],
+ "title": {
+  "en_us": "Circuit Stamp (Desh)",
+  "fr_fr": "Timbre de circuit (Desh)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:stamp_desh_flat|Flat Stamp (Desh)]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:stamp_desh_flat|Timbre plat (Desh)]]."
+ }
+}

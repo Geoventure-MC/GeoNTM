@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_po210be",
+ "icon": [
+  "geontm:billet_po210be"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_po210be"
+  ]
+ ],
+ "title": {
+  "en_us": "Po210Be Billet",
+  "fr_fr": "Billet Po210Be"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 3 x Polonium-210 Nugget, 3 x [[gv:nugget_beryllium|Beryllium Nugget]].<br>- Crafting table (x2) : [[Polonium-210|Polonium-210 Billet]], [[gv:billet_beryllium|Beryllium Billet]].<br>- Crafting table (x6) : 3 x [[Polonium-210|Polonium-210 Billet]], 3 x [[gv:billet_beryllium|Beryllium Billet]].<br><br>Used to make :<br>[[gv:pile_rod_mk2_po210be|Chicago Pile Po210Be Neutron source]], [[gv:rbmk_fuel_po210be|Po210Be RBMK Neutron Source]].",
+  "fr_fr": "Obtention :<br>- Établi : 3 x Pépite de polonium-210, 3 x [[gv:nugget_beryllium|Pépite de béryllium]].<br>- Établi (x2) : [[Polonium-210|Billet de polonium-210]], [[gv:billet_beryllium|Billet de béryllium]].<br>- Établi (x6) : 3 x [[Polonium-210|Billet de polonium-210]], 3 x [[gv:billet_beryllium|Billet de béryllium]].<br><br>Sert à fabriquer :<br>[[gv:pile_rod_mk2_po210be|Source de neutrons Po210Be de la pile de Chicago]], [[gv:rbmk_fuel_po210be|Source de neutrons Po210Be RBMK]]."
+ }
+}

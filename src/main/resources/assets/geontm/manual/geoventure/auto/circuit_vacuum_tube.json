@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_vacuum_tube",
+ "icon": [
+  "geontm:circuit_vacuum_tube"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_vacuum_tube"
+  ]
+ ],
+ "title": {
+  "en_us": "Vacuum Tube",
+  "fr_fr": "Tube à vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : [[gv:pole_satellite_receiver|Satellite Dish]].<br>- Industrial anvil (construction) : [[gv:radiorec|FM Radio]].<br>- Crafting table : Glass Pane, wire (tungsten), [[gv:plate_polymer|Insulator]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[Assembly Machine|Assembly Machine]], [[Soldering Station|Soldering Station]], [[gv:crt_display|Cathode Ray Tube]], [[gv:dosimeter|Dosimeter]], [[gv:drone_patrol|Transport Drone]], [[gv:fluid_identifier_multi|Multi Fluid Identifier]], [[Industrial Mixer|Mixer]], [[gv:mp_c_1|Tier 1 Missile Targeting Circuit]], [[gv:pole_satellite_receiver|Satellite Dish]], [[gv:pollution_detector|Pollution Detector]] and 10 more.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : [[gv:pole_satellite_receiver|Récepteur satellite]].<br>- Enclume industrielle (construction) : [[gv:radiorec|Radio FM cassée]].<br>- Établi : Vitre, fil (tungstène), [[gv:plate_polymer|Isolateur]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[Assembly Machine|Machine d'assemblage]], [[Soldering Station|Station de soudure]], [[gv:crt_display|Tube cathodique]], [[gv:dosimeter|Dosimètre]], [[gv:drone_patrol|Drone de transport]], [[gv:fluid_identifier_multi|Identificateur de fluide multiple]], [[Industrial Mixer|Mélangeur industriel]], [[gv:mp_c_1|Circuit de ciblage de missiles de niveau 1]], [[gv:pole_satellite_receiver|Récepteur satellite]], [[gv:pollution_detector|Détecteur de pollution]] et 10 autres."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:ball_fireclay",
+ "icon": [
+  "geontm:ball_fireclay"
+ ],
+ "trigger": [
+  [
+   "geontm:ball_fireclay"
+  ]
+ ],
+ "title": {
+  "en_us": "Fireclay",
+  "fr_fr": "Argile réfractaire"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x4) : 3 x Clay Ball, Aluminium Powder.<br>- Crafting table (x4) : 3 x Clay Ball, ore (aluminium).<br>- Crafting table (x4) : 3 x Clay Ball, raw ore (aluminium).<br><br>Used to make :<br>[[gv:ingot_firebrick|Firebrick]].",
+  "fr_fr": "Obtention :<br>- Établi (x4) : 3 x Motte d'argile, Poudre d'aluminium.<br>- Établi (x4) : 3 x Motte d'argile, minerai (aluminium).<br>- Établi (x4) : 3 x Motte d'argile, minerai brut (aluminium).<br><br>Sert à fabriquer :<br>[[gv:ingot_firebrick|Brique réfractaire]]."
+ }
+}

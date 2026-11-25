@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_solinium",
+ "icon": [
+  "geontm:block_solinium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_solinium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Solinium",
+  "fr_fr": "Bloc de Solinium-327"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_solinium|Solinium Ingot]].<br><br>Used to make :<br>[[gv:ingot_solinium|Solinium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_solinium|Lingot de solinium-327]].<br><br>Sert à fabriquer :<br>[[gv:ingot_solinium|Lingot de solinium-327]]."
+ }
+}

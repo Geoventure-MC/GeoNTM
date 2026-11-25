@@ -1,0 +1,19 @@
+{
+ "name": "gv:ingot_zirconium",
+ "icon": [
+  "geontm:ingot_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:ingot_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Zirconium Cube",
+  "fr_fr": "Cube de zirconium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) (x4) : [[gv:rbmk_fuel_rod_reasim|RBMK Fuel Channel (ReaSim)]].<br>- Crafting table (x2) : 3 x [[gv:billet_zirconium|Zirconium Billet]].<br>- Furnace : [[gv:powder_zirconium|Zirconium Powder]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:billet_zirconium|Zirconium Billet]], [[gv:block_zirconium|Block of Zirconium]], [[gv:nugget_zirconium|Zirconium Splinter]].",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) (x4) : [[gv:rbmk_fuel_rod_reasim|Barre de combustible RBMK (ReaSim)]].<br>- Établi (x2) : 3 x [[gv:billet_zirconium|Billet de zirconium]].<br>- Four : [[gv:powder_zirconium|Poudre de zirconium]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:billet_zirconium|Billet de zirconium]], [[gv:block_zirconium|Bloc de zirconium]], [[gv:nugget_zirconium|Éclat de zirconium]]."
+ }
+}

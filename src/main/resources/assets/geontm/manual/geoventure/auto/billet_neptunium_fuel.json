@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_neptunium_fuel",
+ "icon": [
+  "geontm:billet_neptunium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_neptunium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Neptunium Fuel Billet",
+  "fr_fr": "Billette de carburant Neptunium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_neptunium_fuel|Neptunium Fuel Nugget]].<br>- Crafting table (x3) : 2 x [[gv:ingot_neptunium_fuel|Neptunium Fuel Ingot]].<br>- Crafting table (x3) : 2 x [[Uranium-238|Uranium-238 Billet]], [[Neptunium|Neptunium Billet]].<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_neptunium_fuel|Neptunium Fuel Ingot]], [[gv:nugget_neptunium_fuel|Neptunium Fuel Nugget]], [[gv:pwr_fuel_men|MEN PWR Fuel Rod]], [[gv:rbmk_fuel_men|MEN RBMK Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_neptunium_fuel|Pépite de carburant Neptunium]].<br>- Établi (x3) : 2 x [[gv:ingot_neptunium_fuel|Lingot de carburant de neptunium]].<br>- Établi (x3) : 2 x [[Uranium-238|Billet d'uranium-238]], [[Neptunium|Billet de Neptunium-237]].<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_neptunium_fuel|Lingot de carburant de neptunium]], [[gv:nugget_neptunium_fuel|Pépite de carburant Neptunium]], [[gv:pwr_fuel_men|Barre de combustible PWR MEN]], [[gv:rbmk_fuel_men|MEN RBMK Carburant Rod]]."
+ }
+}

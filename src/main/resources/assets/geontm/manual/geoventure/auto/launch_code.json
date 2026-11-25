@@ -1,0 +1,19 @@
+{
+ "name": "gv:launch_code",
+ "icon": [
+  "geontm:launch_code"
+ ],
+ "trigger": [
+  [
+   "geontm:launch_code"
+  ]
+ ],
+ "title": {
+  "en_us": "Silo Launch Code",
+  "fr_fr": "Code de lancement de silo"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 8 x [[gv:launch_code_piece|Silo Launch Code Piece]], [[gv:circuit_advanced|Military Grade Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : 8 x [[gv:launch_code_piece|Fragment de code de lancement de silo]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]]."
+ }
+}

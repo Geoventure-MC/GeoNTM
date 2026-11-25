@@ -1,0 +1,19 @@
+{
+ "name": "gv:steel_scaffold",
+ "icon": [
+  "geontm:steel_scaffold"
+ ],
+ "trigger": [
+  [
+   "geontm:steel_scaffold"
+  ]
+ ],
+ "title": {
+  "en_us": "Steel Scaffold",
+  "fr_fr": "Échafaudage en acier"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 7 x Steel Ingot.<br>- Crafting table (x8) : 8 x Steel Scaffold, Gray Dye.<br><br>Used to make :<br>[[Deuterium Extraction Tower|Heavy Water Extraction Tower]], [[Condenser|Cooling Tower]], [[gv:fuel_tank_large|Large Fuel Tank]], [[gv:fuel_tank_medium|Medium Fuel Tank]], [[gv:fuel_tank_small|Small Fuel Tank]], [[Catalytic Cracking Tower|Catalytic Cracking Tower]], [[gv:launch_pad_large|Launch Pad]], [[Satellite Ground Station|Satellite Ground Station]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 7 x Lingot d'acier.<br>- Établi (x8) : 8 x Échafaudage en acier, Teinture grise.<br><br>Sert à fabriquer :<br>[[Deuterium Extraction Tower|Tour d'extraction de deutérium]], [[Condenser|Tour de refroidissement]], [[gv:fuel_tank_large|Grand réservoir de carburant]], [[gv:fuel_tank_medium|Réservoir de carburant moyen]], [[gv:fuel_tank_small|Petit réservoir de carburant]], [[Catalytic Cracking Tower|Tour de craquage catalytique]], [[gv:launch_pad_large|Base de lancement]], [[Satellite Ground Station|Station au sol de satellite]]."
+ }
+}

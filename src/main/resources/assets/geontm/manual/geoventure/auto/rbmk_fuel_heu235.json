@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_heu235",
+ "icon": [
+  "geontm:rbmk_fuel_heu235"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_heu235"
+  ]
+ ],
+ "title": {
+  "en_us": "HEU-235 RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible HEU-235 RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x Uranium-235 Billet.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x Billet d'uranium-235."
+ }
+}

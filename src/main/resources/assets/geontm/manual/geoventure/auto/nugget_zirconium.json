@@ -1,0 +1,19 @@
+{
+ "name": "gv:nugget_zirconium",
+ "icon": [
+  "geontm:nugget_zirconium"
+ ],
+ "trigger": [
+  [
+   "geontm:nugget_zirconium"
+  ]
+ ],
+ "title": {
+  "en_us": "Zirconium Splinter",
+  "fr_fr": "Éclat de zirconium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : [[gv:billet_zirconium|Zirconium Billet]].<br>- Crafting table (x9) : [[gv:ingot_zirconium|Zirconium Cube]].<br>- [[PUREX|PUREX]] (x2) : [[gv:pwr_fuel_depleted_hea242|Depleted HEA-242 PWR Fuel Rod]], 500 mB kerosene, 250 mB nitric acid.<br>(12 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_zirconium|Zirconium Cube]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : [[gv:billet_zirconium|Billet de zirconium]].<br>- Établi (x9) : [[gv:ingot_zirconium|Cube de zirconium]].<br>- machine_purex (x2) : [[gv:pwr_fuel_depleted_hea242|Barre de combustible PWR HEA-242 appauvrie]], 500 mB kerosene, 250 mB nitric acid.<br>(12 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_zirconium|Cube de zirconium]]."
+ }
+}

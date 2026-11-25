@@ -1,0 +1,19 @@
+{
+ "name": "gv:part_beryllium",
+ "icon": [
+  "geontm:part_beryllium"
+ ],
+ "trigger": [
+  [
+   "geontm:part_beryllium"
+  ]
+ ],
+ "title": {
+  "en_us": "Box of Beryllium Dust",
+  "fr_fr": "Boîte de poussière de béryllium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] (x8) : Beryllium Powder.<br><br>Used to make :<br>[[gv:powder_niobium|Niobium Powder]], [[Boron|Boron Powder]], [[Sulfur|Sulfur]], [[Uranium|Uranium Powder]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] (x8) : Poudre de beryllium.<br><br>Sert à fabriquer :<br>[[gv:powder_niobium|Poudre de niobium]], [[Boron|Poudre de bore]], [[Sulfur|Soufre]], [[Uranium|Poudre d'uranium]]."
+ }
+}

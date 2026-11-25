@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_pcb",
+ "icon": [
+  "geontm:circuit_pcb"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_pcb"
+  ]
+ ],
+ "title": {
+  "en_us": "Printed Circuit Board",
+  "fr_fr": "Carte de circuit imprimé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:plate_polymer|Insulator]], Copper Plate.<br>- Crafting table (x4) : [[gv:plate_polymer|Insulator]], Gold Plate.<br><br>Used to make :<br>[[gv:circuit_analog|Analog Circuit Board]], [[gv:circuit_controller_chassis|Control Unit Casing]], [[gv:photo_panel|Photovoltaic Panel]], [[gv:orbital_assembly_crystal_circuit|Orbital Assembly: Crystal Circuit Board]], [[gv:circuit_advanced|Military Grade Circuit Board]], [[gv:circuit_basic|Integrated Circuit Board]], [[gv:circuit_bismoid|Versatile Circuit Board]], [[gv:circuit_capacitor_board|Capacitor Board]], [[gv:circuit_quantum|Quantum Processing Unit]], [[gv:sat_chip|Satellite ID-Chip]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:plate_polymer|Isolateur]], Plaque de cuivre.<br>- Établi (x4) : [[gv:plate_polymer|Isolateur]], Plaque d'or.<br><br>Sert à fabriquer :<br>[[gv:circuit_analog|Carte de circuit analogique]], [[gv:circuit_controller_chassis|Boîtier de l'unité de contrôle]], [[gv:photo_panel|Panneau photovoltaïque]], [[gv:orbital_assembly_crystal_circuit|Assemblage orbital : carte de circuit en cristal]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]], [[gv:circuit_basic|Carte de circuit intégré]], [[gv:circuit_bismoid|Carte de circuit polyvalente]], [[gv:circuit_capacitor_board|Carte de condensateurs]], [[gv:circuit_quantum|Unité de traitement quantique]], [[gv:sat_chip|Puce d'identification satellite]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:upgrade_overdrive_3",
+ "icon": [
+  "geontm:upgrade_overdrive_3"
+ ],
+ "trigger": [
+  [
+   "geontm:upgrade_overdrive_3"
+  ]
+ ],
+ "title": {
+  "en_us": "Overdrive Upgrade Mk.III",
+  "fr_fr": "Mise à niveau de la machine Overdrive Mk.III"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:upgrade_overdrive_2|Overdrive Upgrade Mk.II]], [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (bismoid bronze), 16 x [[Fullerite|Crystalline Fullerite]], 16 x [[gv:circuit_bismoid|Versatile Circuit Board]].<br>- [[gv:machine_precass|Precision Assembly Machine]] : [[gv:upgrade_overdrive_2|Overdrive Upgrade Mk.II]], [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], [[gv:upgrade_effect_3|Effectiveness Upgrade Mk.III]], 16 x ingot (bismoid bronze), 16 x [[Fullerite|Crystalline Fullerite]], 16 x [[gv:circuit_bismoid|Versatile Circuit Board]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:upgrade_overdrive_2|Mise à niveau de la machine Overdrive Mk.II]], [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (bronze bismoïde), 16 x [[Fullerite|Fullerite cristalline]], 16 x [[gv:circuit_bismoid|Carte de circuit polyvalente]].<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : [[gv:upgrade_overdrive_2|Mise à niveau de la machine Overdrive Mk.II]], [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], [[gv:upgrade_effect_3|Amélioration verte Mk.III]], 16 x lingot (bronze bismoïde), 16 x [[Fullerite|Fullerite cristalline]], 16 x [[gv:circuit_bismoid|Carte de circuit polyvalente]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:hazmat_helmet_red",
+ "icon": [
+  "geontm:hazmat_helmet_red"
+ ],
+ "trigger": [
+  [
+   "geontm:hazmat_helmet_red"
+  ]
+ ],
+ "title": {
+  "en_us": "Advanced Hazmat Helmet",
+  "fr_fr": "Casque Hazmat avancé"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:hazmat_cloth_red|Advanced Hazmat Cloth]], 2 x Glass Pane, Iron Plate.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:hazmat_cloth_red|Tissu Hazmat avancé]], 2 x Vitre, Plaque de fer."
+ }
+}

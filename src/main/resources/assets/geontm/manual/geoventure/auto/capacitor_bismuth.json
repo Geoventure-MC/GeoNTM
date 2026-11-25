@@ -1,0 +1,19 @@
+{
+ "name": "gv:capacitor_bismuth",
+ "icon": [
+  "geontm:capacitor_bismuth"
+ ],
+ "trigger": [
+  [
+   "geontm:capacitor_bismuth"
+  ]
+ ],
+ "title": {
+  "en_us": "Bismuth Capacitor",
+  "fr_fr": "Condensateur au bismuth"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 24 x ingot (hard plastic), 24 x Bismuth Ingot, [[gv:circuit_chip_quantum|Solid State Quantum Processor]].<br><br>Used to make :<br>[[gv:satellite_death_ray|Orbital Death Ray]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 24 x lingot (plastique dur), 24 x Lingot de bismuth, [[gv:circuit_chip_quantum|Processeur quantique à semi-conducteurs]].<br><br>Sert à fabriquer :<br>[[gv:satellite_death_ray|Rayon de la mort orbital]]."
+ }
+}

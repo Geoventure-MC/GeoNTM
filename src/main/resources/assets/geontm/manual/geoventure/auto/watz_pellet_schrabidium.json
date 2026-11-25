@@ -1,0 +1,19 @@
+{
+ "name": "gv:watz_pellet_schrabidium",
+ "icon": [
+  "geontm:watz_pellet_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:watz_pellet_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Watz Pellet",
+  "fr_fr": "Pastille Watz de Schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Schrabidium Ingot, Graphite Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de Schrabidium, Lingot de graphite."
+ }
+}

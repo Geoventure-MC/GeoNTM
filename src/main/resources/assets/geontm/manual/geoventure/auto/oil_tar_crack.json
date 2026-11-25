@@ -1,0 +1,19 @@
+{
+ "name": "gv:oil_tar_crack",
+ "icon": [
+  "geontm:oil_tar_crack"
+ ],
+ "trigger": [
+  [
+   "geontm:oil_tar_crack"
+  ]
+ ],
+ "title": {
+  "en_us": "Crack Oil Tar",
+  "fr_fr": "Goudron de pétrole craqué"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Solidifier|Industrial Solidification Machine]] : crackoil.<br><br>Used to make :<br>[[gv:coke_petroleum|Petroleum Coke]], [[gv:oil_tar_wax|Chlorinated Petroleum Wax]].",
+  "fr_fr": "Obtention :<br>- [[Solidifier|Machine de solidification industrielle]] : crackoil.<br><br>Sert à fabriquer :<br>[[gv:coke_petroleum|Coke de pétrole]], [[gv:oil_tar_wax|Cire de pétrole chlorée]]."
+ }
+}

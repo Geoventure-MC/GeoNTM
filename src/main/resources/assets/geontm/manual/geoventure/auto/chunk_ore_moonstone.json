@@ -1,0 +1,19 @@
+{
+ "name": "gv:chunk_ore_moonstone",
+ "icon": [
+  "geontm:chunk_ore_moonstone"
+ ],
+ "trigger": [
+  [
+   "geontm:chunk_ore_moonstone"
+  ]
+ ],
+ "title": {
+  "en_us": "Moonstone",
+  "fr_fr": "Pierre de lune"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : 16 x Moon Turf, 500 mB peroxide.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : 16 x Gazon lunaire, 500 mB peroxide."
+ }
+}

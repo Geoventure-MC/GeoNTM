@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_counter_valve",
+ "icon": [
+  "geontm:fluid_counter_valve"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_counter_valve"
+  ]
+ ],
+ "title": {
+  "en_us": "Fluid Valve with Counter",
+  "fr_fr": "Vanne de fluide avec compteur"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:circuit_chip|Microchip]], [[gv:fluid_switch|Redstone Fluid Valve]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:circuit_chip|Micropuce]], [[gv:fluid_switch|Vanne de fluide à redstone]]."
+ }
+}

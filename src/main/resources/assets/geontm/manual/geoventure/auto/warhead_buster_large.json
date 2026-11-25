@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_buster_large",
+ "icon": [
+  "geontm:warhead_buster_large"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_buster_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Bunker Buster Warhead",
+  "fr_fr": "Grande ogive de Bunker Buster"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:warhead_generic_large|Large Warhead]], 8 x ingot (high explosive) - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_drill|The Concrete Cracker]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:warhead_generic_large|Grande ogive]], 8 x lingot (explosif puissant) - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_drill|Le craqueleur de béton]]."
+ }
+}

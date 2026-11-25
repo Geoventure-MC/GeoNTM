@@ -1,0 +1,19 @@
+{
+ "name": "gv:rebar",
+ "icon": [
+  "geontm:rebar"
+ ],
+ "trigger": [
+  [
+   "geontm:rebar"
+  ]
+ ],
+ "title": {
+  "en_us": "Rebar",
+  "fr_fr": "Barre d'armature"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 4 x bolt (Steel).<br><br>Used to make :<br>[[gv:concrete_rebar|Reinforced Concrete]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 4 x boulon (acier).<br><br>Sert à fabriquer :<br>[[gv:concrete_rebar|Béton armé]]."
+ }
+}

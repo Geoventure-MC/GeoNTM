@@ -1,0 +1,19 @@
+{
+ "name": "gv:pile_rod_mk2_po210be",
+ "icon": [
+  "geontm:pile_rod_mk2_po210be"
+ ],
+ "trigger": [
+  [
+   "geontm:pile_rod_mk2_po210be"
+  ]
+ ],
+ "title": {
+  "en_us": "Chicago Pile Po210Be Neutron source",
+  "fr_fr": "Source de neutrons Po210Be de la pile de Chicago"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Industrial anvil (construction) : 3 x [[gv:billet_po210be|Po210Be Billet]].<br>- [[Assembly Machine|Assembly Machine]] : 3 x [[gv:billet_po210be|Po210Be Billet]] - [[gv:schemas|blueprint required]]: Fission reactors.",
+  "fr_fr": "Obtention :<br>- Enclume industrielle (construction) : 3 x [[gv:billet_po210be|Billet Po210Be]].<br>- [[Assembly Machine|Machine d'assemblage]] : 3 x [[gv:billet_po210be|Billet Po210Be]] - [[gv:schemas|schéma exigé]] : Réacteurs à fission."
+ }
+}

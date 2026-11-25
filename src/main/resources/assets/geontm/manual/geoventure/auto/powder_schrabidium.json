@@ -1,0 +1,19 @@
+{
+ "name": "gv:powder_schrabidium",
+ "icon": [
+  "geontm:powder_schrabidium"
+ ],
+ "trigger": [
+  [
+   "geontm:powder_schrabidium"
+  ]
+ ],
+ "title": {
+  "en_us": "Schrabidium Powder",
+  "fr_fr": "Poudre de schrabidium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Centrifuge|Centrifuge]] (x2) : [[gv:crystal_schrabidium|Schrabidium Crystals]].<br>- [[Centrifuge|Centrifuge]] : ore (schrabidium).<br>- [[Centrifuge|Centrifuge]] : raw ore (schrabidium).<br>(1 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_schrabidium|Schrabidium Ingot]].",
+  "fr_fr": "Obtention :<br>- [[Centrifuge|Centrifugeuse]] (x2) : [[gv:crystal_schrabidium|Cristaux de Schrabidium]].<br>- [[Centrifuge|Centrifugeuse]] : minerai (schrabidium).<br>- [[Centrifuge|Centrifugeuse]] : minerai brut (schrabidium).<br>(1 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_schrabidium|Lingot de Schrabidium]]."
+ }
+}

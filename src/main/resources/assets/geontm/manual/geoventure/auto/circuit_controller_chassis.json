@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_controller_chassis",
+ "icon": [
+  "geontm:circuit_controller_chassis"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_controller_chassis"
+  ]
+ ],
+ "title": {
+  "en_us": "Control Unit Casing",
+  "fr_fr": "Boîtier de l'unité de contrôle"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x ingot (plastic), [[gv:crt_display|Cathode Ray Tube]], 2 x [[gv:circuit_pcb|Printed Circuit Board]].<br><br>Used to make :<br>[[gv:circuit_controller|Control Unit]], [[gv:circuit_controller_advanced|Advanced Control Unit]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x lingot (plastique), [[gv:crt_display|Tube cathodique]], 2 x [[gv:circuit_pcb|Carte de circuit imprimé]].<br><br>Sert à fabriquer :<br>[[gv:circuit_controller|Unité de contrôle]], [[gv:circuit_controller_advanced|Unité de contrôle avancée]]."
+ }
+}

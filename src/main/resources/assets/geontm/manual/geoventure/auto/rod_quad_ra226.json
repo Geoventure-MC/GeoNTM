@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_quad_ra226",
+ "icon": [
+  "geontm:rod_quad_ra226"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_quad_ra226"
+  ]
+ ],
+ "title": {
+  "en_us": "Radium-226 Quad Rod",
+  "fr_fr": "Quadruple tige de radium-226"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rod_quad_empty|Empty Quad Rod]], 4 x Radium-226 Billet.<br><br>Used to make :<br>[[gv:rod_quad_ac227|Actinium-227 Quad Rod]], [[Radium-226|Radium-226 Billet]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rod_quad_empty|Quatruple tige vide]], 4 x Billet de radium-226.<br><br>Sert à fabriquer :<br>[[gv:rod_quad_ac227|Tige quadruple Actinium-227]], [[Radium-226|Billet de radium-226]]."
+ }
+}

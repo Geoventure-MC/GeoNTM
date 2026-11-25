@@ -1,0 +1,19 @@
+{
+ "name": "gv:gem_tantalium",
+ "icon": [
+  "geontm:gem_tantalium"
+ ],
+ "trigger": [
+  [
+   "geontm:gem_tantalium"
+  ]
+ ],
+ "title": {
+  "en_us": "Tantalium Polycrystal",
+  "fr_fr": "Polycristal de tantale"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Chemical Plant|Chemical Plant]] : 1000 mB pain, 500 mB peroxide.",
+  "fr_fr": "Obtention :<br>- [[Chemical Plant|Usine chimique]] : 1000 mB pain, 500 mB peroxide."
+ }
+}

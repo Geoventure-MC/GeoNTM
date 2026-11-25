@@ -1,0 +1,19 @@
+{
+ "name": "gv:dosimeter",
+ "icon": [
+  "geontm:dosimeter"
+ ],
+ "trigger": [
+  [
+   "geontm:dosimeter"
+  ]
+ ],
+ "title": {
+  "en_us": "Dosimeter",
+  "fr_fr": "Dosimètre"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x planks, Glass Pane, [[gv:circuit_vacuum_tube|Vacuum Tube]], Beryllium Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x planks, Vitre, [[gv:circuit_vacuum_tube|Tube à vide]], Lingot de beryllium."
+ }
+}

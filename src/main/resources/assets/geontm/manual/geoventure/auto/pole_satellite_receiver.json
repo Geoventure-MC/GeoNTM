@@ -1,0 +1,19 @@
+{
+ "name": "gv:pole_satellite_receiver",
+ "icon": [
+  "geontm:pole_satellite_receiver"
+ ],
+ "trigger": [
+  [
+   "geontm:pole_satellite_receiver"
+  ]
+ ],
+ "title": {
+  "en_us": "Satellite Dish",
+  "fr_fr": "Récepteur satellite"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 5 x Steel Ingot, [[gv:circuit_vacuum_tube|Vacuum Tube]], wire (minecraft grade copper).<br><br>Used to make :<br>[[gv:circuit_vacuum_tube|Vacuum Tube]].",
+  "fr_fr": "Obtention :<br>- Établi : 5 x Lingot d'acier, [[gv:circuit_vacuum_tube|Tube à vide]], fil (minecraft grade cuivre).<br><br>Sert à fabriquer :<br>[[gv:circuit_vacuum_tube|Tube à vide]]."
+ }
+}

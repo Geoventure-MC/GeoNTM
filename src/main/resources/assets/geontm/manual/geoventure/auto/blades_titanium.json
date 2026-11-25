@@ -1,0 +1,19 @@
+{
+ "name": "gv:blades_titanium",
+ "icon": [
+  "geontm:blades_titanium"
+ ],
+ "trigger": [
+  [
+   "geontm:blades_titanium"
+  ]
+ ],
+ "title": {
+  "en_us": "Titanium Shredder Blades",
+  "fr_fr": "Lames de broyeur en titane"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Titanium Plate, Titanium Ingot.<br>- Crafting table : 2 x Titanium Plate, [[gv:blades_titanium|Titanium Shredder Blades]].<br><br>Used to make :<br>[[gv:blades_desh|Desh Shredder Blades]], [[gv:upgrade_shredder|Shredder Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque en titane, Lingot de titane.<br>- Établi : 2 x Plaque en titane, [[gv:blades_titanium|Lames de broyeur en titane]].<br><br>Sert à fabriquer :<br>[[gv:blades_desh|Lames de déchiqueteuse Desh]], [[gv:upgrade_shredder|Mise à niveau de la déchiqueteuse]]."
+ }
+}

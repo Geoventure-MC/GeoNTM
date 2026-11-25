@@ -1,0 +1,19 @@
+{
+ "name": "gv:billet_thorium_fuel",
+ "icon": [
+  "geontm:billet_thorium_fuel"
+ ],
+ "trigger": [
+  [
+   "geontm:billet_thorium_fuel"
+  ]
+ ],
+ "title": {
+  "en_us": "Thorium Fuel Billet",
+  "fr_fr": "Billette de carburant au thorium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x [[gv:nugget_thorium_fuel|Nugget of Thorium Fuel]].<br>- Crafting table (x3) : 2 x [[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]].<br>- [[gv:rbmk_outgasser|RBMK Irradiation Channel]] : billet (thorium).<br>(6 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:ingot_thorium_fuel|Ingot of Thorium Fuel]], [[gv:nugget_thorium_fuel|Nugget of Thorium Fuel]], [[gv:rbmk_fuel_thmeu|ThMEU RBMK Fuel Rod]], [[gv:rod_dual_thf|Thorium Fuel Dual Rod]], [[gv:rod_quad_thf|Thorium Fuel Quad Rod]], [[gv:rod_thf|Thorium Fuel Rod]].",
+  "fr_fr": "Obtention :<br>- Établi : 6 x [[gv:nugget_thorium_fuel|Pépite de carburant au thorium]].<br>- Établi (x3) : 2 x [[gv:ingot_thorium_fuel|Lingot de thorium combustible]].<br>- [[gv:rbmk_outgasser|Canal d'irradiation RBMK]] : billette (thorium).<br>(6 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:ingot_thorium_fuel|Lingot de thorium combustible]], [[gv:nugget_thorium_fuel|Pépite de carburant au thorium]], [[gv:rbmk_fuel_thmeu|Barre de combustible ThMEU RBMK]], [[gv:rod_dual_thf|Double tige de combustible au thorium]], [[gv:rod_quad_thf|Quadruple tige de combustible au thorium]], [[gv:rod_thf|Tige de combustible au thorium]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:survey_scanner",
+ "icon": [
+  "geontm:survey_scanner"
+ ],
+ "trigger": [
+  [
+   "geontm:survey_scanner"
+  ]
+ ],
+ "title": {
+  "en_us": "Survey Scanner",
+  "fr_fr": "Scanner d'investigation"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : wire (gold), 2 x ingot (plastic), [[gv:circuit_advanced|Military Grade Circuit Board]], 2 x Steel Plate, Gold Ingot.",
+  "fr_fr": "Obtention :<br>- Établi : fil (or), 2 x lingot (plastique), [[gv:circuit_advanced|Carte de circuit de qualité militaire]], 2 x Plaque d'acier, Lingot d'or."
+ }
+}

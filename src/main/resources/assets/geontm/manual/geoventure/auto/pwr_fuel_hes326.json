@@ -1,0 +1,19 @@
+{
+ "name": "gv:pwr_fuel_hes326",
+ "icon": [
+  "geontm:pwr_fuel_hes326"
+ ],
+ "trigger": [
+  [
+   "geontm:pwr_fuel_hes326"
+  ]
+ ],
+ "title": {
+  "en_us": "HES-326 PWR Fuel Rod",
+  "fr_fr": "Barre de combustible PWR HES-326"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x Schrabidium Billet, [[gv:plate_polymer|Insulator]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x Billette de Schrabidium-326, [[gv:plate_polymer|Isolateur]]."
+ }
+}

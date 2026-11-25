@@ -1,0 +1,19 @@
+{
+ "name": "gv:launch_key",
+ "icon": [
+  "geontm:launch_key"
+ ],
+ "trigger": [
+  [
+   "geontm:launch_key"
+  ]
+ ],
+ "title": {
+  "en_us": "Silo Launch Key",
+  "fr_fr": "Clé de lancement de silo"
+ },
+ "content": {
+  "en_us": "How to get it :<br>No direct recipe: ore, loot, assembled structure or by-product. See JEI (R key).",
+  "fr_fr": "Obtention :<br>Pas de recette directe : minerai, butin, structure assemblée ou produit d'une autre machine. JEI (touche R) donne le détail."
+ }
+}

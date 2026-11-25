@@ -1,0 +1,19 @@
+{
+ "name": "gv:rbmk_fuel_hea242",
+ "icon": [
+  "geontm:rbmk_fuel_hea242"
+ ],
+ "trigger": [
+  [
+   "geontm:rbmk_fuel_hea242"
+  ]
+ ],
+ "title": {
+  "en_us": "HEA-242 RBMK Fuel Rod",
+  "fr_fr": "Barre de combustible HEA-242 RBMK"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rbmk_fuel_empty|Empty RBMK Fuel Rod]], 8 x Americium-242 Billet.",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rbmk_fuel_empty|Barre de combustible RBMK vide]], 8 x Billet d'américium-242."
+ }
+}

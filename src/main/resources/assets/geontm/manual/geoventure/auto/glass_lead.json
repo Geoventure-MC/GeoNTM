@@ -1,0 +1,19 @@
+{
+ "name": "gv:glass_lead",
+ "icon": [
+  "geontm:glass_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:glass_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Glass",
+  "fr_fr": "Verre au plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Furnace : [[gv:sand_lead|Lead Sand]].<br><br>Used to make :<br>[[gv:rbmk_lid_glass|RBMK Glass Cover Panel]].",
+  "fr_fr": "Obtention :<br>- Four : [[gv:sand_lead|Sable de plomb]].<br><br>Sert à fabriquer :<br>[[gv:rbmk_lid_glass|Panneau de couverture en verre RBMK]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:sand_lead",
+ "icon": [
+  "geontm:sand_lead"
+ ],
+ "trigger": [
+  [
+   "geontm:sand_lead"
+  ]
+ ],
+ "title": {
+  "en_us": "Lead Sand",
+  "fr_fr": "Sable de plomb"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x8) : 8 x Sand, Lead Powder.<br><br>Used to make :<br>[[gv:glass_lead|Lead Glass]], [[gv:nuclear_waste_vitrified|Vitrified Nuclear Waste]].",
+  "fr_fr": "Obtention :<br>- Établi (x8) : 8 x Sable, Poudre de plomb.<br><br>Sert à fabriquer :<br>[[gv:glass_lead|Verre au plomb]], [[gv:nuclear_waste_vitrified|Déchets nucléaires vitrifiés]]."
+ }
+}

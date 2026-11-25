@@ -1,0 +1,19 @@
+{
+ "name": "gv:flow_control_pump",
+ "icon": [
+  "geontm:flow_control_pump"
+ ],
+ "trigger": [
+  [
+   "geontm:flow_control_pump"
+  ]
+ ],
+ "title": {
+  "en_us": "Flow Control Pump",
+  "fr_fr": "Pompe de contrôle de débit"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 2 x shell (Steel), 2 x Graphite Ingot, [[gv:motor|Motor]].",
+  "fr_fr": "Obtention :<br>- Établi : 2 x coque (acier), 2 x Lingot de graphite, [[gv:motor|Moteur]]."
+ }
+}

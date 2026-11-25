@@ -3,7 +3,7 @@
 Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : point fixe sur les recettes actives (conditions évaluées avec les réglages par défaut : 528, mode coûteux et LBSM désactivés), en exigeant que la machine de chaque recette soit elle-même obtenable. Les objets, tags et fluides de GeoMods comptent comme fournis.
 
 - Objets et fluides obtenables : **2447** (recettes : 1918, butin : 155, blocs de monde : 112, drops : 21)
-- Objets visibles : **853** ; visibles non obtenables : **2**
+- Objets visibles : **1305** ; visibles non obtenables : **2**
 - Hypothèse : 122 recettes actives (missiles modulaires, espace, ogives, réacteurs...) ne se débloquent qu'avec un schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes. Les règles de broyage construites en Java (`ShredderRecipes` : bûches et planches en sciure, minerais, lingots et blocs en poudre) sont modélisées : la sciure du cordite et le coltan broyé de `coltanpain` en viennent. Sont aussi modélisés d'après le code : les constructions autour d'un noyau de structure (lanceurs, Watz, tore de fusion), les conversions à l'outil (`tool_conversion`), les récipients de fluide (vidés dans une machine), les poches de sang et d'expérience, les déchets des barres ZIRNOX usées, les pastilles RTG usées, les schémas ouverts depuis un dossier et la machine d'assemblage de missiles. Un fluide et un objet de même nom (`watz`, `concrete`, `balefire`) sont distingués.
 
 | Catégorie | Nombre |
@@ -384,7 +384,7 @@ Audit du 25/11 sur le jar 0.1.13 : 326 objets visibles non obtenables (323 relev
 
 ### Recettes actives qui exigent un objet caché pour fabriquer un objet visible
 
-aucune
+`shredder/sellafield_0` -> `scrap_nuclear`, `shredder/sellafield_1` -> `scrap_nuclear`, `shredder/sellafield_2` -> `scrap_nuclear`, `shredder/sellafield_3` -> `scrap_nuclear`, `shredder/sellafield_4` -> `scrap_nuclear`, `shredder/sellafield_5` -> `scrap_nuclear`, `silex/rbmk_pellet_balefire_gold_0` -> `nugget_au198`, `silex/rbmk_pellet_balefire_gold_1` -> `nugget_au198`, `silex/rbmk_pellet_balefire_gold_2` -> `nugget_au198`, `silex/rbmk_pellet_balefire_gold_3` -> `nugget_au198`, `silex/rbmk_pellet_balefire_gold_4` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_0` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_0` -> `nugget_bismuth`, `silex/rbmk_pellet_flashlead_0` -> `nugget_gh336`, `silex/rbmk_pellet_flashlead_0` -> `nugget_mercury_tiny`, `silex/rbmk_pellet_flashlead_0` -> `nugget_pb209`, `silex/rbmk_pellet_flashlead_1` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_1` -> `nugget_bismuth`, `silex/rbmk_pellet_flashlead_1` -> `nugget_gh336`, `silex/rbmk_pellet_flashlead_1` -> `nugget_mercury_tiny`, `silex/rbmk_pellet_flashlead_1` -> `nugget_pb209`, `silex/rbmk_pellet_flashlead_2` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_2` -> `nugget_bismuth`, `silex/rbmk_pellet_flashlead_2` -> `nugget_gh336`, `silex/rbmk_pellet_flashlead_2` -> `nugget_mercury_tiny`, `silex/rbmk_pellet_flashlead_2` -> `nugget_pb209`, `silex/rbmk_pellet_flashlead_3` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_3` -> `nugget_bismuth`, `silex/rbmk_pellet_flashlead_3` -> `nugget_gh336`, `silex/rbmk_pellet_flashlead_3` -> `nugget_mercury_tiny`, `silex/rbmk_pellet_flashlead_3` -> `nugget_pb209`, `silex/rbmk_pellet_flashlead_4` -> `nugget_au198`, `silex/rbmk_pellet_flashlead_4` -> `nugget_bismuth`, `silex/rbmk_pellet_flashlead_4` -> `nugget_gh336`, `silex/rbmk_pellet_flashlead_4` -> `nugget_mercury_tiny`, `silex/rbmk_pellet_flashlead_4` -> `nugget_pb209`
 
 ## Fluides demandés par une recette active sans producteur obtenable
 
@@ -398,7 +398,7 @@ Un fluide sans producteur rend inutilisables les recettes qui le demandent (les 
 
 Ces objets visibles n'ont pas de recette praticable : on ne les a qu'en ouvrant des coffres ou en tuant des mobs.
 
-`blueprint_folder_secret`, `fallout`, `falloutitem`, `fusion_core`, `hazmat_kit`, `launch_code`, `launch_code_piece`, `launch_key`, `syringe_metal_super`, `upgrade_5g`
+`block_fallout`, `blueprint_folder_secret`, `cable_detector`, `cable_switch`, `chlorine_pinwheel`, `chunk_ore_moonstone`, `fallout`, `falloutitem`, `fusion_core`, `hazmat_kit`, `launch_code`, `launch_code_piece`, `launch_key`, `missile_micro`, `quartz_plutonium`, `scrap`, `syringe_metal_super`, `upgrade_5g`
 
 ## Ressources planétaires sur Terre
 

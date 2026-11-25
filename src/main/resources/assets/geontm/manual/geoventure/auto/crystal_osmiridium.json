@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_osmiridium",
+ "icon": [
+  "geontm:crystal_osmiridium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_osmiridium"
+  ]
+ ],
+ "title": {
+  "en_us": "Osmiridium Crystals",
+  "fr_fr": "Cristaux d'osmiridium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : Impure Osmiridium Powder, 1000 mB schrabidic.",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : Poudre d'osmiridium impure, 1000 mB schrabidic."
+ }
+}

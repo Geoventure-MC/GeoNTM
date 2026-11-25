@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_duct_gauge",
+ "icon": [
+  "geontm:fluid_duct_gauge"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_duct_gauge"
+  ]
+ ],
+ "title": {
+  "en_us": "Flow Gauge Pipe",
+  "fr_fr": "Conduit à jauge de débit"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:fluid_duct_paintable|Paintable Coated Universal Fluid Duct]], Steel Ingot, [[gv:circuit_basic|Integrated Circuit Board]].",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:fluid_duct_paintable|Conduit de fluide universel enrobé peignable]], Lingot d'acier, [[gv:circuit_basic|Carte de circuit intégré]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_chip_quantum",
+ "icon": [
+  "geontm:circuit_chip_quantum"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_chip_quantum"
+  ]
+ ],
+ "title": {
+  "en_us": "Solid State Quantum Processor",
+  "fr_fr": "Processeur quantique à semi-conducteurs"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 2 x ingot (hard plastic), dense wire (BSCCO), [[gv:pellet_charged|Ionized Particles]], 8 x wire (Gold).<br>- [[gv:machine_precass|Precision Assembly Machine]] : 8 x [[gv:circuit_silicon|Printed Silicon Wafer]], 2 x dense wire (BSCCO), 4 x ingot (hard plastic), 4 x [[gv:pellet_charged|Ionized Particles]], 8 x wire (Gold), 250 mB helium4.<br><br>Used to make :<br>[[gv:capacitor_bismuth|Bismuth Capacitor]], [[gv:capacitor_spark|Spark Capacitor]], [[gv:circuit_controller_quantum|Quantum Computer]], [[gv:orbital_assembly_crystal_circuit|Orbital Assembly: Crystal Circuit Board]], [[gv:circuit_quantum|Quantum Processing Unit]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 2 x lingot (plastique dur), fil dense (bscco), [[gv:pellet_charged|Particules ionisées]], 8 x fil (or).<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 8 x [[gv:circuit_silicon|Tranche de silicium imprimée]], 2 x fil dense (bscco), 4 x lingot (plastique dur), 4 x [[gv:pellet_charged|Particules ionisées]], 8 x fil (or), 250 mB helium4.<br><br>Sert à fabriquer :<br>[[gv:capacitor_bismuth|Condensateur au bismuth]], [[gv:capacitor_spark|Condensateur Spark]], [[gv:circuit_controller_quantum|Ordinateur quantique]], [[gv:orbital_assembly_crystal_circuit|Assemblage orbital : carte de circuit en cristal]], [[gv:circuit_quantum|Unité de traitement quantique]]."
+ }
+}

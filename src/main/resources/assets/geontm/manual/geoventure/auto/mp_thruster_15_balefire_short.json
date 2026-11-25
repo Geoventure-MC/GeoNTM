@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_thruster_15_balefire_short",
+ "icon": [
+  "geontm:mp_thruster_15_balefire_short"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_thruster_15_balefire_short"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 15 BF Thruster with Nuclear Preheater (Shortened)",
+  "fr_fr": "Propulseur BF taille 15 avec préchauffeur nucléaire (raccourci)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : [[gv:seg_15|Size 15 Connector]], 5 x pipe (High-Speed Steel), 8 x cast plate (Tungsten), 8 x plate (ostrum) - [[gv:schemas|blueprint required]]: Modular missiles.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : [[gv:seg_15|Connecteur taille 15]], 5 x tuyau (acier haute vitesse), 8 x plaque coulée (tungstène), 8 x plaque (ostrum) - [[gv:schemas|schéma exigé]] : Missiles modulaires."
+ }
+}

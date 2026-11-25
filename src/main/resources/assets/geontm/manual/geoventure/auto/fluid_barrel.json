@@ -1,0 +1,19 @@
+{
+ "name": "gv:fluid_barrel",
+ "icon": [
+  "geontm:fluid_barrel"
+ ],
+ "trigger": [
+  [
+   "geontm:fluid_barrel"
+  ]
+ ],
+ "title": {
+  "en_us": "Fluid Barrel",
+  "fr_fr": "Fût de fluide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x2) : 6 x Steel Plate, 2 x Aluminium Plate, Glass Pane.<br><br>Used to make :<br>[[gv:upgrade_crystallizer|Crystallizer Upgrade]].",
+  "fr_fr": "Obtention :<br>- Établi (x2) : 6 x Plaque d'acier, 2 x Plaque d'aluminium, Vitre.<br><br>Sert à fabriquer :<br>[[gv:upgrade_crystallizer|Mise à niveau du cristallisoir]]."
+ }
+}

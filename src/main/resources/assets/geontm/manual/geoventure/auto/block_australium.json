@@ -1,0 +1,19 @@
+{
+ "name": "gv:block_australium",
+ "icon": [
+  "geontm:block_australium"
+ ],
+ "trigger": [
+  [
+   "geontm:block_australium"
+  ]
+ ],
+ "title": {
+  "en_us": "Block of Australium",
+  "fr_fr": "Bloc d'Australium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 9 x [[gv:ingot_australium|Australium Ingot]].<br><br>Used to make :<br>[[gv:ingot_australium|Australium Ingot]].",
+  "fr_fr": "Obtention :<br>- Établi : 9 x [[gv:ingot_australium|Lingot d'australium]].<br><br>Sert à fabriquer :<br>[[gv:ingot_australium|Lingot d'australium]]."
+ }
+}

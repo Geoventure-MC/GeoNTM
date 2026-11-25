@@ -1,0 +1,19 @@
+{
+ "name": "gv:crystal_uranium",
+ "icon": [
+  "geontm:crystal_uranium"
+ ],
+ "trigger": [
+  [
+   "geontm:crystal_uranium"
+  ]
+ ],
+ "title": {
+  "en_us": "Uranium Crystals",
+  "fr_fr": "Cristaux d'uranium"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Ore Acidizer|Ore Acidizer]] : ore (uranium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Ore Acidizer]] : raw ore (uranium), 333 mB sulfuric acid.<br><br>Used to make :<br>[[Uranium|Uranium Powder]], [[Radium-226|Radium-226 Nugget]].",
+  "fr_fr": "Obtention :<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai (uranium), 500 mB sulfuric acid.<br>- [[Ore Acidizer|Acidifiant de minerai]] : minerai brut (uranium), 333 mB sulfuric acid.<br><br>Sert à fabriquer :<br>[[Uranium|Poudre d'uranium]], [[Radium-226|Pépite de radium-226]]."
+ }
+}

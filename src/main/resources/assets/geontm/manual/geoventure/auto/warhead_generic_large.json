@@ -1,0 +1,19 @@
+{
+ "name": "gv:warhead_generic_large",
+ "icon": [
+  "geontm:warhead_generic_large"
+ ],
+ "trigger": [
+  [
+   "geontm:warhead_generic_large"
+  ]
+ ],
+ "title": {
+  "en_us": "Large Warhead",
+  "fr_fr": "Grande ogive"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 16 x Titanium Plate, 8 x ingot (high explosive), [[gv:circuit_advanced|Military Grade Circuit Board]] - [[gv:schemas|blueprint required]]: Conventional warheads.<br><br>Used to make :<br>[[gv:missile_burst|Spare Missile]], [[gv:warhead_buster_large|Large Bunker Buster Warhead]], [[gv:warhead_cluster_large|Large Cluster Warhead]], [[gv:warhead_incendiary_large|Large Incendiary Warhead]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 16 x Plaque en titane, 8 x lingot (explosif puissant), [[gv:circuit_advanced|Carte de circuit de qualité militaire]] - [[gv:schemas|schéma exigé]] : Ogives conventionnelles.<br><br>Sert à fabriquer :<br>[[gv:missile_burst|Missile du pardon]], [[gv:warhead_buster_large|Grande ogive de Bunker Buster]], [[gv:warhead_cluster_large|Grande ogive à sous munitions]], [[gv:warhead_incendiary_large|Grande ogive incendiaire]]."
+ }
+}

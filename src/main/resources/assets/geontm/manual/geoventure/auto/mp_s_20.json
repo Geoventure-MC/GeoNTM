@@ -1,0 +1,19 @@
+{
+ "name": "gv:mp_s_20",
+ "icon": [
+  "geontm:mp_s_20"
+ ],
+ "trigger": [
+  [
+   "geontm:mp_s_20"
+  ]
+ ],
+ "title": {
+  "en_us": "Size 20 Flat Fins",
+  "fr_fr": "Ailettes plates taille 20"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 6 x Steel Plate, 3 x Steel Scaffold.",
+  "fr_fr": "Obtention :<br>- Établi : 6 x Plaque d'acier, 3 x Échafaudage en acier."
+ }
+}

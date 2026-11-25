@@ -1,0 +1,19 @@
+{
+ "name": "gv:rad_absorber_red",
+ "icon": [
+  "geontm:rad_absorber_red"
+ ],
+ "trigger": [
+  [
+   "geontm:rad_absorber_red"
+  ]
+ ],
+ "title": {
+  "en_us": "Enhanced Radiation Absorber",
+  "fr_fr": "Absorbeur de radiations amélioré"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Titanium Ingot, 4 x Coal Powder, [[gv:rad_absorber|Radiation Absorber]].<br><br>Used to make :<br>[[gv:rad_absorber_green|Advanced Radiation Absorber]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Lingot de titane, 4 x Poudre de charbon, [[gv:rad_absorber|Absorbeur de radiations]].<br><br>Sert à fabriquer :<br>[[gv:rad_absorber_green|Absorbeur de radiations avancé]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_anti_ballistic",
+ "icon": [
+  "geontm:missile_anti_ballistic"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_anti_ballistic"
+  ]
+ ],
+ "title": {
+  "en_us": "Anti-Ballistic Missile",
+  "fr_fr": "Missile anti-balistique (WIP)"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Arc Welder|Arc Welder]] : 3 x ingot (high explosive), [[gv:missile_assembly|Small Missile Assembly]], 4 x [[gv:thruster_small|Small Thruster]].",
+  "fr_fr": "Obtention :<br>- [[Arc Welder|Soudeuse à arc]] : 3 x lingot (explosif puissant), [[gv:missile_assembly|Petit assemblage de missile]], 4 x [[gv:thruster_small|Petit propulseur]]."
+ }
+}

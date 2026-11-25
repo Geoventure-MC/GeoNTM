@@ -1,0 +1,19 @@
+{
+ "name": "gv:cell",
+ "icon": [
+  "geontm:cell"
+ ],
+ "trigger": [
+  [
+   "geontm:cell"
+  ]
+ ],
+ "title": {
+  "en_us": "Empty Cell",
+  "fr_fr": "Cellule vide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table (x6) : 2 x Steel Plate, 2 x Glass Pane.<br>- Crafting table (x8) : 8 x [[gv:cell|Empty Cell]], Deuterium Tank.<br>- Crafting table (x2) : Tritium Dual Rod, 2 x [[gv:cell|Empty Cell]].<br>(2 more recipes: see JEI.)<br><br>Used to make :<br>[[gv:laser_crystal_cmb|CMB-Schrabidate Antimatter Laser Crystal]], [[gv:pellet_antimatter|Antimatter Cluster]], [[gv:syringe_empty|Empty Syringe]].",
+  "fr_fr": "Obtention :<br>- Établi (x6) : 2 x Plaque d'acier, 2 x Vitre.<br>- Établi (x8) : 8 x [[gv:cell|Cellule vide]], Réservoir de deutérium.<br>- Établi (x2) : Double tige de tritium, 2 x [[gv:cell|Cellule vide]].<br>(2 autres recettes : voir JEI.)<br><br>Sert à fabriquer :<br>[[gv:laser_crystal_cmb|Cristal Laser Xénon-Daffergon]], [[gv:pellet_antimatter|Granule antimatiere]], [[gv:syringe_empty|Seringue vide]]."
+ }
+}

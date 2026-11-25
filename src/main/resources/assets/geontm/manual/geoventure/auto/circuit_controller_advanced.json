@@ -1,0 +1,19 @@
+{
+ "name": "gv:circuit_controller_advanced",
+ "icon": [
+  "geontm:circuit_controller_advanced"
+ ],
+ "trigger": [
+  [
+   "geontm:circuit_controller_advanced"
+  ]
+ ],
+ "title": {
+  "en_us": "Advanced Control Unit",
+  "fr_fr": "Unité de contrôle avancée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[gv:machine_precass|Precision Assembly Machine]] : 16 x [[gv:circuit_chip_bismoid|Versatile Integrated Circuit]], 48 x [[gv:circuit_capacitor_tantalium|Tantalum Capacitor]], [[gv:circuit_atomic_clock|Atomic Clock]], [[gv:circuit_controller_chassis|Control Unit Casing]], [[gv:upgrade_speed_3|Speed Upgrade Mk.III]], 24 x wire (Lead), 4000 mB perfluoromethyl.<br>- [[Soldering Station|Soldering Station]] : 4000 mB perfluoromethyl, 16 x [[gv:circuit_chip_bismoid|Versatile Integrated Circuit]], 48 x [[gv:circuit_capacitor_tantalium|Tantalum Capacitor]], [[gv:circuit_atomic_clock|Atomic Clock]], [[gv:circuit_controller_chassis|Control Unit Casing]], 4 x ingot (hard plastic), 24 x wire (Lead).<br><br>Used to make :<br>[[gv:satellite_miner_astro|Asteroid Mining Ship]], [[gv:satellite_death_ray|Orbital Death Ray]], [[gv:satellite_detector|Wideband Radio Emission Detector Satellite]], [[gv:missile_soyuz_lander|Orbital Module]], [[gv:launchpad_lambda|Lambda Launch Pad]], [[gv:launchpad_soyuz|Soyuz Launch Pad]], [[gv:satellite_miner_lunar|Lunar Mining Ship]], [[gv:satellite_precision_laser|Orbital Precision Laser]], [[gv:satellite_ray_scan|Narrowband Emission Scanning Satellite]], [[gv:satellite_xenium_resonator|Xenium Resonator Satellite]] and 1 more.",
+  "fr_fr": "Obtention :<br>- [[gv:machine_precass|Machine d'assemblage de précision]] : 16 x [[gv:circuit_chip_bismoid|Circuit intégré polyvalent]], 48 x [[gv:circuit_capacitor_tantalium|Condensateur au tantale]], [[gv:circuit_atomic_clock|Horloge atomique]], [[gv:circuit_controller_chassis|Boîtier de l'unité de contrôle]], [[gv:upgrade_speed_3|Amélioration rouge Mk.III]], 24 x fil (plomb), 4000 mB perfluoromethyl.<br>- [[Soldering Station|Station de soudure]] : 4000 mB perfluoromethyl, 16 x [[gv:circuit_chip_bismoid|Circuit intégré polyvalent]], 48 x [[gv:circuit_capacitor_tantalium|Condensateur au tantale]], [[gv:circuit_atomic_clock|Horloge atomique]], [[gv:circuit_controller_chassis|Boîtier de l'unité de contrôle]], 4 x lingot (plastique dur), 24 x fil (plomb).<br><br>Sert à fabriquer :<br>[[gv:satellite_miner_astro|Vaisseau minier d'astéroïdes]], [[gv:satellite_death_ray|Rayon de la mort orbital]], [[gv:satellite_detector|Satellite détecteur d'émissions radio à large bande]], [[gv:missile_soyuz_lander|Module orbital]], [[gv:launchpad_lambda|Rampe de lancement Lambda]], [[gv:launchpad_soyuz|Rampe de lancement Soyouz]], [[gv:satellite_miner_lunar|Vaisseau minier lunaire]], [[gv:satellite_precision_laser|Laser de précision orbital]], [[gv:satellite_ray_scan|Satellite de balayage d'émissions à bande étroite]], [[gv:satellite_xenium_resonator|Satellite résonateur Xénium]] et 1 autres."
+ }
+}

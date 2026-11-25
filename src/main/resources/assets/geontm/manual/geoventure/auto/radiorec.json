@@ -1,0 +1,19 @@
+{
+ "name": "gv:radiorec",
+ "icon": [
+  "geontm:radiorec"
+ ],
+ "trigger": [
+  [
+   "geontm:radiorec"
+  ]
+ ],
+ "title": {
+  "en_us": "FM Radio",
+  "fr_fr": "Radio FM cassée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : wire (copper), 4 x Steel Plate, [[gv:circuit_vacuum_tube|Vacuum Tube]], ingot (plastic).<br><br>Used to make :<br>[[gv:circuit_vacuum_tube|Vacuum Tube]].",
+  "fr_fr": "Obtention :<br>- Établi : fil (cuivre), 4 x Plaque d'acier, [[gv:circuit_vacuum_tube|Tube à vide]], lingot (plastique).<br><br>Sert à fabriquer :<br>[[gv:circuit_vacuum_tube|Tube à vide]]."
+ }
+}

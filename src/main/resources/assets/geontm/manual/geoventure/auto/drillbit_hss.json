@@ -1,0 +1,19 @@
+{
+ "name": "gv:drillbit_hss",
+ "icon": [
+  "geontm:drillbit_hss"
+ ],
+ "trigger": [
+  [
+   "geontm:drillbit_hss"
+  ]
+ ],
+ "title": {
+  "en_us": "High-Speed Steel Drill bit",
+  "fr_fr": "Foret en acier rapide"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 12 x High-Speed Steel Ingot, 12 x ingot (plastic), 8 x Titanium Ingot.<br><br>Used to make :<br>[[gv:drillbit_hss_diamond|High-Speed Steel Drill bit (Diamond-Tipped)]].",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 12 x Lingot d'acier haute vitesse, 12 x lingot (plastique), 8 x Lingot de titane.<br><br>Sert à fabriquer :<br>[[gv:drillbit_hss_diamond|Foret en acier rapide (pointe diamant)]]."
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "gv:blades_desh",
+ "icon": [
+  "geontm:blades_desh"
+ ],
+ "trigger": [
+  [
+   "geontm:blades_desh"
+  ]
+ ],
+ "title": {
+  "en_us": "Desh Shredder Blades",
+  "fr_fr": "Lames de déchiqueteuse Desh"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : 4 x Desh Compound Plate, [[gv:blades_titanium|Titanium Shredder Blades]].",
+  "fr_fr": "Obtention :<br>- Établi : 4 x Plaque de desh, [[gv:blades_titanium|Lames de broyeur en titane]]."
+ }
+}

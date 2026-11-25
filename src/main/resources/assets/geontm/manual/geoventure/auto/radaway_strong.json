@@ -1,0 +1,19 @@
+{
+ "name": "gv:radaway_strong",
+ "icon": [
+  "geontm:radaway_strong"
+ ],
+ "trigger": [
+  [
+   "geontm:radaway_strong"
+  ]
+ ],
+ "title": {
+  "en_us": "Strong RadAway",
+  "fr_fr": "Fort RadAway"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : RadAway, Glowing Mushroom.<br><br>Used to make :<br>[[gv:radaway_flush|Elite RadAway]].",
+  "fr_fr": "Obtention :<br>- Établi : radaway, Champignon fluorescent.<br><br>Sert à fabriquer :<br>[[gv:radaway_flush|Élite RadAway]]."
+ }
+}

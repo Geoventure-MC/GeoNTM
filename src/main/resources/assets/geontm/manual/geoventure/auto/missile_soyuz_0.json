@@ -1,0 +1,19 @@
+{
+ "name": "gv:missile_soyuz_0",
+ "icon": [
+  "geontm:missile_soyuz_0"
+ ],
+ "trigger": [
+  [
+   "geontm:missile_soyuz_0"
+  ]
+ ],
+ "title": {
+  "en_us": "Soyuz-FG",
+  "fr_fr": "Soyouz-FG"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 32 x shell (Titanium), 64 x Rubber Bar, 64 x [[gv:rocket_fuel|Solid Fuel (Rocket Propellant)]], 12 x [[gv:thruster_small|Small Thruster]], 12 x [[gv:thruster_medium|Medium Thruster]], 4 x [[gv:circuit_controller|Control Unit]], 32 x [[gv:part_generic_lde|Low-Density Element]], 4 x [[gv:drive_flash_flightsim|Flash Drive (Flight Simulation Data)]] - [[gv:schemas|blueprint required]]: Space launch and satellites.",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 32 x coque (titane), 64 x Barre en caoutchouc, 64 x [[gv:rocket_fuel|Combustible solide (propulseur de fusée)]], 12 x [[gv:thruster_small|Petit propulseur]], 12 x [[gv:thruster_medium|Propulseur moyen]], 4 x [[gv:circuit_controller|Unité de contrôle]], 32 x [[gv:part_generic_lde|Élément à faible densité]], 4 x [[gv:drive_flash_flightsim|Clé USB (données de simulation de vol)]] - [[gv:schemas|schéma exigé]] : Lancement spatial et satellites."
+ }
+}

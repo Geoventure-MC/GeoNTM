@@ -1,0 +1,19 @@
+{
+ "name": "gv:rod_dual_np237",
+ "icon": [
+  "geontm:rod_dual_np237"
+ ],
+ "trigger": [
+  [
+   "geontm:rod_dual_np237"
+  ]
+ ],
+ "title": {
+  "en_us": "Neptunium-237 Dual Rod",
+  "fr_fr": "Double tige de neptunium-237"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Breeding Reactor (LEGACY) : [[gv:rod_dual_u235|Uranium-235 Dual Rod]].<br>- Crafting table : [[gv:rod_dual_empty|Empty Dual Rod]], 2 x Neptunium Billet.<br><br>Used to make :<br>[[gv:rod_dual_pu238|Plutonium-238 Dual Rod]], [[Neptunium|Neptunium Billet]].",
+  "fr_fr": "Obtention :<br>- Reacteur de fusion : [[gv:rod_dual_u235|Double tige d'U235]].<br>- Établi : [[gv:rod_dual_empty|Double tige vide]], 2 x Billet de Neptunium-237.<br><br>Sert à fabriquer :<br>[[gv:rod_dual_pu238|Dougle tige de Pu238]], [[Neptunium|Billet de Neptunium-237]]."
+ }
+}

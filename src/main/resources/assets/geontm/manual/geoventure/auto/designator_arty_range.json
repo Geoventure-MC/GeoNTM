@@ -1,0 +1,19 @@
+{
+ "name": "gv:designator_arty_range",
+ "icon": [
+  "geontm:designator_arty_range"
+ ],
+ "trigger": [
+  [
+   "geontm:designator_arty_range"
+  ]
+ ],
+ "title": {
+  "en_us": "Long Range Artillery Remote",
+  "fr_fr": "Télécommande d'artillerie longue portée"
+ },
+ "content": {
+  "en_us": "How to get it :<br>- Crafting table : [[gv:rangefinder|Rangefinder]], [[gv:circuit_advanced|Military Grade Circuit Board]], ingot (plastic).",
+  "fr_fr": "Obtention :<br>- Établi : [[gv:rangefinder|Télémètre]], [[gv:circuit_advanced|Carte de circuit de qualité militaire]], lingot (plastique)."
+ }
+}
