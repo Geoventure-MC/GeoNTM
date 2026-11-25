@@ -1684,8 +1684,6 @@ stone_resource_limestone
 stone_resource_malachite
 stone_resource_sulfur
 struct_icf_core
-struct_torus_core
-struct_watz_core
 structure_anchor
 structure_custommachine
 t51_boots

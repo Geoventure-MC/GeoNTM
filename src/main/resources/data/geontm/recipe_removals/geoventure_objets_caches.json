@@ -1,0 +1,19 @@
+{
+ "recipes": [
+  "geontm:anvil_construction/recycle_fusion_hatch",
+  "geontm:anvil_construction/recycle_fusion_heater",
+  "geontm:purex/icf",
+  "geontm:purex/platemox",
+  "geontm:purex/platepu238be",
+  "geontm:purex/platepu239",
+  "geontm:purex/platera226be",
+  "geontm:purex/platesa326",
+  "geontm:purex/plateu233",
+  "geontm:purex/plateu235",
+  "geontm:silex/rbmk_pellet_balefire_0",
+  "geontm:silex/rbmk_pellet_balefire_1",
+  "geontm:silex/rbmk_pellet_balefire_2",
+  "geontm:silex/rbmk_pellet_balefire_3",
+  "geontm:silex/rbmk_pellet_balefire_4"
+ ]
+}

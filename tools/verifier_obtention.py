@@ -16,6 +16,11 @@ schrabidium, starmetal). Les minerais de ces matières ne comptent plus comme du
 ne sont plus fournis, et le rapport liste tout objet de ces matières encore obtenable (= fuite terrestre) avec son origine.
 Sans préfixe, tous les objets visibles sont vérifiés. --md écrit le rapport final (docs/perimetre/obtention.md).
 --explique id : chaîne de blocage d'un objet (recettes, ingrédients manquants, causes premières).
+--retraits fichier.json : écrit les recettes qui exigent un fluide sans producteur obtenable (format recipe_removals) ;
+--retraits-caches fichier.json (avec --md) : écrit les recettes qui exigent un objet caché de l'audit pour fabriquer un objet visible.
+USAGES=1 : pour chaque objet bloqué, les objets visibles qu'il sert à fabriquer.
+Le classement des objets qu'aucune recette ne produisait (A fabricable, B caché, C hors recette) est lu dans
+docs/perimetre/obtention-audit.tsv ; tools/simplifier.py en tire la liste des objets cachés (simplifie.txt).
 Limites : un tag vide ou inconnu est supposé fourni par le pack ; les fluides d'autres mods aussi ; les recettes
 construites en Java sans fichier JSON dans le jar ne sont pas vues ; le butin compte comme obtenable (il faut
 l'avoir trouvé) mais il est listé à part dans le rapport.
@@ -34,6 +39,8 @@ rest = args[1:]
 MD = None
 LISTE_OBTENUS = False
 EXPLIQUE = []
+RETRAITS = None
+RETRAITS_CACHES = None
 PREFIXES = []
 i = 0
 while i < len(rest):
@@ -43,6 +50,12 @@ while i < len(rest):
     elif rest[i] == '--obtenus':  # liste les objets visibles obtenus, un par ligne, puis s'arrête (sert au calcul « sans butin »)
         LISTE_OBTENUS = True
         i += 1
+    elif rest[i] == '--retraits-caches':
+        RETRAITS_CACHES = rest[i + 1]
+        i += 2
+    elif rest[i] == '--retraits':
+        RETRAITS = rest[i + 1]
+        i += 2
     elif rest[i] == '--explique':
         i += 1
         while i < len(rest) and not rest[i].startswith('--'):
@@ -56,11 +69,18 @@ noms = jar.namelist()
 P = 'geontm/perimetre/'
 lst = lambda f: set(jar.read(P + f).decode().split()) if P + f in noms else set()
 MASQUE = lst('simplifie.txt')  # états intermédiaires masqués du créatif et de JEI (plus les armes extrêmes et les objets écartés)
+# Un fluide et un objet peuvent porter le même nom (watz, concrete, balefire) : sans distinction, le fluide « watz » des
+# recyclages passait pour le bloc du réacteur Watz. Pour ces noms, le fluide s'écrit « fluid:<nom> » dans le point fixe.
+COLLISIONS = ({n.split('/')[-1][:-5] for n in noms if n.startswith('data/geontm/fluid_property/') and n.endswith('.json')}
+              & ({n[len('assets/geontm/items/'):-5] for n in noms if n.startswith('assets/geontm/items/') and n.endswith('.json')}
+                 | {n[len('assets/geontm/blockstates/'):-5] for n in noms if n.startswith('assets/geontm/blockstates/') and n.endswith('.json')}))
 
 # recettes retirées au chargement (recipe_removals) : par fichier, pour pouvoir nommer les volontaires
 retirees, volontaires = set(), set()
 for n in noms:
     if 'recipe_removals' in n and n.endswith('.json'):
+        if (RETRAITS or RETRAITS_CACHES) and n.endswith(('geoventure_sans_producteur.json', 'geoventure_objets_caches.json')):
+            continue  # on recalcule ces deux listes : leur état précédent ne doit pas les influencer
         ids = json.loads(jar.read(n))['recipes']
         retirees |= set(ids)
         if n.endswith(('missiles_extremes.json', 'ecartes.json')):
@@ -140,6 +160,9 @@ def exigences(o, out):
             out.append(frozenset(v for v in o['items'] if isinstance(v, str)))
             return
         t = o.get('type')
+        if isinstance(t, str) and 'amount' in o and t.startswith('geontm:') and t[7:] in COLLISIONS:  # fluide homonyme d'un objet
+            out.append(frozenset({'geontm:fluid:' + t[7:]}))
+            return
         if t == 'geontm:fluid_container' and isinstance(o.get('fluid'), str):  # n'importe quel récipient plein de ce fluide
             out.append(frozenset({o['fluid']}))
             return
@@ -178,7 +201,12 @@ def exigences(o, out):
         out.append(frozenset({o}))
 
 
-def sorties(o, out):
+# dossiers des recettes que l'outil déduit du code Java (ni fichier ni identifiant de recette réel)
+SYNTHETIQUES = {'java', 'reacteur', 'construction', 'fonderie', 'enclume', 'chaudiere', 'extracteur'}
+CLES_FLUIDES = {'output_fluids', 'output_fluid', 'fluid_output', 'fluid_produced', 'molten_outputs', 'molten', 'byproduct_type'}
+
+
+def sorties(o, out, fluide=False):
     """Ids geontm produits (objets et fluides) ; les NBT (`tag`, `item_data`) ne produisent rien."""
     if isinstance(o, dict):
         if isinstance(o.get('material'), str) and 'shape' not in o:
@@ -186,12 +214,12 @@ def sorties(o, out):
         for k, v in o.items():
             if k in ('tag', 'item_data', 'nbt', 'components'):
                 continue
-            sorties(v, out)
+            sorties(v, out, fluide or k in CLES_FLUIDES)
     elif isinstance(o, list):
         for v in o:
-            sorties(v, out)
+            sorties(v, out, fluide)
     elif isinstance(o, str):
-        out.update(GEO.findall(o))
+        out.update(('fluid:' + n if fluide and n in COLLISIONS else n) for n in GEO.findall(o))
 
 
 # machines par dossier de recettes : un dossier absent = recette d'établi (toujours possible) ;
@@ -215,19 +243,22 @@ MACHINES = {
     'reforming': ['machine_catalytic_reformer'], 'rotary_furnace': ['machine_rotary_furnace'],
     'shredder': ['machine_shredder'], 'silex': ['machine_silex'], 'soldering': ['machine_soldering_station'],
     'solidification': ['machine_solidifier'], 'storage_drum': ['machine_storage_drum'],
-    'supercomputer': ['machine_supercomputer'], 'vacuum_distill': ['machine_vacuum_distill'], 'blast_furnace': [],
-    'breeder': [], 'combination': ['machine_furnace_combination'], 'difurnace': ['machine_difurnace_off'], 'fluid_breeder': [],
-    'rock_mill': [], 'sawmill': ['machine_sawmill'], 'space_assembler': [],
+    'supercomputer': ['machine_supercomputer'], 'vacuum_distill': ['machine_vacuum_distill'], 'blast_furnace': ['machine_blast_furnace'],
+    'breeder': ['machine_reactor'], 'combination': ['machine_furnace_combination'], 'difurnace': ['machine_difurnace_off'],
+    'fluid_breeder': ['fusion_breeder'], 'rock_mill': ['machine_rockmill'], 'sawmill': ['machine_sawmill'],
+    'space_assembler': ['satellite_science_assembler'],
     'smelting': [], 'blasting': [], 'smoking': [], 'campfire_cooking': [], 'material_distribution': [],
+    'tool_conversion': [],
 }
 
 CLES_SORTIE = {'result', 'results', 'output', 'outputs', 'output_items', 'output_fluids', 'output_item', 'output_fluid',
                'output1', 'output2', 'byproduct', 'byproducts', 'solid_output', 'molten_outputs', 'molten', 'item_output',
-               'fluid_output', 'fluid_produced', 'produced', 'steam', 'crafting_result'}
+               'fluid_output', 'fluid_produced', 'produced', 'steam', 'crafting_result', 'byproduct_type'}  # byproduct_type : fluide du four à coke
 CLES_NEUTRES = {'type', 'name', 'group', 'requires', 'geocore:requires', 'conditions', 'category', 'icon', 'overlay', 'hidden',
                 'name_wrapper', 'custom_localization', 'blueprint_pools', 'blueprint_pools_528', 'auto_switch_group', 'next',
                 'from', 'byproduct_type'}
 recettes = []  # (id, dossier, machines|None, sorties, exigences)
+SANS_SORTIE = []  # (id, dossier, exigences) des recettes dont aucune sortie n'est un objet GeoNTM
 actives = 0
 for n in noms:
     if not (n.startswith('data/geontm/recipes/') and n.endswith('.json')):
@@ -257,7 +288,12 @@ for n in noms:
     if dossier == 'material_distribution':  # un objet fondu dans le creuset donne ces matières
         outs = {'mat:' + m['material'] for m in d.get('materials', []) if isinstance(m, dict) and 'material' in m}
         ing = [frozenset({d['input']})] if isinstance(d.get('input'), str) else []
+    if dossier == 'tool_conversion':  # bloc transformé en jeu à l'outil (boulonneur, chalumeau) avec ces matériaux
+        outs = set(GEO.findall(d.get('to', '')))
+        ing = [frozenset({d['from']})] if isinstance(d.get('from'), str) else []
+        exigences(d.get('materials', []), ing)
     if not outs:
+        SANS_SORTIE.append((rid, dossier, ing))  # sortie vanilla seulement : rien à obtenir, mais ses entrées comptent (fluides)
         continue
     mach = MACHINES.get(dossier, None) if dossier else []
     if dossier == 'material_distribution':
@@ -313,6 +349,21 @@ FLUIDES_DE_BASE = ['oil', 'water', 'lava', 'steam', 'hotsteam', 'superhotsteam',
                    'coolant_hot', 'air', 'none']
 for chaud, froid in (('hotoil', 'oil'), ('hotoil_ds', 'oil_ds'), ('hotcrackoil', 'crackoil'), ('hotcrackoil_ds', 'crackoil_ds')):
     recettes.append((f'chaudiere/{chaud}', 'chaudiere', ['machine_industrial_boiler'], {chaud}, [frozenset({'geontm:' + froid})]))
+# Traits thermiques (data/geontm/fluid_property) : un fluide chauffé (chaudière, échangeur, cœur PWR) ou refroidi (échangeur) en
+# donne un autre, sans recette. Ex. thorium_salt -> thorium_salt_hot (PWR) -> thorium_salt_depleted (échangeur), puis PUREX.
+# ICF (écarté), PA et TURBINE : non modélisés ici.
+CHAUFFE = {'BOILER': 'machine_industrial_boiler', 'HEATEXCHANGER': 'heater_heatex', 'PWR': 'pwr_controller'}
+for n in sorted(noms):
+    if n.startswith('data/geontm/fluid_property/') and n.endswith('.json'):
+        froid, traits_ = n.split('/')[-1][:-5], json.loads(jar.read(n)).get('traits', {})
+        paires = [(etape_['produces'], traits_['heatable']) for etape_ in traits_.get('heatable', {}).get('steps', [])]
+        if traits_.get('coolable'):
+            paires.append((traits_['coolable']['cools_to'], traits_['coolable']))
+        for sortie_, trait_ in paires:
+            for mode_ in trait_.get('efficiency', {}):
+                if mode_ in CHAUFFE:
+                    recettes.append((f'chaudiere/{sortie_[7:]}', 'chaudiere', [CHAUFFE[mode_]], {sortie_[7:]},
+                                     [frozenset({'geontm:' + froid})]))
 for lourd in ('heavywater', 'deuterium'):
     recettes.append((f'extracteur/{lourd}', 'extracteur', ['machine_deuterium_extractor'], {lourd}, [frozenset({'geontm:water'})]))
 
@@ -326,6 +377,51 @@ for c in sorted(CONNUS):
 # Autres comportements Java : un satellite scientifique en orbite (SatelliteScience) écrit les données de vol sur un disque vide.
 recettes.append(('java/flightdata', 'java', [], {'drive_disk_flightdata'},
                  [frozenset({'geontm:satellite_science'}), frozenset({'geontm:drive_disk_empty'})]))
+# Récipients de fluide (value_maps/item/fluid_container.json) : vidé dans une machine, un récipient plein donne son fluide
+# (xpjuice vient d'iv_xp ou d'une fiole d'expérience, blood d'iv_blood, amat de particle_amat).
+if 'data/geontm/value_maps/item/fluid_container.json' in noms:
+    for objet_, info_ in json.loads(jar.read('data/geontm/value_maps/item/fluid_container.json')).get('values', {}).items():
+        fluide_ = (info_.get('fluid') if isinstance(info_, dict) else info_) or ''
+        if fluide_.startswith('geontm:'):
+            nom_ = fluide_[7:]
+            recettes.append((f'java/vider/{objet_}', 'java', [], {'fluid:' + nom_ if nom_ in COLLISIONS else nom_},
+                             [frozenset({objet_})]))
+# Utilisation d'un objet (ItemSimpleConsumable) : la poche vide utilisée sur soi donne la poche pleine (sang : 5 coeurs ;
+# expérience : 100 points). Le dossier de schémas ouvert (ItemBlueprintFolder) donne un schéma au hasard parmi ceux que le pays
+# a débloqués (famille discover : blueprint_folder_discover, alt : blueprint_folder).
+for plein_, vide_ in (('iv_blood', 'iv_empty'), ('iv_xp', 'iv_xp_empty'), ('blueprints', 'blueprint_folder'),
+                      ('blueprints', 'blueprint_folder_discover')):
+    recettes.append((f'java/utiliser/{plein_}', 'java', [], {plein_}, [frozenset({'geontm:' + vide_})]))
+# Pastilles de générateur RTG : l'usure donne la pastille usée de value_maps/item/rtg_pellet.json (decays_to).
+if 'data/geontm/value_maps/item/rtg_pellet.json' in noms:
+    for pastille_, info_ in json.loads(jar.read('data/geontm/value_maps/item/rtg_pellet.json')).get('values', {}).items():
+        if isinstance(info_, dict) and str(info_.get('decays_to', '')).startswith('geontm:'):
+            recettes.append((f'reacteur/{info_["decays_to"][7:]}', 'reacteur', ['machine_rtg_grey'], {info_['decays_to'][7:]},
+                             [frozenset({pastille_})]))
+# Déchets ZIRNOX : une barre usée se transforme en déchet par une recette d'établi Java (ZirnoxWasteRecipe, données de
+# value_maps/item/zirnox_fuel.json : depletes_into -> waste), puis le PUREX les recycle.
+if 'data/geontm/value_maps/item/zirnox_fuel.json' in noms:
+    for _, info_ in json.loads(jar.read('data/geontm/value_maps/item/zirnox_fuel.json')).get('values', {}).items():
+        if isinstance(info_, dict) and info_.get('waste') and info_.get('depletes_into'):
+            recettes.append((f'java/zirnox_dechet/{info_["waste"][7:]}', 'java', [], {info_['waste'][7:]},
+                             [frozenset({info_['depletes_into']})]))
+# Bouteille de gaz pleine : gas_empty (fabricable) remplie à la case de remplissage d'une machine (FluidContainerRegistry).
+recettes.append(('java/remplir/gas_full', 'java', [], {'gas_full'}, [frozenset({'geontm:gas_empty'})]))
+# Constructions (ConstructionHandler, listées par ConstructionRecipeHandler) : le noyau de structure posé et entouré de ses
+# blocs donne la machine formée. Les blocs de structure se fabriquent ; la fusion et le Watz exigent les blocs transformés
+# à l'outil (tool_conversion), le Watz aussi ses éléments et refroidisseurs.
+for machine_, noyau_, blocs_ in (
+        ('launch_table', 'struct_launcher_core_large', ['struct_launcher', 'struct_scaffold']),
+        ('soyuz_launcher', 'struct_soyuz_core', ['struct_launcher', 'struct_scaffold', 'concrete_smooth']),
+        ('fusion_torus', 'struct_torus_core', ['fusion_component_bscco_welded', 'fusion_component_blanket', 'fusion_component_motor']),
+        ('watz', 'struct_watz_core', ['watz_casing_tooled', 'watz_element', 'watz_cooler'])):
+    recettes.append((f'construction/{machine_}', 'construction', [], {machine_},
+                     [frozenset({'geontm:' + noyau_})] + [frozenset({'geontm:' + b_}) for b_ in blocs_]))
+# Machine d'assemblage de missiles : elle assemble ogive, fuselage et propulseur en un missile_custom (items à composants).
+recettes.append(('java/missile_custom', 'java', ['machine_missile_assembly'], {'missile_custom'},
+                 [frozenset({'geontm:mp_warhead_10_he'}), frozenset({'geontm:mp_fuselage_10_kerosene'}),
+                  frozenset({'geontm:mp_thruster_10_kerosene'})]))
+
 # Broyeur : en plus des lignes de ShredderTable (fichiers JSON), ShredderRecipes.registerVanillaSweeps / registerTagSweep
 # construisent des règles en Java, sans fichier : bûches -> 4 sciure, planches -> 1 sciure, et pour chaque matière c:<forme>/<matière>
 # lingots, plaques, gemmes -> 1 poudre ; minerais, matières brutes -> 2 ; blocs -> 4 ou 9 (la quantité n'importe pas ici).
@@ -647,50 +743,18 @@ if TERRE:
         print(f'  {x:42} {origine.get(x)}')
     sys.exit(0)
 
-# --- justification des objets visibles sans chaîne ------------------------------------------------------------------
-# Règles par nom (la première qui correspond décide). Tout objet qui ne correspond à aucune règle est « à décider ».
-SKINS = ('camo|desert|flames|sky|sleek|taint|dash|vap|bullet|silvermoonlight|soviet_glory|soviet_stank|battery|cathedral|'
-         'duracell|moonlit|magnusson|blackjack|decorated|lambda|minuteman|pip|polite|steampunk|yuck|faust|mimi|panorama|'
-         'roses|snowy')
-JUSTIF = [
-    (r'^missile_skin_', 'cosmétique', "peinture de missile, sans recette dans NTM"),
-    (rf'^mp_fuselage_.*_({SKINS})$', 'cosmétique', "variante de peinture de fuselage, sans recette dans NTM"),
-    (r'^mp_warhead_15_nuclear_(mimi|shark)$', 'cosmétique', "variante de peinture d'ogive, sans recette dans NTM"),
-    (r'^(missile_test|missile_obj_context_.*)$', 'cosmétique', "objet technique ou de test"),
-    (r'^missile_soyuz_[12]$', 'cosmétique', "identifiants hérités (LegacyMetaIds) : seul missile_soyuz_0 se fabrique"),
-    (r'^(missile_custom|missile_kit)$', 'produit en jeu', "sortie de la machine d'assemblage de missiles (comportement Java)"),
-    (r'^(mp_s_20|mp_stability_15_soyuz|mp_warhead_15_turbine|mp_warhead_15_boxcar)$', 'butin',
-     "pièce de missile sur mesure sans recette dans NTM (créatif ou butin)"),
-    (r'^(deco_sat_.*|sat_(base|head_.*|laser|mapper|miner|lunar_miner|radar|resonator|scanner|foeq|gerald))$', 'hérité',
-     "ancien satellite ou décor 1.7, remplacé par les satellite_* (sans recette dans NTM)"),
-    (r'^launch_pad_rusted$', 'butin', "ancienne base de lancement posée par la génération du monde"),
-    (r'^(launch_table|soyuz_launcher|soyuz_capsule|pwr_block|pwr_printer|pile_block|pile_device|capacitor_bus|corium_block|'
-     r'rad_lava_block|gas_radon.*|sellafield_.*|rbmk_debris.*|radsensor)$', 'produit en jeu',
-     "bloc formé par une structure, un réacteur ou le monde (pas de recette d'objet)"),
-    (r'^circuit_crystal$', 'produit en jeu', "fabriqué en orbite (space_assembler / assemblage orbital)"),
-    (r'^(capacitor_schrabidate|capacitor_tantalium)$', 'hérité', "bloc LEGACY remplacé par l'objet capacitor_*"),
-    (r'^blueprint.*$', 'butin', "schémas trouvés dans les coffres (feature blueprint_chest)"),
-    (r'^(cap_rad|gem_rad|hazmat_(grey|red)_kit|iv_xp|med_schizophrenia|syringe_mkunicorn|syringe_taint)$', 'butin',
-     "objet de butin ou de curiosité sans recette dans NTM"),
-    (r'^(part_(barrel|receiver|grip|stock|mechanism|emitter|generic_hde)\w*|mechanism_\w+|parts_legendary_tier\d|'
-     r'pellet_(canister|chlorophyte|claws|coal|coolant|flechette|meteorite))$', 'armes retirées',
-     "pièce d'arme ou de munition : les armes sont fournies par SBW et GeoWarfare"),
-    (r'^gas_full$', 'produit en jeu', "réservoir de gaz rempli à la machine (fluid_item)"),
-    (r'^mp_fuselage_(10_xenon_bhole|15_balefire)$', 'non touché', "fuselage d'arme extrême (trou noir, balefire)"),
-    (r'^fluid_identifier$', 'produit en jeu', "identifiant typé réglé à partir de fluid_identifier_multi (craftable) : à vérifier en jeu"),
-    (r'^(fusion_.*|icf.*|watz_.*|pellet_charged|rbmk_(fuel|pellet)_(balefire.*|drx|flashlead|test)|rbmk_control_reasim.*|'
-     r'billet_(balefire_gold|flashlead|unobtainium|yharonite)|pellet_rtg_balefire)$', 'non touché',
-     "fusion, ICF, Watz et combustibles extrêmes laissés tels quels (consigne du propriétaire)"),
-    (r'^pellet_rtg_depleted_.*$', 'produit en jeu', "pastille RTG usée, produite par le générateur"),
-    (r'^(waste_.*|nuclear_waste_.*)$', 'produit en jeu', "déchet produit par les réacteurs ou les retombées"),
-    (r'^pile_rod_(uranium|pu239|plutonium|source|boron|lithium|detector)$', 'hérité',
-     "barreau de la pile de Chicago marqué LEGACY (classe dépréciée, sans onglet), remplacé par les pile_rod_mk2_*"),
-    (r'^circuit_star.*$', 'cosmétique',
-     "objet de collection sans usage (« Currently unused, for it lacks an operating system ») : aucune recette ne l'exige ; ses pièces "
-     "viennent des scrap_plastic_* des bobbleheads, décor sans recette"),
-    (r'^anvil_murky$', 'non touché',
-     "enclume secrète (œuf de Pâques) : exige `undefined`, issu des pastilles DRX (balefire + digamma), combustibles extrêmes laissés tels quels"),
-]
+# --- classement des objets sans recette (audit du 25/11) --------------------------------------------------------------
+# docs/perimetre/obtention-audit.tsv : pour chacun des objets qu'aucune recette ne produisait (id, classe, famille, raison).
+#   A = rendu fabricable (recette ajoutée, ou chaîne réparée) ; B = caché (simplifie.txt) car sans place en survie ;
+#   C = obtenu hors recette et justifié (butin, schémas, recette secrète, produit en jeu).
+# Le rapport vérifie le classement : un A doit être obtenu, un B masqué, un C obtenu ou justifié.
+AUDIT = {}
+CHEMIN_AUDIT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'docs', 'perimetre', 'obtention-audit.tsv')
+if os.path.exists(CHEMIN_AUDIT):
+    for ligne_ in open(CHEMIN_AUDIT, encoding='utf-8').read().splitlines():
+        if ligne_.strip() and not ligne_.startswith('#'):
+            id_, classe_, famille_, raison_ = ligne_.split('\t')
+            AUDIT[id_] = (classe_, famille_, raison_)
 MANUEL = {}
 
 
@@ -699,13 +763,29 @@ def justification(x):
         return 'volontaire', 'arme extrême ou objet écarté, sans recette par décision du propriétaire'
     if x in MANUEL:
         return MANUEL[x]
-    for motif, cat, why in JUSTIF:
-        if re.match(motif, x):
-            return cat, why
+    if x in AUDIT and AUDIT[x][0] == 'C':
+        return 'hors recette', AUDIT[x][2]
     return 'à décider', ''
 
 
 # --- rapport -------------------------------------------------------------------------------------------------------
+# Fluides sans producteur obtenable : les recettes qui les exigent ne peuvent pas tourner. `--retraits fichier.json` écrit leur liste
+# au format des recipe_removals (désactivation au chargement, rien n'est supprimé).
+FLUIDES = {n.split('/')[-1][:-5] for n in noms if n.startswith('data/geontm/fluid_property/') and n.endswith('.json')}
+sans_producteur = {}
+for f in sorted(FLUIDES):
+    cle_ = 'fluid:' + f if f in COLLISIONS else f
+    if cle_ in obtenu:
+        continue
+    users = [r[0] for r in recettes + [(i_, d_, None, None, e_) for i_, d_, e_ in SANS_SORTIE]
+             if any('geontm:' + cle_ in g and len(g) == 1 for g in r[4]) and '/' in r[0] and r[1] not in SYNTHETIQUES]
+    if users:
+        sans_producteur[f] = users
+if RETRAITS:
+    ids_ = sorted({'geontm:' + u for users_ in sans_producteur.values() for u in users_})
+    with open(RETRAITS, 'w', encoding='utf-8', newline='\n') as fichier_:
+        fichier_.write(json.dumps({'recipes': ids_}, indent=1) + '\n')
+    print(f'{len(ids_)} recettes sans producteur de fluide écrites dans {RETRAITS}')
 if LISTE_OBTENUS:
     print(*sorted(x for x in VISIBLE if x in obtenu), sep='\n')
     sys.exit(0)
@@ -726,6 +806,12 @@ for x in manquants:
     for b in mm:
         bloquants[b] += 1
 
+if os.environ.get('USAGES'):  # USAGES=1 : pour chaque objet bloqué, les objets visibles que fabriquent les recettes qui l'exigent
+    print('\n== Utilisé par (sorties visibles des recettes qui exigent l\'objet bloqué)')
+    for x in manquants:
+        users = sorted({o for r in recettes for g in r[4] if len(g) == 1 and ('geontm:' + x) in g for o in r[3] if o in VISIBLE and o != x})
+        if users:
+            print(f'  {x:40} {", ".join(users[:12])}')
 print('\n== Maillons qui bloquent le plus')
 for b, n in bloquants.most_common(25):
     print(f'{n:4}  {b}')
@@ -773,14 +859,6 @@ if MD:
                     n_schemas += 1
             except Exception:
                 pass
-    FLUIDES = {n.split('/')[-1][:-5] for n in noms if n.startswith('data/geontm/fluid_property/') and n.endswith('.json')}
-    sans_producteur = {}
-    for f in sorted(FLUIDES):
-        if f in obtenu:
-            continue
-        users = [r[0] for r in recettes if any('geontm:' + f in g and len(g) == 1 for g in r[4])]
-        if users:
-            sans_producteur[f] = users
     L = ['# Obtention en survie', '',
          'Fichier généré par `tools/verifier_obtention.py` à partir du jar compilé : point fixe sur les recettes actives '
          '(conditions évaluées avec les réglages par défaut : 528, mode coûteux et LBSM désactivés), en exigeant que '
@@ -792,8 +870,12 @@ if MD:
          "schéma (`blueprint_pools`, mécanisme NTM inchangé) trouvé dans les coffres ; l'outil les compte comme faisables. "
          'Les réacteurs, le combustible usé et les déchets sont supposés produits par les machines Java correspondantes. '
          "Les règles de broyage construites en Java (`ShredderRecipes` : bûches et planches en sciure, minerais, lingots et blocs "
-         "en poudre) sont modélisées : la sciure du cordite et le coltan broyé de `coltanpain` en viennent.", '']
-    ordre = ['à décider', 'volontaire', 'cosmétique', 'butin', 'bloc formé', 'monde', 'autre mod', 'dérivé']
+         "en poudre) sont modélisées : la sciure du cordite et le coltan broyé de `coltanpain` en viennent. Sont aussi modélisés "
+         "d'après le code : les constructions autour d'un noyau de structure (lanceurs, Watz, tore de fusion), les conversions à l'outil "
+         "(`tool_conversion`), les récipients de fluide (vidés dans une machine), les poches de sang et d'expérience, les déchets des "
+         "barres ZIRNOX usées, les pastilles RTG usées, les schémas ouverts depuis un dossier et la machine d'assemblage de missiles. "
+         "Un fluide et un objet de même nom (`watz`, `concrete`, `balefire`) sont distingués.", '']
+    ordre = ['à décider', 'volontaire', 'hors recette', 'cosmétique', 'butin', 'bloc formé', 'monde', 'autre mod', 'dérivé']
     L += ['| Catégorie | Nombre |', '|---|---:|']
     for c in sorted(par_cat, key=lambda c: ordre.index(c) if c in ordre else 99):
         L.append(f'| {c} | {len(par_cat[c])} |')
@@ -803,12 +885,56 @@ if MD:
         for x, why, det in par_cat[c]:
             L.append(f'| `{x}` | {why or det} |')
         L.append('')
+    if AUDIT:
+        erreurs = []
+        L += ["## Classement des objets qu'aucune recette ne produisait", '',
+              f'Audit du 25/11 sur le jar 0.1.13 : {len(AUDIT)} objets visibles non obtenables (323 relevés, trois autres révélés par la correction de l’outil). Source : `docs/perimetre/obtention-audit.tsv` '
+              '(id, classe, famille, raison). **A** : rendu fabricable ; **B** : caché dans `simplifie.txt` (l\'id reste enregistré) ; '
+              '**C** : obtenu hors recette, justifié. La colonne « état » est recalculée sur le jar vérifié.', '',
+              '| Classe | Nombre |', '|---|---:|']
+        for classe_, titre_ in (('A', 'A : fabricable'), ('B', 'B : caché'), ('C', 'C : hors recette')):
+            L.append(f'| {titre_} | {sum(1 for v_ in AUDIT.values() if v_[0] == classe_)} |')
+        L.append('')
+        for classe_, titre_ in (('A', 'A : rendus fabricables'), ('B', 'B : cachés'), ('C', 'C : obtenus hors recette')):
+            L += [f'### {titre_}', '', '| Objet | Famille | État | Raison |', '|---|---|---|---|']
+            for x_, (c_, famille_, raison_) in sorted(AUDIT.items(), key=lambda kv: (kv[1][1], kv[0])):
+                if c_ != classe_:
+                    continue
+                if classe_ == 'B':
+                    etat_ = 'caché' if (x_ in MASQUE or x_ not in VISIBLE) else 'VISIBLE'
+                    if etat_ == 'VISIBLE':
+                        erreurs.append(x_)
+                elif x_ in obtenu:
+                    etat_ = 'obtenu (' + origine.get(x_, '?') + ')'
+                elif x_ not in VISIBLE:
+                    etat_ = 'caché'
+                else:
+                    etat_ = 'BLOQUÉ' if classe_ == 'A' else 'sans recette, justifié'
+                    if classe_ == 'A':
+                        erreurs.append(x_)
+                L.append(f'| `{x_}` | {famille_} | {etat_} | {raison_} |')
+            L.append('')
+        print('classement : ' + (f'{len(erreurs)} ERREUR(S) : ' + ', '.join(erreurs) if erreurs else 'tout est conforme'))
+        caches_ = {x_ for x_, v_ in AUDIT.items() if v_[0] == 'B'}
+        exigeants_ = sorted((r_[0], o_) for r_ in recettes if r_[1] not in SYNTHETIQUES for o_ in r_[3] if o_ in VISIBLE
+                            and any(g_ and all(a_.startswith('geontm:') and a_[7:] in caches_ for a_ in g_) for g_ in r_[4]))
+        L += ['### Recettes actives qui exigent un objet caché pour fabriquer un objet visible', '',
+              ', '.join(f'`{r_}` -> `{o_}`' for r_, o_ in exigeants_) or 'aucune', '']
+        print(f'recettes visibles exigeant un objet caché : {len(exigeants_)}', exigeants_[:10])
+        if RETRAITS_CACHES:
+            ids_ = sorted({'geontm:' + r_ for r_, _ in exigeants_})
+            with open(RETRAITS_CACHES, 'w', encoding='utf-8', newline='\n') as fichier_:
+                fichier_.write(json.dumps({'recipes': ids_}, indent=1) + '\n')
+            print(f'{len(ids_)} recettes exigeant un objet caché écrites dans {RETRAITS_CACHES}')
     L += ['## Fluides demandés par une recette active sans producteur obtenable', '',
           'Un fluide sans producteur rend inutilisables les recettes qui le demandent (les autres voies restent possibles). '
           'Le gaz `gas` vient de la gazéification du charbon ou du coke au four de pyrolyse ; les pompes GeoMods ne donnent que le brut.', '',
           '| Fluide | Recettes qui le demandent |', '|---|---|']
     for f, users in sans_producteur.items():
         L.append(f'| `{f}` | {len(users)} : ' + ', '.join(users[:4]) + (' …' if len(users) > 4 else '') + ' |')
+    if not sans_producteur:
+        L.append('| aucun | les recettes qui exigeaient un fluide sans producteur sont désactivées par `recipe_removals/geoventure_sans_producteur.json` '
+                 '(écrit par `--retraits`) ; xpjuice et blood viennent des récipients iv_xp, fiole d’expérience et iv_blood |')
     L.append('')
     import subprocess
     env = dict(os.environ, SANS_BUTIN='1')

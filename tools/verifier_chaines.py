@@ -31,23 +31,23 @@ MACHINES = {
     'anvil_smithing': ['anvil_iron', 'anvil_lead', 'anvil_steel', 'anvil_desh'],
     'arc_furnace': ['machine_arc_furnace'], 'arc_welder': ['machine_arc_welder'],
     'assembly_machine': ['machine_assembly_machine', 'machine_assembly_factory'],
-    'blast_furnace': ['machine_difurnace_off', 'machine_difurnace_rtg_off'], 'breeder': ['machine_reactor_breeding'],
+    'blast_furnace': ['machine_blast_furnace'], 'breeder': ['machine_reactor'],
     'centrifuge': ['machine_centrifuge'], 'chemical_plant': ['machine_chemical_plant', 'machine_chemical_factory'],
     'coker': ['machine_coker'], 'combination': ['machine_furnace_combination'], 'compressor': ['machine_compressor',
                                                                                    'machine_compressor_compact'],
     'cracking': ['machine_catalytic_cracker'], 'crucible': ['machine_crucible'], 'crystallizer': ['machine_crystallizer'],
     'cyclotron': ['machine_cyclotron'], 'difurnace': ['machine_difurnace_off'],
     'electrolyser_fluid': ['machine_electrolyser'], 'electrolyser_metal': ['machine_electrolyser'],
-    'exposure_chamber': ['machine_exposure_chamber'], 'fluid_breeder': ['machine_reactor_breeding'],
+    'exposure_chamber': ['machine_exposure_chamber'], 'fluid_breeder': ['fusion_breeder'],
     'fraction': ['machine_fraction_tower'], 'fusion': ['fusion_torus', 'fusion_core'],
     'gas_centrifuge': ['machine_gascent'], 'hydrotreating': ['machine_hydrotreater'],
     'liquefaction': ['machine_liquefactor'], 'mixer': ['machine_mixer'], 'outgasser': ['rbmk_outgasser'],
     'precision_assembler': ['machine_precass'], 'press': ['machine_press', 'machine_epress'],
     'purex': ['machine_purex'], 'pyrolysis': ['machine_pyrooven'], 'radiolysis': ['machine_radiolysis'],
-    'refinery': ['machine_refinery'], 'reforming': ['machine_catalytic_reformer'], 'rock_mill': ['machine_rock_mill'],
+    'refinery': ['machine_refinery'], 'reforming': ['machine_catalytic_reformer'], 'rock_mill': ['machine_rockmill'],
     'rotary_furnace': ['machine_rotary_furnace'], 'sawmill': ['machine_sawmill'], 'shredder': ['machine_shredder'],
     'silex': ['machine_silex'], 'soldering': ['machine_soldering_station'], 'solidification': ['machine_solidifier'],
-    'space_assembler': ['machine_space_assembler'], 'storage_drum': ['machine_storage_drum'],
+    'space_assembler': ['satellite_science_assembler'], 'storage_drum': ['machine_storage_drum'],
     'supercomputer': ['machine_supercomputer'], 'vacuum_distill': ['machine_vacuum_distill'],
 }
 # Fluides présents sans recette : sources naturelles ou machines sans recette JSON (chaudières, pompes, condenseurs).
@@ -111,9 +111,23 @@ def objets(valeur):
 def main():
     visibles = (lire('creatif.txt') | lire('ajoute.txt')) - lire('simplifie.txt')
     actifs = {d: [m for m in ms if m in visibles] for d, ms in MACHINES.items()}
+    # Recettes désactivées au chargement (recipe_removals) : elles ne comptent pas.
+    retirees = set()
+    for liste in (RACINE / 'src/main/resources/data/geontm/recipe_removals').glob('*.json'):
+        retirees |= set(json.loads(liste.read_text(encoding='utf-8')).get('recipes', []))
+    # Un récipient plein (iv_blood, iv_xp, fiole d'expérience, particle_amat...) vidé dans une machine donne son fluide.
+    conteneurs = RACINE / 'src/generated/data/pack/data/geontm/value_maps/item/fluid_container.json'
+    fluides_de_recipients = set()
+    if conteneurs.exists():
+        for info in json.loads(conteneurs.read_text(encoding='utf-8')).get('values', {}).values():
+            if isinstance(info, dict) and str(info.get('fluid', '')).startswith('geontm:'):
+                fluides_de_recipients.add(info['fluid'])
     recettes = []
     for p in RECETTES.rglob('*.json'):
         dossier = p.relative_to(RECETTES).parts[0]
+        identifiant = 'geontm:' + p.relative_to(RECETTES).with_suffix('').as_posix()
+        if identifiant in retirees:
+            continue
         recettes.append((dossier, p.stem, json.loads(p.read_text(encoding='utf-8'))))
     inconnus = sorted({d for d, _, _ in recettes if d not in MACHINES})
 
@@ -136,7 +150,7 @@ def main():
         produits_objets |= set(re.findall(r'(?:shaped|shapeless)\w*\(NS, "([a-z0-9_]+)"', texte))
 
     manquants = {f: sorted(d)[:4] for f, d in demandes_fluides.items()
-                 if f not in produits_fluides and f not in SOURCES}
+                 if f not in produits_fluides and f not in SOURCES and f not in fluides_de_recipients}
 
     # Missiles du catalogue et pièces : recettes qui produisent un missile, et leurs entrées GeoNTM.
     besoins = defaultdict(set)
@@ -151,6 +165,9 @@ def main():
     lignes = ['# Chaînes de production de GeoNTM', '', 'Fichier généré par `tools/verifier_chaines.py`.', '',
               '## Machines par dossier de recettes', '', '| Dossier | Machines visibles |', '|---|---|']
     lignes += [f'| {d} | {", ".join(m) if m else "**aucune**"} |' for d, m in sorted(actifs.items())]
+    lignes += ["", "Tables laissées sans machine visible, par choix : `breeder` (machine_reactor), `difurnace` (machine_difurnace_off) et "
+               "`sawmill` (machine_sawmill). Aucun objet visible n'en dépend : `tools/verifier_obtention.py` retrouve chaque objet visible "
+               "sans elles."]
     if inconnus:
         lignes += ['', 'Dossiers sans correspondance connue : ' + ', '.join(inconnus)]
     lignes += ['', '## Fluides demandés sans producteur actif', '']

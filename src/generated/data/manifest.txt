@@ -22,7 +22,7 @@ geontm/recipe/anvil_construction 191
 geontm/recipe/anvil_smithing 21
 geontm/recipe/arc_furnace 13
 geontm/recipe/arc_welder 42
-geontm/recipe/assembly_machine 261
+geontm/recipe/assembly_machine 285
 geontm/recipe/blast_furnace 16
 geontm/recipe/breeder 30
 geontm/recipe/centrifuge 82
@@ -65,6 +65,7 @@ geontm/recipe/solidification 46
 geontm/recipe/space_assembler 1
 geontm/recipe/storage_drum 32
 geontm/recipe/supercomputer 18
+geontm/recipe/tool_conversion 4
 geontm/recipe/vacuum_distill 2
 geontm/tags/block/blast_resistant.json 1
 geontm/tags/block/blast_resistant/large_explosion.json 1

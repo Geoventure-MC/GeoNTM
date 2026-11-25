@@ -18,6 +18,7 @@ fr.geoventure.geontm.inventory.recipes.ModComponentRecipes
 fr.geoventure.geontm.inventory.recipes.ModContainerRecipes
 fr.geoventure.geontm.compat.computer.ComputerCraftRecipes
 fr.geoventure.geontm.inventory.recipes.RestoredCraftingRecipes
+fr.geoventure.geontm.inventory.recipes.GeoventureCraftingRecipes
 fr.geoventure.geontm.inventory.recipes.ConfigCraftingRecipes
 fr.geoventure.geontm.inventory.recipes.gen.CraftingRecipesGenerated
 fr.geoventure.geontm.blocks.ModSecurityBlocks

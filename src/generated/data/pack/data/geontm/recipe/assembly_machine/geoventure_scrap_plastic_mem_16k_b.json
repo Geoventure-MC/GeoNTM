@@ -1,0 +1,16 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.geoventure_scrap_plastic_mem_16k_b",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/polymer",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:scrap_plastic_mem_16k_b"
+  ],
+  "duration": 60,
+  "power": 100,
+  "order": 90018
+}

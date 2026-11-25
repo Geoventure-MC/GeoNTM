@@ -9,3 +9,4 @@ Fichier généré par `tools/simplifier.py`. Les objets masqués restent dans le
 | déchets dérivés | 0 | 40 |
 | armes extrêmes, sans recette | 17 | 0 |
 | objets écartés, sans recette | 4 | 0 |
+| audit d'obtention (classe B, voir obtention.md) | 268 | 0 |

@@ -1,0 +1,327 @@
+# id	classe	famille	raison
+anvil_murky	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+billet_balefire_gold	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+billet_flashlead	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+billet_unobtainium	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+billet_yharonite	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+blueprint_plate	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+blueprints	C	schémas	clic droit sur un dossier de schémas (blueprint_folder, fabricable à la main) ; la recherche du pays filtre les familles
+blueprints_528	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+blueprints_discover	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+blueprints_secret	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+cap_rad	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+capacitor_bus	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+capacitor_schrabidate	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+capacitor_spark	A	réacteurs Watz et fusion	le réacteur Watz se construit autour de struct_watz_core, dont la recette d'établi d'origine avait été retirée à tort ; sa boue alimente l'acier Combine (condensateur à étincelle)
+capacitor_tantalium	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+circuit_star	A	circuit étoile	recettes d'origine (composants à la main) ; pièces déjà au cristalliseur
+circuit_star_component_card	A	circuit étoile	recettes d'origine (composants à la main) ; pièces déjà au cristalliseur
+circuit_star_component_chipset	A	circuit étoile	recettes d'origine (composants à la main) ; pièces déjà au cristalliseur
+circuit_star_component_cpu	A	circuit étoile	recettes d'origine (composants à la main) ; pièces déjà au cristalliseur
+circuit_star_component_ram	A	circuit étoile	recettes d'origine (composants à la main) ; pièces déjà au cristalliseur
+circuit_star_piece_board_blank	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_board_converter	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_board_transistor	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_bios	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_bus	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_chipset	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_cmos	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_io	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_north	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_bridge_south	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_card_board	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_card_processor	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_cache	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_clock	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_ext	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_logic	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_register	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_cpu_socket	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_mem_16k_a	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_mem_16k_b	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_mem_16k_c	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_mem_16k_d	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+circuit_star_piece_mem_socket	A	circuit étoile	cristalliseur d'origine (débris de plastique + peroxyde) ; les débris se fabriquent maintenant à l'assembleur (geoventure_scrap_plastic_*)
+corium_block	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+deco_sat_foeq	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+deco_sat_laser	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+deco_sat_mapper	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+deco_sat_radar	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+deco_sat_resonator	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+deco_sat_scanner	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+fluid_identifier	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+fusion_component_bscco_welded	A	réacteurs Watz et fusion	conversion en jeu au chalumeau ou au boulonneur (tool_conversion), table d'origine retirée à tort, rétablie (geoventure_*)
+fusion_core_block	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+fusion_core_infinite	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+fusion_hatch	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+fusion_heater	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+fusion_klystron_creative	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+fusion_torus	A	réacteurs Watz et fusion	construction autour de struct_torus_core ; la recette d'origine du noyau (ass.fusioncore) manquait, rétablie (geoventure_fusioncore)
+gas_full	C	produit en jeu	bouteille de gaz remplie : gas_empty (fabricable) remplie dans une machine (FluidContainerRegistry)
+gas_radon	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+gas_radon_dense	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+gas_radon_tomb	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+gem_rad	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+hazmat_grey_kit	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+hazmat_red_kit	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+icf	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_block	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_component	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_component_structure	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_component_structure_bolted	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_component_vessel	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_component_vessel_welded	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_controller	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_capacitor	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_casing	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_cell	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_emitter	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_port	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_laser_component_turbo	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_pellet	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+icf_pellet_depleted	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+iv_xp	C	produit en jeu	iv_xp_empty utilisé sur soi (100 points d'expérience) donne iv_xp ; vidé, il donne le fluide xpjuice
+launch_pad_rusted	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+launch_table	A	lanceurs	déjà constructibles (noyau de structure + blocs, ConstructionHandler) ; l'outil de vérification ne lisait pas les constructions
+mechanism_launcher_1	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_launcher_2	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_revolver_1	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_revolver_2	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_rifle_1	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_rifle_2	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+mechanism_special	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+med_schizophrenia	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+missile_custom	A	missiles personnalisés	sortie de la machine d'assemblage de missiles à partir des pièces mp_* ; l'outil de vérification ne lisait pas cette machine
+missile_kit	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
+missile_obj_context_base	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+missile_obj_context_legacy	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+missile_skin_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_manly_pink	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_metal	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_orange_insulation	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_soviet_stank	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_soyuz_1	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+missile_soyuz_2	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+missile_test	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
+mp_fuselage_10_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_dash	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_kerosene_vap	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_solid_bullet	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_solid_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_solid_silvermoonlight	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_solid_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_long_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_battery	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_cathedral	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_duracell	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_moonlit	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_xenon_bhole	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+mp_fuselage_15_20_kerosene_magnusson	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_balefire	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+mp_fuselage_15_hydrogen_cathedral	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_blackjack	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_decorated	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_lambda	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_minuteman	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_pip	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_polite	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_steampunk	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_kerosene_yuck	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_faust	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_mimi	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_panorama	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_roses	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_silvermoonlight	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_snowy	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_solid_soviet_stank	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_s_20	A	pièces et capteurs	recette d'établi ajoutée (geoventure) : aucune recette d'origine
+mp_stability_15_soyuz	A	pièces et capteurs	recette d'établi ajoutée (geoventure) : aucune recette d'origine
+mp_warhead_15_boxcar	B	matière ou arme extrême	ogive ou objet extrême (boxcar nucléaire, turbine, taint) : écarté comme les ogives N2, Taint et Balefire
+mp_warhead_15_nuclear_mimi	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_warhead_15_nuclear_shark	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_warhead_15_turbine	B	matière ou arme extrême	ogive ou objet extrême (boxcar nucléaire, turbine, taint) : écarté comme les ogives N2, Taint et Balefire
+part_barrel_heavy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_cdalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_desh	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_dura_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_ferrouranium	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_tcalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_heavy_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_arsenic_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_bismuth_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_cdalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_desh	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_dura_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_tcalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_barrel_light_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_emitter	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_generic_hde	B	ICF	ICF écarté par le propriétaire (le HDE est forgé avec le flux stellaire de l'ICF)
+part_grip	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_desh	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_dura_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_pvc	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_grip_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_mechanism	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_mechanism_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_mechanism_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_mechanism_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_arsenic_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_bismuth_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_cdalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_dura_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_ferrouranium	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_tcalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_heavy_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_arsenic_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_bismuth_bronze	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_cdalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_desh	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_dura_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_steel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_tcalloy	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_receiver_light_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock_desh	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock_gunmetal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock_pvc	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock_saturnite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+part_stock_weaponsteel	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+parts_legendary_tier1	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+parts_legendary_tier2	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+parts_legendary_tier3	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_canister	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_chlorophyte	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_claws	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_coal	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_coolant	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_flechette	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_meteorite	B	armes	pièce d'arme ou de munition : aucune arme NTM n'est visible (SBW et GeoWarfare)
+pellet_rtg_balefire	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+pellet_rtg_depleted_bismuth	C	produit en jeu	pastille usée rendue par le générateur RTG (value_maps/item/rtg_pellet.json, decays_to)
+pellet_rtg_depleted_mercury	C	produit en jeu	pastille usée rendue par le générateur RTG (value_maps/item/rtg_pellet.json, decays_to)
+pellet_rtg_depleted_neptunium	C	produit en jeu	pastille usée rendue par le générateur RTG (value_maps/item/rtg_pellet.json, decays_to)
+pellet_rtg_depleted_nickel	C	produit en jeu	pastille usée rendue par le générateur RTG (value_maps/item/rtg_pellet.json, decays_to)
+pellet_rtg_depleted_zirconium	C	produit en jeu	pastille usée rendue par le générateur RTG (value_maps/item/rtg_pellet.json, decays_to)
+pile_block	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_device	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_boron	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_detector	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_lithium	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_plutonium	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_pu239	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_source	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pile_rod_uranium	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pwr_block	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+pwr_printer	B	hérité ou sans objet	bloc ou classe dépréciée, bloc formé sans objet, ou outil créatif
+rad_lava_block	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+radsensor	A	pièces et capteurs	recette d'établi ajoutée (geoventure) : aucune recette d'origine
+rbmk_control_reasim	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)
+rbmk_control_reasim_auto	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)
+rbmk_debris	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+rbmk_debris_burning	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+rbmk_debris_digamma	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+rbmk_debris_radiating	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+rbmk_fuel_balefire	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_fuel_balefire_gold	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_fuel_drx	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_fuel_flashlead	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_fuel_test	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_pellet_balefire	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_pellet_balefire_gold	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_pellet_drx	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+rbmk_pellet_flashlead	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
+sat_base	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_foeq	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_gerald	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_head_laser	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_head_mapper	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_head_radar	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_head_resonator	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_head_scanner	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_laser	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_lunar_miner	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_mapper	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_miner	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_radar	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_resonator	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sat_scanner	B	satellites hérités	ancien satellite 1.7 : ne lance rien (XSatelliteRegistry), sans recette en amont ; les satellite_* se fabriquent
+sellafield_0	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_1	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_2	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_3	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_4	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_5	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_bedrock	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+sellafield_slaked	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+soyuz_capsule	C	hors recette	capsule de cargaison déposée par une mission d'atterrisseur (missile_soyuz_lander, SoyuzCapsule) ; se ramasse, jamais fabriquée
+soyuz_launcher	A	lanceurs	déjà constructibles (noyau de structure + blocs, ConstructionHandler) ; l'outil de vérification ne lisait pas les constructions
+syringe_mkunicorn	C	recette secrète	recette secrète à disposition mélangée selon la graine du monde (MKUCraftingRecipe), indices dans les livres des donjons de météorite
+syringe_taint	B	matière ou arme extrême	ogive ou objet extrême (boxcar nucléaire, turbine, taint) : écarté comme les ogives N2, Taint et Balefire
+waste_earth	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_leaves	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_log	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_mox	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_mycelium	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_natural_uranium	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_planks	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_plate_mox	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_pu238be	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_pu239	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_ra226be	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_sa326	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_u233	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plate_u235	B	réacteur de recherche	plaque usée rendue par le réacteur de recherche (machine_reactor_small), retiré du périmètre ; les recyclages PUREX qui la demandent sont désactivés
+waste_plutonium	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_schrabidium	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_thorium	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_trinitite	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_trinitite_red	B	monde ou catastrophe	bloc ou minerai de monde, de retombées ou de catastrophe : jamais fabriqué
+waste_u233	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_u235	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_uranium	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+waste_zfb_mox	C	produit en jeu	bâton ZIRNOX usé transformé en déchet (ZirnoxWasteRecipe, data map zirnox_fuel) ; recyclé au PUREX
+watz	A	réacteurs Watz et fusion	le réacteur Watz se construit autour de struct_watz_core, dont la recette d'établi d'origine avait été retirée à tort ; sa boue alimente l'acier Combine (condensateur à étincelle)
+watz_casing_tooled	A	réacteurs Watz et fusion	conversion en jeu au chalumeau ou au boulonneur (tool_conversion), table d'origine retirée à tort, rétablie (geoventure_*)
+watz_pellet_depleted_nqd	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)
+watz_pellet_depleted_nqr	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)
+watz_pellet_nqd	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)
+watz_pellet_nqr	B	variante désactivée	mode 528 désactivé par défaut, ou naquadah d'un autre univers (matière absente)

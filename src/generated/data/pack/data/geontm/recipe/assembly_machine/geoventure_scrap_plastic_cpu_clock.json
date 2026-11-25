@@ -1,0 +1,16 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.geoventure_scrap_plastic_cpu_clock",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/polymer",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:scrap_plastic_cpu_clock"
+  ],
+  "duration": 60,
+  "power": 100,
+  "order": 90011
+}

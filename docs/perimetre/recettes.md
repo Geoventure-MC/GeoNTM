@@ -1,6 +1,6 @@
 # Recettes conservées
 
-- Recettes gardées : **1976**
+- Recettes gardées : **2004** (dont 28 ajoutées par Geoventure, fichiers `geoventure_*`, voir `docs/perimetre/obtention.md`)
 - Recettes retirées : **24**
 - Recettes adaptées à nos objets : **9**
 - Objets ajoutés car indispensables : **48**
@@ -13,7 +13,7 @@
 | `anvil_smithing` | 21 |
 | `arc_furnace` | 13 |
 | `arc_welder` | 42 |
-| `assembly_machine` | 261 |
+| `assembly_machine` | 285 |
 | `blast_furnace` | 16 |
 | `breeder` | 30 |
 | `centrifuge` | 82 |
@@ -56,4 +56,5 @@
 | `space_assembler` | 1 |
 | `storage_drum` | 32 |
 | `supercomputer` | 18 |
+| `tool_conversion` | 4 |
 | `vacuum_distill` | 2 |

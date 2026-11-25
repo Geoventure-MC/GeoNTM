@@ -1,0 +1,28 @@
+{
+ "recipes": [
+  "geontm:chemical_plant/cccentrifuge",
+  "geontm:coker/calcium_solution",
+  "geontm:coker/redmud",
+  "geontm:coker/vitriol",
+  "geontm:crystallizer/powder_calcium_redmud",
+  "geontm:electrolyser_fluid/alumina",
+  "geontm:electrolyser_fluid/calcium_chloride",
+  "geontm:electrolyser_fluid/potassium_chloride",
+  "geontm:electrolyser_fluid/redmud",
+  "geontm:electrolyser_fluid/vitriol",
+  "geontm:fraction/bauxite_solution",
+  "geontm:fraction/chlorocalcite_mix",
+  "geontm:fusion/stellar",
+  "geontm:mixer/alumina.0",
+  "geontm:mixer/alumina.1",
+  "geontm:mixer/chlorocalcite_mix.0",
+  "geontm:mixer/pheromone_m.0",
+  "geontm:purex/flashgold",
+  "geontm:purex/flashlead",
+  "geontm:rotary_furnace/aluminium",
+  "geontm:rotary_furnace/aluminium_2",
+  "geontm:silex/fluid_redmud",
+  "geontm:silex/fluid_vitriol",
+  "geontm:solidification/redmud"
+ ]
+}

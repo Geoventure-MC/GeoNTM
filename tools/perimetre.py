@@ -112,14 +112,17 @@ def materiau(ident):
 # Blocs de structure qui forment les rampes de missiles et le lanceur Soyouz : la règle « struct » les retirait à tort,
 # ce qui rendait ces lanceurs impossibles à construire en survie (décision du propriétaire, 20/11).
 STRUCTURES_DE_LANCEMENT = {'struct_launcher': 'missiles', 'struct_scaffold': 'satellites', 'struct_launcher_core': 'missiles',
-                           'struct_launcher_core_large': 'missiles', 'struct_soyuz_core': 'satellites'}
+                           'struct_launcher_core_large': 'missiles', 'struct_soyuz_core': 'satellites',
+                           'struct_torus_core': 'réacteurs', 'struct_watz_core': 'réacteurs'}
 
 
 # Machines que la règle « MACHINES_RETIRER » écartait à tort : sans elles, des chaînes gardées ne sont plus faisables en
 # survie (assembleur de précision : circuits de contrôle des missiles et satellites ; four de pyrolyse : carbure de tungstène
 # et chlore ; superordinateur : calcul de vol ; four combiné : chlore, peroxyde, créosote, donc plastique dur).
 # Contrôle : tools/verifier_obtention.py. Leurs recettes sont dans src/generated/data/pack/data/geontm/recipe.
-MACHINES_DE_CHAINE = {'machine_furnace_combination', 'machine_precass', 'machine_pyrooven', 'machine_supercomputer'}
+# Haut fourneau et broyeur à roche : seuls producteurs des plaques de hazmat PAA, du bore et de l'enclume de bronze arsénié.
+MACHINES_DE_CHAINE = {'machine_furnace_combination', 'machine_precass', 'machine_pyrooven', 'machine_supercomputer',
+                      'machine_blast_furnace', 'machine_rockmill'}
 
 
 # Intermédiaires que la règle « décoratif » écartait à tort : l'argile réfractaire est la seule source de la brique

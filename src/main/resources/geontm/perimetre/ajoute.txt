@@ -60,3 +60,7 @@ battery_lead
 steel_scaffold
 ball_fireclay
 ingot_firebrick
+struct_torus_core
+struct_watz_core
+machine_blast_furnace
+machine_rockmill

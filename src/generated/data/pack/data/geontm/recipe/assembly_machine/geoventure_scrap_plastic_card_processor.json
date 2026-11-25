@@ -1,0 +1,16 @@
+{
+  "type": "geontm:assembly_machine",
+  "name": "ass.geoventure_scrap_plastic_card_processor",
+  "input_items": [
+    {
+      "ingredient": "#c:ingots/polymer",
+      "count": 2
+    }
+  ],
+  "output_items": [
+    "geontm:scrap_plastic_card_processor"
+  ],
+  "duration": 60,
+  "power": 100,
+  "order": 90022
+}

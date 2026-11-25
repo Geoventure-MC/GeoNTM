@@ -1,0 +1,13 @@
+{
+  "type": "geontm:tool_conversion",
+  "tool": "bolt",
+  "from": "geontm:watz_casing",
+  "to": "geontm:watz_casing_tooled",
+  "materials": [
+    {
+      "material": "dura_steel",
+      "shape": "bolt",
+      "count": 4
+    }
+  ]
+}

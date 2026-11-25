@@ -42,7 +42,7 @@ FAMILLES = {
                            + serie('watz', 'casing', 'cooler', 'rod')),
     'discover.fusion': ('Fusion', 'sci_materials',
                         serie('fusion', 'blanket', 'boiler', 'breeder', 'bscco', 'collector', 'coupler', 'klystron',
-                              'mhdt', 'pipes', 'plasmaforge')),
+                              'mhdt', 'pipes', 'plasmaforge') + ['geoventure_fusioncore']),
     'discover.spatial': ('Lancement spatial et satellites', 'sci_aerospace',
                          ['launchpadsoyuz', 'soyuz', 'lander', 'shuttlemissile', 'satdock', 'satlink', 'radarsat',
                           'scansat', 'relaysat', 'detectorsat', 'spacelab', 'sensorrelay', '0gassembler',

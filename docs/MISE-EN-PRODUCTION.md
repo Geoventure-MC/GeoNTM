@@ -20,6 +20,7 @@ Rien de cette liste n'est lancé sans l'accord du propriétaire. GeoNTM n'est au
 - [ ] Radioactivité : dose unique, compteur Geiger, combinaisons GeoMods, zones visibles côté GeoMods.
 - [ ] Schémas : recette bloquée sans schéma, dossier soumis à la recherche, copie interdite des schémas secrets, butin reçu après une vraie guerre et jamais en double.
 - [ ] Espace : minerais rares sur leurs planètes seulement, satellite lancé et inscrit au bon pays.
+- [ ] Fabrication : les 39 objets rendus fabricables par l'audit d'obtention (`docs/perimetre/obtention.md`) : circuit étoile (débris de plastique à l'assembleur, puis cristalliseur), noyaux de structure du tore de fusion et du Watz, conversions au boulonneur et au chalumeau, empennages et capteur de radiation d'établi, construction d'un tore, d'un Watz, d'un lanceur Soyouz et d'une table de lancement.
 - [ ] Interfaces : créatif, JEI et écrans principaux regardés par un humain.
 - [ ] Essai avec plusieurs vrais joueurs, de la connexion par le launcher à une partie complète.
 

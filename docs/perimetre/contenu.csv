@@ -661,7 +661,7 @@ bloc,machine_battery_potato,Bloc de batterie de pommes de terre,RETIRER,machines
 bloc,machine_battery_redd,,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_battery_socket,Socle de batterie,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_bigasstank,Réservoir à gros cul,FUSIONNER,machines,geomods:liquid_depot,machine Geoventure équivalente
-bloc,machine_blast_furnace,Haut fourneau,FUSIONNER,machines,geomods:mega_foundry,machine Geoventure équivalente
+bloc,machine_blast_furnace,Haut fourneau,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_boiler_off,Chaudière,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_capacitor_copper,Ancien condensateur,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_capacitor_gold,Condensateur d'or (HÉRITÉ),RETIRER,machines,,hors sujet ou trop puissant
@@ -741,7 +741,7 @@ bloc,machine_radiolysis,Générateur thermoélectrique à radio-isotopes et cham
 bloc,machine_reactor,Reacteur de fusion,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_reactor_small,Réacteur de recherche (LEGACY),RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_refinery,Raffinerie de pétrole,FUSIONNER,machines,geomods:refinery,machine Geoventure équivalente
-bloc,machine_rockmill,Broyeur à roche,FUSIONNER,machines,geomods:flour_mill,machine Geoventure équivalente
+bloc,machine_rockmill,Broyeur à roche,GARDER,machines : production,,nécessaire à une chaîne de production gardée
 bloc,machine_rotary_furnace,Four rotatif,GARDER,machines : production,,
 bloc,machine_rtg_furnace_off,Four RTG,RETIRER,machines,,hors sujet ou trop puissant
 bloc,machine_rtg_grey,Générateur RT,GARDER,machines : réacteurs,,
@@ -1175,8 +1175,8 @@ bloc,struct_launcher_core,Composant central du lanceur compact,GARDER,missiles,,
 bloc,struct_launcher_core_large,Lancer le composant de base de la table,GARDER,missiles,,coeur de la grande table de lancement
 bloc,struct_scaffold,Bloc d'échafaudage de rampe de lancement,GARDER,missiles,,échafaudage du lanceur Soyouz
 bloc,struct_soyuz_core,Composant principal du lanceur Soyouz,GARDER,satellites,,coeur du lanceur Soyouz
-bloc,struct_torus_core,Composant central de la cuve du réacteur à fusion,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
-bloc,struct_watz_core,Composant central de la centrale Watz,RETIRER,hors périmètre,,"doublon de GeoMods, GeoDecor ou trop de variantes"
+bloc,struct_torus_core,Composant central de la cuve du réacteur à fusion,GARDER,réacteurs,,forme un réacteur gardé
+bloc,struct_watz_core,Composant central de la centrale Watz,GARDER,réacteurs,,forme un réacteur gardé
 bloc,structure_anchor,Ancre de structure,RETIRER,hors périmètre,,hors périmètre
 bloc,substation,Sous-station,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
 bloc,sulfuric_acid_block,Acide sulfurique,SI_BESOIN,dépendances,,gardé seulement si une recette retenue en dépend
