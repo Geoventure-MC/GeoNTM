@@ -95,68 +95,68 @@ missile_custom	A	missiles personnalisés	sortie de la machine d'assemblage de mi
 missile_kit	B	coffret, curiosité ou doublon	coffret de départ, curiosité ou doublon d'un objet fabricable (fluid_identifier_multi)
 missile_obj_context_base	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
 missile_obj_context_legacy	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
-missile_skin_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_manly_pink	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_metal	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_orange_insulation	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-missile_skin_soviet_stank	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+missile_skin_camo	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_desert	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_flames	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_manly_pink	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_metal	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_orange_insulation	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_sleek	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_soviet_glory	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
+missile_skin_soviet_stank	B	cosmétique	aucun usage dans le code (ni établi, ni assemblage, ni rendu : simple icône, comme en 1.7) ; laissé caché, id gardé
 missile_soyuz_1	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
 missile_soyuz_2	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
 missile_test	B	modèle ou identifiant hérité	modèle d'objet ou identifiant de métadonnée hérité, pas un objet à fabriquer
-mp_fuselage_10_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_kerosene_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_kerosene_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_dash	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_kerosene_vap	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_solid_bullet	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_solid_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_solid_silvermoonlight	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_solid_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_long_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_battery	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_cathedral	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_duracell	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_flames	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_moonlit	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_sleek	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_10_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_10_kerosene_camo	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + green (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_kerosene_desert	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + yellow (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_kerosene_flames	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + orange (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_kerosene_sky	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + light_blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_kerosene_sleek	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_kerosene_taint	A	peintures de missile	peinture à l'établi : mp_fuselage_10_kerosene + purple (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_camo	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + green (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_dash	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + white (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_desert	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + yellow (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_flames	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + orange (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_sky	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + light_blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_sleek	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_taint	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + purple (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_kerosene_vap	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_kerosene + magenta (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_solid_bullet	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_solid + gray (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_solid_flames	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_solid + orange (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_solid_silvermoonlight	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_solid + light_gray (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_solid_sleek	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_solid + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_long_solid_soviet_glory	A	peintures de missile	peinture à l'établi : mp_fuselage_10_long_solid + red (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_battery	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + lime (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_cathedral	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + cyan (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_duracell	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + brown (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_flames	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + orange (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_moonlit	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_sleek	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_10_solid_soviet_glory	A	peintures de missile	peinture à l'établi : mp_fuselage_10_solid + red (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
 mp_fuselage_10_xenon_bhole	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
-mp_fuselage_15_20_kerosene_magnusson	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_20_kerosene_magnusson	A	peintures de missile	peinture à l'établi : mp_fuselage_15_20_kerosene + blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
 mp_fuselage_15_balefire	B	matière ou arme extrême	balefire, flashlead, unobtainium, yharonite, DRX, trou noir : sans recette par décision du propriétaire
-mp_fuselage_15_hydrogen_cathedral	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_blackjack	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_camo	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_decorated	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_desert	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_lambda	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_minuteman	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_pip	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_polite	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_sky	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_steampunk	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_taint	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_kerosene_yuck	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_faust	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_mimi	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_panorama	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_roses	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_silvermoonlight	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_snowy	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_soviet_glory	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
-mp_fuselage_15_solid_soviet_stank	B	cosmétique	peinture ou variante de peinture de missile : décor sans recette en amont
+mp_fuselage_15_hydrogen_cathedral	A	peintures de missile	peinture à l'établi : mp_fuselage_15_hydrogen + cyan (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_blackjack	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_camo	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + green (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_decorated	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + pink (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_desert	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + yellow (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_lambda	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + orange (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_minuteman	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_pip	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + lime (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_polite	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + white (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_sky	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + light_blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_steampunk	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + gray (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_taint	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + purple (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_kerosene_yuck	A	peintures de missile	peinture à l'établi : mp_fuselage_15_kerosene + brown (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_faust	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + black (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_mimi	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + pink (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_panorama	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + light_blue (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_roses	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + magenta (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_silvermoonlight	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + light_gray (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_snowy	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + white (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_soviet_glory	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + red (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
+mp_fuselage_15_solid_soviet_stank	A	peintures de missile	peinture à l'établi : mp_fuselage_15_solid + brown (colorant) ; retour au fuselage de base avec un seau d'eau (GeoventureCraftingRecipes)
 mp_s_20	A	pièces et capteurs	recette d'établi ajoutée (geoventure) : aucune recette d'origine
 mp_stability_15_soyuz	A	pièces et capteurs	recette d'établi ajoutée (geoventure) : aucune recette d'origine
 mp_warhead_15_boxcar	B	matière ou arme extrême	ogive ou objet extrême (boxcar nucléaire, turbine, taint) : écarté comme les ogives N2, Taint et Balefire
