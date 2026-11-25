@@ -94,7 +94,7 @@ public final class ForeignEnergySweep {
     }
 
     /** The core and every cell resolving to it, so the sweep reads and clears only the machine. */
-    private static List<BlockPos> footprint(ServerLevel level, BlockPos core) {
+    public static List<BlockPos> footprint(ServerLevel level, BlockPos core) {
         List<BlockPos> cells = new ArrayList<>();
         BlockEntity owner = level.getBlockEntity(core);
         if (level.getBlockState(core).isAir()) return cells;

@@ -327,6 +327,11 @@ def mku(l):
             'Meteorite dungeon loot piles give one of these ingredients and the book naming its slot in the grid (1 to 9).' % ing)
 
 
+# Geoventure : les faces d'alimentation que NTM referme exprès (un câble Forge Energy ne s'y branche pas ; partout ailleurs la machine
+# prend l'énergie sur chacun de ses blocs). Même règle que le « faces » du bloc : lancement = côtés seulement.
+SE_BRANCHE = {x: ('Alimentation : se branche par les côtés (le dessus est fermé, comme dans NTM).',
+                  'Power: plug in from the sides (the top is closed, as in NTM).')
+              for x in ('launch_pad', 'launch_pad_large', 'launch_table')}
 SECRETES = {'syringe_mkunicorn': mku}  # objets sans recette JSON mais fabricables par une recette codée (docs/perimetre/obtention.md)
 
 
@@ -365,6 +370,9 @@ def page(x, l):
         L.append('')
         L.append('%s :' % ('Sert à fabriquer' if fr else 'Used to make'))
         L.append(', '.join(lien(u, l) for u in use[:10]) + ((' et %d autres.' if fr else ' and %d more.') % (len(use) - 10) if len(use) > 10 else '.'))
+    if x in SE_BRANCHE:
+        L.append('')
+        L.append(SE_BRANCHE[x][0 if fr else 1])
     return '<br>'.join(L)
 
 

@@ -1,12 +1,12 @@
 package fr.geoventure.geontm.blocks.network;
 
+import fr.geoventure.geontm.capability.MachineEnergyExposure;
 import fr.geoventure.geontm.api.energymk2.IEnergyConnectorBlock;
 import fr.geoventure.geontm.api.energymk2.PowerGraph;
 import fr.geoventure.geontm.api.energymk2.PowerGraphProvider;
 import fr.geoventure.geontm.capability.MachineCaps;
 import fr.geoventure.geontm.uninos.graph.LevelNodeGraph;
 import fr.geoventure.geocore.world.CompatBlock;
-import fr.geoventure.geocore.world.EnergyCompat;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
@@ -115,7 +115,8 @@ public class BlockCable extends CompatBlock implements TickingBlock, SimpleWater
         BlockEntity be = level.getBlockEntity(neighbour);
         if (be instanceof IEnergyConnectorMK2 connector && connector.canConnect(neighbourSide)) return true;
         // the same question the power net asks of a face it has no native machine for
-        return EnergyCompat.exposes(level, neighbour, dir.getOpposite());
+        // Geoventure: own machines answer by their ports only here, their FE intake on the whole body must not draw arms
+        return MachineEnergyExposure.exposesAtPort(level, neighbour, dir.getOpposite());
     }
 
     @Override

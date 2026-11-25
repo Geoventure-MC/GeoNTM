@@ -12,6 +12,7 @@ import fr.geoventure.geontm.lib.ForgeDirection;
 import fr.geoventure.geontm.tileentity.MachineCore;
 import fr.geoventure.geontm.uninos.PortNodes;
 import fr.geoventure.geontm.uninos.networkproviders.PowerNetProvider;
+import fr.geoventure.geocore.world.EnergyCompat;
 import fr.geoventure.geocore.world.EnergyExposure;
 import fr.geoventure.geocore.world.EnergySource;
 import java.lang.ref.WeakReference;
@@ -23,6 +24,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -82,8 +84,14 @@ public final class MachineEnergyExposure implements EnergySource {
     }
 
     private static @Nullable IEnergyHandlerMK2 at(ServerLevel level, BlockPos pos, Direction side, CapRole role) {
+        return at(level, pos, side, role, true);
+    }
+
+    /** {@code intake}: a consumer takes FE on every face of every block it owns, not only at its power ports. */
+    private static @Nullable IEnergyHandlerMK2 at(ServerLevel level, BlockPos pos, Direction side, CapRole role,
+                                                  boolean intake) {
         if (!resident(level, pos)) return null;
-        var handler = machineAt(level, pos, side, role);
+        var handler = machineAt(level, pos, side, role, intake);
         if (handler == null) return null;
         // a port block (custom machine) stages into the machine it fronts
         if (handler instanceof PortNodes.Delegate delegate && delegate.portOwner() instanceof IEnergyHandlerMK2 owner
@@ -96,10 +104,18 @@ public final class MachineEnergyExposure implements EnergySource {
     }
 
     /** A ported machine answers at its power ports in their role, any other where an GEONTM cable connects. */
-    private static @Nullable IEnergyHandlerMK2 machineAt(ServerLevel level, BlockPos pos, Direction side, CapRole role) {
+    private static @Nullable IEnergyHandlerMK2 machineAt(ServerLevel level, BlockPos pos, Direction side, CapRole role,
+                                                         boolean intake) {
         var owner = level.getBlockEntity(pos) instanceof IEnergyHandlerMK2 own ? (BlockEntity) own
                 : MachineCore.at(level, pos, level.getBlockState(pos));
         boolean receive = role == CapRole.POWER_IN;
+        // Geoventure: HBM's cable only reaches a multiblock at its few power ports, so another mod's cable laid against
+        // any other block of a machine found no FE there and the machine seemed incompatible. A consumer now takes FE
+        // on every face of every block it owns (a cell's capability proxy relays to the core); outputs stay at the ports.
+        if (intake && receive && owner instanceof IEnergyReceiverMK2 consumer
+                && MachineCaps.supportsRole(owner, CapRole.POWER_IN) && MachineCaps.accepts(owner, side, CapRole.POWER_IN)) {
+            return consumer;
+        }
         if (owner instanceof IEnergyHandlerMK2 machine && PortNodes.isPorted(level, machine, true)) {
             if (receive ? !(machine instanceof IEnergyReceiverMK2) : !(machine instanceof IEnergyProviderMK2)) return null;
             return PortNodes.allows(level, pos.relative(side).asLong(), ForgeDirection.getOrientation(side), machine,
@@ -108,6 +124,16 @@ public final class MachineEnergyExposure implements EnergySource {
         if (!(PowerNetwork.handlerAtFace(level, pos, side) instanceof IEnergyHandlerMK2 machine)) return null;
         boolean plays = receive ? machine instanceof IEnergyReceiverMK2 : machine instanceof IEnergyProviderMK2;
         return plays && MachineCaps.accepts((BlockEntity) machine, side, role) ? machine : null;
+    }
+
+    /**
+     * Whether HBM's own cable rule (the port faces) opens this face: what HBM's cables ask to draw an arm, so the
+     * FE intake on the rest of a machine does not make them connect to its body.
+     */
+    public static boolean exposesAtPort(LevelReader reader, BlockPos pos, Direction side) {
+        if (!(reader instanceof ServerLevel level) || !isMachine(level, pos)) return EnergyCompat.exposes(reader, pos, side);
+        return EnergyCompat.supported() && (at(level, pos, side, CapRole.POWER_IN, false) != null
+                || at(level, pos, side, CapRole.POWER_OUT, false) != null);
     }
 
     @Override

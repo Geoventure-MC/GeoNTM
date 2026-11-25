@@ -1,6 +1,6 @@
 package fr.geoventure.geontm.lib;
 
-import fr.geoventure.geocore.world.EnergyCompat;
+import fr.geoventure.geontm.capability.MachineEnergyExposure;
 import net.minecraft.world.level.LevelReader;
 import fr.geoventure.geontm.Constants;
 import fr.geoventure.geontm.api.energymk2.IBatteryItem;
@@ -126,7 +126,8 @@ public final class Library {
             return con.canConnect(dir.getOpposite());
         }
 
-        return world instanceof LevelReader reader && EnergyCompat.exposes(reader, pos,
+        // Geoventure: own machines answer by their ports only here (see MachineEnergyExposure.exposesAtPort)
+        return world instanceof LevelReader reader && MachineEnergyExposure.exposesAtPort(reader, pos,
                 dir.getOpposite().toDirection());
     }
 

@@ -13,7 +13,7 @@
   "fr_fr": "Base de lancement"
  },
  "content": {
-  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 6 x cast plate (Steel), 64 x Concrete Tile, 16 x ingot (plastic), 24 x [[gv:steel_scaffold|Steel Scaffold]], 2 x [[gv:circuit_advanced|Military Grade Circuit Board]] - [[gv:schemas|blueprint required]]: Heavy warheads.",
-  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 6 x plaque coulée (acier), 64 x Tuile de béton, 16 x lingot (plastique), 24 x [[gv:steel_scaffold|Échafaudage en acier]], 2 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]] - [[gv:schemas|schéma exigé]] : Ogives lourdes."
+  "en_us": "How to get it :<br>- [[Assembly Machine|Assembly Machine]] : 6 x cast plate (Steel), 64 x Concrete Tile, 16 x ingot (plastic), 24 x [[gv:steel_scaffold|Steel Scaffold]], 2 x [[gv:circuit_advanced|Military Grade Circuit Board]] - [[gv:schemas|blueprint required]]: Heavy warheads.<br><br>Power: plug in from the sides (the top is closed, as in NTM).",
+  "fr_fr": "Obtention :<br>- [[Assembly Machine|Machine d'assemblage]] : 6 x plaque coulée (acier), 64 x Tuile de béton, 16 x lingot (plastique), 24 x [[gv:steel_scaffold|Échafaudage en acier]], 2 x [[gv:circuit_advanced|Carte de circuit de qualité militaire]] - [[gv:schemas|schéma exigé]] : Ogives lourdes.<br><br>Alimentation : se branche par les côtés (le dessus est fermé, comme dans NTM)."
  }
 }

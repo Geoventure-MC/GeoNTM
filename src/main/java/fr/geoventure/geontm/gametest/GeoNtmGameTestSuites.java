@@ -133,6 +133,7 @@ public final class GeoNtmGameTestSuites {
             list.add(NetworkReachGameTests.TESTS);
             list.add(FluidNetworkGameTests.TESTS);
             list.add(ForeignEnergyGameTests.TESTS);
+            list.add(EnergyIntakeGameTests.TESTS);
             list.add(FoldedGeometryGameTests.TESTS);
             list.add(NetworkSyncGameTests.TESTS);
             list.add(ChunkPromotionGameTests.TESTS);
@@ -268,6 +269,7 @@ public final class GeoNtmGameTestSuites {
         NetworkReachGameTests.init();
         FluidNetworkGameTests.init();
         ForeignEnergyGameTests.init();
+        EnergyIntakeGameTests.init();
         ForeignEnergyFixture.init();
         FoldedGeometryGameTests.init();
         NetworkSyncGameTests.init();
