@@ -1,15 +1,20 @@
 package fr.geoventure.geontm.saveddata.satellites;
 
+import fr.geoventure.geocore.Ids;
 import fr.geoventure.geontm.entity.ModNtmEntities;
 import fr.geoventure.geontm.entity.logic.EntityDeathBlast;
 import fr.geoventure.geontm.items.machine.ItemSatellite.EnumSatType;
+import fr.geoventure.geontm.pont.PontGuerre;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Locale;
 
@@ -67,20 +72,32 @@ public class SatelliteDeathRay extends Satellite {
         }
     }
 
+    private static final ResourceLocation ID_ARME = Ids.of("geontm", "sat_laser");
+
     @Override
     public void onCoordAction(ServerLevel level, Player player, int x, int y, int z) {
         this.setTarget(x, z);
-        this.deathBlast(level, targetX, targetZ);
+        this.deathBlast(level, targetX, targetZ, player);
     }
 
     public void deathBlast(ServerLevel level, int x, int z) {
+        deathBlast(level, x, z, null);
+    }
+
+    public void deathBlast(ServerLevel level, int x, int z, @Nullable Player player) {
         if (lastShot + CHARGE_TIME < level.getGameTime()) {
+            int y = Heights.heightValue(level, x, z);
+            BlockPos cible = new BlockPos(x, y, z);
+            BlockPos origine = player != null ? player.blockPosition() : cible;
+            PontGuerre.FrappeOrbitale frappe = PontGuerre.autoriserFrappeOrbitale(level, origine, cible, ID_ARME, player);
+            if (frappe == null) return;
+
             lastShot = level.getGameTime();
             this.markDirty();
 
-            int y = Heights.heightValue(level, x, z);
-
             EntityDeathBlast blast = new EntityDeathBlast(ModNtmEntities.LASER_BLAST.get(), level);
+            blast.frappeLancement = frappe.lancement();
+            blast.frappeId = frappe.frappeId();
             // 1.7 dropped the entity into an unloaded column as readily as a loaded one; the claim keeps its
             // sixty-tick timer running there
             blast.anchorAndLoad(level, x >> 4, z >> 4);

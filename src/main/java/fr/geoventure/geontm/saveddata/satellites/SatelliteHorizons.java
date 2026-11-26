@@ -1,9 +1,11 @@
 package fr.geoventure.geontm.saveddata.satellites;
 
+import fr.geoventure.geocore.Ids;
 import fr.geoventure.geontm.advancement.GeoNtmCriteria;
 import fr.geoventure.geontm.entity.ModNtmEntities;
 import fr.geoventure.geontm.entity.projectile.EntityTom;
 import fr.geoventure.geontm.items.ModSatelliteItems;
+import fr.geoventure.geontm.pont.PontGuerre;
 import fr.geoventure.geontm.saveddata.SatelliteSavedData;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -11,11 +13,13 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Locale;
 
@@ -89,19 +93,33 @@ public class SatelliteHorizons extends Satellite {
         }
     }
 
+    private static final ResourceLocation ID_ARME = Ids.of("geontm", "sat_gerald");
+
     @Override
     public void onCoordAction(ServerLevel level, Player player, int x, int y, int z) {
         this.setTarget(x, z);
-        this.theHorizons(level, x, z);
+        this.theHorizons(level, x, z, player);
     }
 
     public void theHorizons(ServerLevel level, int x, int z) {
+        theHorizons(level, x, z, null);
+    }
+
+    public void theHorizons(ServerLevel level, int x, int z, @Nullable Player player) {
         if (used) return;
+
+        int y = Heights.heightValue(level, x, z);
+        BlockPos cible = new BlockPos(x, y, z);
+        BlockPos origine = player != null ? player.blockPosition() : cible;
+        PontGuerre.FrappeOrbitale frappe = PontGuerre.autoriserFrappeOrbitale(level, origine, cible, ID_ARME, player);
+        if (frappe == null) return;
 
         used = true;
         SatelliteSavedData.get(level, new BlockPos(x, 0, z)).setDirty();
 
         EntityTom tom = new EntityTom(ModNtmEntities.TOM_THE_MOONSTONE.get(), level);
+        tom.frappeLancement = frappe.lancement();
+        tom.frappeId = frappe.frappeId();
         tom.setPos(x + 0.5D, 600, z + 0.5D);
         // 1.7 provider.loadChunk(x >> 4, z >> 4)
         tom.anchorAndLoad(level, x >> 4, z >> 4);

@@ -90,6 +90,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
     /** Frappe autorisée par les règles de guerre de Geoventure. */
     public @Nullable UUID frappeLancement;
     public @Nullable String frappeId;
+    private boolean frappeClose;
 
     /**
      * The missile's pitch in upstream's convention: 0° straight up, −90° horizontal, −180° straight
@@ -291,7 +292,8 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
             }
 
             if (getDeltaMovement().y < -1.5 && this.isCluster) {
-                cluster();
+                frappeClose = true;
+                fr.geoventure.geontm.pont.PontGuerre.impact(this, blockPosition(), this::cluster);
                 discard();
                 return;
             }
@@ -320,6 +322,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
                 ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this));
 
         if (hit.getType() != HitResult.Type.MISS) {
+            frappeClose = true;
             GeoNtmEvents.missileImpact(this, hit.getBlockPos(), targetX, targetZ, thrower);
             fr.geoventure.geontm.pont.PontGuerre.impact(this, hit.getBlockPos(), () -> this.onMissileImpact(hit));
             discard();
@@ -410,6 +413,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
 
     /** Destroyed in flight: a modest blast, a shower of shrapnel, and the missile's parts. */
     protected void killMissile() {
+        frappeClose = true;
         fr.geoventure.geontm.pont.PontGuerre.intercepte(this);
         if (isRemoved()) return;
         discard();
@@ -466,6 +470,10 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
 
     @Override
     public void remove(RemovalReason reason) {
+        if (!level().isClientSide() && reason.shouldDestroy() && !frappeClose && frappeLancement != null) {
+            frappeClose = true;
+            fr.geoventure.geontm.pont.PontGuerre.annuler(this, reason.name());
+        }
         chunkLoader.clearChunkLoader();
         super.remove(reason);
     }
@@ -489,6 +497,7 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
         frappeLancement = lancement.isEmpty() ? null : UUID.fromString(lancement);
         String frappe = input.getStringOr("frappeId", "");
         frappeId = frappe.isEmpty() ? null : frappe;
+        fr.geoventure.geontm.pont.PontGuerre.restaurerAutorisation(frappeId, input);
     }
 
     @Override
@@ -509,6 +518,9 @@ public abstract class EntityMissileBaseNT extends CompatEntity implements IChunk
         output.putDouble("veloc", velocity);
         Owners.save(output, owner);
         if (frappeLancement != null) output.putString("frappeLancement", frappeLancement.toString());
-        if (frappeId != null) output.putString("frappeId", frappeId);
+        if (frappeId != null) {
+            output.putString("frappeId", frappeId);
+            fr.geoventure.geontm.pont.PontGuerre.sauvegarderAutorisation(frappeId, output);
+        }
     }
 }

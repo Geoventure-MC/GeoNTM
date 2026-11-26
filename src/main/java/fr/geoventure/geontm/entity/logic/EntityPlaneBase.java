@@ -187,18 +187,10 @@ public abstract class EntityPlaneBase extends CompatEntity {
 
     /**
      * Force-load the entity's current chunk before it is added - a plane spawns ~100 blocks out, usually in unloaded terrain.
+     * Uses the async forced-chunk ticket from {@link #slideForcedChunk()} without synchronously blocking the server thread.
      */
     public void forceSpawnChunk() {
         slideForcedChunk();
-        if (level() instanceof ServerLevel server) {
-            var loaded = false;
-            try {
-                ChunkUtil.loadEntityTickingChunk(server, forcedChunk);
-                loaded = true;
-            } finally {
-                if (!loaded) releaseForcedChunk();
-            }
-        }
     }
 
     /** Adds a newly configured plane, releasing its start claim if the level refuses it or addition throws. */
