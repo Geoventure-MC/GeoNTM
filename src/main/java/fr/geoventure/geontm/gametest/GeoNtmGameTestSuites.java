@@ -134,6 +134,7 @@ public final class GeoNtmGameTestSuites {
             list.add(FluidNetworkGameTests.TESTS);
             list.add(ForeignEnergyGameTests.TESTS);
             list.add(EnergyIntakeGameTests.TESTS);
+            list.add(GeoModsEnergyBridgeGameTests.TESTS);
             list.add(FoldedGeometryGameTests.TESTS);
             list.add(NetworkSyncGameTests.TESTS);
             list.add(ChunkPromotionGameTests.TESTS);
@@ -270,6 +271,7 @@ public final class GeoNtmGameTestSuites {
         FluidNetworkGameTests.init();
         ForeignEnergyGameTests.init();
         EnergyIntakeGameTests.init();
+        GeoModsEnergyBridgeGameTests.init();
         ForeignEnergyFixture.init();
         FoldedGeometryGameTests.init();
         NetworkSyncGameTests.init();

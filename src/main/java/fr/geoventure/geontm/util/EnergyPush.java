@@ -68,6 +68,13 @@ public final class EnergyPush {
         if (available <= 0L) return true;
         EnergyView view = EnergyCompat.find(level, target, face);
         if (view == null) return false;
+        // Geoventure: a provider that also takes power at its ports is a buffer (a battery in buffer or input mode), and
+        // a peer that both takes and gives (a GeoMods cable holding energy, a battery) already balances itself against a
+        // buffer: it pulls up to its half level and pushes back what is above. Pushing as well sent the same energy round
+        // and round for ever, and every lap through a GeoMods cable network costs it a share of what moved. Two buffers
+        // leave the move to the peer; a peer that only takes (a machine) or only gives (a generator) is still pushed.
+        if (provider instanceof IEnergyReceiverMK2 receiver && receiver.getReceiverSpeed() > 0L
+                && view.insertable() > 0L && view.extractable() > 0L) return true;
         long fe = EnergyConversion.feFromHe(available);
         fe -= fe % EnergyConversion.feQuantum();
         long accepted = fe <= 0L ? 0L : view.insert(fe);
