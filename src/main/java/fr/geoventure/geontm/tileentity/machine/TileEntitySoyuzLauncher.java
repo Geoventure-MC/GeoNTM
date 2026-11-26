@@ -201,7 +201,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
         power -= pow;
 
         if (mode == 0) {
-            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(SLOT_SATELLITE), placer());
+            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(SLOT_SATELLITE), this, level);
             soyuz.setSat(inventory.getStackInSlot(SLOT_SATELLITE));
 
             if (this.orbital() == 2) inventory.setStackInSlot(SLOT_ORBITAL, ItemStack.EMPTY);
@@ -385,6 +385,7 @@ public class TileEntitySoyuzLauncher extends TileEntityMachineBase
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int id, Inventory playerInventory, Player player) {
+        noterOperateur(player);
         return new ContainerSoyuzLauncher(id, playerInventory, this);
     }
 }

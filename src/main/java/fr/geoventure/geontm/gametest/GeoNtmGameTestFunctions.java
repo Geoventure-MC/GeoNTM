@@ -309,6 +309,14 @@ public final class GeoNtmGameTestFunctions {
             TESTS.function("space_soyuz_loading", 100, 8, () -> SpaceGameTests::soyuzLoading);
     public static final GameTests.Function SOYUZ_MODES =
             TESTS.function("soyuz_modes", 100, 16, () -> SoyuzGameTests::modes);
+    public static final GameTests.Function SATELLITE_LANCEUR_CHOIX =
+            TESTS.function("satellite_lanceur_choix", 20, () -> SatelliteLanceurGameTests::choix);
+    public static final GameTests.Function SATELLITE_LANCEUR_SOYUZ_LAUNCHER =
+            TESTS.function("satellite_lanceur_soyuz_launcher", 100, 16, () -> SatelliteLanceurGameTests::soyuzLauncher);
+    public static final GameTests.Function SATELLITE_LANCEUR_SOYUZ_PAD =
+            TESTS.function("satellite_lanceur_soyuz_pad", 100, 8, () -> SatelliteLanceurGameTests::soyuzPad);
+    public static final GameTests.Function SATELLITE_LANCEUR_LAMBDA_PAD =
+            TESTS.function("satellite_lanceur_lambda_pad", 100, 8, () -> SatelliteLanceurGameTests::lambdaPad);
     public static final GameTests.Function DFC_BEAM =
             TESTS.function("dfc_beam", 100, 12, () -> DFCGameTests::beam);
     public static final GameTests.Function DFC_REACTION =

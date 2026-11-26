@@ -355,7 +355,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
         tanks[0].setFill(tanks[0].getFill() - 24_000);
         tanks[1].setFill(tanks[1].getFill() - 24_000);
 
-        fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(1), placer());
+        fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(1), this, level);
         rocket.setSat(inventory.getStackInSlot(1));
 
         inventory.setStackInSlot(0, ItemStack.EMPTY);
@@ -559,6 +559,13 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
         return stillValid(player);
     }
 
+    /** Le joueur qui envoie l'ordre (menu ouvert, permission vérifiée par le paquet) devient le lanceur retenu. */
+    @Override
+    public void receiveControl(Player player, CompoundTag data) {
+        if (Tags.contains(data, "launch")) noterOperateur(player);
+        receiveControl(data);
+    }
+
     @Override
     public void receiveControl(CompoundTag data) {
         if (Tags.contains(data, "auto")) {
@@ -577,6 +584,7 @@ public class TileEntityLaunchpadLambda extends TileEntityMachineBase
 
     @Override
     public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        noterOperateur(player);
         return new ContainerLaunchpadLambda(containerId, playerInventory, this);
     }
 }

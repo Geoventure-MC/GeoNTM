@@ -4,12 +4,14 @@ import fr.geoventure.geontm.Constants;
 import fr.geoventure.geontm.api.environment.Environment;
 import fr.geoventure.geontm.saveddata.satellites.Satellite;
 import fr.geoventure.geontm.saveddata.satellites.XSatelliteRegistry;
+import fr.geoventure.geontm.tileentity.TileEntityLoadedBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jspecify.annotations.Nullable;
@@ -18,6 +20,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import java.util.function.Supplier;
 
 /** Inscrit chaque satellite mis en orbite dans la course à l'espace de Geoventure, au nom de son lanceur. */
 public final class PontEspace {
@@ -101,6 +104,36 @@ public final class PontEspace {
     /** Appelé par les pas de tir juste avant de confier le satellite à la fusée. */
     public static void marquerLanceur(ItemStack satellite, @Nullable UUID lanceur) {
         if (lanceur != null && !satellite.isEmpty()) satellite.getOrCreateTag().putUUID(CLE_LANCEUR, lanceur);
+    }
+
+    /** Le dernier opérateur d'un pas de tir ne compte que s'il a agi dans les 10 dernières minutes de jeu. */
+    public static final long FENETRE_OPERATEUR_TICKS = 10L * 60L * 20L;
+    /** Repli : joueur le plus proche du pas de tir dans ce rayon (blocs). */
+    public static final double RAYON_REPLI = 32.0D;
+
+    /**
+     * Ordre de choix du lanceur : dernier opérateur (interface ouverte ou lancement ordonné dans la fenêtre) ->
+     * poseur du bloc -> joueur le plus proche ({@code plusProche}, évalué en dernier) -> nul. Pure.
+     */
+    public static @Nullable UUID choisirLanceur(@Nullable UUID operateur, long tickOperateur, long maintenant,
+                                                @Nullable UUID placer, Supplier<UUID> plusProche) {
+        long ecoule = maintenant - tickOperateur;
+        if (operateur != null && ecoule >= 0 && ecoule <= FENETRE_OPERATEUR_TICKS) return operateur;
+        if (placer != null) return placer;
+        return plusProche.get();
+    }
+
+    /**
+     * Appelé par chaque pas de tir juste avant de confier le satellite à la fusée : choisit le lanceur
+     * ({@link #choisirLanceur}) puis le marque sur le satellite (sans lanceur trouvé, la marque éventuelle du satellite reste).
+     */
+    public static void marquerLanceur(ItemStack satellite, TileEntityLoadedBase pas, Level level) {
+        if (satellite.isEmpty()) return;
+        BlockPos pos = pas.getBlockPos();
+        marquerLanceur(satellite, choisirLanceur(pas.operateur(), pas.operateurTick(), level.getGameTime(), pas.placer(), () -> {
+            Player proche = level.getNearestPlayer(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, RAYON_REPLI, true);
+            return proche == null ? null : proche.getUUID();
+        }));
     }
 
     /** Satellite redescendu : retiré de la liste du plugin sur son astre d'orbite (ou toutes orbites si ancien). */

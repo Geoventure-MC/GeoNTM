@@ -84,7 +84,10 @@ public class ContainerSoyuzLauncher extends AbstractContainerMenu {
     public boolean clickMenuButton(Player player, int id) {
         if (launcher == null) return false;
         switch (id) {
-            case BUTTON_LAUNCH -> launcher.handleButtonPacket(0, 1);
+            case BUTTON_LAUNCH -> {
+                launcher.noterOperateur(player);
+                launcher.handleButtonPacket(0, 1);
+            }
             case BUTTON_MODE_SATELLITE -> launcher.handleButtonPacket(0, 0);
             case BUTTON_MODE_CARGO -> launcher.handleButtonPacket(1, 0);
             default -> {

@@ -538,7 +538,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
             soyuz.targetZ = this.targetZ;
             this.targetX = this.targetZ = null;
         } else {
-            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(2), placer());
+            fr.geoventure.geontm.pont.PontEspace.marquerLanceur(inventory.getStackInSlot(2), this, level);
             soyuz.setSat(inventory.getStackInSlot(2));
             if (this.orbital() == 2) inventory.setStackInSlot(3, ItemStack.EMPTY);
             inventory.setStackInSlot(2, ItemStack.EMPTY);
@@ -772,6 +772,13 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
         return stillValid(player);
     }
 
+    /** Le joueur qui envoie l'ordre (menu ouvert, permission vérifiée par le paquet) devient le lanceur retenu. */
+    @Override
+    public void receiveControl(Player player, CompoundTag data) {
+        if (Tags.contains(data, "launch")) noterOperateur(player);
+        receiveControl(data);
+    }
+
     @Override
     public void receiveControl(CompoundTag data) {
         if (Tags.contains(data, "cargo")) {
@@ -799,6 +806,7 @@ public class TileEntityLaunchpadSoyuz extends TileEntityMachineBase
 
     @Override
     public AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        noterOperateur(player);
         return new ContainerLaunchpadSoyuz(containerId, playerInventory, this);
     }
 }

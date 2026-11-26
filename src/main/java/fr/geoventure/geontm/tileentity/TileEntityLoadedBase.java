@@ -33,6 +33,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -63,6 +64,9 @@ public class TileEntityLoadedBase extends CompatBlockEntity implements ILoadedTi
     public boolean muffled = false;
     private @Nullable UUID placerId;
     private Protection.Source placerSource = Protection.Source.NONE;
+    /** Dernier joueur qui a ouvert l'interface ou ordonné un lancement (pas de tir de satellites), et le temps de jeu de ce geste. */
+    private @Nullable UUID operatorId;
+    private long operatorTick;
 
     /** Set by subclasses when a synced field changes; gates {@link #networkPackMK2()}. */
     protected boolean hasDataChanged = true;
@@ -254,6 +258,26 @@ public class TileEntityLoadedBase extends CompatBlockEntity implements ILoadedTi
         return placerSource;
     }
 
+    /** Retient {@code player} comme dernier opérateur de ce bloc (serveur seulement : jamais le client). */
+    public void noterOperateur(@Nullable Player player) {
+        if (player == null || level == null || level.isClientSide()) return;
+        noterOperateur(player.getUUID(), level.getGameTime());
+    }
+
+    public void noterOperateur(@Nullable UUID joueur, long gameTime) {
+        this.operatorId = joueur;
+        this.operatorTick = gameTime;
+        setChanged();
+    }
+
+    public @Nullable UUID operateur() {
+        return operatorId;
+    }
+
+    public long operateurTick() {
+        return operatorTick;
+    }
+
     // --- persistence ---
 
     @Override
@@ -261,6 +285,10 @@ public class TileEntityLoadedBase extends CompatBlockEntity implements ILoadedTi
         super.saveData(output);
         output.putBoolean("muffled", muffled);
         if (placerId != null) output.store("placer", UUIDUtil.CODEC, placerId);
+        if (operatorId != null) {
+            output.store("geontm_operateur", UUIDUtil.CODEC, operatorId);
+            output.putLong("geontm_operateur_tick", operatorTick);
+        }
     }
 
     @Override
@@ -269,6 +297,8 @@ public class TileEntityLoadedBase extends CompatBlockEntity implements ILoadedTi
         muffled = input.getBooleanOr("muffled", false);
         placerId = input.read("placer", UUIDUtil.CODEC).orElse(null);
         placerSource = Protection.Source.ofPlayer(placerId);
+        operatorId = input.read("geontm_operateur", UUIDUtil.CODEC).orElse(null);
+        operatorTick = input.getLongOr("geontm_operateur_tick", 0L);
         hasDataChanged = true;
     }
 
