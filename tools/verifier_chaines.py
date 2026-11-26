@@ -57,7 +57,9 @@ SOURCES = {'minecraft:water', 'minecraft:lava', 'geontm:water', 'geontm:lava', '
            # Chauffés dans la chaudière industrielle par les réchauffeurs, sans recette JSON.
            'geontm:hotoil', 'geontm:hotoil_ds', 'geontm:hotcrackoil', 'geontm:hotcrackoil_ds',
            # Extracteur et tour de deutérium.
-           'geontm:heavywater', 'geontm:deuterium'}
+           'geontm:heavywater', 'geontm:deuterium',
+           # Sel de thorium appauvri : refroidissement du sel chaud (fluid_property thorium_salt_hot, cools_to), pas une recette.
+           'geontm:thorium_salt_depleted'}
 
 
 def lire(nom):

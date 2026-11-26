@@ -24,6 +24,17 @@ Rien de cette liste n'est lancé sans l'accord du propriétaire. GeoNTM n'est au
 - [ ] Interfaces : créatif, JEI et écrans principaux regardés par un humain.
 - [ ] Essai avec plusieurs vrais joueurs, de la connexion par le launcher à une partie complète.
 
+### Ce qui est déjà prouvé hors serveur (26/11, jar 0.1.21)
+
+Aucune des 9 cases ci-dessus n'est cochée : il reste à les jouer sur le serveur de test. Ce qu'on a pu établir sans lui :
+
+- Fabrication : `tools/verifier_obtention.py` (avec le jar GeoMods) relève 2495 objets obtenables ; les 2 objets visibles non obtenables (`soyuz_capsule`, `syringe_mkunicorn`) sont justifiés. Les 24 recettes sans producteur restent cachées, causes dans `docs/perimetre/sans-producteur.md`. À jouer : les constructions (tore, Watz, Soyouz, table de lancement).
+- Espace : GameTest `ponts_espace_minerais_rares` (starmetal et schrabidium générés seulement par des fichiers `espace_*`, sur des biomes d'Ad Astra) et audit `TERRE=1` (aucune fuite sur Terre). À jouer : la présence réelle sur Glacio et Mercure, le satellite inscrit au bon pays.
+- Orbites : GameTest `ponts_espace_orbites` (Glacio reconnu comme astre d'orbite, orbite -> surface pour les six astres). À jouer : un lancement depuis une station orbitale de Glacio, avec le plugin (il reçoit désormais `glacio_orbit`, au lieu de `earth_orbit`).
+- Faune : GameTest `ponts_espace_peuplement` (modificateurs de biome générés, mobs enregistrés). À jouer : l'apparition réelle sur Mars, Vénus et Mercure (de nuit, glyphes seulement).
+- Protection, énergie, radioactivité : les GameTests de bout en bout (`warforge_safe_zone_blast`, `power_geomods_bridge_energy_balance`) exigent WarForge ou GeoMods chargés et ne font rien sur le banc ; leur preuve reste à faire sur le serveur.
+- Interfaces : le bandeau couvre tous les écrans `GUI*` de GeoNTM (test `ponts_ecrans_bandeau` pour le classement) ; le rendu doit être regardé par un humain.
+
 ## Mesures à relever avec et sans GeoNTM
 
 - [ ] Temps de démarrage du serveur et du client.

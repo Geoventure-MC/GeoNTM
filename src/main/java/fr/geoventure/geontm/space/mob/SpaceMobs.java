@@ -211,6 +211,7 @@ public final class SpaceMobs {
         Spawns.placement(() -> SIFTER_EEL.get(), Spawns.Placement.IN_WATER, Spawns.Rule.LIQUID_BELOW);
         Spawns.placement(() -> SCUTTLECRAB.get(), Spawns.Placement.IN_WATER, Spawns.Rule.LIQUID_BELOW);
         Spawns.placement(() -> DEPTH_SQUID.get(), Spawns.Placement.IN_WATER, Spawns.Rule.LIQUID_BELOW);
+        fr.geoventure.geontm.pont.PeuplementPlanetes.init(); // aliens de Mars, Vénus et Mercure (Geoventure)
 
         EntityAITankshell.registerCasing();
 

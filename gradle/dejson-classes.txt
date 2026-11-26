@@ -105,6 +105,7 @@ fr.geoventure.geontm.items.ModChemicalDyeItems
 fr.geoventure.geontm.items.ModSpawnEggs
 fr.geoventure.geontm.entity.ModMobSpawns
 fr.geoventure.geontm.space.mob.SpaceMobs
+fr.geoventure.geontm.pont.PeuplementPlanetes
 fr.geoventure.geontm.items.ModSingularityItems
 fr.geoventure.geontm.blocks.ModDecoBlocks
 fr.geoventure.geontm.blocks.ModDecoContent

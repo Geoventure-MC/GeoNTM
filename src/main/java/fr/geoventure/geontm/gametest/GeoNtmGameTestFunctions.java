@@ -317,6 +317,14 @@ public final class GeoNtmGameTestFunctions {
             TESTS.function("satellite_lanceur_soyuz_pad", 100, 8, () -> SatelliteLanceurGameTests::soyuzPad);
     public static final GameTests.Function SATELLITE_LANCEUR_LAMBDA_PAD =
             TESTS.function("satellite_lanceur_lambda_pad", 100, 8, () -> SatelliteLanceurGameTests::lambdaPad);
+    public static final GameTests.Function PONTS_ESPACE_ORBITES =
+            TESTS.function("ponts_espace_orbites", 20, () -> PontsEspaceGameTests::orbites);
+    public static final GameTests.Function PONTS_ESPACE_PEUPLEMENT =
+            TESTS.function("ponts_espace_peuplement", 20, () -> PontsEspaceGameTests::peuplement);
+    public static final GameTests.Function PONTS_ESPACE_MINERAIS_RARES =
+            TESTS.function("ponts_espace_minerais_rares", 20, () -> PontsEspaceGameTests::mineraisRares);
+    public static final GameTests.Function PONTS_ECRANS_BANDEAU =
+            TESTS.function("ponts_ecrans_bandeau", 20, () -> PontsEspaceGameTests::ecrans);
     public static final GameTests.Function DFC_BEAM =
             TESTS.function("dfc_beam", 100, 12, () -> DFCGameTests::beam);
     public static final GameTests.Function DFC_REACTION =

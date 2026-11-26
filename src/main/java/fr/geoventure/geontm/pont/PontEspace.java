@@ -9,7 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -75,19 +74,24 @@ public final class PontEspace {
     }
 
     private static @Nullable ServerLevel mondeSurfacePourOrbite(ServerLevel level) {
-        String path = level.dimension().location().getPath().toLowerCase(Locale.ROOT);
-        if (!path.endsWith("_orbit")) return null;
-        MinecraftServer server = level.getServer();
-        String body = path.substring(0, path.length() - "_orbit".length());
-        if ("earth".equals(body) || "overworld".equals(body)) {
-            return server.overworld();
-        }
-        ResourceLocation targetId = new ResourceLocation(level.dimension().location().getNamespace(), body);
-        return server.getLevel(ResourceKey.create(Registries.DIMENSION, targetId));
+        ResourceLocation surface = surfacePourOrbite(level.dimension().location());
+        return surface == null ? null : level.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, surface));
     }
 
     /**
-     * Déduit l'astre d'orbite ({@code earth}, {@code moon}, {@code mars}, {@code venus}, {@code mercury})
+     * Dimension de surface d'une dimension d'orbite Ad Astra ({@code ad_astra:glacio_orbit} -> {@code ad_astra:glacio}),
+     * ou nul si ce n'est pas une orbite. La Terre ({@code earth_orbit}, {@code overworld_orbit}) revient au monde principal.
+     */
+    public static @Nullable ResourceLocation surfacePourOrbite(ResourceLocation dimension) {
+        String path = dimension.getPath().toLowerCase(Locale.ROOT);
+        if (!path.endsWith("_orbit")) return null;
+        String body = path.substring(0, path.length() - "_orbit".length());
+        if ("earth".equals(body) || "overworld".equals(body)) return new ResourceLocation("minecraft", "overworld");
+        return new ResourceLocation(dimension.getNamespace(), body);
+    }
+
+    /**
+     * Déduit l'astre d'orbite ({@code earth}, {@code moon}, {@code mars}, {@code venus}, {@code mercury}, {@code glacio})
      * à partir de l'identifiant de dimension ({@code Level.dimension().location()}).
      */
     public static String astreDOrbite(@Nullable ResourceLocation dimension) {
@@ -98,6 +102,7 @@ public final class PontEspace {
         if (path.contains("venus") || full.contains("venus")) return "venus";
         if (path.contains("mars") || full.contains("mars")) return "mars";
         if (path.contains("moon") || full.contains("moon")) return "moon";
+        if (path.contains("glacio") || full.contains("glacio")) return "glacio";
         return "earth";
     }
 
